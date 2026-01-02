@@ -1,0 +1,21 @@
+state= {
+	id=1050
+	name="STATE_1050"
+	manpower = 600000
+	
+	state_category = town
+
+	history= {
+		owner = CUB
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		add_core_of = CUB
+
+	}
+	provinces={ 7451 10374 }
+
+	local_supplies=0.0 
+}

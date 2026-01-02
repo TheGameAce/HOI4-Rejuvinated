@@ -1,40 +1,32 @@
 state= {
 	id=315
 	name="STATE_315"
-	manpower = 4108719
+	manpower = 2038716
 	resources={
-		steel=3 # was: 4
-		chromium=90 # was: 160
+		oil = 5
 	}
 	
-	state_category = town
+	state_category = large_town
 
 	history= {
 		owner = CUB
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
-			industrial_complex = 3
+			industrial_complex = 2
+			dockyard = 2
 			air_base = 1
 			7622 = {
 				naval_base = 3
-			}
-			1550 = {
-				naval_base = 1
 			}
 		}
 		add_core_of = CUB
 		victory_points = {
 			7622 5 
 		}
-		victory_points = {
-			7590 1
-		}
 
 	}
-	provinces={
-		1550 4476 4600 7451 7546 7590 7622 10374 10498 12347 13382
-	}
+	provinces={ 4600 7622 10498 }
 
-	local_supplies=0.0 
+	local_supplies=4.0 
 }

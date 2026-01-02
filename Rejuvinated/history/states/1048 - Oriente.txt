@@ -1,0 +1,30 @@
+state= {
+	id=1048
+	name="STATE_1048"
+	manpower = 1130000
+	resources={
+		steel=48
+		chromium=22
+	}
+	
+	state_category = large_town
+
+	history= {
+		owner = CUB
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			1550 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = CUB
+		victory_points = {
+			7590 1
+		}
+
+	}
+	provinces={	1550 7590 12347 }
+
+	local_supplies=2.0 
+}
