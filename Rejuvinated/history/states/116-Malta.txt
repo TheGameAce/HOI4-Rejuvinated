@@ -1,0 +1,32 @@
+state=
+{
+	id=116
+	name="STATE_116"
+	manpower = 260553
+	state_category = town
+	history= {
+		owner = MLT
+		add_core_of = MLT
+		add_claim_by = ITA
+		victory_points = {
+			12003 5 
+		}
+		buildings = {
+			infrastructure = 2
+			air_base = 3
+			dockyard = 1
+			industrial_complex = 1
+			arms_factory = 1
+			12003 = {
+				naval_base = 3
+				coastal_bunker = 1
+			}
+		}
+		strategic_province_location = {
+			defensible_coastline = 12003
+		}
+	}
+	provinces= { 12003 }
+
+	local_supplies=2.0 
+}
