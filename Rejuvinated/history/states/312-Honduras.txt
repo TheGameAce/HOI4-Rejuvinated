@@ -3,12 +3,11 @@ state={
 	name="STATE_312"
 	manpower=990761
 	resources={
-		chromium=1 # was: 1
+		steel = 10
 	}
 	
 	state_category = town
-	history=
-	{
+	history= {
 		owner = HON
 		buildings = {
 			infrastructure = 2
@@ -26,11 +25,10 @@ state={
 		victory_points = {
 			12865 3 
 		}
-
 	}
 	provinces={
 		2031 8017 12865
 	}
 
-	local_supplies=0.0 
+	local_supplies=1.0
 }

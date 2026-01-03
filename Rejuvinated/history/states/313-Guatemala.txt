@@ -1,9 +1,10 @@
 state={
 	id=313
 	name="STATE_313"
-	manpower = 2046000
+	manpower = 1294000
 	resources={
-		chromium=4 # was: 6
+		chromium=47
+		steel = 18
 	}
 	
 	state_category = town
@@ -16,10 +17,7 @@ state={
 			industrial_complex = 2 
 			air_base = 1
 			10886 = {
-				naval_base = 1
-			}
-			13085 = {
-				naval_base = 1
+				naval_base = 2
 			}
 		}
 		add_core_of = GUA
@@ -29,10 +27,8 @@ state={
 
 	}
 
-	provinces={
-		4991 10842 10886 13085 
-	}
+	provinces={ 10842 10886 }
 	
 
-	local_supplies=0.0 
+	local_supplies=1.0 
 }

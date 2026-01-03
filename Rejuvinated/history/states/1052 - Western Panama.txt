@@ -1,0 +1,26 @@
+state={
+	id=1052
+	name="STATE_1052"
+	manpower = 124000
+	
+	state_category = rural
+	
+	history={
+		owner = PAN
+		buildings = {
+			infrastructure = 1
+			4611 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = PAN
+		victory_points = {
+			4611 1
+		}
+
+	}
+
+	provinces={ 1633 4611 4624 }
+
+	local_supplies=0.5
+}

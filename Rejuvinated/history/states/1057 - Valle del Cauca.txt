@@ -1,10 +1,14 @@
 state={
-	id=493
-	name="STATE_493"
-	manpower = 626781
+	id=1057
+	name="STATE_1057"
+	manpower = 900000
+
+	resources={
+		coal =13
+	}
 	
 	state_category = town
-
+	
 	history={
 		owner = COL
 		buildings = {
@@ -12,12 +16,9 @@ state={
 			industrial_complex = 2
 		}
 		add_core_of = COL
-		victory_points = {
-			2023 1 
-		}
 	}
 
-	provinces={	2023 10864 12703 12845 }
+	provinces={	10790 7936 10846 7991 }
 
 	local_supplies=1.0 
 }

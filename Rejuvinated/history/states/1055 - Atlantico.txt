@@ -1,0 +1,28 @@
+state={
+	id=1055
+	name="STATE_1055"
+	manpower = 1900000
+	
+	state_category = large_town
+
+	history={
+		owner = COL
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 2
+			12790 = {
+				naval_base = 5
+			}
+		}
+		add_core_of = COL
+		victory_points = {
+			12790 5 
+		}
+
+	}
+
+	provinces={	12790 1937 8056 2085 }
+
+	local_supplies=3.0 
+}

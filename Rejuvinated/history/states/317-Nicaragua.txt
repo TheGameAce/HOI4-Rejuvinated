@@ -2,7 +2,7 @@ state={
 	id=317
 	name="STATE_317"
 	resources={
-		chromium=1 # was: 1
+		steel = 5
 	}
 
 	state_category = town
@@ -24,17 +24,13 @@ state={
 		victory_points = {
 			12738 3
 		}
-		victory_points = {
-			2075 1
-		}
-
 	}
 
 	provinces={
-		1988 2075 10728 12738 13139 13178 
+		1988 12738 13139 13178 
 	}
-	manpower=746000
+	manpower=513000
 	buildings_max_level_factor=1.000
 
-	local_supplies=0.0 
+	local_supplies=1.0 
 }
