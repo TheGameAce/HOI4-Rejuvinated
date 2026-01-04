@@ -1,0 +1,33 @@
+state = {
+	id = 1065
+	name = "STATE_1065"
+	manpower = 600000
+
+	resources = {
+		tungsten = 40
+		steel = 3
+	}
+	
+	state_category = large_town
+
+	history = {
+
+		owner = BOL
+		add_core_of = BOL
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+		}
+
+		victory_points = {
+			12930 10 
+		}
+
+	}
+
+	provinces = { 2174 10952 12930 }
+	
+	buildings_max_level_factor = 1.000
+	local_supplies = 1.0 
+}

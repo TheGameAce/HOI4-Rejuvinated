@@ -1,0 +1,24 @@
+state = {
+	id = 1066
+	name = "STATE_1066"
+	manpower = 350000
+	
+	state_category = rural
+
+	history = {
+
+		owner = BOL
+		add_core_of = BOL
+
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+		}
+
+	}
+
+	provinces = { 10938 5179 10987 5229 12979 }
+	
+	buildings_max_level_factor = 1.000
+	local_supplies = 0.0 
+}
