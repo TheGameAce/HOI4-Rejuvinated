@@ -1,0 +1,27 @@
+state={
+	id=1072
+	name="STATE_1072"
+	manpower = 400000
+	
+	state_category = rural
+	
+	history={
+		add_core_of = MAD
+		owner = MAD
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+			12956 = {
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			12956 1
+		}
+
+	}
+
+	provinces={	8246 2200 12956 8180 }
+
+	local_supplies=1.0
+}

@@ -1,0 +1,25 @@
+state={
+	id=1070
+	name="STATE_1070"
+	manpower = 500000
+	
+	state_category = town
+	
+	history={
+		add_core_of = MAD
+		owner = MAD
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+			5222 1
+		}
+
+	}
+
+	provinces={	5222 }
+
+	local_supplies=1.0
+}
