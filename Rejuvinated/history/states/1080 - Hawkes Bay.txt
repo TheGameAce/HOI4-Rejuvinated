@@ -1,0 +1,23 @@
+state={
+	id=1080
+	name="STATE_1080"
+	manpower = 120000
+	
+	resources = {
+		coal = 12
+		oil = 3
+	}
+	state_category = rural
+	
+	history={
+		owner = NZL
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = NZL
+	}
+
+	provinces={	1801 10609 4748 }
+
+	local_supplies=0.0 
+}

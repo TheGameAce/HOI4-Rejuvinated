@@ -1,0 +1,30 @@
+state={
+	id=1077
+	name="STATE_1077"
+	manpower = 230000
+	resources={
+		coal = 34
+	}
+
+	state_category = rural
+
+
+	history={
+		owner = NZL
+		buildings = {
+			infrastructure = 2
+			air_base = 1
+			industrial_complex = 1
+			2197 = {
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			2197 1 
+		}
+		add_core_of = NZL
+	}
+	provinces={	12974 12966 2203 5195 8212 2197 }
+
+	local_supplies=2.0 
+}

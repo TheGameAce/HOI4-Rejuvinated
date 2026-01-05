@@ -1,0 +1,32 @@
+state={
+	id=1081
+	name="STATE_1081"
+	manpower = 500000
+	
+	resources = {
+		coal = 44
+	}
+	state_category = city
+	
+	history={
+		owner = NZL
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 2
+			air_base = 2
+			4543 = {
+				naval_base = 5
+			}
+		}
+		victory_points = {
+			4543 5 
+		}
+		add_core_of = NZL
+	}
+
+	provinces={	1746 1713 10710 7742 4718 7887 12664 12362 1565 4543 10373 10334 4615 }
+
+	local_supplies=9.0 
+}
