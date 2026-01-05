@@ -1,12 +1,12 @@
 state={
 	id=422
 	name="STATE_422"
-	manpower = 5943000
+	manpower = 3743000
 	
-	state_category = rural
+	state_category = town
 
 	resources={
-		rubber=60 # was: 116
+		rubber=40
 	}
 
 	history={
@@ -22,17 +22,11 @@ state={
 			10201 = {
 				naval_base = 5
 			}
-			7260 = {
-				naval_base = 3
-				coastal_bunker = 3
-			}
 		}
 
 	}
 	
-	provinces={
-		1213 4219 7260 7344 10201 10229 10287 12258 
-	}
+	provinces={	10229 10287 7344 10201 }
 
-	local_supplies=0.0 
+	local_supplies=2.0 
 }

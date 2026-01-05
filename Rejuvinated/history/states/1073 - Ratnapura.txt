@@ -1,0 +1,32 @@
+state={
+	id=1073
+	name="STATE_1073"
+	manpower = 2200000
+	
+	state_category = rural
+
+	resources={
+		rubber=20
+	}
+
+	history={
+		add_core_of = SRL
+		owner = ENG
+		buildings = {
+			infrastructure = 1
+			7260 = {
+				naval_base = 3
+				coastal_bunker = 3
+			}
+		}
+		
+		victory_points = {
+			7260 1
+		}
+
+	}
+	
+	provinces={	12258 1213 7260 4219 }
+
+	local_supplies=1.0 
+}
