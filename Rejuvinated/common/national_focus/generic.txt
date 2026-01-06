@@ -1,0 +1,1600 @@
+search_filter_prios = {
+	FOCUS_FILTER_POLITICAL = 1010
+	
+	FOCUS_FILTER_RESEARCH = 522
+	
+	FOCUS_FILTER_INDUSTRY = 509
+
+	FOCUS_FILTER_BALANCE_OF_POWER = 200
+	FOCUS_FILTER_SOV_POLITICAL_PARANOIA = 111
+	FOCUS_FILTER_PROPAGANDA = 110
+	FOCUS_FILTER_MISSIOLINI = 110
+	FOCUS_FILTER_ARMY_XP = 103
+	FOCUS_FILTER_NAVY_XP = 102
+	FOCUS_FILTER_AIR_XP = 101
+
+}
+
+focus_tree = {
+	id = generic_focus
+
+	country = {
+		factor = 1
+	}
+
+	default = yes
+	reset_on_civilwar = no
+
+	initial_show_position = {
+		
+	}
+
+    ########################
+    ### Political branch ###
+    ########################
+	focus = {
+	    id = HR_focus_generic_our_destiny
+        icon = GFX_HR_focus_generic_our_destiny
+        x = 10
+        y = 0
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        
+        cost = 4
+        
+        completion_reward = {
+            add_political_power = 150
+        }
+	}
+
+    ## Communism branch
+    focus = {
+        id = HR_focus_generic_the_people
+        icon = GFX_HR_focus_generic_the_people
+        relative_position_id = HR_focus_generic_our_destiny
+        x = -4
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+
+        cost = 4
+        prerequisite = { focus = HR_focus_generic_our_destiny }
+
+        available = {
+            OR = { 
+                has_government = communism
+                has_government = democratic
+            }
+        }
+
+        completion_reward = {
+            add_political_power = 50
+            add_ideas = HR_idea_generic_the_people
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_embrace_revolutionary_ideas
+        icon = GFX_HR_focus_generic_embrace_revolutionary_ideas
+        relative_position_id = HR_focus_generic_the_people
+        x = -1
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+
+        cost = 4
+        prerequisite = {focus=HR_focus_generic_the_people}
+        available = {
+            has_government = communism
+        }
+
+        completion_reward = {
+            if = {
+                limit = {
+                    communism > 0.9
+                }
+                add_political_power = 100
+                add_stability = 0.1
+            }
+            else = {
+                    add_popularity = {
+                    ideology = communism
+                    popularity = 0.1
+                }
+            }
+
+            swap_ideas = {
+                remove_idea = HR_idea_generic_the_people
+                add_idea = HR_idea_generic_revolutionary_ideas
+            }
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_will_of_the_people
+        icon = GFX_HR_focus_generic_will_of_the_people
+        relative_position_id = HR_focus_generic_embrace_revolutionary_ideas
+        x = 0
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+
+        prerequisite = {focus=HR_focus_generic_embrace_revolutionary_ideas}
+        cost = 6
+        available = {
+            has_government = communism
+            communism > 0.4
+        }
+        
+        completion_reward = {
+            add_political_power = 100
+            if = {
+                limit = {
+                    communism > 0.85
+                }
+                add_political_power = 100
+                add_war_support = 0.1
+            }
+            else = {
+                add_popularity = {
+                    ideology = communism
+                    popularity = 0.1
+                }
+                add_war_support = 0.05
+            }
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_politburo
+        icon = GFX_HR_focus_generic_will_of_the_people
+        relative_position_id = HR_focus_generic_will_of_the_people
+        x = 0
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+
+        prerequisite = {focus = HR_focus_generic_will_of_the_people}
+        cost = 7.2
+        available = {
+            has_government = communism
+            communism > 0.65
+        }
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = HR_idea_generic_revolutionary_ideas
+                add_idea = HR_idea_generic_politburo
+            }
+        }
+    }
+    
+    focus = {
+        id = HR_focus_generic_soldiers_of_world_revolution
+        icon = GFX_HR_focus_generic_soldiers_of_world_revolution
+        relative_position_id = HR_focus_generic_politburo
+        x = 0
+        y = 1
+
+        cost = 6
+        prerequisite = { focus = HR_focus_generic_politburo }
+
+        available = {
+            has_government = communism
+            conscription_ratio > 0.01
+        }
+
+        completion_reward = {
+            add_war_support = 0.15
+            
+            add_ideas = HR_idea_generic_soldiers_of_world_revolution
+        }
+    }
+    focus = {
+        id = HR_focus_generic_socialist_internationalism
+        icon = GFX_HR_focus_generic_socialist_internationalism
+        relative_position_id = HR_focus_generic_soldiers_of_world_revolution
+        x = -1
+        y = 1
+        
+        cost = 7.2
+        prerequisite = { focus = HR_focus_generic_soldiers_of_world_revolution }
+
+        available = {
+            has_government = communism
+            OR = {
+                AND = {
+                    communism > 0.6
+                    threat > 0.5
+                }
+                AND = {
+                    communism > 0.8
+                    threat > 0.3
+                }
+                communism > 0.95
+            }
+        }
+        bypass = {
+            any_other_country = {
+                is_ally_with = ROOT
+                has_government = communism
+            }
+        }
+
+        completion_reward = {
+            if = {
+                limit = {
+                    any_other_country = {
+                        NOT = { tag = ROOT }
+                        is_major = yes
+                        has_same_ideology = yes
+                        has_capitulated = no
+                        any_other_country = {
+                            is_ally_with = PREV
+                            has_same_ideology = yes
+                            NOT = { tag = ROOT }
+                        }
+                    }
+                }
+
+                every_possible_country = {
+                    limit = {
+
+                        NOT = { tag = ROOT }
+                        is_major = yes
+                        has_government = democratic
+                        any_other_country = {
+                            is_ally_with = PREV
+                            has_government = democratic
+                            NOT = { tag = ROOT }
+                        }
+                    }
+
+                    ROOT = { add_to_variable = { requests = 1 } }
+                    country_event = generic.2
+                }
+            }
+            else = {
+                custom_effect_tooltip = HR_focus_generic_global_solidariry_tt_no_alliances
+                add_political_power = 100
+            }
+
+            add_ideas = HR_idea_generic_internationalism
+        }
+        bypass_effect = {
+            add_political_power = 100
+            add_ideas = HR_idea_generic_internationalism
+        }
+    }
+    
+    ## Democracy
+    focus = {
+        id = HR_focus_generic_embrace_liberty_ideas
+        icon = GFX_HR_focus_generic_embrace_liberty_ideas
+        relative_position_id = HR_focus_generic_the_people
+        x = 1
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+
+        cost = 4
+        prerequisite = { focus = HR_focus_generic_the_people }
+
+        available = {
+            has_government = democratic
+        }
+        completion_reward = {
+            add_political_power = 100
+            if = {
+                limit = {
+                    democratic > 0.9
+                }
+                add_political_power = 100
+                add_stability = 0.1
+            }
+            else = {
+                add_popularity = {
+                    ideology = democratic
+                    popularity = 0.1
+                }
+            }
+            
+            swap_ideas = {
+                remove_idea = HR_idea_generic_the_people
+                add_idea = HR_idea_generic_liberty_ideas
+            }
+        }
+    }
+    
+    focus = {
+        id = HR_focus_generic_individual_consciousness
+        icon = GFX_HR_focus_generic_individual_consciousness
+        relative_position_id = HR_focus_generic_embrace_liberty_ideas
+        x = 0
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+
+        cost = 6
+        prerequisite = {focus=HR_focus_generic_embrace_liberty_ideas}
+        available = {
+            has_government = democratic
+            democratic > 0.4
+        }
+        
+        completion_reward = {
+            add_political_power = 100
+            if = {
+                limit = {
+                    democratic > 0.85
+                }
+                add_political_power = 100
+                add_stability = 0.1
+                add_war_support = 0.1
+            }
+            else = {
+                add_popularity = {
+                    ideology = democratic
+                    popularity = 0.1
+                }
+                add_stability = 0.05
+            }
+            swap_ideas = {
+                remove_idea = HR_idea_generic_liberty_ideas
+                add_idea = HR_idea_generic_individual_consciousness
+            }
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_political_publicity
+        icon = GFX_HR_focus_generic_political_publicity
+        relative_position_id = HR_focus_generic_individual_consciousness
+        x = 0
+        y = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+
+        cost = 7.2
+        prerequisite = {focus = HR_focus_generic_individual_consciousness}
+        available = {
+            has_government = democratic
+            democratic > 0.65
+        }
+
+        completion_reward = {
+            add_stability = 0.1
+            swap_ideas = {
+                remove_idea = HR_idea_generic_individual_consciousness
+                add_idea = HR_idea_generic_political_publicity
+            }
+        }
+    }
+    
+    focus = {
+        id = HR_focus_generic_guardians_of_homeland
+        icon = GFX_HR_focus_generic_guardians_of_homeland
+        relative_position_id = HR_focus_generic_political_publicity
+        x = 0
+        y = 1
+
+        cost = 6
+        prerequisite = { focus = HR_focus_generic_political_publicity }
+
+        available = {
+            has_government = democratic
+            conscription_ratio > 0.01
+        }
+
+        completion_reward = {
+            add_war_support = 0.15
+            
+            add_ideas = HR_idea_generic_guardians_of_homeland
+        }
+    }
+    focus = {
+        id = HR_focus_generic_global_solidarity
+        icon = GFX_HR_focus_generic_global_solidarity
+        relative_position_id = HR_focus_generic_guardians_of_homeland
+        x = 1
+        y = 1
+        
+        cost = 7.2
+        prerequisite = { focus = HR_focus_generic_guardians_of_homeland }
+
+        available = {
+            has_government = democratic
+            OR = {
+                AND = {
+                    democratic > 0.6
+                    threat > 0.7
+                }
+                AND = {
+                    democratic > 0.8
+                    threat > 0.5
+                }
+                AND = {
+                    democratic > 0.95
+                    threat > 0.2
+                }
+            }
+        }
+        bypass = {
+            any_other_country = {
+                AND = {
+                    is_ally_with = ROOT
+                    has_government = democratic
+                }
+            }
+        }
+
+        completion_reward = {
+            if = {
+                limit = {
+                    any_other_country = {
+                        NOT = { tag = ROOT }
+                        is_major = yes
+                        has_same_ideology = yes
+                        has_capitulated = no
+                        any_other_country = {
+                            is_ally_with = PREV
+                            has_same_ideology = yes
+                            NOT = { tag = ROOT }
+                        }
+                    }
+                }
+
+                every_possible_country = {
+                    limit = {
+
+                        NOT = { tag = ROOT }
+                        is_major = yes
+                        has_government = democratic
+                        any_other_country = {
+                            is_ally_with = PREV
+                            has_government = democratic
+                            NOT = { tag = ROOT }
+                        }
+                    }
+
+                    ROOT = { add_to_variable = { requests = 1 } }
+                    country_event = generic.2
+                }
+            }
+            else = {
+                custom_effect_tooltip = HR_focus_generic_global_solidariry_tt_no_alliances
+                add_political_power = 100
+            }
+
+            add_ideas = HR_idea_generic_global_solidarity
+        }
+        bypass_effect = {
+            add_political_power = 100
+            add_ideas = HR_idea_generic_global_solidarity
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_we_stand_alone
+        icon = GFX_HR_focus_generic_we_stand_alone
+        relative_position_id = HR_focus_generic_guardians_of_homeland
+        x = -1
+        y = 1
+        
+        cost = 4
+        prerequisite = {
+            focus = HR_focus_generic_guardians_of_homeland
+            focus = HR_focus_generic_soldiers_of_world_revolution
+        }
+        available = {
+            NOT = {
+                any_other_country = {
+                    is_ally_with = ROOT
+                }
+            }
+            has_war_support > 0.5
+        }
+        
+        completion_reward = {
+            add_war_support = 0.15
+            add_ideas = HR_idea_generic_we_stand_alone
+        }
+    }
+
+    ## Neutrality
+    focus = {
+        id = HR_focus_generic_the_order
+        icon = GFX_HR_focus_generic_the_order
+        relative_position_id = HR_focus_generic_our_destiny
+        x = 0
+        y = 1
+
+        cost = 4
+        prerequisite = {focus = HR_focus_generic_our_destiny}
+        available = {
+            has_government = neutrality 
+        }
+
+        completion_reward = {
+            add_political_power = 150
+            add_ideas = HR_idea_generic_the_order
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_no_red_no_brown
+        icon = GFX_HR_focus_generic_no_red_no_brown
+        relative_position_id = HR_focus_generic_the_order
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_the_order}
+        available = {
+            has_government = neutrality
+            neutrality > 0.5
+
+            NOR = {
+                any_other_country = {
+                    is_ally_with = ROOT
+                    OR = {
+                        has_government = fascism
+                        has_government = communism
+                    }
+                }
+                has_idea_with_trait = fascist_demagogue
+                has_idea_with_trait = communist_revolutionary
+            }
+        }
+
+        completion_reward = {
+            add_political_power = 100
+            swap_ideas = {
+                remove_idea = HR_idea_generic_the_order 
+                add_idea = HR_idea_generic_no_red_no_brown
+            }
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_national_identity
+        icon = GFX_HR_focus_generic_national_identity
+        relative_position_id = HR_focus_generic_no_red_no_brown
+        x = 1
+        y = 1
+
+        cost = 4
+        prerequisite = {focus = HR_focus_generic_no_red_no_brown}
+        
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = HR_idea_generic_no_red_no_brown
+                add_idea = HR_idea_generic_national_identity
+            }
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_regime_of_preservation
+        icon = GFX_HR_focus_generic_regime_of_preservation
+        relative_position_id = HR_focus_generic_national_identity
+        x = 1
+        y = 1
+
+        cost = 4
+        prerequisite = {focus = HR_focus_generic_national_identity}
+
+        available = {
+            has_government = neutrality
+            neutrality > 0.7
+        }
+
+        completion_reward = {
+            add_ideas = HR_idea_generic_regime_of_preservation
+        }
+    }
+    
+    focus = {
+        id = HR_focus_generic_sweat_blood_and_tears
+        icon = GFX_HR_focus_generic_sweat_blood_and_tears
+        relative_position_id = HR_focus_generic_regime_of_preservation
+        x = -1
+        y = 1
+
+        cost = 6
+        prerequisite = {focus = HR_focus_generic_regime_of_preservation}
+
+        completion_reward = {
+            add_ideas = HR_idea_generic_sweat_blood_and_tears
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_fortress_country
+        icon = GFX_HR_focus_generic_fortress_country
+        relative_position_id = HR_focus_generic_sweat_blood_and_tears
+        x = 0
+        y = 1
+
+        cost = 10
+        prerequisite = {focus = HR_focus_generic_sweat_blood_and_tears}
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = HR_idea_generic_sweat_blood_and_tears
+                add_idea = HR_idea_generic_fortress_country
+            }
+        }
+    }
+
+    ## Fasist path
+    focus = {
+        id = HR_focus_generic_the_state
+        icon = GFX_HR_focus_generic_the_state
+        relative_position_id = HR_focus_generic_our_destiny
+        x = 3
+        y = 1
+
+        cost = 4
+        prerequisite = {focus = HR_focus_generic_our_destiny}
+
+        available = {
+            has_government = fascism
+        }
+
+        completion_reward = {
+            add_political_power = 100
+            add_ideas = HR_idea_generic_the_state
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_unity_of_state_and_nation
+        icon = GFX_HR_focus_generic_unity_of_state_and_nation
+        relative_position_id = HR_focus_generic_the_state 
+        x = 0
+        y = 1
+
+        cost = 4
+        prerequisite = {focus = HR_focus_generic_the_state}
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = HR_idea_generic_the_state
+                add_idea = HR_idea_generic_unity_of_state_and_nation
+            }
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_country_above_all 
+        icon = GFX_HR_focus_generic_country_above_all
+        relative_position_id = HR_focus_generic_unity_of_state_and_nation
+        x = 0
+        y = 1
+
+        cost = 6
+        prerequisite = {focus = HR_focus_generic_unity_of_state_and_nation}
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = HR_idea_generic_unity_of_state_and_nation
+                add_idea = HR_idea_generic_country_above_all
+            }
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_black_shirts
+        icon = GFX_HR_focus_generic_black_shirts
+        relative_position_id = HR_focus_generic_country_above_all
+        x = 0
+        y = 1
+
+        cost = 6
+        prerequisite = {focus = HR_focus_generic_country_above_all}
+
+        completion_reward = {
+            add_ideas = HR_idea_generic_black_shirts
+        }
+    }
+    
+    focus = {
+        id = HR_focus_generic_hail_the_armed_forces
+        icon = GFX_HR_focus_generic_hail_the_armed_forces
+        relative_position_id = HR_focus_generic_black_shirts
+        x = -1
+        y = 1
+
+        cost = 10
+        prerequisite = {focus = HR_focus_generic_black_shirts}
+        mutually_exclusive = {focus = HR_focus_generic_every_home_is_a_fortress}
+
+        available = {
+            conscription_ratio > 0.02
+            has_army_manpower = {
+                size > 50000
+            }
+        }
+
+        completion_reward = {
+            add_ideas = HR_idea_generic_hail_the_armed_forces
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_every_home_is_a_fortress
+        icon = GFX_HR_focus_generic_every_home_is_a_fortress
+        relative_position_id = HR_focus_generic_black_shirts
+        x = 1
+        y = 1
+
+        cost = 10
+        prerequisite = {focus = HR_focus_generic_black_shirts}
+        mutually_exclusive = {focus = HR_focus_generic_hail_the_armed_forces}
+
+        completion_reward = {
+            add_ideas = HR_idea_generic_every_home_is_a_fortress
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_against_common_foes_united
+        icon = GFX_HR_focus_generic_against_common_foes_united
+        relative_position_id = HR_focus_generic_black_shirts
+        x = -1
+        y = 2
+
+        cost = 10
+        prerequisite = {
+            focus = HR_focus_generic_every_home_is_a_fortress
+            focus = HR_focus_generic_hail_the_armed_forces
+        }
+        mutually_exclusive = {
+            focus = HR_focus_generic_only_us
+        }
+
+
+        completion_reward = {
+            set_temp_variable = { requests = 0 }
+
+            every_possible_country = {
+                limit = {
+                    #maybe?
+                    #check_variable = { ROOT.requests < 2 }
+
+                    is_major = yes
+                    has_same_ideology = yes
+                    any_other_country = {
+                        is_ally_with = PREV
+                        has_same_ideology = yes
+                    }
+                }
+
+                add_to_variable = { ROOT.requests = 1 }
+                country_event = generic.2
+            }
+
+            if = {
+                limit = {
+                    check_variable = { requests = 0 }
+                }
+                custom_effect_tooltip = HR_focus_generic_against_common_foes_united_tt_no_alliances
+                add_political_power = 100
+            }
+
+            add_ideas = HR_idea_generic_against_common_foes_united
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_only_us
+        icon = GFX_HR_focus_generic_only_us
+        relative_position_id = HR_focus_generic_black_shirts
+        x = 1
+        y = 2
+
+        cost = 10
+        prerequisite = {
+            focus = HR_focus_generic_every_home_is_a_fortress
+            focus = HR_focus_generic_hail_the_armed_forces
+        }
+        mutually_exclusive = {
+            focus = HR_focus_generic_against_common_foes_united
+        }
+
+        completion_reward = {
+            add_ideas = HR_idea_generic_only_us
+        }
+    }
+
+    focus = {
+        id = HR_focus_generic_national_economics
+        icon = GFX_HR_focus_generic_national_economics
+        x = 20
+        y = 0
+
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_public_works
+        icon = GFX_HR_focus_generic_public_works
+        relative_position_id = HR_focus_generic_national_economics
+        x = -3
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_national_economics}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_workers_rights_act
+        icon = GFX_HR_focus_generic_workers_rights_act
+        relative_position_id = HR_focus_generic_public_works
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_public_works}
+        mutually_exclusive = {focus = HR_focus_generic_institutionalize_punitive_labor}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_institutionalize_punitive_labor
+        icon = GFX_HR_focus_generic_institutionalize_punitive_labor
+        relative_position_id = HR_focus_generic_public_works
+        x = 1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_public_works}
+        mutually_exclusive = {focus = HR_focus_generic_workers_rights_act}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_subsidize_civilian_industry
+        icon = GFX_HR_focus_generic_subsidize_civilian_industry
+        relative_position_id = HR_focus_generic_national_economics
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_national_economics}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_special_economic_zone
+        icon = GFX_HR_focus_generic_special_economic_zone
+        relative_position_id = HR_focus_generic_subsidize_civilian_industry
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_subsidize_civilian_industry}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_domestic_industry_priority
+        icon = GFX_HR_focus_generic_domestic_industry_priority
+        relative_position_id = HR_focus_generic_special_economic_zone
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_special_economic_zone}
+        mutually_exclusive = {focus = HR_focus_generic_international_trade_priority}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_international_trade_priority
+        icon = GFX_HR_focus_generic_international_trade_priority
+        relative_position_id = HR_focus_generic_special_economic_zone
+        x = 1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_special_economic_zone}
+        mutually_exclusive = {focus = HR_focus_generic_domestic_industry_priority}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_tax_adjustments
+        icon = GFX_HR_focus_generic_tax_adjustments
+        relative_position_id = HR_focus_generic_domestic_industry_priority
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_domestic_industry_priority}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_foreign_investors
+        icon = GFX_HR_focus_generic_foreign_investors
+        relative_position_id = HR_focus_generic_international_trade_priority
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_international_trade_priority}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_minds_of_our_country
+        icon = GFX_HR_focus_generic_minds_of_our_country
+        relative_position_id = HR_focus_generic_tax_adjustments
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = HR_focus_generic_foreign_investors
+            focus = HR_focus_generic_tax_adjustments
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_engineering_institure
+        icon = GFX_HR_focus_generic_engineering_institure
+        relative_position_id = HR_focus_generic_minds_of_our_country
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_minds_of_our_country}
+        cost = 10
+    }
+    
+    focus = {
+        id = HR_focus_generic_national_transportation_company
+        icon = GFX_HR_focus_generic_national_transportation_company
+        relative_position_id = HR_focus_generic_national_economics
+        x = 3
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_national_economics}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_connect_the_country
+        icon = GFX_HR_focus_generic_connect_the_country
+        relative_position_id = HR_focus_generic_national_transportation_company
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_national_transportation_company}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_veins_of_the_nation
+        icon = GFX_HR_focus_generic_veins_of_the_nation
+        relative_position_id = HR_focus_generic_connect_the_country
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_connect_the_country}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_state_news_agency
+        icon = GFX_HR_focus_generic_state_news_agency
+        relative_position_id = HR_focus_generic_connect_the_country
+        x = 2
+        y = 0
+
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_radiostation
+        icon = GFX_HR_focus_generic_radiostation
+        relative_position_id = HR_focus_generic_state_news_agency
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_state_news_agency}
+        prerequisite = {focus = HR_focus_generic_connect_the_country}
+        cost = 10
+    }
+
+    focus = {
+        id = HR_focus_generic_homeland_at_war
+        icon = GFX_HR_focus_generic_homeland_at_war
+        x = 31
+        y = 0
+
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_shock_shifts
+        icon = GFX_HR_focus_generic_shock_shifts
+        relative_position_id = HR_focus_generic_homeland_at_war
+        x = -2
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_homeland_at_war}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_emergency_factory_conversion
+        icon = GFX_HR_focus_generic_emergency_factory_conversion
+        relative_position_id = HR_focus_generic_shock_shifts
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_shock_shifts}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_citizen_militia
+        icon = GFX_HR_focus_generic_citizen_militia
+        relative_position_id = HR_focus_generic_homeland_at_war
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_homeland_at_war}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_capital_fortification
+        icon = GFX_HR_focus_generic_capital_fortification
+        relative_position_id = HR_focus_generic_citizen_militia
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_citizen_militia}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_declare_martial_law
+        icon = GFX_HR_focus_generic_declare_martial_law
+        relative_position_id = HR_focus_generic_homeland_at_war
+        x = 2
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_homeland_at_war}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_no_step_back
+        icon = GFX_HR_focus_generic_no_step_back
+        relative_position_id = HR_focus_generic_declare_martial_law
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_declare_martial_law}
+        cost = 10
+    }
+    
+    focus = {
+        id = HR_focus_generic_homeland_defense
+        icon = GFX_HR_focus_generic_homeland_defense
+        x = 42
+        y = 0
+
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_conscription_flexibility
+        icon = GFX_HR_focus_generic_conscription_flexibility
+        relative_position_id = HR_focus_generic_homeland_defense
+        x = -4
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_homeland_defense}
+        mutually_exclusive = {focus = HR_focus_generic_army_elitism}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_standard_andjustments
+        icon = GFX_HR_focus_generic_standard_andjustments
+        relative_position_id = HR_focus_generic_conscription_flexibility
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_conscription_flexibility}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_territorial_defense_committees
+        icon = GFX_HR_focus_generic_territorial_defense_committees
+        relative_position_id = HR_focus_generic_standard_andjustments
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_standard_andjustments}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_fight_for_every_home
+        icon = GFX_HR_focus_generic_fight_for_every_home
+        relative_position_id = HR_focus_generic_territorial_defense_committees
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_territorial_defense_committees}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_local_landscape_advantage
+        icon = GFX_HR_focus_generic_local_landscape_advantage
+        relative_position_id = HR_focus_generic_fight_for_every_home
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_fight_for_every_home}
+        cost = 10
+    }
+
+    focus = {
+        id = HR_focus_generic_criminalize_draft_evasion
+        icon = GFX_HR_focus_generic_criminalize_draft_evasion
+        relative_position_id = HR_focus_generic_conscription_flexibility
+        x = -2
+        y = 1
+
+        prerequisite = {
+            focus = HR_focus_generic_declare_martial_law
+            focus = HR_focus_generic_conscription_flexibility
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_penal_batallions
+        icon = GFX_HR_focus_generic_penal_batallions
+        relative_position_id = HR_focus_generic_criminalize_draft_evasion
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_criminalize_draft_evasion}
+        cost = 10
+    }
+
+    focus = {
+        id = HR_focus_generic_army_elitism
+        icon = GFX_HR_focus_generic_army_elitism
+        relative_position_id = HR_focus_generic_homeland_defense
+        x = 4
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_homeland_defense}
+        mutually_exclusive = {focus = HR_focus_generic_conscription_flexibility}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_cult_of_special_forces
+        icon = GFX_HR_focus_generic_cult_of_special_forces
+        relative_position_id = HR_focus_generic_army_elitism
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_army_elitism}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_organization_superiority
+        icon = GFX_HR_focus_generic_organization_superiority
+        relative_position_id = HR_focus_generic_cult_of_special_forces
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_cult_of_special_forces}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_man_supremacy
+        icon = GFX_HR_focus_generic_man_supremacy
+        relative_position_id = HR_focus_generic_organization_superiority
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_organization_superiority}
+        mutually_exclusive = {focus = HR_focus_generic_machine_supremacy}
+        cost = 10
+    }
+    
+    focus = {
+        id = HR_focus_generic_army_mobility
+        icon = GFX_HR_focus_generic_army_mobility
+        relative_position_id = HR_focus_generic_army_elitism
+        x = 2
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_army_elitism}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_cavalry_motorization
+        icon = GFX_HR_focus_generic_cavalry_motorization
+        relative_position_id = HR_focus_generic_army_mobility
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_army_mobility}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_machine_supremacy
+        icon = GFX_HR_focus_generic_machine_supremacy
+        relative_position_id = HR_focus_generic_cavalry_motorization
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_cavalry_motorization}
+        mutually_exclusive = {focus = HR_focus_generic_man_supremacy}
+        cost = 10
+    }
+
+    focus = {
+        id = HR_focus_generic_fund_military_research
+        icon = GFX_HR_focus_generic_fund_military_research
+        relative_position_id = HR_focus_generic_homeland_defense
+        x = 0
+        y = 2
+
+        prerequisite = {
+            focus = HR_focus_generic_conscription_flexibility
+            focus = HR_focus_generic_army_elitism
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_applied_warfare
+        icon = GFX_HR_focus_generic_applied_warfare
+        relative_position_id = HR_focus_generic_fund_military_research
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_fund_military_research}
+        mutually_exclusive = {focus = HR_focus_generic_battle_theory}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_battle_theory
+        icon = GFX_HR_focus_generic_battle_theory
+        relative_position_id = HR_focus_generic_fund_military_research
+        x = 1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_fund_military_research}
+        mutually_exclusive = {focus = HR_focus_generic_applied_warfare}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_institute_of_aviation
+        icon = GFX_HR_focus_generic_institute_of_aviation
+        relative_position_id = HR_focus_generic_applied_warfare
+        x = -1
+        y = 1
+
+        prerequisite = {
+            focus = HR_focus_generic_applied_warfare
+            focus = HR_focus_generic_battle_theory
+        }
+        mutually_exclusive = {
+            focus = HR_focus_generic_institute_of_armed_forces
+            focus = HR_focus_generic_institute_of_shipbuilding
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_institute_of_armed_forces
+        icon = GFX_HR_focus_generic_institute_of_aviation
+        relative_position_id = HR_focus_generic_applied_warfare
+        x = 1
+        y = 1
+
+        prerequisite = {
+            focus = HR_focus_generic_applied_warfare
+            focus = HR_focus_generic_battle_theory
+        }
+        mutually_exclusive = {
+            focus = HR_focus_generic_institute_of_shipbuilding
+            focus = HR_focus_generic_institute_of_aviation
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_institute_of_shipbuilding
+        icon = GFX_HR_focus_generic_institute_of_shipbuilding
+        relative_position_id = HR_focus_generic_applied_warfare
+        x = 3
+        y = 1
+
+        prerequisite = {
+            focus = HR_focus_generic_applied_warfare
+            focus = HR_focus_generic_battle_theory
+        }
+        mutually_exclusive = {
+            focus = HR_focus_generic_institute_of_armed_forces
+            focus = HR_focus_generic_institute_of_aviation
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_air_department
+        icon = GFX_HR_focus_generic_air_department
+        relative_position_id = HR_focus_generic_homeland_defense
+        x = 10
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_homeland_defense}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_airfield
+        icon = GFX_HR_focus_generic_airfield
+        relative_position_id = HR_focus_generic_air_department
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_air_department}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_school_of_aces
+        icon = GFX_HR_focus_generic_school_of_aces
+        relative_position_id = HR_focus_generic_airfield
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_airfield}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_reverse_engineering
+        icon = GFX_HR_focus_generic_reverse_engineering
+        relative_position_id = HR_focus_generic_air_department
+        x = 2
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_air_department}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_prepare_air_production
+        icon = GFX_HR_focus_generic_prepare_air_production
+        relative_position_id = HR_focus_generic_reverse_engineering
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_reverse_engineering}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_medium_aircraft_focus
+        icon = GFX_HR_focus_generic_medium_aircraft_focus
+        relative_position_id = HR_focus_generic_prepare_air_production
+        x = -3
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_prepare_air_production}
+        mutually_exclusive = {
+            focus = HR_focus_generic_light_aircraft_focus
+            focus = HR_focus_generic_large_aicraft_focus
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_direct_combat_support
+        icon = GFX_HR_focus_generic_direct_combat_support
+        relative_position_id = HR_focus_generic_medium_aircraft_focus
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_medium_aircraft_focus}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_on_land_and_in_the_air
+        icon = GFX_HR_focus_generic_on_land_and_in_the_air
+        relative_position_id = HR_focus_generic_direct_combat_support
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_direct_combat_support}
+        prerequisite = {
+            focus = HR_focus_generic_machine_supremacy
+            focus = HR_focus_generic_man_supremacy    
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_light_aircraft_focus
+        icon = GFX_HR_focus_generic_light_aircraft_focus
+        relative_position_id = HR_focus_generic_prepare_air_production
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_prepare_air_production}
+        mutually_exclusive = {
+            focus = HR_focus_generic_large_aicraft_focus
+            focus = HR_focus_generic_medium_aircraft_focus
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_enemy_interception
+        icon = GFX_HR_focus_generic_enemy_interception
+        relative_position_id = HR_focus_generic_light_aircraft_focus
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_light_aircraft_focus}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_precious_pilot
+        icon = GFX_HR_focus_generic_precious_pilot
+        relative_position_id = HR_focus_generic_enemy_interception
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_enemy_interception}
+        mutually_exclusive = {focus = HR_focus_generic_encourage_suicidal_tactics}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_encourage_suicidal_tactics
+        icon = GFX_HR_focus_generic_encourage_suicidal_tactics
+        relative_position_id = HR_focus_generic_enemy_interception
+        x = 1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_enemy_interception}
+        mutually_exclusive = {focus = HR_focus_generic_precious_pilot}
+        cost = 10
+    }
+
+    focus = {
+        id = HR_focus_generic_large_aicraft_focus
+        icon = GFX_HR_focus_generic_large_aicraft_focus
+        relative_position_id = HR_focus_generic_prepare_air_production
+        x = 2
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_prepare_air_production}
+        mutually_exclusive = {
+            focus = HR_focus_generic_light_aircraft_focus
+            focus = HR_focus_generic_medium_aircraft_focus
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_key_point_bombardmenr
+        icon = GFX_HR_focus_generic_key_point_bombardmenr
+        relative_position_id = HR_focus_generic_large_aicraft_focus
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_large_aicraft_focus}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_not_a_stone_left_unturned
+        icon = GFX_HR_focus_generic_not_a_stone_left_unturned
+        relative_position_id = HR_focus_generic_key_point_bombardmenr
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_key_point_bombardmenr}
+        cost = 10
+    }
+
+    focus = {
+        id = HR_focus_generic_naval_department
+        icon = GFX_HR_focus_generic_naval_department
+        relative_position_id = HR_focus_generic_homeland_at_war
+        x = 30
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_homeland_defense}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_shipyard_expansion
+        icon = GFX_HR_focus_generic_shipyard_expansion
+        relative_position_id = HR_focus_generic_naval_department
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_naval_department}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_sailor_training
+        icon = GFX_HR_focus_generic_sailor_training
+        relative_position_id = HR_focus_generic_naval_department
+        x = 1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_naval_department}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_wolfpack
+        icon = GFX_HR_focus_generic_wolfpack
+        relative_position_id = HR_focus_generic_shipyard_expansion
+        x = -1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_shipyard_expansion}
+        prerequisite = {focus = HR_focus_generic_sailor_training}
+        mutually_exclusive = {
+            focus = HR_focus_generic_manifest_of_power
+            focus = HR_focus_generic_pragmatic_shipbuilding
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_pragmatic_shipbuilding
+        icon = GFX_HR_focus_generic_pragmatic_shipbuilding
+        relative_position_id = HR_focus_generic_shipyard_expansion
+        x = 1
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_shipyard_expansion}
+        prerequisite = {focus = HR_focus_generic_sailor_training}
+        mutually_exclusive = {
+            focus = HR_focus_generic_wolfpack
+            focus = HR_focus_generic_manifest_of_power
+        }
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_manifest_of_power
+        icon = GFX_HR_focus_generic_pragmatic_shipbuilding
+        relative_position_id = HR_focus_generic_shipyard_expansion
+        x = 3
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_shipyard_expansion}
+        prerequisite = {focus = HR_focus_generic_sailor_training}
+        mutually_exclusive = {
+            focus = HR_focus_generic_pragmatic_shipbuilding
+            focus = HR_focus_generic_wolfpack
+        }
+        cost = 10
+    }
+    
+    focus = {
+        id = HR_focus_generic_invisible_fleet
+        icon = GFX_HR_focus_generic_invisible_fleet
+        relative_position_id = HR_focus_generic_wolfpack
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_wolfpack}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_naval_bomber_support
+        icon = GFX_HR_focus_generic_naval_bomber_support
+        relative_position_id = HR_focus_generic_pragmatic_shipbuilding
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_pragmatic_shipbuilding}
+        cost = 10
+    }
+    focus = {
+        id = HR_focus_generic_pride_of_nation
+        icon = GFX_HR_focus_generic_pride_of_nation
+        relative_position_id = HR_focus_generic_manifest_of_power
+        x = 0
+        y = 1
+
+        prerequisite = {focus = HR_focus_generic_manifest_of_power}
+        cost = 10
+    }
+
+    focus = {
+        id = HR_focus_generic_control_over_press
+        icon = GFX_HR_focus_generic_control_over_press
+        relative_position_id = HR_focus_generic_embrace_liberty_ideas
+        y = 0
+        x = 4
+    }
+    focus = {
+        id = HR_focus_generic_young_generation_indoctrination
+        icon = GFX_HR_focus_generic_young_generation_indoctrination
+        relative_position_id = HR_focus_generic_black_shirts
+        y = 0
+        x = -4
+    }
+}
