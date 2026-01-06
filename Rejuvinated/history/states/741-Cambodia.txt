@@ -1,6 +1,11 @@
 state={
 	id=741
 	name="STATE_741"
+
+	resources = {
+		rubber = 2
+	}
+
 	history = {
 		add_core_of = CAM
 		owner = FRA
@@ -8,19 +13,17 @@ state={
 			7376 1
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 3
 			7432 = {
-				naval_base = 1
+				naval_base = 3
 			}
 
 		}
 	}
-	provinces={
-		1324 1353 1620 4251 4302 4330 4359 4596 4639 5236 7319 7376 7404 7432 7645 10134 10177 10204 10289 10317 10467 12167 12191 12260 12288 12447 12460 12475 
-	}
-	manpower=3046000
+	provinces={	7376 10289 7404 12260 12288 10317 7432 }
+	manpower=1496000
 	buildings_max_level_factor=1.000
-	state_category=town
+	state_category = metropolis
 
-	local_supplies=0.0 
+	local_supplies=8.0 
 }
