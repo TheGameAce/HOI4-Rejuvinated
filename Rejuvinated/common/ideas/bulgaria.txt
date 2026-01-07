@@ -43,7 +43,15 @@ ideas = {
 			}
 		}
 		BUL_bulgarian_irredentism = {
-			war_support_factor = 0.15
+			picture = bul_third_bulgarian_state
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				war_support_factor = 0.15
+			}
 		}
 		BUL_the_second_national_catastrophe_is_over = {
 

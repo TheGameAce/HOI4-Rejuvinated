@@ -26,11 +26,6 @@ focus_tree = {
 		available = {
 			has_government = neutrality
 		}
-		bypass = {
-			NOT = {
-				is_character = BUL_boris_iii
-			}
-		}
 		completion_reward = {
 			remove_ideas = BUL_treaty_of_neuilly_sur_seine
 
