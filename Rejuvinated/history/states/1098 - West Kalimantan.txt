@@ -1,0 +1,31 @@
+state = {
+	id = 1098
+	name = "STATE_1098"
+	
+	manpower = 950000
+	
+	state_category = town
+
+	history = {
+
+		owner = INS
+		add_core_of = INS
+
+		victory_points = {
+			1316 1
+		}
+
+		buildings = {
+			infrastructure = 1
+
+			1316 = {
+				naval_base = 1
+			}
+		}
+
+	}
+
+	provinces = { 7227 4409 12955 10282 1316 1304 4279 12129 }
+
+	local_supplies = 1.0 
+}

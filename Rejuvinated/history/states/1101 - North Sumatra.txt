@@ -1,0 +1,36 @@
+state = {
+	id = 1101
+	name = "STATE_1101"
+	manpower = 3000000
+	
+	state_category = town
+	
+	resources = {
+		oil = 150
+	}
+
+	history = {
+
+		owner = INS
+		add_core_of = INS
+		
+		victory_points = {
+			4652 1
+		}
+
+		buildings = {
+
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+
+			4652 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = { 10354 12181 1277 12168 7327 1460 12126 1428 4446 7463 12302 7673 10522 4652 8360 1648 10509 12488 7658 }
+
+	local_supplies = 1.0 
+}

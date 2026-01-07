@@ -1,0 +1,35 @@
+state={
+	id=335
+	name="STATE_335" #West Java
+	manpower = 19718200
+	
+	state_category = metropolis
+	
+	resources={
+		rubber=70
+		coal = 30
+	}
+
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			7381 7
+		}
+
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			dockyard = 3
+			arms_factory = 2
+			air_base = 3
+			7381 = {
+				naval_base = 6
+			}
+		}
+	}
+
+	provinces={	4434 1386 12249 7421 4621 1425 10307 4406 7381 10279 1398 }
+
+	local_supplies=5.0 
+}

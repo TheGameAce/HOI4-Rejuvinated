@@ -1,0 +1,27 @@
+state = {
+	id = 1099
+	name = "STATE_1099"
+	
+	manpower = 400000
+	
+	state_category = rural
+
+	resources = {
+		oil = 33
+	}
+
+	history = {
+
+		owner = INS
+		add_core_of = INS
+
+		buildings = {
+			infrastructure = 1
+		}
+
+	}
+
+	provinces = { 10310 12280 10138 12110 7296 10178 1225 1416 12252 10266 }
+
+	local_supplies = 0.0 
+}

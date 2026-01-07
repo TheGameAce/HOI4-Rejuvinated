@@ -1,0 +1,26 @@
+state = {
+	id = 1100
+	name = "STATE_1100"
+	manpower = 1500000
+	
+	state_category = rural
+	
+	resources = {
+		aluminium = 34
+		coal = 57
+	}
+
+	history = {
+
+		owner = INS
+		add_core_of = INS
+
+		buildings = {
+			infrastructure = 2
+		}
+	}
+
+	provinces = { 10294 7440 12415 10194 1373 4364 1345 1332 12212 1533 7368 10382 12343 10225 12184 10209 }
+
+	local_supplies = 0.0 
+}

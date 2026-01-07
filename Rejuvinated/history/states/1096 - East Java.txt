@@ -1,0 +1,33 @@
+state={
+	id=1096
+	name="STATE_1096"
+	manpower = 18000000
+	
+	state_category = large_city
+	
+	resources={
+		oil = 180
+	}
+
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			4608 5
+		}
+
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 2
+			4608 = {
+				naval_base = 4
+			}
+		}
+	}
+
+	provinces={	7654 12472 10479 4306 4608 10491 4390 1209 }
+
+	local_supplies=4.0 
+}

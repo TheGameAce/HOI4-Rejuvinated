@@ -1,0 +1,26 @@
+state={
+	id=1097
+	name="STATE_1097"
+	manpower = 4000000
+	
+	state_category = town
+	
+	resources={
+		rubber = 200
+		coal = 20
+	}
+
+	history={
+		owner = INS
+		add_core_of = INS
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+
+	provinces={	1413 12293 10135 12277 7642 7223 }
+
+	local_supplies=1.0 
+}

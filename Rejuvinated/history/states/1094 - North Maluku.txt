@@ -1,0 +1,25 @@
+state={
+	id=1094
+	name="STATE_1094"
+	manpower = 300000
+	
+	state_category = pastoral
+
+	history={
+		owner = INS
+		add_core_of = INS
+		buildings = {
+			infrastructure = 1
+			1351 = {
+				naval_base = 1
+			}
+			7413 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces={	10342 1437 7413 10141 1419 1351 }
+
+	local_supplies=0.0 
+}
