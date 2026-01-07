@@ -1,0 +1,73 @@
+focus_tree = {
+	id = bulgaria_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 50
+			tag = BUL
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 50 y = 2500 }
+
+	focus = {
+		id = BUL_the_tsars_government
+		icon = GFX_focus_BUL_power_to_the_tsar
+		x = 15
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_government = neutrality
+		}
+		bypass = {
+			NOT = {
+				is_character = BUL_boris_iii
+			}
+		}
+		completion_reward = {
+			remove_ideas = BUL_treaty_of_neuilly_sur_seine
+
+			add_political_power = 100
+			add_war_support = 0.1
+			add_popularity = {
+				ideology = neutrality 
+				popularity = 0.1
+			}
+
+			add_timed_idea = {
+				idea = BUL_remobilizing
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = BUL_bulgarian_nationalism
+		icon = GFX_focus_BUL_promote_bulgarian_nationalism
+		relative_position_id = BUL_the_tsars_government
+		x = 10
+		y = 1
+		prerequisite = {
+			focus = BUL_the_tsars_government
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			OR = {
+				has_government = neutrality 
+				has_government = fascism 
+			}
+		}
+		completion_reward = {
+			add_ideas = BUL_bulgarian_irredentism
+		}
+	}
+}
