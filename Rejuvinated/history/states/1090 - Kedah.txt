@@ -1,0 +1,26 @@
+state = {
+	id = 1090
+	name = "STATE_1090"
+	manpower = 450000
+	
+	state_category = rural
+	
+	resources = {
+		rubber = 150
+	}
+
+	history = {
+
+		owner = MAL
+		add_core_of = MAL
+
+		buildings = {
+			infrastructure = 1
+		}
+		
+	}
+
+	provinces = { 12144 1291 7342 }
+
+	local_supplies = 0.0 
+}

@@ -1,0 +1,35 @@
+state = {
+	id = 1088
+	name = "STATE_1088"
+	manpower = 800000
+	
+	state_category = town
+	
+	resources = {
+		coal = 12
+	}
+
+	history = {
+
+		owner = MAL
+		add_core_of = MAL
+
+		victory_points = {
+			7329 1 # Kota Baru
+		}
+
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+
+			7329 = {
+				naval_base = 1
+			}
+		}
+		
+	}
+
+	provinces = { 7329 12199 10227 1348 4355 }
+
+	local_supplies = 0.0 
+}
