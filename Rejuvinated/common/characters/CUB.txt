@@ -1,0 +1,834 @@
+characters={
+
+#########################################################################################################################################################################
+###Cuban Leaders###
+#########################################################################################################################################################################
+
+	CUB_josé_agripino_barnet={ #Starting Leader & Advisor - Democratic
+		name = "José Agripino Barnet"
+		portraits={
+			civilian={
+				large="GFX_portrait_cuba_jose_barnet"
+				small = "GFX_idea_CUB_jose_barnet"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			traits = { well_traveled_diplomat }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = CUB_jose_barnet
+			ledger = civilian
+			allowed = {
+				original_tag = CUB
+			}
+			available = {
+				NOT = {
+					has_country_leader = {
+						name = "José Agripino Barnet"
+					}
+				}
+			}
+
+			traits = { well_traveled_diplomat }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	CUB_miguel_mariano_gomez={ #Democratic Historical Leader - In power right after Barnet, and impeached by the end of the year via political corruption.
+		name="Miguel Mariano Gómez"
+		portraits={
+			civilian={
+				large= "GFX_Portrait_Cuba_Miguel_Mariano_Gomez"
+			}
+		}
+		country_leader={
+			ideology= liberalism
+			traits={ talented_orator }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
+
+	CUB_federico_bru={ #Democratic Historical Leader - Vice-President to Gomez. Took power after an impeachment engineered by Batista.
+		name="Federico Laredo Brú"
+		portraits={
+			civilian={
+				large= "GFX_Portrait_Cuba_Federico_Laredo_Bru"
+			}
+		}
+		country_leader={
+			ideology= liberalism
+			traits={ batistas_puppet }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
+
+	CUB_mario_garcia_menocal={ #Democratic Alt Leader - Former president of Cuba, one of many who attempted a revolution and was exiled.
+		name="Mario García Menocal"
+		portraits={
+			civilian={
+				large= "GFX_Portrait_Cuba_Mario_Garcia_Menocal"
+			}
+		}
+		country_leader={
+			ideology= conservatism
+			traits={ }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
+
+	CUB_fulgencio_batista={ #Democratic Historical Leader for 1940 - Alt-history Authoritarian leader.
+
+		name = "Fulgencio Batista"
+		portraits={
+			civilian = {
+				large = "GFX_Portrait_Cuba_Fulgencio_Batista"
+				small = "GFX_idea_CUB_batista"
+			}
+			army={
+				large="GFX_Portrait_Cuba_Fulgencio_Batista"
+				small="GFX_idea_CUB_batista"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = { strongman_of_cuba }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = CUB_fulgencio_batista_idea
+			ledger = army			
+			allowed = {
+				original_tag = CUB
+			}
+			available = {
+				NOT = {
+					has_completed_focus = CUB_assassinate_batista
+				}
+			}
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}			
+		}
+		corps_commander = {
+			traits = { career_officer expert_delegator media_personality }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id =	6006	
+		}
+	}
+
+	CUB_blas_roca_calderio={ #Communist Leader - Historically accurate for leading the Communist Party of Cuba up until Castro's reign.
+		name="Blas Roca Calderio"
+		portraits={
+			civilian={
+				large= "GFX_Portrait_Cuba_Blas_Roca_Calderio"
+			}
+		}
+		country_leader={
+			ideology= marxism
+			traits={ reluctant_interventionist editor devoted_marxist }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
+
+	CUB_alfonso_serrano_villarino={ #Fascist Leader - Historically accurate for leading the Cuban Falangists - Little known information.
+		name="Alfonso Serrano Villarino"
+		portraits={
+			civilian={
+				large="gfx/leaders/CUB/r56_portrait_CUB_Alfonso_Serrano_Villarino.dds"
+			}
+		}
+		country_leader={
+			ideology = falangism
+			traits = {
+				r56_trait_opposed_to_communism
+				propaganda_bungler
+			}
+			expire="1952.1.1.12"
+			id=-1
+		}
+	}
+
+#################################################################################################################################################################
+###Advisor Only###
+#################################################################################################################################################################
+
+	CUB_antonio_avendano={
+		name="Antonio Avendaño"
+		advisor={	
+			slot = political_advisor
+			idea_token = CUB_antonio_avendano
+			ledger = civilian
+			allowed = {
+				original_tag = CUB
+			}
+			available = {
+				has_completed_focus = CUB_seek_falangist_support
+			}
+			traits = { fascist_demagogue }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+	}
+
+	CUB_anselmo_alliegro = {
+		name = "Anselmo Alliegro"
+		advisor = {
+			slot = political_advisor
+			idea_token = CUB_anselmo_alliegro
+			ledger = civilian
+			allowed = {
+				original_tag = CUB
+			}
+			traits = { minister_of_commerce }
+			ai_will_do = {
+				factor = 1.000
+			}
+			research_bonus = {
+			industry = 0.05
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+	}
+
+	CUB_carlos_rafael_rodriguez = {
+		name = "Carlos Rafael Rodríguez"
+		advisor = {
+			slot = political_advisor
+			idea_token = CUB_carlos_rodriguez
+			ledger = civilian
+			allowed = {
+				original_tag = CUB
+			}
+			traits = { dedicated_marxist }
+			ai_will_do = {
+				factor = 1.000
+			}
+			available = {
+				has_government = communism
+			}
+		}
+		
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+	}
+
+	CUB_eduardo_chibas={
+		name="Eduardo Chibas"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+		advisor={
+			cost = 100
+			
+			slot = political_advisor
+			idea_token = CUB_eduardo_chibas
+			ledger = civilian
+			allowed = {
+				original_tag = CUB
+			}
+			
+			traits = { revolutionary_broadcaster }
+		}
+	}
+
+	CUB_sergio_carbo={
+		name="Sergio Carbo"
+		portraits={
+			army={
+				small="GFX_idea_generic_air_south_america_2"
+			}
+		}
+		advisor={
+			cost = 100
+			
+			slot = civilian
+			idea_token = CUB_sergio_carbo
+			ledger = civilian
+			allowed = {
+				original_tag = CUB
+			}
+			
+			traits = { editor }
+		}
+	}
+
+	CUB_carlos_prio={
+		name="Carlos Prío Socarrás"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CUB_carlos_prio
+			ledger = civilian
+			allowed = {
+				original_tag  = CUB
+			}
+			traits  = {	minister_of_public_works }
+			cost = 150
+		}
+	}
+
+	CUB_fabio_grobart={
+		name="Fabio Grobart"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CUB_f_grobart
+			ledger = civilian
+			allowed = {
+				original_tag  = CUB
+			}
+			traits  = {	communist_revolutionary }
+			cost = 150
+			available = {
+				has_completed_focus = CUB_oppose_the_presidency
+			}
+		}
+	}
+
+	CUB_raul_castillo = {
+		name = "Raúl López del Castillo"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CUB_r_castillo
+			ledger = civilian
+			allowed = {
+				original_tag  = CUB
+			}
+			traits  = {	democratic_reformer }
+			cost = 150
+		}
+	}
+
+	CUB_felix_sanchez = {
+		name = "Félix Lancís Sánchez"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CUB_f_sanchez
+			ledger = civilian
+			allowed = {
+				original_tag  = CUB
+			}
+			traits  = {	minister_of_education }
+			cost = 150
+		}
+	}
+
+	CUB_carlos_hevia = {
+		name = "Carlos Hevia"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CUB_c_hevia
+			ledger = civilian
+			allowed = {
+				original_tag  = CUB
+			}
+			traits  = {	minister_of_agriculture }
+			cost = 150
+		}
+	}
+
+	CUB_manuel_varona = {
+		name = "Manuel Antonio de Varona"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CUB_m_varona
+			ledger = civilian
+			allowed = {
+				original_tag  = CUB
+			}
+			traits  = {	head_of_intelligence }
+			cost = 150
+		}
+	}
+
+	CUB_meyer_lansky = {
+		name = "Meyer Lansky"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CUB_m_lansky
+			ledger = civilian
+			allowed = {
+				original_tag  = CUB
+			}
+			available = {
+				has_completed_focus = CUB_invite_meyer_lansky
+			}
+			traits  = {	mobster }
+			cost = 150
+		}
+	}
+
+
+#####################################################################################################################################################################
+###Military & Naval Leaders###
+#####################################################################################################################################################################
+
+###Naval#############################################################################################################################################################
+
+	CUB_mario_ramirez_delgado={ #Captain of a ship that sunk a German U-Boat - The only one sunk by Cuba during the war.
+		name = "Mario Ramirez Delgado"
+		portraits={ #Could use a real portrait.
+			army={
+				small="GFX_idea_generic_navy_south_america_3"
+				large="gfx/leaders/r56_generic/r56_portrait_generic_admiral_south_america_1.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CUB_mario_ramirez_delgado
+			ledger = navy
+				allowed = {
+					original_tag = CUB
+				}
+				traits = {
+					navy_anti_submarine_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		navy_leader={
+			traits={ bold }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=1
+			coordination_skill=2
+			legacy_id=-1
+		}		
+	}
+
+	CUB_rodriguez_calderon={ #Rear Admiral for Cuba
+		name = "Rodríguez Calderón"
+		portraits={ #Could use a real portrait.
+			army={
+				small="GFX_idea_generic_navy_south_america_5"
+				large="gfx/leaders/r56_generic/r56_portrait_generic_admiral_south_america_1.dds"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = CUB_calderon
+			ledger = navy
+				allowed = {
+					original_tag = CUB
+				}
+				traits = {
+					navy_screen_3
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		navy_leader={
+			traits={ destroyer_leader blockade_runner }
+			skill=3
+			attack_skill=1
+			defense_skill=3
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=-1
+		}		
+	}
+
+	CUB_pedro_portuondo = { #Commodore for Cuba
+		name = "Pedro Portuondo"
+		portraits={ #Could use a real portrait.
+			army={
+				small="GFX_idea_generic_navy_south_america_5"
+				large="gfx/leaders/r56_generic/r56_portrait_generic_admiral_south_america_1.dds"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = CUB_calderon
+			ledger = navy
+				allowed = {
+					original_tag = CUB
+				}
+				traits = {
+					navy_fleet_logistics_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+		navy_leader={
+			traits={ inshore_fighter spotter }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=-1
+		}		
+	}
+
+###Military#############################################################################################################################################################
+
+	CUB_genovevo_perez_damera={ #Field Marshal in-game. Army Chief of Staff.
+		name="Genovevo Perez Damera"
+		portraits={
+			army={
+				small="GFX_idea_CUB_perez"
+				large="gfx/leaders/CUB/Portrait_Cuba_Genovevo_Perez_Damera.dds"
+			}
+		}
+		advisor={	
+			slot = army_chief
+			idea_token = CUB_genovevo_perez_damera
+			ledger = army
+			allowed = {
+				original_tag = CUB
+			}
+			traits = {
+				army_chief_offensive_3
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+			available = {
+				NOT = {
+					has_idea = CUB_batistas_influence
+				}
+			}
+			cost = 200
+		}
+		
+		field_marshal = {
+			traits = { media_personality politically_connected brilliant_strategist urban_assault_specialist }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2	
+		}
+	}	
+	
+	CUB_francisco_tabernilla={ #Needs proper portrait - Served as Chief of Army under Batista in the 50s.
+
+		name="Francisco Tabernilla"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_2"
+				large="gfx/leaders/Europe/Portrait_europe_generic_land_6.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CUB_francisco_tabernilla
+			ledger = army
+				allowed = {
+					original_tag = CUB
+				}
+				traits = {
+					army_artillery_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}		
+		corps_commander = {
+			traits = { infantry_officer politically_connected }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2	
+		}
+	}
+
+	CUB_pedro_rodriguez_avila = { #No portrait yet found, no serious information yet found - Using as a cavalry officer.
+
+		name = "Pedro Rodríguez Ávila"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_2"
+				large="gfx/leaders/Europe/Portrait_europe_generic_land_6.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CUB_pedro_avila
+			ledger = army
+				allowed = {
+					original_tag = CUB
+				}
+				traits = {
+					army_cavalry_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}		
+		corps_commander = {
+			traits = { cavalry_officer trickster ranger }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2	
+		}
+	}
+
+	CUB_rafael_montalvo_morales = { #War hero during Cuba's war for independence
+
+		name = "Rafael Montalvo Morales"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_1"
+				large="gfx/leaders/Europe/Portrait_europe_generic_land_6.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CUB_rafael_morales
+			ledger = army
+			allowed = {
+				original_tag = CUB
+			}
+			traits = {
+				army_infantry_3
+			}
+			cost = 200
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+		corps_commander = {
+			traits = { infantry_officer war_hero hill_fighter }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	CUB_alberto_franchi = {
+
+		name = "Alberto Herrera Franchi"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_1"
+				large="gfx/leaders/Europe/Portrait_europe_generic_land_6.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CUB_a_franchi
+			ledger = army
+			allowed = {
+				original_tag = CUB
+			}
+			traits = {
+				army_logistics_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+		corps_commander = {
+			traits = { infantry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	CUB_cosme_peraza = {
+
+		name = "Cosme Peraza"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_1"
+				large="gfx/leaders/Europe/Portrait_europe_generic_land_6.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CUB_c_peraza
+			ledger = army
+			allowed = {
+				original_tag = CUB
+			}
+			traits = {
+				army_regrouping_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+		corps_commander = {
+			traits = { cavalry_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+
+	CUB_daniel_gispert_garcia = { #War hero during Cuba's war for independence
+
+		name = "Daniel Gispert García"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+				large="gfx/leaders/Europe/Portrait_europe_generic_land_6.dds"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = CUB_rafael_morales
+			ledger = army
+			allowed = {
+				original_tag = CUB
+			}
+			traits = {
+				veteran_army_doctor
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+			available = {
+				NOT = {
+					has_idea = CUB_batistas_influence
+				}
+			}
+		}		
+		corps_commander = {
+			traits = { career_officer old_guard }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	
+###Air################################################################################################################################################################
+
+	CUB_domingo_r_del_toro={
+		name="Domingo del Toro"
+		portraits={
+			army={
+				small="GFX_idea_generic_air_south_america_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = CUB_domingo_r_del_toro
+			ledger = air
+			allowed = {
+					original_tag = CUB
+				}
+				traits = {
+					efficient_flight_coordinator
+				}
+				cost = 125
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+	}
+
+###Theorists################################################################################################################################################################
+
+	CUB_julio_aguado = {
+		name = "Julio Aguado"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = CUB_j_aguado
+			ledger = theorist
+			allowed = {
+				original_tag  = CUB
+			}
+			traits  = {	secretary_of_war_and_navy }
+			cost = 175
+		}
+	}

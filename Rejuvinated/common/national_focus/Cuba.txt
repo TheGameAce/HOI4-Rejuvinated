@@ -15,7 +15,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = { #Political Tree Start
 		id = CUB_results_of_the_presidential_election
-		icon = GFX_goal_cuba_presidential_election
+		icon = GFX_focus_RJ_ballot_box
 		cost = 1.3
 		x = 48
 		y = 0
@@ -72,7 +72,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_the_nine_cent_law
-		icon = GFX_goal_cuba_sugar_money
+		icon = GFX_SOV_annex_tannu_tuva_ccp_2d_sov_compatibility
 		cost = 10
 		prerequisite = { focus = CUB_victory_for_gomez }
 		mutually_exclusive = { focus = CUB_military_coup }
@@ -89,7 +89,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_issue_amnesties
-		icon = GFX_goal_cuba_issuing_amnesties
+		icon = GFX_goal_generic_forceful_treaty
 		cost = 10
 		prerequisite = { focus = CUB_the_nine_cent_law }
 		relative_position_id = CUB_the_nine_cent_law
@@ -122,7 +122,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_minimum_wage_laws
-		icon = GFX_goal_generic_deals
+		icon = GFX_focus_hol_the_foundations_of_defense
 		cost = 10
 		prerequisite = { focus = CUB_the_nine_cent_law }
 		relative_position_id = CUB_the_nine_cent_law
@@ -138,7 +138,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_retirement_pensions
-		icon = GFX_goal_cuba_stimulate_exportations
+		icon = GFX_focus_generic_monetary_union
 		cost = 10
 		prerequisite = { focus = CUB_minimum_wage_laws }
 		relative_position_id = CUB_minimum_wage_laws
@@ -155,7 +155,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_reduce_american_influence
-		icon = GFX_goal_cuba_diminish_american_influence
+		icon = GFX_focus_ARG_anti_american_propaganda
 		cost = 10
 		prerequisite = { focus = CUB_retirement_pensions }
 		relative_position_id = CUB_retirement_pensions
@@ -174,7 +174,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_law_of_sugar_coordination
-		icon = GFX_goal_cuba_law_of_sugar_coordination
+		icon = GFX_focus_AFG_sugar_factory
 		cost = 10
 		prerequisite = { focus = CUB_minimum_wage_laws }
 		relative_position_id = CUB_minimum_wage_laws
@@ -233,7 +233,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_confederation_of_cuban_workers
-		icon = GFX_goal_generic_industrial_unionism
+		icon = GFX_focus_AUS_lawmaking_leniency
 		cost = 10
 		prerequisite = { focus = CUB_law_of_sugar_coordination }
 		relative_position_id = CUB_law_of_sugar_coordination
@@ -254,7 +254,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_join_the_allies
-		icon = GFX_goal_cuba_join_the_allies
+		icon = GFX_focus_ARG_join_the_allies
 		cost = 5
 		prerequisite = { focus = CUB_confederation_of_cuban_workers focus = CUB_reduce_american_influence focus = CUB_american_sugar_investments }
 		relative_position_id = CUB_confederation_of_cuban_workers
@@ -350,7 +350,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_batista_in_office
-		icon = GFX_goal_cuba_batista_coup
+		icon = GFX_focus_ARG_keep_it_in_the_party
 		cost = 1
 		prerequisite = { focus = CUB_rewrite_the_constitution }
 		relative_position_id = CUB_rewrite_the_constitution
@@ -438,7 +438,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_military_improvements
-		icon = GFX_goal_generic_military_funding
+		icon = GFX_focus_generic_purchase_mechanized_equipment
 		cost = 7.2
 		prerequisite = { focus = CUB_modernize_medical_care }
 		relative_position_id = CUB_modernize_medical_care
@@ -711,7 +711,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_oppose_the_presidency
-		icon = GFX_goal_generic_communist_government2
+		icon = GFX_focus_generic_spur_communist_revolutions
 		cost = 5
 		prerequisite = { focus = CUB_victory_for_garcia_menocal	}
 		mutually_exclusive = { focus = CUB_seek_falangist_support }
@@ -749,7 +749,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_ctc_recruitment
-		icon = GFX_goal_spread_communism
+		icon = GFX_focus_GER_legacy_of_the_spartacus_league
 		cost = 7.2
 		prerequisite = { focus = CUB_galvanize_the_ctc }
 		relative_position_id = CUB_galvanize_the_ctc
@@ -773,7 +773,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_hold_ctc_rallies
-		icon = GFX_goal_generic_peasant_army
+		icon = GFX_SOV_architect_of_communism_ccp_2d_sov_compatibility
 		cost = 5
 		prerequisite = { focus = CUB_galvanize_the_ctc }
 		relative_position_id = CUB_galvanize_the_ctc
@@ -831,7 +831,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_overthrow_the_menocal_government
-		icon = GFX_goal_ussr_revolt
+		icon = GFX_focus_GER_proletarian_solidarity
 		cost = 10
 		prerequisite = { focus = CUB_form_an_alliance_with_batista focus = CUB_unionize_the_sugar_mills }
 		relative_position_id = CUB_form_an_alliance_with_batista
@@ -857,7 +857,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_reaffirm_comintern_ties
-		icon = GFX_goal_stalin
+		icon = GFX_SOV_father_of_nations_ccp_2d_sov_compatibility
 		cost = 10
 		prerequisite = { focus = CUB_overthrow_the_menocal_government }
 		relative_position_id = CUB_overthrow_the_menocal_government
@@ -1069,7 +1069,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_invite_soviet_companies
-		icon = GFX_goal_generic_heavy_armour_russian
+		icon = GFX_focus_SOV_organize_wreckers
 		cost = 10
 		prerequisite = { focus = CUB_study_soviet_armaments }
 		relative_position_id = CUB_study_soviet_armaments
@@ -1257,7 +1257,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_the_revolution_beyond_the_caribbean
-		icon = GFX_goal_generic_red_freedom
+		icon = GFX_focus_GER_the_peoples_victory
 		cost = 10
 		prerequisite = { focus = CUB_an_armed_struggle focus = CUB_for_the_revolution }
 		relative_position_id = CUB_an_armed_struggle
@@ -1370,7 +1370,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_seize_foreign_sugar_mills
-		icon = GFX_goal_communist_factory
+		icon = GFX_focus_DEN_heavy_regulations
 		cost = 10
 		prerequisite = { focus = CUB_adapt_the_five_year_plan }
 		relative_position_id = CUB_adapt_the_five_year_plan
@@ -1576,7 +1576,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_seek_soviet_support
-		icon = GFX_goal_generic_soviet_assistance
+		icon = GFX_focus_GER_alliance_with_the_ussr
 		cost = 5
 		prerequisite = { focus = CUB_galvanize_the_ctc }
 		relative_position_id = CUB_galvanize_the_ctc
@@ -1615,7 +1615,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_exert_influence_over_the_military
-		icon = GFX_goal_extensive_conscription_fascism
+		icon = GFX_goal_generic_territory_or_war
 		cost = 7.2
 		prerequisite = { focus = CUB_seek_falangist_support	}
 		relative_position_id = CUB_seek_falangist_support
@@ -1631,7 +1631,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_repeal_liberal_policies
-		icon = GFX_goal_cuba_repeal_left_wing_reforms
+		icon = GFX_focus_BRA_repeale_national_security_law
 		cost = 7.2
 		prerequisite = { focus = CUB_seek_falangist_support	}
 		relative_position_id = CUB_seek_falangist_support
@@ -1670,7 +1670,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_encourage_anti_communist_violence
-		icon = GFX_goal_attack_communists
+		icon = GFX_focus_GER_end_european_communism
 		cost = 7.2
 		prerequisite = { focus = CUB_gather_political_support }
 		relative_position_id = CUB_gather_political_support
@@ -1790,7 +1790,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_subvert_american_influence
-		icon = GFX_goal_cuba_diminish_american_influence
+		icon = GFX_focus_ARG_anti_american_propaganda
 		cost = 10
 		prerequisite = { focus = CUB_stabilize_internal_politics }
 		relative_position_id = CUB_stabilize_internal_politics 
@@ -1858,7 +1858,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_invite_german_companies
-		icon = GFX_goal_italy_autarky
+		icon = GFX_focus_GER_kdf_wagen
 		cost = 10
 		prerequisite = { focus = CUB_subvert_american_influence }
 		relative_position_id = CUB_subvert_american_influence 
@@ -2225,7 +2225,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_strengthen_catholic_identity
-		icon = GFX_goal_generic_catholic_education
+		icon = GFX_focus_generic_catholic_dominion
 		prerequisite = { focus = CUB_falangist_ideas_in_schools }
 		
 		x = 0
@@ -2285,7 +2285,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_army_expansion
-		icon = GFX_goal_cuba_presidential_guard
+		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
 		prerequisite = { focus = CUB_caribbean_dominance }
 		x = -4
 		y = 1
@@ -2451,7 +2451,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_invite_our_spanish_brothers
-		icon = GFX_goal_generic_befriend_spain_nationalist
+		icon = GFX_focus_ARG_invite_spanish_nationalists
 		relative_position_id = CUB_command_the_caribbean 
 		prerequisite = { focus = CUB_command_the_caribbean }
 		x = 0
@@ -2834,7 +2834,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_island_fortification_project
-		icon = GFX_goal_generic_nested_fortifications
+		icon = GFX_goal_generic_construct_military
 		x = -1
 		y = 1
 		prerequisite = { focus = CUB_lay_claim_to_curacao_and_trinidad }
@@ -3450,7 +3450,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_spanish_civil_war_involvement
-		icon = GFX_goal_generic_spanish_civil_war_soldier
+		icon = GFX_focus_spr_no_pasaran
 		relative_position_id = CUB_secure_power
 		prerequisite = { focus = CUB_secure_power focus = CUB_external_interests }
 		x = 2
@@ -3559,7 +3559,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_military_coup
-		icon = GFX_goal_cuba_batista_military_coup
+		icon = GFX_goal_generic_military_deal
 		cost = 10
 		prerequisite = { focus = CUB_victory_for_gomez }
 		mutually_exclusive = { focus = CUB_the_nine_cent_law }
@@ -3592,7 +3592,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_ensure_military_loyalty
-		icon = GFX_goal_generic_officers
+		icon = GFX_focus_generic_military_dictatorship
 		cost = 7.2
 		prerequisite = { focus = CUB_military_coup }
 		relative_position_id = CUB_military_coup
@@ -3615,7 +3615,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_military_pensions
-		icon = GFX_goal_generic_military_funding
+		icon = GFX_focus_generic_advanced_military_studies
 		cost = 10
 		prerequisite = { focus = CUB_ensure_military_loyalty }
 		relative_position_id = CUB_ensure_military_loyalty
@@ -3635,7 +3635,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_reassure_the_population
-		icon = GFX_goal_fire_paper_peoples
+		icon = GFX_SOV_committee_in_exile_ccp_2d_sov_compatibility
 		cost = 7.2
 		prerequisite = { focus = CUB_military_coup }
 		relative_position_id = CUB_military_coup
@@ -3855,7 +3855,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_invite_american_corporations
-		icon = GFX_goal_generic_automobile
+		icon = GFX_focus_generic_befriend_usa
 		cost = 10
 		prerequisite = { focus = CUB_secure_united_states_political_support }
 		relative_position_id = CUB_secure_united_states_political_support
@@ -3891,7 +3891,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_american_sugar_investments
-		icon = GFX_goal_cuba_nine_cents_law
+		icon = GFX_focus_generic_american_investments
 		cost = 10
 		prerequisite = { focus = CUB_invite_american_corporations }
 		relative_position_id = CUB_invite_american_corporations
