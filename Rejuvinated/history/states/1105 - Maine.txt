@@ -1,0 +1,31 @@
+state={
+	id=1105
+	name="STATE_1105"
+
+	state_category = large_town
+
+
+	history={
+		owner = USA
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			12459 = {
+				naval_base = 2
+
+			}
+
+		}
+		add_core_of = USA
+		victory_points = {
+			12459 1 
+		}
+
+	}
+
+	provinces={ 3732 6719 7462 12202 12459 1338 1619 1282 10318 12221 4287 10247 }
+	manpower=827000
+	buildings_max_level_factor=1.000
+
+	local_supplies=3.0 
+}
