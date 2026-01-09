@@ -347,6 +347,9 @@ def clone_default_image_as_placeholder(focus_id: str, default_image_path: str, m
         # Ensure destination directory exists
         os.makedirs(dest_dir, exist_ok=True)
         
+        if not check_overwrite(dest_path, args):
+            log_message(2, "Didn't create a placeholder since file already existed")
+
         # Copy the default image to create the placeholder
         shutil.copy2(default_image_full_path, dest_path)
         
