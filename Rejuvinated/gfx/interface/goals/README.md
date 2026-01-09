@@ -1,6 +1,6 @@
 This directory contains all custom focus icons for trees added by the Rejuvenated mod. Please organize icons according to the guidelines below.
 
-## Directory structure
+## Folder structure
 
 `shared/` — Icons that are used across multiple focus trees.
 
