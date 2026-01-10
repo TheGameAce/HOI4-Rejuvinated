@@ -67,6 +67,10 @@ add_ideas = {
 	CUB_american_influence
 }
 
+add_dynamic_modifier = { modifier = PHI_island_nation_dynamic_modifier }
+set_variable = { PHI_island_nation_convoy_retreat_speed = 0.15 }
+set_variable = { PHI_island_nation_navy_visibility = -0.05 }
+
 ###Country Leaders###
 recruit_character = CUB_josé_agripino_barnet
 recruit_character = CUB_miguel_mariano_gomez
