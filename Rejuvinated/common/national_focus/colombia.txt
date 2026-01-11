@@ -50,7 +50,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		completion = {
+		completion_reward = {
 			add_popularity = {
 				ideology = communism 
 				popularity = 0.1
@@ -138,6 +138,8 @@ focus_tree = {
 				popularity = 0.1
 			}
 			add_political_power = 50
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = COL_victor_j_merchan
 		}
 	}
 	focus = {
