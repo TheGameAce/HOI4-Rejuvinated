@@ -679,6 +679,10 @@ technologies = {
 			leads_to_tech = advanced_decryption 
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = next_gen_computing_machine
+			research_cost_coeff = 1
+		}
 		
 		research_cost = 2.4
 		start_year = 1942
@@ -699,6 +703,124 @@ technologies = {
 			modifier = {
 				factor = 3
 				date > "1943.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+			decryption_tech
+			computing_tech
+		}
+		special_project_specialization = { specialization_nuclear }
+	}
+
+	next_gen_computing_machine = {
+
+		# small boost to research speed
+		research_speed_factor = 0.1
+		
+		path = {
+			leads_to_tech = advanced_next_gen_computing_machine
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.4
+		start_year = 1944
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @computing y = 18 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 3
+				date > "1944.1.6"
+			}
+			
+			modifier = {
+				factor = 3
+				date > "1945.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+			decryption_tech
+			computing_tech
+		}
+		special_project_specialization = { specialization_nuclear }
+	}
+
+	advanced_next_gen_computing_machine = {
+
+		# small boost to research speed
+		research_speed_factor = 0.12
+		
+		path = {
+			leads_to_tech = modern_computing_machine
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.4
+		start_year = 1946
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @computing y = 22 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 3
+				date > "1946.1.6"
+			}
+			
+			modifier = {
+				factor = 3
+				date > "1947.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+			decryption_tech
+			computing_tech
+		}
+		special_project_specialization = { specialization_nuclear }
+	}
+
+	modern_computing_machine = {
+
+		# small boost to research speed
+		research_speed_factor = 0.12
+		
+		research_cost = 2.4
+		start_year = 1948
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @computing y = 26 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 3
+				date > "1946.1.6"
+			}
+			
+			modifier = {
+				factor = 3
+				date > "1947.1.1"
 			}
 		}
 		
