@@ -513,25 +513,4 @@ characters={
 			}
 		}
 	}
-	COL_victor_j_merchan = {
-		advisor={
-			slot = political_advisor
-			idea_token = COL_victor_j_merchan
-			allowed = {
-				original_tag = COL 
-			}
-			traits = {
-				dedicated_marxist
-			}
-			available = {
-				has_completed_focus = COL_point_out_social_inequalities
-			}
-		}
-		name= "Victor J Merchán"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_south_america_3"
-			}
-		}
-	}
 }
