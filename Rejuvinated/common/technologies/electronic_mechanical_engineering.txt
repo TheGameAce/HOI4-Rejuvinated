@@ -6,7 +6,7 @@ technologies = {
 	@firecontrol = 4
 	@encryption_x = 1
 	@decryption_x = 5
-	@rockets_1940 = 0
+	@rockets_1936 = 0
 	@rockets_1942 = 2
 	@rockets_1943 = 4
 	@rockets_1944 = 6
@@ -1302,11 +1302,11 @@ technologies = {
 		}
 		
 		research_cost = 1.5
-		start_year = 1942
+		start_year = 1936
 		
 		folder = {
 			name = electronics_folder
-			position = { x = 0 y = @rockets_1942 }
+			position = { x = 0 y = @rockets_1936 }
 		}
 
 		on_research_complete = {
