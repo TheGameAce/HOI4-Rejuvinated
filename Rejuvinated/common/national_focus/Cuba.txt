@@ -106,7 +106,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_insurance_mandates
-		icon = GFX_goal_generic_bills
+		icon = GFX_focus_RJ_paper_coins
 		cost = 10
 		prerequisite = { focus = CUB_the_nine_cent_law focus = CUB_military_coup }
 		relative_position_id = CUB_the_nine_cent_law
@@ -330,7 +330,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_rewrite_the_constitution
-		icon = GFX_goal_cuba_rewrite_the_constitution
+		icon = GFX_focus_RJ_CUB_rewrite_constitution
 		cost = 5
 		prerequisite = { focus = CUB_confederation_of_cuban_workers }
 		prerequisite = { focus = CUB_reduce_american_influence }
@@ -369,7 +369,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_establish_soviet_diplomatic_relations
-		icon = GFX_focus_generic_russian_deal_communist
+		icon = GFX_focus_chi_mission_to_the_soviet_union
 		cost = 7.2
 		prerequisite = { focus = CUB_batista_in_office }
 		relative_position_id = CUB_batista_in_office
@@ -419,7 +419,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_modernize_medical_care
-		icon = GFX_goal_medicine
+		icon = GFX_focus_generic_field_hostpital
 		cost = 10
 		prerequisite = { focus = CUB_batista_in_office }
 		relative_position_id = CUB_batista_in_office
@@ -457,7 +457,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_establish_rural_hospitals
-		icon = GFX_goal_SWI_red_cross
+		icon = GFX_focus_RJ_hospital
 		cost = 10
 		prerequisite = { focus = CUB_modernize_medical_care }
 		relative_position_id = CUB_modernize_medical_care
@@ -479,7 +479,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_american_air_bases
-		icon = GFX_goal_generic_airport
+		icon = GFX_focus_RJ_american_air
 		x = -2
 		y = 1
 		relative_position_id = CUB_join_the_allies
@@ -497,7 +497,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 			random_owned_controlled_state = {
-				prioritize = {926}
+				prioritize = {1048}
 				add_building_construction = {
 					type = air_base
 					level = 3
@@ -2396,7 +2396,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_special_amphibious_training
-		icon = GFX_goal_generic_marines2
+		icon = GFX_focus_RJ_marine_training
 		prerequisite = { focus = CUB_amphibious_invasion_preparation }
 		x = 0
 		y = 2
@@ -3453,7 +3453,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		icon = GFX_focus_spr_no_pasaran
 		relative_position_id = CUB_secure_power
 		prerequisite = { focus = CUB_secure_power focus = CUB_external_interests }
-		x = 2
+		x = -2
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -3471,9 +3471,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				add = 8
 			}
 		}
-		bypass = {
-			has_global_flag = r56_scw_our_own_ending_check
-		}
 		available = {
 			has_global_flag = spanish_civil_war
 			has_war = no
@@ -3484,73 +3481,9 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 		completion_reward = {
 			set_rule = { can_send_volunteers = yes }
-			add_timed_idea = {
-				idea = r56_CHL_spanish_civil_war_involvement
-				days = 1100
-			}
 			add_war_support = 0.05
 		}
 		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_POLITICAL FOCUS_FILTER_SPA_CIVIL_WAR }
-	}
-
-	focus = {
-		id = CUB_intervene_ACW
-		icon = GFX_goal_CAN_scheme_no1
-		prerequisite = { focus = CUB_secure_power focus = CUB_external_interests }
-		relative_position_id = CUB_secure_power
-		x = -2
-		y = 1
-		
-		search_filters = { FOCUS_FILTER_MILITARY_IMPROVEMENT FOCUS_FILTER_POLITICAL }
-
-		cost = 5
-		
-		ai_will_do = {
-			factor = 6
-		}
-
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
-		
-		mutually_exclusive = {
-
-		}
-		
-		available = {
-			OR = {
-				USA = {
-					has_completed_focus = USA_america_first
-					has_civil_war = yes
-				}
-				any_other_country = {
-					exists = yes
-					original_tag = USA
-					has_government = fascism
-					has_civil_war = yes
-				}								
-			}
-		}
-		
-		bypass = {
-			USA = { exists = no }
-			has_war_with = USA
-		}
-
-		completion_reward = {
-			random_country = {
-				limit = {
-					original_tag = USA
-					has_government = fascism
-					has_civil_war = yes					
-				}
-				add_opinion_modifier = { 
-					target = ROOT
-					modifier = R56_CAN_ACW_modifer
-				}
-			}
-			add_ideas = r56_CAN_intervene_ACW_idea
-		}
 	}
 
 #######################################################################################################################################################################
@@ -3680,7 +3613,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_reach_out_to_trujillo
-		icon = GFX_goal_cuba_batista_military_coup
+		icon = GFX_focus_RJ_CUB_trujillo_friendship
 		cost = 5
 		prerequisite = { focus = CUB_secure_united_states_political_support }
 		relative_position_id = CUB_secure_united_states_political_support
@@ -3773,7 +3706,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_conduct_joint_military_excercises
-		icon = GFX_goal_generic_multinational_army
+		icon = GFX_focus_AUS_frontmiliz_focus
 		cost = 7.2
 		prerequisite = { focus = CUB_reach_out_to_trujillo }
 		relative_position_id = CUB_reach_out_to_trujillo
@@ -3807,7 +3740,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_invite_trujillo_to_join_the_allies
-		icon = GFX_allies
+		icon = GFX_focus_RAJ_seek_allies_with_the_muslim_league
 		cost = 4
 		prerequisite = { focus = CUB_reach_out_to_trujillo }
 		relative_position_id = CUB_reach_out_to_trujillo
@@ -3936,7 +3869,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_deal_with_the_mafia
-		icon = GFX_goal_generic_risky_deal
+		icon = GFX_focus_RJ_CUB_mafia
 		cost = 7.2
 		prerequisite = { focus = CUB_invite_american_corporations }
 		relative_position_id = CUB_invite_american_corporations
@@ -3955,7 +3888,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_invite_meyer_lansky
-		icon = GFX_goal_cuba_batista_military_coup
+		icon = GFX_focus_RJ_CUB_lansky
 		cost = 2
 		prerequisite = { focus = CUB_deal_with_the_mafia }
 		relative_position_id = CUB_deal_with_the_mafia
@@ -3975,7 +3908,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_implement_a_new_constitution
-		icon = GFX_goal_generic_major_diplo
+		icon = GFX_focus_RJ_CUB_rewrite_constitution
 		cost = 10
 		prerequisite = { focus = CUB_government_reshuffle }
 		relative_position_id = CUB_government_reshuffle
