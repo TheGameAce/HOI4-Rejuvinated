@@ -414,6 +414,96 @@ country_event = { #Soviet acceptance response for sugar trade
 	}
 }
 
+country_event = { #Annexation Demands for the French Caribbean
+	id = cuba.19
+	title = cuba.19.t
+	desc = cuba.19.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Fine, they can have them..."
+		CUB = {
+			transfer_state = 694
+		}
+	}
+
+	option = {
+		name = "We won't give in to these illegitimate claims!"
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 694 }
+			}
+		}
+	}
+}
+
+country_event = { #Annexation Demands for the Windward & Leeward Isles
+	id = cuba.20
+	title = cuba.20.t
+	desc = cuba.20.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Fine, they can have them..."
+		CUB = {
+			transfer_state = 692
+			transfer_state = 308
+		}
+	}
+
+	option = {
+		name = "We won't give in to these illegitimate claims!"
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 692 308 }
+			}
+		}
+	}
+}
+
+country_event = { #Annexation Demands for the Windward & Leeward Isles
+	id = cuba.21
+	title = cuba.21.t
+	desc = cuba.21.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Fine, they can have them..."
+		CUB = {
+			transfer_state = 690
+			transfer_state = 693
+			transfer_state = 689
+		}
+	}
+
+	option = {
+		name = "We won't give in to these illegitimate claims!"
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 690 693 689 }
+			}
+		}
+	}
+}
+
 ####################################################################################################################################################################
 ###NEWS EVENTS###
 ####################################################################################################################################################################

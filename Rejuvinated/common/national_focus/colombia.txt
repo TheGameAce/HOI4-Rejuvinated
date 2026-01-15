@@ -1,0 +1,169 @@
+focus_tree = {
+	id = colombian_tree
+
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = COL
+		}
+	}
+	default = no
+
+	continuous_focus_position = { x = 0 y = 2000 }
+
+	focus = {
+		id = COL_continue_the_presidency
+		icon = GFX_focus_AFG_parliamentary_democracy
+		x = 10
+		y = 0
+		mutually_exclusive = {
+			focus = COL_enough_of_exploitation
+		}
+		mutually_exclusive = {
+			focus = COL_a_nation_shall_rise
+		}
+		cost = 10
+		ai_will_do {
+			factor = 10
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic 
+				popularity = 0.08
+			}
+			add_stability = 0.1
+		}
+	}
+	focus = {
+		id = COL_enough_of_exploitation 
+		icon = GFX_focus_generic_workers
+		x = 24
+		y = 0
+		mutually_exclusive = {
+			focus = COL_continue_the_presidency
+		}
+		mutually_exclusive = {
+			focus = COL_a_nation_shall_rise
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = democratic 
+				popularity = -0.05
+			}
+			add_war_support = 0.05
+			add_timed_idea = {
+				idea = COL_socialists_rise
+				days = 500
+			}
+		}
+	}
+	focus = {
+		id = COL_a_nation_shall_rise
+		icon = GFX_focus_generic_fascist_troops
+		x = 40
+		y = 0
+		mutually_exclusive = {
+			focus = COL_continue_the_presidency
+		}
+		mutually_exclusive = {
+			focus = COL_enough_of_exploitation
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.1
+			}
+			add_timed_idea = {
+				idea = COL_fascists_rise
+				days = 500
+			}
+		}
+	}
+	focus = {
+		id = COL_anti_extremism
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		x = 0
+		y = 1
+		relative_position_id = COL_continue_the_presidency
+		prerequisite = {
+			focus = COL_continue_the_presidency
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			NOT = {
+				has_government = fascism 
+				has_government = communism
+			}
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_timed_idea = {
+				idea = COL_anti_extremism_meassures
+				days = 300
+			}
+		}
+	}
+	focus = {
+		id = COL_point_out_social_inequalities
+		icon = GFX_focus_prc_agrarian_socialism
+		relative_position_id = COL_enough_of_exploitation
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = COL_enough_of_exploitation
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.1
+			}
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = COL_cancel_the_reforms
+		icon = GFX_focus_ARG_crackdown_on_corruption
+		relative_position_id = COL_enough_of_exploitation
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = COL_enough_of_exploitation
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = COL_reforms
+			add_stability = -0.1
+			add_popularity = {
+				ideology = democratic 
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+		}
+	}
+}

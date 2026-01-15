@@ -6,7 +6,7 @@ technologies = {
 	@firecontrol = 4
 	@encryption_x = 1
 	@decryption_x = 5
-	@rockets_1940 = 0
+	@rockets_1936 = 0
 	@rockets_1942 = 2
 	@rockets_1943 = 4
 	@rockets_1944 = 6
@@ -16,7 +16,7 @@ technologies = {
 	electronic_mechanical_engineering = {
 
 		# small boost to research speed
-		research_speed_factor = 0.03
+		research_speed_factor = 0.04
 		
 		path = {
 			leads_to_tech = radio 
@@ -518,7 +518,7 @@ technologies = {
 	mechanical_computing = {
 
 		# small boost to research speed
-		research_speed_factor = 0.04
+		research_speed_factor = 0.05
 		
 		path = {
 			leads_to_tech = computing_machine 
@@ -533,7 +533,7 @@ technologies = {
 			bomb_sights_1
 		}
 		
-		research_cost = 2.5
+		research_cost = 2.4
 		
 		folder = {
 			name = electronics_folder
@@ -555,7 +555,7 @@ technologies = {
 	computing_machine = {
 
 		# small boost to research speed
-		research_speed_factor = 0.05
+		research_speed_factor = 0.06
 		
 		path = {
 			leads_to_tech = improved_computing_machine 
@@ -573,7 +573,7 @@ technologies = {
 			leads_to_tech = improved_fire_control_system
 			research_cost_coeff = 1
 		}
-		research_cost = 2.5
+		research_cost = 2.4
 		start_year = 1938
 		
 		folder = {
@@ -630,7 +630,7 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		
-		research_cost = 2.5
+		research_cost = 2.4
 		start_year = 1940
 		
 		folder = {
@@ -679,8 +679,12 @@ technologies = {
 			leads_to_tech = advanced_decryption 
 			research_cost_coeff = 1
 		}
+		path = {
+			leads_to_tech = next_gen_computing_machine
+			research_cost_coeff = 1
+		}
 		
-		research_cost = 2.5
+		research_cost = 2.4
 		start_year = 1942
 		
 		folder = {
@@ -699,6 +703,124 @@ technologies = {
 			modifier = {
 				factor = 3
 				date > "1943.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+			decryption_tech
+			computing_tech
+		}
+		special_project_specialization = { specialization_nuclear }
+	}
+
+	next_gen_computing_machine = {
+
+		# small boost to research speed
+		research_speed_factor = 0.1
+		
+		path = {
+			leads_to_tech = advanced_next_gen_computing_machine
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.4
+		start_year = 1944
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @computing y = 18 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 3
+				date > "1944.1.6"
+			}
+			
+			modifier = {
+				factor = 3
+				date > "1945.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+			decryption_tech
+			computing_tech
+		}
+		special_project_specialization = { specialization_nuclear }
+	}
+
+	advanced_next_gen_computing_machine = {
+
+		# small boost to research speed
+		research_speed_factor = 0.12
+		
+		path = {
+			leads_to_tech = modern_computing_machine
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 2.4
+		start_year = 1946
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @computing y = 22 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 3
+				date > "1946.1.6"
+			}
+			
+			modifier = {
+				factor = 3
+				date > "1947.1.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			encryption_tech
+			decryption_tech
+			computing_tech
+		}
+		special_project_specialization = { specialization_nuclear }
+	}
+
+	modern_computing_machine = {
+
+		# small boost to research speed
+		research_speed_factor = 0.12
+		
+		research_cost = 2.4
+		start_year = 1948
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @computing y = 26 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 3
+				date > "1946.1.6"
+			}
+			
+			modifier = {
+				factor = 3
+				date > "1947.1.1"
 			}
 		}
 		
@@ -1140,12 +1262,13 @@ technologies = {
 		}
 
 		bunker_max_level_terrain_limit = 1
+		production_speed_bunker_factor = 0.05
 		
-		research_cost = 1.5
-		start_year = 1938
+		research_cost = 1.6
+		start_year = 1937
 		folder = {
 			name = electronics_folder
-			position = { x = 0 y = 6 }
+			position = { x = 0 y = 3 }
 		}
 		
 		ai_will_do = {
@@ -1161,13 +1284,19 @@ technologies = {
 
 	land_fort_tech_2 = {
 
-		bunker_max_level_terrain_limit = 1
+		bunker_max_level_terrain_limit = 2
 		
-		research_cost = 1.5
-		start_year = 1940
+		research_cost = 1.6
+		production_speed_bunker_factor = 0.05
+		start_year = 1939
 		folder = {
 			name = electronics_folder
-			position = { x = 0 y = 10 }
+			position = { x = 0 y = 8 }
+		}
+
+		path = {
+			leads_to_tech = advanced_fortification_engineering
+			research_cost_coeff = 1
 		}
 		
 		ai_will_do = {
@@ -1191,12 +1320,13 @@ technologies = {
 		}
 
 		coastal_bunker_max_level_terrain_limit = 1
+		production_speed_coastal_bunker_factor = 0.05
 		
-		research_cost = 1.5
-		start_year = 1936
+		research_cost = 1.6
+		start_year = 1937
 		folder = {
 			name = electronics_folder
-			position = { x = 2 y = 2 }
+			position = { x = 2 y = 3 }
 		}
 		
 		ai_will_do = {
@@ -1213,12 +1343,42 @@ technologies = {
 	coastal_fort_tech_2 = {
 
 		coastal_bunker_max_level_terrain_limit = 2
+		production_speed_coastal_bunker_factor = 0.05
 		
-		research_cost = 1.5
-		start_year = 1940
+		research_cost = 1.6
+		start_year = 1939
 		folder = {
 			name = electronics_folder
-			position = { x = 2 y = 10 }
+			position = { x = 2 y = 8 }
+		}
+
+		path = {
+			leads_to_tech = advanced_fortification_engineering
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		categories = {
+			cat_fortification
+		}
+		
+
+	}
+
+	advanced_fortification_engineering = {
+
+		land_bunker_effectiveness_factor = 0.05
+		coastal_bunker_effectiveness_factor = 0.05
+		production_speed_stronghold_network_factor = 0.1
+		
+		research_cost = 1.8
+		start_year = 1942
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 14 }
 		}
 		
 		ai_will_do = {
@@ -1265,11 +1425,11 @@ technologies = {
 		}
 		
 		research_cost = 1.5
-		start_year = 1942
+		start_year = 1936
 		
 		folder = {
 			name = electronics_folder
-			position = { x = 0 y = @rockets_1942 }
+			position = { x = 0 y = @rockets_1936 }
 		}
 
 		on_research_complete = {
