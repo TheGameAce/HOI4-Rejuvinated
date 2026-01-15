@@ -174,7 +174,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_law_of_sugar_coordination
-		icon = GFX_focus_AFG_sugar_factory
+		icon = GFX_focus_RJ_CUB_sugar_law
 		cost = 10
 		prerequisite = { focus = CUB_minimum_wage_laws }
 		relative_position_id = CUB_minimum_wage_laws
@@ -516,7 +516,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_winning_the_battle_of_the_caribbean
-		icon = GFX_goal_liberty_ships
+		icon = GFX_focus_RJ_CUB_caribbean_ship
 		cost = 14.4
 		prerequisite = { focus = CUB_join_the_allies }
 		relative_position_id = CUB_join_the_allies
@@ -539,7 +539,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_gift_sugar_to_the_british
-		icon = GFX_focus_chi_british_cooperation
+		icon = GFX_focus_AFG_sugar_factory
 		cost = 10
 		prerequisite = { focus = CUB_join_the_allies }
 		relative_position_id = CUB_join_the_allies
@@ -554,7 +554,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_suggest_operation_hemingway
-		icon = GFX_goal_cuba_attack_nationalist_spain
+		icon = GFX_focus_generic_attack_nationalist_spain_focus
 		cost = 10
 		prerequisite = {focus = CUB_san_antonio_air_base focus = CUB_san_julian_air_base focus = CUB_winning_the_battle_of_the_caribbean }
 		available = {
@@ -794,7 +794,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_unionize_the_sugar_mills
-		icon = GFX_goal_cuba_law_of_sugar_coordination
+		icon = GFX_focus_RJ_CUB_sugar_law
 		cost = 10
 		prerequisite = { focus = CUB_ctc_recruitment }
 		relative_position_id = CUB_ctc_recruitment
@@ -1648,33 +1648,13 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	}
 
 	focus = {
-		id = CUB_gather_political_support
-		icon = GFX_goal_tripartite_pact
+		id = CUB_encourage_anti_communist_violence
+		icon = GFX_focus_GER_end_european_communism
 		cost = 7.2
 		prerequisite = { focus = CUB_repeal_liberal_policies }
 		prerequisite = { focus = CUB_exert_influence_over_the_military }
 		relative_position_id = CUB_repeal_liberal_policies
 		x = 1
-		y = 1
-		
-		completion_reward = {
-			add_political_power = 50
-			add_popularity = {
-			    ideology = fascism
-			    popularity = 0.1
-			}
-		}
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = CUB_encourage_anti_communist_violence
-		icon = GFX_focus_GER_end_european_communism
-		cost = 7.2
-		prerequisite = { focus = CUB_gather_political_support }
-		relative_position_id = CUB_gather_political_support
-		x = 0
 		y = 1
 		
 		completion_reward = {
@@ -1743,11 +1723,11 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_stabilize_internal_politics
-		icon = GFX_goal_generic_interal_instability
+		icon = GFX_SOV_committee_in_exile_ccp_2d_sov_compatibility
 		cost = 10
-		prerequisite = { focus = CUB_secure_power focus = CUB_government_reshuffle }
-		relative_position_id = CUB_secure_power 
-		x = -4
+		prerequisite = { focus = CUB_deal_with_batista focus = CUB_government_reshuffle }
+		relative_position_id = CUB_deal_with_batista
+		x = -3
 		y = 1
 		
 		available = {			
@@ -1764,11 +1744,11 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_panhispanic_diplomacy
-		icon = GFX_goal_cuba_pan_hispanism
+		icon = GFX_focus_CHL_promote_pan_hispanic_rhetoric
 		cost = 10
 		prerequisite = { focus = CUB_stabilize_internal_politics }
 		relative_position_id = CUB_stabilize_internal_politics 
-		x = 0
+		x = -1
 		y = 1
 		
 		available = {			
@@ -1794,7 +1774,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		cost = 10
 		prerequisite = { focus = CUB_stabilize_internal_politics }
 		relative_position_id = CUB_stabilize_internal_politics 
-		x = 1
+		x = 0
 		y = 3
 		
 		available = {			
@@ -1886,298 +1866,298 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		search_filters = { FOCUS_FILTER_STABILITY }
 	}
 
-	focus = {
-		id = CUB_deal_with_the_united_fruit_company
-		icon = GFX_goal_HON_bannana_takeover
-		cost = 5
-		prerequisite = { focus = CUB_subvert_american_influence }
-		relative_position_id = CUB_subvert_american_influence
-		x = 0
-		y = 1
-		
-		available = {			
-			has_government = fascism
-			HON = {
-				exists = yes
-			}
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_united_fruit_company_coup
-		icon = GFX_goal_HON_zemurray
-		cost = 5
-		prerequisite = { focus = CUB_deal_with_the_united_fruit_company }
-		relative_position_id = CUB_deal_with_the_united_fruit_company
-		x = -1
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_a_fruitful_partnership
-		icon = GFX_goal_HON_bannans_empire
-		cost = 10
-		prerequisite = { focus = CUB_deal_with_the_united_fruit_company }
-		relative_position_id = CUB_deal_with_the_united_fruit_company
-		x = 1
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_expand_ufc_influence
-		icon = GFX_goal_MEX_march_southwards
-		cost = 3
-		prerequisite = { focus = CUB_a_fruitful_partnership focus = CUB_united_fruit_company_coup }
-		relative_position_id = CUB_a_fruitful_partnership
-		x = -1
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_our_holdings_in_panama
-		icon = GFX_goal_attack_panama
-		cost = 7.2
-		prerequisite = { focus = CUB_expand_ufc_influence }
-		relative_position_id = CUB_expand_ufc_influence
-		x = 0
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_seize_control_in_guatemala
-		icon = GFX_goal_HON_bannans_empire
-		cost = 7.2
-		prerequisite = { focus = CUB_expand_ufc_influence }
-		relative_position_id = CUB_expand_ufc_influence
-		x = -4
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_overthrow_the_salvadorian_government
-		icon = GFX_goal_generic_attack_el_salvador
-		cost = 7.2
-		prerequisite = { focus = CUB_expand_ufc_influence }
-		relative_position_id = CUB_expand_ufc_influence
-		x = -2
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_takeover_in_nicaragua
-		icon = GFX_goal_generic_attack_nicaragua
-		cost = 7.2
-		prerequisite = { focus = CUB_expand_ufc_influence }
-		relative_position_id = CUB_expand_ufc_influence
-		x = 2
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_take_control_of_costa_rica
-		icon = GFX_goal_generic_attack_costa_rica
-		cost = 7.2
-		prerequisite = { focus = CUB_expand_ufc_influence }
-		relative_position_id = CUB_expand_ufc_influence
-		x = 4
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_corporate_incorporation
-		icon = GFX_goal_HON_ancap_chained_world
-		cost = 7.2
-		prerequisite = { focus = CUB_our_holdings_in_panama }
-		prerequisite = { focus = CUB_overthrow_the_salvadorian_government }
-		prerequisite = { focus = CUB_takeover_in_nicaragua }
-		prerequisite = { focus = CUB_take_control_of_costa_rica }
-		prerequisite = { focus = CUB_seize_control_in_guatemala }
-		mutually_exclusive = { focus = CUB_entrust_central_america_to_the_ufc }
-		relative_position_id = CUB_our_holdings_in_panama
-		x = 3
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_entrust_central_america_to_the_ufc
-		icon = GFX_focus_generic_concessions
-		cost = 7.2
-		prerequisite = { focus = CUB_our_holdings_in_panama }
-		prerequisite = { focus = CUB_overthrow_the_salvadorian_government }
-		prerequisite = { focus = CUB_takeover_in_nicaragua }
-		prerequisite = { focus = CUB_take_control_of_costa_rica }
-		prerequisite = { focus = CUB_seize_control_in_guatemala }
-		mutually_exclusive = { focus = CUB_corporate_incorporation }
-		relative_position_id = CUB_our_holdings_in_panama
-		x = -1
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_legitimize_zemurrays_government
-		icon = GFX_goal_support_fascism
-		cost = 7.2
-		prerequisite = { focus = CUB_entrust_central_america_to_the_ufc }
-		relative_position_id = CUB_entrust_central_america_to_the_ufc
-		x = -1
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			custom_effect_tooltip = CUB_zemurray_legitimized_tt
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_negotiate_for_belize
-		icon = GFX_goal_generic_intelligence_exchange
-		cost = 7.2
-		prerequisite = { focus = CUB_entrust_central_america_to_the_ufc }
-		relative_position_id = CUB_entrust_central_america_to_the_ufc
-		x = 1
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
-
-	focus = {
-		id = CUB_stage_a_conflict_at_the_canal
-		icon = GFX_goal_generic_attack_costa_rica
-		cost = 7.2
-		prerequisite = { focus = CUB_entrust_central_america_to_the_ufc focus = CUB_corporate_incorporation }
-		relative_position_id = CUB_entrust_central_america_to_the_ufc
-		x = 3
-		y = 1
-		
-		available = {			
-			
-		}
-
-		completion_reward = {
-			add_political_power = 50
-		}
-
-		search_filters = { FOCUS_FILTER_STABILITY }
-	}
+#	focus = {
+#		id = CUB_deal_with_the_united_fruit_company
+#		icon = GFX_goal_HON_bannana_takeover
+#		cost = 5
+#		prerequisite = { focus = CUB_subvert_american_influence }
+#		relative_position_id = CUB_subvert_american_influence
+#		x = 0
+#		y = 1
+#		
+#		available = {			
+#			has_government = fascism
+#			HON = {
+#				exists = yes
+#			}
+#		}
+#
+#		completion_reward = {
+#			
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_united_fruit_company_coup
+#		icon = GFX_goal_HON_zemurray
+#		cost = 5
+#		prerequisite = { focus = CUB_deal_with_the_united_fruit_company }
+#		relative_position_id = CUB_deal_with_the_united_fruit_company
+#		x = -1
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_a_fruitful_partnership
+#		icon = GFX_goal_HON_bannans_empire
+#		cost = 10
+#		prerequisite = { focus = CUB_deal_with_the_united_fruit_company }
+#		relative_position_id = CUB_deal_with_the_united_fruit_company
+#		x = 1
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_expand_ufc_influence
+#		icon = GFX_goal_MEX_march_southwards
+#		cost = 3
+#		prerequisite = { focus = CUB_a_fruitful_partnership focus = CUB_united_fruit_company_coup }
+#		relative_position_id = CUB_a_fruitful_partnership
+#		x = -1
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_our_holdings_in_panama
+#		icon = GFX_goal_attack_panama
+#		cost = 7.2
+#		prerequisite = { focus = CUB_expand_ufc_influence }
+#		relative_position_id = CUB_expand_ufc_influence
+#		x = 0
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_seize_control_in_guatemala
+#		icon = GFX_goal_HON_bannans_empire
+#		cost = 7.2
+#		prerequisite = { focus = CUB_expand_ufc_influence }
+#		relative_position_id = CUB_expand_ufc_influence
+#		x = -4
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_overthrow_the_salvadorian_government
+#		icon = GFX_goal_generic_attack_el_salvador
+#		cost = 7.2
+#		prerequisite = { focus = CUB_expand_ufc_influence }
+#		relative_position_id = CUB_expand_ufc_influence
+#		x = -2
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_takeover_in_nicaragua
+#		icon = GFX_goal_generic_attack_nicaragua
+#		cost = 7.2
+#		prerequisite = { focus = CUB_expand_ufc_influence }
+#		relative_position_id = CUB_expand_ufc_influence
+#		x = 2
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_take_control_of_costa_rica
+#		icon = GFX_goal_generic_attack_costa_rica
+#		cost = 7.2
+#		prerequisite = { focus = CUB_expand_ufc_influence }
+#		relative_position_id = CUB_expand_ufc_influence
+#		x = 4
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_corporate_incorporation
+#		icon = GFX_goal_HON_ancap_chained_world
+#		cost = 7.2
+#		prerequisite = { focus = CUB_our_holdings_in_panama }
+#		prerequisite = { focus = CUB_overthrow_the_salvadorian_government }
+#		prerequisite = { focus = CUB_takeover_in_nicaragua }
+#		prerequisite = { focus = CUB_take_control_of_costa_rica }
+#		prerequisite = { focus = CUB_seize_control_in_guatemala }
+#		mutually_exclusive = { focus = CUB_entrust_central_america_to_the_ufc }
+#		relative_position_id = CUB_our_holdings_in_panama
+#		x = 3
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_entrust_central_america_to_the_ufc
+#		icon = GFX_focus_generic_concessions
+#		cost = 7.2
+#		prerequisite = { focus = CUB_our_holdings_in_panama }
+#		prerequisite = { focus = CUB_overthrow_the_salvadorian_government }
+#		prerequisite = { focus = CUB_takeover_in_nicaragua }
+#		prerequisite = { focus = CUB_take_control_of_costa_rica }
+#		prerequisite = { focus = CUB_seize_control_in_guatemala }
+#		mutually_exclusive = { focus = CUB_corporate_incorporation }
+#		relative_position_id = CUB_our_holdings_in_panama
+#		x = -1
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_legitimize_zemurrays_government
+#		icon = GFX_goal_support_fascism
+#		cost = 7.2
+#		prerequisite = { focus = CUB_entrust_central_america_to_the_ufc }
+#		relative_position_id = CUB_entrust_central_america_to_the_ufc
+#		x = -1
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			custom_effect_tooltip = CUB_zemurray_legitimized_tt
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_negotiate_for_belize
+#		icon = GFX_goal_generic_intelligence_exchange
+#		cost = 7.2
+#		prerequisite = { focus = CUB_entrust_central_america_to_the_ufc }
+#		relative_position_id = CUB_entrust_central_america_to_the_ufc
+#		x = 1
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
+#
+#	focus = {
+#		id = CUB_stage_a_conflict_at_the_canal
+#		icon = GFX_goal_generic_attack_costa_rica
+#		cost = 7.2
+#		prerequisite = { focus = CUB_entrust_central_america_to_the_ufc focus = CUB_corporate_incorporation }
+#		relative_position_id = CUB_entrust_central_america_to_the_ufc
+#		x = 3
+#		y = 1
+#		
+#		available = {			
+#			
+#		}
+#
+#		completion_reward = {
+#			add_political_power = 50
+#		}
+#
+#		search_filters = { FOCUS_FILTER_STABILITY }
+#	}
 
 	focus = {
 		id = CUB_encourage_spanish_immigration
@@ -2204,7 +2184,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = CUB_stabilize_internal_politics }
 		
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = CUB_stabilize_internal_politics
 		
@@ -2255,8 +2235,8 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_caribbean_dominance
 		icon = GFX_goal_cuba_caribbean_dominance
-		relative_position_id = CUB_secure_power 
-		prerequisite = { focus = CUB_secure_power focus = CUB_external_interests }
+		relative_position_id = CUB_deal_with_batista
+		prerequisite = { focus = CUB_deal_with_batista focus = CUB_external_interests }
 		x = 4
 		y = 1
 		cost = 7.2
@@ -3451,9 +3431,9 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_spanish_civil_war_involvement
 		icon = GFX_focus_spr_no_pasaran
-		relative_position_id = CUB_secure_power
-		prerequisite = { focus = CUB_secure_power focus = CUB_external_interests }
-		x = -2
+		relative_position_id = CUB_deal_with_batista
+		prerequisite = { focus = CUB_deal_with_batista focus = CUB_external_interests }
+		x = -1
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -3568,7 +3548,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_reassure_the_population
-		icon = GFX_SOV_committee_in_exile_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_population_growth
 		cost = 7.2
 		prerequisite = { focus = CUB_military_coup }
 		relative_position_id = CUB_military_coup
@@ -3765,7 +3745,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_government_reshuffle
-		icon = GFX_goal_generic_peaceful_diplomacy
+		icon = GFX_focus_RJ_CUB_reshuffle
 		cost = 10
 		prerequisite = { focus = CUB_secure_united_states_political_support }
 		relative_position_id = CUB_secure_united_states_political_support
@@ -3920,25 +3900,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 		completion_reward = {
 			add_ideas = CUB_rewritten_constitution
-		}
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-	}
-
-	focus = {
-		id = CUB_unnamed_focus
-		icon = GFX_goal_generic_major_diplo
-		cost = 7.2
-		prerequisite = { focus = CUB_government_reshuffle }
-		relative_position_id = CUB_government_reshuffle
-		x = 1
-		y = 1
-
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
