@@ -614,7 +614,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 									has_government = fascism
 								}
 							}
-							AND = {country_event
+							AND = {
 								has_war_with = ITA
 								ITA = {
 									has_government = fascism
@@ -728,7 +728,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_galvanize_the_ctc
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_focus_RJ_CUB_CTC
 		cost = 7.2
 		prerequisite = { focus = CUB_oppose_the_presidency }
 		relative_position_id = CUB_oppose_the_presidency
@@ -750,7 +750,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_ctc_recruitment
 		icon = GFX_focus_GER_legacy_of_the_spartacus_league
-		cost = 7.2
+		cost = 5
 		prerequisite = { focus = CUB_galvanize_the_ctc }
 		relative_position_id = CUB_galvanize_the_ctc
 		x = 0
@@ -773,7 +773,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_hold_ctc_rallies
-		icon = GFX_SOV_architect_of_communism_ccp_2d_sov_compatibility
+		icon = GFX_SOV_leader_of_the_party_and_the_people_ccp_2d_sov_compatibility
 		cost = 5
 		prerequisite = { focus = CUB_galvanize_the_ctc }
 		relative_position_id = CUB_galvanize_the_ctc
@@ -893,7 +893,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_radio_mil_diez
-		icon = GFX_goal_generic_control_the_radio
+		icon = GFX_focus_RJ_radio_tower
 		cost = 10
 		prerequisite = { focus = CUB_purge_the_falangists }
 		relative_position_id = CUB_purge_the_falangists
@@ -911,7 +911,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_imprison_batista
 		icon = GFX_goal_cuba_trial_of_the_officers
-		cost = 10
+		cost = 5
 		prerequisite = { focus = CUB_establish_the_dgi }
 		mutually_exclusive = { focus = CUB_continued_collaboration_with_batista }
 		relative_position_id = CUB_establish_the_dgi
@@ -932,7 +932,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_continued_collaboration_with_batista
 		icon = GFX_goal_generic_communist_officer
-		cost = 10
+		cost = 5
 		prerequisite = { focus = CUB_establish_the_dgi }
 		mutually_exclusive = { focus = CUB_imprison_batista }
 		relative_position_id = CUB_establish_the_dgi
@@ -949,7 +949,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_purge_the_falangists
-		icon = GFX_goal_generic_army_purges
+		icon = GFX_focus_generic_communism_anti_fascism
 		cost = 5
 		prerequisite = { focus = CUB_imprison_batista focus = CUB_continued_collaboration_with_batista }
 		relative_position_id = CUB_imprison_batista
@@ -970,7 +970,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_recruit_civilian_informants
-		icon = GFX_goal_generic_secret_police
+		icon = GFX_focus_RAJ_a_policy_of_silence
 		cost = 10
 		prerequisite = { focus = CUB_purge_the_falangists }
 		relative_position_id = CUB_purge_the_falangists
@@ -1035,7 +1035,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_soviet_military_advisors
-		icon = GFX_postive_heroism
+		icon = GFX_focus_RJ_communist_advisor
 		cost = 10
 		prerequisite = { focus = CUB_state_visit_to_the_soviet_union }
 		relative_position_id = CUB_state_visit_to_the_soviet_union
@@ -1052,7 +1052,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_study_soviet_armaments
-		icon = GFX_goal_generic_heavy_armour_russian
+		icon = GFX_focus_RJ_communist_armaments
 		cost = 10
 		prerequisite = { focus = CUB_state_visit_to_the_soviet_union }
 		relative_position_id = CUB_state_visit_to_the_soviet_union
@@ -1086,7 +1086,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_create_a_central_committee
-		icon = GFX_generic_goal_communist_reforms
+		icon = GFX_focus_RJ_communist_politics
 		cost = 10
 		prerequisite = { focus = CUB_reaffirm_comintern_ties }
 		relative_position_id = CUB_reaffirm_comintern_ties
@@ -1104,7 +1104,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_diplomacy_with_the_prc
-		icon = GFX_goal_CHI_sinkiang
+		icon = GFX_focus_chi_cooperation_with_the_communists
 		cost = 4
 		prerequisite = { focus = CUB_reaffirm_comintern_ties }
 		relative_position_id = CUB_reaffirm_comintern_ties
@@ -1121,7 +1121,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_education_for_the_masses
-		icon = GFX_goal_SOV_education_initiative
+		icon = GFX_focus_NOR_moscows_education_centers
 		cost = 10
 		prerequisite = { focus = CUB_reaffirm_comintern_ties }
 		relative_position_id = CUB_reaffirm_comintern_ties
@@ -1155,7 +1155,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_establish_the_dgi
-		icon = GFX_goal_generic_communist_secret_police
+		icon = GFX_focus_RJ_CUB_DGI
 		cost = 10
 		prerequisite = { focus = CUB_reaffirm_comintern_ties }
 		relative_position_id = CUB_reaffirm_comintern_ties
@@ -1221,7 +1221,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_an_armed_struggle
-		icon = GFX_goal_red_army
+		icon = GFX_focus_SOV_builder_of_the_red_army
 		cost = 10
 		prerequisite = { focus = CUB_communism_in_the_caribbean }
 		mutually_exclusive = { focus = CUB_for_the_revolution }
@@ -1239,7 +1239,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_for_the_revolution
-		icon = GFX_goal_generic_red_commando
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
 		cost = 10
 		prerequisite = { focus = CUB_communism_in_the_caribbean }
 		mutually_exclusive = { focus = CUB_an_armed_struggle }
@@ -1274,7 +1274,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_deal_with_haitian_oppressors
-		icon = GFX_goal_cuba_attack_dominican_republic
+		icon = GFX_focus_generic_attack_haiti
 		cost = 7.2
 		prerequisite = { focus = CUB_liberate_the_dominican_republic }
 		relative_position_id = CUB_liberate_the_dominican_republic
@@ -1353,7 +1353,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_adapt_the_five_year_plan
-		icon = GFX_five_year_plan_continue
+		icon = GFX_SOV_fourth_five_year_plan_ccp_2d_sov_compatibility
 		cost = 10
 		prerequisite = { focus = CUB_reaffirm_comintern_ties }
 		relative_position_id = CUB_reaffirm_comintern_ties
@@ -1422,7 +1422,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_rural_industrialization
-		icon = GFX_goal_generic_communist_industries
+		icon = GFX_focus_generic_communist_industry
 		cost = 10
 		prerequisite = { focus = CUB_adapt_the_five_year_plan }
 		relative_position_id = CUB_adapt_the_five_year_plan
@@ -1452,7 +1452,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_new_rural_roads
-		icon = GFX_goal_generic_road2
+		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10
 		prerequisite = { focus = CUB_rural_industrialization }
 		relative_position_id = CUB_rural_industrialization
@@ -1512,7 +1512,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_sugar_for_oil
-		icon = GFX_goal_oil_agreement
+		icon = GFX_focus_AFG_sugar_factory
 		cost = 7.2
 		prerequisite = { focus = CUB_expand_the_plantations }
 		relative_position_id = CUB_expand_the_plantations
@@ -1565,23 +1565,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			has_full_control_of_state = 308
 			has_full_control_of_state = 692
 		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
-	}
-
-	focus = {
-		id = CUB_seek_soviet_support
-		icon = GFX_focus_GER_alliance_with_the_ussr
-		cost = 5
-		prerequisite = { focus = CUB_galvanize_the_ctc }
-		relative_position_id = CUB_galvanize_the_ctc
-		x = -2
-		y = 1
 
 		completion_reward = {
 			
@@ -1799,7 +1782,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_nationalize_foreign_sugar_mills
-		icon = GFX_goal_fascist_factory
+		icon = GFX_focus_RJ_fascist_sieze_industry
 		cost = 10
 		prerequisite = { focus = CUB_subvert_american_influence }
 		relative_position_id = CUB_subvert_american_influence 
@@ -1852,15 +1835,17 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		completion_reward = {
-			add_extra_state_shared_building_slots = 2
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 				}
 				add_building_construction = {
 					type = arms_factory
 					level = 1
 				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_STABILITY }
@@ -2161,7 +2146,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_encourage_spanish_immigration
-		icon = GFX_goal_generic_citizens
+		icon = GFX_focus_spr_war_of_independence
 		cost = 10
 		prerequisite = { focus = CUB_panhispanic_diplomacy }
 		relative_position_id = CUB_panhispanic_diplomacy
@@ -2181,7 +2166,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_falangist_ideas_in_schools
-		icon = GFX_focus_generic_military_academy
+		icon = GFX_focus_RJ_CUB_falangist_teachings
 		prerequisite = { focus = CUB_stabilize_internal_politics }
 		
 		x = 1
@@ -2222,7 +2207,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = CUB_falangist_devotion_idea
+				remove_idea = CUB_falangist_youth_idea
 				add_idea = CUB_strengthened_catholic_identity
 			}
 		}
@@ -2234,7 +2219,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_caribbean_dominance
-		icon = GFX_goal_cuba_caribbean_dominance
+		icon = GFX_focus_RJ_CUB_caribbean_dominance
 		relative_position_id = CUB_deal_with_batista
 		prerequisite = { focus = CUB_deal_with_batista focus = CUB_external_interests }
 		x = 4
@@ -2339,7 +2324,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		y = 1
 		relative_position_id = CUB_caribbean_dominance
 
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -2352,13 +2337,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				bonus = 1
 				uses = 1
 				category = marine_tech
-			}
-			add_tech_bonus = {
-				name = JAP_expand_the_snlf
-				bonus = 1.0
-				uses = 1
-				category = r56_special_forces_training_tech 
-			}			
+			}		
 			if = {
 				limit = {
 					has_dlc = "Man the Guns"
@@ -2367,7 +2346,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 					name = JAP_expand_the_snlf
 					bonus = 1
 					uses = 1
-					category = amphibious_armor_tech
+					category = naval_armor
 				}				
 			}
 		}
@@ -2529,7 +2508,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_subjugate_hispaniola
-		icon = GFX_goal_cuba_attack_dominican_republic
+		icon = GFX_focus_generic_attack_haiti
 		x = 0
 		y = 1
 		prerequisite = { focus = CUB_caribbean_dominance }
@@ -2578,7 +2557,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_demand_the_eastern_isles
-		icon = GFX_goal_cuba_antilles
+		icon = GFX_SOV_keep_commissars_organization_ccp_2d_sov_compatibility
 		x = 1
 		y = 1
 		prerequisite = { focus = CUB_subjugate_hispaniola }
@@ -2602,63 +2581,24 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			}		
 		}
 
-		completion_reward = {		
-			if = {
-				limit = {
-					NOT = {
-						owns_state = 319
-					}
-				}			
-				319 = {
-					OWNER = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								expire = 0
-								type = take_state_focus
-								generator = { 319 }
-							}
-							add_ai_strategy = {
-								type = conquer
-								id = PREV
-								value = 200
-							}
-						}
-					}
+		completion_reward = {
+			FRA = {
+				country_event = {
+					id = cuba.19
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						owns_state = 318
-					}
+			ENG = {
+				country_event = {
+					id = cuba.20
 				}
-				318 = {
-					OWNER = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								expire = 0
-								type = take_state_focus
-								generator = { 318 }
-							}
-							add_ai_strategy = {
-								type = conquer
-								id = PREV
-								value = 200
-							}
-						}
-					}
-				}			
-			}			
-			
+			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
 		id = CUB_demand_jamaica_and_the_bahamas
-		icon = GFX_goal_cuba_bahamas
+		icon = GFX_SOV_keep_commissars_organization_ccp_2d_sov_compatibility
 		x = -1
 		y = 1
 		prerequisite = { focus = CUB_subjugate_hispaniola }
@@ -2680,67 +2620,22 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			}
 		}
 
-		completion_reward = {		
-			if = {
-				limit = {
-					NOT = {
-						owns_state = 319
-					}
-				}			
-				319 = {
-					OWNER = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								expire = 0
-								type = take_state_focus
-								generator = { 319 }
-							}
-							add_ai_strategy = {
-								type = conquer
-								id = PREV
-								value = 200
-							}
-						}
-					}
+		completion_reward = {
+			ENG = {
+				country_event = {
+					id = cuba.21
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						owns_state = 318
-					}
-				}
-				318 = {
-					OWNER = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								expire = 0
-								type = take_state_focus
-								generator = { 318 }
-							}
-							add_ai_strategy = {
-								type = conquer
-								id = PREV
-								value = 200
-							}
-						}
-					}
-				}			
-			}			
-			
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
 		id = CUB_lay_claim_to_curacao_and_trinidad
-		icon = GFX_goal_attack_trinidad
+		icon = GFX_SOV_keep_commissars_organization_ccp_2d_sov_compatibility
 		x = -1
 		y = 1
-		prerequisite = { focus = CUB_demand_the_eastern_isles }
-		prerequisite = { focus = CUB_demand_jamaica_and_the_bahamas}
+		prerequisite = { focus = CUB_demand_the_eastern_isles focus = CUB_demand_jamaica_and_the_bahamas }
 		relative_position_id = CUB_demand_the_eastern_isles
 		cost = 7.2
 
@@ -3083,7 +2978,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_seize_venezuela
-		icon = GFX_goal_generic_attack_venezuela
+		icon = GFX_focus_generic_attack_venezuela
 		x = 0
 		y = 2
 		prerequisite = { focus = CUB_lay_claim_to_curacao_and_trinidad }
@@ -3106,7 +3001,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_threaten_colombia
-		icon = GFX_goal_COL_legitimize_gran_colombia
+		icon = GFX_focus_generic_attack_colombia
 		x = -1
 		y = 1
 		prerequisite = { focus = CUB_seize_venezuela }
@@ -3176,8 +3071,8 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_expand_colombian_coffee_plantations
-		icon = GFX_goal_generic_Coffee_Plantations
-		x = -2
+		icon = GFX_focus_generic_coffee
+		x = -1
 		y = 1
 		prerequisite = { focus = CUB_begin_colombian_industrial_development }
 		relative_position_id = CUB_begin_colombian_industrial_development
@@ -3199,31 +3094,8 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_upgrade_venezuelan_oil_facilities
-		icon = GFX_goal_VEN_oil
-		x = 0
-		y = 1
-		prerequisite = { focus = CUB_begin_colombian_industrial_development }
-		relative_position_id = CUB_begin_colombian_industrial_development
-		cost = 10
-
-		ai_will_do = {
-			factor = 25
-		}
-
-		available = {
-			
-		}
-		bypass = {
-				
-		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-	}
-
-	focus = {
-		id = CUB_needs_name
-		icon = GFX_goal_COL_legitimize_gran_colombia
-		x = 2
+		icon = GFX_focus_generic_stockpile_fuel
+		x = 1
 		y = 1
 		prerequisite = { focus = CUB_begin_colombian_industrial_development }
 		relative_position_id = CUB_begin_colombian_industrial_development
@@ -3245,7 +3117,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_island_development_plan
-		icon = GFX_goal_generic_road
+		icon = GFX_SOV_development_aid_for_eastern_allies_ccp_2d_sov_compatibility
 		x = 2
 		y = 1
 		prerequisite = { focus = CUB_demand_the_eastern_isles }
@@ -3731,14 +3603,72 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			factor = 1
 		}
 		available = {
-			ENG = {
+			any_other_country = {
+				is_major = yes
 				has_government = democratic
+				is_faction_leader = yes
+				has_capitulated = no
+				NOT = { has_war_with = DOM }
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = DOM
+						has_war_with = DOM
+					}
+				}
+				NOT = {
+					DOM = {
+						is_puppet = yes
+						is_in_faction = yes
+					}
+				}					
 			}
-			is_in_faction_with = ENG
+			NOT = {
+				has_completed_focus = CUB_caribbean_dominance
+			}
 		}
-		completion_reward = {
-			
-		}
+
+        completion_reward = {
+            if = {
+                limit = {
+                    USA = {
+                        has_government = democratic
+                    }
+                }
+                USA = {
+                     add_opinion_modifier = { target = DOM modifier = medium_increase }
+                }
+            }
+            if = {
+				limit = {
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+						NOT = {
+							has_completed_focus = ENG_a_change_in_course
+						}
+						has_capitulated = no
+						NOT = { has_war_with = DOM }
+					}
+					NOT = {
+						any_other_country = {
+							is_in_faction_with = ENG
+							has_war_with = DOM
+						}
+					}					
+				}
+				ENG = {
+					country_event = { id = generic.2 }
+                    add_opinion_modifier = { target = DOM modifier = medium_increase }
+				}
+			}
+			else = {
+				get_best_alliance_match_democratic_effect = yes
+				var:best_leader = {
+					country_event = generic.2
+				}
+			}		
+
+        }
 
 		search_filters = { FOCUS_FILTER_ALLIANCE }
 	}
