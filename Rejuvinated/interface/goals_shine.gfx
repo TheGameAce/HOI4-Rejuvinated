@@ -90015,15 +90015,15 @@ spriteTypes = {
 
 
 	#######################
-	##GENERIC REJUVINATED##
+	##SHARED REJUVINATED##
 	#######################
 
 	SpriteType = {
 		name = "GFX_focus_RJ_ballot_box_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_ballot_box.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_ballot_box.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_ballot_box.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_ballot_box.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90035,7 +90035,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_ballot_box.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_ballot_box.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90051,7 +90051,7 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_america_agreement_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_ballot_box.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_ballot_box.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
 			animationmaskfile = "gfx/interface/goals/generic/RJ_america_agreement.dds"
@@ -90066,7 +90066,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_america_agreement.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_america_agreement.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90082,10 +90082,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_hospital_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_hospital.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_hospital.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_hospital.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_hospital.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90097,7 +90097,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_hospital.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_hospital.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90113,10 +90113,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_american_air_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_american_air.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_american_air.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_american_air.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_american_air.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90128,7 +90128,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_american_air.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_american_air.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90144,10 +90144,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_marine_training_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_marine_training.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_marine_training.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_marine_training.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_marine_training.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90159,7 +90159,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_marine_training.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_marine_training.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90175,10 +90175,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_paper_coins_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_paper_coins.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_paper_coins.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_paper_coins.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_paper_coins.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90190,7 +90190,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_paper_coins.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_paper_coins.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90206,10 +90206,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_fascist_sieze_industry_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_fascist_sieze_industry.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_fascist_sieze_industry.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_fascist_sieze_industry.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_fascist_sieze_industry.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90221,7 +90221,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_fascist_sieze_industry.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_fascist_sieze_industry.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90237,10 +90237,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_communist_armaments_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_communist_armaments.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_communist_armaments.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_communist_armaments.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_communist_armaments.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90252,7 +90252,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_communist_armaments.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_communist_armaments.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90268,10 +90268,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_communist_advisor_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_communist_advisor.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_communist_advisor.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_communist_advisor.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_communist_advisor.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90283,7 +90283,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_communist_advisor.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_communist_advisor.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90299,10 +90299,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_communist_politics_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_communist_politics.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_communist_politics.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_communist_politics.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_communist_politics.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90314,7 +90314,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_communist_politics.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_communist_politics.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90330,10 +90330,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_radio_tower_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_radio_tower.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_radio_tower.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_radio_tower.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_radio_tower.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90345,7 +90345,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_radio_tower.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_radio_tower.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90361,10 +90361,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_communist_industry_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_communist_industry.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_communist_industry.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_communist_industry.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_communist_industry.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90376,7 +90376,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_communist_industry.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_communist_industry.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90392,10 +90392,10 @@ spriteTypes = {
 
 	SpriteType = {
 		name = "GFX_focus_RJ_attack_DOM_shine"
-		texturefile = "gfx/interface/goals/generic/RJ_attack_DOM.dds"
+		texturefile = "gfx/interface/goals/shared/RJ_attack_DOM.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_attack_DOM.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_attack_DOM.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -90407,7 +90407,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/generic/RJ_attack_DOM.dds"
+			animationmaskfile = "gfx/interface/goals/shared/RJ_attack_DOM.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
