@@ -2655,55 +2655,16 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		completion_reward = {		
-			if = {
-				limit = {
-					NOT = {
-						owns_state = 319
-					}
-				}			
-				319 = {
-					OWNER = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								expire = 0
-								type = take_state_focus
-								generator = { 319 }
-							}
-							add_ai_strategy = {
-								type = conquer
-								id = PREV
-								value = 200
-							}
-						}
-					}
+			ENG = {
+				country_event = {
+					id = cuba.22
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						owns_state = 318
-					}
+			HOL = {
+				country_event = {
+					id = cuba.23
 				}
-				318 = {
-					OWNER = {
-						ROOT = {
-							create_wargoal = {
-								target = PREV
-								expire = 0
-								type = take_state_focus
-								generator = { 318 }
-							}
-							add_ai_strategy = {
-								type = conquer
-								id = PREV
-								value = 200
-							}
-						}
-					}
-				}			
 			}			
-			
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -2726,7 +2687,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			controls_state = 690
 			controls_state = 693
 			controls_state = 686
-			controls_state = 900
 			controls_state = 694
 			controls_state = 308
 			controls_state = 692
@@ -2994,7 +2954,20 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			
 		}
 		bypass = {
-				
+			OR = {
+				NOT = {
+					country_exists = VEN
+				}
+				has_war_with = VEN
+			}	
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = VEN
+				expire = 0
+				type = take_state_focus
+				generator = { 307 }
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -3017,7 +2990,21 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			
 		}
 		bypass = {
-				
+			OR = {
+				NOT = {
+					country_exists = COL
+				}
+				has_war_with = COL
+			}				
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = COL
+				expire = 0
+				type = take_state_focus
+				generator = { 306 }
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -3090,6 +3077,20 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				
 		}
 
+		completion_reward = {		
+			1057 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+		}
+
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 
@@ -3111,6 +3112,27 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 		bypass = {
 				
+		}
+
+		completion_reward = {		
+			489 = {
+				add_building_construction = {
+					type = fuel_silo
+					level = 1
+				}
+			}
+			307 = {
+				add_building_construction = {
+					type = fuel_silo
+					level = 2
+				}
+			}
+			1061 = {
+				add_building_construction = {
+					type = fuel_silo
+					level = 1
+				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
