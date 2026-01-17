@@ -35,7 +35,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = chi_hyper_inflation
+			picture = RJ_CUB_sugar_industry
 	
 			modifier = {
 				consumer_goods_factor = 0.10
@@ -57,8 +57,8 @@ ideas = {
 			picture = RJ_american_influence
 	
 			modifier = {
-				political_power_factor = -0.10
-				min_export = 0.05
+				political_power_factor = -0.15
+				min_export = 0.1
 				CUB = {
 					add_opinion_modifier = {
 						target = USA
@@ -83,7 +83,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = RJ_CUB_sugar_industry
 	
 			modifier = {
 				consumer_goods_factor = 0.05
@@ -728,7 +728,7 @@ ideas = {
 			picture = generic_victors_of_ww1
 			
 			modifier = {
-				amphibious_invasion = 0.05
+				amphibious_invasion = 0.10
 				amphibious_invasion_defence = 0.10
 			}
 		}

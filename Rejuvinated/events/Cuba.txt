@@ -504,6 +504,64 @@ country_event = { #Annexation Demands for the Windward & Leeward Isles
 	}
 }
 
+country_event = { #Annexation Demands for Trinidad & Tobago.
+	id = cuba.22
+	title = cuba.22.t
+	desc = cuba.22.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Oh for the love of... Fine, take it."
+		CUB = {
+			transfer_state = 691
+		}
+	}
+
+	option = {
+		name = "You've harassed us for the last time!"
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 691 }
+			}
+		}
+	}
+}
+
+country_event = { #Annexation Demands for the ABC Islands.
+	id = cuba.23
+	title = cuba.23.t
+	desc = cuba.23.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Fine, they can have them..."
+		CUB = {
+			transfer_state = 695
+		}
+	}
+
+	option = {
+		name = "We won't give in to these illegitimate claims!"
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 695 }
+			}
+		}
+	}
+}
+
 ####################################################################################################################################################################
 ###NEWS EVENTS###
 ####################################################################################################################################################################
