@@ -1,19 +1,44 @@
 ideas = {
     country = {
         HR_idea_generic_the_people = {
-
+            modifier = {
+                communism_drift = 0.05
+                democratic_drift = 0.05
+            }
         }
         HR_idea_generic_revolutionary_ideas = {
-
+            modifier = {
+                communism_drift = 0.1
+            }
         }
         HR_idea_generic_politburo = {
-
+            modifier = {
+                communism_drift = 0.1
+                stability_factor = 0.1
+                political_power_gain = 0.1
+                political_power_factor = 0.1
+            }
         }
         HR_idea_generic_soldiers_of_world_revolution = {
-
+            modifier = {
+                conscription = 0.02
+                conscription_factor = 0.20
+                surrender_limit = 0.4
+            }
         }
         HR_idea_generic_internationalism = {
-
+            modifier = {
+                conscription = 0.02
+                conscription_factor = 0.20
+                surrender_limit = 0.4
+                air_volunteer_cap = 2
+                send_volunteer_size = 4
+                send_volunteer_divisions_required = -1
+            }
+            rule = {
+                can_send_volunteers = yes
+                can_join_factions = yes
+            }
         }
         HR_idea_generic_liberty_ideas = {
 
@@ -31,7 +56,20 @@ ideas = {
 
         }
         HR_idea_generic_we_stand_alone = {
-            
+            modifier = {
+                conscription = 0.03
+                conscription_factor = 0.2
+                surrender_limit = 0.7
+                
+                army_core_defense_factor = 0.2
+                defense = 0.2
+                attack = 0.1
+            }
+            rule = {
+                can_join_factions = no
+                can_create_factions = no
+                can_send_volunteers = no
+            }
         }
         HR_idea_generic_the_order = {
 

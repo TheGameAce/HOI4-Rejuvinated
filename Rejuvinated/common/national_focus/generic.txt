@@ -37,11 +37,8 @@ focus_tree = {
         icon = GFX_HR_focus_generic_our_destiny
         x = 10
         y = 0
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        
-        cost = 4
+
+        cost = 4.3
         
         completion_reward = {
             add_political_power = 150
@@ -55,11 +52,8 @@ focus_tree = {
         relative_position_id = HR_focus_generic_our_destiny
         x = -4
         y = 1
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
 
-        cost = 4
+        cost = 4.3
         prerequisite = { focus = HR_focus_generic_our_destiny }
 
         available = {
@@ -81,11 +75,8 @@ focus_tree = {
         relative_position_id = HR_focus_generic_the_people
         x = -1
         y = 1
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
 
-        cost = 4
+        cost = 4.3
         prerequisite = {focus=HR_focus_generic_the_people}
         available = {
             has_government = communism
@@ -119,15 +110,12 @@ focus_tree = {
         relative_position_id = HR_focus_generic_embrace_revolutionary_ideas
         x = 0
         y = 1
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
 
         prerequisite = {focus=HR_focus_generic_embrace_revolutionary_ideas}
-        cost = 6
+        cost = 4.3
         available = {
             has_government = communism
-            communism > 0.4
+            communism > 0.5
         }
         
         completion_reward = {
@@ -155,12 +143,9 @@ focus_tree = {
         relative_position_id = HR_focus_generic_will_of_the_people
         x = 0
         y = 1
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
 
         prerequisite = {focus = HR_focus_generic_will_of_the_people}
-        cost = 7.2
+        cost = 4.3
         available = {
             has_government = communism
             communism > 0.65
@@ -181,12 +166,12 @@ focus_tree = {
         x = 0
         y = 1
 
-        cost = 6
+        cost = 7.2
         prerequisite = { focus = HR_focus_generic_politburo }
 
         available = {
             has_government = communism
-            conscription_ratio > 0.01
+            conscription_ratio > 0.02
         }
 
         completion_reward = {
@@ -230,7 +215,6 @@ focus_tree = {
             if = {
                 limit = {
                     any_other_country = {
-                        NOT = { tag = ROOT }
                         is_major = yes
                         has_same_ideology = yes
                         has_capitulated = no
@@ -244,13 +228,12 @@ focus_tree = {
 
                 every_possible_country = {
                     limit = {
-
                         NOT = { tag = ROOT }
                         is_major = yes
-                        has_government = democratic
+                        has_same_ideology = yes
                         any_other_country = {
                             is_ally_with = PREV
-                            has_government = democratic
+                            has_same_ideology = yes
                             NOT = { tag = ROOT }
                         }
                     }
@@ -264,11 +247,17 @@ focus_tree = {
                 add_political_power = 100
             }
 
-            add_ideas = HR_idea_generic_internationalism
+            swap_ideas = {
+                remove_idea = HR_idea_generic_soldiers_of_world_revolution
+                add_idea = HR_idea_generic_internationalism
+            }
         }
         bypass_effect = {
             add_political_power = 100
-            add_ideas = HR_idea_generic_internationalism
+            swap_ideas = {
+                remove_idea = HR_idea_generic_soldiers_of_world_revolution
+                add_idea = HR_idea_generic_internationalism
+            }  
         }
     }
     
@@ -279,11 +268,8 @@ focus_tree = {
         relative_position_id = HR_focus_generic_the_people
         x = 1
         y = 1
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
 
-        cost = 4
+        cost = 4.3
         prerequisite = { focus = HR_focus_generic_the_people }
 
         available = {
@@ -318,9 +304,6 @@ focus_tree = {
         relative_position_id = HR_focus_generic_embrace_liberty_ideas
         x = 0
         y = 1
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
 
         cost = 6
         prerequisite = {focus=HR_focus_generic_embrace_liberty_ideas}
@@ -363,7 +346,7 @@ focus_tree = {
             FOCUS_FILTER_POLITICAL
         }
 
-        cost = 7.2
+        cost = 4.3
         prerequisite = {focus = HR_focus_generic_individual_consciousness}
         available = {
             has_government = democratic
@@ -386,7 +369,7 @@ focus_tree = {
         x = 0
         y = 1
 
-        cost = 6
+        cost = 7.2
         prerequisite = { focus = HR_focus_generic_political_publicity }
 
         available = {
@@ -457,10 +440,10 @@ focus_tree = {
 
                         NOT = { tag = ROOT }
                         is_major = yes
-                        has_government = democratic
+                        has_same_ideology = yes
                         any_other_country = {
                             is_ally_with = PREV
-                            has_government = democratic
+                            has_same_ideology = yes
                             NOT = { tag = ROOT }
                         }
                     }
@@ -489,7 +472,7 @@ focus_tree = {
         x = -1
         y = 1
         
-        cost = 4
+        cost = 4.3
         prerequisite = {
             focus = HR_focus_generic_guardians_of_homeland
             focus = HR_focus_generic_soldiers_of_world_revolution
