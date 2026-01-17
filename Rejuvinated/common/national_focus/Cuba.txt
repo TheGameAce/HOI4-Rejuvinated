@@ -2508,7 +2508,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_subjugate_hispaniola
-		icon = GFX_focus_generic_attack_haiti
+		icon = GFX_focus_RJ_attack_hispaniola
 		x = 0
 		y = 1
 		prerequisite = { focus = CUB_caribbean_dominance }
@@ -3120,7 +3120,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_island_development_plan
-		icon = GFX_SOV_development_aid_for_eastern_allies_ccp_2d_sov_compatibility
+		icon = GFX_focus_RJ_CUB_island_development
 		x = 2
 		y = 1
 		prerequisite = { focus = CUB_demand_the_eastern_isles }
@@ -3164,7 +3164,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_develop_the_eastern_isles
-		icon = GFX_SOV_heavy_industry_ccp_2d_sov_compatibility
+		icon = GFX_focus_RJ_industry1
 		x = 1
 		y = 1
 		prerequisite = { focus = CUB_island_development_plan }
@@ -3222,7 +3222,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_develop_the_bahamas_and_jamaica
-		icon = GFX_SOV_heavy_industry_ccp_2d_sov_compatibility
+		icon = GFX_focus_RJ_industry1
 		x = -1
 		y = 1
 		prerequisite = { focus = CUB_island_development_plan }
@@ -3266,7 +3266,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_developing_curacao_and_trinidad
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_RJ_industry2
 		x = 1
 		y = 1
 		prerequisite = { focus = CUB_develop_the_bahamas_and_jamaica focus = CUB_develop_the_eastern_isles }
