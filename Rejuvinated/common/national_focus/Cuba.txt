@@ -1771,10 +1771,8 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = CUB_american_influence
-				add_idea = CUB_reduced_american_influence
-			}
+			remove_ideas = { CUB_american_influence }
+			add_political_power = 100
 		}
 
 		search_filters = { FOCUS_FILTER_STABILITY }
@@ -2601,7 +2599,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_demand_jamaica_and_the_bahamas
-		icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+		icon = GFX_focus_attack_britain
 		x = -1
 		y = 1
 		prerequisite = { focus = CUB_subjugate_hispaniola }
@@ -3027,7 +3025,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_venezuelan_development
-		icon = GFX_goal_VEN_increase_military_spendings
+		icon = GFX_focus_RJ_industry4
 		x = 1
 		y = 1
 		prerequisite = { focus = CUB_seize_venezuela focus = CUB_developing_curacao_and_trinidad }
@@ -3050,7 +3048,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_begin_colombian_industrial_development
-		icon = GFX_goal_generic_building_our_industry
+		icon = GFX_focus_RJ_industry3
 		x = -1
 		y = 1
 		prerequisite = { focus = CUB_venezuelan_development }
