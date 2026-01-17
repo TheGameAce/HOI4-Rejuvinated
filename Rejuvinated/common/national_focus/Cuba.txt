@@ -1387,7 +1387,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_collectivize_the_sugar_plantations
-		icon = GFX_focus_generic_workers_and_farmers_rise
+		icon = GFX_focus_RJ_CUB_communist_plantation
 		cost = 10
 		prerequisite = { focus = CUB_seize_foreign_sugar_mills }
 		relative_position_id = CUB_seize_foreign_sugar_mills
@@ -3487,7 +3487,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_unite_hispaniola
-		icon = GFX_goal_cuba_attack_dominican_republic
+		icon = GFX_focus_RJ_CUB_hispaniola_reunited
 		cost = 5
 		prerequisite = { focus = CUB_invite_trujillo_to_join_the_allies }
 		relative_position_id = CUB_invite_trujillo_to_join_the_allies
