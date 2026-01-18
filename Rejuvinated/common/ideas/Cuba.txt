@@ -155,26 +155,6 @@ ideas = {
 			}
 		}
 
-		CUB_reduced_american_influence = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_democratic_drift_bonus
-			
-			modifier = {
-				min_export = -0.05
-				political_power_factor = 0.10
-			}
-		}
-
 		CUB_cuban_soviet_diplomacy = {
 
 			allowed = {
@@ -604,6 +584,28 @@ ideas = {
 			modifier = {
 				neutrality_drift = 0.07
 				political_power_gain = 0.10
+			}
+		}
+
+		CUB_mafia_influence = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = -0.10
+				production_speed_buildings_factor = 0.15
+				enemy_operative_detection_chance_factor = 0.10
 			}
 		}
 
