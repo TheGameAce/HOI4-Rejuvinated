@@ -80,6 +80,14 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		x = -2
 		y = 1
 
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 5
+			}
+		}
+
 		completion_reward = {
 			add_ideas = CUB_the_nine_cent_law
 		}
@@ -505,7 +513,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			add_equipment_to_stockpile = {
 			    type = fighter_equipment_0
 			    amount = 500
-			    producer = USA
+			    variant_name = PewPewPew
 			}
 		}
 		search_filters = { FOCUS_FILTER_AIRFORCE }
@@ -716,6 +724,14 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		relative_position_id = CUB_victory_for_garcia_menocal
 		x = 8
 		y = 1
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
@@ -1583,6 +1599,14 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		relative_position_id = CUB_victory_for_garcia_menocal
 		x = -8
 		y = 1
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
@@ -3490,8 +3514,29 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		ai_will_do = {
 			factor = 1
 		}
+
+		available = {
+			DOM = {
+				has_country_leader = {
+					character = DOM_rafael_trujillo
+					ruling_only = yes
+				}
+			}
+		}
+
 		completion_reward = {
-			
+			CUB = {
+				add_opinion_modifier = {
+					target = DOM
+					modifier = large_increase
+				}
+			}
+			DOM = {
+				add_opinion_modifier = {
+					target = CUB
+					modifier = large_increase
+				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_DIPLOMACY }
@@ -3520,38 +3565,38 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_caribbean_brothers
-		icon = GFX_goal_cuba_carribean_anti_imperialism
-		cost = 5
+		icon = GFX_focus_RJ_CUB_caribbean_brothers
+		cost = 10
 		prerequisite = { focus = CUB_unite_hispaniola }
 		mutually_exclusive = { focus = CUB_caribbean_unity }
 		relative_position_id = CUB_unite_hispaniola
 		x = -1
 		y = 1
 
+		available = {
+			country_exists = DOM
+			DOM = {
+				is_puppet = no
+				is_in_faction_with = CUB
+			}
+		}
+
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			CUB = {
-				add_opinion_modifier = {
-					target = DOM
-					modifier = large_increase
-				}
-			}
+			add_ideas = { CUB_caribbean_brothers }
 			DOM = {
-				add_opinion_modifier = {
-					target = CUB
-					modifier = large_increase
-				}
+				add_ideas = { CUB_caribbean_brothers }
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_DIPLOMACY FOCUS_FILTER_NATIONAL_SPIRIT }
+		search_filters = { FOCUS_FILTER_DIPLOMACY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
 
 	focus = {
 		id = CUB_caribbean_unity
-		icon = GFX_goal_generic_befriend_united_caribbean
+		icon = GFX_focus_RJ_CUB_caribbean_unity
 		cost = 5
 		prerequisite = { focus = CUB_unite_hispaniola }
 		mutually_exclusive = { focus = CUB_caribbean_brothers }
@@ -3568,13 +3613,13 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_CONQUEST FOCUS_FILTER_EVENT }
+		search_filters = { FOCUS_FILTER_DIPLOMACY FOCUS_FILTER_EVENT FOCUS_FILTER_CONQUEST }
 	}
 
 	focus = {
 		id = CUB_conduct_joint_military_excercises
 		icon = GFX_focus_AUS_frontmiliz_focus
-		cost = 7.2
+		cost = 10
 		prerequisite = { focus = CUB_reach_out_to_trujillo }
 		relative_position_id = CUB_reach_out_to_trujillo
 		x = -1
@@ -3639,6 +3684,13 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			}
 			NOT = {
 				has_completed_focus = CUB_caribbean_dominance
+			}
+
+			DOM = {
+				has_country_leader = {
+					character = DOM_rafael_trujillo
+					ruling_only = yes
+				}
 			}
 		}
 
