@@ -166,4 +166,23 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = COL_propaganda_campaigns
+		icon = GFX_goal_generic_propaganda
+		relative_position_id = COL_enough_of_exploitation 
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = COL_cancel_the_reforms
+		}
+		prerequisite = {
+			focus = COL_point_out_social_inequalities
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
 }
