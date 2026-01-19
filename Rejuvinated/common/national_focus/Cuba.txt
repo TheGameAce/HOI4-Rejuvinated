@@ -43,7 +43,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_victory_for_gomez
-		icon = GFX_goal_cuba_victory_for_gomez
+		icon = GFX_focus_BEL_v_for_victory
 		cost = 10
 		prerequisite = { focus = CUB_results_of_the_presidential_election }
 		mutually_exclusive = { focus = CUB_victory_for_garcia_menocal }
@@ -742,7 +742,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = { #Both Paths Start Here
 		id = CUB_victory_for_garcia_menocal
-		icon = GFX_goal_cuba_victory_for_garcia_menocal
+		icon = GFX_focus_BEL_v_for_victory
 		cost = 10
 		prerequisite = { focus = CUB_results_of_the_presidential_election }
 		mutually_exclusive = { focus = CUB_victory_for_gomez }
@@ -1028,7 +1028,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_imprison_batista
-		icon = GFX_goal_cuba_trial_of_the_officers
+		icon = GFX_focus_BEL_prisoner_king
 		cost = 5
 		prerequisite = { focus = CUB_establish_the_dgi }
 		mutually_exclusive = { focus = CUB_continued_collaboration_with_batista }
@@ -1053,7 +1053,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_continued_collaboration_with_batista
-		icon = GFX_goal_generic_communist_officer
+		icon = GFX_focus_generic_communist
 		cost = 5
 		prerequisite = { focus = CUB_establish_the_dgi }
 		mutually_exclusive = { focus = CUB_imprison_batista }
@@ -1927,7 +1927,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_deal_with_batista
-		icon = GFX_goal_cuba_batista_coup
+		icon = GFX_focus_generic_military_mission
 		cost = 5
 		prerequisite = { focus = CUB_secure_power }
 		relative_position_id = CUB_secure_power
