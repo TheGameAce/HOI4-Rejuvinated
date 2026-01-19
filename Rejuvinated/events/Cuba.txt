@@ -36,6 +36,13 @@ country_event = { #Election Results
 	}
 	option = {
 		name = cuba.1.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		
 		unlock_national_focus = CUB_results_of_the_presidential_election
 		set_country_flag = cuba_mario_garcia_menocal_flag
@@ -62,6 +69,9 @@ country_event = { #Gomez' Inauguration
 	
 	option = {
 		name = cuba.2.a
+		ai_chance = {
+			factor = 1
+		}
 		set_country_flag = gomez_inaugurated_flag
 		promote_character = {
 			character = CUB_miguel_mariano_gomez
@@ -93,6 +103,9 @@ country_event = { #Mario García Menocal's Innauguration
 	
 	option = {
 		name = cuba.3.a
+		ai_chance = {
+			factor = 1
+		}
 		set_country_flag = garcia_menocal_inaugurated_flag
 		promote_character = {
 			character = CUB_mario_garcia_menocal
@@ -126,6 +139,9 @@ country_event = { #Gomez Impeached - Triggers via the Nine Cent Law focus - Fede
 	
 	option = {
 		name = cuba.5.a
+		ai_chance = {
+			factor = 1
+		}
 		set_country_flag = gomez_impeached_flag
 		promote_character = {
 			character = CUB_federico_bru
@@ -144,23 +160,33 @@ country_event = { #Operation Hemingway
 	
 	option = {
 		name = cuba.6.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		random_country = {
-				limit = {
-					original_tag = SPR
-					has_government = fascism
-				}
-				ROOT = {
-					declare_war_on = {
-					    target = PREV
-					    type = puppet_wargoal_focus
-					}
+			limit = {
+				original_tag = SPR
+				has_government = fascism
+			}
+			ROOT = {
+				declare_war_on = {
+				    target = PREV
+				    type = puppet_wargoal_focus
 				}
 			}
+		}
 
 	}
 
 	option = {
 		name = cuba.6.b
+		ai_chance = {
+			factor = 1
+		}
 		CUB = {
 			country_event = cuba.7
 		}
@@ -178,10 +204,13 @@ country_event = { #Operation Hemingway Refused
 	
 	option = {
 		name = cuba.7.a
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
 
-country_event = {
+country_event = { #Attempted Dominican Coup - I don't recall what the heck initiates this. I think it's presently unused. References a cuba.8 event in localization, which is fully localized, yet doesn't exist. I know this is a reference to a real event at least.
 	id = cuba.9
 	title = cuba.9.t
 	desc = cuba.9.d
@@ -192,6 +221,9 @@ country_event = {
 	
 	option = {
 		name = cuba.9.a
+		ai_chance = {
+			factor = 1
+		}
 		declare_war_on = {
 		    target = DOM
 		    type = puppet_wargoal_focus
@@ -200,10 +232,13 @@ country_event = {
 
 	option = {
 		name = cuba.9.b
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
 
-country_event = {
+country_event = { #Proposition of Falangist alliance with Spain.
 	id = cuba.10
 	title = "Cuba Seeks an Alliance"
 	desc = cuba.10.d
@@ -214,16 +249,20 @@ country_event = {
 	
 	option = {
 		name = "A fascinating proposition... We accept."
+		ai_chance = {
+			factor = 3
+		}
 		CUB = {
 			add_to_faction = SPR
-			country_event = {
-			id = cuba.12
-			}
+			country_event = { id = cuba.12 }
 		}
 	}
 
 	option = {
-		name = "This is not in our best interest."
+		name = "This is not in our best interests."
+		ai_chance = {
+			factor = 1
+		}
 		country_event = {
 			id = cuba.13
 		}
@@ -240,6 +279,9 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
+		ai_chance = {
+			factor = 1
+		}
 		name = "¡Viva la alianza!"
 	}
 }
@@ -254,6 +296,9 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
+		ai_chance = {
+			factor = 1
+		}
 		name = "I didn't like them anyways..."
 	}
 }

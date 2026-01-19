@@ -7,11 +7,16 @@ ideas = {
 		CUB_batistas_influence = {
 			
 			allowed = {
-				always = yes
+				NOT = {
+					has_country_leader = {
+						character = CUB_fulgencio_batista
+						ruling_only = yes
+					}
+				}
 			}
 
 			allowed_civil_war = {
-				always = yes
+				original_tag = CUB
 			}
 			
 			removal_cost = -1
@@ -97,11 +102,16 @@ ideas = {
 		CUB_batistas_influence_reduced = {
 			
 			allowed = {
-				always = yes
+				NOT = {
+					has_country_leader = {
+						character = CUB_fulgencio_batista
+						ruling_only = yes
+					}
+				}
 			}
 
 			allowed_civil_war = {
-				always = yes
+				original_tag = CUB
 			}
 			
 			removal_cost = -1
@@ -427,11 +437,16 @@ ideas = {
 		CUB_batistas_influence_reduced_communist = {
 			
 			allowed = {
-				always = yes
+				NOT = {
+					has_country_leader = {
+						character = CUB_fulgencio_batista
+						ruling_only = yes
+					}
+				}
 			}
 
 			allowed_civil_war = {
-				always = yes
+				original_tag = CUB
 			}
 			
 			removal_cost = -1
