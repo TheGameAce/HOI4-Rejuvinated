@@ -2569,12 +2569,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 		completion_reward = {
 			add_ideas = CUB_military_expansions
-			if = {
-				NOT = {
-					has_completed_focus = CUB_spanish_civil_war_involvement
-				}
-				set_rule = { can_send_volunteers = yes }
-			}
 		}
 		search_filters = {  FOCUS_FILTER_MANPOWER FOCUS_FILTER_XP FOCUS_FILTER_NATIONAL_SPIRIT }
 	}	
@@ -3716,7 +3710,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				elections_allowed = no
 			}
 			set_political_party = {
-				ideology = despotism
+				ideology = neutrality
 				popularity = 20
 			}
 		}

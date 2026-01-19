@@ -134,12 +134,11 @@ set_popularities = {
 if = {
 	limit = { has_dlc = "Man the Guns" }
 
-	create_equipment_variant = {
+	create_equipment_variant = { #Needs fixing.
 		name = "Cuba Class"
 		type = destroyer_1
 		upgrades = {
 			destroyer_engine_upgrade = 1
-			fixed_ship_battery_slot = ship_light_battery_1
 		}
 	}
 }
