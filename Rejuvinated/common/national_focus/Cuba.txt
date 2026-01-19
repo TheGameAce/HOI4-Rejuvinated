@@ -327,7 +327,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 						is_faction_leader = yes
 						NOT = {
 							has_completed_focus = ENG_a_change_in_course
-							has_completed_focus = ENG_visit_germany
 						}
 						has_capitulated = no
 						NOT = { has_war_with = ROOT }
@@ -953,6 +952,31 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	}
 
 	focus = {
+		id = CUB_establish_the_dgi
+		icon = GFX_focus_RJ_CUB_DGI
+		cost = 10
+		prerequisite = { focus = CUB_overthrow_the_menocal_government }
+		relative_position_id = CUB_overthrow_the_menocal_government
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			create_intelligence_agency = {
+				name = "Dirección de Inteligencia"
+				icon = GFX_r56_agency_logo_1
+			}
+			add_ideas = CUB_direccion_inteligencia
+		}
+
+		search_filters = { FOCUS_FILTER_ESPIONAGE FOCUS_FILTER_NATIONAL_SPIRIT }
+
+	}
+
+	focus = {
 		id = CUB_reaffirm_comintern_ties
 		icon = GFX_SOV_father_of_nations_ccp_2d_sov_compatibility
 		cost = 10
@@ -999,28 +1023,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		search_filters = { FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
-
-	}
-
-
-	focus = {
-		id = CUB_radio_mil_diez
-		icon = GFX_focus_RJ_radio_tower
-		cost = 10
-		prerequisite = { focus = CUB_purge_the_falangists }
-		relative_position_id = CUB_purge_the_falangists
-		x = -1
-		y = 1
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			add_ideas = CUB_radio_mil_diez_idea
-		}
-
-		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY FOCUS_FILTER_POLITICAL }
 
 	}
 
@@ -1093,6 +1095,27 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL }
+
+	}
+
+	focus = {
+		id = CUB_radio_mil_diez
+		icon = GFX_focus_RJ_radio_tower
+		cost = 10
+		prerequisite = { focus = CUB_purge_the_falangists }
+		relative_position_id = CUB_purge_the_falangists
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = CUB_radio_mil_diez_idea
+		}
+
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ARMY FOCUS_FILTER_POLITICAL }
 
 	}
 
@@ -1318,31 +1341,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
-
-	}
-
-	focus = {
-		id = CUB_establish_the_dgi
-		icon = GFX_focus_RJ_CUB_DGI
-		cost = 10
-		prerequisite = { focus = CUB_overthrow_the_menocal_government }
-		relative_position_id = CUB_overthrow_the_menocal_government
-		x = 0
-		y = 1
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			create_intelligence_agency = {
-				name = "Dirección de Inteligencia"
-				icon = GFX_r56_agency_logo_1
-			}
-			add_ideas = CUB_direccion_inteligencia
-		}
-
-		search_filters = { FOCUS_FILTER_ESPIONAGE FOCUS_FILTER_NATIONAL_SPIRIT }
 
 	}
 
@@ -3847,6 +3845,96 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	}
 
 	focus = {
+		id = CUB_invite_trujillo_to_join_the_allies
+		icon = GFX_focus_RAJ_seek_allies_with_the_muslim_league
+		cost = 4
+		prerequisite = { focus = CUB_reach_out_to_trujillo }
+		relative_position_id = CUB_reach_out_to_trujillo
+		x = 0
+		y = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_other_country = {
+				is_major = yes
+				has_government = democratic
+				is_faction_leader = yes
+				has_capitulated = no
+				NOT = { has_war_with = DOM }
+				NOT = {
+					any_other_country = {
+						is_in_faction_with = DOM
+						has_war_with = DOM
+					}
+				}
+				NOT = {
+					DOM = {
+						is_puppet = yes
+						is_in_faction = yes
+					}
+				}					
+			}
+			NOT = {
+				has_completed_focus = CUB_caribbean_dominance
+			}
+
+			DOM = {
+				has_country_leader = {
+					character = DOM_rafael_trujillo
+					ruling_only = yes
+				}
+			}
+		}
+
+        completion_reward = {
+            if = {
+                limit = {
+                    USA = {
+                        has_government = democratic
+                    }
+                }
+                USA = {
+                     add_opinion_modifier = { target = DOM modifier = medium_increase }
+                }
+            }
+            if = {
+				limit = {
+					ENG = {
+						has_government = democratic
+						is_faction_leader = yes
+						NOT = {
+							has_completed_focus = ENG_a_change_in_course
+						}
+						has_capitulated = no
+						NOT = { has_war_with = DOM }
+					}
+					NOT = {
+						any_other_country = {
+							is_in_faction_with = ENG
+							has_war_with = DOM
+						}
+					}					
+				}
+				ENG = {
+					country_event = { id = generic.2 }
+                    add_opinion_modifier = { target = DOM modifier = medium_increase }
+				}
+			}
+			else = {
+				get_best_alliance_match_democratic_effect = yes
+				var:best_leader = {
+					country_event = generic.2
+				}
+			}		
+
+        }
+
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
+	}
+
+	focus = {
 		id = CUB_unite_hispaniola
 		icon = GFX_focus_RJ_CUB_hispaniola_reunited
 		cost = 5
@@ -3952,96 +4040,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		search_filters = { FOCUS_FILTER_XP }
-	}
-
-	focus = {
-		id = CUB_invite_trujillo_to_join_the_allies
-		icon = GFX_focus_RAJ_seek_allies_with_the_muslim_league
-		cost = 4
-		prerequisite = { focus = CUB_reach_out_to_trujillo }
-		relative_position_id = CUB_reach_out_to_trujillo
-		x = 0
-		y = 2
-
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			any_other_country = {
-				is_major = yes
-				has_government = democratic
-				is_faction_leader = yes
-				has_capitulated = no
-				NOT = { has_war_with = DOM }
-				NOT = {
-					any_other_country = {
-						is_in_faction_with = DOM
-						has_war_with = DOM
-					}
-				}
-				NOT = {
-					DOM = {
-						is_puppet = yes
-						is_in_faction = yes
-					}
-				}					
-			}
-			NOT = {
-				has_completed_focus = CUB_caribbean_dominance
-			}
-
-			DOM = {
-				has_country_leader = {
-					character = DOM_rafael_trujillo
-					ruling_only = yes
-				}
-			}
-		}
-
-        completion_reward = {
-            if = {
-                limit = {
-                    USA = {
-                        has_government = democratic
-                    }
-                }
-                USA = {
-                     add_opinion_modifier = { target = DOM modifier = medium_increase }
-                }
-            }
-            if = {
-				limit = {
-					ENG = {
-						has_government = democratic
-						is_faction_leader = yes
-						NOT = {
-							has_completed_focus = ENG_a_change_in_course
-						}
-						has_capitulated = no
-						NOT = { has_war_with = DOM }
-					}
-					NOT = {
-						any_other_country = {
-							is_in_faction_with = ENG
-							has_war_with = DOM
-						}
-					}					
-				}
-				ENG = {
-					country_event = { id = generic.2 }
-                    add_opinion_modifier = { target = DOM modifier = medium_increase }
-				}
-			}
-			else = {
-				get_best_alliance_match_democratic_effect = yes
-				var:best_leader = {
-					country_event = generic.2
-				}
-			}		
-
-        }
-
-		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
