@@ -185,4 +185,36 @@ focus_tree = {
 		completion_reward = {
 		}
 	}
+	focus = {
+		id = COL_get_back_maria_cano
+		icon = gfx 
+		relative_position_id = COL_propaganda_campaigns
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = COL_propaganda_campaigns
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = COL_get_back_tomas
+		icon = gfx 
+		relative_position_id = COL_propaganda_campaigns
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = COL_propaganda_campaigns
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
 }
