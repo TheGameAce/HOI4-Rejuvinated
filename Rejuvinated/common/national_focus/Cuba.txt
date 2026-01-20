@@ -1580,33 +1580,12 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	}
 
 	focus = {
-		id = CUB_seize_foreign_sugar_mills
-		icon = GFX_focus_DEN_heavy_regulations
+		id = CUB_collectivize_the_sugar_plantations
+		icon = GFX_focus_RJ_CUB_communist_plantation
 		cost = 10
 		prerequisite = { focus = CUB_adapt_the_five_year_plan }
 		relative_position_id = CUB_adapt_the_five_year_plan
 		x = -1
-		y = 1
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
-	}
-
-	focus = {
-		id = CUB_collectivize_the_sugar_plantations
-		icon = GFX_focus_RJ_CUB_communist_plantation
-		cost = 10
-		prerequisite = { focus = CUB_seize_foreign_sugar_mills }
-		relative_position_id = CUB_seize_foreign_sugar_mills
-		x = 0
 		y = 1
 
 		ai_will_do = {
@@ -1654,13 +1633,16 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 		completion_reward = {
 			random_owned_controlled_state = {
+				prioritize = { 1049 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 				}
+				increase_state_category = yes
 			}
 			random_owned_controlled_state = {
+				prioritize = { 1049 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -1687,6 +1669,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		completion_reward = {
+			prioritize = { 1049 }
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1714,7 +1697,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		prerequisite = { focus = CUB_collectivize_the_sugar_plantations focus = CUB_new_rural_roads }
 		relative_position_id = CUB_collectivize_the_sugar_plantations
 		x = 1
-		y = 1
+		y = 2
 
 		ai_will_do = {
 			factor = 1
