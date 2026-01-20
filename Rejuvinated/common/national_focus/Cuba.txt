@@ -1084,7 +1084,10 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = CUB_batistas_influence_reduced_communist
+				add_idea = CUB_batistas_support_communism
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_STABILITY FOCUS_FILTER_ARMY }
@@ -1201,7 +1204,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		completion_reward = {
-			
+			add_ideas = CUB_soviet_military_advisors_idea
 		}
 
 		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -1224,13 +1227,18 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 0.75
-				uses = 2
+				uses = 1
 				category = armor
 			}
 			add_tech_bonus = {
-				bonus = 0.25
-				uses = 2
+				bonus = 0.50
+				uses = 1
 				category = infantry_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = artillery
 			}
 		}
 
@@ -1252,7 +1260,24 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		completion_reward = {
-			
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -1395,92 +1420,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	}
 
 	focus = {
-		id = CUB_communism_in_the_caribbean
-		icon = GFX_focus_ITA_il_sol_dell_avvenire
-		cost = 10
-		prerequisite = { focus = CUB_liberate_the_dominican_republic }
-		relative_position_id = CUB_liberate_the_dominican_republic
-		x = 2
-		y = 1
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { FOCUS_FILTER_DIPLOMACY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_POLITICAL }
-
-	}
-
-	focus = {
-		id = CUB_an_armed_struggle
-		icon = GFX_focus_SOV_builder_of_the_red_army
-		cost = 10
-		prerequisite = { focus = CUB_communism_in_the_caribbean }
-		mutually_exclusive = { focus = CUB_for_the_revolution }
-		relative_position_id = CUB_communism_in_the_caribbean
-		x = -1
-		y = 1
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT }
-
-	}
-
-	focus = {
-		id = CUB_for_the_revolution
-		icon = GFX_focus_SWE_refuge_for_revolutionaries
-		cost = 10
-		prerequisite = { focus = CUB_communism_in_the_caribbean }
-		mutually_exclusive = { focus = CUB_an_armed_struggle }
-		relative_position_id = CUB_communism_in_the_caribbean
-		x = 1
-		y = 1
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT }
-
-	}
-
-	focus = {
-		id = CUB_the_revolution_beyond_the_caribbean
-		icon = GFX_focus_ETH_callout_to_the_world
-		cost = 10
-		prerequisite = { focus = CUB_an_armed_struggle focus = CUB_for_the_revolution }
-		relative_position_id = CUB_an_armed_struggle
-		x = 1
-		y = 1
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		completion_reward = {
-			
-		}
-
-		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_CONQUEST FOCUS_FILTER_WAR_SUPPORT }
-
-	}
-
-	focus = {
 		id = CUB_deal_with_haitian_oppressors
 		icon = GFX_focus_generic_attack_haiti
 		cost = 7.2
@@ -1534,11 +1473,33 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	}
 
 	focus = {
-		id = CUB_one_caribbean_policy
-		icon = GFX_goal_generic_navy_battleship
+		id = CUB_communism_in_the_caribbean
+		icon = GFX_focus_ITA_il_sol_dell_avvenire
 		cost = 10
 		prerequisite = { focus = CUB_demand_colonial_withdrawals }
 		relative_position_id = CUB_demand_colonial_withdrawals
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_DIPLOMACY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_POLITICAL }
+
+	}
+
+	focus = {
+		id = CUB_one_caribbean_policy
+		icon = GFX_SOV_an_oceangoing_navy_ccp_2d_sov_compatibility
+		cost = 10
+		prerequisite = { focus = CUB_communism_in_the_caribbean }
+		mutually_exclusive = { focus = CUB_for_the_revolution }
+		relative_position_id = CUB_communism_in_the_caribbean
 		x = -1
 		y = 1
 
@@ -1550,7 +1511,50 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			
 		}
 
-		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT }
+
+	}
+
+	focus = {
+		id = CUB_for_the_revolution
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
+		cost = 10
+		prerequisite = { focus = CUB_communism_in_the_caribbean }
+		mutually_exclusive = { focus = CUB_one_caribbean_policy }
+		relative_position_id = CUB_communism_in_the_caribbean
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT }
+
+	}
+
+	focus = {
+		id = CUB_the_revolution_beyond_the_caribbean
+		icon = GFX_focus_ETH_callout_to_the_world
+		cost = 10
+		prerequisite = { focus = CUB_one_caribbean_policy focus = CUB_for_the_revolution }
+		relative_position_id = CUB_one_caribbean_policy
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_CONQUEST FOCUS_FILTER_WAR_SUPPORT }
 
 	}
 
@@ -1780,7 +1784,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		icon = GFX_focus_generic_modernize_industry
 		cost = 20
 		prerequisite = { focus = CUB_expand_the_plantations }
-		prerequisite = { focus = CUB_one_caribbean_policy }
+		prerequisite = { focus = CUB_communism_in_the_caribbean }
 		relative_position_id = CUB_expand_the_plantations
 		x = 1
 		y = 2
@@ -4112,6 +4116,13 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 				add_building_construction = {
 					type = arms_factory
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
 					level = 1
 				}
 			}

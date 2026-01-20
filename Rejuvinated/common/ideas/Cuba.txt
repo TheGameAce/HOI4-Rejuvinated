@@ -333,7 +333,29 @@ ideas = {
 			}
 		}
 
+		CUB_sugar_gift_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+			
+			modifier = {
+				army_morale_factor = 0.03
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		##############################
 		###Communist Specific Ideas###
+		##############################
 
 		CUB_direccion_inteligencia = {
 			
@@ -463,6 +485,33 @@ ideas = {
 			}
 		}
 
+		CUB_batistas_support_communism = {
+			
+			allowed = {
+				NOT = {
+					has_country_leader = {
+						character = CUB_fulgencio_batista
+						ruling_only = yes
+					}
+				}
+			}
+
+			allowed_civil_war = {
+				original_tag = CUB
+			}
+			
+			removal_cost = -1
+
+			picture = CUB_batista_influence
+	
+			modifier = {
+				stability_factor = -0.03
+				communism_drift = 0.07
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+
 		CUB_radio_mil_diez_idea = {
 
 			allowed = {
@@ -504,7 +553,31 @@ ideas = {
 			}
 		}
 
+		CUB_soviet_military_advisors_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				army_morale_factor = 0.10
+				planning_speed = 0.10
+				max_planning = 0.15
+				experience_gain_army_unit_factor = 0.05
+			}
+		}
+
+		##################################
 		###Authoritarian-Specific Ideas###
+		##################################
 
 		CUB_us_political_support = {
 
@@ -931,26 +1004,6 @@ ideas = {
 				local_resources_factor = 0.05
 				communism_drift = -0.03
 				democratic_drift = -0.01
-			}
-		}
-
-		CUB_sugar_gift_idea = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = anti_soviet_pact
-			
-			modifier = {
-				army_morale_factor = 0.03
-				consumer_goods_factor = -0.03
 			}
 		}
 	}
