@@ -1340,6 +1340,7 @@ ideas = {
 			allowed = {
 				OR = {
 					original_tag = USA
+					original_tag = CUB
 					PHI_SEA = yes
 				}
 			}
@@ -1360,6 +1361,12 @@ ideas = {
 							has_completed_focus = PHI_declare_military_emergency
 						}
 					}
+				}
+				if = {
+					limit = {
+						original_tag = CUB
+					}
+					has_completed_focus = CUB_invite_american_corporations
 				}
 			}
 			

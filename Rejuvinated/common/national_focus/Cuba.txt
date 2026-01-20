@@ -561,6 +561,12 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			    amount = 500
 			    variant_name = PewPewPew
 			}
+			if = {
+				NOT = {
+					is_in_faction_with = USA
+				}
+				give_military_access = USA
+			}
 		}
 		search_filters = { FOCUS_FILTER_AIRFORCE }
 	}
@@ -595,7 +601,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_gift_sugar_to_the_british
 		icon = GFX_focus_AFG_sugar_factory
-		cost = 10
+		cost = 7.2
 		prerequisite = { focus = CUB_join_the_allies }
 		relative_position_id = CUB_join_the_allies
 		x = 2
@@ -605,8 +611,20 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			factor = 1
 		}
 
+		available = {
+			ENG = {
+				has_war = yes
+			}
+		}
+
 		completion_reward = {
-			
+			ENG = {
+				add_opinion_modifier = {
+					target = CUB
+					modifier = large_increase
+				}
+				country_event = cuba.24
+			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 	}
@@ -3917,9 +3935,11 @@ continuous_focus_position = { x = 5950 y = 2800 }
 						}
 					}					
 				}
+				DOM = {
+					country_event = { id = cuba.25 }
+				}
 				ENG = {
-					country_event = { id = generic.2 }
-                    add_opinion_modifier = { target = DOM modifier = medium_increase }
+					add_opinion_modifier = { target = DOM modifier = medium_increase }
 				}
 			}
 			else = {
@@ -3927,8 +3947,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				var:best_leader = {
 					country_event = generic.2
 				}
-			}		
-
+			}
         }
 
 		search_filters = { FOCUS_FILTER_DIPLOMACY }

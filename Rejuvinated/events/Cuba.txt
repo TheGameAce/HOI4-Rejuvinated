@@ -759,6 +759,97 @@ country_event = { #Annexation Demands for the ABC Islands.
 	}
 }
 
+country_event = { #Sugar Gift
+	id = cuba.24
+	title = cuba.24.t
+	desc = cuba.24.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "How thoughtful!"
+		ai_chance = {
+			factor = 1
+		}
+		ENG = {
+			add_ideas = CUB_sugar_gift_idea
+		}
+	}
+}
+
+country_event = { #Trujillo Invitation to the Allies
+	id = cuba.25
+	title = cuba.25.t
+	desc = cuba.25.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "War is a fun hobby!"
+		ai_chance = {
+			factor = 3
+		}
+		if = {
+			limit = {
+				ENG = {
+					has_government = democratic
+					is_faction_leader = yes
+					NOT = {
+						has_completed_focus = ENG_a_change_in_course
+					}
+					has_capitulated = no
+					NOT = { has_war_with = DOM }
+				}
+					NOT = {
+						any_other_country = {
+							is_in_faction_with = ENG
+							has_war_with = DOM
+						}
+					}					
+				}
+				DOM = {
+					country_event = { id = generic.2 }
+				}
+			}
+		else = {
+			get_best_alliance_match_democratic_effect = yes
+			var:best_leader = {
+				country_event = generic.2
+			}
+		}
+	}
+
+	option = {
+		name = "Eh... Maybe in the next war..."
+		ai_chance = {
+			factor = 1
+		}
+		CUB = {
+			country_event = cuba.26
+		}
+	}
+}
+
+country_event = {
+	id = cuba.26
+	title = cuba.26.t
+	desc = cuba.26.d
+	picture = GFX_report_event_soviet_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = "It was worth a try."
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
 ####################################################################################################################################################################
 ###NEWS EVENTS###
 ####################################################################################################################################################################
