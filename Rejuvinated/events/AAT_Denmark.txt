@@ -1,8 +1,42 @@
-#############################
-#############################
-#### AAT DENMARK EVENTS ####
-#############################
-#############################
 add_namespace = denmark_events
+
+
+country_event = { #Ask for german support
+	id = denmark_events.1
+	name = denmark_events.1.t
+	desc = denmark_events.1.d
+	picture = gfx 
+	is_triggered_only = yes 
+	fire_only_once = yes 
+
+	option = { #Yeah!
+		name = denmark_events.1.a
+		ai_chance = {
+			factor = 100
+		}
+		DEN = {
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.05
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 950
+				producer = GER
+			}
+			swap_ideas = {
+				remove_idea = DEN_fear_of_the_germans_med
+				add_idea = DEN_fear_of_the_germans_low
+			}
+		}
+	}
+
+	option = { #no
+		name = denmark_events.1.b 
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
 
 
