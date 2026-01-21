@@ -575,6 +575,143 @@ ideas = {
 			}
 		}
 
+		CUB_communism_in_the_caribbean_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				naval_speed_factor = 0.10
+				spotting_chance = 0.05
+				navy_visibility = -0.05
+				invasion_preparation = -0.10
+				amphibious_invasion = 0.05
+			}
+		}
+
+		CUB_communism_in_the_caribbean2_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				naval_speed_factor = 0.15
+				spotting_chance = 0.15
+				navy_visibility = -0.10
+				invasion_preparation = -0.15
+				amphibious_invasion = 0.05
+				naval_invasion_penalty = -0.10
+				conscription = 0.02
+			}
+		}
+
+		CUB_communism_in_the_caribbean3_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				naval_speed_factor = 0.10
+				spotting_chance = 0.05
+				navy_visibility = -0.05
+				invasion_preparation = -0.10
+				amphibious_invasion = 0.05
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+				conscription = 0.04
+				training_time_army_factor = -0.15
+			}
+		}
+
+		CUB_global_revolution1_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				naval_speed_factor = 0.10
+				spotting_chance = 0.05
+				navy_visibility = -0.05
+				invasion_preparation = -0.10
+				amphibious_invasion = 0.05
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+				conscription = 0.05
+				training_time_army_factor = -0.15
+				justify_war_goal_time = -0.25
+				annex_cost_factor = -0.25
+				army_org_factor = 0.10
+				army_artillery_attack_factor = 0.10
+				war_stability_factor = 0.15
+			}
+		}
+
+		CUB_global_revolution2_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_production_bonus
+			
+			modifier = {
+				naval_speed_factor = 0.15
+				spotting_chance = 0.15
+				navy_visibility = -0.10
+				invasion_preparation = -0.15
+				amphibious_invasion = 0.05
+				naval_invasion_penalty = -0.10
+				conscription = 0.04
+				justify_war_goal_time = -0.25
+				annex_cost_factor = -0.25
+				naval_hit_chance = 0.10
+				naval_critical_effect_factor = -0.10
+				war_stability_factor = 0.15
+			}
+		}
+
 		##################################
 		###Authoritarian-Specific Ideas###
 		##################################
@@ -832,8 +969,8 @@ ideas = {
 			picture = generic_victors_of_ww1
 			
 			modifier = {
-				global_building_slots_factor = 0.1
-				production_speed_buildings_factor = 0.05
+				global_building_slots_factor = 0.20
+				production_speed_buildings_factor = 0.10
 			}
 		}
 
@@ -1004,6 +1141,26 @@ ideas = {
 				local_resources_factor = 0.05
 				communism_drift = -0.03
 				democratic_drift = -0.01
+			}
+		}
+
+		CUB_colombian_coffee_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+			
+			modifier = {
+				consumer_goods_factor = -0.10
+				army_morale_factor = 0.03
 			}
 		}
 	}
