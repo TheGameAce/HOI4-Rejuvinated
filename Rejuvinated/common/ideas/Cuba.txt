@@ -1163,6 +1163,57 @@ ideas = {
 				army_morale_factor = 0.03
 			}
 		}
+
+	 #############################################################################################################################################################################
+     ###Armed Forces & Economic Ideas###
+	 #############################################################################################################################################################################
+
+		CUB_san_juan_hill_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+			
+			modifier = {
+				trait_hill_fighter_xp_gain_factor = 1
+				acclimatization_hot_climate_gain_factor = 0.10
+				experience_gain_army_unit_factor = 0.05
+			}
+		}
+
+		CUB_san_juan_hill2_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+			
+			modifier = {
+				trait_hill_fighter_xp_gain_factor = 1
+				acclimatization_hot_climate_gain_factor = 0.10
+				experience_gain_army_unit_factor = 0.10
+				breakthrough_factor = 0.05
+				cavalry_attack_factor = 0.15
+				cavalry_defence_factor = 0.15
+			}
+		}
+
+
 	}
 
 #############################################################################################################################################################################
@@ -1239,5 +1290,4 @@ ideas = {
 			}
 		}
 	}
-	
 }

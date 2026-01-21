@@ -538,6 +538,11 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		prerequisite = {
 			focus = CUB_join_the_allies
 		}
+
+		available = {
+			is_in_faction_with = USA
+		}
+
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = {315}
@@ -560,12 +565,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			    type = fighter_equipment_0
 			    amount = 500
 			    variant_name = PewPewPew
-			}
-			if = {
-				NOT = {
-					is_in_faction_with = USA
-				}
-				give_military_access = USA
 			}
 		}
 		search_filters = { FOCUS_FILTER_AIRFORCE }
@@ -4514,5 +4513,241 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_CONQUEST FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+
+
+
+	######################################################################################################################################
+	###################################################### ECONOMIC FOCUSES ##############################################################
+	######################################################################################################################################
+
+
+
+
+
+
+
+	######################################################################################################################################
+	#################################################### ARMED FORCES FOCUSES ############################################################
+	######################################################################################################################################
+
+	focus = {
+		id = CUB_the_cuban_armed_forces
+		icon = GFX_focus_RJ_CUB_armed_forces
+		cost = 10
+
+		x = 25
+		y = 0
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			army_experience = 50
+			navy_experience = 50
+			air_experience = 50
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE}
+	}
+
+	focus = {
+		id = CUB_update_our_equipment
+		icon = GFX_focus_RJ_army_equipment
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_the_cuban_armed_forces
+		}
+		relative_position_id = CUB_the_cuban_armed_forces
+
+		x = 2
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = mio_cat_tech_all_motorized_mechanized
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = CUB_memories_of_san_juan_hill
+		icon = GFX_focus_RJ_CUB_san_juan_hill
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_update_our_equipment
+		}
+		relative_position_id = CUB_update_our_equipment
+
+		x = 1
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = CUB_san_juan_hill_idea
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+	focus = {
+		id = CUB_the_new_rough_riders
+		icon = GFX_focus_RJ_cavalry
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_memories_of_san_juan_hill
+		}
+		relative_position_id = CUB_memories_of_san_juan_hill
+
+		x = 0
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CUB_san_juan_hill_idea
+				add_idea = CUB_san_juan_hill2_idea
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+	focus = {
+		id = CUB_support_advancements
+		icon = GFX_focus_generic_radio_communication
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_update_our_equipment
+		}
+		relative_position_id = CUB_update_our_equipment
+
+		x = -1
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = electronics
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = CUB_a_new_era_in_warfare
+		icon = GFX_focus_RJ_general_arms
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_update_our_equipment
+		}
+		relative_position_id = CUB_update_our_equipment
+
+		x = 0
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
 	}
 }
