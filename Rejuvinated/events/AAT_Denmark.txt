@@ -36,6 +36,10 @@ country_event = { #Ask for german support
 		ai_chance = {
 			factor = 99
 		}
+		add_popularity = {
+			ideology = fascism 
+			popularity = -0.01
+		}
 	}
 }
 
