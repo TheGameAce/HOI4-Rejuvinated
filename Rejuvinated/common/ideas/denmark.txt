@@ -1,0 +1,80 @@
+ideas = {
+	country = {
+		DEN_haeren = {
+
+			picture = DEN_haeren_1
+
+			allowed = {
+				always = yes 
+			}
+			modifier = {
+				supply_factor = -0.15
+				army_org_factor = -0.1
+				army_defence_factor = 0.05
+				army_attack_factor = -0.05
+			}
+		}
+		DEN_recovering_economy = {
+
+			picture = generic_economic_increase
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_buildings_factor = -0.1
+				industrial_capacity_factory = -0.05
+			}
+		}
+		DEN_fear_of_the_germans_low = {
+
+			picture = hol_caved_to_the_germans
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				political_power_gain = -0.05
+				stability_factor = -0.05
+				war_support_factor = -0.1
+				fascism_drift = 0.005
+				production_speed_bunker_factor = 0.05
+			}
+		}
+		DEN_fear_of_the_germans_med = {
+
+			picture = hol_caved_to_the_germans
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				political_power_gain = -0.1
+				stability_factor = -0.1
+				war_support_factor = -0.15
+				fascism_drift = 0.01
+				production_speed_bunker_factor = 0.1
+			}
+		}
+		DEN_fear_of_the_germans_high = {
+
+			picture = hol_caved_to_the_germans
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				political_power_gain = -0.2
+				stability_factor = -0.2
+				war_support_factor = -0.25
+				fascism_drift = 0.03
+				production_speed_bunker_factor = 0.2
+			}
+		}
+	}
+}

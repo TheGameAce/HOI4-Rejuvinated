@@ -1,0 +1,24 @@
+focus_tree = {
+	id = danish_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = DEN
+		}
+	}
+	default = no
+
+	continuous_focus_position = { x = 0 y = 2000}
+
+	focus = {
+		id = DEN_begin_taking_action
+		icon = GFX_focus_ITA_generic_fascist_workers
+		x = 12
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
