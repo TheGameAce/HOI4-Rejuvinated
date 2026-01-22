@@ -1,16 +1,17 @@
 # Iceland events am i cooking guys
 
-add_namespace = Iceland
+add_namespace = iceland
 
 country_event = {
     id = iceland_events.27
-    title = iceland_events.27.t
-    desc = iceland_events.27.desc
+    title = iceland.1.t
+    desc = iceland.1.d
+    picture = GFX_reykjavik_referendum
     
     is_triggered_only = yes
     
     option = {
-        name = iceland_events.27.a
+        name = iceland.1.a
         # effects here
     }
 }
