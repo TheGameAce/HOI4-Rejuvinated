@@ -2027,9 +2027,8 @@ focus_tree = {
 		y = 1
 		relative_position_id = ICE_distance_from_the_king
 		cost = 4
-		prerequisite = {
-    	focus = ICE_not_our_king
-    	}
+		prerequisite = { focus = ICE_not_our_king }
+
 		available = {
 		}
 
