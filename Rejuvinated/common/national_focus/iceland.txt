@@ -2036,14 +2036,8 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_POLITICAL}
 
 		completion_reward = {
-		 completion_reward = {
- 		 #some fancy effects
  		 country_event = {
-  		  id = iceland_events.27
- 		   #optional delay
- 		   #days = val
-  		   #hous = val
- 		   #etc.
+  		        id = iceland_events.27
  				}
 			}
 	    }
