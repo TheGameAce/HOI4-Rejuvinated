@@ -6,6 +6,8 @@
 ### search_filters = {FOCUS_FILTER_MANPOWER}
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 
+
+
 focus_tree = {
 	id = iceland_tree
 	
@@ -14,7 +16,6 @@ focus_tree = {
 		modifier = {
 			add = 10
 			original_tag = ICE
-			has_dlc = "Arms Against Tyranny"
 		}
 	}
 
@@ -2000,7 +2001,9 @@ focus_tree = {
 		cost = 5
 		available = {
 		}
-
+		ai_will_do = {
+			base = 1			
+		}
 		search_filters = {FOCUS_FILTER_POLITICAL}
 
 		completion_reward = {
@@ -2025,9 +2028,13 @@ focus_tree = {
 		icon = GFX_focus_AFG_from_the_ashes # TEMPORARY ICON
 		x = 0
 		y = 1
-		relative_position_id = ICE_distance_from_the_king
+		relative_position_id = ICE_not_our_king
 		cost = 4
 		prerequisite = { focus = ICE_not_our_king }
+
+		ai_will_do = {
+		base = 1			
+		}
 
 		available = {
 		}
