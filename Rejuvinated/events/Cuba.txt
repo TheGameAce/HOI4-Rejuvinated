@@ -66,6 +66,11 @@ country_event = { #Gomez' Inauguration
 			has_country_flag = gomez_inaugurated_flag
 		}
 	}
+
+	mean_time_to_happen = {
+		days = 5
+		years = 0
+	}
 	
 	option = {
 		name = cuba.2.a
@@ -99,6 +104,11 @@ country_event = { #Mario García Menocal's Innauguration
 		NOT = {
 			has_country_flag = garcia_menocal_inaugurated_flag
 		}
+	}
+
+	mean_time_to_happen = {
+		days = 5
+		years = 0
 	}
 	
 	option = {
