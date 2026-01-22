@@ -4750,4 +4750,95 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
 	}
+
+	focus = {
+		id = CUB_state_of_the_airforce
+		icon = GFX_focus_RJ_CUB_airforce
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_the_cuban_armed_forces
+		}
+		relative_position_id = CUB_the_cuban_armed_forces
+
+		x = 0
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = plane_modules_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = light_air
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = medium_air
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = CUB_airbase_expansions
+		icon = GFX_focus_RJ_airstrip
+		cost = 7.2
+
+		prerequisite = {
+			focus = CUB_state_of_the_airforce
+		}
+		relative_position_id = CUB_state_of_the_airforce
+
+		x = 0
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				prioritize = { 315 }
+				add_building_construction = {
+					type = air_base
+					level = 3
+				}
+			}
+
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 4
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_AIRFORCE }
+	}
 }
