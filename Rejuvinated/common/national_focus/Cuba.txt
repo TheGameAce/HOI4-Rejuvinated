@@ -4798,6 +4798,42 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	}
 
 	focus = {
+		id = CUB_sea_patrols
+		icon = GFX_focus_RJ_naval_bomber
+		cost = 7.2
+
+		prerequisite = {
+			focus = CUB_state_of_the_airforce
+		}
+		relative_position_id = CUB_state_of_the_airforce
+
+		x = -1
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 2
+				category = mio_cat_all_naval_bomber_and_modules
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
 		id = CUB_airbase_expansions
 		icon = GFX_focus_RJ_airstrip
 		cost = 7.2
@@ -4840,5 +4876,216 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		search_filters = { FOCUS_FILTER_AIRFORCE }
+	}
+
+	focus = {
+		id = CUB_dedicated_air_research
+		icon = GFX_focus_generic_air_research_boost
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_airbase_expansions
+		}
+		relative_position_id = CUB_airbase_expansions
+
+		x = 0
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = CUB_air_research_idea
+		}
+
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = CUB_increased_safety_standards
+		icon = GFX_SOV_modernize_aircraft_facilities_ccp_2d_sov_compatibility
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_airbase_expansions
+		}
+		relative_position_id = CUB_airbase_expansions
+		mutually_exclusive = {
+			focus = CUB_better_weapons_engineering
+		}
+
+		x = 1
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = CUB_safety_standards_idea
+		}
+
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+	focus = {
+		id = CUB_better_weapons_engineering
+		icon = GFX_focus_generic_multi_role_aircraft
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_airbase_expansions
+		}
+		relative_position_id = CUB_airbase_expansions
+		mutually_exclusive = {
+			focus = CUB_increased_safety_standards
+		}
+
+		x = -1
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = CUB_better_weapons_engineering_idea
+		}
+
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+	focus = {
+		id = CUB_a_defensive_navy
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_the_cuban_armed_forces
+		}
+		relative_position_id = CUB_the_cuban_armed_forces
+
+		x = -3
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 2
+				category = mio_cat_tech_all_screen_ship_and_modules
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				technology = basic_depth_charges
+				technology = improved_depth_charges
+			}
+			set_technology = {
+				coastal_defense_ships = 1
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = CUB_small_but_efficient
+		icon = GFX_focus_generic_destroyer
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_a_defensive_navy
+		}
+		relative_position_id = CUB_a_defensive_navy
+
+		x = -1
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = CUB_expanding_our_shipyards
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_small_but_efficient
+		}
+		relative_position_id = CUB_small_but_efficient
+
+		x = -2
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
 	}
 }

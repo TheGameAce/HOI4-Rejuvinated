@@ -1214,6 +1214,81 @@ ideas = {
 			}
 		}
 
+		CUB_air_research_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+			
+			modifier = {
+				production_speed_air_facility_factor = 0.10
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}
+		}
+
+		CUB_safety_standards_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+			
+			modifier = {
+				air_accidents_factor = -0.10
+			}
+			equipment_bonus = {
+				small_plane_airframe = {
+					reliability_factor = 0.07
+				}
+				medium_plane_airframe = {
+					reliability_factor = 0.07
+				}
+				large_plane_airframe = {
+					reliability_factor = 0.07
+				}
+				mothership_equipment = {
+					reliability_factor = 0.07
+				}
+			}
+		}
+
+		CUB_better_weapons_engineering_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+			
+			modifier = {
+				air_attack_factor = 0.10
+				ground_attack_factor = 0.10
+			}
+		}
+
 
 	}
 
