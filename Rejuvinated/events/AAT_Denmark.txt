@@ -42,5 +42,22 @@ country_event = { #Ask for german support
 		}
 	}
 }
+country_event = { #Denmark wishes to join axis
+	id = denmark_events.2
+	title = denmark_events.2.t
+	desc = denmark_event.2.d 
+	picture = gfx 
+	is_triggered_only = yes
+	fire_only_once = yes 
+
+	option = { #Sure you can join!
+		name = denmark_events.2.a
+		add_to_faction = DEN
+	}
+
+	option = {
+		name = denmark_events.2.b
+	}
+}
 
 

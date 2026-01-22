@@ -76,5 +76,47 @@ ideas = {
 				production_speed_bunker_factor = 0.2
 			}
 		}
+		DEN_fascist_propaganda = {
+
+			picture = generic_fascism_drift_bonus
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				fascism_drift = 0.05
+			}
+		}
+		DEN_frits_regime = {
+
+			picture = SWE_save_denmark
+
+			allowed = {
+				always = no 
+			}
+
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.02
+				war_support_factor = 0.05
+				fascism_drift = 0.01
+			}
+		}
+		DEN_frits_regime2 = {
+
+			picture = SWE_save_denmark
+
+			allowed = {
+				always = no 
+			}
+
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.05
+				war_support_factor = 0.1
+				fascism_drift = 0.03
+			}
+		}
 	}
 }

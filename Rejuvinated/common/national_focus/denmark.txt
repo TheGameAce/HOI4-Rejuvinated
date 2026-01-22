@@ -9,12 +9,12 @@ focus_tree = {
 	}
 	default = no
 
-	continuous_focus_position = { x = 0 y = 2000}
+	continuous_focus_position = { x = 0 y = 2500}
 
 	focus = {
 		id = DEN_begin_taking_action
-		icon = GFX_focus_ITA_generic_fascist_workers
-		x = 12
+		icon = GFX_focus_DEN_undermine_overlord_continuous_focus
+		x = 15
 		y = 0
 		cost = 10
 		ai_will_do = {
@@ -54,6 +54,309 @@ focus_tree = {
 	}
 	focus = {
 		id = DEN_propaganda_efforts 
-
+		icon = GFX_focus_generic_fascist_propaganda
+		relative_position_id = DEN_german_support
+		x = -3
+		y = 1
+		prerequisite = {
+			focus = DEN_german_support
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = fascism
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = DEN_fascist_propaganda
+				days = 720
+			}
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = DEN_the_workers_will 
+		icon = GFX_focus_ITA_generic_fascist_workers 
+		relative_position_id = DEN_german_support
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = DEN_german_support
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = fascism
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.03
+			}
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+	focus = {
+		id = DEN_rally_nationalists
+		icon = GFX_focus_DEN_undermine_overlord_continuous_focus
+		relative_position_id = DEN_german_support
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = DEN_german_support
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = fascism
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = DEN_danish_legacy
+		icon = GFX_focus_generic_attack_denmark
+		relative_position_id = DEN_german_support
+		x = 3
+		y = 1
+		prerequisite = {
+			focus = DEN_german_support
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = fascism
+		}
+		completion_reward = {
+			add_war_support = 0.1
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.06
+			}
+		}
+	}
+	focus = {
+		id = DEN_workers_against_communism
+		icon = gfx
+		relative_position_id = DEN_german_support
+		x = -1
+		y = 2
+		prerequisite = {
+			focus = DEN_propaganda_efforts
+		}
+		prerequisite = {
+			focus = DEN_the_workers_will
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = fascism
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism 
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.05
+			}
+			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = DEN_flaws_of_capitalism
+		icon = gfx 
+		relative_position_id = DEN_german_support
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = DEN_rally_nationalists
+		}
+		prerequisite = {
+			focus = DEN_danish_legacy
+		}
+		cost = 7
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = fascism
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.1
+			}
+		}
+	}
+	focus = {
+		id = DEN_march_on_copenhagen
+		icon = GFX_focus_generic_fascist_troops
+		relative_position_id = DEN_german_support
+		x = 0
+		y = 3
+		prerequisite = {
+			focus = DEN_workers_against_communism
+		}
+		prerequisite = {
+			focus = DEN_flaws_of_capitalism
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			fascism < 0.45
+		}
+		bypass = {
+			has_government = fascism
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.1
+			}
+			set_politics = {
+				ruling_party = fascism 
+				last_election = "1936.1.1"
+				elections_allowed = no
+			}
+		}
+	}
+	focus = {
+		id = DEN_continue_frits_regime
+		icon = gfx 
+		relative_position_id = DEN_march_on_copenhagen
+		x = -6
+		y = 1
+		prerequisite = {
+			focus = DEN_march_on_copenhagen
+		}
+		mutually_exclusive = {
+			focus = DEN_lembckes_return
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = DEN_frits_regime
+		}
+	}
+	focus = {
+		id = DEN_lembckes_return
+		icon = gfx 
+		relative_position_id = DEN_march_on_copenhagen
+		x = 6
+		y = 1
+		prerequisite = {
+			focus = DEN_march_on_copenhagen
+		}
+		mutually_exclusive = {
+			focus = DEN_continue_frits_regime
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism 
+				popluarity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = DEN_reform_rigsdagen
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = DEN_march_on_copenhagen
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = DEN_continue_frits_regime
+			focus = DEN_lembckes_return
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 75
+			add_popularity = {
+				ideology = democratic 
+				popularity = -0.1
+			}
+		}
+	}
+	focus = {
+		id = DEN_denmark_for_danes_and_germans
+		icon = gfx
+		relative_position_id = DEN_continue_frits_regime
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = DEN_continue_frits_regime
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = DEN_frits_regime
+				add_idea = DEN_frits_regime2
+			}
+		}
+	}
+	focus = {
+		id = DEN_join_germany
+		icon = GFX_focus_chi_mission_to_germany
+		relative_position_id = DEN_continue_frits_regime
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = DEN_continue_frits_regime
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			NOT = {
+				GER = {
+					is_in_faction = yes
+				}
+			}
+		}
+	}
+	completion_reward = {
+		GER = {
+			country_event = denmark_events.2
+		}
 	}
 }
