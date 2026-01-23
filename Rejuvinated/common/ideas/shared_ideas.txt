@@ -1,0 +1,22 @@
+ideas = {
+	country = {
+		RJ_industrial_investments_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = RJ_CUB_sugar_industry
+	
+			modifier = {
+				consumer_goods_factor = 0.08
+			}
+		}
+	}
+}

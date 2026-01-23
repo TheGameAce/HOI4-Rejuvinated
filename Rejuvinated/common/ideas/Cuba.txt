@@ -98,6 +98,46 @@ ideas = {
 			}
 		}
 
+		CUB_recovered_sugar_industry_idea = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = RJ_CUB_sugar_industry
+	
+			modifier = {
+				consumer_goods_factor = -0.05
+				trade_opinion_factor = 0.05
+			}
+		}
+
+		CUB_strong_sugar_industry_idea = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = RJ_CUB_sugar_industry
+	
+			modifier = {
+				consumer_goods_factor = -0.10
+				trade_opinion_factor = 0.15
+			}
+		}
+
 		#############################################################################################################################################################
 		###Democratic Ideas###
 		#############################################################################################################################################################
@@ -1330,6 +1370,54 @@ ideas = {
 		}
 
 
+	 #############################################################################################################################################################################
+     ###Armed Forces & Economic Ideas###
+	 #############################################################################################################################################################################
+
+		CUB_fishing_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		CUB_bolstered_tourism_idea = {
+
+			allowed = {
+				NOT = {
+					has_war = yes
+				}
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_war = yes
+				}
+			}
+
+			removal_cost = -1
+
+			picture = anti_soviet_pact
+			
+			modifier = {
+				monthly_population = 0.25
+				weekly_manpower = 50
+			}
+		}
+
+
 	}
 
 #############################################################################################################################################################################
@@ -1344,6 +1432,10 @@ ideas = {
 			
 			allowed = {
 				original_tag = CUB
+			}
+
+			available = {
+				has_completed_focus = CUB_bail_out_the_cuba_company
 			}
 			
 			research_bonus = {
@@ -1390,6 +1482,10 @@ ideas = {
 
 			allowed = {
 				original_tag = CUB
+			}
+
+			available = {
+				has_completed_focus = CUB_back_the_ward_line
 			}
 			
 			research_bonus = {

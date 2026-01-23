@@ -235,6 +235,22 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 			
+			if = {
+				limit = {
+					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
+				}
+				add_ideas = CUB_recovered_sugar_industry_idea
+			}
+
+			if = {
+				limit = {
+					has_idea = CUB_recovered_sugar_industry_idea
+				}
+				swap_ideas = {
+					remove_idea = CUB_recovered_sugar_industry_idea
+					add_idea = CUB_strong_sugar_industry_idea
+				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -1713,6 +1729,23 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
+
+			if = {
+				limit = {
+					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
+				}
+				add_ideas = CUB_recovered_sugar_industry_idea
+			}
+
+			if = {
+				limit = {
+					has_idea = CUB_recovered_sugar_industry_idea
+				}
+				swap_ideas = {
+					remove_idea = CUB_recovered_sugar_industry_idea
+					add_idea = CUB_strong_sugar_industry_idea
+				}
+			}
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2243,6 +2276,23 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
+
+			if = {
+				limit = {
+					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
+				}
+				add_ideas = CUB_recovered_sugar_industry_idea
+			}
+
+			if = {
+				limit = {
+					has_idea = CUB_recovered_sugar_industry_idea
+				}
+				swap_ideas = {
+					remove_idea = CUB_recovered_sugar_industry_idea
+					add_idea = CUB_strong_sugar_industry_idea
+				}
+			}
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2627,7 +2677,10 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		available_if_capitulated = yes
 
 		available = {
-			has_government = fascism
+			OR = {
+				has_government = fascism
+				has_government = neutrality
+			}
 		}
 		
 		completion_reward = {
@@ -4425,6 +4478,23 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
+
+			if = {
+				limit = {
+					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
+				}
+				add_ideas = CUB_recovered_sugar_industry_idea
+			}
+
+			if = {
+				limit = {
+					has_idea = CUB_recovered_sugar_industry_idea
+				}
+				swap_ideas = {
+					remove_idea = CUB_recovered_sugar_industry_idea
+					add_idea = CUB_strong_sugar_industry_idea
+				}
+			}
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -4537,7 +4607,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		icon = GFX_focus_RJ_CUB_armed_forces
 		cost = 10
 
-		x = 28
+		x = 75
 		y = 0
 		
 		ai_will_do = {
@@ -4600,6 +4670,82 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = CUB_establish_new_arms_plants
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 7.2
+
+		prerequisite = {
+			focus = CUB_update_our_equipment
+		}
+		relative_position_id = CUB_update_our_equipment
+
+		x = 3
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = CUB_expand_the_arms_plants
+		icon = GFX_focus_RJ_munitions_factory
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_establish_new_arms_plants
+		}
+		relative_position_id = CUB_establish_new_arms_plants
+
+		x = 0
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_INDUSTRY }
 	}
 
 	focus = {
@@ -5130,5 +5276,617 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+
+	######################################################################################################################################
+	###################################################### ECONOMIC FOCUSES ##############################################################
+	######################################################################################################################################
+
+	focus = {
+		id = CUB_industrial_investments
+		icon = GFX_focus_RJ_upgrade_industry
+		cost = 10
+
+		x = 28
+		y = 0
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = cat_production
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = construction_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY	}
+	}
+
+	focus = {
+		id = CUB_open_new_textile_mills
+		icon = GFX_focus_RJ_industry1
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_industrial_investments
+		}
+		relative_position_id = CUB_industrial_investments
+
+		x = -3
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY	}
+	}
+
+	focus = {
+		id = CUB_expand_the_cobre_mine
+		icon = GFX_focus_generic_mining_industry
+		cost = 7.2
+
+		prerequisite = {
+			focus = CUB_industrial_investments
+		}
+		relative_position_id = CUB_industrial_investments
+
+		x = 1
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 12
+				state = 1048
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESOURCES	}
+	}
+
+	focus = {
+		id = CUB_excavation_research
+		icon = GFX_SOV_increase_state_reserves_ccp_2d_sov_compatibility
+		cost = 7.2
+
+		prerequisite = {
+			focus = CUB_expand_the_cobre_mine
+		}
+		relative_position_id = CUB_expand_the_cobre_mine
+
+		x = 0
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = excavation_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_RESOURCES	}
+	}
+
+	focus = {
+		id = CUB_fund_the_university_of_havanna
+		icon = GFX_focus_RJ_research
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_industrial_investments
+		}
+		relative_position_id = CUB_industrial_investments
+
+		x = -1
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = CUB_bail_out_the_cuba_company
+		icon = GFX_focus_POL_warsaw_main_station
+		cost = 5
+
+		prerequisite = {
+			focus = CUB_industrial_investments
+		}
+		relative_position_id = CUB_industrial_investments
+
+		x = 3
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 8
+				producer = CUB
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = CUB_rails_and_roads
+		icon = GFX_focus_RJ_industry4
+		cost = 7.2
+
+		prerequisite = {
+			focus = CUB_bail_out_the_cuba_company
+		}
+		relative_position_id = CUB_bail_out_the_cuba_company
+
+		x = 1
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			build_railway = {
+				path = { 7622 10498 7451 10374 4476 7546 1550 }
+				level = 3
+				start_province = 7622
+				target_province = 1550
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = CUB_cuba_company_train_plant
+		icon = GFX_focus_RJ_industry3
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_bail_out_the_cuba_company
+		}
+		relative_position_id = CUB_bail_out_the_cuba_company
+
+		x = 0
+		y = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+			add_tech_bonus = {
+				bonus = 0.50
+				uses = 1
+				category = train_tech
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+	focus = {
+		id = CUB_bolster_tourism
+		icon = GFX_focus_RJ_CUB_tourism
+		cost = 7.2
+
+		prerequisite = {
+			focus = CUB_industrial_investments
+		}
+		relative_position_id = CUB_industrial_investments
+
+		x = 0
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = CUB_bolstered_tourism_idea
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+	focus = {
+		id = CUB_increase_fishing
+		icon = GFX_focus_RJ_fish
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_industrial_investments
+		}
+		relative_position_id = CUB_industrial_investments
+
+		x = 2
+		y = 2
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			add_ideas = CUB_fishing_idea
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+	focus = {
+		id = CUB_back_the_ward_line
+		icon = GFX_SOV_expand_shipbuilding_plants_ccp_2d_sov_compatibility
+		cost = 7.2
+
+		prerequisite = {
+			focus = CUB_increase_fishing
+		}
+		relative_position_id = CUB_increase_fishing
+
+		x = 0
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = CUB_plantation_recovery_effort
+		icon = GFX_focus_RJ_CUB_sugarcane
+		cost = 7.2
+
+		prerequisite = {
+			focus = CUB_open_new_textile_mills
+		}
+		relative_position_id = CUB_open_new_textile_mills
+
+		x = -1
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			if = {
+				limit = { has_idea = CUB_recovering_sugar_industry }
+				swap_ideas = {
+					remove_idea = CUB_recovering_sugar_industry
+					add_idea = CUB_recovering_sugar_industry_1
+				}
+			}
+
+			if = {
+				limit = { has_idea = CUB_recovering_sugar_industry_1 }
+				remove_ideas = CUB_recovering_sugar_industry_1
+			}
+
+			if = {
+				limit = {
+					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
+				}
+				add_ideas = CUB_recovered_sugar_industry_idea
+			}
+
+			if = {
+				limit = {
+					has_idea = CUB_recovered_sugar_industry_idea
+				}
+				swap_ideas = {
+					remove_idea = CUB_recovered_sugar_industry_idea
+					add_idea = CUB_strong_sugar_industry_idea
+				}
+			}
+			
+			add_timed_idea = {
+				idea = RJ_industrial_investments_idea
+				days = 90
+			}
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_INDUSTRY	}
+	}
+
+	focus = {
+		id = CUB_build_more_sugar_mills
+		icon = GFX_focus_RJ_CUB_sugar_mill
+		cost = 7.2
+
+		prerequisite = {
+			focus = CUB_open_new_textile_mills
+		}
+		relative_position_id = CUB_open_new_textile_mills
+
+		x = 1
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = CUB_higher_production_quotas
+		icon = GFX_focus_RJ_industry_up
+		cost = 10
+
+		prerequisite = {
+			focus = CUB_plantation_recovery_effort
+		}
+		prerequisite = {
+			focus = CUB_build_more_sugar_mills
+		}
+		relative_position_id = CUB_build_more_sugar_mills
+
+		x = -1
+		y = 1
+		
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+
+		bypass = {
+			
+		}
+
+		completion_reward = {
+			if = {
+				limit = { has_idea = CUB_recovering_sugar_industry }
+				swap_ideas = {
+					remove_idea = CUB_recovering_sugar_industry
+					add_idea = CUB_recovering_sugar_industry_1
+				}
+			}
+
+			if = {
+				limit = { has_idea = CUB_recovering_sugar_industry_1 }
+				remove_ideas = CUB_recovering_sugar_industry_1
+			}
+
+			if = {
+				limit = {
+					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
+				}
+				add_ideas = CUB_recovered_sugar_industry_idea
+			}
+
+			if = {
+				limit = {
+					has_idea = CUB_recovered_sugar_industry_idea
+				}
+				swap_ideas = {
+					remove_idea = CUB_recovered_sugar_industry_idea
+					add_idea = CUB_strong_sugar_industry_idea
+				}
+			}
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_INDUSTRY }
 	}
 }
