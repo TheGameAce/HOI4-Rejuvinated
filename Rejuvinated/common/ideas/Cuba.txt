@@ -1442,7 +1442,7 @@ ideas = {
 				train_tech = 0.15
 			}
 			
-			traits = { rail_company }
+			traits = { }
 			
 			modifier = {
 			}
@@ -1467,12 +1467,10 @@ ideas = {
 				naval_equipment = 0.15
 			}
 			
-			traits = { landing_craft_manufacturer }
+			traits = { }
 			
 			modifier = {
-				#invasion_preparation = -0.1
 				transport_capacity = -0.15
-				#amphibious_invasion_defence = 0.05
 				naval_invasion_capacity = 5
 			}
 		}
