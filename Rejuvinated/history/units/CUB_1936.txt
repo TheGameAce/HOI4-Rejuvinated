@@ -5,7 +5,7 @@
 	regiments = {
 		infantry = { x = 0 y = 0 }
 		infantry = { x = 0 y = 1 }
-		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 1 }
 	}
 }
@@ -16,7 +16,7 @@ division_template = {
 	regiments = {
 		cavalry = { x = 0 y = 0 }
 		cavalry = { x = 0 y = 1 }
-		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
 		cavalry = { x = 1 y = 1 }
 	}
 }
@@ -31,9 +31,22 @@ units = {
 		location = 7622 # Havana
 		division_template = "Brigada de Infanteria"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.3
+		start_equipment_factor = 0.7
 
 	}
+
+	division= {	# "2a Brigada de Ejercito"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 7590 # Guantanamo
+		division_template = "Brigada de Infanteria"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
+
+	}
+
 	division= {	# "1a Brig. de Caballería 'Floridita'"
 		division_name = {
 				is_name_ordered = yes
@@ -42,7 +55,19 @@ units = {
 		location = 7622 # Havana
 		division_template = "Brigada de Caballería" 
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.3
+		start_equipment_factor = 0.7
+
+	}
+
+	division= {	# "2a Brig. de Caballería 'Floridita'"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 4476 # Ciego de Avila
+		division_template = "Brigada de Caballería" 
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
 
 	}
 
