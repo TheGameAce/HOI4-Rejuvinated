@@ -53,10 +53,16 @@ country_event = { #Denmark wishes to join axis
 	option = { #Sure you can join!
 		name = denmark_events.2.a
 		add_to_faction = DEN
+		ai_chance = {
+			factor = 100
+		}
 	}
 
-	option = {
+	option = { #no
 		name = denmark_events.2.b
+		ai_chance = {
+			factor = 99
+		}
 	}
 }
 

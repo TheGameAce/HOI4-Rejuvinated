@@ -353,10 +353,57 @@ focus_tree = {
 				}
 			}
 		}
+		completion_reward = {
+			GER = {
+				country_event = denmark_events.2
+			}
+		}
 	}
-	completion_reward = {
-		GER = {
-			country_event = denmark_events.2
+	focus = {
+		id = DEN_remilitarization 
+		icon = gfx 
+		relative_position_id = DEN_march_on_copenhagen
+		x = -3
+		y = 2
+		prerequisite = {
+			focus = DEN_continue_frits_regime
+			focus = DEN_lembckes_return
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = DEN_conscription_effort
+				days = 400
+			}
+			DEN_bop_very_low_increase_effect = yes
+		}
+	}
+	focus = {
+		id = DEN_total_krig
+		icon = GFX_focus_generic_total_war
+		relative_position_id = DEN_march_on_copenhagen
+		x = 3
+		y = 2
+		prerequisite = {
+			focus = DEN_continue_frits_regime
+			focus = DEN_lembckes_return
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_war_support > 0.8
+			has_world_tension = 0.9
+		}
+		completion_reward = {
+			add_ideas = DEN_totalkrig
+			add_war_support = 0.1
+			add_political_power = -50
+			add_stability = -0.05
 		}
 	}
 }
