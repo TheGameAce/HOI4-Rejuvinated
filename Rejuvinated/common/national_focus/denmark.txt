@@ -231,7 +231,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			fascism < 0.45
+			fascism > 0.45
 		}
 		bypass = {
 			has_government = fascism
@@ -397,7 +397,7 @@ focus_tree = {
 		}
 		available = {
 			has_war_support > 0.8
-			has_world_tension = 0.9
+			threat > 0.9
 		}
 		completion_reward = {
 			add_ideas = DEN_totalkrig
