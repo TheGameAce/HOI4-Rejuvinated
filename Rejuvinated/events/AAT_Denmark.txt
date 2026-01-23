@@ -28,6 +28,7 @@ country_event = { #Ask for german support
 				remove_idea = DEN_fear_of_the_germans_med
 				add_idea = DEN_fear_of_the_germans_low
 			}
+			country_event = denmark_events.3
 		}
 	}
 
@@ -39,6 +40,9 @@ country_event = { #Ask for german support
 		add_popularity = {
 			ideology = fascism 
 			popularity = -0.01
+		}
+		DEN = {
+			country_event = denmark_events.4
 		}
 	}
 }
@@ -56,12 +60,78 @@ country_event = { #Denmark wishes to join axis
 		ai_chance = {
 			factor = 100
 		}
+		DEN = {
+			country_event = denmark_events.5
+		}
 	}
 
 	option = { #no
 		name = denmark_events.2.b
 		ai_chance = {
 			factor = 99
+		}
+		DEN = {
+			country_event = denmark_events.6
+		}
+	}
+}
+country_event = { #Germany gives support
+	id = denmark_events.3
+	title = denmark_events.3.t
+	desc = denmark_events.3.d 
+	picture = gfx 
+	is_triggered_only = yes 
+	fire_only_once = yes 
+
+	option = {
+		name = denmark_events.3.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = { #Germany refuses giving support
+	id = denmark_events.4
+	title = denmark_events.4.t
+	desc = denmark_events.4.d 
+	picture = gfx 
+	is_triggered_only = yes 
+	fire_only_once = yes 
+
+	option = {
+		name = denmark_events.4.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = { #Germany lets us in axis
+	id = denmark_events.5
+	title = denmark_events.5.t
+	desc = denmark_events.5.d 
+	picture = gfx 
+	is_triggered_only = yes 
+	fire_only_once = yes 
+
+	option = {
+		name = denmark_events.5.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = { #Germany doesnt let us in axis
+	id = denmark_events.6
+	title = denmark_events.6.t
+	desc = denmark_events.6.d 
+	picture = gfx 
+	is_triggered_only = yes 
+	fire_only_once = yes 
+
+	option = {
+		name = denmark_events.6.a
+		ai_chance = {
+			factor = 100
 		}
 	}
 }
