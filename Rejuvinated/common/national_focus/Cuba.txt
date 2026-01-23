@@ -4537,7 +4537,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		icon = GFX_focus_RJ_CUB_armed_forces
 		cost = 10
 
-		x = 25
+		x = 28
 		y = 0
 		
 		ai_will_do = {
@@ -4807,7 +4807,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 		relative_position_id = CUB_state_of_the_airforce
 
-		x = -2
+		x = -1
 		y = 1
 		
 		ai_will_do = {
@@ -4990,7 +4990,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 		relative_position_id = CUB_the_cuban_armed_forces
 
-		x = -3
+		x = -2
 		y = 1
 		
 		ai_will_do = {
@@ -5054,7 +5054,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			add_ideas = CUB_efficient_navy_idea
 		}
 
-		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
 	focus = {
@@ -5092,7 +5092,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
@@ -5129,6 +5129,6 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			add_ideas = CUB_marine_training_idea
 		}
 
-		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 }
