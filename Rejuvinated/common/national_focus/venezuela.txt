@@ -1,0 +1,239 @@
+focus_tree = {
+	id = venezuelan_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = VEN
+		}
+	}
+	default = no
+
+
+continuous_focus_position = { x = 5950 y = 2800 }
+
+	focus = { #Economy_Part
+		id = address_the_economy
+		icon = GFX_
+		cost = 10
+		x = 20
+		y = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		bypass = {
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = analize_the_disease
+		icon = GFX_
+		cost = 10
+		relative_position_id = address_the_economy
+		prerequisite = {
+		focus = address_the_economy
+		}
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = create_a_central_bank
+		icon = GFX_
+		cost = 10
+		relative_position_id = address_the_economy
+		prerequisite = {
+		focus = analize_the_disease
+		}
+		x = -4
+		y = 2
+
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = stabilize_the_currency
+		icon = GFX_
+		cost = 10
+		relative_position_id = address_the_economy
+		prerequisite = {
+		focus = create_a_central_bank
+		}
+		x = -4
+		y = 4
+
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = modernize_the_country
+		icon = GFX_
+		cost = 10
+		relative_position_id = address_the_economy
+		prerequisite = {
+		focus = analize_the_disease
+		}
+		x = 0
+		y = 2
+
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = create_education_programms
+		icon = GFX_
+		cost = 10
+		relative_position_id = address_the_economy
+		prerequisite = {
+		focus = modernize_the_country
+		}
+		x = -1
+		y = 3
+
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = invest_in_the_countryside
+		icon = GFX_
+		cost = 10
+		relative_position_id = address_the_economy
+		prerequisite = {
+		focus = modernize_the_country
+		}
+		x = 1
+		y = 3
+
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = pass_pro_labor_laws
+		icon = GFX_
+		cost = 10
+		relative_position_id = address_the_economy
+		prerequisite = {
+		focus = create_education_programms
+		}
+		prerequisite = {
+		focus = invest_in_the_countryside
+		}
+		x = 0
+		y = 4
+
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+}
