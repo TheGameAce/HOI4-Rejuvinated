@@ -246,6 +246,7 @@ focus_tree = {
 				last_election = "1936.1.1"
 				elections_allowed = no
 			}
+			add_ideas = DEN_defiant_socialists
 		}
 	}
 	focus = {
@@ -404,6 +405,24 @@ focus_tree = {
 			add_war_support = 0.1
 			add_political_power = -50
 			add_stability = -0.05
+		}
+	}
+	focus = {
+		id = DEN_rewrite_the_constitution
+		icon = GFX_focus_generic_treaty
+		relative_position_id = DEN_reform_rigsdagen
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = DEN_reform_rigsdagen
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.05
+			remove_ideas = DEN_defiant_socialists
 		}
 	}
 }

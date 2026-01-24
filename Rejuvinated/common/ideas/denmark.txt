@@ -154,5 +154,18 @@ ideas = {
 				political_power_cost = 0.1
 			}
 		}
+		DEN_defiant_socialists = {
+
+			picture = FIN_socialist_welfare
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				stability_weekly_factor = -0.0010
+				communism_drift = 0.05
+			}
+		}
 	}
 }
