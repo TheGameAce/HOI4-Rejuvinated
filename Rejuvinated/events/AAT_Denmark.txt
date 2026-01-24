@@ -128,6 +128,9 @@ country_event = { #Germany lets us in axis
 		ai_chance = {
 			factor = 100
 		}
+		DEN = {
+			remove_ideas = DEN_fear_of_the_germans_low
+		}
 	}
 }
 country_event = { #Germany doesnt let us in axis
