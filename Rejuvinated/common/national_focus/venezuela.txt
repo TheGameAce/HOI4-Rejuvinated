@@ -217,10 +217,31 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 		x = 0
 		y = 4
+		
+		available = {
+		}
 
+		bypass = {
+		}
+		
 		ai_will_do = {
 			factor = 100
 		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = open_up_new_schools
+		icon = GFX_
+		cost = 10
+		relative_position_id = address_the_economy
+		prerequisite = {
+		focus = address_the_economy
+		}
+		x = 4
+		y = 4
 		
 		available = {
 		}
