@@ -1400,7 +1400,7 @@ ideas = {
 				train_tech = 0.15
 			}
 			
-			traits = { }
+			traits = { railway_company }
 			
 			modifier = {
 			}
@@ -1408,7 +1408,7 @@ ideas = {
 	}
 
 	naval_manufacturer = {
-		USA_higgins_industries = {
+		CUB_higgins_industries = {
 			picture = generic_tank_manufacturer_2
 
 			allowed = {
@@ -1425,12 +1425,9 @@ ideas = {
 				naval_equipment = 0.15
 			}
 			
-			traits = { }
+			traits = { transport_specialists }
 			
-			modifier = {
-				transport_capacity = -0.15
-				naval_invasion_capacity = 5
-			}
+			modifier = { }
 		}
 
 		CUB_ward_line = {
@@ -1448,14 +1445,9 @@ ideas = {
 				naval_equipment = 0.10
 			}
 			
-			traits = { transportation_company }
+			traits = { transport_specialists }
 			
-			modifier = {
-				#invasion_preparation = -0.1
-				transport_capacity = -0.05
-				#amphibious_invasion_defence = 0.05
-				naval_invasion_capacity = 3
-			}
+			modifier = { }
 		}
 	}
 }
