@@ -1,0 +1,48 @@
+focus_tree = {
+	id = siam_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SIA 
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 0 y = 2000}
+
+	## ECONOMIC BRANCH ##
+	focus = {
+		id = SIA_begin_recovery_from_the_great_depression
+		icon = GFX_focus_generic_economic_recovery
+		x = 7
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = idea_SIA_the_great_depression
+				add_idea = idea_SIA_the_great_depression2
+			}
+		}
+	}
+	focus = {
+		id = SIA_agricultural_support
+		icon = GFX_focus_generic_agricultural_subsidies
+		relative_position_id = SIA_begin_recovery_from_the_great_depression
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = idea_SIA_the_great_depression2
+				add_idea = idea_SIA_the_great_depression3
+			}
+			add_stability = 0.05
+		}
+	}
+}

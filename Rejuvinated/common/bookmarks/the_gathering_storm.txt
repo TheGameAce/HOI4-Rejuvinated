@@ -1130,6 +1130,19 @@ bookmarks = {
 				SIK_six_great_policies
 			}
 		}
+		SIA = {
+			minor = yes 
+			history = "SIAM_GATHERING_STORM_DESC"
+			ideology = neutrality 
+			ideas = {
+				idea_SIA_army_of_siam
+				SIA_japanese_cooperation
+				idea_SIA_the_great_depression
+			}
+			focuses = {
+				
+			}
+		}
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }
