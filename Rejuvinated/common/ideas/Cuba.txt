@@ -7,16 +7,21 @@ ideas = {
 		CUB_batistas_influence = {
 			
 			allowed = {
-				always = yes
+				NOT = {
+					has_country_leader = {
+						character = CUB_fulgencio_batista
+						ruling_only = yes
+					}
+				}
 			}
 
 			allowed_civil_war = {
-				always = yes
+				original_tag = CUB
 			}
 			
 			removal_cost = -1
 
-			picture = RAJ_private_military_complex
+			picture = chi_war_of_resistance3
 	
 			modifier = {
 				stability_factor = -0.20
@@ -35,7 +40,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = chi_hyper_inflation
+			picture = RJ_CUB_sugar_industry
 	
 			modifier = {
 				consumer_goods_factor = 0.10
@@ -57,12 +62,15 @@ ideas = {
 			picture = RJ_american_influence
 	
 			modifier = {
-				political_power_factor = -0.10
-				min_export = 0.05
-				CUB = {
-					add_opinion_modifier = {
-						target = USA
-						modifier = large_increase
+				political_power_factor = -0.15
+				min_export = 0.1
+				democratic_acceptance = 30
+			}
+
+			cancel = {
+				USA = {
+					NOT = {
+						exists = yes
 					}
 				}
 			}
@@ -83,18 +91,14 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = RJ_CUB_sugar_industry1
 	
 			modifier = {
 				consumer_goods_factor = 0.05
 			}
 		}
 
-		#############################################################################################################################################################
-		###Democratic Ideas###
-		#############################################################################################################################################################
-
-		CUB_batistas_influence_reduced = {
+		CUB_recovered_sugar_industry_idea = {
 			
 			allowed = {
 				always = yes
@@ -106,7 +110,56 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = RAJ_private_military_complex
+			picture = RJ_CUB_sugar_industry_recovered
+	
+			modifier = {
+				consumer_goods_factor = -0.05
+				trade_opinion_factor = 0.05
+			}
+		}
+
+		CUB_strong_sugar_industry_idea = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			removal_cost = -1
+
+			picture = RJ_CUB_sugar_industry_strong
+	
+			modifier = {
+				consumer_goods_factor = -0.10
+				trade_opinion_factor = 0.15
+			}
+		}
+
+		#############################################################################################################################################################
+		###Democratic Ideas###
+		#############################################################################################################################################################
+
+		CUB_batistas_influence_reduced = {
+			
+			allowed = {
+				NOT = {
+					has_country_leader = {
+						character = CUB_fulgencio_batista
+						ruling_only = yes
+					}
+				}
+			}
+
+			allowed_civil_war = {
+				original_tag = CUB
+			}
+			
+			removal_cost = -1
+
+			picture = chi_war_of_resistance
 	
 			modifier = {
 				stability_factor = -0.10
@@ -125,7 +178,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = chi_hyper_inflation3
+			picture = RJ_financial_law
 			
 			modifier = {
 				experience_gain_army = 0.08
@@ -146,32 +199,12 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_democratic_drift_bonus
+			picture = RJ_financial_law2
 			
 			modifier = {
 				production_speed_buildings_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.05
 				production_factory_start_efficiency_factor = 0.1
-			}
-		}
-
-		CUB_reduced_american_influence = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_democratic_drift_bonus
-			
-			modifier = {
-				min_export = -0.05
-				political_power_factor = 0.10
 			}
 		}
 
@@ -206,7 +239,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_democratic_drift_bonus
+			picture = RJ_medical
 			
 			modifier = {
 				monthly_population = 0.30
@@ -226,7 +259,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_democratic_drift_bonus
+			picture = RJ_medical
 			
 			modifier = {
 				monthly_population = 0.60
@@ -247,7 +280,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = RJ_CUB_CTC
 			
 			modifier = {
 				global_building_slots_factor = 0.10
@@ -270,33 +303,13 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_coastal_navy
+			picture = liberty_ships_focus
 			
 			modifier = {
 				navy_submarine_detection_factor = 0.15
 				naval_speed_factor = 0.1
 				spotting_chance = 0.1
 				industrial_capacity_dockyard = 0.15
-			}
-		}
-
-		CUB_the_presidential_guard = {
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-
-			picture = generic_manpower_bonus
-			
-			modifier = {
-				conscription = 0.015
-				army_org_factor = 0.05
 			}
 		}
 
@@ -312,7 +325,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = HUN_treaty_of_triannon
+			picture = MEX_callistas
 			
 			modifier = {
 				conscription = 0.03
@@ -332,7 +345,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = prc_low_popular_support3
 	
 			modifier = {
 				weekly_manpower = 50
@@ -340,7 +353,29 @@ ideas = {
 			}
 		}
 
+		CUB_sugar_gift_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = ARG_british_influences
+			
+			modifier = {
+				army_morale_factor = 0.03
+				consumer_goods_factor = -0.03
+			}
+		}
+
+		##############################
 		###Communist Specific Ideas###
+		##############################
 
 		CUB_direccion_inteligencia = {
 			
@@ -354,7 +389,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = RJ_CUB_DGI
 	
 			modifier = {
 				enemy_operative_intel_extraction_rate = 0.10
@@ -375,7 +410,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = RJ_CUB_DGI
 	
 			modifier = {
 				enemy_operative_intel_extraction_rate = 0.10
@@ -398,7 +433,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = RJ_CUB_CTC
 			
 			modifier = {
 				communism_drift = 0.05
@@ -417,7 +452,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = RJ_CUB_CTC
 			
 			modifier = {
 				communism_drift = 0.08
@@ -436,7 +471,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = SOV_second_five_year_plan_ccp_2d_sov_compatibility
 			
 			modifier = {
 				production_speed_buildings_factor = 0.10
@@ -447,21 +482,53 @@ ideas = {
 		CUB_batistas_influence_reduced_communist = {
 			
 			allowed = {
-				always = yes
+				NOT = {
+					has_country_leader = {
+						character = CUB_fulgencio_batista
+						ruling_only = yes
+					}
+				}
 			}
 
 			allowed_civil_war = {
-				always = yes
+				original_tag = CUB
 			}
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = chi_war_of_resistance
 	
 			modifier = {
 				stability_factor = -0.10
 				communism_drift = 0.03
 				neutrality_drift = 0.02
+			}
+		}
+
+		CUB_batistas_support_communism = {
+			
+			allowed = {
+				NOT = {
+					has_country_leader = {
+						character = CUB_fulgencio_batista
+						ruling_only = yes
+					}
+				}
+			}
+
+			allowed_civil_war = {
+				original_tag = CUB
+			}
+			
+			removal_cost = -1
+
+			picture = chi_war_of_resistance
+	
+			modifier = {
+				stability_factor = -0.03
+				communism_drift = 0.07
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
 			}
 		}
 
@@ -477,7 +544,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = SWE_radiotjanst
 			
 			modifier = {
 				communism_drift = 0.08
@@ -498,7 +565,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = POL_ideology_drift_defence
 			
 			modifier = {
 				political_power_factor = 0.15
@@ -506,7 +573,168 @@ ideas = {
 			}
 		}
 
+		CUB_soviet_military_advisors_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = saf_soviet_advisers
+			
+			modifier = {
+				army_morale_factor = 0.10
+				planning_speed = 0.10
+				max_planning = 0.15
+				experience_gain_army_unit_factor = 0.05
+			}
+		}
+
+		CUB_communism_in_the_caribbean_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = RJ_communist_ship
+			
+			modifier = {
+				naval_speed_factor = 0.10
+				spotting_chance = 0.05
+				navy_visibility = -0.05
+				invasion_preparation = -0.10
+				amphibious_invasion = 0.05
+			}
+		}
+
+		CUB_communism_in_the_caribbean2_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = RJ_communist_ship
+			
+			modifier = {
+				naval_speed_factor = 0.15
+				spotting_chance = 0.15
+				navy_visibility = -0.10
+				invasion_preparation = -0.15
+				amphibious_invasion = 0.05
+				naval_invasion_penalty = -0.10
+				conscription = 0.02
+			}
+		}
+
+		CUB_communism_in_the_caribbean3_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = RJ_communist_ship
+			
+			modifier = {
+				naval_speed_factor = 0.10
+				spotting_chance = 0.05
+				navy_visibility = -0.05
+				invasion_preparation = -0.10
+				amphibious_invasion = 0.05
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+				conscription = 0.04
+				training_time_army_factor = -0.15
+			}
+		}
+
+		CUB_global_revolution1_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = RJ_communist_globe
+			
+			modifier = {
+				naval_speed_factor = 0.10
+				spotting_chance = 0.05
+				navy_visibility = -0.05
+				invasion_preparation = -0.10
+				amphibious_invasion = 0.05
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+				conscription = 0.05
+				training_time_army_factor = -0.15
+				justify_war_goal_time = -0.25
+				annex_cost_factor = -0.25
+				army_org_factor = 0.10
+				army_artillery_attack_factor = 0.10
+				war_stability_factor = 0.15
+			}
+		}
+
+		CUB_global_revolution2_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = RJ_communist_globe
+			
+			modifier = {
+				naval_speed_factor = 0.15
+				spotting_chance = 0.15
+				navy_visibility = -0.10
+				invasion_preparation = -0.15
+				amphibious_invasion = 0.05
+				naval_invasion_penalty = -0.10
+				conscription = 0.04
+				justify_war_goal_time = -0.25
+				annex_cost_factor = -0.25
+				naval_hit_chance = 0.10
+				naval_critical_effect_factor = -0.10
+				war_stability_factor = 0.15
+			}
+		}
+
+		##################################
 		###Authoritarian-Specific Ideas###
+		##################################
 
 		CUB_us_political_support = {
 
@@ -520,11 +748,20 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = ARG_american_allyship
 			
 			modifier = {
 				political_power_factor = 0.10
 				stability_factor = 0.05
+				democratic_acceptance = 50
+			}
+
+			cancel = {
+				USA = {
+					NOT = {
+						exists = yes
+					}
+				}
 			}
 		}
 
@@ -540,7 +777,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = SOV_honest_serfdom_idea_ccp_sov_compatibility
 			
 			modifier = {
 				war_support_factor = 0.10
@@ -560,7 +797,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = RJ_communist_industry
 			
 			modifier = {
 				communism_drift = 0.03
@@ -580,7 +817,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = RJ_army_money
 			
 			modifier = {
 				conscription = 0.04
@@ -599,11 +836,56 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_production_bonus
+			picture = generic_constitutional_guarantees
 			
 			modifier = {
 				neutrality_drift = 0.07
 				political_power_gain = 0.10
+			}
+		}
+
+		CUB_mafia_influence = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = RJ_CUB_mafia_influence
+			
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = -0.10
+				production_speed_buildings_factor = 0.15
+				enemy_operative_detection_chance_factor = 0.10
+			}
+		}
+
+		CUB_caribbean_brothers = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = RJ_CUB_caribbean_brothers
+			
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.10
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.10
+				improve_relations_maintain_cost_factor = -0.50
 			}
 		}
 
@@ -621,7 +903,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = MEX_church_power_5
 	
 			modifier = {
 				fascism_drift = 0.05
@@ -643,7 +925,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = MEX_politicised_army_2
 	
 			modifier = {
 				experience_gain_army = 0.08
@@ -663,7 +945,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = RJ_CUB_caribbean_dominance
 	
 			modifier = {
 				justify_war_goal_time = -0.25
@@ -683,7 +965,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = RJ_CUB_caribbean_guard
 	
 			modifier = {
 				army_core_defence_factor = 0.10
@@ -705,11 +987,11 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_victors_of_ww1
+			picture = generic_improved_industries
 			
 			modifier = {
-				global_building_slots_factor = 0.1
-				production_speed_buildings_factor = 0.05
+				global_building_slots_factor = 0.20
+				production_speed_buildings_factor = 0.10
 			}
 		}
 
@@ -725,7 +1007,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_victors_of_ww1
+			picture = PER_special_units_division_idea
 			
 			modifier = {
 				amphibious_invasion = 0.10
@@ -747,32 +1029,10 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = generic_army_war_college
+			picture = chi_army_corruption
 	
 			modifier = {
 				fascism_drift = 0.03
-				conscription = 0.015
-			}
-		}
-
-		CUB_falangist_devotion_idea = {
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				OR = {
-					has_government = fascism
-				}
-			}
-			
-			removal_cost = -1
-
-			picture = generic_army_war_college
-	
-			modifier = {
-				fascism_drift = 0.05
 				conscription = 0.015
 			}
 		}
@@ -791,7 +1051,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = generic_army_war_college
+			picture = generic_fascism_drift_bonus
 	
 			modifier = {
 				fascism_drift = 0.07
@@ -813,7 +1073,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = generic_army_war_college
+			picture = RJ_anti_communism
 	
 			modifier = {
 				communism_drift = -0.05
@@ -834,7 +1094,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = SOV_romanov_reconstruction_ccp_sov_compatibility
 	
 			modifier = {
 				training_time_army_factor = -0.10
@@ -853,7 +1113,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = CUB_batista_influence
+			picture = SPA_national_recovery
 	
 			modifier = {
 				weekly_manpower = 250
@@ -873,7 +1133,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = anti_soviet_pact
+			picture = generic_democratic_opposition
 			
 			modifier = {
 				production_speed_arms_factory_factor = 0.1
@@ -882,114 +1142,247 @@ ideas = {
 				democratic_drift = -0.01
 			}
 		}
+
+		CUB_colombian_coffee_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = ETH_coffee_exports
+			
+			modifier = {
+				consumer_goods_factor = -0.10
+				army_morale_factor = 0.03
+			}
+		}
+
+	 #############################################################################################################################################################################
+     ###Armed Forces & Economic Ideas###
+	 #############################################################################################################################################################################
+
+		CUB_san_juan_hill_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = RJ_CUB_rough_riders
+			
+			modifier = {
+				trait_hill_fighter_xp_gain_factor = 1
+				acclimatization_hot_climate_gain_factor = 0.10
+				experience_gain_army_unit_factor = 0.05
+			}
+		}
+
+		CUB_san_juan_hill2_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = RJ_CUB_rough_riders
+			
+			modifier = {
+				trait_hill_fighter_xp_gain_factor = 1
+				acclimatization_hot_climate_gain_factor = 0.10
+				experience_gain_army_unit_factor = 0.10
+				breakthrough_factor = 0.05
+				cavalry_attack_factor = 0.15
+				cavalry_defence_factor = 0.15
+			}
+		}
+
+		CUB_air_research_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_air_research
+			
+			modifier = {
+				production_speed_air_facility_factor = 0.10
+			}
+			research_bonus = {
+				air_equipment = 0.15
+			}
+		}
+
+		CUB_safety_standards_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SOV_organize_wreckers
+			
+			modifier = {
+				air_accidents_factor = -0.10
+			}
+			equipment_bonus = {
+				small_plane_airframe = {
+					reliability_factor = 0.07
+				}
+				medium_plane_airframe = {
+					reliability_factor = 0.07
+				}
+				large_plane_airframe = {
+					reliability_factor = 0.07
+				}
+				mothership_equipment = {
+					reliability_factor = 0.07
+				}
+			}
+		}
+
+		CUB_better_weapons_engineering_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = SWE_marauder_bombers
+			
+			modifier = {
+				air_attack_factor = 0.10
+				ground_attack_factor = 0.10
+			}
+		}
+
+		CUB_efficient_navy_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = AUS_naval_efficiency_idea
+			
+			modifier = {
+				navy_submarine_detection_factor = 0.15
+				convoy_escort_efficiency = 0.15
+			}
+		}
+
+		CUB_marine_training_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = PER_special_units_division_idea
+			
+			modifier = {
+				special_forces_training_time_factor = -0.10
+				amphibious_invasion_defence = 0.10
+			}
+		}
+
+
+	 #############################################################################################################################################################################
+     ###Armed Forces & Economic Ideas###
+	 #############################################################################################################################################################################
+
+		CUB_fishing_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = RJ_fishing
+			
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		CUB_bolstered_tourism_idea = {
+
+			allowed = {
+				NOT = {
+					has_war = yes
+				}
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_war = yes
+				}
+			}
+
+			removal_cost = -1
+
+			picture = RJ_CUB_tourism
+			
+			modifier = {
+				monthly_population = 0.25
+				weekly_manpower = 50
+			}
+		}
+
+
 	}
 
 #############################################################################################################################################################################
     ###Companies###
 #############################################################################################################################################################################
 
-	industrial_concern = {
-		standard_oil_california = {
-		
-			allowed = {
-				original_tag = CUB
-			}
-
-			available = {
-				OR = {
-				has_government = democratic
-				has_completed_focus = CUB_invite_american_corporations
-				}
-			}
-			
-			research_bonus = {
-				industry = 0.10
-				refining_tech = 0.25
-			}
-			modifier = {
-				fuel_gain_factor = 0.1
-			}	
-			
-			traits = { refinery_concern }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		USA_general_motors = {
-			
-			picture = usa_general_motors
-			allowed = {
-				original_tag = CUB
-			}
-			available = {
-				OR = {
-				has_government = democratic
-				has_completed_focus = CUB_invite_american_corporations
-				}
-			}
-			
-			research_bonus = {
-				industry = 0.15
-			}
-			
-			traits = { industrial_concern }
-			
-			modifier = {
-				industrial_capacity_factory = 0.05
-			}
-		}
-	}
-
 	materiel_manufacturer = {
-		springfield_armory = {
-			
-			
-			allowed = {
-				original_tag = CUB
-			}
-			
-			available = {
-				OR = {
-				has_government = democratic
-				has_completed_focus = CUB_invite_american_corporations
-				}
-			}
-			
-			research_bonus = {
-				infantry_weapons = 0.15
-			}
-			
-			traits = { infantry_equipment_manufacturer }
-			
-			modifier = {
-			}
-		}
-
-		ford_motor_company = {
-			
-			
-			allowed = {
-				original_tag = CUB
-			}
-			
-			available = {
-				OR = {
-				has_government = democratic
-				has_completed_focus = CUB_invite_american_corporations
-				}
-			}
-
-			research_bonus = {
-				motorized_equipment = 0.15
-			}
-			
-			traits = { motorized_equipment_manufacturer }
-			
-			modifier = {
-			}
-		}
 
 		the_cuba_company = {
 			
@@ -998,12 +1391,16 @@ ideas = {
 			allowed = {
 				original_tag = CUB
 			}
+
+			available = {
+				has_completed_focus = CUB_bail_out_the_cuba_company
+			}
 			
 			research_bonus = {
 				train_tech = 0.15
 			}
 			
-			traits = { rail_company }
+			traits = { railway_company }
 			
 			modifier = {
 			}
@@ -1011,7 +1408,7 @@ ideas = {
 	}
 
 	naval_manufacturer = {
-		USA_higgins_industries = {
+		CUB_higgins_industries = {
 			picture = generic_tank_manufacturer_2
 
 			allowed = {
@@ -1026,17 +1423,11 @@ ideas = {
 			
 			research_bonus = {
 				naval_equipment = 0.15
-				r56_marines_infantry_tech = 0.1
 			}
 			
-			traits = { landing_craft_manufacturer }
+			traits = { transport_specialists }
 			
-			modifier = {
-				#invasion_preparation = -0.1
-				transport_capacity = -0.15
-				#amphibious_invasion_defence = 0.05
-				naval_invasion_capacity = 5
-			}
+			modifier = { }
 		}
 
 		CUB_ward_line = {
@@ -1045,20 +1436,18 @@ ideas = {
 			allowed = {
 				original_tag = CUB
 			}
+
+			available = {
+				has_completed_focus = CUB_back_the_ward_line
+			}
 			
 			research_bonus = {
 				naval_equipment = 0.10
 			}
 			
-			traits = { transportation_company }
+			traits = { transport_specialists }
 			
-			modifier = {
-				#invasion_preparation = -0.1
-				transport_capacity = -0.05
-				#amphibious_invasion_defence = 0.05
-				naval_invasion_capacity = 3
-			}
+			modifier = { }
 		}
 	}
-	
 }

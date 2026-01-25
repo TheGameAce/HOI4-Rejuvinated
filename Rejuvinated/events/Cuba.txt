@@ -36,6 +36,13 @@ country_event = { #Election Results
 	}
 	option = {
 		name = cuba.1.b
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		
 		unlock_national_focus = CUB_results_of_the_presidential_election
 		set_country_flag = cuba_mario_garcia_menocal_flag
@@ -59,9 +66,17 @@ country_event = { #Gomez' Inauguration
 			has_country_flag = gomez_inaugurated_flag
 		}
 	}
+
+	mean_time_to_happen = {
+		days = 5
+		years = 0
+	}
 	
 	option = {
 		name = cuba.2.a
+		ai_chance = {
+			factor = 1
+		}
 		set_country_flag = gomez_inaugurated_flag
 		promote_character = {
 			character = CUB_miguel_mariano_gomez
@@ -90,9 +105,17 @@ country_event = { #Mario García Menocal's Innauguration
 			has_country_flag = garcia_menocal_inaugurated_flag
 		}
 	}
+
+	mean_time_to_happen = {
+		days = 5
+		years = 0
+	}
 	
 	option = {
 		name = cuba.3.a
+		ai_chance = {
+			factor = 1
+		}
 		set_country_flag = garcia_menocal_inaugurated_flag
 		promote_character = {
 			character = CUB_mario_garcia_menocal
@@ -126,6 +149,9 @@ country_event = { #Gomez Impeached - Triggers via the Nine Cent Law focus - Fede
 	
 	option = {
 		name = cuba.5.a
+		ai_chance = {
+			factor = 1
+		}
 		set_country_flag = gomez_impeached_flag
 		promote_character = {
 			character = CUB_federico_bru
@@ -144,23 +170,33 @@ country_event = { #Operation Hemingway
 	
 	option = {
 		name = cuba.6.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		random_country = {
-				limit = {
-					original_tag = SPR
-					has_government = fascism
-				}
-				ROOT = {
-					declare_war_on = {
-					    target = PREV
-					    type = puppet_wargoal_focus
-					}
+			limit = {
+				original_tag = SPR
+				has_government = fascism
+			}
+			ROOT = {
+				declare_war_on = {
+				    target = PREV
+				    type = puppet_wargoal_focus
 				}
 			}
+		}
 
 	}
 
 	option = {
 		name = cuba.6.b
+		ai_chance = {
+			factor = 1
+		}
 		CUB = {
 			country_event = cuba.7
 		}
@@ -178,10 +214,13 @@ country_event = { #Operation Hemingway Refused
 	
 	option = {
 		name = cuba.7.a
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
 
-country_event = {
+country_event = { #Attempted Dominican Coup - I don't recall what the heck initiates this. I think it's presently unused. References a cuba.8 event in localization, which is fully localized, yet doesn't exist. I know this is a reference to a real event at least.
 	id = cuba.9
 	title = cuba.9.t
 	desc = cuba.9.d
@@ -192,6 +231,9 @@ country_event = {
 	
 	option = {
 		name = cuba.9.a
+		ai_chance = {
+			factor = 1
+		}
 		declare_war_on = {
 		    target = DOM
 		    type = puppet_wargoal_focus
@@ -200,10 +242,13 @@ country_event = {
 
 	option = {
 		name = cuba.9.b
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
 
-country_event = {
+country_event = { #Proposition of Falangist alliance with Spain.
 	id = cuba.10
 	title = "Cuba Seeks an Alliance"
 	desc = cuba.10.d
@@ -214,16 +259,20 @@ country_event = {
 	
 	option = {
 		name = "A fascinating proposition... We accept."
+		ai_chance = {
+			factor = 3
+		}
 		CUB = {
 			add_to_faction = SPR
-			country_event = {
-			id = cuba.12
-			}
+			country_event = { id = cuba.12 }
 		}
 	}
 
 	option = {
-		name = "This is not in our best interest."
+		name = "This is not in our best interests."
+		ai_chance = {
+			factor = 1
+		}
 		country_event = {
 			id = cuba.13
 		}
@@ -240,6 +289,9 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
+		ai_chance = {
+			factor = 1
+		}
 		name = "¡Viva la alianza!"
 	}
 }
@@ -254,6 +306,9 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
+		ai_chance = {
+			factor = 1
+		}
 		name = "I didn't like them anyways..."
 	}
 }
@@ -269,6 +324,9 @@ country_event = { #Annexation Demands for Haiti & the Dominican Republic
 	
 	option = {
 		name = "What choice do we have?"
+		ai_chance = {
+			factor = 3
+		}
 		CUB = {
 			annex_country = {
 				target = ROOT 
@@ -279,6 +337,9 @@ country_event = { #Annexation Demands for Haiti & the Dominican Republic
 
 	option = {
 		name = "We won't give in to these illegitimate claims!"
+		ai_chance = {
+			factor = 1
+		}
 		CUB = {
 			create_wargoal = {
 				target = ROOT
@@ -301,6 +362,9 @@ country_event = { #Deal With Batista
 	
 	option = {
 		name = cuba.14.a
+		ai_chance = {
+			factor = 1
+		}
 		retire_character = CUB_fulgencio_batista
 		remove_ideas = { CUB_batistas_influence }
 		add_stability = 0.15
@@ -309,6 +373,9 @@ country_event = { #Deal With Batista
 
 	option = {
 		name = cuba.14.b
+		ai_chance = {
+			factor = 2
+		}
 		swap_ideas = {
 			remove_idea = CUB_batistas_influence
 			add_idea = CUB_batista_cooperation
@@ -327,6 +394,9 @@ country_event = { #Proposal for Hispaniolan Unification
 	
 	option = {
 		name = cuba.15.a
+		ai_chance = {
+			factor = 4
+		}
 		DOM = {
 			annex_country = {
 				target = HAI
@@ -340,6 +410,9 @@ country_event = { #Proposal for Hispaniolan Unification
 
 	option = {
 		name = cuba.15.b
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
 
@@ -354,6 +427,9 @@ country_event = { #Proposal for Caribbean Unity
 	
 	option = {
 		name = cuba.16.a
+		ai_chance = {
+			factor = 4
+		}
 		CUB = {
 			annex_country = {
 				target = DOM
@@ -364,6 +440,9 @@ country_event = { #Proposal for Caribbean Unity
 
 	option = {
 		name = cuba.16.b
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
 
@@ -378,6 +457,13 @@ country_event = { #Proposal to the Soviets or Russians to trade Sugar for Oil
 	
 	option = {
 		name = cuba.17.a
+		ai_chance = {
+			factor = 2
+			modifier = {
+				is_in_faction_with = CUB
+				factor = 10
+			}
+		}
 		give_resource_rights = {
 			receiver = CUB
 			state = 577
@@ -393,6 +479,9 @@ country_event = { #Proposal to the Soviets or Russians to trade Sugar for Oil
 
 	option = {
 		name = cuba.17.b
+		ai_chance = {
+			factor = 1
+		}
 	}
 }
 
@@ -402,14 +491,12 @@ country_event = { #Soviet acceptance response for sugar trade
 	desc = cuba.18.d
 	picture = GFX_report_event_generic_sign_treaty2
 
-
 	is_triggered_only = yes
 	
 	option = {
 		name = cuba.18.a
-		add_building_construction = {
-			type = industrial_complex
-			level = -2
+		ai_chance = {
+			factor = 1
 		}
 	}
 }
@@ -425,6 +512,18 @@ country_event = { #Annexation Demands for the French Caribbean
 	
 	option = {
 		name = "Fine, they can have them..."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				FRA = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
 		CUB = {
 			transfer_state = 694
 		}
@@ -432,6 +531,18 @@ country_event = { #Annexation Demands for the French Caribbean
 
 	option = {
 		name = "We won't give in to these illegitimate claims!"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				FRA = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
 		CUB = {
 			create_wargoal = {
 				target = ROOT
@@ -454,6 +565,18 @@ country_event = { #Annexation Demands for the Windward & Leeward Isles
 	
 	option = {
 		name = "Fine, they can have them..."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				ENG = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
 		CUB = {
 			transfer_state = 692
 			transfer_state = 308
@@ -462,6 +585,18 @@ country_event = { #Annexation Demands for the Windward & Leeward Isles
 
 	option = {
 		name = "We won't give in to these illegitimate claims!"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				ENG = {
+					has_opinion = {
+						target = CUB
+						value < 50
+					}
+				}
+				factor = 2
+			}
+		}
 		CUB = {
 			create_wargoal = {
 				target = ROOT
@@ -483,7 +618,19 @@ country_event = { #Annexation Demands for the Windward & Leeward Isles
 	is_triggered_only = yes
 	
 	option = {
-		name = "Fine, they can have them..."
+		name = "Again? Really? Fine..."
+		ai_chance = {
+			factor = 3
+			modifier = {
+				ENG = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 5
+			}
+		}
 		CUB = {
 			transfer_state = 690
 			transfer_state = 693
@@ -493,12 +640,491 @@ country_event = { #Annexation Demands for the Windward & Leeward Isles
 
 	option = {
 		name = "We won't give in to these illegitimate claims!"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				ENG = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
 		CUB = {
 			create_wargoal = {
 				target = ROOT
 				expire = 0 
 				type = take_state_focus
 				generator = { 690 693 689 }
+			}
+		}
+	}
+}
+
+country_event = { #Annexation Demands for Trinidad & Tobago.
+	id = cuba.22
+	title = cuba.22.t
+	desc = cuba.22.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Oh for the love of... Just take it and leave us alone."
+		ai_chance = {
+			factor = 2
+			modifier = {
+				ENG = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 4
+			}
+		}
+		CUB = {
+			transfer_state = 691
+		}
+	}
+
+	option = {
+		name = "You've harassed us for the last time!"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				ENG = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 691 }
+			}
+		}
+	}
+}
+
+country_event = { #Annexation Demands for the ABC Islands.
+	id = cuba.23
+	title = cuba.23.t
+	desc = cuba.23.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Fine, they can have them..."
+		ai_chance = {
+			factor = 3
+			modifier = {
+				HOL = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 5
+			}
+		}
+		CUB = {
+			transfer_state = 695
+		}
+	}
+
+	option = {
+		name = "We won't give in to these illegitimate claims!"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				HOL = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 695 }
+			}
+		}
+	}
+}
+
+country_event = { #Sugar Gift
+	id = cuba.24
+	title = cuba.24.t
+	desc = cuba.24.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "How thoughtful!"
+		ai_chance = {
+			factor = 1
+		}
+		ENG = {
+			add_ideas = CUB_sugar_gift_idea
+		}
+	}
+}
+
+country_event = { #Trujillo Invitation to the Allies
+	id = cuba.25
+	title = cuba.25.t
+	desc = cuba.25.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "War is a fun hobby!"
+		ai_chance = {
+			factor = 3
+		}
+		if = {
+			limit = {
+				ENG = {
+					has_government = democratic
+					is_faction_leader = yes
+					NOT = {
+						has_completed_focus = ENG_a_change_in_course
+					}
+					has_capitulated = no
+					NOT = { has_war_with = DOM }
+				}
+					NOT = {
+						any_other_country = {
+							is_in_faction_with = ENG
+							has_war_with = DOM
+						}
+					}					
+				}
+				DOM = {
+					country_event = { id = generic.2 }
+				}
+			}
+		else = {
+			get_best_alliance_match_democratic_effect = yes
+			var:best_leader = {
+				country_event = generic.2
+			}
+		}
+	}
+
+	option = {
+		name = "Eh... Maybe in the next war..."
+		ai_chance = {
+			factor = 1
+		}
+		CUB = {
+			country_event = cuba.26
+		}
+	}
+}
+
+country_event = {
+	id = cuba.26
+	title = cuba.26.t
+	desc = cuba.26.d
+	picture = GFX_report_event_soviet_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = "It was worth a try."
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = { #Annexation Demands for Puerto Rico
+	id = cuba.27
+	title = cuba.27.t
+	desc = cuba.27.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Fine, they can have them..."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				USA = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
+		CUB = {
+			transfer_state = 686
+		}
+	}
+
+	option = {
+		name = "We won't give in to these illegitimate claims!"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				USA = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 686 }
+			}
+		}
+	}
+}
+
+country_event = { #Withdrawal from the Caribbean - UK
+	id = cuba.28
+	title = cuba.28.t
+	desc = cuba.28.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "We should take this threat seriously. Let's withdraw."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				ENG = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
+		ENG = {
+			release = JAM
+			release = BAH
+			release = TRI
+			release = BAS
+			release = BLZ
+		}
+	}
+
+	option = {
+		name = "Who do they think they are, anyways?"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				ENG = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 689 }
+			}
+		}
+	}
+}
+
+country_event = { #Withdrawal from the Caribbean - France
+	id = cuba.29
+	title = cuba.29.t
+	desc = cuba.29.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "We should take this threat seriously. Let's withdraw."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				FRA = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
+		FRA = {
+			release = GDL
+		}
+	}
+
+	option = {
+		name = "Who do they think they are, anyways?"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				FRA = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 694 }
+			}
+		}
+	}
+}
+
+country_event = { #Withdrawal from the Caribbean - USA
+	id = cuba.30
+	title = cuba.30.t
+	desc = cuba.30.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "We should take this threat seriously. Let's withdraw."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				USA = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
+		USA = {
+			release = PAN
+			release = PUE
+		}
+	}
+
+	option = {
+		name = "Who do they think they are, anyways?"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				USA = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 686 }
+			}
+		}
+	}
+}
+
+country_event = { #Withdrawal from the Caribbean - Netherlands
+	id = cuba.31
+	title = cuba.31.t
+	desc = cuba.31.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "We should take this threat seriously. Let's withdraw."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				HOL = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
+		HOL = {
+			release = CRC
+		}
+	}
+
+	option = {
+		name = "Who do they think they are, anyways?"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				HOL = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 695 }
 			}
 		}
 	}
@@ -523,6 +1149,9 @@ news_event = { #Death of Gerardo Machado
 	fire_only_once = yes
 
 	option = {
+		ai_chance = {
+			factor = 1
+		}
 		name = "Good Riddance"
 		add_stability = 0.01
 	}
@@ -548,6 +1177,13 @@ country_event = { #MS St. Louis Affair
 
 	option = {
 		name = "Surely we have room for those seeking refuge from tyranny."
+		ai_chance = {
+			factor = 5
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		add_political_power = -25
 		add_stability = 0.03
 		add_manpower = 500
@@ -555,6 +1191,9 @@ country_event = { #MS St. Louis Affair
 	}
 	option = {
 		name = "Turn them away. This will only cause trouble for us."
+		ai_chance = {
+			factor = 1
+		}
 		add_stability = -0.01
 		add_political_power = 50
 	}

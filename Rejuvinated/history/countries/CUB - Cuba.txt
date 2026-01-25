@@ -1,4 +1,4 @@
-﻿capital = 994
+﻿capital = 315
 
 oob = "CUB_1936"
 
@@ -7,21 +7,22 @@ set_research_slots = 3
 # Starting tech
 set_technology = {
 	infantry_weapons = 1
-	infantry_weapons1 = 1
 	early_fighter = 1
-	motorised_infantry = 1
+	tech_trucks = 1
 	gw_artillery = 1
-	tech_support = 1
 	basic_train = 1
+	fuel_silos = 1
 }
 if = {
 	limit = { has_dlc = "By Blood Alone" }
 		set_technology = {
-		
+			iw_small_airframe = 1
+			early_bombs = 1
+			aa_lmg = 1
+			engines_1 = 1
 		}
 	else = {
 		set_technology = {
-			transport_plane1 = 1	
 			early_fighter = 1
 		}
 	}
@@ -29,8 +30,6 @@ if = {
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	set_technology = {
-		early_submarine = 1
-		basic_submarine = 1
 		early_destroyer = 1
 		transport = 1
 	}
@@ -42,22 +41,6 @@ if = {
 		basic_battery = 1
 		basic_depth_charges = 1
 		early_ship_hull_light = 1
-	}
-}
-if = {
-	limit = {
-		NOT = { has_dlc = "No Step Back" }
-	}
-	set_technology = {
-		gwtank = 1
-	}
-}
-if = {
-	limit = {
-		has_dlc = "No Step Back"
-	}
-	set_technology = {
-		gwtank_chassis = 1
 	}
 }
 
@@ -134,12 +117,11 @@ set_popularities = {
 if = {
 	limit = { has_dlc = "Man the Guns" }
 
-	create_equipment_variant = {
+	create_equipment_variant = { #Needs fixing.
 		name = "Cuba Class"
 		type = destroyer_1
 		upgrades = {
 			destroyer_engine_upgrade = 1
-			fixed_ship_battery_slot = ship_light_battery_1
 		}
 	}
 }

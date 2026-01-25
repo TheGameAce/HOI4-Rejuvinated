@@ -1144,7 +1144,7 @@ NMilitary = {
 		0.0, -- operative
 	},
 
-	UNIT_LEADER_USE_NONLINEAR_XP_GAIN = true,       -- Whether unit leader XP gain is scaled by 1/<nr_of_traits>
+	UNIT_LEADER_USE_NONLINEAR_XP_GAIN = false,       -- Whether unit leader XP gain is scaled by 1/<nr_of_traits>
 
 	HOURS_REQ_REJOIN_BORDER_WAR_FOR_INJURED_UNITS = -1, -- minimum hours required for units to rejoin border wars, values below zero will make units never return
 

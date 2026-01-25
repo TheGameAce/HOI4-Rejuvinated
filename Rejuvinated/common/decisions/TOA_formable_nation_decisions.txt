@@ -5,6 +5,14 @@ hispaniola_category = {
 
 		icon = generic_form_nation
 
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 318
+				state = 319
+				state = 1059
+			}
+		}
+
 		allowed = {
 			OR = {
 				original_tag = HAI # Haiti

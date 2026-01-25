@@ -1,4 +1,4 @@
-This folder contains reusable focus icons intended for multiple focus trees. Follow the guidelines below when adding icons.
+This folder contains reusable focus icons intended for general use wherever you feel they may fit. Follow the guidelines below when adding icons.
 
 ## Usage rules
 
@@ -12,7 +12,7 @@ Do **not** include:
 - Other authors' work without explicit permission
 
 ## Namming & Attribution
-Consider prefixing your icon with `RJ_` for consistency
+Icons belonging to this mod should always be prefixed with 'RJ'. If they're designed for a specific country, the country tag should also follow. Ex: 'RJ_CUB' would denote a GFX file unique to this mod, specifically designed for Cuba.
 
 Claim authorship in `attributions.yml` - **do not modify existing entries.**
 

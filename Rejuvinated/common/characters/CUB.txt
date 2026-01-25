@@ -1,14 +1,14 @@
 characters={
 
 #########################################################################################################################################################################
-###Cuban Leaders###
+###Cuban Leaders### NOTE: PORTRAITS ARE PLACEHOLDERS
 #########################################################################################################################################################################
 
 	CUB_josé_agripino_barnet={ #Starting Leader & Advisor - Democratic
 		name = "José Agripino Barnet"
 		portraits={
 			civilian={
-				large="GFX_portrait_cuba_jose_barnet"
+				large = "GFX_portrait_cuba_jose_barnet"
 				small = "GFX_idea_CUB_jose_barnet"
 			}
 		}
@@ -44,7 +44,7 @@ characters={
 		name="Miguel Mariano Gómez"
 		portraits={
 			civilian={
-				large= "GFX_Portrait_Cuba_Miguel_Mariano_Gomez"
+				large = "gfx/leaders/placeholder/Portrait_PLACEHOLDER_large.dds"
 			}
 		}
 		country_leader={
@@ -59,7 +59,7 @@ characters={
 		name="Federico Laredo Brú"
 		portraits={
 			civilian={
-				large= "GFX_Portrait_Cuba_Federico_Laredo_Bru"
+				large = "gfx/leaders/placeholder/Portrait_PLACEHOLDER_large.dds"
 			}
 		}
 		country_leader={
@@ -74,7 +74,7 @@ characters={
 		name="Mario García Menocal"
 		portraits={
 			civilian={
-				large= "GFX_Portrait_Cuba_Mario_Garcia_Menocal"
+				large = "gfx/leaders/placeholder/Portrait_PLACEHOLDER_large.dds"
 			}
 		}
 		country_leader={
@@ -89,13 +89,13 @@ characters={
 
 		name = "Fulgencio Batista"
 		portraits={
-			civilian = {
-				large = "GFX_Portrait_Cuba_Fulgencio_Batista"
-				small = "GFX_idea_CUB_batista"
+			civilian={
+				large = "gfx/leaders/placeholder/Portrait_PLACEHOLDER_large.dds"
+				small = "GFX_idea_CUB_jose_barnet"
 			}
 			army={
-				large="GFX_Portrait_Cuba_Fulgencio_Batista"
-				small="GFX_idea_CUB_batista"
+				large = "GFX_Portrait_Cuba_Fulgencio_Batista"
+				small = "GFX_idea_CUB_jose_barnet"
 			}
 		}
 		country_leader = {
@@ -112,9 +112,7 @@ characters={
 				original_tag = CUB
 			}
 			available = {
-				NOT = {
-					has_completed_focus = CUB_assassinate_batista
-				}
+				
 			}
 			
 			traits = { army_chief_offensive_2 }
@@ -138,7 +136,7 @@ characters={
 		name="Blas Roca Calderio"
 		portraits={
 			civilian={
-				large= "GFX_Portrait_Cuba_Blas_Roca_Calderio"
+				large = "gfx/leaders/placeholder/Portrait_PLACEHOLDER_large.dds"
 			}
 		}
 		country_leader={
@@ -153,7 +151,7 @@ characters={
 		name="Alfonso Serrano Villarino"
 		portraits={
 			civilian={
-				large="gfx/leaders/CUB/r56_portrait_CUB_Alfonso_Serrano_Villarino.dds"
+				large = "gfx/leaders/placeholder/Portrait_PLACEHOLDER_large.dds"
 			}
 		}
 		country_leader={
@@ -210,7 +208,7 @@ characters={
 				factor = 1.000
 			}
 			research_bonus = {
-			industry = 0.05
+			industry = 0.10
 			}
 		}
 		
@@ -824,7 +822,7 @@ characters={
 		advisor={
 			slot = theorist
 			idea_token = CUB_j_aguado
-			ledger = theorist
+			ledger = army
 			allowed = {
 				original_tag  = CUB
 			}
@@ -832,3 +830,4 @@ characters={
 			cost = 175
 		}
 	}
+}
