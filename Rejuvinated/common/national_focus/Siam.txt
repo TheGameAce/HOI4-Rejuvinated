@@ -45,4 +45,72 @@ focus_tree = {
 			add_stability = 0.05
 		}
 	}
+	focus = {
+		id = SIA_abandon_the_gold_standard
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		relative_position_id = SIA_agricultural_support
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = SIA_agricultural_support
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_idea = idea_SIA_the_great_depression5 has_idea = idea_SIA_the_great_depression6 }
+					swap_ideas = {
+						remove_idea = idea_SIA_the_great_depression3
+						add_idea = idea_SIA_the_great_depression4
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = idea_SIA_the_great_depression5
+					swap_ideas = {
+						remove_idea = idea_SIA_the_great_depression5
+						add_idea = idea_SIA_the_great_depression6
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = SIA_promote_economic_nationalism
+		icon = GFX_focus_RAJ_special_economic_zones
+		relative_position_id = SIA_agricultural_support
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = SIA_agricultural_support
+		}
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = idea_SIA_the_great_depression4
+					swap_ideas = {
+						remove_idea = idea_SIA_the_great_depression4
+						add_idea = idea_SIA_the_great_depression6
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = idea_SIA_the_great_depression4 }
+					swap_ideas = {
+						remove_idea = idea_SIA_the_great_depression3
+						add_idea = idea_SIA_the_great_depression5
+					}
+				}
+			}
+		}
+	}
 }
