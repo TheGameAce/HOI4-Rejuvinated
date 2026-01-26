@@ -230,7 +230,7 @@ characters={
 			}
 			traits = { dedicated_marxist }
 			ai_will_do = {
-				factor = 1.000
+				factor = 1
 			}
 			available = {
 				has_government = communism
@@ -262,6 +262,10 @@ characters={
 			}
 			
 			traits = { revolutionary_broadcaster }
+
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 
@@ -283,6 +287,10 @@ characters={
 			}
 			
 			traits = { editor }
+
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 
@@ -301,6 +309,11 @@ characters={
 				original_tag  = CUB
 			}
 			traits  = {	minister_of_public_works }
+
+			ai_will_do = {
+				factor = 1
+			}
+
 			cost = 150
 		}
 	}
@@ -320,6 +333,11 @@ characters={
 				original_tag  = CUB
 			}
 			traits  = {	communist_revolutionary }
+
+			ai_will_do = {
+				factor = 1
+			}
+
 			cost = 150
 			available = {
 				has_completed_focus = CUB_oppose_the_presidency
@@ -798,15 +816,15 @@ characters={
 			idea_token = CUB_domingo_r_del_toro
 			ledger = air
 			allowed = {
-					original_tag = CUB
-				}
-				traits = {
-					efficient_flight_coordinator
-				}
-				cost = 125
-				ai_will_do = {
-					factor = 1.000
-				}
+				original_tag = CUB
+			}
+			traits = {
+				efficient_flight_coordinator
+			}
+			cost = 125
+			ai_will_do = {
+				factor = 1.000
+			}
 		}
 	}
 

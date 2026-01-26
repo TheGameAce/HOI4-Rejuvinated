@@ -1,0 +1,712 @@
+characters = {
+
+	#################################################################################################################################################################
+	################################ Advisors Only ##########################################
+	#################################################################################################################################################################
+
+	BRA_franscisco_morato = {
+		name = "Francisco Morato"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_franscisco_morato
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+
+			traits = { vfb_trait_morato }
+
+			ai_will_do = {
+				factor = 80
+			}
+		}			
+	}
+
+	BRA_gustavo_capanema = {
+		name = "Gustavo Capanema"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_gustavo_capanema
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+
+			traits = { vfb_trait_capanema }
+
+			ai_will_do = {
+				factor = 80
+			}
+		}			
+	}
+
+	BRA_lindolfo_collor = {
+		name = "Lindolfo Collor"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_lindolfo_collor
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+
+			traits = { vfb_trait_collor }
+
+			ai_will_do = {
+				factor = 80
+			}
+		}			
+	}
+
+	BRA_alfredo_de_almeida = {
+		name = "Alfredo de Almeida"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_alfredo_de_almeida
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+			
+			available = {
+				has_completed_focus = bra_tenenge
+			}
+
+			traits = { vfb_trait_alfredo }
+
+			ai_will_do = {
+				factor = 80
+			}
+		}			
+	}
+
+	BRA_osvaldo_aranha = {
+		name = "Osvaldo Aranha"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_osvaldo_aranha
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+			
+			available = {
+				has_completed_focus = bra_heal_wounds
+			}
+
+			traits = { vfb_trait_aranha }
+
+			ai_will_do = {
+				factor = 80
+			}
+		}
+	}
+
+	BRA_afranio_de_mello_franco = {
+		name = "Afranio de Mello-Franco"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_afranio_de_mello_franco
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+			
+			available = {
+				has_completed_focus = bra_guide_latam
+			}
+
+			traits = { vfb_trait_afranio }
+
+			ai_will_do = {
+				factor = 80
+			}
+		}
+	}
+
+	BRA_oswald_de_andrade = {
+		name = "Oswald de Andrade"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_oswald_de_andrade
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+			
+			available = {
+				has_completed_focus = bra_2_prestes_column
+			}
+
+			traits = { vfb_trait_oswald vfb_trait_escritor }
+
+			ai_will_do = {
+				factor = 160
+			}
+		}
+	}
+
+	BRA_guimaraes_rosa = {
+		name = "Guimaraes Rosa"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_guimaraes_rosa
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+			
+			available = {
+				has_completed_focus = bra_quereismo
+			}
+
+			traits = { vfb_trait_guimaraes vfb_trait_escritor }
+
+			ai_will_do = {
+				factor = 160
+			}
+		}
+	}
+
+	BRA_menotti_del_picchia = {
+		name = "Menotti del Picchia"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_menotti_del_picchia
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+			
+			available = {
+				has_completed_focus = bra_brazilian_action
+			}
+
+			traits = { vfb_trait_menotti vfb_trait_escritor }
+
+			ai_will_do = {
+				factor = 160
+			}
+		}
+	}
+
+	BRA_monteiro_lobato = {
+		name = "Monteiro Lobato"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_monteiro_lobato
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+			
+			available = {
+				has_completed_focus = bra_regionalism
+			}
+
+			traits = { vfb_trait_lobato vfb_trait_escritor }
+
+			ai_will_do = {
+				factor = 160
+			}
+		}	
+	}
+
+	BRA_arlindo_veiga = {
+		name = "Arlindo Veiga"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_south_america_2"
+			}
+		}
+
+		advisor = {
+			cost = 150
+
+			slot = political_advisor
+			idea_token = BRA_arlindo_veiga
+			ledger = civilian
+
+			allowed = {
+				original_tag = BRA
+			}
+			
+			available = {
+				has_completed_focus = bra_monarquia_2_focus
+			}
+
+			traits = { vfb_trait_arlindo vfb_trait_escritor }
+
+			ai_will_do = {
+				factor = 160
+			}
+		}		
+	}
+
+	################################################################################################################
+	########################################## THEORISTS ###########################################################
+	################################################################################################################
+
+	BRA_newton_cavalcanti = {
+		name = "Newton Cavalcanti"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+
+		advisor={
+			slot = theorist
+			idea_token = BRA_newton_cavalcanti
+			ledger = army
+
+			allowed = {
+				original_tag  = BRA
+			}
+
+			traits  = {	military_theorist }
+			cost = 150
+
+			ai_will_do = {
+				factor = 80
+			}
+		}
+	}
+
+	BRA_eduardo_gomes = {
+		name = "Eduardo Gomes"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+
+		advisor={
+			slot = theorist
+			idea_token = BRA_eduardo_gomes
+			ledger = army
+
+			allowed = {
+				original_tag  = BRA
+			}
+
+			available = {
+				has_completed_focus = bra_regionalism
+			}
+
+			traits  = {	air_warfare_theorist }
+			cost = 150
+
+			ai_will_do = {
+				factor = 160
+			}
+		}
+	}
+
+	################################################################################################################
+	########################################## ARMY CHIEFS + HIGH COMMAND ##########################################
+	################################################################################################################
+
+	BRA_epaminondas_dos_santos_vfb = {
+		name = "Epaminondas dos Santos"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_1"
+			}
+		}
+
+		advisor={
+			slot = high_command
+			idea_token = BRA_epaminondas_dos_santos
+			ledger = army
+
+			allowed = {
+				original_tag = BRA
+			}
+
+			traits = {
+				air_air_combat_training_2
+			}
+
+			cost = 150
+
+			ai_will_do = {
+				factor = 80
+			}
+		}
+	}
+
+	BRA_francisco_correa_vfb = {
+		name = "Francisco Correa"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_1"
+			}
+		}
+
+		advisor={
+			slot = high_command
+			idea_token = BRA_francisco_correa
+			ledger = army
+
+			allowed = {
+				original_tag = BRA
+			}
+
+			traits = {
+				air_chief_ground_support_2
+			}
+
+			cost = 150
+
+			ai_will_do = {
+			factor = 0
+				modifier = {
+					has_completed_focus = bra_brazilian_action
+					factor = 160
+				}
+			}
+		}
+	}
+
+	BRA_artur_da_costa_e_silva_vfb = {
+		name = "Artur da Costa e Silva"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_1"
+			}
+		}
+
+		advisor={
+			slot = high_command
+			idea_token = BRA_francisco_correa
+			ledger = army
+
+			allowed = {
+				original_tag = BRA
+			}
+
+			traits = {
+				army_infantry_2
+			}
+
+			cost = 150
+
+			ai_will_do = {
+			factor = 0
+				modifier = {
+					has_completed_focus = bra_brazilian_action
+					factor = 160
+				}
+			}
+		}
+	}
+
+	BRA_joao_neves_da_fontoura_vfb = {
+		name = "Joao Neves da Fontoura"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+
+		advisor={
+			slot = army_chief
+			idea_token = BRA_joao_neves_da_fontoura
+			ledger = army
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				army_regrouping_2
+			}
+			cost = 150
+
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_completed_focus = bra_quereismo
+					factor = 160
+				}
+			}
+		}
+	}
+
+	BRA_nero_fiuza_de_castro_vfb = {
+		name = "Nero Fiuza de Castro"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+
+		advisor={
+			slot = army_chief
+			idea_token = BRA_nero_fiuza_de_castro
+			ledger = army
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				army_logistics_2
+			}
+			cost = 150
+
+			ai_will_do = {
+				factor = 80
+			}
+		}
+	}
+
+	BRA_salgado_filho_vfb = {
+		name = "Salgado Filho"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+
+		advisor={
+			slot = air_chief
+			idea_token = BRA_salgado_filho
+			ledger = air
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 125
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_completed_focus = bra_quereismo
+					factor = 160
+				}
+			}
+		}
+	}
+
+	BRA_armando_trompowsky_vfb = {
+		name = "Armando Trompowsky"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+
+		advisor={
+			slot = air_chief
+			idea_token = BRA_armando_trompowsky
+			ledger = air
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				air_chief_safety_1
+			}
+			cost = 75
+			ai_will_do = {
+				factor = 80
+			}
+		}
+	}
+
+	BRA_aristides_guilhem_vfb = {
+		name = "Aristides Guilhem"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+
+		advisor={
+			slot = navy_chief
+			idea_token = BRA_aristides_guilhem
+			ledger = navy
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				navy_chief_maneuver_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 80
+			}
+		}
+	}
+
+	BRA_pedro_max_vfb = {
+		name = "Pedro Max"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+
+		advisor={
+			slot = navy_chief
+			idea_token = BRA_pedro_max
+			ledger = navy
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				navy_anti_submarine_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_completed_focus = bra_regionalism
+					factor = 160
+				}
+			}
+		}
+	}
+
+	BRA_protogenes_guimaraes_vfb = {
+		name = "Protogenes Guimaraes"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+
+		advisor={
+			slot = navy_chief
+			idea_token = BRA_protogenes_guimaraes
+			ledger = navy
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				navy_chief_decisive_battle_1
+			}
+			cost = 75
+			ai_will_do = {
+				factor = 80
+			}
+		}
+	}
+
+	BRA_joao_candido_vfb = {
+		name = "Joao Candido"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+
+		advisor={
+			slot = navy_chief
+			idea_token = BRA_joao_candido
+			ledger = navy
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				navy_capital_ship_2
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_completed_focus = bra_2_prestes_column
+					factor = 160
+				}
+			}
+		}
+	}
+}
