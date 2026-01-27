@@ -34,7 +34,7 @@ BRA_INF_01 =
 {
 	name = "Infantry Division"
 
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
+	for_countries = { BRA ANG GNB MZB }				# Also includes releasable Portuguese colonlies
 
 	can_use = { always = yes }
 
@@ -43,32 +43,32 @@ BRA_INF_01 =
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { BRA_INF_01 }
 
-	fallback_name = "%dº Batalhão de Infantaria"
+	fallback_name = "%da Divisão de Infantaria"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%dº Batalhão de Infantaria" }
-		2 = { "%dº Batalhão de Infantaria" }
-		3 = { "%dº Batalhão de Infantaria" }
-		4 = { "%dº Batalhão de Infantaria" }
-		5 = { "%dº Batalhão de Infantaria" }
-		6 = { "%dº Batalhão de Infantaria" }
-		7 = { "%dº Batalhão de Infantaria" }
-		8 = { "%dº Batalhão de Infantaria" }
-		9 = { "%dº Batalhão de Infantaria" }
-		10 = { "%dº Batalhão de Infantaria" }
-		11 = { "%dº Batalhão de Infantaria" }
-		12 = { "%dº Batalhão de Infantaria" }
-		13 = { "%dº Batalhão de Infantaria" }
-		14 = { "%dº Batalhão de Infantaria" }
-		15 = { "%dº Batalhão de Infantaria" }
-		16 = { "%dº Batalhão de Infantaria" }
-		17 = { "%dº Batalhão de Infantaria" }
-		18 = { "%dº Batalhão de Infantaria" }
-		19 = { "%dº Batalhão de Infantaria" }
-		20 = { "%dº Batalhão de Infantaria" }		
+		1 = { "%da Divisão de Infantaria" }
+		2 = { "%da Divisão de Infantaria" }
+		3 = { "%da Divisão de Infantaria" }
+		4 = { "%da Divisão de Infantaria" }
+		5 = { "%da Divisão de Infantaria" }
+		6 = { "%da Divisão de Infantaria" }
+		7 = { "%da Divisão de Infantaria" }
+		8 = { "%da Divisão de Infantaria" }
+		9 = { "%da Divisão de Infantaria" }
+		10 = { "%da Divisão de Infantaria" }
+		11 = { "%da Divisão de Infantaria" }
+		12 = { "%da Divisão de Infantaria" }
+		13 = { "%da Divisão de Infantaria" }
+		14 = { "%da Divisão de Infantaria" }
+		15 = { "%da Divisão de Infantaria" }
+		16 = { "%da Divisão de Infantaria" }
+		17 = { "%da Divisão de Infantaria" }
+		18 = { "%da Divisão de Infantaria" }
+		19 = { "%da Divisão de Infantaria" }
+		20 = { "%da Divisão de Infantaria" }		
 	}
 }
 
@@ -76,7 +76,7 @@ BRA_CAV_01 =
 {
 	name = "Cavalry Division"
 
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
+	for_countries = { BRA ANG GNB MZB }				# Also includes releasable Portuguese colonlies
 
 	can_use = { always = yes }
 
@@ -85,22 +85,22 @@ BRA_CAV_01 =
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { BRA_INF_01 }
 
-	fallback_name = "%dº Regimento de Cavalaria"
+	fallback_name = "%da Divisão de Cavalaria"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%dº Regimento de Cavalaria" }
-		2 = { "%dº Regimento de Cavalaria" }
-		3 = { "%dº Regimento de Cavalaria" }
-		4 = { "%dº Regimento de Cavalaria" }
-		5 = { "%dº Regimento de Cavalaria" }
-		6 = { "%dº Regimento de Cavalaria" }
-		7 = { "%dº Regimento de Cavalaria" }
-		8 = { "%dº Regimento de Cavalaria" }
-		9 = { "%dº Regimento de Cavalaria" }
-		10 = { "%dº Regimento de Cavalaria" }
+		1 = { "%da Divisão de Cavalaria" }
+		2 = { "%da Divisão de Cavalaria" }
+		3 = { "%da Divisão de Cavalaria" }
+		4 = { "%da Divisão de Cavalaria" }
+		5 = { "%da Divisão de Cavalaria" }
+		6 = { "%da Divisão de Cavalaria" }
+		7 = { "%da Divisão de Cavalaria" }
+		8 = { "%da Divisão de Cavalaria" }
+		9 = { "%da Divisão de Cavalaria" }
+		10 = { "%da Divisão de Cavalaria" }
 	}
 }
 
@@ -108,7 +108,7 @@ BRA_MOT_01 =
 {
 	name = "Motorized Division"
 
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
+	for_countries = { BRA ANG GNB MZB }				# Also includes releasable Portuguese colonlies
 
 	can_use = { always = yes }
 
@@ -117,22 +117,22 @@ BRA_MOT_01 =
 	# Number reservation system will tie to another group.
 	link_numbering_with = { BRA_INF_01 }
 
-	fallback_name = "%dº Batalhão de Infantaria Motorizado"
+	fallback_name = "%da Div. de Infantaria Motorizada"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%dº Batalhão de Infantaria Motorizado" }
-		2 = { "%dº Batalhão de Infantaria Motorizado" }
-		3 = { "%dº Batalhão de Infantaria Motorizado" }
-		4 = { "%dº Batalhão de Infantaria Motorizado" }
-		5 = { "%dº Batalhão de Infantaria Motorizado" }
-		6 = { "%dº Batalhão de Infantaria Motorizado" }
-		7 = { "%dº Batalhão de Infantaria Motorizado" }
-		8 = { "%dº Batalhão de Infantaria Motorizado" }
-		9 = { "%dº Batalhão de Infantaria Motorizado" }
-		10 = { "%dº Batalhão de Infantaria Motorizado" }
+		1 = { "%da Div. de Infantaria Motorizada" }
+		2 = { "%da Div. de Infantaria Motorizada" }
+		3 = { "%da Div. de Infantaria Motorizada" }
+		4 = { "%da Div. de Infantaria Motorizada" }
+		5 = { "%da Div. de Infantaria Motorizada" }
+		6 = { "%da Div. de Infantaria Motorizada" }
+		7 = { "%da Div. de Infantaria Motorizada" }
+		8 = { "%da Div. de Infantaria Motorizada" }
+		9 = { "%da Div. de Infantaria Motorizada" }
+		10 = { "%da Div. de Infantaria Motorizada" }
 	}
 }
 
@@ -140,7 +140,7 @@ BRA_MEC_01 =
 {
 	name = "Mechanized Division"
 
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
+	for_countries = { BRA ANG GNB MZB }				# Also includes releasable Portuguese colonlies
 
 	can_use = { always = yes }
 
@@ -149,22 +149,22 @@ BRA_MEC_01 =
 	# Number reservation system will tie to another group.
 	link_numbering_with = { BRA_INF_01 }
 
-	fallback_name = "%dº Regimento de Cavalaria Mecanizada"
+	fallback_name = "%da Div. de Infantaria Mecânizada"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%dº Regimento de Cavalaria Mecanizada" }
-		2 = { "%dº Regimento de Cavalaria Mecanizada" }
-		3 = { "%dº Regimento de Cavalaria Mecanizada" }
-		4 = { "%dº Regimento de Cavalaria Mecanizada" }
-		5 = { "%dº Regimento de Cavalaria Mecanizada" }
-		6 = { "%dº Regimento de Cavalaria Mecanizada" }
-		7 = { "%dº Regimento de Cavalaria Mecanizada" }
-		8 = { "%dº Regimento de Cavalaria Mecanizada" }
-		9 = { "%dº Regimento de Cavalaria Mecanizada" }
-		10 = { "%dº Regimento de Cavalaria Mecanizada" }
+		1 = { "%da Div. de Infantaria Mecânizada" }
+		2 = { "%da Div. de Infantaria Mecânizada" }
+		3 = { "%da Div. de Infantaria Mecânizada" }
+		4 = { "%da Div. de Infantaria Mecânizada" }
+		5 = { "%da Div. de Infantaria Mecânizada" }
+		6 = { "%da Div. de Infantaria Mecânizada" }
+		7 = { "%da Div. de Infantaria Mecânizada" }
+		8 = { "%da Div. de Infantaria Mecânizada" }
+		9 = { "%da Div. de Infantaria Mecânizada" }
+		10 = { "%da Div. de Infantaria Mecânizada" }
 	}
 }
 
@@ -172,7 +172,7 @@ BRA_ARM_01 =
 {
 	name = "Armored Division"
 
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
+	for_countries = { BRA ANG GNB MZB }				# Also includes releasable Portuguese colonlies
 
 	can_use = { always = yes }
 
@@ -181,22 +181,22 @@ BRA_ARM_01 =
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { BRA_INF_01 }
 
-	fallback_name = "%dº Regimento de Cavalaria Blindada"
+	fallback_name = "%da Divisão de Blindada"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%dª Regimento de Cavalaria Blindada" }
-		2 = { "%dª Regimento de Cavalaria Blindada" }
-		3 = { "%dª Regimento de Cavalaria Blindada" }
-		4 = { "%dª Regimento de Cavalaria Blindada" }
-		5 = { "%dª Regimento de Cavalaria Blindada" }
-		6 = { "%dª Regimento de Cavalaria Blindada" }
-		7 = { "%dª Regimento de Cavalaria Blindada" }
-		8 = { "%dª Regimento de Cavalaria Blindada" }
-		9 = { "%dª Regimento de Cavalaria Blindada" }
-		10 = { "%dº Regimento de Cavalaria Blindada" }
+		1 = { "%da Divisão de Blindada" }
+		2 = { "%da Divisão de Blindada" }
+		3 = { "%da Divisão de Blindada" }
+		4 = { "%da Divisão de Blindada" }
+		5 = { "%da Divisão de Blindada" }
+		6 = { "%da Divisão de Blindada" }
+		7 = { "%da Divisão de Blindada" }
+		8 = { "%da Divisão de Blindada" }
+		9 = { "%da Divisão de Blindada" }
+		10 = { "%da Divisão de Blindada" }
 	}
 }
 
@@ -204,7 +204,7 @@ BRA_PAR_01 =
 {
 	name = "Parachute Division"
 
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
+	for_countries = { BRA ANG GNB MZB }				# Also includes releasable Portuguese colonlies
 
 	can_use = { always = yes }
 
@@ -213,22 +213,22 @@ BRA_PAR_01 =
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { BRA_INF_01 }
 
-	fallback_name = "%dª Batalhão Pára-quedista"
+	fallback_name = "%da Divisão de Pára-Quedistas"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%dº Batalhão Pára-quedista" }
-		2 = { "%dº Batalhão Pára-quedista" }
-		3 = { "%dº Batalhão Pára-quedista" }
-		4 = { "%dº Batalhão Pára-quedista" }
-		5 = { "%dº Batalhão Pára-quedista" }
-		6 = { "%dº Batalhão Pára-quedista" }
-		7 = { "%dº Batalhão Pára-quedista" }
-		8 = { "%dº Batalhão Pára-quedista" }
-		9 = { "%dº Batalhão Pára-quedista" }
-		10 = { "%dº Batalhão Pára-quedista }
+		1 = { "%da Divisão de Pára-Quedistas" }
+		2 = { "%da Divisão de Pára-Quedistas" }
+		3 = { "%da Divisão de Pára-Quedistas" }
+		4 = { "%da Divisão de Pára-Quedistas" }
+		5 = { "%da Divisão de Pára-Quedistas" }
+		6 = { "%da Divisão de Pára-Quedistas" }
+		7 = { "%da Divisão de Pára-Quedistas" }
+		8 = { "%da Divisão de Pára-Quedistas" }
+		9 = { "%da Divisão de Pára-Quedistas" }
+		10 = { "%da Divisão de Pára-Quedistas" }
 	}
 }
 
@@ -236,7 +236,7 @@ BRA_MAR_01 =
 {
 	name = "Marine Division"
 
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
+	for_countries = { BRA ANG GNB MZB }				# Also includes releasable Portuguese colonlies
 
 	can_use = { always = yes }
 
@@ -245,22 +245,22 @@ BRA_MAR_01 =
 	# Number reservation system will tie to another group.
 	#link_numbering_with = { BRA_INF_01 }
 
-	fallback_name = "%dº Corpo de Fuzileiros Navais"
+	fallback_name = "%da Divisão Marinha"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%dº Corpo de Fuzileiros Navais" }
-		2 = { "%dº Corpo de Fuzileiros Navais" }
-		3 = { "%dº Corpo de Fuzileiros Navais" }
-		4 = { "%dº Corpo de Fuzileiros Navais" }
-		5 = { "%dº Corpo de Fuzileiros Navais" }
-		6 = { "%dº Corpo de Fuzileiros Navais" }
-		7 = { "%dº Corpo de Fuzileiros Navais" }
-		8 = { "%dº Corpo de Fuzileiros Navais" }
-		9 = { "%dº Corpo de Fuzileiros Navais" }
-		10 = { "%dº Corpo de Fuzileiros Navais" }
+		1 = { "%da Divisão Marinha" }
+		2 = { "%da Divisão Marinha" }
+		3 = { "%da Divisão Marinha" }
+		4 = { "%da Divisão Marinha" }
+		5 = { "%da Divisão Marinha" }
+		6 = { "%da Divisão Marinha" }
+		7 = { "%da Divisão Marinha" }
+		8 = { "%da Divisão Marinha" }
+		9 = { "%da Divisão Marinha" }
+		10 = { "%da Divisão Marinha" }
 	}
 }
 
@@ -268,7 +268,7 @@ BRA_MNT_01 =
 {
 	name = "Mountain Division"
 
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
+	for_countries = { BRA ANG GNB MZB }				# Also includes releasable Portuguese colonlies
 
 	can_use = { always = yes }
 
@@ -277,22 +277,22 @@ BRA_MNT_01 =
 	# Number reservation system will tie to another group.
 	link_numbering_with = { BRA_INF_01 }
 
-	fallback_name = "%dº Batalhão de Infantaria de Montanha"
+	fallback_name = "%da Divisão de Inf. de Montanha"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%dº Batalhão de Infantaria de Montanha" }
-		2 = { "%dº Batalhão de Infantaria de Montanha" }
-		3 = { "%dº Batalhão de Infantaria de Montanha" }
-		4 = { "%dº Batalhão de Infantaria de Montanha" }
-		5 = { "%dº Batalhão de Infantaria de Montanha" }
-		6 = { "%dº Batalhão de Infantaria de Montanha" }
-		7 = { "%dº Batalhão de Infantaria de Montanha" }
-		8 = { "%dº Batalhão de Infantaria de Montanha" }
-		9 = { "%dº Batalhão de Infantaria de Montanha" }
-		10 = { "%dº Batalhão de Infantaria de Montanha" }
+		1 = { "%da Divisão de Inf. de Montanha" }
+		2 = { "%da Divisão de Inf. de Montanha" }
+		3 = { "%da Divisão de Inf. de Montanha" }
+		4 = { "%da Divisão de Inf. de Montanha" }
+		5 = { "%da Divisão de Inf. de Montanha" }
+		6 = { "%da Divisão de Inf. de Montanha" }
+		7 = { "%da Divisão de Inf. de Montanha" }
+		8 = { "%da Divisão de Inf. de Montanha" }
+		9 = { "%da Divisão de Inf. de Montanha" }
+		10 = { "%da Divisão de Inf. de Montanha" }
 	}
 }
 
@@ -300,7 +300,7 @@ BRA_GAR_01 =
 {
 	name = "Garrison Division"
 
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
+	for_countries = { BRA ANG GNB MZB }				# Also includes releasable Portuguese colonlies
 
 	can_use = { always = yes }
 
@@ -309,114 +309,73 @@ BRA_GAR_01 =
 	# Number reservation system will tie to another group.
 	link_numbering_with = { BRA_INF_01 }
 
-	fallback_name = "%dº Batalhão de Guardas"
+	fallback_name = "%da Divisão de Infantaria"
 
 	# Names with numbers (only one number per entry). 
 	# It's okay to have gaps in numbering.
 	ordered =
 	{
-		1 = { "%dº Batalhão de Guardas" }
-		2 = { "%dº Batalhão de Guardas" }
-		3 = { "%dº Batalhão de Guardas" }
-		4 = { "%dº Batalhão de Guardas" }
-		5 = { "%dº Batalhão de Guardas" }
-		6 = { "%dº Batalhão de Guardas" }
-		7 = { "%dº Batalhão de Guardas" }
-		8 = { "%dº Batalhão de Guardas" }
-		9 = { "%dº Batalhão de Guardas" }
-		10 = { "%dº Batalhão de Guardas" }
-		11 = { "%dº Batalhão de Guardas" }
-		12 = { "%dº Batalhão de Guardas" }
-		13 = { "%dº Batalhão de Guardas" }
-		14 = { "%dº Batalhão de Guardas" }
-		15 = { "%dº Batalhão de Guardas" }
-		16 = { "%dº Batalhão de Guardas" }
-		17 = { "%dº Batalhão de Guardas" }
-		18 = { "%dº Batalhão de Guardas" }
-		19 = { "%dº Batalhão de Guardas" }
-		20 = { "%dº Batalhão de Guardas" }		
+		1 = { "%da Divisão de Infantaria" }
+		2 = { "%da Divisão de Infantaria" }
+		3 = { "%da Divisão de Infantaria" }
+		4 = { "%da Divisão de Infantaria" }
+		5 = { "%da Divisão de Infantaria" }
+		6 = { "%da Divisão de Infantaria" }
+		7 = { "%da Divisão de Infantaria" }
+		8 = { "%da Divisão de Infantaria" }
+		9 = { "%da Divisão de Infantaria" }
+		10 = { "%da Divisão de Infantaria" }
+		11 = { "%da Divisão de Infantaria" }
+		12 = { "%da Divisão de Infantaria" }
+		13 = { "%da Divisão de Infantaria" }
+		14 = { "%da Divisão de Infantaria" }
+		15 = { "%da Divisão de Infantaria" }
+		16 = { "%da Divisão de Infantaria" }
+		17 = { "%da Divisão de Infantaria" }
+		18 = { "%da Divisão de Infantaria" }
+		19 = { "%da Divisão de Infantaria" }
+		20 = { "%da Divisão de Infantaria" }
+	}		
 }
 
-BRA_ART_01 = 
-{
-	name = "Artillery Division"
-
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
-
-	can_use = { always = yes }
-
-	division_types = { "artillery" }
-
-	# Number reservation system will tie to another group.
-	link_numbering_with = { BRA_INF_01 }
-
-	fallback_name = "%dº Grupo de Artilharia de Campanha"
-
-	# Names with numbers (only one number per entry). 
-	# It's okay to have gaps in numbering.
-	ordered =
-	{
-		1 = { "%dº Grupo de Artilharia de Campanha" }
-		2 = { "%dº Grupo de Artilharia de Campanha" }
-		3 = { "%dº Grupo de Artilharia de Campanha" }
-		4 = { "%dº Grupo de Artilharia de Campanha" }
-		5 = { "%dº Grupo de Artilharia de Campanha" }
-		6 = { "%dº Grupo de Artilharia de Campanha" }
-		7 = { "%dº Grupo de Artilharia de Campanha" }
-		8 = { "%dº Grupo de Artilharia de Campanha" }
-		9 = { "%dº Grupo de Artilharia de Campanha" }
-		10 = { "%dº Grupo de Artilharia de Campanha" }
-		11 = { "%dº Grupo de Artilharia de Campanha" }
-		12 = { "%dº Grupo de Artilharia de Campanha" }
-		13 = { "%dº Grupo de Artilharia de Campanha" }
-		14 = { "%dº Grupo de Artilharia de Campanha" }
-		15 = { "%dº Grupo de Artilharia de Campanha" }
-		16 = { "%dº Grupo de Artilharia de Campanha" }
-		17 = { "%dº Grupo de Artilharia de Campanha" }
-		18 = { "%dº Grupo de Artilharia de Campanha" }
-		19 = { "%dº Grupo de Artilharia de Campanha" }
-		20 = { "%dº Grupo de Artilharia de Campanha" }		
-}
-
-BRA_LINF_01 = 
-{
-	name = "Light Infantry Division"
-
-	for_countries = { BRA ANG MZB }				# Also includes releasable Portuguese colonlies
-
-	can_use = { always = yes }
-
-	division_types = { "infantry" }
-
-	# Number reservation system will tie to another group.
-	link_numbering_with = { BRA_INF_01 }
-
-	fallback_name = "%dº Batalhão de Infantaria Leve"
-
-	# Names with numbers (only one number per entry). 
-	# It's okay to have gaps in numbering.
-	ordered =
-	{
-		1 = { "%dº Batalhão de Infantaria Leve" }
-		2 = { "%dº Batalhão de Infantaria Leve" }
-		3 = { "%dº Batalhão de Infantaria Leve" }
-		4 = { "%dº Batalhão de Infantaria Leve" }
-		5 = { "%dº Batalhão de Infantaria Leve" }
-		6 = { "%dº Batalhão de Infantaria Leve" }
-		7 = { "%dº Batalhão de Infantaria Leve" }
-		8 = { "%dº Batalhão de Infantaria Leve" }
-		9 = { "%dº Batalhão de Infantaria Leve" }
-		10 = { "%dº Batalhão de Infantaria Leve" }
-		11 = { "%dº Batalhão de Infantaria Leve" }
-		12 = { "%dº Batalhão de Infantaria Leve" }
-		13 = { "%dº Batalhão de Infantaria Leve" }
-		14 = { "%dº Batalhão de Infantaria Leve" }
-		15 = { "%dº Batalhão de Infantaria Leve" }
-		16 = { "%dº Batalhão de Infantaria Leve" }
-		17 = { "%dº Batalhão de Infantaria Leve" }
-		18 = { "%dº Batalhão de Infantaria Leve" }
-		19 = { "%dº Batalhão de Infantaria Leve" }
-		20 = { "%dº Batalhão de Infantaria Leve" }		
-}
-
-
+#BRA_FL_01 = 
+#{
+#	name = "Foreign Legion"
+#
+#	for_countries = { BRA }	
+#
+#	can_use = { always = yes }
+#
+#	division_types = { "infantry" }
+#
+#	# Number reservation system will tie to another group.
+#	#link_numbering_with = { BRA_INF_01 }
+#
+#	fallback_name = "%da Legião Estrangeira"
+#
+#	# Names with numbers (only one number per entry). 
+#	# It's okay to have gaps in numbering.
+#	ordered =
+#	{
+#		1 = { "%da Legião Estrangeira" }
+#		2 = { "%da Legião Estrangeira" }
+#		3 = { "%da Legião Estrangeira" }
+#		4 = { "%da Legião Estrangeira" }
+#		5 = { "%da Legião Estrangeira" }
+#		6 = { "%da Legião Estrangeira" }
+#		7 = { "%da Legião Estrangeira" }
+#		8 = { "%da Legião Estrangeira" }
+#		9 = { "%da Legião Estrangeira" }
+#		10 = { "%da Legião Estrangeira" }
+#		11 = { "%da Legião Estrangeira" }
+#		12 = { "%da Legião Estrangeira" }
+#		13 = { "%da Legião Estrangeira" }
+#		14 = { "%da Legião Estrangeira" }
+#		15 = { "%da Legião Estrangeira" }
+#		16 = { "%da Legião Estrangeira" }
+#		17 = { "%da Legião Estrangeira" }
+#		18 = { "%da Legião Estrangeira" }
+#		19 = { "%da Legião Estrangeira" }
+#		20 = { "%da Legião Estrangeira" }
+#	}		
+#}
