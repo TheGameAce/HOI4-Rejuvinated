@@ -18,7 +18,7 @@
 }
 division_template = {
 	name = "Regimento de Cavalaria"  		# Cavalry Division
-	division_names_group = BRA_CAV_01
+	division_names_group = BRA_ARM_01
 	
 	regiments = {
 		cavalry = { x = 0 y = 0 }
@@ -32,19 +32,19 @@ division_template = {
 	}
 }
 
-division_template = {
-	name = "Regimento de Cavalaria Blindada"  		# Cavalry Division
-	division_names_group = BRA_ARM_01
-	
-	regiments = {
-		light_armor = { x = 0 y = 0 }
-		light_armor = { x = 0 y = 1 }
-        light_armor = { x = 1 y = 0 }
-		light_armor = { x = 1 y = 1 }
-		motorized = { x = 2 y = 0 }
-        motorized = { x = 2 y = 1 }
-	}
-}
+#division_template = {
+#	name = "Regimento de Cavalaria Blindada"  		# Cavalry Division
+#	division_names_group = BRA_ARM_01
+#	
+#	regiments = {
+#		light_armor = { x = 0 y = 0 }
+#		light_armor = { x = 0 y = 1 }
+#        light_armor = { x = 1 y = 0 }
+#		light_armor = { x = 1 y = 1 }
+#		motorized = { x = 2 y = 0 }
+#        motorized = { x = 2 y = 1 }
+#	}
+#}
 
 units = {
 	##### Exército Brasileiro #####
@@ -158,23 +158,6 @@ units = {
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
 	}
-
-air_wings = {
-	### Aviação Militar -- Rio de Janiero
-	500 = {
-		# Fighter Air Group -- Boeing 256s
-		fighter_equipment_0 =  {
-			owner = "BRA" 
-			amount = 150
-		}
-	}
-	500 = {
-		# Bomber Air Group -- Boeing 256s
-		tac_bomber_equipment_0 =  {
-			owner = "BRA" 
-			amount = 150
-		}
-	}
 }
 
 
@@ -182,7 +165,7 @@ air_wings = {
 instant_effect = {
 	add_equipment_production = {
 		equipment = {
-			type = infantry_equipment_1
+			type = infantry_equipment_0
 			creator = "BRA"
 		}
 		requested_factories = 3
