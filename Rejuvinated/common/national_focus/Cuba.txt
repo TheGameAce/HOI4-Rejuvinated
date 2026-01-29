@@ -1061,7 +1061,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_imprison_batista
-		icon = GFX_focus_BEL_prisoner_king
+		icon = GFX_focus_RJ_CUB_imprison_batista
 		cost = 5
 		prerequisite = { focus = CUB_establish_the_dgi }
 		mutually_exclusive = { focus = CUB_continued_collaboration_with_batista }
@@ -1086,7 +1086,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_continued_collaboration_with_batista
-		icon = GFX_focus_generic_communist
+		icon = GFX_focus_RJ_CUB_batista_collaboration
 		cost = 5
 		prerequisite = { focus = CUB_establish_the_dgi }
 		mutually_exclusive = { focus = CUB_imprison_batista }
@@ -2124,7 +2124,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_deal_with_batista
-		icon = GFX_focus_generic_military_mission
+		icon = GFX_focus_RJ_CUB_deal_with_batista
 		cost = 5
 		prerequisite = { focus = CUB_secure_power }
 		relative_position_id = CUB_secure_power
