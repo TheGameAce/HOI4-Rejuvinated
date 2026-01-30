@@ -1,0 +1,14 @@
+leader_traits = {
+	transport_specialists = { #armored carriers, slightly buffed cap ships
+		random = no
+		equipment_bonus = {
+			convoy = {
+				build_cost_ic = -0.50
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
