@@ -218,6 +218,7 @@ focus_tree = {
                         is_major = yes
                         has_same_ideology = yes
                         has_capitulated = no
+                        is_faction_leader = yes
                         any_other_country = {
                             is_ally_with = PREV
                             has_same_ideology = yes
@@ -231,6 +232,7 @@ focus_tree = {
                         NOT = { tag = ROOT }
                         is_major = yes
                         has_same_ideology = yes
+                        is_faction_leader = yes
                         any_other_country = {
                             is_ally_with = PREV
                             has_same_ideology = yes
@@ -305,7 +307,7 @@ focus_tree = {
         x = 0
         y = 1
 
-        cost = 6
+        cost = 4.3
         prerequisite = {focus=HR_focus_generic_embrace_liberty_ideas}
         available = {
             has_government = democratic
@@ -342,9 +344,6 @@ focus_tree = {
         relative_position_id = HR_focus_generic_individual_consciousness
         x = 0
         y = 1
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
 
         cost = 4.3
         prerequisite = {focus = HR_focus_generic_individual_consciousness}
@@ -427,6 +426,7 @@ focus_tree = {
                         is_major = yes
                         has_same_ideology = yes
                         has_capitulated = no
+                        is_faction_leader = yes
                         any_other_country = {
                             is_ally_with = PREV
                             has_same_ideology = yes
@@ -437,10 +437,10 @@ focus_tree = {
 
                 every_possible_country = {
                     limit = {
-
                         NOT = { tag = ROOT }
                         is_major = yes
                         has_same_ideology = yes
+                        is_faction_leader = yes
                         any_other_country = {
                             is_ally_with = PREV
                             has_same_ideology = yes
@@ -472,7 +472,7 @@ focus_tree = {
         x = -1
         y = 1
         
-        cost = 4.3
+        cost = 7.2
         prerequisite = {
             focus = HR_focus_generic_guardians_of_homeland
             focus = HR_focus_generic_soldiers_of_world_revolution
@@ -500,7 +500,7 @@ focus_tree = {
         x = 0
         y = 1
 
-        cost = 4
+        cost = 4.3
         prerequisite = {focus = HR_focus_generic_our_destiny}
         available = {
             has_government = neutrality 
@@ -519,19 +519,25 @@ focus_tree = {
         x = -1
         y = 1
 
+        cost = 4.3
         prerequisite = {focus = HR_focus_generic_the_order}
         available = {
             has_government = neutrality
             neutrality > 0.5
 
-            NOR = {
-                any_other_country = {
-                    is_ally_with = ROOT
-                    OR = {
-                        has_government = fascism
-                        has_government = communism
-                    }
+            OR = {
+                is_in_faction = no
+                NOT = {
+                    any_other_country = {
+                        NOT = { is_ally_with = ROOT }
+                        OR = {
+                            has_government = fascism
+                            has_government = communism
+                        }
+                    } 
                 }
+            }
+            NOT = {
                 has_idea_with_trait = fascist_demagogue
                 has_idea_with_trait = communist_revolutionary
             }
@@ -553,7 +559,7 @@ focus_tree = {
         x = 1
         y = 1
 
-        cost = 4
+        cost = 4.3
         prerequisite = {focus = HR_focus_generic_no_red_no_brown}
         
         completion_reward = {
@@ -571,7 +577,7 @@ focus_tree = {
         x = 1
         y = 1
 
-        cost = 4
+        cost = 4.3
         prerequisite = {focus = HR_focus_generic_national_identity}
 
         available = {
@@ -580,7 +586,10 @@ focus_tree = {
         }
 
         completion_reward = {
-            add_ideas = HR_idea_generic_regime_of_preservation
+            swap_ideas = {
+                remove_idea = HR_idea_generic_national_identity
+                add_idea = HR_idea_generic_regime_of_preservation
+            }
         }
     }
     
@@ -591,7 +600,7 @@ focus_tree = {
         x = -1
         y = 1
 
-        cost = 6
+        cost = 11.5
         prerequisite = {focus = HR_focus_generic_regime_of_preservation}
 
         completion_reward = {
@@ -606,7 +615,7 @@ focus_tree = {
         x = 0
         y = 1
 
-        cost = 10
+        cost = 11.5
         prerequisite = {focus = HR_focus_generic_sweat_blood_and_tears}
 
         completion_reward = {
@@ -747,29 +756,39 @@ focus_tree = {
 
 
         completion_reward = {
-            set_temp_variable = { requests = 0 }
-
-            every_possible_country = {
+            if = {
                 limit = {
-                    #maybe?
-                    #check_variable = { ROOT.requests < 2 }
-
-                    is_major = yes
-                    has_same_ideology = yes
                     any_other_country = {
-                        is_ally_with = PREV
+                        is_major = yes
                         has_same_ideology = yes
+                        has_capitulated = no
+                        is_faction_leader = yes
+                        any_other_country = {
+                            is_ally_with = PREV
+                            has_same_ideology = yes
+                            NOT = { tag = ROOT }
+                        }
                     }
                 }
 
-                add_to_variable = { ROOT.requests = 1 }
-                country_event = generic.2
-            }
+                every_possible_country = {
+                    limit = {
+                        NOT = { tag = ROOT }
+                        is_major = yes
+                        has_same_ideology = yes
+                        is_faction_leader = yes
+                        any_other_country = {
+                            is_ally_with = PREV
+                            has_same_ideology = yes
+                            NOT = { tag = ROOT }
+                        }
+                    }
 
-            if = {
-                limit = {
-                    check_variable = { requests = 0 }
+                    ROOT = { add_to_variable = { requests = 1 } }
+                    country_event = generic.2
                 }
+            }
+            else = {
                 custom_effect_tooltip = HR_focus_generic_against_common_foes_united_tt_no_alliances
                 add_political_power = 100
             }
