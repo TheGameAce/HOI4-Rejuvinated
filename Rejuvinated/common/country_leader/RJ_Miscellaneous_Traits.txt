@@ -74,4 +74,33 @@ leader_traits = {
 		random = no
 		production_speed_buildings_factor = 0.08
 	}
+
+	rj_nazi_sympathizer = {
+		random = no
+		fascism_acceptance = 75
+		fascism_drift = 0.02
+		ai_strategy = {
+			type = befriend
+			id = "GER"
+			value = 200
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				GER = {
+					NOT = {
+						has_government = fascism
+					}
+				}
+				factor = 0
+			}
+		}
+	}
+
+	white_nationalist = {
+		random = no
+		stability_factor = -0.15
+		autonomy_gain = 0.5
+	}
 }
