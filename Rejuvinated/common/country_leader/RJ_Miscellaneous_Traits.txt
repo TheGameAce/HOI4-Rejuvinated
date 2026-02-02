@@ -124,4 +124,11 @@ leader_traits = {
 		defensive_war_stability_factor = 0.20
 		enemy_justify_war_goal_time = 0.25
 	}
+
+	RJ_military_modernizer = {
+		random = no
+		production_speed_arms_factory_factor = 0.15
+		ai_desired_divisions_factor = 0.25
+		land_doctrine_cost_factor = -0.25
+	}
 }
