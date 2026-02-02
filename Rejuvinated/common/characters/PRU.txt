@@ -5,6 +5,9 @@ characters={
 			civilian={
 				large="GFX_Portrait_peru_oscar_benavides"
 			}
+			army = {
+				large="GFX_Portrait_peru_oscar_benavides"
+			}
 		}
 		country_leader={
 			ideology = despotism
@@ -13,6 +16,15 @@ characters={
 			traits = {
 				military_officer RJ_military_modernizer
 			}
+		}
+
+		field_marshal = {
+			traits = { politically_connected brilliant_strategist jungle_rat war_hero adaptable }
+			skill = 6
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
 		}
 	}
 	PRU_sebastián_lynch={
