@@ -180,7 +180,7 @@ characters={
 			}
 			traits = { fascist_demagogue }
 			ai_will_do = {
-				factor = 1.000
+				factor = 3
 			}
 		}
 		
@@ -202,7 +202,7 @@ characters={
 			}
 			traits = { minister_of_commerce }
 			ai_will_do = {
-				factor = 1.000
+				factor = 1
 			}
 			research_bonus = {
 			industry = 0.10
@@ -227,7 +227,7 @@ characters={
 			}
 			traits = { dedicated_marxist }
 			ai_will_do = {
-				factor = 1.000
+				factor = 1
 			}
 			available = {
 				has_government = communism
@@ -259,6 +259,9 @@ characters={
 			}
 			
 			traits = { revolutionary_broadcaster }
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 
@@ -280,6 +283,9 @@ characters={
 			}
 			
 			traits = { editor }
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 
@@ -299,6 +305,9 @@ characters={
 			}
 			traits  = {	minister_of_public_works }
 			cost = 150
+			ai_will_do = {
+				factor = 2
+			}
 		}
 	}
 
@@ -321,6 +330,9 @@ characters={
 			available = {
 				has_completed_focus = CUB_oppose_the_presidency
 			}
+			ai_will_do = {
+				factor = 3
+			}
 		}
 	}
 
@@ -340,6 +352,9 @@ characters={
 			}
 			traits  = {	democratic_reformer }
 			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 
@@ -359,6 +374,9 @@ characters={
 			}
 			traits  = {	minister_of_education }
 			cost = 150
+			ai_will_do = {
+				factor = 2
+			}
 		}
 	}
 
@@ -378,6 +396,9 @@ characters={
 			}
 			traits  = {	minister_of_agriculture }
 			cost = 150
+			ai_will_do = {
+				factor = 2
+			}
 		}
 	}
 
@@ -397,6 +418,9 @@ characters={
 			}
 			traits  = {	head_of_intelligence }
 			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 
@@ -419,6 +443,9 @@ characters={
 			}
 			traits  = {	mobster }
 			cost = 150
+			ai_will_do = {
+				factor = 10
+			}
 		}
 	}
 
@@ -449,7 +476,7 @@ characters={
 				}
 				cost = 100
 				ai_will_do = {
-					factor = 1.000
+					factor = 1
 				}
 		}
 		navy_leader={
@@ -483,7 +510,7 @@ characters={
 				}
 				cost = 150
 				ai_will_do = {
-					factor = 1.000
+					factor = 1
 				}
 		}
 		navy_leader={
@@ -517,7 +544,7 @@ characters={
 				}
 				cost = 100
 				ai_will_do = {
-					factor = 1.000
+					factor = 1
 				}
 		}
 		navy_leader={
@@ -552,7 +579,7 @@ characters={
 				army_chief_offensive_3
 			}
 			ai_will_do = {
-				factor = 1.000
+				factor = 1
 			}
 			available = {
 				NOT = {
@@ -593,7 +620,7 @@ characters={
 				}
 				cost = 100
 				ai_will_do = {
-					factor = 1.000
+					factor = 1
 				}
 		}		
 		corps_commander = {
@@ -627,7 +654,7 @@ characters={
 				}
 				cost = 100
 				ai_will_do = {
-					factor = 1.000
+					factor = 1
 				}
 		}		
 		corps_commander = {
@@ -661,7 +688,7 @@ characters={
 			}
 			cost = 200
 			ai_will_do = {
-				factor = 1.000
+				factor = 1
 			}
 		}		
 		corps_commander = {
@@ -695,7 +722,7 @@ characters={
 			}
 			cost = 150
 			ai_will_do = {
-				factor = 1.000
+				factor = 1
 			}
 		}		
 		corps_commander = {
@@ -729,7 +756,7 @@ characters={
 			}
 			cost = 150
 			ai_will_do = {
-				factor = 1.000
+				factor = 1
 			}
 		}		
 		corps_commander = {
@@ -763,7 +790,7 @@ characters={
 			}
 			cost = 150
 			ai_will_do = {
-				factor = 1.000
+				factor = 1
 			}
 			available = {
 				NOT = {
@@ -772,11 +799,11 @@ characters={
 			}
 		}		
 		corps_commander = {
-			traits = { career_officer old_guard }
-			skill = 1
-			attack_skill = 1
+			traits = { career_officer }
+			skill = 3
+			attack_skill = 3
 			defense_skill = 2
-			planning_skill = 1
+			planning_skill = 2
 			logistics_skill = 2
 		}
 	}
@@ -802,7 +829,7 @@ characters={
 				}
 				cost = 125
 				ai_will_do = {
-					factor = 1.000
+					factor = 1
 				}
 		}
 	}
@@ -825,6 +852,9 @@ characters={
 			}
 			traits  = {	secretary_of_war_and_navy }
 			cost = 175
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 }
