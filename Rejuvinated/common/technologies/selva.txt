@@ -8,11 +8,11 @@ technologies = {
 		allow = {
 			always = no
 		}
-
 		
-		infantry = {
+		category_all_infantry = {
 			jungle = {
-				army_org = 10
+				defence = 0.3
+				attack = 0.1
 				movement = 0.5
 			}
 		}
