@@ -5607,7 +5607,7 @@ focus_tree = {
 		cost = 10
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			POR = { country_event = bra.20 days = 6 }
+			POR = { country_event = { id = bra.20 days = 6 } }
 			hidden_effect = {
 				news_event = { id = lar_news.25 days = 3 random_days = 5 }
 			}	
@@ -6186,7 +6186,7 @@ focus = {
 				}
 			}
 			set_rule = { can_create_factions = yes }
-			else_if = {
+			else = {
 				limit = { 
 					NOT = { country_exists = BRA }
 				}

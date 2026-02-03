@@ -32,19 +32,19 @@ division_template = {
 	}
 }
 
-#division_template = {
-#	name = "Regimento de Cavalaria Blindada"  		# Cavalry Division
-#	division_names_group = BRA_ARM_01
-#	
-#	regiments = {
-#		light_armor = { x = 0 y = 0 }
-#		light_armor = { x = 0 y = 1 }
-#        light_armor = { x = 1 y = 0 }
-#		light_armor = { x = 1 y = 1 }
-#		motorized = { x = 2 y = 0 }
-#        motorized = { x = 2 y = 1 }
-#	}
-#}
+division_template = {
+	name = "Regimento de Cavalaria Blindada"  		# Cavalry Division
+	division_names_group = BRA_ARM_01
+	
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+        motorized = { x = 2 y = 1 }
+	}
+}
 
 units = {
 	##### Exército Brasileiro #####

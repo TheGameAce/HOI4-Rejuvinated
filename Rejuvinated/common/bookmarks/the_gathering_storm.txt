@@ -778,20 +778,16 @@ bookmarks = {
 		BRA = {
 			minor = yes
 			history = BRA_GATHERING_STORM_DESC
-			ideology = democratic
-			available = { has_dlc = "Trial of Allegiance" }
+			ideology = neutrality
 			ideas = {
-				#BRA_undiversified_economy_modifier
-				#SMB_MTG_naval_arms_race_legacy
-				#BRA_aftermath_of_the_coup
-				BRA_undiversified_economy_modifier_dummy_idea
-				BRA_weak_government_dummy_idea
-				BRA_aftermath_of_the_coup_dummy_idea
+				bra_antropofagia
+				bra_1930
+				bra_rural_elite
 			}
 			focuses = {
-				BRA_coffee_crisis_aftermath
-				BRA_tribunal_de_seguranca_nacional
-				BRA_end_the_state_of_emergency
+				bra_monarquia_focus
+				bra_populism
+				bra_federalism
 			}
 		}
 		CHL = {
