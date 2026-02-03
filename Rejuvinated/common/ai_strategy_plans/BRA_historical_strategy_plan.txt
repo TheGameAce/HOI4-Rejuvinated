@@ -1,0 +1,118 @@
+BRA_historical_plan = {
+	name = "Brazilian Historical Plan"
+	desc = ""
+
+	allowed = {
+		original_tag = BRA
+	}
+	enable = {
+		OR = {
+			AND = {
+				is_historical_focus_on = yes 
+				has_game_rule = {
+					rule = BRA_AI_BEHAVIOR
+					option = DEFAULT
+				}
+			}
+			has_country_flag = BRA_AI_RANDOM_HISTORICAL
+			has_game_rule = {
+				rule = BRA_ai_behavior
+				option = HISTORICAL
+			}
+		}	
+	}
+	abort = {
+		is_subject = yes 
+		has_war = no 
+	}
+
+	ai_national_focuses = {
+		
+		#1936
+		bra_national_security_law
+		bra_a_voz_do_brasil
+		bra_modernizacao_armadas
+		bra_polaca
+		bra_CTEF_CLT
+		bra_populism
+		bra_ana_guerra_civil
+		bra_pm
+		bra_ana_mineira
+		bra_modernizacao_marinha
+		bra_almirantado
+		bra_itabira
+
+		#1937
+		bra_quereismo
+		bra_equip_ind
+		bra_estado_novo
+		bra_cosipa
+		bra_sub_priv
+		
+		
+		#1938
+		bra_patriotic_effort
+		bra_technical_schools
+		bra_viacao
+		bra_obras_exterior
+		bra_eng_mart
+		bra_IRFM
+		bra_cmsp
+		bra_art
+		bra_federal_institutes
+		bra_federal_universities
+
+		#1939
+		
+		bra_tiro_de_guerra
+		bra_diplomacia
+		bra_heal_wounds
+		bra_entreguismo
+		bra_barragem
+
+		#1940
+
+		bra_amigo_eua
+		bra_acogerdau
+		bra_territoriosfederais
+		bra_modernizacao_aerea
+		
+		#1941
+		
+		bra_feb
+
+		#1942
+		
+		#1943
+		
+		#1944
+
+		#1953
+		bra_brasilia
+		
+		
+		
+	}
+
+	focus_factors = {
+		
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
