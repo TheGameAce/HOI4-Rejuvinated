@@ -47,8 +47,6 @@ BRA_amrj_organization = {
 	include = generic_escort_ship_organization
 	icon = GFX_idea_BRA_arsenal_de_marinha
 	allowed = {
-		has_dlc = "Trial of Allegiance"
-		# TODO_JUNO: Add correct DLC check!
 		tag = BRA 
 	}
 
@@ -84,8 +82,6 @@ BRA_embraer_organization = {
 	include = generic_general_aircraft_organization
 	icon = GFX_idea_BRA_embraer
 	allowed = {	
-		has_dlc = "Trial of Allegiance"
-		# TODO_JUNO: Add correct DLC check!
 		tag = BRA 
 	}
 
@@ -99,7 +95,7 @@ BRA_embraer_organization = {
 		ELSE = {
 			FROM = {
 				OR = {
-					has_completed_focus = SMB_establish_aircraft_industry
+					has_completed_focus = bra_caca
 				}
 			}
 		}
@@ -124,8 +120,6 @@ BRA_rossi_organization = {
 	include = generic_infantry_equipment_organization
 	icon = GFX_idea_BRA_rossi
 	allowed = { 
-
-		has_dlc = "Trial of Allegiance"
 		tag = BRA
 	}
 }
@@ -134,8 +128,6 @@ BRA_cbc_organization = {
 	include = generic_support_equipment_organization
 	#icon = GFX_idea_generic_infantry_equipment_manufacturer_1
 	allowed = { 
-
-		has_dlc = "Trial of Allegiance"
 		tag = BRA
 	}
 }
@@ -144,7 +136,6 @@ BRA_ddam_organization = {
 	include = generic_artillery_organization
 	#icon = GFX_idea_generic_infantry_equipment_manufacturer_1
 	allowed = { 
-		has_dlc = "Trial of Allegiance"
 		tag = BRA
 	}
 }
@@ -153,8 +144,6 @@ BRA_fnm_organization = {
 	include = generic_motorized_mechanized_organization
 	icon = GFX_idea_BRA_fnm
 	allowed = { 
-
-		has_dlc = "Trial of Allegiance"
 		tag = BRA
 	}
 	available = { 
@@ -166,10 +155,8 @@ BRA_fnm_organization = {
 		}
 		ELSE = {
 			FROM = { 
-				OR = { 
-					has_completed_focus = SMB_motorized 
-					has_completed_focus = BRA_fabrica_nacional_de_motores
-				}
+				has_completed_focus = bra_mot
+			}
 		}
 	}
 }
