@@ -1,0 +1,26 @@
+state={
+	id=1107
+	name="STATE_1107"
+	manpower=750000 
+	#according to google might be wrong
+	state_category = town
+	resources={
+	}
+	history={
+		owner = SMR
+		add_core_of = MOR
+		add_core_of = RIF
+		add_core_of = SMR
+		victory_points = {
+			12087 1
+		}
+		buildings = {
+			air_base = 3
+		}
+	}
+	provinces = {
+		4199 7215 10113 12087
+	}
+
+	local_supplies = 0.0 
+}
