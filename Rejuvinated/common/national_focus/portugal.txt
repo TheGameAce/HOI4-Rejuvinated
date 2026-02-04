@@ -6177,6 +6177,7 @@ focus = {
 		completion_reward = {
 			remove_ideas = POR_unstable_monarchy
 			add_ideas = POR_the_portuguese_empire
+			set_rule = { can_create_factions = yes }
 			if = {
 				limit = {
 					country_exists = BRA
@@ -6185,8 +6186,7 @@ focus = {
 					country_event = { id = lar_portugal_promote_monarchist_cause.2 hours = 6 }
 				}
 			}
-			set_rule = { can_create_factions = yes }
-			else = {
+			else_if = {
 				limit = { 
 					NOT = { country_exists = BRA }
 				}
@@ -6202,6 +6202,9 @@ focus = {
 					}
 				}
 				custom_effect_tooltip = POR_kingdom_reunited_tooltip_tt				
+			}
+			else = {
+				always = no
 			}
 		}		
 	}
