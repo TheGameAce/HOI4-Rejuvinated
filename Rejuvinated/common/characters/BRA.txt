@@ -1186,4 +1186,17 @@ characters = {
 			legacy_id=-1
 		}
 	}
+	
+	#required for TOA chile for the moment
+	BRA_indigenous_council = { 
+		name = BRA_indigenous_council
+		portraits = {
+			civilian = {
+				large = GFX_portrait_indigenous_brazil_council
+				#small = GFX_portrait_AFA_mohamed_yayyo_small
+			}
+			
+		}
+		
+	}
 }
