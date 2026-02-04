@@ -1,0 +1,327 @@
+ideas = {
+	hidden_ideas = {
+		ICE_travel_guide = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+			
+			}
+
+			removal_cost = -1
+			research_bonus = {
+				air_equipment = 0.15
+			}
+
+			modifier = {
+				
+			}
+		}
+		
+	}
+	country = {
+		ICE_general_strike = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				
+			}
+			on_remove = {
+				add_timed_idea = {
+					idea = ICE_dissent_in_the_working_class
+					days = 365
+				}
+			}
+
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.5
+				industrial_capacity_factory = -0.5
+				production_speed_buildings_factor = -0.5
+			}
+		}
+		ICE_international_brigades = {
+			allowed = {
+				always = no
+			}
+			picture = MEX_revolutionary_army
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				
+			}
+			rule = {
+				can_send_volunteers = yes 
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				weekly_manpower = 50 #This is still 10% the size of a military spirit they can get as communist anyway...
+				send_volunteer_divisions_required = -2
+				send_volunteer_size = 4
+			}
+		}
+
+		ICE_dissent_in_the_working_class = {
+			allowed = {
+				always = no
+			}
+			picture = ICE_general_strike
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.02
+				political_power_factor = -0.05
+				stability_weekly = -0.01
+			}
+		}
+
+		ICE_christian_x = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				neutrality_drift = 0.01
+				stability_factor = -0.1
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		ICE_the_icelandic_economy_modifier_fake_idea = {
+			name = ICE_the_icelandic_economy_modifier
+			allowed = {
+				always = no
+			}
+
+			picture = tur_balkan_central_bank_wealthy_greece
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.2
+				production_factory_max_efficiency_factor = -0.2
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.1
+				consumer_goods_factor = 0.1
+				production_speed_buildings_factor = -0.1
+
+			}
+		}
+
+		ICE_christian_x_worse = {
+			name = ICE_christian_x
+			picture = ICE_christian_x
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				NOT = { has_government = communism }
+				NOT = { has_government = fascism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.15
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		ICE_knud_i = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				NOT = { has_government = communism }
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_factor = -0.2
+				army_core_defence_factor = 0.1
+				drift_defence_factor = 0.2
+			}
+		}
+	}
+	industrial_concern = {
+		ICE_esso = {
+			
+			name = ICE_esso
+			allowed = {
+				original_tag = ICE
+				has_dlc = "Arms Against Tyranny"
+			}
+			available = {
+				has_completed_focus = ICE_american_investments
+			}
+
+			
+			research_bonus = {
+				industry = 0.05
+				synth_resources = 0.15
+			}
+			
+			traits = { refinery_concern }
+			
+			modifier = {
+				production_oil_factor = 0.1
+			}
+		}
+		ICE_eimskip = {
+			
+			allowed = {
+				original_tag = ICE
+				has_dlc = "Arms Against Tyranny"
+			}
+			available = {
+				has_completed_focus = ICE_develop_icelandic_shipping
+			}
+
+			equipment_bonus = {
+				convoy = {
+					build_cost_ic = -0.05
+					instant = yes
+				}
+			}
+
+			
+			research_bonus = {
+				#industry = 0.05
+			}
+			
+			traits = { ICE_shipping_concern }
+			
+			modifier = {
+				repair_speed_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+			}
+
+		}
+		ICE_vifilfell = {
+			allowed = {
+				original_tag = ICE
+				has_dlc = "Arms Against Tyranny"
+			}
+			available = {
+				has_completed_focus = ICE_american_investments
+			}
+
+			
+			research_bonus = {
+
+			}
+			
+			traits = { industrial_concern }
+			
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = -0.15
+			}
+		}
+
+		ICE_siemens = {
+			picture = siemens
+			allowed = {
+				original_tag = ICE
+				has_dlc = "Arms Against Tyranny"
+			}
+			available = {
+				has_completed_focus = ICE_research_cooperation
+			}
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}
+		ICE_landsvirkjun = {
+			picture = generic_electronics_concern_3
+			allowed = {
+				original_tag = ICE
+				has_dlc = "Arms Against Tyranny"
+			}
+			available = {
+				has_completed_focus = ICE_state_owned_industry
+			}
+			
+			research_bonus = {
+				electronics = 0.10
+				industry = 0.05
+			}
+			
+			traits = { electronics_concern }
+		}
+		ICE_aalborg_portland = {
+			name = DEN_aalborg_portland
+			picture = generic_industrial_concern_2
+			
+			allowed = {
+				original_tag = ICE
+				has_dlc = "Arms Against Tyranny"
+			}
+
+			visible = {
+				
+			}
+
+			available = {
+				has_completed_focus = ICE_industrial_cooperation
+			}
+			
+			research_bonus = {
+				excavation_tech = 0.15
+			}
+			
+			traits = { construction_company }
+		}	
+	}
+}
