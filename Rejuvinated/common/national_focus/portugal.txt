@@ -15,7 +15,6 @@ focus_tree = {
 		modifier = {
 			add = 10
 			tag = POR
-			has_dlc = "La Resistance"
 		}
 	}
 	
@@ -1716,7 +1715,7 @@ focus_tree = {
 				name = POR_arsenal_do_alfeite
 			    bonus = 1.0
 			    uses = 1
-			    category = ca_tech	   
+			    category = cl_tech	   
 			}
 			add_tech_bonus = {
 				name = POR_arsenal_do_alfeite
@@ -1762,7 +1761,7 @@ focus_tree = {
 				name = POR_national_cruiser_production
 			    bonus = 1.0
 			    uses = 1
-			    category = ca_tech	   
+			    category = cl_tech	   
 			}
 			add_tech_bonus = {
 				name = POR_national_cruiser_production
@@ -6204,7 +6203,6 @@ focus = {
 				custom_effect_tooltip = POR_kingdom_reunited_tooltip_tt				
 			}
 			else = {
-				always = no
 			}
 		}		
 	}
