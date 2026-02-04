@@ -1,46 +1,42 @@
+
 state={
-	id=230
-	name="STATE_230"
+	id=206
+	name="STATE_206"
+	manpower =  1163163
+	
+	state_category = city
 
 	history={
 		owner = SOV
 		victory_points = {
-			12320 10
+			11370 35
 		}
 		victory_points = {
-			12441 2
+			9289 7
 		}
 		victory_points = {
-			12380 1
+			3267 3
 		}
 		victory_points = {
-			6997 1
+			294 1
 		}
-		
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3 #was: 5
 			industrial_complex = 2
-			air_base = 2
-
+			air_base = 8
 		}
 		add_core_of = SOV
-		add_core_of = ARM
+		add_core_of = BLR
 		1939.1.1 = {
 			buildings = {
 				industrial_complex = 3
-
 			}
-
 		}
-
 	}
 
 	provinces={
-		3564 4660 6642 6997 11708 12320 12380 12441 12450 13123 
+		216 294 342 3267 3378 6292 9289 11216 11322 11370 
 	}
-	manpower=1250082
-	buildings_max_level_factor=1.000
-	state_category=town
 
-	local_supplies=0.0 
+	local_supplies=5.0 
 }
