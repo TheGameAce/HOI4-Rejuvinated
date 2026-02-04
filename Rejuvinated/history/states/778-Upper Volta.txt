@@ -1,25 +1,26 @@
+
 state={
-	id=779
-	name="STATE_779" # Ivory Coast
-	manpower = 3100734
+	id=778
+	name="STATE_778" # Upper Volta
+	manpower = 3186184
 	
 	state_category = pastoral
 	history={
 		owner = FRA
-		add_core_of = IVO
+		add_core_of = VOL
 		victory_points = {
-			10803 2
+			10836 3
+		}
+		victory_points = {
+			8071 1
 		}
 		buildings = {
 			infrastructure = 2
-			10803 = {
-				naval_base = 1
-			}
 		}
 	}
 
 	provinces={
-		5013 5070 8065 8122 10762 10803
+		2001 7950 7983 8071 10836 12851
 	}
 
 	local_supplies=1.0 
