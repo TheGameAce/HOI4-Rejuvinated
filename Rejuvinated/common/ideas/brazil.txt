@@ -6,7 +6,7 @@ ideas = {
 		######################################### Starting Ideas ################################################
 		#########################################################################################################
 
-		bra_antropofagia = {
+		bra_antropofagia = { #Culturual Anthropophagy Starting Idea
 			
 			allowed = {
 				original_tag = BRA
@@ -22,7 +22,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.15
 				foreign_subversive_activites = -0.25
 			}
 		}
@@ -541,20 +541,17 @@ ideas = {
 				always = yes
 			}
 
-			picture = BRA_bandeirantes_art
+			picture = BRA_bandeirantes
 
 			removal_cost = -1
 			
 			modifier = {
-				attrition = -0.2
+				attrition = -0.15
 				out_of_supply_factor = -0.05
-				acclimatization_hot_climate_gain_factor = 1
+				acclimatization_hot_climate_gain_factor = 0.15
 				recon_factor = 0.05
-			}
-			equipment_bonus = {
-				infantry_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
 			}
 		}
 
@@ -569,7 +566,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = BRA_bandeirantes_art
+			picture = BRA_bandeirantes
 
 			removal_cost = -1
 			
@@ -602,7 +599,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = BRA_bandeirantes_mot
+			picture = BRA_bandeirantes
 
 			removal_cost = -1
 			
@@ -631,7 +628,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = BRA_bandeirantes_mot
+			picture = BRA_bandeirantes
 
 			removal_cost = -1
 			
@@ -669,7 +666,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.10
 				foreign_subversive_activites = -0.25
 				democratic_drift = 0.05
 			}
@@ -691,10 +688,10 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.05
 				foreign_subversive_activites = -0.25
-				democratic_drift = 0.05
-				political_power_gain = 0.25
+				democratic_drift = 0.08
+				political_power_gain = 0.10
 			}
 		}
 
@@ -714,10 +711,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
 				foreign_subversive_activites = -0.25
-				democratic_drift = 0.05
-				political_power_gain = 0.25
+				democratic_drift = 0.08
+				political_power_gain = 0.15
 				conscription = 0.02
 				training_time_factor = -0.05
 				supply_consumption_factor = -0.05
@@ -740,7 +736,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.10
 				foreign_subversive_activites = -0.25
 				communism_drift = 0.05
 			}
@@ -762,10 +758,10 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.05
 				foreign_subversive_activites = -0.25
-				communism_drift = 0.05
-				political_power_gain = 0.25
+				communism_drift = 0.08
+				political_power_gain = 0.10
 			}
 		}
 
@@ -785,10 +781,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
 				foreign_subversive_activites = -0.25
-				communism_drift = 0.05
-				political_power_gain = 0.25
+				communism_drift = 0.08
+				political_power_gain = 0.15
 				conscription = 0.05
 				training_time_factor = -0.05
 				supply_consumption_factor = -0.05
@@ -811,7 +806,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.10
 				foreign_subversive_activites = -0.25
 				neutrality_drift = 0.05
 			}
@@ -833,10 +828,10 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.05
 				foreign_subversive_activites = -0.25
-				neutrality_drift = 0.05
-				political_power_gain = 0.25
+				neutrality_drift = 0.08
+				political_power_gain = 0.10
 			}
 		}
 
@@ -856,10 +851,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
 				foreign_subversive_activites = -0.25
-				neutrality_drift = 0.05
-				political_power_gain = 0.25
+				neutrality_drift = 0.08
+				political_power_gain = 0.15
 				conscription = 0.02
 				training_time_factor = -0.05
 				supply_consumption_factor = -0.05
@@ -882,7 +876,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.10
 				foreign_subversive_activites = -0.25
 				fascism_drift = 0.05
 			}
@@ -904,10 +898,10 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.05
 				foreign_subversive_activites = -0.25
-				fascism_drift = 0.05
-				political_power_gain = 0.25
+				fascism_drift = 0.08
+				political_power_gain = 0.10
 			}
 		}
 
@@ -927,10 +921,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
 				foreign_subversive_activites = -0.25
-				fascism_drift = 0.05
-				political_power_gain = 0.25
+				fascism_drift = 0.08
+				political_power_gain = 0.15
 				conscription = 0.05
 				training_time_factor = -0.05
 				supply_consumption_factor = -0.05
@@ -1094,7 +1087,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.10
 				foreign_subversive_activites = -0.25
 				stability_factor = 0.05
 				war_support_factor = 0.1
@@ -1122,7 +1115,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				min_export = 0.2
+				min_export = 0.10
 				foreign_subversive_activites = -0.25
 				stability_factor = 0.05
 				war_support_factor = 0.1

@@ -17,12 +17,12 @@ focus_tree = {
 		icon = GFX_focus_bra_national_security_law
 		x = 1
 		y = 0
-		cost = 1
+		cost = 5
 		ai_will_do = {
 			factor = 320
 		}
 		completion_reward = {
-			add_political_power = 75
+			add_stability = 0.10
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_proclamacao_so_1 } }
 		}
 	}
@@ -61,7 +61,7 @@ focus_tree = {
 		icon = GFX_focus_bra_a_voz_do_brasil
 		x = 5
 		y = 0
-		cost = 1
+		cost = 5
 		ai_will_do = {
 			factor = 320
 		}
@@ -866,11 +866,11 @@ focus_tree = {
 		icon = GFX_focus_bra_ministerio
 		prerequisite = { focus = bra_more_federal_universities }
 		available = {
-			num_of_factories > 60
+			
 		}
 		x = 9
 		y = 5
-		cost = 20
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
@@ -987,7 +987,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 320
 		}
-		cost = 1
+		cost = 10
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_1930 add_idea = bra_1930_2 }
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_proclamacao_so_2 } }
@@ -1001,7 +1001,7 @@ focus_tree = {
 		prerequisite = { focus = bra_pm }
 		x = 15
 		y = 1
-		cost = 1
+		cost = 5
 		ai_will_do = {
 			factor = 40
 		}
@@ -1073,12 +1073,12 @@ focus_tree = {
 		prerequisite = { focus = bra_modernizacao_armadas }
 		x = 12
 		y = 1
-		cost = 1
+		cost = 5
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
-			navy_experience = 25
+			navy_experience = 50
 			hidden_effect = {
 				create_navy_leader = {
 					name = "José Isaías de Noronha"
@@ -1153,12 +1153,12 @@ focus_tree = {
 		prerequisite = { focus = bra_pm }
 		x = 18
 		y = 1
-		cost = 1
+		cost = 5
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
-		air_experience = 25
+		air_experience = 50
 			add_ace = {
 				name = "Eduardo"
 				surname = "Gomes"
@@ -1302,7 +1302,6 @@ focus_tree = {
 			factor = 40
 		}
 		completion_reward = {
-			air_experience = 25
 			add_tech_bonus = {
 				name = BRA_air_doctrine
 				bonus = 0.5
@@ -1523,7 +1522,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 160
 		}
-		cost = 1
+		cost = 7.2
 		available = { has_completed_focus = bra_polaca }
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_rural_elite add_idea = bra_eficiencia_1 }
@@ -3199,7 +3198,7 @@ focus_tree = {
 	focus = {
 		id = bra_diplomacia
 		icon = GFX_focus_bra_diplomacia
-		x = 38
+		x = 48
 		y = 0
 		ai_will_do = {
 			factor = 160
