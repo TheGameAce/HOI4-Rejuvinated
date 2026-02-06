@@ -1,0 +1,616 @@
+﻿l_english:
+ cuban_focus:0 "Cuban National Focus"
+#give more european portrait
+ CUB_fabio_grobart:0 "Fabio Grobart" 
+ CUB_mario_ramirez_delgado:0 "Mario Ramírez Delgado"
+ CUB_genovevo_perez_damera:0 "Genovevo Perez Damera"
+
+ ###################################
+ ###Cuban Leader & Advisor Traits###
+ ###################################
+ well_traveled_diplomat:0 "Well-Traveled Diplomat"
+ strongman_of_cuba:0 "Strongman of Cuba"
+ talented_orator:0 "Talented Orator"
+ minister_of_commerce:0 "Minister of Commerce"
+ dedicated_marxist:0 "Dedicated Marxist"
+ revolutionary_broadcaster:0 "Revolutionary Broadcaster"
+ efficient_flight_coordinator:0 "Efficient Flight Coordinator"
+ veteran_army_doctor:0 "Veteran Army Doctor"
+ minister_of_public_works:0 "Minister of Public Works"
+ minister_of_agriculture:0 "Minister of Agriculture"
+ secretary_of_war_and_navy:0 "Secretary of War & Navy"
+ mobster:0 "Mobster"
+ minister_of_education: "Minister of Education"
+
+ ###Company Traits###
+ transportation_company:0 "Transportation Company"
+ rail_company:0 "Rail Company"
+
+
+
+ CUB_fascism_party:0 "Falange Cubana"
+ CUB_fascism_party_long:0 "Falange Cubana"
+
+ #########################################################################################################################################################################
+ ###Cuban Events###
+ #########################################################################################################################################################################
+
+ cuba.1.t:0 "General Election"
+ cuba.1.d:0 "It is now time for the [CUB.GetAdjective] people to be called to the polls to elect their leader.\nThis year, two main forces are present. The Tripartite coalition, composed of the Liberal Party, National Unity, & Republican Action, has the support of the many forces behind the 1933 revolution, particularly General Fulgencio Batista.\nAgainst them, the relatively conservative National Democratic Association, led by former President Mario García Menocal, who had led Cuba in particular during the First World War."
+ cuba.1.a:0 "Miguel Mariano Gómez"
+ cuba_tripartite_coalition_party_long:0 "Coalición Tripartita"
+ cuba.1.b:0 "Mario García Menocal"
+ cuba_democratic_national_association_party_long:0 "Asociación Nacional Democrática"
+
+ cuba.2.t:0 "Miguel Mariano Gómez's Inauguration"
+ cuba.2.d:0 "Miguel Mariano Gómez was inaugurated as Cuba's seventh president following his election earlier this year.\nIdeologically supported by the forces behind the 1933 revolution, he intends to continue the social reforms implemented by successive administrations since Ramón Grau's 100-day government."
+ cuba.2.a:0 "We act for the [CUB.GetAdjective] people."
+
+ cuba.3.t:0 "Mario García Menocal's Inauguration"
+ cuba.3.d:0 "Mario García Menocal was inaugurated as the seventh president of Cuba today, following his victory in the election earlier this year. Menocal is remembered for his time in office as the 3rd president of Cuba, being a strong ally of corporations & businesses. \n \n During his tenure, Menocal spent far in excess of the federal budget, leaving the country in over $40,000,000 of debt, & was accused of using fraud to win re-election in 1916. This in turn led to an unsuccessful revolt in the army, led by former president José Miguel Gómez. \n \n With Menocal back in power, it's sure to cause a new wave of instability & uncertainty in the days to come."
+ cuba.3.a:0 "Let's hope for the best..."
+
+ cuba.4.t:0 "Batista Marches on Havana!"
+ cuba.4.d:0 "Declaring that Mario García Menocal's government betrayed not only the 1933 revolution but also the entire [CUB.GetAdjective] nation, Fulgencio Batista called on the army to oppose & overthrow the government.\nJ. Butler Wright, the [USA.GetAdjective] ambassador to [CUB.GetNameDef], announced that [USA.GetNameDef] supported the current government.\nThe Havana garrison has still not chosen sides but could well change everything."
+ cuba.4.a:0 "The garrison sides with the government, & the coup fails."
+ cuba.4.b:0 "The garrison supports Batista, & the coup succeeds."
+ cuba_revolutionnary_party_long:0 "Partido Revolucionario Cubano"
+
+ cuba.5.t:0 "President Gomez Impeached!"
+ cuba.5.d:0 "Despite Miguel Mariano Gómez's promised extensive programs, he found himself with increasing opposition, particularly in the Congress & with the army chief, Fulgencio Batista, despite being his supporter during the election.\n\nFollowing the veto of the nine-cent law, Miguel Mariano Gómez was officially dismissed by Congress, & Vice-President Federico Laredo Brú was inaugurated as President of Cuba."
+ cuba.5.a:0 "Let's hope he will meet the expectations of Congress & the people."
+
+ cuba.6.t:0 "[CUB.GetNameDefCap] Suggests a War against Spain"
+ cuba.6.d:0 "Declaring that the apparent neutrality that the Spanish regime is trying to show is in reality only a façade hiding secret aid to the war effort, the [CUB.GetAdjective] government has suggested a declaration of war against fascist Spain.\n\nSuch a declaration is not made lightly, especially against a currently neutral country. There is little doubt, however, that Spain's support is oriented towards the forces of the Axis."
+ cuba.6.a:0 "It's time to avenge the Second Republic."
+ cuba.6.b:0 "It would be too dangerous."
+
+ cuba.7.t:0 "War with Spain Refused!"
+ cuba.7.d:0 "Citing that the war is already long enough, a declaration of war against a country as big as Spain would only make it more brutal & murderous; our plan for a war against nationalist Spain has been rejected."
+ cuba.7.a:0 "At least we tried."
+
+ cuba.8.t:0 "Communist Sympathizers Attempt to Seize Power"
+ cuba.8.d:0 "Many communist parties, including former exiles, have gathered in Santo Domingo today to demand the government's resignation & the establishment of a socialist system. They are very numerous & seem to have received foreign weapons."
+ cuba.8.a:0 "The government falls & the communists take over."
+ cuba.8.b:0 "The government holds on."
+
+ cuba.9.t:0 "The [DOM.GetAdjective] Revolution Crushed"
+ cuba.9.d:0 "Despite our support in terms of material, it seems that the [DOM.GetAdjective] revolutionaries failed to bring down the government. Those who were able to escape tell us that many of those present in Santo Domingo were arrested & may well end up executed. What should we do?"
+ cuba.9.a:0 "If we cannot liberate them from the inside, we will do it from the outside!"
+ cuba.9.b:0 "We will come back later."
+
+ cuba.14.t:0 "What to do with Batista?"
+ cuba.14.d:0 "Fulgencio Batista has been a controversial figure in Cuban politics, & exerts a great deal of influence throughout our country. This causes a great many issues for us, & thusly it's in our best interests to find a solution to the problems he causes; the sooner the better."
+ cuba.14.a:0 "Exile Batista"
+ cuba.14.b:0 "Compromise With Batista"
+
+ cuba.15.t:0 "Proposal for Hispaniolan Unification"
+ cuba.15.d:0 "The Cuban & Dominican governments have approached us with an interesting proposal, to unite the island of Hispaniola under one government, that of the Dominicans. What shall our response be?"
+ cuba.15.a:0 "Accept the Proposal"
+ cuba.15.b:0 "Decline the Proposal"
+
+ cuba.16.t:0 "Caribbean Unity?"
+ cuba.16.d:0 "Fulgencio Batista's government has approached us with a proposal for greater cooperation, through the rule of one government in the Caribbean isles. While this would mean we give up our own power, it would certainly strengthen & unify the Caribbean."
+ cuba.16.a:0 "A good proposal. We accept!"
+ cuba.16.b:0 "We prefer to maintain our autonomy."
+
+ cuba.17.t:0 "Cuban Sugar for Oil?"
+ cuba.17.d:0 "The Cuban government has come to us with a very tempting offer. As one of a limited number of sugar sources, they're offering us a steady supply of sugar in exchange for some of our oil. Shall we accept?"
+ cuba.17.a:0 "A good deal. We accept!"
+ cuba.17.b:0 "Oil is worth more to us than sugar right now."
+
+
+ cuba_election_flag_1936:0 "The Presidential Election Took Place"
+ gomez_inaugurated_flag:0 "Miguel Mariano Gómez Has Been Inaugurated"
+ garcia_menocal_inaugurated_flag:0 "Mario García Menocal Has Been Inaugurated"
+
+ #########################################################################################################################################################################
+ ###Democratic Cuban Focuses###
+ #########################################################################################################################################################################
+
+ CUB_results_of_the_presidential_election:0 "Results of the Presidential Election"
+ CUB_results_of_the_presidential_election_desc:0 "The election results are in. & the new president of [CUB.GetNameDef] is..."
+ CUB_victory_for_gomez:0 "Victory for Gomez"
+ CUB_the_nine_cent_law:0 "The Nine-Cent Law"
+ CUB_the_nine_cent_law_desc:0 "The Nine Cent Law is a tax on each bag of sugar over 250 pounds that we will use to finance rural schools, most of which will be under the control of our army."
+ CUB_minimum_wage_laws:0 "Minimum Wage Laws"
+ CUB_minimum_wage_laws_desc:0 "By passing minimum wage laws, we can help ensure a higher quality of life for our workers, many of whom are currently severely underpaid."
+ CUB_insurance_mandates:0 "Insurance Mandates"
+ CUB_retirement_pensions:0 "Retirement Pensions"
+ CUB_retirement_pensions_desc:0 "We should work to ensure the wellbeing of our retirees. The Europeans have developed a competent model to do this, calling it 'social security'. \n\nBy studying the European model, we can develop a system of our own!"
+ CUB_reduce_american_influence:0 "Curb American Influence"
+ CUB_reduce_american_influence_desc:0 "For decades now, the United States have had significant influence over our nation, particularly in our economy & politics. While they've done some good things for us in the past, if we're ever to be respected as a sovereign nation, we must learn to stand on our own & keep foreign influence at a minimum."
+ CUB_confederation_of_cuban_workers:0 "Legalize the CTC"
+ CUB_confederation_of_cuban_workers_desc:0 "The Cuban Workers' Confederation has gained considerable popularity following the reforms in favor of the unionization of agricultural workers. Legalizing their organization could help our economy & ensure strong backing in future elections."
+ CUB_a_new_constitution:0 "A New Constitution"
+ CUB_batista_in_office:0 "Batista in Office"
+ CUB_modernize_medical_care:0 "Modernize Medical Care"
+ CUB_modernize_medical_care_desc:0 "It's clear that our medical care is greatly exceeded by many other countries. Addressing this problem should prove quite beneficial to the people, as well as our armed forces."
+ CUB_establish_rural_hospitals:0 "Establish Rural Hospitals"
+ CUB_establish_rural_hospitals_desc:0 "As an extension of our improvements in medical care, we should begin establishing hospitals in the rural regions of the country."
+ CUB_military_improvements:0 "Military Improvements"
+ CUB_military_improvements_desc:0 "Our military has been fairly underwhelming for some time now. By increasing payrolls & improving the food our troops get, we can increase morale & encourage more of our brave citizens to enlist!"
+ CUB_increase_education_funding:0 "Increase Education Funding"
+ CUB_increase_education_funding_desc:0 "Just like we have issues with the field of medicine in our country, we also have issues with education. By increasing the funding, we invest in our people & our nation's future."
+ CUB_establish_soviet_diplomatic_relations:0 "Establish Soviet Diplomatic Relations"
+ CUB_establish_soviet_diplomatic_relations_desc:0 "The Soviets have solidified themselves as a world power, & are seemingly here to stay. It would be advantageous to us to establish formal relations with them."
+ CUB_winning_the_battle_of_the_caribbean:0 "Winning the Battle of the Caribbean"
+ CUB_winning_the_battle_of_the_caribbean_desc:0 "Because of our strategic position within the Caribbean & the ever-present threat of U-Boats to allied convoys, our naval forces must be prepared for the ongoing threats, & our facilities expanded to better service our ships."
+ CUB_gift_sugar_to_the_british:0 "Gift Sugar to the British"
+ CUB_gift_sugar_to_the_british_desc:0 "With lingering doubts of our ideological loyalties & the difficulties of acquiring basic goods for their civilians during this time of war, this would be an opportune time to send the Brits a gift. \n\nWe have a great deal of sugar, which would most certainly be greatly appreciated!"
+ CUB_american_air_bases:0 "American Air Bases"
+ CUB_american_air_bases_desc:0 "We have allowed [USA.GetNameDef] to build air bases in [CUB.GetNameDef] to protect the Caribbean from enemy submarines. We've granted them permission to build these bases on both ends of the island, & in return they've supplied us with aircraft to help secure the region."
+ CUB_suggest_operation_hemingway:0 "Suggest Operation Hemingway"
+ CUB_suggest_operation_hemingway_desc:0 "Despite the apparent neutrality on which Franco's regime prides itself, it is clear that its support is oriented towards the Axis powers. We will propose a declaration of war against Nationalist Spain to the League of Nations, considering it a member of the Axis because of its sympathy towards them."
+ CUB_join_the_allies:0 "Join the Allies"
+ CUB_join_the_allies_desc:0 "The Allies need our help in their fight against [GER.GetNameDef]! We must support democracy in the face of fascist tyranny!"
+ CUB_rewrite_the_constitution:0 "Rewrite the Constitution"
+ CUB_rewrite_the_constitution_desc:0 "The 1933 constitution was drafted by the military & for the military. We must change this to represent [CUB.GetAdjective] democracy better."
+ CUB_law_of_sugar_coordination:0 "Law of Sugar Coordination"
+ CUB_law_of_sugar_coordination_desc:0 "The Law of Sugar Coordination will organize small farms into cooperatives & organize agricultural workers, guarantee tenant farmers a share of their crop, & guarantee that they will not be deprived of their fields if they work them."
+ CUB_issue_amnesties:0 "Issue Amnesties"
+ CUB_issue_amnesties_desc:0 "Amnesty will be granted, including former President Gerardo Machado. In this way, we will demonstrate the government's goodwill."
+ CUB_victory_for_gomez_desc:0 "Miguel Mariano Gómez, former Mayor of Havana, was elected President of Cuba. Affiliated with the 1933 revolutionaries, he has all their support regarding the policy to be applied in line with those of the 100-day government."
+ CUB_victory_for_garcia_menocal:0 "Victory For Garcia Menocal"
+ CUB_victory_for_garcia_menocal_desc:0 "Mario García Menocal, former President of Cuba, especially during the Great War, was elected President of Cuba. Representing the conservative opposition to the 1933 revolutionaries, the latter has already met some resistance within the armed forces."
+
+
+ ###########################
+ ###Fascist Cuban Focuses###
+ ###########################
+
+ ###Political###
+ CUB_seek_falangist_support:0 "Seek Falangist Support"
+ CUB_seek_falangist_support_desc:0 "President Menocal has approached us with a tempting offer... Now that he's in power, he faces severe opposition from the left leadership, in particular from the Communist Party. Because of this, he's come to the realization that he needs our backing to get anywhere. This could be a perfect opportunity for us to increase our influence..."
+ CUB_exert_influence_over_the_military:0 "Influence the Military"
+ CUB_exert_influence_over_the_military_desc:0 "Now that we're in a position of influence in Menocal's administration, we can begin extending that influence into crucial areas to our takeover, starting with the military."
+ CUB_repeal_liberal_policies:0 "Repeal Liberal Policies"
+ CUB_repeal_liberal_policies_desc:0 "Many of the policies passed by previous presidents have been far too liberal for our liking. We should pressure Menocal to repeal some of these policies that would otherwise hinder our efforts."
+ CUB_gather_political_support:0 "Gather Political Support"
+ CUB_gather_political_support_desc:0 "Now that support for our cause is growing within the military's ranks, we must begin to gain the influence & backing of the politicians."
+ CUB_encourage_anti_communist_violence:0 "Encourage Anti Communist Violence"
+ CUB_encourage_anti_communist_violence_desc:0 "Communists are the ultimate threat to our way of life. It's the duty of every patriot to fight back against the red terror, even if it means some people will get hurt!"
+ CUB_secure_power:0 "Secure Power"
+ CUB_secure_power_desc:0 "Our strength & numbers have grown significantly enough that we can now seize power & assert full control over the army & government!"
+ CUB_deal_with_batista:0 "Deal With Batista"
+ CUB_deal_with_batista_desc:0 "Fulgencio Batista is a loose cannon. He's simultaneously a powerful influence in Cuban politics, & has a strong influence over our military forces. Now that our regime has come to power, we should decide how to deal with him."
+ CUB_stabilize_internal_politics:0 "Stabilize Internal Politics"
+ CUB_stabilize_internal_politics_desc:0 "Our rise to power caused a great deal of political & social chaos. Now it's time to tend to the internal issues that resulted & reorganize the state."
+ CUB_strengthen_catholic_identity:0 "Strengthen Catholic Identity"
+ CUB_strengthen_catholic_identity_desc:0 "Catholic identity is one of the core elements of Falangism. Catholicism should be encouraged & the church strengthened through our lands!"
+ CUB_encourage_spanish_immigration:0 "Encourage Spanish Immigration"
+ CUB_encourage_spanish_immigration_desc:0 "Part of the policy of Pan-Hispanism is being open to our brothers & cousins regionally & across the world. Encouraging them to immigrate to our country can only strengthen us further!"
+ CUB_panhispanic_diplomacy:0 "Pan-Hispanic Diplomacy"
+ CUB_panhispanic_diplomacy_desc:0 "One of the ideals of the Falangist movement is that of Pan-Hispanism. To help accomplish this, we should reach out to the many Hispanic governments in the region & establish proper diplomatic relations with them."
+ CUB_spanish_civil_war_involvement:0 "Spanish Civil War Involvement"
+ CUB_spanish_civil_war_involvement_desc:0 "Our brothers in Spain are embroiled in a terrible civil war. We should send them whatever assistance we can offer!"
+ CUB_intervene_ACW:0 "Intervene in the American Civil War"
+ CUB_intervene_ACW_desc:0 "The United States of America is no longer united. A new faction has risen up, one that holds an ideology closer to our own. We should send troops & aid to help ensure a favorable outcome."
+ CUB_subvert_american_influence:0 "Subvert American Influence"
+ CUB_subvert_american_influence_desc:0 "The United States of America have had a strong hand in our internal politics & economy for far too long! We must do what we can to subvert their influence for the sake of our independence & strength."
+ CUB_nationalize_foreign_sugar_mills:0 "Nationalize Foreign Sugar Mills"
+ CUB_nationalize_foreign_sugar_mills_desc:0 "By nationalizing sugar mills under the control of foreign corporations, we can get our sugar industry back on track again!"
+ CUB_deal_with_the_united_fruit_company:0 "Deal With the United Fruit Company"
+ CUB_deal_with_the_united_fruit_company_desc:0 "The United Fruit Company has significant interests & influence in Central America, & great interest in our sugar industry. Perhaps we could strike up a mutually beneficial deal with them... §R THIS PART OF THE FOCUS TREE IS NOT YET FUNCTIONAL & WAS ORIGINALLY DESIGNED AROUND CONTENT NOT YET IN THIS MOD§!"
+ CUB_united_fruit_company_coup:0 "United Fruit Company Coup"
+ CUB_united_fruit_company_coup_desc:0 "With enough support now in Honduras, we can help the United Fruit Company to stage a complete government takeover!"
+ CUB_a_fruitful_partnership:0 "A Fruitful Partnership"
+ CUB_a_fruitful_partnership_desc:0 "N/A"
+ CUB_invite_german_companies:0 "Invite German Investment"
+ CUB_invite_german_companies_desc:0 "Companies like Volkswagen & Krupp might be interested in some overseas investments, setting up new factories here & establishing more formal relations with our government."
+
+ ###Diplomacy & Conquest###
+ CUB_command_the_caribbean:0 "Command the Caribbean"
+ CUB_command_the_caribbean_desc:0 "It's become clear to us now that we cannot rely on the leadership of foreign powers that may not have our best interests in mind. We must seek to develop our own alliance with more like-minded allies..."
+ CUB_invite_our_spanish_brothers:0 "Invite Our Spanish Brothers"
+ CUB_invite_our_spanish_brothers_desc:0 "Many centuries ago, our Spanish ancestors colonized this land. In more recent decades, we finally achieved our independence from Spain & have finally become a respectable independent nation. With the civil war in Spain now over & a new government in place, now is the time for our paths to cross again, this time as brothers!"
+ CUB_caribbean_dominance:0 "Caribbean Dominance"
+ CUB_caribbean_dominance_desc:0 "The Carribbean is simultaneously our home & backyard. We can't simply ignore tresspassers in our backyard, can we?"
+ CUB_join_the_reich:0 "Join [GER.GetNameDef]"
+ CUB_join_the_reich_desc:0 "While the national socialists have somewhat different ideals than we do, their might is strong & they have some similar goals to us. A prospective alliance with them could help us better achieve our goals."
+ CUB_join_with_japan:0 "Join with Japan"
+ CUB_join_with_japan_desc:0 "While the Japanese don't hold our exact same ideals, their powerful navy & resilient army make up for that. The Japanese would certainly welcome an alliance with a new power growing right in the United States' backyard."
+ CUB_subjugate_hispaniola:0 "Subjugate Hispaniola"
+ CUB_subjugate_hispaniola_desc:0 "The island of Hispaniola to our east is a natural extension of our territory. We will demand that these illegitimate governments bow to us, or else we will have no choice but to take them by force."
+ CUB_demand_the_eastern_isles:0 "Demand the Eastern Isles"
+ CUB_demand_the_eastern_isles_desc:0 "Further expansion of our territory will require us to make more demands."
+ CUB_demand_jamaica_and_the_bahamas:0 "Demand Jamaica & the Bahamas"
+ CUB_demand_jamaica_and_the_bahamas_desc:0 "Further expansion of our territory will require us to make more demands."
+ CUB_lay_claim_to_curacao_and_trinidad:0 "Lay Claim to Trinidad & the ABC Islands"
+ CUB_lay_claim_to_curacao_and_trinidad_desc:0 "The last islands of the Caribbean left in the hands of outsiders must be given over to us to safeguard as our rightful territory."
+ CUB_seize_venezuela:0 "Seize Venezuela"
+ CUB_seize_venezuela_desc:0 "Our military might & regional influence has grown to an impressive point! With the infamous instability of Venezuela, it should provide us an opportunity for easy territorial expansion."
+ CUB_threaten_colombia:0 "The Colombia Offensive"
+ CUB_threaten_colombia_desc:0 "Colombia is crucial to our plans to form a Greater Caribbean nation. Now that we share a land border with them, we can mount an assault much more readily!"
+ CUB_expand_ufc_influence:0 "Expand the UFC's Influence"
+ CUB_seize_control_in_guatemala:0 "Seize Control in Guatemala"
+ CUB_overthrow_the_salvadorian_government:0 "Overthrow the Salvadorian Government"
+ CUB_our_holdings_in_panama:0 "Our Holdings in Panama"
+ CUB_takeover_in_nicaragua:0 "Takeover in Nicaragua"
+ CUB_take_control_of_costa_rica:0 "Take Control of Costa Rica"
+ CUB_corporate_incorporation:0 "Corporate Incorporation"
+ CUB_stage_a_conflict_at_the_canal:0 "Stage a Conflict at the Canal"
+
+ ###United Fruit Company Partnership###
+ CUB_entrust_central_america_to_the_ufc: "Entrust Central America to the UFC"
+ CUB_negotiate_for_belize:0 "Negotiate for Belize"
+ CUB_legitimize_zemurrays_government:0 "Legitimize Zemurray's Government"
+
+ ###Military & Amphibious###
+ CUB_amphibious_invasion_preparation:0 "Amphibious Invasion Preparation"
+ CUB_amphibious_invasion_preparation_desc:0 "Due to our status as an island nation, & being surrounded by a great many island & coastal regions, we have to be well prepared for amphibious operations."
+ CUB_special_amphibious_training:0 "Special Amphibious Training"
+ CUB_special_amphibious_training_desc:0 "By starting a rigorous special training program for amphibious operations, we can ensure that our troops have the skills needed to face various aquatic situations."
+ CUB_falangist_ideas_in_schools:0 "Falangist Ideas in Schools"
+ CUB_falangist_ideas_in_schools_desc:0 "By teaching our values in the schools, we can better ensure the loyalty of our youth!"
+ CUB_devotion_to_falangism:0 "Devotion to Falangism"
+ CUB_devotion_to_falangism_desc:0 "N/A"
+ CUB_the_caribbean_guard:0 "The Caribbean Guard"
+ CUB_the_caribbean_guard_desc:0 "With our influence & territories now reaching across the Caribbean, we need to form a special guard to help defend the islands!"
+ CUB_army_expansion:0 "Army Expansion"
+ CUB_army_expansion_desc:0 "To achieve our goals, we must begin to increase the size of our army."
+
+
+ ###Developing Newly Conquered Territories###
+ CUB_island_fortification_project:0 "Island Fortification Project"
+ CUB_island_fortification_project_desc:0 "With so many newly acquired territories, it will take a large-scale fortification effort to help ensure the safety of our new territories."
+ CUB_island_development_plan:0 "Island Development Plan"
+ CUB_island_development_plan_desc:0 "Now that we control our rightful territories of the Caribbean, we must begin devloping the islands to support our ever-expanding industrial efforts!"
+ CUB_develop_the_bahamas_and_jamaica:0 "Develop Jamaica & the Bahamas"
+ CUB_develop_the_bahamas_and_jamaica_desc:0 "By making some reasonable investments in Jamaica & the Bahamas, we can increase our industrial capacity."
+ CUB_develop_the_eastern_isles:0 "Develop the Eastern Isles"
+ CUB_develop_the_eastern_isles_desc:0 "Investment in the Antilles islands will help to grow our industrial capacity & improve our newly acquired territories."
+ CUB_developing_curacao_and_trinidad:0 "Developing Trinidad & the ABC Islands"
+ CUB_developing_curacao_and_trinidad_desc:0 "Curacao & Trinidad, being our most recently acquired territories, could benefit from some new industrial investments."
+ CUB_venezuelan_development:0 "Venezuelan Development"
+ CUB_venezuelan_development_desc:0 "Investing in our new Venezuelan territory is of great interest. It will simultaneously boost our economy & reassure the population that we have their best interests in mind."
+ CUB_begin_colombian_industrial_development:0 "Begin Colombian Industrial Development"
+ CUB_begin_colombian_industrial_development_desc:0 "There's great opportunity in our new Colombian territories. We shall begin new industrial developments there right away!"
+ CUB_expand_colombian_coffee_plantations:0 "Expand Colombian Coffee Plantations"
+ CUB_expand_colombian_coffee_plantations_desc:0 "The coffee plantations of Colombia are known far & wide for the quality beans that they produce. Now those plantations fall under our government's control. \n\nInvestment in expanding the plantations will have great benefits for us!"
+ CUB_upgrade_venezuelan_oil_facilities:0 "Upgrade Venezuelan Oil Facilities"
+ CUB_upgrade_venezuelan_oil_facilities_desc:0 "Venezuela is a regional oil hub. Now that it's ours, we can invest in ways the Venezuelan government never did because of their lack of vision."
+ 
+
+ ###Related Events###
+ cuba.11.t:0 "The Government of Cuba Demands Our Territories" #Territory Demands Against Hispaniola
+ cuba.11.d:0 "Now that the Cuban Falangist movement has managed to take over the country, they've begun to make moves towards expanding their territory to now encompass the island of Hispaniola. \n\nWith this new path towards expansion, now come demands to our government to accept subjugation & integration into Cuba. What shall our response be?" #Territory Demands Against Hispaniola
+ cuba.10.d:0 "Cuba, once our prized colony in the Caribbean, has reached out to us with a surprising proposal. They're proposing a formal alliance between our two nations, in the hopes of fostering stronger ties between our two countries. \n\nWhile this comes as a bit of a surprise, it's certainly an idea worth entertaining, & would give us renewed influence in the Americas."
+ cuba.12.t:0 "Nationalist Spain Accepts Our Proposal!"
+ cuba.12.d:0 "Our recent proposal to Spain for an alliance has been accepted!"
+ cuba.13.t:0 "Spain Rejects Our Proposal!"
+ cuba.13.d:0 "In what has been quite a surprise to many, the Spanish government has made the decision to deny our proposal for a formal alliance."
+ cuba.19.t:0 "The Government of Cuba Demands Our Territories" #Territory Demands Against UK & France
+ cuba.19.d:0 "Now that the Cuban Falangist movement has managed to take over the country, they've begun to make moves towards expanding their territory to now encompass the islands of the Caribbean. \n\nWith this new path towards expansion, now come demands to our government to hand over our colonial territories to Cuba. What shall our response be?" #Territory Demands Against UK & France
+ cuba.20.t:0 "The Government of Cuba Demands Our Territories" #Territory Demands Against UK & France
+ cuba.20.d:0 "Now that the Cuban Falangist movement has managed to take over the country, they've begun to make moves towards expanding their territory to now encompass the islands of the Caribbean. \n\nWith this new path towards expansion, now come demands to our government to hand over our colonial territories to Cuba. What shall our response be?" #Territory Demands Against UK & France
+ cuba.21.t:0 "The Government of Cuba Demands Our Territories" #Territory Demands Against UK & France
+ cuba.21.d:0 "Now that the Cuban Falangist movement has managed to take over the country, they've begun to make moves towards expanding their territory to now encompass the islands of the Caribbean. \n\nWith this new path towards expansion, now come demands to our government to hand over our colonial territories to Cuba. What shall our response be?" #Territory Demands Against UK & France
+ cuba.22.t:0 "The Government of Cuba Demands Even More of Our Territories" #Territory Demands Against UK
+ cuba.22.d:0 "The Cuban government has once again made demands for our territories, claiming the entirety of the Caribbean as their sovereign territory. \n\nIf we give them what they want, they should leave us alone." #Territory Demands Against UK
+ cuba.23.t:0 "The Government of Cuba Demands Our Territories" #Territory Demands Against UK & France
+ cuba.23.d:0 "Now that the Cuban Falangist movement has managed to take over the country, they've begun to make moves towards expanding their territory to now encompass the islands of the Caribbean. \n\nWith this new path towards expansion, now come demands to our government to hand over our colonial territories to Cuba. What shall our response be?" #Territory Demands against the Netherlands.
+ cuba.24.t:0 "A Pleasant Gift"
+ cuba.24.d:0 "It would seem that the Cuban government has sent us a gift: A lovely 300,000 bags of sugar! Sugar has been far more difficult to come by thanks to the war, & this will mean a great deal to our people. \n\nThis act of kindness is also sure to dispell any lingering doubts about the loyalties of the Cuban government."
+ cuba.25.t:0 "An Interesting Proposition"
+ cuba.25.d:0 "Fulgencio Batista has reached out to us with a proposition, suggesting that we join with the Allies. While the war seems to largely be a distant threat, they make a compelling argument about mutual security. \n\nWhat should we do?"
+ cuba.26.t:0 "Proposal Rejected"
+ cuba.26.d:0 "It seems Trujillo has rejected our proposal that he join the Allies."
+ cuba.27.t:0 "The Government of Cuba Demands Our Territories" #Territory Demands Against US
+ cuba.27.d:0 "Now that the Cuban Falangist movement has managed to take over the country, they've begun to make moves towards expanding their territory to now encompass the islands of the Caribbean. \n\nWith this new path towards expansion, now come demands to our government to hand over our colonial territories to Cuba. What shall our response be?" #Territory Demands Against US
+ cuba.28.t:0 "[CUB.GetNameDef]'s Government Demands Colonial Withdrawals"
+ cuba.28.d:0 "[CUB.GetNameDef]'s government has issued an aggressive demand to global powers today. They insist that colonial powers no longer have a place in the Caribbean region, demanding that we withdraw from our territories there or else face war."
+ cuba.29.t:0 "[CUB.GetNameDef]'s Government Demands Colonial Withdrawals"
+ cuba.29.d:0 "[CUB.GetNameDef]'s government has issued an aggressive demand to global powers today. They insist that colonial powers no longer have a place in the Caribbean region, demanding that we withdraw from our territories there or else face war."
+ cuba.30.t:0 "[CUB.GetNameDef]'s Government Demands Colonial Withdrawals"
+ cuba.30.d:0 "[CUB.GetNameDef]'s government has issued an aggressive demand to global powers today. They insist that colonial powers no longer have a place in the Caribbean region, demanding that we withdraw from our territories there or else face war."
+ cuba.31.t:0 "[CUB.GetNameDef]'s Government Demands Colonial Withdrawals"
+ cuba.31.d:0 "[CUB.GetNameDef]'s government has issued an aggressive demand to global powers today. They insist that colonial powers no longer have a place in the Caribbean region, demanding that we withdraw from our territories there or else face war."
+
+ ########################################################################################################################################################################
+ ###Communist Cuban Focuses###
+ ########################################################################################################################################################################
+
+ ###Political###
+ CUB_oppose_the_presidency:0 "Oppose the Presidency"
+ CUB_oppose_the_presidency_desc:0 "The new presidency & cabinet of President Menocal are in direct conflict with our beliefs. Direct opposition to this presidency is our only hope, not just for survival, but for our cause to prevail!"
+ CUB_seek_communist_support_desc:0 "President Menocal was forced to rely on our backing to get elected. Now that he's in office, we can use this as an opportunity to further our own goals & policies, working in secret towards a true revolution!"
+ CUB_galvanize_the_ctc:0 "Galvanize the CTC"
+ CUB_galvanize_the_ctc_desc:0 "Galvanizing the Cuban labor movement through the Confederation of Cuban Workers will help us gain some of the necessary support to oppose the current administration. Backing of the CTC will also help us gain control of our national industry."
+ CUB_hold_ctc_rallies:0 "Hold CTC Rallies"
+ CUB_hold_ctc_rallies_desc:0 "By holding large rallies of the CTC, we can show the people what we're all about & make large gains in public opinion!"
+ CUB_ctc_recruitment:0 "CTC Recruitment"
+ CUB_ctc_recruitment_desc:0 "The CTC has gained considerable influence recently, & as such has begun recruiting new members. This will be a great asset to our cause!"
+ CUB_unionize_the_sugar_mills:0 "Unionize the Sugar Mills"
+ CUB_unionize_the_sugar_mills_desc:0 "Helping the workers in sugar mills to form strong unions is a good way to gather additional support for our cause, & to show the workers that we have their best interests at heart."
+ CUB_form_an_alliance_with_batista:0 "Form an Alliance With Batista"
+ CUB_form_an_alliance_with_batista_desc:0 "While Batista may be a loose cannon, he's also shown a willingness to work with us on social reforms, as long as he's allowed to retain his position of power. If we go forward with this deal, however, we'll be stuck with Batista for the forseeable future."
+ CUB_overthrow_the_menocal_government:0 "Overthrow the Menocal Government"
+ CUB_overthrow_the_menocal_government_desc:0 "The Menocal government has become weak & incapable of stopping our movement. Now is the time to sieze power & overthrow the old government, & install our own! Viva la revolution!"
+ CUB_reaffirm_comintern_ties:0 "Affirm Comintern Ties"
+ CUB_reaffirm_comintern_ties_desc:0 "Affirming ties with the Comintern will keep us on good terms with the Soviets & their associates, signaling we're willing to work & potentially even ally with them. \n\nSurely a "
+ CUB_establish_the_dgi:0 "Establish the DGI"
+ CUB_establish_the_dgi_desc:0 "The Dirección de Inteligencia will provide the state with a proper intelligence organization, similar to the NKVD. With such an organization, we can keep a better eye on other nations, as well as on our own people."
+ CUB_radio_mil_diez:0 "Radio Mil Diez"
+ CUB_radio_mil_diez_desc:0 "Since our takeover, we've managed to acquire one of the largest radio stations on the island. Not only can we broadcast messages of our cause from here, but we can also introduce a form of Cuban Jazz to the islands, helping to enrich our culture!"
+ CUB_imprison_batista:0 "Imprison Batista"
+ CUB_imprison_batista_desc:0 "It's this government's opinion that Fulgencio Batista, while willing to make some compromises, is too much of a loose cannon, & thusly poses a risk to the state. We must remove him from his current position & lock him up before he can pose a greater threat to us!"
+ CUB_continued_collaboration_with_batista:0 "Continued Collaboration With Batista"
+ CUB_continued_collaboration_with_batista_desc:0 "Fulgencio Batista is a bit of a loose cannon, but at least he doesn't seem ideologically motivated. If we make some concessions & allow him to retain his position, he's agreed to publicly endorse our government."
+ CUB_purge_the_falangists:0 "Purge the Falangists"
+ CUB_purge_the_falangists_desc:0 "While we have a strong grip on power, there are still small groups of falangists that remain who would threaten our way of life, & could pose a threat to our new government. They must be dealt with swiftly & quietly!"
+ CUB_recruit_civilian_informants:0 "Recruit Civilian Informants"
+ CUB_recruit_civilian_informants_desc:0 "Traitors to the state may well be plotting against us, just as foreign spies may be attempting to infiltrate us. By recruiting informants within the civilian population, we increase the risk to those who would oppose the state!"
+ CUB_soviet_military_advisors:0 "Soviet Military Advisors"
+ CUB_soviet_military_advisors_desc:0 "The Soviets have been kind enough to send us military advisors, who have helped us improve our armed forces greatly."
+ CUB_study_soviet_armaments:0 "Study Soviet Armaments"
+ CUB_study_soviet_armaments_desc:0 "By studying Soviet weaponry, we can better develop our own, giving our military a much needed boost."
+ CUB_study_soviet_tactics:0 "Study Soviet Tactics"
+ CUB_study_soviet_tactics_desc:0 "Studying the tactics of the Soviet Red Army will help us to improve our own tactics & develop better battleplans, & at a somewhat faster rate."
+ CUB_create_a_central_committee:0 "Create a Central Committee"
+ CUB_create_a_central_committee_desc:0 "By emulating the Soviet model we can create our own central committee. This will oversee the rest of the government's functionality, both in the executive & political branches."
+ CUB_diplomacy_with_the_prc:0 "Diplomacy With the PRC"
+ CUB_diplomacy_with_the_prc_desc:0 "The Chinese Soviets, while somewhat weak & unimportant at present, may nonetheless make for a useful ally in the future. Establishing some relations with them could be of mutual advantage as we both push our causes."
+ CUB_the_cuban_politburo:0 "The Cuban Politburo"
+ CUB_the_cuban_politburo_desc:0 "Just as the Soviets have their Politburo, so too must our party! It will function as the supreme authority over all political decisions."
+ CUB_education_for_the_masses:0 "Education for the Masses"
+ CUB_education_for_the_masses_desc:0 "We must strive to educate our people, both in practical matters & matters of the state. They must learn the importance of our government, & their own duty to the same."
+ 
+ ###Industrial###
+ CUB_adapt_the_five_year_plan:0 "Adapt the Five Year Plan"
+ CUB_adapt_the_five_year_plan_desc:0 "The Five Year Plan has so far been a huge success for the Soviet Union, allowing them to rapidly industrialize & compete with the major nations of the world. By following their example, we too hope that we can reach such heights as they have."
+ CUB_collectivize_the_sugar_plantations:0 "Collectivize the Sugar Plantations"
+ CUB_collectivize_the_sugar_plantations_desc:0 "Collectivizing our sugar plantations will help increase efficiency & allow for further expansions of the plantations."
+ CUB_rural_industrialization:0 "Rural Industrialization"
+ CUB_rural_industrialization_desc:0 "We should prioritize industrialization of our under-utilized rural regions. Plenty of room for more factories, comrade!"
+ CUB_new_rural_roads:0 "New Rural Roads"
+ CUB_new_rural_roads_desc:0 "Now that we've developed our rural areas a bit more, we should improve the roads therein to encourage further expansion!"
+ CUB_expand_the_plantations:0 "Expand the Plantations"
+ CUB_expand_the_plantations_desc:0 "Expanding our sugar plantations will be a large step in the right direction, giving us greater economic opportunities."
+ CUB_industrialize_the_islands:0 "Industrialize the Islands"
+ CUB_industrialize_the_islands_desc:0 "See all those islands? The colonial powers never truly saw or understood their potential. If we work hard we can turn them into industrial centers the likes of which they've never seen before!"
+ CUB_sugar_for_oil:0 "Sugar for Oil"
+ CUB_sugar_for_oil_desc:0 "Our Soviet comrades have a large supply of oil that would benefit us greatly, while we have an abundance of sugar that the Soviets could put to good use. Perhaps we could negotiate a trade deal that would be mutually beneficial?"
+ CUB_invite_soviet_companies:0 "Invite Soviet Companies"
+ CUB_invite_soviet_companies_desc:0 "Many companies from the Soviet Union would make good investors in our economy, allowing us means for further growth!"
+
+ ###Conquest###
+ CUB_liberate_the_dominican_republic:0 "Liberate the Dominican Republic"
+ CUB_liberate_the_dominican_republic_desc:0 "The cruel strongman of the Dominican Republic, Rafael Trujillo, has terrorized & oppressed the people for too long. We must liberate our long-lost brothers!"
+ CUB_deal_with_haitian_oppressors:0 "Deal With Haitian Oppressors"
+ CUB_deal_with_haitian_oppressors_desc:0 "Now that we've dealt with the oppressive regime in the Dominican Republic, we must set our sights on the western half of Hispaniola, & freeing the people there from the corrupt capitalist regime!"
+ CUB_demand_colonial_withdrawals:0 "Demand Colonial Withdrawals"
+ CUB_demand_colonial_withdrawals_desc:0 "Foreign powers have intruded upon the region for several centuries, which is several centuries too many. Today, we demand their withdrawal from the region, so that we may have the opportunity to bring our glorious leadership to the rest of the Caribbean!"
+ CUB_communism_in_the_caribbean:0 "Communism in the Caribbean"
+ CUB_communism_in_the_caribbean_desc:0 "It's time that we spread our sphere of influence throughout the rest of the Caribbean, introducing the population to the glory of communism! If they don't like it, comrade Stalin suggests gulags as a good way to change their minds."
+ CUB_for_the_revolution:0 "For the Revolution"
+ CUB_for_the_revolution_desc:0 "For the cause of our glorious revolution!"
+ CUB_the_revolution_beyond_the_caribbean:0 "The Revolution Beyond the Caribbean"
+ CUB_the_revolution_beyond_the_caribbean_desc:0 "Many outside of the Caribbean are suffering under the fascists & capitalist pigs. We must set our sights on freeing them from the oppression that they face!"
+ CUB_one_caribbean_policy:0 "One Caribbean Policy"
+ CUB_one_caribbean_policy_desc:0 "The Caribbean is connected by sea, & shall furthermore be connected by the glorious bonds of communism. All within it's borders shall be our comrades!"
+
+
+ ########################################################################################################################################################################
+ ###Authoritarian Cuban Focuses###
+ ########################################################################################################################################################################
+
+ ###Political###
+ CUB_military_coup:0 "Military Coup"
+ CUB_military_coup_desc:0 "Fulgencio Batista backed Gomez in the elections knowing that he was a weak leader. The intention was to engineer an impeachment crisis to force Gomez out of power in favor of Vice-President Federico Brú, who had agreed to work with Batista. Since then however, Brú has gone back on his decision, forcing us to take more extreme measures."
+ CUB_reassure_the_population:0 "Reassure the Population"
+ CUB_reassure_the_population_desc:0 "Our military coup has severely destabilized the country, & shaken up the population who fear the possibility of this being another Machado-style regime. We must reassure the people that we still have their best interests in mind."
+ CUB_ensure_military_loyalty:0 "Ensure Military Loyalty"
+ CUB_ensure_military_loyalty_desc:0 "Batista's strong influence over the military & political situation of Cuba was already necessary to carry out the coup. However, there are still some concerns among the ranks of the military that need to be addressed in order to ensure total loyalty."
+ CUB_government_reshuffle:0 "Government Reshuffle"
+ CUB_government_reshuffle_desc:0 "Since we took power by way of a coup, many government officials still have loyalty to the previous administration. We should reshuffle them to positions of lesser influence, & put those with greater loyalty to us in positions of power."
+ CUB_reach_out_to_trujillo:0 "Reach Out to Trujillo"
+ CUB_reach_out_to_trujillo_desc:0 "Rafael Trujillo is a longtime friend of Batista's, & might be open to various diplomatic negotiations now that Batista is in power."
+ CUB_invite_american_corporations:0 "Invite American Corporations"
+ CUB_invite_american_corporations_desc:0 "Openly inviting in American corporations to invest in our economy could open many doors for our nation."
+ CUB_american_sugar_investments:0 "American Sugar Investments"
+ CUB_american_sugar_investments_desc:0 "There are many American corporations that would jump at the chance to invest in our vast sugar industry. A few good investments would go a long ways towards strengthening our economy."
+ CUB_deal_with_the_mafia:0 "Deal With the Mafia"
+ CUB_deal_with_the_mafia_desc:0 "The American Mob is a powerful & highly influential organization. While corrupt & a bit dangerous to deal with, they also bring with them significant finances to help bolster our economy. \n\nAs a bonus, they bring with them other 'special talents' to help make up for the occasional 'accident'."
+ CUB_invite_meyer_lansky:0 "Invite Meyer Lansky"
+ CUB_invite_meyer_lansky_desc:0 "Meyer Lansky, the 'Mob's Accountant' has great influence in both the Jewish & Italian Mafia. While he already has a good deal of influence in Cuba, we could make some new deals that would be mutually beneficial..."
+ CUB_implement_a_new_constitution:0 "Implement A New Constitution"
+ CUB_implement_a_new_constitution_desc:0 "The old constitution has evidently been shown to be nothing more than a weak document that has failed the people time & again. A new constitution built for modern times, learning from the mistakes of the past, is the way to go. It also doesn't hurt to add some loopholes to help solidify our power."
+ CUB_unite_hispaniola:0 "Unite Hispaniola"
+ CUB_unite_hispaniola_desc:0 "The island of Hispaniola has been split since the 1697 Treaty of Ryswick, maintaining a peaceful balance between the French & Spanish colonies. \n\nAfter more than 230 years, both sides have gained their independence. Perhaps the time has come to reunite the peoples of Hispaniola under one banner?"
+ CUB_secure_united_states_political_support:0 "Secure United States Political Support"
+ CUB_secure_united_states_political_support_desc:0 "The United States is the most influential power in the region. They've meddled in our affairs for a great many years, & must surely be interested in this change of government. \n\n Securing their support & acknowledgement is vital to our continued existence, & should also alleviate foreign meddling."
+ CUB_military_pensions:0 "Military Pensions"
+ CUB_military_pensions_desc:0 "By offering hearty pensions to members of our armed forces, we encourage soldiering as a proper career. This in turn leads to a great increase in recruitment!"
+ CUB_conduct_joint_military_excercises:0 "Conduct Joint Military Excercises"
+ CUB_conduct_joint_military_excercises_desc:0 "It's easier to do military excercises when you have another party to conduct them with. Trujillo has expressed an interest in this in the past, stating that this would be beneficial to both our great countries!"
+ CUB_invite_trujillo_to_join_the_allies:0 "Invite Trujillo to Join the Allies"
+ CUB_invite_trujillo_to_join_the_allies_desc:0 "Given Trujillo's friendship with Cuba, he may be willing to listen to a plea to join the cause of the Allies, so long as we're the ones making that plea."
+ CUB_caribbean_brothers:0 "Caribbean Brothers"
+ CUB_caribbean_brothers_desc:0 "Let the friendship- no, the brothership-, of the Hispaniolan & Cuban peoples be known far & wide!"
+ CUB_caribbean_unity:0 "Caribbean Unity"
+ CUB_caribbean_unity_desc:0 "The time has come to unite the peoples of the Caribbean under a single banner!"
+ CUB_external_interests:0 "External Interests"
+ CUB_external_interests_desc:0 "It's time we look to the world & expand our sphere of influence beyond our island home!"
+
+ ########################################################################################################################################################################
+ ################################################################### ARMED FORCES FOCUSES ###############################################################################
+ ########################################################################################################################################################################
+
+ CUB_the_cuban_armed_forces:0 "The Cuban Armed Forces"
+ CUB_the_cuban_armed_forces_desc:0 "Cuba has a relatively short military history, having only won our independence 34 years ago. We've had a rough go of things since then & we're still not well developed. With the unease in Europe these days, it's in our best interests to be prepared & review the state of our armed forces."
+ CUB_update_our_equipment:0 "Update Our Equipment"
+ CUB_update_our_equipment_desc:0 "Since our independence war, we've largely neglected our equipment. Much of it is behind the times & likely to let our troops down when they face battle. It's time we did a proper update of our equipment, for the sake of our troops."
+ CUB_memories_of_san_juan_hill:0 "Memories of San Juan Hill"
+ CUB_memories_of_san_juan_hill_desc:0 "Though a distant memory for many, we still remember the Battle of San Juan Hill & the Americans who spilled their blood for our cause that day. It's a day we must never forget."
+ CUB_the_new_rough_riders:0 "The New Rough Riders"
+ CUB_the_new_rough_riders_desc:0 "This day, we honor the men of the 1st United States Volunteer Cavalry: The Rough Riders. Their bold & decisive leadership paved the way to our independence as a free & sovereign nation. Cavalry may not be as effective as it was back then or even during the Great war, but it still has a special place in our army."
+ CUB_support_advancements:0 "Support Advancements"
+ CUB_support_advancements_desc:0 "Many new advancements have been made in the field of support. Radios, field hospitals, signal companies... Such things would be a great help to our armed forces."
+ CUB_a_new_era_in_warfare:0 "A New Era in Warfare"
+ CUB_a_new_era_in_warfare_desc:0 "The era of crude cannons, swords, & lining up politely for your enemy has long since faded away. Now comes the era of tanks, artillery, & all manner of machine."
+ CUB_state_of_the_airforce:0 "State of the Airforce"
+ CUB_state_of_the_airforce_desc:0 "The Fuerza Aérea Cubana has a simple history, dating back to 1917 during the Great War. Like many smaller nations, we developed some basic combat aircraft, but priorities for aeronautical development dropped off after the war concluded. \nAs things heat up in the world, it would be prudent to review the state of our airforce & invest in some modernization."
+ CUB_airbase_expansions:0 "Airbase Expansions"
+ CUB_airbase_expansions_desc:0 "We have minimal airbase facilities, & at present they're quite small. It's time to do some work to expand these facilities & improve upon them."
+ CUB_dedicated_air_research:0 "Dedicated Air Research"
+ CUB_dedicated_air_research_desc:0 "Having a team dedicated to nothing but aircraft research would be of great benefit to us."
+ CUB_increased_safety_standards:0 "Increased Safety Standards"
+ CUB_increased_safety_standards_desc:0 "By increasing our standards for aircraft safety, we help to ensure higher quality plane production, & a reduction in equipment failures when airborne."
+ CUB_better_weapons_engineering:0 "Better Weapons Engineering"
+ CUB_better_weapons_engineering_desc:0 "Sometimes the key to victory is the right weapon. Smarter engineering decisions can help us achieve such a weapon."
+ CUB_sea_patrols:0 "Sea Patrols"
+ CUB_sea_patrols_desc:0 "Planes are a great way to patrol the seas of the Caribbean & beyond. They can provide intelligence as well as attacking enemy ships & submarines that they encounter."
+ CUB_a_defensive_navy:0 "A Defensive Navy"
+ CUB_a_defensive_navy_desc:0 "Our naval forces are minimal, & most of them are decades out of date. We need to begin modernizing our fleet, prioritizing regional defense, particularly against the threat of U-Boats."
+ CUB_small_but_efficient:0 "Small But Efficient"
+ CUB_small_but_efficient_desc:0 "Our navy is quite small, but we take pride in the efficiency & effectiveness of it! We've become particularly skilled at dealing with enemy submarines & protecting convoys."
+ CUB_expanding_our_shipyards:0 "Expanding Our Shipyards"
+ CUB_expanding_our_shipyards_desc:0 "As an island nation, we rely heavily on ships for trade & defense. Investing in some new dockyards will increase our shipbuilding capacity, which means great opportunities for us in the future."
+ CUB_marine_training:0 "Marine Training"
+ CUB_marine_training_desc:0 "Training our armed forces for marine environments is a practical necessity as an island nation. Training up specialized marine divisions would strengthen our position even further, too."
+
+
+
+
+ ########################################################################################################################################################################
+ ##################################################################### ECONOMIC FOCUSES #################################################################################
+ ########################################################################################################################################################################
+
+ CUB_industrial_investments:0 "Industrial Investments"
+ CUB_industrial_investments_desc:0 "To help offset the issues with our sugarcane industry caused by the Great Depression, we need to invest in general industry & machinery. Otherwise we risk being dependent on agriculture & mining indefinitely."
+ CUB_expand_the_cobre_mine:0 "Expand the Cobre Mine"
+ CUB_expand_the_cobre_mine_desc:0 "The Cobre Mine is one of the oldest copper mines in what used to be known as the New World. It's been operational for centuries, originally opening in 1544. \n\nIf we expand the mine we should be able to extract a greater quantity of copper!"
+ CUB_open_new_textile_mills:0 "Open New Textile Mills"
+ CUB_open_new_textile_mills_desc:0 "To diversify our economy & become less reliant on sugar, we can begin to develop our lacking textile industry. Opening a few new factories is a good place to start."
+ CUB_increase_fishing:0 "Increase Fishing"
+ CUB_increase_fishing_desc:0 "One of the greatest natural resources we have is all around us: The ocean! Developing our fishing industry will help us in a variety of ways, including offering a better food source for our people."
+ CUB_back_the_ward_line:0 "Back the Ward Line"
+ CUB_back_the_ward_line_desc:0 "The Ward Line has been around since 1841, when it was founded in New York, having developed strong ties to Cuba, with a notable presence in Havana. A recent unfortunate incident has hurt the company both financially & reputationally, but we believe that with a little investment, we can restore the company & it's reputation, as well as open new business opportunities."
+ CUB_plantation_recovery_effort:0 "Plantation Recovery Effort"
+ CUB_plantation_recovery_effort_desc:0 "While the Sugar Act of 1934 helped bring some stability to our sugarcane industry, we're still nowhere near the industry being as healthy as it should be. State investment in plantations & sugar mills should help plantation recovery efforts along."
+ CUB_build_more_sugar_mills:0 "Build More Sugar Mills"
+ CUB_build_more_sugar_mills_desc:0 "Building more sugar mills will benefit our economy, bringing more job opportunities to the people."
+ CUB_higher_production_quotas:0 "Higher Production Quotas"
+ CUB_higher_production_quotas_desc:0 "Higher quotas for sugarcane production will help to encourage plantations to expand further & work a bit harder. In turn, they'll both invest back into the economy & begin to export more sugar."
+ CUB_fund_the_university_of_havanna:0 "Fund the University of Havanna"
+ CUB_fund_the_university_of_havanna_desc:0 "By putting an emphasis on higher learning & helping to finance our largest university, the University of Havanna, we help to grow the capabilities of our people & produce innovation."
+ CUB_excavation_research:0 "Excavation Research"
+ CUB_excavation_research_desc:0 "Researching new excavation techniques & equipment will allow us to mine far more efficiently than before."
+ CUB_bolster_tourism:0 "Bolster Tourism"
+ CUB_bolster_tourism_desc:0 "Tourism has been responsible for much of our economic growth over the decades, & we've become a popular destination for tourists."
+ CUB_bail_out_the_cuba_company:0 "Bail Out the Cuba Company"
+ CUB_bail_out_the_cuba_company_desc:0 "The Cuba Company has fallen on hard times recently, & we've decided that this would be the perfect opportunity to help them out, & in turn help out our own economy."
+ CUB_rails_and_roads:0 "Rails & Roads"
+ CUB_rails_and_roads_desc:0 "With the Cuba Company back on track again, we can expand our current rail line that goes from La Habana to Oriente, as well as fix up some of our roads along the way."
+ CUB_cuba_company_train_plant:0 "Cuba Company Train Plant"
+ CUB_cuba_company_train_plant_desc:0 "Opening up new manufacturing plants for trains under the Cuba Company will allow us to produce our own high quality trains!"
+ CUB_establish_new_arms_plants:0 "Establish New Arms Plants"
+ CUB_establish_new_arms_plants_desc:0 "With whispers of war in the air, this might be a good time to establish some new arms plants."
+ CUB_expand_the_arms_plants:0 "Expand the Arms Plants"
+ CUB_expand_the_arms_plants_desc:0 "As things heat up in the world, so too should our production of arms. For safety & security, of course."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ########################################################################################################################################################################
+ ########################################################################################################################################################################
+ ########################################################################################################################################################################
+
+ ###National Spirits/Ideas###
+ CUB_recovered_sugar_industry_idea:0 "Recovered Sugar Industry"
+ CUB_strong_sugar_industry_idea:0 "Strong Sugar Industry"
+ CUB_bolstered_tourism_idea:0 "Bolstered Tourism"
+ CUB_fishing_idea:0 "Increased Fishing"
+ CUB_air_research_idea:0 "Aerial Research Program"
+ CUB_safety_standards_idea:0 "Higher Safety Standards"
+ CUB_better_weapons_engineering_idea:0 "Better Weapons Engineering"
+ CUB_efficient_navy_idea:0 "Efficient Escort Navy"
+ CUB_marine_training_idea:0 "Marine Training"
+ CUB_island_development_plan_idea:0 "Island Development Plan"
+ CUB_amphibious_training_idea:0 "Amphibious Training"
+ CUB_falangist_youth_idea:0 "Falangist Teachings"
+ CUB_falangist_devotion_idea:0 "Falangist Devotion"
+ CUB_falangist_military_influence:0 "Falangist Military Influence"
+ CUB_batistas_influence:0 "Batista's Influence"
+ CUB_batistas_influence_desc:0 "Fulgencio Batista, the so-called 'Strongman of Cuba', has been exerting his influence over our politics ever since the Seargants' Revolt, which saw his rise to power. His desire for power & control has led to many issues internally, & likely will for a time to come until he either gets his way or is finally dealt with."
+ CUB_repealed_liberal_policies_idea:0 "Repealed Liberal Policies"
+ CUB_anti_communist_violence:0 "Anti-Communist Violence"
+ CUB_batista_cooperation:0 "Batista's Cooperation"
+ CUB_spanish_immigration:0 "Spanish Immigration"
+ CUB_caribbean_guard:0 "Caribbean Guard"
+ CUB_caribbean_dominance_idea:0 "Caribbean Dominance"
+ CUB_strengthened_catholic_identity:0 "Strengthened Catholic Identity"
+ CUB_ctc_legalized:0 "CTC Legalized"
+ CUB_ctc_galvanized:0 "CTC Galvanized"
+ CUB_ctc_galvanized_1:0 "CTC Galvanized"
+ CUB_minimum_wage_laws_idea:0 "Minimum Wage Laws"
+ CUB_reduced_american_influence:0 "Reduced American Influence"
+ CUB_modernized_medical_care1:0 "Modernized Medical Care"
+ CUB_modernized_medical_care2:0 "Modernized Medical Care"
+ CUB_refugees_accepted:0 "Refugees Accepted"
+ CUB_increased_army_payroll:0 "Increased Army Payroll"
+ CUB_recovering_sugar_industry:0 "Recovering Sugar Industry"
+ CUB_recovering_sugar_industry_desc:0 "The Great Depression primarily hurt our sugarcane industry, which is crucial to the Cuban economy. We'll need to address the industry if we're to make a proper recovery."
+ CUB_recovering_sugar_industry_1:0 "Recovering Sugar Industry"
+ CUB_recovering_sugar_industry_1_desc:0 "The Great Depression primarily hurt our sugarcane industry, which is crucial to the Cuban economy. We've made some progress, but we haven't completely resolved the issue yet."
+ CUB_american_influence:0 "American Influence"
+ CUB_american_influence_desc:0 "The Americans have felt entitled to some level of meddling in our politics, which has caused all sorts of issues for us. We must assert our soveriegnty over our own politics!"
+ CUB_cuban_soviet_diplomacy:0 "Cuban-Soviet Diplomacy"
+ CUB_direccion_inteligencia:0 "Dirección de Inteligencia"
+ CUB_cuban_five_year_plan:0 "Cuban Five-Year Plan"
+ CUB_us_political_support:0 "United States Political Support"
+ CUB_military_pensions_idea:0 "Military Pensions"
+ CUB_ward_line:0 "Ward Line"
+ the_cuba_company:0 "The Cuba Company"
+ CUB_batistas_influence_reduced:0 "Batista's Influence"
+ CUB_military_expansions:0 "Military Expansions"
+ CUB_rewritten_constitution:0 "Rewritten Constitution"
+ CUB_direccion_inteligencia_2:0 "Dirección de Inteligencia"
+ CUB_radio_mil_diez_idea:0 "Radio Mil Diez"
+ CUB_external_interests_idea:0 "External Interests"
+ CUB_unionized_sugar_mills:0 "Unionized Sugar Mills"
+ CUB_batistas_influence_reduced_communist:0 "Batista's Influence"
+ CUB_cuban_politburo:0 "Cuban Politburo"
+ CUB_mafia_influence:0 "Mafia Influence"
+ CUB_mafia_influence_desc:0 "The Mafia in our country is a double-edged sword. They bring with them a mixture of corruption & instability, but also valuable economic opportunities."
+ CUB_sugar_gift_idea:0 "Gifted Sugar"
+ CUB_sugar_gift_idea_desc:0 "The Cubans have given us such a lovely gift!"
+ CUB_soviet_military_advisors_idea:0 "Soviet Military Advisors"
+ CUB_batistas_support_communism:0 "Batista's Support"
+ CUB_communism_in_the_caribbean_idea:0 "Communism in the Caribbean"
+ CUB_communism_in_the_caribbean2_idea:0 "Communism in the Caribbean"
+ CUB_communism_in_the_caribbean3_idea:0 "Communism in the Caribbean"
+ CUB_global_revolution1_idea:0 "Global Revolution"
+ CUB_global_revolution2_idea:0 "Global Revolution"
+ CUB_colombian_coffee_idea:0 "Colombian Coffee"
+ CUB_san_juan_hill_idea:0 "Memories of San Juan Hill"
+ CUB_san_juan_hill2_idea:0 "Memories of San Juan Hill"
+ CUB_higgins_industries:0 "Higgins Industries"
+
+ ###Custom Tooltips###
+ CUB_amphibious_training_tt:0 "§HInfantry§! \n §HAmphibious§! \n §WAttack:§! §G+10%§! \n §WDefence:§! §G+5%§! \n §HRiver§! \n §WMovement:§! §G+10%§! \n §WAttack:§! §G+5%§! \n \n§HCavalry§! \n §HAmphibious§! \n §WAttack:§! §G+10%§! \n §WDefence:§! §G+5%§! \n §HRiver§! \n §WMovement:§! §G+10%§! \n §WAttack:§! §G+5%§! \n \n§HMarines§! \n §HAmphibious§! \n §WAttack:§! §G+5%§! \n §WDefence:§! §G+5%§! \n §HRiver§! \n §WMovement:§! §G+5%§! \n §WAttack:§! §G+5%§!"
+ CUB_island_fortification_tt:0 "§HUpgrades major naval bases in the Caribbean, adds 1 level of AA to each state, & adds coastal fortifications to the upgraded bases."
+ CUB_zemurray_legitimized_tt:0 "Switches §H[HON.GetNameDef]§! to a special cooperationist focus tree."
+ CUB_suggest_operation_hemingway_tt:0 "We will ask our §Yfaction leader§! to declare war on §YNationalist Spain§!.\n"
+ CUB_president_inaugurated_tt:0 "§YThe new president will be inaugurated on May 20.§!"
+ CUB_results_of_the_presidential_election_tt:0 "§YThe presidential election will take place on January 10.§!"
+
+ ###News & Events###
+ cuba.100.d:0 "Gerardo Machado, former president of Cuba who served from 1925 to 1933, has passed away in Miami Beach, Florida, at the age of 69, while undergoing surgery in an attempt to delay his fate at the hands of cancer. \n \nMachado's time in office was disastrous at best, considered by most to have been a dictator, refusing to leave office & clinging to his power while fending off insurgent groups for several years. \n \n Even despite U.S. government intervention to help negotiate a peaceful change of regime, Machado continued to resist until the Cuban army revolted, forcing him to flee the country."
+ cuba.101.t:0 "Arrival of the MS St. Louis in Havana"
+ cuba.101.d:0 "The German passenger ship MS St. Louis has arrived in Havana Harbor today, carrying with it 973 passengers, many of whom are refugees seeking asylum here in Cuba from the Nazi regime in Germany. \n\nIf we turn them away now, we could be forcing them to return to Germany & a certain doom. \n\nWhat should we do?"
+
