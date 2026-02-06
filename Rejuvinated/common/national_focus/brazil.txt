@@ -2405,7 +2405,7 @@ focus_tree = {
 	focus = {
 		id = bra_lobato
 		icon = GFX_focus_bra_lobato
-		x = 34
+		x = 36
 		y = 0
 		ai_will_do = {
 			factor = 40
@@ -2566,10 +2566,11 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_salvador
+		id = BRA_national_petroleum_council
 		icon = GFX_focus_bra_salvador
 		prerequisite = { focus = bra_lobato }
-		x = 33
+		relative_position_id = bra_lobato
+		x = 0
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -2689,10 +2690,11 @@ focus_tree = {
 	focus = {
 		id = bra_petrobras
 		icon = GFX_focus_bra_petrobras
-		prerequisite = { focus = bra_salvador }
+		prerequisite = { focus = BRA_national_petroleum_council }
 		mutually_exclusive = { focus = bra_entreguismo }
-		x = 32
-		y = 2
+		relative_position_id = BRA_national_petroleum_council
+		x = 0
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 160
@@ -3196,7 +3198,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_diplomacia
+		id = BRA_itamaraty
 		icon = GFX_focus_bra_diplomacia
 		x = 48
 		y = 0
@@ -3213,12 +3215,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_heal_wounds
+		id = BRA_global_politics
 		icon = GFX_focus_bra_heal_wounds
-		prerequisite = { focus = bra_diplomacia }
-		mutually_exclusive = { focus = bra_sem_eixo }
-		x = 36
+		prerequisite = { focus = BRA_itamaraty }
+		mutually_exclusive = { focus = BRA_the_uiracu }
+		relative_position_id = BRA_itamaraty
+		x = -3
 		y = 1
+
 		ai_will_do = {
 			factor = 160
 		}
@@ -3231,10 +3235,11 @@ focus_tree = {
 	focus = {
 		id = bra_entreguismo
 		icon = GFX_focus_bra_entreguismo
-		prerequisite = { focus = bra_heal_wounds }
+		prerequisite = { focus = BRA_global_politics }
 		mutually_exclusive = { focus = bra_petrobras }
-		x = 34
-		y = 2
+		relative_position_id = BRA_global_politics
+		x = -7
+		y = 1
 		ai_will_do = {
 			factor = 160
 		}
@@ -3246,9 +3251,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_amigo_eua
+		id = BRA_a_good_neighbor
 		icon = GFX_focus_bra_amigo_eua
-		prerequisite = { focus = bra_heal_wounds }
+		prerequisite = { focus = BRA_global_politics }
+		relative_position_id = BRA_global_politics
 		ai_will_do = {
 			factor = 160
 			modifier = {
@@ -3273,15 +3279,15 @@ focus_tree = {
 				}
 				BRA = {
 					NOT = {
-						has_completed_focus = bra_amigo_uk
-						has_completed_focus = bra_amigo_alemanha
-						has_completed_focus = bra_amigo_urss
+						has_completed_focus = BRA_friendship_across_the_pond
+						has_completed_focus = BRA_a_south_american_reich
+						has_completed_focus = BRA_the_south_american_USSR
 					}
 				}
 			}
 		}
-		x = 35
-		y = 4
+		x = 3
+		y = 1
 		cost = 5
 		
 		completion_reward = {
@@ -3344,11 +3350,12 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_amigo_uk
+		id = BRA_friendship_across_the_pond
 		icon = GFX_focus_bra_amigo_uk
-		prerequisite = { focus = bra_heal_wounds }
-		x = 36
-		y = 3
+		prerequisite = { focus = BRA_global_politics }
+		relative_position_id = BRA_global_politics
+		x = 1
+		y = 1
 		ai_will_do = {
 			factor = 40
 		}
@@ -3368,9 +3375,9 @@ focus_tree = {
 				}
 				BRA = {
 					NOT = {
-						has_completed_focus = bra_amigo_eua
-						has_completed_focus = bra_amigo_urss
-						has_completed_focus = bra_amigo_alemanha
+						has_completed_focus = BRA_a_good_neighbor
+						has_completed_focus = BRA_the_south_american_USSR
+						has_completed_focus = BRA_a_south_american_reich
 					}
 				}
 			}
@@ -3409,9 +3416,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_amigo_alemanha
+		id = BRA_a_south_american_reich
 		icon = GFX_focus_bra_amigo_alemanha
-		prerequisite = { focus = bra_heal_wounds }
+		prerequisite = { focus = BRA_global_politics }
+		relative_position_id = BRA_global_politics
 		available = {
 			country_exists = GER
 			AND = {
@@ -3427,15 +3435,15 @@ focus_tree = {
 				}
 				BRA = {
 					NOT = {
-						has_completed_focus = bra_amigo_eua
-						has_completed_focus = bra_amigo_uk
-						has_completed_focus = bra_amigo_urss
+						has_completed_focus = BRA_a_good_neighbor
+						has_completed_focus = BRA_friendship_across_the_pond
+						has_completed_focus = BRA_the_south_american_USSR
 					}
 				}
 			}
 		}
-		x = 37
-		y = 4
+		x = -1
+		y = 1
 		ai_will_do = {
 			factor = 40
 		}
@@ -3474,9 +3482,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_amigo_urss
+		id = BRA_the_south_american_USSR
 		icon = GFX_focus_bra_amigo_urss
-		prerequisite = { focus = bra_heal_wounds }
+		prerequisite = { focus = BRA_global_politics }
+		relative_position_id = BRA_global_politics
 		available = {
 			country_exists = SOV
 			AND = {
@@ -3489,9 +3498,9 @@ focus_tree = {
 				}
 				BRA = {
 					NOT = {
-						has_completed_focus = bra_amigo_uk
-						has_completed_focus = bra_amigo_alemanha
-						has_completed_focus = bra_amigo_eua
+						has_completed_focus = BRA_friendship_across_the_pond
+						has_completed_focus = BRA_a_south_american_reich
+						has_completed_focus = BRA_a_good_neighbor
 					}
 				}
 			}
@@ -3499,8 +3508,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 40
 		}
-		x = 38
-		y = 3
+		x = -3
+		y = 1
 		cost = 5
 		completion_reward = {
 			if = {
@@ -3536,11 +3545,12 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_mercosul_focus
+		id = BRA_the_southern_common_market
 		icon = GFX_focus_bra_mercosul_focus
-		prerequisite = { focus = bra_guide_latam }
-		x = 41
-		y = 2
+		prerequisite = { focus = BRA_the_crux }
+		relative_position_id = BRA_the_crux
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 160
@@ -3638,10 +3648,11 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_guide_latam
+		id = BRA_the_crux
 		icon = GFX_focus_bra_guide_latam
-		prerequisite = { focus = bra_diplomacia }
-		x = 41
+		prerequisite = { focus = BRA_itamaraty }
+		relative_position_id = BRA_itamaraty
+		x = 4
 		y = 1
 		ai_will_do = {
 			factor = 160
@@ -3654,12 +3665,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_sem_eixo
+		id = BRA_the_uiracu
 		icon = GFX_focus_bra_sem_eixo
-		mutually_exclusive = { focus = bra_heal_wounds }
-		prerequisite = { focus = bra_diplomacia }
+		mutually_exclusive = { focus = BRA_global_politics }
+		prerequisite = { focus = BRA_itamaraty }
+		relative_position_id = BRA_itamaraty
+
 		available = { OR = { has_government = fascism has_government = neutrality } }
-		x = 39
+		x = 1
 		y = 1
 		ai_will_do = {
 			factor = 160
@@ -3672,12 +3685,13 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_mercosul_militar_focus
+		id = BRA_investments_in_latin_america
 		icon = GFX_focus_bra_mercosul_militar_focus
-		prerequisite = { focus = bra_mercosul_focus }
-		x = 41
-		y = 3
-		cost = 5
+		prerequisite = { focus = BRA_the_southern_common_market }
+		relative_position_id = BRA_the_southern_common_market
+		x = 0
+		y = 1
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
@@ -3723,11 +3737,12 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_mercosul_expansao_focus
+		id = BRA_the_union_of_south_american_nations
 		icon = GFX_focus_bra_mercosul_expansao_focus
-		prerequisite = { focus = bra_mercosul_militar_focus }
-		x = 41
-		y = 4
+		prerequisite = { focus = BRA_investments_in_latin_america }
+		relative_position_id = BRA_investments_in_latin_america
+		x = 0
+		y = 1
 		available = {
 			BRA = { is_in_faction = no }
 		}
@@ -3756,14 +3771,15 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_basta
+		id = BRA_the_american_problem
 		icon = GFX_focus_bra_basta
 		prerequisite = {
-			focus = bra_sem_eixo
-			focus = bra_amigo_urss
-			focus = bra_amigo_alemanha
-			focus = bra_mercosul_expansao_focus
+			focus = BRA_the_uiracu
+			focus = BRA_the_south_american_USSR
+			focus = BRA_a_south_american_reich
+			focus = BRA_the_union_of_south_american_nations
 		}
+		relative_position_id = BRA_the_union_of_south_american_nations
 		available = {
 			country_exists = USA
 			USA = {	is_puppet = no }
@@ -3775,8 +3791,8 @@ focus_tree = {
 		ai_will_do = {
 			factor = 160
 		}
-		x = 39
-		y = 5
+		x = -1
+		y = 1
 		cost = 5
 		completion_reward = {
 			create_wargoal = { type = annex_everything target = USA }
