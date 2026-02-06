@@ -32,7 +32,7 @@ USA_marmon_herrington_organization = {
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
-					has_completed_focus = bra_amigo_eua
+					has_completed_focus = BRA_a_good_neighbor
 				}
 			}
 		}
@@ -785,7 +785,7 @@ USA_newport_news_shipbuilding_organization = {
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
-					has_completed_focus = bra_amigo_eua
+					has_completed_focus = BRA_a_good_neighbor
 				}
 			}
 		}
@@ -861,7 +861,7 @@ USA_north_american_aviation_organization = {
 			custom_trigger_tooltip = {
 				tooltip = has_invited_mio_tt
 				FROM = {
-					has_completed_focus = bra_amigo_eua
+					has_completed_focus = BRA_a_good_neighbor
 				}
 			}
 		}
@@ -1444,7 +1444,7 @@ USA_ford_motor_company_organization = {
 				}
 			}
 			FROM = {
-				has_completed_focus = bra_amigo_eua
+				has_completed_focus = BRA_a_good_neighbor
 			}
 		}
 		else_if = {
