@@ -13,7 +13,7 @@ characters = {
 		}
 		country_leader={
 			ideology = despotism
-			traits = { vfb_trait_vargas_1 vfb_trait_vargas_2 }
+			traits = { vfb_trait_vargas_1 vfb_trait_vargas_2 lawyer }
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -270,7 +270,7 @@ characters = {
 				has_completed_focus = bra_2_prestes_column
 			}
 
-			traits = { vfb_trait_oswald vfb_trait_escritor }
+			traits = { vfb_trait_oswald communist_revolutionary }
 
 			ai_will_do = {
 				factor = 160
@@ -332,7 +332,7 @@ characters = {
 				has_completed_focus = bra_brazilian_action
 			}
 
-			traits = { vfb_trait_menotti vfb_trait_escritor }
+			traits = { vfb_trait_menotti fascist_demagogue }
 
 			ai_will_do = {
 				factor = 160
@@ -363,7 +363,7 @@ characters = {
 				has_completed_focus = bra_regionalism
 			}
 
-			traits = { vfb_trait_lobato vfb_trait_escritor }
+			traits = { vfb_trait_lobato democratic_reformer }
 
 			ai_will_do = {
 				factor = 160

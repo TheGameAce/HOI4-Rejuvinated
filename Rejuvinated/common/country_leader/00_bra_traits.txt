@@ -59,7 +59,7 @@ leader_traits = {
 		}
 	}
 	
-	vfb_trait_vargas_1 = {
+	vfb_trait_vargas_1 = { #Chimango
 		random = no
 		
 		political_power_gain = 0.25
@@ -71,10 +71,10 @@ leader_traits = {
 		}
 	}
 	
-	vfb_trait_vargas_2 = {
+	vfb_trait_vargas_2 = { #Father of the Poor
 		random = no
 		
-		political_power_gain = 0.25
+		production_speed_industrial_complex_factor = 0.05
 		army_morale_factor = 0.05
 		
 		ai_will_do = {
@@ -382,8 +382,9 @@ leader_traits = {
 	vfb_trait_alfredo = {
 		random = no
 			
-		political_power_gain = 0.25
-		production_speed_buildings_factor = 0.05
+		trade_opinion_factor = 0.30
+		faction_trade_opinion_factor = 0.30
+		production_speed_buildings_factor = 0.08
 			
 		ai_will_do = {
 			factor = 1
@@ -393,7 +394,7 @@ leader_traits = {
 	vfb_trait_morato = {
 		random = no
 		
-		political_power_gain = 0.25
+		political_power_factor = 0.05
 		production_speed_industrial_complex_factor = 0.1
 		
 		ai_will_do = {
@@ -403,8 +404,7 @@ leader_traits = {
 	
 	vfb_trait_capanema = {
 		random = no
-		
-		political_power_gain = 0.25
+
 		research_speed_factor = 0.05
 		
 		ai_will_do = {
@@ -415,7 +415,7 @@ leader_traits = {
 	vfb_trait_collor = {
 		random = no
 		
-		political_power_gain = 0.25
+		political_power_factor = 0.05
 		stability_factor = 0.1
 		
 		ai_will_do = {
@@ -425,33 +425,32 @@ leader_traits = {
 	
 	vfb_trait_aranha = {
 		random = no
+
+		opinion_gain_monthly_factor = 1
+		send_volunteer_factor = 1
+		improve_relations_maintain_cost_factor = -0.50
 		
-		political_power_gain = 0.25
-		trade_opinion_factor = 0.2
-		#opinion_gain_monthly_same_ideology_factor = 1
-		
-		ai_will_do = {
-			factor = 1
-		}
-	}
-	
-	vfb_trait_afranio = {
-		random = no
-		
-		political_power_gain = 0.25
-		non_core_manpower = 0.25
-		#opinion_gain_monthly_same_ideology_factor = 1
 		
 		ai_will_do = {
 			factor = 1
 		}
 	}
 	
-	vfb_trait_lobato = {
+	vfb_trait_afranio = { #Continental Diplomat
 		random = no
 		
-		democratic_drift = 0.1
-		political_power_gain = 0.25
+		non_core_manpower = 0.20
+		opinion_gain_monthly_same_ideology_factor = 0.50
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	vfb_trait_lobato = { #Visionary Patrician
+		random = no
+	
+		political_power_gain = 0.10
 		fuel_gain_factor = 0.25
 		
 		ai_will_do = {
@@ -462,9 +461,9 @@ leader_traits = {
 	vfb_trait_oswald = {
 		random = no
 		
-		communism_drift = 0.1
-		political_power_gain = 0.25
-		non_core_manpower = 0.25
+		political_power_gain = 0.10
+		non_core_manpower = 0.10
+		conscription_factor = 0.15
 		
 		ai_will_do = {
 			factor = 1
@@ -475,8 +474,9 @@ leader_traits = {
 		random = no
 		
 		neutrality_drift = 0.1
-		political_power_gain = 0.25
-		army_morale_factor = 0.05
+		political_power_gain = 0.10
+		production_speed_infrastructure_factor = 0.10
+		production_speed_rail_way_factor = 0.15
 		
 		ai_will_do = {
 			factor = 1
@@ -486,9 +486,8 @@ leader_traits = {
 	vfb_trait_menotti = {
 		random = no
 		
-		fascism_drift = 0.1
-		political_power_gain = 0.25
-		no_supply_grace = 24
+		political_power_gain = 0.10
+		no_supply_grace = 48
 		
 		ai_will_do = {
 			factor = 1
@@ -500,17 +499,18 @@ leader_traits = {
 		
 		fascism_drift = 0.05
 		neutrality_drift = 0.05
-		political_power_gain = 0.25
+		political_power_gain = 0.10
+		party_popularity_stability_factor = 0.10
 		
 		ai_will_do = {
 			factor = 1
 		}
 	}
 	
-	vfb_trait_escritor = {
+	vfb_trait_escritor = { #Intellectual
 		random = no
 		
-		research_speed_factor = 0.05
+		research_speed_factor = 0.03
 		
 		ai_will_do = {
 			factor = 1
@@ -527,8 +527,9 @@ leader_traits = {
 		}
 	}
 	
-	vfb_trait_communist = no
-		
+	vfb_trait_communist = {
+		random = no
+
 		communism_drift = 0.05
 		
 		ai_will_do = {
