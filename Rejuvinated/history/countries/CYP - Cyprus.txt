@@ -8,16 +8,19 @@ set_technology = {
 }
 
 set_convoys = 25
+set_research_slots = 3
+
+recruit_character = CYP_richmond_palmer
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = neutrality
 	last_election = "1936.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
-	democratic = 50
-	fascism = 8
-	communism = 15
-	neutrality = 27
+	democratic = 15
+	fascism = 10
+	communism = 5
+	neutrality = 70
 }

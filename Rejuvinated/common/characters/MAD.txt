@@ -1,0 +1,16 @@
+characters = {
+	MAD_leon_cayla = { # Historical Governor General of Madagascar from 1930 - 1939, as well as part of 40 - 41.
+		name = "Léon Henri Cayla"
+		portraits={
+			civilian={
+				large = "gfx/leaders/MAD/Leon_Cayla.dds"
+			}
+		}
+		country_leader={
+			ideology= conservatism_neutrality
+			traits={ governor_general }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
+}
