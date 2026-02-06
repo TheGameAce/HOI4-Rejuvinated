@@ -100,7 +100,7 @@ characters={
 		}
 		country_leader = {
 			ideology = despotism
-			traits = { strongman_of_cuba }
+			traits = { strongman_of_cuba military_officer }
 			expire = "1965.1.1.1"
 			id = -1
 		}
@@ -564,8 +564,8 @@ characters={
 		name="Genovevo Perez Damera"
 		portraits={
 			army={
-				small="GFX_idea_CUB_perez"
-				large="gfx/leaders/placeholder/Portrait_PLACEHOLDER_large.dds"
+				small="GFX_idea_CUB_genovevo"
+				large="gfx/leaders/CUB/Genovevo_Perez_Damera.dds"
 			}
 		}
 		advisor={	
