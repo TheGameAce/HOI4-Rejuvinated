@@ -1,0 +1,20 @@
+state={
+	id=1111
+	name="STATE_1111"
+	manpower = 200
+	
+	state_category = wasteland
+	impassable = yes
+
+	history={
+		owner = MOR
+		add_core_of = MOR
+		add_core_of = ALG
+	}
+	
+	provinces={
+		1958
+	}
+
+	local_supplies=0.0 
+}
