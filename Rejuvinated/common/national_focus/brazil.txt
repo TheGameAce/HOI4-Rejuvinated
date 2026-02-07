@@ -14,7 +14,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_national_security_law
-		icon = GFX_focus_bra_national_security_law
+		icon = GFX_focus_BRA_ban_communist_party
 		x = 1
 		y = 0
 		cost = 5
@@ -202,7 +202,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_vital_espace
-		icon = GFX_focus_bra_vital_espace
+		icon = GFX_focus_BRA_brazil_integral
 		prerequisite = { focus = bra_dreams_of_an_empire }
 		x = 6
 		y = 4
@@ -333,7 +333,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_estado_novo
-		icon = GFX_focus_bra_estado_novo
+		icon = GFX_focus_BRA_estado_novo
 		prerequisite = { focus = bra_quereismo }
 		x = 2
 		y = 3
@@ -349,7 +349,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_patriotic_effort
-		icon = GFX_focus_bra_patriotic_effort
+		icon = GFX_focus_BRA_department_of_propaganda
 		prerequisite = { focus = bra_estado_novo }
 		x = 2
 		y = 4
@@ -365,7 +365,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_brasilia
-		icon = GFX_focus_bra_brasilia
+		icon = GFX_focus_BRA_new_capital
 		prerequisite = { focus = bra_patriotic_effort focus = bra_vital_espace focus = bra_tecnocratic_reform focus = bra_cosmopolitanism }
 		available = { 
 			
@@ -730,7 +730,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_federal_universities
-		icon = GFX_focus_bra_federal_universities
+		icon = GFX_focus_BRA_university_of_sao_paulo
 		prerequisite = { focus = bra_technical_schools focus = bra_federal_institutes }
 		x = 9
 		y = 2
@@ -1069,7 +1069,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_modernizacao_marinha
-		icon = GFX_focus_bra_modernizacao_marinha
+		icon = GFX_focus_BRA_navy
 		prerequisite = { focus = bra_modernizacao_armadas }
 		x = 12
 		y = 1
@@ -1148,10 +1148,11 @@ focus_tree = {
 	
 	focus = {
 		id = bra_modernizacao_aerea
-		icon = GFX_focus_bra_modernizacao_aerea
+		icon = GFX_focus_BRA_air_force
 		prerequisite = { focus = bra_modernizacao_armadas }
 		prerequisite = { focus = bra_pm }
-		x = 18
+		relative_position_id = bra_pm
+		x = 1
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -1295,8 +1296,9 @@ focus_tree = {
 		id = bra_bombardeiro
 		icon = GFX_focus_bra_bombardeiro
 		prerequisite = { focus = bra_modernizacao_aerea }
-		x = 18
-		y = 2
+		relative_position_id = bra_modernizacao_aerea
+		x = 1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -1322,9 +1324,10 @@ focus_tree = {
 	focus = {
 		id = bra_caca
 		icon = GFX_focus_bra_caca
-		prerequisite = { focus = bra_bombardeiro }
-		x = 18
-		y = 3
+		prerequisite = { focus = bra_modernizacao_aerea }
+		relative_position_id = bra_modernizacao_aerea
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 10
@@ -1495,7 +1498,8 @@ focus_tree = {
 	focus = {
 		id = bra_pm
 		icon = GFX_focus_bra_pm
-		x = 19
+		relative_position_id = bra_modernizacao_armadas
+		x = 3
 		y = 0
 		ai_will_do = {
 			factor = 160
@@ -1517,7 +1521,7 @@ focus_tree = {
 	focus = {
 		id = bra_CTEF_CLT
 		icon = GFX_focus_bra_CTEF_CLT
-		x = 22
+		x = 32
 		y = 0
 		ai_will_do = {
 			factor = 160
@@ -1537,11 +1541,10 @@ focus_tree = {
 	focus = {
 		id = bra_sub_priv
 		icon = GFX_focus_bra_sub_priv
-		prerequisite = { focus = bra_itabira }
 		prerequisite = { focus = bra_CTEF_CLT }
 		prerequisite = { focus = bra_viacao }
-		prerequisite = { focus = bra_pm }
-		x = 20
+		relative_position_id = bra_CTEF_CLT
+		x = -5
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -1584,10 +1587,10 @@ focus_tree = {
 	focus = {
 		id = bra_obras_exterior
 		icon = GFX_focus_bra_obras_exterior
-		prerequisite = { focus = bra_itabira }
 		prerequisite = { focus = bra_CTEF_CLT }
 		prerequisite = { focus = bra_viacao }
-		x = 23
+		relative_position_id = bra_CTEF_CLT
+		x = -2
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -1635,8 +1638,9 @@ focus_tree = {
 		id = bra_IRFM
 		icon = GFX_focus_bra_IRFM
 		prerequisite = { focus = bra_eng_mart }
-		x = 20
-		y = 3
+		relative_position_id = bra_eng_mart
+		x = 0
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -1682,8 +1686,9 @@ focus_tree = {
 		id = bra_eng_mart
 		icon = GFX_focus_bra_eng_mart
 		prerequisite = { focus = bra_sub_priv }
-		x = 20
-		y = 2
+		relative_position_id = bra_sub_priv
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -1720,8 +1725,9 @@ focus_tree = {
 		id = bra_cmsp
 		icon = GFX_focus_bra_cmsp
 		prerequisite = { focus = bra_IRFM focus = bra_natal_porto focus = bra_mod_sb }
-		x = 20
-		y = 4
+		relative_position_id = bra_IRFM
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -1766,8 +1772,9 @@ focus_tree = {
 		id = bra_belem_porto
 		icon = GFX_focus_bra_porto_gen
 		prerequisite = { focus = bra_obras_exterior }
-		x = 22
-		y = 2
+		relative_position_id = bra_obras_exterior
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -1812,9 +1819,10 @@ focus_tree = {
 		id = bra_natal_porto
 		icon = GFX_focus_bra_porto_gen
 		prerequisite = { focus = bra_belem_porto focus = bra_mod_soroc }
-		x = 22
-		y = 3
-		cost = 5
+		relative_position_id = bra_belem_porto
+		x = 0
+		y = 1
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
@@ -1854,8 +1862,9 @@ focus_tree = {
 		id = bra_elet_1
 		icon = GFX_focus_bra_elet_gen
 		prerequisite = { focus = bra_natal_porto focus = bra_IRFM focus = bra_mod_sb }
-		x = 22
-		y = 4
+		relative_position_id = bra_natal_porto
+		x = -2
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -1892,8 +1901,9 @@ focus_tree = {
 		id = bra_mod_mad_mamo
 		prerequisite = { focus = bra_mod_sb }
 		icon = GFX_focus_bra_infra_gen
-		x = 24
-		y = 4
+		relative_position_id = bra_mod_sb
+		x = 0
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -1944,7 +1954,8 @@ focus_tree = {
 	focus = {
 		id = bra_viacao
 		icon = GFX_focus_bra_viacao
-		x = 24
+		relative_position_id = bra_CTEF_CLT
+		x = -4
 		y = 0
 		cost = 1
 		ai_will_do = {
@@ -1981,11 +1992,12 @@ focus_tree = {
 
 	focus = {
 		id = bra_mobilizacao_ind
-		icon = GFX_focus_bra_ministerio
+		icon = GFX_focus_BRA_national_guard
 		prerequisite = { focus = bra_elet_2 }
 		prerequisite = { focus = bra_fiesp }
-		x = 21
-		y = 6
+		relative_position_id = bra_elet_2
+		x = -1
+		y = 1
 		cost = 5
 		cancel_if_invalid = no
 		ai_will_do = {
@@ -2029,8 +2041,9 @@ focus_tree = {
 		icon = GFX_focus_bra_elet_gen
 		prerequisite = { focus = bra_elet_1 }
 		prerequisite = { focus = bra_cmsp }
-		x = 22
-		y = 5
+		relative_position_id = bra_elet_1
+		x = 1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2065,11 +2078,12 @@ focus_tree = {
 	
 	focus = {
 		id = bra_mod_soroc
-		icon = GFX_focus_bra_infra_gen
+		icon = GFX_focus_RJ_industry4
 		prerequisite = { focus = bra_obras_exterior}
-		x = 24
-		y = 2
-		cost = 5
+		relative_position_id = bra_obras_exterior
+		x = 1
+		y = 1
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
@@ -2161,8 +2175,9 @@ focus_tree = {
 		icon = GFX_focus_bra_fiesp
 		prerequisite = { focus = bra_cmsp }
 		prerequisite = { focus = bra_elet_1 }
-		x = 20
-		y = 5
+		relative_position_id = bra_elet_1
+		x = -1
+		y = 1
 		cost = 5
 		available = { has_idea = bra_eficiencia_3 }
 		ai_will_do = {
@@ -2200,8 +2215,9 @@ focus_tree = {
 		id = bra_mod_sb
 		icon = GFX_focus_bra_infra_gen
 		prerequisite = { focus = bra_mod_soroc focus = bra_belem_porto }
-		x = 24
-		y = 3
+		relative_position_id = bra_mod_soroc
+		x = 0
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2261,8 +2277,9 @@ focus_tree = {
 		id = bra_anhanguera
 		icon = GFX_focus_bra_infra_gen
 		prerequisite = { focus = bra_mod_mad_mamo }
-		x = 24
-		y = 6
+		relative_position_id = bra_mod_mad_mamo
+		x = 0
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 160
@@ -2358,11 +2375,12 @@ focus_tree = {
 	focus = {
 		id = bra_itabira
 		icon = GFX_focus_bra_itabira
-		x = 29
-		y = 0
-		available = { 
-			has_completed_focus = bra_CTEF_CLT
+		prerequisite = {
+			focus = bra_CTEF_CLT
 		}
+		relative_position_id = bra_CTEF_CLT
+		x = 4
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2405,13 +2423,14 @@ focus_tree = {
 	focus = {
 		id = bra_lobato
 		icon = GFX_focus_RJ_oil_pump
-		x = 36
-		y = 0
+		prerequisite = {
+			focus = bra_CTEF_CLT
+		}
+		relative_position_id = bra_CTEF_CLT
+		x = 1
+		y = 1
 		ai_will_do = {
 			factor = 40
-		}
-		available = { 
-			has_completed_focus = bra_CTEF_CLT
 		}
 		cost = 5
 		completion_reward = {
@@ -2446,9 +2465,8 @@ focus_tree = {
 		id = bra_cosipa
 		icon = GFX_focus_bra_cosipa
 		prerequisite = { focus = bra_itabira }
-		prerequisite = { focus = bra_CTEF_CLT }
-		prerequisite = { focus = bra_viacao }
-		x = 27
+		relative_position_id = bra_itabira
+		x = -2
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -2487,9 +2505,8 @@ focus_tree = {
 		id = bra_acogerdau
 		icon = GFX_focus_bra_acogerdau
 		prerequisite = { focus = bra_itabira }
-		prerequisite = { focus = bra_CTEF_CLT }
-		prerequisite = { focus = bra_viacao }
-		x = 29
+		relative_position_id = bra_itabira
+		x = 0
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -2528,9 +2545,8 @@ focus_tree = {
 		id = bra_acominas
 		icon = GFX_focus_bra_acominas
 		prerequisite = { focus = bra_itabira }
-		prerequisite = { focus = bra_CTEF_CLT }
-		prerequisite = { focus = bra_viacao }
-		x = 31
+		relative_position_id = bra_itabira
+		x = 2
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -2571,7 +2587,7 @@ focus_tree = {
 		prerequisite = { focus = bra_lobato }
 		relative_position_id = bra_lobato
 		x = 0
-		y = 1
+		y = 2
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2606,12 +2622,13 @@ focus_tree = {
 	
 	focus = {
 		id = bra_csn
-		icon = GFX_focus_bra_csn
+		icon = GFX_focus_BRA_national_steel_company
 		prerequisite = { focus = bra_cosipa }
 		prerequisite = { focus = bra_acogerdau }
 		prerequisite = { focus = bra_acominas }
-		x = 28
-		y = 2
+		relative_position_id = bra_acogerdau
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2651,8 +2668,9 @@ focus_tree = {
 		prerequisite = { focus = bra_cosipa }
 		prerequisite = { focus = bra_acogerdau }
 		prerequisite = { focus = bra_acominas }
-		x = 30
-		y = 2
+		relative_position_id = bra_acogerdau
+		x = 1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2691,7 +2709,6 @@ focus_tree = {
 		id = bra_petrobras
 		icon = GFX_focus_RJ_BRA_petrobras
 		prerequisite = { focus = BRA_national_petroleum_council }
-		mutually_exclusive = { focus = bra_entreguismo }
 		relative_position_id = BRA_national_petroleum_council
 		x = 0
 		y = 1
@@ -2732,17 +2749,17 @@ focus_tree = {
 	
 	focus = {
 		id = bra_bndes
-		icon = GFX_focus_bra_bndes
-		prerequisite = { focus = bra_vale focus = bra_csn focus = bra_mod_soroc }
-		prerequisite = { focus = bra_petrobras focus = bra_entreguismo }
+		icon = GFX_focus_BRA_banco_do_brasil
+		prerequisite = { focus = bra_vale focus = bra_csn }
+		relative_position_id = bra_csn
 		available = { 
 			AND = { 
 				has_completed_focus = bra_fiesp 
 				has_idea = bra_eficiencia_4
 			}
 		}
-		x = 29
-		y = 3
+		x = 1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 160
@@ -2781,8 +2798,9 @@ focus_tree = {
 		icon = GFX_focus_bra_gerdau
 		prerequisite = { focus = bra_bndes }
 		mutually_exclusive = { focus = bra_tenenge }
-		x = 28
-		y = 4
+		relative_position_id = bra_bndes
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2821,8 +2839,9 @@ focus_tree = {
 		icon = GFX_focus_bra_tenenge
 		prerequisite = { focus = bra_bndes }
 		mutually_exclusive = { focus = bra_gerdau }
-		x = 30
-		y = 4
+		relative_position_id = bra_bndes
+		x = 1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2861,8 +2880,9 @@ focus_tree = {
 		id = bra_chsf
 		icon = GFX_focus_bra_elet_gen
 		prerequisite = { focus = bra_bndes }
-		x = 26
-		y = 5
+		relative_position_id = bra_bndes
+		x = -2
+		y = 2
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2905,6 +2925,7 @@ focus_tree = {
 		id = bra_itaipu
 		icon = GFX_focus_bra_itaipu
 		prerequisite = { focus = bra_tenenge focus = bra_gerdau }
+		relative_position_id = bra_gerdau
 		available = {
 			BRA = {
 				NOT = { 
@@ -2914,8 +2935,8 @@ focus_tree = {
 				owns_state = 503
 			}
 		}
-		x = 29
-		y = 5
+		x = 1
+		y = 1
 		cost = 10
 		ai_will_do = {
 			factor = 320
@@ -2965,8 +2986,9 @@ focus_tree = {
 		id = bra_zfm
 		icon = GFX_focus_bra_infra_gen
 		prerequisite = { focus = bra_bndes }
-		x = 32
-		y = 5
+		relative_position_id = bra_bndes
+		x = 2
+		y = 2
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -3003,8 +3025,9 @@ focus_tree = {
 		id = bra_ciclocana
 		icon = GFX_focus_bra_agro_gen
 		prerequisite = { focus = bra_anhanguera }
-		x = 20
-		y = 7
+		relative_position_id = bra_anhanguera
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 160
@@ -3042,8 +3065,9 @@ focus_tree = {
 		icon = GFX_focus_bra_agro_gen
 		prerequisite = { focus = bra_anhanguera }
 		available = { has_idea = bra_ciclocana_idea }
-		x = 22
-		y = 7
+		relative_position_id = bra_anhanguera
+		x = 1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 160
@@ -3081,8 +3105,9 @@ focus_tree = {
 		icon = GFX_focus_bra_etanol
 		prerequisite = { focus = bra_anhanguera }
 		available = { has_idea = bra_ciclosoja_idea }
-		x = 24
-		y = 7
+		relative_position_id = bra_anhanguera
+		x = 0
+		y = 2
 		cost = 5
 		ai_will_do = {
 			factor = 320
@@ -3158,8 +3183,9 @@ focus_tree = {
 		prerequisite = { focus = bra_itaipu }
 		prerequisite = { focus = bra_zfm }
 		prerequisite = { focus = bra_chsf }
-		x = 29
-		y = 6
+		relative_position_id = bra_itaipu
+		x = 0
+		y = 1
 		cost = 30
 		ai_will_do = {
 			factor = 40
@@ -3236,10 +3262,9 @@ focus_tree = {
 		id = bra_entreguismo
 		icon = GFX_focus_bra_entreguismo
 		prerequisite = { focus = BRA_global_politics }
-		mutually_exclusive = { focus = bra_petrobras }
 		relative_position_id = BRA_global_politics
-		x = -7
-		y = 1
+		x = 0
+		y = 2
 		ai_will_do = {
 			factor = 160
 		}
@@ -3277,7 +3302,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 40
 		}
-		x = -3
+		x = 3
 		y = 1
 		cost = 5
 		completion_reward = {
@@ -3349,7 +3374,7 @@ focus_tree = {
 				}
 			}
 		}
-		x = 3
+		x = -3
 		y = 1
 		cost = 5
 		
@@ -3417,7 +3442,7 @@ focus_tree = {
 		icon = GFX_focus_bra_amigo_uk
 		prerequisite = { focus = BRA_global_politics }
 		relative_position_id = BRA_global_politics
-		x = 1
+		x = -1
 		y = 1
 		ai_will_do = {
 			factor = 40
@@ -3505,7 +3530,7 @@ focus_tree = {
 				}
 			}
 		}
-		x = -1
+		x = 1
 		y = 1
 		ai_will_do = {
 			factor = 40
@@ -3563,7 +3588,7 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_the_southern_common_market
-		icon = GFX_focus_bra_mercosul_focus
+		icon = GFX_focus_BRA_form_mercosul
 		prerequisite = { focus = BRA_the_crux }
 		relative_position_id = BRA_the_crux
 		x = -1
@@ -3686,7 +3711,7 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_investments_in_latin_america
-		icon = GFX_focus_bra_mercosul_militar_focus
+		icon = GFX_focus_BRA_us_of_brazil
 		prerequisite = { focus = BRA_the_southern_common_market }
 		relative_position_id = BRA_the_southern_common_market
 		x = 0
@@ -3738,7 +3763,7 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_the_union_of_south_american_nations
-		icon = GFX_focus_bra_mercosul_expansao_focus
+		icon = GFX_focus_BRA_greater_federalism
 		prerequisite = { focus = BRA_investments_in_latin_america }
 		relative_position_id = BRA_investments_in_latin_america
 		x = 0
