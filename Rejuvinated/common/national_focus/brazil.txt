@@ -993,6 +993,28 @@ focus_tree = {
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_proclamacao_so_2 } }
 		}
 	}
+
+	focus = {
+		id = bra_pm
+		icon = GFX_focus_bra_pm
+		relative_position_id = bra_modernizacao_armadas
+		x = 3
+		y = 0
+		ai_will_do = {
+			factor = 160
+		}
+		cost = 1
+		available = { has_completed_focus = bra_polaca }
+		completion_reward = {
+			add_tech_bonus = {
+				name = mp_bonus
+				bonus = 1
+				uses = 1
+				category = military_police_tech
+			}
+			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_paris_belfort_so_1 } }
+		}
+	}
 	
 	focus = {
 		id = bra_ana_guerra_civil
@@ -1495,28 +1517,6 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = bra_pm
-		icon = GFX_focus_bra_pm
-		relative_position_id = bra_modernizacao_armadas
-		x = 3
-		y = 0
-		ai_will_do = {
-			factor = 160
-		}
-		cost = 1
-		available = { has_completed_focus = bra_polaca }
-		completion_reward = {
-			add_tech_bonus = {
-				name = mp_bonus
-				bonus = 1
-				uses = 1
-				category = military_police_tech
-			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_paris_belfort_so_1 } }
-		}
-	}
-
 
 	focus = {
 		id = bra_CTEF_CLT
@@ -1633,29 +1633,20 @@ focus_tree = {
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_obras_exterior } }
 		}
 	}
-	
+
 	focus = {
-		id = bra_IRFM
-		icon = GFX_focus_bra_IRFM
-		prerequisite = { focus = bra_eng_mart }
-		relative_position_id = bra_eng_mart
-		x = 0
+		id = bra_eng_mart
+		icon = GFX_focus_bra_eng_mart
+		prerequisite = { focus = bra_sub_priv }
+		relative_position_id = bra_sub_priv
+		x = -1
 		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = bra_eficiencia_2 add_idea = bra_eficiencia_3 }
-			
-			501 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
+			swap_ideas = { remove_idea = bra_eficiencia_1 add_idea = bra_eficiencia_2 }
 			
 			if = {
 				limit = {
@@ -1683,18 +1674,27 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_eng_mart
-		icon = GFX_focus_bra_eng_mart
-		prerequisite = { focus = bra_sub_priv }
-		relative_position_id = bra_sub_priv
-		x = -1
+		id = bra_IRFM
+		icon = GFX_focus_bra_IRFM
+		prerequisite = { focus = bra_eng_mart }
+		relative_position_id = bra_eng_mart
+		x = 0
 		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = bra_eficiencia_1 add_idea = bra_eficiencia_2 }
+			swap_ideas = { remove_idea = bra_eficiencia_2 add_idea = bra_eficiencia_3 }
+			
+			501 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 			
 			if = {
 				limit = {
@@ -1857,6 +1857,162 @@ focus_tree = {
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_belem_porto } }
 		}
 	}
+
+	focus = {
+		id = bra_mod_soroc
+		icon = GFX_focus_RJ_industry4
+		prerequisite = { focus = bra_obras_exterior}
+		relative_position_id = bra_obras_exterior
+		x = 1
+		y = 1
+		cost = 7.2
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			498 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			499 = { 
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			496 = { 
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			500 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			501 = { 
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			503 = { 
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			502 = { 
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			
+			if = {
+				limit = {
+					AND = {
+						has_idea = bra_industrial_elite
+					}
+				}
+				modify_timed_idea = {
+					idea = bra_industrial_elite
+					days = 40
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_idea = bra_industrial_elite }
+				}
+				add_timed_idea = {
+					idea = bra_industrial_elite
+					days = 40
+				}
+			}
+			
+			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_transamazonica_so_2 } }
+		}
+	}
+
+	focus = {
+		id = bra_mod_sb
+		icon = GFX_focus_bra_infra_gen
+		prerequisite = { focus = bra_mod_soroc focus = bra_belem_porto }
+		relative_position_id = bra_mod_soroc
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			280 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			504 = { 
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			505 = { 
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			
+			if = {
+				limit = {
+					AND = {
+						has_idea = bra_industrial_elite
+					}
+				}
+				modify_timed_idea = {
+					idea = bra_industrial_elite
+					days = 40
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_idea = bra_industrial_elite }
+				}
+				add_timed_idea = {
+					idea = bra_industrial_elite
+					days = 40
+				}
+			}
+			
+			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_rodovia_so_1 } }
+		}
+	}
 	
 	focus = {
 		id = bra_elet_1
@@ -1989,6 +2145,46 @@ focus_tree = {
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_assovio_1 } }
 		}
 	}
+	
+	focus = {
+		id = bra_elet_2
+		icon = GFX_focus_bra_elet_gen
+		prerequisite = { focus = bra_elet_1 }
+		prerequisite = { focus = bra_cmsp }
+		relative_position_id = bra_elet_1
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = bra_eficiencia_5 add_idea = bra_eficiencia_7 }
+			
+			if = {
+				limit = {
+					AND = {
+						has_idea = bra_industrial_elite
+					}
+				}
+				modify_timed_idea = {
+					idea = bra_industrial_elite
+					days = 40
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { has_idea = bra_industrial_elite }
+				}
+				add_timed_idea = {
+					idea = bra_industrial_elite
+					days = 40
+				}
+			}
+			
+			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_vacinado_1 } }
+		}
+	}
 
 	focus = {
 		id = bra_mobilizacao_ind
@@ -2037,140 +2233,6 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = bra_elet_2
-		icon = GFX_focus_bra_elet_gen
-		prerequisite = { focus = bra_elet_1 }
-		prerequisite = { focus = bra_cmsp }
-		relative_position_id = bra_elet_1
-		x = 1
-		y = 1
-		cost = 5
-		ai_will_do = {
-			factor = 40
-		}
-		completion_reward = {
-			swap_ideas = { remove_idea = bra_eficiencia_5 add_idea = bra_eficiencia_7 }
-			
-			if = {
-				limit = {
-					AND = {
-						has_idea = bra_industrial_elite
-					}
-				}
-				modify_timed_idea = {
-					idea = bra_industrial_elite
-					days = 40
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { has_idea = bra_industrial_elite }
-				}
-				add_timed_idea = {
-					idea = bra_industrial_elite
-					days = 40
-				}
-			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_vacinado_1 } }
-		}
-	}
-	
-	focus = {
-		id = bra_mod_soroc
-		icon = GFX_focus_RJ_industry4
-		prerequisite = { focus = bra_obras_exterior}
-		relative_position_id = bra_obras_exterior
-		x = 1
-		y = 1
-		cost = 7.2
-		ai_will_do = {
-			factor = 40
-		}
-		completion_reward = {
-			498 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			499 = { 
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			496 = { 
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			500 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			501 = { 
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			503 = { 
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			502 = { 
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			
-			if = {
-				limit = {
-					AND = {
-						has_idea = bra_industrial_elite
-					}
-				}
-				modify_timed_idea = {
-					idea = bra_industrial_elite
-					days = 40
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { has_idea = bra_industrial_elite }
-				}
-				add_timed_idea = {
-					idea = bra_industrial_elite
-					days = 40
-				}
-			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_transamazonica_so_2 } }
-		}
-	}
-	
-	focus = {
 		id = bra_fiesp
 		icon = GFX_focus_bra_fiesp
 		prerequisite = { focus = bra_cmsp }
@@ -2208,68 +2270,6 @@ focus_tree = {
 			}
 			
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_assovio_1 } }
-		}
-	}
-	
-	focus = {
-		id = bra_mod_sb
-		icon = GFX_focus_bra_infra_gen
-		prerequisite = { focus = bra_mod_soroc focus = bra_belem_porto }
-		relative_position_id = bra_mod_soroc
-		x = 0
-		y = 1
-		cost = 5
-		ai_will_do = {
-			factor = 40
-		}
-		completion_reward = {
-			280 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			504 = { 
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			505 = { 
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 1
-			}
-			
-			if = {
-				limit = {
-					AND = {
-						has_idea = bra_industrial_elite
-					}
-				}
-				modify_timed_idea = {
-					idea = bra_industrial_elite
-					days = 40
-				}
-			}
-			else_if = {
-				limit = {
-					NOT = { has_idea = bra_industrial_elite }
-				}
-				add_timed_idea = {
-					idea = bra_industrial_elite
-					days = 40
-				}
-			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_rodovia_so_1 } }
 		}
 	}
 	
