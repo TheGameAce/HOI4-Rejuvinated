@@ -15,7 +15,8 @@ focus_tree = {
 	focus = {
 		id = bra_national_security_law
 		icon = GFX_focus_BRA_ban_communist_party
-		x = 1
+		relative_position_id = bra_polaca
+		x = -2
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -30,7 +31,7 @@ focus_tree = {
 	focus = {
 		id = bra_polaca
 		icon = GFX_focus_bra_polaca
-		x = 3
+		x = 30
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -59,7 +60,8 @@ focus_tree = {
 	focus = {
 		id = bra_a_voz_do_brasil
 		icon = GFX_focus_bra_a_voz_do_brasil
-		x = 5
+		relative_position_id = bra_polaca
+		x = 2
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -80,7 +82,8 @@ focus_tree = {
 		mutually_exclusive = { focus = bra_federalism }
 		mutually_exclusive = { focus = bra_monarquia_focus }
 		available = { has_completed_focus = bra_modernizacao_armadas }
-		x = 3
+		relative_position_id = bra_polaca
+		x = -2
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -110,8 +113,9 @@ focus_tree = {
 		prerequisite = { focus = bra_populism }
 		mutually_exclusive = { focus = bra_quereismo }
 		available = { has_government = neutrality }
-		x = 0
-		y = 2
+		relative_position_id = bra_populism
+		x = -1
+		y = 1
 		ai_will_do = {
 			factor = 160
 			modifier = {
@@ -128,10 +132,11 @@ focus_tree = {
 	
 	focus = {
 		id = bra_plan_cohen
-		icon = GFX_focus_bra_plan_cohen
+		icon = GFX_focus_BRA_cohen_plan
 		prerequisite = { focus = bra_2_prestes_column }
+		relative_position_id = bra_2_prestes_column
 		x = 0
-		y = 3
+		y = 1
 		ai_will_do = {
 			factor = 160
 		}
@@ -146,8 +151,9 @@ focus_tree = {
 		id = bra_cosmopolitanism
 		icon = GFX_focus_GER_the_peoples_victory
 		prerequisite = { focus = bra_plan_cohen }
+		relative_position_id = bra_plan_cohen
 		x = 0
-		y = 4
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 160
@@ -163,8 +169,9 @@ focus_tree = {
 		icon = GFX_focus_BRA_work_with_the_integralists
 		prerequisite = { focus = bra_federalism }
 		mutually_exclusive = { focus = bra_regionalism }
-		x = 6
-		y = 2
+		relative_position_id = bra_federalism
+		x = 1
+		y = 1
 		ai_will_do = {
 			factor = 160
 			modifier = {
@@ -182,10 +189,11 @@ focus_tree = {
 	
 	focus = {
 		id = bra_dreams_of_an_empire
-		icon = GFX_focus_bra_dreams_of_an_empire
+		icon = GFX_focus_RJ_BRA_plinios_ministry
 		prerequisite = { focus = bra_brazilian_action }
-		x = 6
-		y = 3
+		relative_position_id = bra_brazilian_action
+		x = 0
+		y = 1
 		ai_will_do = {
 			factor = 160
 			modifier = {
@@ -204,8 +212,9 @@ focus_tree = {
 		id = bra_vital_espace
 		icon = GFX_focus_BRA_brazil_integral
 		prerequisite = { focus = bra_dreams_of_an_empire }
-		x = 6
-		y = 4
+		relative_position_id = bra_dreams_of_an_empire
+		x = 0
+		y = 1
 		ai_will_do = {
 			factor = 160
 			modifier = {
@@ -229,7 +238,8 @@ focus_tree = {
 		mutually_exclusive = { focus = bra_populism }
 		mutually_exclusive = { focus = bra_monarquia_focus }
 		available = { has_completed_focus = bra_modernizacao_armadas }
-		x = 5
+		relative_position_id = bra_polaca
+		x = 2
 		y = 1
 		ai_will_do = {
 			factor = 160
@@ -259,8 +269,9 @@ focus_tree = {
 		prerequisite = { focus = bra_federalism }
 		mutually_exclusive = { focus = bra_brazilian_action }
 		available = { has_government = neutrality }
-		x = 4
-		y = 2
+		relative_position_id = bra_federalism
+		x = -1
+		y = 1
 		ai_will_do = {
 			factor = 160
 			modifier = {
@@ -279,8 +290,9 @@ focus_tree = {
 		id = bra_abertura
 		icon = GFX_focus_bra_abertura
 		prerequisite = { focus = bra_regionalism }
-		x = 4
-		y = 3
+		relative_position_id = bra_regionalism
+		x = 0
+		y = 1
 		ai_will_do = {
 			factor = 160
 		}
@@ -295,8 +307,9 @@ focus_tree = {
 		id = bra_tecnocratic_reform
 		icon = GFX_focus_BRA_for_the_fatherland
 		prerequisite = { focus = bra_abertura }
-		x = 4
-		y = 4
+		relative_position_id = bra_abertura
+		x = 0
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -313,8 +326,9 @@ focus_tree = {
 		prerequisite = {  focus = bra_populism }
 		mutually_exclusive = { focus = bra_2_prestes_column }
 		available = { has_government = neutrality }
-		x = 2
-		y = 2
+		relative_position_id = bra_populism
+		x = 1
+		y = 1
 		ai_will_do = {
 			factor = 160
 			modifier = {
@@ -335,8 +349,9 @@ focus_tree = {
 		id = bra_estado_novo
 		icon = GFX_focus_BRA_estado_novo
 		prerequisite = { focus = bra_quereismo }
-		x = 2
-		y = 3
+		relative_position_id = bra_quereismo
+		x = 0
+		y = 1
 		cost = 5		
 		ai_will_do = {
 			factor = 160
@@ -351,8 +366,9 @@ focus_tree = {
 		id = bra_patriotic_effort
 		icon = GFX_focus_BRA_department_of_propaganda
 		prerequisite = { focus = bra_estado_novo }
-		x = 2
-		y = 4
+		relative_position_id = bra_estado_novo
+		x = 0
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 160
@@ -420,8 +436,9 @@ focus_tree = {
 				}
 			}	
 		}
-		x = 5
-		y = 5
+		relative_position_id = bra_tecnocratic_reform
+		x = 1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 320
@@ -647,8 +664,9 @@ focus_tree = {
 		id = bra_tiro_de_guerra
 		icon = GFX_focus_bra_tiro_de_guerra
 		prerequisite = { focus = bra_patriotic_effort focus = bra_tecnocratic_reform focus = bra_vital_espace focus = bra_cosmopolitanism }
-		x = 3
-		y = 5
+		relative_position_id = bra_tecnocratic_reform
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 160
@@ -732,7 +750,8 @@ focus_tree = {
 		id = bra_federal_universities
 		icon = GFX_focus_BRA_university_of_sao_paulo
 		prerequisite = { focus = bra_technical_schools focus = bra_federal_institutes }
-		x = 9
+		relative_position_id = bra_federal_institutes
+		x = -2
 		y = 2
 		cost = 5
 		ai_will_do = {
@@ -747,7 +766,8 @@ focus_tree = {
 	focus = {
 		id = bra_technical_schools
 		icon = GFX_SOV_pc_of_mechanical_engineering_ccp_2d_sov_compatibility
-		x = 7
+		relative_position_id = bra_federal_institutes
+		x = -4
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -768,7 +788,7 @@ focus_tree = {
 	focus = {
 		id = bra_federal_institutes
 		icon = GFX_focus_bra_federal_institutes
-		x = 11
+		x = 55
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -790,7 +810,8 @@ focus_tree = {
 		id = bra_politechnical_colleges
 		icon = GFX_focus_bra_politechnical_colleges
 		prerequisite = { focus = bra_technical_schools }
-		x = 8
+		relative_position_id = bra_technical_schools
+		x = 1
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -817,7 +838,8 @@ focus_tree = {
 		id = bra_national_institutes
 		icon = GFX_focus_bra_national_institutes
 		prerequisite = { focus = bra_federal_institutes }
-		x = 10
+		relative_position_id = bra_federal_institutes
+		x = -1
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -844,8 +866,9 @@ focus_tree = {
 		id = bra_military_projects
 		icon = GFX_focus_bra_military_projects
 		prerequisite = { focus = bra_politechnical_colleges }
-		x = 8
-		y = 3
+		relative_position_id = bra_politechnical_colleges
+		x = 0
+		y = 2
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -865,11 +888,12 @@ focus_tree = {
 		id = bra_secret_research
 		icon = GFX_focus_NORDIC_com_selector_research
 		prerequisite = { focus = bra_more_federal_universities }
+		relative_position_id = bra_more_federal_universities
 		available = {
 			
 		}
-		x = 9
-		y = 5
+		x = 0
+		y = 1
 		cost = 7.2
 		ai_will_do = {
 			factor = 40
@@ -891,13 +915,14 @@ focus_tree = {
 		prerequisite = { focus = bra_secret_research }
 		prerequisite = { focus = bra_r_s_1 }
 		prerequisite = { focus = bra_r_s_2 }
+		relative_position_id = bra_secret_research
 		available = {
 			is_major = yes
 			num_of_factories > 100
 		}
-		x = 9
-		y = 6
-		cost = 20
+		x = 0
+		y = 1
+		cost = 14.4
 		ai_will_do = {
 			factor = 40
 		}
@@ -918,9 +943,10 @@ focus_tree = {
 		prerequisite = { focus = bra_iti }
 		prerequisite = { focus = bra_military_projects }
 		prerequisite = { focus = bra_federal_universities }
-		x = 9
-		y = 4
-		cost = 5
+		relative_position_id = bra_federal_universities
+		x = 0
+		y = 2
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
@@ -951,9 +977,10 @@ focus_tree = {
 		id = bra_r_s_1
 		icon = GFX_focus_bra_r_s_1
 		prerequisite = { focus = bra_more_federal_universities }
-		x = 7
-		y = 5
-		cost = 5
+		relative_position_id = bra_more_federal_universities
+		x = -2
+		y = 1
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
@@ -967,9 +994,10 @@ focus_tree = {
 		id = bra_r_s_2
 		icon = GFX_focus_bra_r_s_2
 		prerequisite = { focus = bra_more_federal_universities }
-		x = 11
-		y = 5
-		cost = 5
+		relative_position_id = bra_more_federal_universities
+		x = 2
+		y = 1
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
@@ -982,7 +1010,7 @@ focus_tree = {
 	focus = {
 		id = bra_modernizacao_armadas
 		icon = GFX_focus_BRA_army
-		x = 17
+		x = 14
 		y = 0
 		ai_will_do = {
 			factor = 320
@@ -1454,7 +1482,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_mot
-		icon = GFX_focus_BRA_rubber_war
+		icon = GFX_focus_BRA_fabrica_national_de_motores
 		prerequisite = { focus = bra_ana_paulista }
 		relative_position_id = bra_ana_paulista
 		x = 0
@@ -1536,7 +1564,7 @@ focus_tree = {
 	focus = {
 		id = bra_CTEF_CLT
 		icon = GFX_focus_bra_CTEF_CLT
-		x = 32
+		x = 43
 		y = 0
 		ai_will_do = {
 			factor = 160
@@ -2144,8 +2172,9 @@ focus_tree = {
 		id = bra_iti
 		icon = GFX_focus_bra_iti
 		prerequisite = { focus = bra_national_institutes }
-		x = 10
-		y = 3
+		relative_position_id = bra_national_institutes
+		x = 0
+		y = 2
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2342,10 +2371,11 @@ focus_tree = {
 
 	focus = {
 		id = bra_feb
-		icon = GFX_focus_BRA_national_guard
+		icon = GFX_focus_BRA_cobras_fumantes
 		prerequisite = { focus = bra_patriotic_effort focus = bra_vital_espace focus = bra_tecnocratic_reform focus = bra_cosmopolitanism }
-		x = 1
-		y = 5
+		relative_position_id = bra_patriotic_effort
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 40
@@ -2365,7 +2395,8 @@ focus_tree = {
 		prerequisite = { focus = bra_a_voz_do_brasil }
 		mutually_exclusive = { focus = bra_populism }
 		mutually_exclusive = { focus = bra_federalism }
-		x = 1
+		relative_position_id = bra_polaca
+		x = -7
 		y = 1
 		cost = 1
 		ai_will_do = {
@@ -2999,7 +3030,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_zfm
-		icon = GFX_focus_bra_infra_gen
+		icon = GFX_focus_BRA_amazon_colonization
 		prerequisite = { focus = bra_bndes }
 		relative_position_id = bra_bndes
 		x = 2
@@ -3174,13 +3205,14 @@ focus_tree = {
 	
 	focus = {
 		id = bra_territoriosfederais
-		icon = GFX_focus_bra_territoriosfederais
+		icon = GFX_focus_BRA_jaguar_diplomacy
 		prerequisite = { focus = bra_tiro_de_guerra }
+		relative_position_id = bra_tiro_de_guerra
 		ai_will_do = {
 			factor = 160
 		}
-		x = 3
-		y = 6
+		x = 0
+		y = 1
 		cost = 5
 		completion_reward = {
 			
@@ -3241,7 +3273,7 @@ focus_tree = {
 	focus = {
 		id = BRA_itamaraty
 		icon = GFX_focus_bra_diplomacia
-		x = 48
+		x = 62
 		y = 0
 		ai_will_do = {
 			factor = 160
@@ -3843,15 +3875,18 @@ focus_tree = {
 	focus = {
 		id = bra_monarquia_2_focus
 		icon = GFX_focus_BRA_restore_brazilian_honor
-		x = 12
-		y = 6
+		relative_position_id = bra_monarquia_focus
+		x = 0
+		y = 1
 		cost = 1
 		ai_will_do = {
 			factor = 480
 		}
 		available = {
 			has_idea = bra_instabilidade
-			has_completed_focus = bra_monarquia_focus
+		}
+		prerequisite = {
+			focus = bra_monarquia_focus
 		}
 		completion_reward = {
 			add_ideas = bra_march_in_silence
@@ -3863,8 +3898,9 @@ focus_tree = {
 	focus = {
 		id = bra_patri_1_focus
 		icon = GFX_focus_BRA_anaue
-		x = 10
-		y = 7
+		relative_position_id = bra_monarquia_2_focus
+		x = -2
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 240
@@ -3885,8 +3921,9 @@ focus_tree = {
 	focus = {
 		id = bra_patri_2_focus
 		icon = GFX_focus_bra_patri_2_focus
-		x = 12
-		y = 7
+		relative_position_id = bra_monarquia_2_focus
+		x = 0
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 240
@@ -3908,8 +3945,9 @@ focus_tree = {
 	focus = {
 		id = bra_patri_3_focus
 		icon = GFX_focus_bra_patri_3_focus
-		x = 14
-		y = 7
+		relative_position_id = bra_monarquia_2_focus
+		x = 2
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 240
@@ -3930,8 +3968,9 @@ focus_tree = {
 	focus = {
 		id = bra_patri_4_focus
 		icon = GFX_focus_bra_patri_4_focus
-		x = 12
-		y = 8
+		relative_position_id = bra_patri_2_focus
+		x = 0
+		y = 1
 		cost = 1
 		ai_will_do = {
 			factor = 240
@@ -3957,8 +3996,9 @@ focus_tree = {
 	focus = {
 		id = bra_patri_5_focus
 		icon = GFX_focus_bra_patri_5_focus
-		x = 11
-		y = 9
+		relative_position_id = bra_patri_4_focus
+		x = -1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 240
@@ -3981,8 +4021,9 @@ focus_tree = {
 	focus = {
 		id = bra_patri_6_focus
 		icon = GFX_focus_bra_patri_6_focus
-		x = 13
-		y = 9
+		relative_position_id = bra_patri_4_focus
+		x = 1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 240
@@ -4005,8 +4046,9 @@ focus_tree = {
 	focus = {
 		id = bra_patri_7_focus
 		icon = GFX_focus_BRA_constitutional_monarchy
-		x = 11
-		y = 10
+		relative_position_id = bra_patri_5_focus
+		x = 0
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 240
@@ -4026,8 +4068,9 @@ focus_tree = {
 	focus = {
 		id = bra_patri_8_focus
 		icon = GFX_focus_BRA_empire_of_brazil
-		x = 13
-		y = 10
+		relative_position_id = bra_patri_6_focus
+		x = 0
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 240
@@ -4047,8 +4090,9 @@ focus_tree = {
 	focus = {
 		id = bra_patri_9_focus
 		icon = GFX_focus_BRA_pedro_henrique
-		x = 12
-		y = 11
+		relative_position_id = bra_patri_7_focus
+		x = 1
+		y = 1
 		cost = 5
 		ai_will_do = {
 			factor = 240
