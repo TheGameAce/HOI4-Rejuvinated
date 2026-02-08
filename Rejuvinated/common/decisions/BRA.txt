@@ -2677,10 +2677,7 @@ BRA_metas = {
 		
 		available = {
 			#AVAILIABLEMODIFIER
-			OR = {
-				has_completed_focus = bra_barragem
-				has_completed_focus = bra_blitz
-			}
+			has_completed_focus = bra_blitz
 			has_full_control_of_state = 280
 			owns_state = 280
 			has_full_control_of_state = 497

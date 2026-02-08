@@ -773,7 +773,7 @@ focus_tree = {
 		relative_position_id = bra_federal_institutes
 		x = -2
 		y = 2
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
@@ -929,17 +929,12 @@ focus_tree = {
 		}
 		x = 0
 		y = 1
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
-			add_tech_bonus = {
-				name = secret_bonus
-				bonus = 0.5
-				uses = 1
-				category = rocketry
-			}
+			add_ideas = BRA_ministry_of_sciences_and_technology_idea
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
 	}
@@ -963,10 +958,20 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				name = bra_2_nuclear_bonus
+				name = bra_nuclear_bonus
 				bonus = 0.5
 				uses = 1
 				category = nuclear
+			}
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 0.5
+				uses = 1
+				category = rocketry
+			}
+			swap_ideas = {
+				remove_idea = BRA_ministry_of_sciences_and_technology_idea
+				add_idea = BRA_ministry_of_sciences_and_technology_idea_2
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_nuclear_research_bureau } }
 		}
@@ -1035,7 +1040,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = mp_bonus
-				bonus = 1
+				bonus = 0.25
 				uses = 1
 				category = military_police_tech
 			}
@@ -1225,22 +1230,21 @@ focus_tree = {
 	focus = {
 		id = bra_ana_mineira
 		icon = GFX_focus_bra_ana_mineira
-		prerequisite = { focus = bra_ana_guerra_civil focus = bra_modernizacao_marinha }
+		prerequisite = { focus = bra_ana_guerra_civil }
 		mutually_exclusive = { focus = bra_ana_paulista }
 		relative_position_id = bra_ana_guerra_civil
 		x = -1
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
-		army_experience = 25
 			add_tech_bonus = {
-				name = grand_battle_plan_bonus
+				name = superior_firepower
 				bonus = 0.5
-				uses = 1
-				category = cat_grand_battle_plan
+				uses = 2
+				category = cat_superior_firepower
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_paris_belfort_so_2 } }
 		}
@@ -1249,21 +1253,20 @@ focus_tree = {
 	focus = {
 		id = bra_ana_paulista
 		icon = GFX_focus_bra_ana_paulista
-		prerequisite = { focus = bra_ana_guerra_civil focus = bra_modernizacao_aerea }
+		prerequisite = { focus = bra_ana_guerra_civil }
 		mutually_exclusive = { focus = bra_ana_mineira }
 		relative_position_id = bra_ana_guerra_civil
 		x = 1
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
-		army_experience = 25
 			add_tech_bonus = {
 				name = mobile_warfare_bonus
 				bonus = 0.5
-				uses = 1
+				uses = 2
 				category = cat_mobile_warfare
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_paris_belfort_so_1 } }
@@ -1277,12 +1280,11 @@ focus_tree = {
 		relative_position_id = bra_modernizacao_marinha
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
-			navy_experience = 25
 			add_tech_bonus = {
 				name = BRA_navy_doctrine
 				bonus = 0.5
@@ -1292,9 +1294,14 @@ focus_tree = {
 			add_tech_bonus = {
 				name = tech_bonus
 				bonus = 0.5
-				ahead_reduction = 1
+				uses = 2
+				category = mio_cat_tech_all_capital_ship_and_modules
+			}
+			add_tech_bonus = {
+				name = tech_bonus
+				bonus = 0.5
 				uses = 1
-				category = bb_tech
+				category = cat_ship_heavy_battery
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_cisne_branco_so_2 } }
 		}
@@ -1309,7 +1316,7 @@ focus_tree = {
 		relative_position_id = bra_almirantado
 		x = 0
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 10
 		}
@@ -1317,9 +1324,8 @@ focus_tree = {
 			add_tech_bonus = {
 				name = tech_bonus
 				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				category = ss_tech
+				uses = 2
+				category = mio_cat_tech_all_submarine_and_modules
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_cisne_branco_so_3 } }
 		}
@@ -1332,7 +1338,7 @@ focus_tree = {
 		relative_position_id = bra_submarinos
 		x = 0
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 400
 		}
@@ -1340,9 +1346,8 @@ focus_tree = {
 			add_tech_bonus = {
 				name = tech_bonus
 				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				category = bb_tech
+				uses = 2
+				category = mio_cat_tech_all_cruiser_and_modules
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_cisne_branco_so_4 } }
 		}
@@ -1353,25 +1358,50 @@ focus_tree = {
 		icon = GFX_focus_bra_bombardeiro
 		prerequisite = { focus = bra_modernizacao_aerea }
 		relative_position_id = bra_modernizacao_aerea
-		x = 1
-		y = 1
-		cost = 5
+		x = 0
+		y = 2
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
-			add_tech_bonus = {
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = BRA_heavy_air_bonus
+					bonus = 0.30
+					uses = 1
+					category = heavy_air
+				}
+				add_tech_bonus = {
+					name = BRA_heavy_air_bonus2
+					bonus = 0.30
+					uses = 1
+					category = cat_air_bombs
+				}
+				add_tech_bonus = {
+					name = BRA_heavy_air_bonus3
+					bonus = 0.30
+					uses = 1
+					category = cat_air_engine
+				}
+			}
+			else = {
+				add_tech_bonus = {
 				name = BRA_air_doctrine
 				bonus = 0.5
 				uses = 1
 				category = air_doctrine
 			}
-			add_tech_bonus = {
-				name = tech_bonus
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				category = cat_strategic_bomber
+				add_tech_bonus = {
+					name = tech_bonus
+					bonus = 0.5
+					ahead_reduction = 1
+					uses = 1
+					category = cat_strategic_bomber
+				}
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_hino_aviador_so_2 } }
 		}
@@ -1384,18 +1414,12 @@ focus_tree = {
 		relative_position_id = bra_modernizacao_aerea
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 10
 		}
 		completion_reward = {
-			add_tech_bonus = {
-				name = tech_bonus
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				category = light_fighter
-			}
+			add_ideas = BRA_ministry_of_aeronautics_idea
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_hino_aviador_so_3 } }
 		}
 	}
@@ -1407,17 +1431,42 @@ focus_tree = {
 		relative_position_id = bra_bombardeiro
 		x = 0
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 400
 		}
 		completion_reward = {
-			add_tech_bonus = {
-				name = tech_bonus
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = BRA_light_air_bonus
+					bonus = 0.30
+					uses = 1
+					category = light_air
+				}
+				add_tech_bonus = {
+					name = BRA_light_air_bonus2
+					bonus = 0.30
+					uses = 2
+					category = cat_air_guns
+				}
+			}
+			else = {
+				add_tech_bonus = {
+				name = BRA_air_doctrine
 				bonus = 0.5
-				ahead_reduction = 1
 				uses = 1
-				category = cas_bomber
+				category = air_doctrine
+			}
+				add_tech_bonus = {
+					name = tech_bonus
+					bonus = 0.5
+					ahead_reduction = 1
+					uses = 1
+					category = cat_fighter
+				}
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_hino_aviador_so_4 } }
 		}
@@ -1430,13 +1479,20 @@ focus_tree = {
 		relative_position_id = bra_ana_mineira
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_bandeirantes add_idea = bra_bandeirantes_mg_1 }
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_equip_ind } }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
 		}
 	}
 
@@ -1447,35 +1503,20 @@ focus_tree = {
 		relative_position_id = bra_equip_ind
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_bandeirantes_mg_1 add_idea = bra_bandeirantes_mg_2 }
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_art } }
-		}
-	}
-
-	focus = {
-		id = bra_barragem
-		icon = GFX_focus_generic_military_mission
-		prerequisite = { focus = bra_art focus = bra_cruzadores }
-		relative_position_id = bra_art
-		x = -1
-		y = 1
-		cost = 7.2
-		ai_will_do = {
-			factor = 40
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				name = grand_battle_plan_bonus
-				bonus = 0.5
-				uses = 2
-				category = cat_grand_battle_plan
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_art } }
 		}
 	}
 	
@@ -1486,13 +1527,20 @@ focus_tree = {
 		relative_position_id = bra_ana_paulista
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_bandeirantes add_idea = bra_bandeirantes_sp_1 }
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_mot } }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
 		}
 	}
 	
@@ -1503,35 +1551,37 @@ focus_tree = {
 		relative_position_id = bra_mot
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_bandeirantes_sp_1 add_idea = bra_bandeirantes_sp_2 }
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_mec } }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
 		}
 	}
 	
 	focus = {
 		id = bra_blitz
 		icon = GFX_focus_BRA_agulhas_negras
-		prerequisite = { focus = bra_mec focus = bra_CAS }
-		relative_position_id = bra_CAS
-		x = -2bra
-		y = 2
-		cost = 7.2
+		prerequisite = { focus = bra_mec focus = bra_art }
+		relative_position_id = bra_mec
+		x = -1
+		y = 1
+		cost = 10
 
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
-			add_tech_bonus = {
-				name = mobile_warfare_bonus
-				bonus = 0.5
-				uses = 2
-				category = cat_mobile_warfare
-			}
+			add_ideas = BRA_agulhas_negras_idea
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_mec } }
 		}
 	}
@@ -1539,11 +1589,11 @@ focus_tree = {
 	focus = {
 		id = bra_armor
 		icon = GFX_focus_generic_tank_assault
-		prerequisite = { focus = bra_blitz focus = bra_barragem }
+		prerequisite = { focus = bra_blitz }
 		relative_position_id = bra_blitz
-		x = -3
+		x = 0
 		y = 1
-		cost = 10
+		cost = 14.4
 		ai_will_do = {
 			factor = 40
 		}
@@ -1554,6 +1604,13 @@ focus_tree = {
 				ahead_reduction = 1
 				uses = 1
 				category = armor
+			}
+			add_tech_bonus = {
+				name = tech_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = cat_mechanized_equipment
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_armor } }
 		}
@@ -1588,16 +1645,24 @@ focus_tree = {
 		relative_position_id = bra_CTEF_CLT
 		x = -5
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 160
 		}
 		completion_reward = {
-			every_owned_state = {
-				limit = {
-					is_core_of = BRA
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
 				}
-				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
 			}
 			
 			if = {
@@ -1639,18 +1704,27 @@ focus_tree = {
 			factor = 40
 		}
 		completion_reward = {
-			every_owned_state = {
-				limit = {
-					is_core_of = BRA
-				}
-				add_extra_state_shared_building_slots = 2
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = infrastructure
 					level = 1
-					instant_build = yes
 				}
 			}
-			
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
 			if = {
 				limit = {
 					AND = {
@@ -1683,12 +1757,19 @@ focus_tree = {
 		relative_position_id = bra_sub_priv
 		x = -1
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_eficiencia_1 add_idea = bra_eficiencia_2 }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
 			
 			if = {
 				limit = {
@@ -1722,19 +1803,21 @@ focus_tree = {
 		relative_position_id = bra_eng_mart
 		x = 0
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_eficiencia_2 add_idea = bra_eficiencia_3 }
 			
-			501 = {
-				add_extra_state_shared_building_slots = 2
+			random_owned_controlled_state = {
+				prioritize = {
+					501
+				}
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = industrial_complex
-					level = 2
-					instant_build = yes
+					level = 3
 				}
 			}
 			
@@ -1817,7 +1900,7 @@ focus_tree = {
 		relative_position_id = bra_obras_exterior
 		x = -1
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
@@ -1864,15 +1947,18 @@ focus_tree = {
 		relative_position_id = bra_belem_porto
 		x = 0
 		y = 1
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
-			498 = { 
-				add_extra_state_shared_building_slots = 2 
-				add_building_construction = { type = dockyard level = 2 instant_build = yes }
-				add_building_construction = { type = naval_base province = 10933 level = 7 instant_build = yes }
+			random_owned_controlled_state = {
+				prioritize = {
+					498
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = { type = dockyard level = 3 instant_build = yes }
+				add_building_construction = { type = naval_base province = 10933 level = 4 instant_build = yes }
 			}
 			
 			if = {
@@ -1907,7 +1993,7 @@ focus_tree = {
 		relative_position_id = bra_obras_exterior
 		x = 1
 		y = 1
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
@@ -2001,7 +2087,7 @@ focus_tree = {
 		relative_position_id = bra_mod_soroc
 		x = 0
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
@@ -2197,7 +2283,7 @@ focus_tree = {
 		relative_position_id = bra_elet_1
 		x = 1
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
@@ -2328,19 +2414,20 @@ focus_tree = {
 			factor = 160
 		}
 		completion_reward = {
-			#custom_effect_tooltip =  bra_anhanguera_tooltip#
-			501 = {
-				set_building_level = {
-					type = infrastructure
-					level = 10
-					instant_build = yes
-				}
-			}
-			every_owned_state = { 
+			every_owned_state = {
 				limit = {
 					is_core_of = BRA
 				}
-				add_extra_state_shared_building_slots = 2 
+				add_state_modifier = {
+					modifier = { army_speed_factor_for_controller = 0.10 }
+				}
+			}
+			501 = {
+				set_building_level = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
 			}
 			
 			if = {
@@ -2939,6 +3026,10 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
+				add_building_construction = {
+					type = dam
+					level = 1
+				}
 			}
 			
 			if = {
@@ -3020,6 +3111,12 @@ focus_tree = {
 				add_timed_idea = {
 					idea = bra_industrial_elite
 					days = 40
+				}
+			}
+			503 = {
+				add_building_construction = {
+					type = dam
+					level = 1
 				}
 			}
 			
@@ -3153,7 +3250,7 @@ focus_tree = {
 		relative_position_id = bra_anhanguera
 		x = 0
 		y = 2
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 320
 		}
@@ -3232,7 +3329,7 @@ focus_tree = {
 		relative_position_id = bra_itaipu
 		x = 0
 		y = 1
-		cost = 30
+		cost = 7.2
 		ai_will_do = {
 			factor = 40
 		}
@@ -3241,7 +3338,9 @@ focus_tree = {
 				limit = {
 					is_core_of = BRA
 				}
-				add_extra_state_shared_building_slots = 1
+				add_state_modifier = {
+					modifier = { coordination_bonus = 0.10}
+				}
 			}
 		
 			if = {

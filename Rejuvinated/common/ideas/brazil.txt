@@ -343,7 +343,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = BRA_mem1
+			picture = generic_energy_concern
 
 			modifier = {
 				industrial_capacity_dockyard = 0.1
@@ -362,11 +362,13 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = BRA_mem2
+			picture = generic_energy_concern
 
 			modifier = {
-				industrial_capacity_dockyard = 0.2
-				industrial_capacity_factory = 0.2
+				industrial_capacity_dockyard = 0.1
+				industrial_capacity_factory = 0.1
+				production_speed_energy_infrastructure_factor = 0.15
+				production_speed_industrial_infrastructure_factor = 0.15
 			}
 		}
 
@@ -381,7 +383,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = BRA_mem2
+			picture = generic_energy_concern
 
 			modifier = {
 				industrial_capacity_dockyard = 0.2
@@ -405,7 +407,7 @@ ideas = {
 			picture = BRA_empreiteiras
 
 			modifier = {
-				civilian_factory_use = 5
+				consumer_goods_factor = 0.08
 			}
 		}
 
@@ -485,7 +487,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				MONTHLY_POPULATION = 0.1
+				MONTHLY_POPULATION = 0.25
 			}
 		}
 
@@ -505,7 +507,7 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				MONTHLY_POPULATION = 0.2
+				MONTHLY_POPULATION = 0.50
 			}
 		}
 
@@ -525,8 +527,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				MONTHLY_POPULATION = 0.2
-				max_fuel_factor = 1
+				MONTHLY_POPULATION = 0.50
+				max_fuel_factor = 0.25
+				fuel_gain_factor = 0.15
 			}
 		}
 
@@ -548,10 +551,13 @@ ideas = {
 			modifier = {
 				attrition = -0.15
 				out_of_supply_factor = -0.05
+				supply_consumption_factor = -0.05
 				acclimatization_hot_climate_gain_factor = 0.15
 				recon_factor = 0.05
 				army_core_attack_factor = 0.05
 				army_core_defence_factor = 0.05
+				army_defence_factor = 0.05
+				army_attack_factor = 0.05
 			}
 		}
 
@@ -571,19 +577,27 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				attrition = -0.2
+				attrition = -0.15
 				out_of_supply_factor = -0.05
-				acclimatization_hot_climate_gain_factor = 1
+				supply_consumption_factor = -0.05
+				acclimatization_hot_climate_gain_factor = 0.15
 				recon_factor = 0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				army_defence_factor = 0.05
+				army_attack_factor = 0.05
+				army_artillery_attack_factor = 0.10
+				army_artillery_defence_factor = 0.05
 			}
 
 			equipment_bonus = {
 				infantry_equipment = {
-					build_cost_ic = -0.05 instant = yes
+					build_cost_ic = -0.10 instant = yes
+					reliability = 0.05
 				}
-				anti_tank_equipment = {
-					build_cost_ic = -0.25 instant = yes
-					hard_attack = 0.05
+				artillery_equipment = {
+					build_cost_ic = -0.10 instant = yes
+					reliability = 0.05
 				}
 			}
 		}
@@ -604,16 +618,14 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				attrition = -0.2
-				out_of_supply_factor = -0.05
-				acclimatization_hot_climate_gain_factor = 1
-				recon_factor = 0.05
-			}
-
-			equipment_bonus = {
-				motorized_equipment = {
-					build_cost_ic = -0.05 instant = yes
-				}
+				attrition = -0.15
+				acclimatization_hot_climate_gain_factor = 0.15
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				motorized_attack_factor = 0.05
+				motorized_defence_factor = 0.05
+				org_loss_when_moving = -0.10
+				army_speed_factor = 0.10
 			}
 		}
 
@@ -633,18 +645,25 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				attrition = -0.2
-				out_of_supply_factor = -0.05
-				acclimatization_hot_climate_gain_factor = 1
-				recon_factor = 0.05
+				attrition = -0.15
+				acclimatization_hot_climate_gain_factor = 0.15
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				motorized_attack_factor = 0.05
+				motorized_defence_factor = 0.05
+				org_loss_when_moving = -0.10
+				army_speed_factor = 0.10
+				mechanized_attack_factor = 0.10
+				mechanized_defence_factor = 0.05
 			}
 
 			equipment_bonus = {
 				motorized_equipment = {
-					build_cost_ic = -0.05 instant = yes
+					build_cost_ic = -0.10 instant = yes
+					reliability = 0.05
 				}
-				mio_cat_eq_all_light_tank = {
-					build_cost_ic = -0.25 instant = yes
+				mechanized_equipment = {
+					build_cost_ic = -0.10 instant = yes
 					reliability = 0.05
 				}
 			}
@@ -1313,6 +1332,91 @@ ideas = {
 				production_speed_buildings_factor = 0.05
 				democratic_acceptance = 70
 				neutrality_acceptance = 70
+			}
+		}
+
+		BRA_agulhas_negras_idea = {
+			picture = BRA_army
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.03
+				army_leader_start_level = 1
+				army_leader_start_logistics_level = 1
+				army_leader_start_planning_level = 1
+				army_org_factor = 0.08
+			}
+		}
+
+		BRA_ministry_of_aeronautics_idea = {
+			picture = BRA_air_force
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				air_training_xp_gain_factor = 0.15
+				air_accidents_factor = -0.10
+				air_detection = 0.10
+			}
+		}
+
+		BRA_ministry_of_sciences_and_technology_idea = {
+			picture = generic_research_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_land_facility_factor = 0.15
+				production_speed_air_facility_factor = 0.15
+				production_speed_naval_facility_factor = 0.15
+				research_speed_factor = 0.05
+			}
+		}
+
+		BRA_ministry_of_sciences_and_technology_idea_2 = {
+			picture = generic_research_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_land_facility_factor = 0.15
+				production_speed_air_facility_factor = 0.15
+				production_speed_naval_facility_factor = 0.15
+				research_speed_factor = 0.08
+				special_project_speed_factor = 0.20
 			}
 		}
 	}
