@@ -13,22 +13,6 @@ focus_tree = {
 	default = no
 
 	focus = {
-		id = bra_national_security_law
-		icon = GFX_focus_BRA_ban_communist_party
-		relative_position_id = bra_polaca
-		x = -2
-		y = 0
-		cost = 5
-		ai_will_do = {
-			factor = 320
-		}
-		completion_reward = {
-			add_stability = 0.10
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_proclamacao_so_1 } }
-		}
-	}
-	
-	focus = {
 		id = bra_polaca
 		icon = GFX_focus_bra_polaca
 		x = 30
@@ -54,6 +38,22 @@ focus_tree = {
 			
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_quereismo } }
 
+		}
+	}
+
+	focus = {
+		id = bra_national_security_law
+		icon = GFX_focus_BRA_ban_communist_party
+		relative_position_id = bra_polaca
+		x = -2
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 320
+		}
+		completion_reward = {
+			add_stability = 0.10
+			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_proclamacao_so_1 } }
 		}
 	}
 	
@@ -163,6 +163,40 @@ focus_tree = {
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_cosmopolitanism } }
 		}
 	}
+
+	focus = {
+		id = bra_federalism
+		icon = GFX_focus_bra_federalism
+		prerequisite = { focus = bra_polaca }
+		prerequisite = { focus = bra_a_voz_do_brasil }
+		prerequisite = { focus = bra_national_security_law }
+		mutually_exclusive = { focus = bra_populism }
+		mutually_exclusive = { focus = bra_monarquia_focus }
+		available = { has_completed_focus = bra_modernizacao_armadas }
+		relative_position_id = bra_polaca
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 160
+			modifier = {
+				is_historical_focus_on = yes
+				NOT = { has_global_flag = bra_por_sabotage_ai_flag }
+				factor = 0
+			}
+			modifier = {
+				has_global_flag = bra_por_sabotage_ai_flag
+				factor = 1600
+			}
+		}
+		available = {
+			has_idea = bra_instabilidade
+		}
+		cost = 5
+		completion_reward = {
+			swap_ideas = { remove_idea = bra_instabilidade add_idea = bra_instabilidade_2 }
+			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_tecnocratic_reform } }
+		}
+	}
 	
 	focus = {
 		id = bra_brazilian_action
@@ -226,40 +260,6 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = bra.14 }
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_equip_ind } }
-		}
-	}
-	
-	focus = {
-		id = bra_federalism
-		icon = GFX_focus_bra_federalism
-		prerequisite = { focus = bra_polaca }
-		prerequisite = { focus = bra_a_voz_do_brasil }
-		prerequisite = { focus = bra_national_security_law }
-		mutually_exclusive = { focus = bra_populism }
-		mutually_exclusive = { focus = bra_monarquia_focus }
-		available = { has_completed_focus = bra_modernizacao_armadas }
-		relative_position_id = bra_polaca
-		x = 2
-		y = 1
-		ai_will_do = {
-			factor = 160
-			modifier = {
-				is_historical_focus_on = yes
-				NOT = { has_global_flag = bra_por_sabotage_ai_flag }
-				factor = 0
-			}
-			modifier = {
-				has_global_flag = bra_por_sabotage_ai_flag
-				factor = 1600
-			}
-		}
-		available = {
-			has_idea = bra_instabilidade
-		}
-		cost = 5
-		completion_reward = {
-			swap_ideas = { remove_idea = bra_instabilidade add_idea = bra_instabilidade_2 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_tecnocratic_reform } }
 		}
 	}
 
@@ -662,7 +662,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_tiro_de_guerra
-		icon = GFX_focus_bra_tiro_de_guerra
+		icon = GFX_focus_RJ_army_defense
 		prerequisite = { focus = bra_patriotic_effort focus = bra_tecnocratic_reform focus = bra_vital_espace focus = bra_cosmopolitanism }
 		relative_position_id = bra_tecnocratic_reform
 		x = -1
@@ -745,6 +745,26 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = bra_federal_institutes
+		icon = GFX_focus_bra_federal_institutes
+		x = 55
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 40
+		}
+		available = { has_completed_focus = bra_polaca }
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
+		}
+	}
 	
 	focus = {
 		id = bra_federal_universities
@@ -768,27 +788,6 @@ focus_tree = {
 		icon = GFX_SOV_pc_of_mechanical_engineering_ccp_2d_sov_compatibility
 		relative_position_id = bra_federal_institutes
 		x = -4
-		y = 0
-		cost = 5
-		ai_will_do = {
-			factor = 40
-		}
-		available = { has_completed_focus = bra_polaca }
-		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
-		}
-	}
-	
-	focus = {
-		id = bra_federal_institutes
-		icon = GFX_focus_bra_federal_institutes
-		x = 55
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -883,6 +882,42 @@ focus_tree = {
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_art } }
 		}
 	}
+
+	focus = {
+		id = bra_more_federal_universities
+		icon = GFX_SOV_national_academies_of_sciences_ccp_2d_sov_compatibility
+		prerequisite = { focus = bra_iti }
+		prerequisite = { focus = bra_military_projects }
+		prerequisite = { focus = bra_federal_universities }
+		relative_position_id = bra_federal_universities
+		x = 0
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+				add_tech_bonus = {
+					name = medicine_bonus
+					bonus = 1
+					uses = 1
+					category = hospital_tech
+				}
+				add_tech_bonus = {
+					name = enginners_bonus
+					bonus = 1
+					uses = 1
+					category = engineers_tech
+				}	
+				add_tech_bonus = {
+					name = signal_bonus
+					bonus = 1
+					uses = 1
+					category = signal_company_tech
+				}
+			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
+		}
+	}
 	
 	focus = {
 		id = bra_secret_research
@@ -934,42 +969,6 @@ focus_tree = {
 				category = nuclear
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_nuclear_research_bureau } }
-		}
-	}
-	
-	focus = {
-		id = bra_more_federal_universities
-		icon = GFX_SOV_national_academies_of_sciences_ccp_2d_sov_compatibility
-		prerequisite = { focus = bra_iti }
-		prerequisite = { focus = bra_military_projects }
-		prerequisite = { focus = bra_federal_universities }
-		relative_position_id = bra_federal_universities
-		x = 0
-		y = 2
-		cost = 10
-		ai_will_do = {
-			factor = 40
-		}
-		completion_reward = {
-				add_tech_bonus = {
-					name = medicine_bonus
-					bonus = 1
-					uses = 1
-					category = hospital_tech
-				}
-				add_tech_bonus = {
-					name = enginners_bonus
-					bonus = 1
-					uses = 1
-					category = engineers_tech
-				}	
-				add_tech_bonus = {
-					name = signal_bonus
-					bonus = 1
-					uses = 1
-					category = signal_company_tech
-				}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
 	}
 	
