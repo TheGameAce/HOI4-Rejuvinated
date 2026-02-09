@@ -1,0 +1,648 @@
+BRA_fascism_plan = {
+	name = "Brazilian Fascist Plan"
+	desc = ""
+
+	allowed = {
+		original_tag = BRA
+	}
+	enable = {
+		OR = {
+			has_country_flag = BRA_AI_RANDOM_FASCISM
+			has_game_rule = {
+				rule = BRA_AI_BEHAVIOR
+				option = FASCISM
+			}	
+		}
+
+	}
+	abort = {
+		is_subject = yes 
+	}
+
+	ai_national_focuses = {
+		
+		#1936
+		bra_national_security_law
+		bra_a_voz_do_brasil
+		bra_modernizacao_armadas
+		bra_polaca
+		bra_CTEF_CLT
+		bra_federalism
+		bra_ana_guerra_civil
+		bra_pm
+		bra_ana_paulista
+		bra_modernizacao_marinha
+		bra_almirantado
+		bra_itabira
+
+		#1937
+		bra_brazilian_action
+		bra_mot
+		bra_dreams_of_an_empire
+		bra_cosipa
+		bra_sub_priv
+		
+		
+		#1938
+		bra_vital_espace
+		bra_technical_schools
+		bra_viacao
+		bra_obras_exterior
+		bra_eng_mart
+		bra_IRFM
+		bra_cmsp
+		bra_mec
+		bra_federal_institutes
+		bra_federal_universities
+
+		#1939
+		
+		bra_tiro_de_guerra
+		BRA_itamaraty
+		bra_entreguismo
+		BRA_global_politics
+		BRA_a_south_american_reich
+
+		#1940
+
+		BRA_the_american_problem
+		bra_acogerdau
+		bra_territoriosfederais
+		bra_modernizacao_aerea
+		
+		#1941
+		
+		bra_feb
+
+		#1942
+		
+		#1943
+		
+		#1944
+
+		#1953
+		bra_brasilia
+		
+	}
+
+	focus_factors = {
+		
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
+
+BRA_democratic_plan = {
+	name = "Brazilian democratic Plan"
+	desc = ""
+
+	allowed = {
+		original_tag = BRA
+	}
+	enable = {
+		OR = {
+			has_country_flag = BRA_AI_RANDOM_DEMOCRATIC
+			has_game_rule = {
+				rule = BRA_AI_BEHAVIOR
+				option = DEMOCRATIC
+			}	
+		}
+
+
+	}
+	abort = {
+		is_subject = yes 
+	}
+
+	ai_national_focuses = {
+		
+		#1936
+		bra_national_security_law
+		bra_a_voz_do_brasil
+		bra_modernizacao_armadas
+		bra_polaca
+		bra_CTEF_CLT
+		bra_federalism
+		bra_ana_guerra_civil
+		bra_pm
+		bra_ana_mineira
+		bra_modernizacao_marinha
+		bra_almirantado
+		bra_itabira
+
+		#1937
+		bra_regionalism
+		bra_equip_ind
+		bra_abertura
+		bra_cosipa
+		bra_sub_priv
+		
+		
+		#1938
+		bra_tecnocratic_reform
+		bra_technical_schools
+		bra_viacao
+		bra_obras_exterior
+		bra_eng_mart
+		bra_IRFM
+		bra_cmsp
+		bra_art
+		bra_federal_institutes
+		bra_federal_universities
+
+		#1939
+		
+		bra_tiro_de_guerra
+		BRA_itamaraty
+		BRA_global_politics
+		bra_entreguismo
+		bra_blitz
+
+		#1940
+
+		BRA_a_good_neighbor
+		bra_acogerdau
+		bra_territoriosfederais
+		bra_modernizacao_aerea
+		
+		#1941
+		
+		bra_feb
+
+		#1942
+		
+		#1943
+		
+		#1944
+
+		#1953
+		bra_brasilia
+		
+		
+	}
+
+	focus_factors = {
+		
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
+
+BRA_henrique_plan = {
+	name = "Brazilian Monarchist Plan - Parlamentarianism"
+	desc = ""
+
+	allowed = {
+		original_tag = BRA
+	}
+	enable = {
+		OR = {
+			has_country_flag = BRA_AI_RANDOM_MONARCHIST_HENRIQUE
+			has_game_rule = {
+				rule = BRA_AI_BEHAVIOR
+				option = BRA_MONARCHIST_HENRIQUE
+			}	
+		}
+
+	}
+	abort = {
+		is_subject = yes 
+	}
+
+	ai_national_focuses = {
+		#1936
+		bra_national_security_law
+		bra_a_voz_do_brasil
+		bra_modernizacao_armadas
+		bra_polaca
+		bra_CTEF_CLT
+		bra_monarquia_focus
+		bra_monarquia_2_focus
+		bra_ana_guerra_civil
+		bra_pm
+		bra_ana_paulista
+		bra_modernizacao_marinha
+		bra_almirantado
+		bra_itabira
+
+		#1937
+		bra_patri_1_focus
+		bra_mot
+		bra_patri_2_focus
+		bra_cosipa
+		bra_patri_3_focus
+		bra_sub_priv
+		bra_patri_4_focus
+		
+		
+		#1938
+		bra_patri_5_focus
+		bra_technical_schools
+		bra_viacao
+		bra_obras_exterior
+		bra_eng_mart
+		bra_patri_7_focus
+		bra_IRFM
+		bra_cmsp
+		bra_mec
+		bra_federal_institutes
+		bra_federal_universities
+		bra_patri_9_focus
+
+		#1939
+		
+		bra_tiro_de_guerra
+		BRA_itamaraty
+		bra_entreguismo
+		BRA_the_uiracu
+		BRA_the_crux
+		bra_blitz
+
+		#1940
+
+		BRA_the_american_problem
+		bra_acogerdau
+		bra_territoriosfederais
+		bra_modernizacao_aerea
+		
+		#1941
+		
+		bra_feb
+
+		#1942
+		
+		#1943
+		
+		#1944
+
+		#1953
+		bra_brasilia
+
+	}
+
+	focus_factors = {
+		
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
+
+BRA_alcantara_plan = {
+	name = "Brazilian Monarchist Plan - Organic Empire"
+	desc = ""
+
+	allowed = {
+		original_tag = BRA
+	}
+	enable = {
+		OR = {
+			has_country_flag = BRA_AI_RANDOM_MONARCHIST_ALCANTARA
+			has_game_rule = {
+				rule = BRA_AI_BEHAVIOR
+				option = BRA_MONARCHIST_ALCANTARA
+			}	
+		}
+
+
+	}
+	abort = {
+		is_subject = yes 
+	}
+
+	ai_national_focuses = {
+		#1936
+		bra_national_security_law
+		bra_a_voz_do_brasil
+		bra_modernizacao_armadas
+		bra_polaca
+		bra_CTEF_CLT
+		bra_monarquia_focus
+		bra_monarquia_2_focus
+		bra_ana_guerra_civil
+		bra_pm
+		bra_ana_paulista
+		bra_modernizacao_marinha
+		bra_almirantado
+		bra_itabira
+
+		#1937
+		bra_patri_1_focus
+		bra_mot
+		bra_patri_2_focus
+		bra_cosipa
+		bra_patri_3_focus
+		bra_sub_priv
+		bra_patri_4_focus
+		
+		
+		#1938
+		bra_patri_5_focus
+		bra_technical_schools
+		bra_viacao
+		bra_obras_exterior
+		bra_eng_mart
+		bra_patri_6_focus
+		bra_IRFM
+		bra_cmsp
+		bra_mec
+		bra_federal_institutes
+		bra_federal_universities
+		bra_patri_8_focus
+
+		#1939
+		
+		bra_tiro_de_guerra
+		BRA_itamaraty
+		bra_entreguismo
+		BRA_the_uiracu
+		BRA_the_crux
+		bra_blitz
+
+		#1940
+
+		BRA_the_american_problem
+		bra_acogerdau
+		bra_territoriosfederais
+		bra_modernizacao_aerea
+		
+		#1941
+		
+		bra_feb
+
+		#1942
+		
+		#1943
+		
+		#1944
+
+		#1953
+		bra_brasilia
+
+		
+	}
+
+	focus_factors = {
+		
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
+
+BRA_stalinist_plan = {
+	name = "Brazilian Communist Plan - Stalinist"
+	desc = ""
+
+	allowed = {
+		original_tag = BRA
+	}
+	enable = {
+		OR = {
+			has_country_flag = BRA_AI_RANDOM_STALINIST
+			has_game_rule = {
+				rule = BRA_AI_BEHAVIOR
+				option = BRA_COMMUNIST_STALINISM
+			}	
+		}
+
+	}
+	abort = {
+		is_subject = yes 
+	}
+
+	ai_national_focuses = {
+	
+		bra_national_security_law
+		bra_a_voz_do_brasil
+		bra_modernizacao_armadas
+		bra_polaca
+		bra_CTEF_CLT
+		bra_populism
+		bra_ana_guerra_civil
+		bra_pm
+		bra_ana_paulista
+		bra_modernizacao_marinha
+		bra_almirantado
+		bra_itabira
+
+		#1937
+		bra_2_prestes_column
+		bra_mot
+		bra_plan_cohen
+		bra_cosipa
+		bra_sub_priv
+		
+		
+		#1938
+		bra_cosmopolitanism
+		bra_technical_schools
+		bra_viacao
+		bra_obras_exterior
+		bra_eng_mart
+		bra_IRFM
+		bra_cmsp
+		bra_mec
+		bra_federal_institutes
+		bra_federal_universities
+
+		
+		bra_tiro_de_guerra
+		BRA_itamaraty
+		bra_entreguismo
+		BRA_global_politics
+		BRA_the_south_american_USSR
+		bra_blitz
+
+		BRA_the_american_problem
+		bra_acogerdau
+		bra_territoriosfederais
+		bra_modernizacao_aerea
+		
+		bra_feb
+
+		bra_brasilia
+	}
+
+	focus_factors = {
+		
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
+
+BRA_independent_communist_plan = {
+	name = "Brazilian Communist Plan - Independent"
+	desc = ""
+
+	allowed = {
+		original_tag = BRA
+	}
+	enable = {
+		OR = {
+			has_country_flag = BRA_AI_RANDOM_INDEPENDENT_COMMUNIST
+			has_game_rule = {
+				rule = BRA_AI_BEHAVIOR
+				option = BRA_COMMUNIST_INDEPENDENT
+			}	
+		}
+
+		has_dlc = "Trial of Allegiance"
+
+	}
+	abort = {
+		is_subject = yes 
+	}
+
+	ai_national_focuses = {
+		bra_national_security_law
+		bra_a_voz_do_brasil
+		bra_modernizacao_armadas
+		bra_polaca
+		bra_CTEF_CLT
+		bra_populism
+		bra_ana_guerra_civil
+		bra_pm
+		bra_ana_paulista
+		bra_modernizacao_marinha
+		bra_almirantado
+		bra_itabira
+
+		#1937
+		bra_2_prestes_column
+		bra_mot
+		bra_plan_cohen
+		bra_cosipa
+		bra_sub_priv
+		
+		
+		#1938
+		bra_cosmopolitanism
+		bra_technical_schools
+		bra_viacao
+		bra_obras_exterior
+		bra_eng_mart
+		bra_IRFM
+		bra_cmsp
+		bra_mec
+		bra_federal_institutes
+		bra_federal_universities
+
+		
+		bra_tiro_de_guerra
+		BRA_itamaraty
+		bra_entreguismo
+		BRA_the_uiracu
+		BRA_the_crux
+		bra_blitz
+
+		BRA_the_american_problem
+		bra_acogerdau
+		bra_territoriosfederais
+		bra_modernizacao_aerea
+		
+		bra_feb
+
+		bra_brasilia
+	}
+
+	focus_factors = {
+		
+	}
+
+	research = {
+
+	}
+
+	ideas = {
+
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+}
