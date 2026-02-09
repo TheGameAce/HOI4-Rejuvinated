@@ -1,0 +1,22 @@
+technologies = {
+
+	selva_tech = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+		
+		category_all_infantry = {
+			jungle = {
+				defence = 0.3
+				attack = 0.1
+				movement = 0.5
+			}
+		}
+
+	}
+
+}
