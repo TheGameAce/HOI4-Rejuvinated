@@ -3137,7 +3137,7 @@ oceania_colonization_status = {
 		desc = "RULE_OPTION_OCEANIA_UNITED_DESC"
 	}
 }
-caribbean_colonitzation_status = {
+caribbean_colonization_status = {
 	name = "CARIBBEAN_COLONIZATION_STATUS"
 	group = "RULE_GROUP_GAME_SETUP"
 	default = {
@@ -3151,7 +3151,7 @@ caribbean_colonitzation_status = {
 		desc = "RULE_OPTION_CARIBBEAN_DECOLONIZED_DESC"
 	}
 }
-middle_east_colonitzation_status = {
+middle_east_colonization_status = {
 	name = "MIDDLE_EAST_COLONIZATION_STATUS"
 	group = "RULE_GROUP_GAME_SETUP"
 	default = {
@@ -3165,7 +3165,7 @@ middle_east_colonitzation_status = {
 		desc = "RULE_OPTION_MIDDLE_EAST_DECOLONIZED_DESC"
 	}
 }
-sea_colonitzation_status = {
+sea_colonization_status = {
 	name = "SEA_COLONIZATION_STATUS"
 	group = "RULE_GROUP_GAME_SETUP"
 	default = {
@@ -3174,7 +3174,7 @@ sea_colonitzation_status = {
 		desc = "RULE_OPTION_DEFAULT_COLONIZATION_DESC"
 	}
 	option = {
-		name = MIDDLE_EAST_DECOLONIZED
+		name = SEA_DECOLONIZED
 		text = "RULE_OPTION_SEA_DECOLONIZED"
 		desc = "RULE_OPTION_SEA_DECOLONIZED_DESC"
 	}
