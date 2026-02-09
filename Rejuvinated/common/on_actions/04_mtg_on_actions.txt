@@ -2183,6 +2183,185 @@ on_actions = {
 					}
 				}
 			}
+			IF = {
+				limit ={
+					has_game_rule = {
+						rule = CARIBBEAN_COLONIZATION_STATUS
+						option = CARIBBEAN_DECOLONIZED
+					}
+				}
+				ENG = {
+					release = BLZ
+					release = BAH
+					release = JAM
+					release = BAS
+					release = TRI
+				}
+				FRA = {
+					release = GDL
+				}
+				USA = {
+					release = PUE
+					delete_unit = { state = 686 }
+				}
+				HOL =  {
+					release = CRC
+				}
+			}
+			IF = {
+				limit ={
+					has_game_rule = {
+						rule = MIDDLE_EAST_COLONIZATION_STATUS
+						option = MIDDLE_EAST_DECOLONIZED
+					}
+				}
+				ENG = {
+					release = KUW
+					release = QAT
+					release = BHR
+					release = UAE
+					set_autonomy = {
+						target = CYP
+						autonomous_state = autonomy_free
+					}
+					set_autonomy = {
+						target = EGY
+						autonomous_state = autonomy_free
+					}
+					set_autonomy = {
+						target = PAL
+						autonomous_state = autonomy_free
+					}
+					set_autonomy = {
+						target = JOR
+						autonomous_state = autonomy_free
+					}
+					set_autonomy = {
+						target = OMA
+						autonomous_state = autonomy_free
+					}
+					delete_unit = { state = 447 }
+					delete_unit = { state = 906 }
+					delete_unit = { state = 408 }
+					delete_unit = { state = 454 }
+					delete_unit = { state = 659 }
+				}
+				FRA = {
+					set_autonomy = {
+						target = LEB
+						autonomous_state = autonomy_free
+					}
+					set_autonomy = {
+						target = SYR
+						autonomous_state = autonomy_free
+					}
+				}
+				CYP = {
+					abandon_colony_tag = yes
+					drop_cosmetic_tag = yes
+					retire_country_leader = yes
+				}
+				PAL = {
+					abandon_colony_tag = yes
+					drop_cosmetic_tag = yes
+					retire_country_leader = yes
+				}
+				JOR = {
+					abandon_colony_tag = yes
+				}
+				OMA = {
+					abandon_colony_tag = yes
+				}
+				EGY = {
+					abandon_colony_tag = yes
+				}
+				LEB = {
+					abandon_colony_tag = yes
+				}
+				SYR = {
+					abandon_colony_tag = yes
+				}
+				setowner YEM 992
+				setowner YEM 659
+				setowner YEM 906
+			}
+			IF = {
+				limit ={
+					has_game_rule = {
+						rule = SEA_COLONIZATION_STATUS
+						option = SEA_DECOLONIZED
+					}
+				}
+				ENG = {
+					release BRN
+					release SNG
+					set_autonomy = {
+						target = MAL
+						autonomous_state = autonomy_free
+					}
+				}
+				RAJ = {
+					release = BRM
+				}
+				FRA = {
+					release = CAM
+					release = LAO
+					release = VIN
+				}
+				POR = {
+					release = TML
+				}
+				HOL = {
+					set_autonomy = {
+						target = INS
+						autonomous_state = autonomy_free
+					}
+				}
+				USA = {
+					set_autonomy = {
+						target = PHI
+						autonomous_state = autonomy_free
+					}
+				}
+			}
+			IF = {
+				limit ={
+					has_game_rule = {
+						rule = N_AFRICA_COLONIZATION_STATUS
+						option = N_AFRICA_DECOLONIZED
+					}
+				}
+				ENG = {
+					release BRN
+					release SNG
+				}
+				RAJ = {
+					release = BRM
+				}
+				FRA = {
+					release = CAM
+					release = LAO
+					release = VIN
+				}
+				set_autonomy = {
+					target = MAL
+					autonomous_state = autonomy_free
+					end_wars = no
+					end_civil_wars = no
+				}
+				set_autonomy = {
+					target = INS
+					autonomous_state = autonomy_free
+					end_wars = no
+					end_civil_wars = no
+				}
+				set_autonomy = {
+					target = PHI
+					autonomous_state = autonomy_free
+					end_wars = no
+					end_civil_wars = no
+				}
+			}
 			# Game Rules - Fragmentation
 			if = {
 				limit = {
