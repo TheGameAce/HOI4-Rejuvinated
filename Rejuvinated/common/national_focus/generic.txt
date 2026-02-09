@@ -444,6 +444,93 @@ focus_tree = {
 
 
 
+    ####################################################################################################################################################################################
+    ### POLITICAL FOCUSES ##############################################################################################################################################################
+    ####################################################################################################################################################################################
+
+    focus = {
+		id = RJ_generic_the_political_stage
+		icon = GFX_focus_generic_improve_the_administration
+		cost = 10
+        x = 10
+		y = 0
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+            add_political_power = 200
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+    focus = {
+		id = RJ_generic_radical_alignment
+		icon = GFX_SOV_the_rightful_heir_to_the_empire_ccp_2d_sov_compatibility
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_the_political_stage
+        }
+        relative_position_id = RJ_generic_the_political_stage
+        x = -3
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = communism
+                popularity = 0.05
+            }
+            add_popularity = {
+                ideology = fascism
+                popularity = 0.05
+            }
+            add_ideas = RJ_generic_radical_alignment_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+    focus = {
+		id = RJ_generic_moderatism
+		icon = GFX_SOV_call_for_aid_ccp_2d_sov_compatibility
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_the_political_stage
+        }
+        relative_position_id = RJ_generic_the_political_stage
+        x = 3
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.05
+            }
+            add_popularity = {
+                ideology = neutrality
+                popularity = 0.05
+            }
+            add_ideas = RJ_generic_moderatism_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+
+
+
+
+
+
+
+
 
 
     ########################
@@ -452,7 +539,7 @@ focus_tree = {
 	focus = {
 	    id = HR_focus_generic_our_destiny
         icon = GFX_focus_RJ_industry2
-        x = 10
+        x = -10
         y = 0
 
         cost = 4.3
