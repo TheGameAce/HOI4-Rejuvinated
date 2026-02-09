@@ -818,16 +818,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				name = enginners_bonus
-				bonus = 1
-				uses = 1
-				category = engineers_tech
-			}	
-			add_tech_bonus = {
 				name = artillery_bonus
 				bonus = 0.5
 				uses = 1
-				category = artillery
+				category = construction_tech
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
@@ -846,14 +840,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_tech_bonus = {
-				name = medicine_bonus
-				bonus = 1
-				uses = 1
-				category = hospital_tech
-			}
-			add_tech_bonus = {
 				name = electronics_bonus
-				bonus = 0.5
+				bonus = 0.50
 				uses = 1
 				category = electronics
 			}
@@ -899,19 +887,19 @@ focus_tree = {
 		completion_reward = {
 				add_tech_bonus = {
 					name = medicine_bonus
-					bonus = 1
+					bonus = 0.50
 					uses = 1
 					category = hospital_tech
 				}
 				add_tech_bonus = {
 					name = enginners_bonus
-					bonus = 1
+					bonus = 0.50
 					uses = 1
 					category = engineers_tech
 				}	
 				add_tech_bonus = {
 					name = signal_bonus
-					bonus = 1
+					bonus = 0.50
 					uses = 1
 					category = signal_company_tech
 				}
@@ -1465,7 +1453,7 @@ focus_tree = {
 					bonus = 0.5
 					ahead_reduction = 1
 					uses = 1
-					category = cat_fighter
+					category = light_air
 				}
 			}
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_hino_aviador_so_4 } }
@@ -2409,7 +2397,7 @@ focus_tree = {
 		relative_position_id = bra_mod_mad_mamo
 		x = 0
 		y = 1
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 160
 		}
@@ -2428,6 +2416,7 @@ focus_tree = {
 					level = 5
 					instant_build = yes
 				}
+				increase_state_category = yes
 			}
 			
 			if = {
@@ -3030,6 +3019,7 @@ focus_tree = {
 					type = dam
 					level = 1
 				}
+				increase_state_category = yes
 			}
 			
 			if = {
@@ -3118,6 +3108,7 @@ focus_tree = {
 					type = dam
 					level = 1
 				}
+				increase_state_category = yes
 			}
 			
 			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_itaipu } }
@@ -3136,7 +3127,7 @@ focus_tree = {
 			factor = 40
 		}
 		completion_reward = {
-			495 = { add_extra_state_shared_building_slots = 2 }
+			495 = { add_extra_state_shared_building_slots = 2 increase_state_category = yes }
 			
 			if = {
 				limit = {
