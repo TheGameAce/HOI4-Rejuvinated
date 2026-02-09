@@ -1,20 +1,3 @@
-search_filter_prios = {
-	FOCUS_FILTER_POLITICAL = 1010
-	
-	FOCUS_FILTER_RESEARCH = 522
-	
-	FOCUS_FILTER_INDUSTRY = 509
-
-	FOCUS_FILTER_BALANCE_OF_POWER = 200
-	FOCUS_FILTER_SOV_POLITICAL_PARANOIA = 111
-	FOCUS_FILTER_PROPAGANDA = 110
-	FOCUS_FILTER_MISSIOLINI = 110
-	FOCUS_FILTER_ARMY_XP = 103
-	FOCUS_FILTER_NAVY_XP = 102
-	FOCUS_FILTER_AIR_XP = 101
-
-}
-
 focus_tree = {
 	id = generic_focus
 
@@ -29,12 +12,446 @@ focus_tree = {
 		
 	}
 
+
+    ###################################################################################################################################################################################
+    ### ECONOMIC FOCUSES ##############################################################################################################################################################
+    ###################################################################################################################################################################################
+
+    focus = { #Economic Tree Start
+		id = RJ_generic_industrial_investments
+		icon = GFX_focus_RJ_industry1
+		cost = 10
+		x = 22
+		y = 0
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                }
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                }
+            }
+            add_tech_bonus = {
+                name = industrial_bonus_generic
+                bonus = 0.50
+                uses = 2
+                category = industry
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_the_civilian_sector
+		icon = GFX_focus_RJ_industry2
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_industrial_investments
+        }
+        relative_position_id = RJ_generic_industrial_investments
+        x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                }
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_fund_industrial_research
+		icon = GFX_focus_RJ_industrial_research
+		cost = 10
+		prerequisite = {
+            focus = RJ_generic_industrial_investments
+        }
+        relative_position_id = RJ_generic_industrial_investments
+        x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+                name = industrial_bonus_generic
+                bonus = 0.50
+                uses = 3
+                category = industry
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_regional_development
+		icon = GFX_focus_RJ_industry4
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_the_civilian_sector
+        }
+        relative_position_id = RJ_generic_the_civilian_sector
+        x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                }
+                increase_state_category = yes
+                add_state_modifier = {
+                    modifier = { monthly_population = 0.50 }
+                }
+            }
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                }
+                increase_state_category = yes
+                add_state_modifier = {
+                    modifier = { monthly_population = 0.50 }
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_regional_development_2
+		icon = GFX_focus_RJ_industry4
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_regional_development
+        }
+        relative_position_id = RJ_generic_regional_development
+        x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                }
+                increase_state_category = yes
+                add_state_modifier = {
+                    modifier = { monthly_population = 0.50 }
+                }
+            }
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                }
+                increase_state_category = yes
+                add_state_modifier = {
+                    modifier = { monthly_population = 0.50 }
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_port_improvements
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_the_civilian_sector
+        }
+        relative_position_id = RJ_generic_the_civilian_sector
+        x = -3
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+        available = {
+            any_controlled_state = {
+                is_coastal = yes
+            }
+        }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_building_construction = {
+                    type = naval_base
+                    level = 3
+                }
+            }
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = dockyard
+                    level = 2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_factory_subsidies
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_the_civilian_sector
+        }
+        relative_position_id = RJ_generic_the_civilian_sector
+        x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_develop_an_industrial_park
+		icon = GFX_focus_AFG_a_modern_economy
+		cost = 14.4
+		prerequisite = {
+            focus = RJ_generic_factory_subsidies
+        }
+        relative_position_id = RJ_generic_factory_subsidies
+        x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 5
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 3
+                }
+                increase_state_category = yes
+            }
+            add_ideas = RJ_generic_industrial_park_idea
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_university_funding
+		icon = GFX_focus_RJ_research
+		cost = 10
+		prerequisite = {
+            focus = RJ_generic_the_civilian_sector
+        }
+        relative_position_id = RJ_generic_the_civilian_sector
+        x = 0
+		y = 3
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_the_military_sector
+		icon = GFX_focus_RJ_munitions_factory
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_industrial_investments
+        }
+        relative_position_id = RJ_generic_industrial_investments
+        x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                }
+                add_building_construction = {
+                    type = supply_node
+                    level = 1
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_arms_subsidies
+		icon = GFX_SOV_expand_the_aircraft_industry_ccp_2d_sov_compatibility
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_the_military_sector
+        }
+        relative_position_id = RJ_generic_the_military_sector
+        x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_new_munitions_plants
+		icon = GFX_focus_RJ_industry3
+		cost = 10
+		prerequisite = {
+            focus = RJ_generic_the_military_sector
+        }
+        relative_position_id = RJ_generic_the_military_sector
+        x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 3
+                add_building_construction = {
+                    type = arms_factory
+                    level = 3
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_railway_modernization
+		icon = GFX_focus_generic_railroad
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_the_military_sector
+        }
+        relative_position_id = RJ_generic_the_military_sector
+        x = 0
+		y = 2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+                type = train_equipment_1
+                amount = 10
+            }
+            add_ideas = RJ_generic_railway_modernization_idea
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_tax_reforms
+		icon = GFX_focus_RJ_paper_coins
+		cost = 10
+		prerequisite = { focus = RJ_generic_arms_subsidies }
+        prerequisite = { focus = RJ_generic_fund_industrial_research }
+        prerequisite = { focus = RJ_generic_factory_subsidies }
+        relative_position_id = RJ_generic_develop_an_industrial_park
+        x = 1
+		y = 2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_reformed_taxes_idea
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+
+
+
+
+
+
+
+
     ########################
     ### Political branch ###
     ########################
 	focus = {
 	    id = HR_focus_generic_our_destiny
-        icon = GFX_HR_focus_generic_our_destiny
+        icon = GFX_focus_RJ_industry2
         x = 10
         y = 0
 
@@ -818,182 +1235,7 @@ focus_tree = {
         }
     }
 
-    focus = {
-        id = HR_focus_generic_national_economics
-        icon = GFX_HR_focus_generic_national_economics
-        x = 20
-        y = 0
-
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_public_works
-        icon = GFX_HR_focus_generic_public_works
-        relative_position_id = HR_focus_generic_national_economics
-        x = -3
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_national_economics}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_workers_rights_act
-        icon = GFX_HR_focus_generic_workers_rights_act
-        relative_position_id = HR_focus_generic_public_works
-        x = -1
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_public_works}
-        mutually_exclusive = {focus = HR_focus_generic_institutionalize_punitive_labor}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_institutionalize_punitive_labor
-        icon = GFX_HR_focus_generic_institutionalize_punitive_labor
-        relative_position_id = HR_focus_generic_public_works
-        x = 1
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_public_works}
-        mutually_exclusive = {focus = HR_focus_generic_workers_rights_act}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_subsidize_civilian_industry
-        icon = GFX_HR_focus_generic_subsidize_civilian_industry
-        relative_position_id = HR_focus_generic_national_economics
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_national_economics}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_special_economic_zone
-        icon = GFX_HR_focus_generic_special_economic_zone
-        relative_position_id = HR_focus_generic_subsidize_civilian_industry
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_subsidize_civilian_industry}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_domestic_industry_priority
-        icon = GFX_HR_focus_generic_domestic_industry_priority
-        relative_position_id = HR_focus_generic_special_economic_zone
-        x = -1
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_special_economic_zone}
-        mutually_exclusive = {focus = HR_focus_generic_international_trade_priority}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_international_trade_priority
-        icon = GFX_HR_focus_generic_international_trade_priority
-        relative_position_id = HR_focus_generic_special_economic_zone
-        x = 1
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_special_economic_zone}
-        mutually_exclusive = {focus = HR_focus_generic_domestic_industry_priority}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_tax_adjustments
-        icon = GFX_HR_focus_generic_tax_adjustments
-        relative_position_id = HR_focus_generic_domestic_industry_priority
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_domestic_industry_priority}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_foreign_investors
-        icon = GFX_HR_focus_generic_foreign_investors
-        relative_position_id = HR_focus_generic_international_trade_priority
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_international_trade_priority}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_minds_of_our_country
-        icon = GFX_HR_focus_generic_minds_of_our_country
-        relative_position_id = HR_focus_generic_tax_adjustments
-        x = 1
-        y = 1
-
-        prerequisite = {
-            focus = HR_focus_generic_foreign_investors
-            focus = HR_focus_generic_tax_adjustments
-        }
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_engineering_institure
-        icon = GFX_HR_focus_generic_engineering_institure
-        relative_position_id = HR_focus_generic_minds_of_our_country
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_minds_of_our_country}
-        cost = 10
-    }
     
-    focus = {
-        id = HR_focus_generic_national_transportation_company
-        icon = GFX_HR_focus_generic_national_transportation_company
-        relative_position_id = HR_focus_generic_national_economics
-        x = 3
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_national_economics}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_connect_the_country
-        icon = GFX_HR_focus_generic_connect_the_country
-        relative_position_id = HR_focus_generic_national_transportation_company
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_national_transportation_company}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_veins_of_the_nation
-        icon = GFX_HR_focus_generic_veins_of_the_nation
-        relative_position_id = HR_focus_generic_connect_the_country
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_connect_the_country}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_state_news_agency
-        icon = GFX_HR_focus_generic_state_news_agency
-        relative_position_id = HR_focus_generic_connect_the_country
-        x = 2
-        y = 0
-
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_radiostation
-        icon = GFX_HR_focus_generic_radiostation
-        relative_position_id = HR_focus_generic_state_news_agency
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_state_news_agency}
-        prerequisite = {focus = HR_focus_generic_connect_the_country}
-        cost = 10
-    }
 
     focus = {
         id = HR_focus_generic_homeland_at_war

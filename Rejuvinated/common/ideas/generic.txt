@@ -1,5 +1,69 @@
 ideas = {
     country = {
+
+        RJ_generic_railway_modernization_idea = {
+            picture = generic_railroads
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                production_speed_rail_way_factor = 0.15
+                production_speed_supply_node_factor = 0.15
+            }
+
+            equipment_bonus = {
+                train_equipment = {
+                    build_cost_ic = -0.25
+                }
+            }
+        }
+
+        RJ_generic_industrial_park_idea = {
+            picture = generic_improved_industries
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                production_speed_industrial_complex_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_start_efficiency_factor = 0.10
+            }
+        }
+
+        RJ_generic_reformed_taxes_idea = {
+            picture = generic_economic_increase
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                consumer_goods_factor = -0.15
+            }
+        }
+
         HR_idea_generic_the_people = {
             modifier = {
                 communism_drift = 0.05
