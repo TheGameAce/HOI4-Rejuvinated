@@ -1,0 +1,26 @@
+state = {
+	id = 273
+	name = "STATE_273" # Libyan Desert
+	manpower = 1000
+	
+	state_category = wasteland
+	impassable = yes
+	force_link_ownership_to = 1113
+
+	history = {
+
+		owner = ITA
+		add_core_of = LBA
+
+		buildings = {
+			infrastructure = 0
+		}
+		
+	}
+
+	provinces = {
+		5004 7985 10785 11951 12866 
+	}
+
+	local_supplies = 0.0 
+}
