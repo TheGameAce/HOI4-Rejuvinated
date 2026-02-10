@@ -4,6 +4,85 @@
 
 add_namespace = generic
 
+
+country_event = {
+	id = generic.100
+	title = generic.100.t
+	desc = generic.100.d
+	picture = GFX_report_event_ast_parliament_house
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+		    focus = RJ_generic_advanced_research
+		    progress > 0.7
+		}
+	}
+
+	option = {
+		name = "A Land Facility!"
+		ai_chance = {
+			factor = 1
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = land_facility
+				level = 1
+			}
+		}
+	}
+
+	option = {
+		name = "A Naval Facility!"
+		ai_chance = {
+			factor = 1
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = naval_facility
+				level = 1
+			}
+		}
+	}
+
+	option = {
+		name = "An Air Facility!"
+		ai_chance = {
+			factor = 1
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = air_facility
+				level = 1
+			}
+		}
+	}
+
+	option = {
+		name = "A Nuclear Facility!"
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_tech = atomic_research
+				factor = 2
+			}
+		}
+		random_owned_controlled_state = {
+			add_building_construction = {
+				type = nuclear_facility
+				level = 1
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
 # COUNTRY INFLUENCING OUR POLITICS
 country_event = {
 	id = generic.1

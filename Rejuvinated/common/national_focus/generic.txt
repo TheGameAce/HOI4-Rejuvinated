@@ -972,7 +972,7 @@ focus_tree = {
 		completion_reward = {
             add_ideas = RJ_generic_strengthen_the_military_idea
 		}
-		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_WAR_SUPPORT }
 	}
 
     focus = {
@@ -1049,6 +1049,341 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ESPIONAGE }
 	}
+
+
+
+    ####################################################################################################################################################################################
+    ### ARMY FOCUSES ###################################################################################################################################################################
+    ####################################################################################################################################################################################
+
+    focus = {
+		id = RJ_generic_army_review
+		icon = GFX_focus_RJ_army_review
+		cost = 7.2
+        x = -2
+		y = 0
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            army_experience = 50
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_prioritize_conscription
+		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_army_review
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_prioritize_strength
+        }
+        relative_position_id = RJ_generic_army_review
+        x = -2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_conscription_idea
+            add_war_support = 0.05
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+    focus = {
+		id = RJ_generic_prioritize_strength
+		icon = GFX_focus_chi_army_reform
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_army_review
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_prioritize_conscription
+        }
+        relative_position_id = RJ_generic_army_review
+        x = 2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_strong_army_idea
+            add_war_support = 0.05
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+    focus = {
+		id = RJ_generic_army_rnd
+		icon = GFX_focus_RJ_army_research
+		cost = 14.4
+        prerequisite = {
+            focus = RJ_generic_prioritize_conscription focus = RJ_generic_prioritize_strength
+        }
+        relative_position_id = RJ_generic_prioritize_conscription
+        x = 2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_research_slot = 1
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.50
+                category = armor
+            }
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.50
+                category = artillery
+            }
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.50
+                category = infantry_tech
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_radio_improvements
+		icon = GFX_focus_generic_radio_communication
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_army_rnd
+        }
+        relative_position_id = RJ_generic_army_rnd
+        x = 1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = signal_company_tech
+            }
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = electronics
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_motorization_improvements
+		icon = GFX_focus_generic_truck
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_army_rnd
+        }
+        relative_position_id = RJ_generic_army_rnd
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = recon_tech
+            }
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = mio_cat_tech_all_motorized_mechanized
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_field_hospitals
+		icon = GFX_focus_generic_field_hostpital
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_motorization_improvements
+        }
+        relative_position_id = RJ_generic_motorization_improvements
+        x = 0
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 2
+                bonus = 0.75
+                category = hospital_tech
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_logistics_companies
+		icon = GFX_focus_generic_supply_line
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_radio_improvements
+        }
+        relative_position_id = RJ_generic_radio_improvements
+        x = 0
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 2
+                bonus = 0.75
+                category = logistics_tech
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_superior_weapons
+		icon = GFX_focus_RJ_general_arms
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_logistics_companies focus = RJ_generic_field_hospitals
+        }
+        relative_position_id = RJ_generic_logistics_companies
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = armor
+            }
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = mio_cat_all_artillery_equipment
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_advanced_research
+		icon = GFX_focus_NORDIC_com_selector_research
+		cost = 14.4
+        prerequisite = {
+            focus = RJ_generic_superior_weapons
+        }
+        relative_position_id = RJ_generic_superior_weapons
+        x = 0
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            country_event = generic.100
+            add_ideas = RJ_generic_special_projects_idea
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_developing_our_doctrine
+		icon = GFX_goal_generic_army_doctrines
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_prioritize_conscription focus = RJ_generic_prioritize_strength
+        }
+        relative_position_id = RJ_generic_prioritize_strength
+        x = 2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 1
+                category = land_doctrine
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

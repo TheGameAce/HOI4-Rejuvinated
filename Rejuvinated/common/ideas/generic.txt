@@ -300,6 +300,65 @@ ideas = {
             }
         }
 
+        RJ_generic_conscription_idea = {
+            picture = ast_volunteer_defence_corps
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                conscription = 0.04
+            }
+        }
+
+        RJ_generic_strong_army_idea = {
+            picture = ast_volunteer_defence_corps
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                max_organisation = 0.10
+                army_defence_factor = 0.05
+                army_org_regain = 0.05
+                breakthrough_factor = 0.05
+            }
+        }
+
+        RJ_generic_special_projects_idea = {
+            picture = ast_volunteer_defence_corps
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                scientist_breakthrough_bonus_factor = 0.10
+                special_project_speed_factor = 0.15
+                research_speed_factor = 0.03
+            }
+        }
+
 
 
 
