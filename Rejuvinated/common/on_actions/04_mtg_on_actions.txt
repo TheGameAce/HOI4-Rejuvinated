@@ -2364,9 +2364,11 @@ on_actions = {
 				SYR = {
 					abandon_colony_tag = yes
 				}
-				setowner YEM 992
-				setowner YEM 659
-				setowner YEM 906
+				YEM = {
+					set_state_owner 992
+					set_state_owner 656
+					set_state_owner 906
+				}
 			}
 			IF = {
 				limit ={
