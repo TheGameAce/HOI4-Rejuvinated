@@ -3067,9 +3067,8 @@ PHI_AI_BEHAVIOR = {
 #  # #  # #   # #         # #    #  #  # #    
  ##  #  # #   # ###     ##  ###  #   ##  #     
 
-americas_colonization_status = {
-	name = "AMERICAS_COLONIZATION_STATUS"
-	required_dlc = "Man the Guns"
+n_americas_colonization_status = {
+	name = "N_AMERICAS_COLONIZATION_STATUS"
 	group = "RULE_GROUP_GAME_SETUP"
 	default = {
 		name = DEFAULT
@@ -3078,13 +3077,80 @@ americas_colonization_status = {
 	}
 	option = {
 		name = AMERICAS_DECOLONIZED
-		text = "RULE_OPTION_AMERICAS_DECOLONIZED"
-		desc = "RULE_OPTION_AMERICAS_DECOLONIZED_DESC"
+		text = "RULE_OPTION_N_AMERICAS_DECOLONIZED"
+		desc = "RULE_OPTION_N_AMERICAS_DECOLONIZED_DESC"
 	}
 	option = {
-		name = AMERICAS_DEIMPERIALIZED
-		text = "RULE_OPTION_AMERICAS_DEIMPERIALIZED"
-		desc = "RULE_OPTION_AMERICAS_DEIMPERIALIZED_DESC"
+		name = N_AMERICAS_DEIMPERIALIZED
+		text = "RULE_OPTION_N_AMERICAS_DEIMPERIALIZED"
+		desc = "RULE_OPTION_N_AMERICAS_DEIMPERIALIZED_DESC"
+	}
+}
+s_americas_colonization_status = {
+	name = "S_AMERICAS_COLONIZATION_STATUS"
+	group = "RULE_GROUP_GAME_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_COLONIZATION_DESC"
+	}
+	option = {
+		name = AMERICAS_DECOLONIZED
+		text = "RULE_OPTION_S_AMERICAS_DECOLONIZED"
+		desc = "RULE_OPTION_S_AMERICAS_DECOLONIZED_DESC"
+	}
+	option = {
+		name = S_AMERICAS_DEIMPERIALIZED
+		text = "RULE_OPTION_S_AMERICAS_DEIMPERIALIZED"
+		desc = "RULE_OPTION_S_AMERICAS_DEIMPERIALIZED_DESC"
+	}
+}
+caribbean_colonization_status = {
+	name = "CARIBBEAN_COLONIZATION_STATUS"
+	group = "RULE_GROUP_GAME_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_COLONIZATION_DESC"
+	}
+	option = {
+		name = CARIBBEAN_DECOLONIZED
+		text = "RULE_OPTION_CARIBBEAN_DECOLONIZED"
+		desc = "RULE_OPTION_CARIBBEAN_DECOLONIZED_DESC"
+	}
+	option = {
+		name = CARIBBEAN_DEIMPERIALIZED
+		text = "RULE_OPTION_CARIBBEAN_DEIMPERIALIZED"
+		desc = "RULE_OPTION_CARIBBEAN_DEIMPERIALIZED_DESC"
+	}
+	option = {
+		name = CARIBBEAN_UNITED
+		text = "RULE_OPTION_CARIBBEAN_UNITED"
+		desc = "RULE_OPTION_CARIBBEAN_UNITED_DESC"
+	}
+}
+central_america_colonization_status = {
+	name = "CENTRAL_AMERICA_COLONIZATION_STATUS"
+	group = "RULE_GROUP_GAME_SETUP"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_COLONIZATION_DESC"
+	}
+	option = {
+		name = CARIBBEAN_DECOLONIZED
+		text = "RULE_OPTION_CENTRAL_AMERICA_DECOLONIZED"
+		desc = "RULE_OPTION_CENTRAL_AMERICA_DECOLONIZED_DESC"
+	}
+	option = {
+		name = CARIBBEAN_DEIMPERIALIZED
+		text = "RULE_OPTION_CENTRAL_AMERICA_DEIMPERIALIZED"
+		desc = "RULE_OPTION_CENTRAL_AMERICA_DEIMPERIALIZED_DESC"
+	}
+	option = {
+		name = CARIBBEAN_UNITED
+		text = "RULE_OPTION_CENTRAL_AMERICA_UNITED"
+		desc = "RULE_OPTION_CENTRAL_AMERICA_UNITED_DESC"
 	}
 }
 africa_colonization_status = {
@@ -3135,20 +3201,6 @@ oceania_colonization_status = {
 		name = OCEANIA_UNITED
 		text = "RULE_OPTION_OCEANIA_UNITED"
 		desc = "RULE_OPTION_OCEANIA_UNITED_DESC"
-	}
-}
-caribbean_colonization_status = {
-	name = "CARIBBEAN_COLONIZATION_STATUS"
-	group = "RULE_GROUP_GAME_SETUP"
-	default = {
-		name = DEFAULT
-		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_OPTION_DEFAULT_COLONIZATION_DESC"
-	}
-	option = {
-		name = CARIBBEAN_DECOLONIZED
-		text = "RULE_OPTION_CARIBBEAN_DECOLONIZED"
-		desc = "RULE_OPTION_CARIBBEAN_DECOLONIZED_DESC"
 	}
 }
 middle_east_colonization_status = {
