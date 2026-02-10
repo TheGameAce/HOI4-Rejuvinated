@@ -467,17 +467,26 @@ focus_tree = {
 
     focus = {
 		id = RJ_generic_radical_alignment
-		icon = GFX_SOV_the_rightful_heir_to_the_empire_ccp_2d_sov_compatibility
+		icon = GFX_focus_CHL_departemento_de_las_tropas_nacistas_de_asalto
 		cost = 5
         prerequisite = {
             focus = RJ_generic_the_political_stage
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_moderatism
         }
         relative_position_id = RJ_generic_the_political_stage
         x = -3
 		y = 1
 
+        available = {
+            NOT = {
+                is_puppet = yes
+            }
+        }
+
 		ai_will_do = {
-			factor = 2
+			factor = 1
 		}
 
 		completion_reward = {
@@ -489,24 +498,254 @@ focus_tree = {
                 ideology = fascism
                 popularity = 0.05
             }
-            add_ideas = RJ_generic_radical_alignment_idea
+            add_timed_idea = {
+                idea = RJ_generic_radical_alignment_idea
+                days = 500
+            }
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_the_winds_of_revolution
+		icon = GFX_focus_RJ_communism
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_radical_alignment
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_in_service_of_the_state
+        }
+        relative_position_id = RJ_generic_radical_alignment
+        x = 1
+		y = 1
+
+        available = {
+            NOT = {
+                is_puppet = yes
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_timed_idea = {
+                idea = RJ_generic_communism_idea
+                days = 365
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_in_service_of_the_state
+		icon = GFX_focus_RJ_fascism
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_radical_alignment
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_the_winds_of_revolution
+        }
+        relative_position_id = RJ_generic_radical_alignment
+        x = -1
+		y = 1
+
+        available = {
+            NOT = {
+                is_puppet = yes
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_timed_idea = {
+                idea = RJ_generic_fascism_idea
+                days = 365
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_military_youth_program
+		icon = GFX_focus_RJ_military
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_in_service_of_the_state focus = RJ_generic_the_winds_of_revolution
+        }
+        relative_position_id = RJ_generic_in_service_of_the_state
+        x = 1
+		y = 1
+
+        available = {
+            OR = {
+                has_government = communism
+                has_government = fascism
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_military_youth_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
+	}
+
+    focus = {
+		id = RJ_generic_revolutionary_army
+		icon = GFX_focus_RJ_communist_advisor
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_the_winds_of_revolution
+        }
+        relative_position_id = RJ_generic_the_winds_of_revolution
+        x = 1
+		y = 1
+
+        available = {
+            has_government = communism
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_revolutionary_army_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
+	}
+
+    focus = {
+		id = RJ_generic_state_propaganda
+		icon = GFX_focus_generic_fascist_propaganda
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_in_service_of_the_state
+        }
+        relative_position_id = RJ_generic_in_service_of_the_state
+        x = -1
+		y = 1
+
+        available = {
+            has_government = fascism
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_state_propaganda_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_STABILITY FOCUS_FILTER_ARMY FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+    focus = {
+		id = RJ_generic_purge_disruptive_elements
+		icon = GFX_focus_GER_end_european_communism
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_in_service_of_the_state
+        }
+        relative_position_id = RJ_generic_in_service_of_the_state
+        x = 0
+		y = 2
+
+        available = {
+            has_government = fascism
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = communism
+                popularity = -0.15
+            }
+            add_popularity = {
+                ideology = democratic
+                popularity = -0.05
+            }
+            add_popularity = {
+                ideology = neutrality
+                popularity = -0.05
+            }
+            add_stability = 0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+	}
+
+    focus = {
+		id = RJ_generic_purge_the_threats
+		icon = GFX_focus_SOV_the_last_purge
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_the_winds_of_revolution
+        }
+        relative_position_id = RJ_generic_the_winds_of_revolution
+        x = 0
+		y = 2
+
+        available = {
+            has_government = communism
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = fascism
+                popularity = -0.15
+            }
+            add_popularity = {
+                ideology = democratic
+                popularity = -0.05
+            }
+            add_popularity = {
+                ideology = neutrality
+                popularity = -0.05
+            }
+            add_stability = 0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
 
     focus = {
 		id = RJ_generic_moderatism
-		icon = GFX_SOV_call_for_aid_ccp_2d_sov_compatibility
+		icon = GFX_focus_RJ_moderatism
 		cost = 5
         prerequisite = {
             focus = RJ_generic_the_political_stage
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_radical_alignment
         }
         relative_position_id = RJ_generic_the_political_stage
         x = 3
 		y = 1
 
+        available = {
+            NOT = {
+                is_puppet = yes
+            }
+        }
+
 		ai_will_do = {
-			factor = 2
+			factor = 1
 		}
 
 		completion_reward = {
@@ -518,809 +757,306 @@ focus_tree = {
                 ideology = neutrality
                 popularity = 0.05
             }
-            add_ideas = RJ_generic_moderatism_idea
+            add_timed_idea = {
+                idea = RJ_generic_moderatism_idea
+                days = 500
+            }
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
-
-
-
-
-
-
-
-
-
-
-    ########################
-    ### Political branch ###
-    ########################
-	focus = {
-	    id = HR_focus_generic_our_destiny
-        icon = GFX_focus_RJ_industry2
-        x = -10
-        y = 0
-
-        cost = 4.3
-        
-        completion_reward = {
-            add_political_power = 150
-        }
-	}
-
-    ## Communism branch
     focus = {
-        id = HR_focus_generic_the_people
-        icon = GFX_HR_focus_generic_the_people
-        relative_position_id = HR_focus_generic_our_destiny
-        x = -4
-        y = 1
-
-        cost = 4.3
-        prerequisite = { focus = HR_focus_generic_our_destiny }
+		id = RJ_generic_by_the_people_for_the_people
+		icon = GFX_focus_RJ_democracy
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_moderatism
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_the_vision_of_one
+        }
+        relative_position_id = RJ_generic_moderatism
+        x = -1
+		y = 1
 
         available = {
-            OR = { 
-                has_government = communism
+            NOT = {
+                is_puppet = yes
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_timed_idea = {
+                idea = RJ_generic_democracy_idea
+                days = 365
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_the_vision_of_one
+		icon = GFX_focus_RJ_neutrality
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_moderatism
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_by_the_people_for_the_people
+        }
+        relative_position_id = RJ_generic_moderatism
+        x = 1
+		y = 1
+
+        available = {
+            NOT = {
+                is_puppet = yes
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_timed_idea = {
+                idea = RJ_generic_democracy_idea
+                days = 365
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_defense_of_the_country
+		icon = GFX_focus_RJ_army_defense
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_the_vision_of_one focus = RJ_generic_by_the_people_for_the_people
+        }
+        relative_position_id = RJ_generic_the_vision_of_one
+        x = -1
+		y = 1
+
+        available = {
+            OR = {
                 has_government = democratic
+                has_government = neutrality
             }
         }
 
-        completion_reward = {
-            add_political_power = 50
-            add_ideas = HR_idea_generic_the_people
-        }
-    }
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_defense_of_the_country_idea
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
+	}
 
     focus = {
-        id = HR_focus_generic_embrace_revolutionary_ideas
-        icon = GFX_HR_focus_generic_embrace_revolutionary_ideas
-        relative_position_id = HR_focus_generic_the_people
-        x = -1
-        y = 1
-
-        cost = 4.3
-        prerequisite = {focus=HR_focus_generic_the_people}
-        available = {
-            has_government = communism
-        }
-
-        completion_reward = {
-            if = {
-                limit = {
-                    communism > 0.9
-                }
-                add_political_power = 100
-                add_stability = 0.1
-            }
-            else = {
-                    add_popularity = {
-                    ideology = communism
-                    popularity = 0.1
-                }
-            }
-
-            swap_ideas = {
-                remove_idea = HR_idea_generic_the_people
-                add_idea = HR_idea_generic_revolutionary_ideas
-            }
-        }
-    }
-
-    focus = {
-        id = HR_focus_generic_will_of_the_people
-        icon = GFX_HR_focus_generic_will_of_the_people
-        relative_position_id = HR_focus_generic_embrace_revolutionary_ideas
-        x = 0
-        y = 1
-
-        prerequisite = {focus=HR_focus_generic_embrace_revolutionary_ideas}
-        cost = 4.3
-        available = {
-            has_government = communism
-            communism > 0.5
-        }
-        
-        completion_reward = {
-            add_political_power = 100
-            if = {
-                limit = {
-                    communism > 0.85
-                }
-                add_political_power = 100
-                add_war_support = 0.1
-            }
-            else = {
-                add_popularity = {
-                    ideology = communism
-                    popularity = 0.1
-                }
-                add_war_support = 0.05
-            }
-        }
-    }
-
-    focus = {
-        id = HR_focus_generic_politburo
-        icon = GFX_HR_focus_generic_will_of_the_people
-        relative_position_id = HR_focus_generic_will_of_the_people
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_will_of_the_people}
-        cost = 4.3
-        available = {
-            has_government = communism
-            communism > 0.65
-        }
-
-        completion_reward = {
-            swap_ideas = {
-                remove_idea = HR_idea_generic_revolutionary_ideas
-                add_idea = HR_idea_generic_politburo
-            }
-        }
-    }
-    
-    focus = {
-        id = HR_focus_generic_soldiers_of_world_revolution
-        icon = GFX_HR_focus_generic_soldiers_of_world_revolution
-        relative_position_id = HR_focus_generic_politburo
-        x = 0
-        y = 1
-
-        cost = 7.2
-        prerequisite = { focus = HR_focus_generic_politburo }
-
-        available = {
-            has_government = communism
-            conscription_ratio > 0.02
-        }
-
-        completion_reward = {
-            add_war_support = 0.15
-            
-            add_ideas = HR_idea_generic_soldiers_of_world_revolution
-        }
-    }
-    focus = {
-        id = HR_focus_generic_socialist_internationalism
-        icon = GFX_HR_focus_generic_socialist_internationalism
-        relative_position_id = HR_focus_generic_soldiers_of_world_revolution
-        x = -1
-        y = 1
-        
-        cost = 7.2
-        prerequisite = { focus = HR_focus_generic_soldiers_of_world_revolution }
-
-        available = {
-            has_government = communism
-            OR = {
-                AND = {
-                    communism > 0.6
-                    threat > 0.5
-                }
-                AND = {
-                    communism > 0.8
-                    threat > 0.3
-                }
-                communism > 0.95
-            }
-        }
-        bypass = {
-            any_other_country = {
-                is_ally_with = ROOT
-                has_government = communism
-            }
-        }
-
-        completion_reward = {
-            if = {
-                limit = {
-                    any_other_country = {
-                        is_major = yes
-                        has_same_ideology = yes
-                        has_capitulated = no
-                        is_faction_leader = yes
-                        any_other_country = {
-                            is_ally_with = PREV
-                            has_same_ideology = yes
-                            NOT = { tag = ROOT }
-                        }
-                    }
-                }
-
-                every_possible_country = {
-                    limit = {
-                        NOT = { tag = ROOT }
-                        is_major = yes
-                        has_same_ideology = yes
-                        is_faction_leader = yes
-                        any_other_country = {
-                            is_ally_with = PREV
-                            has_same_ideology = yes
-                            NOT = { tag = ROOT }
-                        }
-                    }
-
-                    ROOT = { add_to_variable = { requests = 1 } }
-                    country_event = generic.2
-                }
-            }
-            else = {
-                custom_effect_tooltip = HR_focus_generic_global_solidariry_tt_no_alliances
-                add_political_power = 100
-            }
-
-            swap_ideas = {
-                remove_idea = HR_idea_generic_soldiers_of_world_revolution
-                add_idea = HR_idea_generic_internationalism
-            }
-        }
-        bypass_effect = {
-            add_political_power = 100
-            swap_ideas = {
-                remove_idea = HR_idea_generic_soldiers_of_world_revolution
-                add_idea = HR_idea_generic_internationalism
-            }  
-        }
-    }
-    
-    ## Democracy
-    focus = {
-        id = HR_focus_generic_embrace_liberty_ideas
-        icon = GFX_HR_focus_generic_embrace_liberty_ideas
-        relative_position_id = HR_focus_generic_the_people
-        x = 1
-        y = 1
-
-        cost = 4.3
-        prerequisite = { focus = HR_focus_generic_the_people }
-
-        available = {
-            has_government = democratic
-        }
-        completion_reward = {
-            add_political_power = 100
-            if = {
-                limit = {
-                    democratic > 0.9
-                }
-                add_political_power = 100
-                add_stability = 0.1
-            }
-            else = {
-                add_popularity = {
-                    ideology = democratic
-                    popularity = 0.1
-                }
-            }
-            
-            swap_ideas = {
-                remove_idea = HR_idea_generic_the_people
-                add_idea = HR_idea_generic_liberty_ideas
-            }
-        }
-    }
-    
-    focus = {
-        id = HR_focus_generic_individual_consciousness
-        icon = GFX_HR_focus_generic_individual_consciousness
-        relative_position_id = HR_focus_generic_embrace_liberty_ideas
-        x = 0
-        y = 1
-
-        cost = 4.3
-        prerequisite = {focus=HR_focus_generic_embrace_liberty_ideas}
-        available = {
-            has_government = democratic
-            democratic > 0.4
-        }
-        
-        completion_reward = {
-            add_political_power = 100
-            if = {
-                limit = {
-                    democratic > 0.85
-                }
-                add_political_power = 100
-                add_stability = 0.1
-                add_war_support = 0.1
-            }
-            else = {
-                add_popularity = {
-                    ideology = democratic
-                    popularity = 0.1
-                }
-                add_stability = 0.05
-            }
-            swap_ideas = {
-                remove_idea = HR_idea_generic_liberty_ideas
-                add_idea = HR_idea_generic_individual_consciousness
-            }
-        }
-    }
-
-    focus = {
-        id = HR_focus_generic_political_publicity
-        icon = GFX_HR_focus_generic_political_publicity
-        relative_position_id = HR_focus_generic_individual_consciousness
-        x = 0
-        y = 1
-
-        cost = 4.3
-        prerequisite = {focus = HR_focus_generic_individual_consciousness}
-        available = {
-            has_government = democratic
-            democratic > 0.65
-        }
-
-        completion_reward = {
-            add_stability = 0.1
-            swap_ideas = {
-                remove_idea = HR_idea_generic_individual_consciousness
-                add_idea = HR_idea_generic_political_publicity
-            }
-        }
-    }
-    
-    focus = {
-        id = HR_focus_generic_guardians_of_homeland
-        icon = GFX_HR_focus_generic_guardians_of_homeland
-        relative_position_id = HR_focus_generic_political_publicity
-        x = 0
-        y = 1
-
-        cost = 7.2
-        prerequisite = { focus = HR_focus_generic_political_publicity }
-
-        available = {
-            has_government = democratic
-            conscription_ratio > 0.01
-        }
-
-        completion_reward = {
-            add_war_support = 0.15
-            
-            add_ideas = HR_idea_generic_guardians_of_homeland
-        }
-    }
-    focus = {
-        id = HR_focus_generic_global_solidarity
-        icon = GFX_HR_focus_generic_global_solidarity
-        relative_position_id = HR_focus_generic_guardians_of_homeland
-        x = 1
-        y = 1
-        
-        cost = 7.2
-        prerequisite = { focus = HR_focus_generic_guardians_of_homeland }
-
-        available = {
-            has_government = democratic
-            OR = {
-                AND = {
-                    democratic > 0.6
-                    threat > 0.7
-                }
-                AND = {
-                    democratic > 0.8
-                    threat > 0.5
-                }
-                AND = {
-                    democratic > 0.95
-                    threat > 0.2
-                }
-            }
-        }
-        bypass = {
-            any_other_country = {
-                AND = {
-                    is_ally_with = ROOT
-                    has_government = democratic
-                }
-            }
-        }
-
-        completion_reward = {
-            if = {
-                limit = {
-                    any_other_country = {
-                        NOT = { tag = ROOT }
-                        is_major = yes
-                        has_same_ideology = yes
-                        has_capitulated = no
-                        is_faction_leader = yes
-                        any_other_country = {
-                            is_ally_with = PREV
-                            has_same_ideology = yes
-                            NOT = { tag = ROOT }
-                        }
-                    }
-                }
-
-                every_possible_country = {
-                    limit = {
-                        NOT = { tag = ROOT }
-                        is_major = yes
-                        has_same_ideology = yes
-                        is_faction_leader = yes
-                        any_other_country = {
-                            is_ally_with = PREV
-                            has_same_ideology = yes
-                            NOT = { tag = ROOT }
-                        }
-                    }
-
-                    ROOT = { add_to_variable = { requests = 1 } }
-                    country_event = generic.2
-                }
-            }
-            else = {
-                custom_effect_tooltip = HR_focus_generic_global_solidariry_tt_no_alliances
-                add_political_power = 100
-            }
-
-            add_ideas = HR_idea_generic_global_solidarity
-        }
-        bypass_effect = {
-            add_political_power = 100
-            add_ideas = HR_idea_generic_global_solidarity
-        }
-    }
-
-    focus = {
-        id = HR_focus_generic_we_stand_alone
-        icon = GFX_HR_focus_generic_we_stand_alone
-        relative_position_id = HR_focus_generic_guardians_of_homeland
-        x = -1
-        y = 1
-        
-        cost = 7.2
+		id = RJ_generic_values_of_freedom
+		icon = GFX_focus_RJ_freedom
+		cost = 10
         prerequisite = {
-            focus = HR_focus_generic_guardians_of_homeland
-            focus = HR_focus_generic_soldiers_of_world_revolution
+            focus = RJ_generic_by_the_people_for_the_people
         }
-        available = {
-            NOT = {
-                any_other_country = {
-                    is_ally_with = ROOT
-                }
-            }
-            has_war_support > 0.5
-        }
-        
-        completion_reward = {
-            add_war_support = 0.15
-            add_ideas = HR_idea_generic_we_stand_alone
-        }
-    }
-
-    ## Neutrality
-    focus = {
-        id = HR_focus_generic_the_order
-        icon = GFX_HR_focus_generic_the_order
-        relative_position_id = HR_focus_generic_our_destiny
-        x = 0
-        y = 1
-
-        cost = 4.3
-        prerequisite = {focus = HR_focus_generic_our_destiny}
-        available = {
-            has_government = neutrality 
-        }
-
-        completion_reward = {
-            add_political_power = 150
-            add_ideas = HR_idea_generic_the_order
-        }
-    }
-
-    focus = {
-        id = HR_focus_generic_no_red_no_brown
-        icon = GFX_HR_focus_generic_no_red_no_brown
-        relative_position_id = HR_focus_generic_the_order
+        relative_position_id = RJ_generic_by_the_people_for_the_people
         x = -1
-        y = 1
+		y = 1
 
-        cost = 4.3
-        prerequisite = {focus = HR_focus_generic_the_order}
         available = {
-            has_government = neutrality
-            neutrality > 0.5
-
-            OR = {
-                is_in_faction = no
-                NOT = {
-                    any_other_country = {
-                        NOT = { is_ally_with = ROOT }
-                        OR = {
-                            has_government = fascism
-                            has_government = communism
-                        }
-                    } 
-                }
-            }
-            NOT = {
-                has_idea_with_trait = fascist_demagogue
-                has_idea_with_trait = communist_revolutionary
-            }
+            has_government = democratic
         }
 
-        completion_reward = {
-            add_political_power = 100
-            swap_ideas = {
-                remove_idea = HR_idea_generic_the_order 
-                add_idea = HR_idea_generic_no_red_no_brown
-            }
-        }
-    }
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_values_of_freedom_idea
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH }
+	}
 
     focus = {
-        id = HR_focus_generic_national_identity
-        icon = GFX_HR_focus_generic_national_identity
-        relative_position_id = HR_focus_generic_no_red_no_brown
-        x = 1
-        y = 1
-
-        cost = 4.3
-        prerequisite = {focus = HR_focus_generic_no_red_no_brown}
-        
-        completion_reward = {
-            swap_ideas = {
-                remove_idea = HR_idea_generic_no_red_no_brown
-                add_idea = HR_idea_generic_national_identity
-            }
+		id = RJ_generic_derail_the_radicals
+		icon = GFX_focus_RJ_anti_communism_fascism
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_by_the_people_for_the_people
         }
-    }
+        relative_position_id = RJ_generic_by_the_people_for_the_people
+        x = 0
+		y = 2
+
+        available = {
+            has_government = democratic
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = communism
+                popularity = -0.10
+            }
+            add_popularity = {
+                ideology = fascism
+                popularity = -0.10
+            }
+            add_stability = 0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+	}
 
     focus = {
-        id = HR_focus_generic_regime_of_preservation
-        icon = GFX_HR_focus_generic_regime_of_preservation
-        relative_position_id = HR_focus_generic_national_identity
-        x = 1
-        y = 1
-
-        cost = 4.3
-        prerequisite = {focus = HR_focus_generic_national_identity}
+		id = RJ_generic_centralized_authority
+		icon = GFX_focus_generic_monarchy_1
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_the_vision_of_one
+        }
+        relative_position_id = RJ_generic_the_vision_of_one
+        x = 0
+		y = 2
 
         available = {
             has_government = neutrality
-            neutrality > 0.7
         }
 
-        completion_reward = {
-            swap_ideas = {
-                remove_idea = HR_idea_generic_national_identity
-                add_idea = HR_idea_generic_regime_of_preservation
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = communism
+                popularity = -0.10
             }
-        }
-    }
-    
-    focus = {
-        id = HR_focus_generic_sweat_blood_and_tears
-        icon = GFX_HR_focus_generic_sweat_blood_and_tears
-        relative_position_id = HR_focus_generic_regime_of_preservation
-        x = -1
-        y = 1
-
-        cost = 11.5
-        prerequisite = {focus = HR_focus_generic_regime_of_preservation}
-
-        completion_reward = {
-            add_ideas = HR_idea_generic_sweat_blood_and_tears
-        }
-    }
-
-    focus = {
-        id = HR_focus_generic_fortress_country
-        icon = GFX_HR_focus_generic_fortress_country
-        relative_position_id = HR_focus_generic_sweat_blood_and_tears
-        x = 0
-        y = 1
-
-        cost = 11.5
-        prerequisite = {focus = HR_focus_generic_sweat_blood_and_tears}
-
-        completion_reward = {
-            swap_ideas = {
-                remove_idea = HR_idea_generic_sweat_blood_and_tears
-                add_idea = HR_idea_generic_fortress_country
+            add_popularity = {
+                ideology = fascism
+                popularity = -0.10
             }
-        }
-    }
+            add_stability = 0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+	}
 
-    ## Fasist path
     focus = {
-        id = HR_focus_generic_the_state
-        icon = GFX_HR_focus_generic_the_state
-        relative_position_id = HR_focus_generic_our_destiny
-        x = 3
-        y = 1
-
-        cost = 4
-        prerequisite = {focus = HR_focus_generic_our_destiny}
+		id = RJ_generic_strengthen_the_military
+		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_the_vision_of_one
+        }
+        relative_position_id = RJ_generic_the_vision_of_one
+        x = 1
+		y = 1
 
         available = {
-            has_government = fascism
+            has_government = neutrality
         }
 
-        completion_reward = {
-            add_political_power = 100
-            add_ideas = HR_idea_generic_the_state
-        }
-    }
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_strengthen_the_military_idea
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
 
     focus = {
-        id = HR_focus_generic_unity_of_state_and_nation
-        icon = GFX_HR_focus_generic_unity_of_state_and_nation
-        relative_position_id = HR_focus_generic_the_state 
+		id = RJ_generic_the_best_and_the_brightest
+		icon = GFX_focus_generic_military_mission
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_purge_the_threats focus = RJ_generic_purge_disruptive_elements focus = RJ_generic_centralized_authority focus = RJ_generic_derail_the_radicals
+        }
+        relative_position_id = RJ_generic_purge_the_threats
+        x = 2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            custom_effect_tooltip = RJ_generic_generals_tooltip
+            hidden_effect = {
+				create_corps_commander = {
+					traits = { infantry_officer infantry_expert }
+					skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 3
+					logistics_skill = 2
+				}
+				create_corps_commander = {
+					traits = { infantry_officer trait_engineer }
+					skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 2
+				}
+				create_corps_commander = {
+					traits = { cavalry_officer cavalry_expert }
+					skill = 2
+					attack_skill = 3
+					defense_skill = 1
+					planning_skill = 2
+					logistics_skill = 1
+				}
+			}
+            army_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_spies_incorporated
+		icon = GFX_focus_generic_secret_service_agency
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_the_best_and_the_brightest
+        }
+        relative_position_id = RJ_generic_the_best_and_the_brightest
         x = 0
-        y = 1
+		y = 1
 
-        cost = 4
-        prerequisite = {focus = HR_focus_generic_the_state}
 
-        completion_reward = {
-            swap_ideas = {
-                remove_idea = HR_idea_generic_the_state
-                add_idea = HR_idea_generic_unity_of_state_and_nation
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            create_intelligence_agency = {
+                name = "Spies Incorporated"
+                icon = GFX_intelligence_agency_logo_generic_2
             }
-        }
-    }
+            add_ideas = RJ_generic_intelligence_agency_idea
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ESPIONAGE }
+	}
 
-    focus = {
-        id = HR_focus_generic_country_above_all 
-        icon = GFX_HR_focus_generic_country_above_all
-        relative_position_id = HR_focus_generic_unity_of_state_and_nation
-        x = 0
-        y = 1
 
-        cost = 6
-        prerequisite = {focus = HR_focus_generic_unity_of_state_and_nation}
 
-        completion_reward = {
-            swap_ideas = {
-                remove_idea = HR_idea_generic_unity_of_state_and_nation
-                add_idea = HR_idea_generic_country_above_all
-            }
-        }
-    }
 
-    focus = {
-        id = HR_focus_generic_black_shirts
-        icon = GFX_HR_focus_generic_black_shirts
-        relative_position_id = HR_focus_generic_country_above_all
-        x = 0
-        y = 1
 
-        cost = 6
-        prerequisite = {focus = HR_focus_generic_country_above_all}
 
-        completion_reward = {
-            add_ideas = HR_idea_generic_black_shirts
-        }
-    }
+
     
-    focus = {
-        id = HR_focus_generic_hail_the_armed_forces
-        icon = GFX_HR_focus_generic_hail_the_armed_forces
-        relative_position_id = HR_focus_generic_black_shirts
-        x = -1
-        y = 1
-
-        cost = 10
-        prerequisite = {focus = HR_focus_generic_black_shirts}
-        mutually_exclusive = {focus = HR_focus_generic_every_home_is_a_fortress}
-
-        available = {
-            conscription_ratio > 0.02
-            has_army_manpower = {
-                size > 50000
-            }
-        }
-
-        completion_reward = {
-            add_ideas = HR_idea_generic_hail_the_armed_forces
-        }
-    }
-
-    focus = {
-        id = HR_focus_generic_every_home_is_a_fortress
-        icon = GFX_HR_focus_generic_every_home_is_a_fortress
-        relative_position_id = HR_focus_generic_black_shirts
-        x = 1
-        y = 1
-
-        cost = 10
-        prerequisite = {focus = HR_focus_generic_black_shirts}
-        mutually_exclusive = {focus = HR_focus_generic_hail_the_armed_forces}
-
-        completion_reward = {
-            add_ideas = HR_idea_generic_every_home_is_a_fortress
-        }
-    }
-
-    focus = {
-        id = HR_focus_generic_against_common_foes_united
-        icon = GFX_HR_focus_generic_against_common_foes_united
-        relative_position_id = HR_focus_generic_black_shirts
-        x = -1
-        y = 2
-
-        cost = 10
-        prerequisite = {
-            focus = HR_focus_generic_every_home_is_a_fortress
-            focus = HR_focus_generic_hail_the_armed_forces
-            #focus = HR_focus_generic_sweat_blood_and_tears #could be
-        }
-        mutually_exclusive = {
-            focus = HR_focus_generic_only_us
-        }
-
-
-        completion_reward = {
-            if = {
-                limit = {
-                    any_other_country = {
-                        is_major = yes
-                        has_same_ideology = yes
-                        has_capitulated = no
-                        is_faction_leader = yes
-                        any_other_country = {
-                            is_ally_with = PREV
-                            has_same_ideology = yes
-                            NOT = { tag = ROOT }
-                        }
-                    }
-                }
-
-                every_possible_country = {
-                    limit = {
-                        NOT = { tag = ROOT }
-                        is_major = yes
-                        has_same_ideology = yes
-                        is_faction_leader = yes
-                        any_other_country = {
-                            is_ally_with = PREV
-                            has_same_ideology = yes
-                            NOT = { tag = ROOT }
-                        }
-                    }
-
-                    ROOT = { add_to_variable = { requests = 1 } }
-                    country_event = generic.2
-                }
-            }
-            else = {
-                custom_effect_tooltip = HR_focus_generic_against_common_foes_united_tt_no_alliances
-                add_political_power = 100
-            }
-
-            add_ideas = HR_idea_generic_against_common_foes_united
-        }
-    }
-
-    focus = {
-        id = HR_focus_generic_only_us
-        icon = GFX_HR_focus_generic_only_us
-        relative_position_id = HR_focus_generic_black_shirts
-        x = 1
-        y = 2
-
-        cost = 10
-        prerequisite = {
-            focus = HR_focus_generic_every_home_is_a_fortress
-            focus = HR_focus_generic_hail_the_armed_forces
-        }
-        mutually_exclusive = {
-            focus = HR_focus_generic_against_common_foes_united
-        }
-
-        completion_reward = {
-            add_ideas = HR_idea_generic_only_us
-        }
-    }
 
     
 
@@ -1913,20 +1649,5 @@ focus_tree = {
 
         prerequisite = {focus = HR_focus_generic_manifest_of_power}
         cost = 10
-    }
-
-    focus = {
-        id = HR_focus_generic_control_over_press
-        icon = GFX_HR_focus_generic_control_over_press
-        relative_position_id = HR_focus_generic_embrace_liberty_ideas
-        y = 0
-        x = 4
-    }
-    focus = {
-        id = HR_focus_generic_young_generation_indoctrination
-        icon = GFX_HR_focus_generic_young_generation_indoctrination
-        relative_position_id = HR_focus_generic_black_shirts
-        y = 0
-        x = -4
     }
 }

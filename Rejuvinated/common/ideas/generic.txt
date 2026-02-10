@@ -102,6 +102,204 @@ ideas = {
             }
         }
 
+        RJ_generic_democracy_idea = {
+            picture = generic_democratic_drift_bonus
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                democratic_drift = 0.15
+            }
+        }
+
+        RJ_generic_communism_idea = {
+            picture = generic_communism_drift_bonus
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                communism_drift = 0.15
+            }
+        }
+
+        RJ_generic_fascism_idea = {
+            picture = generic_fascism_drift_bonus
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                fascism_drift = 0.15
+            }
+        }
+
+        RJ_generic_military_youth_idea = {
+            picture = RAJ_military_into_the_workforce
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                conscription = 0.03
+                conscription_factor = 0.10
+            }
+        }
+
+        RJ_generic_revolutionary_army_idea = {
+            picture = home_of_revolution
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                conscription = 0.01
+                army_org_factor = 0.10
+                army_org_regain = 0.10
+                communism_drift = 0.08
+            }
+        }
+
+        RJ_generic_state_propaganda_idea = {
+            picture = generic_fascism_drift_2
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                conscription = 0.03
+                party_popularity_stability_factor = 0.15
+                war_support_factor = 0.10
+                fascism_drift = 0.08
+            }
+        }
+
+        RJ_generic_defense_of_the_country_idea = {
+            picture = YUG_federal_defense_council
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                conscription = 0.02
+                army_core_defence_factor = 0.05
+                army_core_attack_factor = 0.05
+            }
+        }
+
+        RJ_generic_values_of_freedom_idea = {
+            picture = RAJ_independence_movement
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                democratic_drift = 0.08
+                research_speed_factor = 0.03
+                stability_factor = 0.10
+                weekly_manpower = 50
+                monthly_population = 0.25
+            }
+        }
+
+        RJ_generic_strengthen_the_military_idea = {
+            picture = SOV_politicized_military_ccp_sov_compatibility
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                neutrality_drift = 0.08
+                conscription = 0.03
+                war_support_factor = 0.10
+                war_stability_factor = 0.20
+            }
+        }
+
+        RJ_generic_intelligence_agency_idea = {
+            picture = generic_spy_intel
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                agency_upgrade_time = -0.10
+                operative_slot = 1
+                intelligence_operation_speed = 0.15
+            }
+        }
+
 
 
 
