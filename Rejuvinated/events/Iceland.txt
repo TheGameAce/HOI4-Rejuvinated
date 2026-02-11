@@ -13,6 +13,40 @@ country_event = {
     
     option = {
         name = iceland.1.a
+        custom_effect_tooltip = ICE_decision_activate
+        hidden_effect = {
+        add_to_variable = {
+        var = ref_den
+        value = 25
+        }
+        add_to_variable = {
+        var = ref_ICE
+        value = 55
+        }
+    }
         set_country_flag = activate_icelandndependence_decision_category
+    }
+}
+
+country_event = {
+    id = iceland_events.28
+    title = iceland.2.t
+    desc = iceland.2.d
+    picture = GFX_reykjavik_referendum
+    
+    is_triggered_only = yes
+    
+    
+    option = {
+        name = iceland.2.a
+        trigger = {
+            check_variable = { ref_den < ref_ice } #Icleand vicotry
+        }
+    }
+    option = {
+        name = iceland.3.b
+        trigger = {
+            check_variable = { ref_den > ref_ice } #Denmark vicotry\
+        }
     }
 }

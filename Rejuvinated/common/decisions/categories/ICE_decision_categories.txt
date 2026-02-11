@@ -33,11 +33,11 @@ ICE_improve_the_viking_spirit = {
 	}
 }
 
-ICE_independence_referendum = {
+ICE_referendum_gui_container = {
 	
 	icon = hol_gateway_to_europe
 
-	scripted_gui = iceland_independence
+	scripted_gui = referendum_gui_container
 
 	allowed = {
 		original_tag = ICE
@@ -46,12 +46,6 @@ ICE_independence_referendum = {
 	picture = GFX_decision_cat_picture_gateway_to_europe
 	priority = {
 		base = 10
-	}
-	
-	custom_icon = {
-		tag = DEN
-		value = eng_gateway_to_europe_icon_value
-		desc = eng_gateway_to_europe_full_influence_breakdown
 	}
 
 	visible_when_empty = yes
