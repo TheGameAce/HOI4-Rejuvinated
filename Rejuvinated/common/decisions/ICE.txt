@@ -1,4 +1,4 @@
-ICE_referendum_gui_container = {
+```ICE_referendum_gui_container = {
 ICE_independence_referendum = {
         allowed = { tag = ICE }
 
@@ -11,19 +11,19 @@ ICE_independence_referendum = {
         }
 
         available = {
-
+            hidden_trigger = { always = no }
         }
 
         days_mission_timeout = 140
 
         activation = {
-           has_country_flag = activate_icelandndependence_decision_category    
+           has_country_flag = activate_icelandndependence_decision_category
         }
         timeout_effect = {
-            country_event = ICE_political_result.1
+            country_event = iceland_events.28
         }
     } 
-}
+}```
 
 #Economic Policy
 economy_decisions = {
