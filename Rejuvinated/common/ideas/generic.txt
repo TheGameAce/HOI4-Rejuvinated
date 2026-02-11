@@ -397,6 +397,125 @@ ideas = {
             }
         }
 
+        RJ_generic_naval_academy_idea = {
+            picture = generic_sea_focused_navy
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                navy_leader_cost_factor = -0.25
+                navy_leader_start_attack_level = 1
+                navy_leader_start_coordination_level = 1
+                navy_leader_start_defense_level = 1
+                navy_leader_start_maneuvering_level = 1
+                navy_leader_start_level = 1
+            }
+        }
+
+        RJ_generic_ship_research_idea = {
+            picture = generic_research_bonus
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            research_bonus = {
+                mio_cat_tech_all_screen_ship_and_modules = 0.15
+                mio_cat_tech_all_capital_ship_and_modules = 0.15
+                mio_cat_tech_all_cruiser_and_modules = 0.15
+                mio_cat_tech_all_submarine_and_modules = 0.15
+            }
+        }
+
+        RJ_generic_light_ship_specialization_idea = {
+            picture = liberty_ships_focus
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            equipment_bonus = {
+                submarine = {
+                    build_cost_ic = -0.15
+                    naval_speed = 0.10
+                    convoy_raiding_coordination = 0.10
+                }
+                screen_ship = {
+                    build_cost_ic = -0.15
+                    naval_speed = 0.10
+                    sub_detection = 0.10
+                }
+                light_cruiser = {
+                    build_cost_ic = -0.15
+                    naval_speed = 0.10
+                    naval_light_gun_hit_chance_factor = 0.10
+                }
+                ship_hull_cruiser_coastal_defense_ship = {
+                    build_cost_ic = -0.15
+                    naval_speed = 0.10
+                    naval_range = 0.25
+                }
+            }
+
+            modifier = {
+                naval_accidents_chance = -0.10
+            }
+        }
+
+        RJ_generic_capital_ship_specialization_idea = {
+            picture = liberty_ships_focus
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            equipment_bonus = {
+                mio_cat_eq_all_battleship = {
+                    build_cost_ic = -0.15
+                    naval_heavy_gun_hit_chance_factor = 0.10
+                    naval_speed = 0.10
+                    armor_value = 0.05
+                }
+                carrier = {
+                    build_cost_ic = -0.15
+                    naval_weather_penalty_factor = -0.10
+                    naval_speed = 0.10
+                    armor_value = 0.05
+                }
+                
+            }
+
+            modifier = {
+                naval_accidents_chance = -0.10
+            }
+        }
+
 
 
 

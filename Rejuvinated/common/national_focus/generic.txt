@@ -1529,6 +1529,383 @@ focus_tree = {
 	}
 
 
+    ####################################################################################################################################################################################
+    ### NAVY FOCUSES ###################################################################################################################################################################
+    ####################################################################################################################################################################################
+
+    focus = {
+		id = RJ_generic_navy_review
+		icon = GFX_focus_RJ_navy
+		cost = 7.2
+        x = -13
+		y = 0
+
+        available = {
+            any_state = {
+                is_controlled_by = ROOT
+                is_coastal = yes
+            }
+        }
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            navy_experience = 50
+		}
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
+	}
+
+    focus = {
+		id = RJ_generic_new_shipyards
+		icon = GFX_SOV_expand_shipbuilding_plants_ccp_2d_sov_compatibility
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_navy_review
+        }
+        relative_position_id = RJ_generic_navy_review
+        x = -1
+		y = 1
+
+        available = {
+            any_state = {
+                is_controlled_by = ROOT
+                is_coastal = yes
+            }
+        }
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 3
+                add_building_construction = {
+                    type = dockyard
+                    level = 3
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+	}
+
+    focus = {
+		id = RJ_generic_shipyard_expansion
+		icon = GFX_SOV_expand_shipbuilding_plants_ccp_2d_sov_compatibility
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_new_shipyards
+        }
+        relative_position_id = RJ_generic_new_shipyards
+        x = -1
+		y = 1
+
+        available = {
+            any_state = {
+                is_controlled_by = ROOT
+                is_coastal = yes
+            }
+        }
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 3
+                add_building_construction = {
+                    type = dockyard
+                    level = 3
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+	}
+
+    focus = {
+		id = RJ_generic_naval_academy
+		icon = GFX_focus_RJ_naval_academy
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_navy_review
+        }
+        relative_position_id = RJ_generic_navy_review
+        x = 1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_naval_academy_idea
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_NAVY }
+	}
+
+    focus = {
+		id = RJ_generic_new_officers
+		icon = GFX_focus_RJ_naval_officer
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_naval_academy
+        }
+        relative_position_id = RJ_generic_naval_academy
+        x = 2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            custom_effect_tooltip = RJ_generic_naval_officers_tt
+            hidden_effect = {
+				create_navy_leader = {
+					traits = { superior_tactician career_officer bold }
+					skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					coordination_skill = 3
+					maneuvering_skill = 2
+				}
+				create_navy_leader = {
+					traits = { career_officer chief_engineer blockade_runner }
+					skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					coordination_skill = 2
+					maneuvering_skill = 3
+				}
+				create_navy_leader = {
+					traits = { career_officer spotter }
+					skill = 2
+					attack_skill = 3
+					defense_skill = 1
+					coordination_skill = 2
+					maneuvering_skill = 1
+				}
+			}
+            navy_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NAVY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_shipbuilding_advancements
+		icon = GFX_focus_RJ_naval_research
+		cost = 14.4
+        prerequisite = {
+            focus = RJ_generic_naval_academy focus = RJ_generic_new_shipyards
+        }
+        relative_position_id = RJ_generic_naval_academy
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = ship_bonus
+                uses = 1
+                bonus = 0.50
+                category = mio_cat_tech_all_screen_ship_and_modules
+            }
+            add_tech_bonus = {
+                name = ship_bonus
+                uses = 1
+                bonus = 0.50
+                category = mio_cat_tech_all_capital_ship_and_modules
+            }
+            add_tech_bonus = {
+                name = ship_bonus
+                uses = 2
+                bonus = 0.30
+                category = ship_modules_tech
+            }
+            set_technology = {
+				coastal_defense_ships = 1
+			}
+            add_ideas = RJ_generic_ship_research_idea
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_study_foreign_designs
+		icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_shipbuilding_advancements
+        }
+        relative_position_id = RJ_generic_shipbuilding_advancements
+        x = 0
+		y = 1
+
+        available = {
+            OR = {
+                SOV = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                ENG = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                USA = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                GER = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                ITA = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                JAP = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                FRA = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+            }
+        }
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = ship_bonus
+                uses = 1
+                bonus = 0.50
+                ahead_reduction = 1
+                category = mio_cat_tech_all_screen_ship_and_modules
+            }
+            add_tech_bonus = {
+                name = ship_bonus
+                uses = 1
+                bonus = 0.50
+                ahead_reduction = 1
+                category = mio_cat_tech_all_capital_ship_and_modules
+            }
+            navy_experience = 30
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_naval_doctrines
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_naval_academy
+        }
+        relative_position_id = RJ_generic_naval_academy
+        x = 1
+		y = 2
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 3
+                category = naval_doctrine
+            }
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_light_ship_specialization
+		icon = GFX_focus_generic_destroyer
+		cost = 14.4
+        prerequisite = {
+            focus = RJ_generic_study_foreign_designs
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_capital_ship_specialization
+        }
+        relative_position_id = RJ_generic_study_foreign_designs
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_light_ship_specialization_idea
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_capital_ship_specialization
+		icon = GFX_goal_generic_navy_battleship
+		cost = 14.4
+        prerequisite = {
+            focus = RJ_generic_study_foreign_designs
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_light_ship_specialization
+        }
+        relative_position_id = RJ_generic_study_foreign_designs
+        x = 1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_capital_ship_specialization_idea
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
 
 
 
@@ -2034,113 +2411,6 @@ focus_tree = {
         y = 1
 
         prerequisite = {focus = HR_focus_generic_key_point_bombardmenr}
-        cost = 10
-    }
-
-    focus = {
-        id = HR_focus_generic_naval_department
-        icon = GFX_HR_focus_generic_naval_department
-        relative_position_id = HR_focus_generic_homeland_at_war
-        x = 30
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_homeland_defense}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_shipyard_expansion
-        icon = GFX_HR_focus_generic_shipyard_expansion
-        relative_position_id = HR_focus_generic_naval_department
-        x = -1
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_naval_department}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_sailor_training
-        icon = GFX_HR_focus_generic_sailor_training
-        relative_position_id = HR_focus_generic_naval_department
-        x = 1
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_naval_department}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_wolfpack
-        icon = GFX_HR_focus_generic_wolfpack
-        relative_position_id = HR_focus_generic_shipyard_expansion
-        x = -1
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_shipyard_expansion}
-        prerequisite = {focus = HR_focus_generic_sailor_training}
-        mutually_exclusive = {
-            focus = HR_focus_generic_manifest_of_power
-            focus = HR_focus_generic_pragmatic_shipbuilding
-        }
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_pragmatic_shipbuilding
-        icon = GFX_HR_focus_generic_pragmatic_shipbuilding
-        relative_position_id = HR_focus_generic_shipyard_expansion
-        x = 1
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_shipyard_expansion}
-        prerequisite = {focus = HR_focus_generic_sailor_training}
-        mutually_exclusive = {
-            focus = HR_focus_generic_wolfpack
-            focus = HR_focus_generic_manifest_of_power
-        }
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_manifest_of_power
-        icon = GFX_HR_focus_generic_pragmatic_shipbuilding
-        relative_position_id = HR_focus_generic_shipyard_expansion
-        x = 3
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_shipyard_expansion}
-        prerequisite = {focus = HR_focus_generic_sailor_training}
-        mutually_exclusive = {
-            focus = HR_focus_generic_pragmatic_shipbuilding
-            focus = HR_focus_generic_wolfpack
-        }
-        cost = 10
-    }
-    
-    focus = {
-        id = HR_focus_generic_invisible_fleet
-        icon = GFX_HR_focus_generic_invisible_fleet
-        relative_position_id = HR_focus_generic_wolfpack
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_wolfpack}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_naval_bomber_support
-        icon = GFX_HR_focus_generic_naval_bomber_support
-        relative_position_id = HR_focus_generic_pragmatic_shipbuilding
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_pragmatic_shipbuilding}
-        cost = 10
-    }
-    focus = {
-        id = HR_focus_generic_pride_of_nation
-        icon = GFX_HR_focus_generic_pride_of_nation
-        relative_position_id = HR_focus_generic_manifest_of_power
-        x = 0
-        y = 1
-
-        prerequisite = {focus = HR_focus_generic_manifest_of_power}
         cost = 10
     }
 }
