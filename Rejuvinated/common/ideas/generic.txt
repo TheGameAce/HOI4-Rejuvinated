@@ -359,6 +359,44 @@ ideas = {
             }
         }
 
+        RJ_generic_special_forces_idea = {
+            picture = PER_special_units_division_idea
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                special_forces_cap_flat = 6
+                special_forces_training_time_factor = -0.10
+            }
+        }
+
+        RJ_generic_extreme_climate_training_idea = {
+            picture = PER_special_units_division_idea
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            modifier = {
+                acclimatization_hot_climate_gain_factor = 0.20
+                acclimatization_cold_climate_gain_factor = 0.20
+            }
+        }
+
 
 
 

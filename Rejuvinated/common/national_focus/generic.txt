@@ -480,8 +480,13 @@ focus_tree = {
 		y = 1
 
         available = {
-            NOT = {
-                is_puppet = yes
+            OR = {
+                NOT = {
+                    is_puppet = yes
+                }
+                NOT = {
+                    is_ai = yes
+                }
             }
         }
 
@@ -739,8 +744,13 @@ focus_tree = {
 		y = 1
 
         available = {
-            NOT = {
-                is_puppet = yes
+            OR = {
+                NOT = {
+                    is_puppet = yes
+                }
+                NOT = {
+                    is_ai = yes
+                }
             }
         }
 
@@ -1060,7 +1070,7 @@ focus_tree = {
 		id = RJ_generic_army_review
 		icon = GFX_focus_RJ_army_review
 		cost = 7.2
-        x = -2
+        x = -3
 		y = 0
 
 
@@ -1364,11 +1374,159 @@ focus_tree = {
                 uses = 1
                 category = land_doctrine
             }
+            army_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_powerful_doctrines
+		icon = GFX_focus_RJ_mobile_firepower
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_developing_our_doctrine
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_thoughtful_doctrines
+        }
+        relative_position_id = RJ_generic_developing_our_doctrine
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 2
+                category = cat_mobile_warfare
+            }
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 2
+                category = cat_superior_firepower
+            }
+            army_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_thoughtful_doctrines
+		icon = GFX_focus_RJ_soldiers_planning
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_developing_our_doctrine
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_powerful_doctrines
+        }
+        relative_position_id = RJ_generic_developing_our_doctrine
+        x = 1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 2
+                category = cat_grand_battle_plan
+            }
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 2
+                category = cat_mass_assault
+            }
+            army_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_special_forces_training
+		icon = GFX_goal_generic_special_forces
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_prioritize_conscription focus = RJ_generic_prioritize_strength
+        }
+        relative_position_id = RJ_generic_prioritize_conscription
+        x = -2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = sf_bonus
+                bonus = 0.50
+                uses = 2
+                category = cat_special_forces_generic
+            }
+            add_ideas = RJ_generic_special_forces_idea
 		}
 		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
 	}
 
+    focus = {
+		id = RJ_generic_extreme_climate_training
+		icon = GFX_focus_PER_desert_training
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_special_forces_training
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_extreme_terrain_training
+        }
+        relative_position_id = RJ_generic_special_forces_training
+        x = 1
+		y = 1
 
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_extreme_climate_training_idea
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_extreme_terrain_training
+		icon = GFX_focus_AFG_mountain_training
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_special_forces_training
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_extreme_climate_training
+        }
+        relative_position_id = RJ_generic_special_forces_training
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            custom_effect_tooltip = RJ_generic_extreme_terrain_training_tt
+            hidden_effect = { set_technology = { GENERIC_terrain_training = 1 } }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
 
 
 
