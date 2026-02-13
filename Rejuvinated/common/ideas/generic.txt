@@ -607,6 +607,26 @@ ideas = {
             }
         }
 
+        RJ_generic_air_research_idea = {
+            picture = generic_air_research
+
+            removal_cost = -1
+
+            allowed = {
+                always = yes
+            }
+
+            allowed_civil_war = {
+                always = yes
+            }
+
+            research_bonus = {
+                mio_cat_all_light_aircraft_and_modules = 0.15
+                mio_cat_all_medium_aircraft_and_modules = 0.15
+                mio_cat_all_heavy_aircraft_and_modules = 0.15
+            }
+        }
+
 
 
 
