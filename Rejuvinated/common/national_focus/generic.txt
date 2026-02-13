@@ -602,7 +602,7 @@ focus_tree = {
 		completion_reward = {
             add_ideas = RJ_generic_military_youth_idea
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
 	}
 
     focus = {
@@ -982,7 +982,7 @@ focus_tree = {
 		completion_reward = {
             add_ideas = RJ_generic_strengthen_the_military_idea
 		}
-		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_WAR_SUPPORT }
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
 	}
 
     focus = {
@@ -1906,6 +1906,217 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
+
+
+
+    ####################################################################################################################################################################################
+    ### AIRFORCE FOCUSES ###############################################################################################################################################################
+    ####################################################################################################################################################################################
+
+    focus = {
+		id = RJ_generic_airforce_review
+		icon = GFX_focus_FIN_expand_air_force_academy
+		cost = 7.2
+        x = -19
+		y = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            air_experience = 50
+		}
+		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_AIRFORCE }
+	}
+
+    focus = {
+		id = RJ_generic_airbase_construction
+		icon = GFX_focus_RJ_airstrip
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_airforce_review
+        }
+        relative_position_id = RJ_generic_airforce_review
+        x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                }
+            }
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIRFORCE }
+	}
+
+    focus = {
+		id = RJ_generic_early_research_efforts
+		icon = GFX_focus_generic_air_research_boost
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_airforce_review
+        }
+        relative_position_id = RJ_generic_airforce_review
+        x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = plane_modules_bonus
+					bonus = 0.30
+					uses = 2
+					category = plane_modules_tech
+				}
+				add_tech_bonus = {
+					name = light_air_bonus
+					bonus = 0.30
+					uses = 1
+					category = light_air
+				}
+			}
+			else = {
+				add_tech_bonus = {
+				name = air_doctrine
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+				add_tech_bonus = {
+					name = tech_bonus
+					bonus = 0.5
+					uses = 1
+					category = light_fighter
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE }
+	}
+
+    focus = {
+		id = RJ_generic_doctrine_for_the_skies
+		icon = GFX_goal_generic_air_doctrine
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_airbase_construction focus = RJ_generic_early_research_efforts
+        }
+        relative_position_id = RJ_generic_airbase_construction
+        x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                category = air_doctrine
+                uses = 3
+            }
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE }
+	}
+
+    focus = {
+		id = RJ_generic_bombing_supremacy
+		icon = GFX_focus_RJ_bomber
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_doctrine_for_the_skies
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_ground_support_supremacy focus = RJ_generic_aerial_supremacy
+        }
+        relative_position_id = RJ_generic_doctrine_for_the_skies
+        x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas =  RJ_generic_bomber_supremacy_idea
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_ground_support_supremacy
+		icon = GFX_focus_RJ_CAS
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_doctrine_for_the_skies
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_aerial_supremacy focus = RJ_generic_bombing_supremacy
+        }
+        relative_position_id = RJ_generic_doctrine_for_the_skies
+        x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas =  RJ_generic_CAS_idea
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_aerial_supremacy
+		icon = GFX_focus_usa_escort_fighters
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_doctrine_for_the_skies
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_ground_support_supremacy focus = RJ_generic_bombing_supremacy
+        }
+        relative_position_id = RJ_generic_doctrine_for_the_skies
+        x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas =  RJ_generic_fighter_idea
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+
+
+
+
+
+
+
 
 
 
