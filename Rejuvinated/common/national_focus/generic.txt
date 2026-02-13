@@ -1,0 +1,2269 @@
+focus_tree = {
+	id = generic_focus
+
+	country = {
+		factor = 1 
+	}
+
+	default = yes
+	reset_on_civilwar = no
+
+	initial_show_position = {
+		
+	}
+
+
+    ###################################################################################################################################################################################
+    ### ECONOMIC FOCUSES ##############################################################################################################################################################
+    ###################################################################################################################################################################################
+
+    focus = { #Economic Tree Start
+		id = RJ_generic_industrial_investments
+		icon = GFX_focus_RJ_industry1
+		cost = 10
+		x = 22
+		y = 0
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                }
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                }
+            }
+            add_tech_bonus = {
+                name = industrial_bonus_generic
+                bonus = 0.50
+                uses = 2
+                category = industry
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_the_civilian_sector
+		icon = GFX_focus_RJ_industry2
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_industrial_investments
+        }
+        relative_position_id = RJ_generic_industrial_investments
+        x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                }
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_fund_industrial_research
+		icon = GFX_focus_RJ_industrial_research
+		cost = 10
+		prerequisite = {
+            focus = RJ_generic_industrial_investments
+        }
+        relative_position_id = RJ_generic_industrial_investments
+        x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+                name = industrial_bonus_generic
+                bonus = 0.50
+                uses = 3
+                category = industry
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_regional_development
+		icon = GFX_focus_RJ_industry4
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_the_civilian_sector
+        }
+        relative_position_id = RJ_generic_the_civilian_sector
+        x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                }
+                increase_state_category = yes
+                add_state_modifier = {
+                    modifier = { monthly_population = 0.50 }
+                }
+            }
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                }
+                increase_state_category = yes
+                add_state_modifier = {
+                    modifier = { monthly_population = 0.50 }
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_regional_development_2
+		icon = GFX_focus_RJ_industry4
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_regional_development
+        }
+        relative_position_id = RJ_generic_regional_development
+        x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                }
+                increase_state_category = yes
+                add_state_modifier = {
+                    modifier = { monthly_population = 0.50 }
+                }
+            }
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                }
+                increase_state_category = yes
+                add_state_modifier = {
+                    modifier = { monthly_population = 0.50 }
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_port_improvements
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_the_civilian_sector
+        }
+        relative_position_id = RJ_generic_the_civilian_sector
+        x = -3
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+        available = {
+            any_controlled_state = {
+                is_coastal = yes
+            }
+        }
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_building_construction = {
+                    type = naval_base
+                    level = 3
+                }
+            }
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = dockyard
+                    level = 2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_factory_subsidies
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_the_civilian_sector
+        }
+        relative_position_id = RJ_generic_the_civilian_sector
+        x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_develop_an_industrial_park
+		icon = GFX_focus_AFG_a_modern_economy
+		cost = 14.4
+		prerequisite = {
+            focus = RJ_generic_factory_subsidies
+        }
+        relative_position_id = RJ_generic_factory_subsidies
+        x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 5
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 3
+                }
+                increase_state_category = yes
+            }
+            add_ideas = RJ_generic_industrial_park_idea
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_university_funding
+		icon = GFX_focus_RJ_research
+		cost = 10
+		prerequisite = {
+            focus = RJ_generic_the_civilian_sector
+        }
+        relative_position_id = RJ_generic_the_civilian_sector
+        x = 0
+		y = 3
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_the_military_sector
+		icon = GFX_focus_RJ_munitions_factory
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_industrial_investments
+        }
+        relative_position_id = RJ_generic_industrial_investments
+        x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                }
+                add_building_construction = {
+                    type = supply_node
+                    level = 1
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_arms_subsidies
+		icon = GFX_SOV_expand_the_aircraft_industry_ccp_2d_sov_compatibility
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_the_military_sector
+        }
+        relative_position_id = RJ_generic_the_military_sector
+        x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_new_munitions_plants
+		icon = GFX_focus_RJ_industry3
+		cost = 10
+		prerequisite = {
+            focus = RJ_generic_the_military_sector
+        }
+        relative_position_id = RJ_generic_the_military_sector
+        x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 3
+                add_building_construction = {
+                    type = arms_factory
+                    level = 3
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_railway_modernization
+		icon = GFX_focus_generic_railroad
+		cost = 7.2
+		prerequisite = {
+            focus = RJ_generic_the_military_sector
+        }
+        relative_position_id = RJ_generic_the_military_sector
+        x = 0
+		y = 2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+                type = train_equipment_1
+                amount = 10
+            }
+            add_ideas = RJ_generic_railway_modernization_idea
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_tax_reforms
+		icon = GFX_focus_RJ_paper_coins
+		cost = 10
+		prerequisite = { focus = RJ_generic_arms_subsidies }
+        prerequisite = { focus = RJ_generic_fund_industrial_research }
+        prerequisite = { focus = RJ_generic_factory_subsidies }
+        relative_position_id = RJ_generic_develop_an_industrial_park
+        x = 1
+		y = 2
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_reformed_taxes_idea
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+
+
+
+
+
+
+    ####################################################################################################################################################################################
+    ### POLITICAL FOCUSES ##############################################################################################################################################################
+    ####################################################################################################################################################################################
+
+    focus = {
+		id = RJ_generic_the_political_stage
+		icon = GFX_focus_generic_improve_the_administration
+		cost = 10
+        x = 10
+		y = 0
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+            add_political_power = 200
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+    focus = {
+		id = RJ_generic_radical_alignment
+		icon = GFX_focus_CHL_departemento_de_las_tropas_nacistas_de_asalto
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_the_political_stage
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_moderatism
+        }
+        relative_position_id = RJ_generic_the_political_stage
+        x = -3
+		y = 1
+
+        available = {
+            OR = {
+                NOT = {
+                    is_puppet = yes
+                }
+                NOT = {
+                    is_ai = yes
+                }
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = communism
+                popularity = 0.05
+            }
+            add_popularity = {
+                ideology = fascism
+                popularity = 0.05
+            }
+            add_timed_idea = {
+                idea = RJ_generic_radical_alignment_idea
+                days = 500
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_the_winds_of_revolution
+		icon = GFX_focus_RJ_communism
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_radical_alignment
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_in_service_of_the_state
+        }
+        relative_position_id = RJ_generic_radical_alignment
+        x = 1
+		y = 1
+
+        available = {
+            NOT = {
+                is_puppet = yes
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_timed_idea = {
+                idea = RJ_generic_communism_idea
+                days = 365
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_in_service_of_the_state
+		icon = GFX_focus_RJ_fascism
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_radical_alignment
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_the_winds_of_revolution
+        }
+        relative_position_id = RJ_generic_radical_alignment
+        x = -1
+		y = 1
+
+        available = {
+            NOT = {
+                is_puppet = yes
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_timed_idea = {
+                idea = RJ_generic_fascism_idea
+                days = 365
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_military_youth_program
+		icon = GFX_focus_RJ_military
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_in_service_of_the_state focus = RJ_generic_the_winds_of_revolution
+        }
+        relative_position_id = RJ_generic_in_service_of_the_state
+        x = 1
+		y = 1
+
+        available = {
+            OR = {
+                has_government = communism
+                has_government = fascism
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_military_youth_idea
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
+	}
+
+    focus = {
+		id = RJ_generic_revolutionary_army
+		icon = GFX_focus_RJ_communist_advisor
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_the_winds_of_revolution
+        }
+        relative_position_id = RJ_generic_the_winds_of_revolution
+        x = 1
+		y = 1
+
+        available = {
+            has_government = communism
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_revolutionary_army_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
+	}
+
+    focus = {
+		id = RJ_generic_state_propaganda
+		icon = GFX_focus_generic_fascist_propaganda
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_in_service_of_the_state
+        }
+        relative_position_id = RJ_generic_in_service_of_the_state
+        x = -1
+		y = 1
+
+        available = {
+            has_government = fascism
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_state_propaganda_idea
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_STABILITY FOCUS_FILTER_ARMY FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+    focus = {
+		id = RJ_generic_purge_disruptive_elements
+		icon = GFX_focus_GER_end_european_communism
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_in_service_of_the_state
+        }
+        relative_position_id = RJ_generic_in_service_of_the_state
+        x = 0
+		y = 2
+
+        available = {
+            has_government = fascism
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = communism
+                popularity = -0.15
+            }
+            add_popularity = {
+                ideology = democratic
+                popularity = -0.05
+            }
+            add_popularity = {
+                ideology = neutrality
+                popularity = -0.05
+            }
+            add_stability = 0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+	}
+
+    focus = {
+		id = RJ_generic_purge_the_threats
+		icon = GFX_focus_SOV_the_last_purge
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_the_winds_of_revolution
+        }
+        relative_position_id = RJ_generic_the_winds_of_revolution
+        x = 0
+		y = 2
+
+        available = {
+            has_government = communism
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = fascism
+                popularity = -0.15
+            }
+            add_popularity = {
+                ideology = democratic
+                popularity = -0.05
+            }
+            add_popularity = {
+                ideology = neutrality
+                popularity = -0.05
+            }
+            add_stability = 0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+	}
+
+    focus = {
+		id = RJ_generic_moderatism
+		icon = GFX_focus_RJ_moderatism
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_the_political_stage
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_radical_alignment
+        }
+        relative_position_id = RJ_generic_the_political_stage
+        x = 3
+		y = 1
+
+        available = {
+            OR = {
+                NOT = {
+                    is_puppet = yes
+                }
+                NOT = {
+                    is_ai = yes
+                }
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.05
+            }
+            add_popularity = {
+                ideology = neutrality
+                popularity = 0.05
+            }
+            add_timed_idea = {
+                idea = RJ_generic_moderatism_idea
+                days = 500
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_by_the_people_for_the_people
+		icon = GFX_focus_RJ_democracy
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_moderatism
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_the_vision_of_one
+        }
+        relative_position_id = RJ_generic_moderatism
+        x = -1
+		y = 1
+
+        available = {
+            NOT = {
+                is_puppet = yes
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_timed_idea = {
+                idea = RJ_generic_democracy_idea
+                days = 365
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_the_vision_of_one
+		icon = GFX_focus_RJ_neutrality
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_moderatism
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_by_the_people_for_the_people
+        }
+        relative_position_id = RJ_generic_moderatism
+        x = 1
+		y = 1
+
+        available = {
+            NOT = {
+                is_puppet = yes
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_timed_idea = {
+                idea = RJ_generic_democracy_idea
+                days = 365
+            }
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_defense_of_the_country
+		icon = GFX_focus_RJ_army_defense
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_the_vision_of_one focus = RJ_generic_by_the_people_for_the_people
+        }
+        relative_position_id = RJ_generic_the_vision_of_one
+        x = -1
+		y = 1
+
+        available = {
+            OR = {
+                has_government = democratic
+                has_government = neutrality
+            }
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_defense_of_the_country_idea
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
+	}
+
+    focus = {
+		id = RJ_generic_values_of_freedom
+		icon = GFX_focus_RJ_freedom
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_by_the_people_for_the_people
+        }
+        relative_position_id = RJ_generic_by_the_people_for_the_people
+        x = -1
+		y = 1
+
+        available = {
+            has_government = democratic
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_values_of_freedom_idea
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_STABILITY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_derail_the_radicals
+		icon = GFX_focus_RJ_anti_communism_fascism
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_by_the_people_for_the_people
+        }
+        relative_position_id = RJ_generic_by_the_people_for_the_people
+        x = 0
+		y = 2
+
+        available = {
+            has_government = democratic
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = communism
+                popularity = -0.10
+            }
+            add_popularity = {
+                ideology = fascism
+                popularity = -0.10
+            }
+            add_stability = 0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+	}
+
+    focus = {
+		id = RJ_generic_centralized_authority
+		icon = GFX_focus_generic_monarchy_1
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_the_vision_of_one
+        }
+        relative_position_id = RJ_generic_the_vision_of_one
+        x = 0
+		y = 2
+
+        available = {
+            has_government = neutrality
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_popularity = {
+                ideology = communism
+                popularity = -0.10
+            }
+            add_popularity = {
+                ideology = fascism
+                popularity = -0.10
+            }
+            add_stability = 0.05
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+	}
+
+    focus = {
+		id = RJ_generic_strengthen_the_military
+		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_the_vision_of_one
+        }
+        relative_position_id = RJ_generic_the_vision_of_one
+        x = 1
+		y = 1
+
+        available = {
+            has_government = neutrality
+        }
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_strengthen_the_military_idea
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
+	}
+
+    focus = {
+		id = RJ_generic_the_best_and_the_brightest
+		icon = GFX_focus_generic_military_mission
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_purge_the_threats focus = RJ_generic_purge_disruptive_elements focus = RJ_generic_centralized_authority focus = RJ_generic_derail_the_radicals
+        }
+        relative_position_id = RJ_generic_purge_the_threats
+        x = 2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            custom_effect_tooltip = RJ_generic_generals_tooltip
+            hidden_effect = {
+				create_corps_commander = {
+					traits = { infantry_officer infantry_expert }
+					skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 3
+					logistics_skill = 2
+				}
+				create_corps_commander = {
+					traits = { infantry_officer trait_engineer }
+					skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 2
+				}
+				create_corps_commander = {
+					traits = { cavalry_officer cavalry_expert }
+					skill = 2
+					attack_skill = 3
+					defense_skill = 1
+					planning_skill = 2
+					logistics_skill = 1
+				}
+			}
+            army_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_spies_incorporated
+		icon = GFX_focus_generic_secret_service_agency
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_the_best_and_the_brightest
+        }
+        relative_position_id = RJ_generic_the_best_and_the_brightest
+        x = 0
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            create_intelligence_agency = {
+                name = "Spies Incorporated"
+                icon = GFX_intelligence_agency_logo_generic_2
+            }
+            add_ideas = RJ_generic_intelligence_agency_idea
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ESPIONAGE }
+	}
+
+
+
+    ####################################################################################################################################################################################
+    ### ARMY FOCUSES ###################################################################################################################################################################
+    ####################################################################################################################################################################################
+
+    focus = {
+		id = RJ_generic_army_review
+		icon = GFX_focus_RJ_army_review
+		cost = 7.2
+        x = -3
+		y = 0
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            army_experience = 50
+		}
+		search_filters = { FOCUS_FILTER_ARMY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_prioritize_conscription
+		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_army_review
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_prioritize_strength
+        }
+        relative_position_id = RJ_generic_army_review
+        x = -2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_conscription_idea
+            add_war_support = 0.05
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+    focus = {
+		id = RJ_generic_prioritize_strength
+		icon = GFX_focus_chi_army_reform
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_army_review
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_prioritize_conscription
+        }
+        relative_position_id = RJ_generic_army_review
+        x = 2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_strong_army_idea
+            add_war_support = 0.05
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_WAR_SUPPORT }
+	}
+
+    focus = {
+		id = RJ_generic_army_rnd
+		icon = GFX_focus_RJ_army_research
+		cost = 14.4
+        prerequisite = {
+            focus = RJ_generic_prioritize_conscription focus = RJ_generic_prioritize_strength
+        }
+        relative_position_id = RJ_generic_prioritize_conscription
+        x = 2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_research_slot = 1
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.50
+                category = armor
+            }
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.50
+                category = artillery
+            }
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.50
+                category = infantry_tech
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_radio_improvements
+		icon = GFX_focus_generic_radio_communication
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_army_rnd
+        }
+        relative_position_id = RJ_generic_army_rnd
+        x = 1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = signal_company_tech
+            }
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = electronics
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_motorization_improvements
+		icon = GFX_focus_generic_truck
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_army_rnd
+        }
+        relative_position_id = RJ_generic_army_rnd
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = recon_tech
+            }
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = mio_cat_tech_all_motorized_mechanized
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_field_hospitals
+		icon = GFX_focus_generic_field_hostpital
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_motorization_improvements
+        }
+        relative_position_id = RJ_generic_motorization_improvements
+        x = 0
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 2
+                bonus = 0.75
+                category = hospital_tech
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_logistics_companies
+		icon = GFX_focus_generic_supply_line
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_radio_improvements
+        }
+        relative_position_id = RJ_generic_radio_improvements
+        x = 0
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 2
+                bonus = 0.75
+                category = logistics_tech
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_superior_weapons
+		icon = GFX_focus_RJ_general_arms
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_logistics_companies focus = RJ_generic_field_hospitals
+        }
+        relative_position_id = RJ_generic_logistics_companies
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = armor
+            }
+            add_tech_bonus = {
+                name = generic_army_bonus
+                uses = 1
+                bonus = 0.75
+                category = mio_cat_all_artillery_equipment
+            }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_advanced_research
+		icon = GFX_focus_NORDIC_com_selector_research
+		cost = 14.4
+        prerequisite = {
+            focus = RJ_generic_superior_weapons
+        }
+        relative_position_id = RJ_generic_superior_weapons
+        x = 0
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            country_event = generic.100
+            add_ideas = RJ_generic_special_projects_idea
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_developing_our_doctrine
+		icon = GFX_goal_generic_army_doctrines
+		cost = 5
+        prerequisite = {
+            focus = RJ_generic_prioritize_conscription focus = RJ_generic_prioritize_strength
+        }
+        relative_position_id = RJ_generic_prioritize_strength
+        x = 2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 1
+                category = land_doctrine
+            }
+            army_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_powerful_doctrines
+		icon = GFX_focus_RJ_mobile_firepower
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_developing_our_doctrine
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_thoughtful_doctrines
+        }
+        relative_position_id = RJ_generic_developing_our_doctrine
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 2
+                category = cat_mobile_warfare
+            }
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 2
+                category = cat_superior_firepower
+            }
+            army_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_thoughtful_doctrines
+		icon = GFX_focus_RJ_soldiers_planning
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_developing_our_doctrine
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_powerful_doctrines
+        }
+        relative_position_id = RJ_generic_developing_our_doctrine
+        x = 1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 2
+                category = cat_grand_battle_plan
+            }
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 2
+                category = cat_mass_assault
+            }
+            army_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_special_forces_training
+		icon = GFX_goal_generic_special_forces
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_prioritize_conscription focus = RJ_generic_prioritize_strength
+        }
+        relative_position_id = RJ_generic_prioritize_conscription
+        x = -2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = sf_bonus
+                bonus = 0.50
+                uses = 2
+                category = cat_special_forces_generic
+            }
+            add_ideas = RJ_generic_special_forces_idea
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_extreme_climate_training
+		icon = GFX_focus_PER_desert_training
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_special_forces_training
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_extreme_terrain_training
+        }
+        relative_position_id = RJ_generic_special_forces_training
+        x = 1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_extreme_climate_training_idea
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_extreme_terrain_training
+		icon = GFX_focus_AFG_mountain_training
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_special_forces_training
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_extreme_climate_training
+        }
+        relative_position_id = RJ_generic_special_forces_training
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            custom_effect_tooltip = RJ_generic_extreme_terrain_training_tt
+            hidden_effect = { set_technology = { GENERIC_terrain_training = 1 } }
+		}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_RESEARCH }
+	}
+
+
+    ####################################################################################################################################################################################
+    ### NAVY FOCUSES ###################################################################################################################################################################
+    ####################################################################################################################################################################################
+
+    focus = {
+		id = RJ_generic_navy_review
+		icon = GFX_focus_RJ_navy
+		cost = 7.2
+        x = -13
+		y = 0
+
+        available = {
+            any_state = {
+                is_controlled_by = ROOT
+                is_coastal = yes
+            }
+        }
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            navy_experience = 50
+		}
+		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY }
+	}
+
+    focus = {
+		id = RJ_generic_new_shipyards
+		icon = GFX_SOV_expand_shipbuilding_plants_ccp_2d_sov_compatibility
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_navy_review
+        }
+        relative_position_id = RJ_generic_navy_review
+        x = -1
+		y = 1
+
+        available = {
+            any_state = {
+                is_controlled_by = ROOT
+                is_coastal = yes
+            }
+        }
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 3
+                add_building_construction = {
+                    type = dockyard
+                    level = 3
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+	}
+
+    focus = {
+		id = RJ_generic_shipyard_expansion
+		icon = GFX_SOV_expand_shipbuilding_plants_ccp_2d_sov_compatibility
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_new_shipyards
+        }
+        relative_position_id = RJ_generic_new_shipyards
+        x = -1
+		y = 1
+
+        available = {
+            any_state = {
+                is_controlled_by = ROOT
+                is_coastal = yes
+            }
+        }
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_extra_state_shared_building_slots = 3
+                add_building_construction = {
+                    type = dockyard
+                    level = 3
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
+	}
+
+    focus = {
+		id = RJ_generic_naval_academy
+		icon = GFX_focus_RJ_naval_academy
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_navy_review
+        }
+        relative_position_id = RJ_generic_navy_review
+        x = 1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_naval_academy_idea
+		}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_NAVY }
+	}
+
+    focus = {
+		id = RJ_generic_new_officers
+		icon = GFX_focus_RJ_naval_officer
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_naval_academy
+        }
+        relative_position_id = RJ_generic_naval_academy
+        x = 2
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            custom_effect_tooltip = RJ_generic_naval_officers_tt
+            hidden_effect = {
+				create_navy_leader = {
+					traits = { superior_tactician career_officer bold }
+					skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					coordination_skill = 3
+					maneuvering_skill = 2
+				}
+				create_navy_leader = {
+					traits = { career_officer chief_engineer blockade_runner }
+					skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					coordination_skill = 2
+					maneuvering_skill = 3
+				}
+				create_navy_leader = {
+					traits = { career_officer spotter }
+					skill = 2
+					attack_skill = 3
+					defense_skill = 1
+					coordination_skill = 2
+					maneuvering_skill = 1
+				}
+			}
+            navy_experience = 25
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NAVY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_shipbuilding_advancements
+		icon = GFX_focus_RJ_naval_research
+		cost = 14.4
+        prerequisite = {
+            focus = RJ_generic_naval_academy focus = RJ_generic_new_shipyards
+        }
+        relative_position_id = RJ_generic_naval_academy
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = ship_bonus
+                uses = 1
+                bonus = 0.50
+                category = mio_cat_tech_all_screen_ship_and_modules
+            }
+            add_tech_bonus = {
+                name = ship_bonus
+                uses = 1
+                bonus = 0.50
+                category = mio_cat_tech_all_capital_ship_and_modules
+            }
+            add_tech_bonus = {
+                name = ship_bonus
+                uses = 2
+                bonus = 0.30
+                category = ship_modules_tech
+            }
+            set_technology = {
+				coastal_defense_ships = 1
+			}
+            add_ideas = RJ_generic_ship_research_idea
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_study_foreign_designs
+		icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_shipbuilding_advancements
+        }
+        relative_position_id = RJ_generic_shipbuilding_advancements
+        x = 0
+		y = 1
+
+        available = {
+            OR = {
+                SOV = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                ENG = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                USA = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                GER = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                ITA = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                JAP = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                FRA = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+            }
+        }
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = ship_bonus
+                uses = 1
+                bonus = 0.50
+                ahead_reduction = 1
+                category = mio_cat_tech_all_screen_ship_and_modules
+            }
+            add_tech_bonus = {
+                name = ship_bonus
+                uses = 1
+                bonus = 0.50
+                ahead_reduction = 1
+                category = mio_cat_tech_all_capital_ship_and_modules
+            }
+            navy_experience = 30
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY_XP }
+	}
+
+    focus = {
+		id = RJ_generic_naval_doctrines
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_naval_academy
+        }
+        relative_position_id = RJ_generic_naval_academy
+        x = 1
+		y = 2
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                uses = 3
+                category = naval_doctrine
+            }
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
+	}
+
+    focus = {
+		id = RJ_generic_light_ship_specialization
+		icon = GFX_focus_generic_destroyer
+		cost = 14.4
+        prerequisite = {
+            focus = RJ_generic_study_foreign_designs
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_capital_ship_specialization
+        }
+        relative_position_id = RJ_generic_study_foreign_designs
+        x = -1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_light_ship_specialization_idea
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_capital_ship_specialization
+		icon = GFX_goal_generic_navy_battleship
+		cost = 14.4
+        prerequisite = {
+            focus = RJ_generic_study_foreign_designs
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_light_ship_specialization
+        }
+        relative_position_id = RJ_generic_study_foreign_designs
+        x = 1
+		y = 1
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas = RJ_generic_capital_ship_specialization_idea
+		}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+
+
+    ####################################################################################################################################################################################
+    ### AIRFORCE FOCUSES ###############################################################################################################################################################
+    ####################################################################################################################################################################################
+
+    focus = {
+		id = RJ_generic_airforce_review
+		icon = GFX_focus_FIN_expand_air_force_academy
+		cost = 7.2
+        x = -19
+		y = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            air_experience = 50
+		}
+		search_filters = { FOCUS_FILTER_AIR_XP FOCUS_FILTER_AIRFORCE }
+	}
+
+    focus = {
+		id = RJ_generic_airbase_construction
+		icon = GFX_focus_RJ_airstrip
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_airforce_review
+        }
+        relative_position_id = RJ_generic_airforce_review
+        x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                }
+            }
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = air_base
+                    level = 3
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_AIRFORCE }
+	}
+
+    focus = {
+		id = RJ_generic_early_research_efforts
+		icon = GFX_focus_generic_air_research_boost
+		cost = 7.2
+        prerequisite = {
+            focus = RJ_generic_airforce_review
+        }
+        relative_position_id = RJ_generic_airforce_review
+        x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_tech_bonus = {
+					name = plane_modules_bonus
+					bonus = 0.30
+					uses = 2
+					category = plane_modules_tech
+				}
+				add_tech_bonus = {
+					name = light_air_bonus
+					bonus = 0.30
+					uses = 1
+					category = light_air
+				}
+			}
+			else = {
+				add_tech_bonus = {
+				name = air_doctrine
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+				add_tech_bonus = {
+					name = tech_bonus
+					bonus = 0.5
+					uses = 1
+					category = light_fighter
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE }
+	}
+
+    focus = {
+		id = RJ_generic_doctrine_for_the_skies
+		icon = GFX_goal_generic_air_doctrine
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_airbase_construction focus = RJ_generic_early_research_efforts
+        }
+        relative_position_id = RJ_generic_airbase_construction
+        x = -1
+		y = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.50
+                category = air_doctrine
+                uses = 3
+            }
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE }
+	}
+
+    focus = {
+		id = RJ_generic_bombing_supremacy
+		icon = GFX_focus_RJ_bomber
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_doctrine_for_the_skies
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_ground_support_supremacy focus = RJ_generic_aerial_supremacy
+        }
+        relative_position_id = RJ_generic_doctrine_for_the_skies
+        x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas =  RJ_generic_bomber_supremacy_idea
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_ground_support_supremacy
+		icon = GFX_focus_RJ_CAS
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_doctrine_for_the_skies
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_aerial_supremacy focus = RJ_generic_bombing_supremacy
+        }
+        relative_position_id = RJ_generic_doctrine_for_the_skies
+        x = 2
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas =  RJ_generic_CAS_idea
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_aerial_supremacy
+		icon = GFX_focus_usa_escort_fighters
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_doctrine_for_the_skies
+        }
+        mutually_exclusive = {
+            focus = RJ_generic_ground_support_supremacy focus = RJ_generic_bombing_supremacy
+        }
+        relative_position_id = RJ_generic_doctrine_for_the_skies
+        x = -2
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas =  RJ_generic_fighter_idea
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_dedicated_air_research
+		icon = GFX_goal_generic_build_airforce
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_early_research_efforts
+        }
+        relative_position_id = RJ_generic_early_research_efforts
+        x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_ideas =  RJ_generic_air_research_idea
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
+	}
+
+    focus = {
+		id = RJ_generic_airbase_expansion
+		icon = GFX_focus_generic_air_bases
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_airbase_construction
+        }
+        relative_position_id = RJ_generic_airbase_construction
+        x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = air_base
+                    level = 4
+                }
+                add_building_construction = {
+                    type = anti_air_building
+                    level = 1
+                }
+            }
+            random_owned_controlled_state = {
+                add_building_construction = {
+                    type = air_base
+                    level = 4
+                }
+                add_building_construction = {
+                    type = anti_air_building
+                    level = 1
+                }
+            }
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_INDUSTRY }
+	}
+
+    focus = {
+		id = RJ_generic_foreign_plane_designs
+		icon = GFX_focus_generic_air_partners
+		cost = 10
+        prerequisite = {
+            focus = RJ_generic_early_research_efforts
+        }
+        relative_position_id = RJ_generic_early_research_efforts
+        x = -2
+		y = 1
+
+        available = {
+            OR = {
+                SOV = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                ENG = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                USA = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                GER = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                ITA = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                JAP = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+
+                FRA = {
+                    has_opinion = {
+                        target = ROOT
+                        value > 49
+                    }
+                }
+            }
+        }
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+            add_tech_bonus = {
+                name = air_bonus
+                uses = 1
+                bonus = 0.50
+                ahead_reduction = 1
+                category = mio_cat_all_medium_aircraft_and_modules
+            }
+            add_tech_bonus = {
+                name = air_bonus
+                uses = 1
+                bonus = 0.50
+                ahead_reduction = 1
+                category = mio_cat_all_light_aircraft_and_modules
+            }
+            add_tech_bonus = {
+                name = air_bonus
+                uses = 1
+                bonus = 0.30
+                ahead_reduction = 0.50
+                category = plane_modules_tech
+            }
+            air_experience = 30
+		}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIR_XP }
+	}
+}
