@@ -12,12 +12,7 @@ country_event = {
 	picture = GFX_report_event_ast_parliament_house
 	fire_only_once = no
 
-	trigger = {
-		focus_progress = {
-		    focus = RJ_generic_advanced_research
-		    progress > 0.7
-		}
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = "A Land Facility!"
