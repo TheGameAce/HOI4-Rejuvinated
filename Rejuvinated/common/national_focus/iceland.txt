@@ -1395,11 +1395,6 @@ focus_tree = {
 				ideology = communism
 				popularity = 0.05
 			}
-			
-			swap_ideas = {
-				remove_idea = ICE_christian_x
-				add_idea = ICE_christian_x_worse
-			}
 		}
 	}
 	focus = { 
@@ -1408,7 +1403,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ICE_distance_from_the_king
-		cost = 4
+		cost = 5
 		prerequisite = { focus = ICE_distance_from_the_king }
 
 		ai_will_do = {
@@ -1426,7 +1421,175 @@ focus_tree = {
  				}
 			}
 	    }
+	
+	
+	focus = { 
+		id = ICE_utilize_politics  
+		icon = GFX_focus_generic_befriend_iceland
+		x = 0
+		y = 1
+		relative_position_id = prepare_for_the_imminent_referendum
+		cost = 4
+		prerequisite = { focus = prepare_for_the_imminent_referendum }
+
+		ai_will_do = {
+		base = 1
+		}
+
+		available = {
+		}
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = unlocks_decisions
+		}
 	}
+
+	focus = { 
+		id = ICE_encourage_communism
+		icon = GFX_focus_ARG_women_in_industry
+		x = -2
+		y = 1
+		relative_position_id = ICE_utilize_politics
+		cost = 5
+		prerequisite = { focus = ICE_utilize_politics }
+		mutually_exclusive = { focus = ICE_encourage_nationalism }
+		mutually_exclusive = { focus = ICE_propaganda_free }
+
+		ai_will_do = {
+		base = 1
+		}
+
+		available = {
+		}
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.20
+			}
+			add_timed_idea = {
+    		 idea = ICE_bolster_communism
+   			 days = 140
+			}
+		}
+	}
+
+	focus = { 
+		id = ICE_encourage_nationalism
+		icon = GFX_focus_generic_fascist_propaganda
+		x = 2
+		y = 1
+		relative_position_id = ICE_utilize_politics
+		cost = 5
+		prerequisite = { focus = ICE_utilize_politics }
+		mutually_exclusive = { focus = ICE_encourage_communism }
+		mutually_exclusive = { focus = ICE_propaganda_free }
+
+
+		ai_will_do = {
+		base = 1
+		}
+
+		available = {
+		}
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.20
+			}
+			add_timed_idea = {
+    		 idea = ICE_bolster_nationalism
+   			 days = 140
+			}
+		}
+	}
+
+	focus = { 
+		id = ICE_propaganda_free
+		icon = GFX_focus_ARG_defense_and_democracy
+		x = 28
+		y = 3
+		cost = 5
+		prerequisite = { focus = ICE_utilize_politics }
+		mutually_exclusive = { focus = ICE_encourage_communism }
+		mutually_exclusive = { focus = ICE_encourage_nationalism }
+
+		ai_will_do = {
+		base = 1
+		}
+
+		available = {
+		}
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.20
+			}
+			add_stability = 0.1
+			add_political_power = 50
+		}
+	}
+
+	focus = { 
+		id = ICE_independence  
+		icon = GFX_focus_ICE_iceland_defense_force
+		x = 28
+		y = 4
+		cost = 4
+		prerequisite = { focus = ICE_encourage_nationalism focus = ICE_encourage_communism }
+
+		ai_will_do = {
+		base = 1
+		}
+
+		available = {
+			has_country_flag = ICE_independence
+		}
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			OVERLORD = { set_autonomy = { target = ROOT autonomy_state = autonomy_free } }
+		}
+	}
+
+		focus = { 
+		id = ICE_nationalist_coup_preparation
+		icon = GFX_focus_generic_military_mission
+		prerequisite = {
+			focus = ICE_independence
+		}
+		x = 29
+		y = 5
+		cost = 4
+
+		ai_will_do = {
+		base = 1
+		}
+
+		available = {
+
+		}
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			set_country_flag = nationalist_coup
+			}
+		}
+	}
+
 	
 
 
@@ -1912,4 +2075,3 @@ focus_tree = {
 
 
 
-}

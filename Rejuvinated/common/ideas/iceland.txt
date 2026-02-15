@@ -98,7 +98,33 @@ ideas = {
 			}
 		}
 
-		ICE_christian_x = {
+		ICE_fishing_economy = {
+			picture = RAJ_headhunt_army_personell
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor = -0.1
+				equipment_bonus = {
+				    convoy = {
+                    build_cost_ic = -0.1 instant = yes
+				    }
+				}
+			}
+		}
+
+		ICE_rigsfaellesskabet = {
+			picture = ICE_christian_x
 			allowed = {
 				always = no
 			}
@@ -109,6 +135,7 @@ ideas = {
 			available = {
 				NOT = { has_government = communism }
 				NOT = { has_government = fascism }
+				NOT = { is_puppet = no }
 			}
 
 			removal_cost = -1
@@ -116,12 +143,12 @@ ideas = {
 			modifier = {
 				neutrality_drift = 0.01
 				stability_factor = -0.1
+				war_support_factor = -0.1
 				army_core_defence_factor = 0.05
 			}
 		}
 
-		ICE_the_icelandic_economy_modifier_fake_idea = {
-			name = ICE_the_icelandic_economy_modifier
+		ICE_the_icelandic_economy = {
 			allowed = {
 				always = no
 			}
@@ -188,6 +215,45 @@ ideas = {
 				political_power_factor = -0.2
 				army_core_defence_factor = 0.1
 				drift_defence_factor = 0.2
+			}
+		}
+		ICE_bolster_nationalism = {
+			picture = generic_fascist_workers
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				fascism_drift = 0.1
+				neutrality_drift = 0.1
+				drift_defence_factor = -0.1
+			}
+		}
+		ICE_bolster_communism = {
+			picture = generic_communism_drift_bonus
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.1
+				drift_defence_factor = -0.1
 			}
 		}
 	}

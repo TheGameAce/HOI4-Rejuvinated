@@ -42,9 +42,10 @@ country_event = {
         trigger = {
             check_variable = { ref_den < ref_ice } #Icleand vicotry
         }
+        set_country_flag = ICE_independence
     }
     option = {
-        name = iceland.3.b
+        name = iceland.2.b
         trigger = {
             check_variable = { ref_den > ref_ice } #Denmark vicotry\
         }

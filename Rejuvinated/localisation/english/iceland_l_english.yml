@@ -1,18 +1,34 @@
 ﻿l_english:
  ### IDEAS ###
-
+ ICE_rigsfaellesskabet:0 "Rigsfællesskabet"
+ ICE_rigsfaellesskabet_desc:0 "Iceland has for a while been an associated state of Denmark, following an agreement with the Danish Crown a compromise was made for Iceland to get homerule. While Icelands status as a junior partner within the union remains a hot topic in Icelandic politics, opinions vary if it's benificial or not."
+ ICE_fishing_economy:0 "The Icelandic Fishing Industry"
+ ICE_fishing_economy_desc:0 "the history of Iceland's economy has been founded on fishing and whaling since it's founding by the Norsemen, but the increasing importance of industries have encouraged people to start raising questions surrounding Iceland's economic future."
+ ICE_bolster_nationalism:0 "Bolstering Nationalism"
+ ICE_bolster_nationalism_desc:0 "We are currently making efforts to include Icelandic nationalist propaganda into newspapers and broadcasts."
  #####################
  ### F O C U S E S ###
- #####################
-
+ #####################-------------------------------------------------------------------------------------------------------------------------------------------------------
 # alternate political
  prepare_for_the_imminent_referendum:0 "Prepare for the Imminent Referendum"
  prepare_for_the_imminent_referendum_desc:0 "The act of union in 1918 left iceland with home rule, setting us up for a path of autonomy and independence. Therefore it's time we make a referendum to decide our future and break free from the Danish realm, to properly prepare the Icelandic people referendum stations will soon be set up across the major settlements in both the East and West. "
  ICE_distance_from_the_king:0 "Distance From the King"
- GFX_focus_ICE_not_our_king:0 "The current King of Denmark is foreign to the Icelandic people, all though the mainland have tried to mediate and grant us further autonomy, our best choice of action would be to break free from the crown and forge our own path."
+ ICE_distance_from_the_king_desc:0 "The current King of Denmark is foreign to the Icelandic people, all though the mainland have tried to mediate and grant us further autonomy, our best choice of action would be to break free from the crown and forge our own path."
+ ICE_utilize_politics:0 "Utilize Our Politicians"
+ ICE_utilize_politics_desc:0 "By utilizing the highly popular politicians in Iceland, we will have a better chance with gaining our independence."
+ ICE_encourage_communism:0 "Spread class consciousness"
+ ICE_encourage_communism_desc:0 "According to Karl Marx, class consciousness is an awareness that is key to sparking a revolution which would create a dictatorship of the proletariat, transforming it from a wage-earning, propertyless mass into the ruling class. We have to spread this knowledge all over our lone island!"
+ ICE_encourage_nationalism:0 "Encourage nationalism"
+ ICE_encourage_nationalism_desc:0 "."
+ ICE_propaganda_free:0 "Let the people speak"
+ ICE_propaganda_free_desc:0 "."
+ ICE_independence:0 "Freedom, At Last"
+
+ ICE_nationalist_coup_preparation:0 "The Nationalist Coup"
 # economic
  ICE_mineral_prospecting:0 "Reviving the mining industry"
  ICE_mineral_prospecting_desc:0 "Iceland may not have a lot of resources, but we must fund expeditions to dig up the ones we do have! By organizing missions to the mountains in search for coal and iron maybe we can find something!"
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  ### CHARACTERS ###
  ### EVENT TITLES ###
  iceland.1.t:0 "The Imminent Referendum"
@@ -22,11 +38,18 @@
  ### EVENT OPTIONS ### 
  iceland.1.a:0 "Thank god for Þjóðernishyggja!"
  ### DECISIONS ###
- ICE_decision_activate:0 "§BActivates the Referendum decision category§!"
+ ICE_decision_activate:0 "§4Activates the Referendum decision category§!"
  referendum_DEN:0 "§R[?ref_den] %§!"
  referendum_ICE:0 "§G[?ref_ice] %§!"
- ICE_referendum_gui_container:0 "The Rejkjavik Referendum"
- brackets_DEN:0 "Population for independence:"
- brackets_ICE:0 "Population against independence:"
+ ICE_referendum_gui_container:0 "The Reykjavík Referendum"
+ brackets_DEN:0 "Population for \n independence:"
+ brackets_ICE:0 "Population against \n independence:"
+ ICE_independence_referendum:0 "Conclusion of the Referendum"
+ unlocks_decisions:0 "§YUnlocks decisions to increase the popularity of independence...§!"
+ ICE_improve_coastal_infrastructure:0 "Improve Coastal Infrastructure"
+ ICE_sway_non_voters:0 "Sway Non-Voters"
+ add_10_to_ICE:0 "Increases the popularity of independence by §G10%§!"
+ ICE_military_coup:0 "Requires you to take 5 decisions below this one. §G[?ICE_done_decisions_to_coup]/5 taken§!"
+
  ### CHARACTERS ###
  ### PARTIES ###

@@ -6,7 +6,7 @@ guiTypes = {
 
     instantTextBoxType = {
             name = "referendum_DEN"
-            position = { x = 200 y = 0 }
+            position = { x = 290 y = 30 }
             font = "vic_36"
             text = "referendum_DEN"
             maxWidth = 200
@@ -16,7 +16,7 @@ guiTypes = {
 
     instantTextBoxType = {
             name = "referendum_ICE"
-            position = { x = 0 y = 0 }
+            position = { x = 90 y = 30 }
             font = "vic_36"
             text = "referendum_ICE"
             maxWidth = 200
@@ -26,7 +26,7 @@ guiTypes = {
     # Text above the percentage variables
     instantTextBoxType = {
         name = "brackets_DEN"
-        position = { x = 200 y = -30 }
+        position = { x = 50 y = -15 }
         font = "garamond_16_bold"
         text = "brackets_DEN"
         maxWidth = 300
@@ -35,7 +35,7 @@ guiTypes = {
     }
         instantTextBoxType = {
         name = "brackets_ICE"
-        position = { x = 0 y = -30 }
+        position = { x = 225 y = -15 }
         font = "garamond_16_bold"
         text = "brackets_ICE"
         maxWidth = 300
@@ -44,3 +44,4 @@ guiTypes = {
     }
    }
 } 
+

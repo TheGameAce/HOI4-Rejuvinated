@@ -43,7 +43,6 @@ ICE_referendum_gui_container = {
 		original_tag = ICE
 	}
 
-	picture = GFX_decision_cat_picture_gateway_to_europe
 	priority = {
 		base = 10
 	}
@@ -53,4 +52,36 @@ ICE_referendum_gui_container = {
 	visible = {
        has_country_flag = activate_icelandndependence_decision_category
 	}
+}
+
+ICE_coup_preparation = {
+
+	icon = GFX_decision_category_generic_fascism
+
+	allowed {
+		original_tag = ICE
+	}
+
+	priority = {
+		base = 10
+	}
+
+	visible_when_empty = yes
+
+	visible = {
+		has_country_flag = nationalist_coup
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

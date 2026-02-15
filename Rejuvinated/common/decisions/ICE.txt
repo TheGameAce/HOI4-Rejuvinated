@@ -1,8 +1,8 @@
-```ICE_referendum_gui_container = {
+ICE_referendum_gui_container = {
 ICE_independence_referendum = {
         allowed = { tag = ICE }
 
-        icon = GFX_decision_revol
+        icon = GFX_decision_revolt
         is_good = no
         fire_only_once = yes
 
@@ -23,7 +23,252 @@ ICE_independence_referendum = {
             country_event = iceland_events.28
         }
     } 
-}```
+	ICE_improve_coastal_infrastructure = {
+		allowed = { tag = ICE }
+
+		icon = GFX_decision_generic_merge_plant_ship
+
+		visible = {
+            has_completed_focus = ICE_utilize_politics
+        }
+		available = {
+			has_completed_focus = ICE_utilize_politics
+			check_variable = { ref_ice < 100 }
+		}
+
+		complete_effect = {
+            random_owned_state = {
+                 add_building_construction = { type = infrastructure level = 2 instant_build = yes }
+            }
+		}
+		cost = 50
+
+		days_remove = 35
+
+		fire_only_once = yes
+
+		add_to_variable = {
+ 	     var = ref_ice
+  	     value = 10
+  	     tooltip = add_10_to_ICE
+        }
+
+  	    hidden_effect = {
+  	    add_to_variable = {
+   	     var = ref_den
+   	     value = -10
+        }
+        }
+
+    }
+	ICE_sway_non_voters = {
+		allowed = { tag = ICE }
+
+		icon = GFX_decision_generic_speech
+
+		visible = {
+            has_completed_focus = ICE_utilize_politics
+        }
+		available = {
+			has_completed_focus = ICE_utilize_politics
+			check_variable = { ref_ice < 100 } 
+		}
+		cost = 20
+
+		days_remove = 10
+
+		fire_only_once = yes
+
+		add_to_variable = {
+ 	     var = ref_ice
+  	     value = 5
+  	     tooltip = add_5_to_ICE
+        }
+    }
+
+}
+
+ICE_coup_preparation = {
+	ICE_make_the_final_preparations = {
+		allowed = { tag = ICE }
+
+		icon = GFX_decision_eng_blackshirt_march
+
+		visible = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		available = {
+			check_variable = { ICE_done_decisions_to_coup > 4 }
+		}
+
+		fire_only_once = yes
+
+		set_country_flag = ICE_coup_ready
+
+		custom_effect_tooltip = "ICE_military_coup"
+
+	}
+
+	ICE_persuade_military_high_command = {
+		allowed = { tag = ICE }
+
+		icon = GFX_decision_generic_military
+
+		visible = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		available = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		fire_only_once = yes
+
+		set_country_flag = ICE_military_persuaded
+
+		hidden_effect = {
+		add_to_variable = {
+		    var = ICE_done_decisions_to_coup
+   			 value = 1
+ 		}
+	  }
+	}
+
+	ICE_found_transitional_council = {
+		allowed = { tag = ICE }
+
+		icon = GFX_decision_SOV_place_hq
+
+		visible = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		available = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		fire_only_once = yes
+
+		set_country_flag = ICE_stability
+
+		hidden_effect = {
+		add_to_variable = {
+		    var = ICE_done_decisions_to_coup
+   			 value = 1
+ 		}
+	  }
+	}
+
+	ICE_smuggle_guns_out = {
+		allowed = { tag = ICE }
+
+		icon = GFX_decision_generic_reorganize_irregulars
+
+		visible = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		available = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		fire_only_once = yes
+
+		set_country_flag = ICE_smuggle
+
+		hidden_effect = {
+		add_to_variable = {
+		    var = ICE_done_decisions_to_coup
+   			 value = 1
+ 		}
+	  }
+	}
+
+	ICE_arrest_dissidents = {
+		allowed = { tag = ICE }
+
+		icon = GFX_decision_bul_imprison_leaders_bs
+
+		visible = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		available = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		fire_only_once = yes
+
+		set_country_flag = ICE_arrest
+
+		complete_effect { 
+			add_stability 0.05
+
+		}
+
+		hidden_effect = {
+		add_to_variable = {
+		    var = ICE_done_decisions_to_coup
+   			 value = 1
+ 		}
+	  }
+	}
+
+	ICE_map_out_the_area = {
+		allowed = { tag = ICE }
+
+		icon = GFX_decision_eng_trade_unions_support
+
+		visible = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		available = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		fire_only_once = yes
+
+		set_country_flag = ICE_map_out
+
+		hidden_effect = {
+		add_to_variable = {
+		    var = ICE_done_decisions_to_coup
+   			 value = 1
+ 		}
+	  }
+	}
+
+	ICE_organize_rallies = {
+		allowed = { tag = ICE }
+
+		icon = GFX_decision_POL_organize_strike_two
+
+		visible = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		available = {
+			has_completed_focus = ICE_nationalist_coup_preparation
+		}
+
+		fire_only_once = yes
+
+		set_country_flag = ICE_rallies
+
+		hidden_effect = {
+		add_to_variable = {
+		    var = ICE_done_decisions_to_coup
+   			 value = 1
+ 		}
+	  }
+	}
+
+
+
+}
+
 
 #Economic Policy
 economy_decisions = {
