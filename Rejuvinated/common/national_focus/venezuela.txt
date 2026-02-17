@@ -60,7 +60,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = create_a_central_bank
+		id = centralize_state_revenues
 		icon = GFX_
 		cost = 10
 		relative_position_id = address_the_economy
@@ -89,15 +89,15 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = stabilize_the_currency
+		id = national_infrastracture_program
 		icon = GFX_
 		cost = 10
 		relative_position_id = address_the_economy
 		prerequisite = {
-		focus = create_a_central_bank
+		focus = centralize_state_revenues
 		}
 		x = -4
-		y = 4
+		y = 3
 
 		ai_will_do = {
 			factor = 100
@@ -118,7 +118,65 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = modernize_the_country
+		id = support_domestic_light_industry
+		icon = GFX_
+		cost = 10
+		relative_position_id = national_infrastracture_program
+		prerequisite = {
+		focus = national_infrastracture_program
+		}
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = import_machinery_and_tools
+		icon = GFX_
+		cost = 10
+		relative_position_id = national_infrastracture_program
+		prerequisite = {
+		focus = national_infrastracture_program
+		}
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 100
+		}
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = negotiate_better_oil_royalties
 		icon = GFX_
 		cost = 10
 		relative_position_id = address_the_economy
@@ -147,12 +205,12 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = create_education_programms
+		id = oil_revenue_transparency_act
 		icon = GFX_
 		cost = 10
 		relative_position_id = address_the_economy
 		prerequisite = {
-		focus = modernize_the_country
+		focus = negotiate_better_oil_royalties
 		}
 		x = -1
 		y = 3
@@ -176,12 +234,12 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = invest_in_the_countryside
+		id = land_reform_commision
 		icon = GFX_
 		cost = 10
 		relative_position_id = address_the_economy
 		prerequisite = {
-		focus = modernize_the_country
+		focus = negotiate_better_oil_royalties
 		}
 		x = 1
 		y = 3
@@ -205,15 +263,15 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	focus = {
-		id = pass_pro_labor_laws
+		id = rural_electrification_program
 		icon = GFX_
 		cost = 10
 		relative_position_id = address_the_economy
 		prerequisite = {
-		focus = create_education_programms
+		focus = land_reform_commision
 		}
 		prerequisite = {
-		focus = invest_in_the_countryside
+		focus = oil_revenue_transparency_act
 		}
 		x = 0
 		y = 4
@@ -238,10 +296,276 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		cost = 10
 		relative_position_id = address_the_economy
 		prerequisite = {
-		focus = address_the_economy
+		focus = analize_the_disease
 		}
 		x = 4
-		y = 4
+		y = 2
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = send_students_abroad
+		icon = GFX_
+		cost = 10
+		relative_position_id = open_up_new_schools
+		prerequisite = {
+		focus = open_up_new_schools
+		}
+		mutually_exclusive = {
+		focus = university_of_caracas
+		}
+		x = -1
+		y = 1
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = university_of_caracas
+		icon = GFX_
+		cost = 10
+		relative_position_id = open_up_new_schools
+		prerequisite = {
+		focus = open_up_new_schools
+		}
+		mutually_exclusive = {
+		focus = University_of_Caracas
+		}
+		x = 1
+		y = 1
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = compulsory_education
+		icon = GFX_
+		cost = 10
+		relative_position_id = open_up_new_schools
+		prerequisite = {
+		focus = university_of_caracas
+		focus = send_students_abroad
+		}
+		x = 0
+		y = 2
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = a_new_chapter_in_venezuelan_economics
+		icon = GFX_
+		cost = 10
+		relative_position_id = rural_electrification_program
+		prerequisite = {
+		focus = support_domestic_light_industry
+		focus = import_machinery_and_tools
+		}
+		prerequisite = {
+		focus = rural_electrification_program
+		}
+		prerequisite = {
+		focus = compulsory_education
+		}
+		x = 0
+		y = 2
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = mine_for_other_minerals
+		icon = GFX_
+		cost = 10
+		relative_position_id = a_new_chapter_in_venezuelan_economics
+		prerequisite = {
+		focus = a_new_chapter_in_venezuelan_economics
+		}
+		x = 0
+		y = 1
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = extract_gold_from_the_bolivar_region
+		icon = GFX_
+		cost = 10
+		relative_position_id = mine_for_other_minerals
+		prerequisite = {
+		focus = mine_for_other_minerals
+		}
+		x = 0
+		y = 1
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = extract_coal_from_the_zulia_region
+		icon = GFX_
+		cost = 10
+		relative_position_id = mine_for_other_minerals
+		prerequisite = {
+		focus = mine_for_other_minerals
+		}
+		x = 2
+		y = 1
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = extract_iron_from_the_guiana_highlands
+		icon = GFX_
+		cost = 10
+		relative_position_id = mine_for_other_minerals
+		prerequisite = {
+		focus = mine_for_other_minerals
+		}
+		x = -2
+		y = 1
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = expedite_the_extraction_process
+		icon = GFX_
+		cost = 10
+		relative_position_id = mine_for_other_minerals
+		prerequisite = {
+		focus = extract_coal_from_the_zulia_region
+		focus = extract_gold_from_the_bolivar_region
+		focus = extract_iron_from_the_guiana_highlands
+		}
+		x = 0
+		y = 2
+		
+		available = {
+		}
+
+		bypass = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		completion_reward = {
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+	focus = {
+		id = revive_the_cocoa_industry
+		icon = GFX_
+		cost = 10
+		relative_position_id = a_new_chapter_in_venezuelan_economics
+		prerequisite = {
+		focus = a_new_chapter_in_venezuelan_economics
+		}
+		x = 5
+		y = 1
 		
 		available = {
 		}
