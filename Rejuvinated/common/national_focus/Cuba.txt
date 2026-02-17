@@ -230,19 +230,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
-			
-			if = {
+
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
@@ -1725,19 +1725,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
@@ -2263,19 +2263,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
@@ -4456,19 +4456,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
@@ -5735,19 +5735,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
@@ -5839,19 +5839,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
