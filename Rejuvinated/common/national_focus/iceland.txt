@@ -1564,9 +1564,12 @@ focus_tree = {
 		}
 	}
 
-		focus = { 
+	focus = { 
 		id = ICE_nationalist_coup_preparation
 		icon = GFX_focus_generic_military_mission
+		prerequisite = {
+			focus = ICE_encourage_nationalism
+		}
 		prerequisite = {
 			focus = ICE_independence
 		}
@@ -1586,9 +1589,43 @@ focus_tree = {
 
 		completion_reward = {
 			set_country_flag = nationalist_coup
+			set_country_flag = ICE_military_persuaded
+			set_country_flag = ICE_stability
+			set_country_flag = ICE_smuggle
+			set_country_flag = ICE_arrest
+			set_country_flag = ICE_map_out
+			set_country_flag = ICE_rallies
+		}
+	}
+
+	focus = { 
+		id = ICE_the_national_revival
+		icon = GFX_focus_generic_fascist_troops
+		prerequisite = {
+			focus = ICE_nationalist_coup_preparation
+		}
+		x = 29
+		y = 6
+		cost = 4
+
+		ai_will_do = {
+		base = 1
+		}
+
+		available = {
+
+		}
+
+		search_filters = {FOCUS_FILTER_POLITICAL}
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
 			}
 		}
 	}
+}
 
 	
 

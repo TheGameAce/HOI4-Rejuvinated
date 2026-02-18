@@ -94,19 +94,51 @@ ICE_coup_preparation = {
 
 		icon = GFX_decision_eng_blackshirt_march
 
+		is_good = no
+        fire_only_once = yes
+
+        cancel_trigger = {
+
+        }
+
+        available = {
+            hidden_trigger = { always = no }
+        }
+
+        days_mission_timeout = 60
+
 		visible = {
 			has_completed_focus = ICE_nationalist_coup_preparation
-		}
-
-		available = {
-			check_variable = { ICE_done_decisions_to_coup > 4 }
 		}
 
 		fire_only_once = yes
 
 		set_country_flag = ICE_coup_ready
 
-		custom_effect_tooltip = "ICE_military_coup"
+		activation = {
+           has_completed_focus = ICE_nationalist_coup_preparation
+        }
+
+		timeout_effect = {
+			if = {
+				limit = {
+					check_variable = { ICE_done_decisions_to_coup > 2 }
+				}
+				country_event = iceland_events.29
+			}
+			else_if = {
+				limit = {
+					check_variable = { ICE_done_decisions_to_coup > 1 }
+				}
+				country_event = iceland_events.30
+			}
+			else = {
+				limit = {
+					check_variable = { ICE_done_decisions_to_coup > 0 }
+				}
+				country_event = iceland_events.31
+			}
+		}
 
 	}
 
@@ -123,9 +155,13 @@ ICE_coup_preparation = {
 			has_completed_focus = ICE_nationalist_coup_preparation
 		}
 
+		cost = 15
+
+		days_remove = 15
+
 		fire_only_once = yes
 
-		set_country_flag = ICE_military_persuaded
+		clr_country_flag = ICE_military_persuaded
 
 		hidden_effect = {
 		add_to_variable = {
@@ -148,9 +184,13 @@ ICE_coup_preparation = {
 			has_completed_focus = ICE_nationalist_coup_preparation
 		}
 
+		cost = 15
+
+		days_remove = 15
+
 		fire_only_once = yes
 
-		set_country_flag = ICE_stability
+		clr_country_flag = ICE_stability
 
 		hidden_effect = {
 		add_to_variable = {
@@ -173,9 +213,13 @@ ICE_coup_preparation = {
 			has_completed_focus = ICE_nationalist_coup_preparation
 		}
 
+		cost = 15
+
+		days_remove = 15
+
 		fire_only_once = yes
 
-		set_country_flag = ICE_smuggle
+		clr_country_flag = ICE_smuggle
 
 		hidden_effect = {
 		add_to_variable = {
@@ -197,6 +241,10 @@ ICE_coup_preparation = {
 		available = {
 			has_completed_focus = ICE_nationalist_coup_preparation
 		}
+
+		cost = 15
+
+		days_remove = 15
 
 		fire_only_once = yes
 
@@ -228,9 +276,13 @@ ICE_coup_preparation = {
 			has_completed_focus = ICE_nationalist_coup_preparation
 		}
 
+		cost = 15
+
+		days_remove = 15
+
 		fire_only_once = yes
 
-		set_country_flag = ICE_map_out
+		clr_country_flag = ICE_map_out
 
 		hidden_effect = {
 		add_to_variable = {
@@ -253,9 +305,13 @@ ICE_coup_preparation = {
 			has_completed_focus = ICE_nationalist_coup_preparation
 		}
 
+		cost = 15
+
+		days_remove = 15
+
 		fire_only_once = yes
 
-		set_country_flag = ICE_rallies
+		clr_country_flag = ICE_rallies
 
 		hidden_effect = {
 		add_to_variable = {

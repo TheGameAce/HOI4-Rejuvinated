@@ -51,3 +51,47 @@ country_event = {
         }
     }
 }
+
+country_event = {
+    id = iceland_events.29 # disorganized coup
+    title = iceland.3.t
+    desc = iceland.3.d
+    picture = GFX_report_event_gathering_protest
+
+    is_triggered_only = yes
+
+    option = {
+        name = iceland.3.a
+        add_ideas = ICE_disorganized_coup
+        complete_national_focus = ICE_the_national_revival
+    }
+}
+
+country_event = {
+    id = iceland_events.30 # semiorganized coup
+    title = iceland.4.t
+    desc = iceland.4.d
+    picture = GFX_report_event_gathering_protest
+
+    is_triggered_only = yes
+
+    option = {
+        name = iceland.4.a
+        add_ideas = ICE_semiorganized_coup
+        complete_national_focus = ICE_the_national_revival
+    }
+}
+
+country_event = {
+    id = iceland_events.31 # organized coup
+    title = iceland.5.t
+    desc = iceland.5.d
+    picture = GFX_report_event_gathering_protest
+
+    is_triggered_only = yes
+
+    option = {
+        name = iceland.5.a
+        complete_national_focus = ICE_the_national_revival
+    }
+}
