@@ -145,7 +145,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_suspend_the_presecution
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_focus_RJ_USA_suspend_the_persecution
 		x = -7
 		y = 1
 		prerequisite = { focus = USA_continue_the_new_deal }
@@ -511,7 +511,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_old_age_pension_act
-		icon = GFX_goal_generic_consumer_goods
+		icon = GFX_focus_RJ_paper_coins
 		x = 0
 		y = 1
 		prerequisite = { focus = USA_union_representation_act }
@@ -796,7 +796,6 @@ focus_tree = {
 		x = 0
 		y = 3
 		prerequisite = { focus = USA_suspend_the_presecution }
-		prerequisite = { focus = USA_agricultural_adjustment_act }
 		relative_position_id = USA_suspend_the_presecution
 		cost = 10
 
@@ -1296,7 +1295,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_wpa }
 		relative_position_id = USA_wpa
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -1336,7 +1335,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_agricultural_adjustment_act }
 		relative_position_id = USA_wpa
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -1371,12 +1370,12 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_federal_housing_act
-		icon = GFX_goal_generic_construct_civilian
+		icon = GFX_focus_RJ_USA_housing_act
 		x = 0
 		y = 3
 		prerequisite = { focus = USA_fair_labour_standards_act }
 		relative_position_id = USA_wpa
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -1516,7 +1515,7 @@ focus_tree = {
 		x = 2
 		y = 2
 		relative_position_id = USA_wpa
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -5994,7 +5993,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_war_department
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -6023,7 +6022,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_build_the_pentagon }
 		relative_position_id = USA_war_department
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
