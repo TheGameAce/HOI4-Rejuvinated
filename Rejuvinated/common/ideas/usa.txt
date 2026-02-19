@@ -1308,8 +1308,39 @@ ideas = {
 				conscription_factor = 0.25
 			}			
 		}
+
+		USA_WPA_idea = {
+			allowed = { always = no	}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = ARG_construction_guilds
+			modifier = {			
+				production_speed_infrastructure_factor = 0.15
+				production_speed_energy_infrastructure_factor = 0.10
+				production_speed_industrial_infrastructure_factor = 0.10
+			}			
+		}
 	
 	}
+
+
+
+
+
+
+ ############################################################################################################################################
+ ### USA MANUFACTURERS ######################################################################################################################
+ ############################################################################################################################################
+
+
+
+
+
+
 
 
 	tank_manufacturer = { 
