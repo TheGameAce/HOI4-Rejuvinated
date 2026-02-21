@@ -412,12 +412,22 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		complete_tooltip = {
-
-		}
-
 		completion_reward = {
-			
+			custom_effect_tooltip = RJ_USA_end_monarchism_tt
+			every_other_country = {
+				limit = {
+					OR = {
+						has_country_leader_ideology = monarchy
+						has_country_leader_ideology = theocratic_monarchy
+					}
+				}
+				USA = {
+					create_wargoal = {
+						target = PREV
+						type = puppet_wargoal_focus
+					}
+				}
+			}
 		}
 	}
 
@@ -1596,7 +1606,7 @@ focus_tree = {
 			}
 		}
 
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -1628,8 +1638,9 @@ focus_tree = {
 		bypass = {
 			
 		}
-		search_filters = {FOCUS_FILTER_USA_CONGRESS}
+		
 		completion_reward = {
+			custom_effect_tooltip = RJ_focus_limit_tt
 			hidden_effect = {
 				every_other_country = {
 					limit = {
@@ -1664,7 +1675,7 @@ focus_tree = {
 				limit = {
 					has_war_support < 0.2
 				}
-				add_stability = -0.2
+				add_stability = -0.1
 			}
 			custom_effect_tooltip = USA_limited_intervention_tt
 			hidden_effect = {
@@ -1682,6 +1693,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_STABILITY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
 	focus = {
@@ -2151,8 +2164,9 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_USA_CONGRESS}
+		
 		completion_reward = {
+			custom_effect_tooltip = RJ_focus_limit_tt
 			add_political_power = 200
 			add_war_support = -0.05
 			if = {
@@ -2197,6 +2211,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 	focus = {
 		id = USA_lend_lease_act
