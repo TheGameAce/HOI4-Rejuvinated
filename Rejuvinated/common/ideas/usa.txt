@@ -493,8 +493,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				conscription = 0.02	
-				conscription_factor = 0.2
+				conscription = 0.025
+				conscription_factor = 0.3
 			}
 		}
 		USA_worker_management_act = {
@@ -1338,7 +1338,10 @@ ideas = {
 			allowed = { always = no	}
 
 			allowed_civil_war = {
-				always = yes
+				OR = {
+					has_government = communism
+					has_government = democratic
+				}
 			}
 
 			removal_cost = -1
@@ -1356,7 +1359,10 @@ ideas = {
 			allowed = { always = no	}
 
 			allowed_civil_war = {
-				always = yes
+				OR = {
+					has_government = communism
+					has_government = democratic
+				}
 			}
 
 			removal_cost = -1
@@ -1372,7 +1378,12 @@ ideas = {
 		USA_philippine_socialist_influence_idea = {
 			picture = generic_communism_drift_bonus
 
-			allowed = { always = no	}
+			allowed = {
+				PHI = {
+					is_subject_of = USA
+				}
+				always = no
+			}
 
 			allowed_civil_war = {
 				always = yes
@@ -1383,6 +1394,46 @@ ideas = {
 			modifier = {			
 				communism_drift = 0.10
 				communism_acceptance = 50
+			}			
+		}
+
+		USA_silver_legion_rallies_idea = {
+			picture = generic_fascism_drift_bonus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {			
+				fascism_drift = 0.10
+			}			
+		}
+
+		USA_spread_our_ideals_idea = {
+			picture = RJ_idea_USA_spread_our_ideals
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			removal_cost = -1
+			
+			modifier = {			
+				justify_war_goal_time = -0.50
+				boost_ideology_mission_factor = 1
+				ai_desired_divisions_factor = 0.50
+				ai_focus_aggressive_factor = 0.25
+				opinion_gain_monthly_same_ideology_factor = 0.25
 			}			
 		}
 	

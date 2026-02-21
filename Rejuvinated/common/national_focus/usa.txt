@@ -150,7 +150,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_continue_the_new_deal }
 		relative_position_id = USA_continue_the_new_deal
-		cost = 3
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -180,7 +180,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_POLITICAL}
+		
 		completion_reward = {
 			add_stability = -0.05
 			custom_effect_tooltip = available_political_advisor
@@ -198,7 +198,11 @@ focus_tree = {
 		    	}
 		    	add_ideas = earl_browder
 		    }
+			country_event = rj_usa.1
+			custom_effect_tooltip = RJ_suspend_the_persecution_tt
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_EVENT}
 	}
 
 	focus = {
@@ -302,12 +306,13 @@ focus_tree = {
 				limit = {
 					has_country_flag = mtg_usa_civil_war_fascists_1
 					not = { has_country_flag = mtg_usa_civil_war_fascists_2 }
+					fascism > 14
 				}
 				country_event = mtg_usa_civil_war_fascists.2
 				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
 			}
 			else_if = {
-				limit = { not = { has_country_flag = mtg_usa_civil_war_fascists_1 } }
+				limit = { not = { has_country_flag = mtg_usa_civil_war_fascists_1 } fascism > 14 }
 				country_event = mtg_usa_civil_war_fascists.1
 				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
 			}
@@ -357,8 +362,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = USA_end_monarchism
-		icon = GFX_focus_rom_abdicate
+		id = RJ_USA_spread_our_ideals
+		icon = GFX_SOV_a_global_class_struggle_ccp_2d_sov_compatibility
 		x = 1
 		y = 1
 		prerequisite = { focus = USA_democratic_socialism }
@@ -370,7 +375,33 @@ focus_tree = {
 		}
 
 		available = {
-			communism > 0.3
+			has_government = communism
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_POLITICAL}
+		completion_reward = {
+			add_ideas = USA_spread_our_ideals_idea
+		}
+	}
+
+	focus = {
+		id = USA_end_monarchism
+		icon = GFX_focus_rom_abdicate
+		x = 0
+		y = 1
+		prerequisite = { focus = RJ_USA_spread_our_ideals }
+		relative_position_id = RJ_USA_spread_our_ideals
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_government = communism
 		}
 		
 		bypass = {
@@ -386,259 +417,191 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			if = {
-				limit = {
-					ENG = {
-						not = { has_government = communism }
-						not = { is_in_faction_with = ROOT }
-					}
-				}
-				create_wargoal = {
-					target = ENG
-					type = topple_government
-					expire = 0
-				}
-			}
-			if = {
-				limit = {
-					GER = {
-						OR = {
-							has_completed_focus = GER_return_of_the_kaiser
-							has_completed_focus = GER_the_monarchy_compromise
-						}
-						not = { is_in_faction_with = ROOT }
-					}
-				}
-				create_wargoal = {
-					target = GER
-					type = topple_government
-					expire = 0
-				}
-			}
-			if = {
-				limit = {
-					HUN = {
-						has_cosmetic_tag = HUN_EMPIRE
-						not = { is_in_faction_with = ROOT }
-					}
-				}
-				create_wargoal = {
-					target = HUN
-					type = topple_government
-					expire = 0
-				}
-			}
-			if = {
-				limit = {
-					JAP = {
-						not = { has_government = communism }
-						not = { has_government = democratic }
-						not = { is_in_faction_with = ROOT }
-					}
-				}
-				create_wargoal = {
-					target = JAP
-					type = topple_government
-					expire = 0
-				}
-			}
-			if = {
-				limit = {
-					MAN = {
-						has_completed_focus = MAN_imperial_divinity
-						not = { is_in_faction_with = ROOT }
-					}
-				}
-				create_wargoal = {
-					target = MAN
-					type = topple_government
-					expire = 0
-				}
-			}
+			
 		}
 	}
 
-	focus = {
-		id = USA_shatter_the_empires
-		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
-		x = 0
-		y = 1
-		prerequisite = { focus = USA_end_monarchism }
-		relative_position_id = USA_end_monarchism
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			OR = {
-				ENG = {
-					exists = yes
-					NOT = { has_war_with = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-					NOT = { has_completed_focus = ENG_decolonization }
-				}
-				ITA = {
-					exists = yes
-					NOT = { has_war_with = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-					if = {
-						limit = {
-							has_dlc = "By Blood Alone"
-						}
-						NOT = {
-							has_completed_focus = ITA_abolish_the_colonies
-							has_completed_focus = ITA_new_colonial_policies
-						}
-					}
-					any_controlled_state = {
-						NOT = { is_core_of = ITA }
-					}
-				}
-				FRA = {
-					exists = yes
-					NOT = { has_war_with = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-					any_controlled_state = {
-						NOT = { is_core_of = FRA }
-					}
-				}
-				GER = {
-					exists = yes
-					NOT = { has_war_with = ROOT }
-					NOT = { is_in_faction_with = ROOT }
-					any_controlled_state = {
-						NOT = { is_core_of = GER }
-					}
-				}
-			}
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			if = {
-				limit = {
-					ENG = {
-						exists = yes
-						NOT = { has_war_with = ROOT }
-						NOT = { is_in_faction_with = ROOT }
-						NOT = { has_completed_focus = ENG_decolonization }
-					}
-				}
-				every_country = {
-					limit = {
-						OR = {
-							original_tag = ENG
-							is_subject_of = ENG
-						}
-					}
-					ROOT = {
-						create_wargoal = {
-							target = PREV
-							type = puppet_wargoal_focus
-							expire = 0
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					ITA = {
-						exists = yes
-						NOT = { has_war_with = ROOT }
-						NOT = { is_in_faction_with = ROOT }
-						any_controlled_state = {
-							NOT = { is_core_of = ITA }
-						}
-						OR = {
-							NOT = { has_dlc = "By Blood Alone" }
-							NOT = {
-								has_completed_focus = ITA_abolish_the_colonies
-								has_completed_focus = ITA_new_colonial_policies
-							}
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						OR = {
-							original_tag = ITA
-							is_subject_of = ITA
-						}
-					}
-					ROOT = {
-						create_wargoal = {
-							target = PREV
-							type = puppet_wargoal_focus
-							expire = 0
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					FRA = {
-						exists = yes
-						NOT = { has_war_with = ROOT }
-						NOT = { is_in_faction_with = ROOT }
-						any_controlled_state = {
-							NOT = { is_core_of = FRA }
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						OR = {
-							original_tag = FRA
-							is_subject_of = FRA
-						}
-					}
-					ROOT = {
-						create_wargoal = {
-							target = PREV
-							type = puppet_wargoal_focus
-							expire = 0
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = yes
-						NOT = { has_war_with = ROOT }
-						NOT = { is_in_faction_with = ROOT }
-						any_controlled_state = {
-							NOT = { is_core_of = GER }
-						}
-					}
-				}
-				every_country = {
-					limit = {
-						OR = {
-							original_tag = GER
-							is_subject_of = GER
-						}
-					}
-					ROOT = {
-						create_wargoal = {
-							target = PREV
-							type = puppet_wargoal_focus
-							expire = 0
-						}
-					}
-				}
-			}
-		}
-	}
+	#focus = {
+	#	id = USA_shatter_the_empires
+	#	icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+	#	x = 0
+	#	y = 1
+	#	prerequisite = { focus = USA_end_monarchism }
+	#	relative_position_id = USA_end_monarchism
+	#	cost = 10
+	#
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#
+	#	available = {
+	#		OR = {
+	#			ENG = {
+	#				exists = yes
+	#				NOT = { has_war_with = ROOT }
+	#				NOT = { is_in_faction_with = ROOT }
+	#				NOT = { has_completed_focus = ENG_decolonization }
+	#			}
+	#			ITA = {
+	#				exists = yes
+	#				NOT = { has_war_with = ROOT }
+	#				NOT = { is_in_faction_with = ROOT }
+	#				if = {
+	#					limit = {
+	#						has_dlc = "By Blood Alone"
+	#					}
+	#					NOT = {
+	#						has_completed_focus = ITA_abolish_the_colonies
+	#						has_completed_focus = ITA_new_colonial_policies
+	#					}
+	#				}
+	#				any_controlled_state = {
+	#					NOT = { is_core_of = ITA }
+	#				}
+	#			}
+	#			FRA = {
+	#				exists = yes
+	#				NOT = { has_war_with = ROOT }
+	#				NOT = { is_in_faction_with = ROOT }
+	#				any_controlled_state = {
+	#					NOT = { is_core_of = FRA }
+	#				}
+	#			}
+	#			GER = {
+	#				exists = yes
+	#				NOT = { has_war_with = ROOT }
+	#				NOT = { is_in_faction_with = ROOT }
+	#				any_controlled_state = {
+	#					NOT = { is_core_of = GER }
+	#				}
+	#			}
+	#		}
+	#	}
+	#	
+	#	bypass = {
+	#
+	#	}
+	#
+	#	cancel_if_invalid = yes
+	#	continue_if_invalid = no
+	#	available_if_capitulated = no
+	#
+	#	completion_reward = {
+	#		if = {
+	#			limit = {
+	#				ENG = {
+	#					exists = yes
+	#					NOT = { has_war_with = ROOT }
+	#					NOT = { is_in_faction_with = ROOT }
+	#					NOT = { has_completed_focus = ENG_decolonization }
+	#				}
+	#			}
+	#			every_country = {
+	#				limit = {
+	#					OR = {
+	#						original_tag = ENG
+	#						is_subject_of = ENG
+	#					}
+	#				}
+	#				ROOT = {
+	#					create_wargoal = {
+	#						target = PREV
+	#						type = puppet_wargoal_focus
+	#						expire = 0
+	#					}
+	#				}
+	#			}
+	#		}
+	#		if = {
+	#			limit = {
+	#				ITA = {
+	#					exists = yes
+	#					NOT = { has_war_with = ROOT }
+	#					NOT = { is_in_faction_with = ROOT }
+	#					any_controlled_state = {
+	#						NOT = { is_core_of = ITA }
+	#					}
+	#					OR = {
+	#						NOT = { has_dlc = "By Blood Alone" }
+	#						NOT = {
+	#							has_completed_focus = ITA_abolish_the_colonies
+	#							has_completed_focus = ITA_new_colonial_policies
+	#						}
+	#					}
+	#				}
+	#			}
+	#			every_country = {
+	#				limit = {
+	#					OR = {
+	#						original_tag = ITA
+	#						is_subject_of = ITA
+	#					}
+	#				}
+	#				ROOT = {
+	#					create_wargoal = {
+	#						target = PREV
+	#						type = puppet_wargoal_focus
+	#						expire = 0
+	#					}
+	#				}
+	#			}
+	#		}
+	#		if = {
+	#			limit = {
+	#				FRA = {
+	#					exists = yes
+	#					NOT = { has_war_with = ROOT }
+	#					NOT = { is_in_faction_with = ROOT }
+	#					any_controlled_state = {
+	#						NOT = { is_core_of = FRA }
+	#					}
+	#				}
+	#			}
+	#			every_country = {
+	#				limit = {
+	#					OR = {
+	#						original_tag = FRA
+	#						is_subject_of = FRA
+	#					}
+	#				}
+	#				ROOT = {
+	#					create_wargoal = {
+	#						target = PREV
+	#						type = puppet_wargoal_focus
+	#						expire = 0
+	#					}
+	#				}
+	#			}
+	#		}
+	#		if = {
+	#			limit = {
+	#				GER = {
+	#					exists = yes
+	#					NOT = { has_war_with = ROOT }
+	#					NOT = { is_in_faction_with = ROOT }
+	#					any_controlled_state = {
+	#						NOT = { is_core_of = GER }
+	#					}
+	#				}
+	#			}
+	#			every_country = {
+	#				limit = {
+	#					OR = {
+	#						original_tag = GER
+	#						is_subject_of = GER
+	#					}
+	#				}
+	#				ROOT = {
+	#					create_wargoal = {
+	#						target = PREV
+	#						type = puppet_wargoal_focus
+	#						expire = 0
+	#					}
+	#				}
+	#			}
+	#		}
+	#	}
+	#}
 
 
 
@@ -682,7 +645,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_pacific_decolonisation
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_RJ_USA_pacific_decolonization
 		x = 0
 		y = 1
 		prerequisite = { focus = USA_liberty_for_the_philippines }
@@ -715,30 +678,22 @@ focus_tree = {
 						is_subject = yes
 					}
 				}
-				create_wargoal = {
-					target = INS
-					type = puppet_wargoal_focus
-					expire = 0
-				}
-			}
-			if = {
-				limit = { 
-					523 = {
-						not = {
-							is_owned_by = PNG #already decolonized
-						}	
+				INS = {
+					OVERLORD = {
+						country_event = rj_usa.2
 					}
 				}
 			}
-			523 = {
-				OWNER = {
-					ROOT = {
-						create_wargoal = {
-							target = PREV
-							type = take_state
-							expire = 0
-							generator = { 523 }
-						}
+			if = {
+				limit = {
+					MAL = {
+						exists = yes
+						is_subject = yes
+					}
+				}
+				MAL = {
+					OVERLORD = {
+						country_event = rj_usa.3
 					}
 				}
 			}
@@ -794,6 +749,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_country_flag = mtg_usa_civil_war_fascists_1
+					fascism > 14
 					not = {
 						has_country_flag = mtg_usa_civil_war_fascists_2
 					}
@@ -802,7 +758,7 @@ focus_tree = {
 				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
 			}
 			else_if = {
-				limit = { not = { has_country_flag = mtg_usa_civil_war_fascists_1 } }
+				limit = { not = { has_country_flag = mtg_usa_civil_war_fascists_1 } fascism > 14 }
 				country_event = mtg_usa_civil_war_fascists.1
 				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
 			}
@@ -812,6 +768,7 @@ focus_tree = {
 						has_country_flag = mtg_usa_civil_war_fascists_2
 						has_war = no
 						not = { has_country_flag = mucwf4 }
+						fascism > 14
 					}
 					country_event = mtg_usa_civil_war_fascists.4
 				}
@@ -911,7 +868,7 @@ focus_tree = {
 		prerequisite = { focus = USA_old_age_pension_act }
 		prerequisite = { focus = USA_accumulated_wealth_tax_act }
 		relative_position_id = USA_union_representation_act
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -1093,21 +1050,50 @@ focus_tree = {
 			unlock_decision_tooltip = { decision = USA_readmit_state show_effect_tooltip = yes }
 		}
 	}
-	
-#   #  ##  ###  ###      ##  ###   ##  #  # ###  
-#   # #  # #  # #       #    #  # #  # #  # #  # 
-# # # #### ###  ##      # ## ###  #  # #  # ###  
-# # # #  # #  # #       #  # #  # #  # #  # #    
- # #  #  # #  # ###      ##  #  #  ##   ##  #    
 
-	
+	focus = {
+		id = RJ_USA_stamp_out_the_silver_legion
+		icon = GFX_focus_RJ_USA_stamp_out_the_silver_legion
+		x = -1
+		y = 2
+		prerequisite = { focus = USA_democratic_socialism }
+		relative_position_id = USA_democratic_socialism
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_government = communism
+		}
+		
+		bypass = {
+			NOT = {
+				has_idea = USA_silver_legion_rallies_idea
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = USA_silver_legion_rallies_idea
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.25
+			}
+		}
+	}
+		
 	focus = {
 		id = USA_reach_out_to_the_ware_group
 		icon = GFX_focus_RJ_USA_ware_group
-		x = -1
-		y = 3
-		prerequisite = { focus = USA_democratic_socialism }
-		relative_position_id = USA_democratic_socialism
+		x = 0
+		y = 1
+		prerequisite = { focus = RJ_USA_stamp_out_the_silver_legion }
+		relative_position_id = RJ_USA_stamp_out_the_silver_legion
 		cost = 10
 
 		ai_will_do = {
@@ -1135,70 +1121,14 @@ focus_tree = {
 			show_ideas_tooltip = whittaker_chambers
 			add_popularity = {
 				ideology = communism
-				popularity = 0.03
+				popularity = 0.05
 			}
 		}
-	}
-	focus = {
-		id = USA_us_ussr_economic_cooperation
-		icon = GFX_goal_generic_soviet_construction
-		x = -1
-		y = 1
-		prerequisite = { focus = USA_secure_china focus = USA_unholy_alliance }
-		relative_position_id = USA_secure_china
-		cost = 5
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-			not = {
-				has_war_with = SOU
-			}
-		}
-		
-		bypass = {
-			SOU = {
-				OR = {
-					exists = no
-					has_war_with = USA
-					is_subject = yes
-				}
-			}
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			SOU = { add_to_tech_sharing_group = USA_SOV_tech_group }
-			add_to_tech_sharing_group = USA_SOV_tech_group
-
-			if = {
-				limit = {
-					has_completed_focus = USA_unholy_alliance
-					is_in_faction_with = SOV
-				}
-				SOU = { add_to_tech_sharing_group = USA_SOV_tech_group }
-				add_to_tech_sharing_group = USA_SOV_tech_group
-			}
-
-			if = {
-				limit = {
-					has_completed_focus = USA_secure_china
-					is_in_faction_with = PRC
-				}
-				PRC = { add_to_tech_sharing_group = USA_SOV_tech_group }
-				add_to_tech_sharing_group = USA_SOV_tech_group
-			}
-		}	
 	}
 
 	focus = {
 		id = USA_unholy_alliance
-		icon = GFX_focus_chi_mission_to_the_soviet_union
+		icon = GFX_focus_RJ_USA_unholy_alliance
 		prerequisite = { focus = USA_reach_out_to_the_ware_group }
 		mutually_exclusive = { focus = USA_secure_china }
 		
@@ -1228,7 +1158,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_secure_china
-		icon = GFX_focus_chi_cooperation_with_the_communists
+		icon = GFX_focus_RJ_USA_sino_american_alliance
 		x = 1
 		y = 1
 		prerequisite = { focus = USA_reach_out_to_the_ware_group }
@@ -1287,6 +1217,63 @@ focus_tree = {
 				}
 			}
 		}
+	}
+
+	focus = {
+		id = USA_us_ussr_economic_cooperation
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = -1
+		y = 1
+		prerequisite = { focus = USA_secure_china focus = USA_unholy_alliance }
+		relative_position_id = USA_secure_china
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			not = {
+				has_war_with = SOU
+			}
+		}
+		
+		bypass = {
+			SOU = {
+				OR = {
+					exists = no
+					has_war_with = USA
+					is_subject = yes
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			SOU = { add_to_tech_sharing_group = USA_SOV_tech_group }
+			add_to_tech_sharing_group = USA_SOV_tech_group
+
+			if = {
+				limit = {
+					has_completed_focus = USA_unholy_alliance
+					is_in_faction_with = SOV
+				}
+				SOU = { add_to_tech_sharing_group = USA_SOV_tech_group }
+				add_to_tech_sharing_group = USA_SOV_tech_group
+			}
+
+			if = {
+				limit = {
+					has_completed_focus = USA_secure_china
+					is_in_faction_with = PRC
+				}
+				PRC = { add_to_tech_sharing_group = USA_SOV_tech_group }
+				add_to_tech_sharing_group = USA_SOV_tech_group
+			}
+		}	
 	}
 	
  #	#   # ## #  
