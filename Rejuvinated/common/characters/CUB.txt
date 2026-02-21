@@ -1,7 +1,7 @@
 characters={
 
 #########################################################################################################################################################################
-###Cuban Leaders### NOTE: PORTRAITS ARE PLACEHOLDERS
+###Cuban Leaders###
 #########################################################################################################################################################################
 
 	CUB_josé_agripino_barnet={ #Starting Leader & Advisor - Democratic
@@ -79,7 +79,7 @@ characters={
 		}
 		country_leader={
 			ideology= conservatism
-			traits={ }
+			traits={ engineer_trait }
 			expire="1965.1.1.12"
 			id=-1
 		}
@@ -170,7 +170,7 @@ characters={
 		name="Antonio Avendaño"
 		advisor={	
 			slot = political_advisor
-			idea_token = CUB_antonio_avendano
+			idea_token = CUB_avendano
 			ledger = civilian
 			allowed = {
 				original_tag = CUB
@@ -195,7 +195,7 @@ characters={
 		name = "Anselmo Alliegro"
 		advisor = {
 			slot = political_advisor
-			idea_token = CUB_anselmo_alliegro
+			idea_token = CUB_alliegro
 			ledger = civilian
 			allowed = {
 				original_tag = CUB
@@ -220,7 +220,7 @@ characters={
 		name = "Carlos Rafael Rodríguez"
 		advisor = {
 			slot = political_advisor
-			idea_token = CUB_carlos_rodriguez
+			idea_token = CUB_cr_rodriguez
 			ledger = civilian
 			allowed = {
 				original_tag = CUB
@@ -252,7 +252,7 @@ characters={
 			cost = 100
 			
 			slot = political_advisor
-			idea_token = CUB_eduardo_chibas
+			idea_token = CUB_chibas
 			ledger = civilian
 			allowed = {
 				original_tag = CUB
@@ -276,7 +276,7 @@ characters={
 			cost = 100
 			
 			slot = civilian
-			idea_token = CUB_sergio_carbo
+			idea_token = CUB_carbo
 			ledger = civilian
 			allowed = {
 				original_tag = CUB
@@ -298,7 +298,7 @@ characters={
 		}
 		advisor={
 			slot = political_advisor
-			idea_token = CUB_carlos_prio
+			idea_token = CUB_prio
 			ledger = civilian
 			allowed = {
 				original_tag  = CUB
@@ -466,13 +466,13 @@ characters={
 		}
 		advisor={
 			slot = high_command
-			idea_token = CUB_mario_ramirez_delgado
+			idea_token = CUB_mramirez_delgado
 			ledger = navy
 				allowed = {
 					original_tag = CUB
 				}
 				traits = {
-					navy_anti_submarine_2
+					navy_chief_maneuver_2
 				}
 				cost = 100
 				ai_will_do = {
@@ -506,7 +506,7 @@ characters={
 					original_tag = CUB
 				}
 				traits = {
-					navy_screen_3
+					navy_chief_decisive_battle_2
 				}
 				cost = 150
 				ai_will_do = {
@@ -534,7 +534,7 @@ characters={
 		}
 		advisor={
 			slot = navy_chief
-			idea_token = CUB_calderon
+			idea_token = CUB_portuondo
 			ledger = navy
 				allowed = {
 					original_tag = CUB
@@ -570,7 +570,7 @@ characters={
 		}
 		advisor={	
 			slot = army_chief
-			idea_token = CUB_genovevo_perez_damera
+			idea_token = CUB_damera
 			ledger = army
 			allowed = {
 				original_tag = CUB
@@ -610,13 +610,13 @@ characters={
 		}
 		advisor={
 			slot = high_command
-			idea_token = CUB_francisco_tabernilla
+			idea_token = CUB_tabernilla
 			ledger = army
 				allowed = {
 					original_tag = CUB
 				}
 				traits = {
-					army_artillery_2
+					army_chief_morale_2
 				}
 				cost = 100
 				ai_will_do = {
@@ -644,7 +644,7 @@ characters={
 		}
 		advisor={
 			slot = high_command
-			idea_token = CUB_pedro_avila
+			idea_token = CUB_avila
 			ledger = army
 				allowed = {
 					original_tag = CUB
@@ -678,7 +678,7 @@ characters={
 		}
 		advisor={
 			slot = high_command
-			idea_token = CUB_rafael_morales
+			idea_token = CUB_morales
 			ledger = army
 			allowed = {
 				original_tag = CUB
@@ -712,7 +712,7 @@ characters={
 		}
 		advisor={
 			slot = high_command
-			idea_token = CUB_a_franchi
+			idea_token = CUB_franchi
 			ledger = army
 			allowed = {
 				original_tag = CUB
@@ -746,7 +746,7 @@ characters={
 		}
 		advisor={
 			slot = high_command
-			idea_token = CUB_c_peraza
+			idea_token = CUB_peraza
 			ledger = army
 			allowed = {
 				original_tag = CUB
@@ -780,7 +780,7 @@ characters={
 		}
 		advisor={
 			slot = army_chief
-			idea_token = CUB_rafael_morales
+			idea_token = CUB_dgg
 			ledger = army
 			allowed = {
 				original_tag = CUB
@@ -819,7 +819,7 @@ characters={
 		}
 		advisor={
 			slot = air_chief
-			idea_token = CUB_domingo_r_del_toro
+			idea_token = CUB_toro
 			ledger = air
 			allowed = {
 					original_tag = CUB

@@ -3409,119 +3409,119 @@ technologies = {
 		}
 	}
 
-	steelworks_tech = {
-		enable_building = {
-			building = steelworks
-			level = 5
-		}
-		
-		research_cost = 0.5
-		start_year = 1936
+	#steelworks_tech = {
+	#	enable_building = {
+	#		building = steelworks
+	#		level = 5
+	#	}
+	#	
+	#	research_cost = 0.5
+	#	start_year = 1936
+	#
+	#	path = {
+	#		leads_to_tech = steelworks_tech2
+	#		research_cost_coeff = 1
+	#	}
+	#	
+	#	folder = {
+	#		name = industry_folder
+	#		position = { x = 1 y = 0 }
+	#	}
+	#		
+	#	categories = {
+	#		industry
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 5		
+	#	}	
+	#}
 
-		path = {
-			leads_to_tech = steelworks_tech2
-			research_cost_coeff = 1
-		}
-		
-		folder = {
-			name = industry_folder
-			position = { x = 1 y = 0 }
-		}
-			
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 5		
-		}	
-	}
+	#steelworks_tech2 = {
+	#	on_research_complete = {
+	#		modify_building_resources = {
+	#		building = steelworks
+	#		resource = steel
+	#		amount = 3
+	#		}
+	#	}
+	#	
+	#	research_cost = 1.8
+	#	start_year = 1938
+	#
+	#	path = {
+	#		leads_to_tech = steelworks_tech3
+	#		research_cost_coeff = 1
+	#	}
+	#	
+	#	folder = {
+	#		name = industry_folder
+	#		position = { x = 1 y = 5 }
+	#	}
+	#		
+	#	categories = {
+	#		industry
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 5		
+	#	}	
+	#}
 
-	steelworks_tech2 = {
-		on_research_complete = {
-			modify_building_resources = {
-			building = steelworks
-			resource = steel
-			amount = 3
-			}
-		}
-		
-		research_cost = 1.8
-		start_year = 1938
+	#steelworks_tech3 = {
+	#	on_research_complete = {
+	#		modify_building_resources = {
+	#		building = steelworks
+	#		resource = steel
+	#		amount = 3
+	#		}
+	#	}
+	#
+	#	path = {
+	#		leads_to_tech = steelworks_tech4
+	#		research_cost_coeff = 1
+	#	}
+	#	
+	#	research_cost = 1.8
+	#	start_year = 1941
+	#	
+	#	folder = {
+	#		name = industry_folder
+	#		position = { x = 1 y = 8 }
+	#	}
+	#		
+	#	categories = {
+	#		industry
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 5		
+	#	}	
+	#}
 
-		path = {
-			leads_to_tech = steelworks_tech3
-			research_cost_coeff = 1
-		}
-		
-		folder = {
-			name = industry_folder
-			position = { x = 1 y = 5 }
-		}
-			
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 5		
-		}	
-	}
-
-	steelworks_tech3 = {
-		on_research_complete = {
-			modify_building_resources = {
-			building = steelworks
-			resource = steel
-			amount = 3
-			}
-		}
-
-		path = {
-			leads_to_tech = steelworks_tech4
-			research_cost_coeff = 1
-		}
-		
-		research_cost = 1.8
-		start_year = 1941
-		
-		folder = {
-			name = industry_folder
-			position = { x = 1 y = 8 }
-		}
-			
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 5		
-		}	
-	}
-
-	steelworks_tech4 = {
-		on_research_complete = {
-			modify_building_resources = {
-			building = steelworks
-			resource = steel
-			amount = 3
-			}
-		}
-		
-		research_cost = 1.8
-		start_year = 1943
-		
-		folder = {
-			name = industry_folder
-			position = { x = 1 y = 12 }
-		}
-			
-		categories = {
-			industry
-		}
-		
-		ai_will_do = {
-			factor = 5		
-		}	
-	}
+	#steelworks_tech4 = {
+	#	on_research_complete = {
+	#		modify_building_resources = {
+	#		building = steelworks
+	#		resource = steel
+	#		amount = 3
+	#		}
+	#	}
+	#	
+	#	research_cost = 1.8
+	#	start_year = 1943
+	#	
+	#	folder = {
+	#		name = industry_folder
+	#		position = { x = 1 y = 12 }
+	#	}
+	#		
+	#	categories = {
+	#		industry
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 5		
+	#	}	
+	#}
 }
