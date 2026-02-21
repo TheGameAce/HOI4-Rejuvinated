@@ -3102,7 +3102,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		y = 1
 		prerequisite = { focus = CUB_subjugate_hispaniola }
 		relative_position_id = CUB_subjugate_hispaniola
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5377,7 +5377,12 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		completion_reward = {
 			add_resource = {
 				type = steel
-				amount = 12
+				amount = 16
+				state = 1048
+			}
+			add_resource = {
+				type = chromium
+				amount = 10
 				state = 1048
 			}
 		}
