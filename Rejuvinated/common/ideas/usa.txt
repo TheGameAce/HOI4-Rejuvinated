@@ -1437,6 +1437,27 @@ ideas = {
 				opinion_gain_monthly_same_ideology_factor = 0.25
 			}			
 		}
+
+		USA_USACE_idea = {
+			picture = RJ_idea_USA_USACE
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = USA
+			}
+
+			removal_cost = -1
+			
+			modifier = {			
+				production_speed_arms_factory_factor = 0.10
+				production_speed_air_base_factor = 0.15
+				production_speed_dockyard_factor = 0.10
+				production_speed_anti_air_building_factor = 0.15
+			}			
+		}
 	
 	}
 
@@ -2139,7 +2160,7 @@ ideas = {
 			traits = { industrial_concern }
 			
 			modifier = {
-				industrial_capacity_factory = 0.05
+				industrial_capacity_factory = 0.10
 			}
 		}
 		USA_union_pacific_railway = {

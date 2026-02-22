@@ -1699,7 +1699,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_war_propaganda
-		icon = GFX_goal_generic_propaganda
+		icon = GFX_focus_RJ_propaganda
 		prerequisite = { focus = USA_limited_intervention }
 		available = {
 			has_government = democratic
@@ -1991,7 +1991,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_scientist_haven
-		icon = GFX_focus_research
+		icon = GFX_focus_RJ_USA_scientist_haven
 		prerequisite = { focus = USA_black_chamber focus = USA_arsenal_of_democracy }
 		x = 2
 		y = 1
@@ -2525,7 +2525,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_the_giant_wakes
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_RJ_USA_the_giant_wakes
 		prerequisite = { focus = USA_arsenal_of_democracy }
 		available = {
 			OR = {
@@ -2556,7 +2556,7 @@ focus_tree = {
 					NOT = { has_idea = isolation }
 					NOT = { has_country_flag = USA_the_giant_wakes_added_civ_eco }
 				}
-				add_political_power = 100
+				add_political_power = 200
 			}
 			if = {
 				limit = {
@@ -2568,6 +2568,7 @@ focus_tree = {
 				}
 				add_ideas = civilian_economy
 				set_country_flag = USA_the_giant_wakes_added_civ_eco
+				add_political_power = 100
 			}
 		}
 	}
@@ -2578,7 +2579,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = USA_the_giant_wakes
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -2992,9 +2993,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			air_experience = 50
-			navy_experience = 50
-			army_experience = 10			
+			add_ideas = USA_USACE_idea			
 		}
 	}
 
