@@ -7,6 +7,10 @@ characters = {
 			}
 		}
 		country_leader = {
+			traits = {
+				av_self_proclaimed_monarch
+				av_albanian_nationalist
+			}
 			ideology = monarchy
 			expire="1965.1.1.1"
 			id = -1
@@ -20,6 +24,9 @@ characters = {
 			}
 		}
 		country_leader = {
+			traits = {
+				av_skanderbeg_ii
+			}
 			ideology = despotism
 			traits = { skanderbeg_ii }
 			expire="1965.1.1.1"
