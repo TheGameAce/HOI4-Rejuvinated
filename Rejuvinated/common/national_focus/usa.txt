@@ -1523,7 +1523,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_office_of_scientific_research_and_development
-		icon = GFX_focus_research
+		icon = GFX_focus_RJ_USA_scientific_research_and_development_office
 		x = 1
 		y = 1
 		prerequisite = { focus = USA_wpa }
@@ -1553,7 +1553,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_rubber_reserve_company
-		icon = GFX_focus_generic_rubber
+		icon = GFX_focus_RJ_USA_rubber_reserve_company
 		prerequisite = { focus = USA_office_of_scientific_research_and_development }
 		available = {
 			
@@ -2882,7 +2882,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_USACE_projects
-		icon = GFX_goal_generic_production
+		icon = GFX_focus_RJ_USA_USACE
 		prerequisite = { focus = USA_military_construction }
 		available = {
 			OR = {
@@ -3234,12 +3234,12 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_income_tax_reform
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_focus_RJ_USA_income_tax_reform
 		x = 0
 		y = 4
 		prerequisite = { focus = USA_protectionist_tariffs }
 		relative_position_id = USA_adjusted_compensation_act
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
