@@ -936,15 +936,15 @@ ideas = {
 			removal_cost = -1			
 
 			modifier = {
-				propaganda_mission_factor = 0.25
-				boost_ideology_mission_factor = 0.25
+				propaganda_mission_factor = 0.30
+				boost_ideology_mission_factor = 0.50
 			}
 		}
 
 		USA_manhattan_project_ns = {
 			name = USA_manhattan_project
 
-			picture = generic_research_bonus
+			picture = SOV_atomic_bomb_project
 			allowed = {
 				always = no
 			}
@@ -956,7 +956,8 @@ ideas = {
 			removal_cost = -1			
 
 			modifier = {
-				specialization_nuclear_speed_factor = 0.05
+				specialization_nuclear_speed_factor = 0.15
+				production_speed_nuclear_facility_factor = 0.10
 			}
 		}
 

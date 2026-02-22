@@ -1944,7 +1944,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_black_chamber
-		icon = GFX_goal_generic_military_deal
+		icon = GFX_focus_RJ_USA_black_chamber_operation
 		prerequisite = { focus = USA_magic focus = USA_office_of_strategic_services}
 		available = { }
 		x = -1
@@ -2049,7 +2049,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_manhattan_project
-		icon = GFX_focus_wonderweapons
+		icon = GFX_focus_RJ_USA_manhattan_project
 		prerequisite = { focus = USA_scientist_haven }
 		
 		x = 0
