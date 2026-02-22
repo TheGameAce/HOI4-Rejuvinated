@@ -2095,7 +2095,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_neutrality_act
-		icon = GFX_goal_generic_neutrality_focus
+		icon = GFX_focus_RJ_USA_neutrality_act
 		x = 4
 		y = 1
 		prerequisite = { focus = USA_continue_the_new_deal focus = USA_reestablish_the_gold_standard }
@@ -2216,7 +2216,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_lend_lease_act
-		icon = GFX_focus_generic_treaty
+		icon = GFX_focus_RJ_USA_lend_lease_act
 		x = 2
 		y = 2
 		prerequisite = { focus = USA_neutrality_act focus = USA_limited_intervention }
@@ -2300,6 +2300,18 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_USA_CONGRESS}
 		completion_reward = {
+			ENG = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = large_increase
+				}
+			}
+			FRA = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = large_increase
+				}
+			}
 			every_other_country = {
 				limit = {
 					is_major = yes
