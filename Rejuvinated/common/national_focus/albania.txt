@@ -33,8 +33,8 @@
 	
 	focus = {
 		id = av_ALB_root_out_opposition
-		icon = gfx
-		x = 15
+		icon = GFX_goal_generic_major_war
+		x = 15 
 		y = 0
 		cost = 10
 		
@@ -59,9 +59,9 @@
 	
 	focus = {
 		id = av_ALB_our_place_in_balkans
-		icon = gfx
+		icon = GFX_focus_BUL_free_balkan_states
 		relative_position_id = av_ALB_root_out_opposition
-		x = -5
+		x = -5 
 		y = 1
 		cost = 10
 		
@@ -77,9 +77,9 @@
 	
 	focus = {
 		id = av_ALB_balkan_cooperation
-		icon = gfx
+		icon = GFX_focus_generic_balkan_diplomacy
 		relative_position_id = av_ALB_our_place_in_balkans
-		x = -3
+		x = -3 
 		y = 1
 		cost = 10
 		
@@ -109,7 +109,7 @@
 	
 	focus = {
 		id = av_ALB_epirus_for_protection
-		icon = gfx
+		icon = GFX_focus_generic_concessions
 		relative_position_id = av_ALB_balkan_cooperation
 		x = -1
 		y = 1
@@ -122,13 +122,13 @@
 		mutually_exclusive = { focus = av_ALB_balkan_dominance }
 		
 		completion_reward = {
-			GRE = {	country_event = { id = albania_rj.1 days = 1 } }
+			GRE = {	country_event = { id = rj_albania.1 days = 1 } }
 		}
 	}
 	
 	focus = {
 		id = av_ALB_balkan_dominance
-		icon = gfx
+		icon = GFX_goal_generic_occupy_states_ongoing_war
 		relative_position_id = av_ALB_our_place_in_balkans
 		x = 3
 		y = 1
@@ -161,7 +161,7 @@
 	
 	focus = {
 		id = av_ALB_stand_against_italy
-		icon = gfx
+		icon = GFX_focus_generic_anti_fascist_diplomacy
 		relative_position_id = av_ALB_root_out_opposition
 		x = 5
 		y = 1
@@ -186,7 +186,7 @@
 	
 	focus = {
 		id = av_ALB_bunker_plan
-		icon = gfx
+		icon = GFX_goal_fortify_the_westwall
 		relative_position_id = av_ALB_stand_against_italy
 		x = -3
 		y = 1
@@ -204,7 +204,7 @@
 	
 	focus = {
 		id = av_ALB_city_defence
-		icon = gfx
+		icon = GFX_goal_generic_fortify_city
 		relative_position_id = av_ALB_bunker_plan
 		x = 0
 		y = 1
@@ -279,7 +279,7 @@
 	
 	focus = {
 		id = av_ALB_secure_coasts
-		icon = gfx
+		icon = GFX_focus_generic_coastal_fort
 		relative_position_id = av_ALB_city_defence
 		x = 0
 		y = 1
@@ -348,7 +348,7 @@
 	
 	focus = {
 		id = av_ALB_deitalianize_albanian_schools
-		icon = gfx
+		icon = GFX_focus_generic_military_academy
 		relative_position_id = av_ALB_stand_against_italy
 		x = 0
 		y = 1
@@ -366,7 +366,7 @@
 	
 	focus = {
 		id = av_ALB_train_albanian_military
-		icon = gfx
+		icon = GFX_focus_generic_military_academy
 		relative_position_id = av_ALB_deitalianize_albanian_schools
 		x = 0
 		y = 1
@@ -386,7 +386,7 @@
 	
 	focus = {
 		id = av_ALB_albania_is_albanian
-		icon = gfx
+		icon = GFX_SOV_bringing_breakaways_back_to_the_fold_ccp_2d_sov_compatibility
 		relative_position_id = av_ALB_train_albanian_military
 		x = 0
 		y = 1

@@ -1,0 +1,26 @@
+﻿add_namespace = rj_albania
+add_namespace = election_BRA
+add_namespace = news_BRA
+
+country_event = {
+	id = rj_albania.1
+	title = "Albania Offers Epirus for Protection"
+	desc = bra.21.d
+	picture = GFX_bra.21
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = bra.21.a
+		ai_chance = { factor = 100 }
+		hidden_effect = { set_global_flag = bra_viacao_modificadores_flag }
+		custom_effect_tooltip = bra.21.a_tt
+	}
+	
+	option = {
+		name = bra.21.b
+		ai_chance = { factor = 0 }
+		custom_effect_tooltip = bra.21.b_tt
+	}
+	
+}
