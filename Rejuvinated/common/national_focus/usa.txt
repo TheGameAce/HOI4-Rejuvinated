@@ -3124,12 +3124,12 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_adjusted_compensation_act
-		icon = GFX_goal_generic_consumer_goods
-		x = 2
+		icon = GFX_focus_RJ_USA_adjusted_compensation_act
+		x = 3
 		y = 1
 		prerequisite = { focus = USA_reestablish_the_gold_standard }
 		relative_position_id = USA_reestablish_the_gold_standard
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -3146,7 +3146,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER FOCUS_FILTER_USA_CONGRESS}
+		
 		completion_reward = {
 			add_timed_idea = { idea = USA_adjusted_compensation_payment days = 180 }
 			USA_great_depression_level_down = yes
@@ -3156,11 +3156,54 @@ focus_tree = {
 				}
 				USA_congress_small_opposition = yes
 			}
+			add_war_support = 0.05
+			add_political_power = 150
 		}
+
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_MANPOWER FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 	}
+	#focus = {
+	#	id = USA_labour_management_relations_act
+	#	icon = GFX_focus_generic_military_academy
+	#	x = 0
+	#	y = 1
+	#	prerequisite = { focus = USA_adjusted_compensation_act }
+	#	relative_position_id = USA_adjusted_compensation_act
+	#	cost = 10
+	#
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#
+	#	available = {
+	#		congress_medium_support_trigger = yes
+	#	}
+	#	
+	#	bypass = {
+	#
+	#	}
+	#
+	#	cancel_if_invalid = no
+	#	continue_if_invalid = yes
+	#	available_if_capitulated = no
+	#	search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS}
+	#	completion_reward = {
+	#		add_ideas = USA_labour_management_relations_act
+	#		if = {
+	#			limit = {
+	#				communism < 0.1 
+	#			}
+	#			USA_congress_small_opposition = yes
+	#		}
+	#		else = {
+	#			USA_congress_medium_opposition = yes
+	#		}
+	#	}
+	#}
+
 	focus = {
-		id = USA_labour_management_relations_act
-		icon = GFX_focus_generic_military_academy
+		id = RJ_USA_taft_hartley_act
+		icon = GFX_focus_RJ_USA_taft_hartley_act
 		x = 0
 		y = 1
 		prerequisite = { focus = USA_adjusted_compensation_act }
@@ -3174,35 +3217,24 @@ focus_tree = {
 		available = {
 			congress_medium_support_trigger = yes
 		}
-		
-		bypass = {
 
-		}
-
-		cancel_if_invalid = no
-		continue_if_invalid = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
-			add_ideas = USA_labour_management_relations_act
-			if = {
-				limit = {
-					communism < 0.1 
-				}
-				USA_congress_small_opposition = yes
-			}
-			else = {
-				USA_congress_medium_opposition = yes
-			}
+			USA_congress_small_opposition = yes
+			add_ideas = USA_taft_hartley_act_idea
 		}
 	}
+
 	focus = {
 		id = USA_protectionist_tariffs
-		icon = GFX_goal_generic_defence
-		x = 0
-		y = 2
-		prerequisite = { focus = USA_labour_management_relations_act }
-		relative_position_id = USA_adjusted_compensation_act
+		icon = GFX_focus_RJ_USA_protectionist_tariffs
+		x = 1
+		y = 1
+		prerequisite = { focus = RJ_USA_taft_hartley_act }
+		relative_position_id = RJ_USA_taft_hartley_act
 		cost = 10
 
 		ai_will_do = {
@@ -3229,15 +3261,17 @@ focus_tree = {
 				}
 				add_ideas = export_focus
 			}
+			add_ideas = USA_protectionist_tariffs_idea
 		}
 	}
+
 	focus = {
 		id = USA_income_tax_reform
 		icon = GFX_focus_RJ_USA_income_tax_reform
-		x = 0
-		y = 4
-		prerequisite = { focus = USA_protectionist_tariffs }
-		relative_position_id = USA_adjusted_compensation_act
+		x = -1
+		y = 1
+		prerequisite = { focus = RJ_USA_taft_hartley_act }
+		relative_position_id = RJ_USA_taft_hartley_act
 		cost = 7.2
 
 		ai_will_do = {
@@ -3265,10 +3299,10 @@ focus_tree = {
 	focus = {
 		id = USA_institute_of_american_sciences
 		icon = GFX_focus_research
-		x = 0
-		y = 6
-		prerequisite = { focus = USA_income_tax_reform }
-		relative_position_id = USA_adjusted_compensation_act
+		x = 1
+		y = 1
+		prerequisite = { focus = USA_income_tax_reform focus = USA_protectionist_tariffs }
+		relative_position_id = USA_income_tax_reform
 		cost = 10
 
 		ai_will_do = {
@@ -3299,12 +3333,12 @@ focus_tree = {
 
 	focus = {
 		id = USA_america_first
-		icon = GFX_goal_generic_political_pressure
-		x = 4
+		icon = GFX_focus_RJ_USA_america_first
+		x = 11
 		y = 1
 		prerequisite = { focus = USA_reestablish_the_gold_standard }
 		relative_position_id = USA_reestablish_the_gold_standard
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -3354,45 +3388,46 @@ focus_tree = {
 		    }
 		}
 	}
-	focus = {
-		id = USA_extend_the_chinese_exclusion_acts
-		icon = GFX_goal_generic_forceful_treaty
-		x = 0
-		y = 1
-		prerequisite = { focus = USA_america_first }
-		relative_position_id = USA_america_first
-		cost = 10
 
-		ai_will_do = {
-			factor = 1
-		}
+	#focus = {
+	#	id = USA_extend_the_chinese_exclusion_acts
+	#	icon = GFX_goal_generic_forceful_treaty
+	#	x = 0
+	#	y = 1
+	#	prerequisite = { focus = USA_america_first }
+	#	relative_position_id = USA_america_first
+	#	cost = 10
+	#
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#
+	#	available = {
+	#		congress_low_support_trigger = yes
+	#	}
+	#	
+	#	bypass = {
+	#
+	#	}
+	#
+	#	cancel_if_invalid = no
+	#	continue_if_invalid = yes
+	#	available_if_capitulated = no
+	#	search_filters = {FOCUS_FILTER_USA_CONGRESS}
+	#	completion_reward = {
+	#		USA_congress_large_support = yes
+	#		event_target:WTT_current_china_leader = {
+	#			add_opinion_modifier = { modifier = USA_extend_the_chinese_exclusion_acts target = ROOT }
+	#		}
+	#	}
+	#}
 
-		available = {
-			congress_low_support_trigger = yes
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_USA_CONGRESS}
-		completion_reward = {
-			USA_congress_large_support = yes
-			event_target:WTT_current_china_leader = {
-				add_opinion_modifier = { modifier = USA_extend_the_chinese_exclusion_acts target = ROOT }
-			}
-		}
-	}
 	focus = {
 		id = USA_empower_the_huac
-		icon = GFX_goal_generic_war_with_comintern
-		x = 0
-		y = 3
-		prerequisite = { focus = USA_extend_the_chinese_exclusion_acts }
-		prerequisite = { focus = USA_labour_management_relations_act }
+		icon = GFX_focus_RJ_USA_empower_the_huac
+		x = 2
+		y = 1
+		prerequisite = { focus = USA_america_first }
 		relative_position_id = USA_america_first
 		cost = 10
 
@@ -3419,13 +3454,14 @@ focus_tree = {
 		}
 		
 	}
+
 	focus = {
-		id = USA_voter_registration_act
-		icon = GFX_focus_usa_voter_registration_act
+		id = RJ_USA_foreign_agents_registration_act
+		icon = GFX_focus_RJ_USA_foreign_agents_registration_act
 		x = 0
-		y = 5
+		y = 1
 		prerequisite = { focus = USA_empower_the_huac }
-		relative_position_id = USA_america_first
+		relative_position_id = USA_empower_the_huac
 		cost = 10
 
 		ai_will_do = {
@@ -3433,41 +3469,72 @@ focus_tree = {
 		}
 
 		available = {
-			fascism > 0.15
-			congress_high_support_trigger = yes
+
 		}
 		
 		bypass = {
 
 		}
 
-		cancel_if_invalid = no
-		continue_if_invalid = yes
+		cancel_if_invalid = yes
+		continue_if_invalid = no
 		available_if_capitulated = no
-
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ESPIONAGE }
 		completion_reward = {
-			USA_return_majority = yes
-			if = {
-				limit = {
-					democratic > 0.75
-				}
-				add_stability = -0.1
-			}
-			if = {
-				limit = {
-					has_country_flag = mtg_usa_civil_war_democrats_1
-					not = { has_country_flag = mtg_usa_civil_war_democrats_2 }
-				}
-				country_event = mtg_usa_civil_war_democrats.2
-				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
-			}
-			else_if = {
-				limit = { not = { has_country_flag = mtg_usa_civil_war_democrats_1 } }
-				country_event = mtg_usa_civil_war_democrats.1
-				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
-			}
+			add_ideas = USA_foreign_agents_registration_act_idea
 		}
+		
 	}
+
+	#focus = {
+	#	id = USA_voter_registration_act
+	#	icon = GFX_focus_usa_voter_registration_act
+	#	x = 0
+	#	y = 1
+	#	prerequisite = { focus = USA_empower_the_huac }
+	#	relative_position_id = USA_empower_the_huac
+	#	cost = 10
+	#
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#
+	#	available = {
+	#		fascism > 0.15
+	#		congress_high_support_trigger = yes
+	#	}
+	#	
+	#	bypass = {
+	#
+	#	}
+	#
+	#	cancel_if_invalid = no
+	#	continue_if_invalid = yes
+	#	available_if_capitulated = no
+	#
+	#	completion_reward = {
+	#		USA_return_majority = yes
+	#		if = {
+	#			limit = {
+	#				democratic > 0.75
+	#			}
+	#			add_stability = -0.1
+	#		}
+	#		if = {
+	#			limit = {
+	#				has_country_flag = mtg_usa_civil_war_democrats_1
+	#				not = { has_country_flag = mtg_usa_civil_war_democrats_2 }
+	#			}
+	#			country_event = mtg_usa_civil_war_democrats.2
+	#			custom_effect_tooltip = mtg_usa_civil_war_warning_tt
+	#		}
+	#		else_if = {
+	#			limit = { not = { has_country_flag = mtg_usa_civil_war_democrats_1 } }
+	#			country_event = mtg_usa_civil_war_democrats.1
+	#			custom_effect_tooltip = mtg_usa_civil_war_warning_tt
+	#		}
+	#	}
+	#}
 
  ##  #   #   #   #     #   # ### ### #  #     ### #  # ###      ## ### #   #   # ### ###       ## #  # ### ###  ###  ## 
 #  # #   #    # #      #   #  #   #  #  #      #  #  # #       #    #  #   #   # #   #  #     #   #  #  #  #  #  #  #   
@@ -3477,8 +3544,8 @@ focus_tree = {
 
 	focus = {
 		id = USA_ally_with_the_silver_shirts
-		icon = GFX_focus_generic_diplomatic_treaty
-		x = 5
+		icon = GFX_focus_RJ_USA_ally_with_the_silver_shirts
+		x = -2
 		y = 1
 		prerequisite = { focus = USA_america_first }
 		relative_position_id = USA_america_first
@@ -3519,12 +3586,13 @@ focus_tree = {
 				country_event = mtg_usa_civil_war_democrats.1
 				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
 			}
+			set_country_flag = RJ_silver_shirts_completed
 		}
 	}
 
 	focus = {
 		id = USA_national_prosperity_program
-		icon = GFX_goal_generic_consumer_goods
+		icon = GFX_focus_RJ_USA_national_prosperity_program
 		x = -2
 		y = 1
 		prerequisite = { focus = USA_ally_with_the_silver_shirts }
@@ -3536,7 +3604,7 @@ focus_tree = {
 		}
 
 		available = {
-			fascism > 0.2
+			has_government = fascism
 		}
 		
 		bypass = {
@@ -3548,7 +3616,7 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_STABILITY}
 		completion_reward = {
-			add_stability = 0.05
+			add_ideas = USA_national_prosperity_program_idea
 		}
 	}
 	focus = {
@@ -3649,18 +3717,20 @@ focus_tree = {
 	focus = {
 		id = USA_invite_foreign_support
 		icon = GFX_goal_generic_military_deal
-		x = 3
+		x = 2
 		y = 1
 		prerequisite = { focus = USA_ally_with_the_silver_shirts }
 		relative_position_id = USA_ally_with_the_silver_shirts
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-
+			hidden_trigger = {
+				has_country_flag = RJ_silver_shirts_completed
+			}
 		}
 		
 		bypass = {
@@ -3672,18 +3742,19 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			custom_effect_tooltip = RJ_silver_shirts_completed_tt
 			unlock_decision_category_tooltip = USA_foreign_support
 			custom_effect_tooltip = USA_foreign_support_tt
 		}
 	}
 	focus = {
 		id = USA_send_lindbergh_to_germany
-		icon = GFX_focus_chi_mission_to_germany
+		icon = GFX_focus_RJ_USA_send_lindbergh_to_germany
 		x = 0
 		y = 1
-		prerequisite = { focus = USA_invite_foreign_support }
-		relative_position_id = USA_invite_foreign_support
-		cost = 10
+		prerequisite = { focus = USA_ally_with_the_silver_shirts }
+		relative_position_id = USA_ally_with_the_silver_shirts
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -3710,11 +3781,11 @@ focus_tree = {
 	focus = {
 		id = USA_work_with_the_bund
 		icon = GFX_goal_generic_dangerous_deal
-		x = -2
+		x = -1
 		y = 2
-		prerequisite = { focus = USA_send_lindbergh_to_germany }
+		prerequisite = { focus = USA_invite_foreign_support }
 		relative_position_id = USA_invite_foreign_support
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -3736,6 +3807,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_STABILITY}
 		completion_reward = {
 			add_stability = 0.05
+			add_war_support = 0.05
 			GER = { add_opinion_modifier = { target = ROOT modifier = USA_work_with_the_bund } }
 			set_country_flag = MTG_work_with_the_bund # to check if the focus was completed regularly or bypassed
 			custom_effect_tooltip = USA_work_with_the_bund_tt
@@ -3745,10 +3817,10 @@ focus_tree = {
 		id = USA_recruit_the_free_corps
 		icon = GFX_focus_usa_recruit_the_free_corps
 		x = 0
-		y = 2
-		prerequisite = { focus = USA_send_lindbergh_to_germany }
+		y = 1
+		prerequisite = { focus = USA_invite_foreign_support }
 		relative_position_id = USA_invite_foreign_support
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -3774,11 +3846,10 @@ focus_tree = {
 	focus = {
 		id = USA_honor_the_confederacy
 		icon = GFX_focus_usa_honor_the_confederacy
-		x = -4
-		y = 3
-		prerequisite = { focus = USA_work_with_the_bund }
-		prerequisite = { focus = USA_national_employment_strategy }
-		relative_position_id = USA_invite_foreign_support
+		x = 1
+		y = 1
+		prerequisite = { focus = USA_work_with_the_bund focus = USA_recruit_the_free_corps }
+		relative_position_id = USA_work_with_the_bund
 		cost = 10
 
 		ai_will_do = {
@@ -3818,7 +3889,7 @@ focus_tree = {
 	focus = {
 		id = USA_war_powers_act
 		icon = GFX_goal_generic_forceful_treaty
-		x = 11
+		x = 5
 		y = 1
 		prerequisite = { focus = USA_america_first }
 		relative_position_id = USA_america_first
@@ -4740,7 +4811,7 @@ focus_tree = {
  	focus = {
 		id = USA_war_plans_division
 		icon = GFX_goal_generic_position_armies
-		x = 42
+		x = 46
 		y = 0
 		offset = {
 			x = -26
@@ -5598,7 +5669,7 @@ focus_tree = {
 	focus = {
 		id = USA_war_department
 		icon = GFX_goal_generic_army_doctrines
-		x = 16
+		x = 20
 		y = 0
 		relative_position_id = USA_war_plans_division
 		

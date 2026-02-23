@@ -1096,7 +1096,6 @@ country_event = {
 			if = {
 				limit = {
 					NOT = {
-						has_completed_focus = USA_voter_registration_act
 						has_completed_focus = USA_ally_with_the_silver_shirts
 					}
 				}
@@ -2400,7 +2399,6 @@ country_event = {
 		original_tag = USA
 		has_government = fascism
 		has_civil_war = no
-		has_global_flag = USA_civil_war_fired_democrats
 		has_country_leader = { ruling_only = yes character = USA_douglas_macarthur }
 	}
 	mean_time_to_happen = { days = 20 }
