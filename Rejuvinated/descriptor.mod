@@ -11,4 +11,4 @@ tags={
 	"Technologies"
 }
 name="HOI4 Rejuvinated"
-supported_version="1.17.3.0"
+supported_version="1.17.4.0"
