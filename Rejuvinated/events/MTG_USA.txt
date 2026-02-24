@@ -2668,11 +2668,11 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_southern_threat.1.a
 		ai_chance = {
-			factor = 30
+			factor = 40
 			modifier = {
 				is_in_faction = no
 				not = { has_global_flag = mtg_usa_north_american_dominion_refused_faction }
-				factor = 3
+				factor = 30
 			}
 		}
 		add_stability = -0.05
@@ -2688,7 +2688,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_southern_threat.1.b
 		ai_chance = {
-			factor = 70
+			factor = 60
 		}
 		add_war_support = 0.05
 		set_country_flag = north_american_dominion_refused

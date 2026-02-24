@@ -1236,7 +1236,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_secure_china focus = USA_unholy_alliance }
 		relative_position_id = USA_secure_china
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -1283,6 +1283,84 @@ focus_tree = {
 				PRC = { add_to_tech_sharing_group = USA_SOV_tech_group }
 				add_to_tech_sharing_group = USA_SOV_tech_group
 			}
+			add_research_slot = 1
+		}	
+	}
+
+	focus = {
+		id = RJ_USA_repeal_the_chinese_exclusion_act
+		icon = GFX_focus_RJ_USA_repeal_the_chinese_exclusion_act
+		x = 1
+		y = 1
+		prerequisite = { focus = USA_secure_china }
+		relative_position_id = USA_secure_china
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			CHI = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = huge_increase
+				}
+			}
+			PRC = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = huge_increase
+				}
+			}
+			add_ideas = USA_chinese_exclusion_act_repealed_idea
+		}	
+	}
+
+	focus = {
+		id = RJ_USA_military_collaboration
+		icon = GFX_focus_RJ_communist_advisor
+		x = -1
+		y = 1
+		prerequisite = { focus = USA_unholy_alliance }
+		relative_position_id = USA_unholy_alliance
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 50
+			SOV = {
+				army_experience = 50
+				add_ideas = USA_military_collaboration_idea
+			}
+			add_ideas = USA_military_collaboration_idea
 		}	
 	}
 	
@@ -3481,7 +3559,29 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ESPIONAGE }
 		completion_reward = {
+			custom_effect_tooltip = RJ_fascist_civil_war_tt
 			add_ideas = USA_foreign_agents_registration_act_idea
+			USA_return_majority = yes
+			if = {
+				limit = {
+					democratic > 0.75
+				}
+				add_stability = -0.05
+			}
+			if = {
+				limit = {
+					has_country_flag = mtg_usa_civil_war_democrats_1
+					has_government = democratic
+					not = { has_country_flag = mtg_usa_civil_war_democrats_2 }
+				}
+				country_event = mtg_usa_civil_war_democrats.2
+				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
+			}
+			else_if = {
+				limit = { not = { has_country_flag = mtg_usa_civil_war_democrats_1 } has_government = democratic }
+				country_event = mtg_usa_civil_war_democrats.1
+				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
+			}
 		}
 		
 	}
@@ -3571,18 +3671,20 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_USA_CONGRESS}
 		completion_reward = {
+			custom_effect_tooltip = RJ_fascist_civil_war_tt
 			USA_congress_medium_support = yes
 			unlock_decision_tooltip = { decision = USA_beat_up_opposition show_effect_tooltip = yes }
 			if = {
 				limit = {
 					has_country_flag = mtg_usa_civil_war_democrats_1
+					has_government = democratic
 					not = { has_country_flag = mtg_usa_civil_war_democrats_2 }
 				}
 				country_event = mtg_usa_civil_war_democrats.2
 				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
 			}
 			else_if = {
-				limit = { not = { has_country_flag = mtg_usa_civil_war_democrats_1 } }
+				limit = { not = { has_country_flag = mtg_usa_civil_war_democrats_1 } has_government = democratic }
 				country_event = mtg_usa_civil_war_democrats.1
 				custom_effect_tooltip = mtg_usa_civil_war_warning_tt
 			}
@@ -3621,7 +3723,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_privatize_the_TVA
-		icon = GFX_focus_generic_industry_1
+		icon = GFX_focus_RJ_industry4
 		x = -3
 		y = 2
 		prerequisite = { focus = USA_national_prosperity_program }
@@ -3647,13 +3749,21 @@ focus_tree = {
 		completion_reward = {
 			368 = {
 				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_infrastructure
+					level = 1
+				}
+				add_building_construction = {
+					type = energy_infrastructure
+					level = 1
+				}
 			}
-			add_ideas = USA_privatization
+			add_ideas = USA_the_tva_model_idea
 		}
 	}
 	focus = {
 		id = USA_de_regulate_the_banking_sector
-		icon = GFX_focus_generic_industry_2
+		icon = GFX_focus_RJ_USA_deregulate_the_banking_sector
 		x = -1
 		y = 2
 		prerequisite = { focus = USA_national_prosperity_program }
@@ -3680,9 +3790,10 @@ focus_tree = {
 			add_ideas = USA_banking_sector_deregulation
 		}
 	}
+
 	focus = {
 		id = USA_national_employment_strategy
-		icon = GFX_focus_generic_industry_3
+		icon = GFX_focus_RJ_USA_national_employment_strategy
 		x = -2
 		y = 3
 		prerequisite = { focus = USA_privatize_the_TVA }
@@ -3714,9 +3825,77 @@ focus_tree = {
 			USA_great_depression_level_down = yes
 		}
 	}
+
+	focus = {
+		id = RJ_USA_expand_the_bureau_of_mines
+		icon = GFX_focus_RJ_USA_expand_the_bureau_of_mines
+		x = -1
+		y = 1
+		prerequisite = { focus = USA_national_employment_strategy }
+		relative_position_id = USA_national_employment_strategy
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			add_ideas = USA_expanded_bureau_of_mines_idea
+			add_tech_bonus = {
+				name = excavation_bonus
+				category = excavation_tech
+				uses = 2
+				bonus = 0.75
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_USA_establish_the_cmr
+		icon = GFX_focus_generic_field_hostpital
+		x = 1
+		y = 1
+		prerequisite = { focus = USA_national_employment_strategy }
+		relative_position_id = USA_national_employment_strategy
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY}
+		completion_reward = {
+			add_research_slot = 1
+			add_ideas = USA_establish_the_cmr_idea
+		}
+	}
+
 	focus = {
 		id = USA_invite_foreign_support
-		icon = GFX_goal_generic_military_deal
+		icon = GFX_focus_RJ_USA_invite_foreign_support
 		x = 2
 		y = 1
 		prerequisite = { focus = USA_ally_with_the_silver_shirts }
@@ -3850,7 +4029,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_work_with_the_bund focus = USA_recruit_the_free_corps }
 		relative_position_id = USA_work_with_the_bund
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -3888,12 +4067,12 @@ focus_tree = {
 
 	focus = {
 		id = USA_war_powers_act
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_focus_RJ_USA_war_powers_act
 		x = 5
 		y = 1
 		prerequisite = { focus = USA_america_first }
 		relative_position_id = USA_america_first
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -3924,12 +4103,12 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_seize_cuba
-		icon = GFX_goal_generic_occupy_states_ongoing_war
+		icon = GFX_focus_RJ_USA_seize_cuba
 		x = -1
 		y = 1
 		prerequisite = { focus = USA_war_powers_act }
 		relative_position_id = USA_war_powers_act
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -3941,13 +4120,15 @@ focus_tree = {
 		
 		bypass = {
 			OR = {
-				owns_state = 315
+				CUB = {
+					exists = no
+				}
 				has_war_with = CUB
 				CUB = {is_subject_of = ROOT}
 				has_wargoal_against = {
     				target = CUB
     				type = annex_everything
-					}
+				}
 			}
 		}
 
@@ -3989,7 +4170,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_manifest_destiny
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_RJ_USA_manifest_destiny
 		prerequisite = { focus = USA_war_powers_act }
 		available = { }
 		x = 1
@@ -4005,12 +4186,12 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_eliminate_the_southern_threat
-		icon = GFX_goal_generic_military_sphere
+		icon = GFX_focus_mex_jefe_maximo
 		x = -1
 		y = 2
 		prerequisite = { focus = USA_seize_cuba }
 		relative_position_id = USA_war_powers_act
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -4042,12 +4223,12 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_the_canadian_corridor
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_RJ_USA_canadian_corridor
 		x = 1
 		y = 2
 		prerequisite = { focus = USA_manifest_destiny }
 		relative_position_id = USA_war_powers_act
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -4099,7 +4280,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_north_american_dominion
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_RJ_USA_north_american_dominion
 		x = 0
 		y = 3
 		prerequisite = { focus = USA_the_canadian_corridor }
@@ -4231,7 +4412,7 @@ focus_tree = {
 		y = 4
 		prerequisite = { focus = USA_north_american_dominion }
 		relative_position_id = USA_war_powers_act
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -4364,12 +4545,12 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_protect_south_america
-		icon = GFX_goal_generic_attack_allies
+		icon = GFX_focus_generic_south_america
 		x = -1
 		y = 5
 		prerequisite = { focus = USA_strategic_interests }
 		relative_position_id = USA_war_powers_act
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -4476,7 +4657,7 @@ focus_tree = {
 		y = 4
 		prerequisite = { focus = USA_north_american_dominion }
 		relative_position_id = USA_war_powers_act
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -4615,12 +4796,12 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_secure_asia
-		icon = GFX_focus_generic_strike_at_democracy1
+		icon = GFX_focus_usa_focus_on_asia
 		x = 1
 		y = 5
 		prerequisite = { focus = USA_pacific_pacification }
 		relative_position_id = USA_war_powers_act
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -4753,7 +4934,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_global_hegemony
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_focus_RJ_USA_global_hegemony
 		x = 0
 		y = 6
 		prerequisite = { focus = USA_secure_asia }

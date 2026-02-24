@@ -589,7 +589,7 @@ ideas = {
 			}
 		}
 		USA_banking_sector_deregulation = {	
-			picture = generic_foreign_capital
+			picture = tur_balkan_central_bank_wealthy_greece
 			allowed = {
 				always = no
 			}
@@ -1295,7 +1295,11 @@ ideas = {
 			removal_cost = -1
 			picture = generic_volunteer_expedition_bonus
 			modifier = {			
-				justify_war_goal_time = -0.35
+				justify_war_goal_time = -0.30
+				ai_focus_aggressive_factor = 0.30
+				ai_desired_divisions_factor = 0.30
+				compliance_gain = 0.10
+				war_support_weekly_factor = 0.0020
 			}			
 		}
 		CSA_spirit_of_rebellion = {
@@ -1522,7 +1526,7 @@ ideas = {
 		}
 
 		USA_national_prosperity_program_idea = {
-			picture = RJ_idea_USA_foreign_agents_registration_act
+			picture = RJ_idea_USA_national_prosperity_program
 
 			allowed = {
 				always = no
@@ -1539,6 +1543,108 @@ ideas = {
 				consumer_goods_factor = -0.05
 				stability_weekly_factor = 0.0020
 			}			
+		}
+
+		USA_the_tva_model_idea = {
+			picture = generic_build_infrastructure
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = USA
+			}
+
+			removal_cost = -1
+			
+			modifier = {			
+				production_speed_infrastructure_factor = 0.10
+				production_speed_industrial_infrastructure_factor = 0.10
+				production_speed_energy_infrastructure_factor = 0.10
+			}			
+		}
+
+		USA_expanded_bureau_of_mines_idea = {
+			picture = generic_build_infrastructure
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = USA
+			}
+
+			removal_cost = -1
+			
+			modifier = {			
+				local_resources_factor = 0.15
+			}			
+		}
+
+		USA_establish_the_cmr_idea = {
+			picture = RJ_medical
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = USA
+			}
+
+			removal_cost = -1
+			
+			modifier = {			
+				experience_loss_factor = -0.10
+			}
+
+			research_bonus = {
+				hospital_tech = 0.25
+			}
+		}
+
+		USA_chinese_exclusion_act_repealed_idea = {
+			picture = chi_chinese_unity
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = USA
+			}
+
+			removal_cost = -1
+			
+			modifier = {			
+				monthly_population = 0.30
+				weekly_manpower = 1000
+			}
+		}
+
+		USA_military_collaboration_idea = {
+			picture = SOV_politicized_military_ccp_sov_compatibility
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				OR = {
+					original_tag = USA
+					original_tag = SOV
+				}
+			}
+
+			removal_cost = -1
+			
+			modifier = {			
+				army_org_factor = 0.10
+				army_org_regain = 0.10
+				breakthrough_factor = 0.05
+			}
 		}
 	
 	}
