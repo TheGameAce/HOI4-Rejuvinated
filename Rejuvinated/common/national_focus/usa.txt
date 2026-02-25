@@ -4991,8 +4991,8 @@ focus_tree = {
 
  	focus = {
 		id = USA_war_plans_division
-		icon = GFX_goal_generic_position_armies
-		x = 46
+		icon = GFX_focus_RJ_USA_war_plans_division
+		x = 44
 		y = 0
 		offset = {
 			x = -26
@@ -5068,7 +5068,7 @@ focus_tree = {
 			}
 		}
 		
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -5091,15 +5091,18 @@ focus_tree = {
 			show_ideas_tooltip = walter_krueger
 			unlock_decision_category_tooltip = USA_war_plans
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
+
 	focus = {
 		id = USA_intervention_in_the_americas
-		icon = GFX_goal_generic_occupy_states_ongoing_war
+		icon = GFX_focus_RJ_USA_intervention_in_the_americas
 		x = -4
 		y = 1
 		prerequisite = { focus = USA_war_plans_division }
 		relative_position_id = USA_war_plans_division
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5120,7 +5123,10 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = USA_intervention_in_the_americas
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
+
 	focus = {
 		id = USA_war_plan_green
 		icon = GFX_focus_attack_mexico
@@ -5128,7 +5134,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_intervention_in_the_americas }
 		relative_position_id = USA_intervention_in_the_americas
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5149,7 +5155,10 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_green show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
+
 	focus = {
 		id = USA_war_plan_crimson
 		icon = GFX_focus_attack_canada
@@ -5157,7 +5166,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_intervention_in_the_americas }
 		relative_position_id = USA_intervention_in_the_americas
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5178,7 +5187,10 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_crimson show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
+
 	focus = {
 		id = USA_reinforce_monroe_doctrine
 		icon = GFX_goal_generic_positive_trade_relations
@@ -5186,7 +5198,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_intervention_in_the_americas }
 		relative_position_id = USA_intervention_in_the_americas
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 2
 		}
@@ -5217,16 +5229,18 @@ focus_tree = {
 				"PAN" = { add_opinion_modifier =  { target = USA modifier = monroe_doctrine_trade } }
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
 
 	focus = {
 		id = USA_war_plan_gray
-		icon = GFX_goal_generic_more_territorial_claims
+		icon = GFX_focus_RJ_marine_training
 		x = 0
 		y = 3
 		prerequisite = { focus = USA_reinforce_monroe_doctrine }
 		relative_position_id = USA_intervention_in_the_americas
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5247,7 +5261,10 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_gray show_effect_tooltip = yes show_modifiers = yes } 
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
+
 	focus = {
 		id = USA_hemisphere_defense
 		icon = GFX_goal_generic_defence
@@ -5255,7 +5272,7 @@ focus_tree = {
 		y = 4
 		prerequisite = { focus = USA_war_plan_gray }
 		relative_position_id = USA_intervention_in_the_americas
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -5324,15 +5341,18 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_POLITICAL }
 	}
+
 	focus = {
 		id = USA_intervention_in_europe
-		icon = GFX_goal_generic_territory_or_war
-		x = 0
+		icon = GFX_focus_usa_focus_on_europe
+		x = 1
 		y = 1
 		prerequisite = { focus = USA_war_plans_division }
 		relative_position_id = USA_war_plans_division
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5359,15 +5379,18 @@ focus_tree = {
 				USA_create_george_musulin_operative = yes
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
+
 	focus = {
 		id = USA_war_plan_gold
 		icon = GFX_focus_attack_france
-		x = -2
+		x = -3
 		y = 2
 		prerequisite = { focus = USA_intervention_in_europe }
 		relative_position_id = USA_intervention_in_europe
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5394,16 +5417,19 @@ focus_tree = {
 			}
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_gold show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
+
 	focus = {
 		id = USA_war_plan_silver
 		icon = GFX_focus_attack_italy
-		x = -1
-		y = 1
+		x = 3
+		y = 2
 		prerequisite = { focus = USA_intervention_in_europe }
 		mutually_exclusive = { }
 		relative_position_id = USA_intervention_in_europe
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5430,7 +5456,10 @@ focus_tree = {
 			}
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_silver show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
+
 	focus = {
 		id = USA_war_plan_black
 		icon = GFX_focus_attack_germany
@@ -5441,10 +5470,10 @@ focus_tree = {
 		continue_if_invalid = yes
 		available_if_capitulated = yes
 
-		x = 0
-		y = 2
+		x = -2
+		y = 1
 		relative_position_id = USA_intervention_in_europe
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -5460,7 +5489,10 @@ focus_tree = {
 			}
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_black show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
+
 	focus = {
 		id = USA_destroyers_for_bases
 		icon = GFX_goal_generic_navy_cruiser
@@ -5491,13 +5523,12 @@ focus_tree = {
 		}
 
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = USA_war_plan_black
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
-		search_filters = {FOCUS_FILTER_ANNEXATION}
 		completion_reward = {
 			ENG = {
 				custom_effect_tooltip = needs_approval
@@ -5515,7 +5546,10 @@ focus_tree = {
 				
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_EVENT FOCUS_FILTER_ANNEXATION }
 	}
+
 	focus = {
 		id = USA_war_plan_white
 		icon = GFX_focus_attack_soviet
@@ -5524,9 +5558,9 @@ focus_tree = {
 			
 		}
 		x = 2
-		y = 2
+		y = 1
 		relative_position_id = USA_intervention_in_europe
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -5546,15 +5580,16 @@ focus_tree = {
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_white show_effect_tooltip = yes show_modifiers = yes }
 		}
 	}
+
 	focus = {
 		id = USA_anti_bolshevist_aid
 		dynamic = yes
-		icon = GFX_goal_generic_war_with_comintern
-		x = 2
-		y = 3
+		icon = GFX_focus_RJ_USA_anti_bolshevik_aid
+		x = 0
+		y = 2
 		prerequisite = { focus = USA_war_plan_white }
-		relative_position_id = USA_intervention_in_europe
-		cost = 10
+		relative_position_id = USA_war_plan_white
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5562,6 +5597,9 @@ focus_tree = {
 
 		available = {
 			SOV = { has_civil_war = no }
+			NOT = {
+				is_in_faction_with = SOV
+			}
 		}
 		
 		bypass = {
@@ -5576,6 +5614,7 @@ focus_tree = {
 			custom_effect_tooltip = mtg_usa_anti_bolshevist_aid_tt 
 		}
 	}
+
 	focus = {
 		id = USA_war_plan_red
 		icon = GFX_focus_attack_britain
@@ -5583,10 +5622,10 @@ focus_tree = {
 		available = {
 			
 		}
-		x = 4
-		y = 2
+		x = 0
+		y = 1
 		relative_position_id = USA_intervention_in_europe
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -5600,14 +5639,15 @@ focus_tree = {
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_red show_effect_tooltip = yes show_modifiers = yes }
 		}
 	}
+
 	focus = {
 		id = USA_war_plan_ruby
 		icon = GFX_focus_attack_india
-		x = 4
-		y = 3
+		x = -1
+		y = 1
 		prerequisite = { focus = USA_war_plan_red }
-		relative_position_id = USA_intervention_in_europe
-		cost = 10
+		relative_position_id = USA_war_plan_red
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5632,11 +5672,11 @@ focus_tree = {
 	focus = {
 		id = USA_war_plan_scarlet_garnet
 		icon = GFX_focus_attack_australia
-		x = 6
-		y = 3
+		x = 1
+		y = 1
 		prerequisite = { focus = USA_war_plan_red }
-		relative_position_id = USA_intervention_in_europe
-		cost = 10
+		relative_position_id = USA_war_plan_red
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5660,12 +5700,12 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_intervention_in_asia
-		icon = GFX_goal_generic_major_war
+		icon = GFX_focus_usa_focus_on_asia
 		x = 6
 		y = 1
 		prerequisite = { focus = USA_war_plans_division }
 		relative_position_id = USA_war_plans_division
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5685,6 +5725,7 @@ focus_tree = {
 
 		completion_reward = {
 			show_unit_leaders_tooltip = USA_alexander_vandegrift
+			add_ideas = USA_intervention_in_asia_idea
 		}
 	}
 	focus = {
@@ -5700,7 +5741,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = USA_intervention_in_asia
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -5720,7 +5761,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_intervention_in_asia }
 		relative_position_id = USA_intervention_in_asia
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -5742,9 +5783,10 @@ focus_tree = {
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_yellow show_effect_tooltip = yes show_modifiers = yes }
 		}
 	}
+
 	focus = {
 		id = USA_defense_of_the_pacific
-		icon = GFX_goal_generic_occupy_states_coastal
+		icon = GFX_focus_RJ_USA_defense_of_the_pacific
 		prerequisite = { focus = USA_war_plan_yellow }
 		prerequisite = { focus = USA_war_plan_orange }
 		available = {
@@ -5757,7 +5799,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = USA_intervention_in_asia
-		cost = 10
+		cost = 14.4
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -5767,14 +5809,18 @@ focus_tree = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = 13067
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = naval_base
 					province = 13067
-					level = 2
+					level = 3
 					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_supply_hub
+					level = 1
 				}
 			}
 			631 = {
@@ -5782,14 +5828,18 @@ focus_tree = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = 13052
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = naval_base
 					province = 13052
-					level = 2
+					level = 3
 					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_supply_hub
+					level = 1
 				}
 			}
 			632 = {
@@ -5797,14 +5847,18 @@ focus_tree = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = 13047
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = naval_base
 					province = 13047
-					level = 2
+					level = 3
 					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_supply_hub
+					level = 1
 				}
 			}
 			638 = {
@@ -5812,14 +5866,18 @@ focus_tree = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = 12140
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = naval_base
 					province = 12140
-					level = 2
+					level = 3
 					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_supply_hub
+					level = 1
 				}
 			}
 			642 = {
@@ -5827,14 +5885,18 @@ focus_tree = {
 				add_building_construction = {
 					type = coastal_bunker
 					province = 13050
-					level = 2
+					level = 3
 					instant_build = yes
 				}
 				add_building_construction = {
 					type = naval_base
 					province = 13050
-					level = 2
+					level = 3
 					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_supply_hub
+					level = 1
 				}
 			}
 		}
