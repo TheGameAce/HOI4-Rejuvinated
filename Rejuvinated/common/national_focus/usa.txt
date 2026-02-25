@@ -126,7 +126,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_POLITICAL}
+		
 		completion_reward = {
 			add_political_power = 150
 			hidden_effect = {
@@ -141,6 +141,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
@@ -261,10 +263,12 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_MANPOWER}
+		
 		completion_reward = {
 			add_ideas = USA_armed_forces_desegregation
 		}
+
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 	focus = {
 		id = USA_full_desegregation
@@ -290,7 +294,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = USA_armed_forces_desegregation
@@ -342,7 +346,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_POLITICAL}
+		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			set_politics = { ruling_party = communism elections_allowed = yes } #good and nice communism has elections
 			add_popularity = { ideology = communism popularity = 0.25 }
@@ -381,7 +385,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_POLITICAL}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			add_ideas = USA_spread_our_ideals_idea
 		}
@@ -429,6 +433,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	#focus = {
@@ -652,6 +658,8 @@ focus_tree = {
 				add_ideas = USA_philippine_socialist_influence_idea
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 	focus = {
 		id = USA_pacific_decolonisation
@@ -708,6 +716,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_EVENT FOCUS_FILTER_ANNEXATION }
 	}
 	
 #  # #  # ###  ##  #  #     ###  ### ###  ###  ###  ## ### #  # ###  ##  ### ###  ##  #  # 
@@ -786,7 +796,10 @@ focus_tree = {
 
 			add_ideas = USA_union_representation_act_idea
 		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_USA_CONGRESS }
 	}
+
 	focus = {
 		id = USA_old_age_pension_act
 		icon = GFX_focus_RJ_paper_coins
@@ -817,6 +830,7 @@ focus_tree = {
 			USA_congress_small_opposition = yes
 		}
 	}
+
 	focus = {
 		id = USA_accumulated_wealth_tax_act
 		icon = GFX_focus_rom_parties_end
@@ -845,7 +859,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			add_ideas = USA_accumulated_wealth_tax_act
 			if = {
@@ -869,6 +883,7 @@ focus_tree = {
 			USA_great_depression_level_down = yes
 		}
 	}
+
 	focus = {
 		id = USA_guarantee_the_american_dream
 		icon = GFX_focus_usa_guarantee_the_american_dream
@@ -895,11 +910,12 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
 		completion_reward = {
 			add_war_support = 0.1
 		}
 	}
+
 	focus = {
 		id = USA_worker_management_act
 		icon = GFX_focus_RJ_USA_worker_management_act
@@ -928,7 +944,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			add_ideas = USA_worker_management_act
 			if = {
@@ -952,6 +968,7 @@ focus_tree = {
 			USA_great_depression_level_down = yes
 		}
 	}
+
 	focus = {
 		id = USA_militia_organization_act
 		icon = GFX_focus_RJ_USA_militia_organization_act
@@ -976,12 +993,13 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
 			add_ideas = USA_militia_organization_act
 			USA_congress_small_opposition = yes
 		}
 	}
+
 	focus = {
 		id = USA_communal_property_act
 		icon = GFX_focus_RJ_USA_communal_property_act
@@ -1007,7 +1025,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_INDUSTRY FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			if = {
 				limit = {
@@ -1055,7 +1073,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_USA_CONGRESS }
 		completion_reward = {
 			unlock_decision_tooltip = { decision = USA_readmit_state show_effect_tooltip = yes }
 		}
