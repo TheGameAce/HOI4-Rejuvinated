@@ -6040,7 +6040,7 @@ focus_tree = {
 		y = 0
 		relative_position_id = USA_war_plans_division
 		
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -6061,7 +6061,10 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = USA_war_department
 		}
+
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
 	}
+
 	focus = {
 		id = USA_selective_training_act
 		icon = GFX_focus_generic_military_mission
@@ -6487,14 +6490,15 @@ focus_tree = {
 			}
 		}
 	}
+
 	focus = {
 		id = USA_build_the_pentagon
-		icon = GFX_focus_usa_build_the_pentagon
+		icon = GFX_focus_RJ_USA_build_the_pentagon
 		x = -1
 		y = 1
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_war_department
-		cost = 5
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -6515,10 +6519,13 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = USA_the_pentagon
 		}
+
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
 	}
+
 	focus = {
 		id = USA_department_of_defense
-		icon = GFX_goal_generic_military_sphere
+		icon = GFX_focus_RJ_USA_department_of_defense
 		x = -1
 		y = 2
 		prerequisite = { focus = USA_build_the_pentagon }
@@ -6547,6 +6554,8 @@ focus_tree = {
 				add_idea = USA_department_of_defense
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
 	}
 
 

@@ -302,8 +302,10 @@ ideas = {
 			
 			modifier = {
 				max_command_power = 20
+				training_time_army_factor = -0.05
 			}
 		}
+		
 		USA_department_of_defense = {	
 			picture = usa_department_of_defense
 			allowed = {
@@ -320,8 +322,10 @@ ideas = {
 				max_command_power = 30	
 				command_power_gain_mult = 0.1
 				experience_gain_factor = 0.1
+				training_time_army_factor = -0.05
 			}
 		}
+
 		USA_state_funds_refused = {
 			picture = MEX_callistas
 			allowed = {
@@ -338,6 +342,7 @@ ideas = {
 				consumer_goods_factor = 0.10
 			}
 		}
+
 		USA_the_pentagon = {
 			picture = generic_army_war_college
 			allowed = {
@@ -351,9 +356,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				planning_speed = 0.1	
+				planning_speed = 0.1
+				grant_medal_cost_factor = -0.25
+				experience_gain_factor = 0.05	
 			}
 		}
+
 		USA_maritime_commission = {
 			picture = generic_sea_focused_navy
 			allowed = {
