@@ -5579,6 +5579,8 @@ focus_tree = {
 			}
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_white show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
 
 	focus = {
@@ -5613,6 +5615,8 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = mtg_usa_anti_bolshevist_aid_tt 
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
 
 	focus = {
@@ -5638,6 +5642,8 @@ focus_tree = {
 			}
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_red show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
 
 	focus = {
@@ -5668,6 +5674,8 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_ruby show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
 	focus = {
 		id = USA_war_plan_scarlet_garnet
@@ -5697,6 +5705,8 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_scarlet_garnet show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
 	focus = {
 		id = USA_intervention_in_asia
@@ -5727,6 +5737,8 @@ focus_tree = {
 			show_unit_leaders_tooltip = USA_alexander_vandegrift
 			add_ideas = USA_intervention_in_asia_idea
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 	focus = {
 		id = USA_war_plan_orange
@@ -5753,6 +5765,8 @@ focus_tree = {
 			}
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_orange show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
 	focus = {
 		id = USA_war_plan_yellow
@@ -5782,6 +5796,8 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_yellow show_effect_tooltip = yes show_modifiers = yes }
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
 
 	focus = {
@@ -5900,6 +5916,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NAVY FOCUS_FILTER_INDUSTRY }
 	}
 
 #   #  ##  ###      ###  ### ###   ##  ###  ### #   # ### #  # ### 
