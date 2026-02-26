@@ -68,6 +68,19 @@ USA = {
 	country_event = { id = usa.51 days = 2 }
 }
 
+
+################# U.S. ARMY DYNAMIC MODIFIER VARIABLES ########################
+set_variable = { RJ_USA_army_daily_experience_gain = 0.05 }
+
+
+
+
+add_dynamic_modifier = { modifier = RJ_USA_united_states_army }
+
+
+
+
+
 # Starting tech
 set_technology = {
 	infantry_weapons = 1
