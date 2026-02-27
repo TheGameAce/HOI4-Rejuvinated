@@ -6831,7 +6831,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_two_ocean_navy_act
-		icon = GFX_focus_generic_navy_battleship2
+		icon = GFX_focus_RJ_USA_two_ocean_navy_act
 		x = 8
 		y = 1
 		prerequisite = { focus = USA_war_department }
@@ -6885,6 +6885,8 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_USA_CONGRESS}
 		completion_reward = {
+			custom_effect_tooltip = two_ocean_navy_act_DM_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					 has_war_support < 0.4 
@@ -6933,16 +6935,20 @@ focus_tree = {
 			USA_ernest_king = {
 				add_skill_level = 1
 			}
+			add_to_variable = {
+				RJ_USA_navy_dockyard_output = 0.15
+			}
 		}
 	}
+
 	focus = {
 		id = USA_maritime_commission
-		icon = GFX_goal_generic_production2
+		icon = GFX_focus_RJ_USA_maritime_commission
 		x = -3
 		y = 1
 		prerequisite = { focus = USA_two_ocean_navy_act }
 		relative_position_id = USA_two_ocean_navy_act
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -6961,18 +6967,21 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_ideas = USA_maritime_commission
+			custom_effect_tooltip = maritime_commission_DM_tt
+			add_to_variable = {
+				RJ_USA_navy_dockyard_construction_speed = 0.10
+			}
 		}
 	}
 	
 	focus = {
 		id = USA_liberty_ships
-		icon = GFX_goal_generic_amphibious_assault
+		icon = GFX_focus_RJ_USA_liberty_ships
 		prerequisite = { focus = USA_maritime_commission }
 		x = -3
 		y = 2
 		relative_position_id = USA_two_ocean_navy_act
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -6986,7 +6995,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_bureau_of_ships
-		icon = GFX_goal_generic_build_navy
+		icon = GFX_focus_RJ_navy
 		x = 2
 		y = 1
 		cost = 10
@@ -7000,16 +7009,20 @@ focus_tree = {
 		completion_reward = {
 			navy_experience = 50
 			add_ideas = bureau_of_ships_focus
-			if = {
-				limit = { has_idea = bureau_of_ordnance_spirit }
-				remove_ideas = bureau_of_ordnance_spirit
-			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = bureau_of_ships_DM_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
 			USA_chester_w_nimitz = {
 				add_skill_level = 1
 			}
 			USA_william_halsey_jr = {
 				add_skill_level = 1
+			}
+
+			add_to_variable = {
+				RJ_USA_navy_naval_equipment_cost = 0.10
+				RJ_USA_navy_torpedo_hit_chance = 0.10
 			}
 		}
 	}

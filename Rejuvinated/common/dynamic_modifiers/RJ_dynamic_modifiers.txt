@@ -1,7 +1,58 @@
 RJ_USA_united_states_army = {
 	enable = { always = yes }
 
-	icon = PLACEHOLDER_idea_icon
+	icon = GFX_idea_RJ_idea_USA_army
 	
-	experience_gain_army = RJ_USA_army_daily_experience_gain
+	experience_gain_army = RJ_USA_army_daily_experience_gain #Base value of 0
+	conscription = RJ_USA_army_conscription
+	conscription_factor = RJ_USA_army_recruitable_population
+	land_reinforce_rate = RJ_USA_army_reinforce
+	training_time_army_factor = RJ_USA_training_time_army
+	max_training = RJ_USA_max_training
+	special_forces_training_time_factor = RJ_USA_SF_training_time
+	land_doctrine_cost_factor = RJ_USA_land_doctrine_cost_factor
+	land_mastery_gain_factor = RJ_USA_land_doctrine_mastery_gain
+	army_leader_start_level = RJ_USA_army_leader_starting_level
+	army_leader_start_attack_level = RJ_USA_army_leader_starting_attack_level
+	army_leader_start_defense_level = RJ_USA_army_leader_starting_defense_level
+	army_leader_start_logistics_level = RJ_USA_army_leader_starting_logistics_level
+	army_leader_start_planning_level = RJ_USA_army_leader_starting_planning_level
+	grant_medal_cost_factor = RJ_USA_army_medal_cost
+	army_attack_factor = RJ_USA_army_attack
+	army_defence_factor = RJ_USA_army_defense
+	army_core_attack_factor = RJ_USA_army_core_attack
+	army_core_defence_factor = RJ_USA_army_core_defense
+	acclimatization_cold_climate_gain_factor = RJ_USA_army_cold_acclimatization
+	acclimatization_hot_climate_gain_factor = RJ_USA_army_hot_acclimatization
+	army_speed_factor = RJ_USA_army_division_speed
+	army_morale_factor = RJ_USA_army_recovery_rate_factor
+	army_org_factor = RJ_USA_army_org_factor
+	breakthrough_factor = RJ_USA_army_breakthrough
+	dig_in_speed_factor = RJ_USA_army_entrenchment_speed
+	experience_gain_army_unit_factor = RJ_USA_army_unit_experience_gain_speed
+	experience_loss_factor = RJ_USA_army_unit_experience_loss
+	max_dig_in_factor = RJ_USA_army_max_entrenchment
+	special_forces_cap = RJ_USA_army_SF_cap
+	terrain_penalty_reduction = RJ_USA_army_terrain_penalty_reduction
+	org_loss_when_moving = RJ_USA_army_movement_org_loss
+}
+
+RJ_USA_united_states_air_force = {
+	enable = { always = yes }
+
+	icon = GFX_idea_RJ_idea_USA_army_air_corps
+	
+	experience_gain_air = RJ_USA_air_force_daily_experience_gain #Base value of 0
+}
+
+RJ_USA_united_states_navy = {
+	enable = { always = yes }
+
+	icon = GFX_idea_RJ_idea_USA_navy
+	
+	experience_gain_navy = RJ_USA_navy_daily_experience_gain #Base value of 0
+	industrial_capacity_dockyard = RJ_USA_navy_dockyard_output
+	production_speed_dockyard_factor = RJ_USA_navy_dockyard_construction_speed
+	naval_torpedo_hit_chance_factor = RJ_USA_navy_torpedo_hit_chance #Base value of -15% (-0.15)
+	naval_equipment_upgrade_xp_cost = RJ_USA_navy_naval_equipment_cost
 }

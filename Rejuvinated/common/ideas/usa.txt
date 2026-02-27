@@ -775,28 +775,24 @@ ideas = {
 			removal_cost = -1
 
 			picture = generic_navy_bonus
-
-			modifier = {
-				naval_equipment_upgrade_xp_cost = -0.1
-			}
 			
 			equipment_bonus = {
 
 				ship_hull_heavy = {
-					build_cost_ic = -0.05 instant = yes
+					build_cost_ic = -0.10 instant = yes
 				}
 				ship_hull_carrier = {
-					build_cost_ic = -0.05 instant = yes
+					build_cost_ic = -0.10 instant = yes
 				}
 				ship_hull_cruiser = {
-					build_cost_ic = -0.05 instant = yes
+					build_cost_ic = -0.10 instant = yes
 				}
 				ship_hull_light = {
-					build_cost_ic = -0.05 instant = yes
+					build_cost_ic = -0.10 instant = yes
 				}
 				
 				ship_hull_submarine = {
-					build_cost_ic = -0.05 instant = yes
+					build_cost_ic = -0.10 instant = yes
 				}
 			}
 		}
@@ -1017,12 +1013,13 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				amphibious_invasion = 0.10
+				trade_opinion_factor = 0.30
 			}
 			equipment_bonus = {
 				convoy = {
 					instant = yes
 					build_cost_ic = -0.25
+					naval_speed = 0.10
 				}
 			}
 		}
@@ -1131,8 +1128,7 @@ ideas = {
 				drift_defence_factor = 0.25
 				ai_badass_factor = 0.03 # cares for 3% of normal threat
 				ai_desired_divisions_factor = 0.5
-				army_core_defence_factor = 0.05
-				army_core_attack_factor = 0.05
+				resistance_growth_on_our_occupied_states = 0.15
 			}
 		}
 

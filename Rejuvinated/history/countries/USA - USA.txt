@@ -70,12 +70,58 @@ USA = {
 
 
 ################# U.S. ARMY DYNAMIC MODIFIER VARIABLES ########################
-set_variable = { RJ_USA_army_daily_experience_gain = 0.05 }
+set_variable = { RJ_USA_army_daily_experience_gain = 0 }
+set_variable = { RJ_USA_army_conscription = 0 }
+set_variable = { RJ_USA_army_recruitable_population = 0 }
+set_variable = { RJ_USA_training_time_army = 0 }
+set_variable = { RJ_USA_max_training = 0 }
+set_variable = { RJ_USA_SF_training_time = 0 }
+set_variable = { RJ_USA_land_doctrine_cost_factor = 0.50 }
+set_variable = { RJ_USA_land_doctrine_mastery_gain = 0 }
+set_variable = { RJ_USA_army_leader_starting_level = 0 }
+set_variable = { RJ_USA_army_leader_starting_attack_level = 0 }
+set_variable = { RJ_USA_army_leader_starting_defense_level = 0 }
+set_variable = { RJ_USA_army_leader_starting_planning_level = 0 }
+set_variable = { RJ_USA_army_leader_starting_logistics_level = 0 }
+set_variable = { RJ_USA_army_medal_cost = 0 }
 
+set_variable = { RJ_USA_army_attack = 0 }
+set_variable = { RJ_USA_army_defense = 0 }
+set_variable = { RJ_USA_army_core_attack = 0 }
+set_variable = { RJ_USA_army_core_defense = 0 }
+set_variable = { RJ_USA_army_reinforce = 0 }
+set_variable = { RJ_USA_army_cold_acclimatization = 0 }
+set_variable = { RJ_USA_army_hot_acclimatization = 0 }
+set_variable = { RJ_USA_army_division_speed = 0 }
+set_variable = { RJ_USA_army_recovery_rate_factor = 0 }
+set_variable = { RJ_USA_army_org_factor = 0 }
+set_variable = { RJ_USA_army_breakthrough = 0 }
+set_variable = { RJ_USA_army_entrenchment_speed = 0 }
+set_variable = { RJ_USA_army_unit_experience_gain_speed = 0 }
+set_variable = { RJ_USA_army_unit_experience_loss = 0 }
+set_variable = { RJ_USA_army_max_entrenchment = 0 }
+set_variable = { RJ_USA_army_SF_cap = 0 }
+set_variable = { RJ_USA_army_terrain_penalty_reduction = 0 }
+set_variable = { RJ_USA_army_movement_org_loss = 0 }
+
+
+################# U.S. NAVY DYNAMIC MODIFIER VARIABLES ########################
+set_variable = { RJ_USA_navy_dockyard_output = 0 }
+set_variable = { RJ_USA_navy_dockyard_construction_speed = 0 }
+set_variable = { RJ_USA_navy_daily_experience_gain = 0 }
+set_variable = { RJ_USA_navy_naval_equipment_cost = 0 }
+
+set_variable = { RJ_USA_navy_torpedo_hit_chance = -0.15 }
+
+
+################# U.S. AIR FORCE DYNAMIC MODIFIER VARIABLES ########################
+set_variable = { RJ_USA_air_force_daily_experience_gain = 0 }
 
 
 
 add_dynamic_modifier = { modifier = RJ_USA_united_states_army }
+add_dynamic_modifier = { modifier = RJ_USA_united_states_air_force }
+add_dynamic_modifier = { modifier = RJ_USA_united_states_navy }
 
 
 
@@ -134,7 +180,6 @@ if = {
 		gwtank_chassis = 1
 		basic_light_tank_chassis = 1
 	}
-	add_ideas = bureau_of_ordnance_spirit
 }
 
 if = {
