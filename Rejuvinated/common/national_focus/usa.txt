@@ -1397,6 +1397,111 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 	
+	focus = {
+		id = RJ_USA_end_german_fascism
+		icon = GFX_focus_ger_oppose_hitler
+		x = 0
+		y = 1
+		prerequisite = { focus = RJ_USA_military_collaboration }
+		relative_position_id = RJ_USA_military_collaboration
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			GER = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		
+		bypass = {
+		}
+		completion_reward = {
+			add_war_support = .15
+			create_wargoal = {
+				target = GER
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+	
+    focus = {
+		id = USA_industrialize_china
+		icon = 
+		x = 0
+		y = 1
+		prerequisite = { focus = RJ_USA_repeal_the_chinese_exclusion_act }
+		relative_position_id = RJ_USA_repeal_the_chinese_exclusion_act
+		cost = 20
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			is_in_faction_with = PRC
+		}
+		
+		bypass = {
+		}
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_controlled_by = PRC
+					is_core_of = PRC
+					OR = {
+						state_population > 20000000
+						is_capital = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_controlled_by = PRC
+					is_core_of = PRC
+					state_population < 20000000
+					state_population > 15000000
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_controlled_by = PRC
+					is_core_of = PRC
+					state_population < 15000000
+					state_population > 10000000
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = "PRC states with significant populations will recieve factories."
+		}
+	}
+	
  #	#   # ## #  
  #   # #  # #  # 
  # # # ###  #### 
