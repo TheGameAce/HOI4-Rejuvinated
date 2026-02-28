@@ -9,6 +9,14 @@
 
 focus_tree = {
 	id = usa_focus
+
+	initial_show_position = {
+		focus = USA_continue_the_new_deal
+		offset = {
+			x = 1
+			y = 0
+		}
+	}
 	
 	country = {
 		factor = 0
@@ -265,11 +273,15 @@ focus_tree = {
 		available_if_capitulated = no
 		
 		completion_reward = {
-			add_ideas = USA_armed_forces_desegregation
+			custom_effect_tooltip = desegregate_the_armed_forces_DM_tt
+			add_to_variable = {
+				RJ_USA_army_conscription = 0.02
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
+
 	focus = {
 		id = USA_full_desegregation
 		icon = GFX_focus_RJ_USA_full_desegregation
@@ -296,9 +308,11 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = USA_armed_forces_desegregation
-				add_idea = USA_full_desegregation
+			custom_effect_tooltip = full_desegregation_DM_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				RJ_USA_army_conscription = 0.01
+				RJ_USA_army_recruitable_population = 0.30
 			}
 			if = {
 				limit = {
@@ -322,6 +336,7 @@ focus_tree = {
 			}
 		}
 	}
+
 	focus = {
 		id = USA_democratic_socialism
 		icon = GFX_focus_RJ_USA_socialist_states_of_america
@@ -418,6 +433,7 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = RJ_USA_end_monarchism_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 			every_other_country = {
 				limit = {
 					OR = {
@@ -995,8 +1011,14 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY FOCUS_FILTER_MANPOWER }
 		completion_reward = {
-			add_ideas = USA_militia_organization_act
+			custom_effect_tooltip = militia_mobilization_act_DM_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 			USA_congress_small_opposition = yes
+			add_to_variable = {
+				RJ_USA_army_mobilization_speed = 0.15
+				RJ_USA_training_time_army = -0.10
+				RJ_USA_army_recruitable_population = 0.20
+			}
 		}
 	}
 
@@ -1145,10 +1167,13 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = harry_white
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = victor_perlo
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = whittaker_chambers
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_popularity = {
 				ideology = communism
 				popularity = 0.05
@@ -1310,6 +1335,7 @@ focus_tree = {
 				PRC = { add_to_tech_sharing_group = USA_SOV_tech_group }
 				add_to_tech_sharing_group = USA_SOV_tech_group
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_research_slot = 1
 		}
 
@@ -1354,6 +1380,7 @@ focus_tree = {
 					modifier = huge_increase
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			add_ideas = USA_chinese_exclusion_act_repealed_idea
 		}
 
@@ -1387,11 +1414,13 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 50
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = USA_military_collaboration_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
 			SOV = {
 				army_experience = 50
 				add_ideas = USA_military_collaboration_idea
 			}
-			add_ideas = USA_military_collaboration_idea
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -1431,7 +1460,7 @@ focus_tree = {
 	
     focus = {
 		id = USA_industrialize_china
-		icon = 
+		icon = GFX_focus_chi_one_china_policy
 		x = 0
 		y = 1
 		prerequisite = { focus = RJ_USA_repeal_the_chinese_exclusion_act }
@@ -6933,14 +6962,47 @@ focus_tree = {
 # ## ####  # #    #        #  ##  #     #   #  #  # # ## 
 #  # #  #  # #    #         # #   #  #  #   #  #  # #  # 
 #  # #  #   #     #       ##  ###  ##   #  ###  ##  #  # 
+	focus = {
+		id = USA_bureau_of_ships
+		icon = GFX_focus_RJ_navy
+		x = 13
+		y = 1
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+		prerequisite = { focus = USA_war_department }
+		relative_position_id = USA_war_department
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 50
+			add_ideas = bureau_of_ships_focus
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = bureau_of_ships_DM_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			USA_chester_w_nimitz = {
+				add_skill_level = 1
+			}
+			USA_william_halsey_jr = {
+				add_skill_level = 1
+			}
+
+			add_to_variable = {
+				RJ_USA_navy_naval_equipment_cost = 0.10
+				RJ_USA_navy_torpedo_hit_chance = 0.10
+			}
+		}
+	}
 
 	focus = {
 		id = USA_two_ocean_navy_act
 		icon = GFX_focus_RJ_USA_two_ocean_navy_act
-		x = 8
+		x = 1
 		y = 1
-		prerequisite = { focus = USA_war_department }
-		relative_position_id = USA_war_department
+		prerequisite = { focus = USA_bureau_of_ships }
+		relative_position_id = USA_bureau_of_ships
 		cost = 10
 
 		ai_will_do = {
@@ -7049,10 +7111,10 @@ focus_tree = {
 	focus = {
 		id = USA_maritime_commission
 		icon = GFX_focus_RJ_USA_maritime_commission
-		x = -3
+		x = 3
 		y = 1
-		prerequisite = { focus = USA_two_ocean_navy_act }
-		relative_position_id = USA_two_ocean_navy_act
+		prerequisite = { focus = USA_bureau_of_ships }
+		relative_position_id = USA_bureau_of_ships
 		cost = 5
 
 		ai_will_do = {
@@ -7083,9 +7145,9 @@ focus_tree = {
 		id = USA_liberty_ships
 		icon = GFX_focus_RJ_USA_liberty_ships
 		prerequisite = { focus = USA_maritime_commission }
-		x = -3
-		y = 2
-		relative_position_id = USA_two_ocean_navy_act
+		x = 0
+		y = 1
+		relative_position_id = USA_maritime_commission
 		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
@@ -7095,40 +7157,11 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = liberty_ships_focus
-		}
-	}
-
-	focus = {
-		id = USA_bureau_of_ships
-		icon = GFX_focus_RJ_navy
-		x = 2
-		y = 1
-		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-		prerequisite = { focus = USA_two_ocean_navy_act }
-		relative_position_id = USA_two_ocean_navy_act
-		available_if_capitulated = yes
-
-		completion_reward = {
-			navy_experience = 50
-			add_ideas = bureau_of_ships_focus
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = bureau_of_ships_DM_tt
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = generic_skip_one_line_tt
-			USA_chester_w_nimitz = {
-				add_skill_level = 1
-			}
-			USA_william_halsey_jr = {
-				add_skill_level = 1
-			}
-
 			add_to_variable = {
-				RJ_USA_navy_naval_equipment_cost = 0.10
-				RJ_USA_navy_torpedo_hit_chance = 0.10
+				RJ_USA_army_supply_range = 0.05
 			}
+			custom_effect_tooltip = liberty_ships_DM_tt
 		}
 	}
 	
@@ -7136,8 +7169,7 @@ focus_tree = {
 		id = USA_battleship_primacy
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = USA_bureau_of_ships }
-		mutually_exclusive = { focus = USA_carrier_primacy }
-		x = -3
+		x = 7
 		y = 1
 		relative_position_id = USA_bureau_of_ships
 		cost = 10
@@ -7244,10 +7276,9 @@ focus_tree = {
 
 	focus = {
 		id = USA_carrier_primacy
-		icon = GFX_goal_generic_navy_carrier
+		icon = GFX_focus_RJ_USA_carrier_primacy
 		prerequisite = { focus = USA_bureau_of_ships }
-		mutually_exclusive = { focus = USA_battleship_primacy }
-		x = -1
+		x = -5
 		y = 1
 		relative_position_id = USA_bureau_of_ships
 		cost = 10
@@ -7274,9 +7305,9 @@ focus_tree = {
 
 	focus = {
 		id = USA_bureau_of_aeronautics
-		icon = GFX_goal_generic_air_naval_bomber
+		icon = GFX_focus_RJ_USA_bureau_of_aeronautics
 		prerequisite = { focus = USA_carrier_primacy }
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = USA_carrier_primacy
 		cost = 10
@@ -7299,9 +7330,36 @@ focus_tree = {
 	}
 
 	focus = {
+		id = RJ_USA_navy_air_placeholder
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = USA_bureau_of_aeronautics }
+		prerequisite = { focus = RJ_USA_carrier_taskforces }
+		x = 1
+		y = 1
+		relative_position_id = USA_bureau_of_aeronautics
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_tech_bonus = {
+				name = USA_bureau_of_aeronautics
+				bonus = 1.0
+				uses = 1
+				category = naval_bomber
+				category = naval_air
+			}
+		}
+	}
+
+	focus = {
 		id = USA_naval_radar
 		icon = GFX_goal_generic_radar
-		x = 0
+		x = -1
 		y = 1
 		prerequisite = { focus = USA_bureau_of_aeronautics }
 		relative_position_id = USA_bureau_of_aeronautics
@@ -7346,10 +7404,57 @@ focus_tree = {
 	}
 
 	focus = {
+		id = RJ_USA_combat_information_center
+		icon = GFX_goal_generic_radar
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_naval_radar }
+		relative_position_id = USA_naval_radar
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.25
+			}
+			add_breakthrough_progress = {
+				specialization = specialization_air
+				value = 0.5
+			}
+
+			add_tech_bonus = {
+				name = USA_naval_radar
+				uses = 1 # was 2
+				bonus = 1.0
+				category = radar_tech
+			}
+			
+		}
+	}
+
+	focus = {
 		id = USA_escort_effort
 		icon = GFX_goal_generic_navy_anti_submarine
 		prerequisite = { focus = USA_bureau_of_ships }
-		x = 1
+		x = 5
 		y = 1
 		relative_position_id = USA_bureau_of_ships
 		cost = 10
@@ -7397,7 +7502,7 @@ focus_tree = {
 	focus = {
 		id = USA_fleet_submarines
 		icon = GFX_goal_generic_navy_submarine
-		x = 3
+		x = -1
 		y = 1
 		prerequisite = { focus = USA_bureau_of_ships }
 		relative_position_id = USA_bureau_of_ships
@@ -7444,10 +7549,11 @@ focus_tree = {
 	focus = {
 		id = USA_unrestricted_submarine_warfare
 		icon = GFX_goal_generic_wolf_pack
-		x = 3
-		y = 2
+		x = 1
+		y = 1
 		prerequisite = { focus = USA_fleet_submarines }
-		relative_position_id = USA_bureau_of_ships
+		prerequisite = { focus = RJ_USA_wolfpack_tactics }
+		relative_position_id = RJ_USA_wolfpack_tactics
 		cost = 10
 
 		ai_will_do = {
@@ -7471,22 +7577,45 @@ focus_tree = {
 		}
 	}
 
+	#focus = {
+	#	id = USA_fund_the_navy
+	#	icon = GFX_goal_generic_construct_naval_dockyard
+	#	x = 13
+	#	y = 1
+	#	relative_position_id = USA_two_ocean_navy_act
+	#	cost = 10
+	#	prerequisite = { focus = USA_two_ocean_navy_act }
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#
+	#	available_if_capitulated = yes
+	#
+	#	search_filters = {FOCUS_FILTER_RESEARCH}
+	#			completion_reward = {
+	#		add_doctrine_cost_reduction = {
+	#			name = USA_fund_the_navy
+	#			uses = 3
+	#			cost_reduction = 0.5
+	#			category = naval_doctrine
+	#		}
+	#	}
+	#}
+
 	focus = {
-		id = USA_fund_the_navy
-		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 7
+		id = RJ_USA_doctrinal_refinements
+		icon = GFX_focus_RJ_USA_doctrinal_refinements
+		x = -3
 		y = 1
-		relative_position_id = USA_two_ocean_navy_act
+		relative_position_id = USA_bureau_of_ships
 		cost = 10
-		prerequisite = { focus = USA_two_ocean_navy_act }
+		prerequisite = { focus = USA_bureau_of_ships }
 		ai_will_do = {
 			factor = 1
 		}
 
 		available_if_capitulated = yes
-
-		search_filters = {FOCUS_FILTER_RESEARCH}
-				completion_reward = {
+		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = USA_fund_the_navy
 				uses = 3
@@ -7494,15 +7623,17 @@ focus_tree = {
 				category = naval_doctrine
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY }
 	}
 
 	focus = {
 		id = USA_expand_the_USMC
-		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = USA_fund_the_navy }
+		icon = GFX_focus_RJ_USA_expand_the_USMC
+		prerequisite = { focus = RJ_USA_doctrinal_refinements }
 		x = 0
-		y = 1
-		relative_position_id = USA_fund_the_navy
+		y = 2
+		relative_position_id = RJ_USA_doctrinal_refinements
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
@@ -7512,13 +7643,18 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
+			add_to_variable = {
+				RJ_USA_army_SF_cap = 0.25
+			}
+			custom_effect_tooltip = expand_the_USMC_DM_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					has_dlc = "Arms Against Tyranny"
 				}
 				add_doctrine_cost_reduction = {
 					name = USA_expand_the_USMC
-					cost_reduction = 0.25
+					cost_reduction = 0.50
 					uses = 2
 					category = special_forces_doctrine
 				}
@@ -7527,7 +7663,7 @@ focus_tree = {
 				add_tech_bonus = {
 					name = USA_expand_the_USMC
 					bonus = 1.0
-					uses = 1
+					uses = 2
 					technology = marines2
 					technology = marines3
 				}
@@ -7537,7 +7673,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_amphibious_operations
-		icon = GFX_goal_generic_amphibious_assault
+		icon = GFX_focus_generic_naval_invasion
 		prerequisite = { focus = USA_expand_the_USMC }
 		x = 0
 		y = 1
@@ -7557,11 +7693,54 @@ focus_tree = {
 				uses = 2
 				category = tp_tech 
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				RJ_USA_navy_shore_bombardment_bonus = 0.10
+				RJ_USA_army_naval_invasion_penalty = -0.10
+			}
+			custom_effect_tooltip = fleet_landing_army_DM_tt
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = fleet_landing_navy_DM_tt
 		}
 	}
 
-	
+	focus = {
+		id = RJ_USA_wolfpack_tactics
+		icon = GFX_focus_RJ_USA_wolfpack_tactics
+		prerequisite = { focus = RJ_USA_doctrinal_refinements }
+		x = 1
+		y = 1
+		relative_position_id = RJ_USA_doctrinal_refinements
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
 
+		available_if_capitulated = yes
+		
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			
+		}
+	}
 
-	
+	focus = {
+		id = RJ_USA_carrier_taskforces
+		icon = GFX_focus_generic_air_carrier
+		prerequisite = { focus = RJ_USA_doctrinal_refinements }
+		x = -1
+		y = 1
+		relative_position_id = RJ_USA_doctrinal_refinements
+		cost = 10
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+		
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			
+		}
+	}
 }

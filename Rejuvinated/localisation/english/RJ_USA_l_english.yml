@@ -1,7 +1,7 @@
 ﻿l_english:
  RJ_suspend_the_persecution_tt:0 "If §OFascist§! support becomes too high (15% or more), certain focuses will trigger events leading up to civil war!"
  RJ_focus_limit_tt:0 "§CCompleting this focus will make it impossible to go down either the Communist or Fascist paths. You've been warned!§!"
- RJ_USA_end_monarchism_tt:0 "§YGenerates Puppet wargoals against all countries that currently have any form of Monarchy.§!"
+ RJ_USA_end_monarchism_tt:0 "§CGenerates Puppet wargoals against all countries that currently have any form of Monarchy.§!"
 
  RJ_silver_shirts_completed_tt:0 "§CMust not have bypassed Ally With the Silver Shirts to go down this path.§!"
  RJ_fascist_civil_war_tt:0 "Completion of this focus without the government being §OFascist§! will spark events leading up to civil war!"
@@ -33,6 +33,12 @@
  ##############################################################################################################################
 
  RJ_USA_united_states_army:0 "United States Army"
+ desegregate_the_armed_forces_DM_tt:0 "Modify §YUnited States Army§! by \nRecruitable Population: §Y+2.00%§!"
+ full_desegregation_DM_tt:0 "Modify §YUnited States Army§! by \nRecruitable Population: §Y+1.00%§! \nRecruitable Population Factor: §G+30%§!"
+ militia_mobilization_act_DM_tt:0 "Modify §YUnited States Army§! by \nDivision Training Time: §Y-10%§! \nRecruitable Population Factor: §G+20%§! \nMobilization Speed: §G+15%§!"
+ expand_the_USMC_DM_tt:0 "Modify §YUnited States Army§! by \nSpecial Forces Cap: §G+25%§!"
+ liberty_ships_DM_tt:0 "Modify §YUnited States Army§! by \nSupply Range: §G+5%§!"
+ fleet_landing_army_DM_tt:0 "Modify §YUnited States Army§! by \nInvasion Penalty: §G-10%§!"
 
 
 
@@ -49,7 +55,8 @@
  RJ_USA_united_states_navy:0 "United States Navy"
  two_ocean_navy_act_DM_tt:0 "Modify §YUnited States Navy§! by \nDockyard Output: §G+15%§!"
  maritime_commission_DM_tt:0 "Modify §YUnited States Navy§! by \nDockyard Construction Speed: §G+10%§!"
- bureau_of_ships_DM_tt:0 "Modify §YUnited States Navy§! by \nNaval Equipment Upgrade Cost: §G-10%§! \nTorpedo Hit Chance:§G+10%§"
+ bureau_of_ships_DM_tt:0 "Modify §YUnited States Navy§! by \nNaval Equipment Upgrade Cost: §G-10%§! \nTorpedo Hit Chance: §G+10%§"
+ fleet_landing_navy_DM_tt:0 "Modify §YUnited States Navy§! by \nShore Bombardment Bonus: §G+10%§!"
 
 
 
@@ -77,6 +84,14 @@
  RJ_USA_repeal_the_chinese_exclusion_act_desc:0 "The Chinese Exclusion Act is an abhorrent & outdated law, discriminating against Chinese citizens that would seek shelter in our country. It's time to end it once & for all!"
  RJ_USA_military_collaboration:0 "Military Collaboration"
  RJ_USA_military_collaboration_desc:0 "We have a great deal we can learn from the Soviet Union, & they have a great deal they can teach us. Allowing our top military leaders to collaborate together will benefit both sides, strengthening our tactics!"
+ RJ_USA_doctrinal_refinements:0 "Doctrinal Refinements"
+ RJ_USA_doctrinal_refinements_desc:0 "As our navy continues to expand & new ship technologies develop, we need to refine our current doctrines a bit further, accommodating newer elements such as carriers & submarine warfare. We can't be left insufficiently prepared in the event of war!"
+ RJ_USA_wolfpack_tactics:0 "Wolfpack Tactics"
+ RJ_USA_wolfpack_tactics_desc:0 "The modern age of the navy has introduced us to a new, stealthier, form of warfare: Submarine Raids. One of the proposed strategies is using 'wolfpack' style tactics: Sending our submarines out in small, well-coordinated groups to ambush enemy ships & convoys."
+ RJ_USA_carrier_taskforces:0 "Carrier Taskforces"
+ RJ_USA_carrier_taskforces_desc:0 "It's become clear to us that our carriers can no longer simply function as forward scouts, but as a key component of taskforce composition! By grouping them together with a strong screening force, we can coordinate effectively between air, sea, & land!"
+ RJ_USA_combat_information_center:0 "Combat Information Center"
+ RJ_USA_combat_information_center_desc:0 "With advancements in a number of fields including radar, as well as our now refined carrier tactics, we've developed the ability to give commanders, both on sea & land, a massive strategic advantage. This has become particularly effective at dealing with night-time conditions!"
 
 
 

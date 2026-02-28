@@ -35,6 +35,9 @@ RJ_USA_united_states_army = {
 	special_forces_cap = RJ_USA_army_SF_cap
 	terrain_penalty_reduction = RJ_USA_army_terrain_penalty_reduction
 	org_loss_when_moving = RJ_USA_army_movement_org_loss
+	mobilization_speed = RJ_USA_army_mobilization_speed
+	supply_node_range = RJ_USA_army_supply_range
+	naval_invasion_penalty = RJ_USA_army_naval_invasion_penalty
 }
 
 RJ_USA_united_states_air_force = {
@@ -55,4 +58,5 @@ RJ_USA_united_states_navy = {
 	production_speed_dockyard_factor = RJ_USA_navy_dockyard_construction_speed
 	naval_torpedo_hit_chance_factor = RJ_USA_navy_torpedo_hit_chance #Base value of -15% (-0.15)
 	naval_equipment_upgrade_xp_cost = RJ_USA_navy_naval_equipment_cost
+	shore_bombardment_bonus = RJ_USA_navy_shore_bombardment_bonus
 }
