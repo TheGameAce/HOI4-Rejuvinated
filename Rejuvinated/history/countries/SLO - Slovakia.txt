@@ -1,8 +1,5 @@
 ﻿capital = 70
 
-
-
-
 set_technology = {
 	tech_trucks = 1
 	gw_artillery = 1
@@ -74,7 +71,6 @@ if = {
 
 add_ideas = {
 	idea_SLO_bernolak
-	SLO_schutzvertrag_ns
 	idea_SLO_industrial_growth
 	idea_SLO_independence
 }
@@ -97,7 +93,6 @@ recruit_character = SLO_janko_jesensky
 recruit_character = SLO_ferdinand_catlos
 recruit_character = SLO_anton_pulanick
 
-
 1939.1.1 = {
 	
 	add_political_power = 1198
@@ -115,9 +110,6 @@ recruit_character = SLO_anton_pulanick
 	complete_national_focus = production_effort
 	
 	set_technology = {
-		#doctrines
-		#formation_flying = 1
-
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
@@ -132,8 +124,8 @@ recruit_character = SLO_anton_pulanick
 		concentrated_industry = 1
 	}
 
-set_grand_doctrine = grand_battleplan
-set_grand_doctrine = new_battlefield_support
+	set_grand_doctrine = grand_battleplan
+	set_grand_doctrine = new_battlefield_support
 
 	complete_special_project = {
 		project = sp:sp_air_radar
