@@ -66,6 +66,11 @@ country_event = { #Gomez' Inauguration
 			has_country_flag = gomez_inaugurated_flag
 		}
 	}
+
+	mean_time_to_happen = {
+		days = 5
+		years = 0
+	}
 	
 	option = {
 		name = cuba.2.a
@@ -99,6 +104,11 @@ country_event = { #Mario García Menocal's Innauguration
 		NOT = {
 			has_country_flag = garcia_menocal_inaugurated_flag
 		}
+	}
+
+	mean_time_to_happen = {
+		days = 5
+		years = 0
 	}
 	
 	option = {
@@ -146,6 +156,11 @@ country_event = { #Gomez Impeached - Triggers via the Nine Cent Law focus - Fede
 		promote_character = {
 			character = CUB_federico_bru
 		}
+		set_party_name = { 
+		    ideology = democratic 
+		    long_name = cuba_tripartite_coalition_party_long
+		    name = cuba_tripartite_coalition_party_long
+		}	
 	}
 }
 
@@ -846,6 +861,276 @@ country_event = {
 		name = "It was worth a try."
 		ai_chance = {
 			factor = 1
+		}
+	}
+}
+
+country_event = { #Annexation Demands for Puerto Rico
+	id = cuba.27
+	title = cuba.27.t
+	desc = cuba.27.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Fine, they can have them..."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				USA = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
+		CUB = {
+			transfer_state = 686
+		}
+	}
+
+	option = {
+		name = "We won't give in to these illegitimate claims!"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				USA = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 686 }
+			}
+		}
+	}
+}
+
+country_event = { #Withdrawal from the Caribbean - UK
+	id = cuba.28
+	title = cuba.28.t
+	desc = cuba.28.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "We should take this threat seriously. Let's withdraw."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				ENG = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
+		ENG = {
+			release = JAM
+			release = BAH
+			release = TRI
+			release = BAS
+			release = BLZ
+		}
+	}
+
+	option = {
+		name = "Who do they think they are, anyways?"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				ENG = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 689 }
+			}
+		}
+	}
+}
+
+country_event = { #Withdrawal from the Caribbean - France
+	id = cuba.29
+	title = cuba.29.t
+	desc = cuba.29.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "We should take this threat seriously. Let's withdraw."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				FRA = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
+		FRA = {
+			release = GDL
+		}
+	}
+
+	option = {
+		name = "Who do they think they are, anyways?"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				FRA = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 694 }
+			}
+		}
+	}
+}
+
+country_event = { #Withdrawal from the Caribbean - USA
+	id = cuba.30
+	title = cuba.30.t
+	desc = cuba.30.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "We should take this threat seriously. Let's withdraw."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				USA = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
+		USA = {
+			release = PAN
+			release = PUE
+		}
+	}
+
+	option = {
+		name = "Who do they think they are, anyways?"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				USA = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 686 }
+			}
+		}
+	}
+}
+
+country_event = { #Withdrawal from the Caribbean - Netherlands
+	id = cuba.31
+	title = cuba.31.t
+	desc = cuba.31.d
+	picture = GFX_report_event_soviet_soldiers
+
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "We should take this threat seriously. Let's withdraw."
+		ai_chance = {
+			factor = 4
+			modifier = {
+				HOL = {
+					has_opinion = {
+						target = CUB
+						value > 50
+					}
+				}
+				factor = 7
+			}
+		}
+		HOL = {
+			release = CRC
+		}
+	}
+
+	option = {
+		name = "Who do they think they are, anyways?"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				HOL = {
+					has_opinion = {
+						target = CUB
+						value < 10
+					}
+				}
+				factor = 2
+			}
+		}
+		CUB = {
+			create_wargoal = {
+				target = ROOT
+				expire = 0 
+				type = take_state_focus
+				generator = { 695 }
+			}
 		}
 	}
 }

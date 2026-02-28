@@ -37,7 +37,7 @@ leader_traits = {
 	minister_of_commerce = {
 		sprite = 13
 		random = no
-		consumer_goods_factor = -0.05
+		consumer_goods_factor = -0.08
 		trade_opinion_factor = 0.10
 	}
 
@@ -59,8 +59,8 @@ leader_traits = {
 	minister_of_agriculture = {
 		sprite = 13
 		random = no
-		monthly_population = 0.25
-		global_building_slots_factor = 0.10
+		monthly_population = 0.50
+		global_building_slots_factor = 0.15
 	}
 
 	mobster = {
@@ -93,7 +93,7 @@ leader_traits = {
 		sprite = 13
 		random = no
 		stability_factor = 0.05
-		war_support_weekly = 0.001
+		war_support_weekly = 0.002
 	}
 
 	efficient_flight_coordinator = {
@@ -101,6 +101,7 @@ leader_traits = {
 		random = no
 		air_range_factor = 0.15
 		air_fuel_consumption_factor = -0.10
+		experience_gain_air = 0.30
 	}
 
 	veteran_army_doctor = {
@@ -108,11 +109,11 @@ leader_traits = {
 		random = no
 		experience_loss_factor = -0.05
 		army_defence_factor = 0.10
-		experience_gain_army = 0.09
+		experience_gain_army = 0.30
 	}
 
 
-	########DOMINICAN REPUBLIC##########
+	######## DOMINICAN REPUBLIC - Yeah I know this is the Cuba file, but it relates to Cuba content, so it's staying here for now. ##########
 
 
 	strongman_of_the_dominicans = {
