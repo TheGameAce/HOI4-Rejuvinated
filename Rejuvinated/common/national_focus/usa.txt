@@ -1429,7 +1429,7 @@ focus_tree = {
 	focus = {
 		id = RJ_USA_end_german_fascism
 		icon = GFX_focus_ger_oppose_hitler
-		x = 0
+		x = -1
 		y = 1
 		prerequisite = { focus = RJ_USA_military_collaboration }
 		relative_position_id = RJ_USA_military_collaboration
@@ -1459,13 +1459,13 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = RJ_USA_the_china_desicion
+		id = RJ_USA_the_china_decision
 		icon = GFX_focus_attack_japan
 		x = 0
-		y = 1
-		prerequisite = { focus = RJ_USA_end_german_fascism }
-		relative_position_id = RJ_USA_end_german_fascism
-		cost = 10
+		y = 2
+		prerequisite = { focus = RJ_USA_military_collaboration }
+		relative_position_id = RJ_USA_military_collaboration
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1485,9 +1485,9 @@ focus_tree = {
 				limit = {
 					SOV_is_free_chinese_tag = yes
 				}
-					add_opinion_modifier = { target = USA modifier = SOV_supported_china_good }
+				add_opinion_modifier = { target = USA modifier = SOV_supported_china_good }
+			}
 		}
-	}
 	}
 	
 	focus = {
@@ -1495,8 +1495,8 @@ focus_tree = {
 		icon = GFX_focus_generic_befriend_sinkiang
 		x = -2
 		y = 1
-		prerequisite = { focus = RJ_USA_the_china_desicion }
-		relative_position_id = RJ_USA_the_china_desicion
+		prerequisite = { focus = RJ_USA_the_china_decision }
+		relative_position_id = RJ_USA_the_china_decision
 		mutually_exclusive = { focus = RJ_USA_support_the_prc focus = RJ_USA_the_republican_gamble }
 		cost = 10
 
@@ -1509,24 +1509,27 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-		SIK = {
-				add_opinion_modifier = { #
+			SIK = {
+				add_opinion_modifier = {
 					target = ROOT
 					modifier = SOV_cooperating_with_us
 				}
-		}
-			if = {
-		limit = {	
-		SIK = { has_idea = USA_SOV_SIK_support_idea1 }
 			}
-		SIK = { swap_ideas = {
-		remove_idea = USA_SOV_SIK_support_idea1
-		add_idea = USA_SOV_SIK_support_idea2
-			}	
+			if = {
+				limit = {	
+					SIK = { has_idea = USA_SOV_SIK_support_idea1 }
+				}
+				SIK = {
+					swap_ideas = {
+						remove_idea = USA_SOV_SIK_support_idea1
+						add_idea = USA_SOV_SIK_support_idea2
+					}
+				}
+			}
+			else = { SIK = { add_ideas = USA_SOV_SIK_support_idea1	} }
 		}
-	}
-		else = { SIK = { add_ideas = USA_SOV_SIK_support_idea1	} }
-	}
+		
+		
 	}
 	
 	focus = {
@@ -1534,8 +1537,8 @@ focus_tree = {
 		icon = GFX_focus_chi_cooperation_with_the_communists
 		x = 0
 		y = 1
-		prerequisite = { focus = RJ_USA_the_china_desicion }
-		relative_position_id = RJ_USA_the_china_desicion
+		prerequisite = { focus = RJ_USA_the_china_decision }
+		relative_position_id = RJ_USA_the_china_decision
 		mutually_exclusive = { focus = RJ_USA_bet_on_sinkiang focus = RJ_USA_the_republican_gamble }
 		cost = 10
 
@@ -1573,8 +1576,8 @@ focus_tree = {
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
 		x = 2
 		y = 1
-		prerequisite = { focus = RJ_USA_the_china_desicion }
-		relative_position_id = RJ_USA_the_china_desicion
+		prerequisite = { focus = RJ_USA_the_china_decision }
+		relative_position_id = RJ_USA_the_china_decision
 		mutually_exclusive = { focus = RJ_USA_bet_on_sinkiang focus = RJ_USA_support_the_prc }
 		cost = 10
 
@@ -1606,10 +1609,6 @@ focus_tree = {
 		else = { CHI = { add_ideas = USA_SOV_CHI_support_idea1	} }
 	}
 	}
-	
-
-	
-	
 	
     focus = {	
       	id = RJ_USA_industrialize_china
