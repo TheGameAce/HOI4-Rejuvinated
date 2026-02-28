@@ -4,6 +4,7 @@
 
 add_namespace = rj_slovakia
 
+# Germans Demand the Explusion of Nástup
 country_event = {
 	id = rj_slovakia.1
 	title = rj_slovakia.1.t
@@ -14,9 +15,86 @@ country_event = {
 
 	option = {
 		name = rj_slovakia.1.a
+		add_autonomy_score = {
+			value = 100
+			localization = SLO_salzburg_conference
+		}
+		FROM = {
+			country_event = { id = rj_slovakia.2 hours = 6 }
+		}
 	}
 
 	option = {
 		name = rj_slovakia.1.b
+		custom_effect_tooltip = generic_further_escalation_effects_tt
+		effect_tooltip = {
+			FROM = {
+				set_autonomy = {
+					target = SLO
+					autonomy_state = autonomy_free
+				}
+				create_wargoal = {
+					target = SLO
+					type = topple_government
+				}
+			}
+		}
+		custom_effect_tooltip = generic_no_further_escalation_effects_tt
+		effect_tooltip = {
+			add_autonomy_score = {
+				value = 100
+				localization = SLO_salzburg_conference
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		FROM = {
+			country_event = { id = rj_slovakia.3 hours = 6 }
+		}
+	}
+}
+
+# Slovaks Accepted
+country_event = {
+	id = rj_slovakia.2
+	title = rj_slovakia.2.t
+	desc = rj_slovakia.2.desc
+	#picture = GFX_
+
+	is_triggered_only = yes
+
+	option = {
+		name = rj_slovakia.2.a
+	}
+}
+
+# Slovaks Rejected
+country_event = {
+	id = rj_slovakia.3
+	title = rj_slovakia.3.t
+	desc = rj_slovakia.3.desc
+	#picture = GFX_
+
+	is_triggered_only = yes
+
+	option = {
+		name = rj_slovakia.3.a
+		SLO = {
+			add_autonomy_score = {
+				value = 100
+				localization = SLO_salzburg_conference
+			}
+		}
+	}
+
+	option = {
+		name = rj_slovakia.3.b
+		set_autonomy = {
+			target = SLO
+			autonomy_state = autonomy_free
+		}
+		create_wargoal = {
+			target = SLO
+			type = topple_government
+		}
 	}
 }
