@@ -452,7 +452,7 @@ JAP_dcat_invasion_of_china = {
 			hidden_effect = {
 				country_event = { id = jap.10 }
 			}
-			custom_effect_tooltip = mck_puppet_wjw_tt
+			custom_effect_tooltip = man_puppet_wjw_tt
 		}
 	}
 	
@@ -1802,7 +1802,7 @@ political_actions = {
 		visible = {
 			FROM = {
 				is_subject_of = ROOT
-				tag = MCK
+				tag = MAN
 				OR = {
 					has_country_flag = no_jap_mili_officials
 					has_country_flag = no_jap_officials
@@ -1810,14 +1810,14 @@ political_actions = {
 				NOT = {
 					has_country_flag = no_ban_on_jap
 				}
-				check_variable = { FROM.MCK_awareness > 14 }
+				check_variable = { FROM.MAN_awareness > 14 }
 			}
 		}
 		
 		target_trigger = {		
 			FROM = {
 				is_subject_of = ROOT
-				tag = MCK
+				tag = MAN
 				OR = {
 					has_country_flag = no_jap_mili_officials
 					has_country_flag = no_jap_officials
@@ -1842,7 +1842,7 @@ political_actions = {
 			random_country = {
 				limit = {
 					is_subject_of = ROOT
-					tag = MCK
+					tag = MAN
 					OR = {
 						has_country_flag = no_jap_mili_officials
 						has_country_flag = no_jap_officials

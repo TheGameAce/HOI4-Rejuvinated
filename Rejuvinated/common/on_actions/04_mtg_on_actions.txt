@@ -1250,7 +1250,7 @@ on_actions = {
 					transfer_state = 326
 				}
 				JAP = {
-					set_autonomy = { target = MCK autonomy_state = autonomy_free }
+					set_autonomy = { target = MAN autonomy_state = autonomy_free }
 					set_autonomy = { target = MEN autonomy_state = autonomy_free }
 					release = KOR
 					transfer_units_fraction = {
@@ -1258,7 +1258,7 @@ on_actions = {
 						size = 1
 					}
 				}
-				MCK = {
+				MAN = {
 					transfer_state = 745
 				}
 				CHI = {

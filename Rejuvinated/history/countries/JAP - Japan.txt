@@ -1,8 +1,8 @@
 ﻿capital = 282
 
 oob = "JAP_1936"
-set_variable = { MCK_sabotage_timer_infra = 30 }
-set_variable = { MCK_pacify_iw_req = 250 }
+set_variable = { MAN_sabotage_timer_infra = 30 }
+set_variable = { MAN_pacify_iw_req = 250 }
 
 set_stability = 0.2 #baseline, THE EMPEROR PROTECTS
 set_war_support = 0.8
@@ -14,7 +14,7 @@ set_party_name = { ideology = fascism long_name = JAP_toseiha name = JAP_toseiha
 set_party_name = { ideology = neutrality long_name = JAP_kodoha name = JAP_kodoha }
 
 create_faction = "toa_shin_chitsujo"
-add_to_faction = MCK
+add_to_faction = MAN
 add_to_faction = ECR
 add_to_faction = EHA
 
@@ -401,7 +401,7 @@ if = {
 		autonomous_state = autonomy_wtt_imperial_protectorate
 	}
 	set_autonomy = {
-		target = MCK
+		target = MAN
 		autonomous_state = autonomy_wtt_imperial_protectorate
 	}
 	set_autonomy = {
@@ -422,7 +422,7 @@ if = {
 				autonomous_state = autonomy_integrated_puppet
 			}
 			set_autonomy = {
-				target = MCK
+				target = MAN
 				autonomous_state = autonomy_integrated_puppet
 			}
 			set_autonomy = {
@@ -439,7 +439,7 @@ if = {
 					autonomous_state = autonomy_puppet
 				}
 				set_autonomy = {
-					target = MCK
+					target = MAN
 					autonomous_state = autonomy_puppet
 				}
 				set_autonomy = {

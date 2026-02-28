@@ -1111,16 +1111,16 @@ spriteTypes = {
 	}	
 	
 	SpriteType = {
-		name = "GFX_goal_focus_mck_consitutional_monarchy"
-		texturefile = "gfx/interface/goals/mck_consitutional_monarchy.tga"			
+		name = "GFX_goal_focus_man_consitutional_monarchy"
+		texturefile = "gfx/interface/goals/man_consitutional_monarchy.tga"			
 	}	
 
 	SpriteType = {
 		name = "GFX_goal_focus_reintegrate_outer_manchuria_shine"
-		texturefile = "gfx/interface/goals/mck_consitutional_monarchy.tga"			
+		texturefile = "gfx/interface/goals/man_consitutional_monarchy.tga"			
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/mck_consitutional_monarchy.tga"			
+			animationmaskfile = "gfx/interface/goals/man_consitutional_monarchy.tga"			
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -1133,7 +1133,7 @@ spriteTypes = {
 		}
 
 		animation = {
-			animationmaskfile = "gfx/interface/goals/mck_consitutional_monarchy.tga"			
+			animationmaskfile = "gfx/interface/goals/man_consitutional_monarchy.tga"			
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)

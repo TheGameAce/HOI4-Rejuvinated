@@ -5,291 +5,1553 @@ characters={
 			civilian={
 				large="gfx/leaders/MAN/Portrait_Manchuria_Henry_Pu_Yi.dds"
 			}
+			army={
+				small="GFX_idea_puyi_idea_mil"
+				large="gfx/leaders/MAN/Portrait_Manchuria_Henry_Pu_Yi.dds"
+			}
 		}
 		country_leader={
 			ideology=rexism
-			traits={ warrior_code }
+			traits={ puppet_emperor }
 			expire="1960.1.1.1"
 			id=-1
 		}
 		country_leader={
 			ideology=despotism
-			traits={ warrior_code }
+			traits={  }
 			expire="1960.1.1.1"
 			id=-1
 		}
+		advisor = {	
+			slot = army_chief
+			cost = 100
+			idea_token = MAN_puyi_army_chief
+			
+			traits = { ceremonial_army }
+			
+			ai_will_do = { base = 0.5 }
+		}
+		advisor = {	
+			slot = navy_chief
+			cost = 100
+			idea_token = MAN_puyi_navy_chief
+			
+			traits = { ceremonial }
+			
+			ai_will_do = { base = 0.5 }
+		}
+		advisor = {	
+			slot = air_chief
+			cost = 100
+			idea_token = MAN_puyi_air_chief
+			
+			available = {
+				has_completed_focus = MAN_manchukuo_imperial_air_force
+			}
+			
+			traits = { ceremonial_air }
+			
+			ai_will_do = { base = 1 }
+		}
 	}
+	
+	MAN_zheng_xiaoxu={
+		name=MAN_zheng_xiaoxu
+		portraits={
+			civilian={
+				small="GFX_idea_zheng_xiaoxu"
+			}
+		}
+		advisor = {	
+			slot = political_advisor
+			cost = 150
+			idea_token = MAN_zheng_xiaoxu
+			
+			available = { 
+				NOT = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
+				OR = {
+					has_completed_focus = MAN_contact_qing_restorationists 
+					is_subject = no
+				}
+			}
+			
+			traits = { staunch_monarchist }
+			
+			ai_will_do = { base = 1 }
+		}
+	}
+	
+	MAN_zhang_jinghui={
+		name=MAN_zhang_jinghui
+		portraits={
+			civilian={
+				small="GFX_idea_zhang_jinghui"
+			}
+		}
+		advisor = {	
+			slot = political_advisor
+			cost = 150
+			idea_token = MAN_zhang_jinghui
+			
+			available = { } 
+			
+			traits = { popular_figurehead }
+			
+			ai_will_do = { base = 1 }
+		}
+	}
+	
+	MAN_liu_enge={
+		name=MAN_liu_enge
+		portraits={
+			civilian={
+				small="GFX_idea_liu_enge"
+			}
+		}
+		advisor = {	
+			slot = political_advisor
+			cost = 150
+			idea_token = MAN_liu_enge
+			
+			available = { } 
+			
+			traits = { silent_mule }
+			
+			ai_will_do = { base = 1 }
+		}
+	}
+	
+	MAN_zhang_yanqing={
+		name=MAN_zhang_yanqing
+		portraits={
+			civilian={
+				small="GFX_idea_zhang_yanqing"
+			}
+		}
+		advisor = {	
+			slot = political_advisor
+			cost = 150
+			idea_token = MAN_zhang_yanqing
+			
+			available = { } 
+			
+			traits = { backroom_backstabber }
+			
+			ai_will_do = { base = 1 }
+		}
+	}
+	
+	MAN_zang_shiyi={
+		name=MAN_zang_shiyi
+		portraits={
+			civilian={
+				small="GFX_idea_zang_shiyi"
+			}
+		}
+		advisor = {	
+			slot = political_advisor
+			cost = 150
+			idea_token = MAN_zang_shiyi
+			
+			available = { } 
+			
+			traits = { compassionate_commoner }
+			
+			ai_will_do = { base = 1 }
+		}
+	}
+	
+	MAN_xi_qia={
+		name=MAN_xi_qia
+		portraits={
+			civilian={
+				small="GFX_idea_xi_qia"
+			}
+			army={
+				small="GFX_idea_xi_qia_mil"
+				large="gfx/leaders/kmt_mod/xi_qia.dds"
+			}
+		}
+		advisor = {	
+			slot = political_advisor
+			cost = 150
+			idea_token = MAN_xi_qia
+			
+			available = { } 
+			
+			traits = { finance_graduate }
+			
+			ai_will_do = { base = 1 }
+		}
+		advisor = {	
+			slot = army_chief
+			idea_token = MAN_xi_qia_army_chief
+			
+			available = { has_completed_focus = MAN_revive_the_grand_council } 
+			
+			#TODO
+			visible = { has_completed_focus = MAN_revive_the_grand_council  }
+			
+			traits = { army_chief_old_guard }
+			
+			ai_will_do = { base = 1 }
+		}
+		corps_commander = {
+			legacy_id = 1800
+			traits = { politically_connected war_hero }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			skill = 2
+			#TODO
+			visible = { has_completed_focus = MAN_revive_the_grand_council  }
+		}
+	}
+	
 	MAN_zhang_haipeng={
 		name=MAN_zhang_haipeng
 		portraits={
 			army={
-				large="GFX_portrait_man_zhang_haipeng"
-				small="gfx/interface/ideas/idea_MAN_zhang_haipeng.dds"
+				small="GFX_idea_zhang_haipeng"
+				large="gfx/leaders/kmt_mod/zhang_haipeng.dds"
 			}
 		}
-		corps_commander={
-			skill=2
-			attack_skill=2
-			defense_skill=2
-			planning_skill=1
-			logistics_skill=2
-			legacy_id=-1
+		advisor = {	
+			slot = army_chief
+			idea_token = MAN_zhang_haipeng
+			
+			available = { } 
+			
+			traits = { army_chief_old_guard }
+			
+			ai_will_do = { base = 1 }
+		}
+		corps_commander = {
+			legacy_id = 1801
+			traits = { politically_connected }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			skill = 1
 		}
 	}
-	MAN_aisin_gioro_xiqia={
-		name=MAN_aisin_gioro_xiqia
+	
+	MAN_yu_zhishan={
+		name=MAN_yu_zhishan
 		portraits={
 			army={
-				large="GFX_portrait_man_aisin_gioro_xiqia"
-				small="gfx/interface/ideas/idea_MAN_aisin_gioro_xiqia.dds"
+				small="GFX_idea_yu_zhishan"
+				large="gfx/leaders/kmt_mod/yu_zhishan.dds"
 			}
 		}
-		corps_commander={
-			traits={ career_officer }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=1
-			legacy_id=-1
+		advisor = {	
+			slot = army_chief
+			cost = 50
+			idea_token = MAN_yu_zhishan
+			
+			available = { } 
+			
+			traits = { army_chief_planning_1 }
+			
+			ai_will_do = { base = 1 }
+		}
+		corps_commander = {
+			legacy_id = 1802
+			traits = { career_officer }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			skill = 1
 		}
 	}
-
-
-	### THEORISTS ###
-
-	# Claire Lee Chennault is in shared file
-
-	MAN_hung_zhehuang={
-		name=MAN_hung_zhehuang
+	
+	MAN_yu_chencheng={
+		name=MAN_yu_chencheng
+		portraits={
+			army={
+				small="GFX_idea_yu_chencheng"
+				large="gfx/leaders/kmt_mod/yu_chencheng.dds"
+			}
+		}
+		advisor = {	
+			slot = high_command
+			cost = 50
+			idea_token = MAN_yu_chencheng
+			
+			available = { } 
+			
+			traits = { army_CombinedArms_1 }
+			
+			ai_will_do = { base = 1 }
+		}
+		corps_commander = {
+			legacy_id = 1803
+			traits = { cavalry_officer }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			skill = 1
+		}
+	}
+	
+	MAN_ji_xing={
+		name=MAN_ji_xing
+		portraits={
+			army={
+				small="GFX_idea_ji_xing"
+				large="gfx/leaders/kmt_mod/ji_xing.dds"
+			}
+		}
+		advisor = {	
+			slot = high_command
+			cost = 50
+			idea_token = MAN_ji_xing
+			
+			available = { } 
+			
+			traits = { army_artillery_1 }
+			
+			ai_will_do = { base = 1 }
+		}
+		corps_commander = {
+			legacy_id = 1804
+			traits = { }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			skill = 1
+		}
+	}
+	
+	MAN_zhang_wenzhu={
+		name=MAN_zhang_wenzhu
+		portraits={
+			army={
+				small="GFX_idea_zhang_wenzhu"
+				large="gfx/leaders/kmt_mod/zhang_wenzhu.dds"
+			}
+		}
+		advisor = {	
+			slot = high_command
+			cost = 50
+			idea_token = MAN_zhang_wenzhu
+			
+			available = { } 
+			
+			traits = { army_cavalry_1 }
+			
+			ai_will_do = { base = 1 }
+		}
+		corps_commander = {
+			legacy_id = 1805
+			traits = { cavalry_officer }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			skill = 1
+		}
+	}
+	
+	MAN_urzhin_garmaev={
+		name=MAN_urzhin_garmaev
+		portraits={
+			army={
+				small="GFX_idea_urzhin_garmaev"
+				large="gfx/leaders/kmt_mod/urzhin_garmaev.dds"
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			skill = 1
+		}
+	}
+	
+	MAN_ganjuurjab={
+		name=MAN_ganjuurjab
+		portraits={
+			army={
+				small="GFX_idea_ganjuurjab"
+				large="gfx/leaders/kmt_mod/ganjuurjab.dds"
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			skill = 1
+		}
+	}
+	
+	MAN_jengjuurjab={
+		name=MAN_jengjuurjab
+		portraits={
+			army={
+				small="GFX_idea_jengjuurjab"
+				large="gfx/leaders/kmt_mod/jengjuurjab.dds"
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			skill = 1
+		}
+	}
+	
+	MAN_cao_pinsen={
+		name=MAN_cao_pinsen
 		portraits={
 			army={
 				small="GFX_idea_generic_army_asia_1"
 			}
 		}
-		advisor={
-			cost = 100
-			slot = theorist
-			idea_token = MAN_hung_zhehuang
-			ledger = army
-			allowed = {
-				original_tag = MAN
-			}
+		advisor = {	
+			slot = air_chief
+			cost = 50
+			idea_token = MAN_cao_pinsen
 			
-			traits = {
-				military_theorist
-			}
+			available = { 
+				has_completed_focus = MAN_manchukuo_imperial_air_force
+			} 
+			
+			traits = { air_chief_ground_support_1 }
+			
+			ai_will_do = { base = 1 }
 		}
 	}
-
-	MAN_xian_yuan={
-		name=MAN_xian_yuan
+	
+	MAN_yin_zuqian={
+		name=MAN_yin_zuqian
 		portraits={
 			army={
 				small="GFX_idea_generic_navy_asia_1"
 			}
 		}
-		advisor={
-			cost = 100	
-			slot = theorist
-			idea_token = MAN_xian_yuan
-			ledger = navy
-			allowed = {
-				original_tag = MAN
-			}
-			
-			traits = {
-				naval_theorist
-			}
-		}
-	}
-
-	MAN_deng_linge={
-		name=MAN_deng_linge
-		portraits={
-			army={
-				small="GFX_idea_generic_air_asia_2"
-			}
-		}
-		advisor={
-			cost = 100
-			slot = theorist
-			idea_token = MAN_deng_linge
-			ledger = air
-			allowed = {
-				original_tag = MAN
-			}
-			
-			traits = {
-				air_warfare_theorist
-			}
-		}
-	}
-
-
-	### ARMY CHIEFS ###
-
-	# Alexander von Falkenhausen in shared file
-
-	MAN_guan_xingde={
-		name=MAN_guan_xingde
-		portraits={
-			army={
-				small="GFX_idea_generic_army_asia_4"
-			}
-		}
-		advisor={	
-			slot = army_chief
-			idea_token = MAN_guan_xingde
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				army_chief_offensive_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-
-	### NAVY CHIEFS ###
-
-		MAN_yin_zuoqian={
-		name=MAN_yin_zuoqian
-		portraits={
-			army={
-				small="GFX_idea_generic_navy_asia_3"
-			}
-		}
-		advisor={
+		advisor = {	
 			slot = navy_chief
-			idea_token = MAN_yin_zuoqian
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				navy_chief_decisive_battle_1
-			}
-			cost =  50
-			ai_will_do = {
-				factor = 1.000
-			}
+			cost = 50
+			idea_token = MAN_yin_zuqian
+			
+			available = { } 
+			
+			traits = { navy_chief_commerce_raiding_1 }
+			
+			ai_will_do = { base = 1 }
 		}
 	}
-
-
-	### AIR CHIEFS ###
-
-	# Claire Lee Chennault is in shared file
-
-	MAN_nakajima_kesago={
-		name=MAN_nakajima_kesago
+	
+	MAN_yu_zhigong={
+		name=MAN_yu_zhigong
 		portraits={
 			army={
-				small="GFX_idea_generic_air_asia_3"
+				small="GFX_idea_generic_army_asia_2"
 			}
 		}
-		advisor={
-			slot = air_chief
-			idea_token = MAN_nakajima_kesago
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				air_chief_ground_support_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-
-	### MILITARY HIGH COMMAND ###
-
-	MAN_yonimitsu_kasahara={
-		name=MAN_yonimitsu_kasahara
-		portraits={
-			army={
-				small="GFX_idea_generic_army_asia_3"
-			}
-		}
-		advisor={
+		advisor = {	
 			slot = high_command
-			idea_token = MAN_yonimitsu_kasahara
-			ledger = army
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				army_regrouping_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-	MAN_kyoiji_tomonaga={
-		name=MAN_kyoiji_tomonaga
-		portraits={
-			army={
-				small="GFX_idea_generic_air_asia_2"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = MAN_kyoiji_tomonaga
-			ledger = army
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				army_infantry_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
-	MAN_hesehn_tiemei={
-		name=MAN_hesehn_tiemei
-		portraits={
-			army={
-				small="GFX_idea_generic_army_asia_1"
-			}
-		}
-		advisor={
-			slot = high_command
-			idea_token = MAN_hesehn_tiemei
-			ledger = army
-			allowed = {
-				original_tag = MAN
-			}
-			traits = {
-				army_logistics_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
+			cost = 50
+			idea_token = MAN_yu_zhigong
+			
+			available = { } 
+			
+			traits = { army_logistics_1 }
+			
+			ai_will_do = { base = 1 }
 		}
 	}
 
 
-	### POLITICAL ADVISORS ###
-
-	# Girgory Semyonov in Soviet file
-	# Generic Captain of Industry generated in generic_advisors file
-	# Generic Fortification Engineer generated in generic_advisors file
-	# Generic War Industrialist generated in generic_advisors file
+	### Japanese people ###
+	
+	MAN_doihara_kenji={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_doihara_kenji
+			portraits={
+				civilian={
+					small="GFX_idea_kenji_doihara"
+				}
+				army={
+					small="GFX_idea_kenji_doihara"
+				}
+			}
+			advisor = {	
+				slot = political_advisor
+				cost = 100
+				idea_token = MAN_doihara_kenji
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { lawrence_of_manchuria_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_doihara_kenji
+			portraits={
+				civilian={
+					small="GFX_idea_kenji_doihara"
+				}
+				army={
+					small="GFX_idea_kenji_doihara"
+				}
+			}
+			advisor = {	
+				slot = political_advisor
+				cost = 100
+				idea_token = MAN_doihara_kenji
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { lawrence_of_manchuria }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_yoshisuke_aikawa={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_yoshisuke_aikawa
+			portraits={
+				civilian={
+					small="GFX_idea_aikawa_yoshisuke"
+				}
+			}
+			advisor = {	
+				slot = political_advisor
+				cost = 150
+				idea_token = MAN_yoshisuke_aikawa
+				removal_cost = -1
+				
+				available = { 
+					OR = {
+						AND = {
+							has_completed_focus = MAN_support_aikawa_yoshisuke
+							any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { captain_of_industry_man_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_yoshisuke_aikawa
+			portraits={
+				civilian={
+					small="GFX_idea_aikawa_yoshisuke"
+				}
+			}
+			advisor = {	
+				slot = political_advisor
+				cost = 150
+				idea_token = MAN_yoshisuke_aikawa
+				removal_cost = -1
+				
+				available = { 
+					OR = {
+						AND = {
+							has_completed_focus = MAN_support_aikawa_yoshisuke
+							any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { captain_of_industry_man }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_naoki_hoshino={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_naoki_hoshino
+			portraits={
+				army={
+					small="GFX_idea_hoshino_naoki"
+				}
+			}
+			advisor = {	
+				slot = political_advisor
+				cost = 150
+				idea_token = MAN_naoki_hoshino
+				
+				available = { 
+					OR = {
+						AND = {
+							has_completed_focus = MAN_support_naoki_hoshino
+							any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { war_industrialist_man_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_naoki_hoshino
+			portraits={
+				army={
+					small="GFX_idea_hoshino_naoki"
+				}
+			}
+			advisor = {	
+				slot = political_advisor
+				cost = 150
+				idea_token = MAN_naoki_hoshino
+				
+				available = { 
+					OR = {
+						AND = {
+							has_completed_focus = MAN_support_naoki_hoshino
+							any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { war_industrialist_man }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_noguchi_yujiro={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_noguchi_yujiro
+			portraits={
+				army={
+					small="GFX_idea_generic_army_asia_2"
+				}
+			}
+			advisor = {	
+				slot = air_chief
+				cost = 100
+				idea_token = MAN_noguchi_yujiro
+				
+				available = { 
+					OR = {
+						AND = {
+							has_completed_focus = MAN_manchukuo_imperial_air_force
+							any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { air_chief_reform_2_man_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_noguchi_yujiro
+			portraits={
+				army={
+					small="GFX_idea_generic_army_asia_2"
+				}
+			}
+			advisor = {	
+				slot = air_chief
+				cost = 100
+				idea_token = MAN_noguchi_yujiro
+				
+				available = { 
+					OR = {
+						AND = {
+							has_completed_focus = MAN_manchukuo_imperial_air_force
+							any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { air_chief_reform_2_man }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_tanaka_osamu={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_tanaka_osamu
+			portraits={
+				army={
+					small="GFX_idea_generic_army_asia_3"
+				}
+			}
+			advisor = {	
+				slot = air_chief
+				cost = 100
+				idea_token = MAN_tanaka_osamu
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						AND = {
+							has_completed_focus = MAN_manchukuo_imperial_air_force
+							any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { air_chief_ground_support_2_man_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_tanaka_osamu
+			portraits={
+				army={
+					small="GFX_idea_generic_army_asia_3"
+				}
+			}
+			advisor = {	
+				slot = air_chief
+				cost = 100
+				idea_token = MAN_tanaka_osamu
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						AND = {
+							has_completed_focus = MAN_manchukuo_imperial_air_force
+							any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { air_chief_ground_support_2_man }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_itagaki_seishiro={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_itagaki_seishiro
+			portraits={
+				army={
+					small="gfx/interface/ideas/idea_JAP_seishiro_itagaki.dds"
+				}
+			}
+			advisor = {	
+				slot = theorist
+				cost = 100
+				idea_token = MAN_itagaki_seishiro
+				ledger = army
+				
+				available = { 
+					OR = {
+						AND = {
+							has_completed_focus = MAN_kantogun_advisor
+							any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+				} 
+				
+				traits = { military_theorist_man_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_itagaki_seishiro
+			portraits={
+				army={
+					small="gfx/interface/ideas/idea_JAP_seishiro_itagaki.dds"
+				}
+			}
+			advisor = {	
+				slot = theorist
+				cost = 100
+				idea_token = MAN_itagaki_seishiro
+				ledger = army
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						AND = {
+							has_completed_focus = MAN_kantogun_advisor
+							any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { military_theorist_man }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_kawabata_masaharu={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_kawabata_masaharu
+			portraits={
+				army={
+					small="GFX_idea_generic_navy_asia_3"
+				}
+			}
+			advisor = {	
+				slot = theorist
+				cost = 100
+				idea_token = MAN_kawabata_masaharu
+				ledger = navy
+				
+				available = { 
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { naval_theorist_man_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_kawabata_masaharu
+			portraits={
+				army={
+					small="GFX_idea_generic_navy_asia_3"
+				}
+			}
+			advisor = {	
+				slot = theorist
+				cost = 100
+				idea_token = MAN_kawabata_masaharu
+				ledger = navy
+				
+				available = { 
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { naval_theorist_man }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_ito_seiichi={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_ito_seiichi
+			portraits={
+				army={
+					small="GFX_idea_generic_navy_asia_1"
+				}
+			}
+			advisor = {	
+				slot = navy_chief
+				cost = 100
+				idea_token = MAN_ito_seiichi
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { navy_chief_maneuver_2_man_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_ito_seiichi
+			portraits={
+				army={
+					small="GFX_idea_generic_navy_asia_1"
+				}
+			}
+			advisor = {	
+				slot = navy_chief
+				cost = 100
+				idea_token = MAN_ito_seiichi
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { navy_chief_maneuver_2_man }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_sakuma_ryozo={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_sakuma_ryozo
+			portraits={
+				army={
+					small="GFX_idea_generic_army_asia_1"
+				}
+			}
+			advisor = {	
+				slot = army_chief
+				cost = 100
+				idea_token = MAN_sakuma_ryozo
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { army_chief_planning_2_man_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_sakuma_ryozo
+			portraits={
+				army={
+					small="GFX_idea_generic_army_asia_1"
+				}
+			}
+			advisor = {	
+				slot = army_chief
+				cost = 100
+				idea_token = MAN_sakuma_ryozo
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { army_chief_planning_2_man }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_kimura_heitaro={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_kimura_heitaro
+			portraits={
+				army={
+					small="GFX_idea_generic_army_asia_2"
+				}
+			}
+			advisor = {	
+				slot = high_command
+				cost = 100
+				idea_token = MAN_kimura_heitaro
+				ledger = army
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+					}
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { army_artillery_2_man_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_kimura_heitaro
+			portraits={
+				army={
+					small="GFX_idea_generic_army_asia_2"
+				}
+			}
+			advisor = {	
+				slot = high_command
+				cost = 100
+				idea_token = MAN_kimura_heitaro
+				ledger = army
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+					}
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { army_artillery_2_man }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_tsuji_masanobu={
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name=MAN_tsuji_masanobu
+			portraits={
+				army={
+					small="GFX_idea_generic_army_asia_3"
+				}
+			}
+			advisor = {	
+				slot = high_command
+				cost = 100
+				idea_token = MAN_tsuji_masanobu
+				ledger = army
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { army_regrouping_2_man_tfv }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name=MAN_tsuji_masanobu
+			portraits={
+				army={
+					small="GFX_idea_generic_army_asia_3"
+				}
+			}
+			advisor = {	
+				slot = high_command
+				cost = 100
+				idea_token = MAN_tsuji_masanobu
+				ledger = army
+				
+				available = { 
+					NOT = {
+						has_global_flag = MAN_assassinated
+						
+					}
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				} 
+				
+				traits = { army_regrouping_2_man }
+				
+				ai_will_do = { base = 1 }
+			}
+		}
+	}
+	
+	MAN_grand_council_char = {
+		name = MAN_grand_council
+		portraits = {
+			army = {
+				small = "GFX_idea_grand_council"
+			}
+		}
+		advisor = {
+			idea_token = MAN_grand_council_theorist
+			cost = 50
+			slot = theorist
+			ledger = military
+			
+			removal_cost = -1
+			
+			visible = { has_completed_focus = MAN_revive_the_grand_council }
+			available = { has_completed_focus = MAN_revive_the_grand_council }
+			
+			traits = {
+				MAN_the_grand_council_trait
+			}
+		}
+	}
+	
+	MAN_amakasu_masahiko = {
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name = MAN_amakasu_masahiko
+			portraits = {
+				civilian = {
+					small = "GFX_idea_amakasu_masahiko"
+				}
+			}
+			advisor = {
+				idea_token = MAN_amakasu_masahiko
+				cost = 150
+				slot = political_advisor
+				
+				visible = { 
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				}
+				
+				available = { 
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+					OR = {
+						has_idea = MAN_manei
+						has_idea = MAN_state_controlled_media
+					}
+				}
+				
+				traits = {
+					MAN_head_of_manei_tfv
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name = MAN_amakasu_masahiko
+			portraits = {
+				civilian = {
+					small = "GFX_idea_amakasu_masahiko"
+				}
+			}
+			advisor = {
+				idea_token = MAN_amakasu_masahiko
+				cost = 150
+				slot = political_advisor
+				
+				visible = { 
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				}
+				
+				available = { 
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+					OR = {
+						has_idea = MAN_manei
+						has_idea = MAN_state_controlled_media
+					}
+				}
+				
+				traits = {
+					MAN_head_of_manei
+				}
+			}
+		}
+	}
+	
+	MAN_furumi_tadayuki = {
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+			name = MAN_furumi_tadayuki
+			portraits = {
+				civilian = {
+					small = "GFX_idea_furumi_tadayuki"
+				}
+			}
+			advisor = {
+				idea_token = MAN_furumi_tadayuki
+				cost = 150
+				slot = political_advisor
+				
+				visible = { 
+					any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+					has_country_leader = {
+						character = MAN_aisin_gioro_puyi
+						ruling_only = yes 
+					}
+				}
+				
+				available = { 
+					any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+					has_country_leader = {
+						character = MAN_aisin_gioro_puyi
+						ruling_only = yes 
+					}
+				}
+				
+				traits = {
+					MAN_treasurer_tfv
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+			name = MAN_furumi_tadayuki
+			portraits = {
+				civilian = {
+					small = "GFX_idea_furumi_tadayuki"
+				}
+			}
+			advisor = {
+				idea_token = MAN_furumi_tadayuki
+				cost = 150
+				slot = political_advisor
+				
+				visible = { 
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				}
+				
+				available = { 
+					OR = {
+						any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+						has_country_leader = {
+							character = MAN_kwantung_army
+							ruling_only = yes 
+						}
+					}
+				}
+				
+				traits = {
+					MAN_treasurer
+				}
+			}
+		}
+	}
+	
+	MAN_yoshioka_yasunao = {
+		instance = {
+			allowed = {
+				has_dlc = "Together for Victory"
+			}
+		name = MAN_yoshioka_yasunao
+			portraits = {
+				civilian = {
+					small = "GFX_idea_yoshioka_yasunao"
+				}
+			}
+			advisor = {
+				idea_token = MAN_yoshioka_yasunao
+				cost = 150
+				slot = political_advisor
+				removal_cost = -1
+				
+				visible = { 
+					any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+					has_country_leader = {
+						character = MAN_aisin_gioro_puyi
+						ruling_only = yes
+					}
+				}
+				
+				available = { 
+					any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+					has_country_leader = {
+						character = MAN_aisin_gioro_puyi
+						ruling_only = yes
+					}
+				}
+				
+				traits = {
+					MAN_goyogakari_tfv
+				}
+			}
+		}
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Together for Victory" }
+			}
+		name = MAN_yoshioka_yasunao
+			portraits = {
+				civilian = {
+					small = "GFX_idea_yoshioka_yasunao"
+				}
+			}
+			advisor = {
+				idea_token = MAN_yoshioka_yasunao
+				cost = 150
+				slot = political_advisor
+				removal_cost = -1
+				
+				visible = { 
+					any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+				}
+				
+				available = { 
+					any_country = { original_tag = JAP ROOT = { is_subject_of = PREV }}
+					has_country_leader = {
+						character = MAN_aisin_gioro_puyi
+						ruling_only = yes
+					}
+				}
+				
+				traits = {
+					MAN_goyogakari
+				}
+			}
+		}
+	}
+	
+	MAN_republic_parliament = {
+		name = MAN_republic_parliament
+		portraits = {
+			civilian = {
+				large = "gfx/interface/kmt_mod/man_republic_parliament.tga"
+			}
+		}
+	}
+	
+	MAN_kwantung_army = {
+		name = MAN_kwantung_army
+		portraits = {
+			civilian = { large = "gfx/leaders/kmt_mod/kwantung_army_leader.tga" }
+		}
+	}
 
 
 }

@@ -10,15 +10,15 @@ on_actions = {
 			}
 			if = {
 				limit = {
-					tag = MCK
-					has_country_flag = MCK_imperial_elections
+					tag = MAN
+					has_country_flag = MAN_imperial_elections
 				}
 				country_event = { id = jap.237 }
 			}
 			if = {
 				limit = {
-					tag = MCK
-					has_country_flag = MCK_manchurian_republic_elections
+					tag = MAN
+					has_country_flag = MAN_manchurian_republic_elections
 				}
 				country_event = { id = jap.238 }
 			}
@@ -310,7 +310,7 @@ on_actions = {
 			if = {
 				limit = {
 					ROOT = {
-						original_tag = MCK
+						original_tag = MAN
 						has_country_flag = RFP_wins
 					}
 					FROM = {
@@ -331,7 +331,7 @@ on_actions = {
 					}
 					create_faction = rfp_white_movement
 					add_timed_idea = {
-						idea = MCK_RFP_white_movement
+						idea = MAN_RFP_white_movement
 						days = 1700
 					}
 					hidden_effect = {
@@ -590,7 +590,7 @@ on_actions = {
 			if = {
 				limit = {
 					NOT = { has_global_flag = RFP_refuse_aid }
-					tag = MCK
+					tag = MAN
 					is_subject_of = FROM
 					has_country_flag = rfp_path
 					any_country = {
@@ -602,7 +602,7 @@ on_actions = {
 					}
 				}			
 				FROM = {
-					save_global_event_target_as = MCK_independence_target
+					save_global_event_target_as = MAN_independence_target
 				}
 				random_country = {
 					limit = {
@@ -772,10 +772,10 @@ on_actions = {
 			if = {
 				limit = {
 					FROM = {
-						original_tag = MCK
+						original_tag = MAN
 					}
 					ROOT = {
-						original_tag = MCK
+						original_tag = MAN
 						has_government = neutrality
 					}
 				}
@@ -786,11 +786,11 @@ on_actions = {
 			if = {
 				limit = {
 					FROM = {
-						original_tag = MCK
+						original_tag = MAN
 						has_government = neutrality
 					}
 					ROOT = {
-						original_tag = MCK
+						original_tag = MAN
 						has_government = fascism
 					}
 				}
@@ -994,14 +994,14 @@ on_actions = {
 					has_cosmetic_tag = QINGMOH 
 					has_government = democratic
 				}
-				set_party_name = { ideology = democratic name = MCK_federalist_ruling }
+				set_party_name = { ideology = democratic name = MAN_federalist_ruling }
 			}
 			if = {
 				limit = { 
 					has_cosmetic_tag = QINGMOH 
 					has_government = fascism
 				}
-				set_party_name = { ideology = fascism name = MCK_national_peoples_party long_name = MCK_national_peoples_party_long }
+				set_party_name = { ideology = fascism name = MAN_national_peoples_party long_name = MAN_national_peoples_party_long }
 			}
 			if = {
 				limit = { 
@@ -1011,7 +1011,7 @@ on_actions = {
 					}
 					has_government = communism
 				}
-				set_party_name = { ideology = communism name = MCK_communist_oppositions_ruling }
+				set_party_name = { ideology = communism name = MAN_communist_oppositions_ruling }
 			}
 			if = {
 				limit = {
@@ -1059,14 +1059,14 @@ on_actions = {
 			
 			if = {
 				limit = {
-					tag = MCK
+					tag = MAN
 					has_government = neutrality
 					is_subject = no
 					country_exists = event_target:KMT_central_gov_tag
 					event_target:KMT_central_gov_tag = {
 						is_subject = no
 						exists = yes
-						NOT = { has_country_flag = MCK_helping_independence }
+						NOT = { has_country_flag = MAN_helping_independence }
 					}
 				}
 				event_target:KMT_central_gov_tag = { country_event = { id = kmt.275 }}
@@ -1075,13 +1075,13 @@ on_actions = {
 			
 			if = {
 				limit = {
-					tag = MCK
+					tag = MAN
 					NOT = {
 						has_government = fascism
-						has_global_flag = JAP_grant_MCK_independence
-						#has_completed_focus = MCK_call_usa_to_act
-						#has_completed_focus = MCK_coronation
-						has_completed_focus = MCK_independence_war
+						has_global_flag = JAP_grant_MAN_independence
+						#has_completed_focus = MAN_call_usa_to_act
+						#has_completed_focus = MAN_coronation
+						has_completed_focus = MAN_independence_war
 					}
 					is_puppet_of = JAP
 				}
@@ -1229,7 +1229,7 @@ on_actions = {
 			if = {
 				limit = {
 					ROOT = {
-						original_tag = MCK
+						original_tag = MAN
 						has_country_flag = RFP_wins
 					}
 					FROM = {
@@ -1705,57 +1705,57 @@ on_actions = {
 			}
 			if = {
 				limit = {
-					FROM = { has_country_flag = MCK_helping_independence }
-					tag = MCK
+					FROM = { has_country_flag = MAN_helping_independence }
+					tag = MAN
 					is_subject = yes
 					any_owned_state = {
 						is_controlled_by = ROOT
-						has_state_flag = MCK_state_secured
+						has_state_flag = MAN_state_secured
 					}
 				}
-				#anchor: MCK gain independence
-				MCK = { 
-					set_country_flag = MCK_free_flag 
+				#anchor: MAN gain independence
+				MAN = { 
+					set_country_flag = MAN_free_flag 
 					capital_scope = {
 						if = {
-							limit = { NOT = { has_state_flag = MCK_state_secured }}
-							add_to_variable = { global.MCK_secured_state_num = 1 }
-							set_state_flag = MCK_state_secured
-							custom_effect_tooltip = MCK_state_secured_tt
-								set_variable = { MCK_secured_state_frame = 2 }
+							limit = { NOT = { has_state_flag = MAN_state_secured }}
+							add_to_variable = { global.MAN_secured_state_num = 1 }
+							set_state_flag = MAN_state_secured
+							custom_effect_tooltip = MAN_state_secured_tt
+								set_variable = { MAN_secured_state_frame = 2 }
 						}
 					}
 				}
 				white_peace = FROM
-				set_party_name = { ideology = fascism long_name = MCK_independent_f_party name = MCK_independent_f_party }
+				set_party_name = { ideology = fascism long_name = MAN_independent_f_party name = MAN_independent_f_party }
 				every_owned_state = {
 					limit = {
-						has_state_flag = MCK_assimilated_bandits
+						has_state_flag = MAN_assimilated_bandits
 						is_core_of = ROOT
-						has_dynamic_modifier = { modifier = MCK_local_bandits }
+						has_dynamic_modifier = { modifier = MAN_local_bandits }
 						NOT = {
-							has_dynamic_modifier = { modifier = MCK_najua_presence }
-							has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+							has_dynamic_modifier = { modifier = MAN_najua_presence }
+							has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 						}
 					}
-					if = { limit = { has_dynamic_modifier = { modifier = MCK_local_bandits }} remove_dynamic_modifier = { modifier = MCK_local_bandits }}
+					if = { limit = { has_dynamic_modifier = { modifier = MAN_local_bandits }} remove_dynamic_modifier = { modifier = MAN_local_bandits }}
 					if = { limit = { has_resistance = yes } cancel_resistance = yes }
-					if = { limit = { check_variable = { global.MCK_resistance_strength@This > 0 }} set_variable = { global.MCK_resistance_strength@This = 0 }}
+					if = { limit = { check_variable = { global.MAN_resistance_strength@This > 0 }} set_variable = { global.MAN_resistance_strength@This = 0 }}
 				}
 				every_owned_state = {
 					limit = {
 						is_core_of = ROOT
-						check_variable = { MCK_guihuajun_amt > 0 }
+						check_variable = { MAN_guihuajun_amt > 0 }
 					}
 					create_unit = {
 						division = "name = \"Kuei-hua-chün\" division_template = \"Kuei-hua-chün\" start_experience_factor = 0.2 start_equipment_factor = 15 start_equipment_factor = 1"
 						owner = ROOT
 						allow_spawning_on_enemy_provs = yes
-						count = This.MCK_guihuajun_amt
+						count = This.MAN_guihuajun_amt
 					}
 				}
 				OVERLORD = { 
-					save_event_target_as = MCK_former_overlord
+					save_event_target_as = MAN_former_overlord
 					country_event = { id = jap.235 }
 					end_puppet = ROOT 
 					if = {
@@ -1805,49 +1805,49 @@ on_actions = {
 				}
 				if = {
 					limit = {
-						has_completed_focus = MCK_contact_russian_fascists
+						has_completed_focus = MAN_contact_russian_fascists
 					}
-					custom_effect_tooltip = MCK_rfr_arm_forces
+					custom_effect_tooltip = MAN_rfr_arm_forces
 					hidden_effect = {
-						load_oob = "MCK_rfr_arm_forces"
-						#set_temp_variable = { MCK_temp_govnt = 2 }
-						#KMT_mck_break_free_ideo_pop = yes
-						set_variable = { MCK_RFP_mood = 0 }
+						load_oob = "MAN_rfr_arm_forces"
+						#set_temp_variable = { MAN_temp_govnt = 2 }
+						#KMT_man_break_free_ideo_pop = yes
+						set_variable = { MAN_RFP_mood = 0 }
 					}
 				}else = {
-					set_party_name = { ideology = neutrality long_name = MCK_qing_restored name = MCK_qing_restored }
+					set_party_name = { ideology = neutrality long_name = MAN_qing_restored name = MAN_qing_restored }
 				}
-				set_variable = { MCK_awareness = 0 }
-				set_variable = { MCK_suspicion = 0 }
+				set_variable = { MAN_awareness = 0 }
+				set_variable = { MAN_suspicion = 0 }
 				FROM = {
 					diplomatic_relation = { relation = guarantee country = ROOT active = yes }
 				}
 				if = {
 					limit = {
-						has_global_flag = MCK_prepared_for_usa_intervention
+						has_global_flag = MAN_prepared_for_usa_intervention
 						USA = {
 							exists = yes
 							is_subject = no
-							has_country_flag = MCK_helping_independence
+							has_country_flag = MAN_helping_independence
 						}
 						NOT = { is_subject_of = USA }
 					}
-					add_ideas = MCK_usa_intervention
+					add_ideas = MAN_usa_intervention
 					USA = {
 						country_event = { id = jap.241 }
 					}
 				}
 				if = {
 					limit = {
-						has_global_flag = MCK_prepared_for_sov_intervention
+						has_global_flag = MAN_prepared_for_sov_intervention
 						SOV = {
 							exists = yes
 							is_subject = no
-							has_country_flag = MCK_helping_independence
+							has_country_flag = MAN_helping_independence
 						}
 						NOT = { is_subject_of = SOV }
 					}
-					add_ideas = MCK_sov_intervention
+					add_ideas = MAN_sov_intervention
 					if = {
 						limit = { 
 							any_owned_state = { any_neighbor_state = { is_controlled_by = SOV }}
@@ -1874,22 +1874,22 @@ on_actions = {
 							}
 						}
 					}
-				add_equipment_to_stockpile = { type = infantry_equipment amount = MCK_uprise_sov_equipment producer = SOV }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = MAN_uprise_sov_equipment producer = SOV }
 					SOV = {
 						country_event = { id = jap.241 }
 					}
 				}
 				if = {
 					limit = {
-						has_global_flag = MCK_coordinated_uprising_flag
+						has_global_flag = MAN_coordinated_uprising_flag
 						event_target:KMT_central_gov_tag = {
 							exists = yes
 							is_subject = no
-							has_country_flag = MCK_helping_independence
+							has_country_flag = MAN_helping_independence
 						}
 						NOT = { is_subject_of = event_target:KMT_central_gov_tag }
 					}
-					add_ideas = MCK_chi_intervention
+					add_ideas = MAN_chi_intervention
 					division_template = {
 						name = "K'ang-jih Chiu-kuo Ch'i-i-chün"
 						is_locked = yes
@@ -1938,19 +1938,19 @@ on_actions = {
 				}
 				if = {
 					limit = {
-						has_global_flag = MCK_korean_cooperation_flag
+						has_global_flag = MAN_korean_cooperation_flag
 					}
 					if = {
 						limit = {	
 							KOR = { 
-								is_subject_of = event_target:MCK_former_overlord 
+								is_subject_of = event_target:MAN_former_overlord 
 								exists = yes
 							}
 						}
-						event_target:MCK_former_overlord = {
+						event_target:MAN_former_overlord = {
 							end_puppet = KOR
 						}
-						MCK = { puppet = KOR }
+						MAN = { puppet = KOR }
 						KOR = {
 							division_template = {
 								name = "Joseon Uiyondae"
@@ -1984,8 +1984,8 @@ on_actions = {
 							is_core_of = KOR
 							OWNER = {
 								OR = {
-									tag = event_target:MCK_former_overlord
-									is_subject_of = event_target:MCK_former_overlord
+									tag = event_target:MAN_former_overlord
+									is_subject_of = event_target:MAN_former_overlord
 								}
 								NOT = { tag = KOR }
 							}
@@ -2016,91 +2016,91 @@ on_actions = {
 						}
 					}
 				}
-				event_target:MCK_former_overlord = {
+				event_target:MAN_former_overlord = {
 					add_timed_idea = {
-						idea = MCK_disrupted_logistics
+						idea = MAN_disrupted_logistics
 						days = 60
 					}
 				}
 				every_owned_state = {
 					limit = {
-						NOT = { has_state_flag = MCK_state_secured }
+						NOT = { has_state_flag = MAN_state_secured }
 					}
-					event_target:MCK_former_overlord = { set_state_owner = PREV }
+					event_target:MAN_former_overlord = { set_state_owner = PREV }
 					if = {
 						limit = {
 							is_controlled_by = ROOT
 						}
-						event_target:MCK_former_overlord = { set_state_controller = PREV }
+						event_target:MAN_former_overlord = { set_state_controller = PREV }
 					}
 				}
 			}
 			
 			if = {
 				limit = {
-					MCK = { 
+					MAN = { 
 						is_subject_of = ROOT
 						exists = yes
-						has_completed_focus = MCK_an_alternative
+						has_completed_focus = MAN_an_alternative
 						any_owned_state = {
-							is_controlled_by = MCK
-							has_state_flag = MCK_state_secured
+							is_controlled_by = MAN
+							has_state_flag = MAN_state_secured
 						}
 					}
 					has_civil_war = no
 				}
-				#anchor: MCK gain independence
-				MCK = { 
-					set_country_flag = MCK_free_flag 
+				#anchor: MAN gain independence
+				MAN = { 
+					set_country_flag = MAN_free_flag 
 					capital_scope = {
 						if = {
-							limit = { NOT = { has_state_flag = MCK_state_secured }}
-							add_to_variable = { global.MCK_secured_state_num = 1 }
-							set_state_flag = MCK_state_secured
-							custom_effect_tooltip = MCK_state_secured_tt
-								set_variable = { MCK_secured_state_frame = 2 }
+							limit = { NOT = { has_state_flag = MAN_state_secured }}
+							add_to_variable = { global.MAN_secured_state_num = 1 }
+							set_state_flag = MAN_state_secured
+							custom_effect_tooltip = MAN_state_secured_tt
+								set_variable = { MAN_secured_state_frame = 2 }
 						}
 					}
 				}
-				MCK = {
-					set_party_name = { ideology = fascism long_name = MCK_independent_f_party name = MCK_independent_f_party }
+				MAN = {
+					set_party_name = { ideology = fascism long_name = MAN_independent_f_party name = MAN_independent_f_party }
 					every_owned_state = {
 						limit = {
-							has_state_flag = MCK_assimilated_bandits
-							is_core_of = MCK
-							has_dynamic_modifier = { modifier = MCK_local_bandits }
+							has_state_flag = MAN_assimilated_bandits
+							is_core_of = MAN
+							has_dynamic_modifier = { modifier = MAN_local_bandits }
 							NOT = {
-								has_dynamic_modifier = { modifier = MCK_najua_presence }
-								has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+								has_dynamic_modifier = { modifier = MAN_najua_presence }
+								has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 							}
 						}
-						if = { limit = { has_dynamic_modifier = { modifier = MCK_local_bandits }} remove_dynamic_modifier = { modifier = MCK_local_bandits }}
+						if = { limit = { has_dynamic_modifier = { modifier = MAN_local_bandits }} remove_dynamic_modifier = { modifier = MAN_local_bandits }}
 						if = { limit = { has_resistance = yes } cancel_resistance = yes }
-						if = { limit = { check_variable = { global.MCK_resistance_strength@This > 0 }} set_variable = { global.MCK_resistance_strength@This = 0 }}
+						if = { limit = { check_variable = { global.MAN_resistance_strength@This > 0 }} set_variable = { global.MAN_resistance_strength@This = 0 }}
 					}
 					every_owned_state = {
 						limit = {
-							is_core_of = MCK
-							check_variable = { MCK_guihuajun_amt > 0 }
+							is_core_of = MAN
+							check_variable = { MAN_guihuajun_amt > 0 }
 						}
 						create_unit = {
 							division = "name = \"Kuei-hua-chün\" division_template = \"Kuei-hua-chün\" start_experience_factor = 0.2 start_equipment_factor = 15 start_equipment_factor = 1"
-							owner = MCK
+							owner = MAN
 							allow_spawning_on_enemy_provs = yes
-							count = This.MCK_guihuajun_amt
+							count = This.MAN_guihuajun_amt
 						}
 					}
 					OVERLORD = { 
-						save_event_target_as = MCK_former_overlord
+						save_event_target_as = MAN_former_overlord
 						country_event = { id = jap.235 }
-						end_puppet = MCK 
+						end_puppet = MAN 
 						if = {
-							limit = { is_in_faction_with = MCK }
-							remove_from_faction = MCK
+							limit = { is_in_faction_with = MAN }
+							remove_from_faction = MAN
 						}
 						every_country = {
 							limit = { 
-								has_war_with = MCK 
+								has_war_with = MAN 
 								OR = {
 									is_faction_leader = yes
 									is_in_faction = no
@@ -2116,7 +2116,7 @@ on_actions = {
 							country_event = { id = jap.222 }
 						}
 						
-						MCK = {
+						MAN = {
 							declare_war_on = {
 								target = PREV
 								type = topple_government
@@ -2141,46 +2141,46 @@ on_actions = {
 					}
 					if = {
 						limit = {
-							has_completed_focus = MCK_contact_russian_fascists
+							has_completed_focus = MAN_contact_russian_fascists
 						}
-						custom_effect_tooltip = MCK_rfr_arm_forces
+						custom_effect_tooltip = MAN_rfr_arm_forces
 						hidden_effect = {
-							load_oob = "MCK_rfr_arm_forces"
-							#set_temp_variable = { MCK_temp_govnt = 2 }
-							#KMT_mck_break_free_ideo_pop = yes
-							set_variable = { MCK_RFP_mood = 0 }
+							load_oob = "MAN_rfr_arm_forces"
+							#set_temp_variable = { MAN_temp_govnt = 2 }
+							#KMT_man_break_free_ideo_pop = yes
+							set_variable = { MAN_RFP_mood = 0 }
 						}
 					}else = {
-						set_party_name = { ideology = neutrality long_name = MCK_qing_restored name = MCK_qing_restored }
+						set_party_name = { ideology = neutrality long_name = MAN_qing_restored name = MAN_qing_restored }
 					}
-					set_variable = { MCK_awareness = 0 }
-					set_variable = { MCK_suspicion = 0 }
+					set_variable = { MAN_awareness = 0 }
+					set_variable = { MAN_suspicion = 0 }
 					if = {
 						limit = {
-							has_global_flag = MCK_prepared_for_usa_intervention
+							has_global_flag = MAN_prepared_for_usa_intervention
 							USA = {
 								exists = yes
 								is_subject = no
-								has_country_flag = MCK_helping_independence
+								has_country_flag = MAN_helping_independence
 							}
 							NOT = { is_subject_of = USA }
 						}
-						add_ideas = MCK_usa_intervention
+						add_ideas = MAN_usa_intervention
 						USA = {
 							country_event = { id = jap.241 }
 						}
 					}
 					if = {
 						limit = {
-							has_global_flag = MCK_prepared_for_sov_intervention
+							has_global_flag = MAN_prepared_for_sov_intervention
 							SOV = {
 								exists = yes
 								is_subject = no
-								has_country_flag = MCK_helping_independence
+								has_country_flag = MAN_helping_independence
 							}
 							NOT = { is_subject_of = SOV }
 						}
-						add_ideas = MCK_sov_intervention
+						add_ideas = MAN_sov_intervention
 						if = {
 							limit = { 
 								any_owned_state = { any_neighbor_state = { is_controlled_by = SOV }}
@@ -2202,27 +2202,27 @@ on_actions = {
 								}
 								create_unit = {
 									division = "name = \"E-jen Chih-yüan Pu-tui\" division_template = \"E-jen Chih-yüan Pu-tui\"  start_experience_factor = 0.35 start_equipment_factor = 1"
-									owner = MCK
+									owner = MAN
 						allow_spawning_on_enemy_provs = yes
 								}
 							}
 						}
-					add_equipment_to_stockpile = { type = infantry_equipment amount = MCK_uprise_sov_equipment producer = SOV }
+					add_equipment_to_stockpile = { type = infantry_equipment amount = MAN_uprise_sov_equipment producer = SOV }
 						SOV = {
 							country_event = { id = jap.241 }
 						}
 					}
 					if = {
 						limit = {
-							has_global_flag = MCK_coordinated_uprising_flag
+							has_global_flag = MAN_coordinated_uprising_flag
 							event_target:KMT_central_gov_tag = {
 								exists = yes
 								is_subject = no
-								has_country_flag = MCK_helping_independence
+								has_country_flag = MAN_helping_independence
 							}
 							NOT = { is_subject_of = event_target:KMT_central_gov_tag }
 						}
-						add_ideas = MCK_chi_intervention
+						add_ideas = MAN_chi_intervention
 						division_template = {
 							name = "K'ang-jih Chiu-kuo Ch'i-i-chün"
 							is_locked = yes
@@ -2232,10 +2232,10 @@ on_actions = {
 							}
 						}
 						every_owned_state = {
-							limit = { is_core_of = MCK }
+							limit = { is_core_of = MAN }
 							create_unit = {
 								division = "name = \"K'ang-jih Chiu-kuo Ch'i-i-chün\" division_template = \"K'ang-jih Chiu-kuo Ch'i-i-chün\" start_experience_factor = 0.2 start_equipment_factor = 1"
-								owner = MCK
+								owner = MAN
 						allow_spawning_on_enemy_provs = yes
 							}
 						}
@@ -2271,19 +2271,19 @@ on_actions = {
 					}
 					if = {
 						limit = {
-							has_global_flag = MCK_korean_cooperation_flag
+							has_global_flag = MAN_korean_cooperation_flag
 						}
 						if = {
 							limit = {	
 								KOR = { 
-									is_subject_of = event_target:MCK_former_overlord 
+									is_subject_of = event_target:MAN_former_overlord 
 									exists = yes
 								}
 							}
-							event_target:MCK_former_overlord = {
+							event_target:MAN_former_overlord = {
 								end_puppet = KOR
 							}
-							MCK = { puppet = KOR }
+							MAN = { puppet = KOR }
 							KOR = {
 								division_template = {
 									name = "Joseon Uiyondae"
@@ -2317,8 +2317,8 @@ on_actions = {
 								is_core_of = KOR
 								OWNER = {
 									OR = {
-										tag = event_target:MCK_former_overlord
-										is_subject_of = event_target:MCK_former_overlord
+										tag = event_target:MAN_former_overlord
+										is_subject_of = event_target:MAN_former_overlord
 									}
 									NOT = { tag = KOR }
 								}
@@ -2349,22 +2349,22 @@ on_actions = {
 							}
 						}
 					}
-					event_target:MCK_former_overlord = {
+					event_target:MAN_former_overlord = {
 						add_timed_idea = {
-							idea = MCK_disrupted_logistics
+							idea = MAN_disrupted_logistics
 							days = 60
 						}
 					}
 					#every_owned_state = {
 					#	limit = {
-					#		NOT = { has_state_flag = MCK_state_secured }
+					#		NOT = { has_state_flag = MAN_state_secured }
 					#	}
-					#	event_target:MCK_former_overlord = { set_state_owner = PREV }
+					#	event_target:MAN_former_overlord = { set_state_owner = PREV }
 					#	if = {
 					#		limit = {
-					#			is_controlled_by = MCK
+					#			is_controlled_by = MAN
 					#		}
-					#		event_target:MCK_former_overlord = { set_state_controller = PREV }
+					#		event_target:MAN_former_overlord = { set_state_controller = PREV }
 					#	}
 					#}
 				}
@@ -2417,10 +2417,10 @@ on_actions = {
 			if = {
 				limit = {
 					ROOT = {
-						tag = MCK
+						tag = MAN
 						is_puppet_of = JAP
 						has_country_leader = {
-							character = MCK_puyi
+							character = MAN_puyi
 							ruling_only = yes
 						}
 					}
@@ -2617,7 +2617,7 @@ on_actions = {
 						region = 243
 					}
 				}
-				set_variable = { MCK_secured_state_frame = 1 }
+				set_variable = { MAN_secured_state_frame = 1 }
 			}
 			724 = {
 				add_building_construction = {
@@ -2675,140 +2675,140 @@ on_actions = {
 					add_ideas = KMT_falkenhausen_advisor_theorist 
 				}
 			}
-			MCK = {
+			MAN = {
 				if = {
 					limit = { has_start_date < 1936.2.1 }
 					every_owned_state = {
 						limit = { NOT = { state = 961 }}
-						add_dynamic_modifier = { modifier = MCK_local_bandits }
+						add_dynamic_modifier = { modifier = MAN_local_bandits }
 						set_compliance = 0
 						set_resistance = 25
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 45 }
+						set_variable = { global.MAN_resistance_strength@This = 45 }
 					}
 
 					610 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					715 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					964 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					716 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					965 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					328 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					976 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					717 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					974 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					963 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					936 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					761 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 15 }
+						set_variable = { global.MAN_resistance_strength@This = 15 }
 					}
 
 					950 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 30 }
+						set_variable = { global.MAN_resistance_strength@This = 30 }
 					}
 
 					973 = {
 						set_compliance = 0
 						set_resistance = 10
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 30 }
+						set_variable = { global.MAN_resistance_strength@This = 30 }
 					}
 
 					961 = {
 						set_compliance = 0
 						set_resistance = 40
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 50 }
+						set_variable = { global.MAN_resistance_strength@This = 50 }
 					}
 				}else = {
 					961 = {
 						set_compliance = 0
 						set_resistance = 90
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 100 }
+						set_variable = { global.MAN_resistance_strength@This = 100 }
 					}
 					975 = {
 						set_compliance = 0
 						set_resistance = 70
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 70 }
+						set_variable = { global.MAN_resistance_strength@This = 70 }
 					}
 					714 = {
 						set_compliance = 0
 						set_resistance = 50
 						set_garrison_strength = 1.0
-						set_variable = { global.MCK_resistance_strength@This = 45 }
+						set_variable = { global.MAN_resistance_strength@This = 45 }
 					}
 					every_owned_state = {
 						limit = { 
@@ -2816,47 +2816,47 @@ on_actions = {
 							NOT = { state = 975 }
 							NOT = { state = 714 }
 							has_resistance = yes
-							is_core_of = MCK
+							is_core_of = MAN
 						}
 						cancel_resistance = yes
 					}
 				}
 				every_owned_state = {
-					set_variable = { MCK_local_bandits_compliance_gain = global.MCK_resistance_strength@This }
-					multiply_variable = { MCK_local_bandits_compliance_gain = -1 }
-					divide_variable = { MCK_local_bandits_compliance_gain = 10000 }
+					set_variable = { MAN_local_bandits_compliance_gain = global.MAN_resistance_strength@This }
+					multiply_variable = { MAN_local_bandits_compliance_gain = -1 }
+					divide_variable = { MAN_local_bandits_compliance_gain = 10000 }
 					
-					set_variable = { MCK_local_bandits_resistance_target = global.MCK_resistance_strength@This }
-					divide_variable = { MCK_local_bandits_resistance_target = 10000 }
-					multiply_variable = { MCK_local_bandits_resistance_target = 15 }
+					set_variable = { MAN_local_bandits_resistance_target = global.MAN_resistance_strength@This }
+					divide_variable = { MAN_local_bandits_resistance_target = 10000 }
+					multiply_variable = { MAN_local_bandits_resistance_target = 15 }
 					
-					set_variable = { MCK_najua_presence_resistance_growth = global.MCK_resistance_strength@This }
-					divide_variable = { MCK_najua_presence_resistance_growth = 200 }
+					set_variable = { MAN_najua_presence_resistance_growth = global.MAN_resistance_strength@This }
+					divide_variable = { MAN_najua_presence_resistance_growth = 200 }
 					
-					set_variable = { MCK_najua_presence_resistance_decay = global.MCK_resistance_strength@This }
-					divide_variable = { MCK_najua_presence_resistance_decay = -500 }
+					set_variable = { MAN_najua_presence_resistance_decay = global.MAN_resistance_strength@This }
+					divide_variable = { MAN_najua_presence_resistance_decay = -500 }
 					
-					set_variable = { MCK_najua_presence_compliance_gain = global.MCK_resistance_strength@This }
-					multiply_variable = { MCK_najua_presence_compliance_gain = -5 }
-					divide_variable = { MCK_najua_presence_compliance_gain = 10000 }
+					set_variable = { MAN_najua_presence_compliance_gain = global.MAN_resistance_strength@This }
+					multiply_variable = { MAN_najua_presence_compliance_gain = -5 }
+					divide_variable = { MAN_najua_presence_compliance_gain = 10000 }
 					
-					set_variable = { MCK_najua_presence_resistance_target = global.MCK_resistance_strength@This }
-					divide_variable = { MCK_najua_presence_resistance_target = 1000 }
-					multiply_variable = { MCK_najua_presence_resistance_target = 3 }
+					set_variable = { MAN_najua_presence_resistance_target = global.MAN_resistance_strength@This }
+					divide_variable = { MAN_najua_presence_resistance_target = 1000 }
+					multiply_variable = { MAN_najua_presence_resistance_target = 3 }
 					
-					set_variable = { MCK_najua_presence2_resistance_growth = global.MCK_resistance_strength@This }
-					divide_variable = { MCK_najua_presence2_resistance_growth = 100 }
+					set_variable = { MAN_najua_presence2_resistance_growth = global.MAN_resistance_strength@This }
+					divide_variable = { MAN_najua_presence2_resistance_growth = 100 }
 					
-					set_variable = { MCK_najua_presence2_resistance_decay = global.MCK_resistance_strength@This }
-					divide_variable = { MCK_najua_presence2_resistance_decay = -200 }
+					set_variable = { MAN_najua_presence2_resistance_decay = global.MAN_resistance_strength@This }
+					divide_variable = { MAN_najua_presence2_resistance_decay = -200 }
 					
-					set_variable = { MCK_najua_presence2_compliance_gain = global.MCK_resistance_strength@This }
-					multiply_variable = { MCK_najua_presence2_compliance_gain = -7 }
-					divide_variable = { MCK_najua_presence2_compliance_gain = 10000 }
+					set_variable = { MAN_najua_presence2_compliance_gain = global.MAN_resistance_strength@This }
+					multiply_variable = { MAN_najua_presence2_compliance_gain = -7 }
+					divide_variable = { MAN_najua_presence2_compliance_gain = 10000 }
 					
-					set_variable = { MCK_najua_presence2_resistance_target = global.MCK_resistance_strength@This }
-					divide_variable = { MCK_najua_presence2_resistance_target = 1000 }
-					multiply_variable = { MCK_najua_presence2_resistance_target = 7 }
+					set_variable = { MAN_najua_presence2_resistance_target = global.MAN_resistance_strength@This }
+					divide_variable = { MAN_najua_presence2_resistance_target = 1000 }
+					multiply_variable = { MAN_najua_presence2_resistance_target = 7 }
 					
 				}
 			}
@@ -3346,36 +3346,36 @@ on_actions = {
 			
 			every_state = {
 				limit = {
-					is_controlled_by = MCK
-					is_owned_by = MCK
+					is_controlled_by = MAN
+					is_owned_by = MAN
 					OR = {
 						state = 714
 						state = 717
 					}
 				}
-				set_state_flag = MCK_unpacified
+				set_state_flag = MAN_unpacified
 			}
 			
-			MCK = {
-				set_variable = { MCK_sabotage_timer_base = 7 }
-				set_variable = { MCK_awareness_deduction = 2 }
-				set_variable = { MCK_awareness = 0 }
-				set_variable = { MCK_suspicion = 0 }
-				set_variable = { MCK_RFP_readinessV = 0 }
-				set_variable = { MCK_temp_suspicion = 0 }
-				set_variable = { MCK_RFP_optionA_cost = 75 }
-				set_variable = { MCK_RFP_optionB_cost = 100 }
-				set_variable = { MCK_RFP_optionC_cost = 150 }
-				set_variable = { MCK_RFP_optionD_cost = 150 }
-				set_variable = { MCK_RFP_buff_cost = 10 }
-				set_variable = { MCK_RFP_mood = 0 }
-				set_variable = { MCK_RFP_reconciliation_cost_base = 50 }
-				set_variable = { MCK_RFP_reconciliation_cost = 50 }
-				set_variable = { MCK_sabotage_timer_multiplier = 5 }
-				set_variable = { MCK_sabotage_timer = MCK_sabotage_timer_base }
-				multiply_variable = { MCK_sabotage_timer = MCK_sabotage_timer_multiplier }
+			MAN = {
+				set_variable = { MAN_sabotage_timer_base = 7 }
+				set_variable = { MAN_awareness_deduction = 2 }
+				set_variable = { MAN_awareness = 0 }
+				set_variable = { MAN_suspicion = 0 }
+				set_variable = { MAN_RFP_readinessV = 0 }
+				set_variable = { MAN_temp_suspicion = 0 }
+				set_variable = { MAN_RFP_optionA_cost = 75 }
+				set_variable = { MAN_RFP_optionB_cost = 100 }
+				set_variable = { MAN_RFP_optionC_cost = 150 }
+				set_variable = { MAN_RFP_optionD_cost = 150 }
+				set_variable = { MAN_RFP_buff_cost = 10 }
+				set_variable = { MAN_RFP_mood = 0 }
+				set_variable = { MAN_RFP_reconciliation_cost_base = 50 }
+				set_variable = { MAN_RFP_reconciliation_cost = 50 }
+				set_variable = { MAN_sabotage_timer_multiplier = 5 }
+				set_variable = { MAN_sabotage_timer = MAN_sabotage_timer_base }
+				multiply_variable = { MAN_sabotage_timer = MAN_sabotage_timer_multiplier }
 				
-				set_variable = { MCK_sabotage_timer_multiplier_min = 2 }
+				set_variable = { MAN_sabotage_timer_multiplier_min = 2 }
 			}
 
 			if = {
@@ -3599,14 +3599,14 @@ on_actions = {
 	on_border_war_lost = {
 	}
 	
-	on_daily_MCK = {
+	on_daily_MAN = {
 		effect = {
 			if = {
 				limit = {
 					is_subject = no
-					NOT = { has_country_flag = MCK_free_flag }
+					NOT = { has_country_flag = MAN_free_flag }
 				}
-				MCK = { set_country_flag = MCK_free_flag }
+				MAN = { set_country_flag = MAN_free_flag }
 			}
 			if = {
 				limit = {
@@ -3614,14 +3614,14 @@ on_actions = {
 					has_country_leader_with_trait = puppet_emperor_tfv
 				}
 				remove_country_leader_trait = puppet_emperor_tfv
-				MCK = { country_event = { id = jap.244 }}
+				MAN = { country_event = { id = jap.244 }}
 			}
 			if = {
 				limit = {
-					has_country_flag = MCK_war_for_independence
+					has_country_flag = MAN_war_for_independence
 					NOT = { has_war_with = JAP }
 				}
-				clr_country_flag = MCK_war_for_independence
+				clr_country_flag = MAN_war_for_independence
 			}
 		}
 	}
@@ -4363,10 +4363,10 @@ on_actions = {
 		}
 	}
 	
-	on_weekly_MCK = {
+	on_weekly_MAN = {
 		effect = {
-			set_variable = { MCK_awareness_deduction = 2 }
-			subtract_from_variable = { MCK_awareness_deduction = MCK_suspicion }
+			set_variable = { MAN_awareness_deduction = 2 }
+			subtract_from_variable = { MAN_awareness_deduction = MAN_suspicion }
 		}
 	}
 	
@@ -4420,10 +4420,10 @@ on_actions = {
 		}
 	}
 	
-	on_weekly_MCK = {
+	on_weekly_MAN = {
 		effect = {
-			set_variable = { MCK_awareness_deduction = 2 }
-			subtract_from_variable = { MCK_awareness_deduction = MCK_suspicion }
+			set_variable = { MAN_awareness_deduction = 2 }
+			subtract_from_variable = { MAN_awareness_deduction = MAN_suspicion }
 		}
 	}
 	
@@ -4852,7 +4852,7 @@ on_actions = {
 			if = {
 				limit = {
 					has_country_leader = {
-						character = MCK_kwantung_army
+						character = MAN_kwantung_army
 						ruling_only = yes
 					}
 					FROM.FROM = {
@@ -4869,7 +4869,7 @@ on_actions = {
 						count = 4
 						allow_spawning_on_enemy_provs = yes
 					}
-					save_global_event_target_as = MCK_uprised_state
+					save_global_event_target_as = MAN_uprised_state
 				}
 				country_event = { id = jap.275 }
 				
@@ -5296,7 +5296,7 @@ on_actions = {
 							tag = PGR
 							tag = RGR
 							tag = WJW
-							tag = MCK
+							tag = MAN
 							tag = ECR
 							tag = EHA
 						}
@@ -5319,7 +5319,7 @@ on_actions = {
 						has_idea = JAP_remnant_of_jap_faction
 						OR = {
 							is_chinese_nations_w_HYQ = yes
-							original_tag = MCK
+							original_tag = MAN
 							original_tag = MEN
 							original_tag = RGR
 							original_tag = WJW
@@ -5681,21 +5681,21 @@ on_actions = {
 		}
 	}
 	
-	on_monthly_MCK = {
+	on_monthly_MAN = {
 		effect = {
 			if = {
 				limit = {
-					tag = MCK
+					tag = MAN
 					is_subject = no
 					OR = {
-						check_variable = { MCK_RFP_mood > 0 }
-						check_variable = { MCK_awareness > 0 }
-						check_variable = { MCK_suspicion > 0 }
+						check_variable = { MAN_RFP_mood > 0 }
+						check_variable = { MAN_awareness > 0 }
+						check_variable = { MAN_suspicion > 0 }
 					}
 				}
-				set_variable = { MCK_RFP_mood = 0 }
-				set_variable = { MCK_awareness = 0 }
-				set_variable = { MCK_suspicion = 0 }
+				set_variable = { MAN_RFP_mood = 0 }
+				set_variable = { MAN_awareness = 0 }
+				set_variable = { MAN_suspicion = 0 }
 			}
 		}
 	}
@@ -6296,9 +6296,9 @@ on_actions = {
 				limit = {
 					any_controlled_state = {
 						OR = {
-							has_dynamic_modifier = { modifier = MCK_local_bandits }
-							has_dynamic_modifier = { modifier = MCK_najua_presence }
-							has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+							has_dynamic_modifier = { modifier = MAN_local_bandits }
+							has_dynamic_modifier = { modifier = MAN_najua_presence }
+							has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 						}
 					}
 				}
@@ -6316,14 +6316,14 @@ on_actions = {
 					every_controlled_state = {
 						limit = {
 							OR = {
-								has_dynamic_modifier = { modifier = MCK_najua_presence }
-								has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+								has_dynamic_modifier = { modifier = MAN_najua_presence }
+								has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 							}
 						}
-						set_temp_variable = { MCK_temp_rs_change = global.MCK_najua_monthly_growth }
+						set_temp_variable = { MAN_temp_rs_change = global.MAN_najua_monthly_growth }
 						if = {
 							limit = { has_global_flag = PRC_yes_truce }
-							add_to_temp_variable = { MCK_temp_rs_change = 1 }
+							add_to_temp_variable = { MAN_temp_rs_change = 1 }
 						}
 						if = {
 							limit = { 
@@ -6335,46 +6335,46 @@ on_actions = {
 									is_subject = no
 								}
 							}
-							add_to_temp_variable = { MCK_temp_rs_change = 1 }
+							add_to_temp_variable = { MAN_temp_rs_change = 1 }
 						}
 						if = {
 							limit = { 
-								has_global_flag = MCK_reduced_najua_income
-								ROOT = { tag = MCK }
+								has_global_flag = MAN_reduced_najua_income
+								ROOT = { tag = MAN }
 								SOV = {
-									has_country_flag = MCK_helping_independence
+									has_country_flag = MAN_helping_independence
 									exists = yes
 									is_subject = no
 								}
 							}
-							subtract_from_temp_variable = { MCK_temp_rs_change = 2 }
+							subtract_from_temp_variable = { MAN_temp_rs_change = 2 }
 						}
 						clamp_variable = {
-							var = MCK_temp_rs_change
+							var = MAN_temp_rs_change
 							min = 1
 						}
-						add_to_variable = { global.MCK_resistance_strength@This = MCK_temp_rs_change }
+						add_to_variable = { global.MAN_resistance_strength@This = MAN_temp_rs_change }
 						clamp_variable = {
-							var = MCK_resistance_strength
+							var = MAN_resistance_strength
 							min = 0
 							max = 100
 						}
-						MCK_update_local_bandits_modifier = yes
+						MAN_update_local_bandits_modifier = yes
 					}
 				}
 				every_controlled_state = {
 					limit = {
 						OR = {
-							has_dynamic_modifier = { modifier = MCK_local_bandits }
+							has_dynamic_modifier = { modifier = MAN_local_bandits }
 						}
 					}
-					add_to_variable = { global.MCK_resistance_strength@This = 1 }
+					add_to_variable = { global.MAN_resistance_strength@This = 1 }
 					clamp_variable = {
-						var = MCK_resistance_strength
+						var = MAN_resistance_strength
 						min = 0
 						max = 100
 					}
-					MCK_update_local_bandits_modifier = yes
+					MAN_update_local_bandits_modifier = yes
 				}
 			}
 			if = {
@@ -7105,27 +7105,27 @@ on_actions = {
 				limit = {
 					original_tag = JAP
 					has_civil_war = yes
-					country_exists = MCK
-					MCK = {
+					country_exists = MAN
+					MAN = {
 						NOT = { has_war_with = ROOT }
 						OR = {
 							is_subject = no
 							is_subject_of = ROOT
 						}
 					}
-					has_global_flag = MCK_jap_subject_when_pre_emptive_coup
+					has_global_flag = MAN_jap_subject_when_pre_emptive_coup
 				}
 				every_character = { 
 					limit = { has_character_flag = JAP_true_jap_characters }
-					set_character_flag = MCK_japanese_refugee
-					set_nationality = MCK
+					set_character_flag = MAN_japanese_refugee
+					set_nationality = MAN
 				}
 				transfer_units_fraction = {
-					target = MCK
+					target = MAN
 					size = 1
 					navy_ratio = 1
 				}
-				MCK = {
+				MAN = {
 					country_event = { id = jap.251 }
 				}
 			}

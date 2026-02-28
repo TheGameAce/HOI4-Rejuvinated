@@ -640,7 +640,7 @@ foreign_politics = {
 						}
 					}
 				}
-				MCK = {
+				MAN = {
 					OR = {
 						exists = no
 						NOT = {
@@ -697,7 +697,7 @@ foreign_politics = {
 		}
 	}
 
-	JAP_sue_for_peace_MCK = {
+	JAP_sue_for_peace_MAN = {
 
 		allowed = {
 			#original_tag = JAP
@@ -731,12 +731,12 @@ foreign_politics = {
 			}
 		}
 
-		targets = { MCK }
+		targets = { MAN }
 
 		target_trigger = {
 			#Target is FROM
 			FROM = {
-				tag = MCK
+				tag = MAN
 				has_war_with = ROOT
 			}
 		}
@@ -744,7 +744,7 @@ foreign_politics = {
 		visible = {
 			FROM = { exists = yes }
 			tag = JAP
-			has_war_with = MCK
+			has_war_with = MAN
 		}
 
 		cost = 0
@@ -756,7 +756,7 @@ foreign_politics = {
 		}
 
 		complete_effect = {
-			MCK = {
+			MAN = {
 				country_event = { id = wtt_japan.129 days = 1 }
 			}
 		}

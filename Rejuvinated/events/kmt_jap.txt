@@ -658,7 +658,7 @@ country_event = {
 		hidden_effect = {
 			country_event = { id = jap.10 }
 		}
-		custom_effect_tooltip = mck_puppet_wjw_tt
+		custom_effect_tooltip = man_puppet_wjw_tt
 	}
 	
 	option = {
@@ -827,13 +827,13 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_country_flag = MCK_help_response_duration
+		set_country_flag = MAN_help_response_duration
 	}
 	
 	option = {
 		name = jap.13.a
-		unlock_decision_category_tooltip = MCK_dcat_foreign_help_reponse
-		activate_mission = MCK_response_deadline
+		unlock_decision_category_tooltip = MAN_dcat_foreign_help_reponse
+		activate_mission = MAN_response_deadline
 	}
 }
 
@@ -854,7 +854,7 @@ country_event = {
 						tag = SOV
 					}
 				}
-				add_ideas = MCK_communist_influence
+				add_ideas = MAN_communist_influence
 			}
 			if = {
 				limit = {
@@ -862,10 +862,10 @@ country_event = {
 						tag = USA
 					}
 				}
-				add_ideas = MCK_democratic_influence
+				add_ideas = MAN_democratic_influence
 			}
 			FROM = {
-				give_guarantee = MCK
+				give_guarantee = MAN
 			}
 		}
 	}
@@ -879,7 +879,7 @@ country_event = {
 						tag = SOV
 					}
 				}
-				add_ideas = MCK_communist_influence
+				add_ideas = MAN_communist_influence
 			}
 			if = {
 				limit = {
@@ -887,10 +887,10 @@ country_event = {
 						tag = USA
 					}
 				}
-				add_ideas = MCK_democratic_influence
+				add_ideas = MAN_democratic_influence
 			}
 			FROM = {
-				give_guarantee = MCK
+				give_guarantee = MAN
 			}
 		}
 	}
@@ -910,7 +910,7 @@ country_event = {
 	}
 }
 
-#mck wants us to act now
+#MAN wants us to act now
 country_event = {
 	id = jap.16
 	title = jap.16.t
@@ -924,7 +924,7 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		MCK = {
+		MAN = {
 			OVERLORD = {
 				country_event = { id = jap.17 days = 1 }
 			}
@@ -936,7 +936,7 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
-		MCK = {
+		MAN = {
 			country_event = { id = jap.18 days = 1 }
 		}
 	}
@@ -946,7 +946,7 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
-		MCK = {
+		MAN = {
 			OVERLORD = {
 				ROOT = {
 					declare_war_on = {
@@ -969,46 +969,46 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		#anchor: MCK gain independence
+		#anchor: MAN gain independence
 		name = jap.17.a
-		set_global_flag = JAP_grant_MCK_independence
-		MCK = { 
-			set_country_flag = MCK_free_flag 
+		set_global_flag = JAP_grant_MAN_independence
+		MAN = { 
+			set_country_flag = MAN_free_flag 
 			capital_scope = {
 				if = {
-					limit = { NOT = { has_state_flag = MCK_state_secured }}
-					add_to_variable = { global.MCK_secured_state_num = 1 }
-					set_state_flag = MCK_state_secured
-					custom_effect_tooltip = MCK_state_secured_tt
+					limit = { NOT = { has_state_flag = MAN_state_secured }}
+					add_to_variable = { global.MAN_secured_state_num = 1 }
+					set_state_flag = MAN_state_secured
+					custom_effect_tooltip = MAN_state_secured_tt
 				}
 			}
 		}
 		ai_chance = {
 			factor = 10
 		}
-		end_puppet = MCK
+		end_puppet = MAN
 		if = {
-			limit = { is_in_faction_with = MCK }
-			remove_from_faction = MCK
+			limit = { is_in_faction_with = MAN }
+			remove_from_faction = MAN
 		}
 		FROM = {
 			country_event = { id = jap.19 }
-			diplomatic_relation = { relation = guarantee country = MCK active = yes }
+			diplomatic_relation = { relation = guarantee country = MAN active = yes }
 		}
-		MCK = {
+		MAN = {
 			every_owned_state = {
 				limit = {
-					has_state_flag = MCK_assimilated_bandits
+					has_state_flag = MAN_assimilated_bandits
 					is_core_of = ROOT
-					has_dynamic_modifier = { modifier = MCK_local_bandits }
+					has_dynamic_modifier = { modifier = MAN_local_bandits }
 					NOT = {
-						has_dynamic_modifier = { modifier = MCK_najua_presence }
-						has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+						has_dynamic_modifier = { modifier = MAN_najua_presence }
+						has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 					}
 				}
-				if = { limit = { has_dynamic_modifier = { modifier = MCK_local_bandits }} remove_dynamic_modifier = { modifier = MCK_local_bandits }}
+				if = { limit = { has_dynamic_modifier = { modifier = MAN_local_bandits }} remove_dynamic_modifier = { modifier = MAN_local_bandits }}
 				if = { limit = { has_resistance = yes } cancel_resistance = yes }
-				if = { limit = { check_variable = { global.MCK_resistance_strength@This> 0 }} set_variable = { global.MCK_resistance_strength@This= 0 }}
+				if = { limit = { check_variable = { global.MAN_resistance_strength@This> 0 }} set_variable = { global.MAN_resistance_strength@This= 0 }}
 			}
 			every_country = {
 				limit = { 
@@ -1043,14 +1043,14 @@ country_event = {
 				ideology = neutrality
 				popularity = 0.5
 			}
-			set_variable = { MCK_awareness = 0 }
-			set_variable = { MCK_suspicion = 0 }
-			set_variable = { MCK_RFP_mood = 0 }
+			set_variable = { MAN_awareness = 0 }
+			set_variable = { MAN_suspicion = 0 }
+			set_variable = { MAN_RFP_mood = 0 }
 			country_event = { id = jap.20 }
 		}
 		if = {
 			limit = {
-				has_global_flag = MCK_korean_cooperation_flag
+				has_global_flag = MAN_korean_cooperation_flag
 			}
 			if = {
 				limit = { KOR = { is_subject_of = ROOT }}
@@ -1112,7 +1112,7 @@ country_event = {
 	}
 }
 
-#jap release mck
+#jap release MAN
 country_event = {
 	id = jap.19
 	title = jap.19.t
@@ -1139,7 +1139,7 @@ country_event = {
 		name = jap.20.a
 		effect_tooltip = {
 			FROM = {
-				end_puppet = MCK
+				end_puppet = MAN
 			}
 		}
 	}
@@ -1195,7 +1195,7 @@ country_event = {
 		name = jap.22.a
 		effect_tooltip = {
 			JAP = {
-				end_puppet = MCK
+				end_puppet = MAN
 			}
 			add_to_war = {
 				targeted_alliance = USA
@@ -1205,7 +1205,7 @@ country_event = {
 	}
 }
 
-#mck joined usa!
+#MAN joined usa!
 country_event = {
 	id = jap.23
 	title = jap.23.t
@@ -1217,8 +1217,8 @@ country_event = {
 	option = {
 		name = jap.23.a
 		effect_tooltip = {
-			end_puppet = MCK
-			MCK = {
+			end_puppet = MAN
+			MAN = {
 				add_to_war = {
 					targeted_alliance = USA
 					enemy = JAP
@@ -1243,7 +1243,7 @@ country_event = {
 		ai_chance = { 
 			factor = 100	
 			modifier = {
-				MCK = {
+				MAN = {
 					any_war_score < 0.3
 				}
 				factor = 50
@@ -1253,7 +1253,7 @@ country_event = {
 				factor = 20
 			}
 		}
-		MCK = {
+		MAN = {
 			puppet = ROOT
 			country_event = { id = jap.29 }
 		}
@@ -1270,7 +1270,7 @@ country_event = {
 	
 	option = {
 		name = jap.28.b
-		MCK = {
+		MAN = {
 			country_event = { id = jap.30 }
 			create_wargoal = {
 				target = ROOT
@@ -1320,7 +1320,7 @@ country_event = {
 	}
 }
 
-#mck wants kantoshu
+#MAN wants kantoshu
 country_event = {
 	id = jap.31
 	title = jap.31.t
@@ -1443,7 +1443,7 @@ country_event = {
 	
 	option = {
 		name = jap.32.a
-		set_country_flag = MCK_navy_allowed
+		set_country_flag = MAN_navy_allowed
 	}
 }
 
@@ -1484,7 +1484,7 @@ country_event = {
 		hidden_effect = {
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = industrial_complex
 						size > 2
@@ -1497,7 +1497,7 @@ country_event = {
 					level = 3
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_1
+				set_state_flag = MAN_xt_1
 			}
 		}
 	}
@@ -1507,7 +1507,7 @@ country_event = {
 		effect_tooltip = {
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_1
+					has_state_flag = MAN_xt_1
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1538,7 +1538,7 @@ country_event = {
 		hidden_effect = {
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = industrial_complex
 						size > 3
@@ -1551,7 +1551,7 @@ country_event = {
 					level = 4
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_2
+				set_state_flag = MAN_xt_2
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -1566,7 +1566,7 @@ country_event = {
 		effect_tooltip = {
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_1
+					has_state_flag = MAN_xt_1
 				}
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -1602,7 +1602,7 @@ country_event = {
 		hidden_effect = {
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = industrial_complex
 						size > 1
@@ -1615,11 +1615,11 @@ country_event = {
 					level = 2
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_3_ic
+				set_state_flag = MAN_xt_3_ic
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = arms_factory
 						size > 2
@@ -1632,7 +1632,7 @@ country_event = {
 					level = 3
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_3_af
+				set_state_flag = MAN_xt_3_af
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -1647,7 +1647,7 @@ country_event = {
 		effect_tooltip = {
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_3_ic
+					has_state_flag = MAN_xt_3_ic
 				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1658,7 +1658,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_3_af
+					has_state_flag = MAN_xt_3_af
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1694,7 +1694,7 @@ country_event = {
 		hidden_effect = {
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = arms_factory
 						size > 2
@@ -1707,11 +1707,11 @@ country_event = {
 					level = 3
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_4_1
+				set_state_flag = MAN_xt_4_1
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = arms_factory
 						size > 1
@@ -1724,7 +1724,7 @@ country_event = {
 					level = 2
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_4_2
+				set_state_flag = MAN_xt_4_2
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -1739,7 +1739,7 @@ country_event = {
 		effect_tooltip = {
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_4_1
+					has_state_flag = MAN_xt_4_1
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1750,7 +1750,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_4_2
+					has_state_flag = MAN_xt_4_2
 				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1786,7 +1786,7 @@ country_event = {
 		hidden_effect = {
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = arms_factory
 						size > 2
@@ -1799,11 +1799,11 @@ country_event = {
 					level = 3
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_5_af
+				set_state_flag = MAN_xt_5_af
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = dockyard
 						size > 1
@@ -1816,7 +1816,7 @@ country_event = {
 					level = 2
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_5_dy
+				set_state_flag = MAN_xt_5_dy
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -1831,7 +1831,7 @@ country_event = {
 		effect_tooltip = {
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_5_af
+					has_state_flag = MAN_xt_5_af
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1842,7 +1842,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_5_dy
+					has_state_flag = MAN_xt_5_dy
 				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1850,7 +1850,7 @@ country_event = {
 					level = 2
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_5_dy
+				set_state_flag = MAN_xt_5_dy
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -1879,7 +1879,7 @@ country_event = {
 		hidden_effect = {
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = dockyard
 						size > 3
@@ -1892,7 +1892,7 @@ country_event = {
 					level = 4
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_6
+				set_state_flag = MAN_xt_6
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -1907,7 +1907,7 @@ country_event = {
 		effect_tooltip = {
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_6
+					has_state_flag = MAN_xt_6
 				}
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
@@ -1915,7 +1915,7 @@ country_event = {
 					level = 4
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_6
+				set_state_flag = MAN_xt_6
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -1944,7 +1944,7 @@ country_event = {
 		hidden_effect = {
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = dockyard
 						size > 2
@@ -1957,11 +1957,11 @@ country_event = {
 					level = 3
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_7_dy
+				set_state_flag = MAN_xt_7_dy
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = air_base
 						size > 1
@@ -1974,7 +1974,7 @@ country_event = {
 					level = 2
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_7_ab
+				set_state_flag = MAN_xt_7_ab
 			}
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
@@ -1994,7 +1994,7 @@ country_event = {
 		effect_tooltip = {
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_7_dy
+					has_state_flag = MAN_xt_7_dy
 				}
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -2005,7 +2005,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_7_ab
+					has_state_flag = MAN_xt_7_ab
 				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -2046,7 +2046,7 @@ country_event = {
 		hidden_effect = {
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = dockyard
 						size > 0
@@ -2059,11 +2059,11 @@ country_event = {
 					level = 1
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_8_ic
+				set_state_flag = MAN_xt_8_ic
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = air_base
 						size > 3
@@ -2075,11 +2075,11 @@ country_event = {
 					level = 4
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_8_ab_1
+				set_state_flag = MAN_xt_8_ab_1
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = air_base
 						size > 3
@@ -2091,7 +2091,7 @@ country_event = {
 					level = 4
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_8_ab_2
+				set_state_flag = MAN_xt_8_ab_2
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -2106,7 +2106,7 @@ country_event = {
 		effect_tooltip = {
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_8_ic
+					has_state_flag = MAN_xt_8_ic
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2117,7 +2117,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_8_ab_1
+					has_state_flag = MAN_xt_8_ab_1
 				}
 				add_building_construction = {
 					type = air_base
@@ -2127,7 +2127,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_8_ab_2
+					has_state_flag = MAN_xt_8_ab_2
 				}
 				add_building_construction = {
 					type = air_base
@@ -2159,11 +2159,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = KMT_mck_xuantong_res_oil
+		set_global_flag = KMT_man_xuantong_res_oil
 		hidden_effect = {
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
@@ -2176,11 +2176,11 @@ country_event = {
 					level = 1
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_9_ic
+				set_state_flag = MAN_xt_9_ic
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = arms_factory
 						size > 0
@@ -2193,11 +2193,11 @@ country_event = {
 					level = 1
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_9_af
+				set_state_flag = MAN_xt_9_af
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = dockyard
 						size > 0
@@ -2210,11 +2210,11 @@ country_event = {
 					level = 1
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_9_dy
+				set_state_flag = MAN_xt_9_dy
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = air_base
 						size > 3
@@ -2226,7 +2226,7 @@ country_event = {
 					level = 4
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_9_ab
+				set_state_flag = MAN_xt_9_ab
 			}
 			add_research_slot = 1
 		}
@@ -2237,7 +2237,7 @@ country_event = {
 		effect_tooltip = {
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_9_ic
+					has_state_flag = MAN_xt_9_ic
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2248,7 +2248,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_9_af
+					has_state_flag = MAN_xt_9_af
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2259,7 +2259,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_9_dy
+					has_state_flag = MAN_xt_9_dy
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2270,7 +2270,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_9_ab
+					has_state_flag = MAN_xt_9_ab
 				}
 				add_building_construction = {
 					type = air_base
@@ -2299,11 +2299,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = KMT_mck_xuantong_res_minerals
+		set_global_flag = KMT_man_xuantong_res_minerals
 		hidden_effect = {
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
@@ -2316,11 +2316,11 @@ country_event = {
 					level = 1
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_10_ic
+				set_state_flag = MAN_xt_10_ic
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = arms_factory
 						size > 0
@@ -2333,11 +2333,11 @@ country_event = {
 					level = 1
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_10_af
+				set_state_flag = MAN_xt_10_af
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = dockyard
 						size > 0
@@ -2350,11 +2350,11 @@ country_event = {
 					level = 1
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_10_dy
+				set_state_flag = MAN_xt_10_dy
 			}
 			random_owned_controlled_state = {
 				limit = {
-					is_core_of = MCK
+					is_core_of = MAN
 					free_building_slots = {
 						building = air_base
 						size > 3
@@ -2366,7 +2366,7 @@ country_event = {
 					level = 4
 					instant_build = yes
 				}
-				set_state_flag = MCK_xt_10_ab
+				set_state_flag = MAN_xt_10_ab
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -2387,7 +2387,7 @@ country_event = {
 		effect_tooltip = {
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_10_ic
+					has_state_flag = MAN_xt_10_ic
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2398,7 +2398,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_10_af
+					has_state_flag = MAN_xt_10_af
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2409,7 +2409,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_10_dy
+					has_state_flag = MAN_xt_10_dy
 				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2420,7 +2420,7 @@ country_event = {
 			}
 			random_state = {
 				limit = {
-					has_state_flag = MCK_xt_10_ab
+					has_state_flag = MAN_xt_10_ab
 				}
 				add_building_construction = {
 					type = air_base
@@ -2479,10 +2479,10 @@ country_event = {
 	picture = GFX_report_event_stalin_propaganda
 	
 	trigger = {
-		tag = MCK
+		tag = MAN
 		is_puppet = no
 		exists = yes
-		has_idea = MCK_rfr_supporters
+		has_idea = MAN_rfr_supporters
 		has_capitulated = no
 		NOT = {
 			has_war_with = JAP
@@ -2518,15 +2518,15 @@ country_event = {
 				has_government = fascism
 			}
 			create_faction = rfp_white_movement
-			add_to_faction = MCK
-			MCK = {
+			add_to_faction = MAN
+			MAN = {
 				add_to_war = {
 					targeted_alliance = PREV
 					enemy = SOV
 				}
 			}
 			add_timed_idea = {
-				idea = MCK_RFP_white_movement
+				idea = MAN_RFP_white_movement
 				days = 1700
 			}
 			add_ideas = {
@@ -2536,89 +2536,89 @@ country_event = {
 			}
 			hidden_effect = {
 				load_oob = "RFP_anti_bolshelvik"
-				add_equipment_to_stockpile = { type = support_equipment_1 amount = 12000 producer = MCK }
+				add_equipment_to_stockpile = { type = support_equipment_1 amount = 12000 producer = MAN }
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = infantry_weapons
 							NOT = {
 								has_tech = infantry_weapons1
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 15500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 15500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = infantry_weapons1
 							NOT = {
 								has_tech = improved_infantry_weapons
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 15500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 15500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = improved_infantry_weapons
 							NOT = {
 								has_tech = advanced_infantry_weapons
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 15500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 15500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = advanced_infantry_weapons
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 15500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 15500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = gw_artillery
 							NOT = {
 								has_tech = artillery1
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 9000 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 9000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = artillery1
 							NOT = {
 								has_tech = artillery4
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 9000 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 9000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = artillery4
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_3 amount = 9000 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_3 amount = 9000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = motorised_infantry
 						}
 					}
-					add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 7500 producer = MCK }
+					add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 7500 producer = MAN }
 				}
 			}
 		}
-		remove_ideas = MCK_rfr_supporters
+		remove_ideas = MAN_rfr_supporters
 		hidden_effect = {
 			408 = {
 				add_extra_state_shared_building_slots = 8
@@ -2679,7 +2679,7 @@ country_event = {
 	
 	option = {
 		name = jap.47.b
-		custom_effect_tooltip = MCK_10_t_prepare_tt
+		custom_effect_tooltip = MAN_10_t_prepare_tt
 		hidden_effect = {
 			country_event = { id = jap.56 days = 366 }
 		}
@@ -2687,9 +2687,9 @@ country_event = {
 	
 	option = {
 		name = jap.47.c
-		custom_effect_tooltip = MCK_rfp_rise_tt
-		set_country_flag = MCK_deny_rfp_request
-		remove_ideas = MCK_rfr_supporters
+		custom_effect_tooltip = MAN_rfp_rise_tt
+		set_country_flag = MAN_deny_rfp_request
+		remove_ideas = MAN_rfr_supporters
 		hidden_effect = { country_event = { id = jap.49 days = 10 }}
 	}
 }
@@ -2720,102 +2720,102 @@ country_event = {
 				has_government = fascism
 			}
 			create_faction = rfp_white_movement
-			add_to_faction = MCK
-			MCK = {
+			add_to_faction = MAN
+			MAN = {
 				add_to_war = {
 					targeted_alliance = PREV
 					enemy = SOV
 				}
 			}
 			add_timed_idea = {
-				idea = MCK_RFP_white_movement
+				idea = MAN_RFP_white_movement
 				days = 1700
 			}
 			hidden_effect = {
 				load_oob = "RFP_anti_bolshelvik"
-				add_equipment_to_stockpile = { type = support_equipment_1 amount = 12000 producer = MCK }
+				add_equipment_to_stockpile = { type = support_equipment_1 amount = 12000 producer = MAN }
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = infantry_weapons
 							NOT = {
 								has_tech = infantry_weapons1
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 15500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 15500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = infantry_weapons1
 							NOT = {
 								has_tech = improved_infantry_weapons
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 15500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 15500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = improved_infantry_weapons
 							NOT = {
 								has_tech = advanced_infantry_weapons
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 15500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 15500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = advanced_infantry_weapons
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 15500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 15500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = gw_artillery
 							NOT = {
 								has_tech = artillery1
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 9000 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 9000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = artillery1
 							NOT = {
 								has_tech = artillery4
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 9000 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 9000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = artillery4
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_3 amount = 9000 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_3 amount = 9000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = motorised_infantry
 						}
 					}
-					add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 7500 producer = MCK }
+					add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 7500 producer = MAN }
 				}
 			}
 		}
-		remove_ideas = MCK_rfr_supporters
+		remove_ideas = MAN_rfr_supporters
 		hidden_effect = {
 			408 = {
 				add_extra_state_shared_building_slots = 8
@@ -2876,9 +2876,9 @@ country_event = {
 	
 	option = {
 		name = jap.47.c
-		custom_effect_tooltip = MCK_rfp_rise_tt
-		set_country_flag = MCK_deny_rfp_request
-		remove_ideas = MCK_rfr_supporters
+		custom_effect_tooltip = MAN_rfp_rise_tt
+		set_country_flag = MAN_deny_rfp_request
+		remove_ideas = MAN_rfr_supporters
 		hidden_effect = { country_event = { id = jap.49 days = 10 }}
 	}
 }
@@ -2892,8 +2892,8 @@ country_event = {
 	picture = GFX_report_event_swedish_soldier
 	
 	trigger = {
-		has_country_flag = MCK_deny_rfp_request
-		tag = MCK
+		has_country_flag = MAN_deny_rfp_request
+		tag = MAN
 		SOV = {
 			NOT = { has_government = fascism }
 		}
@@ -2914,12 +2914,12 @@ country_event = {
 			}
 			random_country = {
 				limit = {
-					original_tag = MCK
+					original_tag = MAN
 					has_government = fascism
 				}
-				set_cosmetic_tag = RFPmck
-				load_oob = "MCK_RFP_rebelled_oob"
-				set_party_name = { ideology = fascism long_name = MCK_RFP_rebelled_party_long name = MCK_RFP_rebelled_party }
+				set_cosmetic_tag = RFPman
+				load_oob = "MAN_RFP_rebelled_oob"
+				set_party_name = { ideology = fascism long_name = MAN_RFP_rebelled_party_long name = MAN_RFP_rebelled_party }
 				create_country_leader = {
 					name = "Konstantin Rodzaevsky"
 					desc = "POLITICS_KONSTANTIN_RODZAEVSKY_DESC"
@@ -2930,85 +2930,85 @@ country_event = {
 						
 					}
 				}
-				add_equipment_to_stockpile = { type = support_equipment_1 amount = 3500 producer = MCK }
+				add_equipment_to_stockpile = { type = support_equipment_1 amount = 3500 producer = MAN }
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = infantry_weapons
 							NOT = {
 								has_tech = infantry_weapons1
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 6500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 6500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = infantry_weapons1
 							NOT = {
 								has_tech = improved_infantry_weapons
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 6500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 6500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = improved_infantry_weapons
 							NOT = {
 								has_tech = advanced_infantry_weapons
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 6500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 6500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = advanced_infantry_weapons
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 6500 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 6500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = gw_artillery
 							NOT = {
 								has_tech = artillery1
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 2500 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 2500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = artillery1
 							NOT = {
 								has_tech = artillery4
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 2500 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 2500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = artillery4
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_3 amount = 2500 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_3 amount = 2500 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = motorised_infantry
 						}
 					}
-					add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 1200 producer = MCK }
+					add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 1200 producer = MAN }
 				}
 			}
 			add_stability = -0.25
@@ -3042,8 +3042,8 @@ country_event = {
 			add_stability = 0.05
 			add_political_power = 150
 			army_experience = 30
-			remove_ideas = MCK_dongbei_partisan
-			add_ideas = MCK_dongbei_partisan_pacified
+			remove_ideas = MAN_dongbei_partisan
+			add_ideas = MAN_dongbei_partisan_pacified
 		}
 	}
 	
@@ -3055,7 +3055,7 @@ country_event = {
 			add_political_power = 150
 			army_experience = 30
 		}
-		custom_effect_tooltip = MCK_longer_partisan_effect
+		custom_effect_tooltip = MAN_longer_partisan_effect
 	}
 }
 
@@ -3087,7 +3087,7 @@ country_event = {
 	}
 }
 
-#mck independence war send ultimatum
+#MAN independence war send ultimatum
 country_event = {
 	id = jap.52
 	title = jap.52.t
@@ -3096,7 +3096,7 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty1
 	
 	trigger = {
-		MCK = {
+		MAN = {
 			has_war_with = JAP
 			is_in_faction = no
 		}
@@ -3206,7 +3206,7 @@ country_event = {
 				}
 			}	
 		}
-		tag = MCK
+		tag = MAN
 	}
 	
 	#mean_time_to_happen = { days = 200 }
@@ -3230,7 +3230,7 @@ country_event = {
 	}
 }
 
-#mck independence war ultimatum
+#MAN independence war ultimatum
 country_event = {
 	id = jap.53
 	title = jap.53.t
@@ -3253,12 +3253,12 @@ country_event = {
 		}
 		name = jap.53.a
 		effect_tooltip = {
-			white_peace = MCK
+			white_peace = MAN
 		}
-		MCK = {
-			custom_effect_tooltip = MCK_independence_yes_tt
+		MAN = {
+			custom_effect_tooltip = MAN_independence_yes_tt
 		}
-		MCK = {
+		MAN = {
 			country_event = { id = jap.54 }
 		}
 	}
@@ -3275,13 +3275,13 @@ country_event = {
 			}
 		}
 		name = jap.53.b
-		MCK = {
+		MAN = {
 			country_event = { id = jap.55 }
 		}
 	}
 }
 
-#mck independence war ultimatum - yes
+#MAN independence war ultimatum - yes
 country_event = {
 	id = jap.54
 	title = jap.54.t
@@ -3365,12 +3365,12 @@ country_event = {
 		name = jap.54.b
 		effect_tooltip = {
 			white_peace = JAP
-			custom_effect_tooltip = MCK_independence_yes_tt
+			custom_effect_tooltip = MAN_independence_yes_tt
 		}
 	}
 }
 
-#mck independence war ultimatum - no
+#MAN independence war ultimatum - no
 country_event = {
 	id = jap.55
 	title = jap.55.t
@@ -3405,7 +3405,7 @@ country_event = {
 	}
 }
 
-#mck changed government
+#MAN changed government
 country_event = {
 	id = jap.57
 	title = jap.57.t
@@ -3417,7 +3417,7 @@ country_event = {
 	
 	option = {
 		name = jap.57.a
-		MCK = {
+		MAN = {
 			country_event = { id = jap.58 }
 		}
 	}
@@ -3438,49 +3438,49 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		#anchor: MCK gain independence
+		#anchor: MAN gain independence
 		name = jap.58.a
-		MCK = { 
-			set_country_flag = MCK_free_flag
+		MAN = { 
+			set_country_flag = MAN_free_flag
 			capital_scope = {
 				if = {
-					limit = { NOT = { has_state_flag = MCK_state_secured }}
-					add_to_variable = { global.MCK_secured_state_num = 1 }
-					set_state_flag = MCK_state_secured
-					custom_effect_tooltip = MCK_state_secured_tt
-						set_variable = { MCK_secured_state_frame = 2 }
+					limit = { NOT = { has_state_flag = MAN_state_secured }}
+					add_to_variable = { global.MAN_secured_state_num = 1 }
+					set_state_flag = MAN_state_secured
+					custom_effect_tooltip = MAN_state_secured_tt
+						set_variable = { MAN_secured_state_frame = 2 }
 				}
 			}
 		}
 		every_owned_state = {
 			limit = {
-				has_state_flag = MCK_assimilated_bandits
+				has_state_flag = MAN_assimilated_bandits
 				is_core_of = ROOT
-				has_dynamic_modifier = { modifier = MCK_local_bandits }
+				has_dynamic_modifier = { modifier = MAN_local_bandits }
 				NOT = {
-					has_dynamic_modifier = { modifier = MCK_najua_presence }
-					has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+					has_dynamic_modifier = { modifier = MAN_najua_presence }
+					has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 				}
 			}
-			if = { limit = { has_dynamic_modifier = { modifier = MCK_local_bandits }} remove_dynamic_modifier = { modifier = MCK_local_bandits }}
+			if = { limit = { has_dynamic_modifier = { modifier = MAN_local_bandits }} remove_dynamic_modifier = { modifier = MAN_local_bandits }}
 			if = { limit = { has_resistance = yes } cancel_resistance = yes }
-			if = { limit = { check_variable = { global.MCK_resistance_strength@This> 0 }} set_variable = { global.MCK_resistance_strength@This= 0 }}
+			if = { limit = { check_variable = { global.MAN_resistance_strength@This> 0 }} set_variable = { global.MAN_resistance_strength@This= 0 }}
 		}
 		every_owned_state = {
 			limit = {
 				is_core_of = ROOT
-				check_variable = { MCK_guihuajun_amt > 0 }
+				check_variable = { MAN_guihuajun_amt > 0 }
 			}
 			create_unit = {
 				division = "name = \"Kuei-hua-chün\" division_template = \"Kuei-hua-chün\" start_experience_factor = 0.2 start_equipment_factor = 15 start_equipment_factor = 1"
 				owner = ROOT
 				allow_spawning_on_enemy_provs = yes
-				count = This.MCK_guihuajun_amt
+				count = This.MAN_guihuajun_amt
 			}
 		}
 		FROM = {
-			end_puppet = MCK
-			remove_from_faction = MCK
+			end_puppet = MAN
+			remove_from_faction = MAN
 			country_event = { id = jap.59 }
 		}
 		if = {
@@ -3516,39 +3516,39 @@ country_event = {
 			}
 			country_event = { id = jap.222 }
 		}
-		set_variable = { MCK_awareness = 0 }
-		set_variable = { MCK_suspicion = 0 }
-		set_variable = { MCK_RFP_mood = 0 }
+		set_variable = { MAN_awareness = 0 }
+		set_variable = { MAN_suspicion = 0 }
+		set_variable = { MAN_RFP_mood = 0 }
 		declare_war_on = {
 			target = FROM
 			type = topple_government
 		}
 		if = {
 			limit = {
-				has_global_flag = MCK_prepared_for_usa_intervention
+				has_global_flag = MAN_prepared_for_usa_intervention
 				USA = {
 					exists = yes
 					is_subject = no
-					has_country_flag = MCK_helping_independence
+					has_country_flag = MAN_helping_independence
 				}
 				NOT = { is_subject_of = USA }
 			}
-			add_ideas = MCK_usa_intervention
+			add_ideas = MAN_usa_intervention
 			USA = {
 				country_event = { id = jap.241 }
 			}
 		}
 		if = {
 			limit = {
-				has_global_flag = MCK_prepared_for_sov_intervention
+				has_global_flag = MAN_prepared_for_sov_intervention
 				SOV = {
 					exists = yes
 					is_subject = no
-					has_country_flag = MCK_helping_independence
+					has_country_flag = MAN_helping_independence
 				}
 				NOT = { is_subject_of = SOV }
 			}
-			add_ideas = MCK_sov_intervention
+			add_ideas = MAN_sov_intervention
 			if = {
 				limit = { 
 					any_owned_state = { any_neighbor_state = { is_controlled_by = SOV }}
@@ -3575,22 +3575,22 @@ country_event = {
 					}
 				}
 			}
-				add_equipment_to_stockpile = { type = infantry_equipment amount = MCK_uprise_sov_equipment producer = SOV }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = MAN_uprise_sov_equipment producer = SOV }
 			SOV = {
 				country_event = { id = jap.241 }
 			}
 		}
 		if = {
 			limit = {
-				has_global_flag = MCK_coordinated_uprising_flag
+				has_global_flag = MAN_coordinated_uprising_flag
 				event_target:KMT_central_gov_tag = {
 					exists = yes
 					is_subject = no
-					has_country_flag = MCK_helping_independence
+					has_country_flag = MAN_helping_independence
 				}
 				NOT = { is_subject_of = event_target:KMT_central_gov_tag }
 			}
-			add_ideas = MCK_chi_intervention
+			add_ideas = MAN_chi_intervention
 			division_template = {
 				name = "K'ang-jih Chiu-kuo Ch'i-i-chün"
 				is_locked = yes
@@ -3639,7 +3639,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_global_flag = MCK_korean_cooperation_flag
+				has_global_flag = MAN_korean_cooperation_flag
 			}
 			if = {
 				limit = {	
@@ -3651,7 +3651,7 @@ country_event = {
 				FROM = {
 					end_puppet = KOR
 				}
-				MCK = { puppet = KOR }
+				MAN = { puppet = KOR }
 				KOR = {
 					division_template = {
 						name = "Joseon Uiyondae"
@@ -3719,13 +3719,13 @@ country_event = {
 		}
 		FROM = {
 			add_timed_idea = {
-				idea = MCK_disrupted_logistics
+				idea = MAN_disrupted_logistics
 				days = 60
 			}
 		}
 		every_owned_state = {
 			limit = {
-				NOT = { has_state_flag = MCK_state_secured }
+				NOT = { has_state_flag = MAN_state_secured }
 			}
 			FROM = { set_state_owner = PREV }
 			if = {
@@ -3750,24 +3750,24 @@ country_event = {
 		}
 		hidden_effect = {
 			every_other_country = {
-				clr_country_flag = MCK_helping_independence
-				clr_country_flag = MCK_help_response_duration
-				clr_country_flag = MCK_demand_faction_flag
-				clr_country_flag = MCK_demand_resist_communism_flag
-				clr_country_flag = MCK_demand_abolish_monarchy_flag
-				clr_country_flag = MCK_demand_liberal_reform_flag
-				clr_country_flag = MCK_demand_gib_rfp_flag
-				clr_country_flag = MCK_demand_gib_dairen_flag
-				clr_country_flag = MCK_demand_gib_jehol_flag
-				clr_country_flag = MCK_demand_kill_commie_flag
-				clr_country_flag = MCK_demand_special_rights_flag
-				clr_country_flag = MCK_demand_unconditional_flag
+				clr_country_flag = MAN_helping_independence
+				clr_country_flag = MAN_help_response_duration
+				clr_country_flag = MAN_demand_faction_flag
+				clr_country_flag = MAN_demand_resist_communism_flag
+				clr_country_flag = MAN_demand_abolish_monarchy_flag
+				clr_country_flag = MAN_demand_liberal_reform_flag
+				clr_country_flag = MAN_demand_gib_rfp_flag
+				clr_country_flag = MAN_demand_gib_dairen_flag
+				clr_country_flag = MAN_demand_gib_jehol_flag
+				clr_country_flag = MAN_demand_kill_commie_flag
+				clr_country_flag = MAN_demand_special_rights_flag
+				clr_country_flag = MAN_demand_unconditional_flag
 			}
 		}
 	}
 }
 
-#mck break free
+#MAN break free
 country_event = {
 	id = jap.59
 	title = jap.59.t
@@ -3780,12 +3780,12 @@ country_event = {
 	option = {
 		name = jap.58.a
 		effect_tooltip = {
-			end_puppet = MCK
+			end_puppet = MAN
 		}
 	}
 }
 
-#mck annexed
+#MAN annexed
 country_event = {
 	id = jap.60
 	title = jap.60.t
@@ -3798,7 +3798,7 @@ country_event = {
 	option = {
 		name = jap.60.a
 		annex_country = {
-			target = MCK
+			target = MAN
 			transfer_troops = yes
 		}
 	}
@@ -3814,39 +3814,39 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		tag = MCK
+		tag = MAN
 		USA = {
 			has_war_with = JAP
 		}
 		is_puppet_of = JAP
-		has_global_flag = MCK_will_join_usa
+		has_global_flag = MAN_will_join_usa
 	}
 	
 	immediate = {
 		hidden_effect = {
-			MCK = {
+			MAN = {
 				overlord = {
 					set_autonomy = {
-						target = MCK
+						target = MAN
 						autonomy_state = autonomy_free
 					}
 				}
 			}
 			USA = {
 				set_autonomy = {
-					target = MCK
+					target = MAN
 					autonomy_state = autonomy_puppet
 				}
 				set_autonomy = {
-					target = MCK
+					target = MAN
 					autonomy_state = autonomy_free
 				}
 				if = {
 					limit = {
 						is_in_faction = no
 					}
-					create_faction = mck_liberate
-					add_to_faction = MCK
+					create_faction = man_liberate
+					add_to_faction = MAN
 					else = {
 						random_country = {
 							limit = {
@@ -3856,12 +3856,12 @@ country_event = {
 								}
 								is_faction_leader = yes
 							}
-							add_to_faction = MCK
+							add_to_faction = MAN
 						}
 					}
 				}
 			}
-			MCK = {
+			MAN = {
 				declare_war_on = {
 					target = JAP
 					type = take_core_state
@@ -3902,7 +3902,7 @@ country_event = {
 		name = jap.22.a
 		effect_tooltip = {
 			JAP = {
-				end_puppet = MCK
+				end_puppet = MAN
 			}
 			add_to_war = {
 				targeted_alliance = USA
@@ -3946,7 +3946,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		original_tag = MCK
+		original_tag = MAN
 		has_war_with = SOV
 	}
 	
@@ -3965,7 +3965,7 @@ country_event = {
 			}
 			create_faction = rfp_white_movement
 			add_timed_idea = {
-				idea = MCK_RFP_white_movement
+				idea = MAN_RFP_white_movement
 				days = 1700
 			}
 			hidden_effect = {
@@ -3976,85 +3976,85 @@ country_event = {
 				transfer_troops = yes
 			}
 				load_oob = "RFP_anti_bolshelvik"
-				add_equipment_to_stockpile = { type = support_equipment_1 amount = 15000 producer = MCK }
+				add_equipment_to_stockpile = { type = support_equipment_1 amount = 15000 producer = MAN }
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = infantry_weapons
 							NOT = {
 								has_tech = infantry_weapons1
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 25000 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 25000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = infantry_weapons1
 							NOT = {
 								has_tech = improved_infantry_weapons
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 25000 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 25000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = improved_infantry_weapons
 							NOT = {
 								has_tech = advanced_infantry_weapons
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 25000 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 25000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = advanced_infantry_weapons
 						}
 					}
-					add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 25000 producer = MCK }
+					add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 25000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = gw_artillery
 							NOT = {
 								has_tech = artillery1
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 10000 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 10000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = artillery1
 							NOT = {
 								has_tech = artillery4
 							}
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 10000 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 10000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = artillery4
 						}
 					}
-					add_equipment_to_stockpile = { type = artillery_equipment_3 amount = 10000 producer = MCK }
+					add_equipment_to_stockpile = { type = artillery_equipment_3 amount = 10000 producer = MAN }
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = motorised_infantry
 						}
 					}
-					add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 7500 producer = MCK }
+					add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 7500 producer = MAN }
 				}
 			add_ideas = war_economy
 			add_ideas = service_by_requirement
@@ -4863,31 +4863,31 @@ country_event = {
 	
 	trigger = {
 		is_subject = yes
-		NOT = { has_country_flag = MCK_lay_low_flag }
-		NOT = { check_variable = { MCK_awareness > 4 }}
+		NOT = { has_country_flag = MAN_lay_low_flag }
+		NOT = { check_variable = { MAN_awareness > 4 }}
 		has_country_flag = neutral_path
-		has_country_flag = MCK_rest_propa_flag
+		has_country_flag = MAN_rest_propa_flag
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 30
 			}
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_radprog }
+			NOT = { has_country_flag = MAN_neut_path_event_radprog }
 			has_country_flag = {
-				flag = MCK_neut_path_event_radprog
+				flag = MAN_neut_path_event_radprog
 				days > 100
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
-		clr_country_flag = MCK_neut_path_event_radprog
-		set_country_flag = MCK_neut_path_event_radprog
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
+		clr_country_flag = MAN_neut_path_event_radprog
+		set_country_flag = MAN_neut_path_event_radprog
 	}
 	
 	mean_time_to_happen = { days = 100 }
@@ -4926,7 +4926,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		MCK = {
+		MAN = {
 			country_event = { id = jap.58 hours = 2 }
 		}
 	}
@@ -4946,29 +4946,29 @@ country_event = {
 	
 	trigger = {
 		is_subject = yes
-		NOT = { check_variable = { MCK_awareness > 4 }}
+		NOT = { check_variable = { MAN_awareness > 4 }}
 		has_country_flag = neutral_path
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 30
 			}
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_assembly_cracked }
+			NOT = { has_country_flag = MAN_neut_path_event_assembly_cracked }
 			has_country_flag = {
-				flag = MCK_neut_path_event_assembly_cracked
+				flag = MAN_neut_path_event_assembly_cracked
 				days > 150
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
-		clr_country_flag = MCK_neut_path_event_assembly_cracked
-		set_country_flag = MCK_neut_path_event_assembly_cracked
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
+		clr_country_flag = MAN_neut_path_event_assembly_cracked
+		set_country_flag = MAN_neut_path_event_assembly_cracked
 	}
 	
 	mean_time_to_happen = { days = 100 }
@@ -4981,16 +4981,16 @@ country_event = {
 		}
 		add_stability = 0.01
 		add_political_power = 50
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
 	option = {
 		name = jap.80.b
-		custom_effect_tooltip = MCK_remove_crack_down_suspicion_tt
+		custom_effect_tooltip = MAN_remove_crack_down_suspicion_tt
 		if = {
-			limit = { check_variable = { MCK_suspicion > 0 }}
-			subtract_from_variable = { MCK_suspicion = 1 }
+			limit = { check_variable = { MAN_suspicion > 0 }}
+			subtract_from_variable = { MAN_suspicion = 1 }
 		}
 		add_political_power = -25
 		add_stability = -0.01
@@ -5007,32 +5007,32 @@ country_event = {
 	
 	trigger = {
 		is_subject = yes
-		NOT = { check_variable = { MCK_awareness > 4 }}
+		NOT = { check_variable = { MAN_awareness > 4 }}
 		has_country_flag = neutral_path
 		NOT = {
-			has_idea = MCK_neutrality_school
+			has_idea = MAN_neutrality_school
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 30
 			}
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_school }
+			NOT = { has_country_flag = MAN_neut_path_event_school }
 			has_country_flag = {
-				flag = MCK_neut_path_event_school
+				flag = MAN_neut_path_event_school
 				days > 85
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
-		clr_country_flag = MCK_neut_path_event_school
-		set_country_flag = MCK_neut_path_event_school
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
+		clr_country_flag = MAN_neut_path_event_school
+		set_country_flag = MAN_neut_path_event_school
 	}
 	
 	mean_time_to_happen = { days = 100 }
@@ -5041,18 +5041,18 @@ country_event = {
 		name = jap.81.a
 		add_timed_idea = {
 			days = 30
-			idea = MCK_neutrality_school
+			idea = MAN_neutrality_school
 		}
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
 	option = {
 		name = jap.81.b
-		custom_effect_tooltip = MCK_remove_crack_down_suspicion_tt
+		custom_effect_tooltip = MAN_remove_crack_down_suspicion_tt
 		if = {
-			limit = { check_variable = { MCK_suspicion > 0 }}
-			subtract_from_variable = { MCK_suspicion = 1 }
+			limit = { check_variable = { MAN_suspicion > 0 }}
+			subtract_from_variable = { MAN_suspicion = 1 }
 		}
 		add_stability = -0.02
 	}
@@ -5070,28 +5070,28 @@ country_event = {
 		is_subject = yes
 		awareness_at_least_0 = yes
 		has_country_flag = neutral_path
-		has_country_flag = MCK_anti_sentiment
+		has_country_flag = MAN_anti_sentiment
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_aj }
+			NOT = { has_country_flag = MAN_neut_path_event_aj }
 			has_country_flag = {
-				flag = MCK_neut_path_event_aj
+				flag = MAN_neut_path_event_aj
 				days > 30
 			}
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_aj_assembly_cracked }
+			NOT = { has_country_flag = MAN_aj_assembly_cracked }
 			has_country_flag = {
-				flag = MCK_aj_assembly_cracked
+				flag = MAN_aj_assembly_cracked
 				days > 200
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event_aj
-		set_country_flag = MCK_neut_path_event_aj
-		clr_country_flag = MCK_aj_assembly_cracked
-		set_country_flag = MCK_aj_assembly_cracked
+		clr_country_flag = MAN_neut_path_event_aj
+		set_country_flag = MAN_neut_path_event_aj
+		clr_country_flag = MAN_aj_assembly_cracked
+		set_country_flag = MAN_aj_assembly_cracked
 	}
 	
 	mean_time_to_happen = { days = 50 }
@@ -5102,16 +5102,16 @@ country_event = {
 			ideology = fascism
 			popularity = -0.02
 		}
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
 	option = {
 		name = jap.82.b
-		custom_effect_tooltip = MCK_remove_crack_down_suspicion_tt
+		custom_effect_tooltip = MAN_remove_crack_down_suspicion_tt
 		if = {
-			limit = { check_variable = { MCK_suspicion > 0 }}
-			subtract_from_variable = { MCK_suspicion = 1 }
+			limit = { check_variable = { MAN_suspicion > 0 }}
+			subtract_from_variable = { MAN_suspicion = 1 }
 		}
 		add_political_power = -75
 	}
@@ -5129,24 +5129,24 @@ country_event = {
 		always = no
 		awareness_at_least_0 = yes
 		has_country_flag = neutral_path
-		has_country_flag = MCK_anti_sentiment
+		has_country_flag = MAN_anti_sentiment
 		has_japanese_officials_in_gov = yes
 		NOT = {
-			has_idea = MCK_reduced_jap_influence
+			has_idea = MAN_reduced_jap_influence
 			has_country_flag = no_ban_on_jap
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_aj }
+			NOT = { has_country_flag = MAN_neut_path_event_aj }
 			has_country_flag = {
-				flag = MCK_neut_path_event_aj
+				flag = MAN_neut_path_event_aj
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event_aj
-		set_country_flag = MCK_neut_path_event_aj
+		clr_country_flag = MAN_neut_path_event_aj
+		set_country_flag = MAN_neut_path_event_aj
 	}
 	
 	#mean_time_to_happen = { days = 50 }
@@ -5160,7 +5160,7 @@ country_event = {
 			popularity = -0.06
 		}
 		add_timed_idea = {
-			idea = MCK_reduced_jap_influence
+			idea = MAN_reduced_jap_influence
 			days = 150
 		}
 		add_political_power = 300
@@ -5182,10 +5182,10 @@ country_event = {
 				value = -0.05
 			}
 		}
-		custom_effect_tooltip = MCK_remove_crack_down_suspicion_tt
+		custom_effect_tooltip = MAN_remove_crack_down_suspicion_tt
 		if = {
-			limit = { check_variable = { MCK_suspicion > 0 }}
-			subtract_from_variable = { MCK_suspicion = 1 }
+			limit = { check_variable = { MAN_suspicion > 0 }}
+			subtract_from_variable = { MAN_suspicion = 1 }
 		}
 	}
 }
@@ -5202,24 +5202,24 @@ country_event = {
 		always = no
 		awareness_at_least_0 = yes
 		has_country_flag = neutral_path
-		has_country_flag = MCK_anti_sentiment
+		has_country_flag = MAN_anti_sentiment
 		has_japanese_officials_in_mili = yes
 		NOT = {
-			has_idea = MCK_court_martialed_patriotic_men
+			has_idea = MAN_court_martialed_patriotic_men
 			has_country_flag = no_ban_on_jap
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_aj }
+			NOT = { has_country_flag = MAN_neut_path_event_aj }
 			has_country_flag = {
-				flag = MCK_neut_path_event_aj
+				flag = MAN_neut_path_event_aj
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event_aj
-		set_country_flag = MCK_neut_path_event_aj
+		clr_country_flag = MAN_neut_path_event_aj
+		set_country_flag = MAN_neut_path_event_aj
 	}
 	
 	#mean_time_to_happen = { days = 50 }
@@ -5234,7 +5234,7 @@ country_event = {
 		}
 		add_political_power = 550
 		add_timed_idea = {
-			idea = MCK_nationalism_military
+			idea = MAN_nationalism_military
 			days = 300
 		}
 		increase_jap_awareness4 = yes
@@ -5248,7 +5248,7 @@ country_event = {
 			popularity = 0.05
 		}
 		add_timed_idea = {
-			idea = MCK_court_martialed_patriotic_men
+			idea = MAN_court_martialed_patriotic_men
 			days = 60
 		}
 		if = {
@@ -5259,10 +5259,10 @@ country_event = {
 				value = -0.05
 			}
 		}
-		custom_effect_tooltip = MCK_remove_crack_down_suspicion_tt
+		custom_effect_tooltip = MAN_remove_crack_down_suspicion_tt
 		if = {
-			limit = { check_variable = { MCK_suspicion > 0 }}
-			subtract_from_variable = { MCK_suspicion = 1 }
+			limit = { check_variable = { MAN_suspicion > 0 }}
+			subtract_from_variable = { MAN_suspicion = 1 }
 		}
 	}
 }
@@ -5279,19 +5279,19 @@ country_event = {
 		is_subject = yes
 		awareness_at_least_0 = yes
 		has_country_flag = neutral_path
-		has_country_flag = MCK_anti_sentiment
+		has_country_flag = MAN_anti_sentiment
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_aj }
+			NOT = { has_country_flag = MAN_neut_path_event_aj }
 			has_country_flag = {
-				flag = MCK_neut_path_event_aj
+				flag = MAN_neut_path_event_aj
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event_aj
-		set_country_flag = MCK_neut_path_event_aj
+		clr_country_flag = MAN_neut_path_event_aj
+		set_country_flag = MAN_neut_path_event_aj
 	}
 	
 	mean_time_to_happen = { days = 50 }
@@ -5302,17 +5302,17 @@ country_event = {
 			ideology = fascism
 			popularity = -0.02
 		}
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
 	option = {
 		name = jap.85.b
 		add_political_power = -100
-		custom_effect_tooltip = MCK_remove_crack_down_suspicion_tt
+		custom_effect_tooltip = MAN_remove_crack_down_suspicion_tt
 		if = {
-			limit = { check_variable = { MCK_suspicion > 0 }}
-			subtract_from_variable = { MCK_suspicion = 1 }
+			limit = { check_variable = { MAN_suspicion > 0 }}
+			subtract_from_variable = { MAN_suspicion = 1 }
 		}
 	}
 }
@@ -5327,26 +5327,26 @@ country_event = {
 	
 	trigger = {
 		is_subject = yes
-		NOT = { has_country_flag = MCK_lay_low_flag }
+		NOT = { has_country_flag = MAN_lay_low_flag }
 		awareness_at_least_0 = yes
 		has_country_flag = neutral_path
-		has_country_flag = MCK_anti_sentiment
+		has_country_flag = MAN_anti_sentiment
 		neutrality > 0.29
 		NOT = {
-			has_idea = MCK_halt_guerilla_expansion
+			has_idea = MAN_halt_guerilla_expansion
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_aj }
+			NOT = { has_country_flag = MAN_neut_path_event_aj }
 			has_country_flag = {
-				flag = MCK_neut_path_event_aj
+				flag = MAN_neut_path_event_aj
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event_aj
-		set_country_flag = MCK_neut_path_event_aj
+		clr_country_flag = MAN_neut_path_event_aj
+		set_country_flag = MAN_neut_path_event_aj
 	}
 	
 	mean_time_to_happen = { days = 50 }
@@ -5357,7 +5357,7 @@ country_event = {
 			ideology = fascism
 			popularity = -0.02
 		}
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
@@ -5365,7 +5365,7 @@ country_event = {
 		name = jap.87.b
 		add_political_power = -15
 		add_timed_idea = {
-			idea = MCK_halt_guerilla_expansion
+			idea = MAN_halt_guerilla_expansion
 			days = 70
 		}
 	}
@@ -5383,23 +5383,23 @@ country_event = {
 		is_subject = yes
 		awareness_at_least_0 = yes
 		has_country_flag = neutral_path
-		has_country_flag = MCK_anti_sentiment
+		has_country_flag = MAN_anti_sentiment
 		neutrality > 0.24
 		NOT = {
-			has_idea = MCK_faster_repair
+			has_idea = MAN_faster_repair
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_aj }
+			NOT = { has_country_flag = MAN_neut_path_event_aj }
 			has_country_flag = {
-				flag = MCK_neut_path_event_aj
+				flag = MAN_neut_path_event_aj
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event_aj
-		set_country_flag = MCK_neut_path_event_aj
+		clr_country_flag = MAN_neut_path_event_aj
+		set_country_flag = MAN_neut_path_event_aj
 	}
 	
 	mean_time_to_happen = { days = 50 }
@@ -5410,20 +5410,20 @@ country_event = {
 			ideology = fascism
 			popularity = -0.02
 		}
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
 	option = {
 		name = jap.88.b
-		custom_effect_tooltip = MCK_remove_crack_down_suspicion_tt
+		custom_effect_tooltip = MAN_remove_crack_down_suspicion_tt
 		if = {
-			limit = { check_variable = { MCK_suspicion > 0 }}
-			subtract_from_variable = { MCK_suspicion = 1 }
+			limit = { check_variable = { MAN_suspicion > 0 }}
+			subtract_from_variable = { MAN_suspicion = 1 }
 		}
 		add_political_power = -50
 		add_timed_idea = {
-			idea = MCK_faster_repair
+			idea = MAN_faster_repair
 			days = 30
 		}
 	}
@@ -5439,33 +5439,33 @@ country_event = {
 	
 	trigger = {
 		is_subject = yes
-		NOT = { has_country_flag = MCK_lay_low_flag }
+		NOT = { has_country_flag = MAN_lay_low_flag }
 		awareness_at_least_0 = yes
 		has_country_flag = neutral_path
 		NOT = {
-			has_idea = MCK_confidentiality_first
+			has_idea = MAN_confidentiality_first
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 30
 			}
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_no_bold }
+			NOT = { has_country_flag = MAN_neut_path_event_no_bold }
 			has_country_flag = {
-				flag = MCK_neut_path_event_no_bold
+				flag = MAN_neut_path_event_no_bold
 				days > 110
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
-		clr_country_flag = MCK_neut_path_event_no_bold
-		set_country_flag = MCK_neut_path_event_no_bold
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
+		clr_country_flag = MAN_neut_path_event_no_bold
+		set_country_flag = MAN_neut_path_event_no_bold
 	}
 	
 	mean_time_to_happen = { days = 100 }
@@ -5476,14 +5476,14 @@ country_event = {
 			ideology = neutrality
 			popularity = 0.03
 		}
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
 	option = {
 		name = jap.89.b
 		add_timed_idea = {
-			idea = MCK_confidentiality_first
+			idea = MAN_confidentiality_first
 			days = 30
 		}
 	}
@@ -5501,24 +5501,24 @@ country_event = {
 	
 	trigger = {
 		is_subject = yes
-		NOT = { has_country_flag = MCK_lay_low_flag }
+		NOT = { has_country_flag = MAN_lay_low_flag }
 		awareness_at_least_1 = yes
 		has_country_flag = neutral_path
-		has_country_flag = MCK_rest_propa_flag
+		has_country_flag = MAN_rest_propa_flag
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 30
 			}
 		}
-		NOT = { has_country_flag = { flag = MCK_neut_path_event_no_bold days < 30 }}
-		NOT = { has_country_flag = { flag = MCK_neut_path_event_radprog days < 30 }}
+		NOT = { has_country_flag = { flag = MAN_neut_path_event_no_bold days < 30 }}
+		NOT = { has_country_flag = { flag = MAN_neut_path_event_radprog days < 30 }}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
 	}
 	
 	mean_time_to_happen = { days = 100 }
@@ -5527,11 +5527,11 @@ country_event = {
 		name = jap.90.a
 		random_list = {
 			65 = {
-				set_temp_variable = { MCK_awareness_increase = 1 }
+				set_temp_variable = { MAN_awareness_increase = 1 }
 				increase_jap_awareness = yes
 			}
 			30 = {
-				custom_effect_tooltip = MCK_nothing_tt
+				custom_effect_tooltip = MAN_nothing_tt
 			}
 			5 = {
 				add_popularity = {
@@ -5561,19 +5561,19 @@ country_event = {
 		awareness_at_least_1 = yes
 		has_country_flag = neutral_path
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 30
 			}
 		}
-		NOT = { has_country_flag = { flag = MCK_neut_path_event_no_bold days < 30 }}
-		NOT = { has_country_flag = { flag = MCK_neut_path_event_radprog days < 30 }}
+		NOT = { has_country_flag = { flag = MAN_neut_path_event_no_bold days < 30 }}
+		NOT = { has_country_flag = { flag = MAN_neut_path_event_radprog days < 30 }}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
 	}
 	
 	mean_time_to_happen = { days = 50 }
@@ -5585,7 +5585,7 @@ country_event = {
 				increase_jap_awareness3 = yes
 			}
 			45 = {
-				custom_effect_tooltip = MCK_nothing_tt
+				custom_effect_tooltip = MAN_nothing_tt
 			}
 		}
 	}
@@ -5606,21 +5606,21 @@ country_event = {
 	
 	trigger = {
 		is_subject = yes
-		NOT = { has_country_flag = MCK_lay_low_flag }
+		NOT = { has_country_flag = MAN_lay_low_flag }
 		awareness_at_least_1 = yes
 		has_country_flag = neutral_path
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 55
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
 	}
 	
 	mean_time_to_happen = { days = 100 }
@@ -5632,17 +5632,17 @@ country_event = {
 			ideology = neutrality
 			popularity = 0.02
 		}
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
 	option = {
 		name = jap.92.b
 		add_stability = -0.01
-		custom_effect_tooltip = MCK_remove_crack_down_suspicion_tt
+		custom_effect_tooltip = MAN_remove_crack_down_suspicion_tt
 		if = {
-			limit = { check_variable = { MCK_suspicion > 0 }}
-			subtract_from_variable = { MCK_suspicion = 1 }
+			limit = { check_variable = { MAN_suspicion > 0 }}
+			subtract_from_variable = { MAN_suspicion = 1 }
 		}
 	}
 }
@@ -5659,19 +5659,19 @@ country_event = {
 		is_subject = yes
 		awareness_at_least_1 = yes
 		has_country_flag = neutral_path
-		has_country_flag = MCK_anti_sentiment
+		has_country_flag = MAN_anti_sentiment
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event_aj }
+			NOT = { has_country_flag = MAN_neut_path_event_aj }
 			has_country_flag = {
-				flag = MCK_neut_path_event_aj
+				flag = MAN_neut_path_event_aj
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event_aj
-		set_country_flag = MCK_neut_path_event_aj
+		clr_country_flag = MAN_neut_path_event_aj
+		set_country_flag = MAN_neut_path_event_aj
 	}
 	
 	mean_time_to_happen = { days = 50 }
@@ -5684,10 +5684,10 @@ country_event = {
 	option = {
 		name = jap.93.b
 		add_stability = -0.02
-		custom_effect_tooltip = MCK_remove_crack_down_suspicion_tt
+		custom_effect_tooltip = MAN_remove_crack_down_suspicion_tt
 		if = {
-			limit = { check_variable = { MCK_suspicion > 0 }}
-			subtract_from_variable = { MCK_suspicion = 1 }
+			limit = { check_variable = { MAN_suspicion > 0 }}
+			subtract_from_variable = { MAN_suspicion = 1 }
 		}
 	}
 }
@@ -5706,30 +5706,30 @@ country_event = {
 		awareness_at_least_2 = yes
 		has_country_flag = neutral_path
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
 	}
 	
 	mean_time_to_happen = { 
 		days = 100
 		modifier = {
 			factor = 0.3
-			has_country_flag = MCK_anti_sentiment
+			has_country_flag = MAN_anti_sentiment
 		}
 	}
 	
 	option = {
 		name = jap.94.a
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
@@ -5753,31 +5753,31 @@ country_event = {
 	
 	trigger = {
 		is_subject = yes
-		NOT = { has_country_flag = MCK_lay_low_flag }
+		NOT = { has_country_flag = MAN_lay_low_flag }
 		awareness_at_least_2 = yes
 		has_country_flag = neutral_path
 		NOT = {
-			has_idea = MCK_decoys
+			has_idea = MAN_decoys
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
 	}
 	
 	mean_time_to_happen = { 
 		days = 100
 		modifier = {
 			factor = 0.75
-			has_country_flag = MCK_anti_sentiment
+			has_country_flag = MAN_anti_sentiment
 		}
 	}
 	
@@ -5790,7 +5790,7 @@ country_event = {
 		name = jap.95.b
 		add_political_power = -25
 		add_timed_idea = {
-			idea = MCK_decoys
+			idea = MAN_decoys
 			days = 80
 		}
 	}
@@ -5809,20 +5809,20 @@ country_event = {
 		awareness_at_least_2 = yes
 		has_country_flag = neutral_path
 		NOT = {
-			has_idea = MCK_tapped_phone_idea
+			has_idea = MAN_tapped_phone_idea
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
 	}
 	
 	mean_time_to_happen = { 
@@ -5836,7 +5836,7 @@ country_event = {
 				increase_jap_awareness4 = yes
 			}
 			95 = {
-				set_temp_variable = { MCK_awareness_increase = 1 }
+				set_temp_variable = { MAN_awareness_increase = 1 }
 				increase_jap_awareness = yes
 			}
 		}
@@ -5847,12 +5847,12 @@ country_event = {
 		random_list = {
 			25 = {
 				add_timed_idea = {
-					idea = MCK_tapped_phone_idea
+					idea = MAN_tapped_phone_idea
 					days = 120
 				}
 			}
 			75 = {
-				custom_effect_tooltip = MCK_nothing_tt
+				custom_effect_tooltip = MAN_nothing_tt
 			}
 		}
 	}
@@ -5868,7 +5868,7 @@ country_event = {
 	
 	trigger = {
 		is_subject = yes
-		NOT = { has_country_flag = MCK_lay_low_flag }
+		NOT = { has_country_flag = MAN_lay_low_flag }
 		OR = {
 			AND = {
 				awareness_at_least_3 = yes
@@ -5877,31 +5877,31 @@ country_event = {
 			AND = {
 				awareness_at_least_2 = yes
 				has_country_flag = neutral_path
-				has_country_flag = MCK_anti_sentiment
+				has_country_flag = MAN_anti_sentiment
 			}
 		}
 		NOT = {
-			has_idea = MCK_halt_propagation
+			has_idea = MAN_halt_propagation
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_neut_path_event }
+			NOT = { has_country_flag = MAN_neut_path_event }
 			has_country_flag = {
-				flag = MCK_neut_path_event
+				flag = MAN_neut_path_event
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_neut_path_event
-		set_country_flag = MCK_neut_path_event
+		clr_country_flag = MAN_neut_path_event
+		set_country_flag = MAN_neut_path_event
 	}
 	
 	mean_time_to_happen = { 
 		days = 100
 		modifier = {
 			factor = 0.75
-			has_country_flag = MCK_anti_sentiment
+			has_country_flag = MAN_anti_sentiment
 		}
 	}
 	
@@ -5912,7 +5912,7 @@ country_event = {
 				increase_jap_awareness2 = yes
 			}
 			20 = {
-				custom_effect_tooltip = MCK_nothing_tt
+				custom_effect_tooltip = MAN_nothing_tt
 			}
 			5 = {
 				add_popularity = {
@@ -5927,7 +5927,7 @@ country_event = {
 	option = {
 		name = jap.97.b
 		add_timed_idea = {
-			idea = MCK_halt_propagation
+			idea = MAN_halt_propagation
 			days = 180
 		}
 	}
@@ -5945,7 +5945,7 @@ country_event = {
 	trigger = {
 		always = no
 		tag = JAP
-		MCK = {
+		MAN = {
 			awareness_at_least_3 = yes
 			has_country_flag = neutral_path
 			OR = {
@@ -5965,7 +5965,7 @@ country_event = {
 	option = {
 		ai_chance = { factor = 100 }
 		name = jap.98.a
-		MCK = {
+		MAN = {
 			country_event = { id = jap.99 }
 		}
 	}
@@ -6041,7 +6041,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			MCK = {				
+			MAN = {				
 				retire_country_leader = yes
 				set_politics = {
 					ruling_party = neutrality
@@ -6055,7 +6055,7 @@ country_event = {
 					country_event = { id = wd.1 }
 				}
 			}
-			MCK = {
+			MAN = {
 				add_popularity = {
 					ideology = communism
 					popularity = -1
@@ -6085,7 +6085,7 @@ country_event = {
 	}
 }
 
-#house arrest [MCK.GetLeader]?
+#house arrest [MAN.GetLeader]?
 country_event = {
 	id = jap.102
 	title = jap.102.t
@@ -6094,7 +6094,7 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_01
 	
 	trigger = {
-		MCK = {
+		MAN = {
 			is_subject_of = ROOT
 			awareness_at_least_3 = yes
 			OR = {
@@ -6115,7 +6115,7 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		MCK = {
+		MAN = {
 			country_event = { id = jap.103 }
 		}
 	}
@@ -6125,7 +6125,7 @@ country_event = {
 	}
 }
 
-#house arrest [MCK.GetLeader]?
+#house arrest [MAN.GetLeader]?
 country_event = {
 	id = jap.103
 	title = jap.103.t
@@ -6136,52 +6136,52 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		#anchor: MCK gain independence
+		#anchor: MAN gain independence
 		name = jap.103.a
 		ai_chance = {
 			factor = 55
 		}
-		MCK = { 
-			set_country_flag = MCK_free_flag 
+		MAN = { 
+			set_country_flag = MAN_free_flag 
 			capital_scope = {
 				if = {
-					limit = { NOT = { has_state_flag = MCK_state_secured }}
-					add_to_variable = { global.MCK_secured_state_num = 1 }
-					set_state_flag = MCK_state_secured
-					custom_effect_tooltip = MCK_state_secured_tt
-						set_variable = { MCK_secured_state_frame = 2 }
+					limit = { NOT = { has_state_flag = MAN_state_secured }}
+					add_to_variable = { global.MAN_secured_state_num = 1 }
+					set_state_flag = MAN_state_secured
+					custom_effect_tooltip = MAN_state_secured_tt
+						set_variable = { MAN_secured_state_frame = 2 }
 				}
 			}
 		}
 		every_owned_state = {
 			limit = {
-				has_state_flag = MCK_assimilated_bandits
+				has_state_flag = MAN_assimilated_bandits
 				is_core_of = ROOT
-				has_dynamic_modifier = { modifier = MCK_local_bandits }
+				has_dynamic_modifier = { modifier = MAN_local_bandits }
 				NOT = {
-					has_dynamic_modifier = { modifier = MCK_najua_presence }
-					has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+					has_dynamic_modifier = { modifier = MAN_najua_presence }
+					has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 				}
 			}
-			if = { limit = { has_dynamic_modifier = { modifier = MCK_local_bandits }} remove_dynamic_modifier = { modifier = MCK_local_bandits }}
+			if = { limit = { has_dynamic_modifier = { modifier = MAN_local_bandits }} remove_dynamic_modifier = { modifier = MAN_local_bandits }}
 			if = { limit = { has_resistance = yes } cancel_resistance = yes }
-			if = { limit = { check_variable = { global.MCK_resistance_strength@This> 0 }} set_variable = { global.MCK_resistance_strength@This= 0 }}
+			if = { limit = { check_variable = { global.MAN_resistance_strength@This> 0 }} set_variable = { global.MAN_resistance_strength@This= 0 }}
 		}
 		every_owned_state = {
 			limit = {
 				is_core_of = ROOT
-				check_variable = { MCK_guihuajun_amt > 0 }
+				check_variable = { MAN_guihuajun_amt > 0 }
 			}
 			create_unit = {
 				division = "name = \"Kuei-hua-chün\" division_template = \"Kuei-hua-chün\" start_experience_factor = 0.2 start_equipment_factor = 15 start_equipment_factor = 1"
 				owner = ROOT
 				allow_spawning_on_enemy_provs = yes
-				count = This.MCK_guihuajun_amt
+				count = This.MAN_guihuajun_amt
 			}
 		}
 		FROM = {
-			end_puppet = MCK
-			remove_from_faction = MCK
+			end_puppet = MAN
+			remove_from_faction = MAN
 			country_event = { id = jap.104 }
 		}
 		if = {
@@ -6217,39 +6217,39 @@ country_event = {
 			}
 			country_event = { id = jap.222 }
 		}
-		set_variable = { MCK_awareness = 0 }
-		set_variable = { MCK_suspicion = 0 }
-		set_variable = { MCK_RFP_mood = 0 }
+		set_variable = { MAN_awareness = 0 }
+		set_variable = { MAN_suspicion = 0 }
+		set_variable = { MAN_RFP_mood = 0 }
 		declare_war_on = {
 			target = FROM
 			type = topple_government
 		}
 		if = {
 			limit = {
-				has_global_flag = MCK_prepared_for_usa_intervention
+				has_global_flag = MAN_prepared_for_usa_intervention
 				USA = {
 					exists = yes
 					is_subject = no
-					has_country_flag = MCK_helping_independence
+					has_country_flag = MAN_helping_independence
 				}
 				NOT = { is_subject_of = USA }
 			}
-			add_ideas = MCK_usa_intervention
+			add_ideas = MAN_usa_intervention
 			USA = {
 				country_event = { id = jap.241 }
 			}
 		}
 		if = {
 			limit = {
-				has_global_flag = MCK_prepared_for_sov_intervention
+				has_global_flag = MAN_prepared_for_sov_intervention
 				SOV = {
 					exists = yes
 					is_subject = no
-					has_country_flag = MCK_helping_independence
+					has_country_flag = MAN_helping_independence
 				}
 				NOT = { is_subject_of = SOV }
 			}
-			add_ideas = MCK_sov_intervention
+			add_ideas = MAN_sov_intervention
 			if = {
 				limit = { 
 					any_owned_state = { any_neighbor_state = { is_controlled_by = SOV }}
@@ -6276,22 +6276,22 @@ country_event = {
 					}
 				}
 			}
-				add_equipment_to_stockpile = { type = infantry_equipment amount = MCK_uprise_sov_equipment producer = SOV }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = MAN_uprise_sov_equipment producer = SOV }
 			SOV = {
 				country_event = { id = jap.241 }
 			}
 		}
 		if = {
 			limit = {
-				has_global_flag = MCK_coordinated_uprising_flag
+				has_global_flag = MAN_coordinated_uprising_flag
 				event_target:KMT_central_gov_tag = {
 					exists = yes
 					is_subject = no
-					has_country_flag = MCK_helping_independence
+					has_country_flag = MAN_helping_independence
 				}
 				NOT = { is_subject_of = event_target:KMT_central_gov_tag }
 			}
-			add_ideas = MCK_chi_intervention
+			add_ideas = MAN_chi_intervention
 			division_template = {
 				name = "K'ang-jih Chiu-kuo Ch'i-i-chün"
 				is_locked = yes
@@ -6340,7 +6340,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_global_flag = MCK_korean_cooperation_flag
+				has_global_flag = MAN_korean_cooperation_flag
 			}
 			if = {
 				limit = {	
@@ -6352,7 +6352,7 @@ country_event = {
 				FROM = {
 					end_puppet = KOR
 				}
-				MCK = { puppet = KOR }
+				MAN = { puppet = KOR }
 				KOR = {
 					division_template = {
 						name = "Joseon Uiyondae"
@@ -6420,13 +6420,13 @@ country_event = {
 		}
 		FROM = {
 			add_timed_idea = {
-				idea = MCK_disrupted_logistics
+				idea = MAN_disrupted_logistics
 				days = 60
 			}
 		}
 		every_owned_state = {
 			limit = {
-				NOT = { has_state_flag = MCK_state_secured }
+				NOT = { has_state_flag = MAN_state_secured }
 			}
 			FROM = { set_state_owner = PREV }
 			if = {
@@ -6443,7 +6443,7 @@ country_event = {
 		ai_chance = {
 			factor = 45 
 		}
-		add_country_leader_trait = MCK_under_house_arrest
+		add_country_leader_trait = MAN_under_house_arrest
 		FROM = {
 			#country_event = { id = jap.105 }
 		}
@@ -6507,7 +6507,7 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_01
 	
 	trigger = {
-		original_tag = MCK
+		original_tag = MAN
 		is_puppet = no
 		controls_state = 608
 		capital_scope = {
@@ -7812,11 +7812,11 @@ country_event = {
 					add_ideas = KMT_jap_military_advisors
 					diplomatic_relation = {
 						relation = military_access
-						country = MCK
+						country = MAN
 						active = yes
 					}
 				}
-				MCK = {
+				MAN = {
 					diplomatic_relation = {
 						relation = military_access
 						country = WJW
@@ -8191,7 +8191,7 @@ country_event = {
 		}
 		OR = {
 			is_neighbor_of = JAP
-			MCK = {
+			MAN = {
 				is_neighbor_of = SOV
 				is_subject_of = JAP
 			}
@@ -9641,36 +9641,36 @@ country_event = {
 		is_subject = yes
 		has_country_flag = rfp_path
 		OR = {
-			NOT = { has_country_flag = MCK_rfp_path_event }
+			NOT = { has_country_flag = MAN_rfp_path_event }
 			has_country_flag = {
-				flag = MCK_rfp_path_event
+				flag = MAN_rfp_path_event
 				days > 30
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_rfp_path_event
-		set_country_flag = MCK_rfp_path_event
+		clr_country_flag = MAN_rfp_path_event
+		set_country_flag = MAN_rfp_path_event
 	}
 	
 	mean_time_to_happen = { 
 		days = 125 
 		modifier = {
 			factor = 0.8
-			check_variable = { MCK_RFP_mood < 3 }
+			check_variable = { MAN_RFP_mood < 3 }
 		}
 		modifier = {
 			factor = 1.25
-			check_variable = { MCK_awareness > 4 }
+			check_variable = { MAN_awareness > 4 }
 		}
 		modifier = {
 			factor = 1.5
-			check_variable = { MCK_awareness > 9 }
+			check_variable = { MAN_awareness > 9 }
 		}
 		modifier = {
 			factor = 100
-			check_variable = { MCK_awareness > 14 }
+			check_variable = { MAN_awareness > 14 }
 		}
 	}
 	
@@ -9680,32 +9680,32 @@ country_event = {
 			base = 5
 			modifier = {
 				add = 10
-				check_variable = { MCK_RFP_mood > 3 }
+				check_variable = { MAN_RFP_mood > 3 }
 			}
 			modifier = {
 				factor = 0
-				check_variable = { MCK_awareness > 14 }
+				check_variable = { MAN_awareness > 14 }
 			}
 		}
-		custom_effect_tooltip = MCK_add_2_suspicion_tt
-		set_temp_variable = { MCK_temp_suspicion = MCK_suspicion }
-		add_to_temp_variable = { MCK_temp_suspicion = 2 }
+		custom_effect_tooltip = MAN_add_2_suspicion_tt
+		set_temp_variable = { MAN_temp_suspicion = MAN_suspicion }
+		add_to_temp_variable = { MAN_temp_suspicion = 2 }
 		if = {
 			limit = {
-				check_variable = { MCK_temp_suspicion > 9 }
+				check_variable = { MAN_temp_suspicion > 9 }
 			}
-			set_temp_variable = { MCK_awareness_increase = 1 }
+			set_temp_variable = { MAN_awareness_increase = 1 }
 			increase_jap_awareness = yes
-			subtract_from_variable = { MCK_suspicion = 10 }
+			subtract_from_variable = { MAN_suspicion = 10 }
 		}else = {
-			add_to_variable = { MCK_suspicion = 2 }
+			add_to_variable = { MAN_suspicion = 2 }
 		}
 		if = {
 			limit = {
-				check_variable = { MCK_RFP_mood > -6 }
+				check_variable = { MAN_RFP_mood > -6 }
 			}
-			custom_effect_tooltip = MCK_add_RFP_mood1_tt
-			set_temp_variable = { MCK_RFP_mood_increase = -1 }
+			custom_effect_tooltip = MAN_add_RFP_mood1_tt
+			set_temp_variable = { MAN_RFP_mood_increase = -1 }
 			add_mood = yes
 		}
 	}
@@ -9717,16 +9717,16 @@ country_event = {
 		}
 		if = {
 			limit = {
-				check_variable = { MCK_RFP_readinessV > 0 }
+				check_variable = { MAN_RFP_readinessV > 0 }
 			}
-			custom_effect_tooltip = MCK_reduce_RFP_str1_tt
-			subtract_from_variable = { MCK_RFP_readinessV = 1 }
+			custom_effect_tooltip = MAN_reduce_RFP_str1_tt
+			subtract_from_variable = { MAN_RFP_readinessV = 1 }
 			else = {
 				add_political_power = -50
 			}
 		}
-		custom_effect_tooltip = MCK_lower_RFP_mood1_tt
-		set_temp_variable = { MCK_RFP_mood_increase = 1 }
+		custom_effect_tooltip = MAN_lower_RFP_mood1_tt
+		set_temp_variable = { MAN_RFP_mood_increase = 1 }
 		add_mood = yes
 	}
 }
@@ -9738,13 +9738,13 @@ country_event = {
 	desc = {
 		text = jap.160.d_1
 		trigger = {
-			NOT = { check_variable = { MCK_RFP_mood > 5 }}
+			NOT = { check_variable = { MAN_RFP_mood > 5 }}
 		}
 	}
 	desc = {
 		text = jap.160.d_2
 		trigger = {
-			check_variable = { MCK_RFP_mood > 5 }
+			check_variable = { MAN_RFP_mood > 5 }
 		}
 	}
 	
@@ -9753,29 +9753,29 @@ country_event = {
 	trigger = {
 		is_subject = yes
 		NOT = { 
-			has_country_flag = MCK_lay_low_flag 
-			check_variable = { MCK_RFP_mood < 6 }
+			has_country_flag = MAN_lay_low_flag 
+			check_variable = { MAN_RFP_mood < 6 }
 		}
 		awareness_at_least_0 = yes
-		check_variable = { MCK_awareness < 15 }
+		check_variable = { MAN_awareness < 15 }
 		has_country_flag = rfp_path
 		OR = {
 			AND = {
-				NOT = { check_variable = { MCK_RFP_mood > 5 }}
+				NOT = { check_variable = { MAN_RFP_mood > 5 }}
 				OR = {
-					NOT = { has_country_flag = MCK_rfp_path_event }
+					NOT = { has_country_flag = MAN_rfp_path_event }
 					has_country_flag = {
-						flag = MCK_rfp_path_event
+						flag = MAN_rfp_path_event
 						days > 30
 					}
 				}
 			}
 			AND = {
-				check_variable = { MCK_RFP_mood > 5 }
+				check_variable = { MAN_RFP_mood > 5 }
 				OR = {
-					NOT = { has_country_flag = MCK_rfp_path_event_mood }
+					NOT = { has_country_flag = MAN_rfp_path_event_mood }
 					has_country_flag = {
-						flag = MCK_rfp_path_event_mood
+						flag = MAN_rfp_path_event_mood
 						days > 30
 					}
 				}
@@ -9786,13 +9786,13 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				check_variable = { MCK_RFP_mood > 5 }
+				check_variable = { MAN_RFP_mood > 5 }
 			}
-			clr_country_flag = MCK_rfp_path_event_mood
-			set_country_flag = MCK_rfp_path_event_mood
+			clr_country_flag = MAN_rfp_path_event_mood
+			set_country_flag = MAN_rfp_path_event_mood
 			else = {
-				clr_country_flag = MCK_rfp_path_event
-				set_country_flag = MCK_rfp_path_event
+				clr_country_flag = MAN_rfp_path_event
+				set_country_flag = MAN_rfp_path_event
 			}
 		}
 	}
@@ -9801,15 +9801,15 @@ country_event = {
 		days = 100 
 		modifier = {
 			factor = 0.85
-			check_variable = { MCK_RFP_mood < 5 }
+			check_variable = { MAN_RFP_mood < 5 }
 		}
 		modifier = {
 			factor = 1.1
-			check_variable = { MCK_awareness > 4 }
+			check_variable = { MAN_awareness > 4 }
 		}
 		modifier = {
 			factor = 1.25
-			check_variable = { MCK_awareness > 9 }
+			check_variable = { MAN_awareness > 9 }
 		}
 	}
 	
@@ -9818,16 +9818,16 @@ country_event = {
 			base = 10
 			modifier = {
 				add = -8
-				check_variable = { MCK_awareness > 14 }
+				check_variable = { MAN_awareness > 14 }
 			}
 		}
 		name = jap.160.a
-		trigger = { NOT = { check_variable = { MCK_RFP_mood > 5 }}}
+		trigger = { NOT = { check_variable = { MAN_RFP_mood > 5 }}}
 		add_political_power = -50
-		custom_effect_tooltip = MCK_add_RFP_str_tt
-		add_to_variable = { MCK_RFP_readinessV = 1 }
-		custom_effect_tooltip = MCK_add_1_suspicion_tt
-		set_temp_variable = { MCK_suspicion_increase = 1 }
+		custom_effect_tooltip = MAN_add_RFP_str_tt
+		add_to_variable = { MAN_RFP_readinessV = 1 }
+		custom_effect_tooltip = MAN_add_1_suspicion_tt
+		set_temp_variable = { MAN_suspicion_increase = 1 }
 		increase_jap_suspicion = yes
 	}
 	
@@ -9836,27 +9836,27 @@ country_event = {
 			base = 10
 			modifier = {
 				add = -5
-				check_variable = { MCK_RFP_mood > 4 }
+				check_variable = { MAN_RFP_mood > 4 }
 			}
 		}
 		name = jap.160.b
-		trigger = { NOT = { check_variable = { MCK_RFP_mood > 5 }}}
+		trigger = { NOT = { check_variable = { MAN_RFP_mood > 5 }}}
 		if = {
 			limit = {
-				check_variable = { MCK_RFP_mood < 6 }
+				check_variable = { MAN_RFP_mood < 6 }
 			}
-			custom_effect_tooltip = MCK_add_RFP_mood1_tt
-			set_temp_variable = { MCK_RFP_mood_increase = 1 }
+			custom_effect_tooltip = MAN_add_RFP_mood1_tt
+			set_temp_variable = { MAN_RFP_mood_increase = 1 }
 			add_mood = yes
 		}
 	}
 	
 	option = {
 		name = jap.160.c
-		custom_effect_tooltip = MCK_high_mood_alert_tt
-		trigger = { check_variable = { MCK_RFP_mood > 5 }}
-		custom_effect_tooltip = MCK_add_3_suspicion_tt
-		set_temp_variable = { MCK_suspicion_increase = 3 }
+		custom_effect_tooltip = MAN_high_mood_alert_tt
+		trigger = { check_variable = { MAN_RFP_mood > 5 }}
+		custom_effect_tooltip = MAN_add_3_suspicion_tt
+		set_temp_variable = { MAN_suspicion_increase = 3 }
 		increase_jap_suspicion = yes
 	}
 }
@@ -9868,13 +9868,13 @@ country_event = {
 	desc = {
 		text = jap.161.d_1
 		trigger = {
-			NOT = { check_variable = { MCK_RFP_mood > 5 }}
+			NOT = { check_variable = { MAN_RFP_mood > 5 }}
 		}
 	}
 	desc = {
 		text = jap.161.d_2
 		trigger = {
-			check_variable = { MCK_RFP_mood > 5 }
+			check_variable = { MAN_RFP_mood > 5 }
 		}
 	}
 	
@@ -9883,29 +9883,29 @@ country_event = {
 	trigger = {
 		is_subject = yes
 		NOT = { 
-			has_country_flag = MCK_lay_low_flag 
-			check_variable = { MCK_RFP_mood < 6 }
+			has_country_flag = MAN_lay_low_flag 
+			check_variable = { MAN_RFP_mood < 6 }
 		}
 		awareness_at_least_0 = yes
-		check_variable = { MCK_awareness < 15 }
+		check_variable = { MAN_awareness < 15 }
 		has_country_flag = rfp_path
 		OR = {
 			AND = {
-				NOT = { check_variable = { MCK_RFP_mood > 5 }}
+				NOT = { check_variable = { MAN_RFP_mood > 5 }}
 				OR = {
-					NOT = { has_country_flag = MCK_rfp_path_event }
+					NOT = { has_country_flag = MAN_rfp_path_event }
 					has_country_flag = {
-						flag = MCK_rfp_path_event
+						flag = MAN_rfp_path_event
 						days > 30
 					}
 				}
 			}
 			AND = {
-				check_variable = { MCK_RFP_mood > 5 }
+				check_variable = { MAN_RFP_mood > 5 }
 				OR = {
-					NOT = { has_country_flag = MCK_rfp_path_event_mood }
+					NOT = { has_country_flag = MAN_rfp_path_event_mood }
 					has_country_flag = {
-						flag = MCK_rfp_path_event_mood
+						flag = MAN_rfp_path_event_mood
 						days > 30
 					}
 				}
@@ -9916,13 +9916,13 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				check_variable = { MCK_RFP_mood > 5 }
+				check_variable = { MAN_RFP_mood > 5 }
 			}
-			clr_country_flag = MCK_rfp_path_event_mood
-			set_country_flag = MCK_rfp_path_event_mood
+			clr_country_flag = MAN_rfp_path_event_mood
+			set_country_flag = MAN_rfp_path_event_mood
 			else = {
-				clr_country_flag = MCK_rfp_path_event
-				set_country_flag = MCK_rfp_path_event
+				clr_country_flag = MAN_rfp_path_event
+				set_country_flag = MAN_rfp_path_event
 			}
 		}
 	}
@@ -9931,15 +9931,15 @@ country_event = {
 		days = 100 
 		modifier = {
 			factor = 0.85
-			check_variable = { MCK_RFP_mood < 5 }
+			check_variable = { MAN_RFP_mood < 5 }
 		}
 		modifier = {
 			factor = 1.1
-			check_variable = { MCK_awareness > 4 }
+			check_variable = { MAN_awareness > 4 }
 		}
 		modifier = {
 			factor = 1.25
-			check_variable = { MCK_awareness > 9 }
+			check_variable = { MAN_awareness > 9 }
 		}
 	}
 	
@@ -9948,25 +9948,25 @@ country_event = {
 			base = 5
 			modifier = {
 				factor = 0
-				check_variable = { MCK_RFP_mood > 4 }
+				check_variable = { MAN_RFP_mood > 4 }
 			}
 			modifier = {
 				factor = 0
-				check_variable = { MCK_awareness > 9 }
+				check_variable = { MAN_awareness > 9 }
 			}
 		}
-		trigger = { NOT = { check_variable = { MCK_RFP_mood > 5 }}}
+		trigger = { NOT = { check_variable = { MAN_RFP_mood > 5 }}}
 		name = jap.161.a
-		custom_effect_tooltip = MCK_add_RFP_str_tt
-		add_to_variable = { MCK_RFP_readinessV = 1 }
+		custom_effect_tooltip = MAN_add_RFP_str_tt
+		add_to_variable = { MAN_RFP_readinessV = 1 }
 		custom_effect_tooltip = increase_jap_awareness_tt
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
-		custom_effect_tooltip = MCK_add_RFP_mood1_tt
-		set_temp_variable = { MCK_RFP_mood_increase = 1 }
+		custom_effect_tooltip = MAN_add_RFP_mood1_tt
+		set_temp_variable = { MAN_RFP_mood_increase = 1 }
 		add_mood = yes
 		add_timed_idea = {
-			idea = MCK_nash_put
+			idea = MAN_nash_put
 			days = 30
 		}
 	}
@@ -9975,19 +9975,19 @@ country_event = {
 		ai_chance = {
 			base = 5
 		}
-		trigger = { NOT = { check_variable = { MCK_RFP_mood > 5 }}}
+		trigger = { NOT = { check_variable = { MAN_RFP_mood > 5 }}}
 		name = jap.161.b
 		add_political_power = 20
 	}
 	
 	option = {
-		trigger = { check_variable = { MCK_RFP_mood > 5 }}
+		trigger = { check_variable = { MAN_RFP_mood > 5 }}
 		name = jap.161.c
 		add_political_power = -50
-		custom_effect_tooltip = MCK_add_RFP_str_tt
-		add_to_variable = { MCK_RFP_readinessV = 1 }
+		custom_effect_tooltip = MAN_add_RFP_str_tt
+		add_to_variable = { MAN_RFP_readinessV = 1 }
 		custom_effect_tooltip = increase_jap_awareness_tt
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 }
@@ -9999,13 +9999,13 @@ country_event = {
 	desc = {
 		text = jap.162.d_1
 		trigger = {
-			NOT = { check_variable = { MCK_RFP_mood > 5 }}
+			NOT = { check_variable = { MAN_RFP_mood > 5 }}
 		}
 	}
 	desc = {
 		text = jap.162.d_2
 		trigger = {
-			check_variable = { MCK_RFP_mood > 5 }
+			check_variable = { MAN_RFP_mood > 5 }
 		}
 	}
 	
@@ -10014,29 +10014,29 @@ country_event = {
 	trigger = {
 		is_subject = yes
 		NOT = { 
-			has_country_flag = MCK_lay_low_flag 
-			check_variable = { MCK_RFP_mood < 6 }
+			has_country_flag = MAN_lay_low_flag 
+			check_variable = { MAN_RFP_mood < 6 }
 		}
 		awareness_at_least_0 = yes
-		check_variable = { MCK_awareness < 15 }
+		check_variable = { MAN_awareness < 15 }
 		has_country_flag = rfp_path
 		OR = {
 			AND = {
-				NOT = { check_variable = { MCK_RFP_mood > 5 }}
+				NOT = { check_variable = { MAN_RFP_mood > 5 }}
 				OR = {
-					NOT = { has_country_flag = MCK_rfp_path_event }
+					NOT = { has_country_flag = MAN_rfp_path_event }
 					has_country_flag = {
-						flag = MCK_rfp_path_event
+						flag = MAN_rfp_path_event
 						days > 30
 					}
 				}
 			}
 			AND = {
-				check_variable = { MCK_RFP_mood > 5 }
+				check_variable = { MAN_RFP_mood > 5 }
 				OR = {
-					NOT = { has_country_flag = MCK_rfp_path_event_mood }
+					NOT = { has_country_flag = MAN_rfp_path_event_mood }
 					has_country_flag = {
-						flag = MCK_rfp_path_event_mood
+						flag = MAN_rfp_path_event_mood
 						days > 30
 					}
 				}
@@ -10047,13 +10047,13 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				check_variable = { MCK_RFP_mood > 5 }
+				check_variable = { MAN_RFP_mood > 5 }
 			}
-			clr_country_flag = MCK_rfp_path_event_mood
-			set_country_flag = MCK_rfp_path_event_mood
+			clr_country_flag = MAN_rfp_path_event_mood
+			set_country_flag = MAN_rfp_path_event_mood
 			else = {
-				clr_country_flag = MCK_rfp_path_event
-				set_country_flag = MCK_rfp_path_event
+				clr_country_flag = MAN_rfp_path_event
+				set_country_flag = MAN_rfp_path_event
 			}
 		}
 	}
@@ -10062,15 +10062,15 @@ country_event = {
 		days = 100 
 		modifier = {
 			factor = 0.85
-			check_variable = { MCK_RFP_mood < 5 }
+			check_variable = { MAN_RFP_mood < 5 }
 		}
 		modifier = {
 			factor = 1.25
-			check_variable = { MCK_awareness > 4 }
+			check_variable = { MAN_awareness > 4 }
 		}
 		modifier = {
 			factor = 1.5
-			check_variable = { MCK_awareness > 9 }
+			check_variable = { MAN_awareness > 9 }
 		}
 	}
 	
@@ -10079,17 +10079,17 @@ country_event = {
 			base = 10
 			modifier = {
 				add = -5
-				check_variable = { MCK_awareness > 9 }
+				check_variable = { MAN_awareness > 9 }
 			}
 			modifier = {
 				add = -5
-				check_variable = { MCK_awareness > 14 }
+				check_variable = { MAN_awareness > 14 }
 			}
 		}
-		trigger = { NOT = { check_variable = { MCK_RFP_mood > 5 }}}
+		trigger = { NOT = { check_variable = { MAN_RFP_mood > 5 }}}
 		name = jap.162.a
-		custom_effect_tooltip = MCK_add_RFP_str_tt
-		add_to_variable = { MCK_RFP_readinessV = 1 }
+		custom_effect_tooltip = MAN_add_RFP_str_tt
+		add_to_variable = { MAN_RFP_readinessV = 1 }
 		custom_effect_tooltip = increase_jap_awareness2_tt
 		increase_jap_awareness2 = yes
 		add_equipment_to_stockpile = { type = infantry_equipment amount = 2000 }
@@ -10100,26 +10100,26 @@ country_event = {
 			base = 10
 			modifier = {
 				add = -5
-				check_variable = { MCK_RFP_mood > 4 }
+				check_variable = { MAN_RFP_mood > 4 }
 			}
 		}
-		trigger = { NOT = { check_variable = { MCK_RFP_mood > 5 }}}
+		trigger = { NOT = { check_variable = { MAN_RFP_mood > 5 }}}
 		name = jap.162.b
-		custom_effect_tooltip = MCK_add_RFP_mood1_tt
-		set_temp_variable = { MCK_RFP_mood_increase = 1 }
+		custom_effect_tooltip = MAN_add_RFP_mood1_tt
+		set_temp_variable = { MAN_RFP_mood_increase = 1 }
 		add_mood = yes
 		army_experience = 1
 		add_timed_idea = {
-			idea = MCK_raid_plan
+			idea = MAN_raid_plan
 			days = 10
 		}
 	}
 	
 	option = {
-		trigger = { check_variable = { MCK_RFP_mood > 5 }}
+		trigger = { check_variable = { MAN_RFP_mood > 5 }}
 		name = jap.162.c
-		custom_effect_tooltip = MCK_add_RFP_str2_tt
-		add_to_variable = { MCK_RFP_readinessV = 2 }
+		custom_effect_tooltip = MAN_add_RFP_str2_tt
+		add_to_variable = { MAN_RFP_readinessV = 2 }
 		custom_effect_tooltip = increase_jap_awareness3_tt
 		increase_jap_awareness3 = yes
 	}
@@ -10137,26 +10137,26 @@ country_event = {
 	trigger = {
 		is_subject = yes
 		NOT = { 
-			has_country_flag = MCK_lay_low_flag 
+			has_country_flag = MAN_lay_low_flag 
 		}
 		awareness_at_least_0 = yes
-		check_variable = { MCK_awareness < 15 }
+		check_variable = { MAN_awareness < 15 }
 		has_country_flag = rfp_path
 		NOT = {
-			has_idea = MCK_nationalistic_sentiment
+			has_idea = MAN_nationalistic_sentiment
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_rfp_path_event }
+			NOT = { has_country_flag = MAN_rfp_path_event }
 			has_country_flag = {
-				flag = MCK_rfp_path_event
+				flag = MAN_rfp_path_event
 				days > 60
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_rfp_path_event
-		set_country_flag = MCK_rfp_path_event
+		clr_country_flag = MAN_rfp_path_event
+		set_country_flag = MAN_rfp_path_event
 	}
 	
 	mean_time_to_happen = { days = 125 }
@@ -10166,21 +10166,21 @@ country_event = {
 			base = 10
 			modifier = {
 				add = -5
-				check_variable = { MCK_awareness > 9 }
+				check_variable = { MAN_awareness > 9 }
 			}
 			modifier = {
 				add = -5
-				check_variable = { MCK_awareness > 14 }
+				check_variable = { MAN_awareness > 14 }
 			}
 		}
 		name = jap.163.a
 		add_war_support = 0.01
 		add_political_power = 10
 		add_timed_idea = {
-			idea = MCK_nationalistic_sentiment
+			idea = MAN_nationalistic_sentiment
 			days = 60
 		}
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
@@ -10208,29 +10208,29 @@ country_event = {
 		awareness_at_least_1 = yes
 		has_country_flag = rfp_path
 		NOT = {
-			has_idea = MCK_RFP_stay_low
+			has_idea = MAN_RFP_stay_low
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_rfp_path_event }
+			NOT = { has_country_flag = MAN_rfp_path_event }
 			has_country_flag = {
-				flag = MCK_rfp_path_event
+				flag = MAN_rfp_path_event
 				days > 30
 			}
 		}
 		OR = {
-			NOT = { has_country_flag = MCK_rfp_path_event_stay_low }
+			NOT = { has_country_flag = MAN_rfp_path_event_stay_low }
 			has_country_flag = {
-				flag = MCK_rfp_path_event_stay_low
+				flag = MAN_rfp_path_event_stay_low
 				days > 80
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_rfp_path_event
-		set_country_flag = MCK_rfp_path_event
-		clr_country_flag = MCK_rfp_path_event_stay_low
-		set_country_flag = MCK_rfp_path_event_stay_low
+		clr_country_flag = MAN_rfp_path_event
+		set_country_flag = MAN_rfp_path_event
+		clr_country_flag = MAN_rfp_path_event_stay_low
+		set_country_flag = MAN_rfp_path_event_stay_low
 	}
 	
 	mean_time_to_happen = { days = 100 }
@@ -10241,10 +10241,10 @@ country_event = {
 		}
 		name = jap.164.a
 		add_timed_idea = {
-			idea = MCK_RFP_stay_low
+			idea = MAN_RFP_stay_low
 			days = 30
 		}
-		custom_effect_tooltip = MCK_stay_low_no_decision_tt
+		custom_effect_tooltip = MAN_stay_low_no_decision_tt
 	}
 	
 	
@@ -10257,24 +10257,24 @@ country_event = {
 			80 = {
 				if = {
 					limit = {
-						check_variable = { MCK_RFP_readinessV > 0 }
+						check_variable = { MAN_RFP_readinessV > 0 }
 					}
-					custom_effect_tooltip = MCK_reduce_RFP_str1_tt
-					subtract_from_variable = { MCK_RFP_readinessV = 1 }
+					custom_effect_tooltip = MAN_reduce_RFP_str1_tt
+					subtract_from_variable = { MAN_RFP_readinessV = 1 }
 					else = {
 						add_political_power = -50
 					}
 				}
-				set_temp_variable = { MCK_awareness_increase = 1 }
+				set_temp_variable = { MAN_awareness_increase = 1 }
 				increase_jap_awareness = yes
 			}
 			15 = {
 				if = {
 					limit = {
-						check_variable = { MCK_RFP_readinessV > 0 }
+						check_variable = { MAN_RFP_readinessV > 0 }
 					}
-					custom_effect_tooltip = MCK_reduce_RFP_str1_tt
-					subtract_from_variable = { MCK_RFP_readinessV = 1 }
+					custom_effect_tooltip = MAN_reduce_RFP_str1_tt
+					subtract_from_variable = { MAN_RFP_readinessV = 1 }
 					else = {
 						add_political_power = -50
 					}
@@ -10297,22 +10297,22 @@ country_event = {
 	trigger = {
 		is_subject = yes
 		NOT = { 
-			has_country_flag = MCK_lay_low_flag 
+			has_country_flag = MAN_lay_low_flag 
 		}
 		awareness_at_least_1 = yes
 		has_country_flag = rfp_path
 		OR = {
-			NOT = { has_country_flag = MCK_rfp_path_event }
+			NOT = { has_country_flag = MAN_rfp_path_event }
 			has_country_flag = {
-				flag = MCK_rfp_path_event
+				flag = MAN_rfp_path_event
 				days > 40
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_rfp_path_event
-		set_country_flag = MCK_rfp_path_event
+		clr_country_flag = MAN_rfp_path_event
+		set_country_flag = MAN_rfp_path_event
 	}
 	
 	mean_time_to_happen = { days = 100 }
@@ -10322,18 +10322,18 @@ country_event = {
 			base = 10
 			modifier = {
 				add = -5
-				check_variable = { MCK_awareness > 9 }
+				check_variable = { MAN_awareness > 9 }
 			}
 			modifier = {
 				add = -5
-				check_variable = { MCK_awareness > 14 }
+				check_variable = { MAN_awareness > 14 }
 			}
 		}
 		name = jap.165.a
 		add_war_support = 0.01
-		custom_effect_tooltip = MCK_add_RFP_str_tt
-		add_to_variable = { MCK_RFP_readinessV = 1 }
-		set_temp_variable = { MCK_awareness_increase = 1 }
+		custom_effect_tooltip = MAN_add_RFP_str_tt
+		add_to_variable = { MAN_RFP_readinessV = 1 }
+		set_temp_variable = { MAN_awareness_increase = 1 }
 		increase_jap_awareness = yes
 	}
 	
@@ -10368,10 +10368,10 @@ country_event = {
 			base = 10
 		}
 		name = jap.166.a
-		custom_effect_tooltip = MCK_rfp_join_mck
+		custom_effect_tooltip = MAN_rfp_join_man
 		add_to_war = {
 			targeted_alliance = ROOT
-			enemy = event_target:MCK_independence_target
+			enemy = event_target:MAN_independence_target
 		}
 		FROM = {
 			country_event = { id = jap.167 }
@@ -10418,7 +10418,7 @@ country_event = {
 	
 	option = {
 		name = jap.168.a
-		add_opinion_modifier = { modifier = MCK_RFP_no_assist target = FROM }
+		add_opinion_modifier = { modifier = MAN_RFP_no_assist target = FROM }
 	}
 }
 
@@ -10437,17 +10437,17 @@ country_event = {
 		awareness_at_least_2 = yes
 		has_country_flag = rfp_path
 		OR = {
-			NOT = { has_country_flag = MCK_rfp_path_event }
+			NOT = { has_country_flag = MAN_rfp_path_event }
 			has_country_flag = {
-				flag = MCK_rfp_path_event
+				flag = MAN_rfp_path_event
 				days > 35
 			}
 		}
 	}
 	
 	immediate = {
-		clr_country_flag = MCK_rfp_path_event
-		set_country_flag = MCK_rfp_path_event
+		clr_country_flag = MAN_rfp_path_event
+		set_country_flag = MAN_rfp_path_event
 	}
 	
 	mean_time_to_happen = { days = 135 }
@@ -10458,7 +10458,7 @@ country_event = {
 		}
 		name = jap.169.a
 		add_political_power = -75
-		set_temp_variable = { MCK_suspicion_increase = 3 }
+		set_temp_variable = { MAN_suspicion_increase = 3 }
 		increase_jap_suspicion = yes
 	}
 	
@@ -10468,24 +10468,24 @@ country_event = {
 			base = 10
 			modifier = {
 				add = -5
-				check_variable = { MCK_awareness > 12 }
+				check_variable = { MAN_awareness > 12 }
 			}
 			modifier = {
 				add = -5
-				check_variable = { MCK_awareness > 13 }
+				check_variable = { MAN_awareness > 13 }
 			}
 		}
 		name = jap.169.b
 		random_list = {
 			50 = {
-				custom_effect_tooltip = MCK_add_RFP_str2_tt
-				add_to_variable = { MCK_RFP_readinessV = 2 }
-				set_temp_variable = { MCK_awareness_increase = 1 }
+				custom_effect_tooltip = MAN_add_RFP_str2_tt
+				add_to_variable = { MAN_RFP_readinessV = 2 }
+				set_temp_variable = { MAN_awareness_increase = 1 }
 				increase_jap_awareness = yes
 			}
 			50 = {
-				custom_effect_tooltip = MCK_add_RFP_str_tt
-				add_to_variable = { MCK_RFP_readinessV = 1 }
+				custom_effect_tooltip = MAN_add_RFP_str_tt
+				add_to_variable = { MAN_RFP_readinessV = 1 }
 				increase_jap_awareness2 = yes
 			}
 		}
@@ -10590,7 +10590,7 @@ country_event = {
 	}
 }
 
-#MCK is free, clear awareness, suspicion, and mood
+#MAN is free, clear awareness, suspicion, and mood
 country_event = {
 	id = jap.172
 	
@@ -10601,19 +10601,19 @@ country_event = {
 	
 	trigger = {
 		always = no
-		tag = MCK
+		tag = MAN
 		is_subject = no
 		OR = {
-			check_variable = { MCK_RFP_mood > 0 }
-			check_variable = { MCK_awareness > 0 }
-			check_variable = { MCK_suspicion > 0 }
+			check_variable = { MAN_RFP_mood > 0 }
+			check_variable = { MAN_awareness > 0 }
+			check_variable = { MAN_suspicion > 0 }
 		}
 	}
 	
 	immediate = {
-		set_variable = { MCK_RFP_mood = 0 }
-		set_variable = { MCK_awareness = 0 }
-		set_variable = { MCK_suspicion = 0 }
+		set_variable = { MAN_RFP_mood = 0 }
+		set_variable = { MAN_awareness = 0 }
+		set_variable = { MAN_suspicion = 0 }
 	}
 	
 	option = {
@@ -12184,7 +12184,7 @@ country_event = {
 	}
 }
 
-#mck ask help response
+#MAN ask help response
 country_event = {
 	id = jap.215
 	title = jap.215.t
@@ -12193,16 +12193,16 @@ country_event = {
 		trigger = {	
 			FROM = {
 				NOT = {
-					has_country_flag = MCK_demand_faction_flag
-					has_country_flag = MCK_demand_resist_communism_flag
-					has_country_flag = MCK_demand_abolish_monarchy_flag
-					has_country_flag = MCK_demand_liberal_reform_flag
-					has_country_flag = MCK_demand_gib_rfp_flag
-					has_country_flag = MCK_demand_gib_dairen_flag
-					has_country_flag = MCK_demand_gib_jehol_flag
-					has_country_flag = MCK_demand_kill_commie_flag
-					has_country_flag = MCK_demand_special_rights_flag
-					has_country_flag = MCK_demand_unconditional_flag
+					has_country_flag = MAN_demand_faction_flag
+					has_country_flag = MAN_demand_resist_communism_flag
+					has_country_flag = MAN_demand_abolish_monarchy_flag
+					has_country_flag = MAN_demand_liberal_reform_flag
+					has_country_flag = MAN_demand_gib_rfp_flag
+					has_country_flag = MAN_demand_gib_dairen_flag
+					has_country_flag = MAN_demand_gib_jehol_flag
+					has_country_flag = MAN_demand_kill_commie_flag
+					has_country_flag = MAN_demand_special_rights_flag
+					has_country_flag = MAN_demand_unconditional_flag
 				}
 			}
 		}
@@ -12212,15 +12212,15 @@ country_event = {
 		trigger = {	
 			FROM = {
 				OR = {
-					has_country_flag = MCK_demand_faction_flag
-					has_country_flag = MCK_demand_resist_communism_flag
-					has_country_flag = MCK_demand_abolish_monarchy_flag
-					has_country_flag = MCK_demand_liberal_reform_flag
-					has_country_flag = MCK_demand_gib_rfp_flag
-					has_country_flag = MCK_demand_gib_dairen_flag
-					has_country_flag = MCK_demand_gib_jehol_flag
-					has_country_flag = MCK_demand_kill_commie_flag
-					has_country_flag = MCK_demand_special_rights_flag
+					has_country_flag = MAN_demand_faction_flag
+					has_country_flag = MAN_demand_resist_communism_flag
+					has_country_flag = MAN_demand_abolish_monarchy_flag
+					has_country_flag = MAN_demand_liberal_reform_flag
+					has_country_flag = MAN_demand_gib_rfp_flag
+					has_country_flag = MAN_demand_gib_dairen_flag
+					has_country_flag = MAN_demand_gib_jehol_flag
+					has_country_flag = MAN_demand_kill_commie_flag
+					has_country_flag = MAN_demand_special_rights_flag
 				}
 			}
 		}
@@ -12229,7 +12229,7 @@ country_event = {
 		text = jap.215.d_3
 		trigger = {	
 			FROM = {
-				has_country_flag = MCK_demand_unconditional_flag
+				has_country_flag = MAN_demand_unconditional_flag
 			}
 		}
 	}
@@ -12243,15 +12243,15 @@ country_event = {
 		trigger = {
 			FROM = {
 				OR = {
-					has_country_flag = MCK_demand_faction_flag
-					has_country_flag = MCK_demand_resist_communism_flag
-					has_country_flag = MCK_demand_abolish_monarchy_flag
-					has_country_flag = MCK_demand_liberal_reform_flag
-					has_country_flag = MCK_demand_gib_rfp_flag
-					has_country_flag = MCK_demand_gib_dairen_flag
-					has_country_flag = MCK_demand_gib_jehol_flag
-					has_country_flag = MCK_demand_kill_commie_flag
-					has_country_flag = MCK_demand_special_rights_flag
+					has_country_flag = MAN_demand_faction_flag
+					has_country_flag = MAN_demand_resist_communism_flag
+					has_country_flag = MAN_demand_abolish_monarchy_flag
+					has_country_flag = MAN_demand_liberal_reform_flag
+					has_country_flag = MAN_demand_gib_rfp_flag
+					has_country_flag = MAN_demand_gib_dairen_flag
+					has_country_flag = MAN_demand_gib_jehol_flag
+					has_country_flag = MAN_demand_kill_commie_flag
+					has_country_flag = MAN_demand_special_rights_flag
 				}
 			}
 		}
@@ -12266,107 +12266,107 @@ country_event = {
 				if = {
 					limit = {
 						is_in_faction = no
-						has_country_flag = MCK_demand_faction_flag
+						has_country_flag = MAN_demand_faction_flag
 					}
-					clr_country_flag = MCK_demand_faction_flag
+					clr_country_flag = MAN_demand_faction_flag
 				}
 				if = {
 					limit = {
 						has_government = communism
 						OR = {
-							has_country_flag = MCK_demand_resist_communism_flag
-							has_country_flag = MCK_demand_kill_commie_flag
+							has_country_flag = MAN_demand_resist_communism_flag
+							has_country_flag = MAN_demand_kill_commie_flag
 						}
 					}
-					clr_country_flag = MCK_demand_resist_communism_flag
-					clr_country_flag = MCK_demand_kill_commie_flag
+					clr_country_flag = MAN_demand_resist_communism_flag
+					clr_country_flag = MAN_demand_kill_commie_flag
 				}
 				if = {
 					limit = {
 						has_government = fascism
-						has_country_flag = MCK_demand_gib_rfp_flag
+						has_country_flag = MAN_demand_gib_rfp_flag
 					}
-					clr_country_flag = MCK_demand_gib_rfp_flag
+					clr_country_flag = MAN_demand_gib_rfp_flag
 				}
 				if = {
 					limit = {
-						MCK = { NOT = { owns_state = 745 }}
-						has_country_flag = MCK_demand_gib_dairen_flag
+						MAN = { NOT = { owns_state = 745 }}
+						has_country_flag = MAN_demand_gib_dairen_flag
 					}
-					clr_country_flag = MCK_demand_gib_dairen_flag
+					clr_country_flag = MAN_demand_gib_dairen_flag
 				}
 				if = {
 					limit = {
-						MCK = { NOT = { owns_state = 610 }}
-						has_country_flag = MCK_demand_gib_jehol_flag
+						MAN = { NOT = { owns_state = 610 }}
+						has_country_flag = MAN_demand_gib_jehol_flag
 					}
-					clr_country_flag = MCK_demand_gib_jehol_flag
+					clr_country_flag = MAN_demand_gib_jehol_flag
 				}
 				if = {
 					limit = {
-						MCK = { NOT = { owns_state = 745 }}
-						has_country_flag = MCK_demand_gib_dairen_flag
+						MAN = { NOT = { owns_state = 745 }}
+						has_country_flag = MAN_demand_gib_dairen_flag
 					}
-					clr_country_flag = MCK_demand_gib_dairen_flag
+					clr_country_flag = MAN_demand_gib_dairen_flag
 				}
 				country_event = { id = jap.217 }
-				set_country_flag = MCK_helping_independence
+				set_country_flag = MAN_helping_independence
 			}
 			if = {
 				limit = {
 					FROM = { 
-						has_country_flag = MCK_demand_faction_flag 
+						has_country_flag = MAN_demand_faction_flag 
 						is_in_faction = yes
 					}
 				}
-				custom_effect_tooltip = MCK_demand_faction_tt
+				custom_effect_tooltip = MAN_demand_faction_tt
 			}
 			if = {
 				limit = {
 					FROM = { 
-						has_country_flag = MCK_demand_resist_communism_flag 
+						has_country_flag = MAN_demand_resist_communism_flag 
 						NOT = { has_government = communism }
 					}
 				}
-				custom_effect_tooltip = MCK_demand_resist_communism_tt
+				custom_effect_tooltip = MAN_demand_resist_communism_tt
 			}
 			if = {
 				limit = {
 					FROM = { 
-						has_country_flag = MCK_demand_faction_flag 
+						has_country_flag = MAN_demand_faction_flag 
 						is_in_faction = yes
 					}
 				}
-				custom_effect_tooltip = MCK_demand_faction_tt
+				custom_effect_tooltip = MAN_demand_faction_tt
 			}
 			if = {
 				limit = {
 					FROM = { 
-						has_country_flag = MCK_demand_abolish_monarchy_flag
+						has_country_flag = MAN_demand_abolish_monarchy_flag
 					}
 				}
-				custom_effect_tooltip = MCK_demand_abolish_monarchy_tt
+				custom_effect_tooltip = MAN_demand_abolish_monarchy_tt
 			}
 			if = {
 				limit = {
 					FROM = { 
-						has_country_flag = MCK_demand_liberal_reform_flag
+						has_country_flag = MAN_demand_liberal_reform_flag
 					}
 				}
-				custom_effect_tooltip = MCK_demand_liberal_reform_tt
+				custom_effect_tooltip = MAN_demand_liberal_reform_tt
 			}
 			if = {
 				limit = {
 					FROM = { 
-						has_country_flag = MCK_demand_gib_rfp_flag 
+						has_country_flag = MAN_demand_gib_rfp_flag 
 						NOT = { has_government = fascism }
 					}
 				}
-				set_global_flag = MCK_turned_over_rfp
+				set_global_flag = MAN_turned_over_rfp
 				if = {
-					limit = { has_completed_focus = MCK_contact_russian_fascists }
+					limit = { has_completed_focus = MAN_contact_russian_fascists }
 					uncomplete_national_focus = {
-						focus = MCK_contact_russian_fascists
+						focus = MAN_contact_russian_fascists
 						uncomplete_children = yes
 						refund_political_power = no
 					}
@@ -12379,23 +12379,23 @@ country_event = {
 			if = {
 				limit = {
 					FROM = { 
-						has_country_flag = MCK_demand_gib_dairen_flag
+						has_country_flag = MAN_demand_gib_dairen_flag
 					}
 				}
-				custom_effect_tooltip = MCK_demand_gib_dairen_tt
+				custom_effect_tooltip = MAN_demand_gib_dairen_tt
 			}
 			if = {
 				limit = {
 					FROM = { 
-						has_country_flag = MCK_demand_gib_jehol_flag
+						has_country_flag = MAN_demand_gib_jehol_flag
 					}
 				}
-				custom_effect_tooltip = MCK_demand_gib_jehol_tt
+				custom_effect_tooltip = MAN_demand_gib_jehol_tt
 			}
 			if = {
 				limit = {
 					FROM = { 
-						has_country_flag = MCK_demand_kill_commie_flag
+						has_country_flag = MAN_demand_kill_commie_flag
 						NOT = { 
 							has_government = communism 
 							has_completed_focus = KMT_carry_the_flame
@@ -12403,19 +12403,19 @@ country_event = {
 						}
 					}
 				}
-				custom_effect_tooltip = MCK_demand_kill_commie_tt
+				custom_effect_tooltip = MAN_demand_kill_commie_tt
 			}
 			if = {
 				limit = {
 					FROM = { 
-						has_country_flag = MCK_demand_special_rights_flag
+						has_country_flag = MAN_demand_special_rights_flag
 						is_major = yes
 					}
 				}
-				custom_effect_tooltip = MCK_demand_special_rights_tt
+				custom_effect_tooltip = MAN_demand_special_rights_tt
 			}
 		}else = {
-			custom_effect_tooltip = MCK_from_invalid_help_no_effect_tt
+			custom_effect_tooltip = MAN_from_invalid_help_no_effect_tt
 		}
 	}
 	
@@ -12425,15 +12425,15 @@ country_event = {
 		trigger = {
 			FROM = {
 				OR = {
-					has_country_flag = MCK_demand_faction_flag
-					has_country_flag = MCK_demand_resist_communism_flag
-					has_country_flag = MCK_demand_abolish_monarchy_flag
-					has_country_flag = MCK_demand_liberal_reform_flag
-					has_country_flag = MCK_demand_gib_rfp_flag
-					has_country_flag = MCK_demand_gib_dairen_flag
-					has_country_flag = MCK_demand_gib_jehol_flag
-					has_country_flag = MCK_demand_kill_commie_flag
-					has_country_flag = MCK_demand_special_rights_flag
+					has_country_flag = MAN_demand_faction_flag
+					has_country_flag = MAN_demand_resist_communism_flag
+					has_country_flag = MAN_demand_abolish_monarchy_flag
+					has_country_flag = MAN_demand_liberal_reform_flag
+					has_country_flag = MAN_demand_gib_rfp_flag
+					has_country_flag = MAN_demand_gib_dairen_flag
+					has_country_flag = MAN_demand_gib_jehol_flag
+					has_country_flag = MAN_demand_kill_commie_flag
+					has_country_flag = MAN_demand_special_rights_flag
 				}
 			}
 		}
@@ -12446,21 +12446,21 @@ country_event = {
 			}
 			FROM = { 
 				country_event = { id = jap.218 }
-				clr_country_flag = MCK_helping_independence
-				clr_country_flag = MCK_help_response_duration
-				clr_country_flag = MCK_demand_faction_flag
-				clr_country_flag = MCK_demand_resist_communism_flag
-				clr_country_flag = MCK_demand_abolish_monarchy_flag
-				clr_country_flag = MCK_demand_liberal_reform_flag
-				clr_country_flag = MCK_demand_gib_rfp_flag
-				clr_country_flag = MCK_demand_gib_dairen_flag
-				clr_country_flag = MCK_demand_gib_jehol_flag
-				clr_country_flag = MCK_demand_kill_commie_flag
-				clr_country_flag = MCK_demand_special_rights_flag
-				clr_country_flag = MCK_demand_unconditional_flag
+				clr_country_flag = MAN_helping_independence
+				clr_country_flag = MAN_help_response_duration
+				clr_country_flag = MAN_demand_faction_flag
+				clr_country_flag = MAN_demand_resist_communism_flag
+				clr_country_flag = MAN_demand_abolish_monarchy_flag
+				clr_country_flag = MAN_demand_liberal_reform_flag
+				clr_country_flag = MAN_demand_gib_rfp_flag
+				clr_country_flag = MAN_demand_gib_dairen_flag
+				clr_country_flag = MAN_demand_gib_jehol_flag
+				clr_country_flag = MAN_demand_kill_commie_flag
+				clr_country_flag = MAN_demand_special_rights_flag
+				clr_country_flag = MAN_demand_unconditional_flag
 			}
 		}else = {
-			custom_effect_tooltip = MCK_from_invalid_help_no_effect_tt
+			custom_effect_tooltip = MAN_from_invalid_help_no_effect_tt
 		}
 	}
 	
@@ -12470,16 +12470,16 @@ country_event = {
 		trigger = {
 			FROM = {
 				NOT = {
-					has_country_flag = MCK_demand_faction_flag
-					has_country_flag = MCK_demand_resist_communism_flag
-					has_country_flag = MCK_demand_abolish_monarchy_flag
-					has_country_flag = MCK_demand_liberal_reform_flag
-					has_country_flag = MCK_demand_gib_rfp_flag
-					has_country_flag = MCK_demand_gib_dairen_flag
-					has_country_flag = MCK_demand_gib_jehol_flag
-					has_country_flag = MCK_demand_kill_commie_flag
-					has_country_flag = MCK_demand_special_rights_flag
-					has_country_flag = MCK_demand_unconditional_flag
+					has_country_flag = MAN_demand_faction_flag
+					has_country_flag = MAN_demand_resist_communism_flag
+					has_country_flag = MAN_demand_abolish_monarchy_flag
+					has_country_flag = MAN_demand_liberal_reform_flag
+					has_country_flag = MAN_demand_gib_rfp_flag
+					has_country_flag = MAN_demand_gib_dairen_flag
+					has_country_flag = MAN_demand_gib_jehol_flag
+					has_country_flag = MAN_demand_kill_commie_flag
+					has_country_flag = MAN_demand_special_rights_flag
+					has_country_flag = MAN_demand_unconditional_flag
 				}
 			}
 		}
@@ -12490,13 +12490,13 @@ country_event = {
 		name = jap.215.d
 		trigger = {
 			FROM = {
-				has_country_flag = MCK_demand_unconditional_flag
+				has_country_flag = MAN_demand_unconditional_flag
 			}
 		}
 	}
 }
 
-#mck ask help now invalid
+#MAN ask help now invalid
 country_event = {
 	id = jap.216
 	title = jap.216.t
@@ -12548,9 +12548,9 @@ country_event = {
 	mean_time_to_happen = { days = 3 }
 	
 	trigger = {
-		tag = MCK
+		tag = MAN
 		any_country = { 
-			has_country_flag = MCK_helping_independence 
+			has_country_flag = MAN_helping_independence 
 			OR = {
 				exists = no
 				is_subject = yes
@@ -12561,13 +12561,13 @@ country_event = {
 				}
 			}
 		}
-		NOT = { has_country_flag = MCK_free_flag }
+		NOT = { has_country_flag = MAN_free_flag }
 	}
 	
 	immediate = {
 		every_country = {
 			limit = {
-				has_country_flag = MCK_helping_independence 
+				has_country_flag = MAN_helping_independence 
 				OR = {
 					exists = no
 					is_subject = yes
@@ -12579,18 +12579,18 @@ country_event = {
 				}
 			}
 			country_event = { id = jap.220 }
-			clr_country_flag = MCK_help_response_duration
-			clr_country_flag = MCK_helping_independence
-			clr_country_flag = MCK_demand_faction_flag
-			clr_country_flag = MCK_demand_resist_communism_flag
-			clr_country_flag = MCK_demand_abolish_monarchy_flag
-			clr_country_flag = MCK_demand_liberal_reform_flag
-			clr_country_flag = MCK_demand_gib_rfp_flag
-			clr_country_flag = MCK_demand_gib_dairen_flag
-			clr_country_flag = MCK_demand_gib_jehol_flag
-			clr_country_flag = MCK_demand_kill_commie_flag
-			clr_country_flag = MCK_demand_special_rights_flag
-			clr_country_flag = MCK_demand_unconditional_flag
+			clr_country_flag = MAN_help_response_duration
+			clr_country_flag = MAN_helping_independence
+			clr_country_flag = MAN_demand_faction_flag
+			clr_country_flag = MAN_demand_resist_communism_flag
+			clr_country_flag = MAN_demand_abolish_monarchy_flag
+			clr_country_flag = MAN_demand_liberal_reform_flag
+			clr_country_flag = MAN_demand_gib_rfp_flag
+			clr_country_flag = MAN_demand_gib_dairen_flag
+			clr_country_flag = MAN_demand_gib_jehol_flag
+			clr_country_flag = MAN_demand_kill_commie_flag
+			clr_country_flag = MAN_demand_special_rights_flag
+			clr_country_flag = MAN_demand_unconditional_flag
 		}
 	}
 	
@@ -12624,7 +12624,7 @@ country_event = {
 	
 	option = {
 		name = jap.221.a
-		add_opinion_modifier = { target = FROM modifier = MCK_withdraw_help }
+		add_opinion_modifier = { target = FROM modifier = MAN_withdraw_help }
 	}
 }
 
@@ -12656,7 +12656,7 @@ country_event = {
 	}
 	
 	option = {
-		set_variable = { MCK_PEACE_REJECTED = 0 }
+		set_variable = { MAN_PEACE_REJECTED = 0 }
 		name = jap.222.c
 		ai_chance = { base = 100 }
 		trigger = { 
@@ -12668,8 +12668,8 @@ country_event = {
 		}
 		hidden_effect = {
 			every_country = {
-				set_variable = { MCK_PEACE_FACTION_INSTANCE@ROOT = 0 }
-				set_variable = { MCK_PEACE_AWAITING_RESPONSE@ROOT = 0 }
+				set_variable = { MAN_PEACE_FACTION_INSTANCE@ROOT = 0 }
+				set_variable = { MAN_PEACE_AWAITING_RESPONSE@ROOT = 0 }
 			}
 		}
 		every_other_country = {
@@ -12680,8 +12680,8 @@ country_event = {
 					has_autonomy_state = autonomy_dominion
 				}
 			}
-			set_variable = { MCK_PEACE_FACTION_INSTANCE@ROOT = 1 }
-			set_variable = { MCK_PEACE_AWAITING_RESPONSE@ROOT = 1 }
+			set_variable = { MAN_PEACE_FACTION_INSTANCE@ROOT = 1 }
+			set_variable = { MAN_PEACE_AWAITING_RESPONSE@ROOT = 1 }
 		}
 		every_other_country = {
 			limit = {
@@ -12698,13 +12698,13 @@ country_event = {
 	option = {
 		name = jap.222.b
 		trigger = {
-			NOT = { has_country_flag = MCK_helping_independence }
+			NOT = { has_country_flag = MAN_helping_independence }
 		}
 		FROM = { country_event = { id = jap.225 }}
 	}
 }
 
-#white peace with mck?
+#white peace with MAN?
 country_event = {
 	id = jap.223
 	title = jap.223.t
@@ -12716,14 +12716,14 @@ country_event = {
 	option = {
 		name = jap.223.a
 		ai_chance = { base = 100 }
-		set_variable = { MCK_PEACE_AWAITING_RESPONSE@FROM = 0 }
+		set_variable = { MAN_PEACE_AWAITING_RESPONSE@FROM = 0 }
 		if = {
 			limit = {
 				NOT = {
 					any_country = {
 						NOT = { tag = ROOT }
-						check_variable = { MCK_PEACE_FACTION_INSTANCE@FROM = 1 }
-						check_variable = { MCK_PEACE_AWAITING_RESPONSE@FROM = 1 }
+						check_variable = { MAN_PEACE_FACTION_INSTANCE@FROM = 1 }
+						check_variable = { MAN_PEACE_AWAITING_RESPONSE@FROM = 1 }
 					}
 				}
 				FROM = { check_variable = { KMT_WD_PEACE_REJECTED@FROM.FROM = 1 }}
@@ -12732,7 +12732,7 @@ country_event = {
 		}
 		hidden_effect = {
 			if = {
-				limit = { check_variable = { FROM.MCK_peace_counter = 0 }}
+				limit = { check_variable = { FROM.MAN_peace_counter = 0 }}
 				FROM = { country_event = { id = jap.226 }}
 			}
 		}
@@ -12740,8 +12740,8 @@ country_event = {
 	
 	option = {
 		name = jap.222.b
-		set_variable = { MCK_PEACE_AWAITING_RESPONSE@FROM = 0 }
-		set_variable = { FROM.MCK_PEACE_REJECTED = 0 }
+		set_variable = { MAN_PEACE_AWAITING_RESPONSE@FROM = 0 }
+		set_variable = { FROM.MAN_PEACE_REJECTED = 0 }
 		FROM = { country_event = { id = jap.227 }}
 	}
 }
@@ -12775,7 +12775,7 @@ country_event = {
 	}
 }
 
-#faction peace with mck
+#faction peace with MAN
 country_event = {
 	id = jap.226
 	title = jap.226.t
@@ -12794,11 +12794,11 @@ country_event = {
 						is_subject_of = ROOT
 						OVERLORD = { is_in_faction_with = ROOT }
 					}
-					has_war_with = MCK
+					has_war_with = MAN
 				}
-				white_peace = MCK
+				white_peace = MAN
 			}
-			MCK = { country_event = { id = jap.224 }}
+			MAN = { country_event = { id = jap.224 }}
 		}
 	}
 	
@@ -12813,11 +12813,11 @@ country_event = {
 						is_subject_of = ROOT
 						OVERLORD = { is_in_faction_with = ROOT }
 					}
-					has_war_with = MCK
+					has_war_with = MAN
 				}
-				white_peace = MCK
+				white_peace = MAN
 			}
-			MCK = { country_event = { id = jap.224 }}
+			MAN = { country_event = { id = jap.224 }}
 		}
 	}
 }
@@ -12833,11 +12833,11 @@ country_event = {
 	
 	option = {
 		name = jap.227.a
-		MCK = { country_event = { id = jap.225 }}
+		MAN = { country_event = { id = jap.225 }}
 	}
 }
 
-#mck cut us out
+#MAN cut us out
 country_event = {
 	id = jap.228
 	title = jap.228.t
@@ -12852,7 +12852,7 @@ country_event = {
 	}
 }
 
-#mck realise promise
+#MAN realise promise
 country_event = {
 	id = jap.229
 	title = jap.229.t
@@ -12867,7 +12867,7 @@ country_event = {
 	}
 }
 
-#mck broke faction promise
+#MAN broke faction promise
 country_event = {
 	id = jap.230
 	title = jap.230.t
@@ -12880,12 +12880,12 @@ country_event = {
 	option = {
 		name = jap.228.a
 		effect_tooltip = {
-			add_opinion_modifier = { target = FROM modifier = MCK_broken_faction_promise }
+			add_opinion_modifier = { target = FROM modifier = MAN_broken_faction_promise }
 		}
 	}
 }
 
-#mck broke dairen promise
+#MAN broke dairen promise
 country_event = {
 	id = jap.231
 	title = jap.231.t
@@ -12898,12 +12898,12 @@ country_event = {
 	option = {
 		name = jap.228.a
 		effect_tooltip = {
-			add_opinion_modifier = { target = FROM modifier = MCK_no_dairen }
+			add_opinion_modifier = { target = FROM modifier = MAN_no_dairen }
 		}
 	}
 }
 
-#mck broke jehol promise
+#MAN broke jehol promise
 country_event = {
 	id = jap.232
 	title = jap.232.t
@@ -12916,12 +12916,12 @@ country_event = {
 	option = {
 		name = jap.228.a
 		effect_tooltip = {
-			add_opinion_modifier = { target = FROM modifier = MCK_no_jehol }
+			add_opinion_modifier = { target = FROM modifier = MAN_no_jehol }
 		}
 	}
 }
 
-#mck broke cut tie after free
+#MAN broke cut tie after free
 country_event = {
 	id = jap.233
 	title = jap.228.t
@@ -12936,7 +12936,7 @@ country_event = {
 	}
 }
 
-#mck broke free
+#MAN broke free
 country_event = {
 	id = jap.234
 	title = jap.234.t
@@ -12952,7 +12952,7 @@ country_event = {
 	}
 }
 
-#mck broke free after capitulated
+#MAN broke free after capitulated
 country_event = {
 	id = jap.235
 	title = jap.235.t
@@ -12968,7 +12968,7 @@ country_event = {
 	}
 }
 
-#mck coordinated uprising notif
+#MAN coordinated uprising notif
 country_event = {
 	id = jap.236
 	title = jap.236.t
@@ -12984,7 +12984,7 @@ country_event = {
 	}
 }
 
-#mck_constitutional_monarchy election
+#man_constitutional_monarchy election
 country_event = {
 	id = jap.237
 	title = jap.237.t
@@ -13008,10 +13008,10 @@ country_event = {
 			ideology = fascism
 			popularity = 0.01
 		}
-		clr_country_flag = MCK_soc_party
-		clr_country_flag = MCK_lib_party
-		set_country_flag = MCK_con_party
-		set_party_name = { ideology = democratic name = MCK_imperial_conservative_party long_name = MCK_imperial_conservative_party_long }
+		clr_country_flag = MAN_soc_party
+		clr_country_flag = MAN_lib_party
+		set_country_flag = MAN_con_party
+		set_party_name = { ideology = democratic name = MAN_imperial_conservative_party long_name = MAN_imperial_conservative_party_long }
 	}
 	
 	#lib
@@ -13021,10 +13021,10 @@ country_event = {
 			ideology = democratic
 			popularity = 0.15
 		}
-		clr_country_flag = MCK_soc_party
-		set_country_flag = MCK_lib_party
-		clr_country_flag = MCK_con_party
-		set_party_name = { ideology = democratic name = MCK_imperial_liberal_party long_name = MCK_imperial_liberal_party_long }
+		clr_country_flag = MAN_soc_party
+		set_country_flag = MAN_lib_party
+		clr_country_flag = MAN_con_party
+		set_party_name = { ideology = democratic name = MAN_imperial_liberal_party long_name = MAN_imperial_liberal_party_long }
 	}
 	
 	#soc
@@ -13038,14 +13038,14 @@ country_event = {
 			ideology = communism
 			popularity = 0.02
 		}
-		set_country_flag = MCK_soc_party
-		clr_country_flag = MCK_lib_party
-		clr_country_flag = MCK_con_party
-		set_party_name = { ideology = democratic name = MCK_imperial_social_party long_name = MCK_imperial_social_party_long }
+		set_country_flag = MAN_soc_party
+		clr_country_flag = MAN_lib_party
+		clr_country_flag = MAN_con_party
+		set_party_name = { ideology = democratic name = MAN_imperial_social_party long_name = MAN_imperial_social_party_long }
 	}
 }
 
-#mck republic
+#MAN republic
 country_event = {
 	id = jap.238
 	title = jap.238.t
@@ -13076,22 +13076,22 @@ country_event = {
 	#dem
 	option = {
 		name = jap.239.a
-		if = { limit = { FROM = { has_idea = MCK_ia_army }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_navy }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_air }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_industry }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_infrastructure }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_austerity }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_science }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_resources }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_protectionism }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_conscription }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_welfare }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
-		if = { limit = { FROM = { has_idea = MCK_ia_subsidies }} add_timed_idea = { idea = MCK_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_army }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_navy }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_air }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_industry }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_infrastructure }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_austerity }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_science }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_resources }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_protectionism }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_conscription }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_welfare }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
+		if = { limit = { FROM = { has_idea = MAN_ia_subsidies }} add_timed_idea = { idea = MAN_ia_army days = 300 }}
 	}
 }
 
-#mck is prepared
+#MAN is prepared
 country_event = {
 	id = jap.240
 	title = jap.240.t
@@ -13135,11 +13135,11 @@ country_event = {
 		FROM = { 
 			country_event = { id = jap.229 }
 			transfer_state = 745
-			clr_country_flag = MCK_demand_gib_dairen_flag
+			clr_country_flag = MAN_demand_gib_dairen_flag
 			every_country = {
-				limit = { has_country_flag = MCK_demand_gib_dairen_flag }
-				add_opinion_modifier = { target = ROOT modifier = MCK_no_dairen }
-				clr_country_flag = MCK_demand_gib_dairen_flag
+				limit = { has_country_flag = MAN_demand_gib_dairen_flag }
+				add_opinion_modifier = { target = ROOT modifier = MAN_no_dairen }
+				clr_country_flag = MAN_demand_gib_dairen_flag
 				country_event = { id = jap.231 }
 			}
 		}
@@ -13165,11 +13165,11 @@ country_event = {
 		name = jap.242.a
 		FROM = { country_event = { id = jap.229 }
 			transfer_state = 610
-			clr_country_flag = MCK_demand_gib_jehol_flag
+			clr_country_flag = MAN_demand_gib_jehol_flag
 			every_country = {
-				limit = { has_country_flag = MCK_demand_gib_jehol_flag }
-				add_opinion_modifier = { target = ROOT modifier = MCK_no_jehol }
-				clr_country_flag = MCK_demand_gib_jehol_flag
+				limit = { has_country_flag = MAN_demand_gib_jehol_flag }
+				add_opinion_modifier = { target = ROOT modifier = MAN_no_jehol }
+				clr_country_flag = MAN_demand_gib_jehol_flag
 				country_event = { id = jap.232 }
 			}
 		}
@@ -13197,7 +13197,7 @@ country_event = {
 	}
 }
 
-#mck want monarchy
+#MAN want monarchy
 country_event = {
 	id = jap.245
 	title = jap.245.t
@@ -13209,13 +13209,13 @@ country_event = {
 	option = {
 		name = jap.245.a
 		effect_tooltip = {
-			add_opinion_modifier = { target = FROM modifier = MCK_still_monarchy }
-			add_opinion_modifier = { target = FROM modifier = MCK_still_monarchy_trade }
+			add_opinion_modifier = { target = FROM modifier = MAN_still_monarchy }
+			add_opinion_modifier = { target = FROM modifier = MAN_still_monarchy_trade }
 		}
 	}
 }
 
-#mck no reform
+#MAN no reform
 country_event = {
 	id = jap.246
 	title = jap.246.t
@@ -13227,13 +13227,13 @@ country_event = {
 	option = {
 		name = jap.245.a
 		effect_tooltip = {
-			add_opinion_modifier = { target = FROM modifier = MCK_no_liberal }
-			add_opinion_modifier = { target = FROM modifier = MCK_no_liberal_trade }
+			add_opinion_modifier = { target = FROM modifier = MAN_no_liberal }
+			add_opinion_modifier = { target = FROM modifier = MAN_no_liberal_trade }
 		}
 	}
 }
 
-#hidden event add MCK_japanese trait
+#hidden event add MAN_japanese trait
 country_event = {
 	id = jap.247
 	hidden = yes
@@ -13242,172 +13242,172 @@ country_event = {
 	immediate = {
 		if = {
 			limit = { NOT = { has_dlc = "Together for Victory" }}
-			MCK_doihara_kenji = { 
+			MAN_doihara_kenji = { 
 				add_trait = { 
-					trait = MCK_japanese
+					trait = MAN_japanese
 					slot = political_advisor
 				}
 			}
-			MCK_yoshisuke_aikawa = { 
+			MAN_yoshisuke_aikawa = { 
 				add_trait = { 
-					trait = MCK_japanese2
+					trait = MAN_japanese2
 					slot = political_advisor
 				}
 			}
-			MCK_naoki_hoshino = { 
+			MAN_naoki_hoshino = { 
 				add_trait = { 
-					trait = MCK_japanese3
+					trait = MAN_japanese3
 					slot = political_advisor
 				}
 			}
-			MCK_noguchi_yujiro = { 
+			MAN_noguchi_yujiro = { 
 				add_trait = { 
-					trait = MCK_japanese4
+					trait = MAN_japanese4
 					slot = air_chief
 				}
 			}
-			MCK_tanaka_osamu = { 
+			MAN_tanaka_osamu = { 
 				add_trait = { 
-					trait = MCK_japanese5
+					trait = MAN_japanese5
 					slot = air_chief
 				}
 			}
-			MCK_itagaki_seishiro = { 
+			MAN_itagaki_seishiro = { 
 				add_trait = { 
-					trait = MCK_japanese6
+					trait = MAN_japanese6
 					slot = theorist
 				}
 			}
-			MCK_kawabata_masaharu = { 
+			MAN_kawabata_masaharu = { 
 				add_trait = { 
-					trait = MCK_japanese7
+					trait = MAN_japanese7
 					slot = theorist
 				}
 			}
-			MCK_ito_seiichi = { 
+			MAN_ito_seiichi = { 
 				add_trait = { 
-					trait = MCK_japanese8
+					trait = MAN_japanese8
 					slot = navy_chief
 				}
 			}
-			MCK_sakuma_ryozo = { 
+			MAN_sakuma_ryozo = { 
 				add_trait = { 
-					trait = MCK_japanese9
+					trait = MAN_japanese9
 					slot = army_chief
 				}
 			}
-			MCK_kimura_heitaro = { 
+			MAN_kimura_heitaro = { 
 				add_trait = { 
-					trait = MCK_japanese10
+					trait = MAN_japanese10
 					slot = high_command
 				}
 			}
-			MCK_tsuji_masanobu = { 
+			MAN_tsuji_masanobu = { 
 				add_trait = { 
-					trait = MCK_japanese11
+					trait = MAN_japanese11
 					slot = high_command
 				}
 			}
-			MCK_amakasu_masahiko = { 
+			MAN_amakasu_masahiko = { 
 				add_trait = { 
-					trait = MCK_japanese12
+					trait = MAN_japanese12
 					slot = political_advisor
 				}
 			}
-			MCK_furumi_tadayuki = { 
+			MAN_furumi_tadayuki = { 
 				add_trait = { 
-					trait = MCK_japanese13
+					trait = MAN_japanese13
 					slot = political_advisor
 				}
 			}
-			MCK_yoshioka_yasunao = { 
+			MAN_yoshioka_yasunao = { 
 				add_trait = { 
-					trait = MCK_japanese14
+					trait = MAN_japanese14
 					slot = political_advisor
 				}
 			}
 		}else = {
-			MCK_doihara_kenji = { 
+			MAN_doihara_kenji = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv
+					trait = MAN_japanese_tfv
 					slot = political_advisor
 				}
 			}
-			MCK_yoshisuke_aikawa = { 
+			MAN_yoshisuke_aikawa = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv2
+					trait = MAN_japanese_tfv2
 					slot = political_advisor
 				}
 			}
-			MCK_naoki_hoshino = { 
+			MAN_naoki_hoshino = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv3
+					trait = MAN_japanese_tfv3
 					slot = political_advisor
 				}
 			}
-			MCK_noguchi_yujiro = { 
+			MAN_noguchi_yujiro = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv4
+					trait = MAN_japanese_tfv4
 					slot = air_chief
 				}
 			}
-			MCK_tanaka_osamu = { 
+			MAN_tanaka_osamu = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv5
+					trait = MAN_japanese_tfv5
 					slot = air_chief
 				}
 			}
-			MCK_itagaki_seishiro = { 
+			MAN_itagaki_seishiro = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv6
+					trait = MAN_japanese_tfv6
 					slot = theorist
 				}
 			}
-			MCK_kawabata_masaharu = { 
+			MAN_kawabata_masaharu = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv7
+					trait = MAN_japanese_tfv7
 					slot = theorist
 				}
 			}
-			MCK_ito_seiichi = { 
+			MAN_ito_seiichi = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv8
+					trait = MAN_japanese_tfv8
 					slot = navy_chief
 				}
 			}
-			MCK_sakuma_ryozo = { 
+			MAN_sakuma_ryozo = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv9
+					trait = MAN_japanese_tfv9
 					slot = army_chief
 				}
 			}
-			MCK_kimura_heitaro = { 
+			MAN_kimura_heitaro = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv10
+					trait = MAN_japanese_tfv10
 					slot = high_command
 				}
 			}
-			MCK_tsuji_masanobu = { 
+			MAN_tsuji_masanobu = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv11
+					trait = MAN_japanese_tfv11
 					slot = high_command
 				}
 			}
-			MCK_amakasu_masahiko = { 
+			MAN_amakasu_masahiko = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv12
+					trait = MAN_japanese_tfv12
 					slot = political_advisor
 				}
 			}
-			MCK_furumi_tadayuki = { 
+			MAN_furumi_tadayuki = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv13
+					trait = MAN_japanese_tfv13
 					slot = political_advisor
 				}
 			}
-			MCK_yoshioka_yasunao = { 
+			MAN_yoshioka_yasunao = { 
 				add_trait = { 
-					trait = MCK_japanese_tfv14
+					trait = MAN_japanese_tfv14
 					slot = political_advisor
 				}
 			}
@@ -13418,7 +13418,7 @@ country_event = {
 	}
 }
 
-#mck seek peace
+#MAN seek peace
 country_event = {
 	id = jap.248
 	title = jap.248.t
@@ -13460,7 +13460,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_global_flag = MCK_korean_cooperation_flag
+				has_global_flag = MAN_korean_cooperation_flag
 				KOR = {
 					exists = yes
 					is_subject_of = FROM
@@ -13583,7 +13583,7 @@ country_event = {
 						MEN = { is_subject_of = PREV }
 					}
 				}
-				MCK = { puppet = MEN }
+				MAN = { puppet = MEN }
 			}
 			if = {
 				limit = {
@@ -13592,7 +13592,7 @@ country_event = {
 						ECR = { is_subject_of = PREV }
 					}
 				}
-				MCK = { puppet = ECR }
+				MAN = { puppet = ECR }
 			}
 			if = {
 				limit = {
@@ -13601,32 +13601,32 @@ country_event = {
 						EHA = { is_subject_of = PREV }
 					}
 				}
-				MCK = { puppet = EHA }
+				MAN = { puppet = EHA }
 			}
 		}
 	}
 	
 	option = {
 		name = jap.251.a
-		trigger = { NOT = { has_completed_focus = MCK_an_alternative }}
+		trigger = { NOT = { has_completed_focus = MAN_an_alternative }}
 		set_cosmetic_tag = MAN_kwantung_army
 		if = {
 			limit = {
-				MCK = { has_idea = MCK_reliant_idea }
+				MAN = { has_idea = MAN_reliant_idea }
 			}
-			MCK = { remove_ideas = MCK_reliant_idea }
+			MAN = { remove_ideas = MAN_reliant_idea }
 		}
-		custom_effect_tooltip = MCK_more_japanese_immigrants
-		add_to_variable = { MCK_japanese_immigrants_number = 1000 }
-		set_country_flag = MCK_kwantung_terr_flag
-		MCK_kwantung_army = { 
+		custom_effect_tooltip = MAN_more_japanese_immigrants
+		add_to_variable = { MAN_japanese_immigrants_number = 1000 }
+		set_country_flag = MAN_kwantung_terr_flag
+		MAN_kwantung_army = { 
 			set_portraits = {
 				civilian = { large = "gfx/leaders/kmt_mod/kwantung_army_leader.tga" }
 			}
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					traits = { MCK_kwantung_army_trait }
+					traits = { MAN_kwantung_army_trait }
 					expire = "1965.1.1"
 					ideology = fascism_ideology
 				}
@@ -13640,18 +13640,18 @@ country_event = {
 			tree = KTA_focus
 			keep_completed = no
 		}
-		MCK_swap_out_japanese_traits = yes
+		MAN_swap_out_japanese_traits = yes
 	}
 	
 	option = {
-		trigger = { NOT = { has_completed_focus = MCK_enhance_local_policing }}
+		trigger = { NOT = { has_completed_focus = MAN_enhance_local_policing }}
 		name = jap.251.b
 		start_civil_war = {
 			ruling_party = neutrality
 			ideology = fascism
 			size = 0.5
 			keep_unit_leaders_trigger = { always = yes }
-			states_filter = { NOT = { has_state_flag = MCK_state_secured }}
+			states_filter = { NOT = { has_state_flag = MAN_state_secured }}
 			if = {
 				limit = { ECR = { is_subject_of = ROOT }}
 				puppet = ECR
@@ -13665,7 +13665,7 @@ country_event = {
 				puppet = MEN
 			}
 			set_cosmetic_tag = MAN_kwantung_army
-			set_country_flag = MCK_kwantung_terr_flag
+			set_country_flag = MAN_kwantung_terr_flag
 			load_focus_tree = {
 				tree = KTA_focus
 				keep_completed = no
@@ -13680,7 +13680,7 @@ country_event = {
 				every_character = { 
 					limit = { 
 						OR = {
-							has_character_flag = MCK_is_japanese_character 
+							has_character_flag = MAN_is_japanese_character 
 							has_character_flag = JAP_true_jap_characters 
 						}
 					}
@@ -13691,22 +13691,22 @@ country_event = {
 					navy_ratio = 0.9
 				}
 			}
-			MCK_swap_out_japanese_traits = yes
+			MAN_swap_out_japanese_traits = yes
 			if = {
 				limit = {
-					MCK = { has_idea = MCK_reliant_idea }
+					MAN = { has_idea = MAN_reliant_idea }
 				}
-				MCK = { remove_ideas = MCK_reliant_idea }
+				MAN = { remove_ideas = MAN_reliant_idea }
 			}
-			set_party_name = { ideology = fascism name = MCK_kantogun_party }
-			MCK_kwantung_army = { 
+			set_party_name = { ideology = fascism name = MAN_kantogun_party }
+			MAN_kwantung_army = { 
 				set_portraits = {
 					civilian = { large = "gfx/leaders/kmt_mod/kwantung_army_leader.tga" }
 				}
 				add_country_leader_role = {
 					promote_leader = yes
 					country_leader = {
-						traits = { MCK_kwantung_army_trait }
+						traits = { MAN_kwantung_army_trait }
 						expire = "1965.1.1"
 						ideology = fascism_ideology
 					}
@@ -14295,7 +14295,7 @@ country_event = {
 	option = {
 		name = jap.272.a
 		trigger = { is_ai = no }
-		custom_effect_tooltip = MCK_play_as_japan_tt
+		custom_effect_tooltip = MAN_play_as_japan_tt
 		JAP = { change_tag_from = ROOT }
 	}
 	
@@ -14320,9 +14320,9 @@ country_event = {
 	option = {
 		name = jap.273.a
 		effect_tooltip = {
-			FROM = { add_ideas = MCK_support_the_reconstruction_idea }
+			FROM = { add_ideas = MAN_support_the_reconstruction_idea }
 		}
-		add_ideas = MCK_reconstruction_japan
+		add_ideas = MAN_reconstruction_japan
 	}
 }
 
@@ -14365,7 +14365,7 @@ country_event = {
 	}
 }
 
-#mck ask for peking
+#MAN ask for peking
 country_event = {
 	id = jap.276
 	title = jap.276.t
@@ -14512,7 +14512,7 @@ country_event = {
 	}
 }
 
-#overlord tell us to gives mck peking and east hopeh(609)
+#overlord tell us to gives MAN peking and east hopeh(609)
 country_event = {
 	id = jap.279
 	title = jap.279.t
@@ -14559,11 +14559,11 @@ country_event = {
 					state = 609
 				}
 			}
-			MCK = { 
+			MAN = { 
 				transfer_state = PREV
 			}
 		}
-		MCK = { 
+		MAN = { 
 			country_event = { id = jap.277 }
 		}
 	}
@@ -14573,7 +14573,7 @@ country_event = {
 		ai_chance = { base = 0 }
 		declare_war_on = { target = FROM type = topple_government }
 		FROM = { country_event = { id = jap.281 }}
-		MCK = { country_event = { id = jap.281 }}
+		MAN = { country_event = { id = jap.281 }}
 	}
 }
 
@@ -14612,8 +14612,8 @@ country_event = {
 		trigger = { tag = JAP }
 	}
 	desc = {
-		text = jap.281.d_mck
-		trigger = { tag = MCK }
+		text = jap.281.d_man
+		trigger = { tag = MAN }
 	}
 	
 	picture = GFX_report_event_chinese_soldiers_fighting
@@ -14643,6 +14643,6 @@ country_event = {
 	
 	option = {
 		name = jap.280.a
-		custom_effect_tooltip = MCK_sov_no_help_najua_tt
+		custom_effect_tooltip = MAN_sov_no_help_najua_tt
 	}
 }

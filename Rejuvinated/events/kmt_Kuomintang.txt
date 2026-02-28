@@ -10540,7 +10540,7 @@ country_event = {
 			base = 90
 		}
 		every_country = {
-			limit = { original_tag = MCK }
+			limit = { original_tag = MAN }
 			ROOT = {
 				create_wargoal = {
 					target = PREV
@@ -10556,7 +10556,7 @@ country_event = {
 	
 	option = {
 		name = kmt.275.b
-		MCK = { country_event = { id = kmt.276 }}
+		MAN = { country_event = { id = kmt.276 }}
 	}
 	
 	option = {
@@ -11882,7 +11882,7 @@ country_event = {
 	option = {
 		name = kmt.303.b
 		add_political_power = 200
-		MCK = { kill_country_leader = yes }
+		MAN = { kill_country_leader = yes }
 	}
 }
 
@@ -15381,14 +15381,14 @@ country_event = {
 			}
 			if = {
 				limit = {
-					MCK = {
+					MAN = {
 						has_tech = infantry_weapons
 						NOT = {
 							has_tech = infantry_weapons1
 						}
 					}
 				}
-				add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 2500 producer = MCK }
+				add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 2500 producer = MAN }
 			}
 			if = {
 				limit = {
@@ -15414,14 +15414,14 @@ country_event = {
 			}
 			if = {
 				limit = {
-					MCK = {
+					MAN = {
 						has_tech = infantry_weapons1
 						NOT = {
 							has_tech = improved_infantry_weapons
 						}
 					}
 				}
-				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 producer = MCK }
+				add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 producer = MAN }
 			}
 			if = {
 				limit = {
@@ -15447,14 +15447,14 @@ country_event = {
 			}
 			if = {
 				limit = {
-					MCK = {
+					MAN = {
 						has_tech = improved_infantry_weapons
 						NOT = {
 							has_tech = advanced_infantry_weapons
 						}
 					}
 				}
-				add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 2500 producer = MCK }
+				add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 2500 producer = MAN }
 			}
 			if = {
 				limit = {
@@ -15477,11 +15477,11 @@ country_event = {
 			}
 			if = {
 				limit = {
-					MCK = {
+					MAN = {
 						has_tech = advanced_infantry_weapons
 					}
 				}
-				add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 2500 producer = MCK }
+				add_equipment_to_stockpile = { type = infantry_equipment_3 amount = 2500 producer = MAN }
 			}
 			if = {
 				limit = {
@@ -15501,11 +15501,11 @@ country_event = {
 			}
 			if = {
 				limit = {
-					MCK = {
+					MAN = {
 						has_tech = tech_support
 					}
 				}
-				add_equipment_to_stockpile = { type = support_equipment_1 amount = 1200 producer = MCK }
+				add_equipment_to_stockpile = { type = support_equipment_1 amount = 1200 producer = MAN }
 			}
 			if = {
 				limit = {
@@ -18917,7 +18917,7 @@ country_event = {
 	}
 }
 
-#change mck city names
+#change MAN city names
 country_event = {
 	id = kmt.421
 	title = kmt.421.t

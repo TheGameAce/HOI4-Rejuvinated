@@ -113,12 +113,12 @@ peace_ai_desires = {
         ai_desire = 100
     }
 
-    # restore mck for some reason
-    JAP_create_mck_puppet = {
+    # restore MAN for some reason
+    JAP_create_man_puppet = {
         peace_action_type = puppet
         enable = {
             FROM = {
-                original_tag = MCK
+                original_tag = MAN
             }
             FROM.FROM.FROM = {
 				OR = {
@@ -132,12 +132,12 @@ peace_ai_desires = {
         ai_desire = 200
     }
 
-    # restore mck for some reason
-    JAP_mck_puppet = {
+    # restore MAN for some reason
+    JAP_man_puppet = {
         peace_action_type = take_states
         enable = {
             FROM = {
-                original_tag = MCK
+                original_tag = MAN
 				OR = {
 					is_subject_of = ROOT
 					pc_is_puppeted_by = ROOT
@@ -511,12 +511,12 @@ peace_ai_desires = {
         ai_desire = 50
     }
 
-    # gib puppet china mck states if cannot make mck
-    JAP_give_china_puppet_state_no_mck = {
+    # gib puppet china MAN states if cannot make MAN
+    JAP_give_china_puppet_state_no_man = {
         peace_action_type = take_states
         enable = {
 			is_in_array = { global.KMT_greater_china_region_states = FROM.FROM.FROM }
-			MCK = { NOT = { 
+			MAN = { NOT = { 
 				is_subject_of = ROOT
 				pc_is_puppeted_by = ROOT
 			} }

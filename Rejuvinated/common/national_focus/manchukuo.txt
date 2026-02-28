@@ -7,14 +7,14 @@
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 
 focus_tree = {
-	id = MCK_focus
+	id = MAN_focus
 	
 	country = {
 		factor = 0
 		
 		modifier = {
 			add = 10
-			tag = MCK
+			tag = MAN
 			NOT = { has_cosmetic_tag = MAN_kwantung_army }
 		}
 	}
@@ -29,7 +29,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_acquire_the_north_manchu_railway
+		id = MAN_acquire_the_north_manchu_railway
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 0
 		y = 0
@@ -128,7 +128,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_five_race_under_one_union
+		id = MAN_five_race_under_one_union
 		icon = GFX_focus_jap_manchurian_project
 		x = 14
 		y = 0
@@ -142,10 +142,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_showa_steel_mill
+		id = MAN_showa_steel_mill
 		icon = GFX_focus_generic_steel
-		prerequisite = { focus = MCK_acquire_the_north_manchu_railway }
-		relative_position_id = MCK_acquire_the_north_manchu_railway
+		prerequisite = { focus = MAN_acquire_the_north_manchu_railway }
+		relative_position_id = MAN_acquire_the_north_manchu_railway
 		x = 0
 		y = 1
 		cost = 10
@@ -232,7 +232,7 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_finish_the_five_year_plan
+		id = MAN_finish_the_five_year_plan
 		icon = GFX_goal_generic_build_tank
 		x = 4
 		y = 1
@@ -278,18 +278,18 @@ focus_tree = {
 			}
 			add_timed_idea = {
 				days = 1750
-				idea = MCK_five_year_plan
+				idea = MAN_five_year_plan
 			}
 		}
 	}
 	
 	focus = {
-		id = MCK_support_aikawa_yoshisuke
+		id = MAN_support_aikawa_yoshisuke
 		icon = GFX_goal_generic_production
-		prerequisite = { focus = MCK_showa_steel_mill }
-		prerequisite = { focus = MCK_finish_the_five_year_plan }
-		mutually_exclusive = { focus = MCK_support_naoki_hoshino }
-		relative_position_id = MCK_finish_the_five_year_plan
+		prerequisite = { focus = MAN_showa_steel_mill }
+		prerequisite = { focus = MAN_finish_the_five_year_plan }
+		mutually_exclusive = { focus = MAN_support_naoki_hoshino }
+		relative_position_id = MAN_finish_the_five_year_plan
 		dynamic = yes
 		available = {
 		}
@@ -318,7 +318,7 @@ focus_tree = {
 						instant_build = yes
 					}
 				}
-				activate_advisor = MCK_yoshisuke_aikawa
+				activate_advisor = MAN_yoshisuke_aikawa
 			}else = {				
 				random_owned_controlled_state = {
 					limit = {
@@ -341,10 +341,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_manchurian_industrial_development_company
+		id = MAN_manchurian_industrial_development_company
 		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = MCK_support_aikawa_yoshisuke }
-		relative_position_id = MCK_support_aikawa_yoshisuke
+		prerequisite = { focus = MAN_support_aikawa_yoshisuke }
+		relative_position_id = MAN_support_aikawa_yoshisuke
 		dynamic = yes
 		available = {
 		}
@@ -354,7 +354,7 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			add_ideas = MCK_manchurian_industrial_development_company
+			add_ideas = MAN_manchurian_industrial_development_company
 			
 			if = {
 				limit = {
@@ -399,12 +399,12 @@ focus_tree = {
 	
 	
 	focus = {
-		id = MCK_support_naoki_hoshino
+		id = MAN_support_naoki_hoshino
 		icon = GFX_goal_generic_production2
-		prerequisite = { focus = MCK_showa_steel_mill }
-		prerequisite = { focus = MCK_finish_the_five_year_plan }
-		mutually_exclusive = { focus = MCK_support_aikawa_yoshisuke }
-		relative_position_id = MCK_finish_the_five_year_plan
+		prerequisite = { focus = MAN_showa_steel_mill }
+		prerequisite = { focus = MAN_finish_the_five_year_plan }
+		mutually_exclusive = { focus = MAN_support_aikawa_yoshisuke }
+		relative_position_id = MAN_finish_the_five_year_plan
 		dynamic = yes
 		available = {
 		}
@@ -433,42 +433,42 @@ focus_tree = {
 				limit = {
 					is_subject_of = JAP
 				}
-				activate_advisor = MCK_naoki_hoshino
+				activate_advisor = MAN_naoki_hoshino
 			}
 		}	
 	}
 	
 	focus = {
-		id = MCK_increase_opium_production
+		id = MAN_increase_opium_production
 		icon = GFX_goal_generic_construction2
-		prerequisite = { focus = MCK_support_naoki_hoshino }
-		relative_position_id = MCK_support_naoki_hoshino
+		prerequisite = { focus = MAN_support_naoki_hoshino }
+		relative_position_id = MAN_support_naoki_hoshino
 		x = 0
 		y = 1
 		cost = 10
 		available = {
-			has_idea = MCK_opium_plantation
+			has_idea = MAN_opium_plantation
 		}
 		completion_reward = {
 			if = {
 				limit = {
-					has_idea = MCK_opium_plantation
+					has_idea = MAN_opium_plantation
 				}
 				swap_ideas = {
-					remove_idea = MCK_opium_plantation
-					add_idea = MCK_opium_plantation2
+					remove_idea = MAN_opium_plantation
+					add_idea = MAN_opium_plantation2
 				}
 			}
-			add_to_variable = { MCK_sabotage_timer_infra = 10 }
+			add_to_variable = { MAN_sabotage_timer_infra = 10 }
 		}
 	}
 	
 	focus = {
-		id = MCK_request_zaibatsu_investment_on_military_industry
+		id = MAN_request_zaibatsu_investment_on_military_industry
 		icon = GFX_focus_jap_zaibatsu
-		prerequisite = { focus = MCK_support_naoki_hoshino }
-		prerequisite = { focus = MCK_expand_military_district }
-		relative_position_id = MCK_support_naoki_hoshino
+		prerequisite = { focus = MAN_support_naoki_hoshino }
+		prerequisite = { focus = MAN_expand_military_district }
+		relative_position_id = MAN_support_naoki_hoshino
 		dynamic = yes
 		available = {
 		}
@@ -520,10 +520,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_request_zaibatsu_investment_on_industry
+		id = MAN_request_zaibatsu_investment_on_industry
 		icon = GFX_focus_jap_zaibatsu
-		prerequisite = { focus = MCK_manchurian_industrial_development_company }
-		relative_position_id = MCK_manchurian_industrial_development_company
+		prerequisite = { focus = MAN_manchurian_industrial_development_company }
+		relative_position_id = MAN_manchurian_industrial_development_company
 		dynamic = yes
 		available = {
 		}
@@ -574,10 +574,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_aluminium_deposit_in_liaoning
+		id = MAN_aluminium_deposit_in_liaoning
 		icon = GFX_focus_generic_aluminum
-		prerequisite = { focus = MCK_support_aikawa_yoshisuke }
-		relative_position_id = MCK_support_aikawa_yoshisuke
+		prerequisite = { focus = MAN_support_aikawa_yoshisuke }
+		relative_position_id = MAN_support_aikawa_yoshisuke
 		available = {
 			715 = {
 				is_owned_by = ROOT
@@ -594,7 +594,7 @@ focus_tree = {
 					type = aluminium
 					amount = 20
 				}
-				set_state_flag = MCK_715_aluminium_flag1
+				set_state_flag = MAN_715_aluminium_flag1
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -637,10 +637,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_manchu_society_for_light_metal
+		id = MAN_manchu_society_for_light_metal
 		icon = GFX_focus_research
-		prerequisite = { focus = MCK_aluminium_deposit_in_liaoning }
-		relative_position_id = MCK_aluminium_deposit_in_liaoning
+		prerequisite = { focus = MAN_aluminium_deposit_in_liaoning }
+		relative_position_id = MAN_aluminium_deposit_in_liaoning
 		x = 0
 		y = 1
 		cost = 10
@@ -654,7 +654,7 @@ focus_tree = {
 					}
 				}
 				715 = {
-					set_state_flag = MCK_715_aluminium_flag2
+					set_state_flag = MAN_715_aluminium_flag2
 					add_resource = {
 						type = aluminium
 						amount = 6
@@ -693,15 +693,15 @@ focus_tree = {
 					}
 				}
 			}
-			add_ideas = MCK_msflm_idea
+			add_ideas = MAN_msflm_idea
 		}
 	}
 	
 	focus = {
-		id = MCK_prepare_for_war
+		id = MAN_prepare_for_war
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		prerequisite = { focus = MCK_request_zaibatsu_investment_on_military_industry }
-		relative_position_id = MCK_request_zaibatsu_investment_on_military_industry
+		prerequisite = { focus = MAN_request_zaibatsu_investment_on_military_industry }
+		relative_position_id = MAN_request_zaibatsu_investment_on_military_industry
 		x = -1
 		y = 1
 		cost = 10
@@ -736,17 +736,17 @@ focus_tree = {
 				add_ideas = war_economy
 			}
 			add_timed_idea = {
-				idea = MCK_increased_factory_output
+				idea = MAN_increased_factory_output
 				days = 150
 			}
 		}
 	}
 	
 	focus = {
-		id = MCK_for_the_emperor
+		id = MAN_for_the_emperor
 		icon = GFX_goal_generic_demand_territory
-		prerequisite = { focus = MCK_prepare_for_war }
-		relative_position_id = MCK_prepare_for_war
+		prerequisite = { focus = MAN_prepare_for_war }
+		relative_position_id = MAN_prepare_for_war
 		dynamic = yes
 		x = 0
 		y = 1
@@ -796,10 +796,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_expand_military_district
+		id = MAN_expand_military_district
 		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = MCK_five_race_under_one_union }
-		relative_position_id = MCK_five_race_under_one_union
+		prerequisite = { focus = MAN_five_race_under_one_union }
+		relative_position_id = MAN_five_race_under_one_union
 		x = -6
 		y = 1
 		cost = 10
@@ -817,10 +817,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_kantogun_advisor
+		id = MAN_kantogun_advisor
 		icon = GFX_goal_generic_intelligence_exchange
-		prerequisite = { focus = MCK_expand_military_district }
-		relative_position_id = MCK_expand_military_district
+		prerequisite = { focus = MAN_expand_military_district }
+		relative_position_id = MAN_expand_military_district
 		available = {
 			is_subject_of = JAP
 		}
@@ -831,16 +831,16 @@ focus_tree = {
 			army_experience = 50
 			navy_experience = 30
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MCK_itagaki_seishiro
+			show_ideas_tooltip = MAN_itagaki_seishiro
 		}
 	}
 	
 	focus = {
-		id = MCK_enhance_local_policing
+		id = MAN_enhance_local_policing
 		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = MCK_five_race_under_one_union }
-		mutually_exclusive = { focus = MCK_an_alternative }
-		relative_position_id = MCK_five_race_under_one_union
+		prerequisite = { focus = MAN_five_race_under_one_union }
+		mutually_exclusive = { focus = MAN_an_alternative }
+		relative_position_id = MAN_five_race_under_one_union
 		x = 0
 		y = 1
 		available = {
@@ -859,20 +859,20 @@ focus_tree = {
 			add_command_power = 100
 			add_war_support = 0.15
 			add_stability = 0.05
-			custom_effect_tooltip = MCK_some_keibigun_tt
+			custom_effect_tooltip = MAN_some_keibigun_tt
 			hidden_effect = {
-				load_oob = "MCK_some_keibigun"
+				load_oob = "MAN_some_keibigun"
 			}
-			add_ideas = MCK_bear_the_burden_idea
+			add_ideas = MAN_bear_the_burden_idea
 		}
 	}
 	
 	focus = {
-		id = MCK_an_alternative
+		id = MAN_an_alternative
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
-		prerequisite = { focus = MCK_five_race_under_one_union }
-		mutually_exclusive = { focus = MCK_enhance_local_policing }
-		relative_position_id = MCK_five_race_under_one_union
+		prerequisite = { focus = MAN_five_race_under_one_union }
+		mutually_exclusive = { focus = MAN_enhance_local_policing }
+		relative_position_id = MAN_five_race_under_one_union
 		x = 13
 		y = 1
 		available = {
@@ -888,9 +888,9 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			set_country_flag = awareness_enabled
-			custom_effect_tooltip = MCK_enables_awareness_tt
-			custom_effect_tooltip = MCK_secure_state_tips_tt
-			set_variable = { MCK_awareness = 0 }
+			custom_effect_tooltip = MAN_enables_awareness_tt
+			custom_effect_tooltip = MAN_secure_state_tips_tt
+			set_variable = { MAN_awareness = 0 }
 			add_ai_strategy = {
 				type = antagonize
 				id = "JAP"
@@ -913,50 +913,50 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_inward_perfection
+		id = MAN_inward_perfection
 		icon = GFX_focus_generic_self_management
-		prerequisite = { focus = MCK_an_alternative }
-		mutually_exclusive = { focus = MCK_seek_foreign_help }
-		relative_position_id = MCK_an_alternative
+		prerequisite = { focus = MAN_an_alternative }
+		mutually_exclusive = { focus = MAN_seek_foreign_help }
+		relative_position_id = MAN_an_alternative
 		x = 0
 		y = 1
 		cost = 5
 		ai_will_do = { base = 10 }
 		search_filters = {  }
 		completion_reward = {
-			add_ideas = MCK_domestic_focus
+			add_ideas = MAN_domestic_focus
 		}
 	}
 	
 	focus = {
-		id = MCK_contact_qing_restorationists
+		id = MAN_contact_qing_restorationists
 		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = MCK_inward_perfection focus = MCK_seek_foreign_help }
-		#mutually_exclusive = { focus = MCK_contact_russian_fascists }
-		relative_position_id = MCK_inward_perfection
+		prerequisite = { focus = MAN_inward_perfection focus = MAN_seek_foreign_help }
+		#mutually_exclusive = { focus = MAN_contact_russian_fascists }
+		relative_position_id = MAN_inward_perfection
 		x = -1
 		y = 1
 		available = {
 			is_subject = yes
 			OR = {
-				has_completed_focus = MCK_inward_perfection
+				has_completed_focus = MAN_inward_perfection
 				custom_trigger_tooltip = {
-					tooltip = MCK_no_help_tt
+					tooltip = MAN_no_help_tt
 					AND = {
-						has_completed_focus = MCK_turn_to_the_bolshelviks
-						has_completed_focus = MCK_head_towards_democracy
-						has_completed_focus = MCK_china_help
+						has_completed_focus = MAN_turn_to_the_bolshelviks
+						has_completed_focus = MAN_head_towards_democracy
+						has_completed_focus = MAN_china_help
 						NOT = { 
 							any_country = { 
 								OR = {
-									has_country_flag = MCK_helping_independence 
-									has_active_mission = MCK_response_deadline
+									has_country_flag = MAN_helping_independence 
+									has_active_mission = MAN_response_deadline
 								}
 							}
 						}
 					}
 				}
-				NOT = { has_completed_focus = MCK_contact_russian_fascists }
+				NOT = { has_completed_focus = MAN_contact_russian_fascists }
 			}
 		}
 		cost = 5
@@ -968,56 +968,56 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_contact_russian_fascists
+		id = MAN_contact_russian_fascists
 		icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus = MCK_inward_perfection focus = MCK_seek_foreign_help }
-		#mutually_exclusive = { focus = MCK_contact_qing_restorationists }
-		relative_position_id = MCK_inward_perfection
+		prerequisite = { focus = MAN_inward_perfection focus = MAN_seek_foreign_help }
+		#mutually_exclusive = { focus = MAN_contact_qing_restorationists }
+		relative_position_id = MAN_inward_perfection
 		x = 1
 		y = 1
 		available = {
 			is_subject = yes
 			OR = {
-				has_completed_focus = MCK_inward_perfection
+				has_completed_focus = MAN_inward_perfection
 				custom_trigger_tooltip = {
-					tooltip = MCK_no_help_tt
+					tooltip = MAN_no_help_tt
 					AND = {
-						has_completed_focus = MCK_turn_to_the_bolshelviks
-						has_completed_focus = MCK_head_towards_democracy
-						has_completed_focus = MCK_china_help
+						has_completed_focus = MAN_turn_to_the_bolshelviks
+						has_completed_focus = MAN_head_towards_democracy
+						has_completed_focus = MAN_china_help
 						NOT = { 
 							any_country = { 
 								OR = {
-									has_country_flag = MCK_helping_independence 
-									has_active_mission = MCK_response_deadline
+									has_country_flag = MAN_helping_independence 
+									has_active_mission = MAN_response_deadline
 								}
 							}
 						}
 					}
 				}
-				NOT = { has_completed_focus = MCK_contact_qing_restorationists }
+				NOT = { has_completed_focus = MAN_contact_qing_restorationists }
 			}
-			NOT = { has_global_flag = MCK_turned_over_rfp }
+			NOT = { has_global_flag = MAN_turned_over_rfp }
 		}
 		cost = 5
 		completion_reward = {
 			add_political_power = 150
-			custom_effect_tooltip = MCK_contact_white_tt
+			custom_effect_tooltip = MAN_contact_white_tt
 			set_country_flag = rfp_path
 		}
 		on_uncomplete = {
 			add_political_power = -200
 			clr_country_flag = rfp_path
-			set_variable = { MCK_rfp_mood = 0 }
-			set_variable = { MCK_rfp_strength = 0 }
+			set_variable = { MAN_rfp_mood = 0 }
+			set_variable = { MAN_rfp_strength = 0 }
 		}
 	}
 	
 	focus = {
-		id = MCK_national_conscription
+		id = MAN_national_conscription
 		icon = GFX_goal_generic_more_territorial_claims
-		prerequisite = { focus = MCK_enhance_local_policing }
-		relative_position_id = MCK_enhance_local_policing
+		prerequisite = { focus = MAN_enhance_local_policing }
+		relative_position_id = MAN_enhance_local_policing
 		x = 0
 		y = 2
 		available = {
@@ -1051,25 +1051,25 @@ focus_tree = {
 				}
 				add_ideas = service_by_requirement
 			}
-			unlock_decision_category_tooltip = MCK_dcat_crops_contribution
+			unlock_decision_category_tooltip = MAN_dcat_crops_contribution
 		}
 	}
 	
 	focus = {
-		id = MCK_labour_service_corps
+		id = MAN_labour_service_corps
 		icon = GFX_goal_generic_construction2
-		prerequisite = { focus = MCK_national_conscription }
-		relative_position_id = MCK_national_conscription
+		prerequisite = { focus = MAN_national_conscription }
+		relative_position_id = MAN_national_conscription
 		x = -1
 		y = 1
 		cost = 10
 		completion_reward = {
-			add_ideas = MCK_labour_service_corps_idea
+			add_ideas = MAN_labour_service_corps_idea
 		}
 	}
 	
 	focus = {
-		id = MCK_manchukuo_imperial_air_force
+		id = MAN_manchukuo_imperial_air_force
 		icon = GFX_focus_jap_zero
 		x = 55
 		y = 0
@@ -1136,15 +1136,15 @@ focus_tree = {
 				#add_equipment_to_stockpile = { type = fighter_equipment_0 amount = 100 producer = JAP }
 			}
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = MCK_puyi_air_chief
+			show_ideas_tooltip = MAN_puyi_air_chief
 		}
 	}
 	
 	focus = {
-		id = MCK_river_force
+		id = MAN_river_force
 		icon = GFX_goal_generic_amphibious_assault
-		prerequisite = { focus = MCK_enhance_local_policing }
-		relative_position_id = MCK_enhance_local_policing
+		prerequisite = { focus = MAN_enhance_local_policing }
+		relative_position_id = MAN_enhance_local_policing
 		x = 1
 		y = 1
 		cost = 10
@@ -1159,18 +1159,18 @@ focus_tree = {
 				}
 				set_technology = { marines = 1 }
 			}
-			custom_effect_tooltip = MCK_river_force_tt
+			custom_effect_tooltip = MAN_river_force_tt
 			hidden_effect = {
-				load_oob = "MCK_river_force"
+				load_oob = "MAN_river_force"
 			}
 		}
 	}
 	
 	focus = {
-		id = MCK_establish_hoankyoku
+		id = MAN_establish_hoankyoku
 		icon = GFX_goal_generic_intelligence_exchange
-		prerequisite = { focus = MCK_enhance_local_policing }
-		relative_position_id = MCK_enhance_local_policing
+		prerequisite = { focus = MAN_enhance_local_policing }
+		relative_position_id = MAN_enhance_local_policing
 		x = -1
 		y = 1
 		cost = 10
@@ -1208,32 +1208,32 @@ focus_tree = {
 					upgrade_intelligence_agency = upgrade_form_department
 				}
 			}
-			add_ideas = MCK_hoankyoku
+			add_ideas = MAN_hoankyoku
 		}
 	}
 	
 	focus = {
-		id = MCK_spread_restoration_propaganda
+		id = MAN_spread_restoration_propaganda
 		icon = GFX_goal_generic_propaganda
-		prerequisite = { focus = MCK_contact_qing_restorationists }
-		relative_position_id = MCK_contact_qing_restorationists
+		prerequisite = { focus = MAN_contact_qing_restorationists }
+		relative_position_id = MAN_contact_qing_restorationists
 		x = -1
 		y = 1
 		cost = 10
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			add_ideas = MCK_restoration_propaganda
-			set_country_flag = MCK_rest_propa_flag
-			set_temp_variable = { MCK_awareness_increase = 3 }
+			add_ideas = MAN_restoration_propaganda
+			set_country_flag = MAN_rest_propa_flag
+			set_temp_variable = { MAN_awareness_increase = 3 }
 			increase_jap_awareness = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_sow_anti_japanese_sentiment
+		id = MAN_sow_anti_japanese_sentiment
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = MCK_spread_restoration_propaganda }
-		relative_position_id = MCK_spread_restoration_propaganda
+		prerequisite = { focus = MAN_spread_restoration_propaganda }
+		relative_position_id = MAN_spread_restoration_propaganda
 		x = 0
 		y = 1
 		cost = 10
@@ -1243,18 +1243,18 @@ focus_tree = {
 				ideology = fascism
 				popularity = -0.1
 			}
-			set_country_flag = MCK_anti_sentiment
-			add_ideas = MCK_anti_japanese_sentiment
-			set_temp_variable = { MCK_awareness_increase = 3 }
+			set_country_flag = MAN_anti_sentiment
+			add_ideas = MAN_anti_japanese_sentiment
+			set_temp_variable = { MAN_awareness_increase = 3 }
 			increase_jap_awareness = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_strengthen_the_royal_guard
+		id = MAN_strengthen_the_royal_guard
 		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = MCK_sow_anti_japanese_sentiment }
-		relative_position_id = MCK_sow_anti_japanese_sentiment
+		prerequisite = { focus = MAN_sow_anti_japanese_sentiment }
+		relative_position_id = MAN_sow_anti_japanese_sentiment
 		available = {
 			neutrality > 0.35
 		}
@@ -1266,30 +1266,30 @@ focus_tree = {
 			if = {
 				limit = {
 					capital_scope = {
-						NOT = { has_state_flag = MCK_state_secured }
+						NOT = { has_state_flag = MAN_state_secured }
 					}
 				}
 				capital_scope = {
-					set_state_flag = MCK_state_secured
-					custom_effect_tooltip = MCK_state_secured_tt
-					add_to_variable = { global.MCK_secured_state_num = 1 }
-					set_variable = { MCK_secured_state_frame = 2 }
+					set_state_flag = MAN_state_secured
+					custom_effect_tooltip = MAN_state_secured_tt
+					add_to_variable = { global.MAN_secured_state_num = 1 }
+					set_variable = { MAN_secured_state_frame = 2 }
 				}
 			}
-			set_country_flag = MCK_rg
+			set_country_flag = MAN_rg
 			if = {
 				limit = {
-					has_idea = MCK_reliant_idea
+					has_idea = MAN_reliant_idea
 				}
-				remove_ideas = MCK_reliant_idea
-				clr_country_flag = MCK_reliant_flag
+				remove_ideas = MAN_reliant_idea
+				clr_country_flag = MAN_reliant_flag
 			}
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.10
 			}
-			custom_effect_tooltip = MCK_royal_guards_tt
-			set_variable = { MCK_royal_guard_cap = 5 } #--------change division_cap below too!
+			custom_effect_tooltip = MAN_royal_guards_tt
+			set_variable = { MAN_royal_guard_cap = 5 } #--------change division_cap below too!
 			hidden_effect = {
 				division_template = {
 					name = "Chin-wei-chün"			
@@ -1310,7 +1310,7 @@ focus_tree = {
 					priority = 2
 					is_locked = yes
 					force_allow_recruiting = yes
-					division_cap = 5 #--------------------------change MCK_royal_guard_cap above too!
+					division_cap = 5 #--------------------------change MAN_royal_guard_cap above too!
 				}
 				capital_scope = {
 					create_unit = { 
@@ -1339,16 +1339,16 @@ focus_tree = {
 					}
 				}
 			}
-			set_temp_variable = { MCK_awareness_increase = 2 }
+			set_temp_variable = { MAN_awareness_increase = 2 }
 			increase_jap_awareness = yes
 		}
 	}
 #	
 #	focus = {
-#		id = MCK_coronation
+#		id = MAN_coronation
 #		icon = GFX_focus_man_claim_the_mandate_of_heaven
-#		prerequisite = { focus = MCK_strengthen_the_royal_guard }
-#		relative_position_id = MCK_strengthen_the_royal_guard
+#		prerequisite = { focus = MAN_strengthen_the_royal_guard }
+#		relative_position_id = MAN_strengthen_the_royal_guard
 #		x = 0
 #		y = 1
 #		cost = 10
@@ -1357,13 +1357,13 @@ focus_tree = {
 #		}
 #		search_filters = { FOCUS_FILTER_POLITICAL }
 #		completion_reward = {
-#			custom_effect_tooltip = MCK_may_lead_to_war_with_jap_tt
-#			set_party_name = { ideology = neutrality long_name = MCK_qing_restored name = MCK_qing_restored }
+#			custom_effect_tooltip = MAN_may_lead_to_war_with_jap_tt
+#			set_party_name = { ideology = neutrality long_name = MAN_qing_restored name = MAN_qing_restored }
 #			hidden_effect = {
-#				#set_temp_variable = { MCK_temp_govnt = 1 }
-#				#KMT_mck_break_free_ideo_pop = yes
-#				set_variable = { MCK_awareness = 0 }
-#				set_variable = { MCK_suspicion = 0 }
+#				#set_temp_variable = { MAN_temp_govnt = 1 }
+#				#KMT_man_break_free_ideo_pop = yes
+#				set_variable = { MAN_awareness = 0 }
+#				set_variable = { MAN_suspicion = 0 }
 #			}
 #			OVERLORD = {
 #				end_puppet = ROOT
@@ -1371,23 +1371,23 @@ focus_tree = {
 #			}
 #			if = {
 #				limit = {
-#					has_idea = MCK_dongbei_partisan
+#					has_idea = MAN_dongbei_partisan
 #				}
-#				remove_ideas = MCK_dongbei_partisan
+#				remove_ideas = MAN_dongbei_partisan
 #			}
 #			if = {
 #				limit = {
-#					has_idea = MCK_dongbei_partisan_pacified
+#					has_idea = MAN_dongbei_partisan_pacified
 #				}
-#				remove_ideas = MCK_dongbei_partisan_pacified
+#				remove_ideas = MAN_dongbei_partisan_pacified
 #			}
 #		}
 #	}
 	
 	focus = {
-		id = MCK_destroy_opium_plantations
+		id = MAN_destroy_opium_plantations
 		icon = GFX_goal_focus_destroy_opium
-		mutually_exclusive = { focus = MCK_regulate_opium_trade }
+		mutually_exclusive = { focus = MAN_regulate_opium_trade }
 		x = 42
 		y = 0
 		cost = 5
@@ -1399,189 +1399,189 @@ focus_tree = {
 			add_political_power = 75
 			if = {
 				limit = {
-					has_idea = MCK_opium_plantation
+					has_idea = MAN_opium_plantation
 				}
-				remove_ideas = MCK_opium_plantation
+				remove_ideas = MAN_opium_plantation
 			}
 			if = {
 				limit = {
-					has_idea = MCK_opium_plantation2
+					has_idea = MAN_opium_plantation2
 				}
-				remove_ideas = MCK_opium_plantation2
+				remove_ideas = MAN_opium_plantation2
 			}
 		}
 	}
 	
 	focus = {
-		id = MCK_assassination_of_japanese_officials
+		id = MAN_assassination_of_japanese_officials
 		icon = GFX_goal_generic_military_deal
-		prerequisite = { focus = MCK_contact_russian_fascists }
-		relative_position_id = MCK_contact_russian_fascists
+		prerequisite = { focus = MAN_contact_russian_fascists }
+		relative_position_id = MAN_contact_russian_fascists
 		x = 1
 		y = 1
 		cost = 10
 		available = {
 			is_subject = yes
-			NOT = { has_global_flag = MCK_turned_over_rfp }
+			NOT = { has_global_flag = MAN_turned_over_rfp }
 		}
 		completion_reward = {
 			add_stability = -0.05
-			set_global_flag = MCK_assassinated
+			set_global_flag = MAN_assassinated
 			if = {
 				limit = {
 					is_subject_of = JAP
 				}
-				custom_effect_tooltip = MCK_assassination_tt
+				custom_effect_tooltip = MAN_assassination_tt
 				hidden_effect = {
 					OVERLORD = {
 						country_event = { id = jap.12 }
 					}
 				}
 			}
-			custom_effect_tooltip = MCK_lower_costAC_by_25
-			set_variable = { MCK_RFP_optionA_cost = 50 }
-			set_variable = { MCK_RFP_optionC_cost = 125 }
-			set_temp_variable = { MCK_awareness_increase = 2 }
+			custom_effect_tooltip = MAN_lower_costAC_by_25
+			set_variable = { MAN_RFP_optionA_cost = 50 }
+			set_variable = { MAN_RFP_optionC_cost = 125 }
+			set_temp_variable = { MAN_awareness_increase = 2 }
 			increase_jap_awareness = yes
 		}
 		on_uncomplete = {
-			custom_effect_tooltip = MCK_revert_costAC_by_25
-			set_variable = { MCK_RFP_optionA_cost = 75 }
-			set_variable = { MCK_RFP_optionC_cost = 150 }
+			custom_effect_tooltip = MAN_revert_costAC_by_25
+			set_variable = { MAN_RFP_optionA_cost = 75 }
+			set_variable = { MAN_RFP_optionC_cost = 150 }
 		}
 	}
 	
 	focus = {
-		id = MCK_secret_recuitment
+		id = MAN_secret_recuitment
 		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = MCK_assassination_of_japanese_officials }
-		relative_position_id = MCK_assassination_of_japanese_officials
+		prerequisite = { focus = MAN_assassination_of_japanese_officials }
+		relative_position_id = MAN_assassination_of_japanese_officials
 		x = 0
 		y = 1
 		cost = 10
 		available = {
-			NOT = { has_global_flag = MCK_turned_over_rfp }
+			NOT = { has_global_flag = MAN_turned_over_rfp }
 		}
 		search_filters = {  }
 		completion_reward = {
-			add_ideas = MCK_secret_recruitment_idea
-			custom_effect_tooltip = MCK_recruitment_no_awareness
+			add_ideas = MAN_secret_recruitment_idea
+			custom_effect_tooltip = MAN_recruitment_no_awareness
 		}
 		on_uncomplete = {
 			if = {
-				limit = { has_idea = MCK_secret_recruitment_idea }
-				remove_ideas = MCK_secret_recruitment_idea
+				limit = { has_idea = MAN_secret_recruitment_idea }
+				remove_ideas = MAN_secret_recruitment_idea
 			}
 		}
 	}
 	
 	focus = {
-		id = MCK_arm_the_rfr
+		id = MAN_arm_the_rfr
 		icon = GFX_goal_generic_military_sphere
-		prerequisite = { focus = MCK_secret_recuitment }
-		relative_position_id = MCK_secret_recuitment
+		prerequisite = { focus = MAN_secret_recuitment }
+		relative_position_id = MAN_secret_recuitment
 		x = 0
 		y = 2
 		cost = 10
 		available = {
 			is_subject = yes
-			NOT = { has_global_flag = MCK_turned_over_rfp }
+			NOT = { has_global_flag = MAN_turned_over_rfp }
 		}
 		completion_reward = {
 			if = {
 				limit = {
 					capital_scope = {
-						NOT = { has_state_flag = MCK_state_secured }
+						NOT = { has_state_flag = MAN_state_secured }
 					}
 				}
 				capital_scope = {
-					set_state_flag = MCK_state_secured
-					custom_effect_tooltip = MCK_state_secured_tt
-					add_to_variable = { global.MCK_secured_state_num = 1 }
-					set_variable = { MCK_secured_state_frame = 2 }
+					set_state_flag = MAN_state_secured
+					custom_effect_tooltip = MAN_state_secured_tt
+					add_to_variable = { global.MAN_secured_state_num = 1 }
+					set_variable = { MAN_secured_state_frame = 2 }
 				}
 			}
 			if = {
 				limit = {
 					717 = {
-						NOT = { has_state_flag = MCK_state_secured }
+						NOT = { has_state_flag = MAN_state_secured }
 					}
 				}
 				717 = {
-					set_state_flag = MCK_state_secured
-					custom_effect_tooltip = MCK_state_secured_tt
-					add_to_variable = { global.MCK_secured_state_num = 1 }
-					set_variable = { MCK_secured_state_frame = 2 }
+					set_state_flag = MAN_state_secured
+					custom_effect_tooltip = MAN_state_secured_tt
+					add_to_variable = { global.MAN_secured_state_num = 1 }
+					set_variable = { MAN_secured_state_frame = 2 }
 				}
 			}
 			if = {
 				limit = {
-					has_idea = MCK_reliant_idea
+					has_idea = MAN_reliant_idea
 				}
-				remove_ideas = MCK_reliant_idea
-				clr_country_flag = MCK_reliant_flag
+				remove_ideas = MAN_reliant_idea
+				clr_country_flag = MAN_reliant_flag
 			}
 			army_experience = 50
-			add_ideas = MCK_rfr_supporters
+			add_ideas = MAN_rfr_supporters
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
 				uses = 1
 				category = land_doctrine
 			}
-			custom_effect_tooltip = MCK_improve_training
-			set_temp_variable = { MCK_awareness_increase = 1 }
+			custom_effect_tooltip = MAN_improve_training
+			set_temp_variable = { MAN_awareness_increase = 1 }
 			increase_jap_awareness = yes
 		}
 		on_uncomplete = {
 			if = {
-				limit = { has_idea = MCK_rfr_supporters }
-				remove_ideas = MCK_rfr_supporters
+				limit = { has_idea = MAN_rfr_supporters }
+				remove_ideas = MAN_rfr_supporters
 			}
 		}
 	}
 	
 	focus = {
-		id = MCK_independence_war
+		id = MAN_independence_war
 		icon = GFX_focus_AST_war_japan
-		prerequisite = { focus = MCK_arm_the_rfr focus = MCK_strengthen_the_royal_guard }
-		relative_position_id = MCK_arm_the_rfr
+		prerequisite = { focus = MAN_arm_the_rfr focus = MAN_strengthen_the_royal_guard }
+		relative_position_id = MAN_arm_the_rfr
 		x = -2
 		y = 1
 		cost = 10
 		ai_will_do = {
 			base = 0
 			modifier = {
-				check_variable = { global.MCK_secured_state_num > 7 }
-				add = global.MCK_secured_state_num
+				check_variable = { global.MAN_secured_state_num > 7 }
+				add = global.MAN_secured_state_num
 			}
 			modifier = {
 				if = { 
-					limit = { event_target:KMT_central_gov_tag = { has_country_flag = MCK_helping_independence }}
-					NOT = { has_completed_focus = MCK_coordinated_uprising }
+					limit = { event_target:KMT_central_gov_tag = { has_country_flag = MAN_helping_independence }}
+					NOT = { has_completed_focus = MAN_coordinated_uprising }
 				}
 				if = { 
-					limit = { USA = { has_country_flag = MCK_helping_independence }}
-					NOT = { has_completed_focus = MCK_prepare_for_us_intervention }
+					limit = { USA = { has_country_flag = MAN_helping_independence }}
+					NOT = { has_completed_focus = MAN_prepare_for_us_intervention }
 				}
 				if = { 
-					limit = { SOV = { has_country_flag = MCK_helping_independence }}
-					NOT = { has_completed_focus = MCK_prepare_for_soviet_intervention }
+					limit = { SOV = { has_country_flag = MAN_helping_independence }}
+					NOT = { has_completed_focus = MAN_prepare_for_soviet_intervention }
 				}
 				factor = 0
 			}
 			modifier = {
-				has_completed_focus = MCK_inward_perfection
-				NOT = { has_completed_focus = MCK_cooperate_with_the_koreans }
+				has_completed_focus = MAN_inward_perfection
+				NOT = { has_completed_focus = MAN_cooperate_with_the_koreans }
 				factor = 0
 			}
 			modifier = {
-				has_completed_focus = MCK_contact_qing_restorationists
-				NOT = { has_completed_focus = MCK_strengthen_the_royal_guard }
+				has_completed_focus = MAN_contact_qing_restorationists
+				NOT = { has_completed_focus = MAN_strengthen_the_royal_guard }
 				factor = 0
 			}
 			modifier = {
-				has_completed_focus = MCK_contact_russian_fascists
-				NOT = { has_completed_focus = MCK_arm_the_rfr }
+				has_completed_focus = MAN_contact_russian_fascists
+				NOT = { has_completed_focus = MAN_arm_the_rfr }
 				factor = 0
 			}
 		}
@@ -1590,43 +1590,43 @@ focus_tree = {
 			has_army_manpower = { size > 299999 }
 			any_owned_state = {
 				is_controlled_by = ROOT
-				has_state_flag = MCK_state_secured
+				has_state_flag = MAN_state_secured
 			}
 		}
 		will_lead_to_war_with = JAP
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			#anchor: MCK gain independence
-			MCK = { set_country_flag = MCK_free_flag }
-			set_party_name = { ideology = fascism long_name = MCK_independent_f_party name = MCK_independent_f_party }
+			#anchor: MAN gain independence
+			MAN = { set_country_flag = MAN_free_flag }
+			set_party_name = { ideology = fascism long_name = MAN_independent_f_party name = MAN_independent_f_party }
 			every_owned_state = {
 				limit = {
-					has_state_flag = MCK_assimilated_bandits
+					has_state_flag = MAN_assimilated_bandits
 					is_core_of = ROOT
-					has_dynamic_modifier = { modifier = MCK_local_bandits }
+					has_dynamic_modifier = { modifier = MAN_local_bandits }
 					NOT = {
-						has_dynamic_modifier = { modifier = MCK_najua_presence }
-						has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+						has_dynamic_modifier = { modifier = MAN_najua_presence }
+						has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 					}
 				}
-				if = { limit = { has_dynamic_modifier = { modifier = MCK_local_bandits }} remove_dynamic_modifier = { modifier = MCK_local_bandits }}
+				if = { limit = { has_dynamic_modifier = { modifier = MAN_local_bandits }} remove_dynamic_modifier = { modifier = MAN_local_bandits }}
 				if = { limit = { has_resistance = yes } cancel_resistance = yes }
-				if = { limit = { check_variable = { global.MCK_resistance_strength@This > 0 }} set_variable = { global.MCK_resistance_strength@This = 0 }}
+				if = { limit = { check_variable = { global.MAN_resistance_strength@This > 0 }} set_variable = { global.MAN_resistance_strength@This = 0 }}
 			}
 			every_owned_state = {
 				limit = {
 					is_core_of = ROOT
-					check_variable = { MCK_guihuajun_amt > 0 }
+					check_variable = { MAN_guihuajun_amt > 0 }
 				}
 				create_unit = {
 					division = "name = \"Kuei-hua-chün\" division_template = \"Kuei-hua-chün\" start_experience_factor = 0.2 start_equipment_factor = 15 start_equipment_factor = 1"
 					owner = ROOT
 					allow_spawning_on_enemy_provs = yes
-					count = This.MCK_guihuajun_amt
+					count = This.MAN_guihuajun_amt
 				}
 			}
 			OVERLORD = { 
-				save_event_target_as = MCK_former_overlord
+				save_event_target_as = MAN_former_overlord
 				country_event = { id = jap.234 }
 				end_puppet = ROOT 
 				if = {
@@ -1676,46 +1676,46 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_completed_focus = MCK_contact_russian_fascists
+					has_completed_focus = MAN_contact_russian_fascists
 				}
-				custom_effect_tooltip = MCK_rfr_arm_forces
+				custom_effect_tooltip = MAN_rfr_arm_forces
 				hidden_effect = {
-					load_oob = "MCK_rfr_arm_forces"
-					#set_temp_variable = { MCK_temp_govnt = 2 }
-					#KMT_mck_break_free_ideo_pop = yes
-					set_variable = { MCK_RFP_mood = 0 }
+					load_oob = "MAN_rfr_arm_forces"
+					#set_temp_variable = { MAN_temp_govnt = 2 }
+					#KMT_man_break_free_ideo_pop = yes
+					set_variable = { MAN_RFP_mood = 0 }
 				}
 			}else = {
-				set_party_name = { ideology = neutrality long_name = MCK_qing_restored name = MCK_qing_restored }
+				set_party_name = { ideology = neutrality long_name = MAN_qing_restored name = MAN_qing_restored }
 			}
-			set_variable = { MCK_awareness = 0 }
-			set_variable = { MCK_suspicion = 0 }
+			set_variable = { MAN_awareness = 0 }
+			set_variable = { MAN_suspicion = 0 }
 			if = {
 				limit = {
-					has_global_flag = MCK_prepared_for_usa_intervention
+					has_global_flag = MAN_prepared_for_usa_intervention
 					USA = {
 						exists = yes
 						is_subject = no
-						has_country_flag = MCK_helping_independence
+						has_country_flag = MAN_helping_independence
 					}
 					NOT = { is_subject_of = USA }
 				}
-				add_ideas = MCK_usa_intervention
+				add_ideas = MAN_usa_intervention
 				USA = {
 					country_event = { id = jap.241 }
 				}
 			}
 			if = {
 				limit = {
-					has_global_flag = MCK_prepared_for_sov_intervention
+					has_global_flag = MAN_prepared_for_sov_intervention
 					SOV = {
 						exists = yes
 						is_subject = no
-						has_country_flag = MCK_helping_independence
+						has_country_flag = MAN_helping_independence
 					}
 					NOT = { is_subject_of = SOV }
 				}
-				add_ideas = MCK_sov_intervention
+				add_ideas = MAN_sov_intervention
 				if = {
 					limit = { 
 						any_owned_state = { any_neighbor_state = { is_controlled_by = SOV }}
@@ -1742,22 +1742,22 @@ focus_tree = {
 						}
 					}
 				}
-				add_equipment_to_stockpile = { type = infantry_equipment amount = MCK_uprise_sov_equipment producer = SOV }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = MAN_uprise_sov_equipment producer = SOV }
 				SOV = {
 					country_event = { id = jap.241 }
 				}
 			}
 			if = {
 				limit = {
-					has_global_flag = MCK_coordinated_uprising_flag
+					has_global_flag = MAN_coordinated_uprising_flag
 					event_target:KMT_central_gov_tag = {
 						exists = yes
 						is_subject = no
-						has_country_flag = MCK_helping_independence
+						has_country_flag = MAN_helping_independence
 					}
 					NOT = { is_subject_of = event_target:KMT_central_gov_tag }
 				}
-				add_ideas = MCK_chi_intervention
+				add_ideas = MAN_chi_intervention
 				division_template = {
 					name = "K'ang-jih Chiu-kuo Ch'i-i-chün"
 					is_locked = yes
@@ -1806,19 +1806,19 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_global_flag = MCK_korean_cooperation_flag
+					has_global_flag = MAN_korean_cooperation_flag
 				}
 				if = {
 					limit = {	
 						KOR = { 
-							is_subject_of = event_target:MCK_former_overlord 
+							is_subject_of = event_target:MAN_former_overlord 
 							exists = yes
 						}
 					}
-					event_target:MCK_former_overlord = {
+					event_target:MAN_former_overlord = {
 						end_puppet = KOR
 					}
-					MCK = { puppet = KOR }
+					MAN = { puppet = KOR }
 					KOR = {
 						division_template = {
 							name = "Joseon Uiyondae"
@@ -1852,8 +1852,8 @@ focus_tree = {
 						is_core_of = KOR
 						OWNER = {
 							OR = {
-								tag = event_target:MCK_former_overlord
-								is_subject_of = event_target:MCK_former_overlord
+								tag = event_target:MAN_former_overlord
+								is_subject_of = event_target:MAN_former_overlord
 							}
 							NOT = { tag = KOR }
 						}
@@ -1884,33 +1884,33 @@ focus_tree = {
 					}
 				}
 			}
-			event_target:MCK_former_overlord = {
+			event_target:MAN_former_overlord = {
 				add_timed_idea = {
-					idea = MCK_disrupted_logistics
+					idea = MAN_disrupted_logistics
 					days = 60
 				}
 			}
 			every_owned_state = {
 				limit = {
-					NOT = { has_state_flag = MCK_state_secured }
+					NOT = { has_state_flag = MAN_state_secured }
 				}
-				event_target:MCK_former_overlord = { set_state_owner = PREV }
+				event_target:MAN_former_overlord = { set_state_owner = PREV }
 				if = {
 					limit = {
 						is_controlled_by = ROOT
 					}
-					event_target:MCK_former_overlord = { set_state_controller = PREV }
+					event_target:MAN_former_overlord = { set_state_controller = PREV }
 				}
 			}
 		}
 	}
 	
 	focus = {
-		id = MCK_seek_foreign_help
+		id = MAN_seek_foreign_help
 		icon = GFX_focus_generic_concessions
-		prerequisite = { focus = MCK_an_alternative }
-		mutually_exclusive = { focus = MCK_inward_perfection }
-		relative_position_id = MCK_an_alternative
+		prerequisite = { focus = MAN_an_alternative }
+		mutually_exclusive = { focus = MAN_inward_perfection }
+		relative_position_id = MAN_an_alternative
 		x = -7
 		y = 1
 		cost = 5
@@ -1922,10 +1922,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_turn_to_the_bolshelviks
+		id = MAN_turn_to_the_bolshelviks
 		icon = GFX_focus_chi_mission_to_the_soviet_union
-		prerequisite = { focus = MCK_seek_foreign_help }
-		relative_position_id = MCK_seek_foreign_help
+		prerequisite = { focus = MAN_seek_foreign_help }
+		relative_position_id = MAN_seek_foreign_help
 		x = -2
 		y = 1
 		cost = 5
@@ -1947,16 +1947,16 @@ focus_tree = {
 			SOV = {
 				country_event = { id = jap.13 }
 			}
-			set_temp_variable = { MCK_suspicion_increase = 6 }
+			set_temp_variable = { MAN_suspicion_increase = 6 }
 			increase_jap_suspicion = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_head_towards_democracy
+		id = MAN_head_towards_democracy
 		icon = GFX_focus_chi_mission_to_the_us
-		prerequisite = { focus = MCK_seek_foreign_help }
-		relative_position_id = MCK_seek_foreign_help
+		prerequisite = { focus = MAN_seek_foreign_help }
+		relative_position_id = MAN_seek_foreign_help
 		x = 0
 		y = 1
 		cost = 5
@@ -1977,16 +1977,16 @@ focus_tree = {
 			USA = {
 				country_event = { id = jap.13 }
 			}
-			set_temp_variable = { MCK_suspicion_increase = 6 }
+			set_temp_variable = { MAN_suspicion_increase = 6 }
 			increase_jap_suspicion = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_reduce_support_for_bandits
+		id = MAN_reduce_support_for_bandits
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		prerequisite = { focus = MCK_turn_to_the_bolshelviks }
-		relative_position_id = MCK_turn_to_the_bolshelviks
+		prerequisite = { focus = MAN_turn_to_the_bolshelviks }
+		relative_position_id = MAN_turn_to_the_bolshelviks
 		x = 0
 		y = 1
 		cost = 10
@@ -1996,39 +1996,39 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 			}
 			NOT = { is_subject_of = SOV }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			custom_effect_tooltip = MCK_lower_najua_growth
+			custom_effect_tooltip = MAN_lower_najua_growth
 			add_command_power = 75
-			set_global_flag = MCK_reduced_najua_income
+			set_global_flag = MAN_reduced_najua_income
 			every_controlled_state = {
 				limit = { 
 					OR = {
-						has_dynamic_modifier = { modifier = MCK_local_bandits }
-						has_dynamic_modifier = { modifier = MCK_najua_presence }
-						has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+						has_dynamic_modifier = { modifier = MAN_local_bandits }
+						has_dynamic_modifier = { modifier = MAN_najua_presence }
+						has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 					}
 					any_neighbor_state = { is_controlled_by = SOV }
 				}
-				set_temp_variable = { MCK_resistance_strength_change = -15 }
-				MCK_change_resistance_strength = yes
-				MCK_update_local_bandits_modifier = yes
+				set_temp_variable = { MAN_resistance_strength_change = -15 }
+				MAN_change_resistance_strength = yes
+				MAN_update_local_bandits_modifier = yes
 			}
 			
-			set_temp_variable = { MCK_suspicion_increase = 5 }
+			set_temp_variable = { MAN_suspicion_increase = 5 }
 			increase_jap_suspicion = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_smuggle_in_soviet_equipments
+		id = MAN_smuggle_in_soviet_equipments
 		icon = GFX_focus_secret_rearmament
-		prerequisite = { focus = MCK_reduce_support_for_bandits }
-		relative_position_id = MCK_reduce_support_for_bandits
+		prerequisite = { focus = MAN_reduce_support_for_bandits }
+		relative_position_id = MAN_reduce_support_for_bandits
 		dynamic = yes
 		x = 0
 		y = 1
@@ -2039,7 +2039,7 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 			}
 			NOT = { is_subject_of = SOV }
 		}
@@ -2049,31 +2049,31 @@ focus_tree = {
 			every_owned_state = {
 				limit = {
 					any_neighbor_state = { is_controlled_by = SOV }
-					NOT = { has_state_flag = MCK_state_secured }
+					NOT = { has_state_flag = MAN_state_secured }
 				}
-				add_to_variable = { global.MCK_secured_state_num = 1 }
-				set_state_flag = MCK_state_secured
-				custom_effect_tooltip = MCK_state_secured_tt
-				set_variable = { MCK_secured_state_frame = 2 }
+				add_to_variable = { global.MAN_secured_state_num = 1 }
+				set_state_flag = MAN_state_secured
+				custom_effect_tooltip = MAN_state_secured_tt
+				set_variable = { MAN_secured_state_frame = 2 }
 			}
-			set_variable = { MCK_uprise_sov_equipment = 1500 }
-			custom_effect_tooltip = MCK_uprise_get_guns_tt
+			set_variable = { MAN_uprise_sov_equipment = 1500 }
+			custom_effect_tooltip = MAN_uprise_get_guns_tt
 			add_tech_bonus = {
 				bonus = 0.5
 				uses = 1
 				category = infantry_weapons
 			}
-			unlock_decision_tooltip = MCK_smuggle_additional_sov_equipment
-			set_temp_variable = { MCK_awareness_increase = 2 }
+			unlock_decision_tooltip = MAN_smuggle_additional_sov_equipment
+			set_temp_variable = { MAN_awareness_increase = 2 }
 			increase_jap_awareness = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_secret_soviet_tranining
+		id = MAN_secret_soviet_tranining
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = MCK_smuggle_in_soviet_equipments }
-		relative_position_id = MCK_smuggle_in_soviet_equipments
+		prerequisite = { focus = MAN_smuggle_in_soviet_equipments }
+		relative_position_id = MAN_smuggle_in_soviet_equipments
 		dynamic = yes
 		x = 0
 		y = 1
@@ -2084,7 +2084,7 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 			}
 			NOT = { is_subject_of = SOV }
 		}
@@ -2126,10 +2126,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_secret_aid_from_usa
+		id = MAN_secret_aid_from_usa
 		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = MCK_head_towards_democracy }
-		relative_position_id = MCK_head_towards_democracy
+		prerequisite = { focus = MAN_head_towards_democracy }
+		relative_position_id = MAN_head_towards_democracy
 		x = 0
 		y = 1
 		cost = 10
@@ -2139,7 +2139,7 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 			}
 			NOT = { is_subject_of = USA }
 		}
@@ -2162,10 +2162,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_transpacific_spy_network
+		id = MAN_transpacific_spy_network
 		icon = GFX_focus_prc_infiltration
-		prerequisite = { focus = MCK_secret_aid_from_usa }
-		relative_position_id = MCK_secret_aid_from_usa
+		prerequisite = { focus = MAN_secret_aid_from_usa }
+		relative_position_id = MAN_secret_aid_from_usa
 		x = 0
 		y = 1
 		cost = 10
@@ -2175,7 +2175,7 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 			}
 			NOT = { is_subject_of = USA }
 		}
@@ -2184,46 +2184,46 @@ focus_tree = {
 			add_command_power = 50
 			random_owned_state = {
 				prioritize = { 328 }
-				limit = { NOT = { has_state_flag = MCK_state_secured }}
-				set_state_flag = MCK_state_secured
-				custom_effect_tooltip = MCK_state_secured_tt
-				add_to_variable = { global.MCK_secured_state_num = 1 }
-					set_variable = { MCK_secured_state_frame = 2 }
+				limit = { NOT = { has_state_flag = MAN_state_secured }}
+				set_state_flag = MAN_state_secured
+				custom_effect_tooltip = MAN_state_secured_tt
+				add_to_variable = { global.MAN_secured_state_num = 1 }
+					set_variable = { MAN_secured_state_frame = 2 }
 			}
 			random_owned_state = {
 				prioritize = { 974 }
-				limit = { NOT = { has_state_flag = MCK_state_secured }}
-				set_state_flag = MCK_state_secured
-				custom_effect_tooltip = MCK_state_secured_tt
-				add_to_variable = { global.MCK_secured_state_num = 1 }
-					set_variable = { MCK_secured_state_frame = 2 }
+				limit = { NOT = { has_state_flag = MAN_state_secured }}
+				set_state_flag = MAN_state_secured
+				custom_effect_tooltip = MAN_state_secured_tt
+				add_to_variable = { global.MAN_secured_state_num = 1 }
+					set_variable = { MAN_secured_state_frame = 2 }
 			}
 			random_owned_state = {
 				prioritize = { 717 }
-				limit = { NOT = { has_state_flag = MCK_state_secured }}
-				set_state_flag = MCK_state_secured
-				custom_effect_tooltip = MCK_state_secured_tt
-				add_to_variable = { global.MCK_secured_state_num = 1 }
-					set_variable = { MCK_secured_state_frame = 2 }
+				limit = { NOT = { has_state_flag = MAN_state_secured }}
+				set_state_flag = MAN_state_secured
+				custom_effect_tooltip = MAN_state_secured_tt
+				add_to_variable = { global.MAN_secured_state_num = 1 }
+					set_variable = { MAN_secured_state_frame = 2 }
 			}
 			random_owned_state = {
 				prioritize = { 716 }
-				limit = { NOT = { has_state_flag = MCK_state_secured }}
-				set_state_flag = MCK_state_secured
-				custom_effect_tooltip = MCK_state_secured_tt
-				add_to_variable = { global.MCK_secured_state_num = 1 }
-					set_variable = { MCK_secured_state_frame = 2 }
+				limit = { NOT = { has_state_flag = MAN_state_secured }}
+				set_state_flag = MAN_state_secured
+				custom_effect_tooltip = MAN_state_secured_tt
+				add_to_variable = { global.MAN_secured_state_num = 1 }
+					set_variable = { MAN_secured_state_frame = 2 }
 			}
-			set_temp_variable = { MCK_awareness_increase = 2 }
+			set_temp_variable = { MAN_awareness_increase = 2 }
 			increase_jap_awareness = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_prepare_for_us_intervention
+		id = MAN_prepare_for_us_intervention
 		icon = GFX_focus_generic_strike_at_democracy2
-		prerequisite = { focus = MCK_transpacific_spy_network }
-		relative_position_id = MCK_transpacific_spy_network
+		prerequisite = { focus = MAN_transpacific_spy_network }
+		relative_position_id = MAN_transpacific_spy_network
 		x = 0
 		y = 1
 		cost = 10
@@ -2233,26 +2233,26 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 			}
 			NOT = { is_subject_of = USA }
 		}
 		completion_reward = {
-			custom_effect_tooltip = MCK_us_bonus_against_japan_tt
-			set_global_flag = MCK_prepared_for_us_intervention
-			unlock_decision_tooltip = MCK_urge_war
+			custom_effect_tooltip = MAN_us_bonus_against_japan_tt
+			set_global_flag = MAN_prepared_for_us_intervention
+			unlock_decision_tooltip = MAN_urge_war
 			USA = { country_event = { id = jap.240 }}
-			set_temp_variable = { MCK_awareness_increase = 1 }
+			set_temp_variable = { MAN_awareness_increase = 1 }
 			increase_jap_awareness = yes
 		}
 	}
 
 	focus = {
-		id = MCK_fighter_focus
+		id = MAN_fighter_focus
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = MCK_manchukuo_imperial_air_force }
-		mutually_exclusive = { focus = MCK_bomber_focus }
-		relative_position_id = MCK_manchukuo_imperial_air_force
+		prerequisite = { focus = MAN_manchukuo_imperial_air_force }
+		mutually_exclusive = { focus = MAN_bomber_focus }
+		relative_position_id = MAN_manchukuo_imperial_air_force
 		x = -1
 		y = 1
 		cost = 5
@@ -2271,11 +2271,11 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_bomber_focus
+		id = MAN_bomber_focus
 		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = MCK_manchukuo_imperial_air_force }
-		mutually_exclusive = { focus = MCK_fighter_focus }
-		relative_position_id = MCK_manchukuo_imperial_air_force
+		prerequisite = { focus = MAN_manchukuo_imperial_air_force }
+		mutually_exclusive = { focus = MAN_fighter_focus }
+		relative_position_id = MAN_manchukuo_imperial_air_force
 		x = 1
 		y = 1
 		cost = 5
@@ -2296,10 +2296,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_aviation_effort_2
+		id = MAN_aviation_effort_2
 		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = MCK_bomber_focus focus = MCK_fighter_focus }
-		relative_position_id = MCK_bomber_focus
+		prerequisite = { focus = MAN_bomber_focus focus = MAN_fighter_focus }
+		relative_position_id = MAN_bomber_focus
 		x = -1
 		y = 1
 		cost = 5
@@ -2384,10 +2384,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_CAS_effort
+		id = MAN_CAS_effort
 		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = MCK_aviation_effort_2 }
-		relative_position_id = MCK_aviation_effort_2
+		prerequisite = { focus = MAN_aviation_effort_2 }
+		relative_position_id = MAN_aviation_effort_2
 		x = -1
 		y = 1
 		cost = 5
@@ -2407,11 +2407,11 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_NAV_effort
+		id = MAN_NAV_effort
 		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = MCK_aviation_effort_2 }
-		prerequisite = { focus = MCK_flexible_navy }
-		relative_position_id = MCK_aviation_effort_2
+		prerequisite = { focus = MAN_aviation_effort_2 }
+		prerequisite = { focus = MAN_flexible_navy }
+		relative_position_id = MAN_aviation_effort_2
 		x = 1
 		y = 1
 		cost = 5
@@ -2431,7 +2431,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_naval_effort
+		id = MAN_naval_effort
 		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 59
 		y = 0
@@ -2442,7 +2442,7 @@ focus_tree = {
 
 		available = {
 			OR = {
-				has_country_flag = MCK_navy_allowed
+				has_country_flag = MAN_navy_allowed
 				is_subject = no
 			}
 			any_state = {
@@ -2562,11 +2562,11 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_flexible_navy
+		id = MAN_flexible_navy
 		icon = GFX_goal_generic_build_navy
-		prerequisite = { focus = MCK_naval_effort }
-		mutually_exclusive = { focus = MCK_large_navy }
-		relative_position_id = MCK_naval_effort
+		prerequisite = { focus = MAN_naval_effort }
+		mutually_exclusive = { focus = MAN_large_navy }
+		relative_position_id = MAN_naval_effort
 		x = -1
 		y = 1
 		cost = 5
@@ -2603,11 +2603,11 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_large_navy
+		id = MAN_large_navy
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = MCK_naval_effort }
-		mutually_exclusive = { focus = MCK_flexible_navy }
-		relative_position_id = MCK_naval_effort
+		prerequisite = { focus = MAN_naval_effort }
+		mutually_exclusive = { focus = MAN_flexible_navy }
+		relative_position_id = MAN_naval_effort
 		x = 1
 		y = 1
 		cost = 5
@@ -2640,10 +2640,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_submarine_effort
+		id = MAN_submarine_effort
 		icon = GFX_goal_generic_navy_submarine
-		prerequisite = { focus = MCK_flexible_navy focus = MCK_large_navy }
-		relative_position_id = MCK_flexible_navy
+		prerequisite = { focus = MAN_flexible_navy focus = MAN_large_navy }
+		relative_position_id = MAN_flexible_navy
 		x = 0
 		y = 1
 		cost = 5
@@ -2677,10 +2677,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_cruiser_effort
+		id = MAN_cruiser_effort
 		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = MCK_flexible_navy focus = MCK_large_navy }
-		relative_position_id = MCK_large_navy
+		prerequisite = { focus = MAN_flexible_navy focus = MAN_large_navy }
+		relative_position_id = MAN_large_navy
 		x = 0
 		y = 1
 		cost = 5
@@ -2714,10 +2714,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_destroyer_effort
+		id = MAN_destroyer_effort
 		icon = GFX_goal_generic_wolf_pack
-		prerequisite = { focus = MCK_submarine_effort }
-		relative_position_id = MCK_submarine_effort
+		prerequisite = { focus = MAN_submarine_effort }
+		relative_position_id = MAN_submarine_effort
 		x = 0
 		y = 1
 		cost = 5
@@ -2751,10 +2751,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_capital_ships_effort
+		id = MAN_capital_ships_effort
 		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = MCK_cruiser_effort }
-		relative_position_id = MCK_cruiser_effort
+		prerequisite = { focus = MAN_cruiser_effort }
+		relative_position_id = MAN_cruiser_effort
 		x = 0
 		y = 1
 		cost = 5
@@ -2791,11 +2791,11 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_restore_the_empire
+		id = MAN_restore_the_empire
 		icon = GFX_goal_focus_medium_qing
-		prerequisite = { focus = MCK_destroy_opium_plantations focus = MCK_regulate_opium_trade }
-		mutually_exclusive = { focus = MCK_peking_agreement }
-		relative_position_id = MCK_destroy_opium_plantations
+		prerequisite = { focus = MAN_destroy_opium_plantations focus = MAN_regulate_opium_trade }
+		mutually_exclusive = { focus = MAN_peking_agreement }
+		relative_position_id = MAN_destroy_opium_plantations
 		x = -6
 		y = 1
 		cost = 5
@@ -2808,7 +2808,7 @@ focus_tree = {
 		ai_will_do = {
 			base = 1
 			modifier = {
-				has_completed_focus = MCK_contact_qing_restorationists
+				has_completed_focus = MAN_contact_qing_restorationists
 				add = 5
 			}
 		}
@@ -2870,22 +2870,22 @@ focus_tree = {
 			add_war_support = 0.1
 			every_country = {
 				limit = {
-					has_country_flag = MCK_helping_independence
-					has_country_flag = MCK_demand_abolish_monarchy_flag
+					has_country_flag = MAN_helping_independence
+					has_country_flag = MAN_demand_abolish_monarchy_flag
 				}
-				add_opinion_modifier = { target = ROOT modifier = MCK_still_monarchy }
-				add_opinion_modifier = { target = ROOT modifier = MCK_still_monarchy_trade }
+				add_opinion_modifier = { target = ROOT modifier = MAN_still_monarchy }
+				add_opinion_modifier = { target = ROOT modifier = MAN_still_monarchy_trade }
 				country_event = { id = jap.245 }
 			}
 			if = {
-				limit = { has_character = MCK_zheng_xiaoxu }
-				MCK_zheng_xiaoxu = {
+				limit = { has_character = MAN_zheng_xiaoxu }
+				MAN_zheng_xiaoxu = {
 					remove_trait = {
 						trait = staunch_monarchist
 						slot = political_advisor
 					}
 					add_trait = {
-						trait = MCK_imperial_advocate
+						trait = MAN_imperial_advocate
 						slot = political_advisor
 					}
 				}
@@ -2894,11 +2894,11 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_peking_agreement
+		id = MAN_peking_agreement
 		icon = GFX_goal_tripartite_pact
-		prerequisite = { focus = MCK_destroy_opium_plantations focus = MCK_regulate_opium_trade }
-		mutually_exclusive = { focus = MCK_restore_the_empire }
-		relative_position_id = MCK_destroy_opium_plantations
+		prerequisite = { focus = MAN_destroy_opium_plantations focus = MAN_regulate_opium_trade }
+		mutually_exclusive = { focus = MAN_restore_the_empire }
+		relative_position_id = MAN_destroy_opium_plantations
 		x = 3
 		y = 1
 		cost = 5
@@ -2929,8 +2929,8 @@ focus_tree = {
 			add_stability = 0.20
 			add_political_power = 50
 			if = {
-				limit = { has_character = MCK_zheng_xiaoxu }
-				MCK_zheng_xiaoxu = {
+				limit = { has_character = MAN_zheng_xiaoxu }
+				MAN_zheng_xiaoxu = {
 					remove_trait = {
 						trait = staunch_monarchist
 						slot = political_advisor
@@ -2945,10 +2945,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_reclaim_the_central_plain
+		id = MAN_reclaim_the_central_plain
 		icon = GFX_focus_usa_focus_on_asia
-		prerequisite = { focus = MCK_restore_the_empire }
-		relative_position_id = MCK_restore_the_empire
+		prerequisite = { focus = MAN_restore_the_empire }
+		relative_position_id = MAN_restore_the_empire
 		x = -1
 		y = 1
 		cost = 5
@@ -2967,10 +2967,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_revive_the_grand_council
+		id = MAN_revive_the_grand_council
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = MCK_restore_the_empire }
-		relative_position_id = MCK_restore_the_empire
+		prerequisite = { focus = MAN_restore_the_empire }
+		relative_position_id = MAN_restore_the_empire
 		x = 1
 		y = 1
 		cost = 10
@@ -2981,7 +2981,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = MCK_grand_council_idea
+			add_ideas = MAN_grand_council_idea
 			if = {
 				limit = { 
 					has_intelligence_agency = no 
@@ -3012,15 +3012,15 @@ focus_tree = {
 					upgrade_intelligence_agency = upgrade_form_department
 				}
 			}
-			add_ideas = MCK_grand_council_theorist
+			add_ideas = MAN_grand_council_theorist
 		}
 	}
 
 	focus = {
-		id = MCK_revive_zongli_yamen
+		id = MAN_revive_zongli_yamen
 		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = MCK_revive_the_grand_council }
-		relative_position_id = MCK_revive_the_grand_council
+		prerequisite = { focus = MAN_revive_the_grand_council }
+		relative_position_id = MAN_revive_the_grand_council
 		x = 3
 		y = 1
 		cost = 5
@@ -3032,17 +3032,17 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_ideas = MCK_zongli_yamen
+			add_ideas = MAN_zongli_yamen
 			add_research_slot = 1
 		}
 	}
 
 	focus = {
-		id = MCK_xuantong_restoration
+		id = MAN_xuantong_restoration
 		icon = GFX_goal_focus_xuantong_restoration
-		prerequisite = { focus = MCK_reclaim_the_central_plain }
-		prerequisite = { focus = MCK_revive_the_grand_council }
-		relative_position_id = MCK_reclaim_the_central_plain
+		prerequisite = { focus = MAN_reclaim_the_central_plain }
+		prerequisite = { focus = MAN_revive_the_grand_council }
+		relative_position_id = MAN_reclaim_the_central_plain
 		x = 1
 		y = 1
 		cost = 5
@@ -3050,7 +3050,7 @@ focus_tree = {
 			is_subject = no
 			has_government = neutrality
 			custom_trigger_tooltip = {
-				tooltip = MCK_vassal_tt
+				tooltip = MAN_vassal_tt
 				own_china_proper = yes
 			}
 		}
@@ -3073,8 +3073,8 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			if = {
-				limit = { NOT = { has_country_flag = MCK_peking_capital_flag }}
-				set_country_flag = MCK_peking_capital_flag
+				limit = { NOT = { has_country_flag = MAN_peking_capital_flag }}
+				set_country_flag = MAN_peking_capital_flag
 				add_political_power = 650
 				if = {
 					limit = {
@@ -3100,10 +3100,10 @@ focus_tree = {
 			add_command_power = 200
 			add_stability = 0.05
 			add_war_support = 0.05
-			custom_effect_tooltip = MCK_royal_guard_restoration_improvement_tt
+			custom_effect_tooltip = MAN_royal_guard_restoration_improvement_tt
 			hidden_effect = {
-				add_to_variable = { MCK_royal_guard_cap = 5 }
-				set_division_template_cap = { division_template = "Chin-wei-chün" division_cap = MCK_royal_guard_cap }
+				add_to_variable = { MAN_royal_guard_cap = 5 }
+				set_division_template_cap = { division_template = "Chin-wei-chün" division_cap = MAN_royal_guard_cap }
 				add_units_to_division_template = {			
 					template_name = "Chin-wei-chün"
 					regiments = { 
@@ -3117,10 +3117,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_prepare_for_soviet_intervention
+		id = MAN_prepare_for_soviet_intervention
 		icon = GFX_goal_generic_military_deal
-		prerequisite = { focus = MCK_secret_soviet_tranining }
-		relative_position_id = MCK_secret_soviet_tranining 
+		prerequisite = { focus = MAN_secret_soviet_tranining }
+		relative_position_id = MAN_secret_soviet_tranining 
 		x = 0
 		y = 1
 		cost = 5
@@ -3130,25 +3130,25 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 			}
 			NOT = { is_subject_of = SOV }
 		}
 		completion_reward = {
-			custom_effect_tooltip = MCK_sov_bonus_against_japan_tt
-			set_global_flag = MCK_prepared_for_sov_intervention
-			unlock_decision_tooltip = MCK_urge_war
+			custom_effect_tooltip = MAN_sov_bonus_against_japan_tt
+			set_global_flag = MAN_prepared_for_sov_intervention
+			unlock_decision_tooltip = MAN_urge_war
 			SOV = { country_event = { id = jap.240 }}
-			set_temp_variable = { MCK_awareness_increase = 1 }
+			set_temp_variable = { MAN_awareness_increase = 1 }
 			increase_jap_awareness = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_request_us_aid_in_shipbuilding
+		id = MAN_request_us_aid_in_shipbuilding
 		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = MCK_prepare_for_us_intervention }
-		relative_position_id = MCK_prepare_for_us_intervention 
+		prerequisite = { focus = MAN_prepare_for_us_intervention }
+		relative_position_id = MAN_prepare_for_us_intervention 
 		x = 0
 		y = 2
 		cost = 10
@@ -3161,7 +3161,7 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 				has_opinion = { value > 70 target = ROOT }
 			}
 			any_owned_state = {
@@ -3259,11 +3259,11 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_reform_the_maritime_police
+		id = MAN_reform_the_maritime_police
 		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = MCK_river_force }
-		prerequisite = { focus = MCK_national_conscription }
-		relative_position_id = MCK_river_force
+		prerequisite = { focus = MAN_river_force }
+		prerequisite = { focus = MAN_national_conscription }
+		relative_position_id = MAN_river_force
 		x = 0
 		y = 2
 		cost = 5
@@ -3280,10 +3280,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_establish_the_army_academy
+		id = MAN_establish_the_army_academy
 		icon = GFX_focus_generic_military_academy
-		prerequisite = { focus = MCK_labour_service_corps }
-		relative_position_id = MCK_labour_service_corps
+		prerequisite = { focus = MAN_labour_service_corps }
+		relative_position_id = MAN_labour_service_corps
 		x = 1
 		y = 1
 		cost = 10
@@ -3294,15 +3294,15 @@ focus_tree = {
 			every_army_leader = {
 				add_planning = 1
 			}
-			add_ideas = MCK_army_academy
+			add_ideas = MAN_army_academy
 		}
 	}
 	
 	focus = {
-		id = MCK_establish_field_medic_schools
+		id = MAN_establish_field_medic_schools
 		icon = GFX_focus_generic_strike_at_democracy1
-		prerequisite = { focus = MCK_establish_the_army_academy }
-		relative_position_id = MCK_establish_the_army_academy
+		prerequisite = { focus = MAN_establish_the_army_academy }
+		relative_position_id = MAN_establish_the_army_academy
 		x = 1
 		y = 1
 		cost = 10
@@ -3311,8 +3311,8 @@ focus_tree = {
 			add_war_support = 0.02
 			army_experience = 10
 			swap_ideas = {
-				remove_idea = MCK_army_academy
-				add_idea = MCK_army_academy_field_medic
+				remove_idea = MAN_army_academy
+				add_idea = MAN_army_academy_field_medic
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -3323,10 +3323,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_expand_railway_guards
+		id = MAN_expand_railway_guards
 		icon = GFX_focus_generic_manpower
-		prerequisite = { focus = MCK_establish_the_army_academy }
-		relative_position_id = MCK_establish_the_army_academy
+		prerequisite = { focus = MAN_establish_the_army_academy }
+		relative_position_id = MAN_establish_the_army_academy
 		x = -1
 		y = 1
 		cost = 10
@@ -3380,15 +3380,15 @@ focus_tree = {
 					OWNER = ROOT
 				}
 			}
-			add_ideas = MCK_railway_guards
+			add_ideas = MAN_railway_guards
 		}
 	}
 	
 	focus = {
-		id = MCK_acquire_heavy_armaments
+		id = MAN_acquire_heavy_armaments
 		icon = GFX_focus_generic_combined_arms
-		prerequisite = { focus = MCK_establish_the_army_academy }
-		relative_position_id = MCK_establish_the_army_academy
+		prerequisite = { focus = MAN_establish_the_army_academy }
+		relative_position_id = MAN_establish_the_army_academy
 		x = 0
 		y = 2
 		cost = 10
@@ -3470,34 +3470,34 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_manei
+		id = MAN_manei
 		icon = GFX_goal_focus_manei
-		prerequisite = { focus = MCK_enhance_local_policing }
-		relative_position_id = MCK_enhance_local_policing
+		prerequisite = { focus = MAN_enhance_local_policing }
+		relative_position_id = MAN_enhance_local_policing
 		x = -3
 		y = 1
 		cost = 10
 		search_filters = {  }
 		completion_reward = {
-			add_ideas = MCK_manei
+			add_ideas = MAN_manei
 		}
 	}
 	
 	focus = {
-		id = MCK_incentivise_japanese_immigrants
+		id = MAN_incentivise_japanese_immigrants
 		icon = GFX_focus_jap_spiritual_mobilization
-		prerequisite = { focus = MCK_manei }
-		relative_position_id = MCK_manei
+		prerequisite = { focus = MAN_manei }
+		relative_position_id = MAN_manei
 		bypass = {
-			NOT = { has_idea = MCK_japanese_immigrants }
+			NOT = { has_idea = MAN_japanese_immigrants }
 		}
 		x = -1
 		y = 1
 		cost = 5
 		search_filters = {  }
 		completion_reward = {
-			custom_effect_tooltip = MCK_more_japanese_immigrants
-			add_to_variable = { MCK_japanese_immigrants_number = 250 }
+			custom_effect_tooltip = MAN_more_japanese_immigrants
+			add_to_variable = { MAN_japanese_immigrants_number = 250 }
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 1
 			}
@@ -3511,10 +3511,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_kenkoku_university
+		id = MAN_kenkoku_university
 		icon = GFX_focus_research
-		prerequisite = { focus = MCK_support_aikawa_yoshisuke focus = MCK_support_naoki_hoshino }
-		relative_position_id = MCK_finish_the_five_year_plan
+		prerequisite = { focus = MAN_support_aikawa_yoshisuke focus = MAN_support_naoki_hoshino }
+		relative_position_id = MAN_finish_the_five_year_plan
 		x = 0
 		y = 4
 		cost = 5
@@ -3526,10 +3526,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_expand_manchu_air
+		id = MAN_expand_manchu_air
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = MCK_manei }
-		relative_position_id = MCK_manei
+		prerequisite = { focus = MAN_manei }
+		relative_position_id = MAN_manei
 		x = 0
 		y = 3
 		cost = 10
@@ -3537,16 +3537,16 @@ focus_tree = {
 		completion_reward = {
 			#upgrade manchu air
 			if = {
-				limit = { has_idea = MCK_manchu_air }
+				limit = { has_idea = MAN_manchu_air }
 				swap_ideas = {
-					remove_idea = MCK_manchu_air
-					add_idea = MCK_manchu_air2
+					remove_idea = MAN_manchu_air
+					add_idea = MAN_manchu_air2
 				}
 			}else = {
 				effect_tooltip = {
 					swap_ideas = {
-						remove_idea = MCK_manchu_air
-						add_idea = MCK_manchu_air2
+						remove_idea = MAN_manchu_air
+						add_idea = MAN_manchu_air2
 					}
 				}
 			}
@@ -3580,10 +3580,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_manchu_air_manufacturing
+		id = MAN_manchu_air_manufacturing
 		icon = GFX_goal_focus_mamc
-		prerequisite = { focus = MCK_expand_manchu_air }
-		relative_position_id = MCK_expand_manchu_air
+		prerequisite = { focus = MAN_expand_manchu_air }
+		relative_position_id = MAN_expand_manchu_air
 		x = 0
 		y = 1
 		cost = 10
@@ -3619,11 +3619,11 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_three_year_plan_border
+		id = MAN_three_year_plan_border
 		icon = GFX_goal_generic_construct_military
-		prerequisite = { focus = MCK_manchu_air_manufacturing }
-		prerequisite = { focus = MCK_expand_railway_guards }
-		relative_position_id = MCK_manchu_air_manufacturing
+		prerequisite = { focus = MAN_manchu_air_manufacturing }
+		prerequisite = { focus = MAN_expand_railway_guards }
+		relative_position_id = MAN_manchu_air_manufacturing
 		x = 1
 		y = 1
 		cost = 5
@@ -3650,7 +3650,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			#unlock dec
-			unlock_decision_category_tooltip = MCK_dcat_invigorate_the_north
+			unlock_decision_category_tooltip = MAN_dcat_invigorate_the_north
 			add_war_support = 0.02
 			if = {
 				limit = {
@@ -3684,10 +3684,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_china_help
+		id = MAN_china_help
 		icon = GFX_focus_chi_cooperation_with_the_nationalists
-		prerequisite = { focus = MCK_seek_foreign_help }
-		relative_position_id = MCK_seek_foreign_help
+		prerequisite = { focus = MAN_seek_foreign_help }
+		relative_position_id = MAN_seek_foreign_help
 		x = 2
 		y = 1
 		cost = 5
@@ -3708,16 +3708,16 @@ focus_tree = {
 			event_target:KMT_central_gov_tag = {
 				country_event = { id = jap.13 }
 			}
-			set_temp_variable = { MCK_suspicion_increase = 6 }
+			set_temp_variable = { MAN_suspicion_increase = 6 }
 			increase_jap_suspicion = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_reconciliation_with_najua
+		id = MAN_reconciliation_with_najua
 		icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus = MCK_china_help }
-		relative_position_id = MCK_china_help
+		prerequisite = { focus = MAN_china_help }
+		relative_position_id = MAN_china_help
 		x = 0
 		y = 1
 		cost = 10
@@ -3727,7 +3727,7 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 			}
 			NOT = { is_subject_of = event_target:KMT_central_gov_tag }
 		}
@@ -3736,8 +3736,8 @@ focus_tree = {
 				any_state = {
 					is_controlled_by = ROOT
 					OR = {
-						has_dynamic_modifier = { modifier = MCK_najua_presence }
-						has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+						has_dynamic_modifier = { modifier = MAN_najua_presence }
+						has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 					}
 				}
 			}
@@ -3751,34 +3751,34 @@ focus_tree = {
 			add_command_power = 50
 			every_state = {
 				limit = {
-					has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+					has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 					is_controlled_by = ROOT
 				}
-				remove_dynamic_modifier = { modifier = MCK_najua_presence2 }
-				add_dynamic_modifier = { modifier = MCK_najua_presence }
+				remove_dynamic_modifier = { modifier = MAN_najua_presence2 }
+				add_dynamic_modifier = { modifier = MAN_najua_presence }
 			}
 			every_state = {
 				limit = {
 					OR = {
-						has_dynamic_modifier = { modifier = MCK_najua_presence }
-						has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+						has_dynamic_modifier = { modifier = MAN_najua_presence }
+						has_dynamic_modifier = { modifier = MAN_najua_presence2 }
 					}
 					is_controlled_by = ROOT
 				}
-				set_temp_variable = { MCK_resistance_strength_change = -10 }
-				MCK_change_resistance_strength = yes
-				MCK_update_local_bandits_modifier = yes
+				set_temp_variable = { MAN_resistance_strength_change = -10 }
+				MAN_change_resistance_strength = yes
+				MAN_update_local_bandits_modifier = yes
 			}
-			set_temp_variable = { MCK_awareness_increase = 2 }
+			set_temp_variable = { MAN_awareness_increase = 2 }
 			increase_jap_awareness = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_intelligence_exchange
+		id = MAN_intelligence_exchange
 		icon = GFX_goal_generic_intelligence_exchange
-		prerequisite = { focus = MCK_reconciliation_with_najua }
-		relative_position_id = MCK_reconciliation_with_najua
+		prerequisite = { focus = MAN_reconciliation_with_najua }
+		relative_position_id = MAN_reconciliation_with_najua
 		x = 0
 		y = 1
 		cost = 10
@@ -3788,7 +3788,7 @@ focus_tree = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 			}
 			NOT = { is_subject_of = event_target:KMT_central_gov_tag }
 		}
@@ -3806,7 +3806,7 @@ focus_tree = {
 					NOT = { tag = ROOT }
 				}
 				ROOT = { 
-					add_relation_modifier = { target = PREV modifier = MCK_intelligence_exchange }
+					add_relation_modifier = { target = PREV modifier = MAN_intelligence_exchange }
 				}
 				every_country = { 
 					limit = {
@@ -3816,27 +3816,27 @@ focus_tree = {
 							is_subject_of = event_target:KMT_central_gov_tag
 						}
 					}
-					add_relation_modifier = { target = PREV modifier = MCK_intelligence_exchange }
-					add_relation_modifier = { target = ROOT modifier = MCK_intelligence_exchange }
+					add_relation_modifier = { target = PREV modifier = MAN_intelligence_exchange }
+					add_relation_modifier = { target = ROOT modifier = MAN_intelligence_exchange }
 				}
 			}
-			set_temp_variable = { MCK_awareness_increase = 4 }
+			set_temp_variable = { MAN_awareness_increase = 4 }
 			increase_jap_awareness = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_coordinated_uprising
+		id = MAN_coordinated_uprising
 		icon = GFX_goal_generic_more_territorial_claims
-		prerequisite = { focus = MCK_intelligence_exchange }
-		relative_position_id = MCK_intelligence_exchange
+		prerequisite = { focus = MAN_intelligence_exchange }
+		relative_position_id = MAN_intelligence_exchange
 		available = {
 			is_subject = yes
 			event_target:KMT_central_gov_tag = {
 				exists = yes
 				is_subject = no
 				has_capitulated = no
-				has_country_flag = MCK_helping_independence
+				has_country_flag = MAN_helping_independence
 			}
 			NOT = { is_subject_of = event_target:KMT_central_gov_tag }
 		}
@@ -3846,50 +3846,50 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			if = {
-				limit = { capital_scope = { NOT = { has_state_flag = MCK_state_secured }}}
+				limit = { capital_scope = { NOT = { has_state_flag = MAN_state_secured }}}
 				capital_scope = { 
-					custom_effect_tooltip = MCK_state_secured_tt
-					set_state_flag = MCK_state_secured 
-					set_variable = { MCK_secured_state_frame = 2 }
+					custom_effect_tooltip = MAN_state_secured_tt
+					set_state_flag = MAN_state_secured 
+					set_variable = { MAN_secured_state_frame = 2 }
 				}
-				add_to_variable = { global.MCK_secured_state_num = 1 }
+				add_to_variable = { global.MAN_secured_state_num = 1 }
 			}
 			random_owned_state = {
-				limit = { NOT = { has_state_flag = MCK_state_secured }}
-				custom_effect_tooltip = MCK_state_secured_tt
-				set_state_flag = MCK_state_secured 
-					set_variable = { MCK_secured_state_frame = 2 }
-				add_to_variable = { global.MCK_secured_state_num = 1 }
+				limit = { NOT = { has_state_flag = MAN_state_secured }}
+				custom_effect_tooltip = MAN_state_secured_tt
+				set_state_flag = MAN_state_secured 
+					set_variable = { MAN_secured_state_frame = 2 }
+				add_to_variable = { global.MAN_secured_state_num = 1 }
 			}
 			random_owned_state = {
-				limit = { NOT = { has_state_flag = MCK_state_secured }}
-				custom_effect_tooltip = MCK_state_secured_tt
-				set_state_flag = MCK_state_secured 
-					set_variable = { MCK_secured_state_frame = 2 }
-				add_to_variable = { global.MCK_secured_state_num = 1 }
+				limit = { NOT = { has_state_flag = MAN_state_secured }}
+				custom_effect_tooltip = MAN_state_secured_tt
+				set_state_flag = MAN_state_secured 
+					set_variable = { MAN_secured_state_frame = 2 }
+				add_to_variable = { global.MAN_secured_state_num = 1 }
 			}
 			random_owned_state = {
-				limit = { NOT = { has_state_flag = MCK_state_secured }}
-				custom_effect_tooltip = MCK_state_secured_tt
-				set_state_flag = MCK_state_secured 
-					set_variable = { MCK_secured_state_frame = 2 }
-				add_to_variable = { global.MCK_secured_state_num = 1 }
+				limit = { NOT = { has_state_flag = MAN_state_secured }}
+				custom_effect_tooltip = MAN_state_secured_tt
+				set_state_flag = MAN_state_secured 
+					set_variable = { MAN_secured_state_frame = 2 }
+				add_to_variable = { global.MAN_secured_state_num = 1 }
 			}
-			set_country_flag = MCK_coordinated_uprising_flag
+			set_country_flag = MAN_coordinated_uprising_flag
 			event_target:KMT_central_gov_tag = {
 				country_event = { id = jap.236 }
 			}
-			custom_effect_tooltip = MCK_coordinated_uprising_tt
-			set_temp_variable = { MCK_awareness_increase = 1 }
+			custom_effect_tooltip = MAN_coordinated_uprising_tt
+			set_temp_variable = { MAN_awareness_increase = 1 }
 			increase_jap_awareness = yes
 		}
 	}
 	
 	focus = {
-		id = MCK_absorb_local_bandits
+		id = MAN_absorb_local_bandits
 		icon = GFX_focus_BUL_bulgarian_administration_of_the_balkans
-		prerequisite = { focus = MCK_inward_perfection }
-		relative_position_id = MCK_inward_perfection
+		prerequisite = { focus = MAN_inward_perfection }
+		relative_position_id = MAN_inward_perfection
 		x = 0
 		y = 2
 		cost = 5
@@ -3897,18 +3897,18 @@ focus_tree = {
 		search_filters = {  }
 		available = {
 			OR = {
-				has_completed_focus = MCK_inward_perfection
+				has_completed_focus = MAN_inward_perfection
 				custom_trigger_tooltip = {
-					tooltip = MCK_no_help_tt
+					tooltip = MAN_no_help_tt
 					AND = {
-						has_completed_focus = MCK_turn_to_the_bolshelviks
-						has_completed_focus = MCK_head_towards_democracy
-						has_completed_focus = MCK_china_help
+						has_completed_focus = MAN_turn_to_the_bolshelviks
+						has_completed_focus = MAN_head_towards_democracy
+						has_completed_focus = MAN_china_help
 						NOT = { 
 							any_country = { 
 								OR = {
-									has_country_flag = MCK_helping_independence 
-									has_active_mission = MCK_response_deadline
+									has_country_flag = MAN_helping_independence 
+									has_active_mission = MAN_response_deadline
 								}
 							}
 						}
@@ -3918,15 +3918,15 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_manpower = 10000
-			unlock_decision_tooltip = MCK_absorb_local_bandits_decision
+			unlock_decision_tooltip = MAN_absorb_local_bandits_decision
 		}
 	}
 	
 	focus = {
-		id = MCK_proactive_measures
+		id = MAN_proactive_measures
 		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = MCK_absorb_local_bandits }
-		relative_position_id = MCK_absorb_local_bandits
+		prerequisite = { focus = MAN_absorb_local_bandits }
+		relative_position_id = MAN_absorb_local_bandits
 		x = 0
 		y = 1
 		cost = 5
@@ -3936,16 +3936,16 @@ focus_tree = {
 			add_war_support = 0.05
 			add_political_power = 100
 			add_command_power = 100
-			unlock_decision_tooltip = MCK_raid_depots
-			unlock_decision_tooltip = MCK_train_bandits
+			unlock_decision_tooltip = MAN_raid_depots
+			unlock_decision_tooltip = MAN_train_bandits
 		}
 	}
 	
 	focus = {
-		id = MCK_secure_key_locations
+		id = MAN_secure_key_locations
 		icon = GFX_goal_demand_sudetenland
-		prerequisite = { focus = MCK_proactive_measures }
-		relative_position_id = MCK_proactive_measures
+		prerequisite = { focus = MAN_proactive_measures }
+		relative_position_id = MAN_proactive_measures
 		x = 0
 		y = 1
 		available = { is_subject = yes }
@@ -3955,23 +3955,23 @@ focus_tree = {
 			add_command_power = 100
 			add_stability = 0.05
 			if = {
-				limit = { capital_scope = { NOT = { has_state_flag = MCK_state_secured }}}
+				limit = { capital_scope = { NOT = { has_state_flag = MAN_state_secured }}}
 				capital_scope = { 
-					custom_effect_tooltip = MCK_state_secured_tt
-					set_state_flag = MCK_state_secured 
-					set_variable = { MCK_secured_state_frame = 2 }
+					custom_effect_tooltip = MAN_state_secured_tt
+					set_state_flag = MAN_state_secured 
+					set_variable = { MAN_secured_state_frame = 2 }
 				}
-				add_to_variable = { global.MCK_secured_state_num = 1 }
+				add_to_variable = { global.MAN_secured_state_num = 1 }
 			}
-			unlock_decision_tooltip = MCK_secure_state
+			unlock_decision_tooltip = MAN_secure_state
 		}
 	}
 	
 	focus = {
-		id = MCK_cooperate_with_the_koreans
+		id = MAN_cooperate_with_the_koreans
 		icon = GFX_goal_generic_national_unity
-		prerequisite = { focus = MCK_secure_key_locations }
-		relative_position_id = MCK_secure_key_locations
+		prerequisite = { focus = MAN_secure_key_locations }
+		relative_position_id = MAN_secure_key_locations
 		x = 0
 		y = 1
 		cost = 5
@@ -3992,58 +3992,58 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			add_command_power = 100
-			set_global_flag = MCK_korean_cooperation_flag
+			set_global_flag = MAN_korean_cooperation_flag
 			if = {
 				limit = {
 					965 = {
 						is_owned_by = ROOT
-						NOT = { has_state_flag = MCK_state_secured }
+						NOT = { has_state_flag = MAN_state_secured }
 					}
 				}
 				965 = { 
-					custom_effect_tooltip = MCK_state_secured_tt
-					set_state_flag = MCK_state_secured 
-					set_variable = { MCK_secured_state_frame = 2 }
+					custom_effect_tooltip = MAN_state_secured_tt
+					set_state_flag = MAN_state_secured 
+					set_variable = { MAN_secured_state_frame = 2 }
 				}
-				add_to_variable = { global.MCK_secured_state_num = 1 }
+				add_to_variable = { global.MAN_secured_state_num = 1 }
 			}
 			if = {
 				limit = {
 					976 = {
 						is_owned_by = ROOT
-						NOT = { has_state_flag = MCK_state_secured }
+						NOT = { has_state_flag = MAN_state_secured }
 					}
 				}
 				976 = { 
-					custom_effect_tooltip = MCK_state_secured_tt
-					set_state_flag = MCK_state_secured 
-					set_variable = { MCK_secured_state_frame = 2 }
+					custom_effect_tooltip = MAN_state_secured_tt
+					set_state_flag = MAN_state_secured 
+					set_variable = { MAN_secured_state_frame = 2 }
 				}
-				add_to_variable = { global.MCK_secured_state_num = 1 }
+				add_to_variable = { global.MAN_secured_state_num = 1 }
 			}
 			if = {
 				limit = {
 					973 = {
 						is_owned_by = ROOT
-						NOT = { has_state_flag = MCK_state_secured }
+						NOT = { has_state_flag = MAN_state_secured }
 					}
 				}
 				973 = { 
-					custom_effect_tooltip = MCK_state_secured_tt
-					set_state_flag = MCK_state_secured 
-					set_variable = { MCK_secured_state_frame = 2 }
+					custom_effect_tooltip = MAN_state_secured_tt
+					set_state_flag = MAN_state_secured 
+					set_variable = { MAN_secured_state_frame = 2 }
 				}
-				add_to_variable = { global.MCK_secured_state_num = 1 }
+				add_to_variable = { global.MAN_secured_state_num = 1 }
 			}
-			custom_effect_tooltip = MCK_korean_uprising_possible_tt
+			custom_effect_tooltip = MAN_korean_uprising_possible_tt
 		}
 	}
 	
 	focus = {
-		id = MCK_administrative_division_redrawing
+		id = MAN_administrative_division_redrawing
 		icon = GFX_focus_generic_treaty
-		prerequisite = { focus = MCK_incentivise_japanese_immigrants }
-		relative_position_id = MCK_incentivise_japanese_immigrants
+		prerequisite = { focus = MAN_incentivise_japanese_immigrants }
+		relative_position_id = MAN_incentivise_japanese_immigrants
 		x = -1
 		y = 2
 		cost = 10
@@ -4075,15 +4075,15 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_second_five_year_plan
+		id = MAN_second_five_year_plan
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = MCK_kenkoku_university }
-		prerequisite = { focus = MCK_administrative_division_redrawing }
-		relative_position_id = MCK_kenkoku_university
+		prerequisite = { focus = MAN_kenkoku_university }
+		prerequisite = { focus = MAN_administrative_division_redrawing }
+		relative_position_id = MAN_kenkoku_university
 		available = { 
 			has_war = no 
 			is_subject = yes
-			NOT = { has_idea = MCK_five_year_plan }
+			NOT = { has_idea = MAN_five_year_plan }
 		}
 		x = 3
 		y = 2
@@ -4104,25 +4104,25 @@ focus_tree = {
 				}
 			}
 			add_timed_idea = {
-				idea = MCK_five_year_plan2
+				idea = MAN_five_year_plan2
 				days = 1850
 			}
 		}
 	}
 	
 	focus = {
-		id = MCK_mukden_industrial_centre
+		id = MAN_mukden_industrial_centre
 		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = MCK_second_five_year_plan }
-		relative_position_id = MCK_second_five_year_plan
+		prerequisite = { focus = MAN_second_five_year_plan }
+		relative_position_id = MAN_second_five_year_plan
 		available = {
 			owns_state = 716
 			controls_state = 716
-			has_idea = MCK_five_year_plan2
+			has_idea = MAN_five_year_plan2
 		}
 		bypass = {
 			OR = {
-				NOT = { has_idea = MCK_five_year_plan2 }
+				NOT = { has_idea = MAN_five_year_plan2 }
 				716 = {
 					free_building_slots = {
 						building = industrial_complex
@@ -4137,7 +4137,7 @@ focus_tree = {
 		cost = 10
 		search_filters = {  }
 		completion_reward = {
-			set_country_flag = MCK_2fyp_mukden
+			set_country_flag = MAN_2fyp_mukden
 			716 = {
 				add_extra_state_shared_building_slots = 5
 				add_building_construction = {
@@ -4170,7 +4170,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_hsinking }
+				limit = { has_country_flag = MAN_2fyp_hsinking }
 				build_railway = {
 					level = 1
 					start_province = 11771
@@ -4178,7 +4178,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_tsitsihar }
+				limit = { has_country_flag = MAN_2fyp_tsitsihar }
 				build_railway = {
 					level = 1
 					start_province = 11771
@@ -4186,7 +4186,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_harbin }
+				limit = { has_country_flag = MAN_2fyp_harbin }
 				build_railway = {
 					level = 1
 					start_province = 11771
@@ -4197,18 +4197,18 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_develop_hsinking
+		id = MAN_develop_hsinking
 		icon = GFX_goal_generic_construct_civilian
-		prerequisite = { focus = MCK_second_five_year_plan }
-		relative_position_id = MCK_second_five_year_plan
+		prerequisite = { focus = MAN_second_five_year_plan }
+		relative_position_id = MAN_second_five_year_plan
 		available = {
 			owns_state = 328
 			controls_state = 328
-			has_idea = MCK_five_year_plan2
+			has_idea = MAN_five_year_plan2
 		}
 		bypass = {
 			OR = {
-				NOT = { has_idea = MCK_five_year_plan2 }
+				NOT = { has_idea = MAN_five_year_plan2 }
 				328 = {
 					free_building_slots = {
 						building = industrial_complex
@@ -4223,7 +4223,7 @@ focus_tree = {
 		cost = 10
 		search_filters = {  }
 		completion_reward = {
-			set_country_flag = MCK_2fyp_hsinking
+			set_country_flag = MAN_2fyp_hsinking
 			328 = {
 				set_state_category = metropolis
 				add_extra_state_shared_building_slots = 3
@@ -4284,7 +4284,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_mukden }
+				limit = { has_country_flag = MAN_2fyp_mukden }
 				build_railway = {
 					level = 1
 					start_province = 13399
@@ -4292,7 +4292,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_tsitsihar }
+				limit = { has_country_flag = MAN_2fyp_tsitsihar }
 				build_railway = {
 					level = 1
 					start_province = 13399
@@ -4300,7 +4300,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_harbin }
+				limit = { has_country_flag = MAN_2fyp_harbin }
 				build_railway = {
 					level = 1
 					start_province = 13399
@@ -4311,20 +4311,20 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_investment_in_oriental_moscow
+		id = MAN_investment_in_oriental_moscow
 		icon = GFX_goal_generic_construction
-		prerequisite = { focus = MCK_second_five_year_plan }
-		relative_position_id = MCK_second_five_year_plan
+		prerequisite = { focus = MAN_second_five_year_plan }
+		relative_position_id = MAN_second_five_year_plan
 		x = 1
 		y = 1
 		available = {
 			owns_state = 717
 			controls_state = 717
-			has_idea = MCK_five_year_plan2
+			has_idea = MAN_five_year_plan2
 		}
 		bypass = {
 			OR = {
-				NOT = { has_idea = MCK_five_year_plan2 }
+				NOT = { has_idea = MAN_five_year_plan2 }
 				717 = {
 					free_building_slots = {
 						building = industrial_complex
@@ -4337,7 +4337,7 @@ focus_tree = {
 		cost = 10
 		search_filters = {  }
 		completion_reward = {
-			set_country_flag = MCK_2fyp_harbin
+			set_country_flag = MAN_2fyp_harbin
 			717 = {
 				set_state_category = large_city
 				add_extra_state_shared_building_slots = 3
@@ -4376,7 +4376,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_mukden }
+				limit = { has_country_flag = MAN_2fyp_mukden }
 				build_railway = {
 					level = 1
 					start_province = 10433
@@ -4384,7 +4384,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_tsitsihar }
+				limit = { has_country_flag = MAN_2fyp_tsitsihar }
 				build_railway = {
 					level = 1
 					start_province = 10433
@@ -4392,7 +4392,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_hsinking }
+				limit = { has_country_flag = MAN_2fyp_hsinking }
 				build_railway = {
 					level = 1
 					start_province = 10433
@@ -4403,18 +4403,18 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_tsitsihar_modernisation
+		id = MAN_tsitsihar_modernisation
 		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = MCK_second_five_year_plan }
-		relative_position_id = MCK_second_five_year_plan
+		prerequisite = { focus = MAN_second_five_year_plan }
+		relative_position_id = MAN_second_five_year_plan
 		available = {
 			owns_state = 974
 			controls_state = 974
-			has_idea = MCK_five_year_plan2
+			has_idea = MAN_five_year_plan2
 		}
 		bypass = {
 			OR = {
-				NOT = { has_idea = MCK_five_year_plan2 }
+				NOT = { has_idea = MAN_five_year_plan2 }
 				974 = {
 					free_building_slots = {
 						building = industrial_complex
@@ -4429,7 +4429,7 @@ focus_tree = {
 		cost = 10
 		search_filters = {  }
 		completion_reward = {
-			set_country_flag = MCK_2fyp_tsitsihar
+			set_country_flag = MAN_2fyp_tsitsihar
 			974 = {
 				set_state_category = large_city
 				add_extra_state_shared_building_slots = 4
@@ -4473,7 +4473,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_mukden }
+				limit = { has_country_flag = MAN_2fyp_mukden }
 				build_railway = {
 					level = 1
 					start_province = 1588
@@ -4481,7 +4481,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_hsinking }
+				limit = { has_country_flag = MAN_2fyp_hsinking }
 				build_railway = {
 					level = 1
 					start_province = 1588
@@ -4489,7 +4489,7 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_country_flag = MCK_2fyp_harbin }
+				limit = { has_country_flag = MAN_2fyp_harbin }
 				build_railway = {
 					level = 1
 					start_province = 1588
@@ -4500,20 +4500,20 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_encourage_japanese_immigration
+		id = MAN_encourage_japanese_immigration
 		icon = GFX_focus_jap_spiritual_mobilization
-		prerequisite = { focus = MCK_mukden_industrial_centre focus = MCK_develop_hsinking focus = MCK_investment_in_oriental_moscow focus = MCK_tsitsihar_modernisation }
-		relative_position_id = MCK_mukden_industrial_centre
+		prerequisite = { focus = MAN_mukden_industrial_centre focus = MAN_develop_hsinking focus = MAN_investment_in_oriental_moscow focus = MAN_tsitsihar_modernisation }
+		relative_position_id = MAN_mukden_industrial_centre
 		x = 1
 		y = 1
 		bypass = {
-			NOT = { has_idea = MCK_japanese_immigrants }
+			NOT = { has_idea = MAN_japanese_immigrants }
 		}
 		cost = 5
 		search_filters = {  }
 		completion_reward = {
-			custom_effect_tooltip = MCK_more_japanese_immigrants
-			add_to_variable = { MCK_japanese_immigrants_number = 1000 }
+			custom_effect_tooltip = MAN_more_japanese_immigrants
+			add_to_variable = { MAN_japanese_immigrants_number = 1000 }
 			random_owned_controlled_state = {
 				limit = {
 					OR = {
@@ -4563,10 +4563,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_attract_chinese_immigrants
+		id = MAN_attract_chinese_immigrants
 		icon = GFX_goal_generic_production
-		prerequisite = { focus = MCK_mukden_industrial_centre focus = MCK_develop_hsinking focus = MCK_investment_in_oriental_moscow focus = MCK_tsitsihar_modernisation }
-		relative_position_id = MCK_develop_hsinking
+		prerequisite = { focus = MAN_mukden_industrial_centre focus = MAN_develop_hsinking focus = MAN_investment_in_oriental_moscow focus = MAN_tsitsihar_modernisation }
+		relative_position_id = MAN_develop_hsinking
 		x = 1
 		y = 1
 		cost = 5
@@ -4603,10 +4603,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_promote_korean_immigration
+		id = MAN_promote_korean_immigration
 		icon = GFX_goal_generic_construction2
-		prerequisite = { focus = MCK_mukden_industrial_centre focus = MCK_develop_hsinking focus = MCK_investment_in_oriental_moscow focus = MCK_tsitsihar_modernisation }
-		relative_position_id = MCK_investment_in_oriental_moscow
+		prerequisite = { focus = MAN_mukden_industrial_centre focus = MAN_develop_hsinking focus = MAN_investment_in_oriental_moscow focus = MAN_tsitsihar_modernisation }
+		relative_position_id = MAN_investment_in_oriental_moscow
 		x = 1
 		y = 1
 		cost = 5
@@ -4639,10 +4639,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_increase_japanisation
+		id = MAN_increase_japanisation
 		icon = GFX_focus_jap_pacific_guardian
-		prerequisite = { focus = MCK_encourage_japanese_immigration }
-		relative_position_id = MCK_encourage_japanese_immigration
+		prerequisite = { focus = MAN_encourage_japanese_immigration }
+		relative_position_id = MAN_encourage_japanese_immigration
 		available = { is_subject_of = JAP }
 		x = 0
 		y = 1
@@ -4655,10 +4655,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_chinese_labour_management_department
+		id = MAN_chinese_labour_management_department
 		icon = GFX_goal_generic_consumer_goods
-		prerequisite = { focus = MCK_attract_chinese_immigrants }
-		relative_position_id = MCK_attract_chinese_immigrants
+		prerequisite = { focus = MAN_attract_chinese_immigrants }
+		relative_position_id = MAN_attract_chinese_immigrants
 		x = 0
 		y = 1
 		cost = 5
@@ -4666,21 +4666,21 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 50
 			add_manpower = 20000
-			add_ideas = MCK_chinese_labour_department
+			add_ideas = MAN_chinese_labour_department
 		}
 	}
 	
 	focus = {
-		id = MCK_improve_railway_connection
+		id = MAN_improve_railway_connection
 		icon = GFX_focus_SOV_south_manchuria_railway
-		prerequisite = { focus = MCK_promote_korean_immigration }
-		relative_position_id = MCK_promote_korean_immigration
+		prerequisite = { focus = MAN_promote_korean_immigration }
+		relative_position_id = MAN_promote_korean_immigration
 		x = 0
 		y = 1
 		cost = 5
 		search_filters = {  }
 		completion_reward = {
-			add_ideas = MCK_railway_construction_effort
+			add_ideas = MAN_railway_construction_effort
 			if = {
 				limit = {
 					716 = {
@@ -4815,12 +4815,12 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_east_asia_industrial_powerhouse
+		id = MAN_east_asia_industrial_powerhouse
 		icon = GFX_focus_generic_industry_3
-		prerequisite = { focus = MCK_increase_japanisation }
-		prerequisite = { focus = MCK_chinese_labour_management_department }
-		prerequisite = { focus = MCK_improve_railway_connection }
-		relative_position_id = MCK_chinese_labour_management_department
+		prerequisite = { focus = MAN_increase_japanisation }
+		prerequisite = { focus = MAN_chinese_labour_management_department }
+		prerequisite = { focus = MAN_improve_railway_connection }
+		relative_position_id = MAN_chinese_labour_management_department
 		available = {
 			num_of_factories > 100
 		}
@@ -4832,15 +4832,15 @@ focus_tree = {
 			add_political_power = 100
 			add_stability = 0.1
 			add_war_support = 0.1
-			add_ideas = MCK_east_asia_industrial_powerhouse
+			add_ideas = MAN_east_asia_industrial_powerhouse
 		}
 	}
 	
 	focus = {
-		id = MCK_manchuria_reconstruction_decree
+		id = MAN_manchuria_reconstruction_decree
 		icon = GFX_goal_generic_construction
-		prerequisite = { focus = MCK_xuantong_restoration }
-		relative_position_id = MCK_xuantong_restoration
+		prerequisite = { focus = MAN_xuantong_restoration }
+		relative_position_id = MAN_xuantong_restoration
 		x = -3
 		y = 1
 		cost = 10
@@ -4849,15 +4849,15 @@ focus_tree = {
 				is_controlled_by = ROOT
 				OR = {
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_155_tt
+						tooltip = MAN_region_155_tt
 						region = 155
 					}
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_155_tt
+						tooltip = MAN_region_155_tt
 						region = 242
 					}
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_155_tt
+						tooltip = MAN_region_155_tt
 						region = 243
 					}
 				}
@@ -4979,10 +4979,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_north_china_industrialisation_decree
+		id = MAN_north_china_industrialisation_decree
 		icon = GFX_focus_generic_industry_2
-		prerequisite = { focus = MCK_xuantong_restoration }
-		relative_position_id = MCK_xuantong_restoration
+		prerequisite = { focus = MAN_xuantong_restoration }
+		relative_position_id = MAN_xuantong_restoration
 		x = -1
 		y = 1
 		cost = 10
@@ -4991,15 +4991,15 @@ focus_tree = {
 				is_controlled_by = ROOT
 				OR = {
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_143_tt
+						tooltip = MAN_region_143_tt
 						region = 143
 					}
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_245_tt
+						tooltip = MAN_region_245_tt
 						region = 245
 					}
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_244_tt
+						tooltip = MAN_region_244_tt
 						region = 244
 					}
 				}
@@ -5135,20 +5135,20 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_lower_yangtze_development_decree
+		id = MAN_lower_yangtze_development_decree
 		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = MCK_xuantong_restoration }
-		relative_position_id = MCK_xuantong_restoration
+		prerequisite = { focus = MAN_xuantong_restoration }
+		relative_position_id = MAN_xuantong_restoration
 		available = {
 			any_owned_state = {
 				is_controlled_by = ROOT
 				OR = {
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_233_tt
+						tooltip = MAN_region_233_tt
 						region = 233
 					}
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_164_tt
+						tooltip = MAN_region_164_tt
 						region = 164
 					}
 				}
@@ -5312,17 +5312,17 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_south_china_modernisation
+		id = MAN_south_china_modernisation
 		icon = GFX_goal_generic_construct_civilian
-		prerequisite = { focus = MCK_xuantong_restoration }
-		relative_position_id = MCK_xuantong_restoration
+		prerequisite = { focus = MAN_xuantong_restoration }
+		relative_position_id = MAN_xuantong_restoration
 		x = 3
 		y = 1
 		available = {
 			any_owned_state = {
 				is_controlled_by = ROOT
 				custom_trigger_tooltip = {
-					tooltip = MCK_region_165_tt
+					tooltip = MAN_region_165_tt
 					region = 165
 				}
 			}
@@ -5490,10 +5490,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_imperial_aircraft_manufacturing
+		id = MAN_imperial_aircraft_manufacturing
 		icon = GFX_focus_generic_aircraft_production
-		prerequisite = { focus = MCK_manchuria_reconstruction_decree focus = MCK_north_china_industrialisation_decree focus = MCK_lower_yangtze_development_decree focus = MCK_south_china_modernisation }
-		relative_position_id = MCK_manchuria_reconstruction_decree
+		prerequisite = { focus = MAN_manchuria_reconstruction_decree focus = MAN_north_china_industrialisation_decree focus = MAN_lower_yangtze_development_decree focus = MAN_south_china_modernisation }
+		relative_position_id = MAN_manchuria_reconstruction_decree
 		x = 0
 		y = 1
 		cost = 10
@@ -5638,10 +5638,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_imperial_arsenal
+		id = MAN_imperial_arsenal
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = MCK_manchuria_reconstruction_decree focus = MCK_north_china_industrialisation_decree focus = MCK_lower_yangtze_development_decree focus = MCK_south_china_modernisation }
-		relative_position_id = MCK_north_china_industrialisation_decree
+		prerequisite = { focus = MAN_manchuria_reconstruction_decree focus = MAN_north_china_industrialisation_decree focus = MAN_lower_yangtze_development_decree focus = MAN_south_china_modernisation }
+		relative_position_id = MAN_north_china_industrialisation_decree
 		x = 0
 		y = 1
 		cost = 10
@@ -5786,10 +5786,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_imperial_shipbuilding
+		id = MAN_imperial_shipbuilding
 		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = MCK_manchuria_reconstruction_decree focus = MCK_north_china_industrialisation_decree focus = MCK_lower_yangtze_development_decree focus = MCK_south_china_modernisation }
-		relative_position_id = MCK_lower_yangtze_development_decree
+		prerequisite = { focus = MAN_manchuria_reconstruction_decree focus = MAN_north_china_industrialisation_decree focus = MAN_lower_yangtze_development_decree focus = MAN_south_china_modernisation }
+		relative_position_id = MAN_lower_yangtze_development_decree
 		x = 0
 		y = 1
 		available = {
@@ -5940,28 +5940,28 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_imperial_academy
+		id = MAN_imperial_academy
 		icon = GFX_focus_generic_military_academy
-		prerequisite = { focus = MCK_manchuria_reconstruction_decree focus = MCK_north_china_industrialisation_decree focus = MCK_lower_yangtze_development_decree focus = MCK_south_china_modernisation }
-		relative_position_id = MCK_south_china_modernisation
+		prerequisite = { focus = MAN_manchuria_reconstruction_decree focus = MAN_north_china_industrialisation_decree focus = MAN_lower_yangtze_development_decree focus = MAN_south_china_modernisation }
+		relative_position_id = MAN_south_china_modernisation
 		x = 0
 		y = 1
 		cost = 10
 		search_filters = {  }
 		completion_reward = {
-			unlock_decision_category_tooltip = MCK_dcat_imperial_academy
-			add_ideas = MCK_imperial_academy
+			unlock_decision_category_tooltip = MAN_dcat_imperial_academy
+			add_ideas = MAN_imperial_academy
 		}
 	}
 	
 	focus = {
-		id = MCK_a_modern_empire
+		id = MAN_a_modern_empire
 		icon = GFX_goal_tfv_generic_tech_sharing
-		prerequisite = { focus = MCK_imperial_aircraft_manufacturing }
-		prerequisite = { focus = MCK_imperial_arsenal }
-		prerequisite = { focus = MCK_imperial_shipbuilding }
-		prerequisite = { focus = MCK_imperial_academy }
-		relative_position_id = MCK_xuantong_restoration
+		prerequisite = { focus = MAN_imperial_aircraft_manufacturing }
+		prerequisite = { focus = MAN_imperial_arsenal }
+		prerequisite = { focus = MAN_imperial_shipbuilding }
+		prerequisite = { focus = MAN_imperial_academy }
+		relative_position_id = MAN_xuantong_restoration
 		x = 0
 		y = 3
 		cost = 10
@@ -5997,10 +5997,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_imperial_glory
+		id = MAN_imperial_glory
 		icon = GFX_goal_focus_imperial_glory
-		prerequisite = { focus = MCK_a_modern_empire }
-		relative_position_id = MCK_a_modern_empire
+		prerequisite = { focus = MAN_a_modern_empire }
+		relative_position_id = MAN_a_modern_empire
 		x = -3
 		y = 1
 		cost = 10
@@ -6009,11 +6009,11 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			add_ideas = MCK_imperial_glory
-			unlock_decision_tooltip = MCK_integrate_from_territories
+			add_ideas = MAN_imperial_glory
+			unlock_decision_tooltip = MAN_integrate_from_territories
 			if = {
-				limit = { has_character = MCK_zheng_xiaoxu }
-				MCK_liu_enge = {
+				limit = { has_character = MAN_zheng_xiaoxu }
+				MAN_liu_enge = {
 					remove_trait = {
 						trait = silent_mule
 						slot = political_advisor
@@ -6025,8 +6025,8 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_character = MCK_zang_shiyi }
-				MCK_zang_shiyi = {
+				limit = { has_character = MAN_zang_shiyi }
+				MAN_zang_shiyi = {
 					remove_trait = {
 						trait = compassionate_commoner
 						slot = political_advisor
@@ -6037,10 +6037,10 @@ focus_tree = {
 					}
 				}
 			}
-			custom_effect_tooltip = MCK_royal_guard_glory_improvement_tt
+			custom_effect_tooltip = MAN_royal_guard_glory_improvement_tt
 			hidden_effect = {
-				add_to_variable = { MCK_royal_guard_cap = 5 }
-				set_division_template_cap = { division_template = "Chin-wei-chün" division_cap = MCK_royal_guard_cap }
+				add_to_variable = { MAN_royal_guard_cap = 5 }
+				set_division_template_cap = { division_template = "Chin-wei-chün" division_cap = MAN_royal_guard_cap }
 				add_units_to_division_template = {			
 					template_name = "Chin-wei-chün"
 					support = { 
@@ -6052,10 +6052,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_restore_the_old_frontier
+		id = MAN_restore_the_old_frontier
 		icon = GFX_goal_generic_more_territorial_claims
-		prerequisite = { focus = MCK_imperial_glory }
-		relative_position_id = MCK_imperial_glory
+		prerequisite = { focus = MAN_imperial_glory }
+		relative_position_id = MAN_imperial_glory
 		x = 2
 		y = 1
 		cost = 5
@@ -6063,7 +6063,7 @@ focus_tree = {
 			is_subject = no
 			has_government = neutrality
 			custom_trigger_tooltip = {
-				tooltip = MCK_vassal_tt
+				tooltip = MAN_vassal_tt
 				own_china_proper = yes
 			}
 		}
@@ -6077,15 +6077,15 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_offer_vassalisation
+		id = MAN_offer_vassalisation
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = MCK_imperial_glory }
-		relative_position_id = MCK_imperial_glory
+		prerequisite = { focus = MAN_imperial_glory }
+		relative_position_id = MAN_imperial_glory
 		available = {
 			is_subject = no
 			has_government = neutrality
 			custom_trigger_tooltip = {
-				tooltip = MCK_vassal_tt
+				tooltip = MAN_vassal_tt
 				own_china_proper = yes
 			}
 		}
@@ -6135,10 +6135,10 @@ focus_tree = {
 	
 
 	focus = {
-		id = MCK_subjugate_japan
+		id = MAN_subjugate_japan
 		icon = GFX_focus_AST_war_japan
-		prerequisite = { focus = MCK_imperial_glory }
-		relative_position_id = MCK_imperial_glory
+		prerequisite = { focus = MAN_imperial_glory }
+		relative_position_id = MAN_imperial_glory
 		x = 0
 		y = 1
 		cost = 5
@@ -6168,11 +6168,11 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_technological_innovation
+		id = MAN_technological_innovation
 		icon = GFX_focus_research2
-		prerequisite = { focus = MCK_revive_zongli_yamen }
-		prerequisite = { focus = MCK_xuantong_restoration }
-		relative_position_id = MCK_revive_zongli_yamen
+		prerequisite = { focus = MAN_revive_zongli_yamen }
+		prerequisite = { focus = MAN_xuantong_restoration }
+		relative_position_id = MAN_revive_zongli_yamen
 		x = 1
 		y = 1
 		cost = 10
@@ -6203,10 +6203,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_road_to_tibet
+		id = MAN_road_to_tibet
 		icon = GFX_goal_focus_road_to_tibet
-		prerequisite = { focus = MCK_restore_the_old_frontier  focus = MCK_offer_vassalisation}
-		relative_position_id = MCK_restore_the_old_frontier
+		prerequisite = { focus = MAN_restore_the_old_frontier  focus = MAN_offer_vassalisation}
+		relative_position_id = MAN_restore_the_old_frontier
 		x = -3
 		y = 1
 		cost = 10
@@ -6324,24 +6324,24 @@ focus_tree = {
 				uses = 1
 				category = mountaineers_tech
 			}
-			unlock_decision_tooltip = MCK_build_the_tawang_trails
+			unlock_decision_tooltip = MAN_build_the_tawang_trails
 		}
 	}
 	
 	focus = {
-		id = MCK_modernise_sinkiang
+		id = MAN_modernise_sinkiang
 		icon = GFX_goal_focus_modernise_sinkiang
-		prerequisite = { focus = MCK_restore_the_old_frontier focus = MCK_offer_vassalisation }
-		relative_position_id = MCK_restore_the_old_frontier
+		prerequisite = { focus = MAN_restore_the_old_frontier focus = MAN_offer_vassalisation }
+		relative_position_id = MAN_restore_the_old_frontier
 		available = {
 			any_state = {
 				OR = {
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_145_tt
+						tooltip = MAN_region_145_tt
 						region = 145
 					}
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_252_tt
+						tooltip = MAN_region_252_tt
 						region = 252
 					}
 				}
@@ -6491,10 +6491,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_improve_mongolian_infrastructure
+		id = MAN_improve_mongolian_infrastructure
 		icon = GFX_goal_focus_improve_mongolian_infrastructure
-		prerequisite = { focus = MCK_restore_the_old_frontier focus = MCK_offer_vassalisation }
-		relative_position_id = MCK_restore_the_old_frontier
+		prerequisite = { focus = MAN_restore_the_old_frontier focus = MAN_offer_vassalisation }
+		relative_position_id = MAN_restore_the_old_frontier
 		x = 1
 		y = 1
 		cost = 10
@@ -6502,19 +6502,19 @@ focus_tree = {
 			any_state = {
 				OR = {
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_236_tt
+						tooltip = MAN_region_236_tt
 						region = 236
 					}
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_152_tt
+						tooltip = MAN_region_152_tt
 						region = 152
 					}
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_244_tt
+						tooltip = MAN_region_244_tt
 						region = 244
 					}
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_266_tt
+						tooltip = MAN_region_266_tt
 						region = 266
 					}
 					state = 746
@@ -6764,10 +6764,10 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_industrialise_outer_manchuria
+		id = MAN_industrialise_outer_manchuria
 		icon = GFX_goal_focus_reintegrate_outer_manchuria
-		prerequisite = { focus = MCK_restore_the_old_frontier focus = MCK_offer_vassalisation }
-		relative_position_id = MCK_restore_the_old_frontier
+		prerequisite = { focus = MAN_restore_the_old_frontier focus = MAN_offer_vassalisation }
+		relative_position_id = MAN_restore_the_old_frontier
 		x = 3
 		y = 1
 		cost = 10
@@ -6775,11 +6775,11 @@ focus_tree = {
 			any_state = {
 				OR = {
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_148_tt
+						tooltip = MAN_region_148_tt
 						region = 148
 					}
 					custom_trigger_tooltip = {
-						tooltip = MCK_region_255_tt
+						tooltip = MAN_region_255_tt
 						region = 255
 					}
 					state = 655
@@ -6858,15 +6858,15 @@ focus_tree = {
 					target_province = 9604
 				}
 			}
-			unlock_decision_category_tooltip = MCK_dcat_reintegrate_outer_manchuria
+			unlock_decision_category_tooltip = MAN_dcat_reintegrate_outer_manchuria
 		}
 	}
 	
 	focus = {
-		id = MCK_summon_the_privy_council
+		id = MAN_summon_the_privy_council
 		icon = GFX_goal_generic_intelligence_exchange
-		prerequisite = { focus = MCK_a_modern_empire }
-		relative_position_id = MCK_a_modern_empire
+		prerequisite = { focus = MAN_a_modern_empire }
+		relative_position_id = MAN_a_modern_empire
 		x = 3
 		y = 1
 		cost = 5
@@ -6880,13 +6880,13 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_rural_infrastructure_projects
+		id = MAN_rural_infrastructure_projects
 		icon = GFX_goal_generic_construct_civilian
 		x = -2
 		y = 1
 		cost = 5
-		prerequisite = { focus = MCK_peking_agreement }
-		relative_position_id = MCK_peking_agreement
+		prerequisite = { focus = MAN_peking_agreement }
+		relative_position_id = MAN_peking_agreement
 		available = {
 			
 		}
@@ -7112,13 +7112,13 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_expand_rail_network
+		id = MAN_expand_rail_network
 		icon = GFX_goal_generic_construct_infrastructure
 		x = 0
 		y = 1
 		cost = 10
-		prerequisite = { focus = MCK_peking_agreement }
-		relative_position_id = MCK_peking_agreement
+		prerequisite = { focus = MAN_peking_agreement }
+		relative_position_id = MAN_peking_agreement
 		available = {
 		}
 		bypass = {
@@ -7384,14 +7384,14 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_prospect_for_resources
+		id = MAN_prospect_for_resources
 		icon = GFX_goal_generic_construction
 		x = 1
 		y = 1
 		cost = 5
-		prerequisite = { focus = MCK_rural_infrastructure_projects }
-		prerequisite = { focus = MCK_expand_rail_network }
-		relative_position_id = MCK_rural_infrastructure_projects
+		prerequisite = { focus = MAN_rural_infrastructure_projects }
+		prerequisite = { focus = MAN_expand_rail_network }
+		relative_position_id = MAN_rural_infrastructure_projects
 		available = {
 			has_war = no
 			num_of_factories > 75
@@ -7402,24 +7402,24 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_national_defence_forces
+		id = MAN_national_defence_forces
 		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = MCK_peking_agreement }
-		relative_position_id = MCK_peking_agreement
+		prerequisite = { focus = MAN_peking_agreement }
+		relative_position_id = MAN_peking_agreement
 		x = 3
 		y = 1
 		cost = 10
 
 		completion_reward = {
-			add_ideas = MCK_national_defence_forces_idea
+			add_ideas = MAN_national_defence_forces_idea
 		}
 	}
 
 	focus = {
-		id = MCK_business_encouragement_programs
+		id = MAN_business_encouragement_programs
 		icon = GFX_focus_generic_industry_1
-		prerequisite = { focus = MCK_rural_infrastructure_projects }
-		relative_position_id = MCK_rural_infrastructure_projects
+		prerequisite = { focus = MAN_rural_infrastructure_projects }
+		relative_position_id = MAN_rural_infrastructure_projects
 		x = 0
 		y = 2
 		bypass = {
@@ -7534,10 +7534,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_construction_and_development_department
+		id = MAN_construction_and_development_department
 		icon = GFX_goal_generic_production
-		prerequisite = { focus = MCK_business_encouragement_programs }
-		relative_position_id = MCK_business_encouragement_programs
+		prerequisite = { focus = MAN_business_encouragement_programs }
+		relative_position_id = MAN_business_encouragement_programs
 		x = 0
 		y = 1
 		cost = 10
@@ -7548,15 +7548,15 @@ focus_tree = {
 				uses = 2
 				category = industry
 			}
-			add_ideas = MCK_cdd
+			add_ideas = MAN_cdd
 		}
 	}
 
 	focus = {
-		id = MCK_education_reform
+		id = MAN_education_reform
 		icon = GFX_goal_generic_scientific_exchange
-		prerequisite = { focus = MCK_construction_and_development_department }
-		relative_position_id = MCK_construction_and_development_department
+		prerequisite = { focus = MAN_construction_and_development_department }
+		relative_position_id = MAN_construction_and_development_department
 		x = -1
 		y = 1
 		cost = 10
@@ -7567,16 +7567,16 @@ focus_tree = {
 				uses = 2
 				category = electronics
 			}
-			add_ideas = MCK_reformed_education
+			add_ideas = MAN_reformed_education
 			add_research_slot = 1
 		}
 	}
 
 	focus = {
-		id = MCK_industrial_centre_expansion
+		id = MAN_industrial_centre_expansion
 		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = MCK_expand_rail_network }
-		relative_position_id = MCK_expand_rail_network
+		prerequisite = { focus = MAN_expand_rail_network }
+		relative_position_id = MAN_expand_rail_network
 		x = 1
 		y = 2
 		cost = 10
@@ -7789,11 +7789,11 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_increase_military_output
+		id = MAN_increase_military_output
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = MCK_industrial_centre_expansion }
-		prerequisite = { focus = MCK_national_defence_forces }
-		relative_position_id = MCK_industrial_centre_expansion
+		prerequisite = { focus = MAN_industrial_centre_expansion }
+		prerequisite = { focus = MAN_national_defence_forces }
+		relative_position_id = MAN_industrial_centre_expansion
 		x = 1
 		y = 1
 		cost = 10
@@ -7829,16 +7829,16 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_ideas = MCK_increase_factory_output_idea
+			add_ideas = MAN_increase_factory_output_idea
 		}
 	}
 
 	focus = {
-		id = MCK_armament_modernisation
+		id = MAN_armament_modernisation
 		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = MCK_increase_military_output }
-		prerequisite = { focus = MCK_construction_and_development_department }
-		relative_position_id = MCK_increase_military_output
+		prerequisite = { focus = MAN_increase_military_output }
+		prerequisite = { focus = MAN_construction_and_development_department }
+		relative_position_id = MAN_increase_military_output
 		x = -1
 		y = 1
 		cost = 10
@@ -7874,10 +7874,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_naval_industry_expansion
+		id = MAN_naval_industry_expansion
 		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = MCK_industrial_centre_expansion }
-		relative_position_id = MCK_industrial_centre_expansion
+		prerequisite = { focus = MAN_industrial_centre_expansion }
+		relative_position_id = MAN_industrial_centre_expansion
 		x = -1
 		y = 1
 		available = {
@@ -7909,7 +7909,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = MCK_naval_base_vp_coastal_tt
+				custom_effect_tooltip = MAN_naval_base_vp_coastal_tt
 				add_building_construction = {
 					type = naval_base
 					level = 2
@@ -7936,7 +7936,7 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-				custom_effect_tooltip = MCK_naval_base_vp_coastal_tt
+				custom_effect_tooltip = MAN_naval_base_vp_coastal_tt
 				add_building_construction = {
 					type = naval_base
 					level = 2
@@ -7952,10 +7952,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_expand_university
+		id = MAN_expand_university
 		icon = GFX_focus_research
-		prerequisite = { focus = MCK_education_reform }
-		relative_position_id = MCK_education_reform
+		prerequisite = { focus = MAN_education_reform }
+		relative_position_id = MAN_education_reform
 		x = 0
 		y = 1
 		cost = 10
@@ -7977,20 +7977,20 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_new_military_academies
+		id = MAN_new_military_academies
 		icon = GFX_focus_generic_military_academy
-		prerequisite = { focus = MCK_national_defence_forces }
-		relative_position_id = MCK_national_defence_forces
+		prerequisite = { focus = MAN_national_defence_forces }
+		relative_position_id = MAN_national_defence_forces
 		x = 1
 		y = 1
 		cost = 5
 
 		completion_reward = {
-			unlock_decision_category_tooltip = MCK_dcat_imperial_academy
+			unlock_decision_category_tooltip = MAN_dcat_imperial_academy
 			if = {
 				limit = {
-					NOT = { has_idea = MCK_army_academy }
-					NOT = { has_idea = MCK_army_academy_field_medic }
+					NOT = { has_idea = MAN_army_academy }
+					NOT = { has_idea = MAN_army_academy_field_medic }
 				}
 				every_army_leader = {
 					add_planning = 1
@@ -8001,10 +8001,10 @@ focus_tree = {
 					cost_reduction = 0.5
 				}
 				army_experience = 50
-				add_ideas = MCK_army_academy
+				add_ideas = MAN_army_academy
 			}else_if = {
 				limit = {
-					has_idea = MCK_army_academy
+					has_idea = MAN_army_academy
 				}
 				every_navy_leader = {
 					add_coordination = 1
@@ -8016,12 +8016,12 @@ focus_tree = {
 				}
 				navy_experience = 50
 				swap_ideas = {
-					remove_idea = MCK_army_academy
-					add_idea = MCK_improved_military_academies
+					remove_idea = MAN_army_academy
+					add_idea = MAN_improved_military_academies
 				}
 			}else_if = {
 				limit = {
-					has_idea = MCK_army_academy_field_medic
+					has_idea = MAN_army_academy_field_medic
 				}
 				every_navy_leader = {
 					add_coordination = 1
@@ -8033,18 +8033,18 @@ focus_tree = {
 				}
 				navy_experience = 50
 				swap_ideas = {
-					remove_idea = MCK_army_academy_field_medic
-					add_idea = MCK_improved_military_academies_hospital
+					remove_idea = MAN_army_academy_field_medic
+					add_idea = MAN_improved_military_academies_hospital
 				}
 			}
 		}
 	}
 
 	focus = {
-		id = MCK_mandatory_military_service
+		id = MAN_mandatory_military_service
 		icon = GFX_focus_generic_manpower
-		prerequisite = { focus = MCK_national_defence_forces }
-		relative_position_id = MCK_national_defence_forces
+		prerequisite = { focus = MAN_national_defence_forces }
+		relative_position_id = MAN_national_defence_forces
 		x = 3
 		y = 1
 		cost = 5
@@ -8061,16 +8061,16 @@ focus_tree = {
 				}
 				add_ideas = service_by_requirement
 			}
-			add_ideas = MCK_mandatory_military_service
+			add_ideas = MAN_mandatory_military_service
 		}
 	}
 
 	focus = {
-		id = MCK_defence_against_potential_threats
+		id = MAN_defence_against_potential_threats
 		icon = GFX_goal_generic_construct_military
-		prerequisite = { focus = MCK_mandatory_military_service }
-		prerequisite = { focus = MCK_new_military_academies }
-		relative_position_id = MCK_new_military_academies
+		prerequisite = { focus = MAN_mandatory_military_service }
+		prerequisite = { focus = MAN_new_military_academies }
+		relative_position_id = MAN_new_military_academies
 		x = 1
 		y = 1
 		cost = 5
@@ -8078,17 +8078,17 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.1
 			swap_ideas = {
-				remove_idea = MCK_mandatory_military_service
-				add_idea = MCK_mandatory_military_service2
+				remove_idea = MAN_mandatory_military_service
+				add_idea = MAN_mandatory_military_service2
 			}
 		}
 	}
 
 	focus = {
-		id = MCK_fortify_the_cities
+		id = MAN_fortify_the_cities
 		icon = GFX_goal_generic_fortify_city
-		prerequisite = { focus = MCK_defence_against_potential_threats }
-		relative_position_id = MCK_defence_against_potential_threats
+		prerequisite = { focus = MAN_defence_against_potential_threats }
+		relative_position_id = MAN_defence_against_potential_threats
 		x = 0
 		y = 1
 		available = {
@@ -8235,10 +8235,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_beyond_the_great_wall
+		id = MAN_beyond_the_great_wall
 		icon = GFX_goal_generic_defence
-		prerequisite = { focus = MCK_fortify_the_cities }
-		relative_position_id = MCK_fortify_the_cities
+		prerequisite = { focus = MAN_fortify_the_cities }
+		relative_position_id = MAN_fortify_the_cities
 		x = -1
 		y = 1
 		cost = 5
@@ -8464,10 +8464,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_defend_the_mongolian_border
+		id = MAN_defend_the_mongolian_border
 		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = MCK_beyond_the_great_wall }
-		relative_position_id = MCK_beyond_the_great_wall
+		prerequisite = { focus = MAN_beyond_the_great_wall }
+		relative_position_id = MAN_beyond_the_great_wall
 		x = 0
 		y = 1
 		cost = 5
@@ -8608,10 +8608,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_fortify_along_the_three_rivers
+		id = MAN_fortify_along_the_three_rivers
 		icon = GFX_goal_generic_construct_military
-		prerequisite = { focus = MCK_fortify_the_cities }
-		relative_position_id = MCK_fortify_the_cities
+		prerequisite = { focus = MAN_fortify_the_cities }
+		relative_position_id = MAN_fortify_the_cities
 		x = 2
 		y = 1
 		cost = 5
@@ -8819,11 +8819,11 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_fortresses_on_the_yalu_river
+		id = MAN_fortresses_on_the_yalu_river
 		icon = GFX_goal_generic_construct_military
-		prerequisite = { focus = MCK_fortify_along_the_three_rivers }
-		relative_position_id = MCK_fortify_along_the_three_rivers
-		mutually_exclusive = { focus = MCK_preemptive_invasion_of_korea }
+		prerequisite = { focus = MAN_fortify_along_the_three_rivers }
+		relative_position_id = MAN_fortify_along_the_three_rivers
+		mutually_exclusive = { focus = MAN_preemptive_invasion_of_korea }
 		x = -1
 		y = 1
 		cost = 5
@@ -8936,11 +8936,11 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_preemptive_invasion_of_korea
+		id = MAN_preemptive_invasion_of_korea
 		icon = GFX_goal_generic_more_territorial_claims
-		prerequisite = { focus = MCK_fortify_along_the_three_rivers }
-		relative_position_id = MCK_fortify_along_the_three_rivers
-		mutually_exclusive = { focus = MCK_fortresses_on_the_yalu_river }
+		prerequisite = { focus = MAN_fortify_along_the_three_rivers }
+		relative_position_id = MAN_fortify_along_the_three_rivers
+		mutually_exclusive = { focus = MAN_fortresses_on_the_yalu_river }
 		x = 1
 		y = 1
 		cost = 5
@@ -8994,10 +8994,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_administrative_reform
+		id = MAN_administrative_reform
 		icon = GFX_goal_generic_major_alliance
-		prerequisite = { focus = MCK_construction_and_development_department }
-		relative_position_id = MCK_construction_and_development_department
+		prerequisite = { focus = MAN_construction_and_development_department }
+		relative_position_id = MAN_construction_and_development_department
 		x = 1
 		y = 2
 		cost = 5
@@ -9008,12 +9008,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_a_constitutional_monarchy
-		icon = GFX_goal_focus_mck_consitutional_monarchy
-		prerequisite = { focus = MCK_administrative_reform focus = MCK_summon_the_privy_council }
-		mutually_exclusive = { focus = MCK_return_to_tradition }
-		mutually_exclusive = { focus = MCK_abolish_the_monarchy }
-		relative_position_id = MCK_summon_the_privy_council
+		id = MAN_a_constitutional_monarchy
+		icon = GFX_goal_focus_man_consitutional_monarchy
+		prerequisite = { focus = MAN_administrative_reform focus = MAN_summon_the_privy_council }
+		mutually_exclusive = { focus = MAN_return_to_tradition }
+		mutually_exclusive = { focus = MAN_abolish_the_monarchy }
+		relative_position_id = MAN_summon_the_privy_council
 		x = 3
 		y = 1
 		cost = 10
@@ -9024,7 +9024,7 @@ focus_tree = {
 				has_government = democratic
 			}
 			has_country_leader = {
-				character = MCK_aisin_gioro_puyi
+				character = MAN_aisin_gioro_puyi
 				ruling_only = yes
 			}
 		}
@@ -9039,14 +9039,14 @@ focus_tree = {
 				}
 				remove_country_leader_trait = puppet_emperor_tfv
 			}
-			MCK_aisin_gioro_puyi = {
+			MAN_aisin_gioro_puyi = {
 				remove_country_leader_role = { ideology = despotism }
 				remove_country_leader_role = { ideology = rexism }
 				add_country_leader_role = {
 					country_leader = {
 						ideology = moderatism
 						expire = "1965.1.1"
-						traits = { MCK_constitutional_monarch }
+						traits = { MAN_constitutional_monarch }
 					}
 					promote_leader = yes
 				}
@@ -9054,7 +9054,7 @@ focus_tree = {
 					country_leader = {
 						ideology = conservatism
 						expire = "1965.1.1"
-						traits = { MCK_constitutional_monarch }
+						traits = { MAN_constitutional_monarch }
 					}
 					promote_leader = yes
 				}
@@ -9062,7 +9062,7 @@ focus_tree = {
 					country_leader = {
 						ideology = rexism
 						expire = "1965.1.1"
-						traits = { MCK_constitutional_monarch }
+						traits = { MAN_constitutional_monarch }
 					}
 					promote_leader = yes
 				}
@@ -9071,16 +9071,16 @@ focus_tree = {
 				ideology = democratic
 				popularity = 0.25
 			}
-			set_party_name = { ideology = neutrality name = MCK_imperial_royal_party long_name = MCK_imperial_royal_party_long }
-			set_party_name = { ideology = democratic name = MCK_imperial_conservative_party long_name = MCK_imperial_conservative_party_long }
-			set_party_name = { ideology = fascism name = MCK_imperial_national_party long_name = MCK_imperial_national_party_long }
-			set_party_name = { ideology = communism name = MCK_communist_oppositions long_name = MCK_communist_oppositions }
+			set_party_name = { ideology = neutrality name = MAN_imperial_royal_party long_name = MAN_imperial_royal_party_long }
+			set_party_name = { ideology = democratic name = MAN_imperial_conservative_party long_name = MAN_imperial_conservative_party_long }
+			set_party_name = { ideology = fascism name = MAN_imperial_national_party long_name = MAN_imperial_national_party_long }
+			set_party_name = { ideology = communism name = MAN_communist_oppositions long_name = MAN_communist_oppositions }
 			if = {
-				limit = { has_completed_focus = MCK_contact_qing_restorationists }
-				custom_effect_tooltip = MCK_disappointed_restorationists
+				limit = { has_completed_focus = MAN_contact_qing_restorationists }
+				custom_effect_tooltip = MAN_disappointed_restorationists
 				add_political_power = -50
 				add_timed_idea = {
-					idea = MCK_restorationists_disappointed
+					idea = MAN_restorationists_disappointed
 					days = 100
 				}
 			}
@@ -9088,12 +9088,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_return_to_tradition
+		id = MAN_return_to_tradition
 		icon = GFX_focus_man_claim_the_mandate_of_heaven
-		prerequisite = { focus = MCK_administrative_reform focus = MCK_summon_the_privy_council }
-		mutually_exclusive = { focus = MCK_a_constitutional_monarchy }
-		mutually_exclusive = { focus = MCK_abolish_the_monarchy }
-		relative_position_id = MCK_summon_the_privy_council
+		prerequisite = { focus = MAN_administrative_reform focus = MAN_summon_the_privy_council }
+		mutually_exclusive = { focus = MAN_a_constitutional_monarchy }
+		mutually_exclusive = { focus = MAN_abolish_the_monarchy }
+		relative_position_id = MAN_summon_the_privy_council
 		x = 1
 		y = 1
 		cost = 10
@@ -9101,7 +9101,7 @@ focus_tree = {
 			is_subject = no
 			has_government = neutrality
 			has_country_leader = {
-				character = MCK_aisin_gioro_puyi
+				character = MAN_aisin_gioro_puyi
 				ruling_only = yes
 			}
 		}
@@ -9115,7 +9115,7 @@ focus_tree = {
 				}
 				remove_country_leader_trait = puppet_emperor_tfv
 			}
-			MCK_aisin_gioro_puyi = {
+			MAN_aisin_gioro_puyi = {
 				remove_country_leader_role = { ideology = rexism }
 				add_country_leader_trait = emperors_ambition
 			}
@@ -9123,24 +9123,24 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.5
 			}
-			add_ideas = MCK_mandate_of_heaven
-			set_party_name = { ideology = neutrality name = MCK_house_of_aisin_gioro long_name = MCK_house_of_aisin_gioro_long }
-			set_party_name = { ideology = democratic name = MCK_republican_movement long_name = MCK_republican_movement_long }
-			set_party_name = { ideology = fascism name = MCK_national_populist_movement long_name = MCK_national_populist_movement_long }
-			set_party_name = { ideology = communism name = MCK_communist_oppositions long_name = MCK_communist_oppositions }
+			add_ideas = MAN_mandate_of_heaven
+			set_party_name = { ideology = neutrality name = MAN_house_of_aisin_gioro long_name = MAN_house_of_aisin_gioro_long }
+			set_party_name = { ideology = democratic name = MAN_republican_movement long_name = MAN_republican_movement_long }
+			set_party_name = { ideology = fascism name = MAN_national_populist_movement long_name = MAN_national_populist_movement_long }
+			set_party_name = { ideology = communism name = MAN_communist_oppositions long_name = MAN_communist_oppositions }
 			every_country = {
 				limit = {
-					has_country_flag = MCK_helping_independence
-					has_country_flag = MCK_demand_liberal_reform_flag
+					has_country_flag = MAN_helping_independence
+					has_country_flag = MAN_demand_liberal_reform_flag
 				}
-				add_opinion_modifier = { target = ROOT modifier = MCK_no_liberal }
-				add_opinion_modifier = { target = ROOT modifier = MCK_no_liberal_trade }
+				add_opinion_modifier = { target = ROOT modifier = MAN_no_liberal }
+				add_opinion_modifier = { target = ROOT modifier = MAN_no_liberal_trade }
 				country_event = { id = jap.246 }
 			}
-			custom_effect_tooltip = MCK_royal_guard_tradition_improvement_tt
+			custom_effect_tooltip = MAN_royal_guard_tradition_improvement_tt
 			hidden_effect = {
-				add_to_variable = { MCK_royal_guard_cap = 5 }
-				set_division_template_cap = { division_template = "Chin-wei-chün" division_cap = MCK_royal_guard_cap }
+				add_to_variable = { MAN_royal_guard_cap = 5 }
+				set_division_template_cap = { division_template = "Chin-wei-chün" division_cap = MAN_royal_guard_cap }
 				add_units_to_division_template = {			
 					template_name = "Chin-wei-chün"
 					regiments = { 
@@ -9153,12 +9153,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_abolish_the_monarchy
+		id = MAN_abolish_the_monarchy
 		icon = GFX_focus_rom_abdicate
-		prerequisite = { focus = MCK_administrative_reform }
-		mutually_exclusive = { focus = MCK_a_constitutional_monarchy }
-		mutually_exclusive = { focus = MCK_return_to_tradition }
-		relative_position_id = MCK_administrative_reform
+		prerequisite = { focus = MAN_administrative_reform }
+		mutually_exclusive = { focus = MAN_a_constitutional_monarchy }
+		mutually_exclusive = { focus = MAN_return_to_tradition }
+		relative_position_id = MAN_administrative_reform
 		x = 1
 		y = 1
 		cost = 10
@@ -9167,19 +9167,19 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			custom_effect_tooltip = MCK_royal_guard_become_republic_tt
+			custom_effect_tooltip = MAN_royal_guard_become_republic_tt
 			drop_cosmetic_tag = yes
-			set_cosmetic_tag = MCKREPUBLIC
-			retire_character = MCK_zheng_xiaoxu
-			retire_character = MCK_aisin_gioro_puyi
-			MCK_republic_parliament = {
+			set_cosmetic_tag = MANREPUBLIC
+			retire_character = MAN_zheng_xiaoxu
+			retire_character = MAN_aisin_gioro_puyi
+			MAN_republic_parliament = {
 				add_country_leader_role = {
 					promote_leader = yes 
 					country_leader = {
 						ideology = centrism
 						traits = { 
-							MCK_cutthroat_politics 
-							MCK_tradition_adherance 
+							MAN_cutthroat_politics 
+							MAN_tradition_adherance 
 						}
 					}
 				}
@@ -9188,8 +9188,8 @@ focus_tree = {
 					country_leader = {
 						ideology = liberalism
 						traits = { 
-							MCK_cutthroat_politics 
-							MCK_liberal_policies 
+							MAN_cutthroat_politics 
+							MAN_liberal_policies 
 						}
 					}
 				}
@@ -9198,8 +9198,8 @@ focus_tree = {
 					country_leader = {
 						ideology = marxism
 						traits = { 
-							MCK_cutthroat_politics 
-							MCK_socialist_policies 
+							MAN_cutthroat_politics 
+							MAN_socialist_policies 
 						}
 					}
 				}
@@ -9208,28 +9208,28 @@ focus_tree = {
 					country_leader = {
 						ideology = fascism_ideology
 						traits = { 
-							MCK_cutthroat_politics 
-							MCK_national_solidarity
+							MAN_cutthroat_politics 
+							MAN_national_solidarity
 						}
 					}
 				}
 			}
-			set_party_name = { ideology = democratic name = MCK_central_party long_name = MCK_central_party_long }
-			set_party_name = { ideology = democratic name = MCK_republican_party long_name = MCK_republican_party_long }
-			set_party_name = { ideology = fascism name = MCK_national_solidarity_coalition_party long_name = MCK_national_solidarity_coalition_party_long }
-			set_party_name = { ideology = democratic name = MCK_communist_party long_name = MCK_communist_party_long }
+			set_party_name = { ideology = democratic name = MAN_central_party long_name = MAN_central_party_long }
+			set_party_name = { ideology = democratic name = MAN_republican_party long_name = MAN_republican_party_long }
+			set_party_name = { ideology = fascism name = MAN_national_solidarity_coalition_party long_name = MAN_national_solidarity_coalition_party_long }
+			set_party_name = { ideology = democratic name = MAN_communist_party long_name = MAN_communist_party_long }
 			if = {
-				limit = { has_completed_focus = MCK_contact_qing_restorationists }
-				custom_effect_tooltip = MCK_betrayed_restorationists
+				limit = { has_completed_focus = MAN_contact_qing_restorationists }
+				custom_effect_tooltip = MAN_betrayed_restorationists
 				add_political_power = -500
 				add_stability = -0.3
 				add_war_support = -0.5
 				add_timed_idea = {
-					idea = MCK_restorationists_opposition
+					idea = MAN_restorationists_opposition
 					days = 500
 				}
 			}
-			custom_effect_tooltip = MCK_royal_guard_become_republic_tt
+			custom_effect_tooltip = MAN_royal_guard_become_republic_tt
 			hidden_effect = {
 				if = {
 					limit = { has_template = "Chin-wei-chün" }
@@ -9289,10 +9289,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_the_imperial_assembly
+		id = MAN_the_imperial_assembly
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		prerequisite = { focus = MCK_a_constitutional_monarchy }
-		relative_position_id = MCK_a_constitutional_monarchy
+		prerequisite = { focus = MAN_a_constitutional_monarchy }
+		relative_position_id = MAN_a_constitutional_monarchy
 		x = 0
 		y = 1
 		cost = 5
@@ -9305,7 +9305,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			set_country_flag = MCK_imperial_elections
+			set_country_flag = MAN_imperial_elections
 			if = {
 				limit = { has_government = neutrality }
 				set_politics = {
@@ -9322,15 +9322,15 @@ focus_tree = {
 					elections_allowed = yes
 				}
 			}
-			unlock_decision_category_tooltip = MCK_dcat_imperial_assembly
+			unlock_decision_category_tooltip = MAN_dcat_imperial_assembly
 		}
 	}
 
 	focus = {
-		id = MCK_devolved_administration
+		id = MAN_devolved_administration
 		icon = GFX_focus_generic_diplomatic_treaty
-		prerequisite = { focus = MCK_the_imperial_assembly }
-		relative_position_id = MCK_the_imperial_assembly
+		prerequisite = { focus = MAN_the_imperial_assembly }
+		relative_position_id = MAN_the_imperial_assembly
 		x = 0
 		y = 1
 		cost = 10
@@ -9343,15 +9343,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = MCK_devloved_administration
+			add_ideas = MAN_devloved_administration
 		}
 	}
 
 	focus = {
-		id = MCK_a_centralised_state
+		id = MAN_a_centralised_state
 		icon = GFX_focus_usa_voter_registration_act
-		prerequisite = { focus = MCK_return_to_tradition }
-		relative_position_id = MCK_return_to_tradition
+		prerequisite = { focus = MAN_return_to_tradition }
+		relative_position_id = MAN_return_to_tradition
 		available = { 
 			is_subject = no
 			has_government = neutrality
@@ -9362,28 +9362,28 @@ focus_tree = {
 
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = MCK_mandate_of_heaven
-				add_idea = MCK_mandate_of_heaven2
+				remove_idea = MAN_mandate_of_heaven
+				add_idea = MAN_mandate_of_heaven2
 			}			
-			unlock_decision_tooltip = MCK_add_maintenance
-			unlock_decision_tooltip = MCK_add_logistics
-			unlock_decision_tooltip = MCK_add_field_hospital
-			unlock_decision_tooltip = MCK_add_military_police
-			unlock_decision_tooltip = MCK_add_signal_company
-			set_variable = { MCK_royal_guard_support_added = 0 }
-			custom_effect_tooltip = MCK_royal_guard_tradition_improvement2_tt
+			unlock_decision_tooltip = MAN_add_maintenance
+			unlock_decision_tooltip = MAN_add_logistics
+			unlock_decision_tooltip = MAN_add_field_hospital
+			unlock_decision_tooltip = MAN_add_military_police
+			unlock_decision_tooltip = MAN_add_signal_company
+			set_variable = { MAN_royal_guard_support_added = 0 }
+			custom_effect_tooltip = MAN_royal_guard_tradition_improvement2_tt
 			hidden_effect = {
-				add_to_variable = { MCK_royal_guard_cap = 4 }
-				set_division_template_cap = { division_template = "Chin-wei-chün" division_cap = MCK_royal_guard_cap }
+				add_to_variable = { MAN_royal_guard_cap = 4 }
+				set_division_template_cap = { division_template = "Chin-wei-chün" division_cap = MAN_royal_guard_cap }
 			}
 		}
 	}
 
 	focus = {
-		id = MCK_revere_the_emperor
+		id = MAN_revere_the_emperor
 		icon = GFX_focus_generic_little_entente
-		prerequisite = { focus = MCK_a_centralised_state }
-		relative_position_id = MCK_a_centralised_state
+		prerequisite = { focus = MAN_a_centralised_state }
+		relative_position_id = MAN_a_centralised_state
 		x = 0
 		y = 1
 		cost = 10
@@ -9391,7 +9391,7 @@ focus_tree = {
 			is_subject = no
 			has_government = neutrality
 			has_country_leader = {
-				character = MCK_aisin_gioro_puyi
+				character = MAN_aisin_gioro_puyi
 				ruling_only = yes
 			}
 		}
@@ -9401,8 +9401,8 @@ focus_tree = {
 				limit = { has_country_leader_with_trait = popular_figurehead }
 				remove_country_leader_trait = popular_figurehead
 			}
-			add_country_leader_trait = MCK_son_of_heaven
-			MCK_aisin_gioro_puyi = {
+			add_country_leader_trait = MAN_son_of_heaven
+			MAN_aisin_gioro_puyi = {
 				add_field_marshal_role = {
 					traits = { harsh_leader politically_connected }
 					skill = 1
@@ -9416,17 +9416,17 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_a_republic_in_manchuria
+		id = MAN_a_republic_in_manchuria
 		icon = GFX_goal_generic_national_unity
-		prerequisite = { focus = MCK_abolish_the_monarchy }
-		relative_position_id = MCK_abolish_the_monarchy
+		prerequisite = { focus = MAN_abolish_the_monarchy }
+		relative_position_id = MAN_abolish_the_monarchy
 		x = 0
 		y = 1
 		cost = 5
 		available = { is_subject = no }
 
 		completion_reward = {
-			set_country_flag = MCK_manchurian_republic_elections
+			set_country_flag = MAN_manchurian_republic_elections
 			if = {
 				limit = { has_government = neutrality }
 				set_politics = {
@@ -9459,18 +9459,18 @@ focus_tree = {
 					elections_allowed = yes
 				}
 			}
-			unlock_decision_tooltip = MCK_neutrality_campaign
-			unlock_decision_tooltip = MCK_democratic_campaign
-			unlock_decision_tooltip = MCK_communism_campaign
-			unlock_decision_tooltip = MCK_fascism_campaign
+			unlock_decision_tooltip = MAN_neutrality_campaign
+			unlock_decision_tooltip = MAN_democratic_campaign
+			unlock_decision_tooltip = MAN_communism_campaign
+			unlock_decision_tooltip = MAN_fascism_campaign
 		}
 	}
 	
 	focus = {
-		id = MCK_a_self_sufficient_army
+		id = MAN_a_self_sufficient_army
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = MCK_acquire_heavy_armaments }
-		relative_position_id = MCK_acquire_heavy_armaments
+		prerequisite = { focus = MAN_acquire_heavy_armaments }
+		relative_position_id = MAN_acquire_heavy_armaments
 		available = {
 			has_army_manpower = { size > 499999 }
 		}
@@ -9492,10 +9492,10 @@ focus_tree = {
 			air_experience = 15
 			if = {
 				limit = {
-					has_idea = MCK_reliant_idea
+					has_idea = MAN_reliant_idea
 				}
-				remove_ideas = MCK_reliant_idea
-				clr_country_flag = MCK_reliant_flag
+				remove_ideas = MAN_reliant_idea
+				clr_country_flag = MAN_reliant_flag
 			}
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
@@ -9506,30 +9506,30 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = MCK_fotify_heilungkiang_border
+		id = MAN_fotify_heilungkiang_border
 		icon = GFX_focus_spr_crush_the_revolution
-		prerequisite = { focus = MCK_a_self_sufficient_army }
-		relative_position_id = MCK_a_self_sufficient_army
+		prerequisite = { focus = MAN_a_self_sufficient_army }
+		relative_position_id = MAN_a_self_sufficient_army
 		available = {
 		}
 		x = 1
 		y = 1
 		cost = 10
 		completion_reward = {
-			add_ideas = MCK_counter_insurgency_experience
+			add_ideas = MAN_counter_insurgency_experience
 			#if = {
 			#	limit = {
-			#		has_idea = MCK_dongbei_partisan
+			#		has_idea = MAN_dongbei_partisan
 			#	}
 			#	army_experience = 15
-			#	remove_ideas = MCK_dongbei_partisan
+			#	remove_ideas = MAN_dongbei_partisan
 			#}
 			#if = {
 			#	limit = {
-			#		has_idea = MCK_dongbei_partisan_pacified
+			#		has_idea = MAN_dongbei_partisan_pacified
 			#	}
 			#	army_experience = 10
-			#	remove_ideas = MCK_dongbei_partisan_pacified
+			#	remove_ideas = MAN_dongbei_partisan_pacified
 			#}
 			#if = {
 			#	limit = {
@@ -9542,10 +9542,10 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_acquire_kanto_shu
+		id = MAN_acquire_kanto_shu
 		icon = GFX_goal_generic_improve_relations
-		prerequisite = { focus = MCK_a_self_sufficient_army }
-		relative_position_id = MCK_a_self_sufficient_army
+		prerequisite = { focus = MAN_a_self_sufficient_army }
+		relative_position_id = MAN_a_self_sufficient_army
 		available = {
 			is_subject = yes
 			OVERLORD = {
@@ -9564,47 +9564,47 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_send_cadets_to_japan
+		id = MAN_send_cadets_to_japan
 		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = MCK_a_self_sufficient_army }
-		relative_position_id = MCK_a_self_sufficient_army
+		prerequisite = { focus = MAN_a_self_sufficient_army }
+		relative_position_id = MAN_a_self_sufficient_army
 		x = 0
 		y = 2
 		cost = 10
 		available = {
 			is_subject = yes
 			NOT = {
-				has_idea = MCK_reliant_idea
+				has_idea = MAN_reliant_idea
 			}
 		}
 
 		completion_reward = {
 			army_experience = 100
-			add_ideas = MCK_cadets_in_jap_academy
+			add_ideas = MAN_cadets_in_jap_academy
 		}
 	}
 
 	focus = {
-		id = MCK_reform_command_structure
+		id = MAN_reform_command_structure
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = MCK_send_cadets_to_japan }
-		relative_position_id = MCK_send_cadets_to_japan
+		prerequisite = { focus = MAN_send_cadets_to_japan }
+		relative_position_id = MAN_send_cadets_to_japan
 		x = 1
 		y = 1
 		cost = 10
 
 		completion_reward = {
 			add_command_power = 50
-			add_ideas = MCK_efficient_command_structure
+			add_ideas = MAN_efficient_command_structure
 		}
 	}
 
 	focus = {
-		id = MCK_naval_expansion_permission
+		id = MAN_naval_expansion_permission
 		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = MCK_send_cadets_to_japan }
-		prerequisite = { focus = MCK_acquire_kanto_shu }
-		relative_position_id = MCK_send_cadets_to_japan
+		prerequisite = { focus = MAN_send_cadets_to_japan }
+		prerequisite = { focus = MAN_acquire_kanto_shu }
+		relative_position_id = MAN_send_cadets_to_japan
 		available = {
 			is_subject = yes
 		}
@@ -9620,15 +9620,15 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_regulate_opium_trade
+		id = MAN_regulate_opium_trade
 		icon = GFX_goal_generic_forceful_treaty
-		relative_position_id = MCK_destroy_opium_plantations
-		mutually_exclusive = { focus = MCK_destroy_opium_plantations }
+		relative_position_id = MAN_destroy_opium_plantations
+		mutually_exclusive = { focus = MAN_destroy_opium_plantations }
 		available = {
 			is_subject = no
 			OR = {
-				has_idea = MCK_opium_plantation
-				has_idea = MCK_opium_plantation2
+				has_idea = MAN_opium_plantation
+				has_idea = MAN_opium_plantation2
 			}
 		}
 		x = -2
@@ -9642,13 +9642,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MCK_contest_north_china_leadership
+		id = MAN_contest_north_china_leadership
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = MCK_increase_japanisation }
-		prerequisite = { focus = MCK_chinese_labour_management_department }
-		prerequisite = { focus = MCK_improve_railway_connection }
-		prerequisite = { focus = MCK_acquire_kanto_shu }
-		relative_position_id = MCK_chinese_labour_management_department
+		prerequisite = { focus = MAN_increase_japanisation }
+		prerequisite = { focus = MAN_chinese_labour_management_department }
+		prerequisite = { focus = MAN_improve_railway_connection }
+		prerequisite = { focus = MAN_acquire_kanto_shu }
+		relative_position_id = MAN_chinese_labour_management_department
 		available = {
 			is_subject = yes
 			has_army_manpower = { size > 1249999 }

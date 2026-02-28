@@ -14,7 +14,7 @@ focus_tree = {
 		
 		modifier = {
 			add = 10
-			has_country_flag = MCK_kwantung_terr_flag
+			has_country_flag = MAN_kwantung_terr_flag
 		}
 	}
 	
@@ -30,12 +30,12 @@ focus_tree = {
 	focus = {
 		id = KTA_sweep_out_the_bandits
 		icon = GFX_focus_eng_move_to_secure_the_dominions
-		#prerequisite = { focus = MCK_manei }
-		#relative_position_id = MCK_manei
+		#prerequisite = { focus = MAN_manei }
+		#relative_position_id = MAN_manei
 		bypass = {
 			NOT = {
 				any_owned_state = {
-					check_variable = { global.MCK_resistance_strength@This > 0 }
+					check_variable = { global.MAN_resistance_strength@This > 0 }
 				}
 			}
 		}
@@ -48,31 +48,31 @@ focus_tree = {
 			add_political_power = 500
 			if = {
 				limit = {
-					has_idea = MCK_bear_the_burden_idea
+					has_idea = MAN_bear_the_burden_idea
 				}
 				swap_ideas = {
-					remove_idea = MCK_bear_the_burden_idea
-					add_idea = MCK_pacification_campaign
+					remove_idea = MAN_bear_the_burden_idea
+					add_idea = MAN_pacification_campaign
 				}
 			}else_if = {
 				limit = {
-					has_idea = MCK_domestic_focus
+					has_idea = MAN_domestic_focus
 				}
 				swap_ideas = {
-					remove_idea = MCK_domestic_focus
-					add_idea = MCK_pacification_campaign
+					remove_idea = MAN_domestic_focus
+					add_idea = MAN_pacification_campaign
 				}
 			}else = {
-				add_ideas = MCK_pacification_campaign
+				add_ideas = MAN_pacification_campaign
 			}
 			every_owned_state = {
 				limit = {
 					is_controlled_by = ROOT
-					check_variable = { global.MCK_resistance_strength@This > 0 }
+					check_variable = { global.MAN_resistance_strength@This > 0 }
 				}
-				set_temp_variable = { MCK_resistance_strength_change = -35 }
-				MCK_change_resistance_strength = yes
-				MCK_update_local_bandits_modifier = yes
+				set_temp_variable = { MAN_resistance_strength_change = -35 }
+				MAN_change_resistance_strength = yes
+				MAN_update_local_bandits_modifier = yes
 			}
 		}
 	}
@@ -83,7 +83,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_sweep_out_the_bandits }
 		relative_position_id = KTA_sweep_out_the_bandits
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -94,30 +94,30 @@ focus_tree = {
 			add_command_power = 150
 			add_war_support = 0.1
 			if = {
-				limit = { has_idea = MCK_army_academy }
+				limit = { has_idea = MAN_army_academy }
 				swap_ideas = {
-					remove_idea = MCK_army_academy
-					add_idea = MCK_army_academy_indoctrinated
+					remove_idea = MAN_army_academy
+					add_idea = MAN_army_academy_indoctrinated
 				}
 			}else_if = {
-				limit = { has_idea = MCK_army_academy_field_medic }
+				limit = { has_idea = MAN_army_academy_field_medic }
 				swap_ideas = {
-					remove_idea = MCK_army_academy_field_medic
-					add_idea = MCK_army_academy_indoctrinated
+					remove_idea = MAN_army_academy_field_medic
+					add_idea = MAN_army_academy_indoctrinated
 				}
 			}else_if = {
-				limit = { has_idea = MCK_improved_military_academies }
+				limit = { has_idea = MAN_improved_military_academies }
 				swap_ideas = {
-					remove_idea = MCK_improved_military_academies
-					add_idea = MCK_army_academy_indoctrinated
+					remove_idea = MAN_improved_military_academies
+					add_idea = MAN_army_academy_indoctrinated
 				}
 			}else_if = {
-				limit = { has_idea = MCK_improved_military_academies_hospital }
+				limit = { has_idea = MAN_improved_military_academies_hospital }
 				swap_ideas = {
-					remove_idea = MCK_improved_military_academies_hospital
-					add_idea = MCK_army_academy_indoctrinated
+					remove_idea = MAN_improved_military_academies_hospital
+					add_idea = MAN_army_academy_indoctrinated
 				}
-			}else = { add_ideas = MCK_army_academy_indoctrinated }
+			}else = { add_ideas = MAN_army_academy_indoctrinated }
 		}
 	}
 	
@@ -127,7 +127,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_sweep_out_the_bandits }
 		relative_position_id = KTA_sweep_out_the_bandits
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 2
 		y = 1
@@ -177,12 +177,12 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_idea = MCK_hoankyoku }
+				limit = { has_idea = MAN_hoankyoku }
 				swap_ideas = {
-					remove_idea = MCK_hoankyoku
-					add_idea = MCK_kantogun_intelligence_agency
+					remove_idea = MAN_hoankyoku
+					add_idea = MAN_kantogun_intelligence_agency
 				}
-			}else = { add_ideas = MCK_kantogun_intelligence_agency }
+			}else = { add_ideas = MAN_kantogun_intelligence_agency }
 		}
 	}
 	
@@ -192,7 +192,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_sweep_out_the_bandits }
 		relative_position_id = KTA_sweep_out_the_bandits
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -2
 		y = 1
@@ -200,12 +200,12 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			if = {
-				limit = { has_idea = MCK_manei }
+				limit = { has_idea = MAN_manei }
 				swap_ideas = {
-					remove_idea = MCK_manei
-					add_idea = MCK_state_controlled_media
+					remove_idea = MAN_manei
+					add_idea = MAN_state_controlled_media
 				}
-			}else = { add_ideas = MCK_state_controlled_media }
+			}else = { add_ideas = MAN_state_controlled_media }
 		}
 	}
 	
@@ -216,7 +216,7 @@ focus_tree = {
 		relative_position_id = KTA_academy_indoctrination
 		available = { has_war = no }
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 3
 		y = 1
@@ -438,7 +438,7 @@ focus_tree = {
 			NOT = { has_war_with = SOV }
 		}
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -496,7 +496,7 @@ focus_tree = {
 			has_civil_war = no
 		}
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 4
 		y = 0
@@ -579,7 +579,7 @@ focus_tree = {
 		available = { 
 		}
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -1
 		y = 1
@@ -592,7 +592,7 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						715 = { NOT = { has_state_flag = MCK_715_aluminium_flag1 }}
+						715 = { NOT = { has_state_flag = MAN_715_aluminium_flag1 }}
 					}
 					715 = { 
 						add_resource = {
@@ -602,7 +602,7 @@ focus_tree = {
 					}
 				}else_if = {
 					limit = {
-						715 = { NOT = { has_state_flag = MCK_715_aluminium_flag2 }}
+						715 = { NOT = { has_state_flag = MAN_715_aluminium_flag2 }}
 					}
 					715 = { 
 						add_resource = {
@@ -619,7 +619,7 @@ focus_tree = {
 					}
 				}
 			}
-			add_ideas = MCK_resources_exploitation
+			add_ideas = MAN_resources_exploitation
 			every_controlled_state = {
 				limit = {
 					OR = {
@@ -653,7 +653,7 @@ focus_tree = {
 		available = { 
 		}
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -662,21 +662,21 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					has_idea = MCK_opium_plantation
+					has_idea = MAN_opium_plantation
 				}
 				swap_ideas = {
-					remove_idea = MCK_opium_plantation
-					add_idea = MCK_ahen_profit
+					remove_idea = MAN_opium_plantation
+					add_idea = MAN_ahen_profit
 				}
 			}else_if = {
 				limit = {
-					has_idea = MCK_opium_plantation2
+					has_idea = MAN_opium_plantation2
 				}
 				swap_ideas = {
-					remove_idea = MCK_opium_plantation2
-					add_idea = MCK_ahen_profit
+					remove_idea = MAN_opium_plantation2
+					add_idea = MAN_ahen_profit
 				}
-			}else = { add_ideas = MCK_ahen_profit }
+			}else = { add_ideas = MAN_ahen_profit }
 		}
 	}
 	
@@ -689,7 +689,7 @@ focus_tree = {
 		available = { 
 		}
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -1
 		y = 1
@@ -719,7 +719,7 @@ focus_tree = {
 		available = { 
 		}
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 3
 		y = 1
@@ -741,7 +741,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_ideas = MCK_austerity_measures
+			add_ideas = MAN_austerity_measures
 		}
 	}
 	
@@ -754,7 +754,7 @@ focus_tree = {
 		available = { 
 		}
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -800,7 +800,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_expand_military_production }
 		relative_position_id = KTA_expand_military_production
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -857,7 +857,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_academy_indoctrination }
 		relative_position_id = KTA_control_the_media
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -865,7 +865,7 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			add_manpower = 10000
-			add_ideas = MCK_kokudokaifuku_mobilisation_idea
+			add_ideas = MAN_kokudokaifuku_mobilisation_idea
 		}
 	}
 	
@@ -875,7 +875,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_kokudokaifuku_mobilisation }
 		relative_position_id = KTA_kokudokaifuku_mobilisation
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 2
 		y = 2
@@ -885,7 +885,7 @@ focus_tree = {
 			custom_effect_tooltip = kamikaze_focus_tooltip
 			custom_effect_tooltip = JAP_strengthen_the_divine_wind_effect
 			hidden_effect = { set_technology = { suicide_craft = 1 } }
-			add_ideas = MCK_kesshitai
+			add_ideas = MAN_kesshitai
 		}
 	}
 	
@@ -896,7 +896,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_kokudokaifuku_mobilisation }
 		relative_position_id = KTA_impose_austerity_measures
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -942,7 +942,7 @@ focus_tree = {
 				}
 				add_ideas = war_economy
 			}
-			add_ideas = MCK_military_prioritisation
+			add_ideas = MAN_military_prioritisation
 		}
 	}
 	
@@ -952,7 +952,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_military_prioritisation }
 		relative_position_id = KTA_military_prioritisation
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -1
 		y = 1
@@ -978,7 +978,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_small_arms_research }
 		relative_position_id = KTA_small_arms_research
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -1014,7 +1014,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_military_prioritisation }
 		relative_position_id = KTA_military_prioritisation
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -1076,7 +1076,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_sensha_experiment focus = KTA_expand_naval_capacity }
 		relative_position_id = KTA_sensha_experiment
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -1130,7 +1130,7 @@ focus_tree = {
 		#prerequisite = { focus = KTA_sensha_experiment focus = KTA_expand_naval_capacity }
 		#relative_position_id = KTA_sensha_experiment
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 16
 		y = 0
@@ -1138,7 +1138,7 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			add_political_power = 250
-			add_ideas = MCK_martial_law
+			add_ideas = MAN_martial_law
 		}
 	}
 	
@@ -1149,7 +1149,7 @@ focus_tree = {
 		#prerequisite = { focus = KTA_sensha_experiment focus = KTA_expand_naval_capacity }
 		#relative_position_id = KTA_sensha_experiment
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 20
 		y = 0
@@ -1186,7 +1186,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_declare_martial_law }
 		relative_position_id = KTA_declare_martial_law
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -1248,7 +1248,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_declare_martial_law }
 		relative_position_id = KTA_declare_martial_law
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -1
 		y = 1
@@ -1294,7 +1294,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_nationalise_industries }
 		relative_position_id = KTA_takeover_mantetsu
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -1347,7 +1347,7 @@ focus_tree = {
 				}
 			}
 			add_ideas = closed_economy
-			add_ideas = MCK_resources_for_the_military
+			add_ideas = MAN_resources_for_the_military
 		}
 	}
 	
@@ -1358,7 +1358,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_divert_resources_for_the_military }
 		relative_position_id = KTA_divert_resources_for_the_military
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -1381,7 +1381,7 @@ focus_tree = {
 				}
 			}
 			add_timed_idea = {
-				idea = MCK_increase_military_production
+				idea = MAN_increase_military_production
 				days = 500
 			}
 		}
@@ -1394,7 +1394,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_business_as_usual }
 		relative_position_id = KTA_business_as_usual
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -1446,7 +1446,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_ideas = MCK_zaibatsu_influence
+			add_ideas = MAN_zaibatsu_influence
 		}
 	}
 	
@@ -1457,7 +1457,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_allow_zaibatsu_expansion }
 		relative_position_id = KTA_allow_zaibatsu_expansion
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 2
 		y = 1
@@ -1465,8 +1465,8 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = MCK_zaibatsu_influence
-				add_idea = MCK_zaibatsu_influence_research
+				remove_idea = MAN_zaibatsu_influence
+				add_idea = MAN_zaibatsu_influence_research
 			}
 			if = {
 				limit = {
@@ -1485,7 +1485,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_allow_zaibatsu_expansion }
 		relative_position_id = KTA_allow_zaibatsu_expansion
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -1798,7 +1798,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_rural_factories }
 		relative_position_id = KTA_rural_factories
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -1896,15 +1896,15 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_idea = MCK_zaibatsu_influence_research }
+				limit = { has_idea = MAN_zaibatsu_influence_research }
 				swap_ideas = {
-					remove_idea = MCK_zaibatsu_influence_research
-					add_idea = MCK_zaibatsu_influence_research2
+					remove_idea = MAN_zaibatsu_influence_research
+					add_idea = MAN_zaibatsu_influence_research2
 				}
 			}else = {
 				swap_ideas = {
-					remove_idea = MCK_zaibatsu_influence
-					add_idea = MCK_zaibatsu_influence2
+					remove_idea = MAN_zaibatsu_influence
+					add_idea = MAN_zaibatsu_influence2
 				}
 			}
 		}
@@ -1917,16 +1917,16 @@ focus_tree = {
 		prerequisite = { focus = KTA_cheap_local_labour focus = KTA_prepare_for_war }
 		relative_position_id = KTA_prepare_for_war
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 2
 		y = 1
 		cost = 5
 		search_filters = {  }
 		completion_reward = {
-			#add_ideas = MCK_plan_for_the_restoration_idea
+			#add_ideas = MAN_plan_for_the_restoration_idea
 			add_dynamic_modifier = {
-				modifier = MCK_plan_for_the_restoration_dm
+				modifier = MAN_plan_for_the_restoration_dm
 			}
 			add_doctrine_cost_reduction = {
 				uses = 1
@@ -1954,14 +1954,14 @@ focus_tree = {
 		prerequisite = { focus = KTA_plan_for_the_restoration }
 		relative_position_id = KTA_plan_for_the_restoration
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -6
 		y = 1
 		cost = 5
 		search_filters = {  }
 		completion_reward = {
-			unlock_decision_tooltip = MCK_conquer_china
+			unlock_decision_tooltip = MAN_conquer_china
 			add_stability = -0.05
 			add_war_support = -0.05
 			add_political_power = -50
@@ -1999,7 +1999,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_plan_for_the_restoration }
 		relative_position_id = KTA_plan_for_the_restoration
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -1
 		y = 1
@@ -2015,7 +2015,7 @@ focus_tree = {
 				category = naval_doctrine
 			}
 			every_unit_leader = {
-				limit = { has_character_flag = MCK_japanese_refugee }
+				limit = { has_character_flag = MAN_japanese_refugee }
 				add_timed_unit_leader_trait = {
 					trait = trait_SOV_determined
 					days = 1800
@@ -2031,7 +2031,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_conquer_china_first }
 		relative_position_id = KTA_conquer_china_first
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -2
 		y = 1
@@ -2079,7 +2079,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_mountain_warfare }
 		relative_position_id = KTA_mountain_warfare
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -2112,24 +2112,24 @@ focus_tree = {
 						any_neighbor_state = { OWNER = { is_chinese_nations_w_HYQ = yes }}
 					}
 					prioritize = { 610 }
-					set_temp_variable = { ROOT.MCK_improve_logistics_state = THIS.id }
+					set_temp_variable = { ROOT.MAN_improve_logistics_state = THIS.id }
 				}
 				if = {
 					limit = {
 						can_build_railway = {
 							start_state = ROOT.capital
-							target_state = var:MCK_improve_logistics_state
+							target_state = var:MAN_improve_logistics_state
 							build_only_on_allied = yes
 						}
 					}
 					build_railway = {				
 						start_state = ROOT.capital
-						target_state = var:MCK_improve_logistics_state
+						target_state = var:MAN_improve_logistics_state
 						level = 2
 						build_only_on_allied = yes
 					}
 				}
-				var:MCK_improve_logistics_state = {
+				var:MAN_improve_logistics_state = {
 					add_building_construction = {
 						type = infrastructure
 						level = 1
@@ -2188,7 +2188,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_improve_logistics }
 		relative_position_id = KTA_improve_logistics
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -2225,7 +2225,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_conquer_china_first }
 		relative_position_id = KTA_conquer_china_first
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -2245,7 +2245,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_reform_training_curriculum }
 		relative_position_id = KTA_reform_training_curriculum
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -1
 		y = 1
@@ -2255,7 +2255,7 @@ focus_tree = {
 			every_other_country = {
 				limit = { is_chinese_nations_w_HYQ = yes }
 				ROOT = {
-					add_relation_modifier = { modifier = MCK_burn_to_ash }
+					add_relation_modifier = { modifier = MAN_burn_to_ash }
 				}
 			}
 		}
@@ -2268,7 +2268,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_reform_training_curriculum }
 		relative_position_id = KTA_reform_training_curriculum
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -2278,7 +2278,7 @@ focus_tree = {
 			every_other_country = {
 				limit = { is_chinese_nations_w_HYQ = yes }
 				ROOT = {
-					add_relation_modifier = { modifier = MCK_seek_collaborators }
+					add_relation_modifier = { modifier = MAN_seek_collaborators }
 				}
 			}
 		}
@@ -2291,7 +2291,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_burn_to_ash_strategy focus = KTA_seek_collaborators }
 		relative_position_id = KTA_burn_to_ash_strategy
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -2318,7 +2318,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_burn_to_ash_strategy  }
 		relative_position_id = KTA_burn_to_ash_strategy
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 2
@@ -2476,7 +2476,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_seek_collaborators  }
 		relative_position_id = KTA_seek_collaborators
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 2
@@ -2497,7 +2497,7 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			unlock_decision_tooltip = MCK_expand_collaborator_administration
+			unlock_decision_tooltip = MAN_expand_collaborator_administration
 			every_owned_state = {
 				limit = {
 					NOT = { is_core_of = ROOT }
@@ -2515,7 +2515,7 @@ focus_tree = {
 			}
 			puppet = WJW
 			WJW = {
-				add_ideas = MCK_subservient_to_hsinking
+				add_ideas = MAN_subservient_to_hsinking
 			}
 			hidden_effect = {
 				every_other_country = {
@@ -2542,7 +2542,7 @@ focus_tree = {
 			every_other_country = {
 				limit = { is_chinese_nations_w_HYQ = yes }
 				WJW = {
-					add_relation_modifier = { modifier = MCK_seek_collaborators_WJW }
+					add_relation_modifier = { modifier = MAN_seek_collaborators_WJW }
 				}
 			}
 		}
@@ -2555,7 +2555,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_conquer_china_first focus = KTA_return_home }
 		relative_position_id = KTA_conquer_china_first
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 3
 		y = 1
@@ -2582,7 +2582,7 @@ focus_tree = {
 		will_lead_to_war_with = KOR
 		completion_reward = {
 			add_timed_idea = {
-				idea = MCK_take_korea_idea
+				idea = MAN_take_korea_idea
 				days = 100
 			}
 			every_other_country = {
@@ -2611,7 +2611,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_return_home }
 		relative_position_id = KTA_return_home
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -2620,7 +2620,7 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			add_ideas = MCK_paratrooper_focus
+			add_ideas = MAN_paratrooper_focus
 			#add_to_variable = { KTA_paratrooper_attack_factor = 0.05 }
 			#dd_to_variable = { KTA_paratrooper_defence_factor = 0.05 }
 			#add_to_variable = { KTA_paratrooper_speed_factor = 0.05 }
@@ -2679,7 +2679,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_return_home }
 		relative_position_id = KTA_return_home
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 5
 		y = 1
@@ -2688,7 +2688,7 @@ focus_tree = {
 		}
 		search_filters = {  }
 		completion_reward = {
-			add_ideas = MCK_marine_focus
+			add_ideas = MAN_marine_focus
 			#add_to_variable = { KTA_marine_attack_factor = 0.1 }
 			custom_effect_tooltip = KTA_across_the_sea_dm_tt
 			add_to_variable = { KTA_extra_marine_supply_grace = 100 }
@@ -2742,7 +2742,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_return_home }
 		relative_position_id = KTA_across_the_sea
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 2
 		y = 0
@@ -2752,7 +2752,7 @@ focus_tree = {
 		search_filters = {  }
 		completion_reward = {
 			add_political_power = 150
-			custom_effect_tooltip = MCK_infiltrate_home_islands_tt
+			custom_effect_tooltip = MAN_infiltrate_home_islands_tt
 			set_global_flag = KTA_infiltrated_home_island
 			division_template = {
 				name = "Aikokusha"
@@ -2774,7 +2774,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_through_the_air }
 		relative_position_id = KTA_through_the_air
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 2
 		y = 1
@@ -2809,7 +2809,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_air_academy }
 		relative_position_id = KTA_air_academy
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -1
 		y = 1
@@ -2851,7 +2851,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_air_academy focus = KTA_across_the_sea }
 		relative_position_id = KTA_air_academy
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -2896,7 +2896,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_air_academy }
 		relative_position_id = KTA_air_academy
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 2
@@ -2961,7 +2961,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_through_the_air }
 		relative_position_id = KTA_through_the_air
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -1
 		y = 1
@@ -3039,7 +3039,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_new_plane_assembly_plants }
 		relative_position_id = KTA_new_plane_assembly_plants
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -3079,7 +3079,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_study_radar_tech }
 		relative_position_id = KTA_air_academy
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -2
 		y = 2
@@ -3108,7 +3108,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_across_the_sea }
 		relative_position_id = KTA_across_the_sea
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -1
 		y = 1
@@ -3144,7 +3144,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_expand_nslf }
 		relative_position_id = KTA_expand_nslf
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 2
@@ -3179,7 +3179,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_across_the_sea }
 		relative_position_id = KTA_across_the_sea
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -3233,7 +3233,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_ideas = MCK_special_ship_repair_team
+			add_ideas = MAN_special_ship_repair_team
 		}
 	}
 	
@@ -3244,7 +3244,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_maintain_our_fleet }
 		relative_position_id = KTA_maintain_our_fleet
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -3289,7 +3289,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_improve_naval_coordination }
 		relative_position_id = KTA_improve_naval_coordination
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -3328,7 +3328,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_convoy_tactics_innovation focus = KTA_aeronautical_innovation  focus = KTA_relocate_chinese_industry focus = KTA_establish_collaborationist_government }
 		relative_position_id = KTA_return_home
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 5
@@ -3338,7 +3338,7 @@ focus_tree = {
 		search_filters = {  }
 		will_lead_to_war_with = JAP
 		completion_reward = {
-			unlock_decision_tooltip = MCK_return_home
+			unlock_decision_tooltip = MAN_return_home
 			add_war_support = 0.5
 			add_stability = 0.3
 			add_political_power = 150
@@ -3353,7 +3353,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_retake_the_home_islands }
 		relative_position_id = KTA_retake_the_home_islands
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -3383,7 +3383,7 @@ focus_tree = {
 			}
 			every_character = {
 				limit = {
-					has_character_flag = MCK_japanese_refugee
+					has_character_flag = MAN_japanese_refugee
 				}
 				set_nationality = JAP
 			}
@@ -3394,7 +3394,7 @@ focus_tree = {
 				navy_ratio = 0.5     	
 				air_ratio = 0.5     
 				keep_unit_leaders_trigger = { 
-					NOT = { has_character_flag = MCK_japanese_refugee }
+					NOT = { has_character_flag = MAN_japanese_refugee }
 				}
 			}
 			JAP = {
@@ -3457,7 +3457,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_reinstate_the_empire }
 		relative_position_id = KTA_reinstate_the_empire
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 0
 		y = 1
@@ -3473,11 +3473,11 @@ focus_tree = {
 		}
 		search_filters = {  }
 		select_effect = {
-			add_ideas = MCK_support_the_reconstruction_idea
+			add_ideas = MAN_support_the_reconstruction_idea
 			JAP = { country_event = { id = jap.273 }}
 		}
 		completion_reward = {
-			remove_ideas = MCK_support_the_reconstruction_idea
+			remove_ideas = MAN_support_the_reconstruction_idea
 			JAP = {
 				random_owned_controlled_state = {
 					limit = {
@@ -3748,7 +3748,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_support_the_reconstruction }
 		relative_position_id = KTA_support_the_reconstruction
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = -1
 		y = 1
@@ -3775,11 +3775,11 @@ focus_tree = {
 				JAP = { puppet = PREV }
 			}
 			if = {
-				limit = { WJW = { has_idea = MCK_subservient_to_hsinking }}
+				limit = { WJW = { has_idea = MAN_subservient_to_hsinking }}
 				WJW = {
 					swap_ideas = {
-						remove_idea = MCK_subservient_to_hsinking
-						add_idea = MCK_subservient_to_tokyo
+						remove_idea = MAN_subservient_to_hsinking
+						add_idea = MAN_subservient_to_tokyo
 					}
 				}
 			}
@@ -3793,7 +3793,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_support_the_reconstruction }
 		relative_position_id = KTA_support_the_reconstruction
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -3818,7 +3818,7 @@ focus_tree = {
 		prerequisite = { focus = KTA_allow_zaibatsu_expansion focus = KTA_nationalise_industries }
 		relative_position_id = KTA_nationalise_industries
 		#bypass = {
-		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#	NOT = { has_idea = MAN_japanese_immigrants }
 		#}
 		x = 1
 		y = 1
@@ -3847,12 +3847,12 @@ focus_tree = {
 				}
 			}
 			if = {
-				limit = { has_idea = MCK_manchurian_industrial_development_company }
+				limit = { has_idea = MAN_manchurian_industrial_development_company }
 				swap_ideas = {
-					remove_idea = MCK_manchurian_industrial_development_company
-					add_idea = MCK_mangyo_kta
+					remove_idea = MAN_manchurian_industrial_development_company
+					add_idea = MAN_mangyo_kta
 				}
-			}else = { add_ideas = MCK_mangyo_kta }
+			}else = { add_ideas = MAN_mangyo_kta }
 		}
 	}
 	

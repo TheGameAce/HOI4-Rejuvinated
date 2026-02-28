@@ -1,74 +1,363 @@
 ﻿capital = 328
+set_country_flag = JAP_puppet
+set_country_flag = {
+	flag = MAN_jap_awareness_flag
+	value = 0
+}
+set_variable = { MAN_sabotage_timer_infra = 30 }
+set_variable = { MAN_pacify_iw_req = 250 }
+set_variable = { MAN_japanese_immigrants_number = 400 }
+set_variable = { global.MAN_secured_state_num = 0 }
+set_variable = { global.MAN_najua_monthly_growth = 2 }
+set_stability = 0.15
+
+add_political_power = 10
+add_command_power = 10
+
+add_equipment_to_stockpile = { type = infantry_equipment amount = 500 producer = ROOT }
+
+add_dynamic_modifier = { modifier = jap_aware_2 }
+add_dynamic_modifier = { modifier = jap_aware_3 }
+
+961 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+	add_dynamic_modifier = { modifier = MAN_najua_presence }
+}
+
+610 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+715 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+964 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+716 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+965 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+976 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+971 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+610 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+975 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+715 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+961 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+974 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+328 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+714 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+950 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+936 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+761 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+717 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+963 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+973 = {
+	force_enable_resistance = {
+		clear = no
+		occupier = MAN
+	}
+}
+
+recruit_character = MAN_aisin_gioro_puyi
+recruit_character = MAN_zheng_xiaoxu
+recruit_character = MAN_zhang_jinghui
+recruit_character = MAN_liu_enge
+recruit_character = MAN_zhang_yanqing
+recruit_character = MAN_zang_shiyi
+recruit_character = MAN_xi_qia
+recruit_character = MAN_zhang_haipeng
+recruit_character = MAN_yu_zhishan
+recruit_character = MAN_yu_chencheng
+recruit_character = MAN_ji_xing
+recruit_character = MAN_zhang_wenzhu
+recruit_character = MAN_cao_pinsen
+recruit_character = MAN_yin_zuqian
+recruit_character = MAN_yu_zhigong
+
+recruit_character = MAN_doihara_kenji
+recruit_character = MAN_yoshisuke_aikawa
+recruit_character = MAN_naoki_hoshino
+recruit_character = MAN_noguchi_yujiro
+recruit_character = MAN_tanaka_osamu
+recruit_character = MAN_itagaki_seishiro
+recruit_character = MAN_kawabata_masaharu
+recruit_character = MAN_ito_seiichi
+recruit_character = MAN_sakuma_ryozo
+recruit_character = MAN_kimura_heitaro
+recruit_character = MAN_tsuji_masanobu
+recruit_character = MAN_amakasu_masahiko
+recruit_character = MAN_furumi_tadayuki
+recruit_character = MAN_yoshioka_yasunao
+
+recruit_character = MAN_urzhin_garmaev
+recruit_character = MAN_ganjuurjab
+recruit_character = MAN_jengjuurjab
+recruit_character = MAN_grand_council_char
+
+recruit_character = MAN_republic_parliament
+recruit_character = MAN_kwantung_army
+
+MAN_doihara_kenji = { set_character_flag = MAN_is_japanese_character }
+MAN_yoshisuke_aikawa = { set_character_flag = MAN_is_japanese_character }
+MAN_naoki_hoshino = { set_character_flag = MAN_is_japanese_character }
+MAN_noguchi_yujiro = { set_character_flag = MAN_is_japanese_character }
+MAN_tanaka_osamu = { set_character_flag = MAN_is_japanese_character }
+MAN_itagaki_seishiro = { set_character_flag = MAN_is_japanese_character }
+MAN_kawabata_masaharu = { set_character_flag = MAN_is_japanese_character }
+MAN_ito_seiichi = { set_character_flag = MAN_is_japanese_character }
+MAN_sakuma_ryozo = { set_character_flag = MAN_is_japanese_character }
+MAN_kimura_heitaro = { set_character_flag = MAN_is_japanese_character }
+MAN_tsuji_masanobu = { set_character_flag = MAN_is_japanese_character }
+MAN_amakasu_masahiko = { set_character_flag = MAN_is_japanese_character }
+MAN_furumi_tadayuki = { set_character_flag = MAN_is_japanese_character }
+MAN_yoshioka_yasunao = { set_character_flag = MAN_is_japanese_character }
+MAN_kwantung_army = { set_character_flag = MAN_is_japanese_character }
+
+#country_event = { id = jap.247 hours = 3 }
+
+set_convoys = 100
 
 oob = "MAN_1936"
+
+add_manpower = 100000
+
+if = {
+	limit = {
+		
+	}
+}
+
+add_ideas = {
+	disarmed_nation
+	MAN_dongbei_partisan
+	MAN_reliant_idea
+	MAN_opium_plantation
+	MAN_japanese_immigrants
+	MAN_yoshioka_yasunao
+}
+if = {
+	limit = {
+		NOT = {
+			has_dlc = "Together for Victory"
+			has_dlc = "Death or Dishonor"
+			has_dlc = "Waking the Tiger"
+		}
+	}
+	add_ideas = MAN_unitary_status
+}
+
+if = {
+	limit = {
+		has_dlc = "Waking the Tiger"
+	}
+	JAP = {
+		set_autonomy = {
+			target = MAN
+			autonomous_state = autonomy_wtt_imperial_protectorate
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			JAP = {
+				set_autonomy = {
+					target = MAN
+					autonomous_state = autonomy_integrated_puppet
+				}
+			}
+			else = {
+				JAP = {
+					set_autonomy = {
+						target = MAN
+						autonomous_state = autonomy_puppet
+					}
+				}
+			}
+		}
+	}
+}
+
+set_country_flag = MAN_reliant_flag
 
 set_technology = {
 	infantry_weapons = 1
 	gw_artillery = 1
-	
+	tech_support = 1
+	tech_military_police = 1
+	fuel_silos = 1
+	synth_oil_experiments = 1
+	fuel_refining = 1
+	basic_train = 1
 }
-
 if = {
-	limit = { has_dlc = "Waking the Tiger" }
-	set_country_flag = MAN_northern_bandits
-	set_country_flag = MAN_eastern_bandits
-	set_country_flag = MAN_western_bandits
-	add_ideas = MAN_banditry
-	add_ideas = MAN_kwantung_veto
-	add_ideas = MAN_low_legitimacy_5
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		basic_battery = 1
+		#basic_secondary_battery = 1
+		basic_torpedo = 1
+		coastal_defense_ships = 1
+	}
+}
+diplomatic_relation = {
+	relation = military_access
+	country = EHA
+	active = yes
 }
 
-set_convoys = 5
+1936.3.15 = {
+	complete_national_focus = MAN_finish_the_five_year_plan 
+}
 
 1939.1.1 = {
-	
-	add_political_power = 1198
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
-
-
-	if = {
-		limit = { has_dlc = "Waking the Tiger" }
-
-		
-		#No bandits
-		unlock_national_focus = MAN_pacify_the_countryside
-		remove_ideas = MAN_banditry
-
-		complete_national_focus = MAN_army_modernization
-		complete_national_focus = MAN_mukden_military_academy
-		complete_national_focus = MAN_law_university
-		complete_national_focus = MAN_obedience
-
-		#Five year plan
-		unlock_national_focus = MAN_first_five_year_plan
-		add_timed_idea = { days = 1275 idea = MAN_five_year_plan_industry }
-
-		complete_national_focus = MAN_trade_delegation
-		complete_national_focus = MAN_expand_the_textile_industry
-		complete_national_focus = MAN_hoankyoku
-		complete_national_focus = MAN_invite_japanese_investors
-		complete_national_focus = MAN_expand_the_railways
-		complete_national_focus = MAN_develop_aluminum_sources
-		complete_national_focus = MAN_social_research_unit
+	961 = {
+		remove_dynamic_modifier = { modifier = MAN_najua_presence }
+		add_dynamic_modifier = { modifier = MAN_najua_presence2 }
 	}
-	
-	oob = "MAN_1939"
+	714 = {
+		add_dynamic_modifier = { modifier = MAN_najua_presence2 }
+	}
+	975 = {
+		add_dynamic_modifier = { modifier = MAN_najua_presence2 }
+	}
+	oob = "MAN_1936"
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "MAN_1939_naval_mtg"
+		else = {
+			set_naval_oob = "MAN_1939_naval_legacy"
+		}
+	}
+
+	add_to_war = {
+		targeted_alliance = JAP
+		enemy = CHI
+	}
+
+	add_political_power = 1198
 	set_technology = {
 		#doctrines
 		grand_battle_plan = 1
 		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
+		trade_interdiction = 1
+		raider_patrols = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
@@ -80,11 +369,62 @@ set_convoys = 5
 		basic_machine_tools = 1
 		improved_machine_tools = 1
 		advanced_machine_tools = 1
-		fuel_silos = 1
+		synth_oil_experiments = 1
 		construction1 = 1
 		construction2 = 1
 		dispersed_industry = 1
 		dispersed_industry2 = 1
+	}
+	
+	complete_national_focus = MAN_acquire_the_north_manchu_railway
+	complete_national_focus = MAN_five_race_under_one_union
+	complete_national_focus = MAN_showa_steel_mill
+	complete_national_focus = MAN_support_aikawa_yoshisuke
+	complete_national_focus = MAN_manchurian_industrial_development_company
+	complete_national_focus = MAN_aluminium_deposit_in_liaoning
+	complete_national_focus = MAN_manchu_society_for_light_metal
+	complete_national_focus = MAN_expand_military_district
+	complete_national_focus = MAN_kantogun_advisor
+	complete_national_focus = MAN_request_zaibatsu_investment_on_industry
+	complete_national_focus = MAN_enhance_local_policing
+	complete_national_focus = MAN_establish_hoankyoku
+	complete_national_focus = MAN_manei
+	complete_national_focus = MAN_river_force
+	complete_national_focus = MAN_incentivise_japanese_immigrants
+	complete_national_focus = MAN_kenkoku_university
+	
+	activate_advisor = MAN_amakasu_masahiko
+	activate_advisor = MAN_sakuma_ryozo
+	activate_advisor = MAN_yin_zuqian
+	
+	diplomatic_relation = {
+		relation = military_access
+		country = PGR
+		active = yes
+	}
+	
+	diplomatic_relation = {
+		relation = military_access
+		country = RGR
+		active = yes
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" } 
+		create_equipment_variant = {
+			name = "Momo Class"
+			type = ship_hull_light_1
+			name_group = MAN_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_medium_battery_1
+				fixed_ship_anti_air_slot = empty
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				mid_1_custom_slot = ship_torpedo_1
+				rear_1_custom_slot = empty
+			}
+		}
 	}
 }
 
@@ -94,57 +434,29 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
+
 set_popularities = {
-	fascism = 80
-	neutrality = 20
+	fascism = 95
+	neutrality = 5
 }
-
-create_corps_commander = {
-	name = "Zhang Haipeng"
-	GFX = "GFX_portrait_man_zhang_haipeng"
-	traits = {  }
-	skill = 2
-	
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Zhang Jinghui"
-	GFX = "GFX_portrait_man_zhang_jinghui"
-	traits = { infantry_officer }
-	skill = 2
-	
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Aisin Gioro Xiqia"
-	GFX = "GFX_portrait_man_aisin_gioro_xiqia"
-	traits = { career_officer }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 1
-}
-
-create_corps_commander = {
-	name = "Yoshiko Kawashima"
-	gfx = "GFX_portrait_man_yoshiko_kawashima"
-	traits = { cavalry_officer }
-	skill = 3
-	attack_skill = 3
-	defense_skill = 3
-	planning_skill = 2
-	logistics_skill = 2
-	female = yes
-}
-
-1939.1.1 = {
+if = {
+	limit = { has_dlc = "Man the Guns" } 
+	# to allow lvl1 cruiser armor #
+	create_equipment_variant = {
+		name = "Test Class"
+		type = ship_hull_cruiser_coastal_defense_ship
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
 }

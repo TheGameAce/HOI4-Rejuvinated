@@ -67,14 +67,14 @@ KMT_harder_justification = {
 	generate_wargoal_tension_against = 1
 }
 
-MCK_intelligence_exchange = {
+MAN_intelligence_exchange = {
 	attack_bonus_against = 0.05
 	defense_bonus_against = 0.05
 	encryption = 0.5
 	decryption = 0.5
 }
 
-MCK_intelligence_exchange2 = {
+MAN_intelligence_exchange2 = {
 	attack_bonus_against = 0.1
 	defense_bonus_against = 0.1
 	encryption = 1
@@ -86,21 +86,21 @@ KMT_ccw_cease_fire = {
 	breakthrough_bonus_against = -1
 }
 
-MCK_burn_to_ash = {
+MAN_burn_to_ash = {
 	resistance_target = -0.15
 	resistance_growth = -0.15
 	resistance_decay = 0.25
 	compliance_gain = -0.075
 }
 
-MCK_seek_collaborators = {
+MAN_seek_collaborators = {
 	resistance_growth = -0.15
 	resistance_damage_to_garrison = -0.35
 	required_garrison_factor = -0.15
 	compliance_growth = 0.5
 }
 
-MCK_seek_collaborators_WJW = {
+MAN_seek_collaborators_WJW = {
 	resistance_target = -0.05
 	resistance_growth = -0.25
 	resistance_damage_to_garrison = -0.5

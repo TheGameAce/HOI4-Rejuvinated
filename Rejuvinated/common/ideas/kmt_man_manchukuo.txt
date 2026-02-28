@@ -4,7 +4,7 @@ ideas = {
 
 	country = {
 	
-		MCK_manchurian_industrial_development_company = {
+		MAN_manchurian_industrial_development_company = {
 			removal_cost = -1
 			picture = man_five_year_plan_industry
 			
@@ -21,7 +21,7 @@ ideas = {
 			}
 		}
 	
-		MCK_opium_plantation = {
+		MAN_opium_plantation = {
 			removal_cost = -1
 			picture = prc_permit_opium_trade
 			
@@ -38,7 +38,7 @@ ideas = {
 			}
 		}
 	
-		MCK_opium_plantation2 = {
+		MAN_opium_plantation2 = {
 			removal_cost = -1
 			picture = prc_permit_opium_trade
 			
@@ -57,7 +57,7 @@ ideas = {
 			}
 		}
 	
-		MCK_msflm_idea = {
+		MAN_msflm_idea = {
 			removal_cost = -1
 			picture = generic_research_bonus
 			
@@ -75,7 +75,7 @@ ideas = {
 			}
 		}
 	
-		MCK_increased_factory_output = {
+		MAN_increased_factory_output = {
 			removal_cost = -1
 			picture = ast_volunteer_defence_corps
 			
@@ -93,7 +93,7 @@ ideas = {
 			}
 		}
 	
-		MCK_reliant_idea = {
+		MAN_reliant_idea = {
 			removal_cost = -1
 			picture = generic_disjointed_gov
 			
@@ -126,7 +126,7 @@ ideas = {
 		}
 	
 	
-		MCK_labour_service_corps_idea = {
+		MAN_labour_service_corps_idea = {
 			
 			
 			allowed = {
@@ -151,7 +151,7 @@ ideas = {
 		}
 	
 	
-		MCK_restoration_propaganda = {
+		MAN_restoration_propaganda = {
 			
 			
 			allowed = {
@@ -162,7 +162,7 @@ ideas = {
 				always = yes
 			}
 			
-			cancel = { NOT = { has_focus_tree = MCK_focus }}
+			cancel = { NOT = { has_focus_tree = MAN_focus }}
 			
 			removal_cost = -1
 
@@ -177,7 +177,7 @@ ideas = {
 		}
 	
 	
-		MCK_anti_japanese_sentiment = {
+		MAN_anti_japanese_sentiment = {
 			
 			
 			allowed = {
@@ -192,7 +192,7 @@ ideas = {
 
 			picture = FRA_matignon_agreements
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 	
 			modifier = {
 				army_morale_factor = 0.05
@@ -205,7 +205,7 @@ ideas = {
 		}
 	
 	
-		MCK_rfr_supporters = {
+		MAN_rfr_supporters = {
 			
 			
 			allowed = {
@@ -216,7 +216,7 @@ ideas = {
 				always = yes
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 			
 			removal_cost = -1
 
@@ -230,7 +230,7 @@ ideas = {
 		}
 	
 	
-		MCK_national_defence_forces_idea = {
+		MAN_national_defence_forces_idea = {
 			
 			
 			allowed = {
@@ -253,7 +253,7 @@ ideas = {
 		}
 	
 	
-		MCK_cadets_in_jap_academy = {
+		MAN_cadets_in_jap_academy = {
 			
 			
 			allowed = {
@@ -284,7 +284,7 @@ ideas = {
 		}
 	
 	
-		MCK_efficient_command_structure = {
+		MAN_efficient_command_structure = {
 			
 			
 			allowed = {
@@ -309,7 +309,7 @@ ideas = {
 		}
 	
 	
-		MCK_RFP_white_movement = {
+		MAN_RFP_white_movement = {
 			
 			
 			allowed = {
@@ -320,7 +320,7 @@ ideas = {
 				always = yes
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 			
 			removal_cost = -1
 
@@ -334,7 +334,7 @@ ideas = {
 		}
 	
 	
-		MCK_soviet_advisor_idea = {
+		MAN_soviet_advisor_idea = {
 			
 			
 			allowed = {
@@ -345,7 +345,7 @@ ideas = {
 				always = yes
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 			
 			removal_cost = -1
 
@@ -358,7 +358,7 @@ ideas = {
 		}
 	
 	
-		MCK_grand_council_idea = {
+		MAN_grand_council_idea = {
 			
 			
 			allowed = {
@@ -391,7 +391,7 @@ ideas = {
 		}
 	
 	
-		MCK_national_defence_forces_idea_plus = {
+		MAN_national_defence_forces_idea_plus = {
 			
 			allowed = {
 				always = no
@@ -413,7 +413,7 @@ ideas = {
 		}
 	
 	
-		MCK_more_production_idea = {
+		MAN_more_production_idea = {
 			
 			allowed = {
 				always = no
@@ -435,7 +435,7 @@ ideas = {
 		}
 	
 	
-		MCK_zongli_yamen = {
+		MAN_zongli_yamen = {
 			
 			allowed = {
 				always = no
@@ -457,7 +457,7 @@ ideas = {
 		}
 	
 	
-		MCK_dongbei_partisan = {
+		MAN_dongbei_partisan = {
 			
 			allowed = {
 				always = no
@@ -491,7 +491,7 @@ ideas = {
 		}
 	
 	
-		MCK_dongbei_partisan_pacified = {
+		MAN_dongbei_partisan_pacified = {
 			
 			allowed = {
 				always = no
@@ -514,7 +514,7 @@ ideas = {
 		}
 	
 	
-		MCK_secret_recruitment_idea = {
+		MAN_secret_recruitment_idea = {
 			
 			allowed = {
 				always = no
@@ -524,7 +524,7 @@ ideas = {
 				always = no
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 			
 			removal_cost = -1
 
@@ -535,7 +535,7 @@ ideas = {
 			}
 		}
 		
-		MCK_communist_influence = {
+		MAN_communist_influence = {
 			
 			
 			allowed = {
@@ -565,7 +565,7 @@ ideas = {
 			}
 		}
 		
-		MCK_democratic_influence = {
+		MAN_democratic_influence = {
 			
 			
 			allowed = {
@@ -595,7 +595,7 @@ ideas = {
 			}
 		}
 		
-		MCK_neutrality_school = {
+		MAN_neutrality_school = {
 			
 			
 			allowed = {
@@ -606,7 +606,7 @@ ideas = {
 				has_government = neutrality
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			removal_cost = -1
 
@@ -618,7 +618,7 @@ ideas = {
 			}
 		}
 		
-		MCK_nationalism_military = {
+		MAN_nationalism_military = {
 			
 			
 			allowed = {
@@ -629,7 +629,7 @@ ideas = {
 				always = yes
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			removal_cost = -1
 
@@ -642,7 +642,7 @@ ideas = {
 			}
 		}
 		
-		MCK_court_martialed_patriotic_men = {
+		MAN_court_martialed_patriotic_men = {
 			
 			
 			allowed = {
@@ -653,7 +653,7 @@ ideas = {
 				always = yes
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			removal_cost = -1
 
@@ -665,14 +665,14 @@ ideas = {
 			}
 		}
 		
-		MCK_confidentiality_first = {
+		MAN_confidentiality_first = {
 			
 			
 			allowed = {
 				always = no
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			allowed_civil_war = {
 				always = yes
@@ -687,7 +687,7 @@ ideas = {
 			}
 		}
 		
-		MCK_faster_repair = {
+		MAN_faster_repair = {
 			
 			allowed = {
 				always = no
@@ -697,7 +697,7 @@ ideas = {
 				always = yes
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			removal_cost = -1
 
@@ -708,7 +708,7 @@ ideas = {
 			}
 		}
 		
-		MCK_halt_guerilla_expansion = {
+		MAN_halt_guerilla_expansion = {
 			
 			allowed = {
 				always = no
@@ -717,7 +717,7 @@ ideas = {
 			cancel = { 
 				OR = {
 					is_subject = no
-					has_country_leader = { character = MCK_kwantung_army ruling_only = yes }
+					has_country_leader = { character = MAN_kwantung_army ruling_only = yes }
 				}
 			}
 
@@ -735,7 +735,7 @@ ideas = {
 			}
 		}
 		
-		MCK_reduced_jap_influence = {
+		MAN_reduced_jap_influence = {
 			
 			allowed = {
 				always = no
@@ -745,7 +745,7 @@ ideas = {
 				always = yes
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			removal_cost = -1
 
@@ -756,13 +756,13 @@ ideas = {
 			}
 		}
 		
-		MCK_halt_propagation = {
+		MAN_halt_propagation = {
 			
 			allowed = {
 				always = no
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			allowed_civil_war = {
 				always = yes
@@ -777,13 +777,13 @@ ideas = {
 			}
 		}
 		
-		MCK_decoys = {
+		MAN_decoys = {
 			
 			allowed = {
 				always = no
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			allowed_civil_war = {
 				always = yes
@@ -798,13 +798,13 @@ ideas = {
 			}
 		}
 		
-		MCK_tapped_phone_idea = {
+		MAN_tapped_phone_idea = {
 			
 			allowed = {
 				always = no
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			allowed_civil_war = {
 				always = yes
@@ -819,7 +819,7 @@ ideas = {
 			}
 		}
 		
-		MCK_more_resources_idea_yoshisuke = {
+		MAN_more_resources_idea_yoshisuke = {
 			
 			allowed = {
 				always = no
@@ -838,13 +838,13 @@ ideas = {
 			}
 		}
 		
-		MCK_nationalistic_sentiment = {
+		MAN_nationalistic_sentiment = {
 			
 			allowed = {
 				always = no
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			allowed_civil_war = {
 				always = yes
@@ -860,13 +860,13 @@ ideas = {
 			}
 		}
 		
-		MCK_raid_plan = {
+		MAN_raid_plan = {
 			
 			allowed = {
 				always = no
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			allowed_civil_war = {
 				always = yes
@@ -882,13 +882,13 @@ ideas = {
 			}
 		}
 		
-		MCK_nash_put = {
+		MAN_nash_put = {
 			
 			allowed = {
 				always = no
 			}
 			
-			cancel = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+			cancel = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 
 			allowed_civil_war = {
 				always = yes
@@ -903,7 +903,7 @@ ideas = {
 			}
 		}
 		
-		MCK_RFP_stay_low = {
+		MAN_RFP_stay_low = {
 			
 			allowed = {
 				always = no
@@ -912,7 +912,7 @@ ideas = {
 			cancel = { 
 				OR = {
 					is_subject = no
-					has_country_leader = { character = MCK_kwantung_army ruling_only = yes }
+					has_country_leader = { character = MAN_kwantung_army ruling_only = yes }
 				}
 			}
 
@@ -929,7 +929,7 @@ ideas = {
 			}
 		}
 		
-		MCK_unitary_status = {
+		MAN_unitary_status = {
 			
 			allowed = {
 				always = no
@@ -958,7 +958,7 @@ ideas = {
 			}
 		}
 		
-		MCK_japanese_immigrants = {
+		MAN_japanese_immigrants = {
 			
 			allowed = {
 				always = no
@@ -983,11 +983,11 @@ ideas = {
 			
 			modifier = {
 				autonomy_gain_global_factor = -0.25
-				custom_modifier_tooltip = MCK_monthly_immigrants_tt
+				custom_modifier_tooltip = MAN_monthly_immigrants_tt
 			}
 		}
 		
-		MCK_five_year_plan = {
+		MAN_five_year_plan = {
 			
 			allowed = {
 				always = no
@@ -1030,7 +1030,7 @@ ideas = {
 			}
 		}
 		
-		MCK_hoankyoku = {
+		MAN_hoankyoku = {
 			
 			allowed = {
 				always = no
@@ -1065,7 +1065,7 @@ ideas = {
 			}
 		}
 		
-		MCK_army_academy = {
+		MAN_army_academy = {
 			
 			allowed = {
 				always = no
@@ -1096,8 +1096,8 @@ ideas = {
 			}
 		}
 		
-		MCK_army_academy_field_medic = {
-			name = MCK_army_academy
+		MAN_army_academy_field_medic = {
+			name = MAN_army_academy
 			
 			allowed = {
 				always = no
@@ -1130,7 +1130,7 @@ ideas = {
 			}
 		}
 		
-		MCK_railway_guards = {
+		MAN_railway_guards = {
 			
 			allowed = {
 				always = no
@@ -1161,8 +1161,8 @@ ideas = {
 			}
 		}
 		
-		MCK_manei = {
-			name = MCK_manei_idea
+		MAN_manei = {
+			name = MAN_manei_idea
 			
 			allowed = {
 				always = no
@@ -1193,7 +1193,7 @@ ideas = {
 			}
 		}
 		
-		MCK_resist_communism_idea = {
+		MAN_resist_communism_idea = {
 			
 			allowed = {
 				always = no
@@ -1209,7 +1209,7 @@ ideas = {
 			
 			on_remove = {
 				every_other_country = {
-					remove_opinion_modifier = { target = ROOT modifier = MCK_anti_communism }
+					remove_opinion_modifier = { target = ROOT modifier = MAN_anti_communism }
 				}
 			}
 
@@ -1231,7 +1231,7 @@ ideas = {
 			}
 		}
 		
-		MCK_counter_insurgency_experience = {
+		MAN_counter_insurgency_experience = {
 			
 			allowed = {
 				always = no
@@ -1266,7 +1266,7 @@ ideas = {
 			}
 		}
 		
-		MCK_five_year_plan2 = {
+		MAN_five_year_plan2 = {
 			
 			allowed = {
 				always = no
@@ -1315,7 +1315,7 @@ ideas = {
 			}
 		}
 		
-		MCK_chinese_labour_department = {
+		MAN_chinese_labour_department = {
 			
 			allowed = {
 				always = no
@@ -1341,7 +1341,7 @@ ideas = {
 			}
 		}
 		
-		MCK_railway_construction_effort = {
+		MAN_railway_construction_effort = {
 			
 			allowed = {
 				always = no
@@ -1363,7 +1363,7 @@ ideas = {
 			}
 		}
 		
-		MCK_east_asia_industrial_powerhouse = {
+		MAN_east_asia_industrial_powerhouse = {
 			
 			allowed = {
 				always = no
@@ -1390,7 +1390,7 @@ ideas = {
 			}
 		}
 		
-		MCK_imperial_academy = {
+		MAN_imperial_academy = {
 			
 			allowed = {
 				always = no
@@ -1424,7 +1424,7 @@ ideas = {
 			}
 		}
 		
-		MCK_imperial_glory = {
+		MAN_imperial_glory = {
 			
 			allowed = {
 				always = no
@@ -1449,7 +1449,7 @@ ideas = {
 			}
 		}
 		
-		MCK_cdd = {
+		MAN_cdd = {
 			
 			allowed = {
 				always = no
@@ -1476,7 +1476,7 @@ ideas = {
 			}
 		}
 		
-		MCK_increase_factory_output_idea = {
+		MAN_increase_factory_output_idea = {
 			
 			allowed = {
 				always = no
@@ -1504,7 +1504,7 @@ ideas = {
 			}
 		}
 		
-		MCK_improved_military_academies = {
+		MAN_improved_military_academies = {
 			
 			allowed = {
 				always = no
@@ -1537,8 +1537,8 @@ ideas = {
 			}
 		}
 		
-		MCK_improved_military_academies_hospital = {
-			name = MCK_improved_military_academies
+		MAN_improved_military_academies_hospital = {
+			name = MAN_improved_military_academies
 			
 			allowed = {
 				always = no
@@ -1573,7 +1573,7 @@ ideas = {
 			}
 		}
 		
-		MCK_mandatory_military_service = {
+		MAN_mandatory_military_service = {
 			
 			allowed = {
 				always = no
@@ -1600,7 +1600,7 @@ ideas = {
 			}
 		}
 		
-		MCK_mandatory_military_service2 = {
+		MAN_mandatory_military_service2 = {
 			
 			allowed = {
 				always = no
@@ -1631,7 +1631,7 @@ ideas = {
 			}
 		}
 		
-		MCK_mandate_of_heaven = {
+		MAN_mandate_of_heaven = {
 			
 			allowed = {
 				always = no
@@ -1666,8 +1666,8 @@ ideas = {
 			}
 		}
 		
-		MCK_mandate_of_heaven2 = {
-			name = MCK_mandate_of_heaven
+		MAN_mandate_of_heaven2 = {
+			name = MAN_mandate_of_heaven
 			
 			allowed = {
 				always = no
@@ -1707,7 +1707,7 @@ ideas = {
 			}
 		}
 		
-		MCK_devloved_administration = {
+		MAN_devloved_administration = {
 			
 			allowed = {
 				always = no
@@ -1734,7 +1734,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_navy = {
+		MAN_ia_navy = {
 			
 			allowed = {
 				always = no
@@ -1746,7 +1746,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -1765,7 +1765,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_army = {
+		MAN_ia_army = {
 			
 			allowed = {
 				always = no
@@ -1777,7 +1777,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -1796,7 +1796,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_air = {
+		MAN_ia_air = {
 			
 			allowed = {
 				always = no
@@ -1808,7 +1808,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -1827,7 +1827,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_austerity = {
+		MAN_ia_austerity = {
 			
 			allowed = {
 				always = no
@@ -1839,7 +1839,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -1854,7 +1854,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_industry = {
+		MAN_ia_industry = {
 			
 			allowed = {
 				always = no
@@ -1866,7 +1866,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -1884,7 +1884,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_infrastructure = {
+		MAN_ia_infrastructure = {
 			
 			allowed = {
 				always = no
@@ -1896,7 +1896,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -1913,7 +1913,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_science = {
+		MAN_ia_science = {
 			
 			allowed = {
 				always = no
@@ -1925,7 +1925,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -1940,7 +1940,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_resources = {
+		MAN_ia_resources = {
 			
 			allowed = {
 				always = no
@@ -1952,7 +1952,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -1967,7 +1967,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_protectionism = {
+		MAN_ia_protectionism = {
 			
 			allowed = {
 				always = no
@@ -1979,7 +1979,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -1998,7 +1998,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_conscription = {
+		MAN_ia_conscription = {
 			
 			allowed = {
 				always = no
@@ -2010,7 +2010,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -2026,7 +2026,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_welfare = {
+		MAN_ia_welfare = {
 			
 			allowed = {
 				always = no
@@ -2038,7 +2038,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -2054,7 +2054,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ia_subsidies = {
+		MAN_ia_subsidies = {
 			
 			allowed = {
 				always = no
@@ -2066,7 +2066,7 @@ ideas = {
 			
 			cancel = {
 				is_subject = yes
-				NOT = { is_subject_of = MCK }
+				NOT = { is_subject_of = MAN }
 			}
 
 			removal_cost = -1
@@ -2083,7 +2083,7 @@ ideas = {
 			}
 		}
 		
-		MCK_domestic_focus = {
+		MAN_domestic_focus = {
 			
 			allowed = {
 				always = no
@@ -2110,7 +2110,7 @@ ideas = {
 			}
 		}
 		
-		MCK_reformed_education = {
+		MAN_reformed_education = {
 			
 			allowed = {
 				always = no
@@ -2136,7 +2136,7 @@ ideas = {
 			}
 		}
 		
-		MCK_disrupted_logistics = {
+		MAN_disrupted_logistics = {
 			
 			allowed = {
 				always = no
@@ -2165,7 +2165,7 @@ ideas = {
 			}
 		}
 		
-		MCK_independence_fervor = {
+		MAN_independence_fervor = {
 			
 			allowed = {
 				always = no
@@ -2197,7 +2197,7 @@ ideas = {
 			}
 		}
 		
-		MCK_restorationists_opposition = {
+		MAN_restorationists_opposition = {
 			
 			allowed = {
 				always = no
@@ -2223,7 +2223,7 @@ ideas = {
 			}
 		}
 		
-		MCK_restorationists_disappointed = {
+		MAN_restorationists_disappointed = {
 			
 			allowed = {
 				always = no
@@ -2249,7 +2249,7 @@ ideas = {
 			}
 		}
 		
-		MCK_bear_the_burden_idea = {
+		MAN_bear_the_burden_idea = {
 			
 			allowed = {
 				always = no
@@ -2275,14 +2275,14 @@ ideas = {
 				command_power_gain = 0.35
 				command_power_gain_mult = 0.1
 				autonomy_gain_global_factor = 0.1
-				custom_modifier_tooltip = MCK_more_bandit_suppression_tt
+				custom_modifier_tooltip = MAN_more_bandit_suppression_tt
 			}
 			
 			research_bonus = {
 			}
 		}
 		
-		MCK_pacification_campaign = {
+		MAN_pacification_campaign = {
 			
 			allowed = {
 				always = no
@@ -2293,7 +2293,7 @@ ideas = {
 			}
 			
 			cancel = {
-				NOT = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+				NOT = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 			}
 
 			removal_cost = -1
@@ -2308,14 +2308,14 @@ ideas = {
 				max_command_power = 100
 				command_power_gain = 0.5
 				command_power_gain_mult = 0.1
-				custom_modifier_tooltip = MCK_more_bandit_suppression_tt
+				custom_modifier_tooltip = MAN_more_bandit_suppression_tt
 			}
 			
 			research_bonus = {
 			}
 		}
 		
-		MCK_army_academy_indoctrinated = {
+		MAN_army_academy_indoctrinated = {
 			
 			allowed = {
 				always = no
@@ -2357,7 +2357,7 @@ ideas = {
 			}
 		}
 		
-		MCK_kantogun_intelligence_agency = {
+		MAN_kantogun_intelligence_agency = {
 			
 			allowed = {
 				always = no
@@ -2368,7 +2368,7 @@ ideas = {
 			}
 			
 			cancel = {
-				NOT = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+				NOT = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 			}
 
 			removal_cost = -1
@@ -2389,7 +2389,7 @@ ideas = {
 			}
 		}
 		
-		MCK_state_controlled_media = {
+		MAN_state_controlled_media = {
 			
 			allowed = {
 				always = no
@@ -2425,7 +2425,7 @@ ideas = {
 			}
 		}
 		
-		MCK_resources_exploitation = {
+		MAN_resources_exploitation = {
 			
 			allowed = {
 				always = no
@@ -2454,7 +2454,7 @@ ideas = {
 			}
 		}
 		
-		MCK_ahen_profit = {
+		MAN_ahen_profit = {
 			
 			allowed = {
 				always = no
@@ -2484,7 +2484,7 @@ ideas = {
 			}
 		}
 		
-		MCK_austerity_measures = {
+		MAN_austerity_measures = {
 			
 			allowed = {
 				always = no
@@ -2513,7 +2513,7 @@ ideas = {
 			}
 		}
 		
-		MCK_kokudokaifuku_mobilisation_idea = {
+		MAN_kokudokaifuku_mobilisation_idea = {
 			
 			allowed = {
 				always = no
@@ -2542,7 +2542,7 @@ ideas = {
 			}
 		}
 		
-		MCK_martial_law = {
+		MAN_martial_law = {
 			
 			allowed = {
 				always = no
@@ -2573,7 +2573,7 @@ ideas = {
 			}
 		}
 		
-		MCK_kesshitai = {
+		MAN_kesshitai = {
 			
 			allowed = {
 				always = no
@@ -2609,7 +2609,7 @@ ideas = {
 			}
 		}
 		
-		MCK_zaibatsu_influence = {
+		MAN_zaibatsu_influence = {
 			
 			allowed = {
 				always = no
@@ -2639,7 +2639,7 @@ ideas = {
 			}
 		}
 		
-		MCK_increase_military_production = {
+		MAN_increase_military_production = {
 			
 			allowed = {
 				always = no
@@ -2669,8 +2669,8 @@ ideas = {
 			}
 		}
 		
-		MCK_zaibatsu_influence_research = {
-			name = MCK_zaibatsu_influence
+		MAN_zaibatsu_influence_research = {
+			name = MAN_zaibatsu_influence
 			
 			allowed = {
 				always = no
@@ -2708,7 +2708,7 @@ ideas = {
 			}
 		}
 		
-		MCK_military_prioritisation = {
+		MAN_military_prioritisation = {
 			
 			allowed = {
 				always = no
@@ -2736,7 +2736,7 @@ ideas = {
 			}
 		}
 		
-		MCK_resources_for_the_military = {
+		MAN_resources_for_the_military = {
 			
 			allowed = {
 				always = no
@@ -2765,8 +2765,8 @@ ideas = {
 			}
 		}
 		
-		MCK_zaibatsu_influence2 = {
-			name = MCK_zaibatsu_influence
+		MAN_zaibatsu_influence2 = {
+			name = MAN_zaibatsu_influence
 			
 			allowed = {
 				always = no
@@ -2800,8 +2800,8 @@ ideas = {
 			}
 		}
 		
-		MCK_zaibatsu_influence_research2 = {
-			name = MCK_zaibatsu_influence
+		MAN_zaibatsu_influence_research2 = {
+			name = MAN_zaibatsu_influence
 			
 			allowed = {
 				always = no
@@ -2843,7 +2843,7 @@ ideas = {
 			}
 		}
 		
-		MCK_plan_for_the_restoration_idea = {
+		MAN_plan_for_the_restoration_idea = {
 			
 			allowed = {
 				always = no
@@ -2872,7 +2872,7 @@ ideas = {
 			}
 		}
 		
-		MCK_subservient_to_hsinking = {
+		MAN_subservient_to_hsinking = {
 			
 			allowed = {
 				always = no
@@ -2894,7 +2894,7 @@ ideas = {
 			}
 			
 			targeted_modifier = {
-				tag = MCK
+				tag = MAN
 				cic_to_target_factor = 0.5
 				mic_to_target_factor = 0.75
 				extra_trade_to_target_factor = 0.8
@@ -2907,7 +2907,7 @@ ideas = {
 			}
 		}
 		
-		MCK_subservient_to_tokyo = {
+		MAN_subservient_to_tokyo = {
 			
 			allowed = {
 				always = no
@@ -2942,7 +2942,7 @@ ideas = {
 			}
 		}
 		
-		MCK_take_korea_idea = {
+		MAN_take_korea_idea = {
 			
 			allowed = {
 				always = no
@@ -2984,7 +2984,7 @@ ideas = {
 			}
 		}
 		
-		MCK_paratrooper_focus = {
+		MAN_paratrooper_focus = {
 			
 			allowed = {
 				always = no
@@ -3016,7 +3016,7 @@ ideas = {
 			}
 		}
 		
-		MCK_marine_focus = {
+		MAN_marine_focus = {
 			
 			allowed = {
 				always = no
@@ -3048,7 +3048,7 @@ ideas = {
 			}
 		}
 		
-		MCK_special_ship_repair_team = {
+		MAN_special_ship_repair_team = {
 			
 			allowed = {
 				always = no
@@ -3076,7 +3076,7 @@ ideas = {
 			}
 		}
 		
-		MCK_kokudokaifuku_undo = {
+		MAN_kokudokaifuku_undo = {
 			
 			allowed = {
 				always = no
@@ -3112,7 +3112,7 @@ ideas = {
 			}
 		}
 		
-		MCK_support_the_reconstruction_idea = {
+		MAN_support_the_reconstruction_idea = {
 			
 			allowed = {
 				always = no
@@ -3155,7 +3155,7 @@ ideas = {
 			}
 		}
 		
-		MCK_reconstruction_japan = {
+		MAN_reconstruction_japan = {
 			
 			allowed = {
 				always = no
@@ -3166,9 +3166,9 @@ ideas = {
 			}
 			
 			cancel = {
-				MCK = {
+				MAN = {
 					NOT = {
-						has_idea = MCK_support_the_reconstruction_idea
+						has_idea = MAN_support_the_reconstruction_idea
 					}
 				}
 			}
@@ -3191,7 +3191,7 @@ ideas = {
 			}
 		}
 	
-		MCK_mangyo_kta = {
+		MAN_mangyo_kta = {
 			removal_cost = -1
 			picture = man_five_year_plan_industry
 			

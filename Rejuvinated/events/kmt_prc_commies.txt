@@ -7352,7 +7352,7 @@ country_event = {
 					}
 				}
 				add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = MEN }
-				add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = MCK }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = MAN }
 				add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 producer = JAP }
 				if = {
 					limit = {
@@ -7364,11 +7364,11 @@ country_event = {
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = tech_support
 						}
 					}
-					add_equipment_to_stockpile = { type = support_equipment_1 amount = 1500 producer = MCK }
+					add_equipment_to_stockpile = { type = support_equipment_1 amount = 1500 producer = MAN }
 				}
 				if = {
 					limit = {
@@ -7508,7 +7508,7 @@ country_event = {
 					}
 				}
 				add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = MEN }
-				add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = MCK }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = MAN }
 				add_equipment_to_stockpile = { type = infantry_equipment amount = 10000 producer = JAP }
 				if = {
 					limit = {
@@ -7520,11 +7520,11 @@ country_event = {
 				}
 				if = {
 					limit = {
-						MCK = {
+						MAN = {
 							has_tech = tech_support
 						}
 					}
-					add_equipment_to_stockpile = { type = support_equipment_1 amount = 1500 producer = MCK }
+					add_equipment_to_stockpile = { type = support_equipment_1 amount = 1500 producer = MAN }
 				}
 				if = {
 					limit = {

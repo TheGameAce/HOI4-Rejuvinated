@@ -126,19 +126,19 @@ JAP_or_friend_controls_big_part_of_CHI_or_peace = {
 	}
 }
 
-MCK_no_help_scripted_trigger = {
+MAN_no_help_scripted_trigger = {
 	ROOT = {
 		custom_trigger_tooltip = {
-			tooltip = MCK_no_help_tt
+			tooltip = MAN_no_help_tt
 			AND = {
-				has_completed_focus = MCK_turn_to_the_bolshelviks
-				has_completed_focus = MCK_head_towards_democracy
-				has_completed_focus = MCK_china_help
+				has_completed_focus = MAN_turn_to_the_bolshelviks
+				has_completed_focus = MAN_head_towards_democracy
+				has_completed_focus = MAN_china_help
 				NOT = { 
 					any_country = { 
 						OR = {
-							has_country_flag = MCK_helping_independence 
-							has_active_mission = MCK_response_deadline
+							has_country_flag = MAN_helping_independence 
+							has_active_mission = MAN_response_deadline
 						}
 					}
 				}

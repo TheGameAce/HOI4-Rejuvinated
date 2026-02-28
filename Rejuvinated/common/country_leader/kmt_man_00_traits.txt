@@ -136,7 +136,7 @@ leader_traits = {
 	}
 	
 	
-	army_chief_organizational_2_mck = {
+	army_chief_organizational_2_man = {
 		sprite = 5
 		random = no
 		army_org_factor = 0.1
@@ -149,7 +149,7 @@ leader_traits = {
 		}
 	}
 	
-	military_theorist_mck = {
+	military_theorist_man = {
 		sprite = 14
 		random = no
 		land_doctrine_cost_factor = -0.1
@@ -162,7 +162,7 @@ leader_traits = {
 		}
 	}
 	
-	army_chief_reform_3_mck = { 
+	army_chief_reform_3_man = { 
 		sprite = 5
 		random = no
 		experience_gain_army_factor = 0.2
@@ -175,7 +175,7 @@ leader_traits = {
 		}
 	}
 	
-	army_chief_drill_1_mck = { 
+	army_chief_drill_1_man = { 
 		sprite = 5
 		random = no
 		training_time_army_factor = -0.1
@@ -186,7 +186,7 @@ leader_traits = {
 		}
 	}
 	
-	air_chief_ground_support_2_mck = { 
+	air_chief_ground_support_2_man = { 
 		sprite = 2
 		random = no
 		army_bonus_air_superiority_factor = 0.12
@@ -200,7 +200,7 @@ leader_traits = {
 		}
 	}
 	
-	army_regrouping_2_mck = { 
+	army_regrouping_2_man = { 
 		sprite = 5
 		random = no
 		army_morale_factor = 0.1
@@ -214,7 +214,7 @@ leader_traits = {
 		}
 	}
 	
-	army_infantry_2_mck = { 
+	army_infantry_2_man = { 
 		sprite = 5
 		random = no
 		army_infantry_attack_factor = 0.13
@@ -229,7 +229,7 @@ leader_traits = {
 		}
 	}
 	
-	war_industrialist_mck = {
+	war_industrialist_man = {
 		sprite = 10
 		random = no
 		production_speed_arms_factory_factor = 0.25
@@ -242,7 +242,7 @@ leader_traits = {
 		}
 	}
 	
-	captain_of_industry_mck = {
+	captain_of_industry_man = {
 		sprite = 10
 		random = no
 		production_speed_industrial_complex_factor = 0.35
@@ -267,7 +267,7 @@ leader_traits = {
 		}
 	}
 	
-	armaments_organizer_mck = {
+	armaments_organizer_man = {
 		sprite = 10
 		random = no
 		conversion_cost_civ_to_mil_factor= -0.2
@@ -281,7 +281,7 @@ leader_traits = {
 	
 	######### Together For Victory ##########
 	
-	army_chief_organizational_2_mck_tfv = {
+	army_chief_organizational_2_man_tfv = {
 		sprite = 5
 		random = no
 		army_org_factor = 0.1
@@ -295,7 +295,7 @@ leader_traits = {
 		}
 	}
 	
-	military_theorist_mck_tfv = {
+	military_theorist_man_tfv = {
 		sprite = 14
 		random = no
 		land_doctrine_cost_factor = -0.1
@@ -309,7 +309,7 @@ leader_traits = {
 		}
 	}
 	
-	army_chief_reform_3_mck_tfv = { 
+	army_chief_reform_3_man_tfv = { 
 		sprite = 5
 		random = no
 		experience_gain_army_factor = 0.2
@@ -323,7 +323,7 @@ leader_traits = {
 		}
 	}
 	
-	army_chief_drill_1_mck_tfv = { 
+	army_chief_drill_1_man_tfv = { 
 		sprite = 5
 		random = no
 		training_time_army_factor = -0.1
@@ -335,7 +335,7 @@ leader_traits = {
 		}
 	}
 	
-	air_chief_ground_support_2_mck_tfv = { 
+	air_chief_ground_support_2_man_tfv = { 
 		sprite = 2
 		random = no
 		army_bonus_air_superiority_factor = 0.12
@@ -350,7 +350,7 @@ leader_traits = {
 		}
 	}
 	
-	army_regrouping_2_mck_tfv = { 
+	army_regrouping_2_man_tfv = { 
 		sprite = 5
 		random = no
 		army_morale_factor = 0.1
@@ -364,7 +364,7 @@ leader_traits = {
 		}
 	}
 	
-	army_infantry_2_mck_tfv = { 
+	army_infantry_2_man_tfv = { 
 		sprite = 5
 		random = no
 		army_infantry_attack_factor = 0.13
@@ -379,7 +379,7 @@ leader_traits = {
 		}
 	}
 	
-	war_industrialist_mck_tfv = {
+	war_industrialist_man_tfv = {
 		sprite = 10
 		random = no
 		production_speed_arms_factory_factor = 0.25
@@ -407,7 +407,7 @@ leader_traits = {
 		}
 	}
 	
-	captain_of_industry_mck_tfv = {
+	captain_of_industry_man_tfv = {
 		sprite = 10
 		random = no
 		production_speed_industrial_complex_factor = 0.35
@@ -435,7 +435,7 @@ leader_traits = {
 		}
 	}
 	
-	armaments_organizer_mck_tfv = {
+	armaments_organizer_man_tfv = {
 		sprite = 10
 		random = no
 		conversion_cost_civ_to_mil_factor= -0.2
@@ -448,7 +448,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_under_house_arrest = {
+	MAN_under_house_arrest = {
 		sprite = 10
 		random = no
 		
@@ -459,7 +459,7 @@ leader_traits = {
 		}
 	}
 	
-	air_chief_reform_2_mck = {  # Rate at which air experience is gained increases by 10%
+	air_chief_reform_2_man = {  # Rate at which air experience is gained increases by 10%
 		sprite = 1
 		experience_gain_air = 0.16
 		political_power_cost = 0.05
@@ -471,7 +471,7 @@ leader_traits = {
 		}
 	}
 	
-	air_chief_reform_2_mck_tfv = {  # Rate at which air experience is gained increases by 10%
+	air_chief_reform_2_man_tfv = {  # Rate at which air experience is gained increases by 10%
 		sprite = 1
 		experience_gain_air = 0.16
 		political_power_cost = 0.05
@@ -484,7 +484,7 @@ leader_traits = {
 		}
 	}
 	
-	naval_theorist_mck = {
+	naval_theorist_man = {
 		sprite = 14
 		naval_doctrine_cost_factor = -0.1
 		experience_gain_navy = 0.05
@@ -497,7 +497,7 @@ leader_traits = {
 		}
 	}
 	
-	naval_theorist_mck_tfv = {
+	naval_theorist_man_tfv = {
 		sprite = 14
 		naval_doctrine_cost_factor = -0.1
 		experience_gain_navy = 0.05
@@ -511,7 +511,7 @@ leader_traits = {
 		}
 	}
 	
-	navy_chief_maneuver_2_mck = { # Naval units move 10% faster
+	navy_chief_maneuver_2_man = { # Naval units move 10% faster
 		sprite = 3
 		naval_speed_factor = 0.1
 		experience_gain_navy = 0.09
@@ -524,7 +524,7 @@ leader_traits = {
 		}
 	}
 	
-	navy_chief_maneuver_2_mck_tfv = { # Naval units move 10% faster
+	navy_chief_maneuver_2_man_tfv = { # Naval units move 10% faster
 		sprite = 3
 		naval_speed_factor = 0.1
 		experience_gain_navy = 0.09
@@ -538,7 +538,7 @@ leader_traits = {
 		}
 	}
 	
-	army_chief_planning_2_mck = { 
+	army_chief_planning_2_man = { 
 		sprite = 5
 		planning_speed = 0.10		
 		experience_gain_army = 0.09
@@ -551,7 +551,7 @@ leader_traits = {
 		}
 	}
 	
-	army_chief_planning_2_mck_tfv = { 
+	army_chief_planning_2_man_tfv = { 
 		sprite = 5
 		planning_speed = 0.10		
 		experience_gain_army = 0.09
@@ -565,7 +565,7 @@ leader_traits = {
 		}
 	}
 	
-	army_artillery_2_mck = { # +8 artillery efficiency
+	army_artillery_2_man = { # +8 artillery efficiency
 		sprite = 16
 		army_artillery_attack_factor = 0.15
 		army_artillery_defence_factor = 0.1		
@@ -579,7 +579,7 @@ leader_traits = {
 		}
 	}
 	
-	army_artillery_2_mck_tfv = { # +8 artillery efficiency
+	army_artillery_2_man_tfv = { # +8 artillery efficiency
 		sprite = 16
 		army_artillery_attack_factor = 0.15
 		army_artillery_defence_factor = 0.1		
@@ -594,7 +594,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_constitutional_monarch = { 
+	MAN_constitutional_monarch = { 
 		random = no
 		
 		stability_factor = 0.1
@@ -606,7 +606,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_cutthroat_politics = { 
+	MAN_cutthroat_politics = { 
 		random = no
 		
 		political_power_factor = -0.1
@@ -617,7 +617,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_liberal_policies = { 
+	MAN_liberal_policies = { 
 		random = no
 		
 		trade_laws_cost_factor = 1
@@ -633,7 +633,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_tradition_adherance = { 
+	MAN_tradition_adherance = { 
 		random = no
 		
 		political_power_factor = 0.05
@@ -647,7 +647,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_socialist_policies = { 
+	MAN_socialist_policies = { 
 		random = no
 		
 		consumer_goods_factor = 0.05
@@ -660,7 +660,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_national_solidarity = { 
+	MAN_national_solidarity = { 
 		random = no
 		
 		surrender_limit = 0.05
@@ -673,7 +673,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_son_of_heaven = { 
+	MAN_son_of_heaven = { 
 		random = no
 		
 		stability_factor = 0.5
@@ -687,7 +687,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_imperial_advocate = { 
+	MAN_imperial_advocate = { 
 		random = no
 		sprite = 12
 		
@@ -701,7 +701,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_the_grand_council_trait = { 
+	MAN_the_grand_council_trait = { 
 		random = no
 		sprite = 14
 		
@@ -718,7 +718,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_goyogakari = { 
+	MAN_goyogakari = { 
 		random = no
 		sprite = 13
 		
@@ -733,7 +733,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_goyogakari_tfv = { 
+	MAN_goyogakari_tfv = { 
 		random = no
 		sprite = 13
 		
@@ -749,7 +749,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_head_of_manei = { 
+	MAN_head_of_manei = { 
 		random = no
 		sprite = 13
 		
@@ -763,7 +763,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_head_of_manei_tfv = { 
+	MAN_head_of_manei_tfv = { 
 		random = no
 		sprite = 13
 		
@@ -778,7 +778,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_head_of_state_media = { 
+	MAN_head_of_state_media = { 
 		random = no
 		sprite = 13
 		
@@ -793,7 +793,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_treasurer = { 
+	MAN_treasurer = { 
 		random = no
 		sprite = 13
 		
@@ -807,7 +807,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_treasurer_tfv = { 
+	MAN_treasurer_tfv = { 
 		random = no
 		sprite = 13
 		
@@ -823,7 +823,7 @@ leader_traits = {
 		}
 	}
 	
-	navy_chief_maneuver_2_mck = { # Naval units move 10% faster
+	navy_chief_maneuver_2_man = { # Naval units move 10% faster
 		sprite = 3
 		naval_speed_factor = 0.1
 		experience_gain_navy = 0.09
@@ -836,7 +836,7 @@ leader_traits = {
 		}
 	}
 	
-	navy_chief_maneuver_2_mck_tfv = { # Naval units move 10% faster
+	navy_chief_maneuver_2_man_tfv = { # Naval units move 10% faster
 		sprite = 3
 		naval_speed_factor = 0.1
 		experience_gain_navy = 0.09
@@ -850,7 +850,7 @@ leader_traits = {
 		}
 	}
 	
-	MCK_kwantung_army_trait = { 
+	MAN_kwantung_army_trait = { 
 		random = no
 		
 		max_command_power = 150

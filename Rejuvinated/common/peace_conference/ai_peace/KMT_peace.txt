@@ -187,7 +187,7 @@ peace_ai_desires = {
         enable = {
 			FROM = {
 				OR = {
-					original_tag = MCK
+					original_tag = MAN
 					original_tag = ECR
 					original_tag = MEN
 					original_tag = EHA
@@ -455,8 +455,8 @@ peace_ai_desires = {
 			}
 			NOT = {
 				ROOT = {
-					tag = MCK
-					has_completed_focus = MCK_restore_the_empire
+					tag = MAN
+					has_completed_focus = MAN_restore_the_empire
 					is_subject = no
 					has_government = neutrality
 				}

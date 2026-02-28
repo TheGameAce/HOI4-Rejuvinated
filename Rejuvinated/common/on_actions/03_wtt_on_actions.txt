@@ -207,7 +207,7 @@ on_actions = {
 						original_tag = JAP
 						has_government = fascism
 					}
-					MCK = {
+					MAN = {
 						exists = yes
 						NOT = { has_war_with = FROM }
 						OR = {
@@ -217,7 +217,7 @@ on_actions = {
 					}
 				}
 				FROM = { save_event_target_as = jap_civ_loser }
-				MCK = { country_event = { id = wtt_japan.121 days = 1 }}
+				MAN = { country_event = { id = wtt_japan.121 days = 1 }}
 			}
 		}
 	}

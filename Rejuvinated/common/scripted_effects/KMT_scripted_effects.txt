@@ -28,7 +28,7 @@ PRC_create_wargoal_for_dongbei = {
 
 ### anchor_1 ###
 gain_central_plain_wargoal = {
-	custom_effect_tooltip = MCK_reclaim_central_plain_tt
+	custom_effect_tooltip = MAN_reclaim_central_plain_tt
 	every_country = {
 		limit = {
 			any_owned_state = {
@@ -69,7 +69,7 @@ gain_central_plain_wargoal = {
 ### anchor_2 ###
 
 old_frontier_get_wargoal = {
-	custom_effect_tooltip = MCK_restore_frontier_tt
+	custom_effect_tooltip = MAN_restore_frontier_tt
 	every_country = {
 		limit = {
 			any_owned_state = {
@@ -357,141 +357,141 @@ withdraw_from_all_wars_with_puppet = {
 
 increase_jap_suspicion = {
 	custom_effect_tooltip = increase_jap_suspicion_tt
-	add_to_variable = { MCK_suspicion = MCK_suspicion_increase }
+	add_to_variable = { MAN_suspicion = MAN_suspicion_increase }
 	if = {
 		limit = {
-			check_variable = { MCK_suspicion > 9 }
+			check_variable = { MAN_suspicion > 9 }
 		}
-		set_temp_variable = { MCK_awareness_increase = MCK_suspicion }
-		divide_temp_variable = { MCK_awareness_increase = 10 }
-		round_temp_variable = MCK_awareness_increase
-		set_variable = { MCK_suspicion = MCK_awareness_increase }
+		set_temp_variable = { MAN_awareness_increase = MAN_suspicion }
+		divide_temp_variable = { MAN_awareness_increase = 10 }
+		round_temp_variable = MAN_awareness_increase
+		set_variable = { MAN_suspicion = MAN_awareness_increase }
 		increase_jap_awareness = yes
 	}
 }
 
 increase_jap_awareness = {
 	custom_effect_tooltip = increase_jap_awareness_tt
-	set_variable = { MCK_temp_awareness = MCK_awareness }
-	add_to_temp_variable = { MCK_temp_awareness = MCK_awareness_increase }
+	set_variable = { MAN_temp_awareness = MAN_awareness }
+	add_to_temp_variable = { MAN_temp_awareness = MAN_awareness_increase }
 	if = {
-		limit = { check_variable = { MCK_temp_awareness > 19 }}
-		custom_effect_tooltip = MCK_jap_will_demand_submission_tt
+		limit = { check_variable = { MAN_temp_awareness > 19 }}
+		custom_effect_tooltip = MAN_jap_will_demand_submission_tt
 		OVERLORD = { country_event = jap.79 }
 	}else_if = {
 		limit = { 
-			check_variable = { MCK_temp_awareness > 14 }
+			check_variable = { MAN_temp_awareness > 14 }
 		}
-		custom_effect_tooltip = MCK_increase_awareness_modifier_tt
-		custom_effect_tooltip = MCK_awareness_3
+		custom_effect_tooltip = MAN_increase_awareness_modifier_tt
+		custom_effect_tooltip = MAN_awareness_3
 	}else_if = {
 		limit = { 
-			check_variable = { MCK_temp_awareness > 9 }
+			check_variable = { MAN_temp_awareness > 9 }
 		}
-		custom_effect_tooltip = MCK_increase_awareness_modifier_tt
-		custom_effect_tooltip = MCK_awareness_2
+		custom_effect_tooltip = MAN_increase_awareness_modifier_tt
+		custom_effect_tooltip = MAN_awareness_2
 	}
-	add_to_variable = { MCK_awareness = MCK_awareness_increase }
+	add_to_variable = { MAN_awareness = MAN_awareness_increase }
 }
 
 increase_jap_awareness2 = {
 	custom_effect_tooltip = increase_jap_awareness2_tt
-	set_temp_variable = { MCK_temp_awareness = MCK_awareness }
-	add_to_temp_variable = { MCK_temp_awareness = 2 }
+	set_temp_variable = { MAN_temp_awareness = MAN_awareness }
+	add_to_temp_variable = { MAN_temp_awareness = 2 }
 	if = {
-		limit = { check_variable = { MCK_temp_awareness > 19 }}
-		custom_effect_tooltip = MCK_jap_will_demand_submission_tt
+		limit = { check_variable = { MAN_temp_awareness > 19 }}
+		custom_effect_tooltip = MAN_jap_will_demand_submission_tt
 		OVERLORD = { country_event = jap.79 }
 	}else_if = {
 		limit = { 
-			check_variable = { MCK_temp_awareness > 14 }
+			check_variable = { MAN_temp_awareness > 14 }
 		}
-		custom_effect_tooltip = MCK_increase_awareness_modifier_tt
-		custom_effect_tooltip = MCK_awareness_3
+		custom_effect_tooltip = MAN_increase_awareness_modifier_tt
+		custom_effect_tooltip = MAN_awareness_3
 	}else_if = {
 		limit = { 
-			check_variable = { MCK_temp_awareness > 9 }
+			check_variable = { MAN_temp_awareness > 9 }
 		}
-		custom_effect_tooltip = MCK_increase_awareness_modifier_tt
-		custom_effect_tooltip = MCK_awareness_2
+		custom_effect_tooltip = MAN_increase_awareness_modifier_tt
+		custom_effect_tooltip = MAN_awareness_2
 	}
-	add_to_variable = { MCK_awareness = 2 }
+	add_to_variable = { MAN_awareness = 2 }
 }
 
 increase_jap_awareness3 = {
 	custom_effect_tooltip = increase_jap_awareness3_tt
-	set_temp_variable = { MCK_temp_awareness = MCK_awareness }
-	add_to_temp_variable = { MCK_temp_awareness = 3 }
+	set_temp_variable = { MAN_temp_awareness = MAN_awareness }
+	add_to_temp_variable = { MAN_temp_awareness = 3 }
 	if = {
-		limit = { check_variable = { MCK_temp_awareness > 19 }}
-		custom_effect_tooltip = MCK_jap_will_demand_submission_tt
+		limit = { check_variable = { MAN_temp_awareness > 19 }}
+		custom_effect_tooltip = MAN_jap_will_demand_submission_tt
 		OVERLORD = { country_event = jap.79 }
 	}else_if = {
 		limit = { 
-			check_variable = { MCK_temp_awareness > 14 }
+			check_variable = { MAN_temp_awareness > 14 }
 		}
-		custom_effect_tooltip = MCK_increase_awareness_modifier_tt
-		custom_effect_tooltip = MCK_awareness_3
+		custom_effect_tooltip = MAN_increase_awareness_modifier_tt
+		custom_effect_tooltip = MAN_awareness_3
 	}else_if = {
 		limit = { 
-			check_variable = { MCK_temp_awareness > 9 }
+			check_variable = { MAN_temp_awareness > 9 }
 		}
-		custom_effect_tooltip = MCK_increase_awareness_modifier_tt
-		custom_effect_tooltip = MCK_awareness_2
+		custom_effect_tooltip = MAN_increase_awareness_modifier_tt
+		custom_effect_tooltip = MAN_awareness_2
 	}
-	add_to_variable = { MCK_awareness = 3 }
+	add_to_variable = { MAN_awareness = 3 }
 }
 
 increase_jap_awareness4 = {
 	custom_effect_tooltip = increase_jap_awareness4_tt
-	set_temp_variable = { MCK_temp_awareness = MCK_awareness }
-	add_to_temp_variable = { MCK_temp_awareness = 4 }
+	set_temp_variable = { MAN_temp_awareness = MAN_awareness }
+	add_to_temp_variable = { MAN_temp_awareness = 4 }
 	if = {
-		limit = { check_variable = { MCK_temp_awareness > 19 }}
-		custom_effect_tooltip = MCK_jap_will_demand_submission_tt
+		limit = { check_variable = { MAN_temp_awareness > 19 }}
+		custom_effect_tooltip = MAN_jap_will_demand_submission_tt
 		OVERLORD = { country_event = jap.79 }
 	}else_if = {
 		limit = { 
-			check_variable = { MCK_temp_awareness > 14 }
+			check_variable = { MAN_temp_awareness > 14 }
 		}
-		custom_effect_tooltip = MCK_increase_awareness_modifier_tt
-		custom_effect_tooltip = MCK_awareness_3
+		custom_effect_tooltip = MAN_increase_awareness_modifier_tt
+		custom_effect_tooltip = MAN_awareness_3
 	}else_if = {
 		limit = { 
-			check_variable = { MCK_temp_awareness > 9 }
+			check_variable = { MAN_temp_awareness > 9 }
 		}
-		custom_effect_tooltip = MCK_increase_awareness_modifier_tt
-		custom_effect_tooltip = MCK_awareness_2
+		custom_effect_tooltip = MAN_increase_awareness_modifier_tt
+		custom_effect_tooltip = MAN_awareness_2
 	}
-	add_to_variable = { MCK_awareness = 4 }
+	add_to_variable = { MAN_awareness = 4 }
 }
 
 lower_awareness2 = {
 	custom_effect_tooltip = lower_awareness2_tt
-	set_temp_variable = { MCK_temp_awareness = MCK_awareness }
-	subtract_from_temp_variable = { MCK_temp_awareness = 2 }
+	set_temp_variable = { MAN_temp_awareness = MAN_awareness }
+	subtract_from_temp_variable = { MAN_temp_awareness = 2 }
 	if = {
 		limit = { 
-			NOT = { check_variable = { MCK_temp_awareness > 9 }}
+			NOT = { check_variable = { MAN_temp_awareness > 9 }}
 		}
-		custom_effect_tooltip = MCK_increase_awareness_modifier_tt
-		custom_effect_tooltip = MCK_awareness_none_tt
+		custom_effect_tooltip = MAN_increase_awareness_modifier_tt
+		custom_effect_tooltip = MAN_awareness_none_tt
 	}else = {
 		if = {
 			limit = { 
-				NOT = {check_variable = { MCK_temp_awareness > 14 }}
+				NOT = {check_variable = { MAN_temp_awareness > 14 }}
 			}
-			custom_effect_tooltip = MCK_increase_awareness_modifier_tt
-			custom_effect_tooltip = MCK_awareness_2_tt
+			custom_effect_tooltip = MAN_increase_awareness_modifier_tt
+			custom_effect_tooltip = MAN_awareness_2_tt
 		}
 	}
 	if = {
 		limit = {
-			check_variable = { MCK_temp_awareness < 0 }
+			check_variable = { MAN_temp_awareness < 0 }
 		}
-		set_variable = { MCK_awareness = 0 }
+		set_variable = { MAN_awareness = 0 }
 	}else = {
-		subtract_from_variable = { MCK_awareness = 2 }
+		subtract_from_variable = { MAN_awareness = 2 }
 	}
 }
 
@@ -7182,17 +7182,17 @@ KMT_deduct_pop_supportROOT = {
 	}
 }
 
-KMT_mck_break_free_ideo_pop = {	
-	set_temp_variable = { MCK_temp_neut = party_popularity@neutrality }
-	set_temp_variable = { MCK_temp_fasc = party_popularity@fascism }
-	set_temp_variable = { MCK_temp_demo = party_popularity@democratic }
-	set_temp_variable = { MCK_temp_comm = party_popularity@communism }
+KMT_man_break_free_ideo_pop = {	
+	set_temp_variable = { MAN_temp_neut = party_popularity@neutrality }
+	set_temp_variable = { MAN_temp_fasc = party_popularity@fascism }
+	set_temp_variable = { MAN_temp_demo = party_popularity@democratic }
+	set_temp_variable = { MAN_temp_comm = party_popularity@communism }
 	hidden_effect = {
 		country_event = { id = wd.1 }
 	}
 	if = {
 		limit = {
-			check_variable = { MCK_temp_govnt = 1 }
+			check_variable = { MAN_temp_govnt = 1 }
 		}
 		set_politics = {
 			ruling_party = neutrality
@@ -7200,7 +7200,7 @@ KMT_mck_break_free_ideo_pop = {
 		else = {
 			if = {
 				limit = {
-					check_variable = { MCK_temp_govnt = 2 }
+					check_variable = { MAN_temp_govnt = 2 }
 				}
 				set_politics = {
 					ruling_party = fascism
@@ -7208,7 +7208,7 @@ KMT_mck_break_free_ideo_pop = {
 				else = {
 					if = {
 						limit = {
-							check_variable = { MCK_temp_govnt = 3 }
+							check_variable = { MAN_temp_govnt = 3 }
 						}
 						set_politics = {
 							ruling_party = communism
@@ -7216,7 +7216,7 @@ KMT_mck_break_free_ideo_pop = {
 						else = {
 							if = {
 								limit = {
-									check_variable = { MCK_temp_govnt = 4 }
+									check_variable = { MAN_temp_govnt = 4 }
 								}
 								set_politics = {
 									ruling_party = democratic
@@ -7239,19 +7239,19 @@ KMT_mck_break_free_ideo_pop = {
 		}
 		add_popularity = {
 			ideology = democratic
-			popularity = MCK_temp_demo
+			popularity = MAN_temp_demo
 		}
 		add_popularity = {
 			ideology = communism
-			popularity = MCK_temp_comm
+			popularity = MAN_temp_comm
 		}
 		add_popularity = {
 			ideology = fascism
-			popularity = MCK_temp_fasc
+			popularity = MAN_temp_fasc
 		}		
 		add_popularity = {
 			ideology = neutrality
-			popularity = MCK_temp_neut
+			popularity = MAN_temp_neut
 		}
 		else = {
 			if = {
@@ -7264,19 +7264,19 @@ KMT_mck_break_free_ideo_pop = {
 				}
 				add_popularity = {
 					ideology = communism
-					popularity = MCK_temp_comm
+					popularity = MAN_temp_comm
 				}
 				add_popularity = {
 					ideology = fascism
-					popularity = MCK_temp_fasc
+					popularity = MAN_temp_fasc
 				}		
 				add_popularity = {
 					ideology = neutrality
-					popularity = MCK_temp_neut
+					popularity = MAN_temp_neut
 				}
 				add_popularity = {
 					ideology = democratic
-					popularity = MCK_temp_demo
+					popularity = MAN_temp_demo
 				}
 				else = {
 					if = {
@@ -7289,19 +7289,19 @@ KMT_mck_break_free_ideo_pop = {
 						}	
 						add_popularity = {
 							ideology = communism
-							popularity = MCK_temp_comm
+							popularity = MAN_temp_comm
 						}
 						add_popularity = {
 							ideology = neutrality
-							popularity = MCK_temp_neut
+							popularity = MAN_temp_neut
 						}
 						add_popularity = {
 							ideology = democratic
-							popularity = MCK_temp_demo
+							popularity = MAN_temp_demo
 						}
 						add_popularity = {
 							ideology = fascism
-							popularity = MCK_temp_fasc
+							popularity = MAN_temp_fasc
 						}	
 						else = {
 							if = {
@@ -7314,19 +7314,19 @@ KMT_mck_break_free_ideo_pop = {
 								}
 								add_popularity = {
 									ideology = neutrality
-									popularity = MCK_temp_neut
+									popularity = MAN_temp_neut
 								}
 								add_popularity = {
 									ideology = democratic
-									popularity = MCK_temp_demo
+									popularity = MAN_temp_demo
 								}
 								add_popularity = {
 									ideology = fascism
-									popularity = MCK_temp_fasc
+									popularity = MAN_temp_fasc
 								}		
 								add_popularity = {
 									ideology = communism
-									popularity = MCK_temp_comm
+									popularity = MAN_temp_comm
 								}
 							}
 						}
@@ -7338,25 +7338,25 @@ KMT_mck_break_free_ideo_pop = {
 }
 
 update_reconc_cost = {
-	set_variable = { MCK_RFP_reconciliation_cost = MCK_RFP_readinessV }
-	multiply_variable = { MCK_RFP_reconciliation_cost = MCK_RFP_mood }
-	add_to_variable = { MCK_RFP_reconciliation_cost = MCK_RFP_reconciliation_cost_base }
+	set_variable = { MAN_RFP_reconciliation_cost = MAN_RFP_readinessV }
+	multiply_variable = { MAN_RFP_reconciliation_cost = MAN_RFP_mood }
+	add_to_variable = { MAN_RFP_reconciliation_cost = MAN_RFP_reconciliation_cost_base }
 }
 
-#require definition of MCK_RFP_mood_increase
+#require definition of MAN_RFP_mood_increase
 add_mood = {
-	add_to_variable = { MCK_RFP_mood = MCK_RFP_mood_increase }
+	add_to_variable = { MAN_RFP_mood = MAN_RFP_mood_increase }
 	if = {
 		limit = {
-			check_variable = { MCK_RFP_mood > 6 }
+			check_variable = { MAN_RFP_mood > 6 }
 		}
-		set_variable = { MCK_RFP_mood = 6 }
+		set_variable = { MAN_RFP_mood = 6 }
 	}
 	if = {
 		limit = {
-			check_variable = { MCK_RFP_mood < -6 }
+			check_variable = { MAN_RFP_mood < -6 }
 		}
-		set_variable = { MCK_RFP_mood = -6 }
+		set_variable = { MAN_RFP_mood = -6 }
 	}
 }
 
@@ -8468,12 +8468,12 @@ trautmann_truce_effect = {
 		every_state = {
 			limit = {
 				is_in_array = { KMT_central_gov_tag.KMT_considered_inalienable_parts = THIS }
-				is_owned_by = MCK
+				is_owned_by = MAN
 			}
 			remove_core_of = event_target:KMT_central_gov_tag
 			remove_from_array = { KMT_central_gov_tag.KMT_considered_inalienable_parts = THIS }
 		}
-		event_target:KMT_central_gov_tag = { diplomatic_relation = { country = MCK relation = guarantee active = yes }}
+		event_target:KMT_central_gov_tag = { diplomatic_relation = { country = MAN relation = guarantee active = yes }}
 		JAP = { diplomatic_relation = { country = event_target:KMT_central_gov_tag relation = military_access active = yes }}
 		JAP = { diplomatic_relation = { country = event_target:KMT_central_gov_tag relation = docking_rights active = yes }}
 	}
@@ -8634,7 +8634,7 @@ trautmann_truce_effect = {
 			OR = {
 				any_neighbor_state = { 
 					OR = {
-						is_owned_by = MCK 
+						is_owned_by = MAN 
 						is_owned_by = JAP
 						OWNER = { is_subject_of = JAP }
 					}
@@ -9013,68 +9013,68 @@ KMT_warlord_move_leader_to_neutrality = {
 	}
 }
 
-MCK_update_local_bandits_modifier = {
-	set_variable = { MCK_local_bandits_compliance_gain = global.MCK_resistance_strength@This }
-	multiply_variable = { MCK_local_bandits_compliance_gain = -1 }
-	divide_variable = { MCK_local_bandits_compliance_gain = 10000 }
+MAN_update_local_bandits_modifier = {
+	set_variable = { MAN_local_bandits_compliance_gain = global.MAN_resistance_strength@This }
+	multiply_variable = { MAN_local_bandits_compliance_gain = -1 }
+	divide_variable = { MAN_local_bandits_compliance_gain = 10000 }
 	
-	set_variable = { MCK_local_bandits_resistance_target = global.MCK_resistance_strength@This }
-	divide_variable = { MCK_local_bandits_resistance_target = 10000 }
-	multiply_variable = { MCK_local_bandits_resistance_target = 15 }
+	set_variable = { MAN_local_bandits_resistance_target = global.MAN_resistance_strength@This }
+	divide_variable = { MAN_local_bandits_resistance_target = 10000 }
+	multiply_variable = { MAN_local_bandits_resistance_target = 15 }
 	
-	set_variable = { MCK_najua_presence_resistance_growth = global.MCK_resistance_strength@This }
-	divide_variable = { MCK_najua_presence_resistance_growth = 200 }
+	set_variable = { MAN_najua_presence_resistance_growth = global.MAN_resistance_strength@This }
+	divide_variable = { MAN_najua_presence_resistance_growth = 200 }
 	
-	set_variable = { MCK_najua_presence_resistance_decay = global.MCK_resistance_strength@This }
-	divide_variable = { MCK_najua_presence_resistance_decay = -500 }
+	set_variable = { MAN_najua_presence_resistance_decay = global.MAN_resistance_strength@This }
+	divide_variable = { MAN_najua_presence_resistance_decay = -500 }
 	
-	set_variable = { MCK_najua_presence_compliance_gain = global.MCK_resistance_strength@This }
-	multiply_variable = { MCK_najua_presence_compliance_gain = -5 }
-	divide_variable = { MCK_najua_presence_compliance_gain = 10000 }
+	set_variable = { MAN_najua_presence_compliance_gain = global.MAN_resistance_strength@This }
+	multiply_variable = { MAN_najua_presence_compliance_gain = -5 }
+	divide_variable = { MAN_najua_presence_compliance_gain = 10000 }
 	
-	set_variable = { MCK_najua_presence_resistance_target = global.MCK_resistance_strength@This }
-	divide_variable = { MCK_najua_presence_resistance_target = 1000 }
-	multiply_variable = { MCK_najua_presence_resistance_target = 3 }
+	set_variable = { MAN_najua_presence_resistance_target = global.MAN_resistance_strength@This }
+	divide_variable = { MAN_najua_presence_resistance_target = 1000 }
+	multiply_variable = { MAN_najua_presence_resistance_target = 3 }
 	
-	set_variable = { MCK_najua_presence2_resistance_growth = global.MCK_resistance_strength@This }
-	divide_variable = { MCK_najua_presence2_resistance_growth = 100 }
+	set_variable = { MAN_najua_presence2_resistance_growth = global.MAN_resistance_strength@This }
+	divide_variable = { MAN_najua_presence2_resistance_growth = 100 }
 	
-	set_variable = { MCK_najua_presence2_resistance_decay = global.MCK_resistance_strength@This }
-	divide_variable = { MCK_najua_presence2_resistance_decay = -200 }
+	set_variable = { MAN_najua_presence2_resistance_decay = global.MAN_resistance_strength@This }
+	divide_variable = { MAN_najua_presence2_resistance_decay = -200 }
 	
-	set_variable = { MCK_najua_presence2_compliance_gain = global.MCK_resistance_strength@This }
-	multiply_variable = { MCK_najua_presence2_compliance_gain = -7 }
-	divide_variable = { MCK_najua_presence2_compliance_gain = 10000 }
+	set_variable = { MAN_najua_presence2_compliance_gain = global.MAN_resistance_strength@This }
+	multiply_variable = { MAN_najua_presence2_compliance_gain = -7 }
+	divide_variable = { MAN_najua_presence2_compliance_gain = 10000 }
 	
-	set_variable = { MCK_najua_presence2_resistance_target = global.MCK_resistance_strength@This }
-	divide_variable = { MCK_najua_presence2_resistance_target = 1000 }
-	multiply_variable = { MCK_najua_presence2_resistance_target = 7 }
+	set_variable = { MAN_najua_presence2_resistance_target = global.MAN_resistance_strength@This }
+	divide_variable = { MAN_najua_presence2_resistance_target = 1000 }
+	multiply_variable = { MAN_najua_presence2_resistance_target = 7 }
 }
 
-MCK_change_resistance_strength = {
-	custom_effect_tooltip = MCK_resistance_strength_change_tt
-	add_to_variable = { global.MCK_resistance_strength@This = MCK_resistance_strength_change }
+MAN_change_resistance_strength = {
+	custom_effect_tooltip = MAN_resistance_strength_change_tt
+	add_to_variable = { global.MAN_resistance_strength@This = MAN_resistance_strength_change }
 	clamp_variable = {
-		var = global.MCK_resistance_strength@This
+		var = global.MAN_resistance_strength@This
 		min = 0
 		max = 100
 	}
 	if = {
 		limit = { 
-			NOT = { check_variable = { global.MCK_resistance_strength@This > 0 }}
+			NOT = { check_variable = { global.MAN_resistance_strength@This > 0 }}
 			resistance < 5
 		}
 		if = {
-			limit = { has_dynamic_modifier = { modifier = MCK_najua_presence }}
-			remove_dynamic_modifier = { modifier = MCK_najua_presence }
+			limit = { has_dynamic_modifier = { modifier = MAN_najua_presence }}
+			remove_dynamic_modifier = { modifier = MAN_najua_presence }
 		}
 		if = {
-			limit = { has_dynamic_modifier = { modifier = MCK_najua_presence2 }}
-			remove_dynamic_modifier = { modifier = MCK_najua_presence2 }
+			limit = { has_dynamic_modifier = { modifier = MAN_najua_presence2 }}
+			remove_dynamic_modifier = { modifier = MAN_najua_presence2 }
 		}
 		if = {
-			limit = { has_dynamic_modifier = { modifier = MCK_local_bandits }}
-			remove_dynamic_modifier = { modifier = MCK_local_bandits }
+			limit = { has_dynamic_modifier = { modifier = MAN_local_bandits }}
+			remove_dynamic_modifier = { modifier = MAN_local_bandits }
 		}
 		if = {
 			limit = { has_resistance = yes }
@@ -9083,15 +9083,15 @@ MCK_change_resistance_strength = {
 	}
 }
 
-MCK_swap_out_japanese_traits = {
+MAN_swap_out_japanese_traits = {
 	hidden_effect = {
-		MCK_sakuma_ryozo = {
+		MAN_sakuma_ryozo = {
 			remove_trait = {
-				trait = army_chief_planning_2_mck
+				trait = army_chief_planning_2_man
 				slot = army_chief
 			}
 			remove_trait = {
-				trait = army_chief_planning_2_mck_tfv
+				trait = army_chief_planning_2_man_tfv
 				slot = army_chief
 			}
 			add_trait = {
@@ -9099,13 +9099,13 @@ MCK_swap_out_japanese_traits = {
 				slot = army_chief
 			}
 		}
-		MCK_ito_seiichi = {
+		MAN_ito_seiichi = {
 			remove_trait = {
-				trait = navy_chief_maneuver_2_mck_tfv
+				trait = navy_chief_maneuver_2_man_tfv
 				slot = navy_chief
 			}
 			remove_trait = {
-				trait = navy_chief_maneuver_2_mck
+				trait = navy_chief_maneuver_2_man
 				slot = navy_chief
 			}
 			add_trait = {
@@ -9113,13 +9113,13 @@ MCK_swap_out_japanese_traits = {
 				slot = navy_chief
 			}
 		}
-		MCK_noguchi_yujiro = {
+		MAN_noguchi_yujiro = {
 			remove_trait = {
-				trait = air_chief_reform_2_mck_tfv
+				trait = air_chief_reform_2_man_tfv
 				slot = air_chief
 			}
 			remove_trait = {
-				trait = air_chief_reform_2_mck
+				trait = air_chief_reform_2_man
 				slot = air_chief
 			}
 			add_trait = {
@@ -9127,13 +9127,13 @@ MCK_swap_out_japanese_traits = {
 				slot = air_chief
 			}
 		}
-		MCK_tanaka_osamu = {
+		MAN_tanaka_osamu = {
 			remove_trait = {
-				trait = air_chief_ground_support_2_mck_tfv
+				trait = air_chief_ground_support_2_man_tfv
 				slot = air_chief
 			}
 			remove_trait = {
-				trait = air_chief_ground_support_2_mck
+				trait = air_chief_ground_support_2_man
 				slot = air_chief
 			}
 			add_trait = {
@@ -9141,13 +9141,13 @@ MCK_swap_out_japanese_traits = {
 				slot = air_chief
 			}
 		}
-		MCK_kimura_heitaro = {
+		MAN_kimura_heitaro = {
 			remove_trait = {
-				trait = army_artillery_2_mck_tfv
+				trait = army_artillery_2_man_tfv
 				slot = high_command
 			}
 			remove_trait = {
-				trait = army_artillery_2_mck
+				trait = army_artillery_2_man
 				slot = high_command
 			}
 			add_trait = {
@@ -9155,13 +9155,13 @@ MCK_swap_out_japanese_traits = {
 				slot = high_command
 			}
 		}
-		MCK_tsuji_masanobu = {
+		MAN_tsuji_masanobu = {
 			remove_trait = {
-				trait = army_regrouping_2_mck_tfv
+				trait = army_regrouping_2_man_tfv
 				slot = high_command
 			}
 			remove_trait = {
-				trait = army_regrouping_2_mck
+				trait = army_regrouping_2_man
 				slot = high_command
 			}
 			add_trait = {
@@ -9169,7 +9169,7 @@ MCK_swap_out_japanese_traits = {
 				slot = high_command
 			}
 		}
-		MCK_doihara_kenji = {
+		MAN_doihara_kenji = {
 			remove_trait = {
 				trait = lawrence_of_manchuria_tfv
 				slot = political_advisor
@@ -9183,13 +9183,13 @@ MCK_swap_out_japanese_traits = {
 				slot = political_advisor
 			}
 		}
-		MCK_yoshisuke_aikawa = {
+		MAN_yoshisuke_aikawa = {
 			remove_trait = {
-				trait = captain_of_industry_mck_tfv
+				trait = captain_of_industry_man_tfv
 				slot = political_advisor
 			}
 			remove_trait = {
-				trait = captain_of_industry_mck
+				trait = captain_of_industry_man
 				slot = political_advisor
 			}
 			add_trait = {
@@ -9197,13 +9197,13 @@ MCK_swap_out_japanese_traits = {
 				slot = political_advisor
 			}
 		}
-		MCK_naoki_hoshino = {
+		MAN_naoki_hoshino = {
 			remove_trait = {
-				trait = war_industrialist_mck_tfv
+				trait = war_industrialist_man_tfv
 				slot = political_advisor
 			}
 			remove_trait = {
-				trait = war_industrialist_mck
+				trait = war_industrialist_man
 				slot = political_advisor
 			}
 			add_trait = {
@@ -9211,27 +9211,27 @@ MCK_swap_out_japanese_traits = {
 				slot = political_advisor
 			}
 		}
-		MCK_amakasu_masahiko = {
+		MAN_amakasu_masahiko = {
 			remove_trait = {
-				trait = MCK_head_of_manei_tfv
+				trait = MAN_head_of_manei_tfv
 				slot = political_advisor
 			}
 			remove_trait = {
-				trait = MCK_head_of_manei
+				trait = MAN_head_of_manei
 				slot = political_advisor
 			}
 			add_trait = {
-				trait = MCK_head_of_state_media
+				trait = MAN_head_of_state_media
 				slot = political_advisor
 			}
 		}
-		MCK_itagaki_seishiro = {
+		MAN_itagaki_seishiro = {
 			remove_trait = {
-				trait = military_theorist_mck_tfv
+				trait = military_theorist_man_tfv
 				slot = theorist
 			}
 			remove_trait = {
-				trait = military_theorist_mck
+				trait = military_theorist_man
 				slot = theorist
 			}
 			add_trait = {
@@ -9239,13 +9239,13 @@ MCK_swap_out_japanese_traits = {
 				slot = theorist
 			}
 		}
-		MCK_kawabata_masaharu = {
+		MAN_kawabata_masaharu = {
 			remove_trait = {
-				trait = naval_theorist_mck_tfv
+				trait = naval_theorist_man_tfv
 				slot = theorist
 			}
 			remove_trait = {
-				trait = naval_theorist_mck
+				trait = naval_theorist_man
 				slot = theorist
 			}
 			add_trait = {

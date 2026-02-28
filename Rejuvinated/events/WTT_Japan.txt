@@ -222,7 +222,7 @@ country_event = {
  ##  ### #  # ### #  # #  # ### ##       #   ##      #   # #  # #  # 
 
 
-#Japan propse all samurai generals go to MCK
+#Japan propse all samurai generals go to MAN
 country_event = {
 	id = wtt_japan.21
 	title = wtt_japan.21.t
@@ -240,7 +240,7 @@ country_event = {
 		FROM = {		
 			every_army_leader = {
 				limit = { has_trait = JAP_samurai_lineage }
-				set_character_flag = MCK_japanese_refugee
+				set_character_flag = MAN_japanese_refugee
 				set_nationality = ROOT
 			}
 		}		
@@ -248,7 +248,7 @@ country_event = {
 	}
 }
 
-#MCK Answers Japan yes
+#MAN Answers Japan yes
 country_event = {
 	id = wtt_japan.22
 	title = wtt_japan.22.t
@@ -284,12 +284,12 @@ country_event = {
 	option = {
 		name = wtt_japan.31.a
 		trigger = {
-			country_exists = MCK
+			country_exists = MAN
 		}
 		ai_chance = {
 			base = 5
 		}
-		MCK = {
+		MAN = {
 			country_event = { id = wtt_japan.32 }
 			effect_tooltip = {
 				add_ideas = MAN_exiled_imperial_family
@@ -308,7 +308,7 @@ country_event = {
 	}
 }
 
-#Event to MCK. Exiled imperial family comes knocking
+#Event to MAN. Exiled imperial family comes knocking
 country_event = {
 	id = wtt_japan.32
 	title = wtt_japan.32.t
@@ -440,7 +440,7 @@ country_event = {
 	}
 }
 
-#Event to MCK. Japan sends guns
+#Event to MAN. Japan sends guns
 country_event = {
 	id = wtt_japan.41
 	title = wtt_japan.41.t
@@ -457,7 +457,7 @@ country_event = {
 		effect_tooltip = {
 			JAP = { 
 				send_equipment = {
-					target = MCK
+					target = MAN
 					equipment = infantry_equipment
 					amount = 2000
 					old_prioritised = yes
@@ -897,7 +897,7 @@ country_event = {
 				}
 			}
 			add_ideas = JAP_end_the_militarists
-			#set_party_name = { ideology = fascism name = MCK_kantogun_party }
+			#set_party_name = { ideology = fascism name = MAN_kantogun_party }
 			if = {
 				limit = {
 					any_state = {
@@ -1127,7 +1127,7 @@ country_event = {
 	}
 }
 
-# Event for MCK: Commie JAP took Tokyo
+# Event for MAN: Commie JAP took Tokyo
 country_event = {
 	id = wtt_japan.121
 	title = wtt_japan.121.t
@@ -1150,7 +1150,7 @@ country_event = {
 						MEN = { is_subject_of = PREV }
 					}
 				}
-				MCK = { puppet = MEN }
+				MAN = { puppet = MEN }
 			}
 			if = {
 				limit = {
@@ -1159,7 +1159,7 @@ country_event = {
 						ECR = { is_subject_of = PREV }
 					}
 				}
-				MCK = { puppet = ECR }
+				MAN = { puppet = ECR }
 			}
 			if = {
 				limit = {
@@ -1168,7 +1168,7 @@ country_event = {
 						EHA = { is_subject_of = PREV }
 					}
 				}
-				MCK = { puppet = EHA }
+				MAN = { puppet = EHA }
 			}
 		}
 	}
@@ -1176,7 +1176,7 @@ country_event = {
 	# Annex them!
 	option = {
 		name = wtt_japan.121.a
-		trigger = { NOT = { has_completed_focus = MCK_an_alternative }}
+		trigger = { NOT = { has_completed_focus = MAN_an_alternative }}
 		ai_chance = {
 			base = 10
 		}
@@ -1184,8 +1184,8 @@ country_event = {
 		event_target:jap_civ_loser = {
 			every_character = { 
 				limit = { has_character_flag = JAP_true_jap_characters }
-				set_character_flag = MCK_japanese_refugee
-				set_nationality = MCK
+				set_character_flag = MAN_japanese_refugee
+				set_nationality = MAN
 			}
 			transfer_units_fraction = {
 				target = ROOT
@@ -1217,21 +1217,21 @@ country_event = {
 		set_cosmetic_tag = MAN_kwantung_army
 		if = {
 			limit = {
-				MCK = { has_idea = MCK_reliant_idea }
+				MAN = { has_idea = MAN_reliant_idea }
 			}
-			MCK = { remove_ideas = MCK_reliant_idea }
+			MAN = { remove_ideas = MAN_reliant_idea }
 		}
-		custom_effect_tooltip = MCK_more_japanese_immigrants
-		add_to_variable = { MCK_japanese_immigrants_number = 1000 }
-		set_country_flag = MCK_kwantung_terr_flag
-		MCK_kwantung_army = { 
+		custom_effect_tooltip = MAN_more_japanese_immigrants
+		add_to_variable = { MAN_japanese_immigrants_number = 1000 }
+		set_country_flag = MAN_kwantung_terr_flag
+		MAN_kwantung_army = { 
 			set_portraits = {
 				civilian = { large = "gfx/leaders/kmt_mod/kwantung_army_leader.tga" }
 			}
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					traits = { MCK_kwantung_army_trait }
+					traits = { MAN_kwantung_army_trait }
 					expire = "1965.1.1"
 					ideology = fascism_ideology
 				}
@@ -1246,13 +1246,13 @@ country_event = {
 		#	keep_completed = no
 		#}
 		
-			MCK_swap_out_japanese_traits = yes
+			MAN_swap_out_japanese_traits = yes
 	}
 
 	# This is not our fight.
 	option = {
 		name = wtt_japan.121.b
-		trigger = { NOT = { has_completed_focus = MCK_enhance_local_policing }}
+		trigger = { NOT = { has_completed_focus = MAN_enhance_local_policing }}
 		ai_chance = {
 			base = 0
 		}
@@ -1270,7 +1270,7 @@ country_event = {
 			ideology = fascism
 			size = 0.5
 			keep_unit_leaders_trigger = { always = yes }
-			states_filter = { NOT = { has_state_flag = MCK_state_secured }}
+			states_filter = { NOT = { has_state_flag = MAN_state_secured }}
 			if = {
 				limit = { ECR = { is_subject_of = ROOT }}
 				puppet = ECR
@@ -1293,7 +1293,7 @@ country_event = {
 			event_target:jap_civ_loser = {
 				every_character = { 
 					limit = { has_character_flag = JAP_true_jap_characters }
-					set_character_flag = MCK_japanese_refugee
+					set_character_flag = MAN_japanese_refugee
 					set_nationality = PREV.PREV
 				}
 				transfer_units_fraction = {
@@ -1302,7 +1302,7 @@ country_event = {
 				}
 			}
 			set_cosmetic_tag = MAN_kwantung_army
-			set_country_flag = MCK_kwantung_terr_flag
+			set_country_flag = MAN_kwantung_terr_flag
 			load_focus_tree = {
 				tree = KTA_focus
 				keep_completed = no
@@ -1313,31 +1313,31 @@ country_event = {
 			#}
 			ROOT = {
 				every_character = { 
-					limit = { has_character_flag = MCK_is_japanese_character }
+					limit = { has_character_flag = MAN_is_japanese_character }
 					set_nationality = PREV.PREV
 				}
 			}
 			if = {
 				limit = {
-					MCK = { has_idea = MCK_reliant_idea }
+					MAN = { has_idea = MAN_reliant_idea }
 				}
-				MCK = { remove_ideas = MCK_reliant_idea }
+				MAN = { remove_ideas = MAN_reliant_idea }
 			}
-			set_party_name = { ideology = fascism name = MCK_kantogun_party }
-			MCK_kwantung_army = { 
+			set_party_name = { ideology = fascism name = MAN_kantogun_party }
+			MAN_kwantung_army = { 
 				set_portraits = {
 					civilian = { large = "gfx/leaders/kmt_mod/kwantung_army_leader.tga" }
 				}
 				add_country_leader_role = {
 					promote_leader = yes
 					country_leader = {
-						traits = { MCK_kwantung_army_trait }
+						traits = { MAN_kwantung_army_trait }
 						expire = "1965.1.1"
 						ideology = fascism_ideology
 					}
 				}
 			}
-			MCK_swap_out_japanese_traits = yes
+			MAN_swap_out_japanese_traits = yes
 			annex_country = { target = event_target:jap_civ_loser }
 		}
 		FROM = {
@@ -1348,7 +1348,7 @@ country_event = {
 	}
 }
 
-# Event for JAP: MCK takes rest of Japan but war is over
+# Event for JAP: MAN takes rest of Japan but war is over
 country_event = {
 	id = wtt_japan.122
 	title = wtt_japan.122.t
@@ -1373,7 +1373,7 @@ country_event = {
 	}
 }
 
-# Event for JAP: MCK does not take rest of Japan but war is over
+# Event for JAP: MAN does not take rest of Japan but war is over
 country_event = {
 	id = wtt_japan.123
 	title = wtt_japan.123.t
@@ -1457,7 +1457,7 @@ country_event = {
 			if = {
 				limit = {
 					NOT = {
-						MCK = {
+						MAN = {
 							controls_state = 525
 							controls_state = 527
 						}
@@ -1497,8 +1497,8 @@ country_event = {
 									MEN = { is_subject_of = JAP }
 								}
 								AND = {
-									is_owned_by = MCK
-									MCK = { is_subject_of = JAP }
+									is_owned_by = MAN
+									MAN = { is_subject_of = JAP }
 								}
 								AND = {
 									is_owned_by = WJW
@@ -1593,8 +1593,8 @@ country_event = {
 									MEN = { is_subject_of = JAP }
 								}
 								AND = {
-									is_owned_by = MCK
-									MCK = { is_subject_of = JAP }
+									is_owned_by = MAN
+									MAN = { is_subject_of = JAP }
 								}
 							}
 						}
@@ -1711,7 +1711,7 @@ country_event = {
 		if = {
 			limit = {
 				NOT = {
-					MCK = {
+					MAN = {
 						controls_state = 525
 						controls_state = 527
 					}
@@ -1751,8 +1751,8 @@ country_event = {
 								MEN = { is_subject_of = JAP }
 							}
 							AND = {
-								is_owned_by = MCK
-								MCK = { is_subject_of = JAP }
+								is_owned_by = MAN
+								MAN = { is_subject_of = JAP }
 							}
 						}
 					}
@@ -1783,8 +1783,8 @@ country_event = {
 								MEN = { is_subject_of = JAP }
 							}
 							AND = {
-								is_owned_by = MCK
-								MCK = { is_subject_of = JAP }
+								is_owned_by = MAN
+								MAN = { is_subject_of = JAP }
 							}
 						}
 					}
@@ -1897,7 +1897,7 @@ country_event = {
 	}
 }
 
-# Event for MCK that Japan wants to surrender
+# Event for MAN that Japan wants to surrender
 country_event = {
 	id = wtt_japan.129
 	title = wtt_japan.126.t
@@ -1937,7 +1937,7 @@ country_event = {
 				}
 				transfer_state = 524
 			}
-			MCK = {
+			MAN = {
 				every_state = {
 					limit = {
 						is_controlled_by = PREV
@@ -1955,7 +1955,7 @@ country_event = {
 					}
 					every_country = {
 						limit = {
-							original_tag = MCK
+							original_tag = MAN
 							controls_state = PREV
 						}
 						transfer_state = PREV
@@ -1981,7 +1981,7 @@ country_event = {
 	}
 }
 
-# Event for Japan that MCK has accepted
+# Event for Japan that MAN has accepted
 country_event = {
 	id = wtt_japan.130
 	title = wtt_japan.127.t
@@ -2015,9 +2015,9 @@ country_event = {
 					is_controlled_by = JAP
 				}
 			}
-			MCK = { transfer_state = 524 }
+			MAN = { transfer_state = 524 }
 		}
-		MCK = {
+		MAN = {
 			every_state = {
 				limit = {
 					is_controlled_by = PREV
@@ -2029,7 +2029,7 @@ country_event = {
 						}
 					}
 				}
-				MCK = {
+				MAN = {
 					transfer_state = PREV
 				}
 			}

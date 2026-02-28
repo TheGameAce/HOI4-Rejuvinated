@@ -207,7 +207,7 @@ CNFPRC_air_guerrilla_dispatch_organization = {
 
 ###################################
  
-CNFMCK_nc_motorised_organization = {
+CNFMAN_nc_motorised_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_3
 	include = generic_motorized_mechanized_organization
 	delete_included_values = { }
@@ -220,7 +220,7 @@ CNFMCK_nc_motorised_organization = {
 	}
 	
 	initial_trait = {
-		name = CNFMCK_nc_motorised_initial_trait
+		name = CNFMAN_nc_motorised_initial_trait
 		
 		equipment_bonus = {
 			maximum_speed = 0.03
@@ -309,14 +309,14 @@ CNFMCK_nc_motorised_organization = {
 	}
 }
 
-CNFMCK_manchuria_artillery_organization = {
+CNFMAN_manchuria_artillery_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_3
 	include = generic_artillery_organization
 	#delete_included_values = { tree_header_text }
 	allowed = { always = no }
 	
 	initial_trait = {
-		name = CNFMCK_manchuria_artillery_trait
+		name = CNFMAN_manchuria_artillery_trait
 	}
 
 	override_trait = {
@@ -343,14 +343,14 @@ CNFMCK_manchuria_artillery_organization = {
 	}
 }
 
-CNFMCK_nc_artillery_organization = {
+CNFMAN_nc_artillery_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_3
 	include = generic_artillery_organization
 	#delete_included_values = { tree_header_text }
 	allowed = { always = no }
 	
 	initial_trait = {
-		name = CNFMCK_nc_artillery_trait
+		name = CNFMAN_nc_artillery_trait
 	}
 	
 	override_trait = {
@@ -377,14 +377,14 @@ CNFMCK_nc_artillery_organization = {
 	}
 }
 
-CNFMCK_sc_iw_organization = {
+CNFMAN_sc_iw_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_3
 	include = generic_infantry_equipment_organization
 	#delete_included_values = { tree_header_text }
 	allowed = { always = no }
 
 	initial_trait = {
-		name = CNFMCK_sc_iw_trait
+		name = CNFMAN_sc_iw_trait
 		equipment_bonus = {
 			soft_attack = 0.05
 		}
@@ -450,14 +450,14 @@ CNFMCK_sc_iw_organization = {
 	}
 }
 
-CNFMCK_nw_iw_organization = {
+CNFMAN_nw_iw_organization = {
 	icon = GFX_idea_generic_tank_manufacturer_3
 	include = generic_infantry_equipment_organization
 	#delete_included_values = { tree_header_text }
 	allowed = { always = no }
 
 	initial_trait = {
-		name = CNFMCK_nw_iw_trait
+		name = CNFMAN_nw_iw_trait
 		equipment_bonus = {
 			reliability = 0.05
 		}

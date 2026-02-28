@@ -1,0 +1,436 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+
+MAN_mukden_arsenal_tank_mio = {
+	name = MAN_mukden_arsenal_tank
+	include = generic_tank_organization
+	icon = GFX_idea_generic_tank_manufacturer_3
+	allowed = { original_tag = MAN }
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 716
+				owns_state = 716
+			}
+		}
+	}
+
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 716
+				AND = {
+					owns_state = 716
+				}
+			}
+		}
+	}
+}
+		
+MAN_tank_bureau_refurb_mio = {
+	include = generic_tank_refurbishment_plant_organization
+	icon = GFX_idea_generic_armor
+	
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+	available = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+}	
+		
+MAN_tank_bureau_infantry_mio = {
+	include = generic_infantry_tank_organization
+	icon = GFX_idea_generic_armor
+	
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+	available = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+}	
+		
+MAN_tank_bureau_mobile_mio = {
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_generic_armor
+	
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+	available = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+}	
+		
+#MAN_naval_land_combat_coordination_department_mio = {
+#	name = MAN_naval_land_combat_coordination_department
+#	include = CNFMAN_amphibious_tank_organization
+#	icon = GFX_idea_eng_preparing_the_second_front
+#	
+#	allowed = { original_tag = MAN }
+#			
+#	visible = { 
+#		FROM = {
+#			OR = {
+#				#has_completed_focus = MAN_imperial_arsenal 
+#				#has_completed_focus = MAN_imperial_shipbuilding
+#			}
+#		}
+#	}
+#			
+#	available = { 
+#		FROM = {
+#			OR = {
+#				has_completed_focus = MAN_imperial_arsenal 
+#				has_completed_focus = MAN_imperial_shipbuilding
+#			}
+#		}
+#	}
+#}	
+		
+MAN_armoured_vehicle_production_department_mio = {
+	name = MAN_armoured_vehicle_production_department
+	include = generic_heavy_tank_organization
+	icon = GFX_idea_generic_tank_manufacturer_3
+	
+	allowed = { original_tag = MAN }
+			
+	visible = { 
+		FROM = { has_completed_focus = MAN_armament_modernisation }
+	}
+			
+	available = { 
+		FROM = { has_completed_focus = MAN_armament_modernisation }
+	}
+}	
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+MAN_river_defence_and_maritime_police_mio = {
+	name = MAN_river_defence_and_maritime_police
+	include = generic_raider_ship_organization
+	icon = GFX_idea_generic_coastal_navy
+	allowed = { original_tag = MAN }
+}
+
+MAN_naval_production_bureau_mio = {
+	name = MAN_naval_production_bureau
+	include = generic_battle_line_ship_organization
+	icon = GFX_idea_generic_naval_manufacturer_3
+	allowed = { original_tag = MAN }
+			
+	visible = { FROM = { has_completed_focus = MAN_imperial_shipbuilding }}
+	available = { FROM = { has_completed_focus = MAN_imperial_shipbuilding }}
+}
+
+MAN_carrier_research_department_mio = {
+	name = MAN_carrier_research_department
+	include = generic_task_force_ship_organization
+	icon = GFX_idea_generic_navy_carrier_bonus
+	allowed = { original_tag = MAN }
+			
+	visible = { FROM = { has_completed_focus = MAN_imperial_shipbuilding }}
+	available = { FROM = { has_completed_focus = MAN_imperial_shipbuilding }}
+}
+
+MAN_commercial_bureau_mio = {
+	name = MAN_commercial_bureau
+	include = generic_escort_ship_organization
+	icon = GFX_idea_liberty_ships_focus
+	allowed = { original_tag = MAN }
+			
+	visible = { FROM = { has_completed_focus = MAN_imperial_shipbuilding }}
+	available = { FROM = { has_completed_focus = MAN_imperial_shipbuilding }}
+}
+
+MAN_national_shipbuilding_commission_mio = {
+	name = MAN_national_shipbuilding_commission
+	include = generic_refurbishment_repair_organization
+	icon = GFX_idea_generic_naval_manufacturer_1
+	allowed = { original_tag = MAN }
+			
+	visible = { FROM = { has_completed_focus = MAN_naval_industry_expansion }}
+	available = { FROM = { has_completed_focus = MAN_naval_industry_expansion }}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+MAN_manchu_air_mio = {
+	name = MAN_manchu_air
+	include = generic_range_focused_aircraft_organization
+	icon = GFX_idea_manchu_air
+	
+	allowed = { original_tag = MAN }
+}
+
+MAN_manchu_airprod_mio = {
+	name = MAN_manchu_airprod
+	include = generic_high_agility_fighter_aircraft_organization
+	icon = GFX_idea_manchu_airprod
+	
+	allowed = { original_tag = MAN }
+			
+	available = { 
+		if = {
+			limit = { FROM = { has_focus_tree = KTA_focus }}
+			FROM = { has_completed_focus = KTA_mamc }
+		}else = {
+			FROM = { has_completed_focus = MAN_manchu_air_manufacturing }
+		}
+	}
+}
+
+MAN_aircraft_manufacturing_bureau_light_mio = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_1
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_aircraft_manufacturing }}
+	available = { FROM = { has_completed_focus = MAN_imperial_aircraft_manufacturing }}
+}
+
+MAN_aircraft_manufacturing_bureau_medium_mio = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_1
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_aircraft_manufacturing }}
+	available = { FROM = { has_completed_focus = MAN_imperial_aircraft_manufacturing }}
+}
+
+MAN_aircraft_manufacturing_bureau_heavy_mio = {
+	include = generic_heavy_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_1
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_aircraft_manufacturing }}
+	available = { FROM = { has_completed_focus = MAN_imperial_aircraft_manufacturing }}
+}
+
+MAN_special_aircraft_manufacturing_bureau_multirole_mio = {
+	include = generic_multi_role_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_3
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_aircraft_manufacturing }}
+	available = { FROM = { has_completed_focus = MAN_imperial_aircraft_manufacturing }}
+}
+
+MAN_special_aircraft_manufacturing_bureau_cas_mio = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_3
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_aircraft_manufacturing }}
+	available = { FROM = { has_completed_focus = MAN_imperial_aircraft_manufacturing }}
+}
+
+MAN_naval_air_coordination_bureau_mio = {
+	name = MAN_naval_air_coordination_bureau
+	include = generic_naval_aircraft_organization
+	icon = GFX_idea_generic_navy_carrier_bonus
+	allowed = { original_tag = MAN }
+	
+	visible = { 
+		FROM = { 
+			OR = {
+				has_completed_focus = MAN_imperial_aircraft_manufacturing 
+				has_completed_focus = MAN_imperial_shipbuilding
+			}
+		}
+	}
+	
+	available = { 
+		FROM = { 
+			OR = {
+				has_completed_focus = MAN_imperial_aircraft_manufacturing 
+				has_completed_focus = MAN_imperial_shipbuilding
+			}
+		}
+	}
+}
+
+MAN_aircraft_research_commission_mio = {
+	name = MAN_aircraft_research_commission
+	include = generic_general_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_3
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_armament_modernisation }}
+	available = { FROM = { has_completed_focus = MAN_armament_modernisation }}
+}
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+MAN_manchuria_machinery_mio = {
+	name = MAN_manchuria_machinery
+	include = generic_support_equipment_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_1
+	allowed = { original_tag = MAN }
+	
+}
+MAN_tonghe_motorised_mio = {
+	name = MAN_tonghe_motorised
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_generic_motorized_equipment_manufacturer_2
+	allowed = { original_tag = MAN }
+}
+
+MAN_manchuria_production_bureau_mio = {
+	name = MAN_manchuria_production_bureau
+	include = CNFMAN_manchuria_artillery_organization
+	icon = GFX_idea_generic_artillery_regiments
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+	available = { 
+		FROM = {
+			has_completed_focus = MAN_imperial_arsenal 
+			any_owned_state = {
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = MAN_region_155_tt
+						region = 155
+					}
+					custom_trigger_tooltip = {
+						tooltip = MAN_region_242_tt
+						region = 242
+					}
+					custom_trigger_tooltip = {
+						tooltip = MAN_region_243_tt
+						region = 243
+					}
+				}
+			}
+		}
+	}
+}
+
+MAN_nc_production_bureau_mio = {
+	name = MAN_nc_production_bureau
+	include = CNFMAN_nc_artillery_organization
+	icon = GFX_idea_generic_artillery_manufacturer_2
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+	available = { 
+		FROM = {
+			has_completed_focus = MAN_imperial_arsenal 
+			any_owned_state = {
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = MAN_region_143_tt
+						region = 143
+					}
+					custom_trigger_tooltip = {
+						tooltip = MAN_region_245_tt
+						region = 245
+					}
+				}
+			}
+		}
+	}
+}
+
+MAN_kianghuai_production_bureau_mio = {
+	name = MAN_kianghuai_production_bureau
+	include = CNFMAN_nc_motorised_organization
+	icon = GFX_idea_FRA_motorized_focus
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+	available = { 
+		FROM = {
+			has_completed_focus = MAN_imperial_arsenal 
+			any_owned_state = {
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = MAN_region_164_tt
+						region = 164
+					}
+					custom_trigger_tooltip = {
+						tooltip = MAN_region_233_tt
+						region = 233
+					}
+				}
+			}
+		}
+	}
+}
+
+MAN_sc_production_bureau_mio = {
+	name = MAN_sc_production_bureau
+	include = CNFMAN_sc_iw_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_3
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+	available = { 
+		FROM = {
+			has_completed_focus = MAN_imperial_arsenal 
+			any_owned_state = {
+				custom_trigger_tooltip = {
+					tooltip = MAN_region_165_tt
+					region = 165
+				}
+			}
+		}
+	}
+}
+
+MAN_nw_production_bureau_mio = {
+	name = MAN_nw_production_bureau
+	include = CNFMAN_nw_iw_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_2
+	allowed = { original_tag = MAN }
+	
+	visible = { FROM = { has_completed_focus = MAN_imperial_arsenal }}
+	available = { 
+		FROM = {
+			has_completed_focus = MAN_imperial_arsenal 
+			any_owned_state = {
+				custom_trigger_tooltip = {
+					tooltip = MAN_region_235_tt
+					region = 235
+				}
+			}
+		}
+	}
+}

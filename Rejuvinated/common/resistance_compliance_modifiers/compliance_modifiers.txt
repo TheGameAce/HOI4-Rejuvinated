@@ -12,7 +12,7 @@ compliance_15 = {
 	}
 	enabled = {
 		custom_trigger_tooltip = {
-			tooltip = MCK_core_has_no_resistance_tt
+			tooltip = MAN_core_has_no_resistance_tt
 			NOT = {
 				any_controlled_state = {
 					is_core_of = ROOT
@@ -36,7 +36,7 @@ compliance_25 = {
 	}
 	enabled = {
 		custom_trigger_tooltip = {
-			tooltip = MCK_core_has_no_resistance_tt
+			tooltip = MAN_core_has_no_resistance_tt
 			NOT = {
 				any_controlled_state = {
 					is_core_of = ROOT
@@ -59,7 +59,7 @@ compliance_40 = {
 	}
 	enabled = {
 		custom_trigger_tooltip = {
-			tooltip = MCK_core_has_no_resistance_tt
+			tooltip = MAN_core_has_no_resistance_tt
 			NOT = {
 				any_controlled_state = {
 					is_core_of = ROOT
@@ -81,7 +81,7 @@ compliance_60 = {
 	}
 	enabled = {
 		custom_trigger_tooltip = {
-			tooltip = MCK_core_has_no_resistance_tt
+			tooltip = MAN_core_has_no_resistance_tt
 			NOT = {
 				any_controlled_state = {
 					is_core_of = ROOT
@@ -136,11 +136,11 @@ compliance_80 = {
 			}
 		}
 		custom_trigger_tooltip = {
-			tooltip = KMT_chinese_no_collaborate_mck
+			tooltip = KMT_chinese_no_collaborate_man
 			if = {
 				limit = { is_chinese_nations_w_HYQ = yes }
 				FROM = { 
-					NOT = { original_tag = MCK }
+					NOT = { original_tag = MAN }
 				}
 			}
 		}

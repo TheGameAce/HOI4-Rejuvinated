@@ -297,7 +297,7 @@ ideas = {
 			
 			
 			available = {
-				NOT = { has_idea = MCK_reliant_idea }
+				NOT = { has_idea = MAN_reliant_idea }
 				has_war_support > 0.5
 				OR = {
 					has_government = fascism
@@ -421,7 +421,7 @@ ideas = {
 			
 			
 			available = {
-				NOT = { has_idea = MCK_reliant_idea }
+				NOT = { has_idea = MAN_reliant_idea }
 				has_war = yes
 				has_war_support > 0.8
 				any_enemy_country = {

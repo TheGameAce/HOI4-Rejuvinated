@@ -1321,7 +1321,7 @@ scripted_gui = {
 					ROOT = { has_completed_focus = PRC_enforce_obedience }
 				}
 				OR = {
-					ROOT = { has_completed_focus = MCK_xuantong_restoration }
+					ROOT = { has_completed_focus = MAN_xuantong_restoration }
 					is_chinese_nations_w_HYQ = yes
 				}
 				is_subject = no
@@ -1372,7 +1372,7 @@ scripted_gui = {
 					}
 				}
 				OR = {
-					ROOT = { has_completed_focus = MCK_xuantong_restoration }
+					ROOT = { has_completed_focus = MAN_xuantong_restoration }
 					ROOT = { has_completed_focus = PRC_land_reform }
 					ROOT = { has_completed_focus = PRC_destroy_mao_and_his_clique }
 					ROOT = { 
@@ -1397,7 +1397,7 @@ scripted_gui = {
 		ai_enabled = {
 			OR = {
 				is_chinese_nations_w_HYQ = yes
-				tag = MCK
+				tag = MAN
 			}
 		}
 		ai_weights = {

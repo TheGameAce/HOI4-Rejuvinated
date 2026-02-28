@@ -24,15 +24,15 @@
 #	can be added to countries, states or unit leaders
 #	will only updated daily, unless forced by force_update_dynamic_modifier effect
 
-MCK_local_bandits = {
+MAN_local_bandits = {
 	icon = GFX_local_bandits
 	enable = { 
 		CONTROLLER = {
 			OR = {
-				tag = MCK
-				is_in_faction_with = MCK
-				is_subject_of = MCK
-				MCK = { is_subject_of = PREV }
+				tag = MAN
+				is_in_faction_with = MAN
+				is_subject_of = MAN
+				MAN = { is_subject_of = PREV }
 				tag = JAP
 				is_in_faction_with = JAP
 				is_subject_of = JAP
@@ -54,21 +54,21 @@ MCK_local_bandits = {
 		}
 	}
 	
-	#compliance_gain = MCK_local_bandits_compliance_gain				#-0.01
-	resistance_target = MCK_local_bandits_resistance_target			#0.15
+	#compliance_gain = MAN_local_bandits_compliance_gain				#-0.01
+	resistance_target = MAN_local_bandits_resistance_target			#0.15
 	
 	compliance_gain = -100
 }
 
-MCK_najua_presence = {
+MAN_najua_presence = {
 	icon = GFX_najua_presence
 	enable = { 
 		CONTROLLER = {
 			OR = {
-				tag = MCK
-				is_in_faction_with = MCK
-				is_subject_of = MCK
-				MCK = { is_subject_of = PREV }
+				tag = MAN
+				is_in_faction_with = MAN
+				is_subject_of = MAN
+				MAN = { is_subject_of = PREV }
 				tag = JAP
 				is_in_faction_with = JAP
 				is_subject_of = JAP
@@ -90,23 +90,23 @@ MCK_najua_presence = {
 		}
 	}
 	
-	resistance_growth = MCK_najua_presence_resistance_growth		#0.5
-	resistance_decay = MCK_najua_presence_resistance_decay			#-0.2
-	#compliance_gain = MCK_najua_presence_compliance_gain			#-0.05
-	resistance_target = MCK_najua_presence_resistance_target		#0.3
+	resistance_growth = MAN_najua_presence_resistance_growth		#0.5
+	resistance_decay = MAN_najua_presence_resistance_decay			#-0.2
+	#compliance_gain = MAN_najua_presence_compliance_gain			#-0.05
+	resistance_target = MAN_najua_presence_resistance_target		#0.3
 	
 	compliance_gain = -100
 }
 
-MCK_najua_presence2 = {
+MAN_najua_presence2 = {
 	icon = GFX_najua_stronghold
 	enable = { 
 		CONTROLLER = {
 			OR = {
-				tag = MCK
-				is_in_faction_with = MCK
-				is_subject_of = MCK
-				MCK = { is_subject_of = PREV }
+				tag = MAN
+				is_in_faction_with = MAN
+				is_subject_of = MAN
+				MAN = { is_subject_of = PREV }
 				tag = JAP
 				is_in_faction_with = JAP
 				is_subject_of = JAP
@@ -128,17 +128,17 @@ MCK_najua_presence2 = {
 		}
 	}
 	
-	resistance_growth = MCK_najua_presence2_resistance_growth		#1
-	resistance_decay = MCK_najua_presence2_resistance_decay			#-0.5
-	#compliance_gain = MCK_najua_presence2_compliance_gain			#-0.07
-	resistance_target = MCK_najua_presence2_resistance_target		#0.7
+	resistance_growth = MAN_najua_presence2_resistance_growth		#1
+	resistance_decay = MAN_najua_presence2_resistance_decay			#-0.5
+	#compliance_gain = MAN_najua_presence2_compliance_gain			#-0.07
+	resistance_target = MAN_najua_presence2_resistance_target		#0.7
 	
 	compliance_gain = -100
 }
 
 jap_aware_2 = {
 	enable = { 
-		check_variable = { MCK_temp_awareness > 9 }
+		check_variable = { MAN_temp_awareness > 9 }
 	}
 	
 	remove_trigger = { 
@@ -150,7 +150,7 @@ jap_aware_2 = {
 
 jap_aware_3 = {
 	enable = { 
-		check_variable = { MCK_temp_awareness > 14 }
+		check_variable = { MAN_temp_awareness > 14 }
 	}
 	
 	remove_trigger = { 
@@ -180,13 +180,13 @@ JAP_shanghai_reinforcement = {
 	#local_army_org_factor = 0.15
 }
 
-MCK_plan_for_the_restoration_dm = {
+MAN_plan_for_the_restoration_dm = {
 	icon = GFX_idea_warrior_traditions_idea
 	enable = { 
 	}
 	
 	remove_trigger = { 
-		NOT = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+		NOT = { has_country_leader = { character = MAN_kwantung_army ruling_only = yes }}
 	}
 	
 	planning_speed = 0.15

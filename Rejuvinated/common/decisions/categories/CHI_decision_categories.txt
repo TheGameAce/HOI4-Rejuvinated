@@ -127,11 +127,6 @@ CHI_warlord_in_opposition = {
 
 
 CHI_political_power_struggle = {
-	allowed = {
-		has_dlc = "Waking the Tiger"
-		always = no
-	}
-
 	icon = power_struggle
 	picture = GFX_decision_cat_picture_chi_political_support
 	priority = {
@@ -216,6 +211,7 @@ CHI_political_power_struggle = {
 	}
 
 	allowed = {
+		always = no
 		is_literally_china = yes
 	}
 

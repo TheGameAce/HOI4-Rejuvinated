@@ -4313,7 +4313,7 @@ PRC_dcat_autonomy_from_comintern = {
 #	SOV_create_manchurian_ssr = {
 #		visible = { always = no }
 #		available = {
-#			MCK = {
+#			MAN = {
 #				OR = {
 #					exists = no
 #					is_subject_of = ROOT
@@ -4325,9 +4325,9 @@ PRC_dcat_autonomy_from_comintern = {
 #						tag = ROOT
 #						is_subject_of = ROOT
 #					}
-#					NOT = { tag = MCK }
+#					NOT = { tag = MAN }
 #				}
-#				is_core_of = MCK
+#				is_core_of = MAN
 #			}
 #		}
 #		
@@ -4336,24 +4336,24 @@ PRC_dcat_autonomy_from_comintern = {
 #		ai_will_do = { base = 100 }
 #		
 #		complete_effect = {
-#			745 = { add_core_of = MCK }
+#			745 = { add_core_of = MAN }
 #			every_state = {
 #				limit = {
-#					is_core_of = MCK
+#					is_core_of = MAN
 #					OWNER = {
 #						OR = {
 #							tag = ROOT
 #							is_subject_of = ROOT
 #						}
-#						NOT = { tag = MCK }
+#						NOT = { tag = MAN }
 #					}
 #				}
-#				MCK = {
+#				MAN = {
 #					transfer_state = PREV
 #				}
 #			}
 #			set_autonomy = {
-#				target = MCK
+#				target = MAN
 #				autonomy_state = PRC_ssr_autonomy_status
 #			}
 #		}
@@ -4362,7 +4362,7 @@ PRC_dcat_autonomy_from_comintern = {
 #	SOV_create_mongolian_ssr = {
 #		visible = { always = no }
 #		available = {
-#			MCK = {
+#			MAN = {
 #				OR = {
 #					exists = no
 #					is_subject_of = ROOT
@@ -4374,9 +4374,9 @@ PRC_dcat_autonomy_from_comintern = {
 #						tag = ROOT
 #						is_subject_of = ROOT
 #					}
-#					NOT = { tag = MCK }
+#					NOT = { tag = MAN }
 #				}
-#				is_core_of = MCK
+#				is_core_of = MAN
 #			}
 #		}
 #		
@@ -4387,21 +4387,21 @@ PRC_dcat_autonomy_from_comintern = {
 #		complete_effect = {
 #			every_state = {
 #				limit = {
-#					is_core_of = MCK
+#					is_core_of = MAN
 #					OWNER = {
 #						OR = {
 #							tag = ROOT
 #							is_subject_of = ROOT
 #						}
-#						NOT = { tag = MCK }
+#						NOT = { tag = MAN }
 #					}
 #				}
-#				MCK = {
+#				MAN = {
 #					transfer_state = PREV
 #				}
 #			}
 #			set_autonomy = {
-#				target = MCK
+#				target = MAN
 #				autonomy_state = PRC_ssr_autonomy_status
 #			}
 #		}

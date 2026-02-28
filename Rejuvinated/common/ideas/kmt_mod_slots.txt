@@ -31,15 +31,15 @@
 ##			picture = generic_spy_coup
 ##			
 ##			allowed = {
-##				original_tag = MCK
+##				original_tag = MAN
 ##			}
 ##			available = {
-##				original_tag = MCK
+##				original_tag = MAN
 ##				is_subject = yes
 ##				hidden_trigger = { has_country_flag = awareness_enabled }
 ##				custom_trigger_tooltip = {
-##					tooltip = MCK_awareness_4neg
-##					NOT = { check_variable = { MCK_awareness > 4 }}
+##					tooltip = MAN_awareness_4neg
+##					NOT = { check_variable = { MAN_awareness > 4 }}
 ##				}
 ##			}
 ##			
@@ -55,15 +55,15 @@
 ##			picture = SOV_scientist_defect
 ##			
 ##			allowed = {
-##				original_tag = MCK
+##				original_tag = MAN
 ##			}
 ##			available = {
-##				original_tag = MCK
+##				original_tag = MAN
 ##				is_subject = yes
 ##				hidden_trigger = { has_country_flag = awareness_enabled }
 ##				custom_trigger_tooltip = {
-##					tooltip = MCK_awareness_4
-##					check_variable = { MCK_awareness > 4 }
+##					tooltip = MAN_awareness_4
+##					check_variable = { MAN_awareness > 4 }
 ##				}
 ##			}
 ##			cost = 450
@@ -76,15 +76,15 @@
 ##			picture = generic_disjointed_gov
 ##			
 ##			allowed = {
-##				original_tag = MCK
+##				original_tag = MAN
 ##			}
 ##			available = {
-##				original_tag = MCK
+##				original_tag = MAN
 ##				is_subject = yes
 ##				hidden_trigger = { has_country_flag = awareness_enabled }
 ##				custom_trigger_tooltip = {
-##					tooltip = MCK_awareness_9
-##					check_variable = { MCK_awareness > 9 }
+##					tooltip = MAN_awareness_9
+##					check_variable = { MAN_awareness > 9 }
 ##				}
 ##			}
 ##			
@@ -101,15 +101,15 @@
 ##			picture = ast_classify_aliens
 ##			
 ##			allowed = {
-##				original_tag = MCK
+##				original_tag = MAN
 ##			}
 ##			available = {
-##				original_tag = MCK
+##				original_tag = MAN
 ##				is_subject = yes
 ##				hidden_trigger = { has_country_flag = awareness_enabled }
 ##				custom_trigger_tooltip = { 
-##					tooltip = MCK_awareness_14
-##					check_variable = { MCK_awareness > 14 }
+##					tooltip = MAN_awareness_14
+##					check_variable = { MAN_awareness > 14 }
 ##				}
 ##			}
 ##			

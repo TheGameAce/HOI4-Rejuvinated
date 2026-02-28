@@ -824,50 +824,50 @@ check_for_warlord_5_left = {
 }
 
 awareness_at_least_0 = {
-	has_completed_focus = MCK_an_alternative
+	has_completed_focus = MAN_an_alternative
 }
 
 awareness_at_least_1 = {
-	check_variable = { MCK_awareness > 4 }
+	check_variable = { MAN_awareness > 4 }
 }
 
 awareness_at_least_2 = {
-	check_variable = { MCK_awareness > 9 }
+	check_variable = { MAN_awareness > 9 }
 }
 
 awareness_at_least_3 = {
-	check_variable = { MCK_awareness > 14 }
+	check_variable = { MAN_awareness > 14 }
 }
 
 has_japanese_officials_in_gov = {
 	OR = {
-		has_idea_with_trait = captain_of_industry_mck
-		has_idea_with_trait = captain_of_industry_mck_tfv
-		has_idea_with_trait = war_industrialist_mck
-		has_idea_with_trait = war_industrialist_mck_tfv
-		has_idea_with_trait = armaments_organizer_mck
-		has_idea_with_trait = armaments_organizer_mck_tfv
+		has_idea_with_trait = captain_of_industry_man
+		has_idea_with_trait = captain_of_industry_man_tfv
+		has_idea_with_trait = war_industrialist_man
+		has_idea_with_trait = war_industrialist_man_tfv
+		has_idea_with_trait = armaments_organizer_man
+		has_idea_with_trait = armaments_organizer_man_tfv
 	}
 }
 
 has_japanese_officials_in_mili = {
 	OR = {
-		has_idea_with_trait = army_chief_drill_1_mck_tfv
-		has_idea_with_trait = army_chief_reform_3_mck
-		has_idea_with_trait = army_chief_drill_1_mck
-		has_idea_with_trait = army_chief_reform_3_mck_tfv
-		has_idea_with_trait = military_theorist_mck
-		has_idea_with_trait = military_theorist_mck_tfv
-		has_idea_with_trait = army_chief_organizational_2_mck
-		has_idea_with_trait = army_chief_organizational_2_mck_tfv
+		has_idea_with_trait = army_chief_drill_1_man_tfv
+		has_idea_with_trait = army_chief_reform_3_man
+		has_idea_with_trait = army_chief_drill_1_man
+		has_idea_with_trait = army_chief_reform_3_man_tfv
+		has_idea_with_trait = military_theorist_man
+		has_idea_with_trait = military_theorist_man_tfv
+		has_idea_with_trait = army_chief_organizational_2_man
+		has_idea_with_trait = army_chief_organizational_2_man_tfv
 		has_idea_with_trait = lawrence_of_manchuria
 		has_idea_with_trait = lawrence_of_manchuria_tfv
-		has_idea_with_trait = air_chief_ground_support_2_mck
-		has_idea_with_trait = air_chief_ground_support_2_mck_tfv
-		has_idea_with_trait = army_regrouping_2_mck
-		has_idea_with_trait = army_regrouping_2_mck_tfv
-		has_idea_with_trait = army_infantry_2_mck
-		has_idea_with_trait = army_infantry_2_mck_tfv
+		has_idea_with_trait = air_chief_ground_support_2_man
+		has_idea_with_trait = air_chief_ground_support_2_man_tfv
+		has_idea_with_trait = army_regrouping_2_man
+		has_idea_with_trait = army_regrouping_2_man_tfv
+		has_idea_with_trait = army_infantry_2_man
+		has_idea_with_trait = army_infantry_2_man_tfv
 	}
 }
 

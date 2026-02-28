@@ -17,7 +17,7 @@ generic_tank_organization = {
 	allowed = {
 		NOT = { OR = { tag = GER tag = ENG tag = SOV tag = FRA tag = ITA tag = JAP tag = USA tag = BEL tag = CZE tag = ROM } }
 		is_chinese_nations_w_HYQ_allowed = no
-		NOT = { tag = MCK }
+		NOT = { tag = MAN }
 		NOT = {
 			AND = {
 				tag = POL
@@ -2096,7 +2096,7 @@ generic_escort_ship_organization = {
 			}
 		}
 		is_chinese_nations_w_HYQ_allowed = no
-		NOT = { tag = MCK }
+		NOT = { tag = MAN }
 		NOT = {
 			AND = {
 				OR = { tag = MEX tag = HOL }
@@ -3566,7 +3566,7 @@ generic_general_aircraft_organization = {
 			}
 		}
 		is_chinese_nations_w_HYQ_allowed = no
-		NOT = { tag = MCK }
+		NOT = { tag = MAN }
 		NOT = {
 			AND = {
 				tag = MEX
@@ -6326,7 +6326,7 @@ generic_artillery_organization = {
 			}
 		}
 		is_chinese_nations_w_HYQ_allowed = no
-		NOT = { tag = MCK }
+		NOT = { tag = MAN }
 		NOT = {
 			AND = {
 				tag = HOL
@@ -6690,7 +6690,7 @@ generic_infantry_equipment_organization = {
 			}
 		}
 		is_chinese_nations_w_HYQ_allowed = no
-		NOT = { tag = MCK }
+		NOT = { tag = MAN }
 		NOT = {
 			AND = {
 				tag = HOL
@@ -7292,7 +7292,7 @@ generic_motorized_mechanized_organization = {
 			}
 		}
 		is_chinese_nations_w_HYQ_allowed = no
-		NOT = { tag = MCK }
+		NOT = { tag = MAN }
 		NOT = {
 			AND = {
 				tag = HOL

@@ -1,11 +1,11 @@
 debug_decisions = {
 	KMT_spawn_royal_guard = {
 		priority = 1000
-		allowed = { tag = MCK }
+		allowed = { tag = MAN }
 		ai_will_do = { base = 0 }
 		complete_effect = {
-			custom_effect_tooltip = MCK_royal_guards_tt
-			set_variable = { MCK_royal_guard_cap = 5 } #--------change division_cap below too!
+			custom_effect_tooltip = MAN_royal_guards_tt
+			set_variable = { MAN_royal_guard_cap = 5 } #--------change division_cap below too!
 			hidden_effect = {
 				division_template = {
 					name = "Chin-wei-chün"			
@@ -26,7 +26,7 @@ debug_decisions = {
 					priority = 2
 					is_locked = yes
 					force_allow_recruiting = yes
-					division_cap = 5 #--------------------------change MCK_royal_guard_cap above too!
+					division_cap = 5 #--------------------------change MAN_royal_guard_cap above too!
 				}
 				capital_scope = {
 					create_unit = { 
@@ -59,16 +59,16 @@ debug_decisions = {
 	}
 	KMT_add_royal_guard_cap = {
 		priority = 1000
-		allowed = { tag = MCK }
+		allowed = { tag = MAN }
 		ai_will_do = { base = 0 }
 		complete_effect = {
-				add_to_variable = { MCK_royal_guard_cap = 5 }
-				set_division_template_cap = { division_template = "Chin-wei-chün" division_cap = MCK_royal_guard_cap }
+				add_to_variable = { MAN_royal_guard_cap = 5 }
+				set_division_template_cap = { division_template = "Chin-wei-chün" division_cap = MAN_royal_guard_cap }
 		}
 	}
 	KMT_add_royal_guard_unit = {
 		priority = 1000
-		allowed = { tag = MCK }
+		allowed = { tag = MAN }
 		ai_will_do = { base = 0 }
 		complete_effect = {
 				add_units_to_division_template = {			
@@ -82,7 +82,7 @@ debug_decisions = {
 	}
 	KMT_clear_royal_guard = {
 		priority = 1000
-		allowed = { tag = MCK }
+		allowed = { tag = MAN }
 		ai_will_do = { base = 0 }
 		complete_effect = {
 				division_template = {
@@ -139,7 +139,7 @@ debug_decisions = {
 	}
 	KMT_swap_royal_guard = {
 		priority = 1000
-		allowed = { tag = MCK }
+		allowed = { tag = MAN }
 		ai_will_do = { base = 0 }
 		complete_effect = {
 			delete_unit_template_and_units = { 

@@ -1481,7 +1481,7 @@ ideas = {
 				OR = {
 					is_chinese_nations_w_HYQ_allowed = yes
 					tag = PGR
-					tag = MCK
+					tag = MAN
 				}
 				NOT = { tag = PRC }
 			}
@@ -1568,7 +1568,34 @@ ideas = {
 	political_advisor = {
 	}
 	
-	high_command = {##		KMT_hsueh_yueh_hc = {#			name = KMT_hsueh_yueh#			ledger = army#			#			picture = hsueh_yueh#			#			allowed = {#				tag = CHI#			}##			visible = {#			}#			#			available = {#				NOT = {#					has_country_flag = KMT_red_coup_finish#					has_country_flag = KMT_pro_japanese_coup#				}#			}#			#			traits = { KMT_bane_of_red_army }#			#			ai_will_do = {#				factor = 1#			}#		}
+	high_command = {
+#
+#		KMT_hsueh_yueh_hc = {
+#			name = KMT_hsueh_yueh
+#			ledger = army
+#			
+#			picture = hsueh_yueh
+#			
+#			allowed = {
+#				tag = CHI
+#			}
+#
+#			visible = {
+#			}
+#			
+#			available = {
+#				NOT = {
+#					has_country_flag = KMT_red_coup_finish
+#					has_country_flag = KMT_pro_japanese_coup
+#				}
+#			}
+#			
+#			traits = { KMT_bane_of_red_army }
+#			
+#			ai_will_do = {
+#				factor = 1
+#			}
+#		}
 
 	}
 }
