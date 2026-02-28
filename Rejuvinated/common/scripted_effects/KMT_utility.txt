@@ -1,0 +1,47 @@
+#state scope
+#state_real_controller is not global
+KMT_get_real_controller = {
+	clear_array = This.KMT_state_province_controllers_scores
+	every_country = { set_variable = { This.KMT_stake_in_state@PREV = 0 }}
+	for_each_loop = {
+		array = This.KMT_province_array
+		
+		random_country = {
+			limit = { controls_province = v }
+			#log = "[This.GetName] : controls province [?v]"
+			##log = "[This.GetName].KMT_stake_in_state@[PREV.GetName] : [?This.KMT_stake_in_state@PREV.KMT_dcat_sprite_id_num|0.2]" #useless
+			add_to_variable = { This.KMT_stake_in_state@PREV = global.KMT_province_vp_array^v }
+			#log = "after adding [?global.KMT_province_vp_array^v] due to victory points from [?v]"
+			##log = "[This.GetName].KMT_stake_in_state@[PREV.GetName] : [?This.KMT_stake_in_state@PREV|0.2]" #useless
+		}
+		
+	}
+	every_country = {
+		limit = { check_variable = { This.KMT_stake_in_state@PREV > 0 }}
+		#log = "[This.GetName] has stake in [PREV.GetName]"
+		#log = "[This.GetName] stake in [PREV.GetName] is [?This.KMT_stake_in_state@PREV]" #useless
+		add_to_array = { PREV.KMT_state_province_controllers_scores = This.KMT_stake_in_state@PREV }
+	}
+	
+	set_variable = { THIS.highest_controller_score = 0 }
+	#for_each_loop = {
+	#	array = This.KMT_state_province_controllers_scores
+	#	if = {
+	#		limit = { check_variable = { v > THIS.highest_controller_score }}
+	#		log = "[?v]"
+	#		set_variable = { THIS.highest_controller_score = v }
+	#	}
+	#}
+	find_highest_in_array = { 
+		array = This.KMT_state_province_controllers_scores
+	}
+	set_variable = { THIS.highest_controller_score = v }
+	
+	#log = "[This.GetName] highest score is [?This.highest_controller_score]"
+	
+	random_country = {
+		limit = { check_variable = { KMT_stake_in_state@PREV = PREV.highest_controller_score }}
+		#log = "[This.GetName] is chosen"
+		save_event_target_as = state_real_controller
+	}
+}

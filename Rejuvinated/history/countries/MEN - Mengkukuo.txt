@@ -1,0 +1,137 @@
+﻿capital = 966
+set_country_flag = KMT_is_china_tag
+
+recruit_character = MEN_prince_demchugdongrub
+recruit_character = MEN_Yondonwangchug
+recruit_character = MEN_Jodbajab
+recruit_character = MEN_wang_ying
+
+oob = "MEN_1936"
+
+set_technology = {
+	infantry_weapons = 1
+	basic_train = 1
+	
+}
+
+CHI = {
+	puppet = MEN
+}
+
+add_ideas = {
+	limited_exports
+	limited_conscription
+	cg_warlords
+	public_iliteracy
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	KMT_weak_army
+	KMT_corrupted_government
+}
+set_cosmetic_tag = MongalCouncilCtag
+set_party_name = { ideology = neutrality long_name = MEN_mongal_council_long name = MEN_mongal_council }
+
+1939.1.1 = {
+	CHI = {
+		end_puppet = MEN
+	}
+	JAP = {
+		puppet = MEN
+	}
+	retire_character = MEN_Yondonwangchug
+	drop_cosmetic_tag = yes
+	set_cosmetic_tag = MAGmen
+	set_party_name = { ideology = fascism long_name = MAGmen_fascism name = MAGmen_fascism }
+	add_to_war = {
+		targeted_alliance = JAP
+		enemy = CHI
+	}
+
+	add_ideas = {
+		limited_exports
+		limited_conscription
+		war_economy
+	}
+
+	add_political_power = 1198
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	set_popularities = {
+		fascism = 95
+		neutrality = 5
+	}
+	
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	oob = "MEN_1939"
+	set_technology = {
+		#doctrines
+		grand_battle_plan = 1
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	fascism = 35
+	neutrality = 65
+}
+
+1939.1.1 = {
+	611 = {
+		start_resistance = yes
+		set_compliance = 10
+		set_resistance = 50
+		set_garrison_strength = 1.0
+	}
+	621 = {
+		start_resistance = yes
+		set_compliance = 10
+		set_resistance = 50
+		set_garrison_strength = 1.0
+	}
+	746 = {
+		start_resistance = yes
+		set_compliance = 10
+		set_resistance = 50
+		set_garrison_strength = 1.0
+	}
+}

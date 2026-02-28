@@ -1,0 +1,855 @@
+on_actions = {
+#	on_startup = {
+#		effect = {
+#			if = {
+#				limit = {
+#					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+#				}
+#				##########################
+#				#KMT POWER STRUGGLE
+#				##########################
+#				
+#				# FOR TEST #
+#				
+#				#add_to_array = { ROOT.KMT_ps_influencing_states = 1 }
+#				#debug shits
+#				#add_to_array = { global.KMT_test_temp_tag = GER }
+#				#add_to_array = { global.KMT_ps_alliance_leaders = GXC }
+#				#add_to_array = { global.KMT_ps_alliance_leaders = SHX }
+#				#add_to_array = { global.KMT_ps_alliance_leaders = SDC }
+#				#add_to_array = { global.KMT_ps_alliance_leaders = SCC }
+#				#add_to_array = { GXC.KMT_ps_alliance_array = GXC }
+#				#add_to_array = { GXC.KMT_ps_alliance_array = YUN }
+#				#add_to_array = { GXC.KMT_ps_alliance_array = XIA }
+#				#add_to_array = { GXC.KMT_ps_alliance_array = YUT }
+#				#add_to_array = { SCC.KMT_ps_alliance_array = SCC }
+#				#add_to_array = { SCC.KMT_ps_alliance_array = SKC }
+#				#add_to_array = { SCC.KMT_ps_alliance_array = SDC }
+#				#add_to_array = { SCC.KMT_ps_alliance_array = SHX }
+#				
+#				#Create state list array
+#				every_state = {
+#					limit = {
+#						THIS = { is_core_of = CHI }
+#					}
+#					add_to_array = { global.KMT_ps_state_list = THIS }
+#				}
+#				
+#				#Create warlord list array
+#				every_country = {
+#					limit = {
+#						is_valid_power_struggle_participant = yes 
+#					}
+#					add_to_array = { global.KMT_ps_participant_list = THIS }
+#				}
+#				
+#				#POPULAR SUPPORT
+#				
+#				KMT_ps_update_ip = yes
+#				
+#				every_country = {
+#					limit = {
+#						is_valid_power_struggle_participant = yes
+#					}
+#					set_temp_variable = { KMT_temp_stabi = stability }
+#					multiply_temp_variable = { KMT_temp_stabi = 10 }
+#					subtract_from_temp_variable = { KMT_temp_stabi = 3.5 }
+#					round_temp_variable = KMT_temp_stabi
+#					set_variable = { KMT_ps_available_ip_max = KMT_temp_stabi }
+#					if = {
+#						limit = {
+#							tag = event_target:KMT_central_gov_tag
+#						}
+#						add_to_variable = { KMT_ps_available_ip_max = 4 }
+#					}else = {
+#						add_to_variable = { KMT_ps_available_ip_max = 1 }
+#					}
+#					set_variable = { KMT_ps_ip_spent = 0 }
+#				}
+#				
+#				every_state = {
+#					limit = { 
+#						has_state_flag = KMT_china_inalienable_part
+#					}
+#					set_variable = { KMT_power_struggle_pop_support_total = state_population_k }
+#					divide_variable = { KMT_power_struggle_pop_support_total = 100 }
+#					round_variable = KMT_power_struggle_pop_support_total
+#					add_to_variable = { KMT_power_struggle_pop_support_total = 1 }
+#					
+#					set_variable = { KMT_75pc_popsup = KMT_power_struggle_pop_support_total }
+#					multiply_variable = { KMT_75pc_popsup = 0.75 }
+#					round_variable = KMT_75pc_popsup
+#					
+#					set_variable = { KMT_50pc_popsup = KMT_power_struggle_pop_support_total }
+#					multiply_variable = { KMT_50pc_popsup = 0.5 }
+#					round_variable = KMT_50pc_popsup
+#					
+#					set_variable = { KMT_25pc_popsup = KMT_power_struggle_pop_support_total }
+#					multiply_variable = { KMT_25pc_popsup = 0.25 }
+#					round_variable = KMT_25pc_popsup
+#					#set_variable = { KMT_power_struggle_auth_support_total = 100 }
+#					
+#					#set_variable = { KMT_auto_tick_max = 15 }
+#				}
+#				
+#				every_state = {
+#					limit = {
+#						has_state_flag = KMT_china_inalienable_part
+#					}
+#					every_country = {
+#						limit = {
+#							is_valid_power_struggle_participant = yes
+#						}
+#						set_variable = { PREV.KMT_auto_tick_threshold@THIS = 15 }
+#						#set_variable = { PREV.KMT_auto_tick_current@THIS = 0 }
+#					}
+#				}
+#				
+#				random_country = { set_variable = { global.KMT_total_pop_support_cap_temp = 0 } }
+#				
+#				every_country = { 
+#					limit = {
+#						is_valid_power_struggle_participant = yes
+#						OR = {
+#							has_idea = cg_warlords
+#							tag = CHI
+#						}
+#					}
+#					set_variable = { KMT_total_pop_support_temp = 0 }
+#				}
+#				
+#				every_state = {
+#					limit = {
+#						OWNER = { is_valid_power_struggle_participant = yes }
+#						has_state_flag = KMT_china_inalienable_part
+#						is_core_of = CHI
+#						is_owned_by = CHI
+#					}
+#					set_variable = { KMT_pop_support@CHI = 1 }
+#					multiply_variable = { KMT_pop_support@CHI = KMT_power_struggle_pop_support_total }
+#				}
+#				
+#				every_state = {
+#					limit = {
+#						OWNER = { is_valid_power_struggle_participant = yes }
+#						has_state_flag = KMT_china_inalienable_part
+#						check_variable = { KMT_pop_support@CHI < KMT_power_struggle_pop_support_total }
+#						any_neighbor_state = {
+#							check_variable = { KMT_pop_support@CHI = KMT_power_struggle_pop_support_total }
+#						}
+#					}
+#					set_variable = { KMT_pop_support@CHI = 0.3 }
+#					multiply_variable = { KMT_pop_support@CHI = KMT_power_struggle_pop_support_total }
+#					round_variable = KMT_pop_support@CHI
+#				}
+#				
+#				every_state = {
+#					limit = {
+#						OWNER = { is_valid_power_struggle_participant = yes }
+#						has_state_flag = KMT_china_inalienable_part
+#						set_temp_variable = { KMT_power_struggle_pop_support_total_temp = KMT_power_struggle_pop_support_total }
+#						multiply_temp_variable = { KMT_power_struggle_pop_support_total_temp = 0.3 }
+#						check_variable = { KMT_pop_support@CHI < KMT_power_struggle_pop_support_total_temp }
+#						any_neighbor_state = {
+#							check_variable = { KMT_pop_support@CHI = KMT_power_struggle_pop_support_total_temp }
+#						}
+#					}
+#					set_variable = { KMT_pop_support@CHI = 0.15 }
+#					multiply_variable = { KMT_pop_support@CHI = KMT_power_struggle_pop_support_total }
+#					round_variable = KMT_pop_support@CHI
+#				}
+#				
+#				every_state = {
+#					limit = {
+#						OWNER = { is_valid_power_struggle_participant = yes }
+#						has_state_flag = KMT_china_inalienable_part
+#						set_temp_variable = { KMT_power_struggle_pop_support_total_temp = KMT_power_struggle_pop_support_total }
+#						multiply_temp_variable = { KMT_power_struggle_pop_support_total_temp = 0.15 }
+#						check_variable = { KMT_pop_support@CHI < KMT_power_struggle_pop_support_total_temp }
+#						any_neighbor_state = {
+#							check_variable = { KMT_pop_support@CHI = KMT_power_struggle_pop_support_total_temp }
+#						}
+#					}
+#					set_variable = { KMT_pop_support@CHI = 0.05 }
+#					multiply_variable = { KMT_pop_support@CHI = KMT_power_struggle_pop_support_total }
+#					round_variable = KMT_pop_support@CHI
+#				}
+#				
+#				every_state = {
+#					limit = {
+#						OWNER = { is_valid_power_struggle_participant = yes }
+#						has_state_flag = KMT_china_inalienable_part
+#						set_temp_variable = { KMT_power_struggle_pop_support_total_temp = KMT_power_struggle_pop_support_total }
+#						multiply_temp_variable = { KMT_power_struggle_pop_support_total_temp = 0.05 }
+#						check_variable = { KMT_pop_support@CHI < KMT_power_struggle_pop_support_total_temp }
+#						any_neighbor_state = {
+#							check_variable = { KMT_pop_support@CHI = KMT_power_struggle_pop_support_total_temp }
+#						}
+#					}
+#					set_variable = { KMT_pop_support@CHI = 0 }
+#				}
+#				
+#				every_state = {
+#					limit = {
+#						OWNER = { is_valid_power_struggle_participant = yes }
+#						has_state_flag = KMT_china_inalienable_part
+#						check_variable = { KMT_pop_support@CHI < KMT_power_struggle_pop_support_total }
+#					}
+#					OWNER = {
+#						set_variable = { PREV.KMT_pop_support@THIS = 1 }
+#						multiply_variable = { PREV.KMT_pop_support@THIS = PREV.KMT_power_struggle_pop_support_total }
+#						subtract_from_variable = { PREV.KMT_pop_support@THIS = PREV.KMT_pop_support@CHI }
+#					}
+#				}
+#				
+#				every_state = {
+#					limit = {
+#						has_state_flag = KMT_china_inalienable_part
+#						OWNER = { is_valid_power_struggle_participant = yes }
+#					}
+#					set_variable = { KMT_state_sup_total = 0 }
+#					every_country = {
+#						limit = {
+#							check_variable = { PREV.KMT_pop_support@THIS > 0 }
+#						}
+#						add_to_variable = { PREV.KMT_state_sup_total = PREV.KMT_pop_support@THIS }
+#					}
+#				}
+#				
+#				#################################################
+#				#	LOYALTY SETUP
+#				#################################################
+#				
+#				CHI = {
+#					every_country = {
+#						limit = {
+#							is_valid_power_struggle_participant = yes
+#							NOT = { tag = CHI }
+#						}
+#						set_variable = { THIS.KMT_ps_already_has_loyalty_set@CHI = 1 }
+#						set_variable = { KMT_ps_loyalty@CHI = 0 }
+#					}
+#					set_variable = { PRC.KMT_ps_loyalty@CHI = -100 }
+#					set_variable = { SIK.KMT_ps_loyalty@CHI = -50 }
+#					set_variable = { SDC.KMT_ps_loyalty@CHI = -30 }
+#					set_variable = { SCC.KMT_ps_loyalty@CHI = -30 }
+#					set_variable = { XIA.KMT_ps_loyalty@CHI = 25 }
+#					set_variable = { GXC.KMT_ps_loyalty@CHI = -5 }
+#					set_variable = { ZXL.KMT_ps_loyalty@CHI = -5 }
+#					update_cg_loyalty = yes
+#				}
+#				
+#				KMT_ps_update_pop_sup = yes
+#			}
+#		}
+#			
+#	}
+#	
+#	on_weekly = {
+#		effect = {
+#		
+#			
+#			if = {
+#				limit = { 
+#					is_chinese_nations_w_HYQ = yes
+#				}
+#				
+#				if = {
+#					limit = {
+#						NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+#					}
+#					every_state = {
+#						limit = {
+#							is_core_of = event_target:KMT_central_gov_tag
+#							owner = {
+#								is_valid_power_struggle_participant = no
+#							}
+#							check_variable = { KMT_pop_support@ROOT > 0 }
+#						}
+#						set_variable = { KMT_pop_support_reduction@ROOT = 1 }
+#						KMT_deduct_pop_supportROOT = yes 
+#					}
+#					
+#					#moved to on_weekly
+#					#every_state = {
+#					#	limit = {
+#					#		is_core_of = event_target:KMT_central_gov_tag
+#					#	}
+#					#	set_variable = { KMT_state_sup_total = 0 }
+#					#	every_country = {
+#					#		limit = {
+#					#			check_variable = { PREV.KMT_pop_support@THIS > 0 }
+#					#		}
+#					#		add_to_variable = { PREV.KMT_state_sup_total = PREV.KMT_pop_support@THIS }
+#					#	}
+#					#}
+#					
+#					#random_state = {
+#					#	limit = {
+#					#		is_core_of = event_target:KMT_central_gov_tag
+#					#		check_variable = { KMT_pop_support@CHI > 0 }
+#					#	}
+#					#	subtract_from_variable = { KMT_pop_support@CHI = 1 }
+#					#}
+#					
+#					#random_state = {
+#					#	limit = {
+#					#		is_core_of = event_target:KMT_central_gov_tag
+#					#		check_variable = { KMT_CHI_auth_support > 0 }
+#					#	}
+#					#	subtract_from_variable = { KMT_CHI_auth_support = 1 }
+#					#}
+#					
+#					#599 = { state_event = { id = loop.7 trigger_for = CHI }
+#					#	save_global_event_target_as = KMT_ps_pop_sup_temp_state 
+#					#}
+#					
+#				
+#					if = {
+#						limit = { 			
+#							ROOT = { is_valid_power_struggle_participant = yes }
+#							OR = {
+#								OR = {
+#									has_idea = PRC_communists_bandits
+#									any_state = { has_state_flag = KMT_PRC_state_has_guerrilla_cell }
+#								}
+#								any_state = { check_variable = { ROOT.KMT_ps_ip_allocated_in_state@THIS > 0 }}				#have spent influence point in states
+#							}
+#						}
+#						save_global_event_target_as = KMT_ps_pop_sup_temp_tag
+#						every_state = {
+#							limit = {
+#								OR = {
+#									AND = {
+#										ROOT = { has_idea = PRC_communists_bandits }
+#										OR = {
+#											OWNER = { tag = ROOT }
+#											has_state_flag = KMT_PRC_state_has_guerrilla_cell
+#										}
+#									}
+#									check_variable = { ROOT.KMT_ps_ip_allocated_in_state@THIS > 0 }
+#								}
+#							}
+#							save_event_target_as = KMT_ps_pop_sup_temp_state
+#							if = {
+#								limit = {
+#									ROOT = { has_idea = PRC_communists_bandits }
+#									has_state_flag = KMT_PRC_state_has_guerrilla_cell
+#								}
+#								set_temp_variable = { PRC_temp_pop_sup_increment = PRC_state_guerrilla_cell_strength }
+#								divide_temp_variable = { PRC_temp_pop_sup_increment = 10 }
+#								round_temp_variable = PRC_temp_pop_sup_increment
+#								add_to_temp_variable = { PRC_temp_pop_sup_increment = 1 }
+#								set_variable = { KMT_pop_support_increment@ROOT = PRC_temp_pop_sup_increment }
+#							}else_if = {
+#								limit = { 
+#									ROOT = { has_completed_focus = KMT_maintain_regional_presence }
+#									is_owned_by = ROOT
+#								}
+#								set_variable = { KMT_pop_support_increment@ROOT = ROOT.KMT_ps_ip_allocated_in_state_double@THIS }
+#							}else = {
+#								set_variable = { KMT_pop_support_increment@ROOT = ROOT.KMT_ps_ip_allocated_in_state@THIS }
+#							}
+#							KMT_increase_pop_supportTHIS = yes
+#							#if = {
+#							#	limit = {
+#							#		set_temp_variable = { KMT_auto_tick_max_temp = KMT_auto_tick_max }
+#							#		subtract_from_temp_variable = { KMT_auto_tick_max_temp = ROOT.KMT_ps_ip_allocated_in_state@THIS }
+#							#		check_variable = {
+#							#			var = KMT_auto_tick_threshold@ROOT
+#							#			value = KMT_auto_tick_max_temp
+#							#			compare = not_equals
+#							#		}
+#							#	}
+#							#	set_variable = { KMT_auto_tick_threshold@ROOT = KMT_auto_tick_max_temp }
+#							#}
+#						}
+#					}
+#					
+#					KMT_ps_update_pop_sup = yes
+#					#KMT_ps_update_auth_sup = yes
+#				}
+#			}
+#			
+#			if = {
+#				limit = {
+#					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+#					is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+#					NOT = {
+#						any_country = {
+#							is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+#							NOT = { tag = ROOT }
+#						}
+#					}
+#				}
+#				clear_array = ROOT.KMT_ps_alliance_array
+#				remove_from_array = { global.KMT_ps_alliance_array = ROOT }
+#			}
+#			
+#			if = {
+#				limit = {
+#					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+#					is_valid_power_struggle_participant = no
+#					any_country = {
+#						is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+#					}
+#				}
+#				if = {
+#					limit = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+#					every_other_country = {
+#						limit = { is_in_array = { ROOT.KMT_ps_alliance_array = THIS }}
+#						country_event = { id = kmt_powerstruggle.18 }
+#					}
+#					remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+#					clear_array = ROOT.KMT_ps_alliance_array
+#				}else = {
+#					random_country = {
+#						limit = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+#						every_other_country = {
+#							limit = { is_in_array = { THIS.KMT_ps_alliance_array = PREV }}
+#							country_event = { id = kmt_powerstruggle.4 }
+#						}
+#						remove_from_array = { THIS.KMT_ps_alliance_array = ROOT }
+#					}
+#				}
+#			}
+#			
+#			if = {
+#				limit = {
+#					is_valid_power_struggle_participant = yes
+#					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+#				}
+#				KMT_ps_update_ip = yes
+#				if = {
+#					limit = {
+#						NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+#					}
+#					every_state = {
+#						limit = { 
+#							check_variable = { KMT_pop_support@ROOT < 1 }
+#							is_core_of = ROOT
+#							CONTROLLER = { 
+#								NOT = { 
+#									tag = ROOT
+#									is_subject_of = ROOT
+#								}
+#							}
+#							OWNER = { 
+#								NOT = { 
+#									tag = ROOT
+#									is_subject_of = ROOT
+#								}
+#							}
+#						}
+#						remove_core_of = ROOT
+#						if = {
+#							limit = { NOT = { is_claimed_by = ROOT }}
+#							add_claim_by = ROOT
+#						}
+#						if = {
+#							limit = {
+#								NOT = {
+#									any_country = {
+#										PREV = { is_core_of = PREV }
+#									}
+#								}
+#							}
+#							start_resistance = yes
+#						}
+#					}
+#				}
+#			}
+#			
+#			#update valid participant list
+#			if = {
+#				limit = {
+#					ROOT = {
+#						is_valid_power_struggle_participant = yes
+#					}
+#				}
+#				if = {
+#					limit = {
+#						NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+#					}
+#					clear_array = global.KMT_ps_participant_list
+#					every_country = {
+#						limit = {
+#							THIS = { is_valid_power_struggle_participant = yes }
+#						}
+#						add_to_array = { global.KMT_ps_participant_list = THIS }
+#					}
+#				}
+#			}
+#		}
+#	}
+	
+#	on_daily = {
+#	}
+#	
+#	#FROM declared, ROOT declares
+#	on_declare_war = {
+#		effect = {
+#			if = {
+#				limit = {
+#					tag = event_target:KMT_central_gov_tag
+#					FROM = { 
+#						is_valid_power_struggle_participant = yes 
+#						NOT = {
+#							has_idea = PRC_communists_bandits
+#						}
+#					}
+#				}
+#				if = {
+#					limit = {
+#						NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+#					}
+#					every_other_country = {
+#						limit = { 
+#							NOT = { tag = FROM }
+#							is_valid_power_struggle_participant = yes 
+#						}
+#						set_variable = { THIS.KMT_ps_loyalty_change = -20 }
+#						custom_effect_tooltip = KMT_ps_change_loyalty_tt_n20sp
+#						KMT_ps_change_loyalty = yes
+#						update_cg_loyalty = yes
+#					}
+#					FROM = {
+#						set_variable = { THIS.KMT_ps_loyalty_change = -200 }
+#						custom_effect_tooltip = KMT_ps_change_loyalty_tt_n200_sp
+#						KMT_ps_change_loyalty = yes
+#						update_cg_loyalty = yes
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					any_country = {
+#						is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+#						is_in_array = { THIS.KMT_ps_alliance_array = FROM }
+#					}
+#				}
+#				if = {
+#					limit = {
+#						is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+#					}
+#					every_country = {
+#						limit = {
+#							is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+#							NOT = { tag = ROOT }
+#						}
+#						country_event = { id = kmt_powerstruggle.19 }
+#					}
+#					remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+#					clear_array = ROOT.KMT_ps_alliance_array
+#				}else = { 
+#					random_country = {
+#						limit = {
+#							is_in_array = { THIS.KMT_ps_alliance_array = FROM }
+#						}
+#						remove_from_array = { THIS.KMT_ps_alliance_array = ROOT }
+#						every_country = {
+#							limit = {
+#								is_in_array = { PREV.KMT_ps_alliance_array = THIS }
+#								NOT = { tag = ROOT }
+#							}
+#							country_event = { id = kmt_powerstruggle.19 }
+#						}
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					any_country = { 
+#						is_in_array = { THIS.KMT_ps_alliance_array = FROM }
+#						NOT = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+#					}
+#					ROOT = { NOT = { has_country_flag = KMT_ps_betrayal_no_cta }}
+#				}
+#				random_country = {
+#					limit = {
+#						is_in_array = { THIS.KMT_ps_alliance_array = FROM }
+#					}
+#					every_country = {
+#						limit = {
+#							is_in_array = { PREV.KMT_ps_alliance_array = THIS }
+#							NOT = {
+#								tag = ROOT
+#								tag = FROM
+#								has_war_with = FROM
+#								has_war_with = ROOT
+#							}
+#						}
+#						country_event = { id = kmt_powerstruggle.10 }
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					any_country = { 
+#						is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+#						NOT = { is_in_array = { THIS.KMT_ps_alliance_array = FROM }}
+#					}
+#					ROOT = { NOT = { has_country_flag = KMT_ps_betrayal_no_cta }}
+#				}
+#				random_country = {
+#					limit = {
+#						is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+#					}
+#					every_country = {
+#						limit = {
+#							is_in_array = { PREV.KMT_ps_alliance_array = THIS }
+#							NOT = {
+#								tag = ROOT
+#								tag = FROM
+#								has_war_with = FROM
+#								has_war_with = ROOT
+#							}
+#						}
+#						country_event = { id = kmt_powerstruggle.11 }
+#					}
+#				}
+#			}
+#		}
+#	}
+#	
+#	#FROM get annexed, ROOT annexes
+#	on_annex = {
+#		effect = {
+#			if = {
+#				limit = { any_country = { check_variable = { FROM.KMT_ongoing_border_wars_against@THIS > 0 }}}
+#				every_country = { 
+#					limit = { check_variable = { FROM.KMT_ongoing_border_wars_against@THIS > 0 }}
+#					set_variable = { FROM.KMT_ongoing_border_wars_against@THIS = 0 }
+#				}
+#			}
+#			if = {
+#				limit = {
+#					is_in_array = { global.KMT_ps_alliance_leaders = FROM }
+#				}#				random_country = {#					limit = {#						is_in_array = { FROM.KMT_ps_alliance_array = THIS }#					}#					if = {#						limit = {#							NOT = {#								any_country = {#									NOT = {#										tag = FROM.FROM #										tag = FROM#									}#									is_in_array = { FROM.FROM.KMT_ps_alliance_array = THIS }#								}#							}#						}#						set_temp_variable = { ROOT.KMT_temp_one_member_left = 1 }#					}#				}#				if = {#					limit = {#						NOT = { check_variable = { ROOT.KMT_temp_one_member_left = 1 }}#					}
+#					every_country = {
+#						limit = {
+#							NOT = { tag = FROM }
+#							is_in_array = { FROM.KMT_ps_alliance_array = THIS }
+#						}
+#						country_event = { id = kmt_powerstruggle.17 }
+#					}
+#					clear_array = FROM.KMT_ps_alliance_array
+#					remove_from_array = { global.KMT_ps_alliance_leaders = FROM }#				}#				else = {#					random_country = {#						limit = {#							is_in_array = { FROM.KMT_ps_alliance_array = THIS }#						}#						set_country_flag = KMT_new_leader#						country_event = { id = kmt_powerstruggle.17 }#					}#					clear_array = FROM.KMT_ps_alliance_array#					remove_from_array = { global.KMT_ps_alliance_leaders = FROM }#				}
+#			}
+#			
+#			if = {
+#				limit = {
+#					any_country = {
+#						is_in_array = { THIS.KMT_ps_alliance_array = FROM }
+#					}
+#				}
+#				random_country = {
+#					limit = { is_in_array = { THIS.KMT_ps_alliance_array = FROM }}
+#					remove_from_array = { THIS.KMT_ps_alliance_array = FROM }
+#					if = {
+#						limit = {
+#							NOT = { 
+#								any_country = {
+#									NOT = { tag = PREV }
+#									is_in_array = { PREV.KMT_ps_alliance_array = THIS }
+#								}
+#							}
+#						}
+#						country_event = { id = kmt_powerstruggle.33 }
+#						clear_array = THIS.KMT_ps_alliance_array
+#						remove_from_array = { global.KMT_ps_alliance_leaders = THIS }
+#					}
+#				}
+#			}
+#		}
+#	}
+#	
+#	#ROOT puppeted, FROM puppets
+#	on_puppet = {
+#		effect = {
+#			if = {
+#				limit = {
+#					is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+#					is_valid_power_struggle_participant = no
+#				}
+#				#random_country = {
+#				#	limit = {
+#				#		is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+#				#	}
+#				#	if = {
+#				#		limit = {
+#				#			NOT = {
+#				#				any_country = {
+#				#					NOT = {
+#				#						tag = FROM
+#				#						tag = ROOT
+#				#					}
+#				#					is_in_array = { ROOT.FROM.KMT_ps_alliance_array = THIS }
+#				#				}
+#				#			}
+#				#		}
+#				#		set_temp_variable = { ROOT.KMT_temp_one_member_left = 1 }
+#				#	}
+#				#}
+#				#if = {
+#				#	limit = {
+#				#		NOT = { check_variable = { ROOT.KMT_temp_one_member_left = 1 }}
+#				#	}
+#					every_country = {
+#						limit = {
+#							NOT = { tag = ROOT }
+#							is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+#						}
+#						country_event = { id = kmt_powerstruggle.18 }
+#					}
+#					clear_array = ROOT.KMT_ps_alliance_array
+#					remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }#				}else = {#					random_country = {#						limit = {#							is_in_array = { ROOT.KMT_ps_alliance_array = THIS }#						}#						set_country_flag = KMT_new_leader#						country_event = { id = kmt_powerstruggle.18 }#					}#					clear_array = ROOT.KMT_ps_alliance_array#					remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }#				}
+#			}
+#			if = {
+#				limit = {
+#					any_country = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+#					is_valid_power_struggle_participant = no
+#				}
+#				every_country = {
+#					limit = {
+#						NOT = { tag = ROOT }
+#						any_country = { 
+#							is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+#							is_in_array = { THIS.KMT_ps_alliance_array = PREV }
+#						}
+#					}
+#					country_event = { id = kmt_powerstruggle.20 }
+#				}
+#				random_country = {
+#					limit = {
+#						is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+#					}
+#					remove_from_array = { THIS.KMT_ps_alliance_array = ROOT  }
+#				}
+#			}
+#		}
+#	}
+#	
+#	on_monthly_GER = {
+#		effect = {
+#			if = {
+#				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+#					
+#				
+#				if = {
+#					limit = { 			
+#						ROOT = { has_completed_focus = KMT_suppress_dissidents }
+#					}
+#					save_global_event_target_as = KMT_ps_pop_sup_temp_tag
+#					every_state = {
+#						limit = {
+#							is_controlled_by = ROOT
+#							is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+#						}
+#						save_event_target_as = KMT_ps_pop_sup_temp_state
+#						set_variable = { KMT_pop_support_increment@ROOT = 1 }
+#						KMT_increase_pop_supportTHIS = yes
+#					}
+#					KMT_ps_update_pop_sup = yes
+#				}
+#				
+#				every_state = {
+#					limit = { 
+#						has_state_flag = KMT_china_inalienable_part
+#					}
+#					set_variable = { KMT_power_struggle_pop_support_total = state_population_k }
+#					divide_variable = { KMT_power_struggle_pop_support_total = 100 }
+#					round_variable = KMT_power_struggle_pop_support_total
+#					add_to_variable = { KMT_power_struggle_pop_support_total = 1 }
+#					
+#					set_variable = { KMT_75pc_popsup = KMT_power_struggle_pop_support_total }
+#					multiply_variable = { KMT_75pc_popsup = 0.75 }
+#					round_variable = KMT_75pc_popsup
+#					
+#					set_variable = { KMT_50pc_popsup = KMT_power_struggle_pop_support_total }
+#					multiply_variable = { KMT_50pc_popsup = 0.5 }
+#					round_variable = KMT_50pc_popsup
+#					
+#					set_variable = { KMT_25pc_popsup = KMT_power_struggle_pop_support_total }
+#					multiply_variable = { KMT_25pc_popsup = 0.25 }
+#					round_variable = KMT_25pc_popsup
+#				}
+#			}
+#		}
+#	}
+	
+	on_monthly = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						NOT = { has_global_flag = KMT_cg_inalianable_claims_flag }
+						has_global_flag = {
+							flag = KMT_cg_inalianable_claims_flag
+							days > 10
+						}
+					}
+				}
+				clr_global_flag = KMT_cg_inalianable_claims_flag
+				set_global_flag = KMT_cg_inalianable_claims_flag
+				if = {
+					limit = {
+						any_state = {
+							NOT = { is_claimed_by = event_target:KMT_central_gov_tag }
+							is_in_array = { KMT_central_gov_tag.KMT_considered_inalienable_parts = THIS }
+						}
+					}
+					every_state = {
+						limit = {
+							NOT = { is_claimed_by = event_target:KMT_central_gov_tag }
+							is_in_array = { KMT_central_gov_tag.KMT_considered_inalienable_parts = THIS }
+						}
+						add_claim_by = event_target:KMT_central_gov_tag
+					}
+				}
+			}
+#			
+#			#update loyalty
+#			if = {
+#				limit = {
+#					tag = event_target:KMT_central_gov_tag
+#					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+#				}
+#				every_other_country = {
+#					limit = { has_country_flag = KMT_ps_raising_loyalty }
+#					if = {
+#						limit = { check_variable = { THIS.KMT_ps_loyalty@KMT_central_gov_tag < 100 }}
+#						set_variable = { THIS.KMT_ps_loyalty_change = 3 }
+#						KMT_ps_change_loyalty = yes
+#						update_cg_loyalty = yes
+#					}
+#				}
+#				#every_other_country = {
+#				#	limit = { 
+#				#		is_valid_power_struggle_participant = yes
+#				#		NOT = { has_country_flag = KMT_ps_raising_loyalty }
+#				#		check_variable = { THIS.KMT_ps_raise_loyalty_progress > 0 }
+#				#	}
+#				#	subtract_from_variable = { THIS.KMT_ps_raise_loyalty_progress = 1 }
+#				#}
+#				if = {
+#					limit = {
+#						any_country = {
+#							is_valid_power_struggle_participant = no
+#							has_country_flag = KMT_ps_raising_loyalty
+#						}
+#					}
+#					every_other_country = {
+#						limit = { 
+#							is_valid_power_struggle_participant = no
+#							has_country_flag = KMT_ps_raising_loyalty
+#						}
+#						clr_country_flag = KMT_ps_raising_loyalty
+#						subtract_from_variable = { ROOT.KMT_ps_ip_spent = 1 }
+#						#set_variable = { THIS.KMT_ps_raise_loyalty_progress = 0 }
+#					}
+#				}
+#			}
+#		}
+#	}
+}

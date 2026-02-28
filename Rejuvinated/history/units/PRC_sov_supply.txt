@@ -1,0 +1,65 @@
+﻿division_template = {
+	name = "Su-lien Chih-yüan-chün"			
+									
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		artillery_brigade = { x = 2 y = 0 }
+		artillery_brigade = { x = 2 y = 1 }
+	}
+}
+
+division_template = {
+	name = "T'an-k'o Pu-tui" 			
+									
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		light_armor = { x = 1 y = 0 }
+	}
+}
+
+##### OOB #####
+#units = {
+#	division = {
+#		name = "Sulien Yuanping"
+#		location = 12356 #Yan'an
+#		division_template = "Sulien Chihyuanchun"
+#		start_experience_factor = 0.1
+#		start_equipment_factor = 1
+#		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+#		force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+#	}
+#	division = {
+#		name = "Sulien Yuanping"
+#		location = 12356 #Yan'an
+#		division_template = "Sulien Chihyuanchun"
+#		start_experience_factor = 0.1
+#		start_equipment_factor = 1
+#		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+#		force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+#	}
+#	division = {
+#		name = "Sulien Yuanping"
+#		location = 12356 #Yan'an
+#		division_template = "Sulien Chihyuanchun"
+#		start_experience_factor = 0.1
+#		start_equipment_factor = 1
+#		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+#		force_equipment_variants = { artillery_equipment_1 = { owner = "SOV" } }
+#	}
+#	division = {
+#		name = "Sulien Yuanping"
+#		location = 12356 #Yan'an
+#		division_template = "T'ank'o Putui"
+#		start_experience_factor = 0.1
+#		start_equipment_factor = 1
+#		force_equipment_variants = { infantry_equipment_1 = { owner = "SOV" } }
+#		force_equipment_variants = { light_tank_chassis_1 = { owner = "SOV" } }
+#	}
+#}
+

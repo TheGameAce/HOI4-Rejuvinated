@@ -1,0 +1,43 @@
+﻿add_namespace = kmtsov
+
+country_event = {
+	id = kmtsov.1
+	title = kmtsov.1.t
+	desc = kmtsov.1.d
+	picture = GFX_report_event_stalin_propaganda
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	option = { 
+		name = kmtsov.1.a
+		set_variable = { SOV.KMTSOV_gpw_conscription = SOV.surrender_progress }
+		multiply_variable = { SOV.KMTSOV_gpw_conscription = 0.2 }
+		set_variable = { SOV.KMTSOV_gpw_core_def = SOV.surrender_progress }
+		set_variable = { SOV.KMTSOV_gpw_core_off = SOV.surrender_progress }
+		multiply_variable = { SOV.KMTSOV_gpw_core_off = 0.35 }
+		set_variable = { SOV.KMTSOV_gpw_training_time = SOV.surrender_progress }
+		multiply_variable = { SOV.KMTSOV_gpw_training_time = -0.5 }
+		set_variable = { SOV.KMTSOV_gpw_reinforce_rate = SOV.surrender_progress }
+		multiply_variable = { SOV.KMTSOV_gpw_reinforce_rate = 0.2 }
+		set_variable = { SOV.KMTSOV_gpw_production = SOV.surrender_progress }
+		multiply_variable = { SOV.KMTSOV_gpw_production = 0.25 }
+		set_variable = { SOV.KMTSOV_gpw_mobilization_speed = SOV.surrender_progress }
+		multiply_variable = { SOV.KMTSOV_gpw_mobilization_speed = 0.25 }
+		set_variable = { SOV.KMTSOV_gpw_dig_in_speed = SOV.surrender_progress }
+		multiply_variable = { SOV.KMTSOV_gpw_dig_in_speed = 4 }
+		set_variable = { SOV.KMTSOV_gpw_max_dig_in = SOV.surrender_progress }
+		multiply_variable = { SOV.KMTSOV_gpw_max_dig_in = 25 }
+				
+		set_variable = { SOV.KMTSOV_gpw_resistance_target = SOV.surrender_progress }
+		set_variable = { SOV.KMTSOV_gpw_resistance_growth = SOV.surrender_progress }
+		set_variable = { SOV.KMTSOV_gpw_compliance_growth = SOV.surrender_progress }
+		multiply_variable = { SOV.KMTSOV_gpw_compliance_growth = -0.5 }
+		set_variable = { SOV.KMTSOV_gpw_resistance_decay = SOV.surrender_progress }
+		multiply_variable = { SOV.KMTSOV_gpw_resistance_decay = -0.75 }
+		
+		
+		add_dynamic_modifier = { modifier = KMTSOV_great_patriotic_war }
+	}
+}

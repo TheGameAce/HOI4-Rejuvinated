@@ -63,7 +63,7 @@ focus_tree = {
 
 	focus = {
 		id = USA_continue_the_new_deal
-		icon = GFX_focus_RJ_USA_new_deal
+		icon = GFX_focus_generic_self_management
 		x = 14
 		y = 0
 		offset = {
@@ -202,7 +202,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_desegregate_the_armed_forces
-		icon = GFX_focus_RJ_USA_desegregated_army
+		icon = GFX_goal_generic_small_arms
 		x = -6
 		y = 1
 		prerequisite = { focus = USA_suspend_the_presecution }
@@ -874,6 +874,7 @@ focus_tree = {
 		mutually_exclusive = { focus = USA_secure_china }
 		
 		available = {
+			has_government = communism
 			is_in_faction = no
 			not = { has_war_with = SOU }
 			SOV_comintern_joinable = yes 
@@ -909,13 +910,10 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				is_historical_focus_on = yes
-				factor = 0
-			}
 		}
 
 		available = {
+			has_government = communism
 			not = {
 				has_war_with = event_target:WTT_communist_china
 			}
@@ -924,9 +922,6 @@ focus_tree = {
 				event_target:WTT_communist_china = {
 					is_faction_leader = yes
 				}
-			}
-			event_target:WTT_communist_china = {
-				has_rule = can_join_factions
 			}
 		}
 		
@@ -1094,7 +1089,8 @@ focus_tree = {
 							has_completed_focus = ITA_new_colonial_policies
 						}
 					}
-					any_controlled_state = {
+					any_state = {
+						is_controlled_by = ITA
 						NOT = { is_core_of = ITA }
 					}
 				}
@@ -1102,7 +1098,8 @@ focus_tree = {
 					exists = yes
 					NOT = { has_war_with = ROOT }
 					NOT = { is_in_faction_with = ROOT }
-					any_controlled_state = {
+					any_state = {
+						is_controlled_by = FRA
 						NOT = { is_core_of = FRA }
 					}
 				}
@@ -1110,7 +1107,8 @@ focus_tree = {
 					exists = yes
 					NOT = { has_war_with = ROOT }
 					NOT = { is_in_faction_with = ROOT }
-					any_controlled_state = {
+					any_state = {
+						is_controlled_by = GER
 						NOT = { is_core_of = GER }
 					}
 				}
@@ -1157,7 +1155,8 @@ focus_tree = {
 						exists = yes
 						NOT = { has_war_with = ROOT }
 						NOT = { is_in_faction_with = ROOT }
-						any_controlled_state = {
+						any_state = {
+							is_controlled_by = ITA
 							NOT = { is_core_of = ITA }
 						}
 						OR = {
@@ -1191,7 +1190,8 @@ focus_tree = {
 						exists = yes
 						NOT = { has_war_with = ROOT }
 						NOT = { is_in_faction_with = ROOT }
-						any_controlled_state = {
+						any_state = {
+							is_controlled_by = FRA
 							NOT = { is_core_of = FRA }
 						}
 					}
@@ -1218,7 +1218,8 @@ focus_tree = {
 						exists = yes
 						NOT = { has_war_with = ROOT }
 						NOT = { is_in_faction_with = ROOT }
-						any_controlled_state = {
+						any_state = {
+							is_controlled_by = GER
 							NOT = { is_core_of = GER }
 						}
 					}
@@ -1291,7 +1292,7 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_agricultural_adjustment_act
-		icon = GFX_focus_RJ_USA_agricultural_adjustment_act
+		icon = GFX_goal_generic_consumer_goods
 		x = 0
 		y = 1
 		prerequisite = { focus = USA_wpa }
@@ -1998,7 +1999,6 @@ focus_tree = {
 			add_research_slot = 1
 		}
 	}
-
 	focus = {
 		id = USA_manhattan_project
 		icon = GFX_focus_wonderweapons
@@ -2016,35 +2016,20 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-
-			IF = {
-				limit = {
-					NOT = {
-						has_tech = atomic_research
-					}
-				}
-				add_tech_bonus = {
-					name = USA_manhattan_project
-					bonus = 0.5
-					uses = 1
-					category = nuclear
-				}
-				add_breakthrough_progress = {
-					specialization = specialization_nuclear
-					value = 0.5
-				}
-				add_ideas = USA_manhattan_project_ns
+			add_tech_bonus = {
+				name = USA_manhattan_project
+				bonus = 1.0
+				uses = 1
+				category = nuclear
 			}
-			ELSE = {
-				add_breakthrough_progress = {
-					specialization = specialization_nuclear
-					value = 1
-				}
-				add_ideas = USA_manhattan_project_ns
+			add_tech_bonus = {
+				name = USA_manhattan_project
+				bonus = 1.0
+				uses = 1
+				category = nuclear
 			}
 		}
 	}
-
 	focus = {
 		id = USA_neutrality_act
 		icon = GFX_goal_generic_neutrality_focus
@@ -2143,12 +2128,9 @@ focus_tree = {
 				}
 				USA_congress_small_support = yes
 			}
-
-			
 			custom_effect_tooltip = USA_lend_lease_act_neutrality_tt
 			hidden_effect = {
 				news_event = { id = mtg_news.3 days = 3 random_days = 5 }
-				set_country_flag = USA_passed_neutrality_pact_flag
 			}
 			hidden_effect = {
 				if = {
@@ -2525,7 +2507,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = wartime_industry_focus
-			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = available_designer
 			show_ideas_tooltip = USA_general_motors
 		}
@@ -2574,9 +2555,7 @@ focus_tree = {
 				}
 			}
 		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
+		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
 			army_experience = 10
 			random_owned_controlled_state = {
@@ -2857,9 +2836,7 @@ focus_tree = {
 			}
 			add_ideas = extensive_conscription
 		}
-
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
+		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
@@ -2889,6 +2866,7 @@ focus_tree = {
 					free_building_slots = {
 						building = infrastructure
 						size > 2
+						include_locked = yes
 					}
 					OR = {
 						region = 117
@@ -2910,6 +2888,7 @@ focus_tree = {
 					free_building_slots = {
 						building = infrastructure
 						size > 2
+						include_locked = yes
 					}
 					OR = {
 						region = 117
@@ -2926,15 +2905,11 @@ focus_tree = {
 				}
 				set_state_flag = USA_USACE_projects_3Inf
 			}
-
-			custom_effect_tooltip = generic_skip_one_line_tt
-
 			air_experience = 50
 			navy_experience = 50
 			army_experience = 10			
 		}
 	}
-
 ###  ## ###  ##  ###  #   ###  ## #  #     ### #  # ###      ##   ##  #   ###       ## ###  ##  #  # ###   ##  ###  ###  
 #   #    #  #  # #  # #    #  #   #  #      #  #  # #       #    #  # #   #  #     #    #  #  # ## # #  # #  # #  # #  # 
 ##   #   #  #### ###  #    #   #  ####      #  #### ##      # ## #  # #   #  #      #   #  #### # ## #  # #### ###  #  # 
@@ -4571,7 +4546,6 @@ focus_tree = {
 							controls_state = 670
 							controls_state = 286
 							controls_state = 741
-							controls_state = 1017
 							not = { has_war_with = ROOT }
 						} 
 					}
@@ -4968,10 +4942,7 @@ focus_tree = {
 				limit = {
 					is_in_faction = no
 				}
-				create_faction_from_template = {
-					template = faction_template_pan_american
-					name = USA_hemisphere_defense_faction
-				}
+				create_faction = USA_hemisphere_defense_faction
 			}
 			if = {
 				limit = {
@@ -5038,12 +5009,6 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = USA_intervention_in_europe
-			IF = {
-				limit = {
-					has_dlc = "La Resistance"
-				}
-				USA_create_george_musulin_operative = yes
-			}
 		}
 	}
 	focus = {
@@ -5072,12 +5037,6 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			IF = {
-				limit = {
-					has_dlc = "La Resistance"
-				}
-				USA_create_rene_joyeuse_operative = yes
-			}
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_gold show_effect_tooltip = yes show_modifiers = yes }
 		}
 	}
@@ -5108,12 +5067,6 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			IF = {
-				limit = {
-					has_dlc = "La Resistance"
-				}
-				USA_create_joe_savoldi_operative = yes
-			}
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_silver show_effect_tooltip = yes show_modifiers = yes }
 		}
 	}
@@ -5137,12 +5090,6 @@ focus_tree = {
 		completion_reward = {
 			GER = {
 				add_opinion_modifier = { target = USA modifier = war_plan_black }
-			}
-			IF = {
-				limit = {
-					has_dlc = "La Resistance"
-				}
-				USA_create_william_sebold_operative = yes
 			}
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_black show_effect_tooltip = yes show_modifiers = yes }
 		}
@@ -5222,12 +5169,6 @@ focus_tree = {
 		completion_reward = {
 			SOU = {
 				add_opinion_modifier = { target = USA modifier = war_plan_white }
-			}
-			IF = {
-				limit = {
-					has_dlc = "La Resistance"
-				}
-				USA_create_serge_obolensky_operative = yes
 			}
 			unlock_decision_tooltip = { decision = USA_execute_war_plan_white show_effect_tooltip = yes show_modifiers = yes }
 		}
@@ -5689,10 +5630,6 @@ focus_tree = {
 				uses = 1
 				category = land_doctrine
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			USA_george_s_patton = {
-				add_skill_level = 1
-			}	
 		}
 	}
 	focus = {
@@ -5763,13 +5700,6 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = USA_army_of_the_united_states
-			custom_effect_tooltip = generic_skip_one_line_tt
-			USA_omar_bradley = {
-				add_skill_level = 1
-			}
-			USA_mark_clark = {
-				add_skill_level = 1
-			}
 		}
 	}
 	focus = {
@@ -5826,7 +5756,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = USA_tank_experiments
 		icon = GFX_goal_generic_army_tanks
@@ -5853,10 +5782,6 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			add_breakthrough_progress = {
-				specialization = specialization_land
-				value = 0.5
-			}
 			add_tech_bonus = {
 				name = USA_tank_experiments
 				uses = 1
@@ -5865,7 +5790,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = USA_tank_destroyer_doctrine
 		icon = GFX_focus_usa_tank_destroyer_doctrine
@@ -5874,7 +5798,7 @@ focus_tree = {
 		prerequisite = { focus = USA_tank_experiments }
 		mutually_exclusive = { focus = USA_main_battle_tanks }
 		relative_position_id = USA_selective_training_act
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -5918,7 +5842,7 @@ focus_tree = {
 		prerequisite = { focus = USA_tank_experiments }
 		mutually_exclusive = { focus = USA_tank_destroyer_doctrine }
 		relative_position_id = USA_selective_training_act
-		cost = 5
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -5956,7 +5880,7 @@ focus_tree = {
 	focus = {
 		id = USA_armored_infantry
 		icon = GFX_goal_generic_build_tank
-		x = 3
+		x = 2
 		y = 4
 		prerequisite = { focus = USA_main_battle_tanks focus = USA_tank_destroyer_doctrine }
 		relative_position_id = USA_selective_training_act
@@ -6420,10 +6344,6 @@ focus_tree = {
 					}
 				}
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			USA_ernest_king = {
-				add_skill_level = 1
-			}
 		}
 	}
 	focus = {
@@ -6495,13 +6415,6 @@ focus_tree = {
 				limit = { has_idea = bureau_of_ordnance_spirit }
 				remove_ideas = bureau_of_ordnance_spirit
 			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			USA_chester_w_nimitz = {
-				add_skill_level = 1
-			}
-			USA_william_halsey_jr = {
-				add_skill_level = 1
-			}
 		}
 	}
 	
@@ -6522,10 +6435,6 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_breakthrough_progress = {
-				specialization = specialization_naval
-				value = 0.25
-			}
 			add_tech_bonus = {
 				name = USA_battleship_primacy
 				bonus = 1.0
@@ -6551,12 +6460,11 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-
-			add_mastery_bonus = {
+			add_doctrine_cost_reduction = {
 				name = USA_advanced_mahanian_doctrine
-				bonus = 0.1
-				days = 180
-				track = capital_ships
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_base_strike
 			}
 		}
 	}
@@ -6632,10 +6540,6 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			add_breakthrough_progress = {
-				specialization = specialization_naval
-				value = 0.25
-			}
 			add_tech_bonus = {
 				name = USA_carrier_primacy
 				bonus = 1.0
@@ -6670,7 +6574,6 @@ focus_tree = {
 			}
 		}
 	}
-
 	focus = {
 		id = USA_naval_radar
 		icon = GFX_goal_generic_radar
@@ -6698,19 +6601,9 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-
-			add_breakthrough_progress = {
-				specialization = specialization_naval
-				value = 0.25
-			}
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.5
-			}
-
 			add_tech_bonus = {
 				name = USA_naval_radar
-				uses = 1 # was 2
+				uses = 2
 				bonus = 1.0
 				category = radar_tech
 			}
@@ -6755,15 +6648,11 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
 			navy_experience = 25
-			add_mastery = {
-				amount = 50
-				track = screens
-			}
-			add_mastery_bonus = {
+			add_doctrine_cost_reduction = {
 				name = USA_convoy_tactics
-				bonus = 0.1
-				days = 180
-				track = screens
+				cost_reduction = 0.35
+				uses = 2
+				category = convoy_defense_tree
 			}
 		}
 	}
@@ -6781,9 +6670,13 @@ focus_tree = {
 		}
 
 		available = {
-			is_special_project_completed = sp:sp_naval_cruiser_submarine
+
 		}
 		
+		bypass = {
+
+		}
+
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -6796,21 +6689,12 @@ focus_tree = {
 				uses = 2
 				category = ss_tech
 			}
-
-			add_breakthrough_progress = {
-				specialization = specialization_naval
-				value = 0.25
-			}
-
-			IF = {
+			if = {
 				limit = {
 					has_dlc = "Man the Guns"
 				}
-				add_ideas = fleet_submarine_specialization_mtg
+				set_technology = { cruiser_submarines = 1 }
 			}
-			ELSE = {
-				add_ideas = fleet_submarine_specialization
-			}	
 		}
 	}
 

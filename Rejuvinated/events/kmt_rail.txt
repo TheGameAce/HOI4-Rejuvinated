@@ -1,0 +1,44 @@
+﻿add_namespace = kmt_rail
+
+country_event = {
+	id = kmt_rail.1
+	title = kmt_rail.1.t
+	desc = kmt_rail.1.d
+	
+	picture = GFX_report_event_generic_train
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	option = { 
+		name = kmt_rail.1.a
+		effect_tooltip = {
+			build_railway = {
+				level = 1
+				path = { 7097 13143 12350 602 13425 9970 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = kmt_rail.2
+	title = kmt_rail.2.t
+	desc = kmt_rail.2.d
+	
+	picture = null
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	option = { 
+		effect_tooltip = {
+			build_railway = {
+				level = 1
+				path = { 9970 1120 12095 1047 }
+			}
+		}
+	}
+}

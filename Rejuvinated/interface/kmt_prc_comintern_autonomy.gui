@@ -1,0 +1,95 @@
+
+guiTypes = {
+	
+	containerWindowType = {
+		name = "PRC_comintern_autonomy_window"
+		position = {x=200 y=0}
+		size = { width = 2000 height = 100 }
+		
+		background = {
+			name = "Background"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_bar1"
+			position = { x = 60 y = 34 }
+			spriteType = "GFX_prc_autonomy_bar"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_bar2"
+			position = { x = 130 y = 34 }
+			spriteType = "GFX_prc_autonomy_bar"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_bar3"
+			position = { x = 200 y = 34 }
+			spriteType = "GFX_prc_autonomy_bar"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_bar4"
+			position = { x = 270 y = 34 }
+			spriteType = "GFX_prc_autonomy_bar"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_bar5"
+			position = { x = 370 y = 34 }
+			spriteType = "GFX_prc_autonomy_bar"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_lowest"
+			position = { x = 20 y = 0 }
+			spriteType = "GFX_prc_autonomy_lowest"
+			pdx_tooltip = "PRC_comintern_autonomy_lowest_tt"
+			pdx_tooltip_delayed = "PRC_comintern_autonomy_lowest_tt_delayed"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_lower"
+			position = { x = 120 y = 18 }
+			spriteType = "GFX_prc_autonomy_intermediate"
+			frame = 3
+			pdx_tooltip = "PRC_comintern_autonomy_lower_tt"
+			pdx_tooltip_delayed = "PRC_comintern_autonomy_lower_tt_delayed"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_low"
+			position = { x = 190 y = 18 }
+			spriteType = "GFX_prc_autonomy_intermediate"
+			frame = 1
+			pdx_tooltip = "PRC_comintern_autonomy_low_tt"
+			pdx_tooltip_delayed = "PRC_comintern_autonomy_low_tt_delayed"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_high"
+			position = { x = 260 y = 18 }
+			spriteType = "GFX_prc_autonomy_intermediate"
+			frame = 1
+			pdx_tooltip = "PRC_comintern_autonomy_high_tt"
+			pdx_tooltip_delayed = "PRC_comintern_autonomy_high_tt_delayed"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_higher"
+			position = { x = 330 y = 18 }
+			spriteType = "GFX_prc_autonomy_intermediate"
+			frame = 2
+			pdx_tooltip = "PRC_comintern_autonomy_higher_tt"
+			pdx_tooltip_delayed = "PRC_comintern_autonomy_higher_tt_delayed"
+		}
+		
+		iconType = {
+			name = "PRC_comintern_autonomy_highest"
+			position = { x = 390 y = -5 }
+			spriteType = "GFX_prc_autonomy_highest"
+			pdx_tooltip = "PRC_comintern_autonomy_highest_tt"
+			pdx_tooltip_delayed = "PRC_comintern_autonomy_highest_tt_delayed"
+		}
+	}
+}

@@ -1,0 +1,28 @@
+﻿units = {
+
+	##### ROCN #####
+	fleet = {
+		name = "Minkuo Haichun"
+		naval_base = 10076 
+		task_force = {
+			name = "Minkuo Haichun"
+			location = 10076  
+			ship = { name = "Chien Kang" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = CHI version_name = "Chang Feng Class"} } }
+			ship = { name = "Tung An" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = CHI version_name = "Chang Feng Class"} } }
+			
+			ship = { name = "Ning Hai" definition = light_cruiser equipment = { light_cruiser_2 = {amount = 1 owner = CHI } } }
+			ship = { name = "Ping Hai" definition = light_cruiser equipment = { light_cruiser_2 = {amount = 1 owner = CHI } } }
+			
+			ship = { name = "Chao Ho" definition = light_cruiser equipment = { light_cruiser_1 = {amount = 1 owner = CHI } } }
+			ship = { name = "Ying Rui" definition = light_cruiser equipment = { light_cruiser_1 = {amount = 1 owner = CHI } } }
+			
+			ship = { name = "Hai Yung" definition = light_cruiser equipment = { light_cruiser_1 = {amount = 1 owner = CHI version_name = "Hai Yung Class"} } }
+			ship = { name = "Hai Shew" definition = light_cruiser equipment = { light_cruiser_1 = {amount = 1 owner = CHI version_name = "Hai Yung Class"} } }
+			ship = { name = "Hai Chen" definition = light_cruiser equipment = { light_cruiser_1 = {amount = 1 owner = CHI version_name = "Hai Yung Class"} } }
+			
+			ship = { name = "Hai Chi" definition = light_cruiser equipment = { light_cruiser_1 = {amount = 1 owner = CHI version_name = "Hai Chi Class"} } }
+			
+			ship = { name = "Yatsen" definition = light_cruiser equipment = { light_cruiser_1 = {amount = 1 owner = CHI version_name = "Yatsen Class"} } }
+		}
+	}
+}

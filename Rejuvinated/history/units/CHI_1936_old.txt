@@ -1,0 +1,531 @@
+﻿division_template = {
+	name = "Zhengshi Shi"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+		recon = { x = 0 y = 1 }  
+	}
+}
+division_template = {
+	name = "Qibing Shi"	
+	division_names_group = CHI_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+		recon = { x = 0 y = 1 }  
+	}
+}
+division_template = {
+	name = "De Xie Shi"	
+	division_names_group = CHI_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+		recon = { x = 0 y = 1 }  
+		anti_air = { x = 0 y = 2 }  
+		anti_tank = { x = 0 y = 3 }  
+		artillery = { x = 0 y = 4 }  
+	}
+}
+division_template = {
+	name = "Zheng Bian Shi"	
+	division_names_group = CHI_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+		recon = { x = 0 y = 1 } 
+		artillery = { x = 0 y = 2 }  
+	}
+}
+
+### OOB ###
+units = {
+	###### Kuomintang Army (CO: Chang Kai-shek) ######
+	##### Beiping-Tianjin Area (CO: ) #####
+	### 29 Juntuan (highly-reinforced corps) ###
+
+	##### First War Area (CO: Cheng Qian) #####
+	### 2nd Army Group (CO: Liu Shi) ###
+	division = { # "3 Chünt'uan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 12408
+		division_template = "Zhengshi Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+
+	}
+
+	##### Second War Area (CO: Yen Hsi-shan) #####
+	### 7th Army Group (CO: Fu Zuoyi) ###
+	division = { # "4 Bubing Shi"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 404
+		}
+		location = 9958
+		division_template = "Zhengshi Shi"		# Reorganized German-trained division (frontline infantry, better equipment and highest experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.1
+
+	}
+	division = { # "89 Bubing Shi"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 489
+		}
+		location = 9958
+		division_template = "Zhengshi Shi"		# Reorganized German-trained division (frontline infantry, better equipment and highest experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.1
+
+	}
+	division = { # "17 Chünt'uan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 17
+		}
+		location = 4144
+		division_template = "Zhengshi Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = { # "6 Qibing Jun"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 4144
+		division_template = "Qibing Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	### 14th Army Group (CO: Wei Lihuang) ###
+
+	##### Third War Area (CO: Gu Zhutong) #####
+	division = { # "1 Chünt'uan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7027
+		division_template = "Zhengshi Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = {
+		name = "1 Fujian Jingbei"
+		location = 9974
+		division_template = "Zhengshi Shi"		# Garrison unit (poor equipment and training)
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = {
+		name = "2 Fujian Jingbei"
+		location = 4169
+		division_template = "Zhengshi Shi"		# Garrison unit (poor equipment and training)
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = {
+		name = "3 Fujian Jingbei"
+		location = 4196
+		division_template = "Zhengshi Shi"		# Garrison unit (poor equipment and training)
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	## Shanghai Defense Force ##
+	division = {
+		name = "Shanghai Jingbei"
+		location = 12052
+		division_template = "Zhengshi Shi"		# Garrison unit (poor equipment and training)
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = {
+		name = "Lu zhan Shi"
+		location = 12052
+		division_template = "Zhengshi Shi"		# Garrison unit (poor equipment and training)
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	## 8th Army (CO: Zhang Fakui) ##
+	division = { # "3 Bubing Shi"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 403
+		}
+		location = 10076
+		division_template = "Zheng Bian Shi"		# German-trained division (frontline infantry, better equipment and experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.1
+
+	}
+	division = { # "Shui Jing Tuan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 499
+		}
+		location = 10076
+		division_template = "Zhengshi Shi"		# German-trained division (frontline infantry, better equipment and experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.1
+
+	}
+	## 9th Army (CO: Zhang Zhizhong) ##
+	division = {
+		name = "36 Bubing Shi"
+		location = 7191
+		division_template = "De Xie Shi"		# German-trained division (frontline infantry, better equipment and experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { support_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { anti_air_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "GER" } }
+
+	}
+	division = {
+		name = "87 Bubing Shi"
+		location = 7191
+		division_template = "De Xie Shi"		# German-trained division (frontline infantry, better equipment and experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { support_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { anti_air_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "GER" } }
+
+	}
+	division = {
+		name = "88 Bubing Shi"
+		location = 7191
+		division_template = "De Xie Shi"		# German-trained division (frontline infantry, better equipment and experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { support_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { anti_air_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "GER" } }
+
+	}
+	## 10th Army (CO: Liu Jiangxu) ##
+	division = {
+		name = "10 Lujun Shi"
+		location = 10076
+		division_template = "Zhengshi Shi"
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	### 15th Army Group (CO: Chen Cheng) ###
+	division = { # "11 Bubing Shi"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 411
+		}
+		location = 12076
+		division_template = "Zhengshi Shi"		# Reorganized German-trained division (frontline infantry, better equipment and highest experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.1
+
+	}
+	division = { # "14 Bubing Shi"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 414
+		}
+		location = 12076
+		division_template = "Zheng Bian Shi"		# German-trained division (frontline infantry, better equipment and experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.1
+
+	}
+	division = { # "4 Chünt'uan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 12076
+		division_template = "Zhengshi Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = { # "18 Chünt'uan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 18
+		}
+		location = 12076
+		division_template = "Zhengshi Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = { # "39 Chünt'uan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 39
+		}
+		location = 4042
+		division_template = "Zhengshi Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = { # "54 Chünt'uan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 54
+		}
+		location = 4042
+		division_template = "Zhengshi Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = { # "74 Chünt'uan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 74
+		}
+		location = 4042
+		division_template = "Zhengshi Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	### 19th Army Group (CO: Xu Yue) ###
+	division = { # "6 Bubing Shi"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 406
+		}
+		location = 7058
+		division_template = "Zheng Bian Shi"		# German-trained division (frontline infantry, better equipment and experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.1
+
+	}
+	division = { # "9 Bubing Shi"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 409
+		}
+		location = 7058
+		division_template = "Zheng Bian Shi"		# German-trained division (frontline infantry, better equipment and experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1.1
+
+	}
+	division = { # "25 Chünt'uan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 25
+		}
+		location = 1096
+		division_template = "Zheng Bian Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+
+	##### Yangtze War Area (CO: ) #####
+	division = {
+		name = "Wuhan Jingbei"
+		location = 4619
+		division_template = "Zhengshi Shi"		# Garrison unit (poor equipment and training)
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	### River Defense Force (CO: ) ###
+	division = {
+		name = "11 Lujun Shi"
+		location = 1036
+		division_template = "Zhengshi Shi"
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = {
+		name = "12 Lujun Shi"
+		location = 7637
+		division_template = "Zhengshi Shi"
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = { # "43 Chünt'uan"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 43
+		}
+		location = 9959
+		division_template = "Zhengshi Shi"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	### Capital Garrison Force (CO: ) ###
+	division = {
+		name = "2 Lujun Shi"
+		location = 11913
+		division_template = "Zhengshi Shi"
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+
+	}
+	division = { # "Peixun Shi"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 498
+		}
+		location = 11913
+		division_template = "De Xie Shi"		# Reorganized German-trained division (frontline infantry, better equipment and highest experience)
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { support_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { anti_air_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { anti_tank_equipment_1 = { owner = "GER" } }
+
+	}
+	division = {
+		name = "1 Nanking Jingbei"
+		location = 11913
+		division_template = "Zhengshi Shi"		# Garrison unit (poor equipment and training)
+		start_equipment_factor = 1.1
+
+	}
+	division = {
+		name = "2 Nanking Jingbei"
+		location = 11913
+		division_template = "Zhengshi Shi"		# Garrison unit (poor equipment and training)
+		start_equipment_factor = 1.1
+	}
+	division = {
+		name = "3 Nanking Jingbei"
+		location = 11913
+		division_template = "Zhengshi Shi"		# Garrison unit (poor equipment and training)
+		start_equipment_factor = 1.1
+	}
+	division = {
+		name = "4 Nanking Jingbei"
+		location = 11913
+		division_template = "Zhengshi Shi"		# Garrison unit (poor equipment and training)
+		start_equipment_factor = 1.1
+		force_equipment_variants = { infantry_equipment_0 = { owner = "CHI" } }
+	}
+
+	##### Fifth War Area (CO: Li Tsung-jen) #####
+	## 3rd Army (CO: Han Fuqu) ##
+
+
+}
+
+
+### Air Forces ###
+air_wings = {
+# Roughly 300 fighters, 21 tac bombers, but only 200 aircraft total were serviceable in 1937 due to neglect
+	# Beijing
+	608 = { 
+		fighter_equipment_0 = { owner = "CHI" amount = 30 }				# 3rd PG - Fiat CR.32
+	}
+	#Shanghai
+	613 = {
+		fighter_equipment_0 = { owner = "CHI" amount = 70 } 		# 4th PF, 5th PG, 9th PS - Curtiss Hawk
+		tac_bomber_equipment_0 =  { owner = "CHI" amount = 15 }		# Combined BG -- Martin 139WC, Savoia S.72
+	}
+}
+
+
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "CHI"
+		}
+		requested_factories = 2
+		progress = 0.55
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "CHI"
+		}
+		requested_factories = 1
+		progress = 0.55
+		efficiency = 100
+	}	
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "CHI"
+		}
+		requested_factories = 1
+		progress = 0.55
+		efficiency = 100
+	}	
+}

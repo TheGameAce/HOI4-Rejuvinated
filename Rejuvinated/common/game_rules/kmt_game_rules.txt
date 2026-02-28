@@ -1,0 +1,100 @@
+#
+# List of options showing in the Game Rules screen
+#
+# format is:
+# rule_token = {
+#	name = "TEXT_KEY_FOR_NAME"
+#	required_dlc = "Name of the Required DLC"
+#	desc = "TEXT_KEY_FOR_LONG_DESC"
+#	group = "TEXT_KEY_FOR_GROUP"					# Used for filtering. A single rule can be in multiple groups 
+#	icon = gfx_option_token							# Optional icon
+#	option = {										# Unless other specified, the first option is the default option
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		allow_achievements = no						# Achievements cannot be earned if one or more game rules are set to an option that has this property set to no.
+#													# If not specified, this is set to yes for default options and no for all other options.
+#	}
+#	default = {										# Specify an option with the "default" token to override the behavior of treating the first option as the default.
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		...
+#	}
+# }
+
+KMT_power_struggle_mechanics = {
+	name = "KMT_POWER_STRUGGLE_MECHANICS"
+	group = "RULE_GROUP_GAME_SETUP"
+	icon = "GFX_wargoals"
+	option = {
+		name = "DISABLE"
+		text = KMT_DISABLE_POWER_STRUGGLE_MECHANIC
+		desc = "KMT_DISABLE_POWER_STRUGGLE_MECHANIC_DESC"
+	}
+	#option = {
+	#	name = "ENABLE"
+	#	text = KMT_ENABLE_POWER_STRUGGLE_MECHANIC
+	#	desc = "KMT_ENABLE_POWER_STRUGGLE_MECHANIC_DESC"
+	#}
+}
+
+KMT_hunan_clique_setup = {
+	name = "KMT_HUNAN_CLIQUE"
+	group = "RULE_GROUP_GAME_SETUP"
+	icon = "GFX_wargoals"
+	option = {
+		name = "DEFAULT"
+		text = KMT_HUNAN_DEFAULT
+		desc = "KMT_HUNAN_DEFAULT_DESC"
+	}
+	option = {
+		name = "ANNEXED"
+		text = KMT_HUNAN_ANNEXED
+		desc = "KMT_HUNAN_ANNEXED_DESC"
+	}
+}
+
+KMT_japanese_shanghai_garrison = {
+	name = "KMT_JAP_SHANGHAI_GARRISON"
+	group = "RULE_GROUP_GAME_SETUP"
+	icon = "GFX_wargoals"
+	option = {
+		name = "DEFAULT"
+		text = KMT_JSG_DEFAULT
+		desc = "KMT_JSG_DEFAULT_DESC"
+	}
+	option = {
+		name = "STRENGTHENED"
+		text = KMT_JSG_STRENGTHENED
+		desc = "KMT_JSG_STRENGTHENED_DESC"
+	}
+	option = {
+		name = "MONSTROUS"
+		text = KMT_JSG_MONSTROUS
+		desc = "KMT_JSG_MONSTROUS_DESC"
+	}
+}
+
+#KMT_xian_incident_outcome = {
+#	name = "KMT_XIAN_INCDIENT_OUTCOME"
+#	group = "RULE_GROUP_AI_BEHAVIOR"
+#	option = {
+#		name = "DEFAULT"
+#		text = KMT_XIAN_DEFAULT
+#		desc = "KMT_XIAN_DEFAULT_DESC"
+#	}
+#	option = {
+#		name = "CHIANG_KILLED_WJW"
+#		text = CHIANG_KILLED_WJW
+#		desc = "CHIANG_KILLED_WJW_DESC"
+#	}
+#	option = {
+#		name = "CHIANG_KILLED_HYQ"
+#		text = CHIANG_KILLED_HYQ
+#		desc = "CHIANG_KILLED_HYQ_DESC"
+#	}
+#	option = {
+#		name = "CHIANG_SPARED"
+#		text = CHIANG_SPARED
+#		desc = "CHIANG_SPARED_DESC"
+#	}
+#}

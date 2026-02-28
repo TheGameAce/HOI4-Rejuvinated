@@ -1,0 +1,573 @@
+# Scripted AI desire for peace actions.
+# See documentation.info file for more detailed scripting information.
+
+peace_ai_desires = {
+
+    #weird shit will happen if dont puppet
+	#consequence handled via events (hopefully)
+    JAP_avoid_puppeting_warlords_prc = {
+        peace_action_type = { puppet force_government }
+        enable = {
+            FROM = {
+				is_chinese_nations_w_HYQ = yes
+				OR = {
+					NOT = {
+						tag = NSM
+						tag = SIK
+					}
+				}
+            }
+            ROOT = { original_tag = JAP }
+			NOT = { 
+				any_country = {
+					is_in_faction_with = ROOT
+					pc_is_on_same_side_as = ROOT
+					is_chinese_nations_w_HYQ = yes
+					pc_current_score > 100
+				}
+			}
+        }
+        ai_desire = 200
+    }
+
+	#weird border so no
+    ## Try to grab cities and hainan
+    #JAP_take_chinese_cities_if_possible = {
+    #    peace_action_type = take_states
+    #    enable = {
+    #        FROM.FROM.FROM = {
+    #           is_state_japan_wants = yes
+    #        }
+    #        ROOT = { original_tag = JAP }
+    #    }
+    #    ai_desire = 150
+    #}
+
+
+    # If Mengkukuo exists, increase the Inner Mongolian state
+    JAP_restore_MEN = {
+        peace_action_type = puppet
+        enable = {
+            FROM = {
+                original_tag = MEN
+            }
+            FROM.FROM.FROM = {
+				OR = {
+					region = 244
+					state = 621 # Suiyuan
+					state = 966 # Pailingmiao
+					state = 746 # Ikechao
+				}
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 200
+    }
+
+
+    # If Mengkukuo exists, increase the Inner Mongolian state
+    JAP_inner_mongolia = {
+        peace_action_type = take_states
+        enable = {
+            FROM = {
+                original_tag = MEN
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+            }
+            FROM.FROM.FROM = {
+				OR = {
+					region = 244
+					state = 621 # Suiyuan
+					state = 966 # Pailingmiao
+					state = 746 # Ikechao
+				}
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 100
+    }
+
+
+    # If Mengkukuo exists, give outer mongolia
+    JAP_outer_mongolia = {
+        peace_action_type = take_states
+        enable = {
+            FROM = {
+                original_tag = MEN
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+            }
+            FROM.FROM.FROM = {
+				OR = {
+					region = 266
+					region = 152
+					state = 817 # Gobi
+				}
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 100
+    }
+
+    # restore mck for some reason
+    JAP_create_mck_puppet = {
+        peace_action_type = puppet
+        enable = {
+            FROM = {
+                original_tag = MCK
+            }
+            FROM.FROM.FROM = {
+				OR = {
+					region = 242
+					region = 243
+					region = 155
+				}
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 200
+    }
+
+    # restore mck for some reason
+    JAP_mck_puppet = {
+        peace_action_type = take_states
+        enable = {
+            FROM = {
+                original_tag = MCK
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+            }
+            FROM.FROM.FROM = {
+				OR = {
+					region = 242
+					region = 243
+					region = 155
+				}
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 100
+    }
+
+    # Hui hui state
+    JAP_create_hui_hui_state = {
+        peace_action_type = puppet
+        enable = {
+            FROM = {
+                original_tag = NSM
+            }
+            FROM.FROM.FROM = {
+				OR = {
+					region = 144
+					state = 283 # Kansu
+					state = 949 # Shen-Kan-Ning
+					state = 616 # Ningsia
+					state = 945 # Alxa
+					state = 756 # Kiuchuan
+					state = 604 # Yulshul
+				}
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 200
+    }
+
+    # Hui hui state
+    JAP_hui_hui_state = {
+        peace_action_type = take_states
+        enable = {
+            FROM = {
+                original_tag = NSM
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+            }
+            FROM.FROM.FROM = {
+				OR = {
+					region = 144
+					state = 283 # Kansu
+					state = 949 # Shen-Kan-Ning
+					state = 616 # Ningsia
+					state = 945 # Alxa
+					state = 756 # Kiuchuan
+					state = 604 # Yulshul
+				}
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 100
+    }
+
+    #create sik puppet
+    JAP_create_sik_puppet = {
+        peace_action_type = puppet
+        enable = {
+            FROM = {
+                original_tag = SIK
+            }
+            FROM.FROM.FROM = {
+				OR = {
+					region = 145
+					region = 252
+				}
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 200
+    }
+
+    #gib sik puppet states
+    JAP_sik_puppet = {
+        peace_action_type = take_states
+        enable = {
+            FROM = {
+                original_tag = SIK
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+            }
+            FROM.FROM.FROM = {
+				OR = {
+					region = 145
+					region = 252
+				}
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 100
+    }
+
+    #no duplicate china puppet
+    JAP_no_duplicate_china_puppet = {
+        peace_action_type = puppet
+        enable = {
+			HYQ = { 
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				} 
+			}
+            FROM = {
+                original_tag = CHI
+                original_tag = WJW
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = -200
+    }
+
+    #no duplicate china puppet
+    JAP_no_duplicate_china_puppet2 = {
+        peace_action_type = puppet
+        enable = {
+			CHI = { 
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				} 
+			}
+            FROM = {
+                original_tag = HYQ
+                original_tag = WJW
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = -200
+    }
+
+    #no duplicate china puppet
+    JAP_no_duplicate_china_puppet3 = {
+        peace_action_type = puppet
+        enable = {
+			WJW = { 
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+			}
+            FROM = {
+                original_tag = HYQ
+                original_tag = CHI
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = -200
+    }
+
+
+    # Create a chinese puppet state from the rest of China
+    JAP_create_chinese_puppet = {
+        peace_action_type = puppet
+        enable = {
+			is_in_array = { global.KMT_greater_china_region_states = FROM.FROM.FROM }
+            FROM = {
+				OR = {
+					AND = {
+						original_tag = CHI
+						HYQ = { NOT = { 
+							OR = {
+								is_subject_of = ROOT
+								pc_is_puppeted_by = ROOT
+							} }}
+						WJW = { NOT = { 
+							OR = {
+								is_subject_of = ROOT
+								pc_is_puppeted_by = ROOT
+							} }
+						}
+					}
+					AND = {
+						original_tag = HYQ
+						CHI = { NOT = { 
+							OR = {
+								is_subject_of = ROOT
+								pc_is_puppeted_by = ROOT
+							} }}
+						WJW = { NOT = { 
+							OR = {
+								is_subject_of = ROOT
+								pc_is_puppeted_by = ROOT
+							} }}
+					}
+					AND = {
+						original_tag = WJW
+						CHI = { NOT = { 
+							OR = {
+								is_subject_of = ROOT
+								pc_is_puppeted_by = ROOT
+							}}}
+						HYQ = { NOT = { 
+							OR = {
+								is_subject_of = ROOT
+								pc_is_puppeted_by = ROOT
+							} }}
+					}
+				}
+            }
+            FROM.FROM.FROM = {
+				NOT = {
+					region = 145
+					region = 252
+					region = 144
+					state = 283 # Kansu
+					state = 949 # Shen-Kan-Ning
+					state = 616 # Ningsia
+					state = 945 # Alxa
+					state = 756 # Kiuchuan
+					state = 604 # Yulshul
+					state = 758 # Ngari
+					region = 242
+					region = 243
+					region = 155
+					region = 200
+					region = 152
+					region = 266
+					region = 242
+					region = 243
+					region = 244
+					state = 621 # Suiyuan
+					state = 966 # Pailingmiao
+					state = 746 # Ikechao
+				}
+                any_neighbor_state = {
+                    OR = {
+                        is_owned_by = ROOT.FROM
+                        pc_is_state_claimed_by = ROOT.FROM
+                        is_coastal = yes
+                    }
+                }
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 50
+    }
+
+    # gib puppet china hui hui states if cannot make hui hui
+    JAP_give_china_puppet_state_no_huihui = {
+        peace_action_type = take_states
+        enable = {
+			is_in_array = { global.KMT_greater_china_region_states = FROM.FROM.FROM }
+			NSM = { NOT = { 
+				is_subject_of = ROOT
+				pc_is_puppeted_by = ROOT
+			} }
+            FROM = {
+				OR = {
+					original_tag = CHI
+					original_tag = HYQ
+					original_tag = WJW
+				}
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+            }
+            FROM.FROM.FROM = {
+                OR = {
+					region = 144
+					state = 283 # Kansu
+					state = 949 # Shen-Kan-Ning
+					state = 616 # Ningsia
+					state = 945 # Alxa
+					state = 756 # Kiuchuan
+					state = 604 # Yulshul
+                }
+                any_neighbor_state = {
+                    OR = {
+                        is_owned_by = ROOT.FROM
+                        pc_is_state_claimed_by = ROOT.FROM
+                        is_coastal = yes
+                    }
+                }
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 50
+    }
+
+    # gib puppet china sik states if cannot make sik
+    JAP_give_china_puppet_state_no_sik = {
+        peace_action_type = take_states
+        enable = {
+			is_in_array = { global.KMT_greater_china_region_states = FROM.FROM.FROM }
+			SIK = { NOT = { 
+				is_subject_of = ROOT
+				pc_is_puppeted_by = ROOT
+			} }
+            FROM = {
+				OR = {
+					original_tag = CHI
+					original_tag = HYQ
+					original_tag = WJW
+				}
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+            }
+            FROM.FROM.FROM = {
+                OR = {
+					region = 145
+					region = 252
+                }
+                any_neighbor_state = {
+                    OR = {
+                        is_owned_by = ROOT.FROM
+                        pc_is_state_claimed_by = ROOT.FROM
+                        is_coastal = yes
+                    }
+                }
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 50
+    }
+
+    # gib puppet china men states if cannot make men
+    JAP_give_china_puppet_state_no_men = {
+        peace_action_type = take_states
+        enable = {
+			is_in_array = { global.KMT_greater_china_region_states = FROM.FROM.FROM }
+			MEN = { NOT = { 
+				is_subject_of = ROOT
+				pc_is_puppeted_by = ROOT
+			} }
+            FROM = {
+				OR = {
+					original_tag = CHI
+					original_tag = HYQ
+					original_tag = WJW
+				}
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+            }
+            FROM.FROM.FROM = {
+                OR = {
+					region = 244
+					state = 621 # Suiyuan
+					state = 966 # Pailingmiao
+					state = 746 # Ikechao
+                }
+                any_neighbor_state = {
+                    OR = {
+                        is_owned_by = ROOT.FROM
+                        pc_is_state_claimed_by = ROOT.FROM
+                        is_coastal = yes
+                    }
+                }
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 50
+    }
+
+    # gib puppet china mck states if cannot make mck
+    JAP_give_china_puppet_state_no_mck = {
+        peace_action_type = take_states
+        enable = {
+			is_in_array = { global.KMT_greater_china_region_states = FROM.FROM.FROM }
+			MCK = { NOT = { 
+				is_subject_of = ROOT
+				pc_is_puppeted_by = ROOT
+			} }
+            FROM = {
+				OR = {
+					original_tag = CHI
+					original_tag = HYQ
+					original_tag = WJW
+				}
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+            }
+            FROM.FROM.FROM = {
+				OR = {
+					region = 244
+					state = 621 # Suiyuan
+					state = 966 # Pailingmiao
+					state = 746 # Ikechao
+				}
+                any_neighbor_state = {
+                    OR = {
+                        is_owned_by = ROOT.FROM
+                        pc_is_state_claimed_by = ROOT.FROM
+                        is_coastal = yes
+                    }
+                }
+            }
+            ROOT = { original_tag = JAP }
+        }
+        ai_desire = 50
+    }
+
+
+    #Don't give things to communist china
+    JAP_dont_support_prc = {
+        peace_action_type = take_states
+        enable = {
+            FROM = {
+                OR = {
+                    tag = PRC
+                    tag = SIK
+                }
+                has_government = communism
+            }
+            ROOT = {
+                original_tag = JAP
+                NOT = { has_government = communism }
+            }
+        }
+        ai_desire = -200
+    }
+}

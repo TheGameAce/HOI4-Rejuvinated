@@ -1,0 +1,84 @@
+characters={
+	YUN_long_yun={
+		name=YUN_long_yun
+		portraits={
+			civilian={
+				large="GFX_portrait_yun_long_yun"
+			}
+			army = {
+				small="gfx/interface/ideas/idea_YUN_long_yun.dds"
+				large="GFX_portrait_yun_long_yun"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = YUN_lu_han
+			allowed = {
+				original_tag = YUN
+			}
+			traits = {
+				army_chief_morale_2
+			}
+				cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer trait_mountaineer }
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+			legacy_id = 1015
+			skill = 4
+		}
+	}
+
+	YUN_lu_han={
+		name=YUN_lu_han
+		portraits={
+			civilian={
+				large="gfx/leaders/kmt_mod/lu_han.dds"
+			}
+			army={
+				large="gfx/leaders/kmt_mod/lu_han.dds"
+				small="GFX_idea_lu_han"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = YUN_lu_han
+			allowed = {
+				original_tag = YUN
+			}
+			traits = {
+				air_chief_night_operations_1
+			}
+				cost = 50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			id=-1
+		}
+
+		corps_commander={
+			traits = { politically_connected }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = 1063
+			skill = 1
+		}
+	}
+}

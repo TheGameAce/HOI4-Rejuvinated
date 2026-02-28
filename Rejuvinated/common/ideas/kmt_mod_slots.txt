@@ -1,0 +1,730 @@
+#ideas = {
+#	
+#	jap_awareness = {
+#		aware_unavailable_idea = {
+#			removal_cost = -1
+#		
+#			picture = FRA_matignon_agreements
+#			
+#			allowed = {
+#				always = yes
+#			}
+#			available = {
+#				NOT = {
+#					is_puppet_of = JAP
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			traits = {
+#				unavailable_trait
+#			}
+#			default = yes
+#		}
+##		
+##		jap_aware_0 = {
+##			removal_cost = -1
+##			level = 4
+##		
+##			picture = generic_spy_coup
+##			
+##			allowed = {
+##				original_tag = MCK
+##			}
+##			available = {
+##				original_tag = MCK
+##				is_subject = yes
+##				hidden_trigger = { has_country_flag = awareness_enabled }
+##				custom_trigger_tooltip = {
+##					tooltip = MCK_awareness_4neg
+##					NOT = { check_variable = { MCK_awareness > 4 }}
+##				}
+##			}
+##			
+##			allowed_to_remove = {
+##				always = no
+##			}
+##		}
+##		
+##		jap_aware_1 = {
+##			removal_cost = -1
+##			level = 3
+##		
+##			picture = SOV_scientist_defect
+##			
+##			allowed = {
+##				original_tag = MCK
+##			}
+##			available = {
+##				original_tag = MCK
+##				is_subject = yes
+##				hidden_trigger = { has_country_flag = awareness_enabled }
+##				custom_trigger_tooltip = {
+##					tooltip = MCK_awareness_4
+##					check_variable = { MCK_awareness > 4 }
+##				}
+##			}
+##			cost = 450
+##		}
+##		
+##		jap_aware_2 = {
+##			removal_cost = -1
+##			level = 2
+##		
+##			picture = generic_disjointed_gov
+##			
+##			allowed = {
+##				original_tag = MCK
+##			}
+##			available = {
+##				original_tag = MCK
+##				is_subject = yes
+##				hidden_trigger = { has_country_flag = awareness_enabled }
+##				custom_trigger_tooltip = {
+##					tooltip = MCK_awareness_9
+##					check_variable = { MCK_awareness > 9 }
+##				}
+##			}
+##			
+##			modifier = {
+##				political_power_factor = -0.05
+##			}
+##			cost = 450
+##		}
+##		
+##		jap_aware_3 = {
+##			removal_cost = -1
+##			level = 1
+##		
+##			picture = ast_classify_aliens
+##			
+##			allowed = {
+##				original_tag = MCK
+##			}
+##			available = {
+##				original_tag = MCK
+##				is_subject = yes
+##				hidden_trigger = { has_country_flag = awareness_enabled }
+##				custom_trigger_tooltip = { 
+##					tooltip = MCK_awareness_14
+##					check_variable = { MCK_awareness > 14 }
+##				}
+##			}
+##			
+##			modifier = {
+##				neutrality_drift = -0.08
+##				encryption = -1
+##				political_power_factor = -0.25
+##			}
+##			cost = 450
+##		}
+#	}
+#	
+#	central_gov_binary = {
+#		cg_false = {
+#			removal_cost = -1
+#		
+#			picture = FRA_matignon_agreements
+#			
+#			allowed = {
+#				always = yes
+#			}
+#			available = {
+#				always = yes
+#			}
+#			
+#			allowed_to_remove = {
+#				is_chinese_nations_w_HYQ = yes
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_own_central_gov_capital_tt
+#					any_state = {
+#						has_state_flag = KMT_central_gov_capital
+#						is_owned_by = ROOT
+#					}
+#				}
+#			}
+#			default = yes
+#		}
+#		
+#		cg_true = {
+#			removal_cost = -1
+#		
+#			picture = generic_pp_unity_bonus
+#			available = {
+#				tag = event_target:KMT_central_gov_tag
+#			}
+#			
+#			allowed = {
+#				is_chinese_nations_w_HYQ = yes
+#			}
+#			
+#			modifier = {
+#				stability_factor = 0.1
+#				political_power_gain = 0.4
+#			}
+#			on_add = {
+#				country_event = claim_central.2
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			
+#			ai_will_do = {
+#				factor = 1000
+#			}
+#		}
+#		
+#		cg_true_low = {
+#			removal_cost = -1
+#		
+#			picture = great_depression
+#			available = {
+#				always = yes
+#			}
+#			
+#			allowed = {
+#				always = no
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#		}
+#		
+#		cg_warlords = {
+#			removal_cost = -1
+#		
+#			picture = generic_volunteer_expedition_bonus
+#			available = {
+#				OR = {
+#					is_chinese_nations_w_HYQ = yes
+#					original_tag = PGR
+#					original_tag = MEN
+#				}
+#				OR = {
+#					is_subject = no
+#					OVERLORD = {
+#						is_chinese_nations_w_HYQ = yes
+#					}
+#				}
+#				NOT = {
+#					OR = {
+#						has_idea = cg_true
+#						has_idea = cg_true_low
+#					}
+#				}
+#				NOT = { original_tag = PRC }
+#			}
+#			
+#			allowed = {
+#				is_chinese_nations_w_HYQ = yes
+#				NOT = {
+#					original_tag = SIK
+#				}
+#			}
+#			
+#			modifier = {
+#				political_power_factor = -0.1
+#				consumer_goods_factor = -0.05
+#				ai_get_ally_desire_factor = -10000
+#				military_leader_cost_factor = 50
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			rule = {
+#				can_create_factions = no
+#			}
+#		}
+#		
+#		cg_communist_resistence = {
+#			removal_cost = -1
+#		
+#			picture = trotskyite_plot
+#			available = {
+#				tag = PRC
+#			}
+#			
+#			allowed = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				ai_get_ally_desire_factor = -10000
+#				generate_wargoal_tension = 1.1
+#				join_faction_tension = 1.1
+#				lend_lease_tension = 1.1
+#				guarantee_tension = 1.1
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			rule = {
+#				can_create_factions = no
+#				can_send_volunteers = no
+#				can_puppet = no	
+#				can_join_factions = no
+#			}
+#		}
+#		
+#		cg_PRC_new_china = {
+#			removal_cost = -1
+#		
+#			picture = home_of_revolution
+#			available = {
+#				tag = PRC
+#			}
+#			
+#			allowed = {
+#				always = no
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				drift_defence_factor = 0.85
+#				army_morale_factor = 0.1
+#			}
+#		}
+#	}
+#	
+#	china_unification = {
+#		cu_not_chinese_nation = {
+#			removal_cost = -1
+#		
+#			picture = FRA_matignon_agreements
+#			
+#			allowed = {
+#				always = yes
+#			}
+#			available = {
+#				always = yes
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			default = yes
+#		}
+#		
+#		cu_cg_warlords_all = {
+#			removal_cost = -1
+#		
+#			picture = generic_intel_bonus
+#			
+#			allowed = {
+#				always = no
+#			}
+#			available = {
+#				OR = {
+#					has_idea = cg_true
+#					has_idea = cg_true_low
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_8_warlords_tt
+#					check_for_warlord_full = yes
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				political_power_cost = 0.85
+#				stability_factor = -0.5
+#				defensive_war_stability_factor = 0.3
+#				conscription_factor = -0.55
+#			}
+#		}
+#		
+#		cu_cg_warlords_7 = {
+#			removal_cost = -1
+#		
+#			picture = generic_intel_bonus
+#			
+#			allowed = {
+#				always = no
+#			}
+#			available = {
+#				OR = {
+#					has_idea = cg_true
+#					has_idea = cg_true_low
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_7_warlords_tt
+#					check_for_warlord_full = no
+#					check_for_warlord_7_left = yes
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				political_power_cost = 0.8
+#				stability_factor = -0.45
+#				defensive_war_stability_factor = 0.25
+#				conscription_factor = -0.5
+#			}
+#		}
+#		
+#		cu_cg_warlords_6 = {
+#			removal_cost = -1
+#		
+#			picture = generic_intel_bonus
+#			
+#			allowed = {
+#				always = no
+#			}
+#			available = {
+#				OR = {
+#					has_idea = cg_true
+#					has_idea = cg_true_low
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_6_warlords_tt
+#					check_for_warlord_7_left = no
+#					check_for_warlord_6_left = yes
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				political_power_cost = 0.75
+#				stability_factor = -0.40
+#				defensive_war_stability_factor = 0.2
+#				conscription_factor = -0.5
+#			}
+#		}
+#		
+#		cu_cg_warlords_5 = {
+#			removal_cost = -1
+#		
+#			picture = generic_intel_bonus
+#			
+#			
+#			allowed = {
+#				always = no
+#			}
+#			available = {
+#				OR = {
+#					has_idea = cg_true
+#					has_idea = cg_true_low
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_5_warlords_tt
+#					check_for_warlord_6_left = no
+#					check_for_warlord_5_left = yes
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				political_power_cost = 0.7
+#				stability_factor = -0.35
+#				defensive_war_stability_factor = 0.15
+#				conscription_factor = -0.45
+#			}
+#		}
+#		
+#		cu_cg_warlords_4 = {
+#			removal_cost = -1
+#		
+#			picture = generic_intel_bonus
+#			
+#			
+#			allowed = {
+#				always = no
+#			}
+#			available = {
+#				OR = {
+#					has_idea = cg_true
+#					has_idea = cg_true_low
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_4_warlords_tt
+#					check_for_warlord_5_left = no
+#					check_for_warlord_4_left = yes
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			modifier = {
+#				political_power_cost = 0.65
+#				stability_factor = -0.30
+#				defensive_war_stability_factor = 0.1
+#				conscription_factor = -0.4
+#			}
+#		}
+#		
+#		cu_cg_warlords_3 = {
+#			removal_cost = -1
+#		
+#			picture = generic_intel_bonus
+#			
+#			
+#			allowed = {
+#				always = no
+#			}
+#			available = {
+#				OR = {
+#					has_idea = cg_true
+#					has_idea = cg_true_low
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_3_warlords_tt
+#					check_for_warlord_4_left = no
+#					check_for_warlord_3_left = yes
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				political_power_cost = 0.55
+#				stability_factor = -0.25
+#				defensive_war_stability_factor = 0.05
+#				conscription_factor = -0.35
+#			}
+#		}
+#		
+#		cu_cg_warlords_2 = {
+#			removal_cost = -1
+#		
+#			picture = generic_intel_bonus
+#			
+#			
+#			allowed = {
+#				always = no
+#			}
+#			available = {
+#				OR = {
+#					has_idea = cg_true
+#					has_idea = cg_true_low
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_2_warlords_tt
+#					check_for_warlord_3_left = no
+#					check_for_warlord_2_left = yes
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				political_power_cost = 0.4
+#				stability_factor = -0.2
+#				conscription_factor = -0.25
+#			}
+#		}
+#		
+#		cu_cg_warlords_1 = {
+#			removal_cost = -1
+#		
+#			picture = generic_intel_bonus
+#			
+#			
+#			allowed = {
+#				always = no
+#			}
+#			available = {
+#				OR = {
+#					has_idea = cg_true
+#					has_idea = cg_true_low
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_1_warlords_tt
+#					check_for_warlord_2_left = no
+#					check_for_warlord_1_left = yes
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				political_power_cost = 0.25
+#				stability_factor = -0.1
+#				conscription_factor = -0.1
+#			}
+#		}
+#		
+#		cu_cg_warlords_0 = {
+#			removal_cost = -1
+#		
+#			picture = generic_pp_unity_bonus
+#			
+#			allowed = {
+#				always = no
+#			}
+#			available = {
+#				OR = {
+#					has_idea = cg_true
+#					has_idea = cg_true_low
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_no_warlords_tt
+#					check_for_warlord_none = yes
+#				}
+#				any_state = {
+#					is_core_of = ROOT
+#					NOT = {
+#						is_owned_by = ROOT
+#					}
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				stability_factor = 0.05
+#			}
+#		}
+#		
+#		
+#		cu_unified = {
+#			removal_cost = -1
+#		
+#			picture = generic_morale_bonus
+#			
+#			allowed = {
+#				is_chinese_nations_w_HYQ = yes
+#			}
+#			available = {
+#				OR = {
+#					has_idea = cg_true
+#					has_idea = cg_true_low
+#				}
+#				custom_trigger_tooltip = {
+#					tooltip = KMT_no_warlords_tt
+#					check_for_warlord_none = yes
+#				}
+#				NOT = {
+#					any_state = {
+#						is_core_of = ROOT
+#						NOT = {
+#							is_owned_by = ROOT
+#						}
+#					}
+#				}
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				political_power_gain = 0.25
+#				stability_factor = 0.15
+#			}
+#		}
+#		
+#		cu_is_warlord = {
+#			removal_cost = -1
+#		
+#			picture = generic_volunteer_expedition_bonus
+#			
+#			allowed = {
+#				is_chinese_nations_w_HYQ = yes
+#			}
+#			available = {
+#				has_idea = cg_warlords
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				conscription = 0.03
+#				non_core_manpower = 0.05
+#				training_time_factor = -0.1
+#			}
+#		}
+#		
+#		cu_is_warlord_ssc = {
+#			removal_cost = -1
+#		
+#			picture = generic_volunteer_expedition_bonus
+#			available = {
+#				has_idea = cg_warlords
+#			}
+#			
+#			allowed = {
+#				original_tag = SIK
+#			}
+#			
+#			modifier = {
+#				conscription = 0.03
+#				non_core_manpower = 0.05
+#				training_time_factor = -0.1
+#				ai_get_ally_desire_factor = 10000
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			rule = {
+#				can_create_factions = no
+#			}
+#		}
+#		
+#		cu_is_warlord_displaced = {
+#			removal_cost = -1
+#		
+#			picture = generic_volunteer_expedition_bonus
+#			available = {
+#				has_idea = cg_warlords
+#			}
+#			
+#			allowed = {
+#				always = no
+#			}
+#			
+#			modifier = {
+#				conscription = 0.015
+#				non_core_manpower = 0.025
+#				ai_get_ally_desire_factor = -10000
+#			}
+#			
+#			allowed_to_remove = {
+#				always = no
+#			}
+#			
+#			rule = {
+#				can_create_factions = no
+#			}
+#		}
+#		
+#		
+#	}
+#}

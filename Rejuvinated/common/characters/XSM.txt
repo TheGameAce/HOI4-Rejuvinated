@@ -1,0 +1,77 @@
+characters={
+	XSM_ma_bufang={
+		name=XSM_ma_bufang
+		portraits={
+			civilian={
+				large="GFX_portrait_xsm_ma_bufang"
+			}
+			army={
+				small="GFX_idea_ma_bufang"
+				large="GFX_portrait_xsm_ma_bufang"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = XSM_ma_buqing
+			allowed = {
+				original_tag = XSM
+			}
+			traits = {
+				army_chief_maneuver_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		corps_commander = {
+			legacy_id = 1008
+			traits = { cavalry_leader }
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 4
+			skill = 4
+		}
+	}
+
+	XSM_ma_buqing={
+		name=XSM_ma_buqing
+		portraits={
+			army={ #Trust me these portraits match together
+				large="gfx/leaders/kmt_mod/ma_puching.dds"
+				small="GFX_idea_ma_buqing"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = XSM_ma_buqing
+			ledger = army
+			allowed = {
+				original_tag = XSM
+			}
+			traits = {
+				army_cavalry_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		corps_commander={
+			legacy_id = 1055
+			traits = { cavalry_leader }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			skill = 2
+		}
+	}
+}

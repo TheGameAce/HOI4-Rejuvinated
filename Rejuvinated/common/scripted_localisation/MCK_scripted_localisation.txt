@@ -1,0 +1,244 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = { 
+	name = GetAikawa
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_support_aikawa_yoshisukeA
+	}
+	text = {
+		localization_key = MCK_support_aikawa_yoshisukeB
+	}
+}
+
+defined_text = { 
+	name = GetAikawaDesc
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_support_aikawa_yoshisuke_descA
+	}
+	text = {
+		localization_key = MCK_support_aikawa_yoshisuke_descB
+	}
+}
+
+defined_text = { 
+	name = GetHoshino
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_support_naoki_hoshinoA
+	}
+	text = {
+		localization_key = MCK_support_naoki_hoshinoB
+	}
+}
+
+defined_text = { 
+	name = GetHoshinoDesc
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_support_naoki_hoshino_descA
+	}
+	text = {
+		localization_key = MCK_support_naoki_hoshino_descB
+	}
+}
+
+defined_text = { 
+	name = GetMangyo
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_manchurian_industrial_development_companyA
+	}
+	text = {
+		localization_key = MCK_manchurian_industrial_development_companyB
+	}
+}
+
+defined_text = { 
+	name = GetMangyoDesc
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_manchurian_industrial_development_company_descA
+	}
+	text = {
+		localization_key = MCK_manchurian_industrial_development_company_descB
+	}
+}
+
+defined_text = { 
+	name = GetMilZaibatsu
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_request_zaibatsu_investment_on_military_industryA
+	}
+	text = {
+		localization_key = MCK_request_zaibatsu_investment_on_military_industryB
+	}
+}
+
+defined_text = { 
+	name = GetMilZaibatsuDesc
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_request_zaibatsu_investment_on_military_industry_descA
+	}
+	text = {
+		localization_key = MCK_request_zaibatsu_investment_on_military_industry_descB
+	}
+}
+
+defined_text = { 
+	name = GetCivZaibatsu
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_request_zaibatsu_investment_on_industryA
+	}
+	text = {
+		localization_key = MCK_request_zaibatsu_investment_on_industryB
+	}
+}
+
+defined_text = { 
+	name = GetCivZaibatsuDesc
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_request_zaibatsu_investment_on_industry_descA
+	}
+	text = {
+		localization_key = MCK_request_zaibatsu_investment_on_industry_descB
+	}
+}
+
+defined_text = { 
+	name = GetFTE
+	text = {
+		trigger = {
+			OR = {
+				is_subject_of = JAP
+				has_government = neutrality
+			}
+		}
+		localization_key = MCK_for_the_emperorA
+	}
+	text = {
+		localization_key = MCK_for_the_emperorB
+	}
+}
+
+defined_text = { 
+	name = GetFTEDesc
+	text = {
+		trigger = {
+			OR = {
+				is_subject_of = JAP
+				has_government = neutrality
+			}
+		}
+		localization_key = MCK_for_the_emperor_descA
+	}
+	text = {
+		localization_key = MCK_for_the_emperor_descB
+	}
+}
+
+defined_text = { 
+	name = GetAssassination
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_assassination_of_japanese_officialsA
+	}
+	text = {
+		localization_key = MCK_assassination_of_japanese_officialsB
+	}
+}
+
+defined_text = { 
+	name = GetAssassinationDesc
+	text = {
+		trigger = {
+			is_subject_of = JAP
+		}
+		localization_key = MCK_assassination_of_japanese_officials_descA
+	}
+	text = {
+		localization_key = MCK_assassination_of_japanese_officials_descB
+	}
+}
+
+defined_text = { 
+	name = GetRFPReadiness
+	text = {
+		trigger = {
+			has_country_flag = rfp_path
+		}
+		localization_key = MCK_RFP_readiness
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetAwarenessModifierText
+	text = {
+		trigger = {
+			check_variable = { MCK_awareness > 9 }
+			NOT = { check_variable = { MCK_awareness > 14 }}
+		}
+		localization_key = MCK_awareness_2
+	}
+	text = {
+		trigger = {
+			check_variable = { MCK_awareness > 14 }
+		}
+		localization_key = MCK_awareness_3
+	}
+	text = {
+		localization_key = MCK_awareness_none
+	}
+}
+
+defined_text = { 
+	name = GetMCKResistanceStrength
+	text = {
+		localization_key = "[?MCK_resistance_strength]"
+	}
+}
+
+defined_text = { 
+	name = GetMCKSecureStateTT
+	text = {
+		localization_key = "MCK_secure_state_tt"
+	}
+}

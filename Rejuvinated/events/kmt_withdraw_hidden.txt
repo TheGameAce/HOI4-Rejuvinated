@@ -1,0 +1,288 @@
+﻿add_namespace = wd
+
+country_event = {
+	id = wd.1
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		#withdraw_from_all_wars_with_puppet = yes
+		if = {
+			limit = { is_subject = yes }
+			OVERLORD = { end_puppet = ROOT }
+		}
+		if = {
+			limit = { is_in_faction = yes }
+			random_country = {
+				limit = {
+					is_in_faction_with = ROOT
+					is_faction_leader = yes
+				}
+				remove_from_faction = ROOT
+			}
+		}
+		every_other_country = {
+			limit = { 
+				has_war_with = ROOT
+				OR = {
+					is_faction_leader = yes
+					is_in_faction = no
+				}
+			}
+			country_event = { id = wd.2 }
+		}
+	}
+	option = { 
+	}
+}
+
+country_event = {
+	id = wd.2
+	title = wd.2.t
+	desc = wd.2.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { KMT_WD_PEACE_REJECTED@FROM = 0 }
+	}
+	
+	option = { 
+		ai_chance = { base = 100 }
+		name = wd.2.a1
+		trigger = { 
+			OR = {
+				is_in_faction = no 
+				NOT = {
+					any_country = {
+						is_subject = no
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { is_in_faction = no }
+			white_peace = FROM
+			FROM = { country_event = { id = wd.5 }}
+		}
+	}
+	option = { 
+		ai_chance = { base = 100 }
+		name = wd.2.a2
+		trigger = { 
+			is_in_faction = yes 
+			any_country = {
+				is_subject = no
+				is_in_faction_with = ROOT
+			}
+		}
+		if = {
+			limit = { is_faction_leader = yes }
+			hidden_effect = {
+				every_country = {
+					set_variable = { KMT_WD_FACTION_INSTANCE@ROOT = 0 }
+				}
+			}
+			every_other_country = {
+				limit = { 
+					is_in_faction_with = ROOT 
+					is_subject = no
+				}
+				set_variable = { KMT_WD_FACTION_INSTANCE@ROOT = 1 }
+				set_variable = { KMT_WD_AWAITING_RESPONSE@ROOT = 1 }
+			}
+			every_other_country = {
+				limit = { 
+					is_in_faction_with = ROOT 
+					is_subject = no
+				}
+				country_event = { id = wd.3 }
+			}
+		}
+	}
+	
+	option = {
+		name = wd.2.b
+		FROM = { country_event = { id = wd.6 }}
+	}
+}
+
+country_event = {
+	id = wd.3
+	title = wd.3.t
+	desc = wd.3.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = { 
+		ai_chance = { base = 100 }
+		name = wd.3.a
+		set_variable = { KMT_WD_AWAITING_RESPONSE@ROOT = 0 }
+		if = {
+			limit = { 
+				NOT = {
+					any_country = { 
+						NOT = { tag = ROOT }
+						check_variable = { KMT_WD_FACTION_INSTANCE@FROM = 1 }
+						check_variable = { KMT_WD_AWAITING_RESPONSE@ROOT = 1 }
+					}
+					FROM = { check_variable = { KMT_WD_PEACE_REJECTED@FROM.FROM = 1 }}
+				}
+			}
+			FROM = {
+				country_event = { id = wd.4 }
+				white_peace = FROM.FROM
+			}
+			hidden_effect = { 
+				every_country = {
+					limit = { 
+						is_in_faction_with = ROOT 
+						has_war_with = FROM.FROM
+					}
+					white_peace = FROM.FROM
+				}
+				FROM.FROM = { country_event = { id = wd.7 }}
+			}
+		}
+	}
+	
+	option = {
+		name = wd.3.b
+		every_country = { 
+			limit = { is_in_faction_with = ROOT }
+			country_event = { id = wd.8 }
+		}
+		set_variable = { KMT_WD_AWAITING_RESPONSE@ROOT = 0 }
+		hidden_effect = {
+			FROM.FROM = { country_event = { id = wd.9 }}
+		}
+	}
+}
+
+#peace with proposer
+country_event = {
+	id = wd.4
+	title = wd.4.t
+	desc = wd.4.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = { 
+		name = wd.4.a
+	}
+}
+
+#peace with from
+country_event = {
+	id = wd.5
+	title = wd.5.t
+	desc = wd.5.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = { 
+		name = wd.5.a
+		effect_tooltip = {
+			white_peace = FROM
+		}
+	}
+}
+
+#no peace with from 
+country_event = {
+	id = wd.6
+	title = wd.6.t
+	desc = wd.6.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = { 
+		name = wd.6.a
+	}
+}
+
+#peace with from faction
+country_event = {
+	id = wd.7
+	title = wd.7.t
+	desc = wd.7.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = { 
+		name = wd.7.a
+		effect_tooltip = {
+			every_country = {
+				limit = {
+					is_in_faction_with = FROM
+				}
+				white_peace = ROOT
+			}
+		}
+	}
+}
+
+#from rejects peace
+country_event = {
+	id = wd.8
+	title = wd.8.t
+	desc = wd.8.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = { 
+		name = wd.8.a
+	}
+}
+
+#no peace with from faction
+country_event = {
+	id = wd.9
+	title = wd.9.t
+	desc = wd.9.d
+	
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = { 
+		name = wd.9.a
+	}
+}

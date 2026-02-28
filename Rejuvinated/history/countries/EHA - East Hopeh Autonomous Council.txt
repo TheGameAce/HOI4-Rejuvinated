@@ -1,0 +1,70 @@
+﻿capital = 609
+
+set_country_flag = JAP_puppet
+
+recruit_character = EHA_yin_rugeng
+recruit_character = EHA_chi_zongmo
+
+diplomatic_relation = {
+	relation = military_access
+	country = MCK
+	active = yes
+}
+
+if = {
+	limit = {
+		has_dlc = "Waking the Tiger"
+	}
+	JAP = {
+		set_autonomy = {
+			target = ROOT
+			autonomous_state = autonomy_wtt_imperial_protectorate
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			JAP = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_integrated_puppet
+				}
+			}
+			else = {
+				JAP = {
+					set_autonomy = {
+						target = ROOT
+						autonomous_state = autonomy_puppet
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+oob = "EHA_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_military_police = 1
+	tech_support = 1
+	basic_train = 1
+}
+
+set_convoys = 0
+
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "1932.3.1"
+	elections_allowed = no
+}
+
+set_popularities = {
+	fascism = 100
+}

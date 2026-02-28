@@ -1,0 +1,300 @@
+﻿division_template = {
+	name = "Luchün Shih"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "T'iaocheng Shih"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 } 
+	}
+}
+
+division_template = {
+	name = "Chengli Shih"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		artillery_brigade = { x = 4 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+		artillery = { x = 0 y = 1 } 
+	}
+}
+
+division_template = {
+	name = "Ch'iping Shih"	
+	division_names_group = CHI_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+		cavalry = { x = 3 y = 0 }
+		cavalry = { x = 3 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "Tuli Lü"	
+	division_names_group = CHI_IND_INFB_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "Tuli Ch'iping Lü"	
+	division_names_group = CHI_IND_CAVB_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+division_template = {
+	name = "Pao-an Tui"			
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+	}
+	support = {}
+}
+
+units = {
+	division = {
+		name = "100. Shih 1. Lü"
+		location = 12732
+		division_template = "Tuli Ch'iping Lü"
+		start_equipment_factor = 0.45
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "100. Shih 2. Lü"
+		location = 12732
+		division_template = "Tuli Ch'iping Lü"
+		start_equipment_factor = 0.45
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "100. Shih 3. Lü"
+		location = 10787
+		division_template = "Tuli Ch'iping Lü"
+		start_equipment_factor = 0.45
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 12732
+		division_template = "Ch'iping Shih"
+		start_equipment_factor = 0.45
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Hsin-pien Ch'i-ping 2. Shih"
+		location = 12732
+		division_template = "Ch'iping Shih"
+		start_equipment_factor = 0.45
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Tsinghai Pao-an Tui"
+		location = 10856
+		division_template = "Pao-an Tui"
+		start_equipment_factor = 0.45
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Tsinghai Pao-an Tui"
+		location = 12899
+		division_template = "Pao-an Tui"
+		start_equipment_factor = 0.45
+		start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 4914
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 12846
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 13335
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 10750
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 12815
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 13287
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 10856
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 12899
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 12732
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 13320
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 2022
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 4403
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 2053
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 13404
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 10865
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 12890
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+	division = {
+			name = "Tsinghai Pao-an Tui"
+			location = 13319
+			division_template = "Pao-an Tui"
+			start_equipment_factor = 0.45
+			start_experience_factor = 0.2
+	}
+}
+
+### STARTING PRODUCTION ###
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "XSM"
+		}
+		requested_factories = 1
+		progress = 0.74
+		efficiency = 100
+	}
+}

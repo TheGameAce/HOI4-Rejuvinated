@@ -1,0 +1,272 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+MCK_local_bandits = {
+	icon = GFX_local_bandits
+	enable = { 
+		CONTROLLER = {
+			OR = {
+				tag = MCK
+				is_in_faction_with = MCK
+				is_subject_of = MCK
+				MCK = { is_subject_of = PREV }
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+				JAP = { is_subject_of = PREV }
+			}
+		}
+	}
+	
+	remove_trigger = { 
+		OR = {
+			OWNER = {
+				OR = { 
+					tag = event_target:KMT_central_gov_tag
+					tag = PRC
+				}
+				is_subject = no
+			}
+			has_resistance = no
+		}
+	}
+	
+	#compliance_gain = MCK_local_bandits_compliance_gain				#-0.01
+	resistance_target = MCK_local_bandits_resistance_target			#0.15
+	
+	compliance_gain = -100
+}
+
+MCK_najua_presence = {
+	icon = GFX_najua_presence
+	enable = { 
+		CONTROLLER = {
+			OR = {
+				tag = MCK
+				is_in_faction_with = MCK
+				is_subject_of = MCK
+				MCK = { is_subject_of = PREV }
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+				JAP = { is_subject_of = PREV }
+			}
+		}
+	}
+	
+	remove_trigger = { 
+		OR = {
+			OWNER = {
+				OR = { 
+					tag = event_target:KMT_central_gov_tag
+					tag = PRC
+				}
+				is_subject = no
+			}
+			has_resistance = no
+		}
+	}
+	
+	resistance_growth = MCK_najua_presence_resistance_growth		#0.5
+	resistance_decay = MCK_najua_presence_resistance_decay			#-0.2
+	#compliance_gain = MCK_najua_presence_compliance_gain			#-0.05
+	resistance_target = MCK_najua_presence_resistance_target		#0.3
+	
+	compliance_gain = -100
+}
+
+MCK_najua_presence2 = {
+	icon = GFX_najua_stronghold
+	enable = { 
+		CONTROLLER = {
+			OR = {
+				tag = MCK
+				is_in_faction_with = MCK
+				is_subject_of = MCK
+				MCK = { is_subject_of = PREV }
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+				JAP = { is_subject_of = PREV }
+			}
+		}
+	}
+	
+	remove_trigger = { 
+		OR = {
+			has_resistance = no
+			OWNER = {
+				OR = { 
+					tag = event_target:KMT_central_gov_tag
+					tag = PRC
+				}
+				is_subject = no
+			}
+		}
+	}
+	
+	resistance_growth = MCK_najua_presence2_resistance_growth		#1
+	resistance_decay = MCK_najua_presence2_resistance_decay			#-0.5
+	#compliance_gain = MCK_najua_presence2_compliance_gain			#-0.07
+	resistance_target = MCK_najua_presence2_resistance_target		#0.7
+	
+	compliance_gain = -100
+}
+
+jap_aware_2 = {
+	enable = { 
+		check_variable = { MCK_temp_awareness > 9 }
+	}
+	
+	remove_trigger = { 
+		always = no
+	}
+	
+	political_power_factor = -0.05
+}
+
+jap_aware_3 = {
+	enable = { 
+		check_variable = { MCK_temp_awareness > 14 }
+	}
+	
+	remove_trigger = { 
+		always = no
+	}
+	
+	neutrality_drift = -0.08
+	encryption = -1
+	political_power_factor = -0.25
+}
+
+JAP_shanghai_reinforcement = {
+	icon = GFX_modifiers_SOV_armored_battery
+	enable = { 
+	}
+	
+	remove_trigger = { 
+		always = no
+	}
+	
+	army_defence_factor = 0.5
+	army_attack_factor = 0.5
+	breakthrough_factor = 0.5
+	#land_reinforce_rate = 1
+	#local_army_morale_factor = 10
+	#local_org_regain = 10
+	#local_army_org_factor = 0.15
+}
+
+MCK_plan_for_the_restoration_dm = {
+	icon = GFX_idea_warrior_traditions_idea
+	enable = { 
+	}
+	
+	remove_trigger = { 
+		NOT = { has_country_leader = { character = MCK_kwantung_army ruling_only = yes }}
+	}
+	
+	planning_speed = 0.15
+	max_planning = 0.25
+	
+	special_forces_attack_factor = KTA_special_forces_attack_factor
+	special_forces_defence_factor = KTA_special_forces_defence_factor
+	special_forces_cap = KTA_special_forces_cap
+	
+	#for japan
+	##airdrop
+	#army_paratrooper_attack_factor = KTA_paratrooper_attack_factor
+	#army_paratrooper_defence_factor = KTA_paratrooper_defence_factor
+	#army_paratrooper_speed_factor = KTA_paratrooper_speed_factor
+	paradrop_organization_factor = KTA_paradrop_organization_factor
+	paratrooper_aa_defense = KTA_paratrooper_aa_defence
+	paratrooper_weight_factor = KTA_paratrooper_weight_factor
+	extra_paratrooper_supply_grace = KTA_extra_paratrooper_supply_grace
+	
+	air_accidents_factor = KTA_air_accidents_factor
+	air_ace_generation_chance_factor = KTA_air_ace_generation_chance_factor
+	
+	air_air_superiority_agility_factor = KTA_air_air_superiority_agility_factor
+	air_air_superiority_attack_factor = KTA_air_air_superiority_attack_factor
+	air_air_superiority_defence_factor = KTA_air_air_superiority_defence_factor
+	
+	air_superiority_efficiency = KTA_air_superiority_efficiency
+	air_cas_efficiency = KTA_air_cas_efficiency
+	air_cas_present_factor = KTA_air_cas_present_factor
+	
+	air_night_penalty = KTA_air_night_penalty
+	air_range_factor = KTA_air_range_factor
+	air_weather_penalty = KTA_air_weather_penalty
+	
+	mines_planting_by_air_factor = KTA_mines_planting_by_air_factor
+	mines_sweeping_by_air_factor = KTA_mines_sweeping_by_air_factor
+	air_nav_efficiency = KTA_air_nav_efficiency
+	
+	##naval
+	#army_marine_attack_factor = KTA_marine_attack_factor
+	extra_marine_supply_grace = KTA_extra_marine_supply_grace
+	
+	invasion_preparation = KTA_invasion_preparation
+	naval_invasion_capacity = KTA_naval_invasion_capacity
+	transport_capacity = KTA_transport_capacity
+	amphibious_invasion_defence = KTA_amphibious_invasion_defence
+	
+	mines_sweeping_by_fleets_factor = KTA_mines_sweeping_by_fleets_factor
+	naval_accidents_chance = KTA_naval_accidents_chance
+	naval_coordination = KTA_naval_coordination
+	
+	convoy_escort_efficiency = KTA_convoy_escort_efficiency
+	convoy_retreat_speed = KTA_convoy_retreat_speed
+	convoy_raiding_efficiency_factor = KTA_convoy_raiding_efficiency
+	
+	naval_has_potf_in_combat_attack = KTA_naval_has_potf_in_combat_attack
+	naval_has_potf_in_combat_defense = KTA_naval_has_potf_in_combat_defense
+	
+	#for china
+	terrain_penalty_reduction = KTA_terrain_penalty_reduction
+	
+	supply_node_range = KTA_supply_node_range
+	attrition = KTA_attrition
+	production_speed_supply_node_factor = KTA_production_speed_supply_node_factor
+	production_speed_rail_way_factor = KTA_production_speed_rail_way_factor
+	
+	acclimatization_cold_climate_gain_factor = KTA_acclimatization_cold_climate_gain_factor
+	acclimatization_hot_climate_gain_factor = KTA_acclimatization_hot_climate_gain_factor
+	heat_attrition_factor = KTA_heat_attrition
+	winter_attrition_factor = KTA_cold_attrition
+	
+	training_time_factor = KTA_training_time_factor
+	
+	resistance_target = KTA_resistance_target
+	compliance_growth = KTA_compliance_growth
+	compliance_gain = KTA_compliance_gain
+	resistance_growth = KTA_resistance_growth
+	resistance_decay = KTA_resistance_decay
+	resistance_damage_to_garrison = KTA_damage_to_garrison
+	
+	non_core_manpower = KTA_non_core_manpower
+	
+}

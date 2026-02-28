@@ -1,0 +1,4713 @@
+﻿###########################
+# jyutgwai Events
+###########################
+
+
+add_namespace = jyutgwai
+
+			####################
+			###JYUTGWAI EVENT###
+			####################
+
+#death of hu hanmin
+country_event = {
+	id = jyutgwai.1
+	title = jyutgwai.1.t
+	desc = jyutgwai.1.d
+	picture = GFX_report_event_generic_funeral
+	
+	trigger = {
+		date > 1936.5.8
+		tag = YUT
+		NOT = {
+			has_global_flag = is_1939_start
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: 胡漢文之死fired"
+		hidden_effect = {
+			set_global_flag = huhanwen_dead
+		}
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	
+	option = {
+		name = jyutgwai.1.a
+		add_political_power = -25
+		retire_character = YUT_hu_hanmin
+		custom_effect_tooltip = remove_political_advisor
+		show_ideas_tooltip = YUT_hu_hanwen
+		hidden_effect = {
+			event_target:KMT_central_gov_tag = { country_event = { id = jyutgwai.2 days = 3 random = 4 }}
+		}
+	}
+}
+
+#chiang contact chen jitang?
+country_event = {
+	id = jyutgwai.2
+	title = jyutgwai.2.t
+	desc = jyutgwai.2.d
+	picture = GFX_report_event_generic_funeral
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+		has_global_flag = huhanwen_dead
+		tag = event_target:KMT_central_gov_tag
+		NOT = {
+			event_target:KMT_central_gov_tag = {
+				has_completed_focus = KMT_external_defense
+			}
+			has_country_flag = KMT_pro_japanese_coup
+			has_country_flag = KMT_red_coup_finish
+			focus_progress = {
+				focus = KMT_support_pro_japanese_faction
+				progress > 0
+			}
+			has_global_flag = KMT_finished_a_communist_focus
+		}
+	}
+	
+	fire_only_once = yes
+	
+	#mean_time_to_happen = { days = 3 }
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: chiang decision event fired"
+	}
+	
+	option = {
+		log = "[Root.GetName]: chiang decision - go to funeral"
+		ai_chance = { 
+			base = 95
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_external_defense
+					focus_progress = {
+						focus = KMT_external_defense
+						progress > 0
+					}
+				}
+				factor = 0
+			}
+		}
+		name = jyutgwai.2.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			YUT = {
+				country_event = { id = jyutgwai.3 days = 5 }
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: chiang decision - wargoal against YUT and GXC"
+		ai_chance = { base = 0 }
+		name = jyutgwai.2.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			add_stability = -0.2
+			add_war_support = -0.2
+			create_wargoal = {
+				target = YUT
+				type = civil_war
+			}
+			create_wargoal = {
+				target = GXC
+				type = civil_war
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: chiang decision - do nothing"
+		ai_chance = { 
+			base = 1
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_external_defense
+					focus_progress = {
+						focus = KMT_external_defense
+						progress > 0
+					}
+				}
+				factor = 100
+			}
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		name = jyutgwai.2.c
+	}
+}
+
+#chiang send proposal/ultimatum
+country_event = {
+	id = jyutgwai.3
+	title = {
+		text = jyutgwai.3.t
+		trigger = {
+			NOT = { has_global_flag = KMT_liangguang_GXC_no_help_YUT }
+		}
+	}
+	title = {
+		text = jyutgwai.3.t_2
+		trigger = {
+			has_global_flag = KMT_liangguang_GXC_no_help_YUT
+		}
+	}
+	desc = {
+		text = jyutgwai.3.d
+		trigger = {
+			NOT = { has_global_flag = KMT_liangguang_GXC_no_help_YUT }
+		}
+	}
+	desc = {
+		text = jyutgwai.3.d_2
+		trigger = {
+			has_global_flag = KMT_liangguang_GXC_no_help_YUT
+		}
+	}
+	picture = GFX_report_event_chinese_soldiers
+	
+	is_triggered_only = yes
+	
+	fire_only_once = no
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: YUT response to chiang decision"
+	}
+	
+	option = { #ask guangxi fo help
+		log = "[Root.GetName]: YUT response - seek help from GXC"
+		ai_chance = { 
+			base = 95 
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_devote_to_the_party_and_state
+					focus_progress = { focus = KMT_devote_to_the_party_and_state progress > 0 }
+				}
+				factor = 0
+			}
+		}
+		trigger = {
+			country_exists = GXC
+			GXC = {
+				is_puppet = no
+			}
+			NOT = {
+				has_global_flag = KMT_liangguang_GXC_no_help_YUT
+				has_completed_focus = KMT_devote_to_the_party_and_state
+			}
+		}
+		name = jyutgwai.3.a
+		if = {
+			limit = { has_completed_focus = KMT_devote_to_the_party_and_state }
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						NOT = {
+							has_country_flag = KMT_pro_japanese_coup
+							has_country_flag = KMT_red_coup_finish
+						}
+					}
+				}
+				set_global_flag = YUT_submitted_to_CHI
+				every_owned_state = {
+					set_variable = { KMT_pop_support@FROM = KMT_pop_support@ROOT }
+					set_variable = { KMT_pop_support@ROOT = 0 }
+				}
+				event_target:KMT_central_gov_tag = {	
+					annex_country = {
+						target = ROOT
+						transfer_troops = yes
+					}
+					set_country_flag = kmt_cjt_flag
+					set_country_flag = yut_sumitted
+					country_event = { id = jyutgwai.15 }
+				}
+				hidden_effect = {
+					YUT = {
+						every_unit_leader = {
+							#effect_tooltip = { set_nationality = event_target:KMT_central_gov_tag }
+							set_character_flag = KMT_temp_sn_flag
+						}
+						every_character = {
+							limit = { has_character_flag = KMT_temp_sn_flag }
+							set_nationality = event_target:KMT_central_gov_tag
+							clr_character_flag = KMT_temp_sn_flag
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = KMT_liangguang_GXC_no_help_YUT
+					}
+					GXC = {
+						country_event = { id = jyutgwai.10 }
+					}
+				}
+			}
+		}else = {
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						NOT = {
+							has_country_flag = KMT_pro_japanese_coup
+							has_country_flag = KMT_red_coup_finish
+						}
+					}
+				}
+				GXC = {
+					country_event = { id = jyutgwai.4 }
+				}
+			}
+		}
+	}
+	
+	option = { #fight chi alone
+		log = "[Root.GetName]: YUT response - fight chiang alone"
+		ai_chance = { base = 0 }
+		name = jyutgwai.3.b
+		trigger = { 
+			NOT = {	has_completed_focus = KMT_devote_to_the_party_and_state }
+		}
+		if = {
+			limit = { has_completed_focus = KMT_devote_to_the_party_and_state }
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						NOT = {
+							has_country_flag = KMT_pro_japanese_coup
+							has_country_flag = KMT_red_coup_finish
+						}
+					}
+				}
+				set_global_flag = YUT_submitted_to_CHI
+				every_owned_state = {
+					set_variable = { KMT_pop_support@FROM = KMT_pop_support@ROOT }
+					set_variable = { KMT_pop_support@ROOT = 0 }
+				}
+				event_target:KMT_central_gov_tag = {	
+					annex_country = {
+						target = ROOT
+						transfer_troops = yes
+					}
+					set_country_flag = kmt_cjt_flag
+					set_country_flag = yut_sumitted
+					country_event = { id = jyutgwai.15 }
+				}
+				hidden_effect = {
+					YUT = {
+						every_unit_leader = {
+							#effect_tooltip = { set_nationality = event_target:KMT_central_gov_tag }
+							set_character_flag = KMT_temp_sn_flag
+						}
+						every_character = {
+							limit = { has_character_flag = KMT_temp_sn_flag }
+							set_nationality = event_target:KMT_central_gov_tag
+							clr_character_flag = KMT_temp_sn_flag
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = KMT_liangguang_GXC_no_help_YUT
+					}
+					GXC = {
+						country_event = { id = jyutgwai.10 }
+					}
+				}
+			}
+		}else = {
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						NOT = {
+							has_country_flag = KMT_pro_japanese_coup
+							has_country_flag = KMT_red_coup_finish
+						}
+					}
+				}
+				set_global_flag = liangguang_incident
+				add_political_power = 50
+				add_war_support = 0.1
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = jyutgwai.7 hours = 5 }
+				}
+				set_country_flag = KMT_liangguang_opposition
+			}
+			set_variable = { KMT_ps_loyalty_change = -50 }
+				custom_effect_tooltip = KMT_ps_change_loyalty_tt_n50
+			KMT_ps_change_loyalty = yes
+		}
+	}
+	
+	option = { #submit
+		log = "[Root.GetName]: YUT response - submit"
+		ai_chance = { 
+			base = 5 
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_devote_to_the_party_and_state
+					focus_progress = { focus = KMT_devote_to_the_party_and_state progress > 0 }
+				}
+				add = 100
+			}
+		}
+		name = jyutgwai.3.c
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			set_global_flag = YUT_submitted_to_CHI
+			every_owned_state = {
+				set_variable = { KMT_pop_support@FROM = KMT_pop_support@ROOT }
+				set_variable = { KMT_pop_support@ROOT = 0 }
+			}
+			event_target:KMT_central_gov_tag = {	
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+				set_country_flag = kmt_cjt_flag
+				set_country_flag = yut_sumitted
+				country_event = { id = jyutgwai.15 }
+			}
+			hidden_effect = {
+				YUT = {
+					every_unit_leader = {
+						#effect_tooltip = { set_nationality = event_target:KMT_central_gov_tag }
+						set_character_flag = KMT_temp_sn_flag
+					}
+					every_character = {
+						limit = { has_character_flag = KMT_temp_sn_flag }
+						set_nationality = event_target:KMT_central_gov_tag
+						clr_character_flag = KMT_temp_sn_flag
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = KMT_liangguang_GXC_no_help_YUT
+				}
+				GXC = {
+					country_event = { id = jyutgwai.10 }
+				}
+			}
+		}
+	}
+}
+
+#unite against chiang?
+country_event = {
+	id = jyutgwai.4
+	title = jyutgwai.4.t
+	desc = jyutgwai.4.d
+	picture = GFX_report_event_chinese_soldiers_02
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: YUT seek GXC help fired"
+	}
+	
+	option = {
+		log = "[Root.GetName]: YUT seek GXC help, GXC response - yes"
+		trigger = { 
+			NOT = {	has_completed_focus = KMT_devote_to_the_party_and_state }
+		}
+		ai_chance = { 
+			base = 100
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_devote_to_the_party_and_state
+					focus_progress = { focus = KMT_devote_to_the_party_and_state progress > 0 }
+				}
+				factor = 0
+			}
+		}
+		name = jyutgwai.4.a
+		set_global_flag = liangguang_incident
+		set_country_flag = KMT_liangguang_opposition
+		FROM = { set_country_flag = KMT_liangguang_opposition }
+		if = {
+			limit = { has_completed_focus = KMT_devote_to_the_party_and_state }
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						NOT = {
+							has_country_flag = KMT_pro_japanese_coup
+							has_country_flag = KMT_red_coup_finish
+						}
+					}
+				}
+				set_global_flag = KMT_liangguang_GXC_no_help_YUT
+				YUT = {
+					country_event = { id = jyutgwai.3 days = 1 }
+				}
+			}
+		}else = {
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						NOT = {
+							has_country_flag = KMT_pro_japanese_coup
+							has_country_flag = KMT_red_coup_finish
+						}
+					}
+				}
+				YUT = {
+					country_event = { id = jyutgwai.5 days = 1 }
+				}
+			}
+			set_variable = { KMT_ps_loyalty_change = -50 }
+				custom_effect_tooltip = KMT_ps_change_loyalty_tt_n50
+			KMT_ps_change_loyalty = yes
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: YUT seek GXC help, GXC response - no"
+		ai_chance = { 
+			base = 0 
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_devote_to_the_party_and_state
+					focus_progress = { focus = KMT_devote_to_the_party_and_state progress > 0 }
+				}
+				add = 100
+			}
+		}
+		name = jyutgwai.4.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			set_global_flag = KMT_liangguang_GXC_no_help_YUT
+			YUT = {
+				country_event = { id = jyutgwai.3 days = 1 }
+			}
+		}
+	}
+}
+
+#gxc agree
+country_event = {
+	id = jyutgwai.5
+	title = jyutgwai.5.t
+	desc = jyutgwai.5.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: GXC helps YUT"
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_global_flag = KMT_disable_power_struggle_mechanics 
+					}
+					if = {
+						limit = { is_faction_leader = no }
+						create_faction = KMT_anti_jap_salvation_army
+					}
+					add_to_faction = FROM
+				}else = {
+					if = {
+						limit = {
+							NOT = { is_in_array = { global.KMT_ps_alliance_leaders = GXC }}
+						}
+						add_to_array = { global.KMT_ps_alliance_leaders = GXC }
+					}
+					if = { 
+						limit = { 
+							NOT = { is_in_array = { GXC.KMT_ps_alliance_array = GXC }}
+						}
+						add_to_array = { GXC.KMT_ps_alliance_array = GXC }
+					}
+					if = {
+						limit = {
+							NOT = { is_in_array = { GXC.KMT_ps_alliance_array = YUT }}
+						}
+						add_to_array = { GXC.KMT_ps_alliance_array = YUT }
+					}
+				}
+			}
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = jyutgwai.7 hours = 5 }
+			}
+		}
+	}
+	
+	option = {
+		name = jyutgwai.5.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			custom_effect_tooltip = KMT_yut_joins_alliance_tt
+			set_global_flag = GXC_yes
+		}
+	}
+}
+
+#yut no submit
+country_event = {
+	id = jyutgwai.7
+	title = jyutgwai.7.t
+	desc = jyutgwai.7.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: YUT no submit, chiang response"
+	}
+	
+	option = {
+		log = "[Root.GetName]: YUT no submit, chiang response - bribery"
+		ai_chance = {
+			base = 100
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_external_defense
+					focus_progress = {
+						focus = KMT_external_defense
+						progress > 0
+					}
+				}
+				factor = 0
+			}
+		}
+		name = jyutgwai.7.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			hidden_effect = {
+				random_list = {
+					95 = {
+						log = "[Root.GetName]: bribery success"
+						YUT = {
+							country_event = { id = jyutgwai.8 days = 5 }
+						}
+					}
+					5 = {
+						log = "[Root.GetName]: bribery scheitert"
+						YUT = {					
+							country_event = { id = jyutgwai.32 days = 5 }
+						}
+					}
+				}
+				ZXL = {
+					country_event = { id = jyutgwai.62 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: YUT no submit, chiang response - drop it"
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_external_defense
+					focus_progress = {
+						focus = KMT_external_defense
+						progress > 0
+					}
+				}
+				add = 100
+			}
+		}
+		name = jyutgwai.7.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			YUT = {
+				country_event = { id = jyutgwai.29 } 
+			}
+		}
+	}
+}
+
+#yu hanmou
+country_event = {
+	id = jyutgwai.8
+	title = jyutgwai.8.t
+	desc = jyutgwai.8.d
+	picture = GFX_report_event_chinese_army_training
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: YUT bribery success event fired"
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			#send_equipment = { target = event_target:KMT_central_gov_tag type = fighter_equipment_0 amount = 500 }
+			set_global_flag = jyut_generals_defected
+			hidden_effect = {
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = jyutgwai.31 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: YUT bribery success - YUT get annexed entirely"
+		ai_chance = {
+			base = 90
+		}
+		add_political_power = 150
+		name = jyutgwai.8.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			retire_country_leader = yes
+			remove_unit_leader = 1013
+			hidden_effect = { YUT_chen_jitang = { set_nationality = ZZZ }}
+			every_owned_state = {
+				set_variable = { KMT_pop_support@KMT_central_gov_tag = KMT_pop_support@ROOT }
+				set_variable = { KMT_pop_support@ROOT = 0 }
+			}
+			event_target:KMT_central_gov_tag = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+				country_event = { id = jyutgwai.9 }
+				set_country_flag = yut_sumitted
+				set_country_flag = kmt_yhm_flag
+				hidden_effect = {
+					YUT = {
+						every_unit_leader = {
+							set_character_flag = KMT_temp_sn_flag
+							set_nationality = event_target:KMT_central_gov_tag
+						}
+						every_character = {
+							limit = { has_character_flag = KMT_temp_sn_flag }
+							set_nationality = event_target:KMT_central_gov_tag
+							clr_character_flag = KMT_temp_sn_flag
+						}
+					}
+				}
+			}
+			set_global_flag = KMT_cjt_left_yut
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: YUT bribery success - YUT get annexed partially"
+		set_global_flag = cjt_vs_yhm
+		trigger = {
+			has_global_flag = GXC_yes
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				is_historical_focus_on = no
+				add = 30
+			}
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		name = jyutgwai.8.c
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			event_target:KMT_central_gov_tag = {
+				transfer_state = 593
+				transfer_state = 978
+				set_country_flag = kmt_yhm_flag
+				
+				hidden_effect = {
+					load_oob = "YHM_rebellion"
+					YUT = {
+						every_unit_leader = {
+							limit = { 
+								NOT = { has_id = 1013 }
+							}
+							set_nationality = event_target:KMT_central_gov_tag
+							set_character_flag = KMT_temp_sn_flag
+						}
+						every_character = {
+							limit = { has_character_flag = KMT_temp_sn_flag }
+							set_nationality = event_target:KMT_central_gov_tag
+							clr_character_flag = KMT_temp_sn_flag
+						}
+					}
+				}
+			}
+			GXC = {
+				country_event = { id = jyutgwai.10 }
+			}
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = jyutgwai.9 }
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: YUT bribery success - YUT get partitioned by chiang and GXC"
+		trigger = {
+			has_global_flag = GXC_yes
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				is_historical_focus_on = no
+				add = 10
+			}
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		trigger = {
+			has_global_flag = GXC_yes
+		}
+		name = jyutgwai.8.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			retire_country_leader = yes
+			if = {
+				limit = {
+					GXC = { is_ai = yes }
+				}
+				GXC = {
+					change_tag_from = YUT
+				}
+				else = {
+					custom_effect_tooltip = GAME_OVER_TT
+				}
+			}
+			GXC = {
+				set_country_flag = chen_jitang_join_gxc
+				transfer_state = 592
+				transfer_state = 959
+				add_state_core = 592
+				add_state_core = 959
+				hidden_effect = {
+					YUT = {
+						random_unit_leader = {
+							limit = { has_id = 1013 }
+							set_character_flag = KMT_temp_sn_flag
+							set_nationality = GXC
+						}
+						every_character = {
+							limit = { has_character_flag = KMT_temp_sn_flag }
+							set_nationality = GXC
+							clr_character_flag = KMT_temp_sn_flag
+						}
+					}
+				}
+			}
+			every_owned_state = {
+				set_variable = { KMT_pop_support@KMT_central_gov_tag = KMT_pop_support@YUT }
+				set_variable = { KMT_pop_support@YUT = 0 }
+			}
+			event_target:KMT_central_gov_tag = {
+				annex_country = {
+					target = YUT
+					transfer_troops = yes
+				}
+				country_event = { id = jyutgwai.9 }
+				set_country_flag = yut_sumitted
+				set_country_flag = kmt_yhm_flag
+				hidden_effect = {
+					YUT = {
+						every_unit_leader = {
+							limit = { NOT = { has_id = 1013 }}
+							set_nationality = event_target:KMT_central_gov_tag
+							set_character_flag = KMT_temp_sn_flag
+						}
+						every_character = {
+							limit = { has_character_flag = KMT_temp_sn_flag }
+							set_nationality = event_target:KMT_central_gov_tag
+							clr_character_flag = KMT_temp_sn_flag
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#gxc stand against us
+country_event = {
+	id = jyutgwai.9
+	title = jyutgwai.9.t
+	desc = {
+		text = jyutgwai.9.d
+		trigger = {
+			NOT = { country_exists = YUT }
+		}
+	}
+	desc = {
+		text = jyutgwai.9.d_2
+		trigger = {
+			country_exists = YUT
+		}
+	}
+	picture = GFX_report_event_chinese_soldiers
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: GXC stands against chaing event fired"
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC stands against chaing - bribery"
+		ai_chance = {
+			base = 100
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_external_defense
+					focus_progress = {
+						focus = KMT_external_defense
+						progress > 0
+					}
+				}
+				factor = 0
+			}
+		}
+		name = jyutgwai.9.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			hidden_effect = {
+				random_list = {
+					5 = {
+						log = "[Root.GetName]: GXC stands against chaing, bribery succeed"
+						GXC = {
+							country_event = { id = jyutgwai.44 days = 5 }
+						}
+					}
+					95 = {
+						log = "[Root.GetName]: GXC stands against chaing, bribery fail"
+						GXC = {					
+							country_event = { id = jyutgwai.32 days = 5}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC stands against chaing, chiang drop it"
+		name = jyutgwai.9.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_external_defense
+					focus_progress = {
+						focus = KMT_external_defense
+						progress > 0.0
+					}
+				}
+				add = 100
+			}
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = GXC_yes
+				}
+				GXC = {
+					country_event = {
+						id = jyutgwai.29
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC stands against chaing, declare war on YUT"
+		name = jyutgwai.9.c
+		ai_chance = {
+			base = 0
+		}
+		trigger = {
+			country_exists = YUT
+			NOT = {
+				YUT = { is_puppet_of = ROOT }
+			}
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			declare_war_on = {
+				target = YUT
+				type = civil_war
+			}
+			YUT = {
+				country_event = { id = jyutgwai.45 }
+			}
+		}
+	}
+}
+
+#recruit militia
+country_event = {
+	id = jyutgwai.10
+	title = jyutgwai.10.t
+	desc = jyutgwai.10.d
+	picture = GFX_report_event_chinese_soldiers_02
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: GXC recruit militia"
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			effect_tooltip = {
+				if = {
+					limit = {
+						YUT = {
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+					remove_from_faction = YUT
+				}
+			}
+			hidden_effect = {
+				division_template = {
+					name = "Minping"
+					is_locked = yes
+					force_allow_recruiting = yes
+					division_cap = 15
+					priority = 0
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+					}
+				}
+				division_template = {
+					is_locked = yes
+					name = "Linshih Pingt'uan"
+					priority = 1
+					is_locked = yes
+					regiments = {
+						irregular_infantry = { x = 0 y = 0 }
+						irregular_infantry = { x = 0 y = 1 }
+						irregular_infantry = { x = 0 y = 2 }
+						irregular_infantry = { x = 1 y = 0 }
+						irregular_infantry = { x = 1 y = 1 }
+						irregular_infantry = { x = 1 y = 2 }
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Minping\" division_template = \"Minping\" start_experience_factor = 0.1" 
+						owner = GXC
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Minping\" division_template = \"Minping\" start_experience_factor = 0.1" 
+						owner = GXC
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Minping\" division_template = \"Minping\" start_experience_factor = 0.1" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Minping\" division_template = \"Minping\" start_experience_factor = 0.1" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Minping\" division_template = \"Minping\" start_experience_factor = 0.1" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Minping\" division_template = \"Minping\" start_experience_factor = 0.1" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Minping\" division_template = \"Minping\" start_experience_factor = 0.1" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Minping\" division_template = \"Minping\" start_experience_factor = 0.1" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Minping\" division_template = \"Minping\" start_experience_factor = 0.1" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Minping\" division_template = \"Minping\" start_experience_factor = 0.1" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Linshih Pingt'uan\" division_template = \"Linshih Pingt'uan\" start_experience_factor = 0.25" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Linshih Pingt'uan\" division_template = \"Linshih Pingt'uan\" start_experience_factor = 0.25" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Linshih Pingt'uan\" division_template = \"Linshih Pingt'uan\" start_experience_factor = 0.2" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Linshih Pingt'uan\" division_template = \"Linshih Pingt'uan\" start_experience_factor = 0.2" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Linshih Pingt'uan\" division_template = \"Linshih Pingt'uan\" start_experience_factor = 0.2" 
+						owner = GXC
+					}	
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"Tsai T'ingkai Shih\" division_template = \"Luchün Shih\" start_experience_factor = 0.2" 
+						owner = GXC
+					}	
+				}
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC recruit event - observe option"
+		trigger = {
+			NOT = { has_war_with = event_target:KMT_central_gov_tag }
+		}
+		name = jyutgwai.10.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				is_historical_focus_on = no
+				factor = 0.75
+			}
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = jyutgwai.13 days = 5 }
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC recruit event - war option"
+		name = jyutgwai.10.b
+		trigger = {
+			NOT = { has_war_with = event_target:KMT_central_gov_tag }
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_historical_focus_on = no
+				add = 25
+			}
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			add_ideas = KMT_anti_chiang_idea
+			if = {
+				limit = {
+					has_global_flag = YUT_submitted_to_CHI
+				}
+				effect_tooltip = {
+					event_target:KMT_central_gov_tag = {
+						declare_war_on = {
+							target = ROOT
+							type = take_core_state
+						}
+					}
+				}
+			}else_if = {
+				limit = { NOT = { has_war_with = event_target:KMT_central_gov_tag }}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = jyutgwai.14 hours = 2 }
+				}
+			}
+		}
+	}
+}
+
+#bad reputation
+country_event = {
+	id = jyutgwai.11
+	title = jyutgwai.11.t
+	desc = jyutgwai.11.d
+	picture = GFX_report_event_journalists_speech
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+		tag = event_target:KMT_central_gov_tag
+		has_global_flag = liangguang_incident
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: bad reputation event"
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		log = "[Root.GetName]: bad reputation event - continue"
+		ai_chance = { 
+			base = 100
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_external_defense
+					focus_progress = {
+						focus = KMT_external_defense
+						progress > 0
+					}
+				}
+				factor = 0
+			}
+			modifier = {
+				check_variable = { global.KMT_lg_bad_rep > 4 }
+				factor = 0.5
+			}
+			modifier = {
+				check_variable = { global.KMT_lg_bad_rep > 5 }
+				factor = 0.5
+			}
+			modifier = {
+				check_variable = { global.KMT_lg_bad_rep > 6 }
+				factor = 0.5
+			}
+			modifier = {
+				check_variable = { global.KMT_lg_bad_rep > 7 }
+				factor = 0.5
+			}
+			modifier = {
+				check_variable = { global.KMT_lg_bad_rep > 8 }
+				factor = 0.5
+			}
+			modifier = {
+				check_variable = { global.KMT_lg_bad_rep > 9 }
+				factor = 0
+			}
+		}
+		name = jyutgwai.11.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			add_political_power = -50
+			if = {
+				limit = {
+					NOT = {
+						has_idea = KMT_media_pressure_2
+						has_idea = KMT_media_pressure
+					}
+				}
+				add_ideas = KMT_media_pressure
+			}else = {
+				if = {
+					limit = {
+						NOT = { has_idea = KMT_media_pressure_2 }
+					}
+					swap_ideas = {
+						remove_idea = KMT_media_pressure
+						add_idea = KMT_media_pressure_2
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						is_valid_power_struggle_participant = yes
+						has_war_with = ROOT
+					}
+				}
+				add_stability = -0.05
+				add_war_support = -0.05
+				add_manpower = -20000
+			}
+			add_to_variable = { global.KMT_lg_bad_rep = 1 }
+			activate_mission = KMT_reputation_damaged_mission
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: bad reputation event - stop"
+		ai_chance = { 
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = KMT_external_defense
+					focus_progress = {
+						focus = KMT_external_defense
+						progress > 0
+					}
+				}
+				add = 100
+			}
+		}
+		name = jyutgwai.11.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			clr_global_flag = liangguang_incident
+			set_global_flag = liangguang_solved
+			every_other_country = {
+				limit = {
+					OR = {
+						is_in_faction_with = GXC
+						is_in_array = { GXC.KMT_ps_alliance_array = THIS }
+						has_country_flag = KMT_lg_topple_war
+					}
+					has_war_with = ROOT
+				}
+				white_peace = ROOT
+				every_other_country = {
+					limit = {
+						is_subject_of = ROOT 
+					}
+					white_peace = PREV
+				}
+			}
+			if = {
+				limit = {
+					has_idea = KMT_media_pressure
+				}
+				remove_ideas = KMT_media_pressure
+			}
+			if = {
+				limit = {
+					has_idea = KMT_media_pressure_2
+				}
+				remove_ideas = KMT_media_pressure_2
+			}
+			if = {
+				limit = {
+					country_exists = YHM
+				}
+				YUT = {
+					annex_country = { target = YHM }
+				}
+			}
+			GXC = {
+				country_event = { id = jyutgwai.12 }
+			}
+			if = {
+				limit = {
+					YUT = {
+						is_puppet_of = ROOT
+					}
+				}
+				annex_country = {
+					target = YUT
+					transfer_troops = yes
+				}
+			}
+		}
+	}
+}
+
+#end
+country_event = {
+	id = jyutgwai.12
+	title = jyutgwai.12.t
+	desc = jyutgwai.12.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: liangguang end with .12"
+		if = {
+			limit = {
+				has_global_flag = KMT_disable_power_struggle_mechanics 
+			}
+			GXC = { dismantle_faction = yes }
+			YUT = { dismantle_faction = yes }
+		}else = {
+			if = {
+				limit = {
+					is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+				}
+				every_other_country = {
+					limit = {
+						is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+					}
+					country_event = { id = jyutgwai.63 }
+				}
+				clear_array = ROOT.KMT_ps_alliance_array
+				remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+			}
+			if = {
+				limit = {
+					is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+				}
+				every_other_country = {
+					limit = {
+						is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+					}
+					country_event = { id = jyutgwai.63 }
+				}
+				clear_array = ROOT.KMT_ps_alliance_array
+				remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+			}
+		}
+	}
+	
+	option = {
+		name = jyutgwai.12.a
+	}
+}
+
+#GXC send representatives
+country_event = {
+	id = jyutgwai.13
+	title = jyutgwai.13.t
+	desc = jyutgwai.13.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: GXC send representative event fired"
+	}
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC send representative, response - negotiate"
+		name = jyutgwai.13.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			GXC = { 
+				country_event = { id = jyutgwai.17 }
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC send representative, response - war"
+		name = jyutgwai.13.b
+		ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GXC
+					}
+				}
+				declare_war_on = {
+					target = GXC
+					type = take_core_state
+				}
+			}
+			GXC = { country_event = { id = jyutgwai.18 }}
+		}
+	}
+}
+
+#GXC refuse to talk
+country_event = {
+	id = jyutgwai.14
+	title = jyutgwai.14.t
+	desc = jyutgwai.14.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: create wargoal against GXC durch .14"
+	}
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	option = {
+		name = jyutgwai.14.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			create_wargoal = {
+				target = GXC
+				type = take_core_state
+			}
+		}
+	}
+}
+
+#yut submitted
+country_event = {
+	id = jyutgwai.15
+	title = jyutgwai.15.t
+	desc = jyutgwai.15.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: YUT submit"
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		log = "[Root.GetName]: YUT submit - bribe GXC"
+		name = jyutgwai.15.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				is_historical_focus_on = yes
+				add = 10
+			}
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			hidden_effect = {
+				random_list = {
+					5 = {
+						log = "[Root.GetName]: YUT submit - bribe GXC success"
+						GXC = {
+							country_event = { id = jyutgwai.44 days = 5 }
+						}
+					}
+					95 = {
+						log = "[Root.GetName]: YUT submit - bribe GXC fail"
+						GXC = {					
+							country_event = { id = jyutgwai.32 days = 5}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: YUT submit - war with GXC"
+		name = jyutgwai.15.b
+		set_global_flag = liangguang_incident
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			declare_war_on = {
+				target = GXC
+				type =  civil_war
+			}
+			GXC = {
+				add_ideas = KMT_anti_chiang_idea
+				country_event = { id = jyutgwai.45 }
+			}
+		}
+	}
+}
+
+#against chiang?
+country_event = {
+	id = jyutgwai.16
+	title = jyutgwai.16.t
+	desc = jyutgwai.16.d
+	picture = GFX_report_event_nationalist_china_machinegun_firing
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: war with central?"
+	}
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: war with central? - yes"
+		name = jyutgwai.16.a
+		ai_chance = {
+			base = 100
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_in_array = { global.KMT_ps_alliance_leaders = GXC }
+				}
+				GXC = { country_event = { id = kmt_powerstruggle.3 }}
+			}else = {
+				set_country_flag = KMT_lg_topple_war
+				declare_war_on = {
+					target = event_target:KMT_central_gov_tag
+					type = civil_war
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = jyutgwai.19 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: war with central? - no"
+		name = jyutgwai.16.b
+	}
+}
+
+#KMT talk too
+country_event = {
+	id = jyutgwai.17
+	title = jyutgwai.17.t
+	desc = jyutgwai.17.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: liangguang negotiation begins event fired"
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = jyutgwai.17.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			activate_mission = KMT_liangguang_negotiation_mission
+			hidden_effect = {
+				event_target:KMT_central_gov_tag = {
+					activate_mission = KMT_liangguang_negotiation_mission
+					activate_mission = KMT_reputation_damaged_mission
+				}
+			}
+		}
+	}
+}
+
+#KMT rejected talk
+country_event = {
+	id = jyutgwai.18
+	title = jyutgwai.18.t
+	desc = jyutgwai.18.d
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: chiang rejects talk event fired"
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = jyutgwai.18.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			effect_tooltip = {
+				event_target:KMT_central_gov_tag = {
+					declare_war_on = {
+						target = GXC
+						type = take_core_state
+					}
+				}
+			}
+			add_ideas = KMT_anti_chiang_idea
+		}
+	}
+}
+
+#FROM declare war on us
+country_event = {
+	id = jyutgwai.19
+	title = jyutgwai.19.t
+	desc = jyutgwai.19.d
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: [From.GetName] declares war on us"
+	}
+	
+	option = {
+		name = jyutgwai.19.a
+		effect_tooltip = {
+			FROM = {
+				declare_war_on = {
+					target = ROOT
+					type = topple_government
+				}
+			}
+		}
+	}
+}
+
+#1st time result. leave GXC alone, GXC obey event_target:KMT_central_gov_tag command when war start
+country_event = {
+	id = jyutgwai.20
+	title = jyutgwai.20.t
+	desc = jyutgwai.20.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: .20 fired"
+	}
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: .20 agree"
+		name = jyutgwai.20.a
+		ai_chance = { factor = 100 }
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = GXC }
+				}
+				set_global_flag = GXC_agree_1
+			}
+			if = {
+				limit = {
+					ROOT = { tag = event_target:KMT_central_gov_tag }
+				}
+				set_global_flag = CHI_agree_1
+			}
+			hidden_effect = {
+				country_event = { id = jyutgwai.21 }
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: .20 reject"
+		name = jyutgwai.20.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			custom_effect_tooltip = KMT_may_war
+			if = {
+				limit = {
+					ROOT = { tag = GXC }
+				}
+				custom_effect_tooltip = GXC_reject_1_tt
+				set_global_flag = GXC_reject_1
+			}
+			if = {
+				limit = {
+					ROOT = { tag = event_target:KMT_central_gov_tag }
+				}
+				custom_effect_tooltip = CHI_reject_1_tt
+				set_global_flag = CHI_reject_1
+			}
+			hidden_effect = {
+				country_event = { id = jyutgwai.21 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = jyutgwai.21
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: .21 fired"
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = CHI_agree_1
+					has_global_flag = GXC_agree_1
+				}
+				set_global_flag = both_agree_1
+				GXC = {
+					country_event = { id = jyutgwai.27 }
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = jyutgwai.27 }
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = CHI_reject_1
+					has_global_flag = GXC_reject_1
+				}
+				GXC = {
+					country_event = { id = jyutgwai.26 }
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = jyutgwai.26 }
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = CHI_reject_1
+					has_global_flag = GXC_agree_1
+				}
+				GXC = {
+					country_event = { id = jyutgwai.22 }
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = GXC_reject_1
+					has_global_flag = CHI_agree_1
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = jyutgwai.23 }
+				}
+			}
+		}
+	}
+	option = {}
+}
+
+#event_target:KMT_central_gov_tag counter-proposal
+country_event = {
+	id = jyutgwai.22
+	title = jyutgwai.22.t
+	desc = jyutgwai.22.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: central counter-proposal"
+	}
+	
+	option = {
+		log = "[Root.GetName]: central counter-proposal - agree"
+		name = jyutgwai.22.a
+		ai_chance = { factor = 10 }
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = jyutgwai.25 }
+			}
+			set_global_flag = GXC_will_be_puppet
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: central counter-proposal - reject"
+		name = jyutgwai.22.b
+		ai_chance = { factor = 90 }
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			add_ideas = KMT_anti_chiang_idea
+			event_target:KMT_central_gov_tag = {
+				declare_war_on = {
+					target = GXC
+					type = civil_war
+				}
+				country_event = { id = jyutgwai.24 }
+			}
+		}
+	}
+}
+
+#GXC counter-proposal
+country_event = {
+	id = jyutgwai.23
+	title = jyutgwai.23.t
+	desc = jyutgwai.23.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: GXC counter-proposal"
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC counter-proposal - agree"
+		name = jyutgwai.22.a
+		ai_chance = { factor = 10 }
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			GXC = {
+				country_event = { id = jyutgwai.25 }
+			}
+			set_global_flag = GXC_get_guangdong
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC counter-proposal - reject"
+		name = jyutgwai.22.a
+		ai_chance = { factor = 90 }
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			declare_war_on = {
+				target = GXC
+				type = civil_war
+			}
+			GXC = {
+				add_ideas = KMT_anti_chiang_idea
+				country_event = { id = jyutgwai.24 }
+			}
+		}
+	}
+}
+
+#counter-proposal rejected, war
+country_event = {
+	id = jyutgwai.24
+	title = jyutgwai.24.t
+	desc = jyutgwai.24.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: counter-proposal rejected, war"
+	}
+	
+	option = {
+		name = jyutgwai.24.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = event_target:KMT_central_gov_tag }
+				}
+				effect_tooltip = {
+					declare_war_on = {
+						target = GXC
+						type = take_core_state
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = { tag = GXC }
+				}
+				effect_tooltip = {
+					event_target:KMT_central_gov_tag = {
+						declare_war_on = {
+							target = GXC
+							type = take_core_state
+						}
+					}
+				}
+				add_ideas = KMT_anti_chiang_idea
+			}
+		}
+	}
+}
+
+#counter-proposal accepted
+country_event = {
+	id = jyutgwai.25
+	title = jyutgwai.25.t
+	desc = jyutgwai.25.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: counter-proposal accepted"
+	}
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	option = {
+		name = jyutgwai.25.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			hidden_effect = {
+				GXC = {
+					country_event = { id = jyutgwai.27 }
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = jyutgwai.27 }
+				}
+			}
+		}
+	}
+}
+
+#nobody accept
+country_event = {
+	id = jyutgwai.26
+	title = jyutgwai.26.t
+	desc = jyutgwai.26.d
+	picture = GFX_report_event_chinese_army_training
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: nobody accepts, war"
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						ROOT = {
+							tag = event_target:KMT_central_gov_tag
+						}
+					}
+					declare_war_on = {
+						target = GXC
+						type = civil_war
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = GXC
+						}
+					}
+					add_ideas = KMT_anti_chiang_idea
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = jyutgwai.26.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			effect_tooltip = {
+				if = {
+					limit = {
+						ROOT = {
+							tag = event_target:KMT_central_gov_tag
+						}
+					}
+					declare_war_on = {
+						target = GXC
+						type = take_core_state
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = GXC
+						}
+					}
+					add_ideas = KMT_anti_chiang_idea
+				}
+			}
+		}
+	}
+}
+
+#negotiation end
+country_event = {
+	id = jyutgwai.27
+	title = jyutgwai.27.t
+	desc = jyutgwai.27.d
+	picture = GFX_report_event_hitler_handshake
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: negotiation ends"
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			set_global_flag = liangguang_solved
+			clr_global_flag = liangguang_incident
+			log = "[Root.GetName]: clear liangguang global flag"
+			clr_global_flag = liangguang_incident_war
+			hidden_effect = {
+				if = {
+					limit = {
+						has_global_flag = GXC_will_be_puppet
+						GXC = {
+							NOT = {
+								is_puppet_of = event_target:KMT_central_gov_tag
+							}
+						}
+					}
+					log = "[Root.GetName]: chiang puppets GXC"
+					event_target:KMT_central_gov_tag = {
+						puppet = GXC
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = GXC_get_guangdong
+					}
+					log = "[Root.GetName]: GXC gets kwangtung"
+					GXC = {
+						transfer_state = 591
+						transfer_state = 592
+						transfer_state = 593
+						transfer_state = 978
+						transfer_state = 959
+					}
+				}
+				event_target:KMT_central_gov_tag = {
+					white_peace = GXC
+				}
+				if = {
+					limit = {
+						has_global_flag = KMT_disable_power_struggle_mechanics 
+					}
+					GXC = { dismantle_faction = yes }
+					YUT = { dismantle_faction = yes }
+				}else = {
+					if = {
+						limit = {
+							is_in_array = { global.KMT_ps_alliance_leaders = YUT }
+						}
+						every_other_country = {
+							limit = {
+								is_in_array = { YUT.KMT_ps_alliance_array = THIS }
+							}
+							country_event = { id = jyutgwai.63 }
+						}
+						clear_array = YUT.KMT_ps_alliance_array
+						remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+					if = {
+						limit = {
+							is_in_array = { global.KMT_ps_alliance_leaders = GXC }
+						}
+						every_other_country = {
+							limit = {
+								is_in_array = { GXC.KMT_ps_alliance_array = THIS }
+							}
+							country_event = { id = jyutgwai.63 }
+						}
+						clear_array = GXC.KMT_ps_alliance_array
+						remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+				}
+				GXC = {
+					if = {
+						limit = {
+							has_idea = KMT_anti_chiang_idea
+						}
+						remove_ideas = KMT_anti_chiang_idea
+					}
+					white_peace = event_target:KMT_central_gov_tag
+				}
+				set_global_flag = GXC_will_join_uf
+				log = "[Root.GetName]: GXC will join uf global flag"
+			}
+		}
+	}
+			
+	
+	option = {
+		name = jyutgwai.27.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			effect_tooltip = {
+				if = {
+					limit = {
+						has_global_flag = GXC_will_be_puppet
+					}
+					event_target:KMT_central_gov_tag = {
+						puppet = GXC
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = GXC_get_guangdong
+					}
+					GXC = {
+						transfer_state = 591
+						transfer_state = 592
+						transfer_state = 593
+						transfer_state = 978
+						transfer_state = 959
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = KMT_disable_power_struggle_mechanics 
+					}
+					GXC = { dismantle_faction = yes }
+					YUT = { dismantle_faction = yes }
+				}else = {
+					if = {
+						limit = {
+							is_in_array = { global.KMT_ps_alliance_leaders = GXC }
+						}
+						every_other_country = {
+							limit = {
+								is_in_array = { GXC.KMT_ps_alliance_array = THIS }
+							}
+							country_event = { id = jyutgwai.63 }
+						}
+						clear_array = GXC.KMT_ps_alliance_array
+						remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+					if = {
+						limit = {
+							is_in_array = { global.KMT_ps_alliance_leaders = YUT }
+						}
+						every_other_country = {
+							limit = {
+								is_in_array = { YUT.KMT_ps_alliance_array = THIS }
+							}
+							country_event = { id = jyutgwai.63 }
+						}
+						clear_array = YUT.KMT_ps_alliance_array
+						remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+				}
+			}
+		}
+	}
+}
+
+#clr liangguang when GXC not exists
+country_event = {
+	id = jyutgwai.28
+	hidden = yes
+	
+	trigger = {
+		always = no
+		has_global_flag = liangguang_incident
+		NOT = { country_exists = GXC }
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	is_triggered_only = yes
+	
+	immediate = {
+		
+		log = "[Root.GetName]: GXC does not exists, clear liangguang global flag"
+		if = {
+			limit = {
+				OR = {
+					GXC = { exists = no }
+					GXC = { is_puppet_of = event_target:KMT_central_gov_tag }
+				}
+			}
+			clr_global_flag = liangguang_incident
+			clr_global_flag = liangguang_incident_war
+			set_global_flag = liangguang_solved
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						has_idea = KMT_media_pressure
+					}
+				}
+				event_target:KMT_central_gov_tag = {
+					remove_ideas = KMT_media_pressure
+				}
+			}
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						has_idea = KMT_media_pressure_2
+					}
+				}
+				event_target:KMT_central_gov_tag = {
+					remove_ideas = KMT_media_pressure_2
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = KMT_disable_power_struggle_mechanics 
+				}
+				GXC = { dismantle_faction = yes }
+				YUT = { dismantle_faction = yes }
+			}else = {
+				if = {
+					limit = {
+						is_in_array = { global.KMT_ps_alliance_leaders = YUT }
+					}
+					every_other_country = {
+						limit = {
+							is_in_array = { YUT.KMT_ps_alliance_array = THIS }
+						}
+						country_event = { id = jyutgwai.63 }
+					}
+					clear_array = YUT.KMT_ps_alliance_array
+					remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+				}
+				if = {
+					limit = {
+						is_in_array = { global.KMT_ps_alliance_leaders = GXC }
+					}
+					every_other_country = {
+						limit = {
+							is_in_array = { GXC.KMT_ps_alliance_array = THIS }
+						}
+						country_event = { id = jyutgwai.63 }
+					}
+					clear_array = GXC.KMT_ps_alliance_array
+					remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+				}
+			}
+		}
+	}
+			
+	
+	option = {
+	}
+}
+
+#kmt stop the shit
+country_event = {
+	id = jyutgwai.29
+	title = jyutgwai.29.t
+	desc = jyutgwai.29.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: chiang stops messing about"
+		set_global_flag = liangguang_solved
+		clr_global_flag = liangguang_incident
+		log = "[Root.GetName]: clear liangguang global flag"
+		clr_global_flag = liangguang_incident_war
+		if = {
+			limit = {
+				has_global_flag = KMT_disable_power_struggle_mechanics 
+			}
+			GXC = { 
+				dismantle_faction = yes
+			}
+			YUT = { 
+				dismantle_faction = yes
+			}
+		}else = {
+			if = {
+				limit = {
+					is_in_array = { global.KMT_ps_alliance_leaders = YUT }
+				}
+				every_other_country = {
+					limit = {
+						is_in_array = { YUT.KMT_ps_alliance_array = THIS }
+					}
+					country_event = { id = jyutgwai.63 }
+				}
+				clear_array = YUT.KMT_ps_alliance_array
+				remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+			}
+			if = {
+				limit = {
+					is_in_array = { global.KMT_ps_alliance_leaders = GXC }
+				}
+				every_other_country = {
+					limit = {
+						is_in_array = { GXC.KMT_ps_alliance_array = THIS }
+					}
+					country_event = { id = jyutgwai.63 }
+				}
+				clear_array = GXC.KMT_ps_alliance_array
+				remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					CHI = { has_wargoal_against = GXC }
+				}
+				CHI = { remove_wargoal = { target = GXC type = all }}
+			}
+			if = {
+				limit = {
+					CHI = { has_wargoal_against = YUT }
+				}
+				CHI = { remove_wargoal = { target = YUT type = all }}
+			}
+			if = {
+				limit = {
+					CHI = { has_wargoal_against = XIA }
+				}
+				CHI = { remove_wargoal = { target = XIA type = all }}
+			}
+		}
+	}
+	
+	option = {
+		name = jyutgwai.29.a
+	}
+}
+
+#kmt bribe failed
+country_event = {
+	id = jyutgwai.30
+	title = jyutgwai.30.t
+	desc = jyutgwai.30.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: bribe fail"
+	}
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: bribe YUT fail - war"
+		name = jyutgwai.30.a
+		set_global_flag = liangguang_incident
+		trigger = {
+			FROM = { tag = YUT }
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				has_global_flag = KMT_lg_hunan_join_gxc
+				factor = 1000
+			}
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			FROM = {
+				country_event = { id = jyutgwai.45 }
+			}
+			declare_war_on = {
+				target = FROM
+				type = civil_war
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: bribe GXC fail - observe"
+		name = jyutgwai.30.c
+		ai_chance = {
+			factor = 100
+		}
+		set_global_flag = liangguang_incident
+		trigger = {
+			FROM = { tag = GXC }
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			custom_effect_tooltip = KMT_gxc_may_offer_negotiation_tt
+			hidden_effect = {
+				GXC = {	country_event = { id = jyutgwai.10 }}
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: bribe fail - cease"
+		name = jyutgwai.7.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			FROM = {
+				country_event = { id = jyutgwai.29 }
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: bribe GXC fail - war"
+		name = jyutgwai.30.b
+		trigger = {	
+			FROM = {	
+				tag = GXC
+			}
+		}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				has_global_flag = KMT_lg_hunan_join_gxc
+				add = 100
+			}
+		}
+		set_global_flag = liangguang_incident
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			FROM = {
+				country_event = { id = jyutgwai.45 }
+			}
+			declare_war_on = {
+				target = FROM
+				type = civil_war
+			}
+			hidden_effect = {
+				GXC = {	country_event = { id = jyutgwai.10 }}
+			}
+		}
+	}
+}
+
+#kmt bribe success
+country_event = {
+	id = jyutgwai.31
+	title = jyutgwai.31.t
+	desc = jyutgwai.31.d
+	picture = GFX_report_event_hitler_handshake
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: bribe [From.GetName] success"
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_core_of = FROM 
+				}
+				remove_core_of = FROM
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = jyutgwai.31.a
+	}
+}
+
+#our men resisted bribery
+country_event = {
+	id = jyutgwai.32
+	title = jyutgwai.32.t
+	desc = jyutgwai.32.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: bribery resisted"
+		hidden_effect = {
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						NOT = {
+							has_country_flag = KMT_pro_japanese_coup
+							has_country_flag = KMT_red_coup_finish
+						}
+					}
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = jyutgwai.30 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = jyutgwai.32.a
+		add_war_support = 0.15
+		add_stability = 0.15
+		add_political_power = 200
+	}
+}
+
+#zhang xueliang reaction
+country_event = {
+	id = jyutgwai.33
+	title = jyutgwai.33.t
+	desc = jyutgwai.33.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: zxl reaction to liangguang"
+	}
+	
+	option = {
+		name = jyutgwai.33.a
+	}
+}
+
+#end conflict with ZXL?
+country_event = {
+	id = jyutgwai.34
+	title = jyutgwai.34.t
+	desc = jyutgwai.34.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: end conflict with zxl?"
+	}
+	
+	option = {
+		log = "[Root.GetName]: end conflict with zxl? - yes"
+		ai_chance = { base = 100 }
+		name = jyutgwai.34.a
+		FROM = {
+			country_event = { id = jyutgwai.35 days = 1 }
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: end conflict with zxl? - no"
+		name = jyutgwai.34.b
+		FROM = {
+			country_event = { id = jyutgwai.36 days = 1 }
+		}
+	}
+}
+
+#end conflict
+country_event = {
+	id = jyutgwai.35
+	title = jyutgwai.35.t
+	desc = jyutgwai.35.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: end conflict zwischen PRC und ZXL"
+		hidden_effect = {
+			if = {
+				limit = {
+					has_border_war_between = {
+						attacker = event_target:KMT_zxl_offensive_state
+						defender = event_target:KMT_prc_defensive_state
+					}
+				}
+				set_country_flag = KMT_stopped_border_war
+				cancel_border_war = {
+					dont_fire_events = yes
+					defender = event_target:KMT_prc_defensive_state
+					attacker = event_target:KMT_zxl_offensive_state
+				}
+				country_event = { id = jyutgwai.61 days = 1 }
+				FROM = { country_event = { id = jyutgwai.61 days = 1 }}
+			}
+			set_global_flag = KMT_zxl_stopped_attack
+		}
+	}
+	
+	option = {
+		name = jyutgwai.35.a
+		custom_effect_tooltip = KMT_zxl_stopped_attack_tt
+		if = {
+			limit = {
+				has_country_flag = KMT_stopped_border_war
+			}
+			effect_tooltip = {
+				cancel_border_war = {
+					defender = event_target:KMT_prc_defensive_state
+					attacker = event_target:KMT_zxl_offensive_state
+				}
+			}
+		}
+		
+	}
+}
+
+#no end conflict
+country_event = {
+	id = jyutgwai.36
+	title = jyutgwai.36.t
+	desc = jyutgwai.36.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = jyutgwai.36.a
+	}
+}
+
+#ZXL ends conflict with prc
+country_event = {
+	id = jyutgwai.37
+	title = jyutgwai.37.t
+	desc = jyutgwai.37.d
+	picture = GFX_report_event_hitler_handshake
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: zxl ends conflict with PRC"
+	}
+	
+	option = {
+		name = jyutgwai.37.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			add_opinion_modifier = {
+				target = ZXL
+				modifier = KMT_disobedience
+			}
+		}
+	}
+}
+
+#he jian reaction
+country_event = {
+	id = jyutgwai.38
+	title = jyutgwai.38.t
+	desc = jyutgwai.38.d
+	picture = GFX_report_event_hitler_handshake
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+		tag = XIA
+		has_global_flag = liangguang_incident
+		NOT = { has_global_flag = liangguang_solved }
+	}
+	
+	mean_time_to_happen = { days = 30 }
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: he jian reaction to liangguang"
+	}
+	
+	option = {
+		log = "[Root.GetName]: he jian reaction - join chiang"
+		ai_chance = { 
+			base = 10
+		}
+		name = jyutgwai.38.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = jyutgwai.42 }
+				puppet = ROOT
+			}
+			GXC = {
+				country_event = { id = jyutgwai.43 }
+			}
+			set_variable = { KMT_ps_loyalty_change = 10 }
+			custom_effect_tooltip = KMT_ps_change_loyalty_tt_10
+			KMT_ps_change_loyalty = yes
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: he jian reaction - join GXC"
+		ai_chance = { 
+			base = 1
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < 0 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < -29 }
+				add = 2
+			}
+		}
+		name = jyutgwai.38.c
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			GXC = {
+				country_event = { id = jyutgwai.42 }
+				if = {
+					limit = {
+						has_global_flag = KMT_disable_power_struggle_mechanics 
+					}
+					if = {
+						limit = { is_faction_leader = no }
+						create_faction = KMT_anti_jap_salvation_army
+					}
+					add_to_faction = YUT
+				}else = {
+					if = {
+						limit = {
+							NOT = { is_in_array = { global.KMT_ps_alliance_leaders = GXC }}
+						}
+						add_to_array = { global.KMT_ps_alliance_leaders = GXC }
+					}
+					if = {
+						limit = {
+							NOT = { is_in_array = { GXC.KMT_ps_alliance_array = GXC }}
+						}
+						add_to_array = { GXC.KMT_ps_alliance_array = GXC }
+					}
+					add_to_array = { GXC.KMT_ps_alliance_array = XIA }
+				}
+			}
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				OVERLORD = { set_autonomy = { target = ROOT autonomy_state = autonomy_free }}
+			}
+			set_global_flag = KMT_lg_hunan_join_gxc
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = jyutgwai.43 }
+			}
+			set_variable = { KMT_ps_loyalty_change = -30 }
+			custom_effect_tooltip = KMT_ps_change_loyalty_tt_n30
+			KMT_ps_change_loyalty = yes
+		}
+	}
+}
+
+#plan
+country_event = {
+	id = jyutgwai.39
+	title = jyutgwai.39.t
+	desc = jyutgwai.39.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: he jian shit plan"
+	}
+	
+	option = {
+		log = "[Root.GetName]: he jian shit plan - good"
+		name = jyutgwai.39.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			army_experience = -50
+			add_manpower = 50000
+			FROM = {
+				add_manpower = -10000
+				army_experience = 35
+				country_event = { id = jyutgwai.40 }
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: he jian shit plan - ungood"
+		ai_chance = { factor = 100 }
+		name = jyutgwai.39.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			add_political_power = 50
+			FROM = {
+				country_event = { id = jyutgwai.41 }
+			}
+		}
+	}
+}
+
+#plan accepted
+country_event = {
+	id = jyutgwai.40
+	title = jyutgwai.40.t
+	desc = jyutgwai.40.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: he jian shit plan - good"
+	}
+	
+	option = {
+		name = jyutgwai.40.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			effect_tooltip = {
+				FROM = {
+					army_experience = 35
+					add_manpower = -10000
+				}
+				add_manpower = 50000
+				army_experience = -50
+			}
+		}
+	}
+}
+
+#plan rejected
+country_event = {
+	id = jyutgwai.41
+	title = jyutgwai.41.t
+	desc = jyutgwai.41.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: he jian shit plan - ungood"
+	}
+	
+	option = {
+		name = jyutgwai.41.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			retire_country_leader = yes
+		}
+	}
+}
+
+#from join us
+country_event = {
+	id = jyutgwai.42
+	title = jyutgwai.42.t
+	desc = jyutgwai.42.d
+	picture = GFX_report_event_hitler_handshake
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: [From.GetName] joins us"
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = jyutgwai.42.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = event_target:KMT_central_gov_tag
+				}
+				puppet = FROM
+			}else = {
+				custom_effect_tooltip = KMT_from_joins_alliance_tt
+			}
+		}
+	}
+}
+
+#from join our enemy
+country_event = {
+	id = jyutgwai.43
+	title = jyutgwai.43.t
+	desc = jyutgwai.43.d
+	picture = GFX_report_event_hitler_handshake
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: [From.GetName] joins enemy"
+	}
+	
+	option = {
+		name = jyutgwai.42.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+		}
+	}
+}
+
+#our men bribed
+country_event = {
+	id = jyutgwai.44
+	title = jyutgwai.44.t
+	desc = jyutgwai.44.d
+	picture = GFX_report_event_hitler_handshake
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: our men bribed"
+	}
+	
+	option = {
+		name = jyutgwai.44.a
+		log = "[Root.GetName]: our men bribed - get annexed"
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			every_owned_state = {
+				set_variable = { KMT_pop_support@KMT_central_gov_tag = KMT_pop_support@ROOT }
+				set_variable = { KMT_pop_support@ROOT = 0 }
+			}
+			event_target:KMT_central_gov_tag = {
+				hidden_effect = {
+					every_state = {
+						limit = { has_state_flag = KMT_china_inalienable_part }
+						add_to_variable = { KMT_pop_support@PREV = KMT_pop_support@ROOT }
+					}
+				}
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+				country_event = { id = jyutgwai.31 }
+			}
+			if = {
+				limit = {
+					country_exists = YUT
+				}
+				YUT = {
+					country_event = { id = jyutgwai.59 }
+				}
+				else = {	
+					clr_global_flag = liangguang_incident
+					set_global_flag = liangguang_solved
+				}
+			}
+			custom_effect_tooltip = GAME_OVER_TT
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: our men bribed - war"
+		name = jyutgwai.44.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			add_timed_idea = {
+				idea = GXC_bribed_men
+				days = 90
+			}
+			declare_war_on = {
+				target = event_target:KMT_central_gov_tag
+				type = civil_war 
+			}
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = jyutgwai.45 }
+			}
+		}
+	}
+}
+
+#declare war
+country_event = {
+	id = jyutgwai.45
+	title = jyutgwai.45.t
+	desc = jyutgwai.45.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: [From.GetName] war with us"
+	}
+	
+	option = {
+		name = jyutgwai.45.a
+		effect_tooltip = {
+			FROM = {
+				declare_war_on = {
+					target = ROOT
+					type = annex_everything
+				}
+			}
+		}
+	}
+}
+
+#he jian proposal
+country_event = {
+	id = jyutgwai.46
+	title = jyutgwai.46.t
+	desc = jyutgwai.46.d
+	picture = GFX_report_event_chinese_soldiers
+	
+	trigger = {
+		always = no
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+		tag = XIA
+		is_subject_of = event_target:KMT_central_gov_tag
+		has_global_flag = liangguang_incident
+		NOT = {
+			has_global_flag = liangguang_solved
+		}
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {	
+		log = "[Root.GetName]: he jian shit plan start"
+	}
+	
+	option = {
+		log = "[Root.GetName]: he jian shit plan - propose"
+		name = jyutgwai.46.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = jyutgwai.39 }
+			}
+			effect_tooltip = {
+				event_target:KMT_central_gov_tag = {
+					add_manpower = 50000
+					army_experience = -50
+				}
+				army_experience = 35
+				add_manpower = -10000
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: he jian shit plan - no"
+		name = jyutgwai.46.b
+	}
+}
+
+#
+country_event = {
+	id = jyutgwai.47
+	hidden = yes
+	
+	trigger = {
+		always = no
+		OR = {
+			has_idea = KMT_media_pressure
+			has_idea = KMT_media_pressure_2
+		}
+		has_global_flag = liangguang_solved
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: remove pressure since liangguang resolved"
+		remove_ideas = KMT_media_pressure
+		remove_ideas = KMT_media_pressure_2
+	}
+	
+	option = {
+		name = jyutgwai.46.b
+	}
+}
+
+#
+country_event = {
+	id = jyutgwai.48
+	hidden = yes
+	
+	trigger = {
+		always = no
+		has_global_flag = liangguang_solved
+		GXC = {
+			has_idea = KMT_anti_chiang_idea
+		}
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: remove anti-chiang idea since liangguang resolved"
+		GXC = {
+			remove_ideas = KMT_anti_chiang_idea
+		}
+	}
+	
+	option = {
+		name = jyutgwai.46.b
+	}
+}
+
+#
+country_event = {
+	id = jyutgwai.49
+	title = jyutgwai.49.t
+	desc = jyutgwai.49.d
+	
+	picture = GFX_report_event_chinese_army_training
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+		has_global_flag = liangguang_solved
+		is_chinese_nations_w_HYQ = yes
+		has_war_with = GXC
+		NOT = {
+			has_country_flag = jg49_fired
+		}
+		has_global_flag = liangguang_incident_war
+	}
+	
+	mean_time_to_happen = { days = 3 }
+	
+	immediate = {
+		log = "[Root.GetName]: liangguang resolved - white peace with GXC?"
+		set_country_flag = jg49_fired
+	}
+	
+	option = {
+		log = "[Root.GetName]: white peace with GXC - propose"
+		ai_chance = { factor = 100 }
+		name = jyutgwai.49.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			GXC = {
+				country_event = { id = jyutgwai.50 }
+				custom_effect_tooltip = needs_approval
+			}
+			effect_tooltip = {
+				white_peace = GXC
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: white peace with GXC - no"
+		name = jyutgwai.49.b
+	}
+}
+
+#
+country_event = {
+	id = jyutgwai.50
+	title = jyutgwai.50.t
+	desc = jyutgwai.50.d
+	
+	picture = GFX_report_event_chinese_army_training
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: [From.GetName] wants peace"
+	}
+	
+	option = {
+		log = "[Root.GetName]: [From.GetName] wants peace - ok"
+		ai_chance = { factor = 100 }
+		name = jyutgwai.49.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			FROM = {
+				country_event = { id = jyutgwai.51 }
+			}
+			white_peace = FROM
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: [From.GetName] wants peace - no"
+		name = jyutgwai.49.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			FROM = {
+				country_event = { id = jyutgwai.52 }
+			}
+		}
+	}
+}
+
+#
+country_event = {
+	id = jyutgwai.51
+	title = jyutgwai.51.t
+	desc = jyutgwai.51.d
+	
+	picture = GFX_report_event_chinese_army_training
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	immediate = {
+		log = "[Root.GetName]: peace with [From.GetName]"
+	}
+	
+	option = {
+		name = jyutgwai.51.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			white_peace = FROM
+		}
+	}
+}
+
+#
+country_event = {
+	id = jyutgwai.52
+	title = jyutgwai.52.t
+	desc = jyutgwai.52.d
+	
+	picture = GFX_report_event_chinese_army_training
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: no peace with [From.GetName] notification"
+	}
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	option = {
+		name = jyutgwai.52.a
+	}
+}
+
+#
+country_event = {
+	id = jyutgwai.53
+	hidden = yes
+	
+	trigger = {
+		has_global_flag = liangguang_solved
+		always = no
+		OR = {
+			GXC = {
+				is_faction_leader = yes
+			}
+			YUT = {
+				is_faction_leader = yes
+			}
+		}
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	is_triggered_only = yes
+	
+	immediate = {
+		if = { 
+			limit = { GXC = { is_faction_leader = yes }}
+			GXC = {
+				dismantle_faction = yes
+			}
+		}
+		if = { 
+			limit = { YUT = { is_faction_leader = yes }}
+			YUT = {
+				dismantle_faction = yes
+			}
+		}
+	}
+	
+	option = {
+	}
+}
+
+#
+country_event = {
+	id = jyutgwai.54
+	hidden = yes
+	
+	trigger = {
+		NOT = { has_global_flag = liangguang_solved }
+		has_global_flag = liangguang_incident
+		GXC = {
+			has_war_with = event_target:KMT_central_gov_tag
+		}
+	}
+	
+	mean_time_to_happen = { days = 3 }
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: set liangguang war global flag"
+		set_global_flag = liangguang_incident_war
+	}
+	
+	option = {
+	}
+}
+
+#under attack, seek end to incident
+country_event = {
+	id = jyutgwai.55
+	title = jyutgwai.55.t
+	desc = {
+		text = jyutgwai.55.d
+		trigger = {
+			country_exists = GXC
+		}
+	}
+	desc = {
+		text = jyutgwai.55.d_2
+		trigger = {
+			NOT = { country_exists = GXC }
+		}
+	}
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+		tag = event_target:KMT_central_gov_tag
+		NOT = { has_global_flag = liangguang_solved }
+		has_global_flag = liangguang_incident
+		OR = {
+			country_exists = GXC
+			country_exists = YUT
+		}
+		any_country = {
+			is_valid_power_struggle_participant = no
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+			}
+			any_country = {
+				is_valid_power_struggle_participant = yes
+				has_defensive_war_with = PREV
+			}
+		}
+	}
+	
+	mean_time_to_happen = { days = 3 }
+	
+	immediate = {
+		log = "[Root.GetName]: under attack, seek end to incident?"
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		log = "[Root.GetName]: under attack, seek end to incident? - ok"
+		name = jyutgwai.55.a
+		ai_chance = {
+			base = 10
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			GXC = {
+				country_event = { id = jyutgwai.56 }
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: under attack, seek end to incident? - no, war with gxc if not already"
+		name = jyutgwai.55.b
+		ai_chance = {
+			base = 30
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			add_stability = -0.1
+			if = {
+				limit = {
+					NOT = {
+						has_war_with = GXC
+					}
+				}
+				declare_war_on = {
+					target = GXC
+					type = civil_war
+				}
+				GXC = {
+					country_event = { id = jyutgwai.45 }
+				}
+			}
+		}
+	}
+}
+
+#under attack, seek end to incident
+country_event = {
+	id = jyutgwai.56
+	title = jyutgwai.56.t
+	desc = jyutgwai.56.d
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: under attack, agree to end incident?"
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		log = "[Root.GetName]: under attack, agree to end incident"
+		name = jyutgwai.56.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_war_with = FROM
+				}
+				white_peace = FROM
+			}
+			FROM = {
+				country_event = { id = jyutgwai.57 }
+			}
+			set_global_flag = liangguang_solved
+			clr_global_flag = liangguang_incident
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: under attack, not agree to end incident"
+		name = jyutgwai.55.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			add_stability = -0.35
+			add_war_support = -0.5
+			declare_war_on = {
+				target = FROM
+				type = civil_war
+			}
+			FROM = {
+				country_event = {
+					id = jyutgwai.58 
+				}
+			}
+			set_global_flag = liangguang_solved
+			clr_global_flag = liangguang_incident
+		}
+	}
+}
+
+#under attack, seek end to incident
+country_event = {
+	id = jyutgwai.57
+	title = jyutgwai.57.t
+	desc = jyutgwai.57.d
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = jyutgwai.57.a
+	}
+}
+
+#under attack, seek end to incident
+country_event = {
+	id = jyutgwai.58
+	title = jyutgwai.58.t
+	desc = jyutgwai.58.d
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = jyutgwai.58.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			effect_tooltip = {
+				declare_war_on = {
+					target = ROOT
+				}
+			}
+		}
+	}
+}
+
+#GXC submitted
+country_event = {
+	id = jyutgwai.59
+	title = jyutgwai.59.t
+	desc = jyutgwai.59.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = {
+		log = "[Root.GetName]: GXC submitted"
+	}
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC submitted - fight chiang"
+		name = jyutgwai.59.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			declare_war_on = {
+				target = event_target:KMT_central_gov_tag
+				type = civil_war
+			}
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = jyutgwai.45 }
+			}
+			clr_global_flag = liangguang_incident
+			set_global_flag = liangguang_solved
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: GXC submitted - die"
+		name = jyutgwai.59.b
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			every_owned_state = {
+				set_variable = { KMT_pop_support@KMT_central_gov_tag = KMT_pop_support@ROOT }
+				set_variable = { KMT_pop_support@ROOT = 0 }
+			}
+			event_target:KMT_central_gov_tag = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+				country_event = { id = jyutgwai.60 }
+			}
+			custom_effect_tooltip = GAME_OVER_TT
+			clr_global_flag = liangguang_incident
+			set_global_flag = liangguang_solved
+		}
+	}
+}
+
+#from submit
+country_event = {
+	id = jyutgwai.60
+	title = jyutgwai.60.t
+	desc = jyutgwai.60.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = {
+			NOT = {
+				has_country_flag = KMT_pro_japanese_coup
+				has_country_flag = KMT_red_coup_finish
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	option = {
+		name = jyutgwai.60.a
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = {
+					NOT = {
+						has_country_flag = KMT_pro_japanese_coup
+						has_country_flag = KMT_red_coup_finish
+					}
+				}
+			}
+			effect_tooltip = {
+				annex_country = {
+					target = FROM
+				}
+			}
+		}
+	}
+}
+
+#border war ends
+country_event = {
+	id = jyutgwai.61
+	title = jyutgwai.61.t
+	desc = jyutgwai.61.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = jyutgwai.61.a
+	}
+}
+
+#cg is preoccupied
+country_event = {
+	id = jyutgwai.62
+	title = jyutgwai.62.t
+	desc = jyutgwai.62.d
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = jyutgwai.62.a
+		custom_effect_tooltip = KMT_can_ceasefire_tt
+	}
+}
+
+#dismantle alliance 
+country_event = {
+	id = jyutgwai.63
+	title = jyutgwai.63.t
+	desc = jyutgwai.63.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = jyutgwai.63.a
+		custom_effect_tooltip = KMT_ps_alliance_dismantled_tt
+	}
+}
+
+#dismantle alliance 
+country_event = {
+	id = jyutgwai.64
+	title = jyutgwai.64.t
+	desc = jyutgwai.64.d
+	
+	picture = GFX_report_event_gathering_protest
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = jyutgwai.64.a
+		add_war_support = -0.1
+		add_stability = -0.1
+		add_manpower = -50000
+	}
+}
+
+#clear flag if gxc no help and yut dies
+country_event = {
+	id = jyutgwai.65
+	title = jyutgwai.65.t
+	desc = jyutgwai.65.d
+	
+	fire_only_once = yes
+	
+	picture = GFX_report_event_chinese_army_training
+	
+	trigger = {
+		tag = event_target:KMT_central_gov_tag
+		has_global_flag = KMT_liangguang_GXC_no_help_YUT
+		YUT = {
+			OR = { 
+				exists = no 
+				is_subject_of = ROOT
+			}
+		}
+		GXC = {
+			exists = yes
+			NOT = { is_subject_of = ROOT }
+		}
+		has_global_flag = liangguang_incident
+		NOT = { has_global_flag = liangguang_solved }
+	}
+	
+	mean_time_to_happen = { days = 3 }
+	
+	immediate = {
+		log = "[Root.GetName]: YUT dead and GXC no help"
+	}
+	
+	option = {
+		ai_chance = {
+			base = 2
+			modifier = {
+				has_completed_focus = KMT_external_defense
+			}
+		}
+		name = jyutgwai.65.a
+		country_event = { id = jyutgwai.9 }
+	}
+	
+	option = {
+		ai_chance = {
+			base = 1
+		}
+		name = jyutgwai.65.b
+		clr_global_flag = liangguang_incident
+		set_global_flag = liangguang_solved
+	}
+}
+
+#war bad no continue?
+country_event = {
+	id = jyutgwai.66
+	title = jyutgwai.66.t
+	desc = jyutgwai.66.d
+	
+	fire_only_once = yes
+	
+	picture = GFX_report_event_chinese_army_training
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: liangguang war bad no continue? event"
+	}
+	
+	option = {
+		log = "[Root.GetName]: liangguang war bad no continue? event ask for peace"
+		ai_chance = {
+			base = 10
+			modifier = {
+				OR = {
+					GXC = { surrender_progress > 0.8 }
+					YUT = { surrender_progress > 0.8 }
+				}
+				factor = 0
+			}
+		}
+		name = jyutgwai.66.a
+		random_country = {
+			limit = { 
+				OR = {
+					tag = GXC
+					tag = YUT
+				}
+				OR = {
+					is_faction_leader = yes
+					is_in_faction = no
+				}
+			}
+			country_event = { id = jyutgwai.67 }
+		}
+	}
+	
+	option = {
+		log = "[Root.GetName]: liangguang war bad no continue? event continue war"
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					GXC = { surrender_progress > 0.8 }
+					YUT = { surrender_progress > 0.8 }
+				}
+				add = 1
+			}
+		}
+		name = jyutgwai.66.b
+		add_war_support = -0.1
+		custom_effect_tooltip = KMT_no_fire_again_tt
+	}
+}
+
+#war bad no continue?
+country_event = {
+	id = jyutgwai.67
+	title = jyutgwai.67.t
+	desc = jyutgwai.67.d
+	
+	picture = GFX_report_event_chinese_army_training
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: liangguang war bad no continue? event recipient choice"
+	}
+	
+	option = {
+		log = "[Root.GetName]: liangguang war bad no continue? event recipient choose peace"
+		ai_chance = {
+			base = 10
+			modifier = {
+				FROM = { surrender_progress > 0.8 }
+				factor = 0
+			}
+		}
+		name = jyutgwai.67.a
+		white_peace = FROM
+		FROM = { country_event = { id = jyutgwai.68 }}
+		clr_global_flag = liangguang_incident
+		clr_global_flag = liangguang_incident_war
+		set_global_flag = liangguang_solved
+	}
+	
+	option = {
+		log = "[Root.GetName]: liangguang war bad no continue? event recipient choose no"
+		ai_chance = {
+			base = 0
+			modifier = {
+				FROM = { surrender_progress > 0.8 }
+				add = 1
+			}
+		}
+		name = jyutgwai.67.b
+		FROM = { country_event = { id = jyutgwai.69 }}
+	}
+}
+
+#war bad peace
+country_event = {
+	id = jyutgwai.68
+	title = jyutgwai.68.t
+	desc = jyutgwai.68.d
+	
+	picture = GFX_report_event_chinese_army_training
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: liangguang war bad peace"
+	}
+	
+	option = {
+		name = jyutgwai.68.a
+		effect_tooltip = { white_peace = FROM }
+	}
+}
+
+#war not bad
+country_event = {
+	id = jyutgwai.69
+	title = jyutgwai.69.t
+	desc = jyutgwai.69.d
+	
+	picture = GFX_report_event_chinese_army_training
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		log = "[Root.GetName]: liangguang war no bad"
+	}
+	
+	option = {
+		name = jyutgwai.69.a
+	}
+}
+
+	
+
+

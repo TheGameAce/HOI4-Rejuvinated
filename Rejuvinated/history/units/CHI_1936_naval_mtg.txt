@@ -1,0 +1,28 @@
+﻿units = {
+
+	##### ROCN #####
+	fleet = {
+		name = "Minkuo Haichun"
+		naval_base = 10076 #Shanghai
+		task_force = {
+			name = "Minkuo Haichun"
+			location = 10076 #Shanghai
+			ship = { name = "Chien Kang" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = CHI version_name = "Chang Feng Class"} } }
+			ship = { name = "Tung An" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = CHI version_name = "Chang Feng Class"} }}
+			
+			ship = { name = "Ning Hai" definition = light_cruiser equipment = { ship_hull_cruiser_2 = {amount = 1 owner = CHI version_name = "Ning Hai Class"} } }
+			ship = { name = "Ping Hai" definition = light_cruiser equipment = { ship_hull_cruiser_2 = {amount = 1 owner = CHI version_name = "Ning Hai Class"} } }
+			
+			ship = { name = "Chao Ho" definition = light_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = {amount = 1 owner = CHI version_name = "Chao Ho Class"} } }
+			ship = { name = "Ying Rui" definition = light_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = {amount = 1 owner = CHI version_name = "Chao Ho Class"} } }
+			
+			ship = { name = "Hai Yung" definition = light_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = {amount = 1 owner = CHI version_name = "Hai Yung Class"} } }
+			ship = { name = "Hai Shew" definition = light_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = {amount = 1 owner = CHI version_name = "Hai Yung Class"} } }
+			ship = { name = "Hai Chen" definition = light_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = {amount = 1 owner = CHI version_name = "Hai Yung Class"} } }
+			
+			ship = { name = "Hai Chi" definition = light_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = {amount = 1 owner = CHI version_name = "Hai Tien Class"} } }
+			
+			ship = { name = "Yatsen" definition = light_cruiser equipment = { ship_hull_cruiser_1 = {amount = 1 owner = CHI version_name = "Yatsen Class"} } }
+		}
+	}
+}

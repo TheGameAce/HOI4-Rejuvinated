@@ -1,0 +1,253 @@
+﻿division_template = {
+	name = "Luchün Shih"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "T'iaocheng Shih"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 } 
+	}
+}
+
+division_template = {
+	name = "Chengli Shih"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		artillery_brigade = { x = 4 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+		artillery = { x = 0 y = 1 } 
+	}
+}
+
+division_template = {
+	name = "Ch'iping Shih"	
+	division_names_group = CHI_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+		cavalry = { x = 3 y = 0 }
+		cavalry = { x = 3 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "Tuli Lü"	
+	division_names_group = CHI_IND_INFB_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "Tuli Ch'iping Lü"	
+	division_names_group = CHI_IND_CAVB_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "Min-ping"
+	priority = 0
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Lin-shih Ping-t'uan"
+	priority = 1
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+### OOB ###
+units = {
+
+	division = {
+		name = "Kwangsi 19. Shih"
+		location = 4134
+		division_template = "Luchün Shih"	
+		start_equipment_factor = 0.45
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Kwangsi 24. Shih"
+		location = 4134
+		division_template = "Luchün Shih"	
+		start_equipment_factor = 0.45	
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Kwangsi 43. Shih"
+		location = 12407
+		division_template = "Luchün Shih"	
+		start_equipment_factor = 0.45	
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Kwangsi 44. Shih"
+		location = 10404
+		division_template = "Luchün Shih"	
+		start_equipment_factor = 0.45	
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Kwangsi 45. Shih"
+		location = 10431
+		division_template = "Luchün Shih"	
+		start_equipment_factor = 0.45	
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Min-ping"
+		location = 10050
+		division_template = "Min-ping"		
+	}
+	division = {
+		name = "Min-ping"
+		location = 7137
+		division_template = "Min-ping"		
+	}
+	division = {
+		name = "Min-ping"
+		location = 7137
+		division_template = "Min-ping"		
+	}
+	division = {
+		name = "Min-ping"
+		location = 10105
+		division_template = "Min-ping"		
+	}
+	division = {
+		name = "Min-ping"
+		location = 10404
+		division_template = "Min-ping"		
+	}
+	division = {
+		name = "Min-ping"
+		location = 7192
+		division_template = "Min-ping"		
+	}
+	division = {
+		name = "Min-ping"
+		location = 10105
+		division_template = "Min-ping"		
+	}
+	division = {
+		name = "Min-ping"
+		location = 10121
+		division_template = "Min-ping"		
+	}
+	division = {
+		name = "Min-ping"
+		location = 4028
+		division_template = "Min-ping"		
+	}
+	division = {
+		name = "Min-ping"
+		location = 7137
+		division_template = "Min-ping"		
+	}
+	division = {
+		name = "Lin-shih Ping-t'uan"
+		location = 7039
+		division_template = "Lin-shih Ping-t'uan"		
+	}
+	division = {
+		name = "Lin-shih Ping-t'uan"
+		location = 7192
+		division_template = "Lin-shih Ping-t'uan"		
+	}
+	division = {
+		name = "Lin-shih Ping-t'uan"
+		location = 4121
+		division_template = "Lin-shih Ping-t'uan"		
+	}
+	division = {
+		name = "Lin-shih Ping-t'uan"
+		location = 4177
+		division_template = "Lin-shih Ping-t'uan"		
+	}
+	division = {
+		name = "Lin-shih Ping-t'uan"
+		location = 7210
+		division_template = "Lin-shih Ping-t'uan"		
+	}
+	division = {
+		name = "Tsai T'ingkai Shih"
+		location = 7137
+		division_template = "Luchün Shih"		
+	}
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "GXC"
+		}
+		requested_factories = 1
+		progress = 0.47
+		efficiency = 100
+	}
+}

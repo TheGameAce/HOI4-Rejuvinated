@@ -1,0 +1,45 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+
+defined_text = {
+	name = GFXGetBetrayIcon
+	text = {
+		trigger = {
+			any_country = {
+				NOT = { tag = ROOT }
+				is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+				NOT = {
+					any_country = {
+						is_in_array = { PREV.KMT_ps_alliance_array = THIS }
+						NOT = { has_war_with = event_target:KMT_central_gov_tag }
+					}
+				}
+			}
+		}
+		localization_key = "GFX_focus_renounce_the_treaty_of_trianon"
+	}
+	text = {
+		localization_key = "GFX_focus_hol_the_foundations_of_defense"
+	}
+}
+
+defined_text = {
+	name = GetProclaimPRCPicture
+	text = {
+		trigger = {
+			PRC = { capital_scope = { state = 608 }}
+		}
+		localization_key = "GFX_mao_proclaim_prc"
+	}
+	text = {
+		localization_key = "GFX_mao_talking"
+	}
+}

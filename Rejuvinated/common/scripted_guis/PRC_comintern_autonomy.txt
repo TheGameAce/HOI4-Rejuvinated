@@ -1,0 +1,46 @@
+scripted_gui = {
+
+	PRC_comintern_autonomy_decision = {
+		context_type = decision_category
+		
+		window_name = "PRC_comintern_autonomy_window"
+		
+		triggers = {
+			PRC_comintern_autonomy_bar1_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy > 4 }
+			}
+			PRC_comintern_autonomy_bar2_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy > 3 }
+			}
+			PRC_comintern_autonomy_bar3_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy > 2 }
+			}
+			PRC_comintern_autonomy_bar4_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy > 1 }
+			}
+			PRC_comintern_autonomy_bar5_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy > 0 }
+			}
+			PRC_comintern_autonomy_highest_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy < 1 }
+			}
+			PRC_comintern_autonomy_higher_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy = 1 }
+			}
+			PRC_comintern_autonomy_high_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy = 2 }
+			}
+			PRC_comintern_autonomy_low_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy = 3 }
+			}
+			PRC_comintern_autonomy_lower_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy = 4 }
+			}
+			PRC_comintern_autonomy_lowest_click_enabled = {
+				check_variable = { global.PRC_comintern_autonomy > 4 }
+			}
+		}
+	}
+	
+}
+

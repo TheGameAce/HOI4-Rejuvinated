@@ -1,0 +1,286 @@
+﻿##### CHINA NAME LISTS #####
+### REGULAR DESTROYER NAMES###
+CHI_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer }			
+
+	fallback_name = "%d Ch'ü-tsu-chien"					
+
+	unique = {			
+		"Yu Chang" "Chien Kang" "Tung An"
+		"Tan Yang" "Hsin Yang" "Hwa Yang" "Shen Yang" "Fen Yang" "Heng Yang" "Hui Yang"
+		"Tai Kang" "Tai Ping" "Tai Ho" "Tai Ts'ang" "Tai Hu" "Tai Chao" "Tai Yuan"
+		"Lin Fu" "Ching Yang" "Te Yang" 
+		"Kelong" "Su Ao" "Tso Ying" "Ma Kong" 
+	}
+}
+
+### LIGHT CRUISER NAMES###
+CHI_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	fallback_name = "%d Ch'ing-hsing-hsün-yang-chien"
+
+	unique = {
+		"Chao Ho" "Ying Swei" "Fei Hung" "Hai Yung" "Hai Shew" "Hai Chen" "Hai Chi" "Yatsen" "Ning Hai" "Ping Hai" "Chung King" 
+	}
+}
+
+### HEAVY CRUISER NAMES###
+CHI_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	fallback_name = "%d Chung-hsün-yang-chien"
+
+	unique = {
+		"Chao Ho" "Ying Swei" "Fei Hung" "Hai Yung" "Hai Shew" "Hai Chen" "Hai Chi" "Yatsen" "Ning Hai" "Ping Hai" "Chung King" 
+	}
+}
+
+### BATTLECRUISER NAMES ###
+CHI_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	
+	fallback_name = "%d Chan-lieh-hsün-yang-chien"		
+
+	unique = {
+		"Chao Ho" "Ying Swei" "Fei Hung" "Hai Yung" "Hai Shew" "Hai Chen" "Hai Chi" "Yatsen" "Ning Hai" "Ping Hai" "Chung King" 
+	}
+}
+
+
+### BATTLESHIP NAMES ###
+CHI_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	
+	fallback_name = "%d Chan-chien"		
+
+	unique = {
+		"Chao Ho" "Ying Swei" "Fei Hung" "Hai Yung" "Hai Shew" "Hai Chen" "Hai Chi" "Yatsen" "Ning Hai" "Ping Hai" "Chung King" 
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+CHI_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CV
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	fallback_name = "%d Hang-mu"	
+
+	unique = {
+		"Chao Ho" "Ying Swei" "Fei Hung" "Hai Yung" "Hai Shew" "Hai Chen" "Hai Chi" "Yatsen" "Ning Hai" "Ping Hai" "Chung King" 
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+CHI_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SS
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	
+	fallback_name = "%d Ch'ien-t'ing"
+	
+	unique = {
+		"Hai Lung" "Hai Hu" "Hai Shih" "Hai Pao" 
+	}
+}
+
+############ AHISTORICAL ########################
+KMT_DD = {
+	name = KMT_DD_NAME_THEME_RIVER
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer }			
+
+	fallback_name = "%d Quzujian"					
+
+	unique = {			
+		"Luohe" "Qinhe" "Jinghe" "Fenhe" "Yanhe" "Wudinghe" "Kuyehe" "Daheihe" "Zulihe" "Qingshuihe" "Taohe" "Daxiahe" "Huangshui" "Baihe" "Wusongjiang" "Guqihe"
+		"Qingyijiang" "Jingshanhe" "Daonihe" "Zhaxihe" "Machuanhe" "Ganjiang" "Zhangjiang" "Gongshui" "Meihe" "Xiangshui" "Fuhe" "Xinjiang" "Fushui" "Sheshui" "Hanjiang" "Chihui" "Mumahe"
+		"Miluojiang" "Duhe" "Xiaoshui" "Xiangjiang" "Heilungjiang" "Ussuri" "Mulinghe" "Songachahe" "Songhuajiang" "Ashihe" "Wokenhe" "Mudanjiang" "Nenjiang" "Ganhe" "Huifahe" "Argun"
+		"Hailar" "Kherlen" "Zhujiang" "Suifenhe" "Tumenhe" "Hunchunhe" "Anzihe" "Fuzhouhe" "Daliaohe" "Liaohe" "Taizihe" "Hunhe" "Liuhe" "Xiliaohe" "Xar Moron" "Dalinghe" "Yantaihe" "Liuguhe" "Shihe"
+		"Gouhe" "Dashihe" "Jiujiang" "Daihe" "Yanghe" "Luanhe" "Haihe" "Chaobaihe" "Weihe" "Zhanghe" "Yingdinghe" "Sangganhe" "Yanghe" "Daqinghe" "Jumahe" "Weihe" "Tuhaihe" "Xiaoqinghe"
+		"Zihe" "Tahe" "Yanghe" "Zhangsenghe" "Mihe" "Yalujiang" "Dayanghe" "Hulihe" "Yingnahe" "Zhuanghe" "Xiaosihe" "Jiaohe" "Yihe" "Shuhe" "Sihe" "Huaihe" "Huihe" "Guohe" "Yinghe" "Xiaorunhe"
+		"Guhe" "Shiguanhe" "Guanhe" "Honghe" "Huanghe" "Luhe" "Minghe" "Youhe" "Yuehe" "Qinhuaihe" "Zhengshui" "Zijiang" "Yuanjiang" "Lishui" "Loushui" "Qingjiang" "Huangbohe" "Daninghe" "Wushui"
+		"Jialingjiang" "Fujiang" "Qujiang" "Baishui" "Bailongjiang" "Liuchonghe" "Longxihe" "Huaxihe" "Qihe" "Sunxihe" "Wujiang" "Tuojiang" "Chishuihe" "Minjiang" "Daduhe" "Qingyijiang"
+		"Nanyahe" "Caopohe" "Yalongjiang" "Huanghe" "Mulihe" "Shuoduoganghe" "Qiantangjiang" "Hengjiang" "Longchuan" "Fengxihe" "Caoejiang" "Yongjiang" "Jiaojiang" "Oujiang" "Minjiang"
+		"Longjiang" "Luojiang" "Jinjiang" "Jiulongjiang" "Hanjiang" "Meijiang" "Ningjiang" "Tingjiang" "Dajinghe" "Dongjiang" "Liuxihe" "Beijiang" "Xinfengjiang" "Xijiang" "Guijiang"
+		"Lijiang" "Xunjiang" "Qianjiang" "Liujiang" "Rongjiang" "Longjiang" "Hongshuihe" "Beipanjiang" "Nanpanjiang" "Qujiang" "Lianjiang" "Yujiang" "Yongjiang" "Zuojiang" "Youjiang" "Beilunhe"
+		"Yuanjiang" "Nanwenhe" "Lixianjiang" "Lancanghe" "Nanjuhe" "Nanlahe" "Luosuojiang" "Nandu" "Nandujiang" "Haidianhe" "Wanquanhe" "Nujiang" "Wanmahe" "Hongyanghe" "Mengboluohe" "Supahe"
+		"Shidianhe" "Changjiang" "Luomingbahe" "Dulongjiang" "Dayingjiang" "Longchuanjiang" "Yarlung Tsangpo" "Subansiri" "Lasahe" "Zayuqu" "Parlung Tsangpo" "Yigong Tsangpo" "Niyangqu" "Xiangquanhe" "Shiquanhe"
+		"Qiemohe" "Kaiduhe" "Tarim River" "Muzart Rover" "Khotan River" "Aksu River" "Yarkand River" "Karakash" "Yurungkash" "Toshkan River" "Shaksgam River" "Kashgar River" "Tashkurgan River"
+		"Shulehe" "Danghe" "Lucaohe" "Yulinhe" "Changmahe" "Karatash River" "Ulungur River" "Manas River" "Baiyanghe" "Ruoshui" "Kax River" "Ili River" "Tekes River" "Emil River" "Terekty River"
+	
+	}
+}
+
+### LIGHT CRUISER NAMES###
+KMT_CL = {
+	name = KMT_CL_NAME_THEME_CITY
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	
+	fallback_name = "%d Qingxing Xunyangjian"
+
+	unique = {
+		"Kiungshan" "Wanning" "Changkong" "Maoming" "Sinwui" "Peihai" "Swatow" "Chaoan" "Lungki" "Amoy" "Putien" "Foochow" "Canton" "Siapu" "Yungkia" "Watlam" "Kaoyao" "Kukang" "Waiyueng" "Changting"
+		"Yungan" "Nanping" "Kennow" "Kingwha" "Linghai" "Hangchow" "Shaohing" "Kashing" "Shanghai" "Nanking" "Chinkiang" "Hwaiyin" "Tunghai" "Lianyun" "Tsingtao" "Weihaiwei" "Chefoo" "Tsinan" "Yitu"
+		"Hweimin" "Tzeyang" "Lini" "Tientsin" "Peiping" "Liaochang" "Suchow" "Yingtai" "Taming" "Shihkiachwang" "Chengting" "Tsingyuan" "Haiko" "Chihfeng" "Chaoyang" "Yingkow" "Dairen" "Antung"
+		"Linyu" "Kupehkow" "Chengteh" "Mukden" "Sinmin" "Kongmun" "Shiukwan" "Fatshan" "Shiuhing" "Swabue" "Tsingyun" "Yuengkong" "Chaochow" "Chinchew" "Ningpo" "Chusan"
+		
+		"Hofei" "Kian" "Pingsiang" "Tayu" "Nanchang" "Tsingkiang" "Nancheng" "Payang" "Fowling" "Kiukiang" "Changsha" "Suanchan" "Hwaining" "Wuchang" "Hankow" "Yoyang" "Fuyang" "Pengpu" "Fengyang"
+		"Pukow" "Shangchu" "Anlu" "Chungsiang" "Junan" "Nanyang" "Hsuchang" "Sinsiang" "Kaifeng" "Loyang" "Tsenchen" "Changtze" "Linfen" "Fenyang" "Pingyao" "Yangku" "Ningwu" "Tatong" "Suanhwa" "Tungkwan"
+		"Siangyang" "Lingling" "Kiangling" "Shaoyang" "Wukang" "Chihkiang" "Tzeli" "Yungling" "Enshih" "Ichang" "Kingling" "Ankang" "Nanchang" "Tuyun" "Tuhshan" "Anshun" "Kweiyang" "Tsunyi" "Chungking"
+		"Ipin" "Wening" "Chaotung" "Tzekung" "Neikiang" "Chengtu" "Kwangyuan" "Nanchung" "Santai" "Lanchung" "Fengkieh" "Wutu" "Tungwei" "Tenshui" "Kiangyang" "Lanchow" "Sining" "Yungteng" "Kiuchuan"
+		
+		"Leouchow" "Shigatse" "Wuchow" "Nanning" "Poseh" "Kweilin" "Kunming" "Tali" "Puerh" "Tsuyung" "Tienbao" "Ishan" "Shihping" "Kaiyuan" "Kwangnan" "Ningerh" "Kutsing" "Paoshan" "Likiang" "Hweitseh"
+		"Lhasa" "Nagqu" "Changtu" "Kiali" "Paan" "Kangting" "Sichang" "Yenyuan" "Tehka" "Kitai" "Rudok" "Pishan" "Hotien" "Hami" "Yutien" "Cherchen" "Chohchiang" "Soche" "Puli" "Shufu" "Shule" "Kiashi"
+		"Tihwa" "Suilai" "Shanshan" "Chensi" "Tsingho" "Wusu" "Chenghwa" "Chuyen" "Linho" "Tengkow" "Yuchwan" "Taolo" "Tungsheng" "Wuyuan" "Pailingmiao" "Paotow" "Jisu" "Pangpei" "Pangkiang" "Kangpao"
+		"Tsining" "Kwesui" "Wanchua" "Tolun" "Kanchumiao" "Mutankiang" "Tsitsihar" "Hailar" "Harbin" "Fuyu" "Paicheng" "Yungki" "Peian" "Solun" "Chalantun" "Pokotu" "Nunkiang" "Kiamusze" "Fuchin" "Poli"
+	
+	}
+}
+
+### HEAVY CRUISER NAMES###
+KMT_CA = {
+	name = KMT_CA_NAME_THEME_CITY
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	
+	fallback_name = "%d Zhong Xunyangjian"
+
+	unique = {
+		"Kiungshan" "Wanning" "Changkong" "Maoming" "Sinwui" "Peihai" "Swatow" "Chaoan" "Lungki" "Amoy" "Putien" "Foochow" "Canton" "Siapu" "Yungkia" "Watlam" "Kaoyao" "Kukang" "Waiyueng" "Changting"
+		"Yungan" "Nanping" "Kennow" "Kingwha" "Linghai" "Hangchow" "Shaohing" "Kashing" "Shanghai" "Nanking" "Chinkiang" "Hwaiyin" "Tunghai" "Lianyun" "Tsingtao" "Weihaiwei" "Chefoo" "Tsinan" "Yitu"
+		"Hweimin" "Tzeyang" "Lini" "Tientsin" "Peiping" "Liaochang" "Suchow" "Yingtai" "Taming" "Shihkiachwang" "Chengting" "Tsingyuan" "Haiko" "Chihfeng" "Chaoyang" "Yingkow" "Dairen" "Antung"
+		"Linyu" "Kupehkow" "Chengteh" "Mukden" "Sinmin" "Kongmun" "Shiukwan" "Fatshan" "Shiuhing" "Swabue" "Tsingyun" "Yuengkong" "Chaochow" "Chinchew" "Ningpo" "Chusan"
+		
+		"Hofei" "Kian" "Pingsiang" "Tayu" "Nanchang" "Tsingkiang" "Nancheng" "Payang" "Fowling" "Kiukiang" "Changsha" "Suanchan" "Hwaining" "Wuchang" "Hankow" "Yoyang" "Fuyang" "Pengpu" "Fengyang"
+		"Pukow" "Shangchu" "Anlu" "Chungsiang" "Junan" "Nanyang" "Hsuchang" "Sinsiang" "Kaifeng" "Loyang" "Tsenchen" "Changtze" "Linfen" "Fenyang" "Pingyao" "Yangku" "Ningwu" "Tatong" "Suanhwa" "Tungkwan"
+		"Siangyang" "Lingling" "Kiangling" "Shaoyang" "Wukang" "Chihkiang" "Tzeli" "Yungling" "Enshih" "Ichang" "Kingling" "Ankang" "Nanchang" "Tuyun" "Tuhshan" "Anshun" "Kweiyang" "Tsunyi" "Chungking"
+		"Ipin" "Wening" "Chaotung" "Tzekung" "Neikiang" "Chengtu" "Kwangyuan" "Nanchung" "Santai" "Lanchung" "Fengkieh" "Wutu" "Tungwei" "Tenshui" "Kiangyang" "Lanchow" "Sining" "Yungteng" "Kiuchuan"
+		
+		"Leouchow" "Shigatse" "Wuchow" "Nanning" "Poseh" "Kweilin" "Kunming" "Tali" "Puerh" "Tsuyung" "Tienbao" "Ishan" "Shihping" "Kaiyuan" "Kwangnan" "Ningerh" "Kutsing" "Paoshan" "Likiang" "Hweitseh"
+		"Lhasa" "Nagqu" "Changtu" "Kiali" "Paan" "Kangting" "Sichang" "Yenyuan" "Tehka" "Kitai" "Rudok" "Pishan" "Hotien" "Hami" "Yutien" "Cherchen" "Chohchiang" "Soche" "Puli" "Shufu" "Shule" "Kiashi"
+		"Tihwa" "Suilai" "Shanshan" "Chensi" "Tsingho" "Wusu" "Chenghwa" "Chuyen" "Linho" "Tengkow" "Yuchwan" "Taolo" "Tungsheng" "Wuyuan" "Pailingmiao" "Paotow" "Jisu" "Pangpei" "Pangkiang" "Kangpao"
+		"Tsining" "Kwesui" "Wanchua" "Tolun" "Kanchumiao" "Mutankiang" "Tsitsihar" "Hailar" "Harbin" "Fuyu" "Paicheng" "Yungki" "Peian" "Solun" "Chalantun" "Pokotu" "Nunkiang" "Kiamusze" "Fuchin" "Poli"
+	}
+}
+
+### BATTLECRUISER NAMES ###
+KMT_BC = {
+	name = KMT_BC_NAME_THEME_CITY
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	
+	fallback_name = "%d Zhan Lie Xunyangjian"		
+
+	unique = {
+		"Kiungshan" "Wanning" "Changkong" "Maoming" "Sinwui" "Peihai" "Swatow" "Chaoan" "Lungki" "Amoy" "Putien" "Foochow" "Canton" "Siapu" "Yungkia" "Watlam" "Kaoyao" "Kukang" "Waiyueng" "Changting"
+		"Yungan" "Nanping" "Kennow" "Kingwha" "Linghai" "Hangchow" "Shaohing" "Kashing" "Shanghai" "Nanking" "Chinkiang" "Hwaiyin" "Tunghai" "Lianyun" "Tsingtao" "Weihaiwei" "Chefoo" "Tsinan" "Yitu"
+		"Hweimin" "Tzeyang" "Lini" "Tientsin" "Peiping" "Liaochang" "Suchow" "Yingtai" "Taming" "Shihkiachwang" "Chengting" "Tsingyuan" "Haiko" "Chihfeng" "Chaoyang" "Yingkow" "Dairen" "Antung"
+		"Linyu" "Kupehkow" "Chengteh" "Mukden" "Sinmin" "Kongmun" "Shiukwan" "Fatshan" "Shiuhing" "Swabue" "Tsingyun" "Yuengkong" "Chaochow" "Chinchew" "Ningpo" "Chusan"
+		
+		"Hofei" "Kian" "Pingsiang" "Tayu" "Nanchang" "Tsingkiang" "Nancheng" "Payang" "Fowling" "Kiukiang" "Changsha" "Suanchan" "Hwaining" "Wuchang" "Hankow" "Yoyang" "Fuyang" "Pengpu" "Fengyang"
+		"Pukow" "Shangchu" "Anlu" "Chungsiang" "Junan" "Nanyang" "Hsuchang" "Sinsiang" "Kaifeng" "Loyang" "Tsenchen" "Changtze" "Linfen" "Fenyang" "Pingyao" "Yangku" "Ningwu" "Tatong" "Suanhwa" "Tungkwan"
+		"Siangyang" "Lingling" "Kiangling" "Shaoyang" "Wukang" "Chihkiang" "Tzeli" "Yungling" "Enshih" "Ichang" "Kingling" "Ankang" "Nanchang" "Tuyun" "Tuhshan" "Anshun" "Kweiyang" "Tsunyi" "Chungking"
+		"Ipin" "Wening" "Chaotung" "Tzekung" "Neikiang" "Chengtu" "Kwangyuan" "Nanchung" "Santai" "Lanchung" "Fengkieh" "Wutu" "Tungwei" "Tenshui" "Kiangyang" "Lanchow" "Sining" "Yungteng" "Kiuchuan"
+		
+		"Leouchow" "Shigatse" "Wuchow" "Nanning" "Poseh" "Kweilin" "Kunming" "Tali" "Puerh" "Tsuyung" "Tienbao" "Ishan" "Shihping" "Kaiyuan" "Kwangnan" "Ningerh" "Kutsing" "Paoshan" "Likiang" "Hweitseh"
+		"Lhasa" "Nagqu" "Changtu" "Kiali" "Paan" "Kangting" "Sichang" "Yenyuan" "Tehka" "Kitai" "Rudok" "Pishan" "Hotien" "Hami" "Yutien" "Cherchen" "Chohchiang" "Soche" "Puli" "Shufu" "Shule" "Kiashi"
+		"Tihwa" "Suilai" "Shanshan" "Chensi" "Tsingho" "Wusu" "Chenghwa" "Chuyen" "Linho" "Tengkow" "Yuchwan" "Taolo" "Tungsheng" "Wuyuan" "Pailingmiao" "Paotow" "Jisu" "Pangpei" "Pangkiang" "Kangpao"
+		"Tsining" "Kwesui" "Wanchua" "Tolun" "Kanchumiao" "Mutankiang" "Tsitsihar" "Hailar" "Harbin" "Fuyu" "Paicheng" "Yungki" "Peian" "Solun" "Chalantun" "Pokotu" "Nunkiang" "Kiamusze" "Fuchin" "Poli"
+	}
+}
+
+
+### BATTLESHIP NAMES ###
+KMT_BB = {
+	name = KMT_BB_NAME_THEME_PROVINCE
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	
+	fallback_name = "%d Zhanjian"		
+
+	unique = { 
+		"Kwangtung" "Kwangsi" "Fukien" "Chekiang" "Shantung" "Hopeh" "Honan" "Hupeh" "Hunan" "Kweichow" "Szechuan" "Yunnan" "Sikang" "Tibet" "Sinkiang" "Shansi" "Shensi" "Tsinghai" "Ningsia" "Kiangsu"
+		"Kansu" "Suiyuan" "Sian" "Anhwei" "Kiangsi" "Chahar" "Liaoning" "Heilungkiang" "Jehol" "Kirin" "Taiwan"
+	}
+}
+
+### AIRCRAFT CARRIER NAMES ###
+KMT_CV = {
+	name = KMT_CV_NAME_THEME
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	
+	fallback_name = "%d Hangmu"	
+
+	unique = {
+		"Kuo-kuang"#國光 "Min-tsu"#民族 "Min-sheng"#民生 "Min-chüan"#民權 "Min-kuo"#民國 "Sun Yat-sen" "Hua-hsia"#華夏 "Pei-fa"#北伐 "Hu-fa"#護法 "Wu-ssu"#五四 "Tung-i"#統一 "Hsin-hai Ko-ming"#辛亥革命 "Cheng-ho"#鄭和 "Chung-yüan"#中原 "Huang Hsing" "Shen-chou"#神州
+		"Chang-cheng"#長城 "Chung-hua"#中華 "Tsung-tung"#總統
+	}
+}
+
+### SUBMARINES ###
+KMT_SS = {
+	name = KMT_SS_NAME_THEME_Q
+
+	for_countries = { CHI GXC YUT YUN XIA QIA SCC SKC ZXL SHX XSM SDC NSM }
+
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	
+	fallback_name = "Ch-%d"
+	
+	unique = {
+	}
+}

@@ -1,0 +1,3862 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = KTA_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10000
+			has_country_flag = MCK_kwantung_terr_flag
+			
+			#for testing
+			#tag = PER
+		}
+	}
+	
+	continuous_focus_position = { x = 50 y = 1600 }
+	
+	default = no
+
+	initial_show_position = {
+		x = 0
+		y = 0
+	}
+	
+	focus = {
+		id = KTA_sweep_out_the_bandits
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		#prerequisite = { focus = MCK_manei }
+		#relative_position_id = MCK_manei
+		bypass = {
+			NOT = {
+				any_owned_state = {
+					check_variable = { global.MCK_resistance_strength@This > 0 }
+				}
+			}
+		}
+		x = 10
+		y = 0
+		cost = 10
+		search_filters = {  }
+		completion_reward = {
+			add_command_power = 300
+			add_political_power = 500
+			if = {
+				limit = {
+					has_idea = MCK_bear_the_burden_idea
+				}
+				swap_ideas = {
+					remove_idea = MCK_bear_the_burden_idea
+					add_idea = MCK_pacification_campaign
+				}
+			}else_if = {
+				limit = {
+					has_idea = MCK_domestic_focus
+				}
+				swap_ideas = {
+					remove_idea = MCK_domestic_focus
+					add_idea = MCK_pacification_campaign
+				}
+			}else = {
+				add_ideas = MCK_pacification_campaign
+			}
+			every_owned_state = {
+				limit = {
+					is_controlled_by = ROOT
+					check_variable = { global.MCK_resistance_strength@This > 0 }
+				}
+				set_temp_variable = { MCK_resistance_strength_change = -35 }
+				MCK_change_resistance_strength = yes
+				MCK_update_local_bandits_modifier = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_academy_indoctrination
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = KTA_sweep_out_the_bandits }
+		relative_position_id = KTA_sweep_out_the_bandits
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			add_political_power = 150
+			add_command_power = 150
+			add_war_support = 0.1
+			if = {
+				limit = { has_idea = MCK_army_academy }
+				swap_ideas = {
+					remove_idea = MCK_army_academy
+					add_idea = MCK_army_academy_indoctrinated
+				}
+			}else_if = {
+				limit = { has_idea = MCK_army_academy_field_medic }
+				swap_ideas = {
+					remove_idea = MCK_army_academy_field_medic
+					add_idea = MCK_army_academy_indoctrinated
+				}
+			}else_if = {
+				limit = { has_idea = MCK_improved_military_academies }
+				swap_ideas = {
+					remove_idea = MCK_improved_military_academies
+					add_idea = MCK_army_academy_indoctrinated
+				}
+			}else_if = {
+				limit = { has_idea = MCK_improved_military_academies_hospital }
+				swap_ideas = {
+					remove_idea = MCK_improved_military_academies_hospital
+					add_idea = MCK_army_academy_indoctrinated
+				}
+			}else = { add_ideas = MCK_army_academy_indoctrinated }
+		}
+	}
+	
+	focus = {
+		id = KTA_expand_intelligence_operations
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = KTA_sweep_out_the_bandits }
+		relative_position_id = KTA_sweep_out_the_bandits
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 2
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "La Resistance" }
+				if = {
+					limit = { has_intelligence_agency = no }
+					create_intelligence_agency = { 
+					  name = "Kenpeitai" 
+					  icon = "GFX_intelligence_agency_logo_jap" 
+					}
+				}
+				if = {
+					limit = { NOT = { has_done_agency_upgrade = upgrade_economy_civilian }}
+					upgrade_intelligence_agency = upgrade_economy_civilian
+				}
+				if = {
+					limit = { NOT = { has_done_agency_upgrade = upgrade_army_department }}
+					upgrade_intelligence_agency = upgrade_army_department
+				}
+				if = {
+					limit = { NOT = { has_done_agency_upgrade = upgrade_naval_department }}
+					upgrade_intelligence_agency = upgrade_naval_department
+				}
+				if = {
+					limit = { NOT = { has_done_agency_upgrade = upgrade_airforce_department }}
+					upgrade_intelligence_agency = upgrade_airforce_department
+				}
+				if = {
+					limit = { NOT = { has_done_agency_upgrade = upgrade_passive_defense }}
+					upgrade_intelligence_agency = upgrade_passive_defense
+				}
+				if = {
+					limit = { NOT = { has_done_agency_upgrade = upgrade_anti_partisan }}
+					upgrade_intelligence_agency = upgrade_anti_partisan
+				}
+				if = {
+					limit = { NOT = { has_done_agency_upgrade = upgrade_form_department }}
+					upgrade_intelligence_agency = upgrade_form_department
+				}
+				if = {
+					limit = { NOT = { has_done_agency_upgrade = upgrade_psycho_warfare }}
+					upgrade_intelligence_agency = upgrade_psycho_warfare
+				}
+			}
+			if = {
+				limit = { has_idea = MCK_hoankyoku }
+				swap_ideas = {
+					remove_idea = MCK_hoankyoku
+					add_idea = MCK_kantogun_intelligence_agency
+				}
+			}else = { add_ideas = MCK_kantogun_intelligence_agency }
+		}
+	}
+	
+	focus = {
+		id = KTA_control_the_media
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = KTA_sweep_out_the_bandits }
+		relative_position_id = KTA_sweep_out_the_bandits
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -2
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = { has_idea = MCK_manei }
+				swap_ideas = {
+					remove_idea = MCK_manei
+					add_idea = MCK_state_controlled_media
+				}
+			}else = { add_ideas = MCK_state_controlled_media }
+		}
+	}
+	
+	focus = {
+		id = KTA_expand_railways
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = KTA_academy_indoctrination focus = KTA_takeover_mantetsu }
+		relative_position_id = KTA_academy_indoctrination
+		available = { has_war = no }
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 3
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { 
+					is_fully_controlled_by = ROOT 
+					is_capital = no
+				}
+				set_temp_variable = { KTA_rail_state_1 = THIS.id }
+			}
+			if = {
+				limit = {
+					can_build_railway = {
+						start_state = ROOT.capital
+						target_state = var:KTA_rail_state_1
+						build_only_on_allied = yes
+					}
+				}
+				build_railway = {				
+					start_state = ROOT.capital
+					target_state = var:KTA_rail_state_1
+					level = 4
+					build_only_on_allied = yes
+				}
+				var:KTA_rail_state_1 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_victory_point = yes
+							level < 1
+						}
+					}
+				}
+			}else = {
+				capital_scope = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				var:KTA_rail_state_1 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					is_fully_controlled_by = ROOT 
+					is_capital = no
+					NOT = { state = var:KTA_rail_state_1 }
+				}
+				set_temp_variable = { KTA_rail_state_2 = THIS.id }
+			}
+			if = {
+				limit = {
+					can_build_railway = {
+						start_state = ROOT.capital
+						target_state = var:KTA_rail_state_2
+						build_only_on_allied = yes
+					}
+				}
+				build_railway = {				
+					start_state = ROOT.capital
+					target_state = var:KTA_rail_state_2
+					level = 3
+					build_only_on_allied = yes
+				}
+				var:KTA_rail_state_2 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_victory_point = yes
+							level < 1
+						}
+					}
+				}
+			}else = {
+				capital_scope = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				var:KTA_rail_state_2 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					is_fully_controlled_by = ROOT 
+					is_capital = no
+					NOT = { state = var:KTA_rail_state_1 }
+					NOT = { state = var:KTA_rail_state_2 }
+				}
+				set_temp_variable = { KTA_rail_state_3 = THIS.id }
+			}
+			if = {
+				limit = {
+					can_build_railway = {
+						start_state = ROOT.capital
+						target_state = var:KTA_rail_state_3
+						build_only_on_allied = yes
+					}
+				}
+				build_railway = {				
+					start_state = ROOT.capital
+					target_state = var:KTA_rail_state_3
+					level = 2
+					build_only_on_allied = yes
+				}
+				var:KTA_rail_state_3 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_victory_point = yes
+							level < 1
+						}
+					}
+				}
+			}else = {
+				capital_scope = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				var:KTA_rail_state_3 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					is_fully_controlled_by = ROOT 
+					is_capital = no
+					NOT = { state = var:KTA_rail_state_1 }
+					NOT = { state = var:KTA_rail_state_2 }
+					NOT = { state = var:KTA_rail_state_3 }
+				}
+				set_temp_variable = { KTA_rail_state_4 = THIS.id }
+			}
+			if = {
+				limit = {
+					can_build_railway = {
+						start_state = ROOT.capital
+						target_state = var:KTA_rail_state_4
+						build_only_on_allied = yes
+					}
+				}
+				build_railway = {				
+					start_state = ROOT.capital
+					target_state = var:KTA_rail_state_4
+					level = 2
+					build_only_on_allied = yes
+				}
+				var:KTA_rail_state_4 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_victory_point = yes
+							level < 1
+						}
+					}
+				}
+			}else = {
+				capital_scope = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				var:KTA_rail_state_4 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_northward_defence
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = KTA_expand_railways }
+		relative_position_id = KTA_expand_railways
+		available = { 
+			country_exists = SOV
+			NOT = { has_war_with = SOV }
+		}
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			every_controlled_state = {
+				limit = { 
+					is_fully_controlled_by = ROOT 
+					any_neighbor_state = {
+						OWNER = {
+							OR = {
+								tag = SOV
+								is_subject_of = SOV
+								is_in_faction_with = SOV
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+						level < 3
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_reorganise_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		#prerequisite = { focus = KTA_expand_railways }
+		#relative_position_id = KTA_expand_railways
+		available = { 
+			has_civil_war = no
+		}
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 4
+		y = 0
+		cost = 10
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = synthetic_refinery
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = fuel_silo
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = fuel_silo
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_exploit_resources
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = KTA_reorganise_industry }
+		relative_position_id = KTA_reorganise_industry
+		available = { 
+		}
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					controls_state = 715
+				}
+				if = {
+					limit = {
+						715 = { NOT = { has_state_flag = MCK_715_aluminium_flag1 }}
+					}
+					715 = { 
+						add_resource = {
+							type = aluminium
+							amount = 26
+						}
+					}
+				}else_if = {
+					limit = {
+						715 = { NOT = { has_state_flag = MCK_715_aluminium_flag2 }}
+					}
+					715 = { 
+						add_resource = {
+							type = aluminium
+							amount = 6
+						}
+					}
+				}else = {
+					715 = { 
+						add_resource = {
+							type = aluminium
+							amount = 4
+						}
+					}
+				}
+			}
+			add_ideas = MCK_resources_exploitation
+			every_controlled_state = {
+				limit = {
+					OR = {
+						has_resources_amount = { resource = oil amount > 0 }
+						has_resources_amount = { resource = steel amount > 0 }
+						has_resources_amount = { resource = aluminium amount > 0 }
+						has_resources_amount = { resource = tungsten amount > 0 }
+						has_resources_amount = { resource = rubber amount > 0 }
+						has_resources_amount = { resource = chromium amount > 0 }
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_reap_the_ahen_profit
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = KTA_reorganise_industry }
+		relative_position_id = KTA_reorganise_industry
+		available = { 
+		}
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = MCK_opium_plantation
+				}
+				swap_ideas = {
+					remove_idea = MCK_opium_plantation
+					add_idea = MCK_ahen_profit
+				}
+			}else_if = {
+				limit = {
+					has_idea = MCK_opium_plantation2
+				}
+				swap_ideas = {
+					remove_idea = MCK_opium_plantation2
+					add_idea = MCK_ahen_profit
+				}
+			}else = { add_ideas = MCK_ahen_profit }
+		}
+	}
+	
+	focus = {
+		id = KTA_fund_research_departments
+		icon = GFX_focus_research
+		prerequisite = { focus = KTA_exploit_resources }
+		prerequisite = { focus = KTA_reap_the_ahen_profit }
+		relative_position_id = KTA_exploit_resources
+		available = { 
+		}
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					amount_research_slots < 5
+				}
+				add_research_slot = 1
+			}
+			add_tech_bonus = {
+				category = electronics
+				uses = 2
+				bonus = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_impose_austerity_measures
+		icon = GFX_focus_rom_parties_end
+		prerequisite = { focus = KTA_exploit_resources }
+		prerequisite = { focus = KTA_reap_the_ahen_profit }
+		relative_position_id = KTA_exploit_resources
+		available = { 
+		}
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 3
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = MCK_austerity_measures
+		}
+	}
+	
+	focus = {
+		id = KTA_expand_military_production
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = KTA_exploit_resources }
+		prerequisite = { focus = KTA_reap_the_ahen_profit }
+		relative_position_id = KTA_exploit_resources
+		available = { 
+		}
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_mamc
+		icon = GFX_focus_generic_aircraft_production
+		prerequisite = { focus = KTA_expand_military_production }
+		relative_position_id = KTA_expand_military_production
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = air_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_kokudokaifuku_mobilisation
+		icon = GFX_focus_jap_spiritual_mobilization
+		prerequisite = { focus = KTA_control_the_media }
+		prerequisite = { focus = KTA_academy_indoctrination }
+		relative_position_id = KTA_control_the_media
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			add_manpower = 10000
+			add_ideas = MCK_kokudokaifuku_mobilisation_idea
+		}
+	}
+	
+	focus = {
+		id = KTA_kesshitai
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = KTA_kokudokaifuku_mobilisation }
+		relative_position_id = KTA_kokudokaifuku_mobilisation
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 2
+		y = 2
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			custom_effect_tooltip = kamikaze_focus_tooltip
+			custom_effect_tooltip = JAP_strengthen_the_divine_wind_effect
+			hidden_effect = { set_technology = { suicide_craft = 1 } }
+			add_ideas = MCK_kesshitai
+		}
+	}
+	
+	focus = {
+		id = KTA_military_prioritisation
+		icon = GFX_focus_generic_combined_arms
+		prerequisite = { focus = KTA_impose_austerity_measures }
+		prerequisite = { focus = KTA_kokudokaifuku_mobilisation }
+		relative_position_id = KTA_impose_austerity_measures
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = war_economy
+						has_idea = tot_economic_mobilisation
+					}
+				}
+				add_ideas = war_economy
+			}
+			add_ideas = MCK_military_prioritisation
+		}
+	}
+	
+	focus = {
+		id = KTA_small_arms_research
+		icon = GFX_focus_focus_fra_maquis
+		prerequisite = { focus = KTA_military_prioritisation }
+		relative_position_id = KTA_military_prioritisation
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = { amount_research_slots < 5 }
+				add_research_slot = 1
+			}
+			add_tech_bonus = {
+				uses = 3
+				bonus = 1
+				category = infantry_weapons
+				category = support_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_sensha_experiment
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = KTA_small_arms_research }
+		relative_position_id = KTA_small_arms_research
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				uses = 2
+				bonus = 1
+				category = armor
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_expand_naval_capacity
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = KTA_military_prioritisation }
+		relative_position_id = KTA_military_prioritisation
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = { 
+					is_coastal = yes
+					is_controlled_by = ROOT 
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+						level > 0
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_expand_synthetic_oil_production
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = KTA_sensha_experiment focus = KTA_expand_naval_capacity }
+		relative_position_id = KTA_sensha_experiment
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			set_technology = { fuel_silos = 1 }
+			set_technology = { synth_oil_experiments = 1 }
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = synthetic_refinery
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 3
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = fuel_silo
+						size > 2
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = fuel_silo
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				uses = 2
+				bonus = 1
+				category = synth_resources
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_declare_martial_law
+		icon = GFX_focus_generic_manpower
+		mutually_exclusive = { focus = KTA_business_as_usual }
+		#prerequisite = { focus = KTA_sensha_experiment focus = KTA_expand_naval_capacity }
+		#relative_position_id = KTA_sensha_experiment
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 16
+		y = 0
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			add_political_power = 250
+			add_ideas = MCK_martial_law
+		}
+	}
+	
+	focus = {
+		id = KTA_business_as_usual
+		icon = GFX_focus_generic_industry_3
+		mutually_exclusive = { focus = KTA_declare_martial_law }
+		#prerequisite = { focus = KTA_sensha_experiment focus = KTA_expand_naval_capacity }
+		#relative_position_id = KTA_sensha_experiment
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 20
+		y = 0
+		cost = 5
+		search_filters = {  }
+		available = {
+			has_civil_war = no
+		}
+		completion_reward = {
+			add_stability = -0.1
+			add_political_power = -50
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_nationalise_industries
+		icon = GFX_goal_generic_construct_civ_factory
+		#mutually_exclusive = { focus = KTA_declare_martial_law }
+		prerequisite = { focus = KTA_declare_martial_law }
+		relative_position_id = KTA_declare_martial_law
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_takeover_mantetsu
+		icon = GFX_focus_SOV_south_manchuria_railway
+		#mutually_exclusive = { focus = KTA_declare_martial_law }
+		prerequisite = { focus = KTA_declare_martial_law }
+		relative_position_id = KTA_declare_martial_law
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					amount_research_slots < 5
+				}
+				add_research_slot = 1
+			}
+			
+			set_technology = { basic_train = 1 }
+			set_technology = { wartime_train = 1 }
+			if = {
+				limit = { has_dlc = "No Step Back" }
+				set_technology = { railway_gun = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_divert_resources_for_the_military
+		icon = GFX_goal_generic_build_tank
+		#mutually_exclusive = { focus = KTA_declare_martial_law }
+		prerequisite = { focus = KTA_takeover_mantetsu }
+		prerequisite = { focus = KTA_nationalise_industries }
+		relative_position_id = KTA_takeover_mantetsu
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = closed_economy
+			add_ideas = MCK_resources_for_the_military
+		}
+	}
+	
+	focus = {
+		id = KTA_prepare_for_war
+		icon = GFX_goal_demand_sudetenland
+		#mutually_exclusive = { focus = KTA_declare_martial_law }
+		prerequisite = { focus = KTA_divert_resources_for_the_military }
+		relative_position_id = KTA_divert_resources_for_the_military
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_timed_idea = {
+				idea = MCK_increase_military_production
+				days = 500
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_allow_zaibatsu_expansion
+		icon = GFX_focus_jap_zaibatsu
+		#mutually_exclusive = { focus = KTA_declare_martial_law }
+		prerequisite = { focus = KTA_business_as_usual }
+		relative_position_id = KTA_business_as_usual
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = MCK_zaibatsu_influence
+		}
+	}
+	
+	focus = {
+		id = KTA_university_integration
+		icon = GFX_goal_tfv_generic_tech_sharing
+		#mutually_exclusive = { focus = KTA_declare_martial_law }
+		prerequisite = { focus = KTA_allow_zaibatsu_expansion }
+		relative_position_id = KTA_allow_zaibatsu_expansion
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 2
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MCK_zaibatsu_influence
+				add_idea = MCK_zaibatsu_influence_research
+			}
+			if = {
+				limit = {
+					amount_research_slots < 5
+				}
+				add_research_slot = 1
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = KTA_rural_factories
+		icon = GFX_goal_generic_production2
+		#mutually_exclusive = { focus = KTA_declare_martial_law }
+		prerequisite = { focus = KTA_allow_zaibatsu_expansion }
+		relative_position_id = KTA_allow_zaibatsu_expansion
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						OR = {
+							has_state_category = pastoral
+							has_state_category = rural
+							has_state_category = town
+							has_state_category = large_town
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						OR = {
+							has_state_category = pastoral
+							has_state_category = rural
+							has_state_category = town
+							has_state_category = large_town
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					random_neighbor_state = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}else = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					random_neighbor_state = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						OR = {
+							has_state_category = pastoral
+							has_state_category = rural
+							has_state_category = town
+							has_state_category = large_town
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						OR = {
+							has_state_category = pastoral
+							has_state_category = rural
+							has_state_category = town
+							has_state_category = large_town
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					random_neighbor_state = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}else = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					random_neighbor_state = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						OR = {
+							has_state_category = pastoral
+							has_state_category = rural
+							has_state_category = town
+							has_state_category = large_town
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						OR = {
+							has_state_category = pastoral
+							has_state_category = rural
+							has_state_category = town
+							has_state_category = large_town
+						}
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					random_neighbor_state = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}else = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					random_neighbor_state = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						OR = {
+							has_state_category = pastoral
+							has_state_category = rural
+							has_state_category = town
+							has_state_category = large_town
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						OR = {
+							has_state_category = pastoral
+							has_state_category = rural
+							has_state_category = town
+							has_state_category = large_town
+						}
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					random_neighbor_state = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}else = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					random_neighbor_state = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_cheap_local_labour
+		icon = GFX_goal_generic_production
+		#mutually_exclusive = { focus = KTA_declare_martial_law }
+		prerequisite = { focus = KTA_rural_factories }
+		relative_position_id = KTA_rural_factories
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_idea = MCK_zaibatsu_influence_research }
+				swap_ideas = {
+					remove_idea = MCK_zaibatsu_influence_research
+					add_idea = MCK_zaibatsu_influence_research2
+				}
+			}else = {
+				swap_ideas = {
+					remove_idea = MCK_zaibatsu_influence
+					add_idea = MCK_zaibatsu_influence2
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_plan_for_the_restoration
+		icon = GFX_goal_generic_more_territorial_claims
+		#mutually_exclusive = { focus = KTA_declare_martial_law }
+		prerequisite = { focus = KTA_cheap_local_labour focus = KTA_prepare_for_war }
+		relative_position_id = KTA_prepare_for_war
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 2
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			#add_ideas = MCK_plan_for_the_restoration_idea
+			add_dynamic_modifier = {
+				modifier = MCK_plan_for_the_restoration_dm
+			}
+			add_doctrine_cost_reduction = {
+				uses = 1
+				cost_reduction = 0.5
+				category = land_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				uses = 1
+				cost_reduction = 0.5
+				category = naval_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				uses = 1
+				cost_reduction = 0.5
+				category = air_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_conquer_china_first
+		icon = GFX_focus_usa_focus_on_asia
+		mutually_exclusive = { focus = KTA_return_home }
+		prerequisite = { focus = KTA_kesshitai }
+		prerequisite = { focus = KTA_plan_for_the_restoration }
+		relative_position_id = KTA_plan_for_the_restoration
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -6
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			unlock_decision_tooltip = MCK_conquer_china
+			add_stability = -0.05
+			add_war_support = -0.05
+			add_political_power = -50
+			add_to_variable = { KTA_special_forces_cap = 0.05 }
+			custom_effect_tooltip = KTA_special_forces_cap_dm_tt
+			add_doctrine_cost_reduction = {
+				uses = 1
+				cost_reduction = 0.5
+				category = land_doctrine
+			}
+			random_army_leader = {
+				add_planning = 1
+				add_unit_leader_trait = trickster
+			}
+			random_army_leader = {
+				add_logistics = 1
+				add_unit_leader_trait = skilled_staffer
+			}
+			random_army_leader = {
+				add_planning = 1
+				add_unit_leader_trait = trait_engineer
+			}
+			random_army_leader = {
+				add_logistics = 1
+				add_unit_leader_trait = organizer
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_return_home
+		icon = GFX_focus_AST_war_japan
+		mutually_exclusive = { focus = KTA_conquer_china_first }
+		prerequisite = { focus = KTA_kesshitai }
+		prerequisite = { focus = KTA_plan_for_the_restoration }
+		relative_position_id = KTA_plan_for_the_restoration
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			add_to_variable = { KTA_special_forces_cap = 0.05 }
+			custom_effect_tooltip = KTA_special_forces_cap_dm_tt
+			add_doctrine_cost_reduction = {
+				uses = 1
+				cost_reduction = 0.5
+				category = air_doctrine
+				category = naval_doctrine
+			}
+			every_unit_leader = {
+				limit = { has_character_flag = MCK_japanese_refugee }
+				add_timed_unit_leader_trait = {
+					trait = trait_SOV_determined
+					days = 1800
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_mountain_warfare
+		icon = GFX_focus_GRE_a_land_of_mountains
+		#mutually_exclusive = { focus = KTA_conquer_china_first }
+		prerequisite = { focus = KTA_conquer_china_first }
+		relative_position_id = KTA_conquer_china_first
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -2
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			#add_to_variable = { KTA_mountaineer_attack_factor = 0.05 }
+			add_to_variable = { KTA_special_forces_attack_factor = 0.1 }
+			add_to_variable = { KTA_special_forces_defence_factor = 0.1 }
+			add_to_variable = { KTA_terrain_penalty_reduction = 0.1 }
+			custom_effect_tooltip = KTA_mountain_warfare_dm_tt
+			set_technology = { KTA_mountain_warfare = 1 }
+			if = {
+				limit = { has_tech = tech_mountaineers }
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					add_doctrine_cost_reduction = {
+						cost_reduction = 0.5
+						uses = 2
+						category = cat_mountaineers_doctrine
+					}
+				}
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = mountaineers_tech
+				}
+			}else = {
+				set_technology = { tech_mountaineers = 1 }
+			}
+			add_doctrine_cost_reduction = {
+				uses = 1
+				cost_reduction = 0.5
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_improve_logistics
+		icon = GFX_focus_chi_army_reform
+		#mutually_exclusive = { focus = KTA_conquer_china_first }
+		prerequisite = { focus = KTA_mountain_warfare }
+		relative_position_id = KTA_mountain_warfare
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			add_to_variable = { KTA_supply_node_range = 0.1 }
+			add_to_variable = { KTA_attrition = -0.05 }
+			add_to_variable = { KTA_production_speed_supply_node_factor = 0.8 }
+			add_to_variable = { KTA_production_speed_rail_way_factor = 0.5 }
+			custom_effect_tooltip = KTA_improve_logistics_dm_tt
+			if = {
+				limit = { has_tech = tech_logistics_company }
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = logistics_tech
+				}
+			}else = {
+				set_technology = { tech_logistics_company = 1 }
+			}
+			if = {
+				limit = {
+					any_controlled_state = {
+						any_neighbor_state = { OWNER = { is_chinese_nations_w_HYQ = yes }}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						any_neighbor_state = { OWNER = { is_chinese_nations_w_HYQ = yes }}
+					}
+					prioritize = { 610 }
+					set_temp_variable = { ROOT.MCK_improve_logistics_state = THIS.id }
+				}
+				if = {
+					limit = {
+						can_build_railway = {
+							start_state = ROOT.capital
+							target_state = var:MCK_improve_logistics_state
+							build_only_on_allied = yes
+						}
+					}
+					build_railway = {				
+						start_state = ROOT.capital
+						target_state = var:MCK_improve_logistics_state
+						level = 2
+						build_only_on_allied = yes
+					}
+				}
+				var:MCK_improve_logistics_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = air_base
+						level = 3
+						instant_build = yes
+					}
+				}
+			}else = {
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_acclimatization_training
+		icon = GFX_goal_generic_special_forces
+		#mutually_exclusive = { focus = KTA_conquer_china_first }
+		prerequisite = { focus = KTA_improve_logistics }
+		relative_position_id = KTA_improve_logistics
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			army_experience = 50
+			add_to_variable = { KTA_acclimatization_cold_climate_gain_factor = 0.25 }
+			add_to_variable = { KTA_acclimatization_hot_climate_gain_factor = 0.25 }
+			add_to_variable = { KTA_heat_attrition = -0.25 }
+			add_to_variable = { KTA_cold_attrition = -0.25 }
+			custom_effect_tooltip = KTA_acclimatization_training_dm_tt
+			if = {
+				limit = { has_tech = tech_special_forces }
+				add_tech_bonus = {
+					bonus = 1.5
+					uses = 1
+					technology = advanced_special_forces
+					technology = improved_special_forces
+					technology = extreme_environment_training
+					technology = survival_training
+					technology = elite_forces
+				}
+			}else = {
+				set_technology = { tech_special_forces = 1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_reform_training_curriculum
+		icon = GFX_focus_generic_little_entente
+		#mutually_exclusive = { focus = KTA_conquer_china_first }
+		prerequisite = { focus = KTA_conquer_china_first }
+		relative_position_id = KTA_conquer_china_first
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			army_experience = 50
+			add_to_variable = { KTA_training_time_factor = -0.1 }
+			custom_effect_tooltip = KTA_reform_training_curriculum_dm_tt
+		}
+	}
+	
+	focus = {
+		id = KTA_burn_to_ash_strategy
+		icon = GFX_goal_generic_major_war
+		mutually_exclusive = { focus = KTA_seek_collaborators }
+		prerequisite = { focus = KTA_reform_training_curriculum }
+		relative_position_id = KTA_reform_training_curriculum
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			every_other_country = {
+				limit = { is_chinese_nations_w_HYQ = yes }
+				ROOT = {
+					add_relation_modifier = { modifier = MCK_burn_to_ash }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_seek_collaborators
+		icon = GFX_goal_generic_dangerous_deal
+		mutually_exclusive = { focus = KTA_burn_to_ash_strategy }
+		prerequisite = { focus = KTA_reform_training_curriculum }
+		relative_position_id = KTA_reform_training_curriculum
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			every_other_country = {
+				limit = { is_chinese_nations_w_HYQ = yes }
+				ROOT = {
+					add_relation_modifier = { modifier = MCK_seek_collaborators }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_recruit_chinese_soldiers
+		icon = GFX_focus_generic_manpower
+		#mutually_exclusive = { focus = KTA_conquer_china_first }
+		prerequisite = { focus = KTA_burn_to_ash_strategy focus = KTA_seek_collaborators }
+		relative_position_id = KTA_burn_to_ash_strategy
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		search_filters = {  }
+		completion_reward = {
+			if = {
+				limit = { has_completed_focus = KTA_burn_to_ash_strategy }
+				add_manpower = 6000
+				add_to_variable = { KTA_non_core_manpower = 0.02 }
+				custom_effect_tooltip = KTA_recruit_chinese_soldiers_dm_tt
+			}else = {
+				add_manpower = 20000
+				add_to_variable = { KTA_non_core_manpower = 0.075 }
+				custom_effect_tooltip = KTA_recruit_chinese_soldiers_dm_tt2
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_relocate_chinese_industry
+		icon = GFX_focus_SOV_merge_plants
+		#mutually_exclusive = { focus = KTA_conquer_china_first }
+		prerequisite = { focus = KTA_burn_to_ash_strategy  }
+		relative_position_id = KTA_burn_to_ash_strategy
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			any_controlled_state = {
+				NOT = { is_core_of = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = KTA_controls_chinese_core_state_tt
+					any_country = {
+						is_chinese_nations_w_HYQ = yes
+						PREV = { is_core_of = PREV }
+					}
+				}
+				OR = {
+					industrial_complex > 0
+					arms_factory > 0
+				}
+				NOT = { state = 524 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				count_triggers = {
+					amount > 3
+					owns_state = 608
+					owns_state = 613
+					owns_state = 605
+					owns_state = 938
+					owns_state = 592
+					owns_state = 980
+				}
+				add = 10
+			}
+		}
+		search_filters = {  }
+		completion_reward = {
+			set_variable = { KTA_relocate_ic_amt = 0 }
+			set_variable = { KTA_relocate_af_amt = 0 }
+			custom_effect_tooltip = KTA_relocate_chinese_industry_tt
+			hidden_effect = {
+				while_loop_effect = {
+					limit = {
+						check_variable = { KTA_relocate_ic_amt < 16 }
+						any_controlled_state = {
+							NOT = { is_core_of = ROOT }
+							any_country = {
+								is_chinese_nations_w_HYQ = yes
+								PREV = { is_core_of = PREV }
+							}
+							industrial_complex > 0
+						}
+						any_controlled_state = {
+							is_owned_by = ROOT
+							is_core_of = ROOT
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+						}
+					}
+					add_to_variable = { KTA_relocate_ic_amt = 1 }
+					random_controlled_state = {
+						limit = {
+							NOT = { is_core_of = ROOT }
+							any_country = {
+								is_chinese_nations_w_HYQ = yes
+								PREV = { is_core_of = PREV }
+							}
+							industrial_complex > 0
+						}
+						remove_building = {	type = industrial_complex level = 1	}
+						ROOT = {
+							random_owned_controlled_state = {
+								limit = { 
+									is_core_of = ROOT
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+					}
+				}
+				while_loop_effect = {
+					limit = {
+						check_variable = { KTA_relocate_af_amt < 16 }
+						any_controlled_state = {
+							NOT = { is_core_of = ROOT }
+							any_country = {
+								is_chinese_nations_w_HYQ = yes
+								PREV = { is_core_of = PREV }
+							}
+							arms_factory > 0
+						}
+						any_controlled_state = {
+							is_owned_by = ROOT
+							is_core_of = ROOT
+							free_building_slots = {
+								building = arms_factory
+								size > 0
+								include_locked = yes
+							}
+						}
+					}
+					add_to_variable = { KTA_relocate_af_amt = 1 }
+					random_controlled_state = {
+						limit = {
+							NOT = { is_core_of = ROOT }
+							any_country = {
+								is_chinese_nations_w_HYQ = yes
+								PREV = { is_core_of = PREV }
+							}
+							arms_factory > 0
+						}
+						remove_building = {	type = arms_factory level = 1	}
+						ROOT = {
+							random_owned_controlled_state = {
+								limit = { 
+									is_core_of = ROOT
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_establish_collaborationist_government
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		#mutually_exclusive = { focus = KTA_conquer_china_first }
+		prerequisite = { focus = KTA_seek_collaborators  }
+		relative_position_id = KTA_seek_collaborators
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+			any_owned_state = {
+				NOT = { is_core_of = ROOT }
+				custom_trigger_tooltip = {
+					tooltip = KTA_controls_chinese_core_state_tt
+					any_country = {
+						is_chinese_nations_w_HYQ = yes
+						PREV = { is_core_of = PREV }
+					}
+				}
+				NOT = { state = 524 }
+			}
+			NOT = { country_exists = WJW }
+		}
+		search_filters = {  }
+		completion_reward = {
+			unlock_decision_tooltip = MCK_expand_collaborator_administration
+			every_owned_state = {
+				limit = {
+					NOT = { is_core_of = ROOT }
+					custom_trigger_tooltip = {
+						tooltip = KTA_controls_chinese_core_state_tt
+						any_country = {
+							is_chinese_nations_w_HYQ = yes
+							PREV = { is_core_of = PREV }
+						}
+					}
+				}
+				WJW = {
+					transfer_state = PREV
+				}
+			}
+			puppet = WJW
+			WJW = {
+				add_ideas = MCK_subservient_to_hsinking
+			}
+			hidden_effect = {
+				every_other_country = {
+					every_character = { limit = { has_character_flag = WJW_potential_defectors }}
+					set_nationality = WJW
+				}
+				WJW = { CHI_wang_jingwei = { promote_character = { ideology = fascism_ideology }}}
+				every_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						NOT = { is_claimed_by = ROOT }
+						any_country = {
+							is_chinese_nations_w_HYQ = yes
+							PREV = { 
+								OR = {
+									is_core_of = PREV 
+									is_claimed_by = PREV
+								}
+							}
+						}
+					}
+				}
+			}
+			every_other_country = {
+				limit = { is_chinese_nations_w_HYQ = yes }
+				WJW = {
+					add_relation_modifier = { modifier = MCK_seek_collaborators_WJW }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_take_korea
+		icon = GFX_focus_jap_cast_the_die
+		#mutually_exclusive = { focus = KTA_conquer_china_first }
+		prerequisite = { focus = KTA_conquer_china_first focus = KTA_return_home }
+		relative_position_id = KTA_conquer_china_first
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 3
+		y = 1
+		cost = 5
+		available = {
+			any_country = {
+				OR = {
+					original_tag = DPK
+					original_tag = KOR
+				}
+				exists = yes
+				is_subject = no
+				is_in_faction = no
+				NOT = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+				NOT = {	any_country = { has_guaranteed = PREV }}
+			}
+		}
+		search_filters = {  }
+		
+		will_lead_to_war_with = DPK
+		will_lead_to_war_with = KOR
+		completion_reward = {
+			add_timed_idea = {
+				idea = MCK_take_korea_idea
+				days = 100
+			}
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = DPK
+						original_tag = KOR
+					}
+					is_subject = no
+					is_in_faction = no
+					NOT = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					NOT = {	any_country = { has_guaranteed = PREV }}
+				}
+				ROOT = { declare_war_on = { target = PREV type = annex_everything }}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_through_the_air
+		icon = GFX_focus_generic_paratrooper
+		mutually_exclusive = { focus = KTA_across_the_sea }
+		prerequisite = { focus = KTA_return_home }
+		relative_position_id = KTA_return_home
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = MCK_paratrooper_focus
+			#add_to_variable = { KTA_paratrooper_attack_factor = 0.05 }
+			#dd_to_variable = { KTA_paratrooper_defence_factor = 0.05 }
+			#add_to_variable = { KTA_paratrooper_speed_factor = 0.05 }
+			custom_effect_tooltip = KTA_through_the_air_dm_tt
+			add_to_variable = { KTA_special_forces_attack_factor = 0.05 }
+			add_to_variable = { KTA_special_forces_defence_factor = 0.05 }
+			add_to_variable = { KTA_paradrop_organization_factor = 0.5 }
+			add_to_variable = { KTA_paratrooper_aa_defence = 0.1 }
+			add_to_variable = { KTA_paratrooper_weight_factor = -0.25 }
+			add_to_variable = { KTA_extra_paratrooper_supply_grace = 24 }
+			if = {
+				limit = { has_tech = paratroopers }
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					add_doctrine_cost_reduction = {
+						cost_reduction = 0.5
+						uses = 2
+						category = cat_paratroopers_doctrine
+					}
+				}
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = para_tech
+				}
+			}else = {
+				set_technology = { paratroopers = 1 }
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			random_army_leader = {
+				limit = { 
+					has_trait = trait_SOV_determined
+					NOT = { has_trait = paratrooper }
+				}
+				add_unit_leader_trait = paratrooper
+			}
+			random_army_leader = {
+				limit = { 
+					NOT = { has_trait = paratrooper }
+				}
+				add_unit_leader_trait = paratrooper
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_across_the_sea
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		mutually_exclusive = { focus = KTA_through_the_air }
+		prerequisite = { focus = KTA_return_home }
+		relative_position_id = KTA_return_home
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 5
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			add_ideas = MCK_marine_focus
+			#add_to_variable = { KTA_marine_attack_factor = 0.1 }
+			custom_effect_tooltip = KTA_across_the_sea_dm_tt
+			add_to_variable = { KTA_extra_marine_supply_grace = 100 }
+			add_to_variable = { KTA_special_forces_attack_factor = 0.1 }
+			add_to_variable = { KTA_special_forces_defence_factor = 0.1 }
+			if = {
+				limit = { has_tech = marines }
+				if = {
+					limit = {
+						has_dlc = "Arms Against Tyranny"
+					}
+					add_doctrine_cost_reduction = {
+						cost_reduction = 0.5
+						uses = 2
+						category = cat_marines_doctrine
+					}
+				}
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = marine_tech
+				}
+			}else = {
+				set_technology = { marines = 1 }
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			random_army_leader = {
+				limit = { 
+					has_trait = trait_SOV_determined 
+					NOT = { has_trait = naval_invader }
+				}
+				add_unit_leader_trait = naval_invader
+			}
+			random_army_leader = {
+				limit = { 
+					NOT = { has_trait = naval_invader }
+				}
+				add_unit_leader_trait = naval_invader
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_infiltrate_the_home_islands
+		icon = GFX_focus_prc_infiltration
+		#mutually_exclusive = { focus = KTA_conquer_china_first }
+		prerequisite = { focus = KTA_return_home }
+		relative_position_id = KTA_across_the_sea
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 2
+		y = 0
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			add_political_power = 150
+			custom_effect_tooltip = MCK_infiltrate_home_islands_tt
+			set_global_flag = KTA_infiltrated_home_island
+			division_template = {
+				name = "Aikokusha"
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+				}
+				is_locked = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_air_academy
+		icon = GFX_goal_generic_build_airforce
+		#mutually_exclusive = { focus = KTA_through_the_air }
+		prerequisite = { focus = KTA_through_the_air }
+		relative_position_id = KTA_through_the_air
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			air_experience = 50
+			add_to_variable = { KTA_air_accidents_factor = -0.15 }
+			add_to_variable = { KTA_air_ace_generation_chance_factor = 0.15 }
+			custom_effect_tooltip = KTA_air_academy_dm_tt
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_strengthen_the_army_air_corps
+		icon = GFX_goal_generic_air_fighter
+		mutually_exclusive = { focus = KTA_strengthen_the_navy_air_corps }
+		prerequisite = { focus = KTA_air_academy }
+		relative_position_id = KTA_air_academy
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			air_experience = 30
+			army_experience = 30
+			add_to_variable = { KTA_air_superiority_efficiency = 0.1 }
+			add_to_variable = { KTA_air_cas_efficiency = 0.15 }
+			add_to_variable = { KTA_air_cas_present_factor = 0.1 }
+			custom_effect_tooltip = KTA_strengthen_the_army_air_corps_dm_tt
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_battlefield_support
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_strengthen_the_navy_air_corps
+		icon = GFX_goal_generic_air_fighter2
+		mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_air_academy focus = KTA_across_the_sea }
+		relative_position_id = KTA_air_academy
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			air_experience = 30
+			navy_experience = 30
+			add_to_variable = { KTA_air_superiority_efficiency = 0.075 }
+			add_to_variable = { KTA_mines_planting_by_air_factor = 0.25 }
+			add_to_variable = { KTA_mines_sweeping_by_air_factor = 0.25 }
+			add_to_variable = { KTA_air_nav_efficiency = 0.15 }
+			custom_effect_tooltip = KTA_strengthen_the_navy_air_corps_dm_tt
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+			random_owned_controlled_state = {
+				limit = { is_coastal = yes }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_aeronautical_innovation
+		icon = GFX_focus_jap_zero
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_strengthen_the_army_air_corps focus = KTA_strengthen_the_navy_air_corps }
+		prerequisite = { focus = KTA_air_academy }
+		relative_position_id = KTA_air_academy
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			air_experience = 50
+			add_to_variable = { KTA_air_night_penalty = -0.15 }
+			add_to_variable = { KTA_air_range_factor = 0.1 }
+			add_to_variable = { KTA_air_weather_penalty = -0.1 }
+			custom_effect_tooltip = KTA_aeronautical_innovation_dm_tt
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				ahead_reduction = 2
+				category = light_fighter
+			}
+			if = {
+				limit = { has_completed_focus = KTA_strengthen_the_navy_air_corps }
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					ahead_reduction = 2
+					category = naval_bomber
+				}
+			}else = {
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					ahead_reduction = 2
+					category = cas_bomber
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_new_plane_assembly_plants
+		icon = GFX_goal_generic_air_production
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_through_the_air }
+		relative_position_id = KTA_through_the_air
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_study_radar_tech
+		icon = GFX_goal_generic_radar
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_new_plane_assembly_plants }
+		relative_position_id = KTA_new_plane_assembly_plants
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			set_technology = { radio_detection = 1 }
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = radar_station
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = radar_station
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				uses = 1
+				bonus = 0.5
+				category = radar_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_flexible_formation
+		icon = GFX_goal_generic_air_doctrine
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_air_academy }
+		prerequisite = { focus = KTA_study_radar_tech }
+		relative_position_id = KTA_air_academy
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -2
+		y = 2
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			air_experience = 75
+			add_to_variable = { KTA_air_air_superiority_agility_factor = 0.1 }
+			add_to_variable = { KTA_air_air_superiority_attack_factor = 0.1 }
+			add_to_variable = { KTA_air_air_superiority_defence_factor = 0.1 }
+			custom_effect_tooltip = KTA_flexible_formation_dm_tt
+			add_doctrine_cost_reduction = {
+				uses = 1
+				cost_reduction = 0.5
+				category = air_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_expand_nslf
+		icon = GFX_goal_generic_special_forces
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_across_the_sea }
+		relative_position_id = KTA_across_the_sea
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -1
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			army_experience = 10
+			navy_experience = 10
+			add_to_variable = { KTA_invasion_preparation = -0.1 }
+			add_to_variable = { KTA_naval_invasion_capacity = 6 }
+			add_to_variable = { KTA_transport_capacity = -0.5 }
+			add_to_variable = { KTA_amphibious_invasion_defence = 0.5 }
+			custom_effect_tooltip = KTA_expand_nslf_dm_tt
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = marine_tech
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = tp_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_convoy_tactics_innovation
+		icon = GFX_goal_generic_navy_cruiser
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_expand_nslf }
+		relative_position_id = KTA_expand_nslf
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 2
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			navy_experience = 50
+			add_to_variable = { KTA_convoy_escort_efficiency = 0.25 }
+			add_to_variable = { KTA_convoy_retreat_speed = 0.35 }
+			add_to_variable = { KTA_convoy_raiding_efficiency = 0.15 }
+			custom_effect_tooltip = KTA_convoy_tactics_innovation_dm_tt
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = dd_tech
+				category = cl_tech
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = convoy_defense_tree
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_maintain_our_fleet
+		icon = GFX_goal_generic_navy_battleship
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_across_the_sea }
+		relative_position_id = KTA_across_the_sea
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = MCK_special_ship_repair_team
+		}
+	}
+	
+	focus = {
+		id = KTA_improve_naval_coordination
+		icon = GFX_goal_generic_more_territorial_claims
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_maintain_our_fleet }
+		relative_position_id = KTA_maintain_our_fleet
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			navy_experience = 30
+			add_to_variable = { KTA_mines_sweeping_by_fleets_factor = 0.3 }
+			add_to_variable = { KTA_naval_accidents_chance = -0.25 }
+			add_to_variable = { KTA_naval_coordination = 0.1 }
+			custom_effect_tooltip = KTA_improve_naval_coordination_dm_tt
+			random_navy_leader = {
+				limit = { 
+					has_trait = trait_SOV_determined
+					NOT = { has_trait = spotter }
+				}
+				add_coordination = 1
+				add_unit_leader_trait = spotter
+			}
+			random_navy_leader = {
+				limit = { 
+					has_trait = trait_SOV_determined
+					NOT = { has_trait = fleet_protector }
+				}
+				add_coordination = 1
+				add_unit_leader_trait = fleet_protector
+			}
+			random_navy_leader = {
+				limit = { NOT = { has_trait = fleet_protector }}
+				add_coordination = 1
+				add_unit_leader_trait = fleet_protector
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_tactical_innovation
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_improve_naval_coordination }
+		relative_position_id = KTA_improve_naval_coordination
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		completion_reward = {
+			navy_experience = 50
+			add_to_variable = { KTA_naval_has_potf_in_combat_attack = 0.05 }
+			add_to_variable = { KTA_naval_has_potf_in_combat_defense = 0.05 }
+			custom_effect_tooltip = KTA_tactical_innovation_dm_tt
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 3
+				category = naval_doctrine
+			}
+			random_navy_leader = {
+				limit = { 
+					has_trait = trait_SOV_determined
+				}
+				add_maneuver = 1
+			}
+			random_navy_leader = {
+				limit = { NOT = { has_trait = fleet_protector }}
+				add_maneuver = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_retake_the_home_islands
+		icon = GFX_focus_attack_japan
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_flexible_formation  focus = KTA_tactical_innovation focus = KTA_relocate_chinese_industry focus = KTA_establish_collaborationist_government }
+		prerequisite = { focus = KTA_convoy_tactics_innovation focus = KTA_aeronautical_innovation  focus = KTA_relocate_chinese_industry focus = KTA_establish_collaborationist_government }
+		relative_position_id = KTA_return_home
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 5
+		cost = 5
+		available = {
+		}
+		search_filters = {  }
+		will_lead_to_war_with = JAP
+		completion_reward = {
+			unlock_decision_tooltip = MCK_return_home
+			add_war_support = 0.5
+			add_stability = 0.3
+			add_political_power = 150
+			#unlock_decision
+		}
+	}
+	
+	focus = {
+		id = KTA_reinstate_the_empire
+		icon = GFX_focus_jap_showa_restoration
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_retake_the_home_islands }
+		relative_position_id = KTA_retake_the_home_islands
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 5
+		available = {
+			owns_state = 282
+			owns_state = 531
+			owns_state = 532
+			owns_state = 529
+			owns_state = 528
+			owns_state = 530
+			owns_state = 535
+			owns_state = 534
+			owns_state = 533
+			NOT = { country_exists = JAP }
+			is_subject = no
+			has_war = no
+		}
+		search_filters = {  }
+		completion_reward = {
+			add_political_power = 150
+			every_owned_state = {
+				limit = {
+					is_core_of = JAP
+				}
+				JAP = { transfer_state = PREV }
+			}
+			every_character = {
+				limit = {
+					has_character_flag = MCK_japanese_refugee
+				}
+				set_nationality = JAP
+			}
+			transfer_units_fraction = {
+				target = JAP
+				stockpile_ratio = 0.5
+				army_ratio = 0.5
+				navy_ratio = 0.5     	
+				air_ratio = 0.5     
+				keep_unit_leaders_trigger = { 
+					NOT = { has_character_flag = MCK_japanese_refugee }
+				}
+			}
+			JAP = {
+				set_party_name = { ideology = fascism long_name = JAP_taiseiyokusankai name = JAP_taiseiyokusankai }
+				set_country_flag = JAP_only_fascism_flag
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+				hidden_effect = {
+					load_focus_tree = {
+						tree = japan_wtt_focus
+						keep_completed = no
+					}
+					complete_national_focus = JAP_purge_the_kodoha_faction
+					complete_national_focus = JAP_liaison_conference
+					complete_national_focus = JAP_greater_east_asian_co_prosperity_sphere
+					complete_national_focus = JAP_the_manchurian_project
+					complete_national_focus = JAP_army_expansion_law
+					complete_national_focus = JAP_new_naval_estimates
+					complete_national_focus = JAP_guide_the_zaibatsu
+					unlock_national_focus = JAP_intervene_in_china
+					remove_ideas = {
+						JAP_reeducation_campaign
+						JAP_red_brigades
+						JAP_communist_volunteers
+						JAP_nationalize_the_zaibatsus
+						JAP_people_owned_mines
+						JAP_strengthen_civilian_government
+						JAP_zaibatsus_empowered
+						JAP_hirohito
+						JAP_anti_communist_volunteers
+						JAP_supremacy_of_technology
+						JAP_superior_will
+						JAP_expand_the_snlf
+						JAP_first_air_fleet
+					}
+					ROOT = { 
+						remove_ideas = MAN_militarism 
+						remove_ideas = MAN_exiled_imperial_family 
+					}
+					add_ideas = JAP_militarism
+					add_to_faction = ROOT
+					
+				}
+			}
+			if = {
+				limit = { has_template = Aikokusha }
+				delete_unit_template_and_units = { division_template = Aikokusha disband = yes }
+			}
+			country_event = { id = jap.272 }
+		}
+		
+	}
+	
+	focus = {
+		id = KTA_support_the_reconstruction
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		#mutually_exclusive = { focus = KTA_strengthen_the_army_air_corps }
+		prerequisite = { focus = KTA_reinstate_the_empire }
+		relative_position_id = KTA_reinstate_the_empire
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 0
+		y = 1
+		cost = 10
+		available = {
+			country_exists = JAP
+			NOT = { has_war_with = JAP }
+			JAP = { is_subject = no }
+			OR = {
+				is_subject = no
+				is_subject_of = JAP
+			}
+		}
+		search_filters = {  }
+		select_effect = {
+			add_ideas = MCK_support_the_reconstruction_idea
+			JAP = { country_event = { id = jap.273 }}
+		}
+		completion_reward = {
+			remove_ideas = MCK_support_the_reconstruction_idea
+			JAP = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 3
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = industrial_complex
+						level = 4
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 3
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = industrial_complex
+						level = 4
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+						region = 154
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			#play as japan event
+		}
+		
+	}
+	
+	focus = {
+		id = KTA_loyalty_to_the_empire
+		icon = GFX_focus_generic_japanese_imperial_glory
+		mutually_exclusive = { focus = KTA_autonomy_from_tokyo }
+		prerequisite = { focus = KTA_support_the_reconstruction }
+		relative_position_id = KTA_support_the_reconstruction
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = -1
+		y = 1
+		cost = 20
+		available = {
+			country_exists = JAP
+			NOT = { has_war_with = JAP }
+			JAP = { is_subject = no }
+			OR = {
+				is_subject = no
+				is_subject_of = JAP
+			}
+		}
+		search_filters = {  }
+		select_effect = {
+		}
+		completion_reward = {
+			JAP = {
+				puppet = ROOT
+				country_event = { id = jap.274 }
+			}
+			every_other_country = {
+				limit = { is_subject_of = ROOT }
+				JAP = { puppet = PREV }
+			}
+			if = {
+				limit = { WJW = { has_idea = MCK_subservient_to_hsinking }}
+				WJW = {
+					swap_ideas = {
+						remove_idea = MCK_subservient_to_hsinking
+						add_idea = MCK_subservient_to_tokyo
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = KTA_autonomy_from_tokyo
+		icon = GFX_focus_jap_manchurian_project
+		mutually_exclusive = { focus = KTA_loyalty_to_the_empire }
+		prerequisite = { focus = KTA_support_the_reconstruction }
+		relative_position_id = KTA_support_the_reconstruction
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 20
+		available = {
+			is_subject = no
+		}
+		ai_will_do = { base = 0 }
+		search_filters = {  }
+		select_effect = {
+		}
+		completion_reward = {
+			add_stability = 0.25
+			add_political_power = 300
+		}
+	}
+	
+	focus = {
+		id = KTA_mangyo
+		icon = GFX_focus_generic_industry_2
+		#mutually_exclusive = { focus = KTA_loyalty_to_the_empire }
+		prerequisite = { focus = KTA_allow_zaibatsu_expansion focus = KTA_nationalise_industries }
+		relative_position_id = KTA_nationalise_industries
+		#bypass = {
+		#	NOT = { has_idea = MCK_japanese_immigrants }
+		#}
+		x = 1
+		y = 1
+		cost = 20
+		available = {
+			is_subject = no
+		}
+		ai_will_do = { base = 0 }
+		search_filters = {  }
+		select_effect = {
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = { has_idea = MCK_manchurian_industrial_development_company }
+				swap_ideas = {
+					remove_idea = MCK_manchurian_industrial_development_company
+					add_idea = MCK_mangyo_kta
+				}
+			}else = { add_ideas = MCK_mangyo_kta }
+		}
+	}
+	
+}

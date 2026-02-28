@@ -1,0 +1,353 @@
+on_actions = {
+	
+#	on_daily = {
+#		effect = {
+#			if = {
+#				limit = { 
+#					tag = PRC
+#					NOT = { has_country_flag = PRC_no_more_infiltration }
+				#}
+ #				#if = {
+ #					#limit = {
+ #					#	any_state = {
+ #					#		has_state_flag = KMT_PRC_state_has_guerrilla_cell
+ #					#		CONTROLLER = { tag = PRC }
+ #					#		NOT = { is_core_of = PRC }
+ #					#	}
+ #					#}
+ #					#every_state = {
+ #					#	limit = {
+ #					#		has_state_flag = KMT_PRC_state_has_guerrilla_cell
+ #					#		CONTROLLER = { tag = PRC }
+ #					#		NOT = { is_core_of = PRC }
+ #					#	}
+ #					#	add_compliance = 0.25
+ #					#	add_resistance = -0.1
+ #					#}
+ #				#}
+ #				if = {
+ #					limit = {
+ #						any_state = {
+ #							has_state_flag = KMT_PRC_state_has_guerrilla_cell
+ #							CONTROLLER = { has_war_with = PRC }
+ #						}
+ #					}
+ #					#every_state = {
+ #					#	limit = {
+ #					#		has_state_flag = KMT_PRC_state_has_guerrilla_cell
+ #					#		check_variable = { PRC_state_guerrilla_cell_strength > 9 }
+ #					#		CONTROLLER = { has_war_with = PRC }
+ #					#	}
+ #					#	if = {
+ #					#		limit = { has_resistance = yes }
+ #					#		if = {
+ #					#			limit = {
+ #					#				check_variable = { PRC_state_guerrilla_cell_strength > 49 }
+ #					#			}
+ #					#			add_resistance = 0.3
+ #					#		}else = {
+ #					#			if = {
+ #					#				limit = {
+ #					#					check_variable = { PRC_state_guerrilla_cell_strength > 39 }
+ #					#				}
+ #					#				add_resistance = 0.25
+ #					#			}else = {
+ #					#				if = {
+ #					#					limit = {
+ #					#						check_variable = { PRC_state_guerrilla_cell_strength > 29 }
+ #					#					}
+ #					#					add_resistance = 0.2
+ #					#				}else = { 
+ #					#					if = {
+ #					#						limit = {
+ #					#							check_variable = { PRC_state_guerrilla_cell_strength > 18 }
+ #					#						}
+ #					#						add_resistance = 0.15
+ #					#					}else = { add_resistance = 0.1 }
+ #					#				}
+ #					#			}
+ #					#		}
+ #					#	}
+ #					#}
+ #					every_state = {
+ #						limit = {
+ #							has_state_flag = KMT_PRC_state_has_guerrilla_cell
+ #							check_variable = { PRC_state_guerrilla_cell_strength > 19 }
+ #							CONTROLLER = { has_war_with = PRC }
+ #						}
+ #						if = {
+ #							limit = { has_resistance = yes }
+ #							if = {
+ #								limit = {
+ #									check_variable = { PRC_state_guerrilla_cell_strength > 59 }
+ #								}
+ #								add_compliance = -0.04
+ #							}else = {
+ #								if = {
+ #									limit = {
+ #										check_variable = { PRC_state_guerrilla_cell_strength > 49 }
+ #									}
+ #									add_compliance = -0.03
+ #								}else = {
+ #									if = {
+ #										limit = {
+ #											check_variable = { PRC_state_guerrilla_cell_strength > 39 }
+ #										}
+ #										add_compliance = 0.02
+ #									}else = { add_compliance = -0.01 }
+ #								}
+ #							}
+ #						}
+ #					}
+ #				}
+				
+				#if = {
+				#	limit = {
+				#		any_state = {
+				#			has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				#		}
+				#	}
+				#	every_state = {
+				#		limit = {
+				#			has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				#		}
+				#		set_variable = { THIS.PRC_resistance_tick_bonus = THIS.PRC_state_guerrilla_cell_strength }
+				#		divide_variable = { THIS.PRC_resistance_tick_bonus = 5 }
+				#		set_variable = { THIS.PRC_attrition_bonus = THIS.PRC_state_guerrilla_cell_strength }
+				#		divide_variable = { THIS.PRC_attrition_bonus = 100 }
+				#	}
+				#}
+#			}
+#		}
+#	}
+	
+	on_weekly_PRC = {
+		effect = {
+			if = {
+				limit = { 
+					NOT = { has_country_flag = PRC_no_more_infiltration }
+				}
+				if = {
+					limit = {
+						any_state = {
+							is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+							has_state_flag = PRC_partisan_natural_tick_flag_set
+							has_state_flag = KMT_PRC_state_has_guerrilla_cell
+							check_variable = { PRC_state_guerrilla_cell_strength < 100 }
+						}
+					}
+					every_state = {
+						limit = { 
+							is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+							has_state_flag = PRC_partisan_natural_tick_flag_set
+							has_state_flag = KMT_PRC_state_has_guerrilla_cell
+							check_variable = { PRC_state_guerrilla_cell_strength < 100 }
+							NOT = { 
+								region = 155 
+								region = 243 
+								region = 242
+							}
+						}
+						set_temp_variable = { PRC_state_infra_temp = infrastructure_level }
+						subtract_from_temp_variable = { PRC_state_infra_temp = 1 }
+						multiply_temp_variable = { PRC_state_infra_temp = 0.1 }
+						set_variable = { PRC_state_gcs_increase = 0.5 }
+						subtract_from_variable = { PRC_state_gcs_increase = PRC_state_infra_temp }
+						multiply_variable = { PRC_state_gcs_increase = 2 }
+						if = {
+							limit = { is_controlled_by = PRC }
+							add_to_variable = { PRC_state_gcs_increase = 3 }
+						}
+						if = {
+							limit = { is_owned_by = PRC }
+							add_to_variable = { PRC_state_gcs_increase = 3 }
+						}
+						add_to_variable = { PRC_state_guerrilla_cell_strength = PRC_state_gcs_increase }
+						clamp_variable = {
+							var = PRC_state_guerrilla_cell_strength
+							min = 0
+							max = 100
+						}
+					}
+					
+					#special case for japanese-controlled manchuria, in case of sov-jap neutrality pact
+					every_state = {
+						limit = { 
+							is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+							has_state_flag = PRC_partisan_natural_tick_flag_set
+							has_state_flag = KMT_PRC_state_has_guerrilla_cell
+							check_variable = { PRC_state_guerrilla_cell_strength < 100 }
+							OR = { 
+								region = 155 
+								region = 243 
+								region = 242
+							}
+						}
+						set_temp_variable = { PRC_state_infra_temp = infrastructure_level }
+						subtract_from_temp_variable = { PRC_state_infra_temp = 1 }
+						multiply_temp_variable = { PRC_state_infra_temp = 0.1 }
+						set_variable = { PRC_state_gcs_increase = 0.5 }
+						subtract_from_variable = { PRC_state_gcs_increase = PRC_state_infra_temp }
+						clamp_variable = {
+							var = PRC_state_gcs_increase
+							min = 0
+						}
+						if = {
+							limit = {
+								SOV = {
+									is_subject = no
+									has_government = communism
+									NOT = { has_war_with = PRC }
+									has_idea = KMT_SOV_JAP_neutrality
+								}
+								CONTROLLER = {
+									OR = {
+										tag = JAP
+										is_subject_of = JAP
+										is_in_faction_with = JAP
+									}
+								}
+								#PRC = { NOT = { has_country_flag = PRC_refused_sov_jap_neutrality_order }}
+							}
+						}else = {
+							multiply_variable = { PRC_state_gcs_increase = 2 }
+						}
+						if = {
+							limit = { is_controlled_by = PRC }
+							add_to_variable = { PRC_state_gcs_increase = 3 }
+						}
+						if = {
+							limit = { is_owned_by = PRC }
+							add_to_variable = { PRC_state_gcs_increase = 3 }
+						}
+						add_to_variable = { PRC_state_guerrilla_cell_strength = PRC_state_gcs_increase }
+						clamp_variable = {
+							var = PRC_state_guerrilla_cell_strength
+							min = 0
+							max = 100
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						any_state = {
+							has_state_flag = PRC_cell_establishing_in_progress
+						}
+					}
+					every_state = {
+						limit = { 
+							has_state_flag = PRC_cell_establishing_in_progress
+						}
+						if = {
+							limit = {
+								has_state_flag = KMT_PRC_state_has_guerrilla_cell 
+							}
+							clr_state_flag = PRC_cell_establishing_in_progress
+							set_variable = { var = PRC_state_establish_cell_tick_progress value = 0 }
+						}else = {
+							add_to_variable = { PRC_state_establish_cell_tick_progress = 1 }
+							if = {
+								limit = { 
+									check_variable = { 
+										var = PRC_state_establish_cell_tick_progress 
+										value = PRC_state_establish_time_needed
+										compare = greater_than_or_equals
+									}
+								}
+								set_variable = { var = PRC_state_guerrilla_cell_strength value = 0 }
+								set_variable = { var = PRC_state_establish_cell_tick_progress value = 0 }
+								set_state_flag = KMT_PRC_state_has_guerrilla_cell
+								clr_state_flag = PRC_cell_establishing_in_progress
+							}
+						}
+					}
+				}
+				
+				if = {
+					limit = {
+						any_state = {
+							has_state_flag = PRC_send_eq_in_progress
+							has_state_flag = KMT_PRC_state_has_guerrilla_cell
+						}
+					}
+					every_state = {
+						limit = { 
+							has_state_flag = PRC_send_eq_in_progress
+							has_state_flag = KMT_PRC_state_has_guerrilla_cell
+						}
+						add_to_variable = { PRC_state_send_eq_tick_progress = 1 }
+						if = {
+							limit = { 
+								check_variable = { 
+									var = PRC_state_send_eq_tick_progress 
+									value = PRC_state_send_eq_time_needed
+									compare = greater_than_or_equals
+								}
+							}
+							set_state_flag = PRC_sent_eq_to_state
+							set_variable = { var = PRC_state_send_eq_tick_progress value = 0 }
+							set_temp_variable = { var = PRC_target_add_cell_strength_amount value = 10 }
+							add_to_variable = { var = PRC_state_guerrilla_cell_strength value = PRC_target_add_cell_strength_amount }
+							clr_state_flag = PRC_send_eq_in_progress
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	on_monthly_PRC = {
+		effect = {
+			
+			if = {
+				limit = { 
+					NOT = { has_country_flag = PRC_no_more_infiltration }
+				}
+				if = {
+					limit = {
+						any_state = {
+							has_state_flag = KMT_PRC_state_has_guerrilla_cell
+							check_variable = { PRC_state_guerrilla_cell_strength < 0 }
+						}
+					}
+					every_state = {
+						limit = {
+							has_state_flag = KMT_PRC_state_has_guerrilla_cell
+							check_variable = { PRC_state_guerrilla_cell_strength < 0 }
+						}
+						set_variable = { PRC_state_guerrilla_cell_strength = 0 }
+					}
+				}
+				if = {
+					limit = {
+						any_state = {
+							is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+						}
+					}
+					every_state = {
+						limit = {
+							is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+						}
+										#set_variable = { PRC_state_gcs_threshold = 5 }
+						set_variable = { PRC_state_establish_time_needed = 1 }
+						set_variable = { PRC_state_send_eq_time_needed = 1 }
+						
+						set_variable = { PRC_state_infra_level = infrastructure_level }
+						
+						multiply_variable = { PRC_state_infra_level = 0.2 }
+						round_variable = PRC_state_infra_level
+										#add_to_variable = { PRC_state_gcs_threshold = PRC_state_infra_level }
+						
+										#set_variable = { PRC_state_establish_infra_level = infrastructure_level }
+										#multiply_variable = { PRC_state_establish_infra_level = 2 }
+						add_to_variable = { PRC_state_establish_time_needed = PRC_state_infra_level }
+						
+										#set_variable = { PRC_state_send_eq_infra_level = infrastructure_level }
+						add_to_variable = { PRC_state_send_eq_time_needed = PRC_state_infra_level }
+					}
+				}
+			}
+		}
+	}
+}

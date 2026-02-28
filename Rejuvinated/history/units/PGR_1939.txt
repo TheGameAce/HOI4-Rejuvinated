@@ -1,0 +1,52 @@
+﻿division_template = {
+	name = "Sanjiao Jun"			
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+
+### OOB ###
+units = {
+	division = {
+		name = "Tsingtao Chuchun"
+		location = 10000
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Chefoo Chuchun"
+		location = 1200
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Tsinan Chuchun"
+		location = 1069
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Paoting Chuchun"
+		location = 7109
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Yangku Chuchun"
+		location = 4174
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Kaifeng Chuchun"
+		location = 9958
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+}

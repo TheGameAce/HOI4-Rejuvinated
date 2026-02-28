@@ -1,0 +1,2403 @@
+﻿division_template = {
+	name = "Luchün Shih"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "T'iaocheng Shih"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 } 
+	}
+}
+
+division_template = {
+	name = "Chengli Shih"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		artillery_brigade = { x = 4 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+		artillery = { x = 0 y = 1 } 
+	}
+}
+
+division_template = {
+	name = "Ch'iping Shih"	
+	division_names_group = CHI_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+		cavalry = { x = 3 y = 0 }
+		cavalry = { x = 3 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "Tuli Lü"	
+	division_names_group = CHI_IND_INFB_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+
+division_template = {
+	name = "Tuli Ch'iping Lü"	
+	division_names_group = CHI_IND_CAVB_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+
+### OOB ###
+units = {
+	## information based on this spreadsheet: https://docs.google.com/spreadsheets/d/1ez0Nnu_qInXxsgdkaDQppKIxU08PVFrAXFXqQe1-kRU/edit?usp=sharing ##
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		#commanded by Hu Tsung-nan(already a corps commander)
+		#officer = {
+		#	""
+		#}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1933
+		division_template = "Luchün Shih"		
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		officer = {
+			name = KMT_huang_jie
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4144
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		officer = {
+			name = KMT_li_yutang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1066
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		officer = {
+			name = KMT_wang_wanling
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 12017
+		division_template = "Chengli Shih"		
+		start_equipment_factor = 0.85
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		officer = {
+			name = KMT_xie_pufu
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 2067
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 9
+		}
+		officer = {
+			name = KMT_li_yannian
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10069
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 10
+		}
+		officer = {
+			name = KMT_li_moan
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 12017
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 11
+		}
+		officer = {
+			name = KMT_huang_wei
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 9944
+		division_template = "T'iaocheng Shih"		
+		start_equipment_factor = 0.8
+		start_experience_factor = 0.3
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 13
+		}
+		officer = {
+			name = KMT_wan_yaohuang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10763
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 14
+		}
+		officer = {
+			name = KMT_huo_kuizhang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10006
+		division_template = "T'iaocheng Shih"		
+		start_equipment_factor = 0.8
+		start_experience_factor = 0.3
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 15
+		}
+		officer = {
+			name = KMT_wang_dungyuan
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10006
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 16
+		}
+		officer = {
+			name = KMT_zhang_liangji
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 8095
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 17
+		}
+		officer = {
+			name = KMT_sun_weiru
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4074
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 18
+		}
+		officer = {
+			name = KMT_zhu_yaohua
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4156
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 19
+		}
+		officer = {
+			name = KMT_li_jue
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 13446
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 21
+		}
+		officer = {
+			name = KMT_li_xianzhou
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 13438
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 23
+		}
+		officer = {
+			name = KMT_li_bifan
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 8095
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 24
+		}
+		officer = {
+			name = KMT_li_ying
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1647
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 25
+		}
+		officer = {
+			name = KMT_guan_linzheng
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1519
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 27
+		}
+		officer = {
+			name = KMT_feng_anbang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7434
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 28
+		}
+		officer = {
+			name = KMT_wang_maode
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7665
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	#division = {
+	#	division_name = {
+	#		is_name_ordered = yes
+	#		name_order = 29
+	#	}
+	#	location = 8095
+	#	division_template = "Luchün Shih"		
+	#	start_equipment_factor = 0.5
+	#	#	start_experience_factor = 0.5
+	#}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 30
+		}
+		#Sun Lien-chung
+		#officer = {
+		#	"Li Pi-fan"
+		#}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1612
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 31
+		}
+		officer = {
+			name = KMT_chi_fengcheng
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7434
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 32
+		}
+		officer = {
+			name = KMT_liang_guanying
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7097
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 33
+		}
+		officer = {
+			name = KMT_feng_xingxian
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10114
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 36
+		}
+		officer = {
+			name = KMT_song_xilian
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 3992
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 39
+		}
+		officer = {
+			name = KMT_pang_bingxun
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1139
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 40
+		}
+		officer = {
+			name = KMT_liu_peixu
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10114
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 41
+		}
+		#Hsü Yüan-ch'üan
+		#officer = {
+		#	"Li Pi-fan"
+		#}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 13445
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		officer = {
+			name = KMT_zhou_lei
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 6638
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		officer = {
+			name = KMT_zeng_wanzhong
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 6638
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 8
+		}
+		officer = {
+			name = KMT_tao_zhiyue
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1647
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 12
+		}
+		officer = {
+			name = KMT_tang_huaiyuan
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 12882
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 43
+		}
+		officer = {
+			name = KMT_zhou_hong
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7665
+		division_template = "T'iaocheng Shih"		
+		start_equipment_factor = 0.8
+		start_experience_factor = 0.3
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 44
+		}
+		officer = {
+			name = KMT_xiao_zhichu
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7301
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 45
+		}
+		officer = {
+			name = KMT_dai_minquan
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10042
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 46
+		}
+		officer = {
+			name = KMT_dai_sixia
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10112
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 47
+		}
+		officer = {
+			name = KMT_pei_changhui
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4480
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 48
+		}
+		officer = {
+			name = KMT_xu_jiwu
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4896
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 49
+		}
+		officer = {
+			name = KMT_wu_chengren
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10257
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 50
+		}
+		officer = {
+			name = KMT_cheng_guangyao
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 11988
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 51
+		}
+		officer = {
+			name = KMT_bai_tianwen
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10057
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 52
+		}
+		officer = {
+			name = KMT_lu_xingrong
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10819
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 53
+		}
+		officer = {
+			name = KMT_li_yunxing
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4999
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 54
+		}
+		officer = {
+			name = KMT_hao_mengling
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7577
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 55
+		}
+		officer = {
+			name = KMT_li_songshan
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10017
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 56
+		}
+		officer = {
+			name = KMT_liu_shangzhi
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 13434
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 57
+		}
+		officer = {
+			name = KMT_yuan_shaochang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 13442
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 58
+		}
+		officer = {
+			name = KMT_yu_jishi
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4619
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 59
+		}
+		officer = {
+			name = KMT_han_hanying
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10763
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 60
+		}
+		officer = {
+			name = KMT_chen_pei
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4325
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 61
+		}
+		officer = {
+			name = KMT_yang_bufei
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 12705
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 62
+		}
+		officer = {
+			name = KMT_zhong_guangren
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1474
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 63
+		}
+		officer = {
+			name = KMT_chen_guangzhong
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1474
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 64
+		}
+		officer = {
+			name = KMT_liu_zhenhua
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1153
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 65
+		}
+		officer = {
+			name = KMT_liu_maoen
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4203
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 67
+		}
+		officer = {
+			name = KMT_li_shusen
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7104
+		division_template = "T'iaocheng Shih"		
+		start_equipment_factor = 0.8
+		start_experience_factor = 0.3
+	}
+	
+	#division = {
+	#	division_name = {
+	#		is_name_ordered = yes
+	#		name_order = 74
+	#	}
+	#	location = 13442
+	#	division_template = "Luchün Shih"		
+	#	start_equipment_factor = 0.5
+	#	#	start_experience_factor = 0.25
+	#}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 75
+		}
+		officer = {
+			name = KMT_song_tiancai
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10084
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 76
+		}
+		officer = {
+			name = KMT_zhang_fang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 13441
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	#no information
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 78
+		}
+		location = 1171
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+			start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 80
+		}
+		officer = {
+			name = KMT_chen_qi
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 3992
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 82
+		}
+		officer = {
+			name = KMT_yong_jingfang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10474
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 83
+		}
+		officer = {
+			name = KMT_liu_kan
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 3992
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 84
+		}
+		officer = {
+			name = KMT_gao_guizhi
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10367
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 85
+		}
+		officer = {
+			name = KMT_chen_tie
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10757
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 86
+		}
+		officer = {
+			name = KMT_gao_shuangcheng
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4074
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 87
+		}
+		officer = {
+			name = KMT_wang_jingzhi
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1006
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 88
+		}
+		officer = {
+			name = KMT_sun_yuanliang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 12414
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 89
+		}
+		officer = {
+			name = KMT_wang_zhonglian
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10006
+		division_template = "Chengli Shih"		
+		start_equipment_factor = 0.85
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 90
+		}
+		officer = {
+			name = KMT_ou_zhen
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 8095
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 91
+		}
+		officer = {
+			name = KMT_feng_zhanhai
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7167
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 92
+		}
+		officer = {
+			name = KMT_liang_huasheng
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4619
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 93
+		}
+		officer = {
+			name = KMT_gan_lichu
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10616
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 94
+		}
+		#officer = {
+		#	"?"
+		#}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 11947
+		division_template = "T'iaocheng Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.3
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 95
+		}
+		officer = {
+			name = KMT_li_tiejun
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7596
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 96
+		}
+		officer = {
+			name = KMT_zhao_xijiu
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4999
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 97
+		}
+		officer = {
+			name = KMT_kong_lingxun
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7665
+		division_template = "T'iaocheng Shih"		
+		start_equipment_factor = 0.8
+		start_experience_factor = 0.3
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 98
+		}
+		officer = {
+			name = KMT_xia_chuzhong
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7101
+		division_template = "Chengli Shih"		
+		start_equipment_factor = 0.85
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 99
+		}
+		officer = {
+			name = KMT_fu_zhongfang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10616
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.5
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 102
+		}
+		officer = {
+			name = KMT_bai_huizhang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4619
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 103
+		}
+		officer = {
+			name = KMT_he_zhizhong
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4619
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 104
+		}
+		officer = {
+			name = KMT_li_jiayu
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 2067
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 105
+		}
+		officer = {
+			name = KMT_liu_dequan
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4619
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 112
+		}
+		officer = {
+			name = KMT_zhang_yanshu
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4619
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 115
+		}
+		officer = {
+			name = KMT_xiong_zhengping
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4619
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 120
+		}
+		officer = {
+			name = KMT_chang_jingping
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4619
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 121
+		}
+		officer = {
+			name = KMT_wu_jianping
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4999
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 122
+		}
+		officer = {
+			name = KMT_wang_mingzhang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 12819
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 123
+		}
+		officer = {
+			name = KMT_zeng_xiandong
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 12819
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 139
+		}
+		officer = {
+			name = KMT_huang_guanghua
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1575
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 141
+		}
+		officer = {
+			name = KMT_song_kengtang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4606
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 142
+		}
+		officer = {
+			name = KMT_lu_ji
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4606
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		name = "Hsin-pien 34. Shih"
+		officer = {
+			name = KMT_chen_juzhen
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 13445
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "Hsin-pien 5. Shih"
+		location = 11931
+		officer = {
+			name = KMT_yang_qutong
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "Hsin-pien 10. Shih"
+		location = 4196
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.1
+	}
+	
+	division = {
+		name = "Hsin-pien 11. Shih"
+		location = 4113
+		officer = {
+			name = KMT_zhou_zhiqun
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		division_template = "Luchün Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.1
+	}
+	
+	#division = {
+	#	name = "Tsan-pien 2. Shih"
+	#	location = 10841
+	#	officer = {
+	#		name = KMT_liu_juming
+	#	}
+	#	#portraits = {
+	#	#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+	#	#		large=GFX_portrait_GER_erwin_rommel
+	#	#		small="GFX_idea_erwin_rommel"
+	#	#	}
+	#	#}
+	#	division_template = "Luchün Shih"		
+	#	start_equipment_factor = 0.5
+	#	#	start_experience_factor = 0.25
+	#}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		officer = {
+			name = KMT_wang_jinrong
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 8072
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		officer = {
+			name = KMT_zheng_tingzhen
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4480
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 34
+		}
+		officer = {
+			name = KMT_luo_qijiang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 13445
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 35
+		}
+		officer = {
+			name = KMT_li_zongjian
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 13441
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 36
+		}
+		officer = {
+			name = KMT_tong_yuanliang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 1628
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 38
+		}
+		officer = {
+			name = KMT_pan_shanqi
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 12414
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 43
+		}
+		officer = {
+			name = KMT_liu_zhenqing
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 7007
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 44
+		}
+		officer = {
+			name = KMT_zhang_huatang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 9958
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 45
+		}
+		officer = {
+			name = KMT_zhang_luanji
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 13438
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 46
+		}
+		officer = {
+			name = KMT_bao_gang
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10044
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 47
+		}
+		officer = {
+			name = KMT_shi_honglie
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4169
+		division_template = "Tuli Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		officer = {
+			name = KMT_lu_ruji
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 12432
+		division_template = "Tuli Ch'iping Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		officer = {
+			name = KMT_sun_changsheng
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 4074
+		division_template = "Tuli Ch'iping Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 14
+		}
+		officer = {
+			name = KMT_zhang_zhankui
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10434
+		division_template = "Tuli Ch'iping Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 24
+		}
+		officer = {
+			name = KMT_yu_shiming
+		}
+		#portraits = {
+		#	army = { #You can add starting portraits like this. The system expects a large and a small, and they will be cleared after the commander is promoted.
+		#		large=GFX_portrait_GER_erwin_rommel
+		#		small="GFX_idea_erwin_rommel"
+		#	}
+		#}
+		location = 10040
+		division_template = "Tuli Ch'iping Lü"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 13441
+		division_template = "Ch'iping Shih"		
+		start_equipment_factor = 0.5		start_experience_factor = 0.25
+	}
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 8
+		}
+		location = 10733
+		division_template = "Ch'iping Shih"		
+		start_equipment_factor = 0.5
+		start_experience_factor = 0.2
+	}
+	
+	division = { # "Peixun Shi"
+		name = "Chiao-tao Tsung-tui"
+		location = 11913
+		division_template = "Chengli Shih"		# Reorganized German-trained division (frontline infantry, better equipment and highest experience)
+		start_experience_factor = 0.7
+		start_equipment_factor = 1
+		force_equipment_variants = { infantry_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { artillery_equipment_1 = { owner = "GER" } }
+		force_equipment_variants = { support_equipment_1 = { owner = "GER" } }
+
+	}
+
+
+}
+
+
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "CHI"
+		}
+		requested_factories = 2
+		progress = 0.55
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "CHI"
+		}
+		requested_factories = 1
+		progress = 0.55
+		efficiency = 100
+	}	
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "CHI"
+		}
+		requested_factories = 1
+		progress = 0.55
+		efficiency = 100
+	}	
+}

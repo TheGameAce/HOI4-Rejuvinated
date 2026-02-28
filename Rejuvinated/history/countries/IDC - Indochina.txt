@@ -1,0 +1,284 @@
+﻿capital = 967
+
+recruit_character = IDC_rene_robin
+recruit_character = IDC_jules_brevie
+recruit_character = IDC_georges_ayme
+recruit_character = IDC_georges_catroux
+recruit_character = IDC_jean_decoux
+recruit_character = IDC_eugene_mordant
+recruit_character = IDC_marcel_alessandri
+recruit_character = IDC_gabriel_sabattier
+
+recruit_character = IDC_generic_army_chief
+recruit_character = IDC_generic_navy_chief
+recruit_character = IDC_generic_air_chief
+recruit_character = IDC_generic_high_command1
+recruit_character = IDC_generic_high_command2
+recruit_character = IDC_generic_high_command3
+recruit_character = IDC_generic_high_command4
+recruit_character = IDC_generic_pa1
+recruit_character = IDC_generic_pa2
+recruit_character = IDC_generic_pa3
+recruit_character = IDC_generic_pa4
+recruit_character = IDC_generic_pa5
+recruit_character = IDC_generic_pa6
+recruit_character = IDC_generic_pa7
+recruit_character = IDC_generic_pa8
+
+set_convoys = 500
+
+FRA = { set_autonomy = { target = IDC autonomy_state = autonomy_colony }}
+set_cosmetic_tag = FRAIDC
+
+oob = "IDC_1936"
+
+670 = { 
+	start_resistance = yes
+	set_compliance = 90
+	set_resistance = 10
+	set_garrison_strength = 1.0
+}
+
+972 = { 
+	start_resistance = yes
+	set_compliance = 90
+	set_resistance = 10
+	set_garrison_strength = 1.0
+}
+
+971 = { 
+	start_resistance = yes
+	set_compliance = 90
+	set_resistance = 10
+	set_garrison_strength = 1.0
+}
+
+970 = { 
+	start_resistance = yes
+	set_compliance = 90
+	set_resistance = 10
+	set_garrison_strength = 1.0
+}
+
+741 = { 
+	start_resistance = yes
+	set_resistance = 30
+	set_compliance = 30
+	set_garrison_strength = 1.0
+}
+
+969 = { 
+	start_resistance = yes
+	set_resistance = 30
+	set_compliance = 30
+	set_garrison_strength = 1.0
+}
+
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_mountaineers = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	gwtank = 1
+	basic_light_tank = 1
+	basic_heavy_tank = 1
+	improved_light_tank = 1
+	early_fighter = 1
+	naval_bomber1 = 1
+	cv_early_fighter = 1
+	cv_naval_bomber1 = 1
+	early_bomber = 1
+	tactical_bomber1 = 1
+	CAS1 = 1
+	trench_warfare = 1
+	fleet_in_being = 1
+	fuel_silos = 1
+	fuel_refining = 1
+}
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		basic_battlecruiser = 1
+		early_carrier = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		basic_battery = 1
+		basic_heavy_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		#basic_secondary_battery = 1
+		#improved_secondary_battery = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+	}
+}
+
+1939.1.1 = {
+	
+	add_political_power = 1198
+
+	set_technology = {
+		fighter1 = 1
+		fighter2 = 1
+		heavy_fighter1 = 1
+		tactical_bomber2 = 1
+		strategic_bomber1 = 1
+		cv_fighter1 = 1
+		cv_CAS1 = 1
+		improved_light_tank = 1
+		basic_medium_tank = 1
+		basic_heavy_tank = 1
+		interwar_artillery = 1
+		interwar_antitank = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+		support_weapons2 = 1
+
+		#doctrines
+		#Air
+		force_rotation = 1
+		fighter_baiting = 1
+		low_echelon_support = 1
+		dispersed_fighting = 1
+		
+			grand_battle_plan = 1
+
+		trench_warfare = 1
+		prepared_defense = 1
+		battlefleet_concentration = 1
+		subsidiary_carrier_role = 1
+		convoy_sailing = 1
+		submarine_operations = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+		basic_encryption = 1
+		basic_decryption = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_refining2 = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+	}
+
+	add_political_power = 1198
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = construction_effort_2
+	complete_national_focus = production_effort_2
+	complete_national_focus = infrastructure_effort
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 95
+	communism = 5
+}
+
+1937.1.14 = {
+	IDC_rene_robin = { set_nationality = ZZZ }
+}
+
+1939.8.20 = {
+	retire_country_leader = yes
+	IDC_georges_catroux = { promote_character = { ideology = oligarchism }}
+}
+
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	create_equipment_variant = {
+		name = "Duguay-Trouin Class"			# represents Duguay-Trouin, Pluton, Jeanne d'Arc classes
+		type = ship_hull_cruiser_1
+		name_group = FRA_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = ship_light_medium_battery_1
+			rear_1_custom_slot = ship_airplane_launcher_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Suffren Class"				# Duquesne and Suffren classes
+		type = ship_hull_cruiser_1
+		name_group = FRA_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = ship_medium_battery_1
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_airplane_launcher_1
+		}
+		obsolete = yes
+	}
+}

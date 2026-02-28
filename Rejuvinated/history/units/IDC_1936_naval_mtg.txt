@@ -1,0 +1,15 @@
+﻿
+units= {
+
+	### FAR EAST ###				
+	fleet = {
+		name = "Flotte d'Extrême Orient"
+		naval_base = 4401 # Saigon
+		task_force = {
+			name = "Flotte d'Extrême Orient"
+			location = 4401 # Saigon			
+			ship = { name = "Suffren" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FRA version_name = "Suffren Class" } } }
+			ship = { name = "Lamotte-Picquet" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FRA version_name = "Duguay-Trouin Class" } } }
+		}
+	}
+} 

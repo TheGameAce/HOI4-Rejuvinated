@@ -1,0 +1,2468 @@
+characters={
+	KMT_li_shouxin={
+		name=KMT_li_shouxin
+		portraits={
+			civilian={
+				large="gfx/leaders/kmt_mod/portrait_asia_generic_land_13.dds"
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_2"
+				large="gfx/leaders/kmt_mod/portrait_asia_generic_land_13.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = KMT_li_shouxin
+			ledger = army
+			cost = 50
+			
+			traits = { army_artillery_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = 1058
+			skill = 2
+		}
+	}
+	
+	PGR_song_zheyuan={
+		name=PGR_song_zheyuan
+		portraits={
+			civilian={
+				large="gfx/leaders/kmt_mod/Portrait_Song_Zheyuan.dds"
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_1"
+				large="gfx/leaders/kmt_mod/Portrait_Song_Zheyuan.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = PGR_song_zheyuan
+			ledger = army
+			cost = 50
+			
+			allowed = {
+				tag = PGR
+			}
+			
+			traits = { army_commando_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 2109
+			skill = 2
+		}
+	}
+	
+	WJW_ding_mocun={
+		name=WJW_ding_mocun
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = WJW_ding_mocun
+			cost = 150
+			
+			allowed = {
+				original_tag = WJW
+			}
+			
+			traits = { prince_of_terror }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	PGR_zhao_dengyu={
+		name=PGR_zhao_dengyu
+		portraits={
+			civilian={
+			}
+			army = {
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+			}
+		}
+		corps_commander = {
+			traits = { }
+			legacy_id = 1050
+			skill = 1
+		}
+	}
+	
+	PGR_wan_fulin={
+		name=PGR_wan_fulin
+		portraits={
+			civilian={
+			}
+			army = {
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds"
+			}
+		}
+		corps_commander = {
+			traits = { }
+			legacy_id = 1051
+			skill = 1
+		}
+	}
+	
+	PGR_liu_zhensan={
+		name=PGR_liu_zhensan
+		portraits={
+			civilian={
+			}
+			army = {
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
+			}
+		}
+		corps_commander = {
+			traits = { }
+			legacy_id = 1052
+			skill = 1
+		}
+	}
+	
+	PGR_dong_linge={
+		name=PGR_dong_linge
+		portraits={
+			civilian={
+			}
+			army = {
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_land_4.dds"
+			}
+		}
+		corps_commander = {
+			traits = { }
+			legacy_id = 1053
+			skill = 1
+		}
+	}
+	
+	PGR_wang_shuchang={
+		name=PGR_wang_shuchang
+		portraits={
+			civilian={
+			}
+			army = {
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
+			}
+		}
+		corps_commander = {
+			traits = { }
+			legacy_id = 1054
+			skill = 1
+		}
+	}
+	
+	KMT_wang_kemin={
+		name=KMT_wang_kemin
+		portraits={
+			civilian={
+				large="gfx/leaders/kmt_mod/wang_kemin.tag"
+			}
+			army = {
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=-1
+		}
+		corps_commander = {
+			traits = { politically_connected }
+			skill = 1
+			visible = { ROOT = { tag = WJW }}
+		}
+	}
+	
+	SDC_liang_shuming={
+		name=SDC_liang_shuming
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_3"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = SDC_liang_shuming
+			
+			allowed = {
+				original_tag = SDC
+			}
+			
+			available = {
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	
+	SDC_he_siyuan={
+		name=SDC_he_siyuan
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_2"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = SDC_he_siyuan
+			
+			allowed = {
+				original_tag = SDC
+			}
+			
+			available = {
+			}
+			
+			traits = { popular_figurehead }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	
+	SDC_han_fuju={
+		name=SDC_han_fuju
+		portraits={
+			civilian={
+				large="gfx/leaders/kmt_mod/Portrait_Han_Fuqu.dds"
+			}
+			
+			army = {
+				small = "GFX_idea_han_fuju"
+				large="gfx/leaders/kmt_mod/Portrait_Han_Fuqu.dds"
+			}
+		}
+		corps_commander = {
+			traits = { }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 1014
+			skill = 2
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	
+	QIA_wang_jialie={
+		name=QIA_wang_jialie
+		portraits={
+			civilian={
+				large = "gfx/leaders/kmt_mod/Portrait_Wang_Jialie.dds"
+			}
+			
+			army = {
+				small = "GFX_idea_wang_jialie"
+				large = "gfx/leaders/kmt_mod/Portrait_Wang_Jialie.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = QIA_wang_jialie
+			
+			allowed = {
+				original_tag = QIA
+			}
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		corps_commander = {
+			traits = { }
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			skill = 3
+		}
+	}
+	
+	QIA_jiang_zaizhen={
+		name=QIA_jiang_zaizhen
+		portraits={
+			civilian={
+				small="GFX_idea_generic_army_asia_3"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = QIA_jiang_zaizhen
+			ledger = army
+			
+			allowed = {
+				original_tag = QIA
+			}
+			
+			traits = { army_entrenchment_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	QIA_you_guocai={
+		name=QIA_you_guocai
+		portraits={
+			civilian={
+				small="GFX_idea_generic_army_asia_1"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = QIA_you_guocai
+			ledger = army
+			
+			allowed = {
+				original_tag = QIA
+			}
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	QIA_hou_zhidan={
+		name=QIA_hou_zhidan
+		portraits={
+			civilian={
+				small="GFX_idea_generic_army_asia_2"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = QIA_hou_zhidan
+			ledger = army
+			
+			allowed = {
+				original_tag = QIA
+			}
+			
+			traits = { army_artillery_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	QIA_he_zhizhong={
+		name=QIA_he_zhizhong
+		portraits={
+			civilian={
+				small="GFX_idea_generic_army_asia_3"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = QIA_he_zhizhong
+			ledger = army
+			
+			allowed = {
+				original_tag = QIA
+			}
+			
+			traits = { army_regrouping_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	QIA_bo_huizhang={
+		name=QIA_bo_huizhang
+		portraits={
+			civilian={
+				small="GFX_idea_generic_army_asia_1"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = QIA_bo_huizhang
+			ledger = army
+			
+			allowed = {
+				original_tag = QIA
+			}
+			
+			traits = { army_commando_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	XIA_zhao_hengti={
+		name=XIA_zhao_hengti
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_2"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = XIA_zhao_hengti
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			available = {
+			}
+			
+			traits = { 
+				silent_workhorse 
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	
+	XIA_he_jian={
+		name=XIA_he_jian
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_1"
+				large = "gfx/leaders/kmt_mod/Ho_Chien.dds"
+			}
+			army = {
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1"
+			traits = { KMT_dislike_communism }
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = XIA_he_jian
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { prince_of_terror }
+		}
+	}
+	
+	XIA_liu_fei={
+		name=XIA_liu_fei
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_2"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = XIA_liu_fei
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { smooth_talking_charmer }
+		}
+	}
+	
+	XIA_zhou_lan={
+		name=XIA_zhou_lan
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_3"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = XIA_zhou_lan
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { compassionate_gentleman }
+		}
+	}
+	
+	XIA_liu_xing={
+		name=XIA_liu_xing
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_1"
+			}
+		}
+		advisor = {
+			slot = theorist
+			cost = 100
+			idea_token = XIA_liu_xing
+			ledger = army
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { military_theorist }
+		}
+	}
+	
+	XIA_zhang_zhizhong={
+		name=XIA_zhang_zhizhong
+		portraits={
+			civilian={
+				large="gfx/leaders/kmt_mod/Zhang_Zhizhong.dds"
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_2"
+				large="gfx/leaders/kmt_mod/Zhang_Zhizhong.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1"
+			traits = { }
+		}
+		advisor = {
+			slot = high_command
+			cost = 50
+			idea_token = XIA_zhang_zhizhong
+			ledger = army
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { army_regrouping_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer media_personality }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = 1021
+			skill = 1
+		}
+	}
+	
+	XIA_chen_mingren={
+		name=XIA_chen_mingren
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_1"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = XIA_chen_mingren
+			ledger = army
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	XIA_liu_jianxu={
+		name=XIA_liu_jianxu
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_3"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = XIA_liu_jianxu
+			ledger = army
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { army_artillery_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	XIA_tao_guang={
+		name=XIA_tao_guang
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_2"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = XIA_tao_guang
+			ledger = army
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { army_commando_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	XIA_li_jue={
+		name=XIA_li_jue
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_1"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 50
+			idea_token = XIA_li_jue
+			ledger = army
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { army_cavalry_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	XIA_cheng_qian={
+		name=XIA_cheng_qian
+		portraits={
+			civilian={
+				large = "gfx/leaders/kmt_mod/Portrait_Cheng_Qian.dds"
+			}
+			army = {
+				small="GFX_idea_cheng_qian"
+				large = "gfx/leaders/kmt_mod/Portrait_Cheng_Qian.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = XIA_cheng_qian
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1"
+			traits = { }
+		}
+		corps_commander = {
+			traits = { }
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = 1026
+			skill = 3
+		}
+	}
+	
+	XIA_tang_shengzhi={
+		name=XIA_tang_shengzhi
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_tang_shengzhi"
+				large = "gfx/leaders/kmt_mod/Portrait_Tang_Shengzhi.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = XIA_tang_shengzhi
+			
+			allowed = {
+				original_tag = XIA
+			}
+			
+			traits = { army_entrenchment_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = { inflexible_strategist old_guard defensive_doctrine }
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = 1025
+			skill = 2
+		}
+	}
+	
+	YUT_chen_jitang={
+		name=YUT_chen_jitang
+		portraits={
+			civilian={
+				large = "gfx/leaders/kmt_mod/Portrait_Jyut_Chen_Jitang.dds"
+			}
+			army = {
+				small="GFX_idea_chen_jitang"
+				large = "gfx/leaders/kmt_mod/Portrait_Jyut_Chen_Jitang.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1"
+			traits = { }
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = YUT_chen_jitang_ac
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { army_chief_morale_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = YUT_chen_jitang_hc
+			ledger = army
+			
+			allowed = {
+				original_tag = GXC
+			}
+			
+			traits = { army_regrouping_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal = {
+			traits = { inflexible_strategist trait_cautious }
+			legacy_id = 1013
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+			skill = 3
+		}
+	}
+	
+	YUT_yu_hanmou={
+		name=YUT_yu_hanmou
+		portraits={
+			civilian={
+				large = "gfx/leaders/kmt_mod/yu_hanmou.dds"
+			}
+			army = {
+				small="GFX_idea_yu_hanmou"
+				large = "gfx/leaders/kmt_mod/yu_hanmou.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1"
+			traits = { }
+		}
+		advisor = {
+			slot = theorist
+			cost = 100
+			idea_token = YUT_yu_hanmou
+			ledger = army
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { military_theorist }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			legacy_id = 1012	
+			traits = { infantry_officer career_officer }
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			skill = 3
+		}
+	}
+	
+	YUT_zhang_fakui={
+		name=YUT_zhang_fakui
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_zhang_fakui"
+				large = "gfx/leaders/kmt_mod/Portrait_Zhang_Fakui.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1"
+			traits = { }
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = YUT_zhang_fakui
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { scavenger }
+			legacy_id = 1024
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			skill = 2
+		}
+	}
+	
+	YUT_hu_hanmin={
+		name=YUT_hu_hanwen
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_2"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = YUT_hu_hanwen
+			
+			allowed = {
+				tag = YUT
+			}
+			
+			available = {
+				NOT = { has_global_flag = huhanwen_dead }
+			}
+			
+			traits = { 
+				silent_workhorse 
+				popular_figurehead
+			}
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+	
+	YUT_li_jishen={
+		name=YUT_li_jishen
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_1"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = YUT_li_jishen
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { smooth_talking_charmer }
+		}
+	}
+	
+	YUT_lin_yizhong={
+		name=YUT_lin_yizhong
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_2"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = YUT_lin_yizhong
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { popular_figurehead }
+		}
+	}
+	
+	YUT_feng_zhuwan={
+		name=YUT_feng_zhuwan
+		portraits={
+			civilian={
+				small="GFX_idea_generic_political_advisor_asia_3"
+			}
+			army = {
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = YUT_feng_zhuwan
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { captain_of_industry }
+		}
+	}
+	
+	YUT_xu_heng={
+		name=YUT_xu_heng
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_navy_asia_1"
+			}
+		}
+		advisor = {
+			slot = theorist
+			cost = 100
+			idea_token = YUT_xu_heng
+			ledger = navy
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { naval_theorist }
+		}
+	}
+	
+	YUT_zhou_baoheng={
+		name=YUT_zhou_baoheng
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_air_asia_1"
+			}
+		}
+		advisor = {
+			slot = theorist
+			cost = 100
+			idea_token = YUT_zhou_baoheng
+			ledger = air
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+	}
+	
+	YUT_huang_zhenqiu={
+		name=YUT_huang_zhenqiu
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_1"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = YUT_huang_zhenqiu
+			ledger = army
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { army_concealment_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	YUT_ye_zhao={
+		name=YUT_ye_zhao
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_2"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = YUT_ye_zhao
+			ledger = army
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { army_regrouping_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	YUT_deng_shizeng={
+		name=YUT_deng_shizeng
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_3"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = YUT_deng_shizeng
+			ledger = army
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { army_artillery_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	YUT_liu_guangkai={
+		name=YUT_liu_guangkai
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_navy_asia_3"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 50
+			idea_token = YUT_liu_guangkai
+			ledger = navy
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { navy_amphibious_assault_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	YUT_cai_tingkai={
+		name=YUT_cai_tingkai
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_3"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = YUT_cai_tingkai
+			
+			allowed = {
+				original_tag = YUT
+			}
+			
+			traits = { army_chief_organizational_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	YUT_huang_guangrui={
+		name=YUT_huang_guangrui
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_air_asia_3"
+			}
+		}
+		advisor = {
+			slot = air_chief
+			cost = 200
+			idea_token = YUT_huang_guangrui
+			
+			allowed = {
+			}
+			
+			available = {
+			}
+			
+			traits = { air_chief_safety_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	YUT_chen_ce={
+		name=YUT_chen_ce
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_chan_chak"
+				large="gfx/leaders/kmt_mod/Chen_Chak.dds"
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			cost = 200
+			idea_token = YUT_chen_ce
+
+			allowed = {
+			}
+					
+			traits = { navy_chief_reform_3 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		navy_leader = {
+			legacy_id = 2110
+			traits = { superior_tactician navy_career_officer bold blockade_runner }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}
+	
+	YUT_feng_qicong={
+		name=YUT_feng_qicong
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_navy_asia_2"
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			cost = 100
+			idea_token = YUT_feng_qicong
+
+			allowed = {
+				original_tag = YUT
+			}
+					
+			traits = { navy_chief_commerce_raiding_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	SCC_liu_xiang={
+		name=SCC_liu_xiang
+		portraits={
+			civilian={
+				large = "gfx/leaders/kmt_mod/Portrait_Liu_Xiang.dds"
+			}
+			army = {
+				small="GFX_idea_liu_xiang"
+				large = "gfx/leaders/kmt_mod/Portrait_Liu_Xiang.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = SCC_liu_xiang
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { army_chief_morale_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader = {
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {}
+		}
+		corps_commander = {
+			legacy_id = 1027
+			traits = { infantry_officer }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+			skill = 3
+		}
+	}
+	
+	SCC_deng_xihou={
+		name=SCC_deng_xihou
+		portraits={
+			civilian={
+				large = "gfx/leaders/kmt_mod/Portrait_Deng_Xihou.dds"
+			}
+			army = {
+				small="GFX_idea_deng_xihou"
+				large = "gfx/leaders/kmt_mod/Portrait_Deng_Xihou.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = SCC_deng_xihou
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { army_chief_planning_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader = {
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {}
+		}
+		corps_commander = {
+			traits = { }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id = 1028
+			skill = 3
+		}
+	}
+	
+	SCC_sun_zhen={
+		name=SCC_sun_zhen
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_sun_zhen"
+				large = "gfx/leaders/kmt_mod/sun_chen.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 50
+			idea_token = SCC_sun_zhen
+			ledger = army
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { army_cavalry_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			legacy_id = 1029
+			traits = { infantry_officer }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			skill = 2
+		}
+	}
+	
+	SCC_tang_shizun={
+		name=SCC_tang_shizun
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_tang_shizun"
+				large = "gfx/leaders/kmt_mod/tang_shihtsun.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 50
+			idea_token = SCC_tang_shizun
+			ledger = army
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { army_artillery_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			legacy_id = 1030
+			traits = {  }
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			skill = 2
+		}
+	}
+	
+	SCC_pan_wenhua={
+		name=SCC_pan_wenhua
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_pan_wenhua"
+				large = "gfx/leaders/kmt_mod/pan_wenhua.dds"
+			}
+		}
+		advisor = {
+		}
+		corps_commander = {
+			legacy_id = 1100
+			traits = {  }
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			skill = 2
+		}
+	}
+	
+	SCC_deng_hanxiang={
+		name=SCC_deng_hanxiang
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_political_advisor_asia_2"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = SCC_deng_hanxiang
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { silent_workhorse }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	SCC_liu_hangshen={
+		name=SCC_liu_hangshen
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_political_advisor_asia_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = SCC_liu_hangshen
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { captain_of_industry }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	SCC_gan_jieyong={
+		name=SCC_gan_jieyong
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_political_advisor_asia_3"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = SCC_gan_jieyong
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { compassionate_gentleman }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	SCC_zhong_tiqian={
+		name=SCC_zhong_tiqian
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_political_advisor_asia_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = SCC_zhong_tiqian
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { quartermaster_general }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	SCC_fu_chang={
+		name=SCC_fu_chang
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_1"
+			}
+		}
+		advisor = {
+			slot = theorist
+			cost = 100
+			idea_token = SCC_fu_chang
+			ledger = army
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { military_theorist }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	SCC_li_jiayu={
+		name=SCC_li_jiayu
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_1"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = SCC_li_jiayu
+			ledger = army
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { army_entrenchment_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	SCC_yang_sen={
+		name=SCC_yang_sen
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_2"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = SCC_yang_sen
+			ledger = army
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	SCC_wang_zuanxu={
+		name=SCC_wang_zuanxu
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_3"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = SCC_wang_zuanxu
+			ledger = army
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { army_logistics_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	SCC_tian_song_yao={
+		name=SCC_tian_song_yao
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_3"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = SCC_tian_song_yao
+
+			allowed = {
+				original_tag = SCC
+			}
+					
+			traits = { army_chief_offensive_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	ZXL_li_bo_hai={
+		name=ZXL_li_bo_hai
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_generic_political_advisor_asia_3"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 100
+			idea_token = ZXL_li_bo_hai
+
+			allowed = {
+				OR = {
+					original_tag = PRC
+					original_tag = ZXL
+				}
+			}
+					
+			traits = { silent_workhorse }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	ZXL_zhang_xueliang={
+		name=ZXL_zhang_xueliang
+		portraits={
+			civilian={
+				small="GFX_idea_chang_hsueh_liang"
+				large="gfx/leaders/kmt_mod/Portrait_Zhang_Xueliang.dds"
+			}
+			army = {
+				small="GFX_idea_chang_hsueh_liang"
+				large="gfx/leaders/kmt_mod/Portrait_Zhang_Xueliang.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = ZXL_zhang_xueliang
+
+			allowed = {
+				original_tag = ZXL
+			}
+					
+			traits = { army_chief_maneuver_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			cost = 100
+			idea_token = PRC_zxl_navy
+			
+			allowed = {
+				original_tag = PRC
+			}
+			
+			available = {
+				has_global_flag = PRC_zxl_as_leader
+			}
+			
+			traits = { navy_chief_old_guard }
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		advisor = {
+			slot = air_chief
+			cost = 100
+			idea_token = PRC_zxl_air
+			
+			allowed = {
+				original_tag = PRC
+			}
+			
+			available = {
+				has_global_flag = PRC_zxl_as_leader
+			}
+			
+			traits = { air_chief_old_guard }
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		field_marshal = {
+			traits = { inflexible_strategist old_guard }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 3612
+			skill = 2
+		}
+		country_leader = {
+			ideology = despotism
+			DESC = "KMT_zhangxueliang_desc"
+			expire="1965.1.1.1"
+			traits = { 
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			DESC = "KMT_zhangxueliang_desc"
+			expire="1965.1.1.1"
+			traits = { 
+				fascism_follower 
+				the_generals_that_dont_resist 
+			}
+		}
+		country_leader = {
+			ideology = marxism
+			DESC = "KMT_zhangxueliang_desc"
+			expire="1965.1.1.1"
+			traits = { 
+				fascism_follower 
+				the_generals_that_dont_resist 
+			}
+		}
+	}
+	
+	ZXL_yang_hucheng={
+		name=ZXL_yang_hucheng
+		portraits={
+			civilian={
+				large="gfx/leaders/kmt_mod/Portrait_Yang_Hucheng.dds"
+			}
+			army = {
+				small="GFX_idea_yang_hucheng"
+				large="gfx/leaders/kmt_mod/Portrait_Yang_Hucheng.dds"
+			}
+		}
+		
+		advisor={
+			slot = high_command
+			idea_token = ZXL_yang_hu_cheng
+			cost = 100
+			ledger = army
+			
+			allowed = {
+				OR = {
+					tag = PRC
+					tag = ZXL
+				}
+			}
+			
+			available = {
+				has_country_flag = PRC_yhc_enable
+			}
+			
+			traits = { army_infantry_2 }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		field_marshal = {
+			traits = { inflexible_strategist }
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 3613
+			skill = 3
+		}
+		country_leader = {
+			ideology = despotism
+			expire="1965.1.1.1"
+		}
+	}
+	
+	ZXL_he_zhuguo={
+		name=ZXL_he_zhuguo
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_he_zhuguo"
+				large="gfx/leaders/kmt_mod/ho_chukuo.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ZXL_he_zhuguo
+			cost = 100
+			ledger = army
+			
+			allowed = {
+				OR = {
+					tag = PRC
+					tag = ZXL
+				}
+			}
+			
+			available = {
+			}
+			
+			traits = { army_artillery_2 }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		field_marshal = {
+			traits = { KMT_artillery_specialist }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 3614
+			skill = 2
+		}
+	}
+	
+	ZXL_yu_xuezhong={
+		name=ZXL_yu_xue_zhong
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_yu_xuezhong"
+				large="gfx/leaders/kmt_mod/Portrait_Yu_Xuezong.dds"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ZXL_yu_xue_zhong
+			cost = 100
+			
+			allowed = {
+				OR = {
+					tag = PRC
+					tag = ZXL
+				}
+			}
+			
+			available = {
+			}
+			
+			traits = { army_chief_organizational_2 }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		field_marshal = {
+			traits = {  }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 1062
+			skill = 2
+		}
+	}
+
+	ZXL_wang_tehan={
+		name=ZXL_wang_tehan
+		portraits={
+			army={	
+				small="GFX_idea_wang_tiehan"
+			}
+		}
+		
+		advisor={
+			slot = high_command
+			idea_token = ZXL_wang_tehan
+			cost = 100
+			ledger = army
+			
+			allowed = {
+				OR = {
+					original_tag = PRC
+					original_tag = ZXL
+				}
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = PRC_recall_feng_clique_generals
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+			
+			traits = { army_chief_offensive_2 }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	ZXL_xu_lanzhou={
+		name=ZXL_xu_lanzhou
+		portraits={
+			army={	
+				small="GFX_idea_xu_lanzhou"
+			}
+		}
+		
+		advisor={
+			slot = army_chief
+			idea_token = ZXL_xu_lanzhou
+			cost = 100
+			#ledger = army
+			
+			allowed = {
+				OR = {
+					original_tag = PRC
+					original_tag = ZXL
+				}
+			}
+			
+			visible = {
+				OR = {
+					tag = ZXL
+					has_country_flag = PRC_enable_xlz
+				}
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = PRC_recall_feng_clique_generals
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+			
+			traits = { army_chief_drill_2 }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	ZXL_mazhanshan={
+		name=ZXL_mazhanshan
+		portraits={
+			army={	
+				small="GFX_idea_ma_zhanshan"
+				large = "gfx/leaders/kmt_mod/Portrait_Ma_Zhanshan.dds"
+			}
+		}
+		
+		advisor={
+			slot = high_command
+			idea_token = ZXL_mazhanshan
+			cost = 100
+			ledger = army
+			
+			allowed = {
+				OR = {
+					original_tag = PRC
+					original_tag = ZXL
+				}
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = PRC_recall_feng_clique_generals
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+			
+			traits = { army_cavalry_3 }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_leader winter_specialist trickster }
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 4
+			logistics_skill = 3
+			skill = 3
+			visible = { 
+				OR = {
+					has_completed_focus = PRC_recall_feng_clique_generals
+					has_country_flag = KMT_had_proclaimed_cg
+				}
+			}
+		}
+	}
+
+	ZXL_liu_duo_quan={
+		name=ZXL_liu_duo_quan
+		portraits={
+			army={	
+				small="GFX_idea_generic_army_asia_2"
+			}
+		}
+		
+		advisor={
+			slot = high_command
+			idea_token = ZXL_liu_duo_quan
+			cost = 100
+			ledger = army
+			
+			allowed = {
+				OR = {
+					original_tag = PRC
+					original_tag = ZXL
+				}
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = PRC_recall_feng_clique_generals
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+			
+			traits = { army_commando_1 }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	ZXL_deng_bao_shan={
+		name=ZXL_deng_bao_shan
+		portraits={
+			army={	
+				small="GFX_idea_deng_baoshan"
+			}
+		}
+		
+		advisor={
+			slot = army_chief
+			idea_token = ZXL_deng_bao_shan
+			ledger = army
+			
+			allowed = {
+				OR = {
+					original_tag = PRC
+					original_tag = ZXL
+				}
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = PRC_incorporate_xbj
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+			
+			traits = { army_chief_old_guard }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+	SKC_liu_wenhui={
+		name = SKC_liu_wenhui
+		portraits={
+			civilian={	
+				large="gfx/leaders/kmt_mod/Portrait_Liu_Wenhui.dds"
+			}
+			army={	
+				small="GFX_idea_liu_wenhui"
+				large="gfx/leaders/kmt_mod/Portrait_Liu_Wenhui.dds"
+			}
+		}
+		
+		advisor={
+			slot = army_chief
+			idea_token = SKC_liu_wenhui
+			cost = 100
+			
+			allowed = {
+				original_tag = SKC
+			}
+			
+			available = {
+			}
+			
+			traits = { army_chief_maneuver_3 }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		corps_commander = {
+			legacy_id = 1031
+			traits = { }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			skill = 2
+		}
+		country_leader = {
+			ideology = despotism
+			expire="1965.1.1.1"
+		}
+	}
+
+	NSM_ma_hongkui={
+		name = NSM_ma_hongkui
+		portraits={
+			civilian = {
+				large="gfx/leaders/kmt_mod/Ma_Hongkui.dds"
+			}
+			army={	
+				small="GFX_idea_generic_army_asia_2"
+				large="gfx/leaders/kmt_mod/Ma_Hongkui.dds"
+			}
+		}
+		
+		advisor={
+			slot = army_chief
+			idea_token = NSM_ma_hongkui
+			cost = 100
+			
+			allowed = {
+				original_tag = NSM
+			}
+			
+			available = {
+			}
+			
+			traits = { army_chief_maneuver_3 }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		corps_commander = {
+			legacy_id = 1056
+			traits = { cavalry_leader }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			skill = 2
+		}
+		country_leader = {
+			ideology = despotism
+			expire="1965.1.1.1"
+		}
+	}
+
+	NSM_ma_hongbin={
+		name = NSM_ma_hongbin
+		portraits={
+			civilian={	
+				small="GFX_idea_ma_hongbin"
+				large="gfx/leaders/kmt_mod/ma_hungpin.dds"
+			}
+			army={	
+				small="GFX_idea_ma_hongbin"
+				large="gfx/leaders/kmt_mod/ma_hungpin.dds"
+			}
+		}
+		
+		advisor={
+			slot = high_command
+			idea_token = NSM_ma_hongbin
+			cost = 100
+			ledger = army
+			
+			allowed = {
+				original_tag = NSM
+			}
+			
+			available = {
+			}
+			
+			traits = { army_cavalry_2 }
+	
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		corps_commander = {
+			legacy_id = 1057
+			traits = { cavalry_leader }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			skill = 2
+		}
+		country_leader = {
+			ideology = despotism
+			expire="1965.1.1.1"
+		}
+	}
+
+	EHA_yin_rugeng={
+		name = EHA_yin_rugeng
+		portraits={
+			civilian={	
+				large="gfx/leaders/kmt_mod/yin_jukeng.dds"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			expire="1965.1.1.1"
+		}
+	}
+
+	EHA_chi_zongmo={
+		name = EHA_chi_zongmo
+		portraits={
+			civilian={	
+				large="gfx/leaders/kmt_mod/chih_tsungmo.dds"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			expire="1965.1.1.1"
+		}
+	}
+	
+	EHA_zhang_qingyu = {
+		name = EHA_zhang_qingyu
+		portraits={
+			civilian={
+				large = "gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+			}
+			army = {
+				large = "gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			expire = "1965.1.1"
+		}
+		corps_commander = {
+			traits = { trait_reckless }
+			skill = 1
+		}
+	}
+	
+	EHA_zhang_yantian = {
+		name = EHA_zhang_yantian
+		portraits={
+			civilian={
+			}
+			army = {
+				large = "gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
+			}
+		}
+		corps_commander = {
+			traits = { trait_reckless }
+			skill = 1
+		}
+	}
+	
+	ZXL_zhang_zuoxiang = {
+		name = ZXL_zhang_zuoxiang
+		portraits = {
+			civilian = {
+				small = "GFX_idea_zhang_zuoxiang"
+			}
+		}
+		advisor = {
+			idea_token = ZXL_zhang_zuoxiang
+			slot = political_advisor
+			cost = 150
+			
+			visible = {
+				has_completed_focus = PRC_recall_feng_clique_generals
+			}
+			
+			available = {
+				has_completed_focus = PRC_recall_feng_clique_generals
+			}
+			
+			traits = { quartermaster_general }
+		}
+	}
+	ZXL_tang_yulin = {
+		name = ZXL_tang_yulin
+		portraits = {
+			army = {
+				small = "GFX_idea_tang_yulin"
+				large = "gfx/leaders/kmt_mod/tang_yulin.dds"
+			}
+		}
+		corps_commander = {
+			skill = 1
+			
+			visible = {
+				has_completed_focus = PRC_recall_feng_clique_generals
+			}
+		}
+	}
+	
+	JAP_yasuhito = {
+		name = JAP_yasuhito
+		portraits = {
+			army = {
+				large = "gfx/leaders/kmt_mod/yasuhito.dds"
+			}
+		}
+	}
+}

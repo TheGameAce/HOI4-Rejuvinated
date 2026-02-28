@@ -1,0 +1,201 @@
+﻿capital = 608
+set_country_flag = KMT_is_china_tag
+
+set_cosmetic_tag = HCPC
+
+recruit_character = PGR_song_zheyuan
+recruit_character = PGR_zhao_dengyu
+recruit_character = PGR_wan_fulin
+recruit_character = PGR_liu_zhensan
+recruit_character = PGR_dong_linge
+recruit_character = PGR_wang_shuchang
+recruit_character = KMT_wang_kemin
+
+oob = "PGR_1936"
+add_ideas = {
+	limited_exports
+	limited_conscription
+	cg_warlords
+	public_iliteracy
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	KMT_weak_army
+	KMT_corrupted_government
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	fascism = 35
+	neutrality = 65
+}
+
+1937.12.14 = {
+	drop_cosmetic_tag = yes
+	set_country_flag = JAP_puppet
+	oob = "PGR_1939"
+	
+	CHI = {
+		end_puppet = PGR
+	}
+	JAP = { 
+		puppet = PGR
+	}
+
+	MEN = { 
+		diplomatic_relation = {
+			relation = military_access
+			country = PGR
+			active = yes
+		}
+	}
+
+	RGR = { 
+		diplomatic_relation = {
+			relation = military_access
+			country = PGR
+			active = yes
+		}
+	}
+	
+	diplomatic_relation = {
+		relation = military_access
+		country = MEN
+		active = yes
+	}
+	
+	diplomatic_relation = {
+		relation = military_access
+		country = RGR
+		active = yes
+	}
+	
+	diplomatic_relation = {
+		relation = military_access
+		country = MCK
+		active = yes
+	}
+
+	add_political_power = 750
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+		infantry_weapons1 = 1
+		support_weapons = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		construction1 = 1
+		dispersed_industry = 1
+	}
+
+	set_politics = {
+		ruling_party = fascism
+		last_election = "1937.12.14"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	set_popularities = {
+		fascism = 100
+	}
+
+	add_ideas = {
+		limited_exports
+		limited_conscription
+		war_economy
+		KMT_JAP_puppet_no_surrender
+	}
+
+	PGR_song_zheyuan = { set_nationality = ZZZ }
+	PGR_zhao_dengyu = { set_nationality = ZZZ }
+	PGR_wan_fulin = { set_nationality = ZZZ }
+	PGR_liu_zhensan = { set_nationality = ZZZ }
+	PGR_dong_linge = { set_nationality = ZZZ }
+	PGR_wang_shuchang = { set_nationality = ZZZ }
+	
+	create_corps_commander = {
+		name = "P'ang Ping-hsün"	#龐炳勳
+		portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
+		traits = { }
+		skill = 1
+	}
+	create_corps_commander = {
+		name = "Sun Tien-ying"	#孫殿英
+		portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds"
+		traits = { }
+		skill = 1
+	}
+	create_corps_commander = {
+		name = "Men Chih-chung"	#門致中
+		portrait_path = "gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
+		traits = { }
+		skill = 1
+	}
+}
+
+1939.1.1 = {
+	608 = {
+		start_resistance = yes
+		set_compliance = 10
+		set_resistance = 60
+		set_garrison_strength = 1.0
+	}
+	614 = {
+		start_resistance = yes
+		set_compliance = 5
+		set_resistance = 55
+		set_garrison_strength = 1.0
+	}
+	615 = {
+		start_resistance = yes
+		set_compliance = 5
+		set_resistance = 55
+		set_garrison_strength = 1.0
+	}
+	819 = {
+		start_resistance = yes
+		set_compliance = 0
+		set_resistance = 50
+		set_garrison_strength = 1.0
+	}
+	607 = {
+		start_resistance = yes
+		set_compliance = 0
+		set_resistance = 50
+		set_garrison_strength = 1.0
+	}
+	597 = {
+		start_resistance = yes
+		set_compliance = 0
+		set_resistance = 45
+		set_garrison_strength = 1.0
+	}
+	743 = {
+		start_resistance = yes
+		set_compliance = 0
+		set_resistance = 40
+		set_garrison_strength = 1.0
+	}
+}

@@ -1,0 +1,98 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+# value
+# min_trust
+# max_trust
+# decay
+# months/years/days = timer
+# trade = yes/no
+
+opinion_modifiers = {
+	
+	### KMT mod ###
+	
+	industrial_assistance = { value = 50 }
+	
+	sino_sov_cooperation = { value = 90 }
+	
+	political_rivalry = { value = -75 }
+	
+	revisionist_traitor = { value = -100 }
+	
+	PRC_swcc_1 = { value = 10 trade = yes }
+	
+	PRC_swcc_2 = { value = 10 trade = yes }
+	
+	PRC_swcc_3 = { value = 15 trade = yes }
+	
+	PRC_swcc_4 = { value = 15 trade = yes }
+	
+	PRC_swcc_5 = { value = 20 trade = yes }
+	
+	PRC_swcc_6 = { value = 20 trade = yes }
+	
+	no_paycheck = { value = -100 }
+	
+	sik_no_coop = { value = -50 }
+	
+	prc_no_coop = { value = -50 }
+	
+	PRC_defy_order = { value = -100 }
+	
+	PRC_defy_order_2 = { value = -100 trade = yes}
+	
+	trostkyism_vermin = { value = -100 }
+	
+	PRC_2nd_ne_flag_replacement = { 
+		value = -100 
+	}
+	
+	PRC_ccp_officials = { 
+		value = 150
+		max_trust = 200
+	}
+	
+	PRC_sik_pro_sov_attitude = { value = 35 }
+	
+	damn_opportunitist = { value = -75 }
+	
+	PRC_sik_issue_opi = { value = -10 }
+	
+	KMT_interfere_with_internal_affairs = { value = -35 }
+	
+	KMT_hold_on_to_manchuria = { value = -90 }
+	
+	PRC_wang_ming_executed = { value = -90 }
+	
+	PRC_wang_ming_imprisoned = { value = -75 }
+	
+	PRC_rectification_purge_om = { value = -20 }
+	
+	PRC_rectification_purge_om_trade = { value = -20 trade = yes}
+	
+	PRC_comintern_leaning = { value = 35 }
+	
+	PRC_denounced_jap_imperialism = { value = -50 }
+	
+	PRC_adsu = { value = 15 }
+	
+	PRC_sov_displeased = { value = -15 days = 30 decay = 3 }
+	
+	PRC_sov_displeased_greater = { value = -50 days = 50 decay = 2 }
+	
+	PRC_ordered_dismantling_of_ndg = { value = 20 }
+	
+	PRC_refuse_to_dismantle_ndg = { value = -50 }
+	
+	PRC_refuse_to_dismantle_ndg_trade = { value = -75 trade = yes}
+	
+	PRC_refuse_to_dismantle_ndg_prc = { value = -30 }
+	
+	PRC_dismantle_ndg_betrayal	= { value = -75 }
+	
+	PRC_severed_ties = { value = -200 min_trust = -200 }
+	
+	PRC_severed_ties_trade = { value = -150 min_trust = -200 trade = yes}
+	
+}	

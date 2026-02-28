@@ -1,0 +1,555 @@
+﻿add_namespace = kmtmisc
+
+#jules_brevie
+country_event = {
+	id = kmtmisc.1
+	title = kmtmisc.1.t
+	desc = kmtmisc.1.d
+	picture = GFX_report_jules_brevie
+	
+	trigger = { 
+		tag = IDC
+		is_subject_of = FRA
+		FRA = {
+			has_completed_focus = FRA_form_the_popular_front
+		}
+		has_country_leader = {
+			character = IDC_rene_robin
+			ruling_only = yes
+		}
+	}
+	
+	mean_time_to_happen = { months = 2 }
+	
+	fire_only_once = yes
+	
+	immediate = { 
+	}
+	option = { 
+		name = kmtmisc.1.a
+		retire_character = IDC_rene_robin
+		IDC_jules_brevie = { promote_character = { ideology = oligarchism }}
+	}
+}
+
+#georges catroux
+country_event = {
+	id = kmtmisc.2
+	title = kmtmisc.2.t
+	desc = kmtmisc.2.d
+	picture = GFX_report_georges_catroux
+	
+	trigger = { 
+		tag = IDC
+		is_subject_of = FRA
+		OR = {
+			GER = { has_completed_focus = GER_demand_sudetenland }
+			GER = { has_completed_focus = GER_czech_friend }
+			FRA = { NOT = { has_government = democratic }}
+		}
+		has_country_leader = {
+			character = IDC_jules_brevie
+			ruling_only = yes
+		}
+	}
+	
+	mean_time_to_happen = { 
+		months = 2
+		modifier = {
+			FRA = { NOT = { has_government = democratic }}
+			factor = 0
+		}
+	}
+	
+	fire_only_once = yes
+	
+	immediate = { 
+	}
+	option = { 
+		name = kmtmisc.2.a
+		retire_character = IDC_jules_brevie
+		IDC_georges_catroux = { promote_character = { ideology = oligarchism }}
+	}
+}
+
+#we vichy now
+country_event = {
+	id = kmtmisc.3
+	title = kmtmisc.3.t
+	desc = kmtmisc.3.d
+	picture = GFX_report_event_worried_french
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = { 
+		FRA = { end_puppet = ROOT }
+		random_country = {
+			limit = { 
+				is_in_faction_with = ROOT 
+				is_faction_leader = yes
+			}
+			remove_from_faction = ROOT
+		}
+		every_other_country = {
+			limit = {
+				has_war_with = FRA
+				has_war_with = ROOT
+			}
+			white_peace = ROOT
+		}
+	}
+	
+	option = { 
+		name = kmtmisc.3.a
+	}
+}
+
+#skirmish with thai
+country_event = {
+	id = kmtmisc.4
+	title = kmtmisc.4.t
+	desc = kmtmisc.4.d
+	picture = GFX_report_thai_protest
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.4.a
+		
+	}
+}
+
+#phibun
+country_event = {
+	id = kmtmisc.5
+	title = kmtmisc.5.t
+	desc = kmtmisc.5.d
+	picture = GFX_report_phibun
+	
+	trigger = {
+		has_country_leader = {
+			character = SIA_phraya_phahon
+			ruling_only = yes
+		}
+		date > 1938.12.1
+	}
+	
+	mean_time_to_happen = { days = 10 }
+	
+	fire_only_once = yes
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.5.a
+		retire_country_leader = yes
+		add_popularity = { ideology = fascism popularity = 0.5 }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "Plaek Phibunsongkhram"
+			picture = "gfx/leaders/kmt_mod/plaek_phibunsongkhram.dds"
+			expire = "1960.1.1"
+			ideology = fascism_ideology
+			traits = {
+				KMT_thai_nationalist
+				KMT_thai_military_dictator
+			}
+		}
+		random_unit_leader = { limit = { has_id = 1922 } add_unit_leader_trait = media_personality }
+		
+	}
+}
+
+#pridi depose phibun
+country_event = {
+	id = kmtmisc.6
+	title = kmtmisc.6.t
+	desc = kmtmisc.6.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			is_in_faction = no
+			is_faction_leader = yes
+		}
+	}
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.6.a
+		ai_chance = { base = 100 }
+		every_country = {
+			limit = {
+				has_war_with = FROM
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+			white_peace = FROM
+			diplomatic_relation = { country = FROM relation = military_access active = yes }
+		}
+		FROM = { country_event = { id = kmtmisc.7 }}
+	}
+	
+	option = { 
+		name = kmtmisc.6.b
+		FROM = { country_event = { id = kmtmisc.8 }}
+	}
+}
+
+#peace
+country_event = {
+	id = kmtmisc.7
+	title = kmtmisc.7.t
+	desc = kmtmisc.7.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		hidden_effect = {
+			if = {
+				limit = { is_in_faction = yes }
+				random_country = {
+					limit = {
+						is_in_faction_with = ROOT
+						is_faction_leader = yes
+					}
+					remove_from_faction = ROOT
+				}
+			}
+		}
+	}
+	
+	option = { 
+		name = kmtmisc.7.a
+	}
+}
+
+#no peace
+country_event = {
+	id = kmtmisc.8
+	title = kmtmisc.8.t
+	desc = kmtmisc.8.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.8.a
+	}
+}
+
+#coup in siam
+country_event = {
+	id = kmtmisc.9
+	title = kmtmisc.6.t
+	desc = kmtmisc.9.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.9.a
+		trigger = { has_capitulated = no }
+		ai_chance = { base = 100 }
+		create_wargoal = { 
+			target = FROM
+			type = puppet_wargoal_focus
+		}
+	}
+	
+	option = { 
+		name = kmtmisc.9.b
+	}
+}
+
+#land returned to us
+country_event = {
+	id = kmtmisc.10
+	title = kmtmisc.10.t
+	desc = kmtmisc.10.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.10.a
+	}
+}
+
+#ast demand portuguese timor
+country_event = {
+	id = kmtmisc.11
+	title = kmtmisc.11.t
+	desc = kmtmisc.11.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.11.a
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		set_country_flag = AST_POR_timor_transferred
+		FROM = { 
+			transfer_state = 721
+			country_event = { id = kmtmisc.12 }
+		}
+	}
+	
+	option = { 
+		name = kmtmisc.11.b
+		ai_chance = {
+			factor = 1
+		}
+		FROM = { 
+			country_event = { id = kmtmisc.13 }
+		}
+	}
+}
+
+#ast demand portuguese timor yes
+country_event = {
+	id = kmtmisc.12
+	title = kmtmisc.12.t
+	desc = kmtmisc.12.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.12.a
+		effect_tooltip = {
+			transfer_state = 721
+		}
+	}
+}
+
+#ast demand portuguese timor no
+country_event = {
+	id = kmtmisc.13
+	title = kmtmisc.13.t
+	desc = kmtmisc.13.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.13.a
+		set_country_flag = AST_can_occupy_pt
+		unlock_decision_tooltip = AST_occupy_portuguese_timor
+	}
+}
+
+#ast occupy portuguese timor
+country_event = {
+	id = kmtmisc.14
+	title = kmtmisc.14.t
+	desc = kmtmisc.14.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_country_flag = AST_POR_timor_transferred
+	}
+	
+	option = { 
+		name = kmtmisc.14.a
+		ROOT = { add_opinion_modifier = { modifier = POR_occupied_portuguese_timor target = FROM }}
+	}
+	
+	option = { 
+		name = kmtmisc.14.b
+		ROOT = { add_opinion_modifier = { modifier = POR_occupied_portuguese_timor target = FROM }}
+		ai_chance = {
+			base = 0
+		}
+		declare_war_on = {
+			target = FROM
+			type = take_state_focus
+			generator = { 721 }
+		}
+	}
+}
+
+#ast return portuguese timor
+country_event = {
+	id = kmtmisc.15
+	title = kmtmisc.15.t
+	desc = kmtmisc.15.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.15.a
+		effect_tooltip = {
+			transfer_state = 721
+		}
+	}
+}
+
+#operation countenance
+country_event = {
+	id = kmtmisc.16
+	title = kmtmisc.16.t
+	desc = kmtmisc.16.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		PER = {
+			is_subject = no
+			is_in_faction = no
+		}
+		ENG = { 
+			is_major = yes
+			NOT = { has_war_with = PER }
+			NOT = { has_war_with = SOV }
+			is_subject = no 
+		}
+	}
+	
+	immediate = { 
+	}
+	
+	option = { 
+		name = kmtmisc.16.a
+		ai_chance = { 
+			base = 100
+			modifier = { 
+				surrender_progress > 0.5
+				factor = 0
+			}
+		}
+		declare_war_on = {
+			target = PER
+			type = topple_government
+		}
+		set_global_flag = ENG_countenance_war
+		PER = { country_event = { id = kmtmisc.17 }}
+	}
+	
+	option = {
+		name = kmtmisc.16.b
+		ai_chance = { 
+			base = 1
+		}
+	}
+}
+
+#operation countenance
+country_event = {
+	id = kmtmisc.17
+	title = kmtmisc.17.t
+	desc = kmtmisc.17.d
+	picture = GFX_report_generic_read_write
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		hidden_effect = {
+			add_timed_idea = {
+				idea = KMT_countenance_PER_debuff
+				days = 100
+			}
+		}
+	}
+	
+	option = { 
+		name = kmtmisc.17.a
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = KMT_countenance_PER_debuff
+				days = 100
+			}
+		}
+	}
+}
+
+#persian oil for the king!
+country_event = {
+	id = kmtmisc.18
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		PER = { 
+			give_resource_rights = { receiver = ENG state = 413 }
+			give_resource_rights = { receiver = ENG state = 412 }
+		}
+	}
+	
+	option = { 
+		name = kmtmisc.17.a
+	}
+}
+
+#shanghai stay demilitarised
+country_event = {
+	id = kmtmisc.19
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = KMT_JAP_troops_in_shanghai }
+		NOT = { has_global_flag = KMT_remilitarised_shanghai }
+		NOT = { has_global_flag = KMT_chapei_incident }
+	}
+	
+	immediate = { 
+		938 = { set_demilitarized_zone = yes }
+	}
+	
+	option = { 
+		name = kmtmisc.17.a
+	}
+}

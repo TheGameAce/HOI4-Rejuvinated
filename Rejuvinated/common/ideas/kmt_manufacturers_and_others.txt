@@ -1,0 +1,1574 @@
+ideas = {
+	
+	hidden_ideas = {
+
+		KMT_lend_lease = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+		}
+	}
+
+
+
+	theorist = {
+	}
+	
+	economy = { 
+		law = yes
+		
+		KMT_corrupted_government = {
+			
+			picture = corrupt_economy
+			
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			level = 1
+		
+			modifier = {
+				consumer_goods_expected_value = 0.5
+				production_speed_industrial_complex_factor = -0.5
+				production_speed_arms_factory_factor = -0.5
+				conversion_cost_civ_to_mil_factor = 0.5
+				conversion_cost_mil_to_civ_factor = 0.5
+				conscription_factor = -0.2
+				max_fuel_factor = -0.5
+				fuel_gain_factor = -0.5
+				agency_upgrade_time = 0.75
+			}
+			
+			allowed_to_remove = {
+				NOT = {
+					has_idea = KMT_hhk
+					has_idea = KMT_soong_tv
+				}
+				has_country_flag = KMT_reformed_fiat_currency
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		KMT_corrupted_government_lesser = {
+			
+			picture = great_depression
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			level = 1
+		
+			modifier = {
+				consumer_goods_expected_value = 0.25
+				production_speed_industrial_complex_factor = -0.3
+				production_speed_arms_factory_factor = -0.1
+				conversion_cost_mil_to_civ_factor = 0.15
+				conscription_factor = -0.1
+				max_fuel_factor = -0.1
+				fuel_gain_factor = -0.1
+				agency_upgrade_time = 0.5
+			}
+			
+			allowed_to_remove = {
+				NOT = {
+					has_idea = KMT_hhk
+					has_idea = KMT_soong_tv
+				}
+				has_country_flag = KMT_reformed_fiat_currency
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		KMT_corrupted_government_wartime = {
+			
+			picture = corrupt_economy_war
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			level = 1
+		
+			modifier = {
+				consumer_goods_expected_value = 0.2
+				production_speed_industrial_complex_factor = -0.15
+				production_speed_arms_factory_factor = -0.1
+				conversion_cost_mil_to_civ_factor = 0.2
+				max_fuel_factor = -0.1
+				fuel_gain_factor = -0.1
+			}
+			
+			allowed_to_remove = {
+				NOT = {
+					has_idea = KMT_hhk
+					has_idea = KMT_soong_tv
+				}
+				has_country_flag = KMT_reformed_fiat_currency
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		KMT_corrupted_government_wartime_lesser = {
+			
+			picture = great_depression
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			
+			level = 1
+		
+			modifier = {
+				consumer_goods_expected_value = 0.2
+				production_speed_industrial_complex_factor = -0.1
+				production_speed_arms_factory_factor = -0.1
+				conversion_cost_civ_to_mil_factor = 0.25
+				conversion_cost_mil_to_civ_factor = 0.25
+			}
+			
+			cancel_if_invalid = no
+		}
+	}
+		
+	tank_manufacturer = { 
+	
+		designer = yes
+		
+		KMT_army_ordnance_department = {
+			
+			picture = army_ordnance_department
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			
+			available = {
+				has_completed_focus = KMT_national_defense_council
+				NOT = { has_war_with = USA }
+				country_exists = USA
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { heavy_tank_manufacturer }
+			
+			modifier = {
+			}
+		}	
+		
+		KMT_hanyang_arsenal_tank = {
+			
+			picture = generic_tank_manufacturer_2
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 980
+						owns_state = 980
+					}
+				}
+			}
+			
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					has_completed_focus = KMT_increase_funding_of_german_weaponary
+					OR = {
+						controls_state = 980
+						AND = {
+							owns_state = 980
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { medium_tank_manufacturer }
+			
+			modifier = {
+			}
+			
+			research_bonus = {
+				armor = 0.1
+			}
+		}	
+		
+		KMT_steel_lion_armour = {
+			
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			
+			available = {
+				has_completed_focus = KMT_joint_tank_dev
+			}
+			
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { fast_tank_manufacturer }
+			
+			modifier = {
+			}
+			
+			research_bonus = {
+				armor = 0.1
+			}
+		}	
+	}
+	
+	naval_manufacturer = {
+		
+		KMT_jiangnan_shipyard_group = {
+			picture = generic_naval_manufacturer_3
+
+			
+			allowed = {
+				original_tag = CHI
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.10
+			}
+			
+			available = {
+				has_completed_focus = KMT_revive_jiangnan_shipyard
+			}
+			
+			# riverine warfare weak on open waters
+						
+			traits = { coastal_defence_naval_manufacturer }
+				
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		#KMT_navy_shipyard_naval_aviation = {
+		#	
+		#	picture = generic_naval_manufacturer_3
+		#	allowed = {
+		#		tag = CHI
+		#		always = no
+		#	}
+		#	available = {
+		#		has_completed_focus = KMT_naval_aviation
+		#		#has_completed_focus = KMT_consolidate_our_naval_doctrine
+		#	}
+		#	
+		#	cost = 150
+		#	removal_cost = 10
+		#	
+		#	research_bonus = {
+		#		naval_equipment = 0.10
+		#	}
+		#	
+		#	traits = { KMT_naval_aviation_trait }
+		#}	
+		
+		#KMT_navy_shipyard_battleship_supremacy = {
+		#	
+		#	picture = generic_naval_manufacturer_3
+		#	allowed = {
+		#		tag = CHI
+		#		always = no
+		#	}
+		#	available = {
+		#		has_completed_focus = KMT_battleship_supremacy
+		#		#has_completed_focus = KMT_consolidate_our_naval_doctrine
+		#	}
+		#	
+		#	cost = 150
+		#	removal_cost = 10
+		#	
+		#	research_bonus = {
+		#		naval_equipment = 0.10
+		#	}
+		#	
+		#	traits = { KMT_battleship_supremacy_trait }
+		#}	
+		
+		KMT_dagu_dock = {
+			
+			picture =  generic_naval_manufacturer_2
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 608
+						owns_state = 608
+					}
+				}
+			}
+			
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 608
+						AND = {
+							owns_state = 608
+							has_completed_focus = KMT_the_big_rear_concept
+							any_controlled_state = { is_coastal = yes }
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { repair_and_refurbishment_plant }
+		}
+		
+		KMT_foochow_shipping_bureau = {
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 595
+						owns_state = 595
+					}
+				}
+			}
+			
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 595
+						AND = {
+							owns_state = 595
+							has_completed_focus = KMT_the_big_rear_concept
+							any_controlled_state = { is_coastal = yes }
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+		
+	}
+	
+	aircraft_manufacturer = { #
+			
+		designer = yes
+		
+		KMT_aircraft_research_department = {
+			picture =  generic_air_manufacturer_1
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			
+			research_bonus = {
+				air_equipment = 0.15
+			}
+			
+			traits = { KMT_aircraft_reseach }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		camco_light = {
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			
+			research_bonus = {
+				air_equipment = 0.05
+			}
+			
+			available = {
+				has_completed_focus = KMT_local_fighter_prod
+			}
+			
+			traits = { KMT_camco_fighter_manufacturer }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		camco_bomb = {
+			picture = generic_air_manufacturer_3
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			
+			available = {
+				has_completed_focus = KMT_local_bomber_prod
+			}
+			
+			research_bonus = {
+				air_equipment = 0.05
+			}
+			
+			traits = { KMT_camco_bomber_manufacturer }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		KMT_air_command_light = {
+			picture = generic_air_manufacturer_2
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = KMT_ministry_of_national_defense
+					has_country_flag = KMT_promoted_new_officers
+					has_completed_focus = KMT_militarism_focus
+				}
+			}
+			
+			research_bonus = {
+				air_equipment = 0.05
+			}
+			
+			traits = { light_aircraft_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		KMT_leouchow_machinery = {
+			picture = generic_air_payment
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 599
+						owns_state = 599
+					}
+				}
+			}
+			
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 599
+						AND = {
+							owns_state = 599
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			research_bonus = {
+				air_equipment = 0.05
+			}
+			
+			traits = { KMT_leouchow_air }
+						
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		KMT_foochow_shipping_bureau2 = {
+			name = KMT_foochow_shipping_bureau
+			
+			picture = generic_naval_manufacturer_3
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 595
+						owns_state = 595
+					}
+				}
+			}
+			
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 595
+						AND = {
+							owns_state = 595
+							has_completed_focus = KMT_the_big_rear_concept
+							any_controlled_state = { is_coastal = yes }
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+	}
+	
+	industrial_concern = {
+		
+		KMT_krupp = {
+			
+			picture = krupp
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			available = {
+				has_completed_focus = KMT_industrial_effort
+				NOT = { has_war_with = GER }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				industry = 0.15
+				
+			}
+			
+			traits = { industrial_concern }
+		}	
+		
+		KMT_chongqing_steel = {
+			
+			picture = generic_industrial_concern_1
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 605
+							owns_state = 605
+					}
+				}
+			}
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 605
+						AND = {
+							owns_state = 605
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}	
+		
+		KMT_central_wireless = {
+			
+			picture = generic_electronics_concern_1
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+		}	
+		
+		KMT_military_industry_department = {
+			
+			picture = man_five_year_plan_tank
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+			}
+			
+			traits = { KMT_mil_indus_department }
+		}	
+		
+		KMT_kiangnan_manufacturing = {
+			
+			picture = generic_industrial_concern_3
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 938
+							owns_state = 938
+					}
+				}
+			}
+			
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 938
+						AND = {
+							owns_state = 938
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { KMT_kiangnan_manufacturing }
+		}
+	}
+	
+	materiel_manufacturer = {
+		
+		designer = yes
+		
+		KMT_local_workshops = {
+			
+			picture = generic_production_bonus
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+			}
+
+			visible = {
+				NOT = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			available = {
+			}
+			
+			cost = 50
+			removal_cost = -25
+			
+			traits = { KMT_local_workshops }
+			
+		}
+		
+		KMT_rheinmetall = {
+			
+			picture = rheinmetall
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			available = {
+				has_completed_focus = KMT_national_defense_council
+				NOT = { has_war_with = GER }
+			}
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { artillery_manufacturer }
+			
+		}
+		
+		KMT_mauser = {
+			picture = mauser
+			
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			available = {
+				has_completed_focus = KMT_national_defense_council
+				NOT = { has_war_with = GER }
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Hanyang_armory = {
+			
+			picture = generic_infantry_equipment_manufacturer_1
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 980
+							owns_state = 980
+					}
+				}
+			}
+			
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 980
+						AND = {
+							owns_state = 980
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { KMT_hanyang_artillery }
+		}
+		
+		Taiyuan_armory = {
+			
+			picture = generic_artillery_manufacturer_2
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 615
+						owns_state = 615
+					}
+				}
+			}
+			
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 615
+						AND = {
+							owns_state = 615
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = { infantry_weapons = 0.05 }
+			
+			traits = { taiyuan_artillery }
+		}
+		
+		KMT_kunghsien_arsenal = {
+			
+			picture = generic_infantry_equipment_manufacturer_2
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 607
+						owns_state = 607
+					}
+				}
+			}
+
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 607
+						AND = {
+							owns_state = 607
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+			}
+			
+			traits = { KMT_kunghsien_rifle }
+		}
+		
+		KMT_kwangsi_arsenal = {
+			
+			picture = generic_infantry_equipment_manufacturer_3
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 594
+						owns_state = 594
+					}
+				}
+			}
+
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 594
+						AND = {
+							owns_state = 594
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+			}
+			
+			traits = { KMT_kwangsi_rifle }
+		}
+		
+		KMT_tsinan_arsenal = {
+			
+			picture = generic_war_preparation
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 939
+						owns_state = 939
+					}
+				}
+			}
+
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 939
+						AND = {
+							owns_state = 939
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+			}
+			
+			traits = { KMT_tsinan_rifle }
+		}
+		
+		KMT_chinling_arsenal = {
+			
+			picture = HUN_secret_rearmament
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 613
+						owns_state = 613
+					}
+				}
+			}
+
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 613
+						AND = {
+							owns_state = 613
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+			}
+			
+			traits = { KMT_chinling_rifle }
+		}
+		
+		KMT_chuchow_artillery = {
+			name = KMT_chuchow_artillery_plant
+			
+			picture = generic_artillery_regiments
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 602
+						owns_state = 602
+					}
+				}
+			}
+
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 602
+						AND = {
+							owns_state = 602
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				artillery = 0.05
+			}
+			
+			traits = { KMT_chuchow_artillery }
+		}
+		
+		KMT_huahsing_manufacturing = {
+			
+			picture = generic_motorized_equipment_manufacturer_3
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 605
+						owns_state = 605
+					}
+				}
+			}
+
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 605
+						AND = {
+							owns_state = 605
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				motorized_equipment = 0.05
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+		}
+		
+		KMT_shekcheng_arsenal = {
+			
+			picture = ast_volunteer_defence_corps
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 592
+						owns_state = 592
+					}
+				}
+			}
+
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 592
+						AND = {
+							owns_state = 592
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+			}
+			
+			traits = { KMT_shekcheng_rifle }
+		}
+		
+		KMT_mukden_arsenal = {
+			
+			picture = SOV_third_five_year_plan_military
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+					tag = MCK
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 716
+						owns_state = 716
+					}
+				}
+			}
+
+			available = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					OR = {
+						controls_state = 716
+						AND = {
+							owns_state = 716
+							has_completed_focus = KMT_the_big_rear_concept
+						}
+					}
+				}
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+				artillery = 0.05
+			}
+			
+			traits = { KMT_mukden_armaments }
+		}
+		
+		KMT_central_manchinery = {
+			
+			picture = generic_industrial_concern_2
+			
+			allowed = {
+				OR = {
+					is_chinese_nations_w_HYQ_allowed = yes
+					tag = PGR
+				}
+				NOT = { tag = PRC }
+			}
+
+			visible = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_country_flag = KMT_red_coup_finish
+					has_country_flag = KMT_pro_japanese_coup
+				}
+			}
+
+			available = {
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+			}
+			
+			traits = { KMT_central_machineries }
+		}
+	}	
+	
+	air_chief = {
+	}
+
+	political_advisor = {
+	}
+	
+	high_command = {##		KMT_hsueh_yueh_hc = {#			name = KMT_hsueh_yueh#			ledger = army#			#			picture = hsueh_yueh#			#			allowed = {#				tag = CHI#			}##			visible = {#			}#			#			available = {#				NOT = {#					has_country_flag = KMT_red_coup_finish#					has_country_flag = KMT_pro_japanese_coup#				}#			}#			#			traits = { KMT_bane_of_red_army }#			#			ai_will_do = {#				factor = 1#			}#		}
+
+	}
+}

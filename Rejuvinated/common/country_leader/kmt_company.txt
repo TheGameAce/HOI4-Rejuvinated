@@ -1,0 +1,1338 @@
+leader_traits = {
+	
+	taiyuan_artillery = {
+		random = no
+		equipment_bonus = {
+			artillery_equipment = {
+				soft_attack = 0.02
+				reliability = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	hanyang_rifles = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	mukden_rifles = {
+		random = no
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.02
+				hard_attack = 0.01
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	harbin_motorised = {
+		random = no
+		equipment_bonus = {
+			motorized_equipment = {
+				maximum_speed = 0.25
+				reliability = 0.15
+				hardness = -0.05
+			}
+			motorized_equipment = {
+				maximum_speed = 0.4
+				reliability = 0.15
+				hardness = -0.15
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	mukden_u = {
+		random = no
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	infantry_support_tank = {
+		random = no
+			
+		equipment_bonus = {
+			light_tank_chassis = {
+				soft_attack = 0.02
+				armor_value = 0.15
+				maximum_speed = -0.1
+				build_cost_ic = 0.25
+				instant = no
+			}
+			medium_tank_chassis = {
+				soft_attack = 0.02
+				armor_value = 0.15
+				maximum_speed = -0.1
+				build_cost_ic = 0.25
+				instant = no
+			}
+			heavy_tank_chassis = {
+				soft_attack = 0.02
+				armor_value = 0.15
+				maximum_speed = -0.1
+				build_cost_ic = 0.25
+				instant = no
+			}
+			super_heavy_tank_chassis = {
+				soft_attack = 0.02
+				armor_value = 0.15
+				maximum_speed = -0.1
+				build_cost_ic = 0.25
+				instant = no
+			}
+			modern_tank_chassis = {
+				soft_attack = 0.02
+				armor_value = 0.15
+				maximum_speed = -0.1
+				build_cost_ic = 0.25
+				instant = no
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	mobile_tank = {
+		random = no
+			
+		equipment_bonus = {
+			light_tank_chassis = {
+				maximum_speed = 0.5
+				breakthrough = 0.5
+				build_cost_ic = 0.1
+				instant = no
+			}
+			medium_tank_chassis = {
+				maximum_speed = 0.5
+				breakthrough = 0.5
+				build_cost_ic = 0.1
+				instant = no
+			}
+			heavy_tank_chassis = {
+				maximum_speed = 0.5
+				breakthrough = 0.5
+				build_cost_ic = 0.1
+				instant = no
+			}
+			super_heavy_tank_chassis = {
+				maximum_speed = 0.5
+				breakthrough = 0.5
+				build_cost_ic = 0.1
+				instant = no
+			}
+			modern_tank_chassis = {
+				maximum_speed = 0.5
+				breakthrough = 0.5
+				build_cost_ic = 0.1
+				instant = no
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	quantity_tank = {
+		random = no
+			
+		equipment_bonus = {
+			light_tank_chassis = {
+				build_cost_ic = -0.1
+				reliability = 0.1
+				instant = no
+			}
+			medium_tank_chassis = {
+				build_cost_ic = -0.1
+				reliability = 0.1
+				instant = no
+			}
+			heavy_tank_chassis = {
+				build_cost_ic = -0.1
+				reliability = 0.1
+				instant = no
+			}
+			super_heavy_tank_chassis = {
+				build_cost_ic = -0.1
+				reliability = 0.1
+				instant = no
+			}
+			modern_tank_chassis = {
+				build_cost_ic = -0.1
+				reliability = 0.1
+				instant = no
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#KMT_battleship_supremacy_trait = {
+	#	random = no
+	#		
+	#	equipment_bonus = {
+	#		capital_ship = {
+	#			fire_range = 0.1
+	#			ap_attack = 0.1
+	#			attack = 0.1
+	#			armor_value = 0.15
+	#			build_cost_ic = 0.15
+	#			instant = no
+	#		}
+	#		screen_ship = {
+	#			ap_attack = -0.1
+	#			attack = -0.1
+	#			anti_air_attack = 0.15
+	#			instant = no
+	#		}
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+	
+	#KMT_naval_aviation_trait = {
+	#	random = no
+	#		
+	#	equipment_bonus = {
+	#		carrier = {
+	#			carrier_size = 0.15
+	#			armor_value = -0.1
+	#			instant = no
+	#		}
+	#		cv_fighter_equipment = {
+	#			naval_strike_attack = 0.15
+	#			naval_strike_targetting = 0.15
+	#			instant = no
+	#		}
+	#		cv_small_plane_naval_bomber_airframe = {
+	#			naval_strike_attack = 0.15
+	#			naval_strike_targetting = 0.15
+	#			instant = no
+	#		}
+	#		screen_ship = {
+	#			surface_detection = 0.15
+	#			instant = no
+	#		}
+	#	}
+	#	
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#}
+	
+	KMT_camco_fighter_manufacturer = {
+		random = no
+			
+		equipment_bonus = {
+			small_plane_airframe = {
+				reliability = 0.1
+				build_cost_ic = -0.05
+				instant = no
+			}
+			medium_plane_fighter_airframe = {
+				reliability = 0.1
+				build_cost_ic = -0.05
+				instant = no
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	KMT_camco_bomber_manufacturer = {
+		random = no
+			
+		equipment_bonus = {
+			large_plane_airframe = {
+				reliability = 0.1
+				build_cost_ic = -0.05
+				instant = no
+			}
+			medium_plane_airframe = {
+				reliability = 0.1
+				build_cost_ic = -0.05
+				instant = no
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	KMT_camco_null = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_asa_infantry_trait = {
+		random = no
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_asa_artillery_trait = {
+		random = no
+		
+		equipment_bonus = {
+			artillery_equipment = {
+				build_cost_ic = -0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_asa_tank_trait = {
+		random = no
+		
+		equipment_bonus = {
+			light_tank_chassis = {
+				build_cost_ic = -0.05
+			}
+			medium_tank_chassis = {
+				build_cost_ic = -0.05
+			}
+			heavy_tank_chassis = {
+				build_cost_ic = -0.05
+			}
+			super_heavy_tank_chassis = {
+				build_cost_ic = -0.05
+			}
+			modern_tank_chassis = {
+				build_cost_ic = -0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_asa_ship_trait = {
+		random = no
+		
+		equipment_bonus = {
+			capital_ship = {
+				build_cost_ic = -0.05
+			}
+			carrier = {
+				build_cost_ic = -0.05
+			}
+			screen_ship = {
+				build_cost_ic = -0.05
+			}
+			submarine = {
+				build_cost_ic = -0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_asa_air_trait = {
+		random = no
+		
+		equipment_bonus = {
+			small_plane_airframe = {
+				build_cost_ic = -0.05
+			}
+			small_plane_cas_airframe = {
+				build_cost_ic = -0.05
+			}
+			small_plane_naval_bomber_airframe = {
+				build_cost_ic = -0.05
+			}
+			medium_plane_airframe = {
+				build_cost_ic = -0.05
+			}
+			medium_plane_fighter_airframe = {
+				build_cost_ic = -0.05
+			}
+			large_plane_airframe = {
+				build_cost_ic = -0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_peoples_machine_tank = {
+		random = no
+		
+		equipment_bonus = {
+			light_tank_chassis = {
+				build_cost_ic = -0.1
+				reliability = -0.1
+			}
+			medium_tank_chassis = {
+				build_cost_ic = -0.1
+				reliability = -0.1
+			}
+			heavy_tank_chassis = {
+				build_cost_ic = -0.1
+				reliability = -0.1
+			}
+			super_heavy_tank_chassis = {
+				build_cost_ic = -0.1
+				reliability = -0.1
+			}
+			modern_tank_chassis = {
+				build_cost_ic = -0.1
+				reliability = -0.1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_republic_air_safety_trait = {
+		random = no
+	
+		equipment_bonus = {
+			small_plane_airframe = {
+				reliability = 0.2
+				build_cost_ic = 0.15
+			}
+			small_plane_cas_airframe = {
+				reliability = 0.2
+				build_cost_ic = 0.15
+			}
+			small_plane_naval_bomber_airframe = {
+				reliability = 0.2
+				build_cost_ic = 0.15
+			}
+			medium_plane_airframe = {
+				reliability = 0.2
+				build_cost_ic = 0.15
+			}
+			medium_plane_fighter_airframe = {
+				reliability = 0.2
+				build_cost_ic = 0.15
+			}
+			large_plane_airframe = {
+				reliability = 0.2
+				build_cost_ic = 0.15
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_air_guerrilla = {
+		random = no
+	
+		equipment_bonus = {
+			small_plane_naval_bomber_airframe = {
+				naval_strike_attack = 0.1
+				air_range = 0.15
+				air_agility = 0.05
+				maximum_speed = 0.05
+				reliability = -0.15
+				air_defence = -0.15
+			}
+			medium_plane_airframe = {
+				air_bombing = 0.1
+				air_range = 0.15
+				air_agility = 0.05
+				maximum_speed = 0.05
+				reliability = -0.15
+				air_defence = -0.15
+			}
+			large_plane_airframe = {
+				air_bombing = 0.1
+				air_range = 0.15
+				air_agility = 0.05
+				maximum_speed = 0.05
+				reliability = -0.15
+				air_defence = -0.15
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_1st_arsenal_iw = {
+		random = no
+	
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.05
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_2nd_arsenal_iw = {
+		random = no
+	
+		equipment_bonus = {
+			artillery_equipment = {
+				soft_attack = 0.02
+				hard_attack = 0.02
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_red_militia_rifles = {
+		random = no
+	
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = -0.05
+				hard_attack = -0.05
+				reliability = -0.2
+				build_cost_ic = -0.25
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_red_army_production_facility_trait = {
+		random = no
+	
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.05
+			}
+			support_equipment = {
+				build_cost_ic = -0.05
+				instant = yes
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_republic_u = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_war_effort_overseer_group_trait = {
+		random = no
+		
+		production_speed_infrastructure_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_construction_regulation_committee_trait = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_ministry_of_propaganda_trait = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_more_tanks = {
+		random = no
+			
+		equipment_bonus = {
+			light_tank_chassis = {
+				build_cost_ic = -0.1
+				instant = no
+			}
+			medium_tank_chassis = {
+				build_cost_ic = -0.1
+				instant = no
+			}
+			heavy_tank_chassis = {
+				build_cost_ic = -0.1
+				instant = no
+			}
+			super_heavy_tank_chassis = {
+				build_cost_ic = -0.1
+				instant = no
+			}
+			modern_tank_chassis = {
+				build_cost_ic = -0.1
+				instant = no
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_mupd = {
+		random = no
+		
+		production_speed_infrastructure_factor = 0.1
+		production_speed_industrial_complex_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_mpoc = {
+		random = no
+		
+		production_speed_arms_factory_factor = 0.1
+		production_speed_dockyard_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_ngsd_trait = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_naval_development_bureau_trait = {
+		random = no
+		
+		production_speed_dockyard_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	PRC_equipment_improvement_committee_trait = {
+		random = no
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.02
+				hard_attack = 0.02
+				instant = no
+			}
+		}
+	}
+	
+	PRC_ap_artillery_rounds = {
+		random = no
+		
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		equipment_bonus = {
+			artillery_equipment = {
+				soft_attack = -0.01
+				hard_attack = 0.03
+				ap_attack = 0.05
+				instant = no
+			}
+		}
+	}
+	
+	PRC_reliable_equipment = {
+		random = no
+		
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				reliability = 0.15
+				instant = no
+			}
+			support_equipment = {
+				reliability = 0.15
+				instant = yes
+			}
+			artillery_equipment = {
+				reliability = 0.15
+				instant = no
+			}
+		}
+	}
+	
+	PRC_fast_motorised = {
+		random = no
+
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		equipment_bonus = {
+			motorized_equipment = {
+				maximum_speed = 0.15
+				hardness = -0.05
+				instant = no
+			}
+			mechanized_equipment = {
+				maximum_speed = 0.15
+				hardness = -0.05
+				instant = no
+			}
+		}
+	}
+	
+	PRC_antiair_motorised = {
+		random = no
+
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		equipment_bonus = {
+			motorized_equipment = {
+				soft_attack = 0.03
+				air_attack = 1
+				maximum_speed = -0.1
+				reliability = -0.2
+				instant = no
+			}
+			mechanized_equipment = {
+				soft_attack = 0.03
+				air_attack = 1
+				maximum_speed = -0.1
+				reliability = -0.2
+				instant = no
+			}
+		}
+	}
+	
+	PRC_air_academy = {
+		random = no
+
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		air_ace_generation_chance_factor = 0.03
+		experience_gain_air = 0.075
+		experience_gain_air_factor = 0.15
+	}
+	
+	PRC_naval_academy = {
+		random = no
+
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		naval_coordination = 0.05
+		experience_gain_navy = 0.075
+		experience_gain_navy_factor = 0.15
+	}
+	
+	MCK_aluminium_refining = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		country_resource_aluminium = 25
+		production_lack_of_resource_penalty_factor = -0.05
+	}
+	
+	MCK_state_university = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		research_speed_factor = 0.05
+	}
+	
+	MCK_militaristic_economy_planning = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		production_speed_arms_factory_factor = 0.15
+		production_speed_dockyard_factor = 0.15
+	}
+	
+	MCK_rnd = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		research_speed_factor = 0.1
+		production_speed_nuclear_reactor_factor = 0.1
+		production_speed_rocket_site_factor = 0.1
+		production_speed_synthetic_refinery_factor = 0.1
+	}
+	
+	MCK_mukden_rifle = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.05
+				soft_attack = 0.05
+			}
+		}
+	}
+	
+	MCK_machinery_production = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		industrial_capacity_factory = 0.05
+	}
+	
+	MCK_manchu_air_lvl2 = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		equipment_bonus = {
+			small_plane_airframe = {
+				air_range = 0.1
+				reliability = 0.2
+			}
+			medium_plane_fighter_airframe = {
+				air_range = 0.1
+				reliability = 0.2
+			}
+			medium_plane_airframe = {
+				air_range = 0.1
+				reliability = 0.2
+			}
+			transport_plane_equipment = {
+				air_range = 0.35
+				instant = yes
+			}
+			scout_plane = {
+				air_range = 0.35
+			}
+		}
+	}
+	
+	MCK_manchu_air_prod = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		equipment_bonus = {
+			small_plane_airframe = {
+				reliability = 0.1
+				build_cost_ic = -0.1
+			}
+			small_plane_cas_airframe = {
+				reliability = 0.1
+				build_cost_ic = -0.1
+			}
+			small_plane_naval_bomber_airframe = {
+				reliability = 0.1
+				build_cost_ic = -0.1
+			}
+			medium_plane_airframe = {
+				reliability = 0.1
+				build_cost_ic = -0.1
+			}
+			medium_plane_fighter_airframe = {
+				reliability = 0.1
+				build_cost_ic = -0.1
+			}
+			large_plane_airframe = {
+				reliability = 0.1
+				build_cost_ic = -0.1
+			}
+			transport_plane_equipment = {
+				reliability = 0.1
+				build_cost_ic = -0.1
+				instant = yes
+			}
+			scout_plane = {
+				reliability = 0.1
+				build_cost_ic = -0.1
+			}
+		}
+	}
+	
+	KMT_taiyuan_rifles = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.05
+			}
+		}
+	}
+	
+	KMT_hanyang_artillery = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.025
+				reliability = 0.05
+			}
+		}
+	}
+	
+	KMT_kunghsien_rifle = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.075
+			}
+		}
+	}
+	
+	KMT_kwangsi_rifle = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				reliability = 0.15
+			}
+		}
+	}
+	
+	KMT_tsinan_rifle = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				breakthrough = 0.035
+			}
+		}
+	}
+	
+	KMT_chinling_rifle = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				hard_attack = 0.03
+			}
+		}
+	}
+	
+	KMT_shekcheng_rifle = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.03
+				hard_attack = 0.02
+			}
+		}
+	}
+	
+	KMT_mukden_armaments = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				soft_attack = 0.05
+			}
+			artillery_equipment = {
+				soft_attack = 0.03
+			}
+		}
+	}
+	
+	KMT_chuchow_artillery = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			artillery_equipment = {
+				soft_attack = 0.02
+			}
+		}
+	}
+	
+	KMT_central_machineries = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.02
+				reliability = 0.1
+			}
+		}
+	}
+	
+	KMT_local_workshops = {
+		random = no
+		
+		ai_will_do = { base = 0.1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.01
+			}
+		}
+	}
+	
+	KMT_mil_indus_department = {
+		random = no
+		
+		ai_will_do = { base = 0.1 }
+		
+		production_speed_arms_factory_factor = 0.15
+		production_speed_dockyard_factor = 0.05
+	}
+	
+	KMT_aircraft_reseach = {
+		random = no
+		
+		ai_will_do = { base = 0.5 }
+	}
+	
+	KMT_leouchow_air = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			small_plane_airframe = {
+				build_cost_ic = -0.05
+			}
+			small_plane_cas_airframe = {
+				build_cost_ic = -0.05
+			}
+			medium_plane_airframe = {
+				build_cost_ic = -0.05
+			}
+			transport_plane_equipment = {
+				build_cost_ic = -0.05
+				instant = yes
+			}
+			scout_plane = {
+				build_cost_ic = -0.05
+			}
+		}
+	}
+	
+	KMT_kiangnan_manufacturing = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		industrial_capacity_factory = 0.035
+	}
+	
+	MCK_qing_special_aircraft_bureau = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			guided_missile_equipment = {
+				air_bombing = 0.1
+				air_agility = 0.1
+				instant = yes
+			}
+			rocket_interceptor_equipment = {
+				maximum_speed = 0.05
+				air_agility = 0.1
+				reliability = 0.05
+				instant = yes
+			}
+			small_plane_airframe = {
+				reliability = 0.1
+			}
+			medium_plane_airframe = {
+				reliability = 0.1
+			}
+			large_plane_airframe = {
+				reliability = 0.1
+			}
+		}
+	}
+	
+	MCK_amphibious_tank_manufacturer = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			amphibious_tank_chassis = {
+				armor_value = 0.2
+				soft_attack = 0.1
+				hard_attack = 0.1
+				reliability = 0.2
+				hardness = 0.15
+				maximum_speed = -0.1
+			}
+		}
+	}
+	
+	MCK_manchuria_artillery = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			artillery_equipment = {
+				build_cost_ic = -0.05
+				reliability = 0.1
+				hard_attack = 0.03
+			}
+		}
+	}
+	
+	MCK_nc_motorisation = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			artillery_equipment = {
+				build_cost_ic = -0.05
+				reliability = 0.1
+				soft_attack = 0.03
+			}
+		}
+	}
+	
+	MCK_kianghuai_iw = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			motorized_equipment = {
+				build_cost_ic = -0.05
+				reliability = 0.1
+				hardness = 0.05
+				maximum_speed = 0.03
+			}
+			mechanized_equipment = {
+				build_cost_ic = -0.05
+				reliability = 0.1
+				hardness = 0.05
+				maximum_speed = 0.03
+			}
+		}
+	}
+	
+	MCK_sc_weapons = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.03
+				reliability = 0.1
+				soft_attack = 0.03
+				hard_attack = 0.03
+			}
+		}
+	}
+	
+	MCK_nw_support = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.05
+				reliability = 0.15
+			}
+			artillery_equipment = {
+				build_cost_ic = -0.075
+				reliability = 0.15
+			}
+			motorized_equipment = {
+				build_cost_ic = -0.075
+				reliability = 0.15
+			}
+			mechanized_equipment = {
+				build_cost_ic = -0.075
+				reliability = 0.15
+			}
+			support_equipment = {
+				build_cost_ic = -0.075
+				reliability = 0.15
+				instant = yes
+			}
+		}
+	}
+	
+	MCK_mini_mil = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		production_speed_arms_factory_factor = 0.15
+		production_speed_dockyard_factor = 0.15
+	}
+	
+	MCK_mini_civ = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		production_speed_industrial_complex_factor = 0.15
+		production_speed_infrastructure_factor = 0.15
+	}
+	
+	MCK_mini_rail = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		production_speed_rail_way_factor = 0.15
+		production_speed_supply_node_factor = 0.15
+		equipment_bonus = {
+			train_equipment = {
+				build_cost_ic = -0.25
+				reliability = 0.1
+			}
+		}
+	}
+	
+	MCK_mini_res = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		local_resources_factor = 0.1
+		production_lack_of_resource_penalty_factor = -0.05
+		production_speed_synthetic_refinery_factor = 0.1
+		production_speed_fuel_silo_factor = 0.1
+	}
+	
+	MCK_cdb = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		production_speed_industrial_complex_factor = 0.15
+		production_speed_infrastructure_factor = 0.15
+	}
+	
+	MCK_armament_department_trait = {
+		random = no
+		
+		ai_will_do = { base = 1 }
+		
+		production_speed_arms_factory_factor = 0.15
+		production_speed_dockyard_factor = 0.15
+	}
+	
+}

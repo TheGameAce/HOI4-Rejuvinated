@@ -1,0 +1,104 @@
+characters={
+	MEN_prince_demchugdongrub={
+		name=MEN_prince_demchugdongrub
+		portraits={
+			civilian={
+				large="GFX_portrait_men_demchugdongrub"
+			}
+			army = {
+				small="GFX_idea_demchugdongrub"
+				large = "gfx/leaders/kmt_mod/Portrait_Demchugdongrub.dds"
+			}
+		}
+		country_leader={
+			ideology=rexism
+			traits={ spirit_of_genghis }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=oligarchism
+			traits={ spirit_of_genghis }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		corps_commander = {
+			traits = {  }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+			skill = 2
+		}
+	}
+	
+	MEN_Yondonwangchug={
+		name=MEN_Yondonwangchug
+		portraits={
+			civilian={
+				large = "gfx/leaders/kmt_mod/yondonwangchug.dds"
+			}
+			army = {
+			}
+		}
+		country_leader={
+			ideology=rexism
+			traits={ spirit_of_genghis }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	
+	MEN_Jodbajab={
+		name=MEN_Jodbajab
+		portraits={
+			civilian={
+			}
+			army = {
+				small="GFX_idea_jodbajab"
+				large = "gfx/leaders/kmt_mod/Jodbajab.dds"
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			skill = 1
+		}
+	}
+	
+	MEN_wang_ying={
+		name=MEN_wang_ying
+		portraits={
+			civilian={
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+			}
+			army = {
+				small="GFX_idea_generic_army_asia_2"
+				large="gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = MEN_wang_ying
+			ledger = army
+			cost = 50
+			
+			traits = { army_cavalry_1 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+			skill = 2
+		}
+	}
+}

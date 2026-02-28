@@ -1,0 +1,465 @@
+﻿
+add_namespace = kmt_fsr
+#Info event that Burma road has been closed due to occupation of state
+
+country_event = {
+	id = kmt_fsr.1
+	title = wtt_burma_road.1.t
+	desc = wtt_burma_road.1.desc
+	picture = GFX_report_event_burma_road
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_burma_road_idea
+			}
+			swap_ideas = {
+				remove_idea = KMT_burma_road_idea
+				add_idea = KMT_burma_road_idea_closed
+			}
+		}
+	}
+	
+
+	option = {
+		name = wtt_burma_road.1.a
+	}
+
+}
+
+#Info event that Burma road has been closed from decision.
+country_event = {
+	id = kmt_fsr.2
+	title = wtt_burma_road.1.t
+	
+	desc = {
+		text = wtt_burma_road.2.desc
+		trigger = {
+			NOT = { FROM = { has_war_with = ROOT } }
+		}
+	}
+
+	desc = {
+		text = wtt_burma_road.2.desc_war_with_from
+		trigger = {
+			FROM = { has_war_with = ROOT }
+		}
+	}
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_burma_road_idea
+			}
+			swap_ideas = {
+				remove_idea = KMT_burma_road_idea
+				add_idea = KMT_burma_road_idea_closed
+			}
+		}
+	}
+	
+
+	option = {
+		name = wtt_burma_road.1.a
+	}
+
+}
+
+#Info event that part of the route has been reopened from decision.
+country_event = {
+	id = kmt_fsr.3
+	title = wtt_burma_road.3.t
+	desc = wtt_burma_road.3.desc
+	picture = GFX_report_event_ledo_road
+
+	is_triggered_only = yes
+	
+
+	option = {
+		name = wtt_burma_road.3.a
+	}
+
+}
+
+#Info event that route is fully reopened from decision.
+country_event = {
+	id = kmt_fsr.4
+	title = wtt_burma_road.4.t
+	desc = wtt_burma_road.4.desc
+	picture = GFX_report_event_burma_road
+
+	is_triggered_only = yes	
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_burma_road_idea_closed
+			}
+			swap_ideas = {
+				remove_idea = KMT_burma_road_idea_closed
+				add_idea = KMT_burma_road_idea
+			}
+		}
+	}
+
+	option = {
+		name = wtt_burma_road.4.a
+	}
+
+}
+
+#   ### ###   ##      ###   ##   ##  ###  
+#   #   #  # #  #     #  # #  # #  # #  # 
+#   ##  #  # #  #     ###  #  # #### #  # 
+#   #   #  # #  #     #  # #  # #  # #  # 
+### ### ###   ##      #  #  ##  #  # ###  
+
+#Info event that Ledo road has been closed due to occupation of state
+country_event = {
+	id = kmt_fsr.5
+	title = wtt_ledo_road.1.t
+	desc = wtt_ledo_road.1.desc
+	picture = GFX_report_event_nationalist_china_machinegun_firing
+
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_ledo_road_idea
+			}
+			swap_ideas = {
+				remove_idea = KMT_ledo_road_idea
+				add_idea = KMT_ledo_road_idea_closed
+			}
+		}
+	}
+	
+
+	option = {
+		name = wtt_burma_road.1.a
+	}
+
+}
+
+#Info event that Ledo road has been closed from decision.
+country_event = {
+	id = kmt_fsr.6
+	title = wtt_ledo_road.1.t
+	
+	desc = {
+		text = wtt_ledo_road.2.desc
+		trigger = {
+			NOT = { FROM = { has_war_with = ROOT } }
+		}
+	}
+
+	desc = {
+		text = wtt_ledo_road.2.desc_war_with_from
+		trigger = {
+			FROM = { has_war_with = ROOT }
+		}
+	}
+	picture = GFX_report_event_indian_soldiers #TODO_WTT_CD event pic
+
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_ledo_road_idea
+			}
+			swap_ideas = {
+				remove_idea = KMT_ledo_road_idea
+				add_idea = KMT_ledo_road_idea_closed
+			}
+		}
+	}
+	
+
+	option = {
+		name = wtt_burma_road.1.a
+	}
+
+}
+
+#Info event that part of the route has been reopened from decision.
+country_event = {
+	id = kmt_fsr.7
+	title = wtt_ledo_road.3.t
+	desc = wtt_ledo_road.3.desc
+	picture = GFX_report_event_ledo_road
+
+	is_triggered_only = yes
+	
+
+	option = {
+		name = wtt_ledo_road.3.a
+	}
+
+}
+
+#Info event that route is fully reopened from decision.
+country_event = {
+	id = kmt_fsr.8
+	title = wtt_ledo_road.4.t
+	desc = wtt_ledo_road.4.desc
+	picture = GFX_report_event_ledo_road
+
+	is_triggered_only = yes	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_ledo_road_idea_closed
+			}
+			swap_ideas = {
+				remove_idea = KMT_ledo_road_idea_closed
+				add_idea = KMT_ledo_road_idea
+			}
+		}
+	}
+
+	option = {
+		name = wtt_ledo_road.4.a
+	}
+
+}
+
+#  #  ##  #  #  ##  ###     ###   ##  #  # ### ### 
+#  # #  # ## # #  #  #      #  # #  # #  #  #  #   
+#### #### # ## #  #  #      ###  #  # #  #  #  ##  
+#  # #  # #  # #  #  #      #  # #  # #  #  #  #   
+#  # #  # #  #  ##  ###     #  #  ##   ##   #  ### 
+
+#Info event that Hanoi route road has been closed due to occupation of state
+country_event = {
+	id = kmt_fsr.9
+	title = wtt_hanoi_route.1.t
+	desc = wtt_hanoi_route.1.desc
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_yunnan_bahn_idea
+			}
+			swap_ideas = {
+				remove_idea = KMT_yunnan_bahn_idea
+				add_idea = KMT_yunnan_bahn_idea_closed
+			}
+		}
+	}
+	
+
+	option = {
+		name = wtt_burma_road.1.a
+	}
+
+}
+
+#Info event that Hanoi route has been closed from decision.
+country_event = {
+	id = kmt_fsr.10
+	title = wtt_hanoi_route.1.t
+	
+	desc = {
+		text = wtt_hanoi_route.2.desc
+		trigger = {
+			NOT = { FROM = { has_war_with = ROOT } }
+		}
+	}
+
+	desc = {
+		text = wtt_hanoi_route.2.desc_war_with_from
+		trigger = {
+			FROM = { has_war_with = ROOT }
+		}
+	}
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_yunnan_bahn_idea
+			}
+			swap_ideas = {
+				remove_idea = KMT_yunnan_bahn_idea
+				add_idea = KMT_yunnan_bahn_idea_closed
+			}
+		}
+	}
+	
+
+	option = {
+		name = wtt_burma_road.1.a
+	}
+
+}
+
+
+### #  # ###     #  # #  # #   # ###  
+ #  #  # #       #  # #  # ## ## #  # 
+ #  #### ##      #### #  # # # # ###  
+ #  #  # #       #  # #  # #   # #    
+ #  #  # ###     #  #  ##  #   # #    
+#Info event that hump route road has been closed due to occupation of state
+country_event = {
+	id = kmt_fsr.11
+	title = wtt_the_hump.1.t
+	desc = wtt_the_hump.1.desc
+	picture = GFX_report_event_nationalist_china_machinegun_firing
+
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_the_hump_idea
+			}
+			swap_ideas = {
+				remove_idea = KMT_the_hump_idea
+				add_idea = KMT_the_hump_idea_closed
+			}
+		}
+	}
+	
+
+	option = {
+		name = wtt_burma_road.1.a
+	}
+
+}
+
+#Info event that The Hump has been closed from decision.
+country_event = {
+	id = kmt_fsr.12
+	title = wtt_the_hump.1.t
+	
+	desc = {
+		text = wtt_the_hump.2.desc
+		trigger = {
+			NOT = { FROM = { has_war_with = ROOT } }
+		}
+	}
+
+	desc = {
+		text = wtt_the_hump.2.desc_war_with_from
+		trigger = {
+			FROM = { has_war_with = ROOT }
+		}
+	}
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_the_hump_idea
+			}
+			swap_ideas = {
+				remove_idea = KMT_the_hump_idea
+				add_idea = KMT_the_hump_idea_closed
+			}
+		}
+	}
+	
+
+	option = {
+		name = wtt_burma_road.1.a
+	}
+
+}
+
+#Info event that part of the route has been reopened from decision.
+country_event = {
+	id = kmt_fsr.13
+	title = wtt_the_hump.3.t
+	desc = wtt_the_hump.3.desc
+	picture = GFX_report_event_generic_bombers
+
+	is_triggered_only = yes
+	
+
+	option = {
+		name = wtt_the_hump.3.a
+	}
+
+}
+
+#Info event that route is fully reopened from decision.
+country_event = {
+	id = kmt_fsr.14
+	title = wtt_the_hump.4.t
+	desc = wtt_the_hump.4.desc
+	picture = GFX_report_event_generic_bombers
+
+	is_triggered_only = yes	
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_the_hump_idea_closed
+			}
+			swap_ideas = {
+				remove_idea = KMT_the_hump_idea_closed
+				add_idea = KMT_the_hump_idea
+			}
+		}
+	}
+
+	option = {
+		name = wtt_the_hump.4.a
+	}
+
+}
+
+#Info event that part of the route has been reopened from decision.
+country_event = {
+	id = kmt_fsr.15
+	title = kmt_fsr.15.t
+	desc = kmt_fsr.15.d
+	picture = GFX_report_event_generic_bombers
+
+	is_triggered_only = yes
+	
+
+	option = {
+		name = kmt_fsr.3.a
+	}
+
+}
+
+#Info event that route is fully reopened from decision.
+country_event = {
+	id = kmt_fsr.16
+	title = kmt_fsr.16.t
+	desc = kmt_fsr.16.d
+	picture = GFX_report_event_generic_bombers
+
+	is_triggered_only = yes	
+	
+	immediate = {
+		if = {
+			limit = {
+				has_idea = KMT_yunnan_bahn_idea_closed
+			}
+			swap_ideas = {
+				remove_idea = KMT_yunnan_bahn_idea_closed
+				add_idea = KMT_yunnan_bahn_idea
+			}
+		}
+	}
+
+	option = {
+		name = kmt_fsr.16.a
+	}
+
+}

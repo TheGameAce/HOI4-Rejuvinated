@@ -1,0 +1,748 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "KMT_power_struggle_state_view"
+		position = { x = 1100 y = 200 }
+		size = { width = 624 height = 401 }
+		
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "KMT_ps_state_view_bar"
+			spriteType = "GFX_ps_state_bar"
+		}
+		
+		buttonType = {
+			name = "KMT_ps_state_view_close"
+			position = { x=598 y=9 }
+			spriteType = "GFX_closebutton_small"
+			shortcut = "ESCAPE"
+			scale = 0.7
+		}
+		
+		buttonType = {
+			name = "KMT_ps_state_view_more_ip"
+			position = { x=421 y=3 }
+			spriteType = "GFX_zoom_in"
+			pdx_tooltip = "KMT_ps_more_ip_tt"
+			pdx_tooltip_delayed = "KMT_ps_more_ip_tt_delayed"
+		}
+		
+		buttonType = {
+			name = "KMT_ps_state_view_less_ip"
+			position = { x=324 y=3 }
+			spriteType = "GFX_zoom_out"
+			pdx_tooltip = "KMT_ps_less_ip_tt"
+			pdx_tooltip_delayed = "KMT_ps_less_ip_tt_delayed"
+		}
+		#		iconType = {#			name = "KMT_ps_state_name_bg"#			position = { x=3 y=4 }#			spriteType = "GFX_ps_state_name_bg"#			pdx_tooltip = "KMT_ps_state_name_bg_tt"#		}
+		
+		instantTextBoxType = {
+			name = "KMT_power_struggle_state_name"
+			position = { x = 3 y = 6 }
+			font = "hoi_18mbs"
+			maxWidth = 154
+			maxHeight = 23
+			format = center
+			text = "[This.getName]"
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "KMT_ps_state_support_bg"
+			position = { x=167 y=4 }
+			spriteType = "GFX_ps_state_support_bg"
+			pdx_tooltip = "KMT_ps_state_support_bg_tt"
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_power_struggle_state_support"
+			position = { x = 167 y = 6 }
+			font = "hoi_18mbs"
+			maxWidth = 48
+			maxHeight = 23
+			format = center
+			text = "[?This.KMT_pop_support@ROOT|+|.0]"
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "KMT_ps_state_tick_bg"
+			position = { x=218 y=4 }
+			spriteType = "GFX_ps_state_tick_bg"
+			pdx_tooltip = "KMT_ps_state_tick_bg_tt"
+			pdx_tooltip_delayed = "KMT_ps_state_tick_bg_tt_delayed"
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_power_struggle_state_support_buildup"
+			position = { x = 218 y = 6 }
+			font = "hoi_18mbs"
+			maxWidth = 99
+			maxHeight = 23
+			format = center
+			text = "Max: [?This.KMT_power_struggle_pop_support_total]"
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "KMT_ps_state_influence_bg"
+			position = { x=365 y=4 }
+			spriteType = "GFX_ps_state_influence_bg"
+			pdx_tooltip = "KMT_ps_state_influence_bg_tt"
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_power_struggle_state_influence"
+			position = { x = 324 y = 6 }
+			font = "hoi_18mbs"
+			maxWidth = 124
+			maxHeight = 23
+			format = center
+			text = "[?Root.KMT_ps_ip_allocated_in_state@THIS]"
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_ps_influencing_states_tt"
+			position = { x = 481 y = 9 }
+			font = "hoi_16mbs"
+			maxWidth = 114
+			maxHeight = 23
+			format = center
+			text = KMT_influencing_states_tt
+			alwaystransparent = yes
+		}
+
+		containerWindowType = {
+			name = "KMT_ps_participant_container_grid"
+			position = { x = 9 y = 35 }
+			size = { width = 450 height = 355 }
+			verticalScrollbar = "right_vertical_slider"
+		
+			background = {
+				name = "Background"
+			}
+		
+			gridboxtype = {
+				name = "KMT_ps_participant_list_grid"
+				position = { x = 0 y = 0 }
+				size = { width = 448 height = 357 }
+				slotsize = { width = 1 height = 1 } #if width or height is 1, it will use slot element's dimension
+				max_slots_horizontal = 1
+				add_horizontal = no
+			}
+		}
+
+		containerWindowType = {
+			name = "KMT_ps_state_container_grid"
+			position = { x = 467 y = 35 }
+			size = { width = 149 height = 355 }
+			verticalScrollbar = "right_vertical_slider"
+		
+			background = {
+				name = "Background"
+			}
+		
+			gridboxtype = {
+				name = "KMT_ps_state_list_grid"
+				position = { x = 0 y = 0 }
+				size = { width = 143 height = 355 }
+				slotsize = { width = 1 height = 1 } #if width or height is 1, it will use slot element's dimension
+				max_slots_horizontal = 1
+				add_horizontal = no
+			}
+		}#		#		instantTextBoxType = {#			name = "KMT_power_struggle_state_support_other_name"#			position = { x = 15 y = 37 }#			font = "hoi_18mbs"#			maxWidth = 350#			maxHeight = 340#			format = left#			text = KMT_ps_state_view_name#			alwaystransparent = yes#		}#		#		instantTextBoxType = {#			name = "KMT_power_struggle_state_support_other"#			position = { x = 350 y = 37 }#			font = "hoi_18mbs"#			maxWidth = 150#			maxHeight = 340#			format = center#			text = KMT_ps_state_view_percentage#			alwaystransparent = yes#		}
+	}
+
+	containerWindowType = {
+		name = "KMT_ps_participant_container"
+		position = { x = -220 y = 0 }
+		size = { width = 466 height = 28 }
+		
+		background = {
+			name = "KMT_ps_member_list_bg"
+			spriteType = "GFX_ps_member_list_bg"
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_ps_participant_name"
+			position = { x = 5 y = 6 }
+			font = "hoi_18mbs"
+			maxWidth = 358
+			maxHeight = 22
+			format = left
+			text = "[This.GetName]"
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_ps_participant_support"
+			position = { x = 390 y = 6 }
+			font = "hoi_18mbs"
+			maxWidth = 35
+			maxHeight = 22
+			format = center
+			text = "[?From.KMT_pop_support@THIS|.+0]"
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "KMT_ps_influencing_states_container"
+		position = { x = -65 y = 5 }
+		size = { width = 131 height = 32 }
+		
+		background = {
+			name = "KMT_ps_state_list_bg"
+			spriteType = "GFX_ps_state_bg"
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_ps_state_name"
+			position = { x = 0 y = 0 }
+			font = "hoi_16mbs"
+			maxWidth = 131
+			maxHeight = 32
+			format = center
+			text = "[This.GetName] ([?ROOT.KMT_ps_ip_allocated_in_state@This|H.+0])"
+			alwaystransparent = yes
+		}
+	}
+	
+	containerWindowType = {
+		name = "KMT_ps_views"
+		position = { x = -2 y = 60 }
+		size = { width = 97 height = 27 }
+		orientation = upper_left
+		
+		background = {
+			name = "KMT_ps_panel_buttons_bg"
+			spriteType = "GFX_ps_panel_buttons_bg"
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name = "KMT_ps_state_panel_button"
+			position = { x=4 y=3 }
+			spriteType = "GFX_ps_panel_buttons"
+			frame = 1
+			pdx_tooltip = "KMT_state_view_tt"
+			pdx_tooltip_delayed = "KMT_state_view_tt_delayed"
+		}
+		
+		buttonType = {
+			name = "KMT_ps_alliance_panel_button"
+			position = { x=34 y=3 }
+			spriteType = "GFX_ps_panel_buttons"
+			frame = 2
+			pdx_tooltip = "KMT_alliance_view_tt"
+			pdx_tooltip_delayed = "KMT_alliance_view_tt_delayed"
+		}
+		
+		buttonType = {
+			name = "KMT_ps_loyalty_panel_button"
+			position = { x=64 y=3 }
+			spriteType = "GFX_ps_panel_buttons"
+			frame = 3
+			pdx_tooltip = "KMT_loyalty_view_tt"
+			pdx_tooltip_delayed = "KMT_loyalty_view_tt_delayed"
+		}
+	}
+	
+	containerWindowType = {
+		name = "KMT_power_struggle_alliance_view"
+		position = { x = 1000 y = 100 }
+		size = { width = 532 height = 707 }
+		
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "KMT_ps_alliance_bg"
+			spriteType = "GFX_ps_alliance_bg"
+		}
+		
+		buttonType = {
+			name = "KMT_ps_alliance_view_close_button"
+			position = { x=388 y=31 }
+			spriteType = "GFX_closebutton_small"
+			shortcut = "ESCAPE"
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_alliances"
+			position = { x = 116 y = 25 }
+			font = "hoi_36header"
+			maxWidth = 300
+			maxHeight = 43
+			format = center
+			text = "KMT_alliances"
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "KMT_ps_cg_flag"
+			position = { x=225 y=108 }	#x should be x of KMT_ps_cg_frame +9, and y should be y of KMT_ps_cg_frame +8
+			quadTextureSprite = "GFX_shield_medium"
+		}
+		
+		iconType = {
+			name = "KMT_ps_cg_frame"
+			position = { x=216 y=100 }
+			quadTextureSprite = "GFX_ps_cg_frame"
+			pdx_tooltip = "KMT_central_gov_tt"
+		}
+		
+		buttonType = {
+			name = "KMT_benefits_modifiers"
+			position = { x=357 y=97 }
+			quadTextureSprite = "GFX_kmt_placeholder"
+			pdx_tooltip = "KMT_ps_alliance_benefits_tt"
+		}
+		
+		iconType = {
+			name = "KMT_willingness_modifiers"
+			position = { x=67 y=100 }
+			quadTextureSprite = "GFX_goal_generic_dangerous_deal"
+			pdx_tooltip = "KMT_ps_alliance_willingness_tt"
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_cg_tt"
+			position = { x = 222 y = 161 }
+			font = "hoi_16mbs"
+			maxWidth = 88
+			maxHeight = 13
+			format = center
+			text = "KMT_central_government"
+			alwaystransparent = yes
+		}
+
+		containerWindowType = {
+			name = "KMT_ps_alliance_target_grid_container"
+			position = { x = 14 y = 199 }
+			size = { width = 504 height = 249 }
+			verticalScrollbar = "right_vertical_slider"
+		
+			background = {
+				name = "Background"
+			}
+		
+			gridboxtype = {
+				name = "KMT_ps_alliance_target_grid"
+				position = { x = 0 y = 0 }
+				size = { width = 504 height = 249 }
+				slotsize = { width = 174 height = 119 } #if width or height is 1, it will use slot element's dimension
+				#max_slots = { x = 6 y = 3	}
+				max_slots_horizontal = 3
+				max_slots_vertical = 10
+				add_horizontal = yes
+				format = "UPPER_LEFT"
+			}
+		}
+
+		containerWindowType = {
+			name = "KMT_ps_alliances_grid_container"
+			position = { x = 14 y = 473 }
+			size = { width = 504 height = 221 }
+			verticalScrollbar = "right_vertical_slider"
+		
+			background = {
+				name = "Background"
+			}
+		
+			gridboxtype = {
+				name = "KMT_ps_alliances_grid"
+				position = { x = 0 y = 0 }
+				size = { width = 504 height = 249 }
+				slotsize = { width = 1 height = 1 } #if width or height is 1, it will use slot element's dimension
+				#max_slots = { x = 6 y = 3	}
+				add_horizontal = no
+				format = "UPPER_LEFT"
+			}
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_no_alliances"
+			position = { x = 120 y = 550 }
+			font = "hoi_30header"
+			maxWidth = 300
+			maxHeight = 221
+			format = center
+			text = "KMT_no_alliances"
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "KMT_alliance_target_container"
+		position = { x = 0 y = 0 }
+		size = { width = 134 height = 119 }
+		
+		background = {
+			name = "Background"
+		}
+		
+		iconType = {
+			name = "KMT_alliance_target_flag"
+			position = { x = 26 y = 11 }
+			quadTextureSprite = "GFX_shield_medium"
+			pdx_tooltip = "KMT_ps_alliance_target_tt"
+		}
+		
+		buttonType = {
+			name = "KMT_seek_alliance_with_target"
+			position = { x = 8 y = 73 }
+			spriteType = "GFX_ps_seek_alliance_button"
+			buttonFont = "hoi_16mbs"
+			buttonText = "      [THIS.GetSeekTT]"
+			pdx_tooltip = "KMT_GetSeekTTLong"
+			pdx_tooltip_delayed = "KMT_seek_alliance_tt_delayed"
+		}
+		
+		buttonType = {
+			name = "KMT_break_alliance_with_target"
+			position = { x = 8 y = 73 }
+			spriteType = "GFX_ps_break_alliance_button"
+			buttonFont = "hoi_16mbs"
+			buttonText = "      [THIS.GetBreakTT]"
+			pdx_tooltip = "KMT_GetBreakTTLong"
+			pdx_tooltip_delayed = "KMT_break_alliance_tt_delayed"
+		}
+		
+		iconType = {
+			name = "KMT_alliance_target_frame"
+			position = { x = 0 y = 0}
+			spriteType = "GFX_ps_alliance_target_frame"
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "KMT_alliances_container"
+		position = { x = 12 y = 0 }
+		size = { width = 475 height = 75 }
+		
+		background = {
+			name = "KMT_ps_alliances_bg"
+			spriteType = "GFX_warlord_detail_list"
+		}
+		
+		iconType = {
+			name = "KMT_alliance_target_flag"
+			position = { x = 10 y = 11 }
+			quadTextureSprite = "GFX_shield_medium"
+			pdx_tooltip = "KMT_ps_alliance_target_tt"
+		}
+		
+		iconType = {
+			name = "KMT_warlord_flag_frame"
+			position = {x=0 y=0}
+			quadTextureSprite = "GFX_warlord_frame"
+			alwaystransparent = yes
+		}
+		
+		gridboxtype = {
+			name = "KMT_ps_alliance_member_grid"
+			position = { x = 100 y = 0 }
+			size = { width = 475 height = 75 }
+			slotsize = { width = 25 height = 25 } #if width or height is 1, it will use slot element's dimension
+			#max_slots = { x = 6 y = 3	}
+			max_slots_horizontal = 10
+			max_slots_vertical = 3
+			add_horizontal = yes
+			format = "UPPER_LEFT"
+		}
+		
+	}
+
+	containerWindowType = {
+		name = "KMT_alliance_member_container"
+		position = { x = 0 y = 0 }
+		size = { width = 350 height = 75 }
+		
+		background = {
+			name = "Background"
+		}
+		
+		iconType = {
+			name = "KMT_alliance_member_flag"
+			position = { x = 26 y = 11 }
+			quadTextureSprite = "GFX_flag_small"
+			pdx_tooltip = "KMT_ps_alliance_target_tt"
+		}
+	}
+
+	containerWindowType = {
+		name = "KMT_power_struggle_loyalty_view"
+		position = { x = 900 y = 100 }
+		size = { width = 527 height = 500 }
+		
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_ps_loyalty_bg"
+		}
+		
+		buttonType = {
+			name = "KMT_ps_loyalty_view_close_button"
+			position = { x=388 y=31 }
+			spriteType = "GFX_closebutton_small"
+			shortcut = "ESCAPE"
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_loyalty"
+			position = { x = 116 y = 25 }
+			font = "hoi_36header"
+			maxWidth = 300
+			maxHeight = 43
+			format = center
+			text = "KMT_loyalty"
+			alwaystransparent = yes
+		}
+		
+		iconType = {
+			name = "KMT_ps_loyalty_cg_flag"
+			position = { x=225 y=108 }	#x should be x of KMT_ps_cg_frame +9, and y should be y of KMT_ps_cg_frame +8
+			quadTextureSprite = "GFX_shield_medium"
+		}
+		
+		iconType = {
+			name = "KMT_ps_loyalty_cg_frame"
+			position = { x=216 y=100 }
+			quadTextureSprite = "GFX_ps_cg_frame"
+			pdx_tooltip = "KMT_central_gov_tt"
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_cg_tt"
+			position = { x = 222 y = 161 }
+			font = "hoi_16mbs"
+			maxWidth = 88
+			maxHeight = 13
+			format = center
+			text = "KMT_central_government"
+			alwaystransparent = yes
+		}
+		
+		buttonType = {
+			name = "KMT_war_for_national_leadership"
+			position = { x = 100 y = 80 }
+			spriteType = "GFX_war_for_leadership"
+			pdx_tooltip = "KMT_war_for_national_leadership_tt"
+			pdx_tooltip_delayed = "KMT_war_for_national_leadership_tt_delayed"
+		}
+		
+		buttonType = {
+			name = "KMT_ultimatum_for_national_leadership"
+			position = { x = 330 y = 80 }
+			spriteType = "GFX_ultimatum_for_leadership"
+			pdx_tooltip = "KMT_ultimatum_for_national_leadership_tt"
+			pdx_tooltip_delayed = "KMT_ultimatum_for_national_leadership_tt_delayed"
+		}
+
+		containerWindowType = {
+			name = "KMT_ps_loyalty_grid_container"
+			position = { x = 13 y = 199 }
+			size = { width = 500 height = 285 }
+			verticalScrollbar = "right_vertical_slider"
+		
+			background = {
+				name = "Background"
+			}
+		
+			gridboxtype = {
+				name = "KMT_ps_loyalty_target_grid"
+				position = { x = 0 y = 0 }
+				size = { width = 500 height = 285 }
+				slotsize = { width = 172 height = 119 } #if width or height is 1, it will use slot element's dimension
+				#max_slots = { x = 6 y = 3	}
+				max_slots_horizontal = 3
+				max_slots_vertical = 20
+				add_horizontal = yes
+				format = "UPPER_LEFT"
+			}
+		}
+	}
+
+	containerWindowType = {
+		name = "KMT_loyalty_member_container"
+		position = { x = 0 y = 0 }
+		size = { width = 134 height = 119 }
+		
+		background = {
+			name = "Background"
+		}
+		
+		buttonType = {
+			name = "KMT_incorporate_warlod_button"
+			position = { x = 8 y = 73 }
+			spriteType = "GFX_ps_incorporate_warlord_button"
+			pdx_tooltip = "KMT_incorporate_warlord_button_tt"
+			pdx_tooltip_delayed = "KMT_incorporate_warlord_button_tt_delayed"
+		}
+		
+		buttonType = {
+			name = "KMT_warlord_loyalty_influence_button"
+			position = { x = 65 y = 73 }
+			spriteType = "GFX_ps_raise_loyalty_button"
+			pdx_tooltip = "KMT_warlord_loyalty_influence_button_tt"
+			pdx_tooltip_delayed = "KMT_warlord_loyalty_influence_button_tt_delayed"
+		}
+		
+		buttonType = {
+			name = "KMT_stop_warlord_loyalty_influence_button"
+			position = { x = 65 y = 73 }
+			spriteType = "GFX_ps_stop_raise_loyalty_button"
+			pdx_tooltip = "KMT_stop_warlord_loyalty_influence_button_tt"
+			pdx_tooltip_delayed = "KMT_stop_warlord_loyalty_influence_button_tt_delayed"
+		}
+		
+		iconType = {
+			name = "KMT_loyalty_target_flag"
+			position = { x = 26 y = 11 }
+			quadTextureSprite = "GFX_shield_medium"
+			pdx_tooltip = "KMT_ps_loyalty_target_tt"
+		}
+		
+		iconType = {
+			name = "KMT_loyalty_target_frame"
+			position = { x = 0 y = 0}
+			spriteType = "GFX_ps_loyalty_target_frame"
+			alwaystransparent = yes
+		}
+		
+		instantTextBoxType = {
+			name = "KMT_loyalty_value_tt"
+			position = { x = 82 y = 51 }
+			font = "hoi_16mbs"
+			maxWidth = 29
+			maxHeight = 16
+			format = center
+			text = "KMT_ps_loyalty_value"
+			alwaystransparent = yes
+		}
+	}
+	
+	containerWindowType = {
+		name = "KMT_ps_modifiers_gui"
+		position = {x=0 y=0}
+		size = { width=100% height=400 }
+
+		iconType = {
+			name ="KMT_ps_cg_benefit"
+			spriteType = "GFX_cg_modifiers"
+			position = { x= 75 y = -25 }
+
+			pdx_tooltip = "KMT_ps_cg_modifier"
+		}
+
+		iconType = {
+			name ="KMT_ps_cg_absent"
+			spriteType = "GFX_cg_modifiers_absent"
+			position = { x= 75 y = -25 }
+
+			pdx_tooltip = "KMT_ps_cg_absent"
+		}
+
+		iconType = {
+			name ="KMT_ps_warlords_modifiers"
+			spriteType = "GFX_cg_regional_governments_amount"
+			position = { x= 340 y = -21 }
+
+			pdx_tooltip = "KMT_ps_warlords_modifier"
+		}
+		
+		iconType = {
+			name = "KMT_inalienable_parts_borderlines"
+			position = { x = 0 y = 50 }
+			spriteType = "GFX_borderlines"
+			pdx_tooltip = "KMT_dcat_inalienable_parts_tt"
+			pdx_tooltip_delayed = "KMT_dcat_inalienable_parts_tt_delayed"
+		}
+		
+		gridboxtype = {
+			name = "KMT_inalienable_parts_gridbox"
+			position = { x = 0 y = 50 }
+			size = { width = 500 height = 400 }
+			slotsize = { width = 0 height = 0 } #if width or height is 1, it will use slot element's dimension
+			add_horizontal = yes
+			format = "UPPER_LEFT"
+		}
+	}
+	
+	containerWindowType = {
+		name = "KMT_ps_modifiers_gui_nomap"
+		position = {x=0 y=0}
+		size = { width=100% height=50 }
+
+		iconType = {
+			name ="KMT_ps_cg_benefit"
+			spriteType = "GFX_cg_modifiers"
+			position = { x= 75 y = -25 }
+
+			pdx_tooltip = "KMT_ps_cg_modifier"
+		}
+
+		iconType = {
+			name ="KMT_ps_cg_absent"
+			spriteType = "GFX_cg_modifiers_absent"
+			position = { x= 75 y = -25 }
+
+			pdx_tooltip = "KMT_ps_cg_absent"
+		}
+
+		iconType = {
+			name ="KMT_ps_warlords_modifiers"
+			spriteType = "GFX_cg_regional_governments_amount"
+			position = { x= 340 y = -21 }
+
+			pdx_tooltip = "KMT_ps_warlords_modifier"
+		}
+	}
+
+	containerWindowType = {
+		name = "KMT_dcat_state_container"
+		position = { x = 0 y = 0 }
+		size = { width = 500 height = 400 }
+		
+		background = {
+			name = "Background"
+		}
+		
+		iconType = {
+			name = "KMT_state_tga"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_dcat_state_283"
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "KMT_core_china_states"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height = 100% }
+		
+		background = {
+			name = "Background"
+		}
+		
+		buttonType = {
+			name = "KMT_core_this_state"
+			position = { x = 107 y = 57 }
+			spriteType = "GFX_decision_category_eng_move_to_secure_the_dominions"
+			pdx_tooltip = "KMT_core_this_state_tt"
+			pdx_tooltip_delayed = "KMT_core_this_state_tt_delayed"
+		}
+	}
+}

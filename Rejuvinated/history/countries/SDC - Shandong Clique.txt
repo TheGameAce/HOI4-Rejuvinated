@@ -1,0 +1,50 @@
+﻿capital = 939
+set_country_flag = KMT_is_china_tag
+
+oob = "SDC_1936"
+
+recruit_character = SDC_han_fuju
+recruit_character = SDC_he_siyuan
+recruit_character = SDC_liang_shuming
+SDC_han_fuju = { set_character_flag = PRC_potential_defectors }
+
+SDC_han_fuju = { set_character_flag = KMT_hyq_flag }
+
+every_character = { set_character_flag = KMT_real_character }
+
+set_technology = {
+	infantry_weapons = 1
+	mass_assault = 1
+	basic_train = 1
+}
+
+add_ideas = {
+	limited_exports
+	limited_conscription
+	war_economy
+}
+
+add_ideas = {
+	public_iliteracy
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	cg_warlords
+	KMT_weak_army
+	KMT_corrupted_government
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 100
+}
+set_country_flag = is_warlords
+
+1939.1.1 = {
+	retire_character = SDC_han_fuju
+}

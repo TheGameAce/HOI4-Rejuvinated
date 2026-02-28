@@ -1,0 +1,357 @@
+PRC_dcat_ire = {
+	icon = category_border_war
+	
+	visible = {
+		OR = {
+			is_valid_power_struggle_participant = yes
+			tag = PRC
+		}
+		PRC = {
+			exists = yes
+			OR = {
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject = no
+			}
+			OR = {
+				has_global_flag = PRC_yes_truce
+				has_completed_focus = PRC_submit_to_the_united_front
+			}
+			NOT = {
+				has_completed_focus = PRC_found_our_nation
+				has_completed_focus = PRC_the_chinese_soviet_republic
+				has_completed_focus = PRC_first_5year_plan
+			}
+		}
+		NOT = { has_global_flag = PRC_restart_CHI_war }
+	}
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	
+	visible_when_empty = yes
+	
+	priority = 50
+}
+
+PRC_dcat_internal_power_struggle = {
+	icon = power_struggle
+	
+	visible = {
+		tag = PRC
+		has_government = communism
+		NOT = {
+			has_country_flag = PRC_internal_power_struggle_concluded
+		}
+	}
+	
+	allowed = {
+		tag = PRC
+	}
+	
+	priority = 100
+}
+
+PRC_dcat_the_long_march = {
+	icon = sov_great_patriotic_war
+	
+	visible = {
+		tag = PRC
+		check_variable = { PRC.PRC_long_march_debuff_base > 0 }
+	}
+	
+	allowed = {
+		tag = PRC
+	}
+	
+	priority = 90
+}
+
+PRC_dcat_frontline_behind_enemy_line = {
+	icon = category_infiltration
+	
+	priority = 100
+	
+	scripted_gui = PRC_dcat_states
+	
+	visible = {
+		OR = {
+			has_completed_focus = PRC_front_line_behind_enemy_line
+			has_completed_focus = PRCkmt_infiltration
+			has_completed_focus = PRC_infiltration_tactics_wm
+			has_completed_focus = PRC_infiltration_tactics
+		}
+	}
+	
+	visible_when_empty = yes
+	
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_frontline_behind_enemy_line_ai = {
+	icon = category_infiltration
+	
+	visible = {
+		OR = {
+			has_completed_focus = PRC_front_line_behind_enemy_line
+			has_completed_focus = PRCkmt_infiltration
+		}
+		always = no
+	}
+	
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_pacify_enemy_guerrilla_cell = {
+	icon = category_infiltration
+	
+	visible = {
+		any_controlled_state = {
+			has_state_flag = KMT_PRC_state_cell_detected
+		}
+		has_war_with = PRC
+		NOT = { 
+			is_subject_of = PRC
+			tag = PRC
+		}
+	}
+	
+	allowed = {
+	}
+}
+
+PRC_dcat_sweep_commie_cell = {
+	icon = category_infiltration
+	
+	visible = {
+		OR = {
+			any_controlled_state = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+			}
+			AND = {
+				is_in_faction_with = PRC
+				any_controlled_state = {
+					check_variable = { PRC_state_guerrilla_cell_strength > 50 }
+				}
+			}
+		}
+		NOT = { 
+			has_war_with = PRC
+			is_subject_of = PRC
+			tag = PRC
+		}
+	}
+	
+	allowed = {
+	}
+}
+
+PRC_dcat_initiatives_in_war_times = {
+	icon = generic_propaganda
+	
+	visible = {
+		tag = PRC
+	}
+	
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_chinese_civil_war_decide_capital = {
+	icon = sov_great_patriotic_war
+	
+	visible = {
+		NOT = { has_country_flag = prc_capital_decided }
+		NOT = { has_completed_focus = PRC_destroy_mao_and_his_clique }
+		is_subject = no
+		tag = PRC
+	}
+	
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_expansion_direction = {
+	icon = border_conflicts
+	
+	priority = 500
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_military_measures = {
+	icon = usa_intervention_mandate
+	priority = 800
+	visible = {
+		has_completed_focus = PRC_military_above_all
+	}
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_zgt_reactionary_elements = {
+	icon = generic_communism
+	
+	visible = {
+		tag = PRC
+		OR = {
+			any_state = {
+				is_controlled_by = ROOT
+				is_in_array = { global.PRC_zgt_reactionary_hideout_array = THIS }
+			}
+			check_variable = { global.PRC_zgt_max_reactionary_hideout > 0 }
+		}
+	}
+	
+	priority = 900
+	
+	visible_when_empty = yes
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_spies_within_our_enemies = {
+	icon = infiltration
+	
+	priority = 800
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+}
+
+PRC_dcat_build_up_a_conventional_force = {
+	icon = army_reform
+	
+	visible = {
+		tag = PRC
+	}
+	allowed = {
+		tag = PRC
+	}
+	
+}
+
+PRC_dcat_autonomy_from_comintern = {
+	icon = SOV_civil_puppet_interaction
+	
+	visible = {
+		OR = {
+			tag = PRC
+			tag = SOV
+		}
+		PRC = {
+			exists = yes
+			has_government = communism
+			NOT = { has_country_flag = PRC_broken_tie_with_SOV }
+			has_country_flag = PRC_autonomy_enabled
+			OR = {
+				is_subject = no
+				is_subject_of = SOV
+			}
+			NOT = { has_war_with = SOV }
+		}
+		SOV = {
+			exists = yes
+			has_government = communism
+			is_subject = no
+			NOT = { has_war_with = PRC }
+		}
+	}
+	allowed = {
+		OR = {
+			original_tag = PRC
+			original_tag = SOV
+		}
+	}
+	
+	scripted_gui = PRC_comintern_autonomy_decision
+	
+	priority = 1000
+}
+
+PRC_dcat_capital_accumulation = {
+	icon = generic_economy
+	
+	visible = {
+		tag = PRC
+		has_completed_focus = PRC_limit_soviet_interference
+		NOT = { has_country_flag = PRC_end_capital_accumulation }
+	}
+	
+	priority = 900
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_education_refinement = {
+	icon = generic_political_actions
+	
+	visible = {
+		tag = PRC
+		has_completed_focus = PRC_literacy_movement
+	}
+	
+	priority = 800
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_national_defense_government = {
+	icon = generic_foreign_policy
+	priority = 900
+	
+	visible = {
+		tag = PRC
+		has_dynamic_modifier = { modifier = PRC_national_defence_government_legitimacy }
+	}
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_prepare_for_civil_war = {
+	icon = SOV_propaganda
+	priority = 900
+	
+	visible = {
+		tag = PRC
+		has_completed_focus = PRC_the_inevitable_civil_war
+		NOT = { has_global_flag = PRC_restart_revolution_completed }
+	}
+	allowed = {
+		tag = PRC
+	}
+}
+
+PRC_dcat_remnants_of_opposition = {
+	icon = spr_the_seeds_of_revolution
+	priority = 900
+	
+	visible = {
+		any_controlled_state = {
+			OR = {
+				has_dynamic_modifier = { modifier = PRC_zgt_hideout }
+				has_dynamic_modifier = { modifier = PRC_mao_hideout }
+			}
+		}
+	}
+}
+
+PRC_dcat_approach_the_front = {
+	icon = border_conflicts
+	priority = 90
+	allowed = { 
+		original_tag = PRC
+	}
+}

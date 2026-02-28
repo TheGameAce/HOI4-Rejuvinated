@@ -1,0 +1,76 @@
+﻿capital = 937
+
+oob = "ECR_1936"
+
+recruit_character = KMT_li_shouxin
+
+set_country_flag = JAP_puppet
+set_technology = {
+	infantry_weapons = 1
+	tech_military_police = 1
+	tech_support = 1
+}
+
+add_ideas = {
+	limited_exports
+	limited_conscription
+	war_economy
+}
+
+if = {
+	limit = {
+		has_dlc = "Waking the Tiger"
+	}
+	JAP = {
+		set_autonomy = {
+			target = ROOT
+			autonomous_state = autonomy_wtt_imperial_protectorate
+		}
+	}
+	else = {
+		if = {
+			limit = {
+				has_dlc = "Together for Victory"
+			}
+			JAP = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_integrated_puppet
+				}
+			}
+			else = {
+				JAP = {
+					set_autonomy = {
+						target = ROOT
+						autonomous_state = autonomy_puppet
+					}
+				}
+			}
+		}
+	}
+}
+
+set_stability = 0.5
+
+set_party_name = { ideology = fascism long_name = ECSAR_fascism name = ECSAR_fascism }
+
+1939.1.1 = {
+	
+	KMT_li_shouxin = { set_nationality = MEN }
+	drop_cosmetic_tag = yes
+}
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	fascism = 80
+	neutrality = 20
+}
+
+1939.1.1 = {
+}

@@ -1,0 +1,202 @@
+leader_traits = {
+
+	KMT_cks_generalissimo = { 
+		type = field_marshal
+		trait_type = personality_trait
+		gain_xp = {
+			always = no
+		}
+		
+		non_shared_modifier = {
+			wounded_chance_factor = -1
+		}
+		
+		modifier = {
+			shore_bombardment_bonus = 0.3
+		}
+		
+		field_marshal_modifier = {
+			max_army_group_size = 5
+		}
+		
+		new_commander_weight = {
+			factor = 0  
+		}
+	}
+
+	KMT_artillery_specialist = { 
+		type = corps_commander
+		trait_type = personality_trait
+		gain_xp = {
+			always = no
+		}
+		
+		non_shared_modifier = {
+		}
+		specialist_advisor_trait = army_artillery_1
+		expert_advisor_trait = army_artillery_2
+		genius_advisor_trait = army_artillery_3
+		
+		modifier = {
+			army_artillery_attack_factor = 0.1
+		}
+		
+		new_commander_weight = {
+			factor = 0  
+		}
+	}
+
+	KMT_former_communists = { 
+		type = { land navy }
+		trait_type = personality_trait
+		gain_xp = {
+			always = no
+		}
+		
+		non_shared_modifier = {
+			promote_cost_factor = 2
+		}
+		
+		modifier = {
+		}
+		
+		field_marshal_modifier = {
+		}
+		
+		new_commander_weight = {
+			factor = 0  
+		}
+	}
+
+	PRC_basic_anti_fortification_training = { 
+		type = corps_commander
+		trait_type = personality_trait
+		gain_xp = {
+			always = no
+		}
+		
+		trait_xp_factor = {
+			fortress_buster = 5     
+		}
+		
+		planning_skill = 1
+		
+		field_marshal_modifier = {
+		}
+		
+		new_commander_weight = {
+			factor = 0  
+			modifier = {
+				FROM = { has_completed_focus = PRC_stationary_defense }
+				add = 0.5
+			}
+		}
+	}
+
+	PRC_advanced_guerrilla_tactics = { 
+		type = corps_commander
+		trait_type = personality_trait
+		gain_xp = {
+			always = no
+		}
+		
+		modifier = {
+			defence = 0.05
+			dig_in_speed_factor = 0.1
+			land_night_attack = 0.15
+		}
+		
+		new_commander_weight = {
+			factor = 0  
+		}
+		
+		field_marshal_modifier = {
+		}
+	}
+	
+	#KMT_sickly = { 
+	#	type = all
+	#	trait_type = personality_trait
+	#	
+	#	modifier = {
+	#		sickness_chance = 0.5
+	#	}
+	#}
+
+	PRC_urban_warfare_training = { 
+		type = corps_commander
+		trait_type = personality_trait
+		gain_xp = {
+			always = no
+		}
+		
+		trait_xp_factor = {
+			urban_assault_specialist = 6     
+		}
+		
+		attack_skill = 1
+		
+		field_marshal_modifier = {
+		}
+		
+		new_commander_weight = {
+			factor = 0  
+			modifier = {
+				FROM = { has_completed_focus = PRC_urban_warfare_training }
+				add = 0.5
+			}
+		}
+	}
+
+	PRC_peculiar_urban_warfare_insights = { 
+		type = corps_commander
+		trait_type = personality_trait
+		gain_xp = {
+			always = no
+		}
+		
+		attack_skill = 1
+		logistics_skill = 1
+		
+		modifier = {
+			urban = {
+				movement = 0.1
+				attack = 0.05
+				defence = 0.05
+			}
+		}
+		
+		field_marshal_modifier = {
+		}
+		
+		new_commander_weight = {
+			factor = 0  
+		}
+	}
+
+	KMT_held_hostage = { 
+		type = land
+		trait_type = personality_trait
+		gain_xp = {
+			always = no
+		}
+		
+		attack_skill = -10
+		defense_skill = -10
+		logistics_skill = -10
+		planning_skill = -10
+		
+		modifier = {
+			skill_bonus_factor = -1
+			cannot_use_abilities = 1
+		}
+		
+		field_marshal_modifier = {
+		}
+		
+		new_commander_weight = {
+			factor = 0  
+		}
+	}
+
+}

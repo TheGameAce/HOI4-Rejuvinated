@@ -1,0 +1,73 @@
+﻿division_template = {
+	name = "Youjidui"			
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+	}
+}
+
+#henan
+units = {
+	division = {
+		name = "Henan Youjidui"
+		location = 7085
+		division_template = "Youjidui"
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Henan Youjidui"
+		location = 10364
+		division_template = "Youjidui"
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Henan Youjidui"
+		location = 7074
+		division_template = "Youjidui"
+		start_experience_factor = 0.2
+	}
+
+	division = {
+		name = "Anhui Youjidui"
+		location = 7094
+		division_template = "Youjidui"
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Anhui Youjidui"
+		location = 1083
+		division_template = "Youjidui"
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Anhui Youjidui"
+		location = 12061
+		division_template = "Youjidui"
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Zhejiang Youjidui"
+		location = 10086
+		division_template = "Youjidui"
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Zhejiang Youjidui"
+		location = 12059
+		division_template = "Youjidui"
+		start_experience_factor = 0.2
+	}
+	
+	division = {
+		name = "Zhejiang Youjidui"
+		location = 7174
+		division_template = "Youjidui"
+		start_experience_factor = 0.2
+	}
+}

@@ -1,0 +1,2266 @@
+JAP_dcat_invasion_of_china = {
+	
+	JAP_establish_PGR = {
+		allowed = { original_tag = JAP }
+		
+		icon = generic_political_discourse
+
+		highlight_states = {
+			state = 608
+		}
+
+		available = {
+			has_government = fascism
+			608 = {
+				controller = {
+					OR = {
+						tag = JAP
+						is_puppet_of = JAP
+					}
+					has_full_control_of_state = 608
+				}
+			}
+		}
+
+		visible = {
+			NOT = {
+				has_global_flag = KMT_PGR_established
+			}
+			original_tag = JAP
+			has_government = fascism
+			NOT = {
+				country_exists = PGR
+				has_global_flag = is_1939_start
+				PGR = {
+					has_country_flag = bridge_choose_die
+				}
+				has_war_together_with = HYQ
+				HYQ = { is_subject_of = ROOT }
+				CHI = { is_subject_of = ROOT }
+			}
+			OR = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					divisions_in_state = {
+						state = 608
+						size > 0
+					}
+				}
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					controls_state = 608
+				}
+			}
+			608 = {
+				OWNER = {
+					NOT = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 0
+
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			set_global_flag = KMT_PGR_established
+			PGR = {
+				add_state_claim = 609
+				add_state_claim = 608
+				add_state_claim = 614
+				add_state_claim = 597
+				add_state_claim = 615
+				add_state_claim = 939
+				add_state_claim = 743
+				transfer_state = 608
+				set_capital = { state = 608 }
+				every_state = {
+					limit = {
+						is_claimed_by = PGR
+						owner = { tag = JAP }
+					}
+					PGR = {
+						transfer_state = PREV
+					}
+				}
+				if = {
+					limit = { NOT = { has_war_with = CHI }}
+					set_cosmetic_tag = JAP_kahoku_autonomy
+				}
+			}
+			JAP = {
+				if = {
+					limit = {
+						has_dlc = "Waking the Tiger"
+					}
+					JAP = {
+						set_autonomy = {
+							target = PGR
+							autonomous_state = autonomy_wtt_imperial_protectorate
+						}
+					}
+				}else = {
+					if = {
+						limit = {
+							has_dlc = "Together for Victory"
+						}
+						JAP = {
+							set_autonomy = {
+								target = PGR
+								autonomous_state = autonomy_integrated_puppet
+							}
+						}
+					}else = {
+						JAP = {
+							set_autonomy = {
+								target = PGR
+								autonomous_state = autonomy_puppet
+							}
+						}
+					}
+				}
+			}
+			EHA = {
+				country_event = { id = jap.4 days = 1 }
+			}
+			hidden_effect = {
+				PGR = {
+					add_ideas = KMT_JAP_puppet_no_surrender
+					add_manpower = 250000
+					add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 25000 producer = CHI }
+					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 producer = JAP }
+					remove_ideas = cg_warlords
+					diplomatic_relation = {
+						relation = military_access
+						country = MEN
+						active = yes
+					}
+					MEN = {
+						diplomatic_relation = {
+							relation = military_access
+							country = PGR
+							active = yes
+						}
+					}
+					if = {
+						limit = {
+							country_exists = RGR
+						}
+						diplomatic_relation = {
+							relation = military_access
+							country = RGR
+							active = yes
+						}
+						RGR = {
+							diplomatic_relation = {
+								relation = military_access
+								country = PGR
+								active = yes
+							}
+						}
+					}
+					load_oob = "PGR_established"
+				}
+			}
+		}
+	}
+	
+	JAP_establish_RGR = {
+		allowed = { original_tag = JAP }
+		
+		icon = generic_political_discourse
+
+		highlight_states = {
+			state = 613
+		}
+
+		available = {
+			has_government = fascism
+			613 = {
+				controller = {
+					OR = {
+						tag = JAP
+						is_puppet_of = JAP
+					}
+					has_full_control_of_state = 613
+				}
+			}
+		}
+
+		visible = {
+			NOT = {
+				has_global_flag = KMT_RGR_established
+			}
+			original_tag = JAP
+			has_government = fascism
+			NOT = {
+				country_exists = RGR
+				has_global_flag = is_1939_start
+				RGR = {
+					has_country_flag = bridge_choose_die
+				}
+				has_war_together_with = HYQ
+				HYQ = { is_subject_of = ROOT }
+				CHI = { is_subject_of = ROOT }
+			}
+			OR = {
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					divisions_in_state = {
+						state = 613
+						size > 0
+					}
+				}
+				any_country = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					controls_state = 613
+				}
+			}
+			613 = {
+				OWNER = {
+					NOT = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 0
+
+		ai_will_do = {
+			factor = 1000
+		}
+		complete_effect = {
+			set_global_flag = KMT_RGR_established
+			RGR = {
+				add_state_claim = 596
+				add_state_claim = 606
+				add_state_claim = 613
+				add_state_claim = 598
+				add_state_claim = 938
+				add_state_claim = 749
+				transfer_state = 613
+				set_capital = { state = 613 }
+				every_state = {
+					limit = {
+						is_claimed_by = RGR
+						owner = { tag = JAP }
+					}
+					RGR = {
+						transfer_state = PREV
+					}
+				}
+			}
+			JAP = {
+				if = {
+					limit = {
+						has_dlc = "Waking the Tiger"
+					}
+					JAP = {
+						set_autonomy = {
+							target = RGR
+							autonomous_state = autonomy_wtt_imperial_protectorate
+						}
+					}
+				}else = {
+					if = {
+						limit = {
+							has_dlc = "Together for Victory"
+						}
+						JAP = {
+							set_autonomy = {
+								target = RGR
+								autonomous_state = autonomy_integrated_puppet
+							}
+						}
+					}else = {
+						JAP = {
+							set_autonomy = {
+								target = RGR
+								autonomous_state = autonomy_puppet
+							}
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				RGR = {
+					add_ideas = KMT_JAP_puppet_no_surrender
+					add_manpower = 250000
+					add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 25000 producer = CHI }
+					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 producer = JAP }
+					diplomatic_relation = {
+						relation = military_access
+						country = MEN
+						active = yes
+					}
+					MEN = {
+						diplomatic_relation = {
+							relation = military_access
+							country = RGR
+							active = yes
+						}
+					}
+					if = {
+						limit = {
+							country_exists = PGR
+						}
+						diplomatic_relation = {
+							relation = military_access
+							country = PGR
+							active = yes
+						}
+						PGR = {
+							diplomatic_relation = {
+								relation = military_access
+								country = RGR
+								active = yes
+							}
+						}
+					}
+					if = {
+						limit = {
+							country_exists = EHA
+						}
+						diplomatic_relation = {
+							relation = military_access
+							country = EHA
+							active = yes
+						}
+						EHA = {
+							diplomatic_relation = {
+								relation = military_access
+								country = RGR
+								active = yes
+							}
+						}
+					}
+					load_oob = "RGR_established"
+				}
+			}
+		}
+	}
+	
+	JAP_establish_WJW = {
+		allowed = { original_tag = JAP }
+		
+		icon = generic_political_discourse
+
+		available = {
+			has_government = fascism
+			OR = {
+				AND = {
+					PGR = {
+						exists = yes
+						has_capitulated = no
+						is_subject_of = ROOT
+						has_war_with = CHI
+					}
+					RGR = {
+						exists = yes
+						has_capitulated = no
+						is_subject_of = ROOT
+						has_war_with = CHI
+					}
+				}
+				CHI = { exists = no }
+			}
+		}
+
+		visible = {
+			original_tag = JAP
+			has_government = fascism
+			OR = {
+				608 = {
+					CONTROLLER = { 
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				613 = {
+					CONTROLLER = { 
+						OR = {
+							is_subject_of = ROOT
+							tag = ROOT
+						}
+					}
+				}
+				has_offensive_war_with = CHI
+			}
+			CHI = {
+				OR = {
+					surrender_progress > 0.49
+					exists = no
+				}
+			}
+			any_state = {
+				is_core_of = CHI
+				controller = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			has_global_flag = KMT_wjw_contacted_jap
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+		days_remove = 0
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				date > 1940.1.1
+				factor = 5000
+			}
+		}
+		complete_effect = {
+			CHI = {
+				effect_tooltip = {
+					start_civil_war = {
+						ideology = fascism
+						capital = 613
+					}
+				}
+			} 
+			hidden_effect = {
+				country_event = { id = jap.10 }
+			}
+			custom_effect_tooltip = mck_puppet_wjw_tt
+		}
+	}
+	
+	JAP_hui_hui_state = {
+		allowed = { original_tag = JAP }
+		
+		icon = generic_political_discourse
+
+		visible = {
+			original_tag = JAP
+			has_government = fascism
+			NOT = {
+				has_war_with = NSM
+			}
+			NSM = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+			any_state = {
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					NOT = { tag = NSM }
+				}
+				OR = {
+					region = 144
+					state = 283
+					state = 604
+					state = 756
+					state = 945
+					state = 616
+					state = 949
+				}
+			}
+		}
+		
+		available = { has_war = no }
+
+		cost = 0
+		days_remove = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					OWNER = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+					OR = {
+						region = 144
+						state = 283
+						state = 604
+						state = 756
+						state = 945
+						state = 616
+						state = 949
+					}
+				}
+				NSM = { transfer_state = PREV }
+			}
+			if = {
+				limit = {
+					NSM = {
+						NOT = {
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				puppet = NSM
+			}
+			NSM = { set_cosmetic_tag = JAP_huihui_state }
+		}
+	}
+	
+	JAP_mengkukuo = {
+		allowed = { original_tag = JAP }
+		
+		icon = generic_political_discourse
+
+		visible = {
+			original_tag = JAP
+			has_government = fascism
+			NOT = {
+				has_war_with = MEN
+			}
+			MEN = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+			any_state = {
+				OWNER = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+					NOT = { tag = MEN }
+				}
+				OR = {
+					region = 152
+					state = 966
+					state = 621
+					state = 746
+					state = 611
+					state = 612
+					state = 937
+				}
+			}
+		}
+		
+		available = { has_war = no }
+
+		cost = 0
+		days_remove = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			every_state = {
+				limit = {
+					OWNER = {
+						OR = {
+							tag = ROOT
+							is_subject_of = ROOT
+						}
+					}
+					OR = {
+						region = 152
+						state = 966
+						state = 621
+						state = 746
+						state = 611
+						state = 612
+						state = 937
+					}
+				}
+				MEN = { transfer_state = PREV }
+			}
+			if = {
+				limit = {
+					MEN = {
+						NOT = {
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				puppet = MEN
+			}
+		}
+	}
+	
+	JAP_invade_sinkiang = {
+		visible = { 
+			has_completed_focus = JAP_secure_china 
+			can_declare_war_on = SIK
+		}
+		
+		available = {
+			SIK = { NOT = {	has_idea = KMT_trautmann_peace }}
+		}
+	
+		war_with_on_remove = SIK
+		
+		days_remove = 30
+		
+		ai_will_do = {
+			base = 10
+			modifier = {
+				SIK = { alliance_strength_ratio > 1 }
+				factor = 0
+			}
+			modifier = {
+				any_country = { 
+					is_chinese_nations_w_HYQ = yes
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+			modifier = {
+				SIK = {
+					NOT = {
+						any_neighbor_country = {
+							OR = { 
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+		
+		remove_effect = {
+			declare_war_on = { target = SIK type = puppet_wargoal_focus }
+		}
+	}
+}
+
+foreign_politics = {
+	
+	KMT_request_leased_ports = {
+		visible = {
+			OR = {
+				has_country_flag = KMT_former_colony_master_hk
+				has_country_flag = KMT_former_colony_master_gzw
+				has_country_flag = KMT_former_colony_master_mc
+			}
+		}
+		
+		available = {
+			OR = {
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = KMT_former_colonial_overlord_hk_tt
+						has_country_flag = KMT_former_colony_master_hk
+					}
+					custom_trigger_tooltip = {
+						tooltip = KMT_peace_with_owner_hk_tt
+						326 = {
+							OWNER = {
+								OR = {
+									AND = {
+										is_subject = yes
+										OVERLORD = {
+											NOT = {
+												has_war_with = ROOT 
+												tag = JAP
+												has_government = fascism
+											}
+										}
+									}
+									AND = {
+										NOT = {
+											has_war_with = ROOT 
+											tag = JAP
+											has_government = fascism
+										}
+										is_subject = no
+									}
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = KMT_former_colonial_overlord_gzw_tt
+						has_country_flag = KMT_former_colony_master_gzw
+					}
+					custom_trigger_tooltip = {
+						tooltip = KMT_peace_with_owner_gzw_tt
+						728 = {
+							OWNER = {
+								OR = {
+									AND = {
+										is_subject = yes
+										OVERLORD = {
+											NOT = { 
+												has_war_with = ROOT 
+												tag = JAP
+												has_government = fascism
+											}
+										}
+									}
+									AND = {
+										NOT = {
+											has_war_with = ROOT 
+											tag = JAP
+											has_government = fascism
+										}
+										is_subject = no
+									}
+								}
+							}
+						}
+					}
+				}
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = KMT_former_colonial_overlord_mc_tt
+						has_country_flag = KMT_former_colony_master_mc
+					}
+					custom_trigger_tooltip = {
+						tooltip = KMT_peace_with_owner_mc_tt
+						729 = {
+							OWNER = {
+								OR = {
+									AND = {
+										is_subject = yes
+										OVERLORD = {
+											NOT = { 
+												has_war_with = ROOT 
+												tag = JAP
+												has_government = fascism
+											}
+										}
+									}
+									AND = {
+										NOT = {
+											has_war_with = ROOT 
+											tag = JAP
+											has_government = fascism
+										}
+										is_subject = no
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		fire_only_once = yes
+		
+		cost = 5
+		
+		ai_will_do = {
+			base = 10
+		}
+		
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = KMT_former_colony_master_gzw
+				}
+				if = {
+					limit = {
+						728 = {
+							OWNER = {
+								is_subject = no
+							}
+						}
+					}
+					728 = {
+						OWNER = {
+							country_event = { id = jap.155 }
+							set_country_flag = KMT_requested_flag
+						}
+					}
+				}else = {
+					728 = {
+						OWNER = {
+							OVERLORD = {
+								country_event = { id = jap.155 }
+								set_country_flag = KMT_requested_flag
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = KMT_former_colony_master_hk
+				}
+				if = {
+					limit = {
+						328 = {
+							OWNER = {
+								NOT = { has_country_flag = KMT_requested_flag }
+								is_subject = no
+							}
+						}
+					}
+					326 = {
+						OWNER = {
+							country_event = { id = jap.155 }
+							set_country_flag = KMT_requested_flag
+						}
+					}
+				}else = {
+					if = {
+						limit = {
+							326 = {
+								OWNER = {
+									OVERLORD = {
+										NOT = { has_country_flag = KMT_requested_flag }
+									}
+								}
+							}
+						}
+						326 = {
+							OWNER = {
+								OVERLORD = {
+									country_event = { id = jap.155 }
+									set_country_flag = KMT_requested_flag
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = KMT_former_colony_master_mc
+				}
+				if = {
+					limit = {
+						729 = {
+							OWNER = {
+								is_subject = no
+								NOT = { has_country_flag = KMT_requested_flag }
+							}
+						}
+					}
+					729 = {
+						OWNER = {
+							country_event = { id = jap.155 }
+						}
+					}
+				}else = {
+					if = {
+						limit = {
+							729 = {
+								OWNER = {
+									OVERLORD = {
+										NOT = { has_country_flag = KMT_requested_flag }
+									}
+								}
+							}
+						}
+						729 = {
+							OWNER = {
+								OVERLORD = {
+									country_event = { id = jap.155 }
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+JAP_southern_expansion = {
+	
+	#historically, japan invaded siam right after pearl harbour, and resulted in ceasefire and siamese military cooperation after several hours
+	KMT_ultimatum_to_siam = {
+		allowed = { original_tag = JAP }
+		visible = {
+			NOT = { has_completed_focus = JAP_alliance_with_siam }
+			has_completed_focus = JAP_strike_south_doctrine
+			SIA = {
+				exists = yes
+				is_subject = no
+				is_in_faction = no
+			}
+		}
+		
+		target_trigger = { FROM = { tag = SIA }}
+		
+		fire_only_once = yes
+		
+		cost = 0
+		
+		available = {
+			OR = {
+				has_war_with = MAL
+				has_war_with = RAJ
+				has_war_with = ENG
+				has_completed_focus = JAP_strike_on_the_southern_resource_area
+			}
+		}
+		
+		ai_will_do = { base = 100 }
+		
+		complete_effect = {
+			FROM = {
+				country_event = { id = jap.190 }
+			}
+		}
+	}
+	
+	JAP_occupy_ktw = {
+		allowed = { original_tag = JAP }
+		visible = {
+			has_completed_focus = JAP_strike_south_doctrine
+			FROM = { 
+				owns_state = 728
+				NOT = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		
+		target_trigger = { 
+			FROM = { 
+				owns_state = 728
+				NOT = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		
+		custom_cost_trigger = {
+			NOT = { command_power < 5 }
+		}
+		
+		custom_cost_text = PRC_cost_5_cp
+		
+		available = {
+			FROM = { 
+				has_country_flag = JAP_accepted_indochina_demand 
+				controls_state = 728
+			}
+			if = {
+				limit = { is_ai = no }
+				divisions_in_state = {
+					state = 728
+					size > 0
+				}
+			}
+		}
+		
+		fire_only_once = yes
+		
+		ai_will_do = { 
+			base = 100 
+		}
+		
+		complete_effect = {
+			transfer_state = 728
+			FROM = {
+				country_event = { id = jap.214 }
+			}
+		}
+	}
+	
+	JAP_occupy_northern_indochina = {
+		allowed = { original_tag = JAP }
+		visible = {
+			has_completed_focus = JAP_strike_south_doctrine
+			FROM = { 
+				any_owned_state = {
+					OR = {
+						state = 967
+						state = 972
+					}
+				}
+				NOT = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		
+		fire_only_once = yes
+		
+		target_trigger = { 
+			FROM = { 
+				any_owned_state = {
+					OR = {
+						state = 967
+						state = 972
+					}
+				}
+				NOT = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		
+		custom_cost_trigger = {
+			NOT = { command_power < 5 }
+		}
+		
+		custom_cost_text = PRC_cost_5_cp
+		
+		available = {
+			FROM = { 
+				has_country_flag = JAP_accepted_indochina_demand 
+				OR = {
+					controls_state = 967
+					controls_state = 972
+				}
+			}
+			if = {
+				limit = { FROM = { owns_state = 967 } is_ai = no}
+				divisions_in_state = {
+					state = 967
+					size > 4
+				}
+			}
+			if = {
+				limit = { FROM = { owns_state = 972 } is_ai = no}
+				divisions_in_state = {
+					state = 972
+					size > 4
+				}
+			}
+		}
+		
+		ai_will_do = { 
+			base = 100 
+		}
+		
+		complete_effect = {
+			log = "[JAP.GetName] occupies north indochina from [From.GetName]"
+			if = {
+				limit = { is_ai = yes }
+				if = { 
+					limit = { NOT = { has_template = "Futsuin Shinchu Gun" }}
+					division_template = {
+						name = "Futsuin Shinchu Gun"
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
+						support = {
+							engineer = { x = 0 y = 0 }
+							artillery = { x = 0 y = 1 }
+						}
+						priority = 1
+					}
+				}
+			}
+			if = {
+				limit = { FROM = { owns_state = 967 }}
+				transfer_state = 967
+				if = {
+					limit = {
+						is_ai = yes
+						NOT = { has_country_flag = JAP_846_shinshued }
+					}
+					set_country_flag = JAP_846_shinshued
+					967 = {
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 7093
+							owner = ROOT
+							count = 1
+						}
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 9948
+							owner = ROOT
+							count = 1
+						}
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 12065
+							owner = ROOT
+							count = 1
+						}
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 7518
+							owner = ROOT
+							count = 1
+						}
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 12008
+							owner = ROOT
+							count = 1
+						}
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 12319
+							owner = ROOT
+							count = 1
+						}
+					}
+				}
+			}
+			if = {
+				limit = { FROM = { owns_state = 972 }}
+				transfer_state = 972
+				if = {
+					limit = {
+						is_ai = yes
+						NOT = { has_country_flag = JAP_851_shinshued }
+					}
+					set_country_flag = JAP_851_shinshued
+					972 = {
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 12392
+							owner = ROOT
+							count = 1
+						}
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 12392
+							owner = ROOT
+							count = 1
+						}
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 12433
+							owner = ROOT
+							count = 1
+						}
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 12433
+							owner = ROOT
+							count = 1
+						}
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 4568
+							owner = ROOT
+							count = 1
+						}
+						create_unit = {
+							division = "name = \"Futsuin Shinchu Gun\" division_template = \"Futsuin Shinchu Gun\" start_experience_factor = 0.4" 
+							prioritize_location = 4568
+							owner = ROOT
+							count = 1
+						}
+					}
+				}
+			}
+			
+			FROM = {
+				country_event = { id = jap.198 }
+			}
+		}
+	}
+	
+	JAP_occupy_southern_indochina = {
+		allowed = { original_tag = JAP }
+		visible = {
+			has_completed_focus = JAP_strike_south_doctrine
+			FROM = { 
+				owns_state = 286
+				NOT = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		
+		
+		fire_only_once = yes
+		target_trigger = { 
+			FROM = { 
+				owns_state = 286
+				NOT = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+		
+		custom_cost_trigger = {
+			NOT = { command_power < 5 }
+		}
+		
+		custom_cost_text = PRC_cost_5_cp
+		
+		available = {
+			FROM = { 
+				has_country_flag = JAP_accepted_indochina_demand 
+				controls_state = 286
+			}
+			if = { 
+				limit = { is_ai = no }
+				divisions_in_state = {
+					state = 286
+					size > 4
+				}
+			}
+		}
+		
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				OR = {
+					has_war_with = MAL
+					has_war_with = ENG
+					has_war_with = INS
+					has_war_with = PHI
+					has_war_with = USA
+					focus_progress = {
+						focus = JAP_strike_on_the_southern_resource_area
+						progress > 0.5
+					}
+					has_completed_focus = JAP_strike_on_the_southern_resource_area
+				}
+				add = 10000
+			}
+		}
+		
+		complete_effect = {
+			transfer_state = 286
+			FROM = {
+				country_event = { id = jap.199 }
+			}
+		}
+	}
+	
+	JAP_dismantle_indochina_mission = {
+		days_mission_timeout = 10
+		is_good = no
+		
+		activation = { always = no }
+		
+		available = {
+			NOT = { has_country_flag = IDC_jap_planning_coup }
+		}
+		
+		timeout_effect = {
+			custom_effect_tooltip = GAME_OVER_TT
+		}
+	}
+	
+	JAP_dismantle_indochina = {
+		war_with_on_remove = IDC
+		visible = {
+			has_completed_focus = JAP_strike_south_doctrine
+			IDC = { 
+				NOT = {
+					has_war_with = ROOT
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+					has_country_flag = JAP_revoked_indochina_access
+				}
+				any_owned_state = {
+					OR = {
+						AND = {
+							is_core_of = VIN
+							VIN = {
+								OR = { 
+									exists = no
+									is_in_faction_with = ROOT
+									is_subject_of = ROOT
+								}
+							}
+						}
+						AND = {
+							is_core_of = LAO
+							LAO = {
+								OR = { 
+									exists = no
+									is_in_faction_with = ROOT
+									is_subject_of = ROOT
+								}
+							}
+						}
+						AND = {
+							is_core_of = CAM
+							CAM = {
+								OR = { 
+									exists = no
+									is_in_faction_with = ROOT
+									is_subject_of = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		target_trigger = { 
+			FROM = { 
+				tag = IDC
+				NOT = {
+					has_war_with = ROOT
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+				any_owned_state = {
+					OR = {
+						AND = {
+							is_core_of = VIN
+							VIN = {
+								OR = { 
+									exists = no
+									is_in_faction_with = ROOT
+									is_subject_of = ROOT
+								}
+							}
+						}
+						AND = {
+							is_core_of = LAO
+							LAO = {
+								OR = { 
+									exists = no
+									is_in_faction_with = ROOT
+									is_subject_of = ROOT
+								}
+							}
+						}
+						AND = {
+							is_core_of = CAM
+							CAM = {
+								OR = { 
+									exists = no
+									is_in_faction_with = ROOT
+									is_subject_of = ROOT
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		custom_cost_trigger = {
+			NOT = { command_power < 5 }
+		}
+		
+		fire_only_once = yes
+		
+		custom_cost_text = PRC_cost_5_cp
+		
+		available = {
+			FROM = { has_country_flag = JAP_accepted_indochina_demand }
+			has_military_access_to = IDC
+			OR = {
+				FRA = { controls_state = 16 }
+				NOT = {
+					any_country = {
+						has_war_with = FRA
+						is_major = yes
+						surrender_progress < 0.6
+					}
+				}
+				NOT = {
+					country_exists = FRA
+					country_exists = VIC
+				}
+			}
+			IDC = {
+				OR = {
+					is_subject = no
+					OVERLORD = {
+						strength_ratio = {
+							tag = ROOT
+							ratio < 0.25
+						}
+					}
+				}
+			}
+		}
+		
+		days_remove = 10
+		
+		ai_will_do = { base = 100 }
+		
+		cancel_trigger = {
+			OR = {
+				has_war_with = IDC
+				IDC = { NOT = { has_country_flag = IDC_jap_planning_coup }}
+			}
+		}
+		
+		complete_effect = {
+			IDC = {
+				set_country_flag = IDC_jap_planning_coup
+				activate_mission = JAP_dismantle_indochina_mission
+				country_event = { id = jap.200 }
+			}
+		}
+		remove_effect = {
+			hidden_effect = { news_event = { id = jap.209 hours = 2 }}
+			if = { limit = { NOT = { country_exists = VIN }} set_country_flag = JAP_no_vin_prior_to_idc_coup }
+			if = { limit = { NOT = { country_exists = LAO }} set_country_flag = JAP_no_lao_prior_to_idc_coup }
+			if = { limit = { NOT = { country_exists = CAM }} set_country_flag = JAP_no_cam_prior_to_idc_coup }
+			if = {
+				limit = {
+					VIN = {
+						OR = { 
+							exists = no
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = VIN
+					}
+					VIN = { transfer_state = PREV }
+				}
+				IDC = {
+					every_owned_state = {
+						limit = { 
+							is_core_of = VIN
+						}
+						VIN = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					LAO = {
+						OR = { 
+							exists = no
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = LAO
+					}
+					LAO = { transfer_state = PREV }
+				}
+				IDC = {
+					every_owned_state = {
+						limit = { 
+							is_core_of = LAO
+						}
+						LAO = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					CAM = {
+						OR = { 
+							exists = no
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = CAM
+					}
+					CAM = { transfer_state = PREV }
+				}
+				IDC = {
+					every_owned_state = {
+						limit = { 
+							is_core_of = CAM
+						}
+						CAM = { transfer_state = PREV }
+					}
+				}
+			}
+			if = {
+				limit = { 
+					has_country_flag = JAP_no_vin_prior_to_idc_coup 
+					country_exists = VIN
+				}
+				puppet = VIN
+			}
+			if = {
+				limit = { 
+					has_country_flag = JAP_no_lao_prior_to_idc_coup 
+					country_exists = LAO
+				}
+				puppet = LAO
+			}
+			if = {
+				limit = { 
+					has_country_flag = JAP_no_cam_prior_to_idc_coup 
+					country_exists = cam
+				}
+				puppet = CAM
+			}
+			annex_country = {
+				target = IDC
+				transfer_troops = no
+			}
+			IDC = { clr_country_flag = IDC_jap_planning_coup }
+		}
+	}
+	
+	JAP_intervene_in_franco_thai_war = {
+		allowed = { original_tag = JAP }
+		allowed = { tag = JAP }
+		
+		visible = {
+			SIA = {
+				has_war_with = IDC
+				is_subject = no
+				is_in_faction = no
+			}
+			IDC = {
+				is_subject = no
+				is_in_faction = no
+			}
+		}
+		
+		cost = 0
+		
+		ai_will_do = {
+			base = 0
+			modifier = {
+				SIA = {
+					OR = { 
+						surrender_progress > 0.02
+						casualties_inflicted_by = {
+							opponent = IDC
+							thousands > 1
+						}
+					}
+				}
+				add = 10000
+			}
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_variable = { global.JAP_franco_thai_accepted = 0 }
+			SIA = {
+				country_event = { id = jap.211 }
+			}
+			IDC = {
+				country_event = { id = jap.211 }
+			}
+		}
+	}
+	
+	JAP_take_macao = {
+		allowed = { 
+			always = no
+			#tag = JAP 
+		}
+		
+		visible = {
+			729 = {
+				OWNER = {
+					NOT = { 
+						has_war_with = ROOT 
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					controls_state = 729
+				}
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				NOT = { 
+					has_war_with = ROOT 
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+				controls_state = 729
+				owns_state = 729
+			}
+		}
+		
+		
+		custom_cost_trigger = { NOT = { command_power < 10 }}
+		
+		custom_cost_text = 10cp
+		
+		ai_will_do = {
+			base = 0
+		}
+		
+		available = {
+			any_country = {
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_full_control_of_state = 592
+			}
+		}
+		
+		cancel_trigger = {
+			NOT = {
+				FROM = {
+					owns_state = 729
+					controls_state = 729
+				}
+			}
+		}
+		
+		days_remove = 5
+		
+		fire_only_once = yes
+		
+		war_with_target_on_remove = yes
+		
+		complete_effect = {
+			hidden_effect = { add_command_power = -50 }
+			729 = {
+				OWNER = { country_event = { id = jap.252 }}
+			}
+		}
+		
+		remove_effect = {
+			set_province_controller = 4189
+			729 = {
+				OWNER = { country_event = { id = jap.258 }}
+			}
+			start_border_war = {
+				attacker = {
+					state = 592
+					num_provinces = 1
+					on_win = jap.253
+					on_lose = jap.254
+					on_cancel = jap.255
+				}
+				
+				defender = {
+					state = 729
+					num_provinces = 1
+					on_win = jap.256
+					on_lose = jap.267
+					on_cancel = jap.257
+				}
+				
+			}
+		}
+	}
+	
+	JAP_take_east_timor = {
+		allowed = { 
+			always = no
+			#tag = JAP 
+		}
+		
+		visible = {
+			721 = {
+				OWNER = {
+					NOT = { 
+						has_war_with = ROOT 
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					controls_state = 721
+				}
+			}
+		}
+		
+		target_trigger = {
+			FROM = {
+				NOT = { 
+					has_war_with = ROOT 
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+				controls_state = 721
+				owns_state = 721
+			}
+		}
+		
+		custom_cost_trigger = { NOT = { command_power < 10 }}
+		
+		custom_cost_text = 10cp
+		
+		ai_will_do = {
+			base = 0
+		}
+		
+		available = {
+			any_country = {
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_full_control_of_state = 667
+			}
+		}
+		
+		cancel_trigger = {
+			NOT = {
+				FROM = {
+					owns_state = 721
+					controls_state = 721
+				}
+			}
+		}
+		
+		days_remove = 5
+		
+		fire_only_once = yes
+		
+		war_with_target_on_remove = yes
+		
+		complete_effect = {
+			hidden_effect = { add_command_power = -50 }
+			721 = { OWNER = { country_event = { id = jap.259 }}}
+		}
+		
+		remove_effect = {
+			set_state_controller = 667
+			721 = {
+				OWNER = { country_event = { id = jap.260 }}
+			}
+			start_border_war = {
+				attacker = {
+					state = 667
+					num_provinces = 1
+					on_win = jap.261
+					on_lose = jap.262
+					on_cancel = jap.263
+				}
+				
+				defender = {
+					state = 721
+					num_provinces = 1
+					on_win = jap.264
+					on_lose = jap.265
+					on_cancel = jap.266
+				}
+				
+			}
+		}
+	}
+}
+
+political_actions = {
+
+	JAP_request_ban_lift_officials = {
+		allowed = { original_tag = JAP }
+		visible = {
+			FROM = {
+				is_subject_of = ROOT
+				tag = MCK
+				OR = {
+					has_country_flag = no_jap_mili_officials
+					has_country_flag = no_jap_officials
+				}
+				NOT = {
+					has_country_flag = no_ban_on_jap
+				}
+				check_variable = { FROM.MCK_awareness > 14 }
+			}
+		}
+		
+		target_trigger = {		
+			FROM = {
+				is_subject_of = ROOT
+				tag = MCK
+				OR = {
+					has_country_flag = no_jap_mili_officials
+					has_country_flag = no_jap_officials
+				}
+				NOT = {
+					has_country_flag = no_ban_on_jap
+				}
+			}
+		}
+		
+		available = {}
+		
+		ai_will_do = {
+			base = 15
+		}
+		
+		fire_only_once = yes
+		
+		cost = 25
+		
+		complete_effect = {
+			random_country = {
+				limit = {
+					is_subject_of = ROOT
+					tag = MCK
+					OR = {
+						has_country_flag = no_jap_mili_officials
+						has_country_flag = no_jap_officials
+					}
+					NOT = {
+						has_country_flag = no_ban_on_jap
+					}
+				}
+				country_event = { id = jap.99 }
+			}
+		}
+	}
+	
+	MEN_core_mongolia = {
+		allowed = { original_tag = MEN }
+		priority = 500
+		
+		visible = {
+			OR = {
+				owns_state = 937
+				owns_state = 612
+				owns_state = 611
+				owns_state = 966
+				owns_state = 621
+				owns_state = 746
+				owns_state = 616
+				owns_state = 945
+				owns_state = 819
+				owns_state = 817
+				owns_state = 330
+				owns_state = 820
+				owns_state = 818
+				owns_state = 329
+			}
+		}
+		
+		available = {
+			owns_state = 937
+			owns_state = 612
+			owns_state = 611
+			owns_state = 966
+			owns_state = 621
+			owns_state = 746
+			owns_state = 616
+			owns_state = 945
+			owns_state = 819
+			owns_state = 817
+			owns_state = 330
+			owns_state = 820
+			owns_state = 818
+			owns_state = 329
+		}
+		
+		fire_only_once = yes
+		
+		cost = 50
+		
+		complete_effect = {
+			add_state_core = 937
+			add_state_core = 612
+			add_state_core = 611
+			add_state_core = 966
+			add_state_core = 621
+			add_state_core = 746
+			add_state_core = 616
+			add_state_core = 945
+			add_state_core = 819
+			add_state_core = 817
+			add_state_core = 330
+			add_state_core = 820
+			add_state_core = 818
+			add_state_core = 329
+		}
+	}
+}
+
+MEN_dcat_suiyuan_campaign = {
+	MEN_suiyuan_offensive_mission = {
+		days_mission_timeout = 90
+		
+		is_good = yes
+		
+		activation = { always = no }
+		
+		available = {
+			OR = {
+				owns_state = 621
+				621 = {
+					OWNER = {
+						OR = { 
+							is_chinese_nations_w_HYQ = no
+							is_subject_of = JAP
+						}
+					}
+				}
+				NOT = { is_subject_of = JAP }
+				NOT = { owns_state = 966 }
+				has_war = yes
+			}
+		}
+		
+		timeout_effect = {
+			JAP = { country_event = { id = jap.176 }}
+			add_ideas = MEN_suiyuan_campaign
+			621 = { OWNER = { add_ideas = MEN_suiyuan_campaign }}
+			start_border_war = {
+				id = 31
+				change_state_after_war = yes
+				minimum_duration_in_days = 30
+				combat_width = 120
+				attacker = {
+					state = 966
+					num_provinces = 3
+					on_win = jap.186
+					on_lose = jap.187
+					on_cancel = jap.188
+					leader_score = {
+						base = 1
+						modifier = {
+							has_id = 1058
+							add = 10
+						}
+					}
+					modifier = global.MEN_suiyuan_support
+				}
+				
+				defender = {
+					state = 621
+					num_provinces = 3
+					on_win = jap.183
+					on_lose = jap.184
+					on_cancel = jap.185
+					leader_score = {
+						base = 1
+						modifier = {
+							has_id = 1032
+							add = 10
+						}
+					}
+					modifier = global.SHX_suiyuan_support
+				}
+			}
+		}
+	}
+	
+	KMT_send_military_support_to_suiyuan_governor = {
+		visible = {
+			has_country_flag = KMT_can_support_suiyuan
+			621 = { 
+				OWNER = {
+					is_chinese_nations_w_HYQ = yes 
+					NOT = { is_subject_of = JAP }
+					controls_state = 621
+				}
+			}
+			NOT = { has_global_flag = MEN_suiyuan_campaign_end }
+		}
+		
+		fire_only_once = yes
+		
+		custom_cost_text = PRC_cost_50_cp
+		
+		custom_cost_trigger = {
+			if = {
+				limit = { is_ai	= no }
+				NOT = { command_power < 50 }
+			}
+		}
+		
+		ai_will_do = {
+			base = 2
+			modifier = {
+				is_historical_focus_on = yes
+				add = 100
+			}
+		}
+		
+		complete_effect = {
+			set_global_flag = KMT_supported_suiyuan
+			hidden_effect = { add_command_power = -50 }
+			custom_effect_tooltip = KMT_shx_suiyuan_more_powerful
+			if = {
+				limit = { 621 = { CONTROLLER = { has_border_war_with = MEN }}}
+				set_border_war_data = {
+					attacker = 966
+					defender = 621
+					defender_modifier = 1.5
+				}
+			}else = { set_variable = { global.SHX_suiyuan_support = 1.5 }}
+			MEN = { country_event = { id = jap.180 }}
+			621 = { CONTROLLER = { country_event = { id = jap.177 }}}
+			JAP = { country_event = { id = jap.180 }}
+		}
+	}
+	
+	KMT_escalate_suiyuan_campaign = {
+		visible = {
+			has_country_flag = KMT_can_support_suiyuan
+			621 = { 
+				OWNER = {
+					is_chinese_nations_w_HYQ = yes 
+					NOT = { is_subject_of = JAP }
+					controls_state = 621
+				}
+			}
+			NOT = { has_global_flag = MEN_suiyuan_campaign_end }
+		}
+		
+		available = {
+			has_global_flag = KMT_supported_suiyuan
+			621 = { CONTROLLER = { has_border_war_with = MEN }}
+		}
+		
+		fire_only_once = yes
+		
+		custom_cost_text = PRC_cost_50_cp
+		
+		custom_cost_trigger = {
+			NOT = { command_power < 50 }
+		}
+		
+		ai_will_do = {
+			base = 2
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				has_global_flag = JAP_escalated_suiyuan
+				add = 5
+			}
+		}
+		
+		complete_effect = {
+			set_global_flag = KMT_escalated_suiyuan
+			hidden_effect = { add_command_power = -50 }
+			if = {
+				limit = { NOT = { has_global_flag = JAP_escalated_suiyuan }}
+				custom_effect_tooltip = JAP_men_suiyuan_more_powerful
+				set_border_war_data = {
+					attacker = 966
+					defender = 621
+					defender_modifier = 1.5
+				}
+				MEN = { country_event = { id = jap.181 }}
+				621 = { CONTROLLER = { country_event = { id = jap.178 }}}
+				JAP = { country_event = { id = jap.181 }}
+			}else = {
+				621 = {
+					CONTROLLER = {
+						MEN = { 
+							declare_war_on = {
+								target = PREV
+								type = take_state_focus
+								generator = { 621 746 }
+							}
+						}
+					}
+				}
+				hidden_effect = {
+					news_event = { id = kns.23 days = 1 }
+				}
+				cancel_border_war = {
+					dont_fire_events = yes
+					attacker = 966
+					defender = 621
+				}
+				MEN = { country_event = { id = jap.182 }}
+				621 = { CONTROLLER = { country_event = { id = jap.179 }}}
+				JAP = { country_event = { id = jap.182 }}
+				set_global_flag = MEN_suiyuan_campaign_end
+			}
+		}
+	}
+	
+	JAP_send_military_support_to_MEN = {
+		allowed = { original_tag = JAP }
+		visible = {
+			has_country_flag = JAP_can_support_suiyuan
+			FROM = { 
+				is_subject_of = JAP
+				controls_state = 966
+			}
+			NOT = { has_global_flag = MEN_suiyuan_campaign_end }
+		}
+		
+		target_trigger = {
+			FROM = {
+				controls_state = 966
+				is_subject_of = JAP
+			}
+		}
+		
+		fire_only_once = yes
+		
+		custom_cost_text = PRC_cost_50_cp
+		
+		custom_cost_trigger = {
+			NOT = { command_power < 50 }
+		}
+		
+		ai_will_do = {
+			base = 2
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		
+		complete_effect = {
+			set_global_flag = JAP_supported_suiyuan
+			hidden_effect = { add_command_power = -50 }
+			custom_effect_tooltip = JAP_men_suiyuan_more_powerful
+			if = {
+				limit = { 621 = { CONTROLLER = { has_border_war_with = MEN }}}
+				set_border_war_data = {
+					attacker = 966
+					defender = 621
+					attacker_modifier = 0.5
+				}
+			}else = { set_variable = { global.MEN_suiyuan_support = 0.5 }}
+			MEN = { country_event = { id = jap.177 }}
+			621 = { CONTROLLER = { country_event = { id = jap.180 }}}
+			if = {
+				limit = { 621 = { CONTROLLER = { is_chinese_nations_w_HYQ = yes NOT = { is_subject_of = ROOT }}}}
+				event_target:KMT_central_gov_tag = { country_event = { id = jap.180 }}
+			}
+		}
+	}
+	
+	JAP_escalate_suiyuan_campaign = {
+		allowed = { original_tag = JAP }
+		visible = {
+			has_country_flag = JAP_can_support_suiyuan
+			FROM = { 
+				is_subject_of = JAP
+				controls_state = 966
+			}
+			NOT = { has_global_flag = MEN_suiyuan_campaign_end }
+		}
+		
+		target_trigger = {
+			FROM = {
+				controls_state = 966
+				is_subject_of = JAP
+			}
+		}
+		
+		available = {
+			has_global_flag = JAP_supported_suiyuan
+			621 = { CONTROLLER = { has_border_war_with = MEN }}
+		}
+		
+		fire_only_once = yes
+		
+		custom_cost_text = PRC_cost_50_cp
+		
+		custom_cost_trigger = {
+			NOT = { command_power < 50 }
+		}
+		
+		ai_will_do = {
+			base = 2
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				has_global_flag = KMT_escalated_suiyuan
+				add = 5
+			}
+		}
+		
+		complete_effect = {
+			set_global_flag = JAP_escalated_suiyuan
+			hidden_effect = { add_command_power = -50 }
+			if = {
+				limit = { NOT = { has_global_flag = KMT_escalated_suiyuan }}
+				custom_effect_tooltip = JAP_men_suiyuan_more_powerful
+				set_border_war_data = {
+					attacker = 966
+					defender = 621
+					attacker_modifier = 2
+				}
+				MEN = { country_event = { id = jap.178 }}
+				621 = { CONTROLLER = { country_event = { id = jap.181 }}}
+				if = {
+					limit = { 621 = { CONTROLLER = { is_chinese_nations_w_HYQ = yes NOT = { is_subject_of = ROOT }}}}
+					event_target:KMT_central_gov_tag = { country_event = { id = jap.181 }}
+				}
+			}else = {
+				621 = {
+					CONTROLLER = {
+						MEN = { 
+							declare_war_on = {
+								target = PREV
+								type = take_state_focus
+								generator = { 621 746 }
+							}
+						}
+					}
+				}
+				cancel_border_war = {
+					dont_fire_events = yes
+					attacker = 966
+					defender = 621
+				}
+				MEN = { country_event = { id = jap.179 }}
+				621 = { CONTROLLER = { country_event = { id = jap.182 }}}
+				if = {
+					limit = { 621 = { CONTROLLER = { is_chinese_nations_w_HYQ = yes NOT = { is_subject_of = ROOT }}}}
+					event_target:KMT_central_gov_tag = { country_event = { id = jap.182 }}
+				}
+				hidden_effect = {
+					news_event = { id = kns.23 days = 1 }
+				}
+				set_global_flag = MEN_suiyuan_campaign_end
+			}
+		}
+	}
+}

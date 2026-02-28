@@ -1,0 +1,468 @@
+use_postal_romanisation = {
+	set_global_flag = KMT_use_postal_romanisation
+	### STATES ###
+	283 = { set_state_name = KMT_STATES_283_postal }		#甘肅，甘/隴
+	328 = { set_state_name = KMT_STATES_328_postal }		#吉林
+	592 = { set_state_name = KMT_STATES_592_postal }		#西廣東，粵西
+	593 = { set_state_name = KMT_STATES_593_postal }		#東廣東，粵東    
+	595 = { set_state_name = KMT_STATES_595_postal }		#褔建，閩
+	596 = { set_state_name = KMT_STATES_596_postal }		#浙江，浙
+	597 = { set_state_name = KMT_STATES_597_postal }		#膠東
+	598 = { set_state_name = KMT_STATES_598_postal }		#江蘇，蘇
+	599 = { set_state_name = KMT_STATES_599_postal }		#北廣西，桂北
+	600 = { set_state_name = KMT_STATES_600_postal }		#東江西，贛東
+	603 = { set_state_name = KMT_STATES_603_postal }		#貴州﹐貴/黔
+	605 = { set_state_name = KMT_STATES_605_postal }		#重慶
+	606 = { set_state_name = KMT_STATES_606_postal }		#安徽，皖
+	607 = { set_state_name = KMT_STATES_607_postal }		#北河南，䂊北
+	if = { limit = { 608 = { OWNER = { has_country_flag = peking_capital }}} 608 = { set_state_name = KMT_STATES_608_capital_postal }}	#北平
+	else = { 608 = { set_state_name = KMT_STATES_608_postal } }
+	609 = { set_state_name = KMT_STATES_609_postal }		#東河北，冀東
+	610 = { set_state_name = KMT_STATES_610_postal }		#熱河
+	613 = { set_state_name = KMT_STATES_613_postal }		#南京
+	614 = { set_state_name = KMT_STATES_614_postal }		#河北，冀
+	615 = { set_state_name = KMT_STATES_615_postal }		#山西，晉
+	616 = { set_state_name = KMT_STATES_616_postal }		#寧夏，寧
+	620 = { set_state_name = KMT_STATES_620_postal }		#東湖北，鄂東
+	622 = { set_state_name = KMT_STATES_622_postal }		#陝西，陝/秦
+	743 = { set_state_name = KMT_STATES_743_postal }		#青島
+	714 = { set_state_name = KMT_STATES_714_postal }		#黑河
+	715 = { set_state_name = KMT_STATES_715_postal }		#西興安
+	716 = { set_state_name = KMT_STATES_716_postal }		#奉天
+	717 = { set_state_name = KMT_STATES_717_postal }		#濱江
+	744 = { set_state_name = KMT_STATES_744_postal }		#關中
+	746 = { set_state_name = KMT_STATES_746_postal }		#伊克昭（盟），今鄂爾多斯市
+	747 = { set_state_name = KMT_STATES_747_postal }		#大理
+	748 = { set_state_name = KMT_STATES_748_postal }		#南四川，川南/蜀南
+	749 = { set_state_name = KMT_STATES_749_postal }		#宣城
+	750 = { set_state_name = KMT_STATES_750_postal }		#西湖北，鄂西
+	751 = { set_state_name = KMT_STATES_751_postal }		#西四川，川西/蜀西
+	752 = { set_state_name = KMT_STATES_752_postal }		#東西康，康東
+	753 = { set_state_name = KMT_STATES_753_postal }		#北四川，川北
+	754 = { set_state_name = KMT_STATES_754_postal }		#東青海，青東
+	755 = { set_state_name = KMT_STATES_755_postal }		#都蘭
+	756 = { set_state_name = KMT_STATES_756_postal }		#酒泉
+	761 = { set_state_name = KMT_STATES_761_postal }		#北興安
+	973 = { set_state_name = KMT_STATES_973_postal }		#間島
+	974 = { set_state_name = KMT_STATES_974_postal }		#龍江
+	975 = { set_state_name = KMT_STATES_975_postal }		#牡丹江
+	976 = { set_state_name = KMT_STATES_976_postal }		#通化
+	978 = { set_state_name = KMT_STATES_978_postal }		#北廣東，粵北
+	936 = { set_state_name = KMT_STATES_936_postal }		#東興安
+	939 = { set_state_name = KMT_STATES_939_postal }		#山東，魯
+	940 = { set_state_name = KMT_STATES_940_postal }		#南河南，䂊南
+	941 = { set_state_name = KMT_STATES_941_postal }		#東廣西，桂東
+	943 = { set_state_name = KMT_STATES_943_postal }		#成都
+	946 = { set_state_name = KMT_STATES_946_postal }		#业肅走廊/河西走廊
+	950 = { set_state_name = KMT_STATES_950_postal }		#北安
+	949 = { set_state_name = KMT_STATES_949_postal }		#陝甘寧
+	955 = { set_state_name = KMT_STATES_955_postal }		#北湖北，鄂北
+	956 = { set_state_name = KMT_STATES_956_postal }		#南江西，贛南
+	957 = { set_state_name = KMT_STATES_957_postal }		#西江西，贛西
+	959 = { set_state_name = KMT_STATES_959_postal }		#欽廉
+	961 = { set_state_name = KMT_STATES_961_postal }		#三江
+	963 = { set_state_name = KMT_STATES_963_postal }		#南興安
+	964 = { set_state_name = KMT_STATES_964_postal }		#錦州
+	965 = { set_state_name = KMT_STATES_965_postal }		#安東
+	966 = { set_state_name = KMT_STATES_966_postal }		#百靈廟
+
+	### VP ###
+	set_province_name = { id = 944 name = KMT_VP_944_postal }		#延吉
+	set_province_name = { id = 994 name = KMT_VP_994_postal }		#崖（縣）
+	set_province_name = { id = 1018 name = KMT_VP_1018_postal }		#北海
+	set_province_name = { id = 1029 name = KMT_VP_1029_postal }		#連雲港
+	set_province_name = { id = 1047 name = KMT_VP_1047_postal }		#廣州
+	set_province_name = { id = 1053 name = KMT_VP_1053_postal }		#贛（縣）
+	set_province_name = { id = 1055 name = KMT_VP_1055_postal }		#永嘉
+	set_province_name = { id = 1069 name = KMT_VP_1069_postal }		#濟南
+	set_province_name = { id = 1070 name = KMT_VP_1070_postal }		#海口
+	set_province_name = { id = 1114 name = KMT_VP_1114_postal }		#蒙自
+	set_province_name = { id = 1150 name = KMT_VP_1150_postal }		#大連
+	set_province_name = { id = 1168 name = KMT_VP_1168_postal }		#臨海
+	set_province_name = { id = 1200 name = KMT_VP_1200_postal }		#煙臺，舊稱芝罘
+	set_province_name = { id = 1257 name = KMT_VP_1257_postal }		#松潘
+	set_province_name = { id = 1395 name = KMT_VP_1395_postal }		#成都
+	set_province_name = { id = 1474 name = KMT_VP_1474_postal }		#鎮遠
+	set_province_name = { id = 1588 name = KMT_VP_1588_postal }		#齊齊哈爾
+	set_province_name = { id = 1590 name = KMT_VP_1590_postal }		#萬全
+	set_province_name = { id = 1597 name = KMT_VP_1597_postal }		#柳州
+	set_province_name = { id = 1614 name = KMT_VP_1614_postal }		#宜昌
+	set_province_name = { id = 1630 name = KMT_VP_1630_postal }		#永登
+	set_province_name = { id = 1976 name = KMT_VP_1976_postal }		#西安
+	set_province_name = { id = 2028 name = KMT_VP_2028_postal }		#酒泉
+	set_province_name = { id = 2006 name = KMT_VP_2006_postal }		#寶雞
+	set_province_name = { id = 2067 name = KMT_VP_2067_postal }		#雅安
+	set_province_name = { id = 3427 name = KMT_VP_3427_postal }		#東勝
+	set_province_name = { id = 4005 name = KMT_VP_4005_postal }		#淮陰
+	set_province_name = { id = 4028 name = KMT_VP_4028_postal }		#桂平
+	set_province_name = { id = 4042 name = KMT_VP_4042_postal }		#嘉興
+	set_province_name = { id = 4071 name = KMT_VP_4071_postal }		#益都
+	set_province_name = { id = 4130 name = KMT_VP_4130_postal }		#江陵
+	set_province_name = { id = 4152 name = KMT_VP_4152_postal }		#梧州
+	set_province_name = { id = 4174 name = KMT_VP_4174_postal }		#陽曲
+	set_province_name = { id = 4181 name = KMT_VP_4181_postal }		#臨沂
+	set_province_name = { id = 4185 name = KMT_VP_4185_postal }		#鄱陽
+	set_province_name = { id = 4189 name = KMT_VP_4189_postal }		#新會
+	set_province_name = { id = 4190 name = KMT_VP_4190_postal }		#石家莊
+	set_province_name = { id = 4196 name = KMT_VP_4196_postal }		#福州
+	set_province_name = { id = 4495 name = KMT_VP_4495_postal }		#多倫
+	set_province_name = { id = 4514 name = KMT_VP_4514_postal }		#通遼
+	set_province_name = { id = 4561 name = KMT_VP_4561_postal }		#白城
+	set_province_name = { id = 4876 name = KMT_VP_4876_postal }		#雅魯/紥蘭屯
+	set_province_name = { id = 4999 name = KMT_VP_4999_postal }		#康定
+	set_province_name = { id = 6638 name = KMT_VP_6638_postal }		#蘭州
+	set_province_name = { id = 6811 name = KMT_VP_6811_postal }		#牡丹江
+	set_province_name = { id = 6837 name = KMT_VP_6837_postal }		#葫蘆島
+	set_province_name = { id = 6981 name = KMT_VP_6981_postal }		#安東
+	set_province_name = { id = 6999 name = KMT_VP_6999_postal }		#重慶
+	set_province_name = { id = 7014 name = KMT_VP_7014_postal }		#虹口
+	set_province_name = { id = 7027 name = KMT_VP_7027_postal }		#莆田
+	set_province_name = { id = 7067 name = KMT_VP_7067_postal }		#汕尾
+	set_province_name = { id = 7071 name = KMT_VP_7071_postal }		#廈門
+	set_province_name = { id = 7094 name = KMT_VP_7094_postal }		#蚌埠
+	set_province_name = { id = 7101 name = KMT_VP_7101_postal }		#常德
+	set_province_name = { id = 7104 name = KMT_VP_7104_postal }		#宣城
+	set_province_name = { id = 7108 name = KMT_VP_7108_postal }		#惠陽
+	set_province_name = { id = 7109 name = KMT_VP_7109_postal }		#保定
+	set_province_name = { id = 7152 name = KMT_VP_7152_postal }		#高要
+	set_province_name = { id = 7167 name = KMT_VP_7167_postal }		#漢口
+	set_province_name = { id = 7191 name = KMT_VP_7191_postal }		#杭州
+	set_province_name = { id = 7192 name = KMT_VP_7192_postal }		#鬱林，今玉林
+	set_province_name = { id = 7545 name = KMT_VP_7545_postal }		#康保
+	set_province_name = { id = 7633 name = KMT_VP_7633_postal }		#赤峰
+	set_province_name = { id = 7897 name = KMT_VP_7897_postal }		#北安
+	set_province_name = { id = 7911 name = KMT_VP_7911_postal }		#天水
+	set_province_name = { id = 7948 name = KMT_VP_7948_postal }		#奉節
+	set_province_name = { id = 7965 name = KMT_VP_7965_postal }		#大理
+	set_province_name = { id = 8026 name = KMT_VP_8026_postal }		#閬中
+	if = { limit = { has_global_flag = KMT_fusze_to_yenan }
+		set_province_name = { id = 12356 name = KMT_VP_12356_yenan_postal }		#延安
+	}else = {
+		set_province_name = { id = 12356 name = KMT_VP_12356_postal }		#膚施，今延安
+	}
+	set_province_name = { id = 9623 name = KMT_VP_9623_postal }		#佳木斯
+	set_province_name = { id = 9803 name = KMT_VP_9803_postal }		#通化
+	set_province_name = { id = 9835 name = KMT_VP_9835_postal }		#錦（縣）
+	if = { limit = { 608 = { controller = { has_country_flag = peking_capital }}} 
+		set_province_name = { id = 9843 name = KMT_VP_9843_capital_postal }}	#北平
+	else = { set_province_name = { id = 9843 name = KMT_VP_9843_postal } }
+	set_province_name = { id = 9938 name = KMT_VP_9938_postal }		#汕頭
+	set_province_name = { id = 9958 name = KMT_VP_9958_postal }		#鄭縣
+	set_province_name = { id = 9970 name = KMT_VP_9970_postal }		#曲江
+	set_province_name = { id = 9974 name = KMT_VP_9974_postal }		#寧波
+	set_province_name = { id = 9987 name = KMT_VP_9987_postal }		#聊城
+	set_province_name = { id = 10000 name = KMT_VP_10000_postal }		#青島
+	set_province_name = { id = 10017 name = KMT_VP_10017_postal }		#合肥
+	set_province_name = { id = 10057 name = KMT_VP_10057_postal }		#吉安
+	set_province_name = { id = 10068 name = KMT_VP_10068_postal }		#天津
+	set_province_name = { id = 10069 name = KMT_VP_10069_postal }		#霞浦
+	set_province_name = { id = 10076 name = KMT_VP_10076_postal }		#蘇州/吳縣
+	set_province_name = { id = 10084 name = KMT_VP_10084_postal }		#永安
+	set_province_name = { id = 10335 name = KMT_VP_10335_postal }		#芷江
+	set_province_name = { id = 10404 name = KMT_VP_10404_postal }		#貴林
+	set_province_name = { id = 10424 name = KMT_VP_10424_postal }		#歸綏
+	set_province_name = { id = 10446 name = KMT_VP_10446_postal }		#信陽
+	set_province_name = { id = 10459 name = KMT_VP_10459_postal }		#玻色
+	set_province_name = { id = 10474 name = KMT_VP_10474_postal }		#襄陽
+	set_province_name = { id = 10490 name = KMT_VP_10490_postal }		#西寧
+	set_province_name = { id = 10612 name = KMT_VP_10612_postal }		#滿洲里
+	set_province_name = { id = 10616 name = KMT_VP_10616_postal }		#貴陽
+	set_province_name = { id = 10724 name = KMT_VP_10724_postal }		#銀川
+	set_province_name = { id = 10750 name = KMT_VP_10750_postal }		#都蘭
+	set_province_name = { id = 10776 name = KMT_VP_10776_postal }		#寧洱
+	set_province_name = { id = 11764 name = KMT_VP_11764_postal }		#營口
+	set_province_name = { id = 11771 name = KMT_VP_11771_postal }		#奉天
+	set_province_name = { id = 11801 name = KMT_VP_11801_postal }		#承德
+	set_province_name = { id = 11822 name = KMT_VP_11822_postal }		#通州
+	set_province_name = { id = 11913 name = KMT_VP_11913_postal }		#南京
+	set_province_name = { id = 11920 name = KMT_VP_11920_postal }		#金華
+	set_province_name = { id = 11973 name = KMT_VP_11973_postal }		#徐州
+	set_province_name = { id = 11991 name = KMT_VP_11991_postal }		#紹興
+	set_province_name = { id = 12053 name = KMT_VP_12053_postal }		#武岡
+	set_province_name = { id = 12327 name = KMT_VP_12327_postal }		#張棭
+	set_province_name = { id = 12331 name = KMT_VP_12331_postal }		#百靈廟
+	set_province_name = { id = 12414 name = KMT_VP_12414_postal }		#恩施
+	set_province_name = { id = 12432 name = KMT_VP_12432_postal }		#大同
+	set_province_name = { id = 12705 name = KMT_VP_12705_postal }		#自貢
+	set_province_name = { id = 12713 name = KMT_VP_12713_postal }		#潼關
+	set_province_name = { id = 13417 name = KMT_VP_13417_postal }		#潮州
+	set_province_name = { id = 13432 name = KMT_VP_13432_postal }		#昭通
+	set_province_name = { id = 13279 name = KMT_VP_13279_postal }		#閘北
+	set_province_name = { id = 13306 name = KMT_VP_13306_postal }		#商邱
+	set_province_name = { id = 13376 name = KMT_VP_13376_postal }		#葛根廟
+	set_province_name = { id = 13389 name = KMT_VP_13389_postal }		#愛琿/璦琿
+	set_province_name = { id = 13399 name = KMT_VP_13399_postal }		#新京
+}
+
+
+use_hanyu_pinyin = {
+	clr_global_flag = KMT_use_postal_romanisation
+	### STATES ###
+	283 = { set_state_name = KMT_STATES_283_pinyin }		#甘肅，甘/隴
+	328 = { set_state_name = KMT_STATES_328_pinyin }		#吉林
+	592 = { set_state_name = KMT_STATES_592_pinyin }		#西廣東，粵西
+	593 = { set_state_name = KMT_STATES_593_pinyin }		#東廣東，粵東    
+	595 = { set_state_name = KMT_STATES_595_pinyin }		#褔建，閩
+	596 = { set_state_name = KMT_STATES_596_pinyin }		#浙江，浙
+	597 = { set_state_name = KMT_STATES_597_pinyin }		#膠東
+	598 = { set_state_name = KMT_STATES_598_pinyin }		#江蘇，蘇
+	599 = { set_state_name = KMT_STATES_599_pinyin }		#北廣西，桂北
+	600 = { set_state_name = KMT_STATES_600_pinyin }		#東江西，贛東
+	603 = { set_state_name = KMT_STATES_603_pinyin }		#貴州﹐貴/黔
+	605 = { set_state_name = KMT_STATES_605_pinyin }		#重慶
+	606 = { set_state_name = KMT_STATES_606_pinyin }		#安徽，皖
+	607 = { set_state_name = KMT_STATES_607_pinyin }		#北河南，䂊北
+	608 = { set_state_name = KMT_STATES_608_pinyin }		#北平
+	if = { limit = { 608 = { OWNER = { has_country_flag = peking_capital }}} 608 = { set_state_name = KMT_STATES_608_capital_pinyin }}	#北平
+	else = { 608 = { set_state_name = KMT_STATES_608_pinyin } }
+	609 = { set_state_name = KMT_STATES_609_pinyin }		#東河北，冀東
+	610 = { set_state_name = KMT_STATES_610_pinyin }		#熱河
+	613 = { set_state_name = KMT_STATES_613_pinyin }		#南京
+	614 = { set_state_name = KMT_STATES_614_pinyin }		#河北，冀
+	615 = { set_state_name = KMT_STATES_615_pinyin }		#山西，晉
+	616 = { set_state_name = KMT_STATES_616_pinyin }		#寧夏，寧
+	620 = { set_state_name = KMT_STATES_620_pinyin }		#東湖北，鄂東
+	622 = { set_state_name = KMT_STATES_622_pinyin }		#陝西，陝/秦
+	743 = { set_state_name = KMT_STATES_743_pinyin }		#青島
+	714 = { set_state_name = KMT_STATES_714_pinyin }		#黑河
+	715 = { set_state_name = KMT_STATES_715_pinyin }		#西興安
+	716 = { set_state_name = KMT_STATES_716_pinyin }		#奉天
+	717 = { set_state_name = KMT_STATES_717_pinyin }		#濱江
+	744 = { set_state_name = KMT_STATES_744_pinyin }		#關中
+	746 = { set_state_name = KMT_STATES_746_pinyin }		#伊克昭（盟），今鄂爾多斯市
+	747 = { set_state_name = KMT_STATES_747_pinyin }		#大理
+	748 = { set_state_name = KMT_STATES_748_pinyin }		#南四川，川南/蜀南
+	749 = { set_state_name = KMT_STATES_749_pinyin }		#宣城
+	750 = { set_state_name = KMT_STATES_750_pinyin }		#西湖北，鄂西
+	751 = { set_state_name = KMT_STATES_751_pinyin }		#西四川，川西/蜀西
+	752 = { set_state_name = KMT_STATES_752_pinyin }		#東西康，康東
+	753 = { set_state_name = KMT_STATES_753_pinyin }		#北四川，川北
+	754 = { set_state_name = KMT_STATES_754_pinyin }		#東青海，青東
+	755 = { set_state_name = KMT_STATES_755_pinyin }		#都蘭
+	756 = { set_state_name = KMT_STATES_756_pinyin }		#酒泉
+	761 = { set_state_name = KMT_STATES_761_pinyin }		#北興安
+	973 = { set_state_name = KMT_STATES_973_pinyin }		#間島
+	974 = { set_state_name = KMT_STATES_974_pinyin }		#龍江
+	975 = { set_state_name = KMT_STATES_975_pinyin }		#牡丹江
+	976 = { set_state_name = KMT_STATES_976_pinyin }		#通化
+	978 = { set_state_name = KMT_STATES_978_pinyin }		#北廣東，粵北
+	936 = { set_state_name = KMT_STATES_936_pinyin }		#東興安
+	939 = { set_state_name = KMT_STATES_939_pinyin }		#山東，魯
+	940 = { set_state_name = KMT_STATES_940_pinyin }		#南河南，䂊南
+	941 = { set_state_name = KMT_STATES_941_pinyin }		#東廣西，桂東
+	943 = { set_state_name = KMT_STATES_943_pinyin }		#成都
+	946 = { set_state_name = KMT_STATES_946_pinyin }		#业肅走廊/河西走廊
+	950 = { set_state_name = KMT_STATES_950_pinyin }		#北安
+	949 = { set_state_name = KMT_STATES_949_pinyin }		#陝甘寧
+	955 = { set_state_name = KMT_STATES_955_pinyin }		#北湖北，鄂北
+	956 = { set_state_name = KMT_STATES_956_pinyin }		#南江西，贛南
+	957 = { set_state_name = KMT_STATES_957_pinyin }		#西江西，贛西
+	959 = { set_state_name = KMT_STATES_959_pinyin }		#欽廉
+	961 = { set_state_name = KMT_STATES_961_pinyin }		#三江
+	963 = { set_state_name = KMT_STATES_963_pinyin }		#南興安
+	964 = { set_state_name = KMT_STATES_964_pinyin }		#錦州
+	965 = { set_state_name = KMT_STATES_965_pinyin }		#安東
+	966 = { set_state_name = KMT_STATES_966_pinyin }		#百靈廟
+
+	### VP ###
+	set_province_name = { id = 944 name = KMT_VP_944_pinyin }		#延吉
+	set_province_name = { id = 994 name = KMT_VP_994_pinyin }		#崖（縣）
+	set_province_name = { id = 1018 name = KMT_VP_1018_pinyin }		#北海
+	set_province_name = { id = 1029 name = KMT_VP_1029_pinyin }		#連雲港
+	set_province_name = { id = 1047 name = KMT_VP_1047_pinyin }		#廣州
+	set_province_name = { id = 1053 name = KMT_VP_1053_pinyin }		#贛（縣）
+	set_province_name = { id = 1055 name = KMT_VP_1055_pinyin }		#永嘉
+	set_province_name = { id = 1069 name = KMT_VP_1069_pinyin }		#濟南
+	set_province_name = { id = 1070 name = KMT_VP_1070_pinyin }		#海口
+	set_province_name = { id = 1114 name = KMT_VP_1114_pinyin }		#蒙自
+	set_province_name = { id = 1150 name = KMT_VP_1150_pinyin }		#大連
+	set_province_name = { id = 1168 name = KMT_VP_1168_pinyin }		#臨海
+	set_province_name = { id = 1200 name = KMT_VP_1200_pinyin }		#煙臺，舊稱芝罘
+	set_province_name = { id = 1257 name = KMT_VP_1257_pinyin }		#松潘
+	set_province_name = { id = 1395 name = KMT_VP_1395_pinyin }		#成都
+	set_province_name = { id = 1474 name = KMT_VP_1474_pinyin }		#鎮遠
+	set_province_name = { id = 1588 name = KMT_VP_1588_pinyin }		#齊齊哈爾
+	set_province_name = { id = 1590 name = KMT_VP_1590_pinyin }		#萬全
+	set_province_name = { id = 1597 name = KMT_VP_1597_pinyin }		#柳州
+	set_province_name = { id = 1614 name = KMT_VP_1614_pinyin }		#宜昌
+	set_province_name = { id = 1630 name = KMT_VP_1630_pinyin }		#永登
+	set_province_name = { id = 1976 name = KMT_VP_1976_pinyin }		#西安
+	set_province_name = { id = 2028 name = KMT_VP_2028_pinyin }		#酒泉
+	set_province_name = { id = 2006 name = KMT_VP_2006_pinyin }		#寶雞
+	set_province_name = { id = 2067 name = KMT_VP_2067_pinyin }		#雅安
+	set_province_name = { id = 3427 name = KMT_VP_3427_pinyin }		#東勝
+	set_province_name = { id = 4005 name = KMT_VP_4005_pinyin }		#淮陰
+	set_province_name = { id = 4028 name = KMT_VP_4028_pinyin }		#桂平
+	set_province_name = { id = 4042 name = KMT_VP_4042_pinyin }		#嘉興
+	set_province_name = { id = 4071 name = KMT_VP_4071_pinyin }		#益都
+	set_province_name = { id = 4130 name = KMT_VP_4130_pinyin }		#江陵
+	set_province_name = { id = 4152 name = KMT_VP_4152_pinyin }		#梧州
+	set_province_name = { id = 4174 name = KMT_VP_4174_pinyin }		#陽曲
+	set_province_name = { id = 4181 name = KMT_VP_4181_pinyin }		#臨沂
+	set_province_name = { id = 4185 name = KMT_VP_4185_pinyin }		#鄱陽
+	set_province_name = { id = 4189 name = KMT_VP_4189_pinyin }		#新會
+	set_province_name = { id = 4190 name = KMT_VP_4190_pinyin }		#石家莊
+	set_province_name = { id = 4196 name = KMT_VP_4196_pinyin }		#福州
+	set_province_name = { id = 4495 name = KMT_VP_4495_pinyin }		#多倫
+	set_province_name = { id = 4514 name = KMT_VP_4514_pinyin }		#通遼
+	set_province_name = { id = 4561 name = KMT_VP_4561_pinyin }		#白城
+	set_province_name = { id = 4876 name = KMT_VP_4876_pinyin }		#雅魯/紥蘭屯
+	set_province_name = { id = 4999 name = KMT_VP_4999_pinyin }		#康定
+	set_province_name = { id = 6638 name = KMT_VP_6638_pinyin }		#蘭州
+	set_province_name = { id = 6811 name = KMT_VP_6811_pinyin }		#牡丹江
+	set_province_name = { id = 6837 name = KMT_VP_6837_pinyin }		#葫蘆島
+	set_province_name = { id = 6981 name = KMT_VP_6981_pinyin }		#安東
+	set_province_name = { id = 6999 name = KMT_VP_6999_pinyin }		#重慶
+	set_province_name = { id = 7014 name = KMT_VP_7014_pinyin }		#虹口
+	set_province_name = { id = 7027 name = KMT_VP_7027_pinyin }		#莆田
+	set_province_name = { id = 7067 name = KMT_VP_7067_pinyin }		#汕尾
+	set_province_name = { id = 7071 name = KMT_VP_7071_pinyin }		#廈門
+	set_province_name = { id = 7094 name = KMT_VP_7094_pinyin }		#蚌埠
+	set_province_name = { id = 7101 name = KMT_VP_7101_pinyin }		#常德
+	set_province_name = { id = 7104 name = KMT_VP_7104_pinyin }		#宣城
+	set_province_name = { id = 7108 name = KMT_VP_7108_pinyin }		#惠陽
+	set_province_name = { id = 7109 name = KMT_VP_7109_pinyin }		#保定
+	set_province_name = { id = 7152 name = KMT_VP_7152_pinyin }		#高要
+	set_province_name = { id = 7165 name = KMT_VP_7167_pinyin }		#漢口
+	set_province_name = { id = 7191 name = KMT_VP_7191_pinyin }		#杭州
+	set_province_name = { id = 7192 name = KMT_VP_7192_pinyin }		#鬱林，今玉林
+	set_province_name = { id = 7545 name = KMT_VP_7545_pinyin }		#康保
+	set_province_name = { id = 7633 name = KMT_VP_7633_pinyin }		#赤峰
+	set_province_name = { id = 7897 name = KMT_VP_7897_pinyin }		#北安
+	set_province_name = { id = 7911 name = KMT_VP_7911_pinyin }		#天水
+	set_province_name = { id = 7948 name = KMT_VP_7948_pinyin }		#奉節
+	set_province_name = { id = 7965 name = KMT_VP_7965_pinyin }		#大理
+	set_province_name = { id = 8026 name = KMT_VP_8026_pinyin }		#閬中
+	if = { limit = { has_global_flag = KMT_fusze_to_yenan }
+		set_province_name = { id = 12356 name = KMT_VP_12356_yenan_pinyin }		#延安
+	}else = {
+		set_province_name = { id = 12356 name = KMT_VP_12356_pinyin }		#膚施，今延安
+	}
+	set_province_name = { id = 9623 name = KMT_VP_9623_pinyin }		#佳木斯
+	set_province_name = { id = 9803 name = KMT_VP_9803_pinyin }		#通化
+	set_province_name = { id = 9835 name = KMT_VP_9835_pinyin }		#錦（縣）
+	if = { limit = { 608 = { controller = { has_country_flag = peking_capital }}} 
+		set_province_name = { id = 9843 name = KMT_VP_9843_capital_pinyin }}	#北平
+	else = { set_province_name = { id = 9843 name = KMT_VP_9843_pinyin } }
+	set_province_name = { id = 9938 name = KMT_VP_9938_pinyin }		#汕頭
+	set_province_name = { id = 9958 name = KMT_VP_9958_pinyin }		#鄭縣
+	set_province_name = { id = 9970 name = KMT_VP_9970_pinyin }		#曲江
+	set_province_name = { id = 9974 name = KMT_VP_9974_pinyin }		#寧波
+	set_province_name = { id = 9987 name = KMT_VP_9987_pinyin }		#聊城
+	set_province_name = { id = 10000 name = KMT_VP_10000_pinyin }		#青島
+	set_province_name = { id = 10017 name = KMT_VP_10017_pinyin }		#合肥
+	set_province_name = { id = 10057 name = KMT_VP_10057_pinyin }		#吉安
+	set_province_name = { id = 10068 name = KMT_VP_10068_pinyin }		#天津
+	set_province_name = { id = 10069 name = KMT_VP_10069_pinyin }		#霞浦
+	set_province_name = { id = 10076 name = KMT_VP_10076_pinyin }		#蘇州/吳縣
+	set_province_name = { id = 10084 name = KMT_VP_10084_pinyin }		#永安
+	set_province_name = { id = 10335 name = KMT_VP_10335_pinyin }		#芷江
+	set_province_name = { id = 10404 name = KMT_VP_10404_pinyin }		#貴林
+	set_province_name = { id = 10424 name = KMT_VP_10424_pinyin }		#歸綏
+	set_province_name = { id = 10446 name = KMT_VP_10446_pinyin }		#信陽
+	set_province_name = { id = 10459 name = KMT_VP_10459_pinyin }		#玻色
+	set_province_name = { id = 10474 name = KMT_VP_10474_pinyin }		#襄陽
+	set_province_name = { id = 10490 name = KMT_VP_10490_pinyin }		#西寧
+	set_province_name = { id = 10612 name = KMT_VP_10612_pinyin }		#滿洲里
+	set_province_name = { id = 10616 name = KMT_VP_10616_pinyin }		#貴陽
+	set_province_name = { id = 10724 name = KMT_VP_10724_pinyin }		#銀川
+	set_province_name = { id = 10750 name = KMT_VP_10750_pinyin }		#都蘭
+	set_province_name = { id = 10776 name = KMT_VP_10776_pinyin }		#寧洱
+	set_province_name = { id = 11764 name = KMT_VP_11764_pinyin }		#營口
+	set_province_name = { id = 11771 name = KMT_VP_11771_pinyin }		#奉天
+	set_province_name = { id = 11801 name = KMT_VP_11801_pinyin }		#承德
+	set_province_name = { id = 11822 name = KMT_VP_11822_pinyin }		#通州
+	set_province_name = { id = 11913 name = KMT_VP_11913_pinyin }		#南京
+	set_province_name = { id = 11920 name = KMT_VP_11920_pinyin }		#金華
+	set_province_name = { id = 11973 name = KMT_VP_11973_pinyin }		#徐州
+	set_province_name = { id = 11991 name = KMT_VP_11991_pinyin }		#紹興
+	set_province_name = { id = 12053 name = KMT_VP_12053_pinyin }		#武岡
+	set_province_name = { id = 12327 name = KMT_VP_12327_pinyin }		#張棭
+	set_province_name = { id = 12331 name = KMT_VP_12331_pinyin }		#百靈廟
+	set_province_name = { id = 12414 name = KMT_VP_12414_pinyin }		#恩施
+	set_province_name = { id = 12432 name = KMT_VP_12432_pinyin }		#大同
+	set_province_name = { id = 12705 name = KMT_VP_12705_pinyin }		#自貢
+	set_province_name = { id = 12713 name = KMT_VP_12713_pinyin }		#潼關
+	set_province_name = { id = 13417 name = KMT_VP_13417_pinyin }		#潮州
+	set_province_name = { id = 13432 name = KMT_VP_13432_pinyin }		#昭通
+	set_province_name = { id = 13279 name = KMT_VP_13279_pinyin }		#閘北
+	set_province_name = { id = 13306 name = KMT_VP_13306_pinyin }		#商邱
+	set_province_name = { id = 13376 name = KMT_VP_13376_pinyin }		#葛根廟
+	set_province_name = { id = 13389 name = KMT_VP_13389_pinyin }		#愛琿/璦琿
+	set_province_name = { id = 13399 name = KMT_VP_13399_pinyin }		#新京
+}
+
+startup_state_vp_name = {
+	942 = { set_state_name = KMT_STATE_942 }		#昆明
+	979 = { set_state_name = KMT_STATE_979 }		#迪慶
+	594 = { set_state_name = KMT_STATE_594 }		#南寧
+	938 = { set_state_name = KMT_STATE_938 }		#上海
+	980 = { set_state_name = KMT_STATE_980 }		#武昌
+	602 = { set_state_name = KMT_STATE_602 }		#東湖南，湘東
+	944 = { set_state_name = KMT_STATE_944 }		#北湖南，湘北
+	958 = { set_state_name = KMT_STATE_958 }		#西湖南，湘西
+	325 = { set_state_name = KMT_STATE_325 }		#南雲南，滇南
+	747 = { set_state_name = KMT_STATE_747 }		#北雲南，滇北
+	601 = { set_state_name = KMT_STATE_601 }		#昌都
+	604 = { set_state_name = KMT_STATE_604 }		#玉樹
+	945 = { set_state_name = KMT_STATE_945 }		#阿拉善（盟）
+	621 = { set_state_name = KMT_STATE_621 }		#綏遠
+	611 = { set_state_name = KMT_STATE_611 }		#南察哈爾，察南
+	612 = { set_state_name = KMT_STATE_612 }		#察哈爾
+	937 = { set_state_name = KMT_STATE_937 }		#東察哈爾，察東
+	745 = { set_state_name = KMT_STATE_745 }		#關東州
+	728 = { set_state_name = KMT_STATE_728 }		#廣州灣
+	759 = { set_state_name = KMT_STATE_759 }		#焉耆
+	619 = { set_state_name = KMT_STATE_619 }		#喀什
+	287 = { set_state_name = KMT_STATE_287 }		#和闐
+	760 = { set_state_name = KMT_STATE_760 }		#哈密
+	951 = { set_state_name = KMT_STATE_951 }		#阿克蘇
+	947 = { set_state_name = KMT_STATE_947 }		#伊犁
+	948 = { set_state_name = KMT_STATE_948 }		#塔城
+	617 = { set_state_name = KMT_STATE_617 }		#迪化
+	977 = { set_state_name = KMT_STATE_977 }		#江心坡
+	960 = { set_state_name = KMT_STATE_960 }		#塔克拉瑪干沙漠
+	935 = { set_state_name = KMT_STATE_935 }		#密支那
+	945 = { set_state_name = KMT_STATE_945 }		#阿拉善（盟）
+	#818 = { set_state_name = KMT_STATE_818 }		#阿爾泰-杭愛（山脈）
+	#817 = { set_state_name = KMT_STATE_817 }		#戈壁沙漠
+	#819 = { set_state_name = KMT_STATE_819 }		#肯特
+	618 = { set_state_name = KMT_STATE_618 }		#阿山
+
+	set_province_name = { id = 7137 name = KMT_VICTORY_POINTS_7137 }		#南寧
+	set_province_name = { id = 7039 name = KMT_VICTORY_POINTS_7039 }		#茂名
+	set_province_name = { id = 3992 name = KMT_VICTORY_POINTS_3992 }		#南昌    
+	#set_province_name = { id = 7014 name = KMT_VICTORY_POINTS_7014 }		#上海
+	set_province_name = { id = 4619 name = KMT_VICTORY_POINTS_4619 }		#武昌
+	set_province_name = { id = 12310 name = KMT_VICTORY_POINTS_12310 }		#邵陽
+	set_province_name = { id = 7097 name = KMT_VICTORY_POINTS_7097 }		#長沙
+	set_province_name = { id = 7502 name = KMT_VICTORY_POINTS_7502 }		#衡陽    
+	set_province_name = { id = 1319 name = KMT_VICTORY_POINTS_1319 }		#昆明
+	set_province_name = { id = 8059 name = KMT_VICTORY_POINTS_8059 }		#昌都
+	#set_province_name = { id = 1029 name = KMT_VICTORY_POINTS_1029 }		#連雲
+	#set_province_name = { id = 9958 name = KMT_VICTORY_POINTS_9958 }		#開封
+	set_province_name = { id = 4519 name = KMT_VICTORY_POINTS_4519 }		#南陽
+	set_province_name = { id = 13336 name = KMT_VICTORY_POINTS_13336 }		#榆林    
+	set_province_name = { id = 10856 name = KMT_VICTORY_POINTS_10856 }		#玉樹
+	set_province_name = { id = 1034 name = KMT_VICTORY_POINTS_1034 }		#臨汾
+	set_province_name = { id = 3900 name = KMT_VICTORY_POINTS_3900 }		#臨榆
+	set_province_name = { id = 4205 name = KMT_VICTORY_POINTS_4205 }		#威海衛
+	set_province_name = { id = 7652 name = KMT_VICTORY_POINTS_7652 }		#扶餘
+	set_province_name = { id = 10433 name = KMT_VICTORY_POINTS_10433 }		#哈爾濱
+	set_province_name = { id = 13380 name = KMT_VICTORY_POINTS_13380 }		#海倫
+	set_province_name = { id = 4745 name = KMT_VICTORY_POINTS_4745 }		#海拉爾
+	set_province_name = { id = 1197 name = KMT_VICTORY_POINTS_1197 }		#葡萄
+	set_province_name = { id = 8104 name = KMT_VICTORY_POINTS_8104 }		#白瓦特城
+	set_province_name = { id = 13414 name = KMT_VICTORY_POINTS_13414 }		#澳門
+	set_province_name = { id = 4843 name = KMT_VICTORY_POINTS_4843 }		#哈密
+	set_province_name = { id = 2074 name = KMT_VICTORY_POINTS_2074 }		#婼羌
+	set_province_name = { id = 2015 name = KMT_VICTORY_POINTS_2015 }		#莎車
+	set_province_name = { id = 12656 name = KMT_VICTORY_POINTS_12656 }		#迪化    
+	set_province_name = { id = 7702 name = KMT_VICTORY_POINTS_7702 }		#庫車
+	set_province_name = { id = 1783 name = KMT_VICTORY_POINTS_1783 }		#烏蘇           
+	set_province_name = { id = 7693 name = KMT_VICTORY_POINTS_7693 }		#承化，今阿勒泰
+	set_province_name = { id = 4973 name = KMT_VICTORY_POINTS_4973 }		#和闐
+	set_province_name = { id = 12601 name = KMT_VICTORY_POINTS_12601 }		#伊寧
+	set_province_name = { id = 12068 name = KMT_VICTORY_POINTS_12068 }		#高雄
+	set_province_name = { id = 10062 name = KMT_VICTORY_POINTS_10062 }		#維多利亞城（域多利城/女皇城/香港城）
+}

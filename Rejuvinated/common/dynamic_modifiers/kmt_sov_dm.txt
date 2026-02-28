@@ -1,0 +1,79 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+KMTSOV_great_patriotic_war = {
+	icon = "GFX_idea_generic_communist_army"
+	enable = { 
+		always = yes
+	}
+	
+	remove_trigger = { 
+		has_war = no
+	}
+	
+	conscription = SOV.KMTSOV_gpw_conscription
+	mobilization_speed = SOV.KMTSOV_gpw_mobilization_speed
+	army_core_defence_factor = SOV.KMTSOV_gpw_core_def
+	army_core_attack_factor = SOV.KMTSOV_gpw_core_off
+	training_time_factor = SOV.KMTSOV_gpw_training_time
+	land_reinforce_rate = SOV.KMTSOV_gpw_reinforce_rate
+	industrial_capacity_factory = SOV.KMTSOV_gpw_production
+	dig_in_speed = SOV.KMTSOV_gpw_dig_in_speed
+	max_dig_in = SOV.KMTSOV_gpw_max_dig_in
+	
+	resistance_target_on_our_occupied_states = SOV.KMTSOV_gpw_resistance_target
+	resistance_growth_on_our_occupied_states = SOV.KMTSOV_gpw_resistance_growth
+	resistance_decay_on_our_occupied_states = SOV.KMTSOV_gpw_resistance_decay
+	compliance_growth_on_our_occupied_states = SOV.KMTSOV_gpw_compliance_growth
+	
+	command_power_gain = 1
+	political_power_gain = 0.5
+}
+
+KMTGER_no_spam = {
+	enable = { 
+		NOT = { 
+			any_country = { 
+				has_war_with = ROOT 
+				is_ai = no 
+			}
+			difficulty > 2
+		}
+		NOT = {
+			any_country = {
+				has_war_with = ROOT
+				check_variable = { THIS.num_divisions > ROOT.num_divisions }
+			}
+		}
+		num_divisions > 250
+	}
+	
+	remove_trigger = { 
+		always = no
+	}
+	
+	ai_desired_divisions_factor = -200
+}

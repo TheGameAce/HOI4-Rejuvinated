@@ -1,0 +1,7153 @@
+on_actions = {
+	on_new_term_election = {
+		
+		effect = {
+			if = {
+				limit = {
+					tag = event_target:KMT_central_gov_tag
+				}
+				country_event = { id = kmt.654 }
+			}
+			if = {
+				limit = {
+					tag = MCK
+					has_country_flag = MCK_imperial_elections
+				}
+				country_event = { id = jap.237 }
+			}
+			if = {
+				limit = {
+					tag = MCK
+					has_country_flag = MCK_manchurian_republic_elections
+				}
+				country_event = { id = jap.238 }
+			}
+		}
+	
+	}
+	
+	#FROM is war target
+	
+	on_declare_war = {
+		effect = {
+			#bruh demilitarised zones get automatically remilitarised if at war, wtf paradox
+			#if = {
+			#	limit = {
+			#		OR = {
+			#			ROOT = { owns_state = 938 }
+			#			FROM = { owns_state = 938 }
+			#		}
+			#		NOT = { has_global_flag = CHI_warred_with_JAP }
+			#	}
+			#	938 = { owner = { country_event = { id = kmt.620 hours = 5 }}}
+			#}
+			if = {
+				limit = {
+					tag = PRC
+					has_completed_focus = PRC_approach_the_front
+					FROM = { tag = SHX }
+					NOT = { has_global_flag = east_expedition_started }
+					NOT = { has_global_flag = failed_eexp }
+					has_global_flag = PRC_allow_east_expedition
+				}
+				set_global_flag = east_expedition_started
+			}
+			if = {
+				limit = {
+					tag = SOV
+					FROM = { 
+						tag = PER 
+					}
+					NOT = { has_global_flag = KMT_op_countenance_flag }
+					is_subject = no
+				}
+				set_global_flag = KMT_op_countenance_flag
+				ENG = { country_event = { id = kmtmisc.16 }}
+			}
+			
+			if = {
+				limit = {
+					tag = PRC
+					FROM = { is_valid_power_struggle_participant = yes }
+					OR = {
+						has_global_flag = PRC_yes_truce
+						has_completed_focus = PRC_submit_to_the_united_front
+					}
+					NOT = { has_global_flag = PRC_restart_CHI_war }
+				}
+				custom_effect_tooltip = PRC_gain_5_ire_tt
+				add_to_variable = { global.PRC_expansion_ire = 5 }
+			}
+			
+			if = {
+				limit = {
+					tag = JAP
+					FROM = { 
+						OR = {
+							tag = USA 
+							is_subject_of = USA
+						}
+					}
+					has_completed_focus = JAP_secure_the_philippines
+					NOT = { has_global_flag = JAP_stp_surprised }
+				}
+				set_global_flag = JAP_stp_surprised
+				USA = { 
+					add_timed_idea = {
+						idea = JAP_USA_surprised
+						days = 15
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { is_chinese_nations_w_HYQ = yes }
+							FROM = { tag = JAP }
+						}
+						AND = {
+							FROM = { is_chinese_nations_w_HYQ = yes }
+							ROOT = { tag = JAP }
+						}
+					}
+					JAP = {	NOT = {	has_completed_focus = JAP_secure_china }}
+				}
+				JAP = {
+					country_event = { id = jap.170 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { is_chinese_nations_w_HYQ = yes }
+							FROM = { tag = JAP }
+						}
+						AND = {
+							FROM = { is_chinese_nations_w_HYQ = yes }
+							ROOT = { tag = JAP }
+						}
+					}
+					JAP = {	num_divisions < 80 }
+				}
+				JAP = {
+					add_timed_idea = {
+						idea = JAP_mobilise_for_incident_in_china
+						days = 360
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = PRC_restart_CHI_war
+					}
+					OR = {
+						AND = {
+							tag = PRC
+							FROM = {
+								tag = event_target:KMT_central_gov_tag
+							}
+						}
+						AND = {
+							tag = event_target:KMT_central_gov_tag
+							FROM = {
+								tag = PRC
+							}
+						}
+					}
+					OR = {
+						has_global_flag = CHI_warred_with_JAP
+						has_global_flag = KMT_prc_worked_with_chi
+						has_global_flag = PRC_no_join
+						PRC = {
+							num_of_controlled_states > 5
+						}
+					}
+					event_target:KMT_central_gov_tag = {
+						NOT = {
+							has_country_flag = KMT_pro_japanese_coup
+							has_country_flag = KMT_red_coup_finish
+						}
+					}
+				}
+				PRC = {
+					#country_event = { id = china.108 }
+					if = {
+						limit = {
+							NOT = {
+								has_completed_focus = PRC_found_our_nation
+							}
+						}
+						drop_cosmetic_tag = yes
+						set_cosmetic_tag = GCDcivilwar
+					}
+					if = {
+						limit = { 
+							is_in_faction = no
+							NOT = { has_idea = kmt_planning_the_civil_war }
+						}
+						add_ideas = kmt_planning_the_civil_war
+						create_faction = PRC_communists_china
+					}
+					if = {
+						limit = { 
+							event_target:KMT_central_gov_tag = { 
+								is_in_faction = no
+								NOT = { has_idea = KMT_chinese_matter }
+							}
+						}
+						event_target:KMT_central_gov_tag = { 
+							add_ideas = KMT_chinese_matter 
+							if = {
+								limit = { PRC = { has_government = communism }}
+								create_faction = KMT_kmt_faction
+							}else = {
+								create_faction = KMT_central_government_faction
+							}
+						}
+					}
+				}
+			}
+		
+			#remove chi ger opinion
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							FROM = {
+								has_opinion_modifier = sino_german_cooperation
+							}
+							ROOT = {
+								tag = GER
+							}
+						}
+						AND = {
+							ROOT = {
+								has_opinion_modifier = sino_german_cooperation
+							}
+							FROM = {
+								tag = GER
+							}
+						}
+						AND = {
+							FROM = {
+								has_opinion_modifier = more_sino_german_coop
+							}
+							ROOT = {
+								tag = GER
+							}
+						}
+						AND = {
+							ROOT = {
+								has_opinion_modifier = more_sino_german_coop
+							}
+							FROM = {
+								tag = GER
+							}
+						}
+					}
+				}
+				remove_opinion_modifier = {
+					target = GER
+					modifier = sino_german_cooperation
+				}
+				remove_opinion_modifier = {
+					target = GER
+					modifier = more_sino_german_coop
+				}
+				GER = {
+					remove_opinion_modifier = {
+						target = ROOT
+						modifier = sino_german_cooperation
+					}
+					remove_opinion_modifier = {
+						target = ROOT
+						modifier = more_sino_german_coop
+					}
+				}
+			}
+			
+			#gain buff when against commie - f
+			if = {
+				limit = {
+					FROM = {
+						has_idea = KMT_resist_the_reds
+						NOT = {
+							has_idea = KMT_anti_communism_sentiment
+						}
+					}
+					ROOT = {
+						has_government = communism
+					}
+				}
+				FROM = {
+					add_ideas = KMT_anti_communism_sentiment
+				}
+			}
+			
+			#gain buff when against commie - r
+			if = {
+				limit = {
+					ROOT = {
+						has_idea = KMT_resist_the_reds
+						NOT = {
+							has_idea = KMT_anti_communism_sentiment
+						}
+					}
+					FROM = {
+						has_government = communism
+					}
+				}
+				ROOT = {
+					add_ideas = KMT_anti_communism_sentiment
+				}
+			}
+			
+			#russian civil war
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = MCK
+						has_country_flag = RFP_wins
+					}
+					FROM = {
+						tag = SOV
+					}
+				}
+				SOV = {
+					start_civil_war = {
+						ideology = fascism
+						capital = 408
+						states = { 408 409 560 657 655 537 561 563 }
+					}
+				}
+				random_country = {
+					limit = {
+						original_tag = SOV
+						has_government = fascism
+					}
+					create_faction = rfp_white_movement
+					add_timed_idea = {
+						idea = MCK_RFP_white_movement
+						days = 1700
+					}
+					hidden_effect = {
+						load_oob = "RFP_anti_bolshelvik"
+					}
+					annex_country = {
+						target = ROOT
+						transfer_troops = yes
+					}
+				}
+			}
+			
+			#set flag for warred with jap
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { tag = event_target:KMT_central_gov_tag }
+							FROM = { tag = JAP }
+						}
+						AND = {
+							ROOT = { tag = JAP }
+							FROM = { tag = event_target:KMT_central_gov_tag }
+						}
+					}
+				}
+				set_global_flag = CHI_warred_with_JAP
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = { tag = PRC }
+							FROM = { tag = JAP }
+						}
+						AND = {
+							ROOT = { tag = JAP }
+							FROM = { tag = PRC }
+						}
+					}
+				}
+				set_global_flag = PRC_warred_with_JAP
+			}
+			
+			#change to wartime corruption
+			if = {
+				limit = {
+					OR = {
+						FROM = {
+							OR = {
+								has_idea = KMT_corrupted_government
+								has_idea = KMT_corrupted_government_lesser
+							}
+						}
+						OR = {
+							has_idea = KMT_corrupted_government
+							has_idea = KMT_corrupted_government_lesser
+						}
+					}
+				}
+				hidden_effect = {
+					random_country = {
+						limit = {
+							OR = {
+								tag = FROM
+								tag = ROOT
+							}
+							OR = {
+								has_idea = KMT_corrupted_government
+								has_idea = KMT_corrupted_government_lesser
+							}
+						}
+						country_event = { id = kmt.272 }
+					}
+				}
+			}
+			
+			#set flag
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = west_expedition_started
+					}
+					FROM = { tag = NSM }
+					ROOT = {
+						tag = PRC
+						has_completed_focus = PRC_west_expedition
+					}
+				}
+				set_global_flag = west_expedition_started
+				set_country_flag = PRC_failed_exp_timer
+			}
+			
+			#strike prc when west-expedition-ing
+			if = {
+				limit = {
+					FROM = { tag = PRC }
+					tag = event_target:KMT_central_gov_tag
+					PRC = {
+						is_in_faction = no
+						has_war_with = NSM
+					}
+					has_global_flag = west_expedition_started
+				}
+				PRC = {
+					country_event = { id = prc.53 }
+				}
+			}
+			
+			#get revanchism when war with jap
+			if = {
+				limit = {
+					has_idea = PRC_anti_jap_sentiment
+					NOT = {
+						has_idea = PRC_revanchism
+					}
+					FROM = { tag = JAP }
+				}
+				country_event = { id = prc.107 }
+			}
+			
+			#pop tips for central government
+			## You cannot trigger this when join others' war against the central government, since it would not be legitimate
+			#if = {
+			#	limit = {
+			#		OR = {
+			#			has_country_flag = KMT_central_government_flag
+			#			FROM = {
+			#				has_country_flag = KMT_central_government_flag
+			#			}
+			#		}
+			#	}
+			#	country_event = { id = prc.107 }
+			#}
+			
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							tag = event_target:KMT_central_gov_tag
+							FROM = { tag = JAP }
+						}
+						AND = {
+							tag = JAP
+							FROM = { tag = event_target:KMT_central_gov_tag }
+						}
+					}
+					country_exists = MEN
+				}
+				set_global_flag = KMT_MEN_trigger_by_on_action
+				MEN = {
+					country_event = { id = jap.74 }
+				}
+			}	
+			
+			if = {
+				limit = {
+					tag = JAP
+					FROM = { tag = event_target:KMT_central_gov_tag }
+					NOT = { has_global_flag = CHI_unite }
+					NOT = { has_global_flag = CHI_no_national_front_flag }
+					has_global_flag = KMT_united_front_enabled
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = china.100 days = 2 }
+				}
+				if = {
+					limit = {
+						PGR = { is_puppet_of = event_target:KMT_central_gov_tag }
+					}
+					PGR = {
+						add_to_war = { 
+							targeted_alliance = event_target:KMT_central_gov_tag
+							enemy = JAP
+						}
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					has_idea = KMT_SOV_JAP_neutrality
+					FROM = {
+						has_idea = KMT_SOV_JAP_neutrality
+					}
+				}
+				save_global_event_target_as = KMT_SJ_neutrality_broker
+				remove_ideas = KMT_SOV_JAP_neutrality
+				FROM = {
+					save_global_event_target_as = KMT_SJ_neutrality_attacked
+					remove_ideas = KMT_SOV_JAP_neutrality
+				}
+				if = {
+					limit = {
+						tag = SOV
+					}
+					news_event = { id = jap.136 days = 1 }
+				}
+				if = {
+					limit = {
+						tag = JAP
+					}
+					news_event = { id = jap.137 days = 1 }
+				}
+			}
+			
+			#if = {
+			#	limit = {
+			#		has_event_target = KMT_central_gov_tag
+			#		is_chinese_nations_w_HYQ = no
+			#		event_target:KMT_central_gov_tag = { is_puppet = no }
+			#		NOT = {
+			#			tag = PGR
+			#			tag = event_target:KMT_central_gov_tag 
+			#		}
+			#		FROM = { 
+			#			tag = PGR
+			#			is_puppet = no
+			#			has_cosmetic_tag = HCPC 
+			#		}
+			#	}
+			#	event_target:KMT_central_gov_tag = {
+			#		add_to_war = {
+			#			targeted_alliance = FROM
+			#			enemy = ROOT
+			#		}
+			#		puppet = PGR
+			#	}
+			#}
+			
+			#if = {
+			#	limit = {
+			#		has_event_target = KMT_central_gov_tag
+			#		is_chinese_nations_w_HYQ = no
+			#		FROM = { 
+			#			tag = event_target:KMT_central_gov_tag
+			#			is_puppet = no 
+			#		}
+			#		NOT = {
+			#			tag = PGR
+			#			tag = event_target:KMT_central_gov_tag 
+			#			tag = HYQ 
+			#		}
+			#		PGR = { 
+			#			exists = yes
+			#			is_puppet = no
+			#			has_cosmetic_tag = HCPC 
+			#		}
+			#	}
+			#	event_target:KMT_central_gov_tag = {
+			#		puppet = PGR
+			#	}
+			#}
+			
+			if = {
+				limit = {
+					NOT = { has_global_flag = RFP_refuse_aid }
+					tag = MCK
+					is_subject_of = FROM
+					has_country_flag = rfp_path
+					any_country = {
+						exists = yes
+						has_government = fascism
+						has_civil_war = no
+						original_tag = SOV
+						is_subject = no
+					}
+				}			
+				FROM = {
+					save_global_event_target_as = MCK_independence_target
+				}
+				random_country = {
+					limit = {
+						exists = yes
+						has_government = fascism
+						has_civil_war = no
+						original_tag = SOV
+						is_subject = no
+					}
+					country_event = { id = jap.166 }
+				}
+			}
+			
+			if = {
+				limit = {
+					has_event_target = KMT_central_gov_tag
+					NOT = {
+						has_global_flag = liangguang_incident_war
+					}
+					has_global_flag = liangguang_incident
+					OR = {
+						AND = {
+							tag = event_target:KMT_central_gov_tag
+							FROM = { 
+								OR = {
+									tag = GXC
+									tag = YUT
+									is_in_array = { GXC.KMT_ps_alliance_array = FROM }
+								}
+							}
+						}
+						AND = {
+							tag = GXC
+							FROM = { 
+								OR = {
+									tag = event_target:KMT_central_gov_tag
+									is_subject_of = event_target:KMT_central_gov_tag
+								}
+							}
+						}
+					}
+				}
+				set_global_flag = liangguang_incident_war
+				event_target:KMT_central_gov_tag = { country_event = { id = jyutgwai.64 }}
+			}
+			
+			if = {
+				limit = {
+					ROOT = {
+						tag = PRC
+						has_dynamic_modifier = { modifier = PRC_national_defence_government_legitimacy }
+					}
+					FROM = {
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							NOT = { tag = event_target:KMT_central_gov_tag }
+							has_completed_focus = KMT_external_defense
+						}
+					}
+				}
+				PRC = { 
+					country_event = { id = prc.285 }
+					decrease_ndglegi2 = yes
+				}
+			}
+			
+			if = {
+				limit = {
+					ROOT = {
+						tag = PRC
+						has_dynamic_modifier = { modifier = PRC_national_defence_government_legitimacy }
+					}
+					FROM = {
+						OR = {
+							AND = {
+								tag = event_target:KMT_central_gov_tag
+								NOT = { has_completed_focus = KMT_external_defense }
+							}
+							tag = JAP
+							is_subject_of = JAP
+						}
+					}
+				}
+				PRC = { 
+					country_event = { id = prc.281 }
+					increase_ndglegi1 = yes
+				}
+			}
+		}
+	}
+
+	#ROOT is winner #FROM gets annexed
+	on_civil_war_end = {
+		effect = {
+			
+			#spread revolution siam commies win
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SIA
+					}
+					ROOT = {
+						original_tag = SIA
+						has_government = communism
+					}
+				}
+				set_capital = { state = 289 }
+			}
+			
+			#spread revolution indo commies win
+			if = {
+				limit = {
+					FROM = {
+						original_tag = INS
+					}
+					ROOT = {
+						original_tag = INS
+						has_government = communism
+					}
+				}
+				set_capital = { state = 335 }
+			}
+			
+			#spread revolution indian commies win
+			if = {
+				limit = {
+					FROM = {
+						original_tag = RAJ
+					}
+					ROOT = {
+						original_tag = RAJ
+						has_government = communism
+					}
+				}
+				set_capital = { state = 439 }
+			}
+			
+			#spread revolution malay commies win
+			if = {
+				limit = {
+					FROM = {
+						original_tag = MAL
+					}
+					ROOT = {
+						original_tag = MAL
+						has_government = communism
+					}
+				}
+				set_capital = { state = 336 }
+			}
+			
+			#russian empire win
+			if = {
+				limit = {
+					FROM = {
+						original_tag = SOV
+					}
+					ROOT = {
+						original_tag = SOV
+						has_government = fascism
+					}
+				}
+				set_capital = { state = 195 }
+			}
+
+			#drop cosmetic tag
+			if = {
+				limit = {
+					FROM = {
+						original_tag = MCK
+					}
+					ROOT = {
+						original_tag = MCK
+						has_government = neutrality
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
+
+			#drop cosmetic tag
+			if = {
+				limit = {
+					FROM = {
+						original_tag = MCK
+						has_government = neutrality
+					}
+					ROOT = {
+						original_tag = MCK
+						has_government = fascism
+					}
+				}
+				set_country_flag = RFP_wins
+				create_wargoal = {
+					target = SOV
+					type = annex_everything
+				}
+			}
+
+			if = {
+				limit = {
+					original_tag = CHI
+					OR = {
+						has_global_flag = kmt392_fired
+						has_global_flag = xian_civil_war
+						has_global_flag = KMT_special_japan16_civil_war
+					}
+				}
+				clr_global_flag = kmt392_fired
+				clr_global_flag = xian_civil_war
+				clr_global_flag = KMT_special_japan16_civil_war
+			}
+
+			if = {
+				limit = {
+					original_tag = JAP
+					has_global_flag = jap_civil_war_sf_duration
+				}
+				clr_global_flag = jap_civil_war_sf_duration
+				if = {
+					limit = { country_exists = IDC }
+					every_owned_state = {
+						limit = {
+							region = 142
+						}
+						IDC = { transfer_state = PREV }
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					original_tag = AFG
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_AFG
+			}
+			
+			if = {
+				limit = {
+					original_tag = VIN
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_VIN
+			}
+			
+			if = {
+				limit = {
+					original_tag = CAM
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_CAM
+			}
+			
+			if = {
+				limit = {
+					original_tag = LAO
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_LAO
+			}
+			
+			if = {
+				limit = {
+					original_tag = SIA
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_SIA
+			}
+			
+			if = {
+				limit = {
+					original_tag = RAJ
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_RAJ
+			}
+			
+			if = {
+				limit = {
+					original_tag = MON
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_MON
+			}
+			
+			if = {
+				limit = {
+					original_tag = TAN
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_TAN
+			}
+			
+			if = {
+				limit = {
+					original_tag = PHI
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_PHI
+				save_global_event_target_as = KMT_wtf_PHI_tag
+			}
+			
+			if = {
+				limit = {
+					original_tag = NEP
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_NEP
+			}
+			
+			if = {
+				limit = {
+					original_tag = BHU
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_BHU
+			}
+			
+			if = {
+				limit = {
+					original_tag = PAK
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_PAK
+			}
+			
+			if = {
+				limit = {
+					original_tag = MAL
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_MAL
+			}
+			
+			if = {
+				limit = {
+					original_tag = INS
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_INS
+			}
+			
+			if = {
+				limit = {
+					original_tag = KOR
+				}
+				save_global_event_target_as = KMT_spread_revolution_target_KOR
+			}
+			
+			if = {
+				limit = {
+					original_tag = JAP
+				}
+				set_capital = 282
+				save_global_event_target_as = KMT_spread_revolution_target_JAP
+			}
+			
+			if = {
+				limit = {
+					original_tag = JAP
+					has_government = fascism
+					FROM = {
+						original_tag = JAP
+						has_completed_focus = JAP_pre_emptive_coup
+						has_government = democratic
+					}
+					KOR = {
+						exists = yes
+						NOT = {
+							has_war_with = ROOT
+							is_subject_of = ROOT
+							is_in_faction_with = ROOT
+						}
+					}
+					NOT = { has_wargoal_against = KOR }
+				}
+				create_wargoal = { target = KOR type = annex_everything }
+			}
+			
+			if = {
+				limit = {
+					original_tag = JAP
+					has_completed_focus = JAP_pre_emptive_coup
+					has_government = democratic
+					FROM = {
+						original_tag = JAP
+						has_government = fascism
+					}
+					has_template = "Minshuha Minhei"
+				}
+				delete_unit_template_and_units = { 
+					division_template = "Minshuha Minhei"
+					disband = yes
+				}
+			}
+		}
+	}
+	
+	on_government_change = {
+		effect = {			
+			if = {
+				limit = { 
+					has_cosmetic_tag = QINGMOH 
+					has_government = democratic
+				}
+				set_party_name = { ideology = democratic name = MCK_federalist_ruling }
+			}
+			if = {
+				limit = { 
+					has_cosmetic_tag = QINGMOH 
+					has_government = fascism
+				}
+				set_party_name = { ideology = fascism name = MCK_national_peoples_party long_name = MCK_national_peoples_party_long }
+			}
+			if = {
+				limit = { 
+					OR = {
+						has_cosmetic_tag = QINGMOH 
+						has_cosmetic_tag = QINGCM 
+					}
+					has_government = communism
+				}
+				set_party_name = { ideology = communism name = MCK_communist_oppositions_ruling }
+			}
+			if = {
+				limit = {
+					tag = IDC
+					OR = {
+						has_country_leader = {
+							character = IDC_rene_robin
+							ruling_only = yes
+						}
+						has_country_leader = {
+							character = IDC_georges_catroux
+							ruling_only = yes
+						}
+						has_country_leader = {
+							character = IDC_jean_decoux
+							ruling_only = yes
+						}
+						has_country_leader = {
+							character = IDC_jules_brevie
+							ruling_only = yes
+						}
+					}
+					has_country_flag = IDC_no_more_french
+				}
+				retire_country_leader = yes
+			}
+			if = {
+				limit = {
+					has_government = communism
+				}
+				hidden_effect = {
+					CHI_chiang_kaishek = { set_nationality = ZZZ }
+					CHI_xue_yue = { set_nationality = ZZZ }
+					CHI_sun_lijen = { set_nationality = ZZZ }
+					XSM_ma_bufang = { set_nationality = ZZZ }
+					SHX_yan_xishan = { set_nationality = ZZZ }
+					GXC_li_zongren = { set_nationality = ZZZ }
+					GXC_bai_chongxi = { set_nationality = ZZZ }
+					CHI_hu_zongnan = { set_nationality = ZZZ }
+					CHI_he_yingqin = { set_nationality = ZZZ }
+					CHI_zhang_lingfu = { set_nationality = ZZZ }
+					CHI_chen_cheng = { set_nationality = ZZZ }
+				}
+			}
+			
+			if = {
+				limit = {
+					tag = MCK
+					has_government = neutrality
+					is_subject = no
+					country_exists = event_target:KMT_central_gov_tag
+					event_target:KMT_central_gov_tag = {
+						is_subject = no
+						exists = yes
+						NOT = { has_country_flag = MCK_helping_independence }
+					}
+				}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.275 }}
+			}
+			
+			
+			if = {
+				limit = {
+					tag = MCK
+					NOT = {
+						has_government = fascism
+						has_global_flag = JAP_grant_MCK_independence
+						#has_completed_focus = MCK_call_usa_to_act
+						#has_completed_focus = MCK_coronation
+						has_completed_focus = MCK_independence_war
+					}
+					is_puppet_of = JAP
+				}
+				overlord = {
+					country_event = { id = jap.57 }
+				}
+			}
+			
+			if = {
+				limit = {
+					tag = CHI
+					has_government = fascism
+					NOT = {
+						OR = {
+							focus_progress = {
+								focus = KMT_support_pro_japanese_faction
+								progress > 0
+							}
+							has_completed_focus = KMT_support_pro_japanese_faction
+							has_country_flag = KMT_pro_japanese_coup
+						}
+					}
+					has_character = CHI_chiang_kaishek
+				}
+				set_party_name = { ideology = fascism long_name = CKS_regime name = CKS_regime }
+				CHI_chiang_kaishek = { 
+					promote_character = {
+						ideology = fascism_ideology
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					tag = SOV
+					has_opinion_modifier = PRC_defy_order
+				}
+				remove_opinion_modifier = {
+					target = PRC
+					modifier = PRC_defy_order_2
+				}
+				remove_opinion_modifier = {
+					target = PRC
+					modifier = PRC_defy_order
+				}
+			}
+			
+			if = {
+				limit = {
+					tag = CHI
+					has_government = democratic
+					NOT = {
+						has_global_flag = party_chosen
+					}
+				}
+				country_event = { id = kmt.279 }
+				set_party_name = { ideology = democratic long_name = CKS_regime name = CKS_regime }
+			}
+			
+			if = {
+				limit = {
+					OR = { 
+						tag = JAP
+						tag = GER
+					}
+					has_global_flag = GER_JAP_tripartite_pact
+				}
+				clr_global_flag = GER_JAP_tripartite_pact
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						tag = PRC
+						tag = SOV
+					}
+					NOT = { has_government = communism }
+					has_opinion_modifier = PRC_comintern_leaning
+				}
+				SOV = {
+					remove_opinion_modifier = {
+						target = PRC
+						modifier = PRC_comintern_leaning
+					}
+				}
+				PRC = {
+					remove_opinion_modifier = {
+						target = SOV
+						modifier = PRC_comintern_leaning
+					}
+				}
+			}
+		}
+	}
+	
+	on_join_allies = {
+		effect = {
+			
+			#gain buff when against commie - f
+			if = {
+				limit = {
+					any_country = {
+						has_idea = KMT_resist_the_reds
+						has_war_with = ROOT
+						has_war_with = FROM
+					}
+					ROOT = {
+						has_government = communism
+					}
+				}
+				every_other_country = {
+					limit = {
+						has_idea = KMT_resist_the_reds
+						NOT = {
+							has_idea = KMT_anti_communism_sentiment
+						}
+						has_war_with = ROOT
+						has_war_with = FROM
+					}
+					country_event = { id = kmt.252 hours = 1 }
+				}
+			}
+			
+			#gain buff when against commie - r
+			if = {
+				limit = {
+					ROOT = {
+						has_idea = KMT_resist_the_reds
+						NOT = {
+							has_idea = KMT_anti_communism_sentiment
+						}
+					}
+					any_country = {
+						has_government = communism
+						has_war_with = ROOT
+						has_war_with = FROM
+					}
+				}
+				ROOT = {
+					country_event = { id = kmt.252 hours = 1 }
+				}
+			}
+			
+			#russian civil war
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = MCK
+						has_country_flag = RFP_wins
+					}
+					FROM = {
+						has_war_with = SOV
+					}
+					SOV = {
+						has_civil_war = no
+					}
+				}
+				country_event = { id = jap.63 hours = 1 }
+			}
+			
+			#change to wartime corruption
+			if = {
+				limit = {
+					tag = CHI
+					OR = {
+						has_idea = KMT_corrupted_government
+						has_idea = KMT_corrupted_government_lesser
+					}
+				}
+				country_event = { id = kmt.272 hours = 1 }
+			}
+		}
+	}
+	
+	on_subject_free = {
+		effect = {
+			if = {
+				limit = { 
+					has_cosmetic_tag = NWBSHQ
+				}
+				drop_cosmetic_tag = yes
+			}
+		}
+	}
+	
+	
+	on_subject_autonomy_level_change = {
+		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						has_focus_tree = KMT_warlord_generic_focus
+						is_valid_power_struggle_participant = no
+						NOT = { 
+							tag = PRC
+							tag = event_target:KMT_central_gov_tag
+						}
+					}
+				}
+				load_focus_tree = {
+					tree = generic_focus
+					keep_completed = no
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { 
+							has_focus_tree = KMT_warlord_generic_focus 
+							tag = PRC
+							tag = event_target:KMT_central_gov_tag
+						}
+						is_valid_power_struggle_participant = yes
+					}
+				}
+				load_focus_tree = {
+					tree = KMT_warlord_generic_focus
+					keep_completed = no
+				}
+			}
+			if = {
+				limit = { 
+					ROOT = { tag = event_target:KMT_central_gov_tag }
+					FROM = { tag = JAP }
+				}
+				WJW = {
+					annex_country = {
+						target = ROOT
+					}
+				}
+				every_country = { 
+					CHI_wang_jingwei = { set_nationality = WJW }
+					every_character = {
+						limit = {
+							has_character_flag = WJW_potential_defectors
+						}
+						set_nationality = WJW
+					}
+				}
+				WJW = { CHI_wang_jingwei = { promote_character = { ideology = pan_asianism }}}
+				JAP = {
+					puppet = WJW
+				}
+			}
+		}
+	}
+	
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					FROM = { tag = JAP }
+					ROOT = { tag = SDC }
+				}
+				set_cosmetic_tag = JAP_santou_autonomy
+			}
+			if = {
+				limit = {
+					FROM = { tag = JAP }
+					ROOT = { tag = SHX }
+				}
+				set_cosmetic_tag = JAP_sansei_autonomy
+			}
+			if = {
+				limit = {
+					FROM = { tag = JAP }
+					ROOT = {
+						OR = {
+							tag = SDC
+							tag = SHX
+						}
+					}
+					PGR = { is_subject_of = FROM }
+				}
+				PGR = { annex_country = { target = ROOT transfer_troops = yes }}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						has_focus_tree = KMT_warlord_generic_focus
+						is_valid_power_struggle_participant = no
+						NOT = { 
+							tag = PRC
+							tag = event_target:KMT_central_gov_tag
+						}
+					}
+				}
+				load_focus_tree = {
+					tree = generic_focus
+					keep_completed = no
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = GER_JAP_tripartite_pact
+					ROOT = {
+						OR = {
+							tag = JAP
+							tag = GER
+						}
+					}
+				}
+				clr_global_flag = GER_JAP_tripartite_pact
+			}
+			if = {
+				limit = {
+					ROOT = {
+						NOT = { 
+							has_focus_tree = KMT_warlord_generic_focus 
+							tag = PRC
+							tag = event_target:KMT_central_gov_tag
+						}
+						is_valid_power_struggle_participant = yes
+					}
+				}
+				load_focus_tree = {
+					tree = KMT_warlord_generic_focus
+					keep_completed = no
+				}
+			}
+			if = {
+				limit = {
+					tag = IDC
+					has_country_flag = IDC_no_more_french
+					FROM = { 
+						NOT = {
+							tag = FRA
+							tag = VIC
+						}
+					}
+				}
+				set_country_flag = IDC_no_more_french
+			}
+			if = {
+				limit = {
+					tag = IDC
+					OR = {
+						has_country_leader = {
+							character = IDC_rene_robin
+							ruling_only = yes
+						}
+						has_country_leader = {
+							character = IDC_georges_catroux
+							ruling_only = yes
+						}
+						has_country_leader = {
+							character = IDC_jean_decoux
+							ruling_only = yes
+						}
+						has_country_leader = {
+							character = IDC_jules_brevie
+							ruling_only = yes
+						}
+					}
+					has_country_flag = IDC_no_more_french
+				}
+				retire_country_leader = yes
+			}
+
+			#if = {
+			#	limit = { 
+			#		tag = event_target:KMT_central_gov_tag
+			#		FROM = { tag = JAP }
+			#	}
+			#	drop_cosmetic_tag = yes
+			#	clear_global_event_target = KMT_central_gov_tag
+			#}
+
+			if = {
+				limit = { 
+					tag = JAP
+					FROM = { tag = SOV }
+				}
+				every_owned_state = {
+					limit = {
+						OR = {
+							state = 537
+							state = 536
+							state = 555
+						}
+					}
+					FROM = { transfer_state = PREV }
+				}
+			}
+
+			if = {
+				limit = { 
+					has_cosmetic_tag = NWBSHQ
+				}
+				drop_cosmetic_tag = yes
+			}
+
+			if = {
+				limit = { 
+					ROOT = { tag = PGR }
+					FROM = { tag = JAP }
+				}
+				PGR = {
+					remove_ideas = cg_warlords
+					add_state_claim = 597
+					add_state_claim = 615
+					add_state_claim = 614
+					add_state_claim = 609
+					add_state_claim = 939
+					set_country_flag = became_jap_puppet
+					drop_cosmetic_tag = yes
+					add_ideas = KMT_JAP_puppet_no_surrender
+					set_global_flag = KMT_PGR_established
+					
+					retire_character = PGR_song_zheyuan
+					retire_character = PGR_zhao_dengyu
+					retire_character = PGR_wan_fulin
+					retire_character = PGR_liu_zhensan
+					retire_character = PGR_dong_linge
+					retire_character = PGR_wang_shuchang
+					
+					KMT_wang_kemin = {
+						promote_character = {
+							ideology = fascism_ideology
+						}
+					}
+					if = {
+						limit = { NOT = { has_global_flag = KMT_PGR_established }}
+						set_cosmetic_tag = JAP_kahoku_autonomy
+					}
+				}
+				if = {
+					limit = { 
+						owns_state = 611 
+						MEN = {
+							owns_state = 612
+							is_subject_of = JAP
+						}
+					}
+					MEN = { transfer_state = 611 }
+				}
+				EHA = {
+					country_event = { id = jap.4 days = 1 }
+				}
+				every_state = {
+					limit = { 	
+						is_core_of = ROOT
+						OR = {
+							NOT = { state = 608 }
+							NOT = { is_owned_by = ROOT }
+						}
+					}
+					remove_core_of = ROOT
+				}
+			}
+
+			if = {
+				limit = { 
+					ROOT = { tag = MEN }
+					FROM = { tag = JAP }
+				}
+				MEN = {
+					remove_ideas = cg_warlords
+					set_country_flag = became_jap_puppet
+					division_template = {
+						name = "Militia"	
+						is_locked = yes
+						force_allow_recruiting = yes
+						division_cap = 10 
+						regiments = { 
+							militia = { x = 0 y = 0 } 
+							militia = { x = 0 y = 1 } 
+						}
+					}
+					random_owned_controlled_state = {
+						create_unit = { 
+							division = "name = \"Minping\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.95" 
+							owner = MEN
+						}
+						create_unit = { 
+							division = "name = \"Minping\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.95" 
+							owner = MEN
+						}
+					}
+					random_owned_controlled_state = {
+						create_unit = { 
+							division = "name = \"Minping\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.95" 
+							owner = MEN
+						}
+						create_unit = { 
+							division = "name = \"Minping\" division_template = \"Militia\" start_experience_factor = 0.1 start_equipment_factor = 0.95" 
+							owner = MEN
+						}
+					}
+				}
+			}
+
+			if = {
+				limit = { 
+					is_chinese_nations_w_HYQ = yes
+					NOT = {
+						original_tag = NSM
+						original_tag = XSM
+						original_tag = SIK
+						original_tag = PGR
+					}
+					FROM = { tag = JAP }
+					WJW = {
+						exists = yes
+						OR = {
+							is_puppet_of = JAP
+							is_in_faction_with = JAP
+						}
+					}
+				}
+				WJW = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = yes
+					}
+				}
+			}
+
+			if = {
+				limit = { 
+					tag = XSM
+					FROM = { tag = JAP }
+					NSM = { is_subject_of = JAP }
+				}
+				NSM = {
+					annex_country = {
+						target = ROOT
+						transfer_troops = yes
+					}
+				}
+			}
+
+			if = {
+				limit = { 
+					OR = {
+						tag = CHI
+						tag = HYQ
+					}
+					FROM = { tag = JAP }
+				}
+				every_state = {
+					limit = { 
+						OWNER = {
+							NOT = { tag = ROOT }
+							OR = {
+								tag = JAP
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+					}
+					remove_from_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+					if = {
+						limit = { is_core_of = ROOT }
+						remove_core_of = ROOT
+					}
+					if = {
+						limit = { is_claimed_by = ROOT }
+						remove_claim_by = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	# ROOT is capitulated country, FROM is winner
+	on_capitulation = {
+		effect = {
+			if = {
+				limit = { 
+					tag = PER 
+					OR = {
+						owns_state = 413
+						owns_state = 412
+					}
+					has_global_flag = ENG_countenance_war
+					NOT = { has_global_flag = KMT_countenance_ENG_resources_rights }
+				}
+				set_global_flag = KMT_countenance_ENG_resources_rights
+				SOV = { country_event = { id = kmtmisc.18 days = 7 }}
+			}
+			#hopefully will prevent china becomes poland
+			if = {
+				limit = { 
+					tag = JAP
+					has_war_with = event_target:KMT_central_gov_tag
+					any_country = {
+						OR = {
+							tag = MEN
+							tag = WJW
+							tag = PGR
+							tag = RGR
+							tag = YUN
+							tag = XSM
+							tag = SIK
+							tag = EHA
+							tag = ECR
+							is_chinese_nations_w_HYQ = yes
+						}
+						is_subject_of = ROOT
+					}
+				}
+				every_other_country = {
+					limit = {
+						OR = {
+							tag = MEN
+							tag = WJW
+							tag = PGR
+							tag = RGR
+							tag = YUN
+							tag = XSM
+							tag = SIK
+							tag = EHA
+							tag = ECR
+							is_chinese_nations_w_HYQ = yes
+						}
+						is_subject_of = ROOT
+					}
+					event_target:KMT_central_gov_tag = { annex_country = { target = PREV }}
+				}
+			}
+			if = {
+				limit = {
+					FROM = { has_country_flag = MCK_helping_independence }
+					tag = MCK
+					is_subject = yes
+					any_owned_state = {
+						is_controlled_by = ROOT
+						has_state_flag = MCK_state_secured
+					}
+				}
+				#anchor: MCK gain independence
+				MCK = { 
+					set_country_flag = MCK_free_flag 
+					capital_scope = {
+						if = {
+							limit = { NOT = { has_state_flag = MCK_state_secured }}
+							add_to_variable = { global.MCK_secured_state_num = 1 }
+							set_state_flag = MCK_state_secured
+							custom_effect_tooltip = MCK_state_secured_tt
+								set_variable = { MCK_secured_state_frame = 2 }
+						}
+					}
+				}
+				white_peace = FROM
+				set_party_name = { ideology = fascism long_name = MCK_independent_f_party name = MCK_independent_f_party }
+				every_owned_state = {
+					limit = {
+						has_state_flag = MCK_assimilated_bandits
+						is_core_of = ROOT
+						has_dynamic_modifier = { modifier = MCK_local_bandits }
+						NOT = {
+							has_dynamic_modifier = { modifier = MCK_najua_presence }
+							has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+						}
+					}
+					if = { limit = { has_dynamic_modifier = { modifier = MCK_local_bandits }} remove_dynamic_modifier = { modifier = MCK_local_bandits }}
+					if = { limit = { has_resistance = yes } cancel_resistance = yes }
+					if = { limit = { check_variable = { global.MCK_resistance_strength@This > 0 }} set_variable = { global.MCK_resistance_strength@This = 0 }}
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = ROOT
+						check_variable = { MCK_guihuajun_amt > 0 }
+					}
+					create_unit = {
+						division = "name = \"Kuei-hua-chün\" division_template = \"Kuei-hua-chün\" start_experience_factor = 0.2 start_equipment_factor = 15 start_equipment_factor = 1"
+						owner = ROOT
+						allow_spawning_on_enemy_provs = yes
+						count = This.MCK_guihuajun_amt
+					}
+				}
+				OVERLORD = { 
+					save_event_target_as = MCK_former_overlord
+					country_event = { id = jap.235 }
+					end_puppet = ROOT 
+					if = {
+						limit = { is_in_faction_with = ROOT }
+						remove_from_faction = ROOT
+					}
+					every_country = {
+						limit = { 
+							has_war_with = ROOT 
+							OR = {
+								is_faction_leader = yes
+								is_in_faction = no
+							}
+							NOT = { 
+								tag = PREV
+								is_in_faction_with = PREV
+								is_subject_of = PREV
+								OVERLORD = { is_in_faction_with = PREV }
+							}
+							NOT = { tag = event_target:KMT_central_gov_tag }
+						}
+						country_event = { id = jap.222 }
+					}
+					
+					ROOT = {
+						declare_war_on = {
+							target = PREV
+							type = topple_government
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_government = neutrality
+						}
+					}
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+						last_election = "1936.1.1"
+					}
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.5
+				}
+				if = {
+					limit = {
+						has_completed_focus = MCK_contact_russian_fascists
+					}
+					custom_effect_tooltip = MCK_rfr_arm_forces
+					hidden_effect = {
+						load_oob = "MCK_rfr_arm_forces"
+						#set_temp_variable = { MCK_temp_govnt = 2 }
+						#KMT_mck_break_free_ideo_pop = yes
+						set_variable = { MCK_RFP_mood = 0 }
+					}
+				}else = {
+					set_party_name = { ideology = neutrality long_name = MCK_qing_restored name = MCK_qing_restored }
+				}
+				set_variable = { MCK_awareness = 0 }
+				set_variable = { MCK_suspicion = 0 }
+				FROM = {
+					diplomatic_relation = { relation = guarantee country = ROOT active = yes }
+				}
+				if = {
+					limit = {
+						has_global_flag = MCK_prepared_for_usa_intervention
+						USA = {
+							exists = yes
+							is_subject = no
+							has_country_flag = MCK_helping_independence
+						}
+						NOT = { is_subject_of = USA }
+					}
+					add_ideas = MCK_usa_intervention
+					USA = {
+						country_event = { id = jap.241 }
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = MCK_prepared_for_sov_intervention
+						SOV = {
+							exists = yes
+							is_subject = no
+							has_country_flag = MCK_helping_independence
+						}
+						NOT = { is_subject_of = SOV }
+					}
+					add_ideas = MCK_sov_intervention
+					if = {
+						limit = { 
+							any_owned_state = { any_neighbor_state = { is_controlled_by = SOV }}
+						}
+						division_template = {
+							name = "E-jen Chih-yüan Pu-tui"
+							is_locked = yes
+							regiments = {
+								infantry = { x = 0 y = 0 }
+								infantry = { x = 0 y = 1 }
+								infantry = { x = 1 y = 0 }
+								infantry = { x = 1 y = 1 }
+							}
+							support = { recon = { x = 0 y = 0 }}
+						}
+						every_owned_state = {
+							limit = { 
+								any_neighbor_state = { is_controlled_by = SOV }
+							}
+							create_unit = {
+								division = "name = \"E-jen Chih-yüan Pu-tui\" division_template = \"E-jen Chih-yüan Pu-tui\"  start_experience_factor = 0.35 start_equipment_factor = 1"
+								owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+							}
+						}
+					}
+				add_equipment_to_stockpile = { type = infantry_equipment amount = MCK_uprise_sov_equipment producer = SOV }
+					SOV = {
+						country_event = { id = jap.241 }
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = MCK_coordinated_uprising_flag
+						event_target:KMT_central_gov_tag = {
+							exists = yes
+							is_subject = no
+							has_country_flag = MCK_helping_independence
+						}
+						NOT = { is_subject_of = event_target:KMT_central_gov_tag }
+					}
+					add_ideas = MCK_chi_intervention
+					division_template = {
+						name = "K'ang-jih Chiu-kuo Ch'i-i-chün"
+						is_locked = yes
+						regiments = {
+							militia = { x = 0 y = 0 }
+							militia = { x = 0 y = 1 }
+						}
+					}
+					every_owned_state = {
+						limit = { is_core_of = ROOT }
+						create_unit = {
+							division = "name = \"K'ang-jih Chiu-kuo Ch'i-i-chün\" division_template = \"K'ang-jih Chiu-kuo Ch'i-i-chün\" start_experience_factor = 0.2 start_equipment_factor = 1"
+							owner = ROOT
+					allow_spawning_on_enemy_provs = yes
+						}
+					}
+					event_target:KMT_central_gov_tag = {
+						country_event = { id = jap.241 }
+						division_template = {
+							name = "K'ang-jih Chiu-kuo Ch'i-i-chün"
+							is_locked = yes
+							regiments = {
+								militia = { x = 0 y = 0 }
+								militia = { x = 0 y = 1 }
+							}
+						}
+						every_owned_state = {
+							limit = { 
+								is_core_of = event_target:KMT_central_gov_tag
+								controller = {
+									has_war_with = event_target:KMT_central_gov_tag
+									OR = {
+										tag = JAP
+										is_in_faction_with = JAP
+										is_subject_of = JAP
+									}
+								}
+							}
+							create_unit = {
+								division = "name = \"K'ang-jih Chiu-kuo Ch'i-i-chün\" division_template = \"K'ang-jih Chiu-kuo Ch'i-i-chün\" start_experience_factor = 0.2 start_equipment_factor = 1"
+								owner = PREV
+					allow_spawning_on_enemy_provs = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = MCK_korean_cooperation_flag
+					}
+					if = {
+						limit = {	
+							KOR = { 
+								is_subject_of = event_target:MCK_former_overlord 
+								exists = yes
+							}
+						}
+						event_target:MCK_former_overlord = {
+							end_puppet = KOR
+						}
+						MCK = { puppet = KOR }
+						KOR = {
+							division_template = {
+								name = "Joseon Uiyondae"
+								is_locked = yes
+								regiments = {
+									irregular_infantry = { x = 0 y = 0 }
+									irregular_infantry = { x = 0 y = 1 }
+								}
+							}
+							every_owned_state = {
+								limit = { is_core_of = KOR }
+								create_unit = {
+									division = "name = \"Joseon Uiyondae\" division_template = \"Joseon Uiyondae\" start_experience_factor = 0.5 start_equipment_factor = 1"
+									owner = ROOT
+									allow_spawning_on_enemy_provs = yes
+									count = 5
+								}
+							}
+						}
+					}
+					division_template = {
+						name = "Joseon Uiyondae"
+						is_locked = yes
+						regiments = {
+							irregular_infantry = { x = 0 y = 0 }
+							irregular_infantry = { x = 0 y = 1 }
+						}
+					}
+					every_state = {
+						limit = {
+							is_core_of = KOR
+							OWNER = {
+								OR = {
+									tag = event_target:MCK_former_overlord
+									is_subject_of = event_target:MCK_former_overlord
+								}
+								NOT = { tag = KOR }
+							}
+						}
+						ROOT = { set_state_owner = PREV }
+					}
+					every_owned_state = {
+						limit = { 
+							OR = {
+								state = 965
+								state = 973
+								state = 976
+							}
+						}
+						create_unit = {
+							division = "name = \"Joseon Uiyondae\" division_template = \"Joseon Uiyondae\" start_experience_factor = 0.2 start_equipment_factor = 1 start_equipment_factor = 1"
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					every_owned_state = {
+						limit = { is_core_of = KOR }
+						create_unit = {
+							division = "name = \"Joseon Uiyondae\" division_template = \"Joseon Uiyondae\" start_experience_factor = 0.5 start_equipment_factor = 1"
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+							count = 5
+						}
+					}
+				}
+				event_target:MCK_former_overlord = {
+					add_timed_idea = {
+						idea = MCK_disrupted_logistics
+						days = 60
+					}
+				}
+				every_owned_state = {
+					limit = {
+						NOT = { has_state_flag = MCK_state_secured }
+					}
+					event_target:MCK_former_overlord = { set_state_owner = PREV }
+					if = {
+						limit = {
+							is_controlled_by = ROOT
+						}
+						event_target:MCK_former_overlord = { set_state_controller = PREV }
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					MCK = { 
+						is_subject_of = ROOT
+						exists = yes
+						has_completed_focus = MCK_an_alternative
+						any_owned_state = {
+							is_controlled_by = MCK
+							has_state_flag = MCK_state_secured
+						}
+					}
+					has_civil_war = no
+				}
+				#anchor: MCK gain independence
+				MCK = { 
+					set_country_flag = MCK_free_flag 
+					capital_scope = {
+						if = {
+							limit = { NOT = { has_state_flag = MCK_state_secured }}
+							add_to_variable = { global.MCK_secured_state_num = 1 }
+							set_state_flag = MCK_state_secured
+							custom_effect_tooltip = MCK_state_secured_tt
+								set_variable = { MCK_secured_state_frame = 2 }
+						}
+					}
+				}
+				MCK = {
+					set_party_name = { ideology = fascism long_name = MCK_independent_f_party name = MCK_independent_f_party }
+					every_owned_state = {
+						limit = {
+							has_state_flag = MCK_assimilated_bandits
+							is_core_of = MCK
+							has_dynamic_modifier = { modifier = MCK_local_bandits }
+							NOT = {
+								has_dynamic_modifier = { modifier = MCK_najua_presence }
+								has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+							}
+						}
+						if = { limit = { has_dynamic_modifier = { modifier = MCK_local_bandits }} remove_dynamic_modifier = { modifier = MCK_local_bandits }}
+						if = { limit = { has_resistance = yes } cancel_resistance = yes }
+						if = { limit = { check_variable = { global.MCK_resistance_strength@This > 0 }} set_variable = { global.MCK_resistance_strength@This = 0 }}
+					}
+					every_owned_state = {
+						limit = {
+							is_core_of = MCK
+							check_variable = { MCK_guihuajun_amt > 0 }
+						}
+						create_unit = {
+							division = "name = \"Kuei-hua-chün\" division_template = \"Kuei-hua-chün\" start_experience_factor = 0.2 start_equipment_factor = 15 start_equipment_factor = 1"
+							owner = MCK
+							allow_spawning_on_enemy_provs = yes
+							count = This.MCK_guihuajun_amt
+						}
+					}
+					OVERLORD = { 
+						save_event_target_as = MCK_former_overlord
+						country_event = { id = jap.235 }
+						end_puppet = MCK 
+						if = {
+							limit = { is_in_faction_with = MCK }
+							remove_from_faction = MCK
+						}
+						every_country = {
+							limit = { 
+								has_war_with = MCK 
+								OR = {
+									is_faction_leader = yes
+									is_in_faction = no
+								}
+								NOT = { 
+									tag = PREV
+									is_in_faction_with = PREV
+									is_subject_of = PREV
+									OVERLORD = { is_in_faction_with = PREV }
+								}
+								NOT = { tag = event_target:KMT_central_gov_tag }
+							}
+							country_event = { id = jap.222 }
+						}
+						
+						MCK = {
+							declare_war_on = {
+								target = PREV
+								type = topple_government
+							}
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								has_government = neutrality
+							}
+						}
+						set_politics = {
+							ruling_party = neutrality
+							elections_allowed = no
+							last_election = "1936.1.1"
+						}
+					}
+					add_popularity = {
+						ideology = neutrality
+						popularity = 0.5
+					}
+					if = {
+						limit = {
+							has_completed_focus = MCK_contact_russian_fascists
+						}
+						custom_effect_tooltip = MCK_rfr_arm_forces
+						hidden_effect = {
+							load_oob = "MCK_rfr_arm_forces"
+							#set_temp_variable = { MCK_temp_govnt = 2 }
+							#KMT_mck_break_free_ideo_pop = yes
+							set_variable = { MCK_RFP_mood = 0 }
+						}
+					}else = {
+						set_party_name = { ideology = neutrality long_name = MCK_qing_restored name = MCK_qing_restored }
+					}
+					set_variable = { MCK_awareness = 0 }
+					set_variable = { MCK_suspicion = 0 }
+					if = {
+						limit = {
+							has_global_flag = MCK_prepared_for_usa_intervention
+							USA = {
+								exists = yes
+								is_subject = no
+								has_country_flag = MCK_helping_independence
+							}
+							NOT = { is_subject_of = USA }
+						}
+						add_ideas = MCK_usa_intervention
+						USA = {
+							country_event = { id = jap.241 }
+						}
+					}
+					if = {
+						limit = {
+							has_global_flag = MCK_prepared_for_sov_intervention
+							SOV = {
+								exists = yes
+								is_subject = no
+								has_country_flag = MCK_helping_independence
+							}
+							NOT = { is_subject_of = SOV }
+						}
+						add_ideas = MCK_sov_intervention
+						if = {
+							limit = { 
+								any_owned_state = { any_neighbor_state = { is_controlled_by = SOV }}
+							}
+							division_template = {
+								name = "E-jen Chih-yüan Pu-tui"
+								is_locked = yes
+								regiments = {
+									infantry = { x = 0 y = 0 }
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 1 y = 0 }
+									infantry = { x = 1 y = 1 }
+								}
+								support = { recon = { x = 0 y = 0 }}
+							}
+							every_owned_state = {
+								limit = { 
+									any_neighbor_state = { is_controlled_by = SOV }
+								}
+								create_unit = {
+									division = "name = \"E-jen Chih-yüan Pu-tui\" division_template = \"E-jen Chih-yüan Pu-tui\"  start_experience_factor = 0.35 start_equipment_factor = 1"
+									owner = MCK
+						allow_spawning_on_enemy_provs = yes
+								}
+							}
+						}
+					add_equipment_to_stockpile = { type = infantry_equipment amount = MCK_uprise_sov_equipment producer = SOV }
+						SOV = {
+							country_event = { id = jap.241 }
+						}
+					}
+					if = {
+						limit = {
+							has_global_flag = MCK_coordinated_uprising_flag
+							event_target:KMT_central_gov_tag = {
+								exists = yes
+								is_subject = no
+								has_country_flag = MCK_helping_independence
+							}
+							NOT = { is_subject_of = event_target:KMT_central_gov_tag }
+						}
+						add_ideas = MCK_chi_intervention
+						division_template = {
+							name = "K'ang-jih Chiu-kuo Ch'i-i-chün"
+							is_locked = yes
+							regiments = {
+								militia = { x = 0 y = 0 }
+								militia = { x = 0 y = 1 }
+							}
+						}
+						every_owned_state = {
+							limit = { is_core_of = MCK }
+							create_unit = {
+								division = "name = \"K'ang-jih Chiu-kuo Ch'i-i-chün\" division_template = \"K'ang-jih Chiu-kuo Ch'i-i-chün\" start_experience_factor = 0.2 start_equipment_factor = 1"
+								owner = MCK
+						allow_spawning_on_enemy_provs = yes
+							}
+						}
+						event_target:KMT_central_gov_tag = {
+							country_event = { id = jap.241 }
+							division_template = {
+								name = "K'ang-jih Chiu-kuo Ch'i-i-chün"
+								is_locked = yes
+								regiments = {
+									militia = { x = 0 y = 0 }
+									militia = { x = 0 y = 1 }
+								}
+							}
+							every_owned_state = {
+								limit = { 
+									is_core_of = event_target:KMT_central_gov_tag
+									controller = {
+										has_war_with = event_target:KMT_central_gov_tag
+										OR = {
+											tag = JAP
+											is_in_faction_with = JAP
+											is_subject_of = JAP
+										}
+									}
+								}
+								create_unit = {
+									division = "name = \"K'ang-jih Chiu-kuo Ch'i-i-chün\" division_template = \"K'ang-jih Chiu-kuo Ch'i-i-chün\" start_experience_factor = 0.2 start_equipment_factor = 1"
+									owner = PREV
+						allow_spawning_on_enemy_provs = yes
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							has_global_flag = MCK_korean_cooperation_flag
+						}
+						if = {
+							limit = {	
+								KOR = { 
+									is_subject_of = event_target:MCK_former_overlord 
+									exists = yes
+								}
+							}
+							event_target:MCK_former_overlord = {
+								end_puppet = KOR
+							}
+							MCK = { puppet = KOR }
+							KOR = {
+								division_template = {
+									name = "Joseon Uiyondae"
+									is_locked = yes
+									regiments = {
+										irregular_infantry = { x = 0 y = 0 }
+										irregular_infantry = { x = 0 y = 1 }
+									}
+								}
+								every_owned_state = {
+									limit = { is_core_of = KOR }
+									create_unit = {
+										division = "name = \"Joseon Uiyondae\" division_template = \"Joseon Uiyondae\" start_experience_factor = 0.5 start_equipment_factor = 1"
+										owner = ROOT
+										allow_spawning_on_enemy_provs = yes
+										count = 5
+									}
+								}
+							}
+						}
+						division_template = {
+							name = "Joseon Uiyondae"
+							is_locked = yes
+							regiments = {
+								irregular_infantry = { x = 0 y = 0 }
+								irregular_infantry = { x = 0 y = 1 }
+							}
+						}
+						every_state = {
+							limit = {
+								is_core_of = KOR
+								OWNER = {
+									OR = {
+										tag = event_target:MCK_former_overlord
+										is_subject_of = event_target:MCK_former_overlord
+									}
+									NOT = { tag = KOR }
+								}
+							}
+							ROOT = { set_state_owner = PREV }
+						}
+						every_owned_state = {
+							limit = { 
+								OR = {
+									state = 965
+									state = 973
+									state = 976
+								}
+							}
+							create_unit = {
+								division = "name = \"Joseon Uiyondae\" division_template = \"Joseon Uiyondae\" start_experience_factor = 0.2 start_equipment_factor = 1 start_equipment_factor = 1"
+								owner = ROOT
+								allow_spawning_on_enemy_provs = yes
+							}
+						}
+						every_owned_state = {
+							limit = { is_core_of = KOR }
+							create_unit = {
+								division = "name = \"Joseon Uiyondae\" division_template = \"Joseon Uiyondae\" start_experience_factor = 0.5 start_equipment_factor = 1"
+								owner = ROOT
+								allow_spawning_on_enemy_provs = yes
+								count = 5
+							}
+						}
+					}
+					event_target:MCK_former_overlord = {
+						add_timed_idea = {
+							idea = MCK_disrupted_logistics
+							days = 60
+						}
+					}
+					#every_owned_state = {
+					#	limit = {
+					#		NOT = { has_state_flag = MCK_state_secured }
+					#	}
+					#	event_target:MCK_former_overlord = { set_state_owner = PREV }
+					#	if = {
+					#		limit = {
+					#			is_controlled_by = MCK
+					#		}
+					#		event_target:MCK_former_overlord = { set_state_controller = PREV }
+					#	}
+					#}
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = { has_war_with = JAP }
+					has_idea = KMT_JAP_puppet_no_surrender
+				}
+				for_each_loop = {
+					array = ROOT.JAP_collaborator_controlled_province
+					
+					JAP = { set_province_controller = v }
+				}
+				JAP = { 
+					country_event = { id = jap.189 }
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = cks_held
+					ROOT = {
+						tag = ZXL
+					}
+				}
+				CHI = {
+					country_event = { id = xian.13 }
+				}
+			}
+			
+			if = {
+				limit = {
+					ROOT = {
+						has_idea = cg_warlords
+						OR = {
+							AND = {
+								has_idea = KMT_united_front
+								is_in_faction_with = event_target:KMT_central_gov_tag
+							}
+							is_subject_of = event_target:KMT_central_gov_tag
+						}
+					}
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = kmt.300 }
+				}
+			}
+			
+			if = {
+				limit = {
+					ROOT = {
+						tag = MCK
+						is_puppet_of = JAP
+						has_country_leader = {
+							character = MCK_puyi
+							ruling_only = yes
+						}
+					}
+					FROM = {
+						OR = {
+							tag = CHI
+							tag = PRC
+							tag = event_target:KMT_central_gov_tag
+						}
+					}
+				}
+				FROM = {
+					country_event = { id = kmt.303 }
+				}
+			}
+			
+			if = {
+				limit = {
+					has_global_flag = cks_held
+					ROOT = {
+						tag = ZXL
+					}
+					FROM = {
+						tag = CHI
+					}
+				}
+				FROM = {
+					country_event = { id = xian.13 }
+				}
+			}
+			
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							tag = PGR
+							has_cosmetic_tag = HCPC
+						}
+						is_puppet_of = CHI
+					}
+				}
+				CHI = {
+					country_event = { id = kmt.300 }
+				}
+				CHI = {
+					set_state_controller = 614
+				}
+			}
+			
+			if = {
+				limit = {
+					ROOT = {
+						has_country_flag = joined_kmt_against_prc
+						has_idea = cg_warlords
+						has_war_together_with = CHI
+					}
+				}
+				CHI = {
+					country_event = { id = kmt.300 }
+				}
+			}
+			
+			if = {
+				limit = {
+					tag = JAP
+					has_global_flag = KMT_cairo_JAP_return_land_when_capitulate
+					any_country = {
+						has_country_flag = agreed_on_cairoC_terms
+						has_capitulated = no
+						has_war_with = JAP
+					}
+				}
+				every_country = {
+					limit = {
+						OR = {
+							tag = JAP
+							is_puppet_of = JAP
+						}
+						any_owned_state = {
+							is_core_of = CHI
+						}
+					}
+					country_event = { id = kmt.413 }
+				}
+			}
+			
+			if = {
+				limit = {
+					tag = PGR
+				}
+				retire_character = PGR_zhao_dengyu
+				retire_character = PGR_wan_fulin
+				retire_character = PGR_liu_zhensan
+				retire_character = PGR_dong_linge
+				retire_character = PGR_wang_shuchang
+			}
+			
+			if = {
+				limit = {
+					tag = JAP
+				}
+				every_other_country = {
+					limit = {
+						is_puppet_of = JAP
+					}
+					JAP = {
+						end_puppet = PREV
+					}
+				}
+			}
+		}
+	}
+	
+	on_startup = {
+		effect = {
+			819 = { add_claim_by = CHI }
+			330 = { add_claim_by = CHI }
+			817 = { add_claim_by = CHI }
+			817 = { add_claim_by = CHI }
+			820 = { add_claim_by = CHI }
+			if = {
+				limit = { has_start_date > 1938.01.01 }
+				add_victory_points = {
+				  province = 4619
+				  value = 8
+				}
+				add_victory_points = {
+				  province = 7167
+				  value = -8
+				}
+				add_victory_points = {
+				  province = 6999
+				  value = 20
+				}
+				add_victory_points = {
+				  province = 11913
+				  value = -20
+				}
+				remove_from_array = { 
+					array = global.KMT_province_vp_array 
+					index = 4619
+				}
+				add_to_array = { 
+					array = global.KMT_province_vp_array 
+					index = 4619
+					value = 18
+				}
+				remove_from_array = { 
+					array = global.KMT_province_vp_array 
+					index = 7167
+				}
+				add_to_array = { 
+					array = global.KMT_province_vp_array 
+					index = 7167
+					value = 0.1
+				}
+				remove_from_array = { 
+					array = global.KMT_province_vp_array 
+					index = 11913
+				}
+				add_to_array = { 
+					array = global.KMT_province_vp_array 
+					index = 11913
+					value = 10
+				}
+				remove_from_array = { 
+					array = global.KMT_province_vp_array 
+					index = 6999
+				}
+				add_to_array = { 
+					array = global.KMT_province_vp_array 
+					index = 6999
+					value = 30
+				}
+				605 = {
+					save_global_event_target_as = KMT_central_gov_capital_state
+				}
+				set_province_name = { id = 4619 name = KMT_VP_4619_wuhan }
+			}
+			every_country = {
+				limit = { is_chinese_nations_w_HYQ = yes }				
+				set_variable = { KMT_warlord_border_war_defender_modifier = 1 }
+				set_variable = { KMT_warlord_border_war_attacker_modifier = 1 }
+			}
+			log = "KMT_on_actions startup"
+			CHI = { 
+				save_global_event_target_as = WTT_current_china_leader 
+			}
+			every_state = {
+				limit = {
+					OR = {
+						region = 155
+						region = 242
+						region = 243
+					}
+				}
+				set_variable = { MCK_secured_state_frame = 1 }
+			}
+			724 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 7236
+				}
+			}
+			JAP = {
+				set_variable = { JAP.JAP_military_satisfied_duration = 200 }
+				every_character = { set_character_flag = JAP_true_jap_characters }
+				if = {
+					limit = { has_start_date > 1939.1.1 }
+					build_railway = {
+						path = { 7094 12036 10017 }
+						level = 1
+					}
+					build_railway = {
+						path = { 4190 4032 13328 11980 }
+						level = 1
+					}
+					build_railway = {
+						path = { 11963 994 11990 }
+						level = 1
+					}
+					build_railway = {
+						level = 2
+						path = { 7097 13143 12350 9982 13425 9970 }
+					}
+					build_railway = {
+						level = 1
+						path = { 9970 1120 12095 1047 }
+					}
+					build_railway = {
+						level = 1
+						path = { 11801 881 6969 9843 }
+					}
+					build_railway = {
+						level = 1
+						path = { 13380 13411 7767 13406 1545 9623 }
+					}
+				}
+			}
+			GER = { 
+				#add_dynamic_modifier = { modifier = KMTGER_no_spam }
+			}
+			CHI = { 
+				use_postal_romanisation = yes 
+				startup_state_vp_name = yes
+				save_global_event_target_as = KMT_central_gov_tag
+				save_global_event_target_as = KMT_president_elect_tag
+				if = {
+					limit = { has_start_date < 1936.1.5 }
+					add_ideas = KMT_falkenhausen_advisor_theorist 
+				}
+			}
+			MCK = {
+				if = {
+					limit = { has_start_date < 1936.2.1 }
+					every_owned_state = {
+						limit = { NOT = { state = 961 }}
+						add_dynamic_modifier = { modifier = MCK_local_bandits }
+						set_compliance = 0
+						set_resistance = 25
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 45 }
+					}
+
+					610 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					715 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					964 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					716 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					965 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					328 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					976 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					717 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					974 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					963 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					936 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					761 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 15 }
+					}
+
+					950 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 30 }
+					}
+
+					973 = {
+						set_compliance = 0
+						set_resistance = 10
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 30 }
+					}
+
+					961 = {
+						set_compliance = 0
+						set_resistance = 40
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 50 }
+					}
+				}else = {
+					961 = {
+						set_compliance = 0
+						set_resistance = 90
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 100 }
+					}
+					975 = {
+						set_compliance = 0
+						set_resistance = 70
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 70 }
+					}
+					714 = {
+						set_compliance = 0
+						set_resistance = 50
+						set_garrison_strength = 1.0
+						set_variable = { global.MCK_resistance_strength@This = 45 }
+					}
+					every_owned_state = {
+						limit = { 
+							NOT = { state = 961 }
+							NOT = { state = 975 }
+							NOT = { state = 714 }
+							has_resistance = yes
+							is_core_of = MCK
+						}
+						cancel_resistance = yes
+					}
+				}
+				every_owned_state = {
+					set_variable = { MCK_local_bandits_compliance_gain = global.MCK_resistance_strength@This }
+					multiply_variable = { MCK_local_bandits_compliance_gain = -1 }
+					divide_variable = { MCK_local_bandits_compliance_gain = 10000 }
+					
+					set_variable = { MCK_local_bandits_resistance_target = global.MCK_resistance_strength@This }
+					divide_variable = { MCK_local_bandits_resistance_target = 10000 }
+					multiply_variable = { MCK_local_bandits_resistance_target = 15 }
+					
+					set_variable = { MCK_najua_presence_resistance_growth = global.MCK_resistance_strength@This }
+					divide_variable = { MCK_najua_presence_resistance_growth = 200 }
+					
+					set_variable = { MCK_najua_presence_resistance_decay = global.MCK_resistance_strength@This }
+					divide_variable = { MCK_najua_presence_resistance_decay = -500 }
+					
+					set_variable = { MCK_najua_presence_compliance_gain = global.MCK_resistance_strength@This }
+					multiply_variable = { MCK_najua_presence_compliance_gain = -5 }
+					divide_variable = { MCK_najua_presence_compliance_gain = 10000 }
+					
+					set_variable = { MCK_najua_presence_resistance_target = global.MCK_resistance_strength@This }
+					divide_variable = { MCK_najua_presence_resistance_target = 1000 }
+					multiply_variable = { MCK_najua_presence_resistance_target = 3 }
+					
+					set_variable = { MCK_najua_presence2_resistance_growth = global.MCK_resistance_strength@This }
+					divide_variable = { MCK_najua_presence2_resistance_growth = 100 }
+					
+					set_variable = { MCK_najua_presence2_resistance_decay = global.MCK_resistance_strength@This }
+					divide_variable = { MCK_najua_presence2_resistance_decay = -200 }
+					
+					set_variable = { MCK_najua_presence2_compliance_gain = global.MCK_resistance_strength@This }
+					multiply_variable = { MCK_najua_presence2_compliance_gain = -7 }
+					divide_variable = { MCK_najua_presence2_compliance_gain = 10000 }
+					
+					set_variable = { MCK_najua_presence2_resistance_target = global.MCK_resistance_strength@This }
+					divide_variable = { MCK_najua_presence2_resistance_target = 1000 }
+					multiply_variable = { MCK_najua_presence2_resistance_target = 7 }
+					
+				}
+			}
+			
+			set_variable = { global.KMT_gc_max_ip_from_loyal_warlords = 0 }
+			every_country = {
+				limit = { is_chinese_nations_w_HYQ = yes }
+				division_template = {
+					name = "Lin-shih Min-ping"
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+					}
+					is_locked = yes
+					priority = 0
+				}
+				set_variable = { KMT_agitate_workers_limit = 0 }
+				set_variable = { KMT_improve_army_xp_cost = 350 }
+			}
+			#RAJ = { remove_ideas = RAJ_agrarian_society }
+			SIA = {
+				
+				set_party_name = { ideology = fascism long_name = SIA_neutrality_party name = SIA_neutrality_party_long }
+				if = {
+					limit = {
+						has_country_leader = {
+							character = SIA_phraya_phahon
+							ruling_only = yes
+						}
+					}
+					add_country_leader_trait = KMT_thai_anti_communist
+				}
+				if = {
+					limit = {
+						date > 1938.12.16
+						has_country_leader = {
+							character = SIA_phraya_phahon
+							ruling_only = yes
+						}
+					}
+					retire_country_leader = yes
+				}
+				if = {
+					limit = {
+						has_start_date > 1939.5.5
+					}
+					add_popularity = { ideology = fascism popularity = 0.5 }
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = no
+					}
+					create_country_leader = {
+						name = "Plaek Phibunsongkhram"
+						picture = "gfx/leaders/kmt_mod/plaek_phibunsongkhram.dds"
+						expire = "1960.1.1"
+						ideology = fascism_ideology
+						traits = {
+							KMT_thai_nationalist
+							KMT_thai_military_dictator
+						}
+						
+					}
+				}
+				create_field_marshal = {
+					name = "Plaek Phibunsongkhram"
+					portrait_path = "gfx/leaders/kmt_mod/plaek_phibunsongkhram.dds"
+					traits = { politically_connected career_officer inspirational_leader }
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 3
+					logistics_skill = 3
+					skill = 3
+					id = 1922
+				}
+				create_corps_commander = {
+					name = "Sarit Thanarat"
+					portrait_path = "gfx/leaders/kmt_mod/sarit_thanarat.dds"
+					traits = { }
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+					skill = 1
+				}
+				create_corps_commander = {
+					name = "Phin Choonhavan"
+					portrait_path = "gfx/leaders/kmt_mod/phin_choonhavan.dds"
+					traits = { infantry_officer career_officer brilliant_strategist }
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 2
+					logistics_skill = 2
+					skill = 2
+				}
+				create_corps_commander = {
+					name = "Charum Rattanakun Seriroengrit"
+					portrait_path = "gfx/leaders/kmt_mod/charun_rattanakun.dds"
+					traits = { }
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+					skill = 1
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = MAL
+						tag = PHI
+						tag = INS
+					}
+				}
+				add_ideas = JAP_weak_east_asia
+			}
+			set_variable = { global.KMT_zxl_border_war_offensive_modifier = 0 }
+			every_country = {
+				limit = { is_chinese_nations_w_HYQ = yes }
+				add_to_array = { global.KMT_chinese_nations = THIS }
+				add_dynamic_modifier = { modifier = KMT_player_japan_buff }
+			}
+			if = {
+				limit = {
+					has_start_date > 1939.1.1
+				}
+				set_variable = { PRC.PRC_long_march_debuff_base = 5 }
+				PRC_update_long_march_debuff = yes
+				596 = {
+					start_resistance = yes
+					set_compliance = 5
+					set_resistance = 55
+					set_garrison_strength = 1.0
+				}
+
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = KMT_power_struggle_mechanics
+						option = DISABLE
+					}
+				}
+				set_global_flag = KMT_disable_power_struggle_mechanics
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = KMT_japanese_shanghai_garrison
+						option = STRENGTHENED
+					}
+				}
+				set_global_flag = KMT_stronger_jap_shanghai_garrison
+			}else_if = {
+				limit = {
+					has_game_rule = {
+						rule = KMT_japanese_shanghai_garrison
+						option = MONSTROUS
+					}
+				}
+				set_global_flag = KMT_strongest_jap_shanghai_garrison
+			}
+			random_country = {
+				KMT_zxlprc_border_war = yes
+			}
+			
+			PRC = {
+				activate_mission = PRC_criticise_cd_mission
+				if = {
+					limit = { has_start_date < 1936.2.1 }
+					activate_mission = PRC_2nd_and_4th_army_en_route
+				}else = {
+					939 = {
+						set_state_flag = KMT_PRC_state_has_guerrilla_cell
+						set_variable = { PRC_state_guerrilla_cell_strength = 15 }
+					}
+					615 = {
+						set_state_flag = KMT_PRC_state_has_guerrilla_cell
+						set_variable = { PRC_state_guerrilla_cell_strength = 5 }
+					}
+					746 = {
+						set_state_flag = KMT_PRC_state_has_guerrilla_cell
+						set_variable = { PRC_state_guerrilla_cell_strength = 5 }
+					}
+					622 = {
+						set_state_flag = KMT_PRC_state_has_guerrilla_cell
+						set_variable = { PRC_state_guerrilla_cell_strength = 100 }
+					}
+					597 = {
+						set_state_flag = KMT_PRC_state_has_guerrilla_cell
+						set_variable = { PRC_state_guerrilla_cell_strength = 15 }
+					}
+					591 = {
+						set_state_flag = KMT_PRC_state_has_guerrilla_cell
+						set_variable = { PRC_state_guerrilla_cell_strength = 5 }
+					}
+				}
+				set_variable = { PRC.PRC_zgt_raid_hideout_cp_cost = 70 }
+				set_variable = { PRC.PRC_zgt_raid_hideout_pp_cost = 20 }
+				set_variable = { PRC.PRC_zgt_checkpoint_cp_cost = 30 }
+				set_variable = { PRC.PRC_zgt_checkpoint_pp_cost = 20 }
+				set_variable = { PRC.PRC_sov_assistance_focus_cost = 5 }
+				set_variable = { PRC.PRC_comintern_pp_cost15 = 15 }
+				every_state = {
+					limit = {
+						OR = {
+							region = 165
+							region = 164
+							
+							region = 249	#Yunkwei
+							region = 281	#Hunan
+							region = 248	#Min-Kan
+							region = 246	#Hubei
+							region = 247	#Lower Yangtze
+							region = 250	#Chwan-Kang
+							region = 280	#Honan
+							region = 282	#Loess Plateau
+							region = 283	#Gobi
+							
+							region = 143
+							region = 155
+							region = 144
+							region = 200
+							region = 145
+							region = 152
+							region = 252
+							region = 266
+							region = 242
+							region = 243
+							region = 244
+							region = 245
+							state = 758
+							state = 757
+							state = 434
+							state = 977
+							state = 524
+							state = 960
+							state = 964
+							state = 939
+						}
+					}
+					add_to_array = { PRC.KMT_considered_inalienable_parts = THIS }
+					add_dynamic_modifier = { modifier = PRC_positive_guerrilla_effect }
+					add_dynamic_modifier = { modifier = PRC_hostile_guerrilla_effect }
+					add_dynamic_modifier = { modifier = PRC_hostile_guerrilla_effect2 }
+					add_dynamic_modifier = { modifier = PRC_hostile_guerrilla_effect3 }
+					add_dynamic_modifier = { modifier = PRC_hostile_guerrilla_effect4 }
+					add_dynamic_modifier = { modifier = PRC_hostile_guerrilla_effect5 }
+					add_claim_by = PRC
+					if = {
+						limit = {
+							NOT = {
+								state = 601
+								state = 757
+								state = 322
+								state = 758
+								state = 604
+								state = 326
+								state = 938
+								state = 527
+								state = 817
+								state = 819
+								state = 330
+								state = 818
+								state = 329
+								state = 434
+								state = 977
+								state = 524
+							}
+						}
+						add_dynamic_modifier = {
+							modifier = PRC_rising_popular_support
+						}
+					}
+				}
+			}
+			
+			CHI = {
+				set_variable = { global.warlord_counts = 0 }
+				set_variable = { global.PRC_steal_equip_busted = 0 }
+				every_country = {
+					limit = {
+						NOT = { tag = event_target:KMT_central_gov_tag }
+						is_valid_power_struggle_participant = yes
+						exists = yes
+					}
+					add_to_variable = { global.warlord_counts = 1 }
+				}
+				set_variable = { global.KMT_warlord_pp_cost_mod = 0.035 }
+				multiply_variable = { global.KMT_warlord_pp_cost_mod = global.warlord_counts }
+				set_variable = { global.KMT_warlord_stability_mod = -0.012 }
+				multiply_variable = { global.KMT_warlord_stability_mod = global.warlord_counts }
+				set_variable = { global.KMT_warlord_defensive_stab_mod = 0.01 }
+				multiply_variable = { global.KMT_warlord_defensive_stab_mod = global.warlord_counts }
+				set_variable = { global.KMT_warlord_conscription_factor_mod = -0.04 }
+				multiply_variable = { global.KMT_warlord_conscription_factor_mod = global.warlord_counts }
+				add_dynamic_modifier = { modifier = cu_warlords_count }
+				
+				set_variable = { global.KMT_cg_regional_government_frame_no = global.warlord_counts }
+				multiply_variable = { global.KMT_cg_regional_government_frame_no = 5 }
+				divide_variable = { global.KMT_cg_regional_government_frame_no = 18 }
+				add_to_variable = { global.KMT_cg_regional_government_frame_no = 1}
+				if = {
+					limit = { check_variable = { global.KMT_cg_regional_government_frame_no > 0 }}
+					round_variable = global.KMT_cg_regional_government_frame_no
+				}else = { set_variable = { global.KMT_cg_regional_government_frame_no = 0 }}
+				
+				set_variable = { global.KMT_ps_cg_controlled_states = 0 }
+				set_variable = { global.KMT_ps_cg_inalienable_states = 0 }
+				set_variable = { global.KMT_ps_cg_pp_factor_bonus_base = 0.15 }
+				
+				every_state = {
+					limit = {
+						OR = { 
+							region = 242	#N Manchuria
+							region = 243	#W Manchuria
+							region = 155	#S Manchuria
+							region = 143	#Chi-Lu
+							region = 244	#Chahar
+							region = 152	#Mongolia
+							region = 283	#Gobi Desert
+							region = 266	#Uriankhai
+							region = 252	#Sinkiang
+							region = 145	#E Turkestan
+							region = 144	#Amdo
+							region = 282	#Loess Plateau
+							region = 245	#Shansi
+							region = 280	#Honan
+							region = 246	#Hupeh
+							region = 247	#Lower Yangtze
+							region = 164	#Kiangnan
+							region = 200	#Tibet
+							region = 250	#Chwan-Kang
+							region = 249	#Yunkwei Plateau
+							region = 281	#Hunan
+							region = 248	#Min-Kan
+							region = 165	#Liangkwang
+							
+							state = 758		#Ngari
+							state = 434		#Arunachal Pradesh
+							state = 977		#Kachin Hills
+							state = 524		#Taiwan
+						}
+					}
+					every_country = {
+						limit = {
+							is_valid_power_struggle_participant = yes
+							NOT = { tag = PRC }
+						}
+						add_to_array = { THIS.KMT_considered_inalienable_parts = PREV }
+					}
+					add_to_array = { HYQ.KMT_considered_inalienable_parts = THIS }
+					add_to_array = { global.KMT_greater_china_region_states = THIS }
+					set_variable = { var:This.KMT_dcat_sprite_id_num = var:This.id }
+					add_to_variable = { This.KMT_dcat_sprite_id_num = 1073741 }
+					multiply_variable = { This.KMT_dcat_sprite_id_num = 1000 }
+					add_to_variable = { This.KMT_dcat_sprite_id_num = 824 }
+					if = {
+						limit = {
+							has_global_flag = KMT_disable_power_struggle_mechanics
+						}
+						#add_core_of = CHI
+						#add_core_of = PRC
+					}else = {
+						CHI = { add_to_variable = { global.KMT_ps_cg_inalienable_states = 1 }}
+						update_cg_inalienable_parts = yes
+						set_state_flag = KMT_china_inalienable_part
+						if = {
+							limit = {
+								NOT = { is_owned_by = CHI }
+								is_core_of = CHI
+								NOT = { is_claimed_by = CHI }
+							}
+							remove_core_of = CHI
+							add_claim_by = CHI
+						}
+					}
+					
+					#remove_from_array = { global.KMT_cg_inalienable_parts = 283 }
+					#remove_from_array = { CHI.KMT_considered_inalienable_parts = 591 } 
+				}
+				
+				if = {
+					limit = {
+						has_global_flag = KMT_disable_power_struggle_mechanics
+					}
+					set_stability = 0.5
+				}else = {
+					set_variable = { global.KMT_divided_number = global.KMT_ps_cg_controlled_states }
+					divide_variable = { global.KMT_divided_number = global.KMT_ps_cg_inalienable_states }
+					set_variable = { global.KMT_ps_cg_stability_bonus = global.KMT_divided_number }
+					set_variable = { global.KMT_ps_cg_ppfactor_bonus = global.KMT_divided_number }
+					multiply_variable = { global.KMT_ps_cg_ppfactor_bonus = global.KMT_ps_cg_pp_factor_bonus_base }
+					add_dynamic_modifier = { modifier = KMT_cg_modifier }
+				}
+			}
+			
+			PRC = {
+				PRC_update_long_march_debuff = yes
+			}
+			
+			random_country = {
+				limit = { tag = PHI }
+				save_global_event_target_as = KMT_wtf_PHI_tag
+			}
+			
+			GXC = {
+				set_country_flag = KMT_lzr_tt
+			}
+			
+			YUT = {
+				set_country_flag = KMT_cjt_tt
+			}
+			
+			JAP = {
+				if = {
+					limit = {
+						is_ai = yes
+						any_country = { 
+							is_chinese_nations_w_HYQ = yes 
+							is_ai = no
+						}
+						difficulty > 3
+					}
+					add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 10000 producer = JAP }
+					add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 50000 producer = JAP }
+					add_equipment_to_stockpile = { type = support_equipment_1 amount = 2000 producer = JAP }
+					add_equipment_to_stockpile = { type = light_tank_equipment_1 amount = 50 producer = JAP }
+				}
+			}
+			
+			JAP = { save_global_event_target_as = KMT_spread_revolution_target_JAP }
+			KOR = { save_global_event_target_as = KMT_spread_revolution_target_KOR }
+			INS = { save_global_event_target_as = KMT_spread_revolution_target_INS }
+			MAL = { save_global_event_target_as = KMT_spread_revolution_target_MAL }
+			VIN = { save_global_event_target_as = KMT_spread_revolution_target_VIN }
+			CAM = { save_global_event_target_as = KMT_spread_revolution_target_CAM }
+			LAO = { save_global_event_target_as = KMT_spread_revolution_target_LAO }
+			AFG = { save_global_event_target_as = KMT_spread_revolution_target_AFG }
+			MON = { save_global_event_target_as = KMT_spread_revolution_target_MON }
+			TAN = { save_global_event_target_as = KMT_spread_revolution_target_TAN }
+			event_target:KMT_wtf_PHI_tag = { save_global_event_target_as = KMT_spread_revolution_target_PHI }
+			RAJ = { save_global_event_target_as = KMT_spread_revolution_target_RAJ }
+			PAK = { save_global_event_target_as = KMT_spread_revolution_target_PAK }
+			BHU = { save_global_event_target_as = KMT_spread_revolution_target_BHU }
+			NEP = { save_global_event_target_as = KMT_spread_revolution_target_NEP }
+			SIA = { save_global_event_target_as = KMT_spread_revolution_target_SIA }
+			
+			
+			
+			#CHI = {
+			#	country_event = { id = china.1 days = 546 }
+			#}
+			
+			every_country = {
+				limit = {
+					has_idea = incompetent_industry_fake
+				}
+				remove_ideas = incompetent_industry_fake
+				add_ideas = incompetent_industry_real
+			}
+			
+			every_country = {
+				limit = {
+					has_idea = incompetent_industry_fake_navy
+				}
+				remove_ideas = incompetent_industry_fake_navy
+				add_ideas = incompetent_industry_real_navy
+			}
+			
+			ENG = {
+				set_variable = { KMT_subject_pp = 0 }
+			}
+			
+			every_state = {
+				limit = {
+					is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+				}
+				set_variable = { PRC_state_guerrilla_cell_str_natural_tick_progress = 0 }
+				set_state_flag = PRC_partisan_natural_tick_flag_set
+			}
+			
+			every_state = {
+				set_variable = { PRC_state_gcs_threshold = 5 }
+				set_variable = { PRC_state_establish_time_needed = 10 }
+			}
+			
+			every_state = {
+				limit = {
+					is_controlled_by = MCK
+					is_owned_by = MCK
+					OR = {
+						state = 714
+						state = 717
+					}
+				}
+				set_state_flag = MCK_unpacified
+			}
+			
+			MCK = {
+				set_variable = { MCK_sabotage_timer_base = 7 }
+				set_variable = { MCK_awareness_deduction = 2 }
+				set_variable = { MCK_awareness = 0 }
+				set_variable = { MCK_suspicion = 0 }
+				set_variable = { MCK_RFP_readinessV = 0 }
+				set_variable = { MCK_temp_suspicion = 0 }
+				set_variable = { MCK_RFP_optionA_cost = 75 }
+				set_variable = { MCK_RFP_optionB_cost = 100 }
+				set_variable = { MCK_RFP_optionC_cost = 150 }
+				set_variable = { MCK_RFP_optionD_cost = 150 }
+				set_variable = { MCK_RFP_buff_cost = 10 }
+				set_variable = { MCK_RFP_mood = 0 }
+				set_variable = { MCK_RFP_reconciliation_cost_base = 50 }
+				set_variable = { MCK_RFP_reconciliation_cost = 50 }
+				set_variable = { MCK_sabotage_timer_multiplier = 5 }
+				set_variable = { MCK_sabotage_timer = MCK_sabotage_timer_base }
+				multiply_variable = { MCK_sabotage_timer = MCK_sabotage_timer_multiplier }
+				
+				set_variable = { MCK_sabotage_timer_multiplier_min = 2 }
+			}
+
+			if = {
+				limit = {
+					date > 1938.6.5
+				}
+				607 = {
+					damage_building = {
+						type = infrastructure
+						damage = 10
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 7656
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 10098
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 4066
+						}
+					}
+				}
+				940 = {
+					damage_building = {
+						type = infrastructure
+						damage = 1
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 7126
+						}
+					}
+				}
+				606 = {
+					damage_building = {
+						type = infrastructure
+						damage = 5
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 10079
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 9937
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 4079
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 12036
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 10040
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 11916
+						}
+					}
+				}
+				598 = {
+					damage_building = {
+						type = infrastructure
+						damage = 5
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 1161
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 1121
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 1001
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 4005
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 4123
+						}
+					}
+					add_province_modifier = {
+						static_modifiers = { flooded }
+						province = {
+							id = 1076
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#ROOT is winner #FROM gets annexed - For civil wars on_civil_war_end is also fired
+	on_annex = {
+		effect = {
+			if = {
+				limit = { FROM = { tag = SHX }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.76 hours = 1 }}
+			}
+			if = {
+				limit = { FROM = { tag = SDC }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.364 hours = 1 }}
+			}
+			if = {
+				limit = { FROM = { tag = NSM }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.618 hours = 1 }}
+			}
+			if = {
+				limit = { FROM = { tag = XSM }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.183 hours = 1 }}
+			}
+			if = {
+				limit = { FROM = { tag = SCC }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.427 hours = 1 }}
+			}
+			if = {
+				limit = { FROM = { tag = SKC }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.428 hours = 1 }}
+			}
+			if = {
+				limit = { FROM = { tag = XIA }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.426 hours = 1 }}
+			}
+			if = {
+				limit = { FROM = { tag = YUT }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.281 hours = 1 }}
+			}
+			if = {
+				limit = { FROM = { tag = ZXL }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.429 hours = 1 }}
+			}
+			if = {
+				limit = { FROM = { tag = YUN }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.78 hours = 1 }}
+			}
+			if = {
+				limit = { FROM = { tag = GXC }}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.77 hours = 1 }}
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = event_target:KMT_central_gov_tag
+					}
+				}
+				if = {
+					limit = {
+						original_tag = FROM
+						exists = yes
+					}
+					#set_country_flag = KMT_central_government_flag
+					capital_scope = {
+						set_state_flag = KMT_central_gov_capital
+					}
+					country_event = { id = claim_central.7 }
+					every_other_country = {
+						limit = {
+							is_valid_power_struggle_participant = yes
+						}
+						country_event = { id = claim_central.8 }
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					has_global_flag = cks_held
+					FROM = {
+						tag = ZXL
+					}
+					ROOT = {
+						tag = CHI
+					}
+				}
+				ROOT = {
+					country_event = { id = xian.13 }
+				}
+			}
+		}
+	}
+	
+
+	on_border_war_lost = {
+	}
+	
+	on_daily_MCK = {
+		effect = {
+			if = {
+				limit = {
+					is_subject = no
+					NOT = { has_country_flag = MCK_free_flag }
+				}
+				MCK = { set_country_flag = MCK_free_flag }
+			}
+			if = {
+				limit = {
+					is_subject = no
+					has_country_leader_with_trait = puppet_emperor_tfv
+				}
+				remove_country_leader_trait = puppet_emperor_tfv
+				MCK = { country_event = { id = jap.244 }}
+			}
+			if = {
+				limit = {
+					has_country_flag = MCK_war_for_independence
+					NOT = { has_war_with = JAP }
+				}
+				clr_country_flag = MCK_war_for_independence
+			}
+		}
+	}
+	
+	on_daily_ZXL = {
+		effect = {
+			if = {
+				limit = {
+					has_cosmetic_tag = NWBSHQ
+					NOT = { is_subject_of = CHI }
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					is_ai = yes
+					has_political_power < 0
+				}
+				set_political_power = 10
+			}
+		}
+	}
+	
+	on_daily_GXC = {
+		effect = {
+			if = {
+				limit = {
+					has_war_with = event_target:KMT_central_gov_tag
+					NOT = { has_global_flag = liangguang_incident_war }
+					NOT = { has_global_flag = liangguang_solved }
+					has_global_flag = liangguang_incident
+				}
+				set_global_flag = liangguang_incident_war
+			}
+		}
+	}
+	
+	on_daily_JAP = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = GER_JAP_tripartite_pact
+					NOT = { has_government = fascism }
+				}
+				clr_global_flag = GER_JAP_tripartite_pact
+			}
+			if = {
+				limit = {
+					has_war_with = event_target:KMT_central_gov_tag
+					NOT = {
+						has_global_flag = CHI_warred_with_JAP
+					}
+				}
+				set_global_flag = CHI_warred_with_JAP
+			}
+			if = {
+				limit = {
+					has_war_with = SOV
+					NOT = { has_global_flag = KMT_SOV_had_war_with_JAP }
+				}
+				set_global_flag = KMT_SOV_had_war_with_JAP
+			}
+
+			#if = {
+			#	limit = { 
+			#		event_target:KMT_central_gov_tag = {
+			#			is_subject_of = JAP
+			#		}
+			#	}
+			#	event_target:KMT_central_gov_tag = {
+			#		drop_cosmetic_tag = yes
+			#		clear_global_event_target = KMT_central_gov_tag
+			#		load_focus_tree = generic_focus
+			#	}
+			#}
+
+			if = {
+				limit = { 
+					XSM = {
+						is_subject_of = JAP
+					}
+					NSM = {
+						OR = {
+							exists = no
+							is_subject_of = JAP
+							is_in_faction_with = JAP
+						}
+					}
+				}
+				NSM = {
+					annex_country = {
+						target = XSM
+						transfer_troops = yes
+					}
+				}
+				if = {
+					limit = {
+						NSM = {
+							NOT = { 
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+					}
+					JAP = {
+						puppet = NSM
+					}
+				}
+			}
+
+			if = {
+				limit = { 
+					PRC = {
+						is_subject_of = JAP
+					}
+					WJW = {
+						OR = {
+							exists = no
+							is_subject_of = JAP
+							is_in_faction_with = JAP
+						}
+					}
+				}
+				WJW = {
+					annex_country = {
+						target = PRC
+						transfer_troops = yes
+					}
+				}
+				if = {
+					limit = {
+						WJW = {
+							NOT = { 
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+					}
+					JAP = {
+						puppet = WJW
+					}
+				}
+			}
+		}
+	}
+	
+	on_daily_PGR = {
+		effect = {
+			if = {
+				limit = { 
+					has_cosmetic_tag = JAP_kahoku_autonomy 
+					is_subject = no
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = { 
+					has_character = PGR_song_zheyuan
+					is_subject_of = JAP
+				}
+				retire_character = PGR_song_zheyuan
+			}
+		}
+	}
+	
+	on_daily_SHX = {
+		effect = {
+			if = {
+				limit = { 
+					has_cosmetic_tag = JAP_sansei_autonomy 
+					is_subject = no
+				}
+				drop_cosmetic_tag = yes
+			}
+		}
+	}
+	
+	on_daily_SDC = {
+		effect = {
+			if = {
+				limit = { 
+					has_cosmetic_tag = JAP_santou_autonomy 
+					is_subject = no
+				}
+				drop_cosmetic_tag = yes
+			}
+		}
+	}
+	
+	on_daily_PRC = {
+		effect = {
+			#if = {
+			#	limit = {
+			#		divisions_in_state = { state = 524 size > 0 }
+			#	}
+			#	log = "[GetDateText]: PRC divisions in Taiwan, crash game"
+			#	country_event = { id = test_value.3 }
+			#}
+			if = {
+				limit = {
+					has_war_with = JAP
+					NOT = {
+						has_global_flag = PRC_warred_with_JAP
+					}
+				}
+				set_global_flag = PRC_warred_with_JAP
+			}
+			if = {
+				limit = {
+					has_war_with = event_target:KMT_central_gov_tag
+					NOT = { has_global_flag = PRC_restart_CHI_war }
+					has_global_flag = PRC_warred_with_JAP
+					has_global_flag = CHI_warred_with_JAP
+					NOT = { has_war_with = JAP }
+				}
+				set_global_flag = PRC_restart_CHI_war
+				news_event = { id = kns.49 }
+			}
+			if = {
+				limit = {
+					PRC = {
+						NOT = {
+							has_power_balance = { id = KMTPRC_coalition_government }
+						}
+					}
+					event_target:KMT_central_gov_tag = {
+						has_power_balance = { id = KMTPRC_coalition_government }
+					}
+				}
+				every_country = {
+					limit = { has_power_balance = { id = KMTPRC_coalition_government }}
+					remove_power_balance = { id = KMTPRC_coalition_government }
+				}
+			}
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						exists = no
+						has_power_balance = { id = KMTPRC_coalition_government }
+					}
+				}
+				every_country = {
+					limit = { has_power_balance = { id = KMTPRC_coalition_government }}
+					remove_power_balance = { id = KMTPRC_coalition_government }
+				}
+			}
+		}
+	}
+	
+	on_daily = {
+		effect = {
+			if = {
+				limit = { 
+					OR = {
+						original_tag = CHI
+						original_tag = PRC
+						original_tag = GXC
+						original_tag = YUN
+						original_tag = SHX
+						original_tag = XSM
+						original_tag = YUT
+						original_tag = XIA
+						original_tag = SCC
+						original_tag = QIA
+						original_tag = ZXL
+						original_tag = SDC
+						original_tag = SIK
+						original_tag = SKC
+						original_tag = MEN
+						original_tag = PGR
+						original_tag = HYQ
+						original_tag = NSM
+					}
+				}
+				if = { limit = { NOT = { has_country_flag = KMT_is_china_tag }} set_country_flag = KMT_is_china_tag }
+			}else_if = {
+				limit = { has_country_flag = KMT_is_china_tag }
+				clr_country_flag = KMT_is_china_tag
+			}
+			if = {
+				limit = {
+					PRC = {
+						exists = no
+						has_power_balance = { id = KMTPRC_coalition_government }
+					}
+				}
+				every_country = {
+					limit = { has_power_balance = { id = KMTPRC_coalition_government }}
+					remove_power_balance = { id = KMTPRC_coalition_government }
+				}
+			}
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = {
+						NOT = {
+							has_power_balance = { id = KMTPRC_coalition_government }
+						}
+					}
+					PRC = {
+						has_power_balance = { id = KMTPRC_coalition_government }
+					}
+				}
+				every_country = {
+					limit = { has_power_balance = { id = KMTPRC_coalition_government }}
+					remove_power_balance = { id = KMTPRC_coalition_government }
+				}
+			}
+			if = {
+				limit = { event_target:KMT_central_gov_tag = { NOT = { tag = event_target:WTT_current_china_leader }}}
+				event_target:KMT_central_gov_tag = { save_global_event_target_as = WTT_current_china_leader }
+			}
+			if = {
+				limit = {
+					has_global_flag = KMT_JAP_troops_in_shanghai
+					NOT = { has_global_flag = KMT_removed_jap_shanghai_reinforcement_modifier_flag }
+					JAP = { NOT = { controls_province = 7014 }}
+				}
+				set_global_flag = KMT_removed_jap_shanghai_reinforcement_modifier_flag
+				938 = {
+					remove_province_modifier = {
+						static_modifiers = { JAP_shanghai_reinforcements }
+						province = 7014
+					}
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 938
+					938 = {
+						is_demilitarized_zone = no
+					}
+					NOT = { has_global_flag = KMT_JAP_troops_in_shanghai }
+					NOT = { has_global_flag = KMT_remilitarised_shanghai }
+					NOT = { has_global_flag = KMT_chapei_incident }
+					NOT = { has_global_flag = PRC_restart_CHI_war }
+					NOT = { has_idea = KMT_chinese_matter }
+					NOT = { has_idea = kmt_planning_the_civil_war }
+					has_civil_war = no
+				}
+				938 = { set_demilitarized_zone = yes }
+				hidden_effect = { country_event = { id = kmtmisc.19 hours = 5 }}
+				hidden_effect = { country_event = { id = kmtmisc.19 hours = 15 }}
+				hidden_effect = { country_event = { id = kmtmisc.19 hours = 20 }}
+			}
+			if = {
+				limit = {
+					tag = event_target:KMT_central_gov_tag
+					has_global_flag = KMT_sino_soviet_neutrality
+					OR = {
+						has_war_with = SOV
+						any_country = {
+							has_idea = KMT_SOV_JAP_neutrality
+						}
+					}
+				}
+				clr_global_flag = KMT_sino_soviet_neutrality
+			}
+			
+	#		if = {
+	#			limit = { 
+	#				has_country_flag = KMT_demand_steppe_picked
+	#				NOT = { check_variable = { kmt_demand_steppe_war = 2 }}
+	#			}
+	#			set_variable = { kmt_demand_steppe_war = 2 }
+	#		}
+	#		
+	#		if = {
+	#			limit = { 
+	#				has_country_flag = KMT_demand_indochina_picked
+	#				NOT = { check_variable = { kmt_demand_indochina_war = 2 }}
+	#			}
+	#			set_variable = { kmt_demand_indochina_war = 2 }
+	#		}
+	#		
+	#		if = {
+	#			limit = { 
+	#				has_country_flag = KMT_can_demand_ports_fascism
+	#				NOT = { check_variable = { kmt_demand_ports_war = 2 }}
+	#			}
+	#			set_variable = { kmt_demand_ports_war = 2 }
+	#		}
+	#		
+	#		if = {
+	#			limit = { 
+	#				is_subject = no
+	#				any_country = {
+	#					OR = {
+	#						tag = THIS
+	#						is_subject_of = THIS
+	#					}
+	#					OR = {
+	#						owns_state = 671
+	#						owns_state = 670
+	#						owns_state = 741
+	#						owns_state = 286
+	#					}
+	#				}
+	#			}
+	#			set_variable = { kmt_demand_indochina_war = 1 }
+	#		}
+	#		
+	#		if = {
+	#			limit = { 
+	#				is_subject = no
+	#				any_country = {
+	#					OR = {
+	#						tag = THIS
+	#						is_subject_of = THIS
+	#					}
+	#					OR = {
+	#						owns_state = 619
+	#						owns_state = 287
+	#						owns_state = 759
+	#						owns_state = 760
+	#						owns_state = 617
+	#						owns_state = 618
+	#						owns_state = 330
+	#						owns_state = 329
+	#					}
+	#				}
+	#			}
+	#			set_variable = { kmt_demand_steppe_war = 1 }
+	#		}
+	#		
+	#		if = {
+	#			limit = { 
+	#				is_subject = no
+	#				any_country = {
+	#					OR = {
+	#						tag = THIS
+	#						is_subject_of = THIS
+	#					}
+	#					OR = {
+	#						owns_state = 729
+	#						owns_state = 728
+	#						owns_state = 326
+	#						owns_state = 743
+	#					}
+	#				}
+	#			}
+	#			set_variable = { kmt_demand_ports_war = 1 }
+	#		}
+	#		
+	#		if = {
+	#			limit = {
+	#				check_variable = { kmt_demand_indochina_war = 1 }
+	#				OR = {
+	#					is_subject = yes
+	#					NOT = { 
+	#						any_country = {
+	#							OR = {
+	#								tag = ROOT
+	#								is_subject_of = ROOT
+	#							}
+	#							OR = {
+	#								owns_state = 671
+	#								owns_state = 670
+	#								owns_state = 741
+	#								owns_state = 286
+	#							}
+	#						}
+	#					}
+	#				}
+	#			}
+	#			set_variable = { kmt_demand_indochina_war = 0 }
+	#		}
+	#		
+	#		if = {
+	#			limit = {
+	#				check_variable = { kmt_demand_steppe_war = 1 }
+	#				OR = {
+	#					is_subject = yes
+	#					NOT = { 
+	#						any_country = {
+	#							OR = {
+	#								tag = ROOT
+	#								is_subject_of = ROOT
+	#							}
+	#							OR = {
+	#								owns_state = 619
+	#								owns_state = 287
+	#								owns_state = 759
+	#								owns_state = 760
+	#								owns_state = 617
+	#								owns_state = 618
+	#								owns_state = 330
+	#								owns_state = 329
+	#							}
+	#						}
+	#					}
+	#				}
+	#			}
+	#			set_variable = { kmt_demand_steppe_war = 0 }
+	#		}
+	#		
+	#		if = {
+	#			limit = {
+	#				check_variable = { kmt_demand_ports_war = 1 }
+	#				OR = {
+	#					is_subject = yes
+	#					NOT = { 
+	#						any_country = {
+	#							OR = {
+	#								tag = ROOT
+	#								is_subject_of = ROOT
+	#							}
+	#							OR = {
+	#								owns_state = 729
+	#								owns_state = 728
+	#								owns_state = 326
+	#								owns_state = 743
+	#							}
+	#						}
+	#					}
+	#				}
+	#			}
+	#			set_variable = { kmt_demand_ports_war = 0 }
+	#		}
+			
+		}
+	}
+	
+	#on_weekly_XSM = {
+	#	effect = {
+	#		if = {
+	#			limit = { 
+	#				has_template = "K'angkung Linshih Shih"
+	#				NOT = { has_idea = PRC_communist_incursion_into_nw }
+	#			}
+	#			log = "XSM delete kanggung linshih shih"
+	#			delete_unit_template_and_units = { division_template = "K'angkung Linshih Shih" disband = no }
+	#		}
+	#	}
+	#}
+	
+	on_weekly_JAP = {
+		effect = {
+			if = {
+				limit = {
+					any_country = {
+						has_country_flag = JAP_accepted_indochina_demand
+						NOT = { 
+							has_country_flag = JAP_revoked_indochina_access 
+							ROOT = { has_military_access_to = PREV }
+						}
+					}
+				}
+				country_event = { id = jap.203 }
+			}
+			if = {
+				limit = {
+					
+					has_war_with = event_target:KMT_central_gov_tag
+					has_global_flag = {
+						flag = CHI_warred_with_JAP
+						days > 300
+					}
+				}
+				event_target:KMT_central_gov_tag = { set_country_flag = KMT_can_hyperinflation_flag }
+			}
+			
+			if = {
+				limit = {
+					has_government = fascism
+				}
+				every_state = {
+					limit = {
+						OWNER = {
+							OR = {
+								tag = ROOT
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+						is_in_array = { global.KMT_greater_china_region_states = THIS }
+						NOT = {
+							has_state_flag = KMT_collaborator_state
+						}
+					}
+					set_state_flag = KMT_collaborator_state
+				}
+			}
+			
+			if = {
+				limit = {
+					any_country = {
+						has_idea = KMT_trautmann_peace
+						has_war = no
+						any_owned_state = {
+							has_state_flag = KMT_trautmann_truce_demilitarised_zone
+							is_demilitarized_zone = no
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_idea = KMT_trautmann_peace
+						has_war = no
+						any_owned_state = {
+							has_state_flag = KMT_trautmann_truce_demilitarised_zone
+							is_demilitarized_zone = no
+						}
+					}
+					every_state = {
+						limit = {
+							has_state_flag = KMT_trautmann_truce_demilitarised_zone
+							is_demilitarized_zone = no
+							OWNER = {
+								OR = {
+									tag = event_target:KMT_central_gov_tag
+									is_subject_of = event_target:KMT_central_gov_tag
+									is_chinese_nations_w_HYQ = yes
+								}
+								NOT = {
+									is_subject_of = JAP
+									is_in_faction_with = JAP
+								}
+							}
+						}
+						set_demilitarized_zone = yes
+					}
+				}
+			}
+		}
+	}
+	
+	on_weekly_PRC = {
+		effect = {
+			if = {
+				limit = { 
+					tag = PRC
+					has_cosmetic_tag = FengClique
+					check_variable = { num_of_controlled_states > 20 }
+					is_subject = no
+					owns_state = 613
+					owns_state = 608
+					#owns_state = 592
+					owns_state = 716
+					613 = { is_in_home_area = yes }
+					608 = { is_in_home_area = yes }
+					#592 = { is_in_home_area = yes }
+					716 = { is_in_home_area = yes }
+				}
+				country_event = { id = prc.342 }
+			}
+			if = {
+				limit = { 
+					CHI = {
+						OR = {
+							exists = no
+							is_subject = yes
+						}
+					}
+					is_subject = no
+					NOT = { has_global_flag = PRC_kmt_influx }
+				}
+				set_global_flag = PRC_kmt_influx
+				country_event = { id = prc.341 }
+			}
+			if = {
+				limit = { 
+					any_state = {
+						has_state_flag = {
+							flag = PRC_hideout_raid_target
+							days > 31
+						}
+					}
+				}
+				every_state = {
+					limit = {
+						has_state_flag = {
+							flag = PRC_hideout_raid_target
+							days > 31
+						}
+					}
+					clr_state_flag = PRC_hideout_raid_target
+				}
+			}
+			if = { 
+				limit = {
+					any_controlled_state = {
+						is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+						compliance > 99
+						NOT = { is_core_of = PRC }
+					}
+				}
+				every_controlled_state = {
+					limit = {
+						is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+						compliance > 99
+						NOT = { is_core_of = PRC }
+					}
+					log = "[THIS.GetName] becomes PRC core"
+					add_core_of = PRC
+					every_country = {
+						limit = {
+							is_chinese_nations_w_HYQ = yes
+							NOT = { tag = PRC }
+						}
+						remove_state_core = PREV
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						any_neighbor_country = {
+							OR = {
+								tag = SIK
+								tag = SOV
+							}
+						}
+						NOT = {
+							country_exists = NSM
+						}
+					}
+					has_country_flag = PRC_allow_west_expedition
+				}
+				clr_country_flag = PRC_allow_west_expedition
+			}
+			if = {
+				limit = {
+					date > 1938.1.1
+					tag = PRC
+					has_war_with = event_target:KMT_central_gov_tag
+					NOT = { has_global_flag = PRC_restart_revolution_completed }
+				}
+				set_global_flag = PRC_restart_revolution_completed
+			}
+			
+			if = {
+				limit = {
+					has_global_flag = west_expedition_started
+					NOT = { has_war_with = NSM }
+				}
+				clr_country_flag = PRC_allow_west_expedition
+			}
+		}
+	}
+	
+	on_weekly_MCK = {
+		effect = {
+			set_variable = { MCK_awareness_deduction = 2 }
+			subtract_from_variable = { MCK_awareness_deduction = MCK_suspicion }
+		}
+	}
+	
+	on_weekly_CHI = {
+		effect = {
+			if = {
+				limit = {
+					has_war = no
+					NOT = { country_exists = HYQ }
+					is_faction_leader = yes
+					has_country_flag = KMT_xian_faction_leader
+				}
+				clr_country_flag = KMT_xian_faction_leader
+				country_event = { id = kmt.719 }
+			}
+			if = {
+				limit = {
+					has_war = no
+					NOT = { country_exists = HYQ }
+					is_faction_leader = yes
+					has_country_flag = KMT_pro_jap_cw_faction_leader
+				}
+				clr_country_flag = KMT_pro_jap_cw_faction_leader
+				country_event = { id = kmt.719 }
+			}
+		}
+	}
+	
+	on_weekly_HYQ = {
+		effect = {
+			if = {
+				limit = {
+					has_war = no
+					NOT = { country_exists = CHI }
+					is_faction_leader = yes
+					has_country_flag = KMT_xian_faction_leader
+				}
+				clr_country_flag = KMT_xian_faction_leader
+				country_event = { id = kmt.719 }
+			}
+			if = {
+				limit = {
+					has_war = no
+					NOT = { country_exists = HYQ }
+					is_faction_leader = yes
+					has_country_flag = KMT_pro_jap_cw_faction_leader
+				}
+				clr_country_flag = KMT_pro_jap_cw_faction_leader
+				country_event = { id = kmt.719 }
+			}
+		}
+	}
+	
+	on_weekly_MCK = {
+		effect = {
+			set_variable = { MCK_awareness_deduction = 2 }
+			subtract_from_variable = { MCK_awareness_deduction = MCK_suspicion }
+		}
+	}
+	
+	on_weekly_PGR = {
+		effect = {
+			if = {
+				limit = {
+					is_subject_of = JAP
+					NOT = { has_global_flag = KMT_PGR_estalished }
+				}
+				set_global_flag = KMT_PGR_estalished
+			}
+		}
+	}
+	
+	
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = KMT_JAP_puppet_no_surrender
+				}
+				clear_array = ROOT.JAP_collaborator_controlled_province
+				every_controlled_state = {
+					for_each_loop = {
+						array = KMT_province_array
+						
+						if = {
+							limit = { ROOT = { controls_province = v }}
+							add_to_array = { ROOT.JAP_collaborator_controlled_province = v }
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_dynamic_modifier = { modifier = KMT_reorganised_army }
+				}
+				if = {
+					limit = { tag = PRC }
+					update_reorganised_army_dm_prc = yes
+				}else = {
+					update_reorganised_army_dm = yes
+				}
+			}
+#			if = {
+#				limit = {
+#					has_war_with = PRC
+#					OR = {
+#						is_in_faction_with = event_target:KMT_central_gov_tag
+#						is_subject_of = event_target:KMT_central_gov_tag
+#					}
+#					any_country = {
+#						OR = {
+#							tag = PRC
+#							is_subject_of = PRC
+#							is_in_faction_with = PRC
+#						}
+#						OR = {
+#							NOT = { has_relation_modifier = { modifier = KMT_ccw_cease_fire target = ROOT }}
+#							ROOT = { NOT = { has_relation_modifier = { modifier = KMT_ccw_cease_fire target = PREV }}}
+#						}
+#					}
+#					event_target:KMT_central_gov_tag = { has_relation_modifier = { modifier = KMT_ccw_cease_fire target = PRC }}
+#					NOT = { has_relation_modifier = { modifier = KMT_ccw_cease_fire target = PRC }}
+#				}
+#				every_country = {
+#					limit = {
+#						NOT = { has_relation_modifier = { modifier = KMT_ccw_cease_fire target = ROOT }}
+#						OR = {
+#							tag = PRC
+#							is_subject_of = PRC
+#							is_in_faction_with = PRC
+#						}
+#					}
+#					add_relation_modifier = { modifier = KMT_ccw_cease_fire target = ROOT }
+#				}
+#				every_country = {
+#					limit = {
+#						NOT = { ROOT = { has_relation_modifier = { modifier = KMT_ccw_cease_fire target = ROOT }}}
+#						OR = {
+#							tag = PRC
+#							is_subject_of = PRC
+#							is_in_faction_with = PRC
+#						}
+#					}
+#					ROOT = { add_relation_modifier = { modifier = KMT_ccw_cease_fire target = PREV }}
+#				}
+#			}
+			if = {
+				limit = { 
+					has_focus_tree = KMT_warlord_generic_focus
+					is_valid_power_struggle_participant = no
+					NOT = {
+						tag = event_target:KMT_central_gov_tag
+						tag = PRC
+					}
+				}
+				load_focus_tree = {
+					tree = generic_focus
+					keep_completed = no
+				}
+			}
+			if = {
+				limit = { 
+					has_focus_tree = generic_focus
+					is_valid_power_struggle_participant = yes
+					NOT = {
+						tag = event_target:KMT_central_gov_tag
+						tag = PRC
+					}
+				}
+				load_focus_tree = {
+					tree = KMT_warlord_generic_focus
+					keep_completed = no
+				}
+			}
+			if = {
+				limit = { 
+					NOT = { has_global_flag = no_more_trautmann }
+					tag = event_target:KMT_central_gov_tag
+					has_war_with = JAP
+					NOT = { surrender_progress < 25 }
+				}
+				set_global_flag = no_more_trautmann
+			}
+			if = {
+				limit = { 
+					has_idea = KMT_trautmann_peace
+					any_country = {
+						OR = {
+							tag = JAP
+							is_subject_of = JAP
+							is_in_faction_with = JAP
+						}
+						ROOT = {
+							NOT = {
+								has_relation_modifier = {
+									target = PREV
+									modifier = KMT_harder_justification
+								}
+							}
+						}
+					}
+				}
+				every_other_country = {
+					limit = {
+						OR = {
+							tag = JAP
+							is_subject_of = JAP
+							is_in_faction_with = JAP
+						}
+						ROOT = {
+							NOT = {
+								has_relation_modifier = {
+									target = PREV
+									modifier = KMT_harder_justification
+								}
+							}
+						}
+					}
+					ROOT = {
+						add_relation_modifier = {
+							target = PREV
+							modifier = KMT_harder_justification
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					tag = event_target:KMT_central_gov_tag
+					OR = {
+						has_global_flag = KMT_special_japan16_civil_war
+						has_civil_war = yes
+					}
+					any_country = {
+						original_tag = ROOT
+						NOT = { tag = ROOT }
+						NOT = { has_government = ROOT }
+					}
+					NOT = {
+						has_global_flag = kmt392_fired
+						has_global_flag = xian_civil_war
+					}
+				}
+				set_global_flag = kmt392_fired
+				every_country = {
+					limit = {
+						OR = {
+							tag = PRC
+							has_idea = cg_warlords
+						}
+						NOT = { original_tag = ROOT }
+						is_puppet = no
+						has_civil_war = no
+					}
+					country_event = { id = kmt.393 }
+				}
+			}
+			if = {
+				limit = {
+					tag = event_target:KMT_central_gov_tag
+					exists = yes
+				}				
+				if = {
+					limit = {
+						NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+					}
+					set_variable = { global.KMT_ps_cg_controlled_states = 0 }
+					every_state = {
+						limit = {
+							is_core_of = event_target:KMT_central_gov_tag
+							has_state_flag = KMT_china_inalienable_part
+						}
+						CHI = { add_to_variable = { global.KMT_ps_cg_controlled_states = 1 }}
+					}
+					
+					set_variable = { global.KMT_divided_number = global.KMT_ps_cg_controlled_states }
+					divide_variable = { global.KMT_divided_number = global.KMT_ps_cg_inalienable_states }
+					set_variable = { global.KMT_ps_cg_stability_bonus = global.KMT_divided_number }
+					set_variable = { global.KMT_ps_cg_ppfactor_bonus = global.KMT_divided_number }
+					multiply_variable = { global.KMT_ps_cg_ppfactor_bonus = global.KMT_ps_cg_pp_factor_bonus_base }
+				}
+			}
+			if = {
+				limit = { 
+					has_global_flag = liangguang_incident
+					NOT = { 
+						any_country = {
+							has_country_flag = KMT_liangguang_opposition
+							exists = yes
+							is_subject = no
+						}
+					}
+				}
+				log = "[Root.GetName]: GXC does not exists, clear liangguang global flag"
+				clr_global_flag = liangguang_incident
+				clr_global_flag = liangguang_incident_war
+				set_global_flag = liangguang_solved
+				if = {
+					limit = {
+						event_target:KMT_central_gov_tag = {
+							has_idea = KMT_media_pressure
+						}
+					}
+					event_target:KMT_central_gov_tag = {
+						remove_ideas = KMT_media_pressure
+					}
+				}
+				if = {
+					limit = {
+						event_target:KMT_central_gov_tag = {
+							has_idea = KMT_media_pressure_2
+						}
+					}
+					event_target:KMT_central_gov_tag = {
+						remove_ideas = KMT_media_pressure_2
+					}
+				}
+				if = {
+					limit = {
+						has_global_flag = KMT_disable_power_struggle_mechanics 
+					}
+					GXC = { dismantle_faction = yes }
+					YUT = { dismantle_faction = yes }
+				}else = {
+					if = {
+						limit = {
+							is_in_array = { global.KMT_ps_alliance_leaders = YUT }
+						}
+						every_other_country = {
+							limit = {
+								is_in_array = { YUT.KMT_ps_alliance_array = THIS }
+							}
+							country_event = { id = jyutgwai.63 }
+						}
+						clear_array = YUT.KMT_ps_alliance_array
+						remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+					if = {
+						limit = {
+							is_in_array = { global.KMT_ps_alliance_leaders = GXC }
+						}
+						every_other_country = {
+							limit = {
+								is_in_array = { GXC.KMT_ps_alliance_array = THIS }
+							}
+							country_event = { id = jyutgwai.63 }
+						}
+						clear_array = GXC.KMT_ps_alliance_array
+						remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+				}
+			}
+			if = {
+				limit = { 
+					has_global_flag = liangguang_solved
+					NOT = { has_global_flag = KMT_dismantled_gxcyut_alliance }
+					OR = {
+						GXC = {
+							is_faction_leader = yes
+						}
+						YUT = {
+							is_faction_leader = yes
+						}
+					}
+				}
+				set_global_flag = KMT_dismantled_gxcyut_alliance
+				if = { 
+					limit = { GXC = { is_faction_leader = yes }}
+					GXC = {
+						dismantle_faction = yes
+					}
+				}
+				if = { 
+					limit = { YUT = { is_faction_leader = yes }}
+					YUT = {
+						dismantle_faction = yes
+					}
+				}
+			}
+			if = {
+				limit = { 
+					HYQ = {
+						exists = no
+						has_cosmetic_tag = KMTHYQwarlord
+					}
+				}
+				HYQ = { drop_cosmetic_tag = yes }
+			}
+			if = {
+				limit = {
+					has_country_flag = KMT_anti_colonial_target
+					has_war = no
+				}
+				clr_country_flag = KMT_anti_colonial_target
+			}
+			
+			if = {
+				limit = {
+					has_completed_focus = KMT_join_comintern
+					is_in_faction_with = SOV
+					SOV = { is_faction_leader = yes }
+					NOT = { has_completed_focus = KMT_boycott_the_comitern }
+					NOT = { has_country_flag = KMT_sov_accepts_chi_into_faction }
+				}
+				set_country_flag = KMT_sov_accepts_chi_into_faction
+			}
+			
+			if = {
+				limit = {
+					has_completed_focus = KMT_boycott_the_comitern
+					has_country_flag = KMT_sov_accepts_chi_into_faction
+				}
+				clr_country_flag = KMT_sov_accepts_chi_into_faction
+			}
+			
+			if = {
+				limit = {
+					has_completed_focus = KMT_european_friend
+					is_in_faction_with = ENG
+					ENG = { is_faction_leader = yes }
+					NOT = { has_completed_focus = KMT_alone_in_the_east }
+					NOT = { has_country_flag = KMT_eng_accepts_chi_into_faction }
+				}
+				set_country_flag = KMT_eng_accepts_chi_into_faction
+			}
+			
+			if = {
+				limit = {
+					has_completed_focus = KMT_alone_in_the_east
+					has_country_flag = KMT_eng_accepts_chi_into_faction
+				}
+				clr_country_flag = KMT_eng_accepts_chi_into_faction
+			}
+			
+			if = {
+				limit = {
+					ROOT = { 
+						is_valid_power_struggle_participant = yes 
+						NOT = { 
+							tag = event_target:KMT_central_gov_tag
+							has_idea = cg_warlords 
+							tag = PRC
+						}
+					}
+				}
+				add_ideas = cg_warlords
+			}
+		}
+	}
+	
+	#ROOT = new controller
+	#FROM = old controller
+	#FROM.FROM = state
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = { 
+					FROM.FROM = {
+						state = 614 
+						has_state_flag = prevent_auto_flip_after_capitulation
+					}
+				}
+				614 = { clr_state_flag = prevent_auto_flip_after_capitulation }
+			}
+			if = {
+				limit = {
+					tag = PRC
+					FROM.FROM = { state = 283 }
+					SIK = { 
+						has_war_with = ROOT
+						OR = {
+							is_subject_of = event_target:KMT_central_gov_tag
+							AND = {
+								has_idea = KMT_joined_central_against_prc
+								is_in_faction_with = event_target:KMT_central_gov_tag
+							}
+						}
+					}
+					has_global_flag = PRC_restart_CHI_war
+				}
+				SIK = { country_event = { id = prc.149 days = 1 }}
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						character = MCK_kwantung_army
+						ruling_only = yes
+					}
+					FROM.FROM = {
+						is_core_of = JAP
+						NOT = { has_state_flag = KTA_infiltrated_helped }
+					}
+					has_global_flag = KTA_infiltrated_home_island
+				}
+				FROM.FROM = { 
+					set_state_flag = KTA_infiltrated_helped 
+					create_unit = {
+						division = "name = \"Aikokusha\" division_template = \"Aikokusha\" start_equipment_factor = 1" 
+						owner = ROOT
+						count = 4
+						allow_spawning_on_enemy_provs = yes
+					}
+					save_global_event_target_as = MCK_uprised_state
+				}
+				country_event = { id = jap.275 }
+				
+			}
+			if = {
+				limit = {
+					tag = SOV
+					PRC = { 
+						has_government = ROOT 
+						OR = {
+							is_subject = no
+							is_subject_of = ROOT
+							is_subject_of = event_target:KMT_central_gov_tag
+						}
+					}
+					FROM = {
+						OR = {
+							tag = JAP
+							is_subject_of = JAP
+							is_in_faction_with = JAP
+						}
+					}
+					FROM.FROM = { 
+						has_state_flag = KMT_collaborator_state 
+						NOT = { has_state_flag = PRC_collaborator_state_ransacked }
+					}
+				}
+				FROM.FROM = { 
+					set_state_flag = PRC_collaborator_state_ransacked
+				}
+				PRC = { country_event = { id = prc.331 }}
+			}
+			if = {
+				limit = {
+					FROM.FROM = {
+						OR = {
+							state = 617
+							state = 946
+						}
+					}
+					ROOT = { has_idea = PRC_west_expedition_momentum }
+				}
+				FROM = { country_event = { id = prc.301 }}
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = SOV
+						has_government = communism
+						has_war = yes
+						surrender_progress > 0.25
+						NOT = { has_dynamic_modifier = { modifier = KMTSOV_great_patriotic_war }}
+					}
+				}
+				FROM = { country_event = { id = kmtsov.1 }}
+			}
+			
+			if = {
+				limit = {
+					SOV = {
+						has_dynamic_modifier = { modifier = KMTSOV_great_patriotic_war }
+					}
+				}
+				set_variable = { SOV.KMTSOV_gpw_conscription = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_conscription = 0.2 }
+				set_variable = { SOV.KMTSOV_gpw_core_def = SOV.surrender_progress }
+				set_variable = { SOV.KMTSOV_gpw_core_off = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_core_off = 0.35 }
+				set_variable = { SOV.KMTSOV_gpw_training_time = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_training_time = -0.5 }
+				set_variable = { SOV.KMTSOV_gpw_reinforce_rate = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_reinforce_rate = 0.2 }
+				set_variable = { SOV.KMTSOV_gpw_production = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_production = 0.25 }
+				set_variable = { SOV.KMTSOV_gpw_mobilization_speed = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_mobilization_speed = 0.25 }
+				set_variable = { SOV.KMTSOV_gpw_dig_in_speed = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_dig_in_speed = 4 }
+				set_variable = { SOV.KMTSOV_gpw_max_dig_in = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_max_dig_in = 25 }
+				
+				set_variable = { SOV.KMTSOV_gpw_resistance_target = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_compliance_growth = 0.5 }
+				set_variable = { SOV.KMTSOV_gpw_resistance_growth = SOV.surrender_progress }
+				set_variable = { SOV.KMTSOV_gpw_compliance_growth = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_compliance_growth = -0.5 }
+				set_variable = { SOV.KMTSOV_gpw_resistance_decay = SOV.surrender_progress }
+				multiply_variable = { SOV.KMTSOV_gpw_resistance_decay = -0.75 }
+			}
+			
+			if = {
+				limit = {
+					tag = PRC
+					FROM.FROM = {
+						region = 228
+					}
+					NOT = { has_global_flag = PRC_kiangsi_guerrilla_returned }
+					NOT = { has_global_flag = PRC_wang_purge }
+				}
+				country_event = { id = prc.308 }
+			}
+			
+			if = {
+				limit = {
+					ROOT = { 
+						OR = {
+							tag = JAP
+							is_subject_of = JAP
+							is_in_faction_with = JAP
+						}
+					}
+					FROM = { 
+						tag = SDC
+						is_in_faction_with = event_target:KMT_central_gov_tag
+						is_ai = yes
+						has_country_leader = {
+							character = SDC_han_fuju
+							ruling_only = yes
+						}
+					}
+					FROM.FROM = {
+						state = 939
+					}
+					NOT = { has_global_flag = KMT_hfj_withdrawal_fired }
+				}
+				set_global_flag = KMT_hfj_withdrawal_fired
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.633 hours = 1 }}
+			}
+			
+			if = {
+				limit = {
+					ROOT = { 
+						tag = PRC
+					}
+					FROM.FROM = {
+						has_dynamic_modifier = { modifier = PRC_rising_popular_support }
+						compliance < 30
+						has_resistance = yes
+					}
+				}
+				FROM.FROM = { add_compliance = 30 }
+			}
+			
+			if = {
+				limit = {
+					ROOT = { 
+						tag = PRC
+					}
+					is_in_array = { PRC.KMT_considered_inalienable_parts = FROM.FROM }
+					FROM.FROM = {
+						NOT = { has_dynamic_modifier = { modifier = PRC_rising_popular_support }}
+						compliance < 5
+						has_resistance = yes
+					}
+				}
+				FROM.FROM = { add_compliance = 5 }
+			}
+			
+			if = {
+				limit = {
+					ROOT = { 
+						has_completed_focus = KMT_show_leniency
+					}
+					is_in_array = { ROOT.KMT_considered_inalienable_parts = FROM.FROM }
+					FROM.FROM = {
+						compliance < 30
+						has_resistance = yes
+					}
+				}
+				FROM.FROM = { set_compliance = 30 }
+			}
+			
+			if = {
+				limit = {
+					ROOT = { 
+						is_chinese_nations_w_HYQ = yes
+						NOT = { tag = PRC }
+					}
+					is_in_array = { ROOT.KMT_considered_inalienable_parts = FROM.FROM }
+					FROM.FROM = {
+						compliance < 15
+						has_resistance = yes
+					}
+				}
+				FROM.FROM = { add_compliance = 15 }
+			}
+			
+			if = {
+				limit = {
+					ROOT = { 
+						tag = PRC
+						has_completed_focus = PRC_land_reform
+					}
+					is_in_array = { PRC.KMT_considered_inalienable_parts = FROM.FROM }
+					FROM.FROM = {
+						has_resistance = yes
+					}
+				}
+				FROM.FROM = { add_compliance = 45 }
+			}
+			
+			if = {
+				limit = {
+					ROOT = { 
+						tag = PRC
+						has_completed_focus = PRC_plant_spies_within_local_government
+					}
+					is_in_array = { PRC.KMT_considered_inalienable_parts = FROM.FROM }
+					check_variable = { PRC.PRC_state_guerrilla_cell_strength > 20 }
+					FROM.FROM = { has_dynamic_modifier = { modifier = PRC_rising_popular_support }}
+				}
+				FROM.FROM = { 
+					add_core_of = PRC
+				}
+			}
+			
+			if = {
+				limit = {
+					ROOT = { 
+						tag = PRC
+						has_completed_focus = PRC_plant_spies_within_local_government
+					}
+					is_in_array = { PRC.KMT_considered_inalienable_parts = FROM.FROM }
+					check_variable = { PRC.PRC_state_guerrilla_cell_strength > 35 }
+					FROM.FROM = { NOT = { has_dynamic_modifier = { modifier = PRC_rising_popular_support }}}
+				}
+				FROM.FROM = { 
+					add_core_of = PRC
+				}
+			}
+		
+			if = {
+				limit = {
+					ROOT = {
+						is_chinese_nations_w_HYQ = yes
+						NOT = { 
+							tag = PRC
+							is_subject_of = PRC
+							has_country_flag = KMT_first_time_commie_cell_tooltip
+						}
+					}
+					FROM.FROM = {
+						has_state_flag = KMT_PRC_state_has_guerrilla_cell
+					}
+				}
+				ROOT = {
+					country_event = { id = guerrilla.3 }
+					set_country_flag = KMT_first_time_commie_cell_tooltip
+				}
+			}
+			
+			if = {
+				limit = { 
+					FROM.FROM = { state = 608 }
+					ROOT = { has_country_flag = peking_capital }
+				}
+				if = {
+					limit = { has_global_flag = KMT_use_postal_romanisation }
+					608 = { set_state_name = KMT_STATES_608_capital_postal }
+					set_province_name = { id = 9843 name = KMT_VP_9843_capital_postal }
+				}
+				else = {
+					608 = { set_state_name = KMT_STATES_608_capital_pinyin }
+					set_province_name = { id = 9843 name = KMT_VP_9843_capital_pinyin }	
+				}
+			}
+			
+			if = {
+				limit = { 
+					FROM.FROM = { state = 608 }
+					ROOT = { 
+						NOT = { has_country_flag = peking_capital }
+						is_chinese_nations_w_HYQ = yes
+					}
+				}
+				if = {
+					limit = { has_global_flag = KMT_use_postal_romanisation }
+					608 = { set_state_name = KMT_STATES_608_postal }
+					set_province_name = { id = 9843 name = KMT_VP_9843_postal }	
+				}
+				else = {
+					608 = { set_state_name = KMT_STATES_608_pinyin }
+					set_province_name = { id = 9843 name = KMT_VP_9843_pinyin }	
+				}
+			}
+			
+			if = {
+				limit = {
+					is_in_array = { PRC.KMT_considered_inalienable_parts = FROM.FROM }
+					ROOT = {
+						tag = PRC
+						has_completed_focus = PRC_messianic_emancipation
+					}
+				}
+				FROM.FROM = {
+					if = {
+						limit = { NOT = { has_state_flag = PRC_qiyiquned }}
+						set_state_flag = PRC_qiyiquned
+						create_unit = {
+							division = "name = \"Qi Yi Jun\" division_template = \"Qi Yi Jun\" start_experience_factor = 0.1 start_equipment_factor = 1" 
+							owner = ROOT
+						}
+						create_unit = {
+							division = "name = \"Qi Yi Jun\" division_template = \"Qi Yi Jun\" start_experience_factor = 0.1 start_equipment_factor = 1" 
+							owner = ROOT
+						}
+					}
+					if = {
+						limit = { has_resistance = yes }
+						add_compliance = 30
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					is_in_array = { PRC.KMT_considered_inalienable_parts = FROM.FROM }
+					ROOT = {
+						tag = PRC
+						has_completed_focus = PRC_comply_or_die
+					}
+				}
+				FROM.FROM = {
+					if = {
+						limit = { 
+							NOT = {
+								has_dynamic_modifier = {
+									modifier = PRC_recent_bloody_purge
+								}
+							}
+						}
+						add_manpower = -5000
+						add_dynamic_modifier = {
+							modifier = PRC_recent_bloody_purge
+							days = 60
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	on_peaceconference_ended = {
+		effect = {
+			if = {
+				limit = { 
+					original_tag = JAP
+					FROM = {
+						OR = {
+							tag = SHX
+							tag = SDC
+						}
+						is_subject_of = ROOT
+					}
+					PGR = {
+						NOT = { is_subject_of = JAP }
+					}
+					WJW = {
+						NOT = { is_subject_of = JAP }
+					}
+				}
+				PGR = {
+					annex_country = { target = FROM transfer_troops = yes }
+				}
+			}
+			if = {
+				limit = { 
+					original_tag = JAP
+					FROM = {
+						is_chinese_nations_w_HYQ = yes
+						is_subject_of = ROOT
+					}
+					WJW = {
+						is_subject_of = JAP
+					}
+				}
+				WJW = {
+					annex_country = { target = FROM transfer_troops = yes }
+				}
+			}
+			if = {
+				limit = { 
+					tag = CHI
+					HYQ = { 
+						OR = {
+							exists = no 
+							is_subject = yes
+						}
+					}
+					OR = {
+						has_cosmetic_tag = KMTWJW
+						has_cosmetic_tag = KMTPWY
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = { 
+					tag = PRC
+					has_cosmetic_tag = FengClique
+					check_variable = { num_of_controlled_states > 20 }
+					is_subject = no
+					owns_state = 613
+					owns_state = 608
+					#owns_state = 592
+					owns_state = 617
+					613 = { is_in_home_area = yes }
+					608 = { is_in_home_area = yes }
+					#592 = { is_in_home_area = yes }
+					716 = { is_in_home_area = yes }
+				}
+				country_event = { id = prc.342 }
+			}
+			if = {
+				limit = { 
+					tag = event_target:KMT_central_gov_tag
+					FROM = {
+						any_owned_state = { 
+							has_state_flag = KMT_collaborator_state 
+							NOT = { has_state_flag = KMT_collaborator_state_returned }
+						}
+						OR = {
+							tag = MEN
+							tag = PGR
+							tag = RGR
+							tag = WJW
+							tag = MCK
+							tag = ECR
+							tag = EHA
+						}
+					}
+				}
+				every_state = {
+					limit = { 
+						has_state_flag = KMT_collaborator_state 
+						is_owned_by = FROM
+						
+					}
+					event_target:KMT_central_gov_tag = { transfer_state = PREV }	
+					set_state_flag = KMT_collaborator_state_returned
+				}
+			}
+			if = {
+				limit = { 
+					tag = event_target:KMT_central_gov_tag
+					FROM = {
+						has_idea = JAP_remnant_of_jap_faction
+						OR = {
+							is_chinese_nations_w_HYQ = yes
+							original_tag = MCK
+							original_tag = MEN
+							original_tag = RGR
+							original_tag = WJW
+							original_tag = PGR
+							original_tag = ECR
+							original_tag = EHA
+						}
+					}
+				}
+				event_target:KMT_central_gov_tag = { annex_country = { target = FROM }}
+			}
+			if = {
+				limit = { 
+					tag = USA
+					is_ai = yes
+				}
+				add_political_power = 2000
+			}
+			if = {
+				limit = { 
+					tag = event_target:KMT_central_gov_tag
+					FROM = { tag = PRC }
+					NOT = { country_exists = PRC }
+				}
+				set_global_flag = KMT_ccw_over
+			}
+			if = {
+				limit = { 
+					FROM = { tag = event_target:KMT_central_gov_tag }
+					NOT = { country_exists = event_target:KMT_central_gov_tag }
+					tag = PRC
+				}
+				set_global_flag = KMT_ccw_over
+			}
+			if = {
+				limit = { 
+					NOT = {
+						any_country = {
+							is_chinese_nations_w_HYQ = yes
+							has_war_with = JAP
+						}
+					}
+					OR = {
+						has_global_flag = CHI_warred_with_JAP
+						has_global_flag = PRC_warred_with_JAP
+					}
+				}
+				set_global_flag = KMT_no_more_sunfall
+			}
+			if = {
+				limit = { 
+					FROM = { 
+						tag = PER 
+						OR = {
+							owns_state = 413
+							owns_state = 412
+						}
+					}
+					has_global_flag = ENG_countenance_war
+					NOT = { has_global_flag = KMT_countenance_ENG_resources_rights }
+				}
+				set_global_flag = KMT_countenance_ENG_resources_rights
+				SOV = { country_event = { id = kmtmisc.18 days = 7 }}
+			}
+#			if = {
+#				limit = { 
+#					FROM = { tag = GER }
+#					tag = ENG
+#					has_global_flag = had_yalta_conference
+#					GER = {
+#						any_owned_state = { 
+#							is_core_of = WGR
+#						}
+#					}
+#					NOT = { has_global_flag = KMT_yalta_WGR_on_action_flag }
+#				}
+#				set_global_flag = KMT_yalta_WGR_on_action_flag
+#				GER = {
+#					every_owned_state = {
+#						limit = { is_core_of = WGR }
+#						WGR = { transfer_state = PREV }
+#					}
+#				}
+#			}
+#			if = {
+#				limit = { 
+#					FROM = { tag = GER }
+#					tag = SOV
+#					has_global_flag = had_yalta_conference
+#					GER = {
+#						any_owned_state = { 
+#							is_core_of = DDR
+#						}
+#					}
+#					NOT = { has_global_flag = KMT_yalta_DDR_on_action_flag }
+#				}
+#				set_global_flag = KMT_yalta_DDR_on_action_flag
+#				GER = {
+#					every_owned_state = {
+#						limit = { is_core_of = DDR }
+#						DDR = { transfer_state = PREV }
+#					}
+#				}
+#			}
+			if = {
+				limit = { 
+					FROM = { tag = JAP }
+					SIA = { 
+						NOT = { has_idea = JAP_remnant_of_jap_faction }
+						has_country_flag = SIA_accepted_jap_ultimatum
+					}
+				}
+				SIA = { clr_country_flag = SIA_accepted_jap_ultimatum }
+			}
+			if = {
+				limit = { 
+					tag = SIA 
+					FROM = { tag = IDC }
+					SIA = { has_unit_leader = 1922 }
+				}
+				SIA = { random_unit_leader = { limit = { has_id = 1922 } add_unit_leader_trait = war_hero }}
+			}
+			if = {
+				limit = { 
+					OR = {
+						AND = {
+							tag = SIA 
+							FROM = { tag = IDC }
+						}
+						AND = {
+							tag = IDC
+							FROM = { tag = SIA }
+						}
+					}
+					SIA = { has_country_flag = SIA_attack_indochina_flag }
+				}
+				SIA = { clr_country_flag = SIA_attack_indochina_flag }
+			}
+			
+			if = {
+				limit = {
+					tag = JAP
+					FROM = {
+						tag = IDC
+					}
+					has_country_flag = JAP_IDC_coup_failed_flag
+				}
+				if = { limit = { NOT = { country_exists = VIN }} set_country_flag = JAP_no_vin_prior_to_idc_pc }
+				if = { limit = { NOT = { country_exists = LAO }} set_country_flag = JAP_no_lao_prior_to_idc_pc }
+				if = { limit = { NOT = { country_exists = CAM }} set_country_flag = JAP_no_cam_prior_to_idc_pc }
+				if = {
+					limit = {
+						VIN = {
+							OR = { 
+								exists = no
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+					IDC = {
+						every_owned_state = {
+							limit = { 
+								is_core_of = VIN
+							}
+							VIN = { transfer_state = PREV }
+						}
+					}
+				}
+				if = {
+					limit = {
+						LAO = {
+							OR = { 
+								exists = no
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+					IDC = {
+						every_owned_state = {
+							limit = { 
+								is_core_of = LAO
+							}
+							LAO = { transfer_state = PREV }
+						}
+					}
+				}
+				if = {
+					limit = {
+						CAM = {
+							OR = { 
+								exists = no
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+					IDC = {
+						every_owned_state = {
+							limit = { 
+								is_core_of = CAM
+							}
+							CAM = { transfer_state = PREV }
+						}
+					}
+				}
+				if = {
+					limit = { 
+						has_country_flag = JAP_no_vin_prior_to_idc_pc
+						country_exists = VIN
+					}
+					puppet = VIN
+				}
+				if = {
+					limit = { 
+						has_country_flag = JAP_no_lao_prior_to_idc_pc
+						country_exists = LAO
+					}
+					puppet = LAO
+				}
+				if = {
+					limit = { 
+						has_country_flag = JAP_no_cam_prior_to_idc_pc
+						country_exists = cam
+					}
+					puppet = CAM
+				}
+				if = {
+					limit = { IDC = { is_subject = no }}
+					
+					annex_country = {
+						target = IDC
+						transfer_troops = no
+					}
+					
+				}
+			}
+			
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							tag = JAP
+							has_idea = JAP_remnant_of_jap_faction
+						}
+					}
+					has_country_flag = KMT_no_seperate_peace_with_JAP_flag
+				}
+				every_state = {
+					limit = {
+						has_state_flag = KMT_collaborator_state
+						is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+						OWNER = {
+							OR = {
+								tag = ENG
+								tag = USA
+								is_subject_of = ENG
+								is_subject_of = USA
+								is_in_faction_with = ENG
+								is_in_faction_with = USA
+							}
+						}
+					}
+					ROOT = { transfer_state = PREV }
+				}
+			}
+			
+			if = {
+				limit = {
+					tag = PRC
+					FROM = {
+						tag = NSM
+					}
+					has_country_flag = PRC_allow_west_expedition
+				}
+				transfer_state = 616
+				transfer_state = 946
+				transfer_state = 756
+				country_event = { id = prc.173 }
+				if = {
+					limit = {
+						OR = {
+							has_global_flag = PRC_yes_truce
+							has_completed_focus = PRC_submit_to_the_united_front
+						}
+						NOT = { has_global_flag = PRC_restart_CHI_war }
+					}
+					add_to_variable = { global.PRC_expansion_ire = 3 }
+				}
+			}
+			
+			if = {
+				limit = {
+					tag = ZXL
+					FROM = {
+						tag = event_target:KMT_central_gov_tag
+					}
+					NOT = { has_global_flag = cks_killed_xian }
+					NOT = { has_global_flag = xian_resolved }
+					has_global_flag = xian_incident
+					country_exists = event_target:KMT_central_gov_tag
+				}
+				set_global_flag = xian_zxl_won
+				set_global_flag = xian_resolved
+				clr_global_flag = xian_incident
+				set_global_flag = PRC_yes_truce
+					log = "[GetDate]: [Root.GetName] PRC_yes_truce"
+					set_variable = { global.PRC_past_month_ire = global.PRC_expansion_ire }
+				set_global_flag = KMT_united_front_enabled
+				clr_global_flag = KMT_first_chinese_civil_war
+				custom_effect_tooltip = KMT_enables_united_front_tt
+				if = {
+					limit = {
+						any_country = {
+							OR = {
+								tag = PRC
+								has_country_flag = is_warlords
+							}
+							has_war_with = event_target:KMT_central_gov_tag
+						}
+					}
+					every_country = {
+						limit = {
+							OR = {
+								has_country_flag = is_warlords
+								tag = PRC
+							}	
+						}
+						event_target:KMT_central_gov_tag = {
+							white_peace = PREV
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						OR = {
+							has_country_flag = is_warlords
+							tag = PRC
+						}	
+					}
+					event_target:KMT_central_gov_tag = {
+						diplomatic_relation = {
+							country = PREV
+							relation = non_aggression_pact
+							active = yes
+						}
+					}
+				}
+				clr_global_flag = liangguang_incident
+				set_global_flag = liangguang_solved
+				clr_global_flag = KMT_chi_stop_civil_war_demand_rejected
+				clr_global_flag = KMT_zxl_submit_demand_flag
+				clr_global_flag = KMT_zxl_submit_demand_rejected
+				clr_global_flag = KMT_chi_stop_civil_war_demand_again
+				clr_global_flag = cks_held
+				news_event = { id = kns.27 }
+			}
+		}
+	}
+	
+	on_monthly_MCK = {
+		effect = {
+			if = {
+				limit = {
+					tag = MCK
+					is_subject = no
+					OR = {
+						check_variable = { MCK_RFP_mood > 0 }
+						check_variable = { MCK_awareness > 0 }
+						check_variable = { MCK_suspicion > 0 }
+					}
+				}
+				set_variable = { MCK_RFP_mood = 0 }
+				set_variable = { MCK_awareness = 0 }
+				set_variable = { MCK_suspicion = 0 }
+			}
+		}
+	}
+	
+	on_monthly_CHI = {
+		effect = {
+			if = {
+				limit = {
+					HYQ = {
+						exists = yes
+						is_subject = no
+						has_war = no
+					}
+					has_global_flag = KMT_CHI_HYQ_temporary_peace
+					is_subject = no
+					has_war = no
+				}
+				country_event = { id = kmt.716 }
+			}
+
+			if = {
+				limit = { 
+					is_subject_of = JAP
+					any_state = {
+						OWNER = {
+							NOT = { tag = ROOT }
+							OR = {
+								tag = JAP
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+						OR = {
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+							is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+						}
+					}
+				}
+				every_state = {
+					limit = { 
+						OWNER = {
+							NOT = { tag = ROOT }
+							OR = {
+								tag = JAP
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+						OR = {
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+							is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+						}
+					}
+					if = {
+						limit = { is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }}
+						remove_from_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+					}
+					if = {
+						limit = { is_core_of = ROOT }
+						remove_core_of = ROOT
+					}
+					if = {
+						limit = { is_claimed_by = ROOT }
+						remove_claim_by = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	on_monthly_HYQ = {
+		effect = {
+			if = {
+				limit = { 
+					is_subject_of = JAP
+					any_state = {
+						OWNER = {
+							NOT = { tag = ROOT }
+							OR = {
+								tag = JAP
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+						OR = {
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+							is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+						}
+					}
+				}
+				every_state = {
+					limit = { 
+						OWNER = {
+							NOT = { tag = ROOT }
+							OR = {
+								tag = JAP
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+						OR = {
+							is_claimed_by = ROOT
+							is_core_of = ROOT
+							is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+						}
+					}
+					if = {
+						limit = { is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }}
+						remove_from_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+					}
+					if = {
+						limit = { is_core_of = ROOT }
+						remove_core_of = ROOT
+					}
+					if = {
+						limit = { is_claimed_by = ROOT }
+						remove_claim_by = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	on_monthly_FRA = {
+		effect = {
+			if = {
+				limit = { 
+					OCC = {
+						exists = yes
+						is_subject = yes
+						is_in_faction_with = ROOT
+					}
+					is_subject = no
+				}
+				annex_country = { target = OCC }
+			}
+			if = {
+				limit = { 
+					COR = {
+						exists = yes
+						is_subject = yes
+						is_in_faction_with = ROOT
+					}
+					is_subject = no
+				}
+				annex_country = { target = COR }
+			}
+		}
+	}
+	
+	on_monthly_WJW = {
+		effect = {
+			if = {
+				limit = { 
+					is_ai = yes
+					is_subject_of = JAP 
+					has_army_manpower = { size < 400000 }
+					has_equipment = { infantry_equipment < 2500 }
+				}
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = JAP }
+			}
+			if = {
+				limit = { 
+					is_ai = yes
+					is_subject_of = JAP 
+					has_army_manpower = { size < 400000 }
+					has_equipment = { artillery_equipment < 1000 }
+				}
+				add_equipment_to_stockpile = { type = artillery_equipment amount = 1500 producer = JAP }
+			}
+			if = {
+				limit = { 
+					is_ai = yes
+					is_subject_of = JAP 
+					has_army_manpower = { size < 400000 }
+					has_equipment = { support_equipment < 2000 }
+				}
+				add_equipment_to_stockpile = { type = support_equipment amount = 3000 producer = JAP }
+			}
+		}
+	}
+	
+	on_monthly_XIA = {
+		effect = {
+			if = {
+				limit = {
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = PRC
+					PRC = { has_government = communism }
+					event_target:KMT_central_gov_tag = {
+						NOT = { has_government = communism }
+					}
+					has_country_leader = {
+						character = XIA_he_jian
+						ruling_only = yes
+					}
+				}
+				country_event = { id = kmt.634 }
+			}
+			if = {
+				limit = {
+					date > 1947.1.1
+					has_country_leader = {
+						character = XIA_zhang_zhizhong
+						ruling_only = yes
+					}
+				}
+				country_event = { id = kmt.635 }
+			}
+		}
+	}
+	
+	on_daily_CHI = {
+		effect = {
+			if = {
+				limit = { 
+					HYQ = { 
+						OR = {
+							exists = no 
+							is_subject = yes
+						}
+					}
+					OR = {
+						has_cosmetic_tag = KMTWJW
+						has_cosmetic_tag = KMTPWY
+					}
+				}
+				drop_cosmetic_tag = yes
+			}
+		}
+	}
+	
+	on_daily_JAP = {
+		effect = {
+			if = {
+				limit = {
+					is_ai = yes
+					has_political_power < 0
+				}
+				set_political_power = 0
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_war_with = ROOT
+						has_country_flag = JAP_accepted_indochina_demand
+					}
+				}
+				every_country = {
+					limit = {
+						has_war_with = ROOT
+						has_country_flag = JAP_accepted_indochina_demand
+					}
+					clr_country_flag = JAP_accepted_indochina_demand
+				}
+			}
+		}
+	}
+	
+	on_daily_SIK = {
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						NOT = { is_subject_of = event_target:KMT_central_gov_tag }
+						OVERLORD = { has_government = communism }
+					}
+					has_cosmetic_tag = SIK_KMT
+				}
+				drop_cosmetic_tag = yes
+			}
+		}
+	}
+	
+	on_daily_GER = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = GER_JAP_tripartite_pact
+					NOT = { has_government = fascism }
+				}
+				clr_global_flag = GER_JAP_tripartite_pact
+			}
+#			if = {
+#				limit = {
+#					country_exists = WGR
+#				}
+#				DDR = {
+#					annex_country = {
+#						target = GER
+#						transfer_troops = no
+#					}
+#				}
+#			}
+		}
+	}
+	
+	on_daily_IDC = {
+		effect = {
+			if = {
+				limit = {
+					country_exists = VIC
+					is_subject_of = FRA
+					NOT = { has_global_flag = IDC_loyalty_to_vichy }
+				}
+				set_global_flag = IDC_loyalty_to_vichy
+				country_event = { id = kmtmisc.3 }
+			}
+			if = {
+				limit = {
+					has_country_flag = IDC_no_more_french
+					has_cosmetic_tag = FRAIDC
+				}
+				drop_cosmetic_tag = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = {
+						flag = IDC_jap_planning_coup
+						days > 11
+					}
+				}
+				clr_country_flag = IDC_jap_planning_coup
+			}
+			
+			if = {
+				limit = {
+					is_subject = yes
+					OVERLORD = {
+						NOT = { 
+							tag = VIC
+							tag = FRA
+						}
+					}
+				}
+				set_country_flag = IDC_no_more_french
+
+				retire_character = IDC_rene_robin
+				retire_character = IDC_jules_brevie
+				retire_character = IDC_georges_ayme
+				retire_character = IDC_georges_catroux
+				retire_character = IDC_jean_decoux
+				retire_character = IDC_eugene_mordant
+				retire_character = IDC_marcel_alessandri
+				retire_character = IDC_gabriel_sabattier
+			}
+		}
+	}
+	
+	on_monthly_PRC = {
+		effect = {
+			if = {
+				limit = {
+					has_global_flag = PRC_restart_CHI_war
+					event_target:KMT_central_gov_tag = { has_war_with = PRC }
+					NOT = { has_global_flag = status_quo_fired }
+					OR = {
+						NOT = { has_global_flag = status_quo_event_wait_duration }
+						has_global_flag = {
+							flag = status_quo_event_wait_duration
+							days > 800
+						}
+					}
+				}
+				log = "[Root.GetName]: checking chinese civil war stalemate status - initialisation"
+				clear_array = PRC.KMT_civil_war_controlled_province
+				clear_array = KMT_central_gov_tag.KMT_civil_war_controlled_province
+				for_each_loop = {
+					array = global.KMT_province_array
+					
+					if = {
+						limit = { 
+							any_country = {
+								OR = {
+									tag = PRC
+									is_subject_of = PRC
+									is_in_faction_with = PRC
+								}
+								controls_province = v
+							}
+						}
+						add_to_array = { PRC.KMT_civil_war_controlled_province = v }
+					}
+					
+					if = {
+						limit = { 
+							any_country = {
+								OR = {
+									tag = event_target:KMT_central_gov_tag
+									is_subject_of = event_target:KMT_central_gov_tag
+									is_in_faction_with = event_target:KMT_central_gov_tag
+								}
+								controls_province = v
+							}
+						}
+						add_to_array = { KMT_central_gov_tag.KMT_civil_war_controlled_province = v }
+					}
+				}
+				clr_global_flag = status_quo_event_wait_duration
+				set_global_flag = status_quo_event_wait_duration
+				log = "[Root.GetName]: checking chinese civil war stalemate status - waiting for kmt.619 in 150 in-game days"
+				country_event = { id = kmt.619 days = 150 }
+			}
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							has_country_flag = peking_capital
+							controls_state = 608
+							capital_scope = { NOT = { state = 608 }}
+						}
+						AND = {
+							has_country_flag = nanking_capital
+							controls_state = 613
+							capital_scope = { NOT = { state = 613 }}
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = peking_capital
+						controls_state = 608
+						capital_scope = { NOT = { state = 608 }}
+					}
+					set_capital = { state = 608 }
+				}
+				if = {
+					limit = {
+						has_country_flag = nanking_capital
+						controls_state = 613
+						capital_scope = { NOT = { state = 613 }}
+					}
+					set_capital = { state = 608 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						SOV = {
+							OR = {
+								exists = no
+								NOT = { has_government = communism }
+								has_war_with = ROOT
+							}
+						}
+						date > 1937.10.25
+					}
+					NOT = { has_global_flag = PRC_hsukuangta_returned_to_PRC }
+				}
+				country_event = { id = prc.306 }
+			}
+			if = {
+				limit = {
+					OR = {
+						any_state = {
+							region = 228
+							CONTROLLER = {
+								OR = { 
+									tag = ROOT
+									is_subject_of = ROOT
+									is_in_faction_with = ROOT
+								}
+							}
+						}
+						date > 1940.1.1
+					}
+					NOT = { has_global_flag = PRC_kiangsi_guerrilla_returned }
+					NOT = { has_global_flag = PRC_wang_purge }
+				}
+				country_event = { id = prc.307 }
+			}
+			if = {
+				limit = {
+					is_in_faction_with = event_target:KMT_central_gov_tag
+					is_puppet = no
+					NOT = {
+						has_global_flag = KMT_prc_worked_with_chi
+						has_war_with = event_target:KMT_central_gov_tag
+					}
+				}
+				set_global_flag = KMT_prc_worked_with_chi
+			}
+			if = {
+				limit = { has_completed_focus = PRC_together_we_stand }
+				update_tws_bonus = yes 
+			} 
+			
+			
+			if = {
+				limit = { has_completed_focus = PRC_produce_exportation }
+				update_collective_farm_capital = yes 
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = PRC_yes_truce
+						has_completed_focus = PRC_submit_to_the_united_front
+					}
+					NOT = { has_global_flag = PRC_restart_CHI_war }
+				}
+				#set_temp_variable = { global.PRC_ire_increase = global.PRC_expansion_ire }
+				#subtract_from_variable = { global.PRC_ire_increase = global.PRC_past_month_ire }
+				#if = {
+				#	limit = { 
+				#		NOT = { check_variable = { global.PRC_ire_increase > 0 }}
+				#		check_variable = { global.PRC_expansion_ire > 0 }
+				#	}
+				#	subtract_from_variable = { global.PRC_expansion_ire = 1 }
+				#	if = {
+				#		limit = { check_variable = { global.PRC_expansion_ire_from_bw > 1 }}
+				#		subtract_from_variable = { global.PRC_expansion_ire_from_bw = 1 }
+				#	}
+				#}
+				#set_variable = { global.PRC_past_month_ire = global.PRC_expansion_ire }
+				set_variable = { global.PRC_ire_war_cost = 200 }
+				set_temp_variable = { global.PRC_ire_cost_discount = global.PRC_expansion_ire }
+				multiply_temp_variable = { global.PRC_ire_cost_discount = 10 }
+				subtract_from_variable = { global.PRC_ire_war_cost = global.PRC_ire_cost_discount }
+			}
+		}
+	}
+	
+	on_monthly_GXC = {
+		effect = {
+			if = {
+				limit = {
+					has_idea = KMT_anti_chiang_idea
+					has_global_flag = liangguang_solved
+				}
+				log = "[Root.GetName]: remove anti-chiang idea since liangguang resolved"
+				remove_ideas = KMT_anti_chiang_idea
+			}
+		}
+	}
+	
+	on_monthly = {
+		effect = {
+			if = {
+				limit = { 
+					is_chinese_nations_w_HYQ = no
+					any_owned_state = { has_state_flag = KMT_trautmann_truce_demilitarised_zone }
+				}
+				every_owned_state = {
+					limit = { has_state_flag = KMT_trautmann_truce_demilitarised_zone }
+					clr_state_flag = KMT_trautmann_truce_demilitarised_zone
+				}
+			}
+			#if = {
+			#	limit = { 
+			#		has_global_flag = KMT_changsha_fire_fired
+			#		602 = { has_dynamic_modifier = { modifier = KMT_changsha_fire }}
+			#	}
+			#	602 = {
+			#		damage_building = {
+			#			type = supply_node
+			#			damage = 1
+			#			province = 7097
+			#		}
+			#		damage_building = {
+			#			type = rail_way
+			#			damage = 5
+			#		}
+			#	}
+			#}
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = { has_government = communism }
+					ZZZ = { NOT = { has_government = communism }}
+				}
+				ZZZ = { 
+					set_politics = {
+						ruling_party = communism
+						last_election = "1936.1.1"
+						election_frequency = 120
+						elections_allowed = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = { NOT = { has_government = communism }}
+					ZZZ = { has_government = communism }
+				}
+				ZZZ = { 
+					set_politics = {
+						ruling_party = neutrality
+						last_election = "1936.1.1"
+						election_frequency = 120
+						elections_allowed = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_controlled_state = {
+						OR = {
+							has_dynamic_modifier = { modifier = MCK_local_bandits }
+							has_dynamic_modifier = { modifier = MCK_najua_presence }
+							has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+						}
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							SOV = { NOT = { has_idea = KMT_SOV_JAP_neutrality }}
+							NOT = {
+								original_tag = JAP
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+					}
+					every_controlled_state = {
+						limit = {
+							OR = {
+								has_dynamic_modifier = { modifier = MCK_najua_presence }
+								has_dynamic_modifier = { modifier = MCK_najua_presence2 }
+							}
+						}
+						set_temp_variable = { MCK_temp_rs_change = global.MCK_najua_monthly_growth }
+						if = {
+							limit = { has_global_flag = PRC_yes_truce }
+							add_to_temp_variable = { MCK_temp_rs_change = 1 }
+						}
+						if = {
+							limit = { 
+								event_target:KMT_central_gov_tag = {
+									is_in_faction_with = PRC
+									is_subject = no
+								}
+								PRC = {
+									is_subject = no
+								}
+							}
+							add_to_temp_variable = { MCK_temp_rs_change = 1 }
+						}
+						if = {
+							limit = { 
+								has_global_flag = MCK_reduced_najua_income
+								ROOT = { tag = MCK }
+								SOV = {
+									has_country_flag = MCK_helping_independence
+									exists = yes
+									is_subject = no
+								}
+							}
+							subtract_from_temp_variable = { MCK_temp_rs_change = 2 }
+						}
+						clamp_variable = {
+							var = MCK_temp_rs_change
+							min = 1
+						}
+						add_to_variable = { global.MCK_resistance_strength@This = MCK_temp_rs_change }
+						clamp_variable = {
+							var = MCK_resistance_strength
+							min = 0
+							max = 100
+						}
+						MCK_update_local_bandits_modifier = yes
+					}
+				}
+				every_controlled_state = {
+					limit = {
+						OR = {
+							has_dynamic_modifier = { modifier = MCK_local_bandits }
+						}
+					}
+					add_to_variable = { global.MCK_resistance_strength@This = 1 }
+					clamp_variable = {
+						var = MCK_resistance_strength
+						min = 0
+						max = 100
+					}
+					MCK_update_local_bandits_modifier = yes
+				}
+			}
+			if = {
+				limit = { tag = event_target:KMT_central_gov_tag }
+				set_variable = { global.warlord_counts = 0 }
+				if = {
+					limit = {
+						any_country = {
+							has_idea = cg_warlords
+							exists = yes
+						}
+					}
+					every_country = {
+						limit = {
+							is_valid_power_struggle_participant = yes
+							NOT = { tag = event_target:KMT_central_gov_tag }
+						}
+						add_to_variable = { global.warlord_counts = 1 }
+					}
+				}
+				set_variable = { global.KMT_warlord_pp_cost_mod = 0.035 }
+				multiply_variable = { global.KMT_warlord_pp_cost_mod = global.warlord_counts }
+				set_variable = { global.KMT_warlord_stability_mod = -0.012 }
+				multiply_variable = { global.KMT_warlord_stability_mod = global.warlord_counts }
+				set_variable = { global.KMT_warlord_defensive_stab_mod = 0.01 }
+				multiply_variable = { global.KMT_warlord_defensive_stab_mod = global.warlord_counts }
+				set_variable = { global.KMT_warlord_conscription_factor_mod = -0.04 }
+				multiply_variable = { global.KMT_warlord_conscription_factor_mod = global.warlord_counts }
+				
+				set_variable = { global.KMT_cg_regional_government_frame_no = global.warlord_counts }
+				multiply_variable = { global.KMT_cg_regional_government_frame_no = 5 }
+				divide_variable = { global.KMT_cg_regional_government_frame_no = 18 }
+				add_to_variable = { global.KMT_cg_regional_government_frame_no = 1}
+				if = {
+					limit = { check_variable = { global.KMT_cg_regional_government_frame_no > 0 }}
+					round_variable = global.KMT_cg_regional_government_frame_no
+				}else = { set_variable = { global.KMT_cg_regional_government_frame_no = 0 }}
+			}
+#			if = {
+#				limit = {
+#					is_valid_power_struggle_participant = yes
+#					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics } 
+#					any_controlled_state = {
+#						is_in_array = { global.KMT_greater_china_region_states = THIS }
+#						has_resistance = no
+#						NOT = { is_core_of = ROOT }
+#					}
+#				}
+#				every_controlled_state = {
+#					limit = {
+#						is_in_array = { global.KMT_greater_china_region_states = THIS }
+#						has_resistance = no
+#						NOT = { is_core_of = ROOT }
+#					}
+#					start_resistance = yes
+#					if = {
+#						limit = { compliance < 30 }
+#						add_compliance = 30
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics } 
+#					is_valid_power_struggle_participant = yes
+#					any_controlled_state = {
+#						has_resistance = yes
+#						is_core_of = ROOT
+#					}
+#				}
+#				every_controlled_state = {
+#					limit = {
+#						has_resistance = yes
+#						is_core_of = ROOT
+#					}
+#					cancel_resistance = yes
+#				}
+#			}
+			if = {
+				limit = {
+					NOT = {
+						country_exists = HYQ
+					}
+					any_state = {
+						is_core_of = HYQ
+					}
+				}
+				every_state = {
+					remove_core_of = HYQ
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						country_exists = HYQ
+					}
+					any_state = {
+						is_claimed_by = HYQ
+					}
+				}
+				every_state = {
+					remove_claim_by = HYQ
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_idea = KMT_media_pressure
+						has_idea = KMT_media_pressure_2
+					}
+					has_global_flag = liangguang_solved
+				}
+				log = "[Root.GetName]: remove pressure since liangguang resolved"
+				remove_ideas = KMT_media_pressure
+				remove_ideas = KMT_media_pressure_2
+			}
+			if = {
+				limit = { 
+					is_puppet_of = JAP
+					has_capitulated = no
+					any_state = {
+						owner = { has_war_with = ROOT }
+						controller = {
+							NOT = { tag = ROOT }
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+						OR = {
+							is_core_of = ROOT
+							AND = {
+								ROOT = {
+									OR = {
+										tag = WJW
+										tag = RGR
+										tag = PGR
+									}
+								}
+								is_claimed_by = ROOT
+							}
+						}
+					}
+				}
+				every_state = {
+					limit = {
+						owner = { has_war_with = ROOT }
+						controller = {
+							NOT = { tag = ROOT }
+							OR = {
+								tag = JAP
+								is_puppet_of = JAP
+							}
+						}
+						OR = {
+							is_core_of = ROOT
+							is_claimed_by = ROOT
+						}
+						NOT = {
+							state = 621
+							controller = {
+								tag = MEN
+								is_puppet_of = JAP
+							}
+						}
+						NOT = {
+							state = 611
+							controller = {
+								tag = MEN
+								is_puppet_of = JAP
+							}
+						}
+						NOT = {
+							OR = {
+								state = 524
+								state = 745
+							}
+						}
+					}
+					if = {
+						limit = {
+							any_country = {
+								NOT = { tag = ROOT }
+								OR = {
+									tag = JAP
+									is_puppet_of = JAP
+								}
+								has_full_control_of_state = PREV
+							}
+						}
+						ROOT = {
+							set_state_controller = PREV
+						}
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { country_exists = PRC }}
+				set_global_flag = PRC_ded
+			}
+			
+			if = {
+				limit = {
+					HYQ = {
+						exists = no
+						has_cosmetic_tag = KMTHYQwarlord
+					}
+				}
+				HYQ = { drop_cosmetic_tag = yes }
+			}
+		}
+	}
+	
+	on_war_relation_added = {
+		effect = {
+			#log = "[Root.GetName]:on_war_relation_added with [From.GetName]"
+			if = {
+				limit = {
+					FROM = { 
+						tag = event_target:KMT_central_gov_tag 
+						has_defensive_war_with = JAP
+						NOT = {
+							has_country_flag = KMT_red_coup_finish
+							has_country_flag = KMT_pro_japanese_coup
+						}
+					}
+					any_country = {
+						is_valid_power_struggle_participant = yes
+						NOT = {
+							is_subject_of = JAP
+							is_in_faction_with = JAP
+						}
+						has_war_with = FROM
+					}
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = kmt.185 days = 2 }
+				}
+			}
+			if = {
+				limit = {
+					has_relation_modifier = { modifier = KMT_industrial_assistance target = FROM }
+				}
+				remove_relation_modifier = { modifier = KMT_industrial_assistance target = FROM }
+				remove_opinion_modifier = {
+					modifier = KMT_offered_assistance
+					target = FROM
+				}
+				FROM = {
+					remove_opinion_modifier = {
+						modifier = KMT_offered_assistance
+						target = ROOT
+					}
+					country_event = { id = kmt.538 }
+				}
+				if = {
+					limit = {
+						any_state = {
+							controller = {
+								OR = {
+									tag = ROOT
+									is_puppet_of = ROOT
+								}
+							}
+							has_state_flag = CHI_needed_for_hanoi_route
+							NOT = { has_state_flag = CHI_hanoi_route_closed_state }
+						}
+					}
+					hidden_effect = {
+						every_state = {
+							limit = {
+								has_state_flag = CHI_needed_for_hanoi_route
+								NOT = { has_state_flag = CHI_hanoi_route_closed_state }
+								OR = {
+									is_controlled_by = ROOT
+									CONTROLLER = { is_subject_of = ROOT }
+								}
+							}
+							set_state_flag = CHI_hanoi_route_closed_state
+						}
+					}
+					random_country = {
+						#Country that had the route
+						limit = { 
+							OR = {
+								has_idea = KMT_yunnan_bahn_idea
+								has_idea = KMT_yunnan_bahn_idea_closed
+							}
+						}
+						country_event = { id = kmt_fsr.10 }
+						custom_effect_tooltip = close_hanoi_route_explanation # Prints the contents of the CHI_hanoi_route_current_level variable
+					}
+				}
+				if = {
+					limit = {
+						any_state = {
+							controller = {
+								OR = {
+									tag = ROOT
+									is_puppet_of = ROOT
+								}
+							}
+							has_state_flag = CHI_the_hump_closed_state
+							NOT = { has_state_flag = CHI_the_hump_closed_state }
+						}
+					}
+					hidden_effect = {
+						every_state = {
+							limit = {
+								has_state_flag = CHI_needed_for_the_hump
+								NOT = { has_state_flag = CHI_the_hump_closed_state }
+								OR = {
+									is_controlled_by = ROOT
+									CONTROLLER = { is_subject_of = ROOT }
+								}
+							}
+							set_state_flag = CHI_the_hump_closed_state
+						}
+					}
+					random_country = {
+						#Country that had the route
+						limit = { 
+							OR = {
+								has_idea = KMT_the_hump_idea
+								has_idea = KMT_the_hump_idea_closed
+							}
+						}
+						country_event = { id = kmt_fsr.12 }
+						custom_effect_tooltip = close_the_hump_explanation # Prints the contents of the CHI_the_hump_current_level variable
+					}
+				}
+				if = {
+					limit = {
+						any_state = {
+							controller = {
+								OR = {
+									tag = ROOT
+									is_puppet_of = ROOT
+								}
+							}
+							has_state_flag = CHI_needed_for_ledo_road
+							NOT = { has_state_flag = CHI_ledo_road_closed_state }
+						}
+					}
+					hidden_effect = {
+						every_state = {
+							limit = {
+								has_state_flag = CHI_needed_for_ledo_road
+								NOT = { has_state_flag = CHI_ledo_road_closed_state }
+								OR = {
+									is_controlled_by = ROOT
+									CONTROLLER = { is_subject_of = ROOT }
+								}
+							}
+							set_state_flag = CHI_ledo_road_closed_state
+						}
+					}
+					random_country = {
+						#Country that had the route
+						limit = { 
+							OR = {
+								has_idea = KMT_ledo_road_idea
+								has_idea = KMT_ledo_road_idea_closed
+							}
+						}
+						country_event = { id = kmt_fsr.6 }
+						custom_effect_tooltip = close_ledo_road_explanation # Prints the contents of the CHI_ledo_road_current_level variable
+					}
+				}
+				if = {
+					limit = {
+						any_state = {
+							controller = {
+								OR = {
+									tag = ROOT
+									is_puppet_of = ROOT
+								}
+							}
+							has_state_flag = CHI_needed_for_burma_road
+							NOT = { has_state_flag = CHI_burma_road_closed_state }
+						}
+					}
+					hidden_effect = {
+						every_state = {
+							limit = {
+								has_state_flag = CHI_needed_for_burma_road
+								NOT = { has_state_flag = CHI_burma_road_closed_state }
+								OR = {
+									is_controlled_by = ROOT
+									CONTROLLER = { is_subject_of = ROOT }
+								}
+							}
+							set_state_flag = CHI_burma_road_closed_state
+						}
+					}
+					random_country = {
+						limit = { 
+							OR = {
+								has_idea = KMT_burma_road_idea 
+								has_idea = KMT_burma_road_idea_closed
+							}				
+						}
+						country_event = { id = kmt_fsr.2 }
+					}
+				}
+				if = {
+					limit = {
+						FROM = { has_volunteers_amount_from = { tag = ROOT count > 0 }}
+					}
+					recall_volunteers_from = FROM
+				}
+				meta_effect = {
+					text = {
+						set_country_flag = KMT_withdrew_support_from_[FromTag]
+					}
+					FromTag = "[From.GetTag]"
+				}
+			}
+			if = {
+				limit = {
+					FROM = { has_relation_modifier = { modifier = KMT_industrial_assistance target = ROOT }}
+				}
+				FROM = { remove_relation_modifier = { modifier = KMT_industrial_assistance target = ROOT }}
+				remove_opinion_modifier = {
+					modifier = KMT_offered_assistance
+					target = FROM
+				}
+				country_event = { id = kmt.538 }
+				FROM = {
+					remove_opinion_modifier = {
+						modifier = KMT_offered_assistance
+						target = ROOT
+					}
+				}
+				if = {
+					limit = {
+						any_state = {
+							controller = {
+								OR = {
+									tag = FROM
+									is_puppet_of = FROM
+								}
+							}
+							has_state_flag = CHI_needed_for_hanoi_route
+							NOT = { has_state_flag = CHI_hanoi_route_closed_state }
+						}
+					}
+					hidden_effect = {
+						every_state = {
+							limit = {
+								has_state_flag = CHI_needed_for_hanoi_route
+								NOT = { has_state_flag = CHI_hanoi_route_closed_state }
+								OR = {
+									is_controlled_by = FROM
+									CONTROLLER = { is_subject_of = FROM }
+								}
+							}
+							set_state_flag = CHI_hanoi_route_closed_state
+						}
+					}
+					random_country = {
+						#Country that had the route
+						limit = { 
+							OR = {
+								has_idea = KMT_yunnan_bahn_idea
+								has_idea = KMT_yunnan_bahn_idea_closed
+							}
+						}
+						country_event = { id = kmt_fsr.10 }
+						custom_effect_tooltip = close_hanoi_route_explanation # Prints the contents of the CHI_hanoi_route_current_level variable
+					}
+				}
+				if = {
+					limit = {
+						any_state = {
+							controller = {
+								OR = {
+									tag = FROM
+									is_puppet_of = FROM
+								}
+							}
+							has_state_flag = CHI_the_hump_closed_state
+							NOT = { has_state_flag = CHI_the_hump_closed_state }
+						}
+					}
+					hidden_effect = {
+						every_state = {
+							limit = {
+								has_state_flag = CHI_needed_for_the_hump
+								NOT = { has_state_flag = CHI_the_hump_closed_state }
+								OR = {
+									is_controlled_by = FROM
+									CONTROLLER = { is_subject_of = FROM }
+								}
+							}
+							set_state_flag = CHI_the_hump_closed_state
+						}
+					}
+					random_country = {
+						#Country that had the route
+						limit = { 
+							OR = {
+								has_idea = KMT_the_hump_idea
+								has_idea = KMT_the_hump_idea_closed
+							}
+						}
+						country_event = { id = kmt_fsr.12 }
+						custom_effect_tooltip = close_the_hump_explanation # Prints the contents of the CHI_the_hump_current_level variable
+					}
+				}
+				if = {
+					limit = {
+						any_state = {
+							controller = {
+								OR = {
+									tag = FROM
+									is_puppet_of = FROM
+								}
+							}
+							has_state_flag = CHI_needed_for_ledo_road
+							NOT = { has_state_flag = CHI_ledo_road_closed_state }
+						}
+					}
+					hidden_effect = {
+						every_state = {
+							limit = {
+								has_state_flag = CHI_needed_for_ledo_road
+								NOT = { has_state_flag = CHI_ledo_road_closed_state }
+								OR = {
+									is_controlled_by = FROM
+									CONTROLLER = { is_subject_of = FROM }
+								}
+							}
+							set_state_flag = CHI_ledo_road_closed_state
+						}
+					}
+					random_country = {
+						#Country that had the route
+						limit = { 
+							OR = {
+								has_idea = KMT_ledo_road_idea
+								has_idea = KMT_ledo_road_idea_closed
+							}
+						}
+						country_event = { id = kmt_fsr.6 }
+						custom_effect_tooltip = close_ledo_road_explanation # Prints the contents of the CHI_ledo_road_current_level variable
+					}
+				}
+				if = {
+					limit = {
+						any_state = {
+							controller = {
+								OR = {
+									tag = FROM
+									is_puppet_of = FROM
+								}
+							}
+							has_state_flag = CHI_needed_for_burma_road
+							NOT = { has_state_flag = CHI_burma_road_closed_state }
+						}
+					}
+					hidden_effect = {
+						every_state = {
+							limit = {
+								has_state_flag = CHI_needed_for_burma_road
+								NOT = { has_state_flag = CHI_burma_road_closed_state }
+								OR = {
+									is_controlled_by = FROM
+									CONTROLLER = { is_subject_of = FROM }
+								}
+							}
+							set_state_flag = CHI_burma_road_closed_state
+						}
+					}
+					random_country = {
+						limit = { 
+							OR = {
+								has_idea = KMT_burma_road_idea 
+								has_idea = KMT_burma_road_idea_closed
+							}				
+						}
+						country_event = { id = kmt_fsr.2 }
+					}
+				}
+				if = {
+					limit = {
+						ROOT = { has_volunteers_amount_from = { tag = ROOT count > 0 }}
+					}
+					recall_volunteers_from = ROOT
+				}
+				meta_effect = {
+					text = {
+						FROM = { set_country_flag = KMT_withdrew_support_from_[FromTag] }
+					}
+					FromTag = "[Root.GetTag]"
+				}
+			}
+			if = {
+				limit = {
+					any_country = { 
+						has_character = CHI_gao_zhihang
+					}
+				}
+				random_country = {
+					limit = { has_character = CHI_gao_zhihang }
+					country_event = { id = kmt.690 days = 130 }
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_war_with = PRC
+						NOT = { has_war_with = event_target:KMT_central_gov_tag }
+					}
+					PRC = { is_in_faction_with = event_target:KMT_central_gov_tag }
+					has_global_flag = KMT_PRC_coalition_gov_faction
+				}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmt.679 }}
+			}
+			if = {
+				limit = {
+					any_country = {
+						has_war_with = event_target:KMT_central_gov_tag
+						NOT = { has_war_with = PRC }
+					}
+					PRC = { is_in_faction_with = event_target:KMT_central_gov_tag }
+					has_global_flag = KMT_PRC_coalition_gov_faction
+				}
+				PRC = { country_event = { id = kmt.679 }}
+			}
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							tag = PRC
+							tag = event_target:KMT_central_gov_tag
+						}
+					}
+					PRC = { 
+						has_idea = kmt_planning_the_civil_war 
+					}
+					any_country = {
+						has_war_with = PRC
+						has_idea = KMT_chinese_matter
+					}
+					is_chinese_nations_w_HYQ = no
+				}
+				if = {
+					limit = { FROM = { tag = PRC }}
+					event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.48 }}
+				}else = {
+					PRC = { country_event = { id = kmtccw.48 }}
+				}
+			}
+			if = {
+				limit = {
+					PRC = { has_war_with = event_target:KMT_central_gov_tag }
+					NOT = { has_global_flag = PRC_restart_CHI_war }
+				}
+				set_global_flag = PRC_restart_CHI_war
+				news_event = { id = kns.49 }
+			}
+			if = {
+				limit = {
+					JAP = { has_war_with = event_target:KMT_central_gov_tag }
+					NOT = {
+						has_global_flag = CHI_warred_with_JAP
+					}
+				}
+				set_global_flag = CHI_warred_with_JAP
+			}
+			if = {
+				limit = {
+					JAP = { has_war_with = PRC }
+					NOT = {
+						has_global_flag = PRC_warred_with_JAP
+					}
+				}
+				set_global_flag = PRC_warred_with_JAP
+			}
+			if = {
+				limit = {
+					JAP = { has_war_with = SOV }
+					NOT = { has_global_flag = KMT_SOV_had_war_with_JAP }
+				}
+				set_global_flag = KMT_SOV_had_war_with_JAP
+			}
+			if = {
+				limit = {
+					GXC = { has_war_with = event_target:KMT_central_gov_tag }
+					NOT = { has_global_flag = liangguang_incident_war }
+					NOT = { has_global_flag = liangguang_solved }
+					has_global_flag = liangguang_incident
+				}
+				set_global_flag = liangguang_incident_war
+			}
+		}
+	}
+	
+	on_offer_join_faction = {
+		effect = {
+			if = {
+				limit = { 
+					has_country_flag = KMT_republic_of_china_faction 
+					is_faction_leader = yes
+					FROM = { is_chinese_nations_w_HYQ = no }
+				}
+				clr_country_flag = KMT_republic_of_china_faction
+				every_country = {
+					limit = { is_in_faction_with = ROOT }
+					set_country_flag = KMT_roc_member
+				}
+				dismantle_faction = yes
+				create_faction = KMT_nanking_pact
+				every_country = {
+					limit = { has_country_flag = KMT_roc_member }
+					ROOT = { add_to_faction = PREV }
+				}
+			}
+		}
+	}
+	
+	#ROOT is capitulated country, FROM is winner.
+	on_capitulation_immediate = {
+		effect = {
+		
+			if = {
+				limit = {
+					original_tag = JAP
+					has_civil_war = yes
+					country_exists = MCK
+					MCK = {
+						NOT = { has_war_with = ROOT }
+						OR = {
+							is_subject = no
+							is_subject_of = ROOT
+						}
+					}
+					has_global_flag = MCK_jap_subject_when_pre_emptive_coup
+				}
+				every_character = { 
+					limit = { has_character_flag = JAP_true_jap_characters }
+					set_character_flag = MCK_japanese_refugee
+					set_nationality = MCK
+				}
+				transfer_units_fraction = {
+					target = MCK
+					size = 1
+					navy_ratio = 1
+				}
+				MCK = {
+					country_event = { id = jap.251 }
+				}
+			}
+			
+			if = {
+				limit = {
+					ROOT = {
+						original_tag = PGR
+						OR = {
+							is_in_faction_with = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+						}
+					}
+				}
+				if = {
+					limit = { 
+						owns_state = 614 
+						controls_state = 614
+					}
+					614 = { set_state_flag = prevent_auto_flip_after_capitulation }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+ideas = {
+
+	country = {
+
+		GER_barbarossa_kmtmod = {
+			name = GER_barbarossa
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			picture = generic_acquire_tanks
+			
+			modifier = {
+				ai_focus_aggressive_factor = 1
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.1
+				breakthrough_bonus_against = 0.5
+				defense_bonus_against = 0.1
+			}
+
+		}
+
+	}
+
+
+
+
+}

@@ -1,0 +1,256 @@
+﻿capital = 622
+set_country_flag = KMT_is_china_tag
+save_global_event_target_as = WTT_communist_china
+set_variable = { global.PRC_expansion_ire = 0 }
+set_variable = { global.PRC_expansion_ire_from_bw = 1 }
+set_variable = { global.PRC_ire_war_cost = 200 }
+set_variable = { global.PRC_constitutional_autonomy = 0 }
+
+if = {
+	limit = { has_dlc = "La Resistance" }
+	create_intelligence_agency = { 
+	  name = "Special Operation Division" 
+	  icon = "GFX_intelligence_agency_logo_generic_9" 
+	}
+}
+
+recruit_character = PRC_mao_zedong
+recruit_character = PRC_zhang_guotao
+recruit_character = PRC_wang_ming
+recruit_character = PRC_bo_gu
+recruit_character = PRC_lin_biao
+recruit_character = PRC_zhu_de
+recruit_character = PRC_chen_yi
+recruit_character = PRC_xiao_ke
+recruit_character = PRC_peng_dehuai
+recruit_character = PRC_xu_xiangqian
+recruit_character = PRC_he_long
+recruit_character = PRC_liu_bocheng
+recruit_character = PRC_ye_jianying
+recruit_character = PRC_nie_rongzhen
+recruit_character = PRC_luo_ronghuan
+recruit_character = PRC_su_yu
+recruit_character = PRC_xu_haidong
+recruit_character = PRC_huang_kecheng
+recruit_character = PRC_chen_geng
+recruit_character = PRC_xu_guangda
+recruit_character = PRC_tan_zheng
+recruit_character = PRC_zhang_yunyi
+recruit_character = PRC_luo_ruixing
+recruit_character = PRC_wang_shusheng
+recruit_character = PRC_lin_boju
+recruit_character = PRC_zhou_enlai
+recruit_character = PRC_liu_shaoqi
+recruit_character = PRC_otto_braun
+recruit_character = PRC_gao_gang
+recruit_character = PRC_xiao_jingguang
+recruit_character = PRC_gao_qiu
+recruit_character = PRC_state_air_academy
+recruit_character = PRC_state_navy_academy
+recruit_character = PRC_deng_xiaoping
+recruit_character = PRC_kang_sheng
+recruit_character = PRC_wang_jiaxiang
+recruit_character = PRC_chen_yun
+recruit_character = PRC_zhang_wentian
+recruit_character = PRC_wm_old_guard_air
+recruit_character = PRC_wm_generic_air
+recruit_character = PRC_wm_generic_air2
+recruit_character = PRC_wm_old_guard_navy
+recruit_character = PRC_wm_generic_navy
+recruit_character = PRC_random_high_command
+
+recruit_character = PRC_fang_qiang
+recruit_character = PRC_luo_shunchu
+recruit_character = PRC_wang_hongkun
+recruit_character = PRC_chen_weiwen
+recruit_character = PRC_liu_huaqing
+recruit_character = PRC_wei_mingsen
+recruit_character = PRC_su_zhenhua
+recruit_character = PRC_ye_fei
+recruit_character = PRC_liu_daosheng
+
+recruit_character = PRC_liu_yalou
+recruit_character = PRC_xiao_hua
+
+recruit_character = ZXL_zhang_zuoxiang
+recruit_character = ZXL_tang_yulin
+
+oob = "PRC_1936"
+
+set_stability = 0.4
+
+add_offsite_building = { type = arms_factory level = 1 }
+
+set_variable = { PRC_ips_wang_support = 10 }
+set_variable = { PRC_ips_mao_support = 45 }
+set_variable = { PRC_ips_zhang_support = 40 }
+set_variable = { PRC_wang_sov_assistance = 0 }
+set_variable = { PRC_wang_purge_mao_zhang = 0 }
+add_equipment_to_stockpile = { type = infantry_equipment amount = -1000 }
+set_country_flag = PRC_zgt_dead_rip_bozo
+activate_advisor = PRC_zhang_wentian
+
+if = {
+	limit = { date < 1936.2.2 }
+	622 = {
+		start_resistance = yes
+		set_compliance = 100
+		set_resistance = 0
+		set_garrison_strength = 1.0
+	}
+
+	country_event = {
+		id = prc.203 days = 1
+	}
+
+	country_event = {
+		id = prc.343 hours = 5
+	}
+}
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	mass_assault = 1
+	pocket_defence = 1
+	defence_in_depth = 1
+	peoples_army = 1
+	human_infantry_offensive = 1
+	large_front_offensive = 1
+	human_wave_offensive = 1
+	guerilla_warfare = 1
+}
+
+add_dynamic_modifier = { modifier = PRC_long_march_debuff }
+set_variable = { PRC.PRC_long_march_debuff_base = 10 }
+
+#add_timed_idea = {
+#	days = 300
+#	idea = PRC_devastating_long_march
+#}
+
+set_cosmetic_tag = GCDguerrilla
+
+1939.1.1 = {
+	add_manpower = 100000
+	remove_mission = PRC_west_expidition_mission
+	remove_mission = PRC_west_expidition_mission
+	drop_cosmetic_tag = yes
+	set_cosmetic_tag = GCDsgn
+
+	add_political_power = 1198
+	oob = "PRC_1939"
+	#set_division_template_lock = { division_template = "Chünt'uan" is_locked = no }
+	set_country_flag = PRC_2nd_and_4th_rendezvoused
+	set_global_flag = PRC_kiangsi_guerrilla_returned 
+	set_country_flag = PRC_kiangsi_guerrilla_returned_cf
+
+	#generic focuses
+	complete_national_focus = PRC_recover_from_the_long_march
+	complete_national_focus = PRC_anti_japanese_aim
+	complete_national_focus = PRC_boost_the_morale
+	unlock_national_focus = PRC_purge_dissident_element
+	unlock_national_focus = PRC_the_grand_northwest_united_proposal
+	unlock_national_focus = PRC_lure_them_in_strategy
+	complete_national_focus = PRC_west_expedition
+	complete_national_focus = PRC_prepare_for_war
+	complete_national_focus = PRC_political_mobilisation
+	complete_national_focus = PRC_the_united_front
+	complete_national_focus = PRC_protracted_war
+	complete_national_focus = PRC_neccessary_flexibility
+	complete_national_focus = PRC_war_of_attrition
+	complete_national_focus = PRC_self_perservation
+	complete_national_focus = PRC_prepare_for_decisive_battle
+	complete_national_focus = PRC_front_line_behind_enemy_line
+	complete_national_focus = PRC_debunk_the_underestimation
+	set_country_flag = failed_exp
+	set_country_flag = PRC_initiated_west_expedition
+	clr_country_flag = PRC_allow_west_expedition
+	set_variable = { PRC_ips_wang_support = 0 }
+	set_variable = { PRC_ips_mao_support = 50 }
+	set_variable = { PRC_ips_zhang_support = -1 }
+	retire_character = PRC_zhang_guotao
+	set_country_flag = PRC_absconded
+
+	# Chinese Popular Front effects
+	add_to_war = {
+		targeted_alliance = CHI
+		enemy = JAP
+	}
+	set_country_flag = PRC_joined_CHI_against_JAP
+	remove_opinion_modifier = { target = CHI modifier = hostile_status }
+
+	add_ideas = {
+		closed_economy
+		political_mobilisation_idea
+		PRC_defeatism_2
+		#PRC_underestimation
+		PRC_guerrilla_warfare
+		PRC_lack_skilled_personnel
+		incompetent_industry_fake
+		incompetent_industry_fake_navy
+		KMT_united_front
+		KMT_lure_them_in
+	}
+
+	
+	set_technology = {
+		infantry_weapons1 = 1
+		tech_mountaineers = 1
+		tech_support = 1
+		tech_engineers = 1
+		tech_recon = 1
+		tech_field_hospital = 1
+		tech_trucks = 1
+
+		#electronics
+
+		#industry
+	}
+	
+	activate_advisor = PRC_peng_dehuai
+	deactivate_advisor = PRC_zhang_wentian
+	activate_advisor = PRC_liu_shaoqi
+	activate_advisor = PRC_wang_jiaxiang
+	activate_advisor = PRC_kang_sheng
+}
+
+set_politics = {	
+	ruling_party = communism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	communism = 100
+}
+
+1939.1.1 = {
+	set_politics = {		
+		ruling_party = communism
+		last_election = "1936.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	set_popularities = {
+		communism = 100
+	}
+}
+add_ideas = {
+	closed_economy
+	propaganda_recruits
+	PRC_defeatism_1
+	PRC_underestimation
+	PRC_guerrilla_warfare
+	PRC_lack_skilled_personnel
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	PRC_communists_bandits
+	#PRC_zhang_wentian
+}
+
+add_opinion_modifier = { target = CHI modifier = hostile_status }
+
+
+set_research_slots = 1

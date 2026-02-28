@@ -1,0 +1,460 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = { 
+	name = GetKwangtung
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_kwangtung_postal
+	}
+	text = {
+		localization_key = KMT_kwangtung_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetKwangsi
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_kwangsi_postal
+	}
+	text = {
+		localization_key = KMT_kwangsi_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetYunan
+	text = {
+		localization_key = KMT_yunnan
+	}
+}
+
+defined_text = { 
+	name = GetFukien
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_fukien_postal
+	}
+	text = {
+		localization_key = KMT_fukien_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetChekiang
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_chekiang_postal
+	}
+	text = {
+		localization_key = KMT_chekiang_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetHunan
+	text = {
+		localization_key = KMT_hunan
+	}
+}
+
+defined_text = { 
+	name = GetKweichow
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_kweichow_postal
+	}
+	text = {
+		localization_key = KMT_kweichow_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetHupeh
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_hupeh_postal
+	}
+	text = {
+		localization_key = KMT_hupeh_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetAnhwei
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_anhwei_postal
+	}
+	text = {
+		localization_key = KMT_anhwei_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetKiangsu
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_kiangsu_postal
+	}
+	text = {
+		localization_key = KMT_kiangsu_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetKiangsi
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_kiangsi_postal
+	}
+	text = {
+		localization_key = KMT_kiangsi_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetHonan
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_honan_postal
+	}
+	text = {
+		localization_key = KMT_honan_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetShansi
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_shansi_postal
+	}
+	text = {
+		localization_key = KMT_shansi_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetShensi
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_shensi_postal
+	}
+	text = {
+		localization_key = KMT_shensi_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetSzechwan
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_szechwan_postal
+	}
+	text = {
+		localization_key = KMT_szechwan_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetSikang
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_sikang_postal
+	}
+	text = {
+		localization_key = KMT_sikang_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetTsinghai
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_tsinghai_postal
+	}
+	text = {
+		localization_key = KMT_tsinghai_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetKansu
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_kansu_postal
+	}
+	text = {
+		localization_key = KMT_kansu_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetNingsia
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_ningsia_postal
+	}
+	text = {
+		localization_key = KMT_ningsia_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetHopeh
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_hopeh_postal
+	}
+	text = {
+		localization_key = KMT_hopeh_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetShantung
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_shantung_postal
+	}
+	text = {
+		localization_key = KMT_shantung_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetJehol
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_jehol_postal
+	}
+	text = {
+		localization_key = KMT_jehol_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetLiaopeh
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_liaopeh_postal
+	}
+	text = {
+		localization_key = KMT_liaopeh_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetKirin
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_kirin_postal
+	}
+	text = {
+		localization_key = KMT_kirin_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetAntung
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_antung_postal
+	}
+	text = {
+		localization_key = KMT_antung_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetSungkiang
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_sungkiang_postal
+	}
+	text = {
+		localization_key = KMT_sungkiang_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetHokiang
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_hokiang_postal
+	}
+	text = {
+		localization_key = KMT_hokiang_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetHeilungkiang
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_heilungkiang_postal
+	}
+	text = {
+		localization_key = KMT_heilungkiang_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetNunkiang
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_nunkiang_postal
+	}
+	text = {
+		localization_key = KMT_nunkiang_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetSinan
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_sinan_postal
+	}
+	text = {
+		localization_key = KMT_sinan_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetLiaoning
+	text = {
+		localization_key = KMT_liaoning
+	}
+}
+
+defined_text = { 
+	name = GetSuiyuan
+	text = {
+		localization_key = KMT_suiyuan
+	}
+}
+
+defined_text = { 
+	name = GetTaiwan
+	text = {
+		localization_key = KMT_taiwan
+	}
+}
+
+defined_text = { 
+	name = GetMongolia
+	text = {
+		localization_key = KMT_mongolia
+	}
+}
+
+defined_text = { 
+	name = GetTibet
+	text = {
+		localization_key = KMT_tibet
+	}
+}
+
+defined_text = { 
+	name = GetEastTurkestan
+	text = {
+		localization_key = KMT_east_turkestan
+	}
+}
+
+defined_text = { 
+	name = GetSinkiang
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_sinkiang_postal
+	}
+	text = {
+		localization_key = KMT_sinkiang_pinyin
+	}
+}
+
+defined_text = { 
+	name = GetCharhar
+	text = {
+		localization_key = KMT_charhar
+	}
+}
+
+defined_text = {
+	name = GetRegion145Name
+	text = {
+		trigger = { has_global_flag = R145_eturkestan }
+		localization_key = "[This.GetEastTurkestan]"
+	}
+	text = {
+		localization_key = "[This.GetSinkiang]"
+	}
+}

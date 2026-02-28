@@ -1,0 +1,74 @@
+﻿capital = 605
+set_country_flag = KMT_is_china_tag
+
+oob = "SCC_1936"
+
+recruit_character = SCC_liu_xiang
+recruit_character = SCC_deng_xihou
+recruit_character = SCC_sun_zhen
+recruit_character = SCC_tang_shizun
+recruit_character = SCC_pan_wenhua
+recruit_character = SCC_deng_hanxiang
+recruit_character = SCC_liu_hangshen
+recruit_character = SCC_gan_jieyong
+recruit_character = SCC_zhong_tiqian
+recruit_character = SCC_fu_chang
+recruit_character = SCC_li_jiayu
+recruit_character = SCC_yang_sen
+recruit_character = SCC_wang_zuanxu
+recruit_character = SCC_tian_song_yao
+
+SCC_liu_xiang = { set_character_flag = PRC_potential_defectors }
+SCC_deng_xihou = { set_character_flag = PRC_potential_defectors }
+SCC_sun_zhen = { set_character_flag = PRC_potential_defectors }
+SCC_tang_shizun = { set_character_flag = PRC_potential_defectors }
+SCC_pan_wenhua = { set_character_flag = PRC_potential_defectors }
+
+SCC_liu_xiang = { set_character_flag = KMT_hyq_flag }
+SCC_deng_xihou = { set_character_flag = KMT_hyq_flag }
+
+every_character = { set_character_flag = KMT_real_character }
+
+set_technology = {
+	infantry_weapons = 1
+	mass_assault = 1
+	basic_train = 1
+}
+
+add_ideas = {
+	limited_exports
+	limited_conscription
+	war_economy
+}
+
+add_ideas = {
+	public_iliteracy
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	cg_warlords
+	KMT_weak_army
+	KMT_corrupted_government
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 100
+}
+
+set_country_flag = is_warlords
+
+1939.1.1 = {
+
+
+	retire_character = SCC_liu_xiang
+	SCC_deng_xihou = { set_nationality = CHI }
+	SCC_sun_zhen = { set_nationality = CHI }
+	SCC_tang_shizun = { set_nationality = CHI }
+	SCC_pan_wenhua = { set_nationality = CHI }
+}

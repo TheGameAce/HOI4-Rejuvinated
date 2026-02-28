@@ -1,0 +1,262 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+		
+cu_warlords_count = {
+
+	enable = { 
+		tag = event_target:KMT_central_gov_tag
+	}
+	
+	remove_trigger = { 
+		NOT = { tag = event_target:KMT_central_gov_tag }
+	}
+	
+	political_power_cost = global.KMT_warlord_pp_cost_mod #0.8
+	stability_factor = global.KMT_warlord_stability_mod #-0.45
+	defensive_war_stability_factor = global.KMT_warlord_defensive_stab_mod #0.25
+	conscription_factor = global.KMT_warlord_conscription_factor_mod #-0.04 base
+}
+		
+KMT_cg_modifier = {
+
+	enable = { 
+		tag = event_target:KMT_central_gov_tag
+	}
+	
+	remove_trigger = { 
+		NOT = { tag = event_target:KMT_central_gov_tag }
+	}
+	
+	stability_factor = global.KMT_ps_cg_stability_bonus
+	political_power_factor = global.KMT_ps_cg_ppfactor_bonus
+}
+
+KMT_unideal_resistance_holdout = {
+	enable = { 
+		always = yes
+	}
+	
+	remove_trigger = { 
+		always = no
+	}
+
+	icon = GFX_occupation_supresion_icon
+	
+	resistance_target = -0.15
+	resistance_growth = -0.95
+}
+
+KMT_japanese_rule_in_taiwan = {
+	enable = { 
+		always = yes
+	}
+	
+	remove_trigger = { 
+		always = no
+	}
+
+	icon = GFX_occupation_supresion_icon
+	
+	resistance_target = -0.05
+	resistance_growth = -0.5
+}
+
+KMT_player_japan_buff = {
+	enable = { 
+		has_war_with = JAP
+		difficulty > 1
+		JAP = {
+			is_ai = no
+		}
+		is_ai = yes
+	}
+	
+	remove_trigger = { 
+		always = no
+	}
+	
+	army_core_defence_factor = 0.3
+	army_org_factor = 0.35
+	army_morale_factor = 0.3
+	out_of_supply_factor = -1
+}
+
+JAP_ai_small_army = {
+	enable = { 
+		has_war = no
+		date < 1940.5.5
+	}
+	
+	remove_trigger = { 
+		OR = {
+			has_war = yes
+			any_country = { 
+				is_chinese_nations_w_HYQ = yes
+				ROOT = { has_wargoal_against = PREV }
+			}
+			date > 1940.5.5
+			AND = {
+				CHI = { is_ai = no }
+				difficulty > 2
+			}
+		}
+	}
+	
+	ai_desired_divisions_factor = -25
+}
+
+SHX_suiyuan_campagin_bruteforce_historical_dm = {
+	enable = {
+		has_border_war = yes
+	}
+	
+	remove_trigger = {
+		OR = {
+			has_war = yes
+			is_historical_focus_on = no
+		}
+	}
+	
+	land_reinforce_rate = 10
+	army_defence_factor = 1
+}
+
+KMT_supply_range_test = {
+	enable = {
+		always = yes
+	}
+	
+	remove_trigger = {
+		always = no
+	}
+	
+	supply_node_range = -10
+}
+
+KMT_supply_range_test2 = {
+	enable = {
+		always = yes
+	}
+	
+	remove_trigger = {
+		always = no
+	}
+	
+	supply_node_range = 10
+}
+
+KMT_battle_of_shanghai = {
+	icon = GFX_modifiers_generic_military_plans
+	
+	remove_trigger = {
+		CONTROLLER = { 
+			OWNER = { has_war_with = PREV }
+		}
+	}
+	
+	army_defence_factor = 0.05
+	land_reinforce_rate = 0.02
+	army_morale_factor = 0.05
+}
+
+KMT_ccw_manchuria_hostility = {
+	icon = GFX_modifiers_generic_military_plans
+	
+	remove_trigger = {
+		OWNER = { NOT = { has_idea = KMT_ccw_ceasefire }}
+	}
+	
+	army_attack_factor = 1
+	breakthrough_factor = 2
+	army_speed_factor = -1
+}
+
+KMT_ccw_ceasefire_state_dm = {
+	icon = GFX_modifiers_conscription_exemptions_granted
+	
+	remove_trigger = {
+		OWNER = { NOT = { has_idea = KMT_ccw_ceasefire }}
+	}
+	
+	army_attack_factor = -2
+	breakthrough_factor = -2
+	army_speed_factor = -1
+}
+
+KMT_reorganised_army = {
+	icon = "GFX_idea_generic_infantry_bonus"
+	
+	army_attack_factor = KMT_reorganised_army_att
+	army_defence_factor = KMT_reorganised_army_def
+	breakthrough_factor = KMT_reorganised_army_breakthru
+	army_org_factor = KMT_reorganised_army_org
+	army_morale_factor = KMT_reorganised_army_morale
+	land_reinforce_rate = KMT_reorganised_army_reinforce_rate
+}
+
+KMT_bop_dm = {
+
+	remove_trigger = {
+		NOT = {
+			has_power_balance = {
+				id = KMTPRC_coalition_government
+			}
+		}
+	}
+	
+	political_power_gain = KMT_bop_political_power_gain
+	stability_factor = KMT_bop_stability_factor
+	war_support_factor = KMT_bop_war_support_factor
+	communism_drift = KMT_bop_communism_drift
+	drift_defence_factor = KMT_bop_drift_defense_factor
+}
+
+PRC_bop_dm = {
+
+	remove_trigger = {
+		NOT = {
+			has_power_balance = {
+				id = KMTPRC_coalition_government
+			}
+		}
+	}
+	
+	political_power_gain = PRC_bop_political_power_gain
+	war_stability_factor = PRC_bop_war_stability_factor
+	war_support_factor = PRC_bop_war_support_factor
+	army_morale_factor = PRC_bop_army_morale_factor
+	conscription_factor = PRC_bop_conscription_factor
+	mobilization_speed = PRC_bop_mobilization_speed
+	training_time_factor = PRC_bop_training_time_factor
+}
+
+KMT_changsha_fire = {
+	icon = GFX_decision_generic_scorched_earth
+	state_repair_speed_supply_node_factor = -10
+	state_production_speed_supply_node_factor = -10
+	custom_modifier_tooltip = KMT_supply_node_damage_tt
+}

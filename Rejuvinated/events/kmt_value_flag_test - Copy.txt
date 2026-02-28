@@ -1,0 +1,167 @@
+﻿add_namespace = test_s
+
+country_event = {
+	id = test_s.1
+	title = test_s.1.t
+	desc = test_s.1.d
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	option = { 
+		if = {
+			limit = {
+				event_target:KMT_central_gov_tag = { has_war_with = PRC }
+				has_global_flag = PRC_restart_CHI_war
+				NOT = { has_global_flag = status_quo_fired }
+				#OR = {
+				#	NOT = { has_global_flag = status_quo_event_wait_duration }
+				#	has_global_flag = {
+				#		flag = status_quo_event_wait_duration
+				#		days > 800
+				#	}
+				#}
+			}
+			custom_effect_tooltip = "Status quo pre true"
+			clear_array = PRC.KMT_civil_war_controlled_province
+			clear_array = KMT_central_gov_tag.KMT_civil_war_controlled_province
+			for_each_loop = {
+				array = global.KMT_province_array
+				
+				if = {
+					limit = { 
+						any_country = {
+							OR = {
+								tag = PRC
+								is_subject_of = PRC
+								is_in_faction_with = PRC
+							}
+							controls_province = v
+						}
+					}
+					add_to_array = { PRC.KMT_civil_war_controlled_province = v }
+					log = "[?v] is controlled by ccp"
+				}
+				
+				if = {
+					limit = { 
+						any_country = {
+							OR = {
+								tag = event_target:KMT_central_gov_tag
+								is_subject_of = event_target:KMT_central_gov_tag
+								is_in_faction_with = event_target:KMT_central_gov_tag
+							}
+							controls_province = v
+						}
+					}
+					add_to_array = { KMT_central_gov_tag.KMT_civil_war_controlled_province = v }
+					log = "[?v] is controlled by kmt"
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = test_s.2
+	title = test_s.1.t
+	desc = test_s.1.d
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_global_flag = KMT_no_status_quo
+		for_each_loop = {
+			array = PRC.KMT_civil_war_controlled_province
+			
+			if = {
+				limit = {
+					any_country = {
+						NOT = {
+							tag = PRC
+							is_subject_of = PRC
+							is_in_faction_with = PRC
+						}
+						controls_province = v
+					}
+				}
+				log = "[?v] is acquired by kmt"
+				set_global_flag = KMT_no_status_quo
+				set_variable = { break = 1 }
+			}
+		}
+		if = {
+			limit = { NOT = { has_global_flag = KMT_no_status_quo }}
+			for_each_loop = {
+				array = KMT_central_gov_tag.KMT_civil_war_controlled_province
+				
+				if = {
+					limit = {
+						any_country = {
+							NOT = {
+								tag = event_target:KMT_central_gov_tag
+								is_subject_of = event_target:KMT_central_gov_tag
+								is_in_faction_with = event_target:KMT_central_gov_tag
+							}
+							controls_province = v
+						}
+					}
+					log = "[?v] is acquired by ccp"
+					set_global_flag = KMT_no_status_quo
+					set_variable = { break = 1 }
+				}
+			}
+		}
+	}
+	
+	option = { 
+		if = {
+			limit = {
+				has_global_flag = KMT_no_status_quo
+			}
+			custom_effect_tooltip = "Status Quo true"
+		}
+		if = {
+			limit = {
+				NOT = { has_global_flag = KMT_no_status_quo }
+			}
+			custom_effect_tooltip = "Status Quo false"
+		}
+	}
+}
+country_event = {
+	id = test_s.3
+	title = test_s.1.t
+	desc = test_s.1.d
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		for_each_loop = {
+			array = researched_techs
+			
+			log = "[?v]"
+		}
+	}
+	
+	option = { 
+	}
+}
+
+country_event = {
+	id = test_s.4
+	title = test_s.1.t
+	desc = "[From.GetName] [From.From.GetName]"
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = { 
+	}
+}

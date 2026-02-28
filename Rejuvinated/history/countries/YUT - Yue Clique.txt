@@ -1,0 +1,129 @@
+﻿capital = 592
+set_country_flag = KMT_is_china_tag
+
+oob = "YUT_1936"
+
+recruit_character = YUT_chen_jitang
+recruit_character = YUT_yu_hanmou
+recruit_character = YUT_zhang_fakui
+recruit_character = YUT_hu_hanmin
+recruit_character = YUT_li_jishen
+recruit_character = YUT_lin_yizhong
+recruit_character = YUT_feng_zhuwan
+recruit_character = YUT_xu_heng
+recruit_character = YUT_zhou_baoheng
+recruit_character = YUT_huang_zhenqiu
+recruit_character = YUT_ye_zhao
+recruit_character = YUT_deng_shizeng
+recruit_character = YUT_liu_guangkai
+recruit_character = YUT_cai_tingkai
+recruit_character = YUT_huang_guangrui
+recruit_character = YUT_feng_qicong
+
+every_character = { set_character_flag = KMT_real_character }
+country_event = { id = jyutgwai.1 days = 152 }
+
+YUT_chen_jitang = { set_character_flag = KMT_hyq_flag }
+
+set_technology = {
+	infantry_weapons = 1
+	early_fighter = 1
+	mass_assault = 1
+	basic_train = 1
+}
+
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_naval_oob = "YUT_1936_naval_mtg"
+	else = {
+		set_naval_oob = "YUT_1936_naval_legacy"
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_naval_mines = 1
+		basic_battery = 1
+		#basic_secondary_battery = 1
+		basic_torpedo = 1
+		coastal_defense_ships = 1
+	}
+}
+
+add_ideas = {
+	public_iliteracy
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	YUT_hu_hanwen
+	cg_warlords
+	limited_exports
+	limited_conscription
+	KMT_corrupted_government
+	KMT_weak_army
+}
+
+set_convoys = 50
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 100
+}
+
+
+set_country_flag = is_warlords
+1939.1.1 = {
+	
+	retire_character = YUT_chen_jitang
+	retire_character = YUT_hu_hanmin
+	
+	YUT_yu_hanmou = { set_nationality = CHI }
+	YUT_zhang_fakui = { set_nationality = CHI }
+	YUT_huang_guangrui = { set_nationality = CHI }
+	YUT_chen_ce = { set_nationality = CHI }
+}
+if = {
+	limit = { has_dlc = "Man the Guns" } 
+	create_equipment_variant = {
+		name = "Hoi Chow Class"
+		type = ship_hull_light_1
+		name_group = CHI_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			mid_1_custom_slot = ship_mine_sweeper_1
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "Kwong Chin Class"
+		type = ship_hull_light_1
+		name_group = CHI_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+}

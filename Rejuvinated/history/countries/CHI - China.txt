@@ -1,0 +1,800 @@
+﻿capital = 613 # Nanjing
+
+set_country_flag = KMT_is_china_tag
+
+recruit_character = CHI_chiang_kaishek
+recruit_character = CHI_huang_qixiang
+recruit_character = KMT_chen_duxiu
+recruit_character = CHI_wang_jingwei
+recruit_character = CHI_xu_fulin
+recruit_character = CHI_ju_zheng
+recruit_character = CHI_yan_jiagan
+recruit_character = CHI_chiang_chingkuo
+recruit_character = CHI_he_zhonghan
+recruit_character = CHI_dai_li
+recruit_character = CHI_hu_shih
+recruit_character = CHI_dai_anlan
+recruit_character = CHI_wang_yaowu
+recruit_character = CHI_hu_zongnan
+recruit_character = CHI_he_yingqin
+recruit_character = CHI_chen_cheng
+recruit_character = CHI_chiang_weiguo
+recruit_character = CHI_wei_lihuang
+recruit_character = CHI_gu_zhutong
+recruit_character = CHI_sun_lianzhong
+recruit_character = CHI_zhang_lingfu
+recruit_character = CHI_xiong_shihui
+recruit_character = CHI_lu_zhonglin
+recruit_character = CHI_jiang_dingwen
+recruit_character = CHI_xu_yuanquan
+recruit_character = CHI_he_chengjun
+recruit_character = CHI_liu_zhi
+recruit_character = CHI_zhu_shaoliang
+recruit_character = CHI_chen_shaokuan
+recruit_character = CHI_wang_shuming
+recruit_character = CHI_zhou_zhirou
+recruit_character = CHI_gao_zhihang
+recruit_character = CHI_xiao_yisu
+recruit_character = KMT_chen_lifu
+recruit_character = KMT_soong_tv
+recruit_character = KMT_soong_ml
+recruit_character = KMT_hhk
+recruit_character = KMT_vkk
+recruit_character = KMT_fsn
+recruit_character = KMT_zhang_qun
+recruit_character = KMT_dong_xianguang
+recruit_character = CHI_du_yuming
+recruit_character = CHI_sun_lijen
+recruit_character = CHI_xue_yue
+recruit_character = KMT_falkenhausen
+recruit_character = CHI_shen_honglie
+recruit_character = YUT_chen_ce
+recruit_character = CHI_lin_sen
+recruit_character = CHI_feng_yuxiang
+
+recruit_character = CHI_shi_yousan
+recruit_character = CHI_wu_huawen
+recruit_character = CHI_zhang_lanfeng
+recruit_character = CHI_hao_pengju
+recruit_character = KMT_zhou_fohai
+recruit_character = KMT_li_shiqun
+recruit_character = KMT_chen_bijun
+recruit_character = KMT_chu_minyi
+recruit_character = KMT_chen_gongbo
+recruit_character = KMT_ren_yuandao
+recruit_character = KMT_yang_kuiyi
+recruit_character = KMT_xiao_shuxuan
+recruit_character = KMT_hu_yukun
+recruit_character = KMT_bao_wenyue
+recruit_character = CHI_sun_liancheng
+
+CHI_wang_jingwei = { set_character_flag = WJW_potential_defectors }
+CHI_shi_yousan = { set_character_flag = WJW_potential_defectors }
+CHI_wu_huawen = { set_character_flag = WJW_potential_defectors }
+CHI_zhang_lanfeng = { set_character_flag = WJW_potential_defectors }
+CHI_hao_pengju = { set_character_flag = WJW_potential_defectors }
+KMT_zhou_fohai = { set_character_flag = WJW_potential_defectors }
+KMT_li_shiqun = { set_character_flag = WJW_potential_defectors }
+KMT_chen_bijun = { set_character_flag = WJW_potential_defectors }
+KMT_chu_minyi = { set_character_flag = WJW_potential_defectors }
+KMT_chen_gongbo = { set_character_flag = WJW_potential_defectors }
+KMT_ren_yuandao = { set_character_flag = WJW_potential_defectors }
+KMT_yang_kuiyi = { set_character_flag = WJW_potential_defectors }
+KMT_xiao_shuxuan = { set_character_flag = WJW_potential_defectors }
+KMT_hu_yukun = { set_character_flag = WJW_potential_defectors }
+CHI_sun_liancheng = { set_character_flag = WJW_potential_defectors }
+KMT_bao_wenyue = { set_character_flag = WJW_potential_defectors }
+
+CHI_feng_yuxiang = { set_character_flag = PRC_potential_defectors }
+CHI_sun_liancheng = { set_character_flag = PRC_potential_defectors }
+KMT_bao_wenyue = { set_character_flag = PRC_potential_defectors }
+CHI_zhang_lanfeng = { set_character_flag = PRC_potential_defectors }
+CHI_hao_pengju = { set_character_flag = PRC_potential_defectors }
+CHI_shi_yousan = { set_character_flag = PRC_potential_defectors }
+CHI_wu_huawen = { set_character_flag = PRC_potential_defectors }
+CHI_lu_zhonglin = { set_character_flag = PRC_potential_defectors }
+
+CHI_dai_li = { set_character_flag = KMT_hyq_flag }
+CHI_he_zhonghan = { set_character_flag = KMT_hyq_flag }
+CHI_hu_zongnan = { set_character_flag = KMT_hyq_flag }
+CHI_he_yingqin = { set_character_flag = KMT_hyq_flag }
+CHI_chen_cheng = { set_character_flag = KMT_hyq_flag }
+CHI_zhang_lingfu = { set_character_flag = KMT_hyq_flag }
+CHI_xiong_shihui = { set_character_flag = KMT_hyq_flag }
+KMT_dong_xianguang = { set_character_flag = KMT_hyq_flag }
+CHI_chen_shaokuan = { set_character_flag = KMT_hyq_flag }
+CHI_zhu_shaoliang = { set_character_flag = KMT_hyq_flag }
+CHI_xu_yuanquan = { set_character_flag = KMT_hyq_flag }
+CHI_jiang_dingwen = { set_character_flag = KMT_hyq_flag }
+CHI_lu_zhonglin = { set_character_flag = KMT_hyq_flag }
+CHI_liu_zhi = { set_character_flag = KMT_hyq_flag }
+CHI_du_yuming = { set_character_flag = KMT_hyq_flag }
+CHI_dai_anlan = { set_character_flag = KMT_hyq_flag }
+CHI_wang_yaowu = { set_character_flag = KMT_hyq_flag }
+CHI_wei_lihuang = { set_character_flag = KMT_hyq_flag }
+CHI_gu_zhutong = { set_character_flag = KMT_hyq_flag }
+
+
+add_command_power = 200
+
+promote_character = {
+	character = CHI_he_zhonghan
+	ideology = fascism_ideology
+}
+
+promote_character = {
+	character = CHI_hu_shih
+	ideology = liberalism
+}
+
+every_character = { set_character_flag = KMT_real_character }
+
+oob = "CHI_1936"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "CHI_1936_naval_mtg"
+	else = {
+		set_naval_oob = "CHI_1936_naval_legacy"
+	}
+}
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "CHI_1936_air_bba"
+		set_technology = {
+			iw_small_airframe = 1
+			basic_small_airframe = 1
+		}
+	else = {
+		set_air_oob = "CHI_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			early_bomber = 1
+		}
+	}
+}
+puppet = ZXL
+puppet = XIA
+if = {
+	limit = { has_dlc = "La Resistance" }
+	create_intelligence_agency = { 
+	  name = "B.I.S." 
+	  icon = "GFX_intelligence_agency_logo_chi" 
+	}
+}
+country_event = { id = kmt.637 days = 1 }
+country_event = { id = jap.67 days = 54 }
+country_event = { id = kmt.686 days = 157 }
+country_event = { id = kmt.681 days = 317 }
+set_variable = { KMT_presidential_support = 10 }
+save_global_event_target_as = KMT_central_gov_tag
+save_global_event_target_as = KMT_president_elect_tag
+save_global_event_target_as = WTT_current_china_leader
+set_global_flag = KMT_mod_enabled
+set_global_flag = KMT_first_chinese_civil_war
+add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 10 producer = GER }
+add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 20 producer = ENG }
+add_equipment_to_stockpile = { type = infantry_equipment_0 amount = 6000 producer = CHI }
+add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 200 producer = GER }
+add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 10 producer = ITA }
+add_equipment_to_stockpile = { type = support_equipment_1 amount = 1000 producer = GER }
+add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 500 }
+diplomatic_relation = { country = SHX relation = military_access active = yes }
+diplomatic_relation = { country = SCC relation = military_access active = yes }
+diplomatic_relation = { country = SKC relation = military_access active = yes }
+if = { limit = { has_start_date < 1936.5.1 } activate_mission = KMT_zhushao_segment}
+1937.12.14 = {
+	diplomatic_relation = { country = PGR relation = guarantee active = no }
+	PGR = {
+		diplomatic_relation = { country = ROOT relation = guarantee active = no }
+	}
+}
+
+326 = {
+	add_dynamic_modifier = { modifier = KMT_unideal_resistance_holdout }
+}
+728 = {
+	add_dynamic_modifier = { modifier = KMT_unideal_resistance_holdout }
+}
+729 = {
+	add_dynamic_modifier = { modifier = KMT_unideal_resistance_holdout }
+}
+745 = {
+	add_dynamic_modifier = { modifier = KMT_unideal_resistance_holdout }
+}
+524 = {
+	add_dynamic_modifier = { modifier = KMT_japanese_rule_in_taiwan }
+}
+
+set_stability = 0
+set_war_support = 0.5
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	interwar_antiair = 1
+	mass_assault = 1
+	gw_artillery = 1
+	tech_support = 1
+	tech_recon = 1
+	tech_engineers = 1
+	tech_mountaineers = 1
+	support_weapons = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+	}
+	else = {
+		set_technology = {
+			gwtank = 1
+		}
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		basic_depth_charges = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		basic_battery = 1
+		basic_medium_battery = 1
+		#basic_secondary_battery = 1
+		basic_torpedo = 1
+		coastal_defense_ships = 1
+	}
+}
+set_party_name = { ideology = fascism long_name = KMT_blueshirt name = KMT_blueshirt }
+set_country_flag = KMT_central_gov_tag_flag
+capital_scope = {
+	set_state_flag = KMT_central_gov_capital
+	save_global_event_target_as = KMT_central_gov_capital_state
+}
+set_party_name = { ideology = communism long_name = KMT_CPWDP_long name = KMT_CPWDP }
+
+add_ideas = {
+	german_advisors
+	public_iliteracy
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	KMT_weak_army
+	#KMT_falkenhausen
+	KMT_corrupted_government
+	KMT_soong_tv
+	KMT_hhk
+}
+
+add_opinion_modifier = { target = PRC modifier = hostile_status }
+add_opinion_modifier = { target = JAP modifier = hostile_status }
+JAP = {
+	add_opinion_modifier = { target = CHI modifier = hostile_status }
+}
+add_opinion_modifier = { target = GER modifier = sino_german_cooperation }
+GER = {
+	add_opinion_modifier = { target = CHI modifier = sino_german_cooperation }
+}
+
+set_convoys = 40
+
+1936.12.24 = {
+	clr_global_flag = KMT_first_chinese_civil_war
+	set_global_flag = KMT_xian_incident_fired
+}
+
+1939.1.1 = {
+	end_puppet = ZXL
+	set_global_flag = PRC_yes_truce
+	log = "[GetDate]: [Root.GetName] PRC_yes_truce"
+	set_variable = { global.PRC_past_month_ire = global.PRC_expansion_ire }
+	set_global_flag = KMT_sino_soviet_neutrality
+	set_global_flag = KMT_fusze_to_yenan
+	set_global_flag = KMT_JAP_troops_in_shanghai
+
+	retire_character = CHI_gao_zhihang
+
+	add_political_power = 150
+	
+	complete_national_focus = KMT_internal_stability
+	complete_national_focus = KMT_preparation 
+	complete_national_focus = KMT_national_defense_council
+	complete_national_focus = KMT_industrial_effort
+	complete_national_focus = KMT_the_big_rear_concept
+	unlock_national_focus = KMT_lure_them_in_strategy
+	complete_national_focus = KMT_invite_foreign_investors
+	
+	unlock_national_focus = KMT_increase_sino_german_cooperation
+	unlock_national_focus = KMT_sino_soviet_non_agression_pact
+	set_global_flag = KMT_SOV_agreed_to_assist
+	set_naval_oob = "CHI_1939_naval"
+	SOV = {
+		add_opinion_modifier = {
+			modifier = KMT_offered_assistance
+			target = CHI
+		}
+		diplomatic_relation = {
+			country = CHI
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_relation_modifier = {
+			modifier = KMT_industrial_assistance
+			target = CHI
+		}			
+	}
+	add_opinion_modifier = {
+		modifier = KMT_offered_assistance
+		target = SOV
+	}
+	diplomatic_relation = {
+		country = SOV
+		relation = non_aggression_pact
+		active = yes
+	}
+	unlock_national_focus = KMT_closer_tie_with_fra
+	set_global_flag = KMT_FRA_agreed_to_assist
+	FRA = {
+		add_opinion_modifier = {
+			modifier = KMT_offered_assistance
+			target = CHI
+		}
+		diplomatic_relation = {
+			country = CHI
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_relation_modifier = {
+			modifier = KMT_industrial_assistance
+			target = CHI
+		}			
+	}
+	add_opinion_modifier = {
+		modifier = KMT_offered_assistance
+		target = FRA
+	}
+	diplomatic_relation = {
+		country = FRA
+		relation = non_aggression_pact
+		active = yes
+	}
+	unlock_national_focus = KMT_closer_tie_with_eng
+	unlock_national_focus = KMT_pursuade_britain
+	set_global_flag = KMT_ENG_agreed_to_assist
+	ENG = {
+		add_opinion_modifier = {
+			modifier = KMT_offered_assistance
+			target = CHI
+		}
+		diplomatic_relation = {
+			country = CHI
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_relation_modifier = {
+			modifier = KMT_industrial_assistance
+			target = CHI
+		}			
+	}
+	add_opinion_modifier = {
+		modifier = KMT_offered_assistance
+		target = ENG
+	}
+	diplomatic_relation = {
+		country = ENG
+		relation = non_aggression_pact
+		active = yes
+	}
+	unlock_national_focus = KMT_closer_tie_with_usa
+	set_global_flag = KMT_USA_agreed_to_assist
+	USA = {
+		add_opinion_modifier = {
+			modifier = KMT_offered_assistance
+			target = CHI
+		}
+		diplomatic_relation = {
+			country = CHI
+			relation = non_aggression_pact
+			active = yes
+		}
+		add_relation_modifier = {
+			modifier = KMT_industrial_assistance
+			target = CHI
+		}			
+	}
+	add_opinion_modifier = {
+		modifier = KMT_offered_assistance
+		target = USA
+	}
+	diplomatic_relation = {
+		country = USA
+		relation = non_aggression_pact
+		active = yes
+	}
+	
+	complete_national_focus = KMT_the_burma_road
+	complete_national_focus = KMT_yunnan_bahn
+	complete_national_focus = KMT_hire_chennault
+	complete_national_focus = KMT_the_international_squadron
+	
+	remove_ideas = {
+		german_advisors
+		#KMT_falkenhausen
+	}
+	
+	remove_opinion_modifier = {
+		modifier = sino_german_cooperation
+		target = GER
+	}
+	GER = {
+		remove_opinion_modifier = {
+			modifier = sino_german_cooperation
+			target = CHI
+		}
+	}
+
+	add_ideas = {
+		#laws
+		KMT_corrupted_government_wartime
+		service_by_requirement
+		closed_economy
+
+		#ministers
+		KMT_soong_ml
+		KMT_soong_tv
+		CHI_KMT_li_zongren
+		CHI_xiao_yisu
+		Hanyang_armory
+		CHI_chen_shaokuan
+		KMT_warlord_cliques_war
+		KMT_united_front
+		KMT_lure_them_in
+		#KMT_chennault_air_chief
+	}
+	
+	set_global_flag = CHI_warred_with_JAP
+	set_global_flag = fall_of_beijing_jap
+	set_global_flag = fall_of_nanjing
+	set_global_flag = KMT_united_front_enabled
+	set_global_flag = fall_of_shanghai_jap
+	set_country_flag = artefacts_evacuated
+	#set_country_flag = shx_sumitted
+	set_country_flag = sdc_sumitted
+	set_country_flag = scc_sumitted
+	set_country_flag = yut_sumitted
+	set_country_flag = zxl_sumitted
+	create_faction = chinese_united_front
+	add_to_faction = PRC
+	add_to_faction = XSM
+	add_to_faction = GXC
+	add_to_faction = YUN
+	add_to_faction = XIA
+	add_to_faction = SKC
+	add_to_faction = NSM
+	add_to_faction = SHX
+	remove_opinion_modifier = { target = PRC modifier = hostile_status }
+	#load_oob = "CHI_united_front"
+	set_global_flag = CHI_unite
+	oob = "CHI_1939"
+	set_global_flag = huayuankou_destroyed 
+	activate_advisor = CHI_KMT_li_zongren
+	
+	set_technology = {
+
+		#PLACEHOLDER techs for vehicles
+		tech_support = 1		
+		tech_recon = 1
+		tech_engineers = 1
+
+		#doctrines
+		air_superiority = 1
+		pocket_defence = 1
+		defence_in_depth = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+		basic_encryption = 1
+		basic_decryption = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+		dispersed_industry3 = 1
+	}
+	
+	activate_advisor = KMT_soong_ml
+	if = {
+		limit = {
+			has_dlc = "No Step Back"
+		}
+		create_equipment_variant = {
+			name = "Type 94 Tankette"
+			type = light_tank_chassis_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_heavy_machine_gun
+				turret_type_slot = tank_light_one_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 1
+				tank_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_gwtank_medium"
+		}
+	}
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 1
+	fascism = 4
+	communism = 1
+	neutrality = 94
+}
+
+1939.1.1 = {
+	set_popularities = {
+		democratic = 1
+		fascism = 4
+		communism = 1
+		neutrality = 94
+	}
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1936.1.1"
+		election_frequency = 72
+		elections_allowed = no
+	}
+}
+
+
+every_unit_leader = {
+	limit = {	
+		OR = {
+			has_id = 1033
+			has_id = 1034
+			has_id = 1035
+			has_id = 1036
+			has_id = 1037
+			has_id = 1039
+		}
+	}
+	set_unit_leader_flag = KMT_will_stay_after_pro_jap_coup
+}
+
+
+#if = {
+#	limit = {
+#		has_dlc = "Together for Victory"
+#	}
+#	set_autonomy = {
+#		target = SHX
+#		autonomous_state = autonomy_warlords
+#	}
+#	set_autonomy = {
+#		target = GXC
+#		autonomous_state = autonomy_warlords
+#	}
+#	set_autonomy = {
+#		target = XSM
+#		autonomous_state = autonomy_warlords
+#	}
+#	set_autonomy = {
+#		target = YUN
+#		autonomous_state = autonomy_warlords
+#	}
+#	else = {
+#	}
+#}	
+
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	create_equipment_variant = {
+		name = "Hai Yung Class"
+		type = light_cruiser_1
+		parent_version = 0
+		upgrades = {
+			ship_reliability_upgrade = 0
+			ship_engine_upgrade = 0
+			ship_gun_upgrade = 0
+			ship_anti_air_upgrade = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hai Chi Class"
+		type = light_cruiser_1
+		parent_version = 0
+		upgrades = {
+			ship_reliability_upgrade = 0
+			ship_engine_upgrade = 0
+			ship_gun_upgrade = 0
+			ship_anti_air_upgrade = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Yatsen Class"
+		type = light_cruiser_1
+		parent_version = 0
+		upgrades = {
+			ship_reliability_upgrade = 0
+			ship_engine_upgrade = 0
+			ship_gun_upgrade = 0
+			ship_anti_air_upgrade = 0
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Chang Feng Class"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			ship_torpedo_upgrade = 0
+			destroyer_engine_upgrade = 0
+			ship_ASW_upgrade = 0
+			ship_anti_air_upgrade = 0
+		}
+		obsolete = yes
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" } 
+	# Light Cruisers #
+	create_equipment_variant = {
+		name = "Hai Tien Class"
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = CHI_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = empty
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hai Yung Class"					# Hairong protected cruisers and Zhaohe, Yingrui training cruisers
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = CHI_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_torpedo_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Chao Ho Class"
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = CHI_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_torpedo_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Yatsen Class"
+		type = ship_hull_cruiser_1
+		name_group = CHI_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Ning Hai Class"
+		type = ship_hull_cruiser_2
+		name_group = CHI_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+	create_equipment_variant = {
+		name = "Chang Feng Class"
+		type = ship_hull_light_1
+		name_group = CHI_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+}
+
+## testing ##
+#set_power_balance = {
+#	id = KMTPRC_coalition_government
+#	left_side = KMTPRC_PRC # will keep the last set side if not specified
+#	right_side = KMTPRC_KMT # will keep the last set side if not specified
+#	set_default = yes # whether or not to reset the power balance to the initial value, default = no
+#	#set_value = 0.25 # if specified will set the value of the power balance, this option will override the effect of set_default so the two options should not be used together. if neither set_default or set_value is specified the current value of the power balance will not change
+#}

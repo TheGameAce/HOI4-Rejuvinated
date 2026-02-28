@@ -1,0 +1,204 @@
+#check resistance_modifiers.txt for example
+
+
+compliance_15 = {
+	type = core_compliance_modifier
+	icon = "GFX_occupation_compliance_modifier_strip:1"
+	small_icon = "GFX_occupation_compliance_modifier_small_strip:1"
+	threshold = 15
+	margin = 2
+	state_modifier = {
+		enemy_operative_detection_chance = 0.25
+	}
+	enabled = {
+		custom_trigger_tooltip = {
+			tooltip = MCK_core_has_no_resistance_tt
+			NOT = {
+				any_controlled_state = {
+					is_core_of = ROOT
+					is_core_of = FROM
+					has_resistance = yes
+				}
+			}
+		}
+	}
+}
+
+compliance_25 = {
+	type = core_compliance_modifier
+	icon = "GFX_occupation_compliance_modifier_strip:2"
+	small_icon = "GFX_occupation_compliance_modifier_small_strip:2"
+	threshold = 25
+	margin = 2
+	state_modifier = {
+		required_garrison_factor = -0.25
+		recruitable_population = 0.005
+	}
+	enabled = {
+		custom_trigger_tooltip = {
+			tooltip = MCK_core_has_no_resistance_tt
+			NOT = {
+				any_controlled_state = {
+					is_core_of = ROOT
+					is_core_of = FROM
+					has_resistance = yes
+				}
+			}
+		}
+	}
+}
+compliance_40 = {
+	type = core_compliance_modifier
+	icon = "GFX_occupation_compliance_modifier_strip:3"
+	small_icon = "GFX_occupation_compliance_modifier_small_strip:3"
+	threshold = 40
+	margin = 2
+	state_modifier = {
+		local_factories = 0.1
+		local_resources = 0.1
+	}
+	enabled = {
+		custom_trigger_tooltip = {
+			tooltip = MCK_core_has_no_resistance_tt
+			NOT = {
+				any_controlled_state = {
+					is_core_of = ROOT
+					is_core_of = FROM
+					has_resistance = yes
+				}
+			}
+		}
+	}
+}
+compliance_60 = {
+	type = core_compliance_modifier
+	icon = "GFX_occupation_compliance_modifier_strip:4"
+	small_icon = "GFX_occupation_compliance_modifier_small_strip:4"
+	threshold = 60
+	margin = 2
+	state_modifier = {
+		recruitable_population_factor = 0.2
+	}
+	enabled = {
+		custom_trigger_tooltip = {
+			tooltip = MCK_core_has_no_resistance_tt
+			NOT = {
+				any_controlled_state = {
+					is_core_of = ROOT
+					is_core_of = FROM
+					has_resistance = yes
+				}
+			}
+		}
+	}
+}
+compliance_80 = {
+	type = core_compliance_modifier
+	icon = "GFX_occupation_compliance_modifier_strip:5"
+	small_icon = "GFX_occupation_compliance_modifier_small_strip:5"
+	threshold = 80
+	margin = 2
+	
+	visible = {
+		has_dlc = "La Resistance"
+		OR = {
+			is_ai = no
+			AND = {
+				is_ai = yes
+				OR = {
+					has_government = communism
+					is_major = no
+					date > 1948.1.1
+				}
+			}
+		}
+	}
+	enabled = {
+		is_available_to_collaboration_government = yes
+		has_rule = can_create_collaboration_government
+		custom_trigger_tooltip = {
+			tooltip = KMT_no_chinese_collab_with_chinese_tt
+			OR = {
+				FROM = { is_chinese_nations_w_HYQ = no }
+				ROOT = { is_chinese_nations_w_HYQ = no }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = KMT_jap_has_unique_collaboration_gov_tt
+			OR = {
+				NOT = { original_tag = JAP }
+				AND = {
+					original_tag = JAP
+					FROM = {
+						is_chinese_nations_w_HYQ = no
+					}
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = KMT_chinese_no_collaborate_mck
+			if = {
+				limit = { is_chinese_nations_w_HYQ = yes }
+				FROM = { 
+					NOT = { original_tag = MCK }
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = KMT_sia_no_collab_with_lao_cam_bur_tt
+			if = {
+				limit = { original_tag = SIA }
+				FROM = { 
+					NOT = { 
+						original_tag = LAO
+						original_tag = BRM
+						original_tag = CAM
+						original_tag = MAL
+					}
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = KMT_idc_no_collaboration_with_vin_cam_lao
+			if = {
+				limit = { original_tag = IDC }
+				FROM = { 
+					NOT = { 
+						original_tag = LAO
+						original_tag = VIN
+						original_tag = CAM
+					}
+				}
+			}
+		}
+		ROOT = { 
+			OR = {
+				NOT = {
+					original_tag = WJW
+					original_tag = MEN
+					original_tag = PGR
+					original_tag = RGR
+					original_tag = EHA
+					original_tag = ECR
+				}
+				is_subject = no
+			}
+		}
+		FROM = { 
+			NOT = {
+				original_tag = WJW
+				original_tag = MEN
+				original_tag = PGR
+				original_tag = RGR
+				original_tag = EHA
+				original_tag = ECR
+				original_tag = IDC
+			}
+		}
+	}
+	state_modifier = {
+	}
+	
+	on_enable = {
+	}
+}

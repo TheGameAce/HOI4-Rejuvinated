@@ -105,6 +105,22 @@ leader_traits = {
 			generate_wargoal_tension_against = 0.75
 		}
 		targeted_modifier = {
+			tag = PGR
+			generate_wargoal_tension_against = 0.75
+		}
+		targeted_modifier = {
+			tag = SDC
+			generate_wargoal_tension_against = 0.75
+		}
+		targeted_modifier = {
+			tag = MEN
+			generate_wargoal_tension_against = 0.75
+		}
+		targeted_modifier = {
+			tag = YUT
+			generate_wargoal_tension_against = 0.75
+		}
+		targeted_modifier = {
 			tag = GXC
 			generate_wargoal_tension_against = 0.75
 		}
@@ -114,6 +130,30 @@ leader_traits = {
 		}
 		targeted_modifier = {
 			tag = XSM
+			generate_wargoal_tension_against = 0.75
+		}
+		targeted_modifier = {
+			tag = NSM
+			generate_wargoal_tension_against = 0.75
+		}
+		targeted_modifier = {
+			tag = ZXL
+			generate_wargoal_tension_against = 0.75
+		}
+		targeted_modifier = {
+			tag = XIA
+			generate_wargoal_tension_against = 0.75
+		}
+		targeted_modifier = {
+			tag = QIA
+			generate_wargoal_tension_against = 0.75
+		}
+		targeted_modifier = {
+			tag = SCC
+			generate_wargoal_tension_against = 0.75
+		}
+		targeted_modifier = {
+			tag = SKC
 			generate_wargoal_tension_against = 0.75
 		}
 		targeted_modifier = {
@@ -395,6 +435,9 @@ leader_traits = {
 			small_plane_airframe = {
 				air_range = 0.01
 			}
+			small_plane_naval_bomber_airframe = {
+				air_range = 0.1 naval_strike_attack = 0.1
+			}
 		}
 
 		ai_will_do = {
@@ -405,11 +448,6 @@ leader_traits = {
 	spirit_of_genghis = {
 		random = no
 		cavalry_attack_factor = 0.1
-		equipment_bonus = {
-			small_plane_naval_bomber_airframe = {
-				air_range = 0.1 naval_strike_attack = 0.1
-			}
-		}
 
 		ai_will_do = {
 			factor = 1
@@ -6001,8 +6039,7 @@ leader_traits = {
 				instant = yes
 				build_cost_ic = -0.15
 			}
-		}
-		equipment_bonus = {
+
 			motorized_equipment = {
 				instant = yes
 				build_cost_ic = -0.15

@@ -1,0 +1,146 @@
+
+guiTypes = {
+	
+	containerWindowType = {
+		name = "MCK_secure_state_gui"
+		position = {x=0 y=0}
+		size = { width=100% height=300 }
+		
+		background = {
+			name = "Background"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_328"
+			position = {x=232 y=166}
+			spriteType = "GFX_mck_state_328"
+			pdx_tooltip = "MCK_secure_state_tt_agent_priority"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_610"
+			position = {x=116 y=206}
+			spriteType = "GFX_mck_state_610"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_714"
+			position = {x=192 y=2}
+			spriteType = "GFX_mck_state_714"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_715"
+			position = {x=122 y=158}
+			spriteType = "GFX_mck_state_715"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_716"
+			position = {x=192 y=184}
+			spriteType = "GFX_mck_state_716"
+			pdx_tooltip = "MCK_secure_state_tt_agent_priority"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_717"
+			position = {x=242 y=124}
+			spriteType = "GFX_mck_state_717"
+			pdx_tooltip = "MCK_secure_state_tt_agent_priority"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_745"
+			position = {x=190 y=276}
+			spriteType = "GFX_mck_state_745"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_761"
+			position = {x=102 y=6}
+			spriteType = "GFX_mck_state_761"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_961"
+			position = {x=308 y=108}
+			spriteType = "GFX_mck_state_915"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_963"
+			position = {x=174 y=116}
+			spriteType = "GFX_mck_state_917"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_964"
+			position = {x=168 y=210}
+			spriteType = "GFX_mck_state_918"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_965"
+			position = {x=218 y=230}
+			spriteType = "GFX_mck_state_919"
+			pdx_tooltip = "MCK_secure_state_tt_korean"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_973"
+			position = {x=304 y=194}
+			spriteType = "GFX_mck_state_927"
+			pdx_tooltip = "MCK_secure_state_tt_korean"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_974"
+			position = {x=202 y=122}
+			spriteType = "GFX_mck_state_928"
+			pdx_tooltip = "MCK_secure_state_tt_agent_priority"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_975"
+			position = {x=306 y=140}
+			spriteType = "GFX_mck_state_929"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_976"
+			position = {x=266 y=210}
+			spriteType = "GFX_mck_state_930"
+			pdx_tooltip = "MCK_secure_state_tt_korean"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_936"
+			position = {x=170 y=44}
+			spriteType = "GFX_mck_state_936"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_950"
+			position = {x=222 y=50}
+			spriteType = "GFX_mck_state_950"
+			pdx_tooltip = "MCK_secure_state_tt_generic"
+		}
+			
+		iconType = {
+			name = "MCK_secure_state_border"
+			position = {x=100 y=0}
+			spriteType = "GFX_mck_state_border"
+			alwaystransparent = yes
+		}
+	}
+}

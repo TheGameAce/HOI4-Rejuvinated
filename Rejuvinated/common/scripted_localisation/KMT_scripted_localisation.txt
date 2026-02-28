@@ -1,0 +1,2119 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = { # Country
+	name = GetIncorporateWarlordForcesName
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_pro_japanese_coup
+		}
+		localization_key = KMT_DESTROY_FACTIONS_IN_THE_ARMY
+	}
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_red_coup_finish
+		}
+		localization_key = KMT_DISBAND_MILITIA
+	}
+	text = {
+		localization_key = KMT_INTEGRATE_WARLORD_FORCES
+	}
+}
+
+defined_text = { # Country
+	name = GetIncorporateWarlordForcesDesc
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_pro_japanese_coup
+		}
+		localization_key = KMT_DESTROY_FACTIONS_IN_THE_ARMY_DESC
+	}
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_red_coup_finish
+		}
+		localization_key = KMT_DISBAND_MILITIA_DESC
+	}
+	text = {
+		localization_key = KMT_INTEGRATE_WARLORD_FORCES_DESC
+	}
+}
+
+defined_text = { # Country
+	name = GetFocusOnCentralArmyName
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_pro_japanese_coup
+		}
+		localization_key = KMT_ENCOURAGE_FACTIONALISM_IN_THE_ARMY
+	}
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_red_coup_finish
+		}
+		localization_key = KMT_MILITIA_ASSAULT_TACTICS
+	}
+	text = {
+		localization_key = KMT_FOCUS_ON_CENTRAL_ARMY
+	}
+}
+
+defined_text = { # Country
+	name = GetFocusOnCentralArmyDesc
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_pro_japanese_coup
+		}
+		localization_key = KMT_ENCOURAGE_FACTIONALISM_IN_THE_ARMY_DESC
+	}
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_red_coup_finish
+		}
+		localization_key = KMT_MILITIA_ASSAULT_TACTICS_DESC
+	}
+	text = {
+		localization_key = KMT_FOCUS_ON_CENTRAL_ARMY_DESC
+	}
+}
+
+defined_text = { # Country
+	name = GetEffectiveIntegrationIdeaName
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_pro_japanese_coup
+		}
+		localization_key = KMT_FACTIONS_IN_ARMY_DESTROYED
+	}
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_red_coup_finish
+		}
+		localization_key = KMT_MILITIAS_DISBANDED
+	}
+	text = {
+		localization_key = KMT_EFFICIENT_INTEGRATION
+	}
+}
+
+defined_text = { # Country
+	name = GetEffectiveIntegrationIdeaDesc
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_pro_japanese_coup
+		}
+		localization_key = KMT_FACTIONS_IN_ARMY_DESTROYED_DESC
+	}
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_red_coup_finish
+		}
+		localization_key = KMT_MILITIAS_DISBANDED_DESC
+	}
+	text = {
+		localization_key = KMT_EFFICIENT_INTEGRATION_DESC
+	}
+}
+
+defined_text = { # Country
+	name = GetFocusOnOwnArmyIdeaName
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_pro_japanese_coup
+		}
+		localization_key = KMT_FACTIONALISM_ENCOURAGED
+	}
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_red_coup_finish
+		}
+		localization_key = KMT_MILITIA_STORMTROOPERS
+	}
+	text = {
+		localization_key = KMT_FOCUS_ON_CENTRAL_ARMY_IDEA
+	}
+}
+
+defined_text = { # Country
+	name = GetFocusOnOwnArmyIdeaDesc
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_pro_japanese_coup
+		}
+		localization_key = KMT_FACTIONALISM_ENCOURAGED_DESC
+	}
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_red_coup_finish
+		}
+		localization_key = KMT_MILITIA_STORMTROOPERS_DESC
+	}
+	text = {
+		localization_key = KMT_FOCUS_ON_CENTRAL_ARMY_IDEA_DESC
+	}
+}
+
+defined_text = { # Country
+	name = GetWarlordArmyName
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_pro_japanese_coup
+		}
+		localization_key = KMT_FACTIONS_WITHIN_THE_ARMY
+	}
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_red_coup_finish
+		}
+		localization_key = KMT_MILITIAS
+	}
+	text = {
+		localization_key = KMT_WARLORD_ARMIES
+	}
+}
+
+defined_text = { # Country
+	name = GetWarlordArmyDesc
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_pro_japanese_coup
+		}
+		localization_key = KMT_FACTIONS_WITHIN_THE_ARMY_DESC
+	}
+	text = {
+		trigger = {
+			original_tag = CHI
+			has_country_flag = KMT_red_coup_finish
+		}
+		localization_key = KMT_MILITIAS_DESC
+	}
+	text = {
+		localization_key = KMT_WARLORD_ARMIES_DESC
+	}
+}
+
+defined_text = { # Country
+	name = GetSOVTankFocusDesc
+	text = {
+		trigger = {
+			NOT = {
+				has_idea = incompetent_industry_fake
+				has_idea = incompetent_industry_real
+				has_idea = incompetent_industry_real_2
+				has_idea = incompetent_industry_real_3
+			}
+		}
+		localization_key = KMT_soviet_tanks_desc_2
+	}
+	text = {
+		localization_key = KMT_soviet_tanks_desc_1
+	}
+}
+
+defined_text = { # Country
+	name = GetNewConstitutionDesc
+	text = {
+		trigger = {
+			has_completed_focus = KMT_military_dictatorship
+		}
+		localization_key = KMT_voting_rights_dictator_desc
+	}
+	text = {
+		localization_key = KMT_voting_rights_normal_desc
+	}
+}
+
+#####################
+#	POWER STRUGGLE	#
+#####################
+
+defined_text = { 
+	name = GetCHIPopSuppportName
+	text = {
+		trigger = {
+			CHI = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_CHI_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetGXCPopSuppportName
+	text = {
+		trigger = {
+			GXC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_GXC_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetQIAPopSuppportName
+	text = {
+		trigger = {
+			QIA = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_QIA_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSCCPopSuppportName
+	text = {
+		trigger = {
+			SCC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SCC_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSDCPopSuppportName
+	text = {
+		trigger = {
+			SDC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SDC_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSIKPopSuppportName
+	text = {
+		trigger = {
+			SIK = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SIK_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSHXPopSuppportName
+	text = {
+		trigger = {
+			SHX = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SHX_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSKCPopSuppportName
+	text = {
+		trigger = {
+			SKC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SKC_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetXIAPopSuppportName
+	text = {
+		trigger = {
+			XIA = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_XIA_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetXSMPopSuppportName
+	text = {
+		trigger = {
+			XSM = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_XSM_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYUNPopSuppportName
+	text = {
+		trigger = {
+			YUN = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_YUN_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYUTPopSuppportName
+	text = {
+		trigger = {
+			YUT = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_YUT_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetZXLPopSuppportName
+	text = {
+		trigger = {
+			ZXL = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_ZXL_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetPRCPopSuppportName
+	text = {
+		trigger = {
+			PRC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_PRC_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetMENPopSuppportName
+	text = {
+		trigger = {
+			MEN = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_MEN_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetPGRPopSuppportName
+	text = {
+		trigger = {
+			PGR = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_PGR_pop_support_GetName
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetCHIPopSuppport
+	text = {
+		trigger = {
+			CHI = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_CHI_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetGXCPopSuppport
+	text = {
+		trigger = {
+			GXC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_GXC_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetQIAPopSuppport
+	text = {
+		trigger = {
+			QIA = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_QIA_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSCCPopSuppport
+	text = {
+		trigger = {
+			SCC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SCC_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSDCPopSuppport
+	text = {
+		trigger = {
+			SDC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SDC_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSIKPopSuppport
+	text = {
+		trigger = {
+			SIK = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SIK_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSHXPopSuppport
+	text = {
+		trigger = {
+			SHX = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SHX_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSKCPopSuppport
+	text = {
+		trigger = {
+			SKC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SKC_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetXIAPopSuppport
+	text = {
+		trigger = {
+			XIA = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_XIA_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetXSMPopSuppport
+	text = {
+		trigger = {
+			XSM = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_XSM_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYUNPopSuppport
+	text = {
+		trigger = {
+			YUN = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_YUN_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYUTPopSuppport
+	text = {
+		trigger = {
+			YUT = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_YUT_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetZXLPopSuppport
+	text = {
+		trigger = {
+			ZXL = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_ZXL_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetPRCPopSuppport
+	text = {
+		trigger = {
+			PRC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_PRC_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetMENPopSuppport
+	text = {
+		trigger = {
+			MEN = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_MEN_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetPGRPopSuppport
+	text = {
+		trigger = {
+			PGR = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_PGR_pop_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetCHIAuthSupport
+	text = {
+		trigger = {
+			CHI = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_CHI_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetGXCAuthSupport
+	text = {
+		trigger = {
+			GXC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_GXC_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetQIAAuthSupport
+	text = {
+		trigger = {
+			QIA = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_QIA_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSCCAuthSupport
+	text = {
+		trigger = {
+			SCC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SCC_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSDCAuthSupport
+	text = {
+		trigger = {
+			SDC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SDC_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSIKAuthSupport
+	text = {
+		trigger = {
+			SIK = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SIK_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSHXAuthSupport
+	text = {
+		trigger = {
+			SHX = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SHX_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSKCAuthSupport
+	text = {
+		trigger = {
+			SKC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_SKC_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetXIAAuthSupport
+	text = {
+		trigger = {
+			XIA = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_XIA_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetXSMAuthSupport
+	text = {
+		trigger = {
+			XSM = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_XSM_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYUNAuthSupport
+	text = {
+		trigger = {
+			YUN = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_YUN_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYUTAuthSupport
+	text = {
+		trigger = {
+			YUT = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_YUT_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetZXLAuthSupport
+	text = {
+		trigger = {
+			ZXL = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_ZXL_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetPRCAuthSupport
+	text = {
+		trigger = {
+			PRC = {
+				exists = yes
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_state_PRC_auth_support
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetOpenOrCloseDetails
+	text = {
+		trigger = {
+			has_country_flag = KMT_test_window_opened
+		}
+		localization_key = KMT_close
+	}
+	text = {
+		localization_key = KMT_open
+	}
+}
+
+defined_text = { 
+	name = GetAllowDisallowStateView
+	text = {
+		trigger = {
+			has_country_flag = KMT_ps_allow_state_view
+		}
+		localization_key = KMT_disallow
+	}
+	text = {
+		localization_key = KMT_allow
+	}
+}
+
+defined_text = { 
+	name = GetAllowDisallowStateViewStatus
+	text = {
+		trigger = {
+			has_country_flag = KMT_ps_allow_state_view
+		}
+		localization_key = KMT_disallowed
+	}
+	text = {
+		localization_key = KMT_allowed
+	}
+}
+
+defined_text = { 
+	name = GetUsurpAction
+	text = {
+		trigger = {
+			has_country_flag = KMT_usurp_ultimatum
+		}
+		localization_key = KMT_usurp_ultimatum
+	}
+	text = {
+		localization_key = KMT_usurp_war
+	}
+}
+
+defined_text = { 
+	name = GetUsurpActionDesc
+	text = {
+		trigger = {
+			has_country_flag = KMT_usurp_ultimatum
+		}
+		localization_key = KMT_usurp_ultimatum_desc
+	}
+	text = {
+		trigger = {
+			has_country_flag = KMT_usurp_war
+		}
+		localization_key = KMT_usurp_war_desc
+	}
+}
+
+defined_text = { 
+	name = GetUltimatumOrWarDetails
+	text = {
+		trigger = {
+			has_country_flag = KMT_usurp_ultimatum
+		}
+		localization_key = KMT_usurp_ultimatum_detail
+	}
+	text = {
+		trigger = {
+			has_country_flag = KMT_usurp_war
+		}
+		localization_key = KMT_usurp_war_detail
+	}
+}
+
+defined_text = { 
+	name = GetCHILoyalties
+	text = {
+		trigger = {
+			CHI = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_CHI_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetGXCLoyalties
+	text = {
+		trigger = {
+			GXC = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_GXC_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSCCLoyalties
+	text = {
+		trigger = {
+			SCC = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_SCC_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSDCLoyalties
+	text = {
+		trigger = {
+			SDC = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_SDC_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSHXLoyalties
+	text = {
+		trigger = {
+			SHX = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_SHX_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSIKLoyalties
+	text = {
+		trigger = {
+			SIK = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_SIK_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSKCLoyalties
+	text = {
+		trigger = {
+			SKC = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_SKC_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetXIALoyalties
+	text = {
+		trigger = {
+			XIA = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_XIA_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetXSMLoyalties
+	text = {
+		trigger = {
+			XSM = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_XSM_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYUNLoyalties
+	text = {
+		trigger = {
+			YUN = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_YUN_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYUTLoyalties
+	text = {
+		trigger = {
+			YUT = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_YUT_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetZXLLoyalties
+	text = {
+		trigger = {
+			ZXL = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_ZXL_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetPRCLoyalties
+	text = {
+		trigger = {
+			PRC = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_PRC_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetMENLoyalties
+	text = {
+		trigger = {
+			MEN = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_MEN_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetPGRLoyalties
+	text = {
+		trigger = {
+			PGR = {
+				exists = yes
+				NOT = { tag = event_target:KMT_central_gov_tag }
+				OR = {
+					is_subject = no
+					is_subject_of = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+		localization_key = KMT_ps_warlord_loyalty_value_PGR_tt
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetShowHide
+	text = {
+		trigger = {
+			has_country_flag = KMT_ps_show_state_view
+		}
+		localization_key = KMT_disallow
+	}
+	text = {
+		localization_key = KMT_allow
+	}
+}
+
+defined_text = { 
+	name = GetStatus
+	text = {
+		trigger = {
+			tag = event_target:KMT_central_gov_tag
+		}
+		localization_key = "LoyaltyCG"
+	}
+	text = {
+		trigger = {
+			is_in_array = { THIS.KMT_ps_alliance_array = THIS }
+		}
+		localization_key = KMT_is_in_alliance_with_ROOT
+	}
+	text = {
+		trigger = {
+			any_country = {
+				is_valid_power_struggle_participant = yes
+				is_in_array = { THIS.KMT_ps_alliance_array = PREV }
+			}
+		}
+		localization_key = KMT_is_in_alliance_with_THIS
+	}
+	text = {
+		localization_key = KMT_ps_not_in_faction
+	}
+}
+
+defined_text = {
+	name = GetAllianceLeader
+	text = {
+		trigger = { is_in_array = { CHI.KMT_ps_alliance_array = THIS }}
+		localization_key = "[CHI.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { GXC.KMT_ps_alliance_array = THIS }}
+		localization_key = "[GXC.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { YUT.KMT_ps_alliance_array = THIS }}
+		localization_key = "[YUT.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { YUN.KMT_ps_alliance_array = THIS }}
+		localization_key = "[YUN.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { XIA.KMT_ps_alliance_array = THIS }}
+		localization_key = "[XIA.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { QIA.KMT_ps_alliance_array = THIS }}
+		localization_key = "[QIA.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { SCC.KMT_ps_alliance_array = THIS }}
+		localization_key = "[SCC.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { SKC.KMT_ps_alliance_array = THIS }}
+		localization_key = "[SKC.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { SDD.KMT_ps_alliance_array = THIS }}
+		localization_key = "[SDD.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { SHX.KMT_ps_alliance_array = THIS }}
+		localization_key = "[SHX.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { PRC.KMT_ps_alliance_array = THIS }}
+		localization_key = "[PRC.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { PGR.KMT_ps_alliance_array = THIS }}
+		localization_key = "[PGR.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { MEN.KMT_ps_alliance_array = THIS }}
+		localization_key = "[MEN.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { XSM.KMT_ps_alliance_array = THIS }}
+		localization_key = "[XSM.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { ZXL.KMT_ps_alliance_array = THIS }}
+		localization_key = "[ZXL.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { SIK.KMT_ps_alliance_array = THIS }}
+		localization_key = "[NSM.GetName]"
+	}
+	text = {
+		trigger = { is_in_array = { SIK.KMT_ps_alliance_array = THIS }}
+		localization_key = "[SIK.GetName]"
+	}
+}
+
+defined_text = {
+	name = GetBreakTT
+	text = {
+		trigger = { 
+			is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+			NOT = { THIS = { tag = ROOT }}
+		}
+		localization_key = "KMT_leave"
+	}
+	text = {
+		trigger = { 
+			is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+			NOT = { THIS = { tag = ROOT }}
+		}
+		localization_key = "KMT_kick"
+	}
+	text = {
+		localization_key = "KMT_dismantle"
+	}
+}
+
+defined_text = {
+	name = GetBreakTTLong
+	text = {
+		trigger = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+		localization_key = "KMT_leave_alliance"
+	}
+	text = {
+		trigger = { is_in_array = { ROOT.KMT_ps_alliance_array = THIS }}
+		localization_key = "KMT_kick_alliance"
+	}
+	text = {
+		localization_key = "KMT_dismantle_alliance"
+	}
+}
+
+defined_text = {
+	name = GetSeekTT
+	text = {
+		trigger = { 
+			is_in_array = { THIS.KMT_ps_alliance_array = THIS }
+		}
+		localization_key = "KMT_join"
+	}
+	text = {
+		localization_key = "KMT_invite"
+	}
+}
+
+defined_text = {
+	name = GetSeekTTLong
+	text = {
+		trigger = { 
+			is_in_array = { THIS.KMT_ps_alliance_array = THIS }
+		}
+		localization_key = "KMT_join_alliance"
+	}
+	text = {
+		localization_key = "KMT_invite_alliance"
+	}
+}
+
+defined_text = {
+	name = GetNoAllianceTT
+	text = {
+		trigger = { 
+			any_country = { is_in_array = { global.KMT_ps_alliance_leaders = THIS }}
+		}
+		localization_key = ""
+	}
+	text = {
+		localization_key = "KMT_no_alliances_tt"
+	}
+}
+
+defined_text = {
+	name = GetCentralGovTT
+	text = {
+		trigger = { 
+			has_event_target = KMT_central_gov_tag
+		}
+		localization_key = "KMT_no_central_gov"
+	}
+	text = {
+		localization_key = "KMT_central_gov_tt"
+	}
+}
+
+defined_text = {
+	name = GetInviteJoin
+	text = {
+		trigger = { 
+			is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+		}
+		localization_key = "KMTPSJoin"
+	}
+	text = {
+		localization_key = "KMTPSInvite"
+	}
+}
+
+defined_text = {
+	name = GetInviteJoinDesc
+	text = {
+		trigger = { 
+			is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+		}
+		localization_key = "KMTPSJoinDesc"
+	}
+	text = {
+		localization_key = "KMTPSInviteDesc"
+	}
+}
+
+defined_text = {
+	name = GetLeftKick
+	text = {
+		trigger = { 
+			is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+		}
+		localization_key = "KMTPSLeft"
+	}
+	text = {
+		localization_key = "KMTPSKick"
+	}
+}
+
+defined_text = {
+	name = GetLeftKickDesc
+	text = {
+		trigger = { 
+			is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+		}
+		localization_key = "KMTPSLeftDesc"
+	}
+	text = {
+		localization_key = "KMTPSKickDesc"
+	}
+}
+
+defined_text = {
+	name = GetCGDemands
+	text = {
+		trigger = {
+			has_global_flag = KMT_chi_stop_civil_war_demand
+		}
+		localization_key = "KMTStopAllCivilWars"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetCGDemands2
+	text = {
+		trigger = {
+			has_global_flag = KMT_chi_no_prosecution_demand
+		}
+		localization_key = "KMTNoProsecution"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetZXLemands
+	text = {
+		trigger = {
+			has_global_flag = KMT_zxl_release_chiang_demand
+		}
+		localization_key = "KMTReleaseCKS"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetZXLemands2
+	text = {
+		trigger = {
+			has_global_flag = KMT_zxl_submit_demand
+		}
+		localization_key = "KMTSubmission"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetDemand
+	text = {
+		trigger = {
+			check_variable = { global.KMT_xian_demand_id = 1 }
+		}
+		localization_key = "KMTStopAllCivilWars"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.KMT_xian_demand_id = 2 }
+		}
+		localization_key = "KMTNoProsecution"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.KMT_xian_demand_id = 3 }
+		}
+		localization_key = "KMTReleaseCKS"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.KMT_xian_demand_id = 4 }
+		}
+		localization_key = "KMTSubmission"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.KMT_xian_demand_id = 5 }
+		}
+		localization_key = "KMTStopAllCivilWarsRej"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.KMT_xian_demand_id = 6 }
+		}
+		localization_key = "KMTNoProsecutionRej"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.KMT_xian_demand_id = 7 }
+		}
+		localization_key = "KMTReleaseCKSRej"
+	}
+	text = {
+		trigger = {
+			check_variable = { global.KMT_xian_demand_id = 8 }
+		}
+		localization_key = "KMTSubmissionRej"
+	}
+}
+
+defined_text = {
+	name = GetCGSignedStatus
+	text = {
+		trigger = {
+			check_variable = { global.KMT_xian_negotiation_signed@CHI = 1 }
+		}
+		localization_key = "KMTSigned"
+	}
+	text = {
+		localization_key = "KMTNotSigned"
+	}
+}
+
+defined_text = {
+	name = GetZXLSignedStatus
+	text = {
+		trigger = {
+			check_variable = { global.KMT_xian_negotiation_signed@ZXL = 1 }
+		}
+		localization_key = "KMTSigned"
+	}
+	text = {
+		localization_key = "KMTNotSigned"
+	}
+}
+
+defined_text = {
+	name = GetLoyaltyStatus
+	text = {
+		trigger = {
+			has_country_flag = KMT_proclaimed_opposition
+		}
+		localization_key = "LoyaltyRival"
+	}
+	text = {
+		trigger = {
+			tag = event_target:KMT_central_gov_tag
+		}
+		localization_key = "LoyaltyCG"
+	}
+	text = {
+		trigger = {
+			check_variable = { THIS.KMT_ps_loyalty@KMT_central_gov_tag > 89 }
+		}
+		localization_key = "LoyaltySubserviant"
+	}
+	text = {
+		trigger = {
+			check_variable = { THIS.KMT_ps_loyalty@KMT_central_gov_tag > 0 }
+		}
+		localization_key = "LoyaltyLoyal"
+	}
+	text = {
+		trigger = {
+			check_variable = { THIS.KMT_ps_loyalty@KMT_central_gov_tag > -61 }
+		}
+		localization_key = "LoyaltyDisloyal"
+	}
+	text = {
+		localization_key = "LoyaltyRebellious"
+	}
+}
+
+defined_text = {
+	name = GetLoyaltyButtonSprite
+	text = {
+		trigger = {
+			check_variable = { ROOT.KMT_raise_loyalty_ip@This = 1 }
+		}
+		localization_key = "GFX_ps_stop_raise_loyalty_button"
+	}
+	text = {
+		localization_key = "GFX_ps_raise_loyalty_button"
+	}
+}
+
+defined_text = {
+	name = GetLoyaltyInteraction
+	text = {
+		trigger = {
+			check_variable = { ROOT.KMT_raise_loyalty_ip@This = 1 }
+		}
+		localization_key = "KMTStopRaiseLoyalty"
+	}
+	text = {
+		localization_key = "KMTRaiseLoyalty"
+	}
+}
+
+defined_text = {
+	name = GetInfluenceStateAmt
+	text = {
+		trigger = {
+			check_variable = { ROOT.KMT_ps_ip_spent_on_state > 0 }
+		}
+		localization_key = "KMTIPSpentOnState"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetInfluenceAllianceAmt
+	text = {
+		trigger = {
+			is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+		}
+		localization_key = "KMTIPSpentOnAlliance"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetInfluenceLoyaltyAmt
+	text = {
+		trigger = {
+			check_variable = { ROOT.KMT_ps_ip_spent_on_loyalty > 0 }
+		}
+		localization_key = "KMTIPSpentOnLoyalty"
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetDcatCGDesc
+	text = {
+		trigger = {
+			has_event_target = KMT_central_gov_tag
+		}
+		localization_key = "KMTCGPresent"
+	}
+	text = {
+		localization_key = "KMTCGAbsent"
+	}
+}
+
+defined_text = {
+	name = GetDisabledMechanicTT
+	text = {
+		trigger = {
+			has_global_flag = KMT_disable_power_struggle_mechanics
+		}
+		localization_key = "KMT_useless_now"
+	}
+	text = {
+		localization_key = "KMT_useful"
+	}
+}
+
+defined_text = {
+	name = GetCoreBonus
+	text = {
+		trigger = {
+			has_global_flag = KMT_disable_power_struggle_mechanics
+		}
+		localization_key = ""
+	}
+	text = {
+		localization_key = "KMT_ps_cg_modifiers_enabled"
+	}
+}
+
+defined_text = {
+	name = GetKMTArmyName
+	text = {
+		trigger = {
+			has_completed_focus = KMT_civ_control_of_mil
+		}
+		localization_key = KMT_roc_armed_force
+	}
+	text = {
+		trigger = {
+			NOT = { tag = event_target:KMT_central_gov_tag }
+		}
+		localization_key = KMT_warlord_forces
+	}
+	text = {
+		localization_key = KMT_nra_foces
+	}
+}
+
+defined_text = {
+	name = GetJAPTrautmannDemands
+	text = {
+		trigger = {
+			check_variable = { global.KMT_trautmann_jap_demand_level = 1 }
+		}
+		localization_key = KMT_trautmann_harsher_jap_demands
+	}
+}
+
+defined_text = {
+	name = GetCHITrautmannDemands
+	text = {
+		trigger = {
+			has_global_flag = KMT_trautmann_chi_demanded
+		}
+		localization_key = KMT_trautmann_chi_demands
+	}
+}
+
+defined_text = {
+	name = GetIMAutonomyTT
+	text = {
+		trigger = {
+			NOT = { has_global_flag = KMT_trautmann_chi_demanded }
+		}
+		localization_key = KMT_trautmann_inner_mogolia_autonomy
+	}
+}
+
+defined_text = {
+	name = GetCCPCNA
+	text = {
+		trigger = {
+			has_global_flag = PRC_attend_constitutional_assembly
+		}
+		localization_key = HAVECCP
+	}
+	text = { localization_key = "" }
+}
+
+defined_text = {
+	name = GetKNS55Picture
+	text = {
+		trigger = {
+			event_target:KMT_central_gov_tag = { has_country_leader = { character = CHI_chiang_kaishek ruling_only = yes }}
+		}
+		localization_key = "GFX_news_chiang_deal_with_it"
+	}
+	text = { localization_key = "GFX_news_chinese_soldiers_stahlhelm" }
+}
+
+defined_text = {
+	name = GetKNS51Picture
+	text = {
+		trigger = {
+			event_target:KMT_central_gov_tag = { has_country_leader = { character = CHI_chiang_kaishek ruling_only = yes }}
+			PRC = { has_country_leader = { character = PRC_mao_zedong ruling_only = yes }}
+		}
+		localization_key = "GFX_news_mao_chiang_toast"
+	}
+	text = { localization_key = "GFX_news_kuomintang_communists_cooperation_flags" }
+}

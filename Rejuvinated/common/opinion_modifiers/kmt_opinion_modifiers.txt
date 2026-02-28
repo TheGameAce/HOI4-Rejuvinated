@@ -1,0 +1,243 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+# value
+# min_trust
+# max_trust
+# decay
+# months/years/days = timer
+# trade = yes/no
+
+opinion_modifiers = {
+	
+	### KMT mod ###
+	
+	no_collaboration_with_CHI_COM = { value = -100 }
+	
+	KMT_SHX_refused = { value = -50 }
+	
+	PRC_SHX_refused = { value = 100 }
+	
+	SHX_SHX_refused = { value = -100 }
+	
+	chi_tib_diplomatic_focus = { value = 60 }
+	
+	CHI_join_britain_rejected = { value = -10 }
+	
+	false_document_trusted = { value = -100 }
+	
+	never_like_them_anyway = { value = -100 }
+	
+	recognition = { value = 100 }
+	
+	tolerance = { value = 100 }
+	
+	wtever = { value = 40 }
+	
+	SOV_CHI_join_comintern_reject = { value = -50 }
+	
+	KMT_commie_banned = { value = -50 }
+	
+	boycott_comitern = { value = -50 }
+	
+	gzw_kept = { value = -50 }
+	
+	hk_kept = { value = -50 }
+	
+	macau_kept = { value = -50 }
+	
+	gzw_returned_tp = { value = 75 }
+	
+	gzw_kept_tp = { value = -100 }
+	
+	mc_returned_tp = { value = 75 }
+	
+	mc_kept_tp = { value = -100 }
+	
+	hk_returned_tp = { value = 75 }
+	
+	hk_kept_tp = { value = -100 }
+	
+	denounciation = { value = -100 }
+	
+	gzw_demo_kpt = { value = -50 }
+	
+	mc_demo_kpt = { value = -50 }
+	
+	hk_demo_kpt = { value = -50 }
+	
+	no_interv_in_tp = { value = -25 }
+	
+	jap_friendship_trade = { value = 75 trade = yes }
+	
+	jap_friendship = { value = 75 }
+	
+	jap_no_return_terri = { value = -100 }
+	
+	still_border_dispute = { value = -20 }
+	
+	sov_better_trade = { value = 50 trade = yes }
+	
+	aggresion = { value = -100 }
+	
+	ohne_ehre = { value = -50 }
+	
+	hanjian = { value = -100 }
+	
+	flying_tigers = { value = 35 }
+	
+	revisionist_pig = { value = -25 }
+	
+	war_against_communist_china = { value = 50 }
+	
+	liberator_of_korea = {
+		value = 100
+		months = 1
+		decay = 2
+	}
+	
+	ignore_claim = { value = -25 }
+	
+	sino_german_cooperation = { value = 15 }
+	
+	more_sino_german_coop = { value = 20 }
+	
+	KMT_sino_japanes_friendship = { value = 50 }
+	
+	selfish = { 
+		value = -5 
+		months = 1
+		decay = 1
+	}
+	
+	GER_CHI_join_germany_reject = { value = -10 }
+	
+	KMT_closer_to_britain = { value = 35 }
+	
+	KMT_trans_pacific_friendship = { value = 35 }
+	
+	pro_jap_traitor = { value = -80 }
+	
+	KMT_doolittle_pilots_help_arrest = { value = 30 }
+	
+	KMT_doolittle_pilots_given_to_JAP = { value = -50 }
+	
+	KMT_doolittle_pilots_help_JAP_reaction = { value = -25 }
+	
+	KMT_doolittle_pilots_detained_SOV = { value = -5 }
+	
+	KMT_doolittle_pilots_detained = { value = -50 }
+	
+	KMT_doolittle_pilots_help = { value = 50 }
+	
+	KMT_assist_in_war = { value = 75 }
+	
+	KMT_discontent = { value = -150 }
+	
+	KMT_disobedience = { value = -100 }
+	
+	KMT_xian_incident_kmt_zxl = { value = -100 }
+	
+	KMT_xian_incident_sov_pos = { value = 25 }
+	
+	KMT_xian_incident_sov_pos_trade = { value = 25 trade = yes }
+	
+	KMT_xian_incident_sov_neg = { value = -100 }
+	
+	KMT_xian_incident_sov_neg_trade = { value = -100 trade = yes }
+	
+	KMT_closer_to_britain_ENG = { value = 10 }
+	
+	CHI_KR_fd = { value = 35 }
+	
+	KMT_damaged_colonial_interest = { value = -50 }
+	
+	KMT_indochina_liberator = { 
+		value = 75
+		months = 1
+		decay = 1 
+	}
+	
+	KMT_returned_indochina = { 
+		value = 25
+		months = 1
+		decay = 2 
+	}
+	
+	KMT_SOV_neutrality_pact = { value = 35 }
+	
+	more_sino_german_coop_trade = { value = 50 trade = yes }
+	
+	KMT_offered_assistance = { value = 35 }
+	
+	KMT_not_offered_assistance = { value = -10 }
+	
+	KMT_the_hump_om = { value = 25 }
+	
+	KMT_ledo_road_om = { value = 25 }
+	
+	KMT_recognise_rival_government = { value = -75 }
+	
+	KMT_recognise_rival_government_trade = { value = -75 }
+	
+	KMT_incompetent_gov_om = { value = -100 }
+	
+	KMT_occupied_trade_port = { value = -100 }
+	
+	KMT_occupied_trade_port_trade = { value = -100 trade = yes}
+	
+	insolence = { value = -100 }
+	
+	KMT_refused_unification = { value = -100 }
+	
+	KMT_ostensible_loyalty_om = { value = 15 }
+	
+	KMT_devote_to_the_party_and_state_om = { value = 75 }
+	
+	KMT_devote_to_the_party_and_state_om_cg = { value = 25 }
+	
+	KMT_oppose_the_central_government_om = { value = -25 }
+	
+	KMT_proclaim_opposition_om = { value = -75 }
+	
+	KMT_carry_the_flame_om = { value = -100 }
+	
+	KMT_carry_the_flame_om_prc = { value = 50 }
+	
+	KMT_warlord_revisionists = { value = -100 }
+	
+	KMT_ps_broke_alliance = { 
+		value = -75
+		months = 1
+		decay = 5
+	}
+	
+	KMT_ps_broke_alliance_for_another = { 
+		value = -100
+		months = 1
+		decay = 5
+	}
+	
+	KMT_ps_reject_invitation = { 
+		value = -30
+		months = 1
+		decay = 5
+	}
+	
+	KMT_ps_refuses_call_to_arm = { 
+		value = -90
+		months = 1
+		decay = 5
+	}
+	
+	KMT_ps_betrayal = { 
+		value = -100
+		months = 1
+		decay = 2
+	}
+	
+	POR_occupied_portuguese_timor = { value = -25 }
+	
+	KMT_ccw_no_negotiation = { value = -50 }
+	KMT_ccw_no_negotiation_trade = { value = -50 trade = yes}
+}	

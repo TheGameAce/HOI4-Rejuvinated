@@ -1,0 +1,2525 @@
+﻿add_namespace = kmt_powerstruggle
+
+#requires the following statement BEFORE calling this event
+#state_scope = {
+#	set_state_flag = KMT_ps_popsup_target_pos
+#	set_variable = { KMT_pop_support_increment@COUNTRY_TAG = number }
+#}
+#EXAMPLE
+##every_state = {
+##	limit = {
+##		is_owned_by = SIK
+##	}
+##	set_state_flag = KMT_ps_popsup_target_pos
+##	set_variable = { KMT_pop_support_increment@PRC = 21 }
+##}
+##PRC = {
+##	country_event = { id = kmt_powerstruggle.1 }
+##}
+#END OF EXAMPLE
+#the country fired for is the affected country
+country_event = {
+	id = kmt_powerstruggle.1
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		save_global_event_target_as = KMT_ps_pop_sup_temp_tag
+		every_state = {
+			limit = {
+				has_state_flag = KMT_ps_popsup_target_pos
+			}
+			save_global_event_target_as = KMT_ps_pop_sup_temp_state
+			KMT_increase_pop_supportTHIS = yes
+			clr_state_flag = KMT_ps_popsup_target_pos
+			clear_global_event_target = KMT_ps_pop_sup_temp_state
+		}
+		clear_global_event_target = KMT_ps_pop_sup_temp_tag
+	}
+	option = { 
+	}
+}
+
+#requires the following statement BEFORE calling this event
+#state_scope = {
+#	set_state_flag = KMT_ps_popsup_target_neg
+#	set_variable = { KMT_pop_support_reduction@COUNTRY_TAG = number }
+#}
+#EXAMPLE
+##every_state = {
+##	limit = {
+##		is_owned_by = SIK
+##	}
+##	set_state_flag = KMT_ps_popsup_target_neg
+##	set_variable = { KMT_pop_support_reduction@PRC = 21 }
+##}
+##PRC = {
+##	country_event = { id = kmt_powerstruggle.2 }
+##}
+#END OF EXAMPLE
+#the country fired for is the affected country
+country_event = {
+	id = kmt_powerstruggle.2
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		save_global_event_target_as = KMT_ps_pop_sup_temp_tag
+		every_state = {
+			limit = {
+				has_state_flag = KMT_ps_popsup_target_neg
+			}
+			save_global_event_target_as = KMT_ps_pop_sup_temp_state
+			KMT_deduct_pop_supportROOT = yes
+			clr_state_flag = KMT_ps_popsup_target_neg
+			clear_global_event_target = KMT_ps_pop_sup_temp_state
+		}
+		clear_global_event_target = KMT_ps_pop_sup_temp_tag
+	}
+	option = { 
+	}
+}
+
+#alliance invitation 
+country_event = {
+	id = kmt_powerstruggle.3
+	title = kmt_powerstruggle.3.t
+	desc = kmt_powerstruggle.3.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { ROOT.KMT_ps_waiting_response@FROM = 1 }
+	}
+	
+	#ok
+	option = {
+		#recommended to reflect it in KMT_ps_alliance_willingness_tt
+		ai_chance = {
+			base = 2
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 40
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 50
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 60
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 70
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 80
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 90
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value > 99
+				}
+				add = 1
+			}
+			modifier = {
+				has_country_flag = KMT_resist_cg
+				add = 50
+			}
+			modifier = {
+				has_country_flag = KMT_proclaimed_opposition
+				add = 5
+			}
+			modifier = {
+				has_country_flag = KMT_proclaimed_opposition
+				FROM = { has_country_flag = KMT_proclaimed_opposition }
+				add = 5
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < -19 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < -39 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < -49 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < -59 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < -60 }
+				add = 100
+			}
+			modifier = {
+				is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.1
+				}
+				factor = 0
+			}
+			modifier = {
+				has_completed_focus = KMT_devote_to_the_party_and_state
+				factor = 0
+			}
+		}
+		name = kmt_powerstruggle.3.a
+		if = {
+			limit = {
+				any_country = {
+					is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+				}
+			}
+			random_country = {
+				limit = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+				save_event_target_as = KMT_temp_leader_tag
+			}
+			custom_effect_tooltip = KMT_leave_current_alliance_tt
+			remove_from_array = { KMT_temp_leader_tag.KMT_ps_alliance_array = ROOT }
+			event_target:KMT_temp_leader_tag = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = KMT_ps_broke_alliance_for_another
+				}
+				country_event = { id = kmt_powerstruggle.9 }
+			}
+		}
+		if = {
+			limit = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}			
+			custom_effect_tooltip = KMT_ps_will_accept_tt
+			add_to_array = { ROOT.KMT_ps_alliance_array = FROM }
+		}else = {
+			if = {
+				limit = { NOT = { is_in_array = { global.KMT_ps_alliance_leaders = FROM }}}	
+				custom_effect_tooltip = KMT_ps_will_form_tt
+				add_to_array = { global.KMT_ps_alliance_leaders = FROM }
+			}
+			if = {
+				limit = { NOT = { is_in_array = { FROM.KMT_ps_alliance_array = FROM }}}
+				custom_effect_tooltip = KMT_ps_will_lead_tt
+				add_to_array = { FROM.KMT_ps_alliance_array = FROM }
+			}	
+			custom_effect_tooltip = KMT_ps_will_join_tt
+			add_to_array = { FROM.KMT_ps_alliance_array = ROOT }
+		}
+		FROM = { country_event = { id = kmt_powerstruggle.6 }}
+		set_variable = { ROOT.KMT_ps_invite_cd@FROM = 1 }
+		set_variable = { ROOT.KMT_ps_waiting_response@FROM = 0 }
+		if = {
+			limit = {
+				has_war = yes
+			}
+			every_other_country = {
+				limit = { has_war_with = ROOT }
+				FROM = {
+					add_to_war = {
+						targeted_alliance = ROOT
+						enemy = PREV
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			random_country = { country_event = { id = kmt_powerstruggle.8 days = 30 }}
+		}
+	}
+	
+	#not ok
+	option = {
+		ai_chance = {
+			base = 5
+			modifier = {
+				is_in_array = { ROOT.KMT_ps_alliance_array = ROOT }
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.3
+				}
+				add = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -20
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -40
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -50
+				}
+				add = 1
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -70
+				}
+				add = 2
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -80
+				}
+				add = 3
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -90
+				}
+				add = 3
+			}
+			modifier = {
+				has_opinion = {
+					target = FROM
+					value < -99
+				}
+				add = 10
+			}
+			modifier = {
+				FROM = { NOT = { has_government = ROOT }}
+				add = 1
+			}
+			modifier = {
+				FROM = { 
+					NOT = { has_government = ROOT }
+					has_government = communism
+				}
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 0 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 9 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 19 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 29 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 39 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 49 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 59 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 69 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 79 }
+				add = 2
+			}
+			modifier = {
+				FROM = { NOT = { has_country_flag = KMT_proclaimed_opposition }}
+				add = 20
+			}
+			modifier = {
+				NOT = { has_country_flag = KMT_proclaimed_opposition }
+				add = 25
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 89 }
+				add = 100
+			}
+			modifier = {
+				FROM = { 
+					has_country_flag = KMT_ps_betrayer
+				}
+				add = 50
+			}
+		}
+		name = kmt_powerstruggle.3.a
+		FROM = { 
+			country_event = { id = kmt_powerstruggle.7 }
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = KMT_ps_reject_invitation
+			}
+		}
+		set_variable = { ROOT.KMT_ps_invite_cd@FROM = 1 }
+		set_variable = { ROOT.KMT_ps_waiting_response@FROM = 0 }
+		hidden_effect = {
+			random_country = { country_event = { id = kmt_powerstruggle.8 days = 30 }}
+		}
+	}
+}
+
+#broke alliance
+#advise to call this event for leaving alliance
+country_event = {
+	id = kmt_powerstruggle.4
+	title = kmt_powerstruggle.4.t
+	desc = kmt_powerstruggle.4.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				is_in_array = { FROM.KMT_ps_alliance_array = ROOT }
+			}
+			remove_from_array = { FROM.KMT_ps_alliance_array = ROOT }
+			set_country_flag = KMT_ps_kicked
+		}else = {
+			if = {
+				limit = {
+					is_in_array = { ROOT.KMT_ps_alliance_array = FROM }
+				}
+				remove_from_array = { ROOT.KMT_ps_alliance_array = FROM }
+			}
+			set_country_flag = KMT_ps_left
+		}
+		hidden_effect = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = KMT_ps_broke_alliance
+			}
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.4.a
+		if = {
+			limit = { has_country_flag = KMT_ps_kicked }
+			custom_effect_tooltip = KMT_ps_kicked_tt
+		}else = { custom_effect_tooltip = KMT_ps_left_tt }
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = KMT_ps_broke_alliance
+			}
+		}
+		clr_country_flag = KMT_ps_kicked
+		clr_country_flag = KMT_ps_left
+		if = {
+			limit = { 
+				NOT = {
+					any_country = {
+						NOT = { tag = ROOT }
+						is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+					}
+				}
+			}
+			clear_array = ROOT.KMT_ps_alliance_array
+			if = {
+				limit = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+				remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+			}
+			custom_effect_tooltip = KMT_ps_alliance_dismatle_no_member_tt
+		}
+	}
+}
+
+#dismantle alliance 
+country_event = {
+	id = kmt_powerstruggle.5
+	title = kmt_powerstruggle.5.t
+	desc = kmt_powerstruggle.5.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = KMT_ps_broke_alliance
+			}
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.5.a
+		custom_effect_tooltip = KMT_ps_alliance_dismantled_tt
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = KMT_ps_broke_alliance
+			}
+		}
+	}
+}
+
+#accept
+country_event = {
+	id = kmt_powerstruggle.6
+	title = kmt_powerstruggle.6.t
+	desc = kmt_powerstruggle.6.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.6.a
+		if = {
+			limit = { is_in_array = { FROM.KMT_ps_alliance_array = FROM }}
+			custom_effect_tooltip = KMT_ps_we_joined
+		}else = { custom_effect_tooltip = KMT_ps_joined_us }
+	}
+}
+
+#accept
+country_event = {
+	id = kmt_powerstruggle.7
+	title = kmt_powerstruggle.7.t
+	desc = kmt_powerstruggle.7.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.7.a
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = KMT_ps_reject_invitation
+			}
+		}
+	}
+}
+
+#clear invite cd
+country_event = {
+	id = kmt_powerstruggle.8
+	
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { FROM.KMT_ps_invite_cd@FROM.FROM = 0}
+	}
+	
+	option = {}
+}
+
+#from left for another alliance
+country_event = {
+	id = kmt_powerstruggle.9
+	title = kmt_powerstruggle.9.t
+	desc = kmt_powerstruggle.9.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = kmt_powerstruggle.9.a
+		custom_effect_tooltip = KMT_ps_left_for_another_tt
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = KMT_ps_broke_alliance_for_another
+			}
+		}
+		if = {
+			limit = { 
+				NOT = {
+					any_country = {
+						NOT = { tag = ROOT }
+						is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+					}
+				}
+			}
+			clear_array = ROOT.KMT_ps_alliance_array
+			if = {
+				limit = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+				remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+			}
+			custom_effect_tooltip = KMT_ps_alliance_dismatle_no_member_tt
+		}
+	}
+}
+
+#FROM is agressor, FROM.FROM is defender
+#alliance under attack
+country_event = {
+	id = kmt_powerstruggle.10
+	title = kmt_powerstruggle.10.t
+	desc = kmt_powerstruggle.10.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			tag = FROM
+			tag = FROM.FROM
+			has_war_with = FROM
+			has_war_with = FROM.FROM
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			base = 10
+		}
+		name = kmt_powerstruggle.10.a
+		add_to_war = {
+			enemy = FROM
+			targeted_alliance = FROM.FROM
+		}
+		FROM.FROM = { country_event = { id = kmt_powerstruggle.12 }}
+		FROM = { country_event = { id = kmt_powerstruggle.13 }}
+	}
+	
+	option = {
+		ai_chance = {
+			base = 1
+		}
+		name = kmt_powerstruggle.10.b
+		random_country = {
+			limit = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+			country_event = { id = kmt_powerstruggle.4 }
+		}
+		FROM.FROM = { 
+			country_event = { id = kmt_powerstruggle.14 }
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = KMT_ps_refuses_call_to_arm
+			}
+		}
+		FROM = { country_event = { id = kmt_powerstruggle.15 }}
+	}
+	
+	option = {
+		ai_chance = {
+			base = 0
+			modifier = {
+				FROM.FROM = {
+					strength_ratio = {
+						ratio < 0.7
+						tag = ROOT
+					}
+				}
+				add = 1
+			}
+			modifier = {
+				FROM.FROM = {
+					strength_ratio = {
+						ratio < 0.5
+						tag = ROOT
+					}
+				}
+				add = 2
+			}
+			modifier = {
+				FROM.FROM = {
+					strength_ratio = {
+						ratio < 0.3
+						tag = ROOT
+					}
+				}
+				add = 3
+			}
+			modifier = {
+				FROM.FROM = {
+					strength_ratio = {
+						ratio < 0.1
+						tag = ROOT
+					}
+				}
+				add = 5
+			}
+			modifier = {
+				FROM = {
+					strength_ratio = {
+						ratio < 0.7
+						tag = ROOT
+					}
+				}
+				add = 1
+			}
+			modifier = {
+				FROM = {
+					strength_ratio = {
+						ratio < 0.5
+						tag = ROOT
+					}
+				}
+				add = 4
+			}
+			modifier = {
+				FROM = {
+					strength_ratio = {
+						ratio < 0.3
+						tag = ROOT
+					}
+				}
+				add = 7
+			}
+			modifier = {
+				FROM = {
+					strength_ratio = {
+						ratio < 0.1
+						tag = ROOT
+					}
+				}
+				add = 20
+			}
+			modifier = {
+				is_major = yes
+				add = 2
+			}
+		}
+		trigger = { 
+			NOT = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+			FROM = { tag = event_target:KMT_central_gov_tag }
+		}
+		name = kmt_powerstruggle.10.c
+		set_country_flag = KMT_ps_betrayer
+		set_country_flag = KMT_ps_betrayal_no_cta
+		random_country = {
+			limit = {
+				is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+			}
+			country_event = { id = kmt_powerstruggle.4 }
+			remove_from_array = { THIS.KMT_ps_alliance_array = ROOT }
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					OR = {
+						is_in_array = { PREV.KMT_ps_alliance_array = THIS }
+						tag = PREV
+					}
+				}
+				ROOT = { 
+					declare_war_on = {
+						target = PREV
+						type = civil_war
+					}
+				}
+				country_event = { id = kmt_powerstruggle.16 }
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = KMT_ps_betrayal
+				}
+			}
+			
+		}
+		clr_country_flag = KMT_ps_betrayal_no_cta
+		declare_war_on = {
+			target = event_target:KMT_central_gov_tag
+			type = civil_war
+		}
+		event_target:KMT_central_gov_tag = {
+			country_event = { id = kmt_powerstruggle.16 }
+		}
+	}
+}
+
+#FROM is agressor, FROM.FROM is defender
+#alliance member declares war
+country_event = {
+	id = kmt_powerstruggle.11
+	title = kmt_powerstruggle.10.t
+	desc = kmt_powerstruggle.10.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			tag = FROM
+			tag = FROM.FROM
+			has_war_with = FROM
+			has_war_with = FROM.FROM
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			base = 10
+		}
+		name = kmt_powerstruggle.10.a
+		add_to_war = {
+			enemy = FROM.FROM
+			targeted_alliance = FROM
+		}
+		FROM = { country_event = { id = kmt_powerstruggle.12 }}
+		FROM.FROM = { country_event = { id = kmt_powerstruggle.13 }}
+	}
+	
+	option = {
+		ai_chance = {
+			base = 1
+		}
+		name = kmt_powerstruggle.10.b
+		random_country = {
+			limit = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+			country_event = { id = kmt_powerstruggle.4 }
+		}
+		FROM = { 
+			country_event = { id = kmt_powerstruggle.14 }
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = KMT_ps_refuses_call_to_arm
+			}
+		}
+		FROM.FROM = { country_event = { id = kmt_powerstruggle.15 }}
+	}
+	
+	option = {
+		ai_chance = {
+			base = 0
+			modifier = {
+				FROM = {
+					strength_ratio = {
+						ratio < 0.7
+						tag = ROOT
+					}
+				}
+				add = 1
+			}
+			modifier = {
+				FROM = {
+					strength_ratio = {
+						ratio < 0.5
+						tag = ROOT
+					}
+				}
+				add = 2
+			}
+			modifier = {
+				FROM = {
+					strength_ratio = {
+						ratio < 0.3
+						tag = ROOT
+					}
+				}
+				add = 3
+			}
+			modifier = {
+				FROM = {
+					strength_ratio = {
+						ratio < 0.1
+						tag = ROOT
+					}
+				}
+				add = 5
+			}
+			modifier = {
+				FROM.FROM = {
+					strength_ratio = {
+						ratio < 0.7
+						tag = ROOT
+					}
+				}
+				add = 1
+			}
+			modifier = {
+				FROM.FROM = {
+					strength_ratio = {
+						ratio < 0.5
+						tag = ROOT
+					}
+				}
+				add = 4
+			}
+			modifier = {
+				FROM.FROM = {
+					strength_ratio = {
+						ratio < 0.3
+						tag = ROOT
+					}
+				}
+				add = 7
+			}
+			modifier = {
+				FROM.FROM = {
+					strength_ratio = {
+						ratio < 0.1
+						tag = ROOT
+					}
+				}
+				add = 20
+			}
+			modifier = {
+				is_major = yes
+				add = 2
+			}
+		}
+		trigger = { 
+			NOT = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+			FROM.FROM = { tag = event_target:KMT_central_gov_tag }
+		}
+		name = kmt_powerstruggle.10.c
+		set_country_flag = KMT_ps_betrayer
+		set_country_flag = KMT_ps_betrayal_no_cta
+		random_country = {
+			limit = {
+				is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+			}
+			country_event = { id = kmt_powerstruggle.4 }
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					OR = {
+						is_in_array = { PREV.KMT_ps_alliance_array = THIS }
+						tag = PREV
+					}
+				}
+				ROOT = { 
+					declare_war_on = {
+						target = PREV
+						type = civil_war
+					}
+				}
+				country_event = { id = kmt_powerstruggle.16 }
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = KMT_ps_betrayal
+				}
+			}
+		}
+		clr_country_flag = KMT_ps_betrayal_no_cta
+		declare_war_on = {
+			target = event_target:KMT_central_gov_tag
+			type = civil_war
+		}
+		event_target:KMT_central_gov_tag = {
+			country_event = { id = kmt_powerstruggle.16 }
+		}
+	}
+	
+}
+
+#FROM help
+country_event = {
+	id = kmt_powerstruggle.12
+	title = kmt_powerstruggle.12.t
+	desc = kmt_powerstruggle.12.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_war_together_with = ROOT
+					any_country = {
+						is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+						is_in_array = { THIS.KMT_ps_alliance_array = PREV }
+					}
+					NOT = { tag = FROM }
+				}
+				give_military_access = FROM
+				FROM = { give_military_access = PREV }
+			}
+			give_military_access = FROM
+			FROM = { give_military_access = ROOT }
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.12.a
+	}
+}
+
+#FROM join against us
+country_event = {
+	id = kmt_powerstruggle.13
+	title = kmt_powerstruggle.13.t
+	desc = kmt_powerstruggle.13.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.13.a
+		effect_tooltip = { FROM = { declare_war_on = { target = ROOT }}}
+	}
+}
+
+#FROM refuse to help
+country_event = {
+	id = kmt_powerstruggle.14
+	title = kmt_powerstruggle.14.t
+	desc = kmt_powerstruggle.14.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.14.a
+		effect_tooltip = {
+			add_opinion_modifier = {
+				target = FROM
+				modifier = KMT_ps_refuses_call_to_arm
+			}
+		}
+#		if = {
+#			limit = { 
+#				NOT = {
+#					any_country = {
+#						NOT = { tag = ROOT }
+#						is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+#					}
+#				}
+#			}
+#			clear_array = ROOT.KMT_ps_alliance_array
+#			if = {
+#				limit = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+#				remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+#			}
+#			custom_effect_tooltip = KMT_ps_alliance_dismatle_no_member_tt
+#		}
+#
+	}
+}
+
+#FROM stands down
+country_event = {
+	id = kmt_powerstruggle.15
+	title = kmt_powerstruggle.15.t
+	desc = kmt_powerstruggle.15.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.15.a
+	}
+}
+
+#FROM betrayal
+country_event = {
+	id = kmt_powerstruggle.16
+	title = kmt_powerstruggle.16.t
+	desc = kmt_powerstruggle.16.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			#FROM = {
+			#	declare_war_on = {
+			#		target = ROOT
+			#		type = civil_war
+			#	}
+			#}
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.9.a
+		effect_tooltip = {
+			FROM = { declare_war_on = { target = ROOT }}
+		}
+		if = {
+			limit = { 
+				NOT = {
+					any_country = {
+						NOT = { tag = ROOT }
+						is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+					}
+				}
+			}
+			clear_array = ROOT.KMT_ps_alliance_array
+			if = {
+				limit = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+				remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+			}
+			custom_effect_tooltip = KMT_ps_alliance_dismatle_no_member_tt
+		}
+	}
+}
+
+#leader annexed, alliance dismantled
+country_event = {
+	id = kmt_powerstruggle.17
+	title = kmt_powerstruggle.17.t
+	desc = kmt_powerstruggle.17.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.17.a
+		custom_effect_tooltip = KMT_ps_alliance_dismantled_FROMFROM_tt
+	}
+}
+
+#from puppeted, removed or dismantled alliance
+country_event = {
+	id = kmt_powerstruggle.18
+	title = kmt_powerstruggle.18.t
+	desc = kmt_powerstruggle.18.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.17.a
+		custom_effect_tooltip = KMT_ps_alliance_removed_tt
+	}
+}
+
+#FROM betrayal, direct war
+country_event = {
+	id = kmt_powerstruggle.19
+	title = kmt_powerstruggle.19.t
+	desc = kmt_powerstruggle.19.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = kmt_powerstruggle.19.a
+		add_to_war = {
+			targeted_alliance = FROM.FROM
+			enemy = FROM
+		}
+		FROM.FROM = { country_event = { id = kmt_powerstruggle.12 }}
+		FROM = { country_event = { id = kmt_powerstruggle.13 }}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.19.b
+		if = {
+			limit = {
+				any_country = {
+					is_in_array = { THIS.KMT_ps_alliance_array = FROM.FROM }
+				}
+			}
+			random_country = {
+				limit = {
+					is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+				}
+				country_event = { id = kmt_powerstruggle.4 }
+			}
+		}
+		FROM.FROM = {
+			country_event = { id = kmt_powerstruggle.14 }
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = KMT_ps_refuses_call_to_arm
+			}
+		}
+		FROM = {
+			country_event = { id = kmt_powerstruggle.15 }
+		}
+	}
+}
+
+#central gov demand submission
+country_event = {
+	id = kmt_powerstruggle.20
+	title = kmt_powerstruggle.20.t
+	desc = kmt_powerstruggle.20.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = { base = 10 }
+		name = kmt_powerstruggle.20.a
+		FROM = {
+			country_event = { id = kmt_powerstruggle.21 }
+			puppet = ROOT
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			base = 2
+			modifier = {
+				has_country_flag = KMT_ps_broke_away
+				add = 8
+			}
+		}
+		name = kmt_powerstruggle.20.b
+		set_variable = { THIS.KMT_ps_loyalty_change = -100 }
+		custom_effect_tooltip = KMT_ps_change_loyalty_tt_n100
+		KMT_ps_change_loyalty = yes
+		update_cg_loyalty = yes
+		FROM = {
+			country_event = { id = kmt_powerstruggle.22 }
+			create_wargoal = {
+				target = ROOT
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+}
+
+#puppeted from
+country_event = {
+	id = kmt_powerstruggle.21
+	title = kmt_powerstruggle.21.t
+	desc = kmt_powerstruggle.21.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.21.a
+		effect_tooltip = {
+			puppet = FROM
+		}
+	}
+}
+
+#from refuses
+country_event = {
+	id = kmt_powerstruggle.22
+	title = kmt_powerstruggle.22.t
+	desc = kmt_powerstruggle.22.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.22.a
+		effect_tooltip = {
+			create_wargoal = {
+				target = FROM
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+}
+
+#from gain autonomy
+country_event = {
+	id = kmt_powerstruggle.23
+	title = kmt_powerstruggle.23.t
+	desc = kmt_powerstruggle.23.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.23.a
+		effect_tooltip = {
+			end_puppet = FROM
+			FROM = {
+				set_variable = { THIS.KMT_ps_loyalty_change = -55 }
+				custom_effect_tooltip = KMT_ps_change_loyalty_tt_n55
+			}
+		}
+	}
+}
+
+#from sends equipment for loyalty
+country_event = {
+	id = kmt_powerstruggle.24
+	title = kmt_powerstruggle.24.t
+	desc = kmt_powerstruggle.24.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.24.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 24 }
+				add = 2
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 44 }
+				add = 3
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 64 }
+				add = 3
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag > 89 }
+				add = 100
+			}
+			modifier = {
+				has_equipment = { infantry_equipment < 500 }
+				add = 5
+			}
+			modifier = {
+				has_country_flag = KMT_proclaimed_opposition
+				factor = 0
+			}
+		}
+		add_equipment_to_stockpile = { type = infantry_equipment amount = 500 }
+		set_variable = { KMT_ps_loyalty_change = 10 }
+		custom_effect_tooltip = KMT_ps_change_loyalty_tt_10
+		KMT_ps_change_loyalty = yes
+		FROM = { country_event = { id = kmt_powerstruggle.25 }}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.24.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < 1 }
+				add = 5
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < -29 }
+				add = 5
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < -59 }
+				add = 10
+			}
+			modifier = {
+				check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < -89 }
+				add = 100
+			}
+		}
+		add_political_power = 150
+		set_variable = { KMT_ps_loyalty_change = -5 }
+		custom_effect_tooltip = KMT_ps_change_loyalty_tt_n5
+		KMT_ps_change_loyalty = yes
+		FROM = { country_event = { id = kmt_powerstruggle.26 }}
+	}
+}
+
+#from accepts gun
+country_event = {
+	id = kmt_powerstruggle.25
+	title = kmt_powerstruggle.25.t
+	desc = kmt_powerstruggle.25.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.25.a
+		effect_tooltip = {
+			FROM = {
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 500 }
+				custom_effect_tooltip = KMT_ps_change_loyalty_tt_10
+			}
+		}
+	}
+}
+
+#from rejects guns
+country_event = {
+	id = kmt_powerstruggle.26
+	title = kmt_powerstruggle.26.t
+	desc = kmt_powerstruggle.26.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.26.a
+		add_political_power = -50
+		FROM = {
+			custom_effect_tooltip = KMT_ps_change_loyalty_tt_n5
+		}
+	}
+}
+
+#from tries to absorb
+country_event = {
+	id = kmt_powerstruggle.27
+	title = kmt_powerstruggle.27.t
+	desc = kmt_powerstruggle.27.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.27.a
+		custom_effect_tooltip = KMT_ps_break_free_tt
+	}
+}
+
+#absorbed
+country_event = {
+	id = kmt_powerstruggle.28
+	title = kmt_powerstruggle.28.t
+	desc = kmt_powerstruggle.28.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.28.a
+		FROM = {
+			every_state = {
+				limit = {
+					is_core_of = ROOT
+					NOT = { is_core_of = FROM }
+				}
+				add_core_of = FROM
+				remove_core_of = ROOT
+				remove_claim_by = FROM
+			}
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+#ultimatum
+country_event = {
+	id = kmt_powerstruggle.29
+	title = kmt_powerstruggle.29.t
+	desc = kmt_powerstruggle.29.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	#step down
+	option = {
+		ai_chance = {
+			base = 5
+			modifier = {
+				FROM = { has_country_flag = KMT_ps_highest_pop_sup_tag }
+				add = 5
+			}
+			modifier = {
+				is_in_array = { global.KMT_ps_alliance_leaders = FROM }
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 1
+				}
+				add = 1
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.75
+				}
+				add = 2
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+				add = 4
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.25
+				}
+				add = 10
+			}
+			modifier = {
+				set_temp_variable = { KMT_ps_pop_sup_diff = FROM.KMT_ps_total_pop_sup }
+				subtract_from_temp_variable = { KMT_ps_pop_sup_diff = KMT_ps_total_pop_sup }
+				multiply_temp_variable = { KMT_ps_pop_sup_diff = 0.01 }
+				round_temp_variable = KMT_ps_pop_sup_diff
+				add = KMT_ps_pop_sup_diff
+			}
+		}
+		name = kmt_powerstruggle.29.a
+		FROM = {
+			country_event = { id = kmt_powerstruggle.30 }
+			country_event = { id = claim_central.2 }
+			every_country = {
+				limit = {
+					has_war_with = ROOT
+				}
+				FROM = {
+					add_to_war = {
+						targeted_alliance = ROOT
+						enemy = PREV
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_state = {
+						is_owned_by = ROOT
+						NOT = { has_state_flag = KMT_china_inalienable_part }
+					}
+				}
+			}
+			FROM = {
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+			custom_effect_tooltip = GAME_OVER_TT
+		}else = {
+			every_state = {
+				limit = {
+					is_owned_by = ROOT
+					has_state_flag = KMT_china_inalienable_part
+				}
+				FROM = { set_state_owner = PREV }
+			}
+		}
+	}
+	
+	#NO!
+	option = {
+		ai_chance = {
+			base = 10
+			modifier = {
+				is_in_faction = yes
+				add = 10
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 1
+				}
+				add = 1
+			}
+			modifier = {
+				any_country = {
+					is_subject_of = ROOT
+					strength_ratio = {
+						tag = FROM
+						ratio > 0.5
+					}
+				}
+				add = 1
+			}
+			modifier = {
+				any_country = {
+					is_subject_of = ROOT
+					strength_ratio = {
+						tag = FROM
+						ratio > 0.75
+					}
+				}
+				add = 1
+			}
+			modifier = {
+				any_country = {
+					is_subject_of = ROOT
+					strength_ratio = {
+						tag = FROM
+						ratio > 1
+					}
+				}
+				add = 2
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.25
+				}
+				add = 2
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.5
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.75
+				}
+				add = 10
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 2
+				}
+				add = 20
+			}
+			modifier = {
+				has_war = yes
+				add = 1000
+			}
+			modifier = {
+				is_subject = yes
+				add = 1000
+			}
+		}
+		name = kmt_powerstruggle.29.b
+		add_ideas = KMT_popular_discontent
+		declare_war_on = {
+			target = FROM
+			type = civil_war
+		}
+		FROM = { country_event = { id = kmt_powerstruggle.31 }}
+	}
+}
+
+#from stepped down
+country_event = {
+	id = kmt_powerstruggle.30
+	title = kmt_powerstruggle.30.t
+	desc = kmt_powerstruggle.30.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	immediate = {
+		hidden_effect = {
+			activate_mission = KMT_new_peace_window
+			set_country_flag = KMT_new_peace_window_active
+			every_country = {
+				limit = {	
+					has_country_flag = KMT_new_peace_event_fired
+				}
+				clr_country_flag = KMT_new_peace_event_fired
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.30.a
+	}
+}
+
+#from war
+country_event = {
+	id = kmt_powerstruggle.31
+	title = kmt_powerstruggle.31.t
+	desc = kmt_powerstruggle.31.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.31.a
+		effect_tooltip = {
+			FROM = {
+				declare_war_on = { target = ROOT }
+			}
+		}
+	}
+}
+
+#from war for leadership
+country_event = {
+	id = kmt_powerstruggle.32
+	title = kmt_powerstruggle.32.t
+	desc = kmt_powerstruggle.32.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				limit = { check_variable = { KMT_pop_support@FROM = KMT_power_struggle_pop_support_total }}
+				FROM = { transfer_state = PREV }
+				add_core_of = FROM
+				create_unit = {
+					division = "name = \"Ch'i-i-chün\" division_template = \"Ch'i-i-chün\" start_experience_factor = 0.25" 
+					allow_spawning_on_enemy_provs = yes
+					owner = ROOT
+				}
+			}
+			every_owned_state = {
+				limit = { check_variable = { KMT_pop_support@FROM > KMT_75pc_popsup }}
+				create_unit = {
+					division = "name = \"Local Militia\" division_template = \"Local Militia\" start_experience_factor = 0.25" 
+					allow_spawning_on_enemy_provs = yes
+					owner = ROOT
+				}
+			}
+			every_owned_state = {
+				limit = { check_variable = { KMT_pop_support@FROM > KMT_50pc_popsup }}
+				create_unit = {
+					division = "name = \"Local Militia\" division_template = \"Local Militia\" start_experience_factor = 0.25" 
+					allow_spawning_on_enemy_provs = yes
+					owner = ROOT
+				}
+			}
+			every_owned_state = {
+				limit = { check_variable = { KMT_pop_support@FROM > KMT_25pc_popsup }}
+				create_unit = {
+					division = "name = \"Local Militia\" division_template = \"Local Militia\" start_experience_factor = 0.25" 
+					allow_spawning_on_enemy_provs = yes
+					owner = ROOT
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.32.a
+		effect_tooltip = {
+			FROM = {
+				declare_war_on = { target = ROOT }
+			}
+		}
+	}
+}
+
+#dismantle no member
+country_event = {
+	id = kmt_powerstruggle.33
+	title = kmt_powerstruggle.33.t
+	desc = kmt_powerstruggle.33.d
+	
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kmt_powerstruggle.33.a
+	}
+}
+
+#manage no core resistance - enable
+country_event = {
+	id = kmt_powerstruggle.34
+	hidden = yes
+	
+	trigger = {
+		always = no
+		NOT = { has_global_flag = KMT_disable_power_struggle_mechanics } 
+		is_valid_power_struggle_participant = yes
+		any_controlled_state = {
+			has_state_flag = KMT_china_inalienable_part
+			has_resistance = no
+			NOT = { is_core_of = ROOT }
+		}
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	is_triggered_only = yes
+	
+	immediate = {
+		every_controlled_state = {
+			limit = {
+				has_state_flag = KMT_china_inalienable_part
+				has_resistance = no
+				NOT = { is_core_of = ROOT }
+			}
+			force_enable_resistance = {
+				clear = no
+				occupier = ROOT
+			}
+			if = {
+				limit = { compliance < 30 }
+				add_compliance = 30
+			}
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.33.a
+	}
+}
+
+#manage no core resistance - disable
+country_event = {
+	id = kmt_powerstruggle.35
+	hidden = yes
+	
+	trigger = {
+		always = no
+		NOT = { has_global_flag = KMT_disable_power_struggle_mechanics } 
+		is_valid_power_struggle_participant = yes
+		any_controlled_state = {
+			has_state_flag = KMT_china_inalienable_part
+			has_resistance = yes
+			is_core_of = ROOT
+		}
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	is_triggered_only = yes
+	
+	immediate = {
+		every_controlled_state = {
+			limit = {
+				has_state_flag = KMT_china_inalienable_part
+				has_resistance = yes
+				is_core_of = ROOT
+			}
+			force_disable_resistance = {
+				clear = no
+				occupier = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.33.a
+	}
+}
+
+#anti us speech
+country_event = {
+	id = kmt_powerstruggle.36
+	title = kmt_powerstruggle.36.t
+	desc = kmt_powerstruggle.36.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_officers
+	
+	option = {
+		name = kmt_powerstruggle.36.a
+	}
+}
+
+#from attack us
+country_event = {
+	id = kmt_powerstruggle.37
+	title = kmt_powerstruggle.37.t
+	desc = kmt_powerstruggle.37.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	option = {
+		name = kmt_powerstruggle.37.a
+	}
+}
+
+#warlord ask prc
+country_event = {
+	id = kmt_powerstruggle.38
+	title = kmt_powerstruggle.38.t
+	desc = kmt_powerstruggle.38.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_officers
+	
+	option = {
+		name = kmt_powerstruggle.38.a
+		ai_chance = { base = 100 }
+		if = {
+			limit = { is_in_faction = no }
+			create_faction = PRC_chinese_peoples_liberation_front
+		}
+		add_to_faction = FROM
+		FROM = {
+			set_country_flag = KMT_join_prc_faction
+			country_event = { id = prc.39 }
+		}
+		if = {
+			limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+			if = {
+				limit = { NOT = { is_in_array = { global.KMT_ps_alliance_leaders = PRC }}}
+				add_to_array = { global.KMT_ps_alliance_leaders = PRC }
+				add_to_array = { PRC.KMT_ps_alliance_array = PRC }
+			}
+			if = {
+				limit = {
+					any_country = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+				}
+				random_country = {
+					limit = {
+						any_country = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+					}
+					every_country = {
+						limit = {
+							is_in_array = { PREV.KMT_ps_alliance_array = THIS }
+							NOT = { tag = ROOT }
+						}
+						country_event = { id = kmt_powerstruggle.59 }
+					}
+					remove_from_array = { THIS.KMT_ps_alliance_array = ROOT }
+				}
+			}
+			add_to_array = { PRC.KMT_ps_alliance_array = FROM }
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.38.b
+		FROM = {
+			country_event = { id = prc.40 }
+		}
+	}
+}
+
+#warlord ask prc
+country_event = {
+	id = kmt_powerstruggle.39
+	title = kmt_powerstruggle.39.t
+	desc = kmt_powerstruggle.39.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_officers
+	
+	option = {
+		name = kmt_powerstruggle.39.a
+		effect_tooltip = {
+			FROM = { add_to_faction = ROOT }
+		}
+	}
+}
+
+#warlord ask prc
+country_event = {
+	id = kmt_powerstruggle.40
+	title = kmt_powerstruggle.40.t
+	desc = kmt_powerstruggle.40.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_officers
+	
+	option = {
+		name = kmt_powerstruggle.40.a
+	}
+}
+
+#from campaign in stae
+country_event = {
+	id = kmt_powerstruggle.41
+	title = kmt_powerstruggle.41.t
+	desc = kmt_powerstruggle.41.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_crowd_in_prague
+	
+	option = {
+		name = kmt_powerstruggle.41.a
+	}
+}
+
+#from agitate in stae
+country_event = {
+	id = kmt_powerstruggle.42
+	title = kmt_powerstruggle.42.t
+	desc = kmt_powerstruggle.42.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_crowd_in_prague
+	
+	option = {
+		name = kmt_powerstruggle.42.a
+	}
+}
+
+#commie demand referendum
+country_event = {
+	id = kmt_powerstruggle.43
+	title = kmt_powerstruggle.43.t
+	desc = kmt_powerstruggle.43.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_crowd_in_prague
+	
+	option = {
+		name = kmt_powerstruggle.43.a
+		every_country = {
+			limit = {
+				has_defensive_war_with = ROOT
+				NOT = { has_war_with = FROM }
+			}
+			FROM = { declare_war_on = { target = PREV type = puppet_wargoal_focus }}
+		}
+		every_country = {
+			limit = {
+				has_offensive_war_with = ROOT
+				NOT = { has_war_with = FROM }
+			}
+			declare_war_on = { target = FROM type = puppet_wargoal_focus }
+		}
+		FROM = { 
+			annex_country = { 
+				target = ROOT 
+				transfer_troops = yes
+			}
+			country_event = { id = kmt_powerstruggle.44 }
+		}
+		custom_effect_tooltip = GAME_OVER_TT
+	}
+	
+	option = {
+		name = kmt_powerstruggle.43.b
+		activate_mission = KMT_imminent_uprising_mission
+		FROM = { 
+			activate_mission = PRC_imminent_uprising_mission
+			country_event = { id = kmt_powerstruggle.44 }
+		}
+	}
+}
+
+#commie demand referendum - yes
+country_event = {
+	id = kmt_powerstruggle.44
+	title = kmt_powerstruggle.44.t
+	desc = kmt_powerstruggle.44.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_crowd_in_prague
+	
+	option = {
+		name = kmt_powerstruggle.44.a
+		effect_tooltip = {
+			annex_country = { 
+				target = FROM
+				transfer_troops = yes
+			}
+		}
+	}
+	
+}
+
+#commie demand referendum - no
+country_event = {
+	id = kmt_powerstruggle.45
+	title = kmt_powerstruggle.45.t
+	desc = kmt_powerstruggle.45.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_crowd_in_prague
+	
+	option = {
+		name = kmt_powerstruggle.45.a
+		effect_tooltip = { 
+			activate_mission = PRC_imminent_uprising_mission 
+		}
+	}
+}
+
+#commie uprising
+country_event = {
+	id = kmt_powerstruggle.46
+	title = kmt_powerstruggle.46.t
+	desc = kmt_powerstruggle.46.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	option = {
+		name = kmt_powerstruggle.46.a
+		effect_tooltip = {
+			FROM = { 
+				declare_war_on = {
+					target = ROOT
+					type = civil_war
+				}
+			}
+		}
+	}
+}
+
+#commie infiltration
+country_event = {
+	id = kmt_powerstruggle.47
+	title = kmt_powerstruggle.47.t
+	desc = kmt_powerstruggle.47.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_china_infiltration
+	
+	option = {
+		name = kmt_powerstruggle.47.a
+		effect_tooltip = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+}
+
+#psbw attacker win
+country_event = {
+	id = kmt_powerstruggle.48
+	title = kmt_powerstruggle.48.t
+	desc = kmt_powerstruggle.48.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = { 
+		subtract_from_variable = { ROOT.KMT_ongoing_border_wars_against@FROM.FROM = 1 }
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = PRC_yes_truce
+					has_completed_focus = PRC_submit_to_the_united_front
+				}
+				NOT = { has_global_flag = PRC_restart_CHI_war }
+				tag = PRC 
+			}
+			add_to_variable = { global.PRC_expansion_ire = global.PRC_expansion_ire_from_bw }
+			add_to_variable = { global.PRC_expansion_ire_from_bw = 1 }
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.48.a
+	}
+}
+
+#psbw attacker war defender notif
+country_event = {
+	id = kmt_powerstruggle.49
+	title = kmt_powerstruggle.49.t
+	desc = kmt_powerstruggle.49.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = { 
+	}
+	
+	option = {
+		name = kmt_powerstruggle.49.a
+	}
+}
+
+#psbw attacker lose
+country_event = {
+	id = kmt_powerstruggle.50
+	title = kmt_powerstruggle.50.t
+	desc = kmt_powerstruggle.50.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = { 
+		subtract_from_variable = { ROOT.KMT_ongoing_border_wars_against@FROM.FROM = 1 }
+	}
+	
+	option = {
+		name = kmt_powerstruggle.50.a
+	}
+}
+
+#psbw attacker cancel
+country_event = {
+	id = kmt_powerstruggle.51
+	title = kmt_powerstruggle.51.t
+	desc = kmt_powerstruggle.51.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = { 
+		subtract_from_variable = { ROOT.KMT_ongoing_border_wars_against@FROM.FROM = 1 }
+	}
+	
+	option = {
+		name = kmt_powerstruggle.51.a
+	}
+}
+
+#psbw defender win
+country_event = {
+	id = kmt_powerstruggle.52
+	title = kmt_powerstruggle.52.t
+	desc = kmt_powerstruggle.52.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = { 
+	}
+	
+	option = {
+		name = kmt_powerstruggle.52.a
+	}
+}
+
+#psbw defender lose
+country_event = {
+	id = kmt_powerstruggle.53
+	title = kmt_powerstruggle.53.t
+	desc = kmt_powerstruggle.53.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = { 
+		FROM.FROM = { transfer_state = FROM }
+	}
+	
+	option = {
+		name = kmt_powerstruggle.53.a
+	}
+}
+
+#psbw defender cancel
+country_event = {
+	id = kmt_powerstruggle.54
+	title = kmt_powerstruggle.54.t
+	desc = kmt_powerstruggle.54.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = { 
+	}
+	
+	option = {
+		name = kmt_powerstruggle.54.a
+	}
+}
+
+#state now support someone else
+country_event = {
+	id = kmt_powerstruggle.55
+	title = kmt_powerstruggle.55.t
+	desc = kmt_powerstruggle.55.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_generic_rally2
+	
+	immediate = { 
+	}
+	
+	option = {
+		name = kmt_powerstruggle.55.a
+	}
+}
+
+#new president
+country_event = {
+	id = kmt_powerstruggle.56
+	title = kmt_powerstruggle.56.t
+	desc = kmt_powerstruggle.56.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_election_vote
+	
+	immediate = { 
+	}
+	
+	option = {
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				NOT = { 
+					any_owned_state = { 
+						NOT = { is_in_array = { KMT_president_elect_tag.KMT_president_supporter_state = THIS }}
+					}
+				}
+				event_target:KMT_president_elect_tag = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.8
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_other_country = {
+				set_variable = { KMT_presidential_support = 0 }
+			}
+		}
+		set_variable = { KMT_presidential_support = 5 }
+		FROM = { set_variable = { KMT_presidential_support = 10 }}
+		name = kmt_powerstruggle.56.a
+		every_owned_state = {
+			limit = { is_in_array = { KMT_president_elect_tag.KMT_president_supporter_state = THIS }}
+			event_target:KMT_president_elect_tag = { transfer_state = PREV }
+		}
+		event_target:KMT_president_elect_tag = {
+			country_event = { id = claim_central.2 }
+		}
+		if = {
+			limit = { NOT = { any_owned_state = { NOT = { is_in_array = { KMT_president_elect_tag.KMT_president_supporter_state = THIS }}}}}
+			custom_effect_tooltip = GAME_OVER_TT
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.56.b
+		ai_chance = {
+			base = 1
+		}
+		declare_war_on = {
+			target = event_target:KMT_president_elect_tag
+			type = civil_war
+		}
+		add_timed_idea = {
+			idea = KMT_low_legitimacy
+			days = 365
+		}
+		hidden_effect = {
+			every_other_country = {
+				set_variable = { KMT_presidential_support = 0 }
+			}
+		}
+		set_variable = { KMT_presidential_support = 0 }
+		FROM = { set_variable = { KMT_presidential_support = 25 }}
+		event_target:KMT_president_elect_tag = { country_event = { id = kmt_powerstruggle.59 }}
+	}
+}
+
+#from compete in election
+country_event = {
+	id = kmt_powerstruggle.57
+	title = kmt_powerstruggle.57.t
+	desc = kmt_powerstruggle.57.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_generic_rally_3
+	
+	immediate = { 
+	}
+	
+	option = {
+		name = kmt_powerstruggle.57.a
+	}
+}
+
+#lost predicted majority
+country_event = {
+	id = kmt_powerstruggle.58
+	title = kmt_powerstruggle.58.t
+	desc = kmt_powerstruggle.58.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_generic_rally_3
+	
+	immediate = { 
+	}
+	
+	option = {
+		name = kmt_powerstruggle.58.a
+	}
+}
+
+#from join the prc
+country_event = {
+	id = kmt_powerstruggle.59
+	title = kmt_powerstruggle.59.t
+	desc = kmt_powerstruggle.59.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_generic_rally_3
+	
+	immediate = { 
+	}
+	
+	option = {
+		name = kmt_powerstruggle.59.a
+	}
+}
+
+#create alliance?
+country_event = {
+	id = kmt_powerstruggle.60
+	title = kmt_powerstruggle.60.t
+	desc = kmt_powerstruggle.60.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_generic_rally_3
+	
+	trigger = { 
+		NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+	}
+	
+	immediate = { 
+	}
+	
+	option = {
+		name = kmt_powerstruggle.60.a
+		every_other_country = { 
+			limit = { has_completed_focus = KMT_devote_to_the_party_and_state }
+			country_event = { id = kmt_powerstruggle.61 }
+		}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.60.b
+	}
+}
+
+#alliance?
+country_event = {
+	id = kmt_powerstruggle.61
+	title = kmt_powerstruggle.61.t
+	desc = kmt_powerstruggle.61.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_generic_rally_3
+	
+	immediate = { 
+	}
+	
+	option = {
+		name = kmt_powerstruggle.61.a
+		if = {
+			limit = { NOT = { is_in_array = { global.KMT_ps_alliance_leaders = FROM }}}
+			add_to_array = { global.KMT_ps_alliance_leaders = FROM }
+		}
+		if = {
+			limit = { 
+				any_country = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+				is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+			}
+			every_other_country = { 
+				limit = { is_in_array = { ROOT.KMT_ps_alliance_array = THIS }}
+				country_event = { id = kmt_powerstruggle.5 }
+			}
+		}else_if = {
+			limit = {
+				any_country = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+				NOT = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+			}
+			random_country = {
+				limit = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+				country_event = { id = kmt_powerstruggle.4 }
+			}
+		}
+		add_to_array = { From.KMT_ps_alliance_array = ROOT }
+		FROM = { country_event = { id = kmt_powerstruggle.62 }}
+	}
+	
+	option = {
+		name = kmt_powerstruggle.61.b
+		FROM = { country_event = { id = kmt_powerstruggle.62 }}
+	}
+}
+
+#create alliance yes
+country_event = {
+	id = kmt_powerstruggle.62
+	title = kmt_powerstruggle.62.t
+	desc = kmt_powerstruggle.62.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_generic_rally_3
+	
+	immediate = {}
+	
+	option = {
+		name = kmt_powerstruggle.62.b
+	}
+}
+
+#create alliance no
+country_event = {
+	id = kmt_powerstruggle.63
+	title = kmt_powerstruggle.63.t
+	desc = kmt_powerstruggle.63.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_generic_rally_3
+	
+	immediate = {}
+	
+	option = {
+		name = kmt_powerstruggle.63.b
+	}
+}

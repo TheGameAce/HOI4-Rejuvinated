@@ -1,0 +1,135 @@
+scripted_gui = {
+
+	MCK_secured_state_gui = {
+		context_type = decision_category
+		
+		window_name = "MCK_secure_state_gui"
+		
+		dynamic_lists = {
+		}
+		
+		visible = {
+			MCK = { is_subject = yes }
+		}
+		
+		triggers = {
+			MCK_secure_state_328_visible = {
+				328 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_610_visible = {
+				610 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_714_visible = {
+				714 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_715_visible = {
+				715 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_716_visible = {
+				716 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_717_visible = {
+				717 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_745_visible = {
+				745 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_761_visible = {
+				761 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_961_visible = {
+				961 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_963_visible = {
+				963 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_964_visible = {
+				964 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_965_visible = {
+				965 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_973_visible = {
+				973 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_974_visible = {
+				974 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_975_visible = {
+				975 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_976_visible = {
+				976 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_936_visible = {
+				936 = { is_owned_by = MCK }
+			}
+			MCK_secure_state_950_visible = {
+				950 = { is_owned_by = MCK }
+			}
+		}
+		
+		properties = {
+			MCK_secure_state_328 = {
+				frame = 328.MCK_secured_state_frame
+			}
+			MCK_secure_state_610 = {
+				frame = 610.MCK_secured_state_frame
+			}
+			MCK_secure_state_714 = {
+				frame = 714.MCK_secured_state_frame
+			}
+			MCK_secure_state_715 = {
+				frame = 715.MCK_secured_state_frame
+			}
+			MCK_secure_state_716 = {
+				frame = 716.MCK_secured_state_frame
+			}
+			MCK_secure_state_717 = {
+				frame = 717.MCK_secured_state_frame
+			}
+			MCK_secure_state_745 = {
+				frame = 745.MCK_secured_state_frame
+			}
+			MCK_secure_state_761 = {
+				frame = 761.MCK_secured_state_frame
+			}
+			MCK_secure_state_961 = {
+				frame = 961.MCK_secured_state_frame
+			}
+			MCK_secure_state_963 = {
+				frame = 963.MCK_secured_state_frame
+			}
+			MCK_secure_state_964 = {
+				frame = 964.MCK_secured_state_frame
+			}
+			MCK_secure_state_965 = {
+				frame = 965.MCK_secured_state_frame
+			}
+			MCK_secure_state_973 = {
+				frame = 973.MCK_secured_state_frame
+			}
+			MCK_secure_state_974 = {
+				frame = 974.MCK_secured_state_frame
+			}
+			MCK_secure_state_975 = {
+				frame = 975.MCK_secured_state_frame
+			}
+			MCK_secure_state_976 = {
+				frame = 976.MCK_secured_state_frame
+			}
+			MCK_secure_state_936 = {
+				frame = 936.MCK_secured_state_frame
+			}
+			MCK_secure_state_950 = {
+				frame = 950.MCK_secured_state_frame
+			}
+		}
+		
+		ai_enabled = {
+			always = no
+		}
+	}
+	
+}
+

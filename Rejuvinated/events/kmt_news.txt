@@ -1,0 +1,3588 @@
+﻿add_namespace = kns
+
+#japan civil war
+news_event = {
+	id = kns.1
+	title = kns.1.t
+	desc = kns.1.d
+	picture = news_event_041
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	fire_for_sender = no
+	
+	option = {
+		name = kns.1.a
+		trigger = {
+			has_war_with = JAP
+		}
+	}
+	
+	option = {
+		name = kns.1.b
+		trigger = {
+			NOT = {
+				has_war_with = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.1.c
+		trigger = {
+			always = no
+		}
+	}
+}
+
+#end of jap cw
+news_event = {
+	id = kns.2
+	title = kns.2.t
+	desc = {
+		text = kns.2.d_f
+		trigger = {
+			JAP = {
+				has_government = fascism
+			}
+		}
+	}
+	desc = {
+		text = kns.2.d_d
+		trigger = {
+			JAP = {
+				has_government = democratic
+			}
+		}
+	}
+	picture = news_event_050
+	
+	trigger = {
+		NOT = { has_country_flag = JAP_civil_war_event_fired }
+		has_global_flag = jap_civil_war_sf
+		JAP = {
+			has_civil_war = no
+		}
+	}
+	
+	immediate = {
+		set_country_flag = JAP_civil_war_event_fired
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.2.a
+	}
+}
+
+# The Fall of Beijing (Japan)
+news_event = {
+	id = kns.3
+	title = kns.3.t
+	desc = kns.3.d
+	picture = GFX_japanese_soldiers_in_beijing
+	
+	major = yes
+	
+	trigger = {
+		608 = { 
+			controller = {
+				OR = {
+					tag = JAP 
+					is_puppet_of = JAP
+				}
+			}
+		}
+		608 = { 
+			OWNER = { 
+				is_valid_power_struggle_participant = yes 
+				has_war_with = JAP
+			}
+		}
+		NOT = { has_global_flag = fall_of_beijing_jap }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_beijing_jap
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.17.a
+		trigger = {
+			OR = {
+				TAG = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.17.b
+		trigger = { 
+			OR = {
+				TAG = JAP 
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.17.c
+		trigger = { 
+			is_in_faction_with = JAP
+			NOT = { 
+				tag = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				TAG = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				TAG = JAP 
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
+
+# Death of Stalin
+news_event = {
+	id = kns.4
+	title = kns.4.t
+	desc = kns.4.d
+	picture = GFX_stalin_dead
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	fire_for_sender = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = kns.4.a
+		trigger = {
+			TAG = SOV
+		}
+	}
+	
+	option = {
+		name = kns.4.b
+		trigger = {
+			NOT = {
+				TAG = SOV
+			}
+			has_government = communism
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = {
+			NOT = {
+				TAG = SOV
+				has_government = communism
+			}
+		}
+	}
+}
+
+# china trick war
+news_event = {
+	id = kns.5
+	title = kns.5.t
+	desc = kns.5.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = kns.5.a
+		trigger = {
+			OR = {
+				tag = CHI
+				tag = PRC
+				tag = GXC
+				tag = SHX
+				tag = XSM
+				tag = YUN
+			}
+		}
+	}
+	
+	option = {
+		name = kns.5.b
+		trigger = {
+			tag = JAP
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = {
+			NOT = {
+				tag = CHI
+				tag = PRC
+				tag = GXC
+				tag = SHX
+				tag = XSM
+				tag = YUN
+				tag = JAP
+			}
+		}
+	}
+}
+
+# pan-asianism
+news_event = {
+	id = kns.6
+	title = kns.6.t
+	desc = kns.6.d
+	picture = GFX_greater_east_asia_conference
+	
+	is_triggered_only = yes
+	
+	fire_for_sender = yes
+	
+	major = yes
+	
+	option = {
+		name = kns.6.a
+		trigger = {
+			OR = {
+				is_in_faction_with = JAP
+				is_in_faction_with = CHI
+			}	
+		}
+	}
+	
+	option = {
+		name = kns.6.b
+		trigger = {
+			NOT = {
+				is_in_faction_with = JAP
+				is_in_faction_with = CHI
+			}	
+		}
+	}
+}
+
+
+#France Joins the [From.GetFaction] (Germany)
+news_event = {
+	id = kns.7
+	title = kns.7.t
+	desc = kns.7.d
+	picture = GFX_news_event_fascist_gathering
+	
+	major = yes
+
+	is_triggered_only = yes
+
+	#Nothing can threaten the [From.GetFaction]!
+	option = {
+		name = news.182.a
+		trigger = {
+			is_in_faction_with = GER
+		}
+	}
+
+	#European diplomacy realigns along the Paris-Berlin Axis.
+	option = {
+		name = kns.7.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = GER
+			}
+		}
+	}
+}
+
+
+#[From.GetName] Rejects French Offer of Alliance!
+news_event = {
+	id = kns.8
+	title = kns.8.t
+	desc = kns.8.d
+	picture = GFX_news_event_fascist_gathering
+
+	major = yes
+
+	is_triggered_only = yes
+
+	#How dare they!
+	option = {
+		name = news.183.a
+		trigger = {
+			tag = CHI
+		}
+	}
+
+	#We can live with them as our enemies.
+	option = {
+		name = kns.8.b
+		trigger = {
+			tag = GER
+		}
+	}
+
+	#As long as they are busy fighting each other...
+	option = {
+		name = news.10.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = CHI
+					tag = GER
+				}
+			}
+		}
+	}
+}
+
+
+#return of qing
+news_event = {
+	id = kns.9
+	title = kns.9.t
+	desc = kns.9.d
+	picture = GFX_news_event_fascist_gathering
+
+	major = yes
+
+	is_triggered_only = yes
+
+	#How dare they!
+	option = {
+		name = news.183.a
+		trigger = {
+			tag = CHI
+		}
+	}
+
+	#We can live with them as our enemies.
+	option = {
+		name = kns.8.b
+		trigger = {
+			tag = GER
+		}
+	}
+
+	#As long as they are busy fighting each other...
+	option = {
+		name = news.10.a
+		trigger = {
+			NOT = {
+				OR = {
+					tag = CHI
+					tag = GER
+				}
+			}
+		}
+	}
+}
+
+#77
+news_event = {
+	id = kns.10
+	title = kns.10.t
+	desc = kns.10.d_no_submit
+	picture = GFX_news_event_001
+
+	major = yes
+
+	is_triggered_only = yes
+
+	#Interesting
+	option = {
+		name = kns.10.a
+		trigger = {
+			tag = CHI
+			NOT = {
+				is_puppet_of = JAP
+				has_country_flag = KMT_defied_JAP_country
+			}
+		}
+	}
+
+	#A foolish move
+	option = {
+		name = kns.10.b
+		trigger = {
+			OR = {
+				tag = JAP
+				is_puppet_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+
+	#We will never surrender!
+	option = {
+		name = kns.10.c
+		trigger = {
+			has_country_flag = KMT_defied_JAP_country
+		}
+	}
+	
+	option = {
+		name = kns.10.e
+		trigger = {
+			NOT = {
+				OR = {
+					tag = JAP
+					tag = CHI
+					has_war_with = JAP
+					is_puppet_of = JAP
+					is_in_faction_with = JAP
+					has_country_flag = KMT_defied_JAP_country
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = kns.10.f
+		trigger = {
+			has_war_with = JAP
+		}
+	}
+}
+
+# The Fall of Shanghai (JAP)
+news_event = {
+	id = kns.11
+	title = kns.11.t
+	desc = kns.11.d
+	picture = GFX_japs_in_shanghai
+	
+	major = yes
+	
+	trigger = {
+		938 = { 
+			controller = {
+				OR = {
+					tag = JAP 
+					is_puppet_of = JAP
+				}
+			}
+		}
+		938 = { 
+			OWNER = { 
+				is_valid_power_struggle_participant = yes 
+				has_war_with = JAP
+			}
+		}
+		NOT = { has_global_flag = fall_of_shanghai_jap }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_shanghai_jap
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.17.a
+		trigger = {
+			OR = {
+				TAG = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.17.b
+		trigger = { 
+			OR = {
+				TAG = JAP 
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.17.c
+		trigger = { 
+			is_in_faction_with = JAP
+			NOT = { 
+				tag = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				TAG = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				TAG = JAP 
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
+
+# The Fall of NAnking (PRC)
+news_event = {
+	id = kns.12
+	title = kns.12.t
+	desc = kns.12.d
+	picture = GFX_fall_of_nanking_prc
+	
+	major = yes
+	
+	trigger = {
+		OR = {
+			PRC = { has_country_flag = prc_capital_decided }
+			AND = {
+				613 = { 
+					controller = {
+						OR = {
+							tag = PRC 
+							is_puppet_of = PRC
+						}
+					}
+				}
+				613 = { 
+					OWNER = {
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = PRC
+					}
+				}
+			}
+		}
+		PRC = { has_government = communism }
+		NOT = { has_global_flag = fall_of_nanking_prc }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_nanking_prc
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.12.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.12.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of Shanghai (PRC)
+news_event = {
+	id = kns.13
+	title = kns.13.t
+	desc = kns.13.d
+	picture = GFX_fall_of_shanghai_prc
+	
+	major = yes
+	
+	trigger = {
+		938 = { 
+			controller = {
+				OR = {
+					tag = PRC 
+					is_puppet_of = PRC
+				}
+			}
+		}
+		938 = { 
+			OWNER = {
+				is_chinese_nations_w_HYQ = yes
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				}
+				has_war_with = PRC
+			}
+		}
+		PRC = { has_government = communism }
+		NOT = { has_global_flag = fall_of_shanghai_prc }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_shanghai_prc
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.12.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.12.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of Canton (PRC)
+news_event = {
+	id = kns.14
+	title = kns.14.t
+	desc = kns.14.d
+	picture = GFX_fall_of_canton
+	
+	major = yes
+	
+	trigger = {
+		592 = { 
+			controller = {
+				OR = {
+					tag = PRC 
+					is_puppet_of = PRC
+				}
+			}
+		}
+		592 = { 
+			OWNER = {
+				is_chinese_nations_w_HYQ = yes
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				}
+				has_war_with = PRC
+			}
+		}
+		PRC = { has_government = communism }
+		NOT = { has_global_flag = fall_of_canton_prc }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_canton_prc
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.12.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.12.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of Taiwan (PRC)
+news_event = {
+	id = kns.15
+	title = kns.15.t
+	desc = kns.15.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	trigger = {
+		524 = { 
+			controller = {
+				OR = {
+					tag = PRC 
+					is_puppet_of = PRC
+				}
+			}
+		}
+		524 = { 
+			OWNER = {
+				is_chinese_nations_w_HYQ = yes
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				}
+				has_war_with = PRC
+			}
+		}
+		PRC = { has_war_with = CHI }
+		NOT = { has_global_flag = fall_of_taiwan_prc }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_taiwan_prc
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.12.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.12.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+#Yangtze Partition
+news_event = {
+	id = kns.16
+	title = kns.16.t
+	desc = kns.16.d
+	picture = GFX_yangtze_partition
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.16.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.16.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of Chungking (JAP)
+news_event = {
+	id = kns.17
+	title = kns.17.t
+	desc = kns.17.d
+	picture = GFX_bombed_chungking
+	
+	major = yes
+	
+	trigger = {
+		605 = { 
+			controller = {
+				OR = {
+					tag = JAP 
+					is_puppet_of = JAP
+				}
+			}
+		}
+		605 = { 
+			OWNER = { 
+				is_valid_power_struggle_participant = yes 
+				has_war_with = JAP
+			}
+		}
+		NOT = { has_global_flag = fall_of_chungking_jap }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_chungking_jap
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.17.a
+		trigger = {
+			OR = {
+				TAG = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.17.b
+		trigger = { 
+			OR = {
+				TAG = JAP 
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.17.c
+		trigger = { 
+			is_in_faction_with = JAP
+			NOT = { 
+				tag = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				TAG = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				TAG = JAP 
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
+
+#Chapei Incident - china backs down
+news_event = {
+	id = kns.18
+	title = kns.18.t
+	desc = kns.18.d
+	picture = GFX_jap_parade_in_shanghai
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.18.a
+		trigger = {
+			OR = {
+				TAG = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.18.b
+		trigger = { 
+			OR = {
+				TAG = JAP 
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				TAG = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				TAG = JAP 
+				is_subject_of = JAP
+			}
+		}
+	}
+}
+
+#Chapei Incident - china no backs down
+news_event = {
+	id = kns.19
+	title = kns.18.t
+	desc = kns.19.d
+	picture = GFX_news_event_003
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.19.a
+		trigger = {
+			OR = {
+				TAG = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.19.b
+		trigger = { 
+			OR = {
+				TAG = JAP 
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				TAG = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				TAG = JAP 
+				is_subject_of = JAP
+			}
+		}
+	}
+}
+
+#Suiyuan Campaign - shx wins
+news_event = {
+	id = kns.20
+	title = kns.20.t
+	desc = kns.20.d
+	picture = GFX_pailingmiao_artillery
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.20.a
+		trigger = {
+			owns_state = 621
+		}
+	}
+	
+	option = {
+		name = kns.20.b
+		trigger = { 
+			tag = MEN
+		}
+	}
+	
+	option = {
+		name = kns.20.c
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes
+			NOT = {
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+				owns_state = 621
+			}
+		}
+	}
+	
+	option = {
+		name = kns.20.e
+		trigger = { 
+			OR = {
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = {
+				tag = MEN
+				owns_state = 621
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
+
+#Suiyuan Campaign - shx loses
+news_event = {
+	id = kns.21
+	title = kns.21.t
+	desc = kns.21.d
+	picture = GFX_demchugdongrub_li
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.21.a
+		trigger = {
+			owns_state = 746
+		}
+	}
+	
+	option = {
+		name = kns.21.b
+		trigger = { 
+			tag = MEN
+		}
+	}
+	
+	option = {
+		name = kns.21.c
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes
+			NOT = {
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+				owns_state = 746
+			}
+		}
+	}
+	
+	option = {
+		name = kns.21.e
+		trigger = { 
+			OR = {
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = {
+				tag = MEN
+				owns_state = 746
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
+
+#Suiyuan Campaign - draw
+news_event = {
+	id = kns.22
+	title = kns.22.t
+	desc = kns.22.d
+	picture = GFX_MEN_cavalries
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.22.a
+		trigger = {
+			owns_state = 621
+		}
+	}
+	
+	option = {
+		name = kns.22.b
+		trigger = { 
+			tag = MEN
+		}
+	}
+	
+	option = {
+		name = kns.22.c
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes
+			NOT = {
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+				owns_state = 621
+			}
+		}
+	}
+	
+	option = {
+		name = kns.22.e
+		trigger = { 
+			OR = {
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = {
+				tag = MEN
+				owns_state = 621
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
+
+#Suiyuan Campaign - war
+news_event = {
+	id = kns.23
+	title = kns.23.t
+	desc = kns.23.d
+	picture = GFX_suiyuan_fighting
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.23.a
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes
+			NOT = {
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.23.b
+		trigger = { 
+			OR = {
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = {
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
+
+#Sian Incident - peaceful
+news_event = {
+	id = kns.24
+	title = kns.24.t
+	desc = kns.24.d
+	picture = GFX_sian_incident
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		set_country_flag = KMT_sian_incident_news_fired
+	}
+	
+	trigger = {
+		NOT = { has_country_flag = KMT_sian_incident_news_fired }
+	}
+	
+	option = {
+		name = kns.24.a
+		trigger = { 
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.24.b
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.24.c
+		trigger = { 
+			tag = SOV
+		}
+	}
+	
+	option = {
+		name = kns.24.e
+		trigger = { 
+			tag = JAP
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = JAP
+				tag = SOV
+			}
+			is_chinese_nations_w_HYQ = no
+		}
+	}
+}
+
+#Sian Incident - no civil war
+news_event = {
+	id = kns.25
+	title = kns.25.t
+	desc = kns.25.d
+	picture = GFX_chiang_deal_with_it
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = KMT_sian_incident_news_fired
+	}
+	
+	trigger = {
+		NOT = { has_country_flag = KMT_sian_incident_news_fired }
+	}
+	
+	option = {
+		name = kns.25.a
+		trigger = { 
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.25.b
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.25.c
+		trigger = { 
+			tag = SOV
+		}
+	}
+	
+	option = {
+		name = kns.24.e
+		trigger = { 
+			tag = JAP
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = JAP
+				tag = SOV
+			}
+			is_chinese_nations_w_HYQ = no
+		}
+	}
+}
+
+#Sian Incident - civil war
+news_event = {
+	id = kns.26
+	title = kns.26.t
+	desc = kns.26.d
+	picture = GFX_news_event_001
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.26.a
+	}
+}
+
+#Sian Incident - zxl won
+news_event = {
+	id = kns.27
+	title = kns.24.t
+	desc = kns.27.d
+	picture = GFX_chang_hseuhliang_off_train
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.27.a
+		trigger = { 
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.27.b
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.27.c
+		trigger = { 
+			tag = SOV
+		}
+	}
+	
+	option = {
+		name = kns.24.e
+		trigger = { 
+			tag = JAP
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = JAP
+				tag = SOV
+			}
+			is_chinese_nations_w_HYQ = no
+		}
+	}
+}
+
+#communist coup in china
+news_event = {
+	id = kns.28
+	title = kns.28.t
+	desc = kns.28.d
+	picture = GFX_news_event_018
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.28.a
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes
+			has_government = communism
+			NOT = { is_subject_of = JAP }
+		}
+	}
+	
+	option = {
+		name = kns.28.b
+		trigger = { 
+			OR = {
+				tag = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = {
+				tag = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+}
+
+#communist civil war in china
+news_event = {
+	id = kns.29
+	title = kns.29.t
+	desc = kns.29.d
+	picture = GFX_chinese_soldiers_news
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.29.a
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes
+			has_government = communism
+			NOT = { is_subject_of = JAP }
+		}
+	}
+	
+	option = {
+		name = kns.29.b
+		trigger = { 
+			OR = {
+				tag = HYQ
+				is_subject_of = HYQ
+			}
+		}
+	}
+	
+	option = {
+		name = kns.28.c
+		trigger = { 
+			tag = JAP
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = {
+				tag = JAP
+				is_subject_of = JAP
+				tag = HYQ
+				is_subject_of = HYQ
+			}
+		}
+	}
+}
+
+#communist civil war in china
+news_event = {
+	id = kns.30
+	title = kns.30.t
+	desc = kns.30.d
+	picture = GFX_chinese_soldiers_news2
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.30.a
+		trigger = { 
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.30.b
+		trigger = { 
+			OR = {
+				tag = HYQ
+				is_subject_of = HYQ
+				is_in_faction_with = HYQ
+			}
+		}
+	}
+	
+	option = {
+		name = kns.30.c
+		trigger = { 
+			tag = JAP
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = JAP
+				is_subject_of = JAP
+				tag = HYQ
+				is_subject_of = HYQ
+				is_in_faction_with = HYQ
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+}
+
+# The Fall of wuhan (JAP)
+news_event = {
+	id = kns.31
+	title = kns.31.t
+	desc = kns.31.d
+	picture = GFX_jap_in_wuhan
+	
+	major = yes
+	
+	trigger = {
+		980 = { 
+			controller = {
+				OR = {
+					tag = JAP 
+					is_puppet_of = JAP
+				}
+			}
+		}
+		980 = { 
+			OWNER = { 
+				is_valid_power_struggle_participant = yes 
+				has_war_with = JAP
+			}
+		}
+		NOT = { has_global_flag = fall_of_wuhan_jap }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_wuhan_jap
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.17.a
+		trigger = {
+			OR = {
+				TAG = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.17.b
+		trigger = { 
+			OR = {
+				TAG = JAP 
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.17.c
+		trigger = { 
+			is_in_faction_with = JAP
+			NOT = { 
+				tag = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				TAG = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				TAG = JAP 
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
+
+# The Fall of canton (JAP)
+news_event = {
+	id = kns.32
+	title = kns.32.t
+	desc = kns.32.d
+	picture = GFX_jap_in_canton
+	
+	major = yes
+	
+	trigger = {
+		592 = { 
+			controller = {
+				OR = {
+					tag = JAP 
+					is_puppet_of = JAP
+				}
+			}
+		}
+		592 = { 
+			OWNER = { 
+				is_valid_power_struggle_participant = yes 
+				has_war_with = JAP
+			}
+		}
+		NOT = { has_global_flag = fall_of_canton_jap }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_canton_jap
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.17.a
+		trigger = {
+			OR = {
+				TAG = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	option = {
+		name = kns.17.b
+		trigger = { 
+			OR = {
+				TAG = JAP 
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.17.c
+		trigger = { 
+			is_in_faction_with = JAP
+			NOT = { 
+				tag = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				TAG = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				TAG = JAP 
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
+
+
+# The Fall of nanking (CHI)
+news_event = {
+	id = kns.33
+	title = kns.33.t
+	desc = kns.33.d
+	picture = GFX_nanking_detritus
+	
+	major = yes
+	
+	trigger = {
+		613 = { 
+			controller = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag 
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				} 
+				has_war_with = PRC
+			}
+		}
+		613 = { 
+			OWNER = { 
+				tag = PRC
+			}
+		}
+		PRC = { has_government = communism }
+		NOT = { has_global_flag = fall_of_nanking_chi }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_nanking_chi
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.33.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.33.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of peking (CHI)
+news_event = {
+	id = kns.34
+	title = kns.34.t
+	desc = kns.34.d
+	picture = GFX_chiang_tiananmen
+	
+	major = yes
+	
+	trigger = {
+		608 = { 
+			controller = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag 
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				} 
+				has_war_with = PRC
+			}
+		}
+		608 = { 
+			OWNER = { 
+				tag = PRC
+			}
+		}
+		NOT = { has_global_flag = fall_of_peiping_chi }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_peiping_chi
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.33.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.33.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of wuhan (CHI)
+news_event = {
+	id = kns.35
+	title = kns.35.t
+	desc = kns.35.d
+	picture = GFX_wuhan_nra_machine_gun
+	
+	major = yes
+	
+	trigger = {
+		980 = { 
+			controller = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag 
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				} 
+				has_war_with = PRC
+			}
+		}
+		980 = { 
+			OWNER = { 
+				tag = PRC
+			}
+		}
+		NOT = { has_global_flag = fall_of_wuhan_chi }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_wuhan_chi
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.33.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.33.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of wuhan (PRC)
+news_event = {
+	id = kns.36
+	title = kns.36.t
+	desc = kns.36.d
+	picture = GFX_pla_in_hankow
+	
+	major = yes
+	
+	trigger = {
+		980 = { 
+			controller = {
+				OR = {
+					tag = PRC 
+					is_puppet_of = PRC
+				}
+			}
+		}
+		980 = { 
+			OWNER = {
+				is_chinese_nations_w_HYQ = yes
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				}
+				has_war_with = PRC
+			}
+		}
+		PRC = { has_government = communism }
+		NOT = { has_global_flag = fall_of_wuhan_prc }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_wuhan_prc
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.12.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.12.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of lanzhou (PRC)
+news_event = {
+	id = kns.37
+	title = kns.37.t
+	desc = kns.37.d
+	picture = GFX_pla_lanzhou
+	
+	major = yes
+	
+	trigger = {
+		283 = { 
+			controller = {
+				OR = {
+					tag = PRC 
+					is_puppet_of = PRC
+				}
+			}
+		}
+		283 = { 
+			OWNER = {
+				is_chinese_nations_w_HYQ = yes
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				}
+				has_war_with = PRC
+			}
+		}
+		PRC = { has_government = communism }
+		NOT = { has_global_flag = fall_of_lanzhou_prc }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_lanzhou_prc
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.12.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.12.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of hainan (PRC)
+news_event = {
+	id = kns.38
+	title = kns.38.t
+	desc = kns.38.d
+	picture = GFX_liberation_of_hainan
+	
+	major = yes
+	
+	trigger = {
+		591 = { 
+			controller = {
+				OR = {
+					tag = PRC 
+					is_puppet_of = PRC
+				}
+			}
+		}
+		591 = { 
+			OWNER = {
+				is_chinese_nations_w_HYQ = yes
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				}
+				has_war_with = PRC
+			}
+		}
+		PRC = { has_government = communism }
+		NOT = { has_global_flag = fall_of_hainan_prc }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_hainan_prc
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.12.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.12.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of canton (CHI)
+news_event = {
+	id = kns.39
+	title = kns.39.t
+	desc = kns.39.d
+	picture = GFX_roc_troops_parade
+	
+	major = yes
+	
+	trigger = {
+		592 = { 
+			controller = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag 
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				} 
+				has_war_with = PRC
+			}
+		}
+		592 = { 
+			OWNER = { 
+				tag = PRC
+			}
+		}
+		NOT = { has_global_flag = fall_of_canton_chi }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_canton_chi
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.33.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.33.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of yanan (CHI)
+news_event = {
+	id = kns.40
+	title = kns.40.t
+	desc = kns.40.d
+	picture = GFX_nra_to_yanan
+	
+	major = yes
+	
+	trigger = {
+		date > 1940.1.1
+		622 = { 
+			controller = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag 
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				} 
+				has_war_with = PRC
+			}
+		}
+		622 = { 
+			OWNER = { 
+				tag = PRC
+			}
+		}
+		NOT = { has_global_flag = fall_of_yanan_chi }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_yanan_chi
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.33.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.33.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of shenyang/mukden (PRC)
+news_event = {
+	id = kns.41
+	title = kns.41.t
+	desc = kns.41.d
+	picture = GFX_pla_with_jap_tank
+	
+	major = yes
+	
+	trigger = {
+		716 = { 
+			controller = {
+				OR = {
+					tag = PRC 
+					is_puppet_of = PRC
+				}
+			}
+		}
+		716 = { 
+			OWNER = {
+				is_chinese_nations_w_HYQ = yes
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					is_subject_of = event_target:KMT_central_gov_tag
+					is_in_faction_with = event_target:KMT_central_gov_tag
+				}
+				has_war_with = PRC
+			}
+		}
+		PRC = { has_government = communism }
+		NOT = { has_global_flag = fall_of_mukden_prc }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_mukden_prc
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.12.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.12.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# The Fall of peiping (PRC)
+news_event = {
+	id = kns.42
+	title = kns.42.t
+	desc = kns.42.d
+	picture = GFX_pla_in_peking
+	
+	major = yes
+	
+	trigger = {
+		OR = {
+			PRC = { has_country_flag = prc_capital_decided }
+			AND = {
+				608 = { 
+					controller = {
+						OR = {
+							tag = PRC 
+							is_puppet_of = PRC
+						}
+					}
+				}
+				608 = { 
+					OWNER = {
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = PRC
+					}
+				}
+			}
+		}
+		PRC = { has_government = communism }
+		NOT = { has_global_flag = fall_of_peiping_prc }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_peiping_prc
+	}
+	
+	#mean_time_to_happen = {
+	#	days = 2
+	#}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.12.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.12.b
+		trigger = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_in_faction_with = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = event_target:KMT_central_gov_tag
+				tag = PRC
+				has_war_with = event_target:KMT_central_gov_tag
+				has_war_with = PRC
+				is_subject_of = event_target:KMT_central_gov_tag
+				is_subject_of = PRC
+				is_in_faction_with = event_target:KMT_central_gov_tag
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+# founding of prc
+news_event = {
+	id = kns.43
+	title = kns.43.t
+	desc = {
+		text = kns.43.d_pk
+		trigger = { PRC = { capital_scope = { state = 608 }}}
+	}
+	desc = {
+		text = kns.43.d_nk
+		trigger = { PRC = { capital_scope = { state = 613 }}}
+	}
+	desc = {
+		text = kns.43.d_default
+		trigger = { 
+			PRC = { 
+				capital_scope = { 
+					NOT = { 
+						state = 608 
+						state = 613 
+					}
+				}
+			}
+		}
+	}
+	picture = "[This.GetProclaimPRCPicture]"
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.43.a
+		trigger = {
+			OR = {
+				tag = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = kns.43.b
+		trigger = {
+			has_war_with = PRC
+			NOT = { has_government = communism }
+			NOT = { has_government = fascism }
+		}
+	}
+	option = {
+		name = kns.43.c
+		trigger = {
+			has_war_with = PRC
+			has_government = communism
+		}
+	}
+	option = {
+		name = kns.43.e
+		trigger = {
+			NOT = { has_war_with = PRC }
+			has_government = communism
+		}
+	}
+	option = {
+		name = kns.43.f
+		trigger = {
+			NOT = { has_war_with = PRC }
+			has_government = fascism
+		}
+	}
+	option = {
+		name = kns.43.g
+		trigger = {
+			has_war_with = PRC
+			has_government = fascism
+		}
+	}
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = PRC
+				has_war_with = PRC
+				is_subject_of = PRC
+				is_in_faction_with = PRC
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+}
+
+#nine power treaty conference
+news_event = {
+	id = kns.44
+	title = kns.44.t
+	desc = kns.44.d
+	
+	picture = GFX_nine_power_treaty_conference
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = KMT_npt_conference_fired
+		log = "[From.GetName] event npt FROM"
+		log = "[Root.GetName] event npt"
+		log = "[This.GetName] event npt THIS"
+	}
+	
+	option = {
+		name = kns.44.a
+		hidden_effect = {
+			if = {
+				limit = {
+					always = no
+					has_global_flag = KMT_battle_of_shanghai_lasted
+					OR = {
+						tag = BEL
+						tag = FRA
+						tag = ENG
+						tag = ITA
+						tag = HOL
+						tag = POR
+						tag = USA
+					}
+					is_major = yes
+					NOT = {
+						has_war_with = event_target:KMT_central_gov_tag
+						has_war_with = JAP
+					}
+					is_subject = no
+					JAP = { has_war_with = event_target:KMT_central_gov_tag }
+				}
+				log = "[Root.GetName]: help china after nine-power treaty news event?"
+				country_event = { id = kmt.671 hours = 5 }
+			}
+		}
+	}
+}
+
+#trautmann failed
+news_event = {
+	id = kns.45
+	title = kns.45.t
+	desc = kns.45.d
+	
+	picture = GFX_trautmann
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = kns.45.a
+		trigger = { original_tag = GER }
+	}
+	
+	option = {
+		name = kns.45.b
+		trigger = { has_war_with = JAP }
+	}
+	
+	option = {
+		name = kns.45.c
+		trigger = { 
+			OR = {
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+				has_war_with = JAP
+				original_tag = GER
+			}
+		}
+	}
+}
+
+#trautmann success
+news_event = {
+	id = kns.46
+	title = kns.46.t
+	desc = kns.46.d
+	
+	picture = GFX_trautmann
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = {
+		name = kns.46.a
+		trigger = { original_tag = GER }
+	}
+	
+	option = {
+		name = kns.46.b
+		trigger = {
+			is_chinese_nations_w_HYQ = yes
+			NOT = { tag = PRC }
+		}
+	}
+	
+	option = {
+		name = kns.46.b2
+		trigger = {
+			tag = PRC
+		}
+	}
+	
+	option = {
+		name = kns.46.c
+		trigger = { 
+			OR = {
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+				is_chinese_nations_w_HYQ = yes
+				original_tag = GER
+			}
+		}
+	}
+}
+
+#fanco thai war
+news_event = {
+	id = kns.47
+	title = kns.47.t
+	desc = kns.47.d
+	
+	picture = GFX_guerre_franco_thai
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = {
+		name = kns.47.a
+		trigger = { tag = SIA }
+	}
+	
+	option = {
+		name = kns.47.b
+		trigger = { tag = IDC }
+	}
+	
+	option = {
+		name = kns.47.c
+		trigger = {
+			OR = {
+				tag = FRA
+				tag = VIC
+			}
+		}
+	}
+	
+	option = {
+		name = kns.4.c
+		trigger = { 
+			NOT = {
+				tag = SIA
+				tag = IDC
+				tag = VIC
+				tag = FRA
+			}
+		}
+	}
+}
+
+#post 9ptc intervention
+news_event = {
+	id = kns.48
+	title = kns.48.t
+	desc = kns.48.d
+	
+	picture = GFX_news_jap_troops_landing
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	trigger = {
+		NOT = { has_global_flag = KMT_foreign_intervention_in_sino_jap_war2 }
+	}
+	
+	immediate = {
+		set_global_flag = KMT_foreign_intervention_in_sino_jap_war2
+	}
+	
+	option = {
+		name = kns.48.a
+		trigger = { has_war_with = JAP }
+	}
+	
+	option = {
+		name = kns.48.b
+		trigger = { 
+			OR = {
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.48.c
+		trigger = { 
+			NOT = {
+				has_war_with = JAP
+				tag = JAP
+				is_subject_of = JAP
+				is_in_faction_with = JAP
+			}
+		}
+	}
+}
+
+#2nd ccw
+news_event = {
+	id = kns.49
+	title = kns.49.t
+	desc = kns.49.d
+	
+	picture = GFX_news_jinzhou_attack
+	
+	trigger = {
+		has_global_flag = CHI_warred_with_JAP
+		has_global_flag = PRC_warred_with_JAP
+		has_global_flag = PRC_joined_CHI_against_JAP
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.49.a
+		trigger = { has_war_with = PRC }
+	}
+	
+	option = {
+		name = kns.49.b
+		trigger = { has_war_with = event_target:KMT_central_gov_tag }
+	}
+	
+	option = {
+		name = KMT_interesting
+		trigger = { 
+			NOT = { has_war_with = event_target:KMT_central_gov_tag }
+			NOT = { has_war_with = PRC }
+		}
+	}
+}
+
+#2nd ccw mediation
+news_event = {
+	id = kns.50
+	title = kns.50.t
+	desc = kns.50.d
+	
+	picture = GFX_news_xuzhou_three_ppl
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.50.a
+		trigger = { is_chinese_nations_w_HYQ = yes }
+	}
+	
+	option = {
+		name = kns.50.b
+		trigger = { tag = event_target:KMT_ccw_mediator }
+	}
+	
+	option = {
+		name = KMT_interesting
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = { tag = event_target:KMT_ccw_mediator }
+		}
+	}
+}
+
+#2nd ccw mediation success
+news_event = {
+	id = kns.51
+	title = kns.51.t
+	desc = {
+		text = kns.51.d1
+		trigger = {
+			check_variable = { global.PRC_constitutional_autonomy > 1 }
+		}
+	}
+	desc = {
+		text = kns.51.d2
+		trigger = {
+			check_variable = { global.PRC_constitutional_autonomy = 1 }
+		}
+	}
+	desc = {
+		text = kns.51.d3
+		trigger = {
+			check_variable = { global.PRC_constitutional_autonomy < 1 }
+		}
+	}
+	
+	picture = "[This.GetKNS51Picture]"
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.51.a
+		trigger = { is_chinese_nations_w_HYQ = yes }
+	}
+	
+	option = {
+		name = kns.51.b
+		trigger = { tag = event_target:KMT_ccw_mediator }
+	}
+	
+	option = {
+		name = KMT_interesting
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = { tag = event_target:KMT_ccw_mediator }
+		}
+	}
+}
+
+#2nd ccw mediation fail
+news_event = {
+	id = kns.52
+	title = kns.52.t
+	desc = kns.52.d
+	
+	picture = GFX_news_pla_snow_and_tank
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.52.a
+		trigger = { is_chinese_nations_w_HYQ = yes }
+	}
+	
+	option = {
+		name = kns.52.b
+		trigger = { tag = event_target:KMT_ccw_mediator }
+	}
+	
+	option = {
+		name = KMT_interesting
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = { tag = event_target:KMT_ccw_mediator }
+		}
+	}
+}
+
+#anti-jap national slavation uf
+news_event = {
+	id = kns.53
+	title = kns.53.t
+	desc = kns.53.d
+	
+	picture = GFX_news_china_man_speaking_on_podium
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.53.a
+		trigger = { 
+			OR = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+				has_idea = KMT_trautmann_peace
+			}
+		}
+	}
+	
+	option = {
+		name = kns.53.b
+		trigger = { has_idea = PRC_anti_jap_national_salvation_uf_idea }
+	}
+	
+	option = {
+		name = KMT_interesting
+		trigger = { 
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+				has_idea = KMT_trautmann_peace
+				has_idea = PRC_anti_jap_national_salvation_uf_idea
+			}
+		}
+	}
+}
+
+#china ends tutelage
+news_event = {
+	id = kns.54
+	title = kns.54.t
+	desc = kns.54.d
+	
+	picture = GFX_news_china_first_national_assembly
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.54.a
+		trigger = { tag = event_target:KMT_central_gov_tag }
+	}
+	
+	option = {
+		name = KMT_interesting
+		trigger = { 
+			NOT = {tag = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+}
+
+#china fascism
+news_event = {
+	id = kns.55
+	title = kns.55.t
+	desc = kns.55.d
+	
+	picture = "[This.GetKNS55Picture]"
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.55.a
+		trigger = { tag = event_target:KMT_central_gov_tag }
+	}
+	
+	option = {
+		name = kns.55.b
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes
+			NOT = { tag = event_target:KMT_central_gov_tag }
+		}
+	}
+	
+	option = {
+		name = KMT_interesting
+		trigger = { 
+			NOT = {tag = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+}
+
+#china pro-jap
+news_event = {
+	id = kns.56
+	title = kns.56.t
+	desc = kns.56.d
+	
+	picture = GFX_news_pro_japanese_ppl
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.56.a
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes 
+			has_completed_focus = KMT_support_pro_japanese_faction
+		}
+	}
+	
+	option = {
+		name = kns.56.b
+		trigger = { 
+			tag = PRC
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.56.c
+		trigger = { 
+			tag = HYQ
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.56.e
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes 
+			NOT = {
+				tag = JAP
+				tag = PRC
+				tag = HYQ
+				has_completed_focus = KMT_support_pro_japanese_faction
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.56.f
+		trigger = { 
+			OR = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.56.z
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+}
+
+#china red coup peace
+news_event = {
+	id = kns.57
+	title = kns.57.t
+	desc = kns.57.d
+	
+	picture = GFX_news_fukien_peoples_assembly
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.57.a
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes 
+			has_government = communism
+			NOT = { tag = PRC }
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	
+	option = {
+		name = kns.57.b
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes 
+			NOT = { has_government = communism }
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.57.c
+		trigger = { 
+			tag = PRC
+			has_government = communism
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.57.e
+		trigger = {
+			has_government = communism
+			OR = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.57.f
+		trigger = {
+			NOT = { has_government = communism }
+			OR = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.57.g
+		trigger = {
+			has_government = communism
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.57.z
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+		}
+	}
+}
+
+#china red coup war
+news_event = {
+	id = kns.58
+	title = kns.58.t
+	desc = kns.58.d
+	
+	picture = GFX_chinese_soldiers_news
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.58.a
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes 
+			has_government = communism
+			NOT = { tag = PRC }
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	
+	option = {
+		name = kns.58.b
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes 
+			NOT = { has_government = communism }
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.58.c
+		trigger = { 
+			tag = PRC
+			has_government = communism
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.58.e
+		trigger = {
+			has_government = communism
+			OR = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.58.f
+		trigger = {
+			NOT = { has_government = communism }
+			OR = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.58.g
+		trigger = {
+			has_government = communism
+			NOT = {
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = kns.58.z
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = {
+				has_government = communism
+				tag = JAP
+				is_in_faction_with = JAP
+				is_subject_of = JAP
+			}
+		}
+	}
+}
+
+#changsha fire
+news_event = {
+	id = kns.59
+	title = kns.59.t
+	desc = kns.59.d
+	
+	picture = GFX_news_changsha_fire
+	
+	trigger = {
+	}
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = kns.59.a
+		trigger = { 
+			is_chinese_nations_w_HYQ = yes 
+			NOT = {
+				any_country = { 
+					has_war_with = ROOT
+					is_chinese_nations_w_HYQ = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = kns.59.b
+		trigger = { 
+			any_country = { 
+				has_war_with = ROOT
+				is_chinese_nations_w_HYQ = yes
+			}
+		}
+	}
+	
+	
+	option = {
+		name = kns.58.c
+		trigger = { 
+			is_chinese_nations_w_HYQ = no
+			NOT = {
+				any_country = { 
+					has_war_with = ROOT
+					is_chinese_nations_w_HYQ = yes
+				}
+			}
+		}
+	}
+}

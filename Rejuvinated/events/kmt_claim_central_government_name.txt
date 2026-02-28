@@ -1,0 +1,1246 @@
+﻿add_namespace = claim_central
+
+#test
+country_event = {
+	id = claim_central.0
+	title = claim_central.0.t
+	desc = claim_central.0.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	option = {
+	}
+}
+
+#tips - trigger when at war with central government
+country_event = {
+	id = claim_central.1
+	title = claim_central.1.t
+	desc = claim_central.1.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_independent_china_or_warlord = yes
+		NOT = {
+			has_country_flag = tips_triggered
+		}
+	}
+	
+	immediate = {
+		set_country_flag = tips_triggered
+	}
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	option = {
+		name = claim_central.1.a
+		custom_effect_tooltip = KMT_can_claim_central_government_tt
+	}
+}
+
+#claimed central government
+country_event = {
+	id = claim_central.2
+	title = claim_central.2.t
+	desc = claim_central.2.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = KMT_had_proclaimed_cg
+			overlord = {
+				end_puppet = ROOT 
+			}
+			set_variable = { ROOT.KMT_ps_loyalty@ROOT = 0 }
+			every_state = {
+				limit = { check_variable = { KMT_pop_support@ROOT > 74 }}
+				add_core_of = ROOT
+			}
+			every_country = {
+				limit = {
+					is_valid_power_struggle_participant = yes
+					has_country_flag = KMT_proclaimed_opposition
+				}
+				clr_country_flag = KMT_proclaimed_opposition
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+				}
+				every_other_country = {
+					limit = {
+						NOT = { check_variable = { THIS.KMT_ps_already_has_loyalty_set@ROOT = 1 }}
+					}
+					set_variable = { THIS.KMT_ps_already_has_loyalty_set@ROOT = 1 }
+					if = {
+						limit = { is_in_array = { ROOT.KMT_ps_alliance_array = THIS }}
+						set_variable = { THIS.KMT_ps_loyalty@ROOT = 50 }
+					}else = {
+						set_variable = { THIS.KMT_ps_loyalty@ROOT = 0 }
+					}
+				}
+				if = {
+					limit = {
+						any_country = {
+							is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+						}
+						NOT = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+					}
+					set_country_flag = KMT_ps_betrayer
+					random_country = {
+						limit = {
+							is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+							is_in_array = { global.KMT_ps_alliance_leaders = THIS }
+						}
+						every_other_country = {
+							limit = {
+								any_country = { is_in_array = { PREV.KMT_ps_alliance_array = THIS }}
+								NOT = { tag = PREV }
+							}
+							set_variable = { THIS.KMT_ps_loyalty@ROOT = -50 }
+							set_country_flag = KMT_proclaimed_opposition
+							country_event = { id = claim_central.14 }
+						}
+						set_variable = { THIS.KMT_ps_loyalty@ROOT = -100 }
+						set_country_flag = KMT_proclaimed_opposition
+						country_event = { id = claim_central.15 }
+					}
+				}
+				if = {
+					limit = {
+						is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+					every_other_country = {
+						limit = {
+							is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+						}
+						country_event = { id = claim_central.13 }
+						clear_array = ROOT.KMT_ps_alliance_array
+						remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							any_state = {
+								is_in_array = { global.KMT_cg_inalienable_parts = THIS }
+								NOT = { is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }}
+							}
+							any_state = {
+								NOT = { is_in_array = { global.KMT_cg_inalienable_parts = THIS }}
+								is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+							}
+						}
+					}
+					country_event = { id = claim_central.9 }
+				}
+			}else = {
+				every_state = {
+					limit = {
+						has_state_flag = KMT_china_inalienable_part
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+					add_core_of = ROOT
+					remove_claim_by = ROOT
+				}
+			}
+			if = {
+				limit = {
+					country_exists = HYQ
+					HYQ = { 
+						NOT = { 
+							has_cosmetic_tag = KMTHYQwarlord
+							tag = ROOT
+						}
+						is_valid_power_struggle_participant = yes
+					}
+				}
+				HYQ = {
+					set_cosmetic_tag = KMTHYQwarlord
+				}
+			}
+			if = {
+				limit = {
+					country_exists = event_target:KMT_central_gov_tag
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = claim_central.3 }
+				}
+			}else = {
+				event_target:KMT_central_gov_tag = { 
+					drop_cosmetic_tag = yes
+				}
+			}
+			if = {
+				limit = {
+					CHI = { 
+						NOT = { 
+							has_cosmetic_tag = TWKMT
+							has_cosmetic_tag = CKSclique
+							tag = ROOT
+						}
+						is_valid_power_struggle_participant = yes
+					}
+				}
+				CHI = {
+					set_cosmetic_tag = CKSclique
+				}
+			}
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = { 
+						NOT = {
+							has_idea = cg_warlords
+						}
+					}
+				}
+				event_target:KMT_central_gov_tag = { 
+					add_ideas = cg_warlords
+				}
+			}
+			remove_ideas = cg_warlords
+			if = {
+				limit = {
+					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+				}
+				every_state = {
+					limit = {
+						is_claimed_by = event_target:KMT_central_gov_tag
+					}
+					if = {
+						limit = { NOT = { is_core_of = ROOT }}
+						add_claim_by = ROOT
+					}
+					remove_claim_by = event_target:KMT_central_gov_tag
+				}
+			}else = {
+				every_state = {
+					limit = { 
+						has_state_flag = KMT_china_inalienable_part
+						is_core_of = event_target:KMT_central_gov_tag
+						NOT = { is_owned_by = event_target:KMT_central_gov_tag }
+					}
+					remove_core_of = event_target:KMT_central_gov_tag
+				}
+			}
+			#set_country_flag = KMT_central_government_flag
+			event_target:KMT_central_gov_tag = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+					}
+					add_stability = 0.2
+					remove_dynamic_modifier = { modifier = KMT_cg_modifier }
+				}
+				add_ideas = cg_warlords
+				remove_dynamic_modifier = { modifier = cu_warlords_count }
+				load_focus_tree = {
+					tree = KMT_warlord_generic_focus
+					keep_completed = no
+				}
+				if = {
+					limit = {
+						any_country = {
+							has_completed_focus = KMT_devote_to_the_party_and_state
+						}
+					}
+					clr_global_flag = KMT_reevaluate_delay_flag
+					set_global_flag = KMT_reevaluate_delay_flag
+					country_event = { id = kmt_powerstruggle.60 }
+				}
+			}
+			save_global_event_target_as = KMT_central_gov_tag
+			set_country_flag = KMT_central_gov_tag_flag
+			every_other_country = { limit = { has_country_flag = KMT_central_gov_tag_flag } clr_country_flag = KMT_central_gov_tag_flag }
+			load_focus_tree = {
+				tree = KMT_focus
+				keep_completed = no
+			}
+			capital_scope = {
+				save_global_event_target_as = KMT_central_gov_capital_state
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+				}
+				every_state = {
+					limit = {
+						has_state_flag = KMT_china_inalienable_part
+						NOT = { 
+							is_core_of = ROOT 
+							is_claimed_by = ROOT 
+						}
+					}
+					add_claim_by = ROOT
+				}
+			}
+			add_dynamic_modifier = { modifier = cu_warlords_count }
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = CentralGov
+			if = {
+				limit = {
+					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+				}
+				add_dynamic_modifier = { modifier = KMT_cg_modifier }
+				add_stability = -0.2
+				KMT_ps_update_ip = yes
+				update_cg_loyalty = yes
+			}
+			remove_ideas = KMT_central_government_lost
+			news_event = { id = claim_central.18 }
+			if = {
+				limit = { 
+					NOT = {
+						has_country_leader_ideology = constitutionalism
+					}
+					has_government = neutrality
+				}
+				set_country_leader_ideology = the_peoples_tutelage
+			}
+		}
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 50
+			modifier = {
+				tag = CHI
+				factor = 0
+			}
+		}
+		name = claim_central.2.a
+		capital_scope = {
+			save_global_event_target_as = KMT_central_gov_capital_state
+		}
+		#custom_effect_tooltip = KMT_central_gov_core_tt
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 50
+			modifier = {
+				tag = CHI
+				factor = 100
+			}
+		}
+		trigger = {
+			owns_state = 613
+		}
+		name = claim_central.2.b
+		set_capital = { state = 613 }
+		#custom_effect_tooltip = KMT_central_gov_core_tt
+		capital_scope = {
+			#set_state_flag = KMT_central_gov_capital
+			save_global_event_target_as = KMT_central_gov_capital_state
+		}
+	}
+}
+
+#central government position lost
+country_event = {
+	id = claim_central.3
+	title = claim_central.3.t
+	desc = claim_central.3.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	trigger = {
+	}
+	
+	immediate = {
+		hidden_effect = {
+			#clr_country_flag = KMT_central_government_flag
+			add_timed_idea = {
+				idea = KMT_central_government_lost
+				days = 365
+			}
+			remove_ideas = {
+				#KMT_warlord_cliques_pre_war
+				#KMT_warlord_cliques_4
+				#KMT_warlord_cliques_3
+				#KMT_warlord_cliques_2
+				#KMT_warlord_cliques_1
+				KMT_warlord_cliques_war
+				KMT_focus_on_own_army
+			}
+			drop_cosmetic_tag = yes
+			if = {
+				limit = {
+					tag = CHI
+					NOT = {
+						has_cosmetic_tag = TWKMT
+						has_cosmetic_tag = CKSclique
+					}
+				}
+				set_cosmetic_tag = CKSclique
+			}
+			if = {
+				limit = {
+					tag = HYQ
+					NOT = { has_cosmetic_tag = KMTHYQwarlord }
+				}
+				set_cosmetic_tag = KMTHYQwarlord
+			}
+		}
+	}
+	
+	option = {
+		name = claim_central.3.a
+		custom_effect_tooltip = KMT_central_government_position_lost_tt
+		effect_tooltip = {
+			add_timed_idea = {
+				idea = KMT_central_government_lost
+				days = 365
+			}
+		}
+	}
+}
+
+#central government lost too few states
+country_event = {
+	id = claim_central.4
+	title = claim_central.4.t
+	desc = claim_central.4.d
+	
+	trigger = {
+		always = no
+		tag = event_target:KMT_central_gov_tag
+		NOT = {
+			has_country_flag = low_l
+		}
+		num_of_controlled_states < 4
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = low_l
+		}
+	}
+	
+	option = {
+		name = claim_central.4.a
+		custom_effect_tooltip = KMT_remove_benefits_from_legitimacy_tt
+	}
+}
+
+#central government lost too few states
+country_event = {
+	id = claim_central.5
+	title = claim_central.5.t
+	desc = claim_central.5.d
+	
+	trigger = {
+		always = no
+		tag = event_target:KMT_central_gov_tag
+		has_country_flag = low_l
+		num_of_controlled_states > 3
+	}
+	
+	#mean_time_to_happen = { days = 3 }
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = {
+		hidden_effect = {
+			add_ideas = cg_true
+			clr_country_flag = low_l
+		}
+	}
+	
+	option = {
+		name = claim_central.5.a
+		effect_tooltip = {
+			#swap_ideas = {
+			#	remove_idea = cg_true_low
+			#	add_idea = cg_true
+			#}
+		}
+	}
+}
+
+#central government destroyed
+country_event = {
+	id = claim_central.6
+	title = claim_central.6.t
+	desc = claim_central.6.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	option = {
+		name = claim_central.4.a
+		custom_effect_tooltip = KMT_diable_central_government_tt
+	}
+}
+ 
+#central government transferred to us
+country_event = {
+	id = claim_central.7
+	title = claim_central.7.t
+	desc = claim_central.7.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = {
+		hidden_effect = {
+			set_variable = { ROOT.KMT_ps_loyalty@ROOT = 0 }
+			every_state = {
+				limit = { check_variable = { KMT_pop_support@ROOT > 74 }}
+				add_core_of = ROOT
+			}
+			every_country = {
+				limit = {
+					is_valid_power_struggle_participant = yes
+					has_country_flag = KMT_proclaimed_opposition
+				}
+				clr_country_flag = KMT_proclaimed_opposition
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+				}
+				every_other_country = {
+					limit = {
+						NOT = { check_variable = { THIS.KMT_ps_already_has_loyalty_set@ROOT = 1 }}
+					}
+					set_variable = { THIS.KMT_ps_already_has_loyalty_set@ROOT = 1 }
+					if = {
+						limit = { is_in_array = { ROOT.KMT_ps_alliance_array = THIS }}
+						set_variable = { THIS.KMT_ps_loyalty@ROOT = 50 }
+					}else = {
+						set_variable = { THIS.KMT_ps_loyalty@ROOT = 0 }
+					}
+				}
+				if = {
+					limit = {
+						any_country = {
+							is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+						}
+						NOT = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+					}
+					set_country_flag = KMT_ps_betrayer
+					random_country = {
+						limit = {
+							is_in_array = { THIS.KMT_ps_alliance_array = ROOT }
+							is_in_array = { global.KMT_ps_alliance_leaders = THIS }
+						}
+						every_other_country = {
+							limit = {
+								any_country = { is_in_array = { PREV.KMT_ps_alliance_array = THIS }}
+								NOT = { tag = PREV }
+							}
+							set_variable = { THIS.KMT_ps_loyalty@ROOT = -50 }
+							set_country_flag = KMT_proclaimed_opposition
+							country_event = { id = claim_central.14 }
+						}
+						set_variable = { THIS.KMT_ps_loyalty@ROOT = -100 }
+						set_country_flag = KMT_proclaimed_opposition
+						country_event = { id = claim_central.15 }
+					}
+				}
+				event_target:KMT_central_gov_tag = {
+					set_variable = { THIS.KMT_ps_loyalty@ROOT = -100 }
+					set_country_flag = KMT_proclaimed_opposition
+				}
+				if = {
+					limit = {
+						is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+					every_other_country = {
+						limit = {
+							is_in_array = { ROOT.KMT_ps_alliance_array = THIS }
+						}
+						country_event = { id = claim_central.13 }
+						clear_array = ROOT.KMT_ps_alliance_array
+						remove_from_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							any_state = {
+								is_in_array = { global.KMT_cg_inalienable_parts = THIS }
+								NOT = { is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }}
+							}
+							any_state = {
+								NOT = { is_in_array = { global.KMT_cg_inalienable_parts = THIS }}
+								is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+							}
+						}
+					}
+					country_event = { id = claim_central.9 }
+				}
+			}else = {
+				every_state = {
+					limit = {
+						has_state_flag = KMT_china_inalienable_part
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+					add_core_of = ROOT
+					remove_claim_by = ROOT
+				}
+			}
+			if = {
+				limit = {
+					country_exists = HYQ
+					HYQ = { 
+						NOT = { 
+							has_cosmetic_tag = KMTHYQwarlord
+							tag = ROOT
+						}
+						is_valid_power_struggle_participant = yes
+					}
+				}
+				HYQ = {
+					set_cosmetic_tag = KMTHYQwarlord
+				}
+			}
+			if = {
+				limit = {
+					country_exists = CHI
+					CHI = { 
+						NOT = { 
+							has_cosmetic_tag = TWKMT
+							has_cosmetic_tag = CKSclique
+							tag = ROOT
+						}
+						is_valid_power_struggle_participant = yes
+					}
+				}
+				CHI = {
+					set_cosmetic_tag = CKSclique
+				}
+			}
+			if = {
+				limit = {
+					event_target:KMT_central_gov_tag = { 
+						NOT = {
+							has_idea = cg_warlords
+						}
+					}
+				}
+				event_target:KMT_central_gov_tag = { 
+					add_ideas = cg_warlords
+				}
+			}
+			remove_ideas = cg_warlords
+			if = {
+				limit = {
+					country_exists = event_target:KMT_central_gov_tag
+				}
+				event_target:KMT_central_gov_tag = {
+					country_event = { id = claim_central.3 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+				}
+				every_state = {
+					limit = {
+						is_claimed_by = event_target:KMT_central_gov_tag
+					}
+					if = {
+						limit = { NOT = { is_core_of = ROOT }}
+						add_claim_by = ROOT
+					}
+					remove_claim_by = event_target:KMT_central_gov_tag
+				}
+			}else = {
+				every_state = {
+					limit = { 
+						has_state_flag = KMT_china_inalienable_part
+						is_core_of = event_target:KMT_central_gov_tag
+						NOT = { is_owned_by = event_target:KMT_central_gov_tag }
+					}
+					remove_core_of = event_target:KMT_central_gov_tag
+				}
+			}
+			#set_country_flag = KMT_central_government_flag
+			event_target:KMT_central_gov_tag = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+					}
+					add_stability = 0.2
+					remove_dynamic_modifier = { modifier = KMT_cg_modifier }
+				}
+				add_ideas = cg_warlords
+				remove_dynamic_modifier = { modifier = cu_warlords_count }
+				if = {
+					limit = {
+						has_dlc = "Waking the Tiger"
+					}
+					load_focus_tree = {
+						tree = china_warlord_focus
+						keep_completed = yes
+					}
+				}else = {
+					load_focus_tree = {
+						tree = generic_focus
+						keep_completed = yes
+					}
+				}
+			}
+			every_country = {
+				limit = { has_completed_focus = KMT_devote_to_the_party_and_state }
+				set_variable = { THIS.KMT_ps_loyalty@ROOT = -50 }
+			}
+			save_global_event_target_as = KMT_central_gov_tag
+			set_country_flag = KMT_central_gov_tag_flag
+			every_other_country = { limit = { has_country_flag = KMT_central_gov_tag_flag } clr_country_flag = KMT_central_gov_tag_flag }
+			load_focus_tree = {
+				tree = KMT_focus
+				keep_completed = yes
+			}
+			capital_scope = {
+				save_global_event_target_as = KMT_central_gov_capital_state
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+				}
+				every_state = {
+					limit = {
+						has_state_flag = KMT_china_inalienable_part
+						NOT = { 
+							is_core_of = ROOT 
+							is_claimed_by = ROOT 
+						}
+					}
+					add_claim_by = ROOT
+				}
+			}
+			add_dynamic_modifier = { modifier = cu_warlords_count }
+			drop_cosmetic_tag = yes
+			set_cosmetic_tag = CentralGov
+			if = {
+				limit = {
+					NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+				}
+				add_dynamic_modifier = { modifier = KMT_cg_modifier }
+				add_stability = -0.2
+				KMT_ps_update_ip = yes
+				update_cg_loyalty = yes
+			}
+			#remove_ideas = KMT_central_government_lost
+		}
+	}
+	
+	option = {
+		name = claim_central.5.a
+		capital_scope = {
+			save_global_event_target_as = KMT_central_gov_capital_state
+		}
+		effect_tooltip = {
+			add_political_power = 200
+		}
+	}
+}
+
+#central government transferred
+country_event = {
+	id = claim_central.8
+	title = claim_central.8.t
+	desc = claim_central.8.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	option = {
+		name = claim_central.8.a
+	}
+}
+
+#territorial claims
+country_event = {
+	id = claim_central.9
+	title = claim_central.9.t
+	desc = claim_central.9.d
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			any_state = {
+				is_in_array = { global.KMT_cg_inalienable_parts = THIS }
+				NOT = { is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }}
+			}
+			any_state = {
+				NOT = { is_in_array = { global.KMT_cg_inalienable_parts = THIS }}
+				is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+	}
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	immediate = {
+		#remove_from_array = { global.KMT_cg_inalienable_parts = 753.id }
+	}
+	
+	option = {
+		ai_chance = { base = 100 }
+		name = claim_central.9.a
+		every_state = {
+			limit = { 
+				is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+				NOT = { is_in_array = { global.KMT_cg_inalienable_parts = THIS }}
+			}
+			custom_effect_tooltip = KMT_now_inalienable
+		}
+		every_state = {
+			limit = { 
+				is_in_array = { global.KMT_cg_inalienable_parts = THIS }
+				NOT = { is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }}
+			}
+			custom_effect_tooltip = KMT_nolonger_inalienable
+		}
+		update_cg_inalienable_parts = yes
+	}
+	
+	option = {
+		name = claim_central.9.b
+		every_state = {
+			limit = { 
+				is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+				NOT = { is_in_array = { global.KMT_cg_inalienable_parts = THIS }}
+			}
+			custom_effect_tooltip = KMT_nolonger_inalienable
+		}
+		every_state = {
+			limit = { 
+				is_in_array = { global.KMT_cg_inalienable_parts = THIS }
+				NOT = { is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }}
+			}
+			custom_effect_tooltip = KMT_now_inalienable
+		}
+		clear_array = ROOT.KMT_considered_inalienable_parts
+		every_state = {
+			limit = { is_in_array = { global.KMT_cg_inalienable_parts = THIS }}
+			add_to_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+		}
+	}
+	
+	option = {
+		name = claim_central.9.c
+		every_state = {
+			limit = { 
+				has_state_flag = KMT_china_inalienable_part
+				OR = {
+					NOT = { is_in_array = { ROOT.KMT_considered_inalienable_parts = THIS }}
+					NOT = { is_in_array = { global.KMT_cg_inalienable_parts = THIS }}
+				}
+			}
+			custom_effect_tooltip = KMT_now_inalienable
+		}
+		clear_array = ROOT.KMT_considered_inalienable_parts
+		every_state = {
+			limit = { has_state_flag = KMT_china_inalienable_part }
+			add_to_array = { ROOT.KMT_considered_inalienable_parts = THIS }
+		}
+		update_cg_inalienable_parts = yes
+	}
+}
+
+#continue war?
+country_event = {
+	id = claim_central.10
+	title = claim_central.10.t
+	desc = claim_central.10.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	#continue
+	option = {
+		ai_chance = {
+			base = 0
+			modifier = {
+				has_offensive_war_with = FROM
+				add = 5
+			}
+			modifier = {
+				any_state = {
+					OWNER = { tag = FROM }
+					CONTROLLER = {
+						OR = {
+							tag = ROOT
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				add = 5
+			}
+			modifier = {
+				FROM = { surrender_progress > 0.5 }
+				add = 2
+			}
+			modifier = {
+				FROM = { surrender_progress > 0.6 }
+				add = 2
+			}
+			modifier = {
+				FROM = { surrender_progress > 0.7 }
+				add = 2
+			}
+			modifier = {
+				FROM = { surrender_progress > 0.8 }
+				add = 2
+			}
+			modifier = {
+				FROM = { surrender_progress > 0.9 }
+				add = 2
+			}
+		}
+		name = claim_central.10.a
+		FROM = { country_event = { id = claim_central.11 }}
+	}
+	
+	option = {
+		ai_chance = {
+			base = 5
+			modifier = {
+				has_defensive_war_with = FROM
+				add = 1
+			}
+			modifier = {
+				NOT = { is_neighbor_of = FROM }
+				add = 5
+			}
+			modifier = {
+				AND = {
+					NOT = {
+						any_state = {
+							is_owned_by = ROOT 
+							is_coastal = yes
+						}
+						any_state = {
+							is_owned_by = FROM
+							is_coastal = yes
+						}
+					}
+					NOT = {
+						any_state = {
+							is_owned_by = ROOT
+							any_neighbor_state = {
+								is_owned_by = FROM
+							}
+						}
+					}
+				}
+				add = 10
+			}
+			modifier = {
+				surrender_progress > 0
+				add = 1
+			}
+			modifier = {
+				surrender_progress > 0.1
+				add = 1
+			}
+			modifier = {
+				surrender_progress > 0.2
+				add = 1
+			}
+			modifier = {
+				surrender_progress > 0.3
+				add = 1
+			}
+			modifier = {
+				surrender_progress > 0.4
+				add = 1
+			}
+			modifier = {
+				surrender_progress > 0.5
+				add = 1
+			}
+			modifier = {
+				surrender_progress > 0.6
+				add = 1
+			}
+			modifier = {
+				surrender_progress > 0.7
+				add = 1
+			}
+			modifier = {
+				surrender_progress > 0.8
+				add = 1
+			}
+			modifier = {
+				surrender_progress > 0.9
+				add = 1
+			}
+		}
+		name = claim_central.10.b
+		white_peace = FROM
+		FROM = {
+			country_event = { id = claim_central.12 }
+		}
+	}
+}
+
+#continued war
+country_event = {
+	id = claim_central.11
+	title = claim_central.11.t
+	desc = claim_central.11.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	#continue
+	option = {
+		name = claim_central.11.a
+	}
+	
+}
+
+#stopped war
+country_event = {
+	id = claim_central.12
+	title = claim_central.12.t
+	desc = claim_central.12.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	#continue
+	option = {
+		name = claim_central.12.a
+	}
+}
+
+#cg auto disband alliance
+country_event = {
+	id = claim_central.13
+	title = claim_central.13.t
+	desc = claim_central.13.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	#continue
+	option = {
+		name = claim_central.13.a
+	}
+}
+
+#alliance member seized national leadership - former member
+country_event = {
+	id = claim_central.14
+	title = claim_central.14.t
+	desc = claim_central.14.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	#continue
+	option = {
+		name = claim_central.14.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = KMT_ps_betrayal
+		}
+	}
+}
+
+#alliance member seized national leadership - former leader
+country_event = {
+	id = claim_central.15
+	title = claim_central.14.t
+	desc = claim_central.15.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	#continue
+	option = {
+		name = claim_central.15.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = KMT_ps_betrayal
+		}
+		declare_war_on = {
+			target = FROM
+			type = civil_war
+		}
+	}
+}
+
+#handover cg capital?
+country_event = {
+	id = claim_central.16
+	title = claim_central.16.t
+	desc = claim_central.16.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	#claim for ourselves
+	option = {
+		ai_chance = {
+			base = 0
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.5
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.75
+				}
+				add = 5
+			}
+			modifier = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 2
+				}
+				add = 5
+			}
+		}
+		name = claim_central.16.a
+		clr_country_flag = KMT_ps_hand_over_cg_capital_response_flag
+		country_event = { id = claim_central.2 }
+	}
+	
+	option = {
+		ai_chance = {
+			base = 10
+		}
+		name = claim_central.16.b
+		clr_country_flag = KMT_ps_hand_over_cg_capital_response_flag
+		FROM = {
+			set_state_owner = event_target:KMT_central_gov_capital_state
+			country_event = { id = claim_central.17 }
+		}
+	}
+}
+
+#gain cg capital
+country_event = {
+	id = claim_central.17
+	title = claim_central.17.t
+	desc = claim_central.17.d
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_soldiers_01
+	
+	#continue
+	option = {
+		name = claim_central.17.a
+	}
+}
+
+#claim cg news
+news_event = {
+	id = claim_central.18
+	title = claim_central.18.t
+	desc = claim_central.18.d
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	picture = GFX_kmt_nationalist_government
+	
+	#continue
+	option = {
+		name = claim_central.18.a
+	}
+}
+
+#from opposes us
+news_event = {
+	id = claim_central.19
+	title = claim_central.19.t
+	desc = claim_central.19.d
+	
+	major = no
+	
+	is_triggered_only = yes
+	
+	picture = GFX_kmt_nationalist_government
+	
+	option = {
+		trigger = { NOT = { tag = event_target:KMT_central_gov_tag }}
+		name = claim_central.19.a
+	}
+	
+	
+	option = {
+		trigger = { tag = event_target:KMT_central_gov_tag }
+		name = claim_central.19.b
+	}
+}
+
+#from becomes our puppet
+country_event = {
+	id = claim_central.20
+	title = claim_central.20.t
+	desc = claim_central.20.d
+	
+	major = no
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_officers
+	
+	option = {
+		effect_tooltip = { puppet = FROM }
+		name = claim_central.20.a
+	}
+}
+
+#from becomes our puppet
+country_event = {
+	id = claim_central.21
+	title = claim_central.21.t
+	desc = claim_central.21.d
+	
+	major = no
+	
+	is_triggered_only = yes
+	
+	picture = GFX_report_event_chinese_officers
+	
+	option = {
+		effect_tooltip = { puppet = FROM }
+		name = claim_central.20.a
+	}
+}

@@ -1,0 +1,149 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = {
+	name = GetPlanDraftingCDMissionName
+	text = {
+		localization_key = PRC_plan_drafting_cd
+	}
+}
+
+defined_text = {
+	name = GetPRC186T
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_purge_mao_zhang = 1 }
+		}
+		localization_key = PRC186T1
+	}
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_purge_mao_zhang = 2 }
+		}
+		localization_key = PRC186T2
+	}
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_purge_mao_zhang > 2 }
+		}
+		localization_key = PRC186T3
+	}
+	text = {
+		localization_key = PRC186TDefault
+	}
+}
+
+defined_text = {
+	name = GetPRC186D
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_purge_mao_zhang = 1 }
+		}
+		localization_key = PRC186D1
+	}
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_purge_mao_zhang = 2 }
+		}
+		localization_key = PRC186D2
+	}
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_purge_mao_zhang > 2 }
+		}
+		localization_key = PRC186D3
+	}
+	text = {
+		localization_key = PRC186DDefault
+	}
+}
+
+defined_text = {
+	name = GetPRC186A
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_purge_mao_zhang = 0 }
+		}
+		localization_key = PRC186A2
+	}
+	text = {
+		localization_key = PRC186A1
+	}
+}
+
+defined_text = {
+	name = GetPRC187T
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_sov_assistance > 5 }
+		}
+		localization_key = PRC187T1
+	}
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_sov_assistance > 1 }
+		}
+		localization_key = PRC187T2
+	}
+	text = {
+		localization_key = PRC187T3
+	}
+}
+
+defined_text = {
+	name = GetPRC187D
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_sov_assistance > 8 }
+		}
+		localization_key = PRC187D1
+	}
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_sov_assistance > 4 }
+		}
+		localization_key = PRC187D2
+	}
+	text = {
+		localization_key = PRC187D3
+	}
+}
+
+defined_text = {
+	name = GetPRC187A
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_sov_assistance > 5 }
+		}
+		localization_key = PRC187A1
+	}
+	text = {
+		trigger = {
+			check_variable = { PRC_wang_sov_assistance > 1 }
+		}
+		localization_key = PRC187A2
+	}
+	text = {
+		localization_key = PRC187A3
+	}
+}
+
+defined_text = {
+	name = GetPRCArmyName
+	text = {
+		trigger = {
+			PRC = { has_completed_focus = PRC_pla }
+		}
+		localization_key = PRC_army_name_pla
+	}
+	text = {
+		localization_key = PRC_army_name_cwpra
+	}
+}

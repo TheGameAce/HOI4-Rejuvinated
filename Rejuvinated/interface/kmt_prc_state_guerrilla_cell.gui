@@ -1,0 +1,190 @@
+
+guiTypes = {
+	
+	containerWindowType = {
+		name = "PRC_sgc_state_interactions_container"
+		position = {x=950 y=150}
+		size = { width=270 height=500 }
+
+		fade_time = 300
+		fade_type = linear
+		moveable = yes
+			
+		iconType = {
+			name = "PRC_guerrilla_panel_detail_bg"
+			position = {x=0 y=70}
+			spriteType = "GFX_prc_guerrilla_panel_detail"
+			alwaystransparent = yes
+		}
+
+		instantTextboxType = {
+			name = "PRC_guerrilla_panel_details"
+			position = {x=12 y=78}
+			font = "hoi_18mbs"
+			text = PRC_guerrilla_panel_details_text
+			maxWidth = 248
+			maxHeight = 500
+			format = left
+			alwaystransparent = yes
+		}
+		
+		background = {
+			name = "Background"
+			spriteType = "GFX_prc_guerrilla_panel"
+		}
+
+		instantTextboxType = {
+			name = "title"
+			position = {x=14 y=6}
+			font = "hoi_18mbs"
+			text = PRC_sgc_state_gui_title
+			maxWidth = 270
+			maxHeight = 23
+			format = left
+			pdx_tooltip = "PRC_guerrilla_weekly_growth"
+		}
+		
+		buttonType = {
+			name = "PRC_sgc_state_interaction_set_up" 
+			position = {x=15 y=35}	
+			spriteType = "GFX_decision_infiltrate_state"
+			pdx_tooltip = "PRC_sgc_state_interaction_set_up_tt"
+			pdx_tooltip_delayed = "PRC_sgc_state_interaction_set_up_tt_delayed"
+		}
+		
+		buttonType = {
+			name = "PRC_sgc_state_interaction_send_eq" 
+			position = {x=55 y=35}	
+			spriteType = "GFX_decision_ger_military_buildup"
+			pdx_tooltip = "PPRC_sgc_state_interaction_send_eq_tt"
+			pdx_tooltip_delayed = "PPRC_sgc_state_interaction_send_eq_tt_delayed"
+		}
+		
+		buttonType = {
+			name = "PRC_sgc_state_interaction_sabotage" 
+			position = {x=95 y=35}	
+			spriteType = "GFX_decision_generic_ignite_civil_war"
+			pdx_tooltip = "PRC_sgc_state_interaction_sabotage_tt"
+			pdx_tooltip_delayed = "PRC_sgc_state_interaction_sabotage_tt_delayed"
+		}
+		
+		buttonType = {
+			name = "PRC_sgc_state_interaction_uprise" 
+			position = {x=135 y=35}	
+			spriteType = "GFX_decision_revolt"
+			pdx_tooltip = "PRC_sgc_state_interaction_uprise_tt"
+			pdx_tooltip_delayed = "PRC_sgc_state_interaction_uprise_tt_delayed"
+			scale = 0.75
+		}
+		
+		buttonType = {
+			name = "PRC_sgc_state_interaction_relocate_FROM" 
+			position = {x=170 y=35}	
+			spriteType = "GFX_decision_category_infiltration"
+			pdx_tooltip = "PRC_sgc_state_interaction_relocate_FROM_tt"
+			pdx_tooltip_delayed = "PRC_sgc_state_interaction_relocate_FROM_tt_delayed"
+			scale = 0.75
+		}
+		
+		buttonType = {
+			name = "PRC_sgc_state_interaction_relocate_TARG" 
+			position = {x=210 y=35}	
+			spriteType = "GFX_decision_category_sov_great_patriotic_war"
+			pdx_tooltip = "PRC_sgc_state_interaction_relocate_TARG_tt"
+			pdx_tooltip_delayed = "PRC_sgc_state_interaction_relocate_TARG_tt_delayed"
+			scale = 0.75
+		}
+		
+		buttonType = {
+			name = "PRC_panel_detail_expand" 
+			position = {x=243 y=52}	
+			spriteType = "GFX_PRC_panel_detail_expand"
+			frame = 2
+		}
+		
+		buttonType = {
+			name = "PRC_panel_detail_retract" 
+			position = {x=243 y=52}	
+			spriteType = "GFX_PRC_panel_detail_expand"
+			frame = 1
+		}
+	}
+	
+	containerWindowType = {
+		name = "PRC_guerrilla_cells_location"
+		position = {x=0 y=0}
+		size = { width=100% height=350 }
+		
+		iconType = {
+			name = "PRC_borderlines"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_borderlines"
+			pdx_tooltip = "PRC_borderlines_tt"
+		}
+		
+		gridboxtype = {
+			name = "PRC_map_gridbox"
+			position = { x = 0 y = 0 }
+			size = { width = 500 height = 400 }
+			slotsize = { width = 0 height = 0 } #if width or height is 1, it will use slot element's dimension
+			add_horizontal = yes
+			format = "UPPER_LEFT"
+		}
+	}
+
+	containerWindowType = {
+		name = "PRC_gcs_dcat_state_container"
+		position = { x = 0 y = 0 }
+		size = { width = 500 height = 400 }
+		
+		background = {
+			name = "Background"
+		}
+		
+		iconType = {
+			name = "PRC_gcs_states_tga"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_dcat_state_283"
+			alwaystransparent = yes
+		}
+	}
+	
+	containerWindowType = {
+		name = "PRC_reactionary_hideout_location"
+		position = {x=0 y=0}
+		size = { width=100% height=350 }
+		
+		iconType = {
+			name = "PRC_zgt_borderlines"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_borderlines"
+			pdx_tooltip = "PRC_borderlines_tt"
+		}
+		
+		gridboxtype = {
+			name = "PRC_zgt_map_gridbox"
+			position = { x = 0 y = 0 }
+			size = { width = 500 height = 400 }
+			slotsize = { width = 0 height = 0 } #if width or height is 1, it will use slot element's dimension
+			add_horizontal = yes
+			format = "UPPER_LEFT"
+		}
+	}
+
+	containerWindowType = {
+		name = "PRC_zgt_dcat_state_container"
+		position = { x = 0 y = 0 }
+		size = { width = 500 height = 400 }
+		
+		background = {
+			name = "Background"
+		}
+		
+		iconType = {
+			name = "PRC_zgt_states_tga"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_dcat_state_283"
+			alwaystransparent = yes
+		}
+	}
+}

@@ -1,0 +1,78 @@
+﻿add_namespace = test_value
+
+country_event = {
+	id = test_value.1
+	title = test_value.1.t
+	desc = test_value.1.d
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	trigger = {
+		always = no
+		has_global_flag = {
+			flag = KMT_xian_rejected_num
+			value > 2
+		}
+		has_global_flag = {
+			flag = KMT_xian_rejected_num
+			value > 4
+		}
+		has_global_flag = {
+			flag = KMT_xian_rejected_num
+			value > 6
+		}
+		has_global_flag = {
+			flag = KMT_xian_rejected_num
+			value > 8
+		}
+		has_global_flag = {
+			flag = KMT_xian_rejected_num
+			value > 10
+		}
+		has_global_flag = {
+			flag = KMT_xian_rejected_num
+			value > 12
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+	}
+	option = { 
+	}
+}
+country_event = {
+	id = test_value.2
+	title = test_value.1.t
+	desc = test_value.1.d
+	picture = GFX_report_event_japanese_transport_soldiers
+	
+	trigger = {
+		always = no
+	}
+	
+	immediate = { 
+		set_country_flag = {
+			flag = KMT_test_value
+			value = 1
+		}
+	}
+	
+	is_triggered_only = yes
+	option = { 
+	}
+}
+
+#emergency brake - crash game
+country_event = {
+	id = test_value.3
+	hidden = yes
+	
+	immediate = { 
+		#country_event = { id = test_value.3 }
+	}
+	
+	is_triggered_only = yes
+	option = { 
+	}
+}

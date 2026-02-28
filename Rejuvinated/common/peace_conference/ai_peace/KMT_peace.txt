@@ -1,0 +1,502 @@
+# Scripted AI desire for peace actions.
+# See documentation.info file for more detailed scripting information.
+
+peace_ai_desires = {
+
+    #no patches in us-occupied japan
+    KMT_dont_interfere_with_usa_puppeting_japan = {
+        peace_action_type = { puppet force_government liberate }
+        enable = {
+			FROM.FROM = { original_tag = JAP }
+            FROM.FROM.FROM = {
+				is_core_of = JAP
+            }
+			USA = {
+				has_war_with = JAP
+				NOT = { has_war_with = ROOT }
+                has_government = democratic
+			}
+			ROOT = { NOT = { original_tag = USA }}
+        }
+        ai_desire = -75
+    }
+
+    #no patches in us-occupied japan
+    KMT_dont_interfere_with_usa_puppeting_japan2 = {
+        peace_action_type = take_states
+        enable = {
+			FROM.FROM = { original_tag = JAP }
+            FROM.FROM.FROM = {
+				is_core_of = JAP
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+            }
+			USA = {
+				has_war_with = JAP
+				NOT = { has_war_with = ROOT }
+                has_government = democratic
+			}
+			ROOT = { NOT = { original_tag = USA }}
+        }
+        ai_desire = -75
+    }
+
+    KMT_no_indochina_bordergore = {
+        peace_action_type = take_states
+        enable = {
+            FROM.FROM.FROM = {
+				OR = {
+					is_claimed_by = IDC
+					is_core_of = IDC
+				}
+				NOT = {
+					is_claimed_by = ROOT
+					is_core_of = ROOT
+				}
+            }
+            ROOT = {
+				NOT = { 
+					original_tag = IDC 
+					has_war_with = IDC
+				}
+            }
+        }
+        ai_desire = -150
+    }
+
+    KMT_no_indochina_bordergore2 = {
+        peace_action_type = { puppet force_government liberate }
+        enable = {
+            FROM.FROM.FROM = {
+				OR = {
+					is_claimed_by = IDC
+					is_core_of = IDC
+				}
+            }
+			FROM.FROM = {
+				has_war_with = IDC
+			}
+            ROOT = {
+				NOT = { 
+					has_war_with = IDC
+				}
+            }
+        }
+        ai_desire = -75
+    }
+
+    #idc is friend so give states
+    KMT_give_states_to_idc = {
+        peace_action_type = take_states 
+        enable = {
+            FROM.FROM.FROM = {
+				OR = {
+					is_claimed_by = IDC
+					is_core_of = IDC
+				}
+				NOT = {
+					is_claimed_by = ROOT
+					is_core_of = ROOT
+				}
+            }
+            FROM = {
+				original_tag = IDC
+            }
+            ROOT = {
+				OR = {
+					IDC = { is_subject_of = ROOT }
+					is_in_faction_with = IDC
+					original_tag = IDC
+					NOT = { has_war_with = IDC }
+				}
+            }
+        }
+        ai_desire = 200
+    }
+
+    #has decision to remedy
+    KMT_give_states_to_idc2 = {
+        peace_action_type = take_states
+        enable = {
+            FROM.FROM.FROM = {
+				OR = {
+					is_claimed_by = IDC
+					is_core_of = IDC
+				}
+            }
+            ROOT = {
+				OR = {
+					IDC = { is_subject_of = ROOT }
+					is_in_faction_with = IDC
+					original_tag = IDC
+				}
+            }
+        }
+        ai_desire = 200
+    }
+
+    #cg land to cg
+    KMT_dont_take_cg_china_land = {
+        peace_action_type = { puppet take_states force_government liberate }
+        enable = {
+			is_in_array = { KMT_central_gov_tag.KMT_considered_inalienable_parts = FROM.FROM.FROM }
+            FROM.FROM.FROM = {
+				NOT = {
+					is_core_of = ROOT
+					is_claimed_by = ROOT
+				}
+            }
+			FROM.FROM = {
+				has_war_with = event_target:KMT_central_gov_tag
+			}
+            ROOT = {
+				NOT = { 
+					tag = event_target:KMT_central_gov_tag
+					has_war_with = event_target:KMT_central_gov_tag
+				}
+            }
+        }
+        ai_desire = -75
+    }
+
+    #cg land to cg
+    KMT_dont_liberate_warlords = {
+        peace_action_type = { puppet force_government liberate }
+        enable = {
+			FROM = {
+				is_chinese_nations_w_HYQ = yes
+				NOT = { 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+            ROOT = {
+				NOT = { 
+					original_tag = JAP
+					has_government = communism
+				}
+            }
+        }
+        ai_desire = -75
+    }
+
+    #cg land to cg
+    KMT_leave_jap_puppet_to_cg = {
+        peace_action_type = { puppet force_government }
+        enable = {
+			FROM = {
+				OR = {
+					original_tag = MCK
+					original_tag = ECR
+					original_tag = MEN
+					original_tag = EHA
+					original_tag = PGR
+					original_tag = RGR
+					is_chinese_nations_w_HYQ = yes
+				}
+				has_war_with = event_target:KMT_central_gov_tag
+			}
+            ROOT = {
+				NOT = { has_war_with = event_target:KMT_central_gov_tag }
+				is_chinese_nations_w_HYQ = no
+            }
+        }
+        ai_desire = -75
+    }
+
+    #cg land to cg
+    KMT_give_jap_puppet_land_to_cg = {
+        peace_action_type = { take_states }
+        enable = {
+			is_in_array = { KMT_central_gov_tag.KMT_considered_inalienable_parts = FROM.FROM.FROM }
+			FROM.FROM.FROM = { has_state_flag = KMT_collaborator_state }
+			FROM.FROM = {
+				has_war_with = event_target:KMT_central_gov_tag
+			}
+			FROM = {
+				tag = event_target:KMT_central_gov_tag
+			}
+            ROOT = {
+				NOT = { has_war_with = event_target:KMT_central_gov_tag }
+				is_chinese_nations_w_HYQ = no
+            }
+        }
+        ai_desire = 75
+    }
+
+    #cg land to cg
+    KMT_dont_liberate_warlords2 = {
+        peace_action_type = { puppet force_government }
+        enable = {
+			FROM = {
+				is_chinese_nations_w_HYQ = yes
+				NOT = { 
+					tag = PRC
+				}
+			}
+            ROOT = {
+				has_government = communism
+            }
+        }
+        ai_desire = -75
+    }
+
+    #dont take usa claimed islands
+    KMT_sov_no_pacific_islands = {
+        peace_action_type = { puppet take_states force_government liberate }
+        enable = {
+            FROM.FROM.FROM = {
+				is_claimed_by = USA
+            }
+			FROM.FROM = {
+				original_tag = JAP
+				has_war_with = USA
+				has_war_with = SOV
+			}
+            ROOT = {
+				original_tag = SOV
+				NOT = { has_war_with = USA }
+            }
+        }
+        ai_desire = -75
+    }
+
+    #dont take pacific islands
+    KMT_sov_dont_take_pacific_islands = {
+        peace_action_type = { puppet take_states force_government liberate }
+        enable = {
+            FROM.FROM.FROM = {
+				OR = {
+					region = 78
+					region = 85
+					region = 84
+					region = 94
+					region = 97
+					region = 95
+					region = 180
+					region = 105
+					region = 172
+					state = 526
+				}
+            }
+			FROM.FROM = {
+				has_war_with = USA
+				has_war_with = ROOT
+			}
+			FROM = {
+				OR = {
+					original_tag = GUM
+					original_tag = FSM
+					original_tag = JAP
+					original_tag = ROOT
+				}
+			}
+            ROOT = {
+				NOT = { original_tag = USA }
+				NOT = { has_war_with = USA }
+            }
+        }
+        ai_desire = -75
+    }
+
+    #usa take pacific islands
+    KMT_usa_take_pacific_islands = {
+        peace_action_type = { take_states }
+        enable = {
+            FROM.FROM.FROM = {
+				OR = {
+					region = 78
+					region = 85
+					region = 94
+					region = 84
+					region = 97
+					region = 95
+					region = 180
+					region = 105
+					region = 172
+				}
+            }
+			FROM = {
+				original_tag = USA
+			}
+            ROOT = {
+				original_tag = USA
+            }
+			629 = {	
+				OR = {
+					is_owned_by = ROOT
+					pc_is_state_claimed_by = ROOT
+				}
+			}
+        }
+        ai_desire = 100
+    }
+
+    #dont liberate pacific tags
+    KMT_usa_dont_liberate_pacific_tag = {
+        peace_action_type = { puppet force_government liberate }
+        enable = {
+            FROM.FROM.FROM = {
+				OR = {
+					region = 78
+					region = 85
+					region = 94
+					region = 84
+					region = 97
+					region = 95
+					region = 180
+					region = 105
+					region = 172
+				}
+            }
+			FROM = {
+				OR = {
+					original_tag = GUM
+					original_tag = FSM
+					original_tag = JAP
+				}
+			}
+            ROOT = {
+				original_tag = USA
+            }
+			629 = {	
+				OR = {
+					is_owned_by = ROOT
+					pc_is_state_claimed_by = ROOT
+				}
+			}
+        }
+        ai_desire = -100
+    }
+
+    #no pacific tags
+    KMT_dont_release_pacific_tags = {
+        peace_action_type = { puppet force_government liberate }
+        enable = {
+			FROM = {
+				OR = {
+					original_tag = FSM
+					original_tag = GUM
+				}
+			}
+        }
+        ai_desire = -75
+    }
+
+    #kurils and sakhalin
+    KMT_sov_take_kuril_karafuto = {
+        peace_action_type = take_states
+        enable = {
+			FROM.FROM.FROM = {
+				OR = {
+					region = 148
+					region = 87
+				}
+			}
+			ROOT = {
+				original_tag = SOV
+			}
+			any_state = {
+				OR = {
+					region = 148
+					region = 87
+				}
+				is_in_home_area = yes
+				OR = {
+					is_owned_by = ROOT
+					pc_is_state_claimed_by = ROOT
+				}
+			}
+        }
+        ai_desire = 100
+    }
+
+    #dont puppet siam if bangkok is taken
+    KMT_siam_puppet_bangkok = {
+        peace_action_type = { puppet force_government liberate }
+        enable = {
+			FROM.FROM = { 
+				original_tag = SIA
+			}
+			FROM.FROM.FROM = {
+				NOT = { state = 289 }
+			}
+			ROOT = {
+			}
+        }
+        ai_desire = -100
+    }
+
+    #give siam puppet core
+    KMT_siam_puppet_give_state = {
+        peace_action_type = { take_states puppet }
+        enable = {
+			FROM.FROM.FROM = {
+				is_core_of = SIA
+			}
+			FROM = {
+				original_tag = SIA
+				OR = {
+					is_subject_of = ROOT
+					pc_is_puppeted_by = ROOT
+				}
+			}
+        }
+        ai_desire = 125
+    }
+
+    #no ryukyu
+    KMT_no_ryukyu = {
+        peace_action_type = { liberate puppet }
+        enable = {
+			FROM = {
+				original_tag = RYU
+			}
+			NOT = {
+				ROOT = {
+					tag = MCK
+					has_completed_focus = MCK_restore_the_empire
+					is_subject = no
+					has_government = neutrality
+				}
+			}
+        }
+        ai_desire = -75
+    }
+
+    #respect idc
+    KMT_no_vincamlao_when_with_idc = {
+        peace_action_type = { liberate force_government puppet }
+        enable = {
+			FROM.FROM = {
+				has_war_with = IDC
+			}
+			FROM = {
+				OR = {
+					original_tag = VIN
+					original_tag = CAM
+					original_tag = LAO
+				}
+			}
+			ROOT = {
+				NOT = { has_war_with = IDC }
+			}
+        }
+        ai_desire = -75
+    }
+
+    # We want a base in this region
+    USA_take_okinawa_increase = {
+        peace_action_type = { take_states }
+        enable = {
+            FROM.FROM.FROM = {
+                state = 526 # Okinawa
+            }
+            ROOT = {
+                original_tag = USA
+            }
+        }
+        ai_desire = 1000
+    }
+}

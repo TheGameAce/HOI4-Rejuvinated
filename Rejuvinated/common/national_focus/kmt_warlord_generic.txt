@@ -1,0 +1,3429 @@
+focus_tree = {
+	id = KMT_warlord_generic_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 100
+			warlord_focus_tree_trigger = yes
+			NOT = {
+				tag = PRC
+				tag = event_target:KMT_central_gov_tag
+			}
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 1350 }
+
+	focus = {
+		id = KMT_ostensible_loyalty
+		icon = GFX_goal_generic_major_alliance
+		x = 6
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = GXC_li_zongren
+						ruling_only = yes
+					}
+					tag = YUT
+					tag = QIA
+					tag = XIA
+				}
+				is_historical_focus_on = yes
+				factor = 2.5
+			}
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = SDC_han_fuju
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = SCC_liu_xiang
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = MEN_prince_demchugdongrub
+						ruling_only = yes
+					}
+				}
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				has_country_leader = {
+					character = ZXL_yang_hucheng
+					ruling_only = yes
+				}
+				event_target:KMT_central_gov_tag = {
+					has_country_leader = {
+						character = CHI_chiang_kaishek
+						ruling_only = yes
+					}
+				}
+				is_historical_focus_on = yes
+				factor = 0.1
+			}
+			modifier = {
+				event_target:KMT_central_gov_tag = {
+					is_in_faction_with = JAP
+				}
+				JAP = { 
+					has_government = fascism
+					is_faction_leader = yes
+					is_subject = no
+				}
+				NOT = { has_government = fascism }
+				factor = 0
+			}
+			modifier = {
+				event_target:KMT_central_gov_tag = {
+					has_government = communism
+				}
+				NOT = { has_government = communism }
+				factor = 0
+			}
+			modifier = {
+				event_target:KMT_central_gov_tag = {
+					has_government = democratic
+				}
+				NOT = { has_government = democratic }
+				factor = 0.1
+			}
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = SCC_liu_xiang
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = SDC_han_fuju
+						ruling_only = yes
+					}
+				}
+				is_historical_focus_on = yes
+				factor = 0.05
+			}
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = YUN_long_yun
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = SKC_liu_wenhui
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = PGR_song_zheyuan
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = SHX_yan_xishan
+						ruling_only = yes
+					}
+				}
+				is_historical_focus_on = yes
+				factor = 0.1
+			}
+		}
+		historical_ai = {
+		}
+		mutually_exclusive = { focus = KMT_neutral_stance focus = KMT_oppose_the_central_government }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_central_gov_tag_tt
+				has_event_target = KMT_central_gov_tag
+			}
+			event_target:KMT_central_gov_tag = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			set_variable = { KMT_cg_stance_target@KMT_central_gov_tag = 1 }
+			unlock_decision_tooltip = KMT_reevaluate_relation_with_cg
+			add_opinion_modifier = { target = event_target:KMT_central_gov_tag modifier = KMT_ostensible_loyalty_om }
+			add_stability = 0.05
+			add_political_power = 50
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				
+				set_temp_variable = { global.KMT_ps_loyalty_change = 5 }
+				KMT_ps_change_loyalty = yes
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_neutral_stance
+		icon = GFX_goal_generic_neutrality_focus
+		x = 23
+		y = 0
+		mutually_exclusive = { focus = KMT_ostensible_loyalty focus = KMT_oppose_the_central_government }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = YUN_long_yun
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = SKC_liu_wenhui
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = PGR_song_zheyuan
+						ruling_only = yes
+					}
+				}
+				is_historical_focus_on = yes
+				factor = 1.5
+			}
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = SHX_yan_xishan
+						ruling_only = yes
+					}
+				}
+				is_historical_focus_on = yes
+				factor = 2
+			}
+			modifier = {
+				has_country_leader = {
+					character = ZXL_zhang_xueliang
+					ruling_only = yes
+				}
+				is_historical_focus_on = yes
+				factor = 0.3
+			}
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = SCC_liu_xiang
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = SDC_han_fuju
+						ruling_only = yes
+					}
+				}
+				is_historical_focus_on = yes
+				factor = 0.1
+			}
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = GXC_li_zongren
+						ruling_only = yes
+					}
+					tag = YUT
+					tag = QIA
+					tag = XIA
+				}
+				is_historical_focus_on = yes
+				factor = 0.001
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_ps_not_in_faction
+				NOT = {
+					any_country = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+				}
+			}
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			set_variable = { KMT_cg_stance_target@KMT_central_gov_tag = 1 }
+			unlock_decision_tooltip = KMT_reevaluate_relation_with_cg
+			custom_effect_tooltip = KMT_neutral_stance_tt
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = KMT_oppose_the_central_government
+		icon = GFX_goal_generic_major_war
+		x = 12
+		y = 0
+		mutually_exclusive = { focus = KMT_neutral_stance focus = KMT_ostensible_loyalty }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = GXC_li_zongren
+						ruling_only = yes
+					}
+				}
+				is_historical_focus_on = yes
+				factor = 0.2
+			}
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = YUN_long_yun
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = SKC_liu_wenhui
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = SHX_yan_xishan
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = PGR_song_zheyuan
+						ruling_only = yes
+					}
+				}
+				is_historical_focus_on = yes
+				factor = 0.05
+			}
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = SCC_liu_xiang
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = SDC_han_fuju
+						ruling_only = yes
+					}
+				}
+				is_historical_focus_on = yes
+				factor = 1.5
+			}
+			modifier = {
+				has_country_leader = {
+					character = ZXL_zhang_xueliang
+					ruling_only = yes
+				}
+				is_historical_focus_on = yes
+				factor = 0.1
+			}
+			modifier = {
+				has_government = communism
+				factor = 2
+			}
+			modifier = {
+				OR = {
+					has_country_leader = {
+						character = GXC_li_zongren
+						ruling_only = yes
+					}
+					tag = YUT
+					tag = QIA
+					tag = XIA
+					tag = XSM
+					tag = NSM
+					tag = SHX
+					tag = SKC
+					tag = YUN
+					tag = PGR
+					tag = MEN
+				}
+				is_historical_focus_on = yes
+				factor = 0.001
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_central_gov_tag_tt
+				has_event_target = KMT_central_gov_tag
+			}
+			event_target:KMT_central_gov_tag = {
+				exists = yes
+			}
+
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_opinion_modifier = { target = event_target:KMT_central_gov_tag modifier = KMT_oppose_the_central_government_om }
+			add_political_power = 100
+			add_command_power = 75
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				
+				set_temp_variable = { global.KMT_ps_loyalty_change = -25 }
+				KMT_ps_change_loyalty = yes
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_devote_to_the_party_and_state
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		prerequisite = { focus = KMT_ostensible_loyalty }
+		mutually_exclusive = { focus = KMT_struggle_for_power }
+		x = -2
+		y = 1
+		relative_position_id = KMT_ostensible_loyalty
+
+		cost = 5
+		
+		available = {
+			if = {
+				limit = {
+					OR = {
+						tag = YUT
+						tag = GXC
+					}
+				}
+				NOT = { has_global_flag = liangguang_incident }
+			}
+			if = {
+				limit = {
+					tag = ZXL
+				}
+				NOT = { has_global_flag = xian_incident }
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 10
+				OR = {
+					tag = XIA
+					tag = QIA
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					tag = XSM
+					tag = NSM
+				}
+				event_target:KMT_central_gov_tag = { has_government = ROOT }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					tag = ZXL
+					tag = SIK
+					tag = GXC
+					tag = SCC
+					tag = SDC
+					tag = MEN
+					tag = YUT
+					tag = SHX
+				}
+				is_historical_focus_on = yes
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_central_gov_tag_tt
+				has_event_target = KMT_central_gov_tag
+			}
+			event_target:KMT_central_gov_tag = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+			custom_trigger_tooltip = {
+				tooltip = KMT_ps_not_in_faction
+				NOT = {
+					any_country = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_opinion_modifier = { target = event_target:KMT_central_gov_tag modifier = KMT_devote_to_the_party_and_state_om }
+			event_target:KMT_central_gov_tag = { add_opinion_modifier = { target = ROOT modifier = KMT_devote_to_the_party_and_state_om_cg }}
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				
+				#if = {
+				#	limit = { NOT = { is_in_array = { global.KMT_ps_alliance_leaders = event_target:KMT_central_gov_tag }}}
+				#	add_to_array = { global.KMT_ps_alliance_leaders = event_target:KMT_central_gov_tag }
+				#	add_to_array = { KMT_central_gov_tag.KMT_ps_alliance_array = event_target:KMT_central_gov_tag }
+				#}
+				#add_to_array = { KMT_central_gov_tag.KMT_ps_alliance_array = ROOT }
+				
+				if = {
+					limit = { 
+						any_country = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+						is_in_array = { global.KMT_ps_alliance_leaders = ROOT }
+					}
+					every_other_country = { 
+						limit = { is_in_array = { ROOT.KMT_ps_alliance_array = THIS }}
+						country_event = { id = kmt_powerstruggle.5 }
+					}
+				}else_if = {
+					limit = {
+						any_country = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+						NOT = { is_in_array = { global.KMT_ps_alliance_leaders = ROOT }}
+					}
+					random_country = {
+						limit = { is_in_array = { THIS.KMT_ps_alliance_array = ROOT }}
+						country_event = { id = kmt_powerstruggle.4 }
+					}
+				}
+				
+				set_temp_variable = { global.KMT_ps_loyalty_change = 25 }
+				KMT_ps_change_loyalty = yes
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_tighter_military_cooperation
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = KMT_devote_to_the_party_and_state }
+		x = 0
+		y = 1
+		relative_position_id = KMT_devote_to_the_party_and_state
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_central_gov_tag_tt
+				has_event_target = KMT_central_gov_tag
+			}
+			event_target:KMT_central_gov_tag = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = KMT_tighter_military_cooperation_tt
+			if = {
+				limit = { NOT = { has_country_flag = KMT_completed_tmc }}
+				set_country_flag = KMT_completed_tmc
+				add_doctrine_cost_reduction = {
+					uses = 1
+					cost_reduction = 0.25
+					category = land_doctrine
+				}
+				add_tech_bonus = {
+					uses = 1
+					bonus = 0.5
+					category = infantry_weapons
+					category = artillery
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_officials_screening
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = KMT_devote_to_the_party_and_state }
+		x = -2
+		y = 1
+		relative_position_id = KMT_devote_to_the_party_and_state
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_central_gov_tag_tt
+				has_event_target = KMT_central_gov_tag
+			}
+			event_target:KMT_central_gov_tag = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = KMT_officials_screening_unlock_decisions_tt
+			add_political_power = 50
+			add_war_support = 0.1
+			if = {
+				limit = { event_target:KMT_central_gov_tag = { has_government = neutrality }}
+				add_popularity = { ideology = neutrality popularity = 0.3 }
+			}else_if = {
+				limit = { event_target:KMT_central_gov_tag = { has_government = fascism }}
+				add_popularity = { ideology = fascism popularity = 0.3 }
+			}else_if = {
+				limit = { event_target:KMT_central_gov_tag = { has_government = democratic }}
+				add_popularity = { ideology = democratic popularity = 0.3 }
+			}else = {
+				add_popularity = { ideology = communism popularity = 0.3 }
+			}
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_officials_screening_tt
+				set_temp_variable = { global.KMT_ps_loyalty_change = 10 }
+				KMT_ps_change_loyalty = yes
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_suppress_dissidents
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = KMT_devote_to_the_party_and_state }
+		x = -4
+		y = 1
+		relative_position_id = KMT_devote_to_the_party_and_state
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_central_gov_tag_tt
+				has_event_target = KMT_central_gov_tag
+			}
+			event_target:KMT_central_gov_tag = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = KMT_warlord_suppress_dissidents_idea
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				
+				custom_effect_tooltip = KMT_suppress_dissidents_tt
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_new_model_region
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = KMT_tighter_military_cooperation }
+		prerequisite = { focus = KMT_officials_screening }
+		prerequisite = { focus = KMT_suppress_dissidents }
+		x = 0
+		y = 1
+		relative_position_id = KMT_officials_screening
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_same_ideo_with_cg_tt
+				event_target:KMT_central_gov_tag = { has_government = ROOT }
+			}
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_central_gov_tag_tt
+				has_event_target = KMT_central_gov_tag
+			}
+			event_target:KMT_central_gov_tag = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_new_model_region_tt
+			}
+			
+			add_to_variable = { global.KMT_gc_max_ip_from_loyal_warlords = 2 }
+			add_stability = 0.05
+			add_political_power = 200
+			add_manpower = 50000
+		}
+	}
+
+	focus = {
+		id = KMT_attract_central_investments
+		icon = GFX_focus_generic_industry_2
+		prerequisite = { focus = KMT_new_model_region }
+		x = -3
+		y = 1
+		relative_position_id = KMT_new_model_region
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_central_gov_tag_tt
+				has_event_target = KMT_central_gov_tag
+			}
+			event_target:KMT_central_gov_tag = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+				num_of_civilian_factories > 5
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = KMT_warlord_has_completed_aci }}
+				set_country_flag = KMT_warlord_has_completed_aci
+				if = {
+					limit = {
+						any_owned_state = {
+							is_controlled_by = ROOT
+							is_in_array = { global.KMT_greater_china_region_states = THIS }
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							is_in_array = { global.KMT_greater_china_region_states = THIS }
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}else_if = {
+					limit = {
+						any_owned_state = {
+							is_controlled_by = ROOT
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							free_building_slots = {
+								building = industrial_complex
+								size > 0
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}else = {
+					add_tech_bonus = { 
+						uses = 1
+						bonus = 1
+						category = industry
+					}
+				}
+				if = {
+					limit = { event_target:KMT_central_gov_tag = { num_of_civilian_factories > 15 }}
+					if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = ROOT
+								is_in_array = { global.KMT_greater_china_region_states = THIS }
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}
+						}
+						random_owned_controlled_state = {
+							limit = {
+								is_in_array = { global.KMT_greater_china_region_states = THIS }
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+							add_building_construction = {
+								type = infrastructure
+								level = 1
+								instant_build = yes
+							}
+						}
+					}else_if = {
+						limit = {
+							any_owned_state = {
+								is_controlled_by = ROOT
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}
+						}
+						random_owned_controlled_state = {
+							limit = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+								type = arms_factory
+								level = 1
+								instant_build = yes
+							}
+							add_building_construction = {
+								type = infrastructure
+								level = 1
+								instant_build = yes
+							}
+						}
+					}else = {
+						add_tech_bonus = { 
+							uses = 1
+							bonus = 1
+							category = infantry_weapons
+						}
+					}
+				}else = {
+					custom_effect_tooltip = KMT_attract_central_investments_tt
+				}
+			}else = { add_political_power = 50 }
+			custom_effect_tooltip = KMT_lower_incompetent_industry_along_cg_tt
+		}
+	}
+
+	focus = {
+		id = KMT_improve_border_defence
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = KMT_new_model_region }
+		x = -1
+		y = 1
+		relative_position_id = KMT_new_model_region
+		mutually_exclusive = { focus = KMT_offensive_operations }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = KMT_improve_border_defence_tt
+			set_variable = { KMT_warlord_border_war_defender_modifier = 1.5 }
+			add_ideas = KMT_warlord_defensive_posture
+		}
+	}
+
+	focus = {
+		id = KMT_offensive_operations
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = KMT_new_model_region }
+		x = 1
+		y = 1
+		relative_position_id = KMT_new_model_region
+		mutually_exclusive = { focus = KMT_improve_border_defence }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_central_gov_tag_tt
+				has_event_target = KMT_central_gov_tag
+			}
+			event_target:KMT_central_gov_tag = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_offensive_operations_tt2
+			}else = { custom_effect_tooltip = KMT_offensive_operations_tt }
+		}
+	}
+
+	focus = {
+		id = KMT_the_final_reward
+		
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = KMT_offensive_operations focus = KMT_improve_border_defence }
+		x = -1
+		y = 1
+		relative_position_id = KMT_offensive_operations
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_has_central_gov_tag_tt
+				has_event_target = KMT_central_gov_tag
+			}
+			event_target:KMT_central_gov_tag = {
+				exists = yes
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+			has_stability > 0.75
+			OR = {
+				has_war = no
+				has_war_support > 0.9
+			}
+			OR = {
+				is_subject_of = event_target:KMT_central_gov_tag
+				if = {
+					limit = { event_target:KMT_central_gov_tag = { has_government = democratic }}
+					democratic > 0.75
+				}
+				if = {
+					limit = { event_target:KMT_central_gov_tag = { has_government = communism }}
+					communism > 0.75
+				}
+				if = {
+					limit = { event_target:KMT_central_gov_tag = { has_government = fascism }}
+					fascism > 0.75
+				}
+				if = {
+					limit = { event_target:KMT_central_gov_tag = { has_government = neutrality }}
+					neutrality > 0.75
+				}
+				if = {
+					limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+					custom_trigger_tooltip = {
+						tooltip = KMT_the_final_reward_loyalty_trigger_tt
+						NOT = { check_variable = { KMT_ps_loyalty@KMT_central_gov_tag < 100 }}
+					}
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = KMT_the_final_reward_tt
+			for_each_loop = {
+				array = researched_techs
+				#log = "[?v]"
+				event_target:KMT_central_gov_tag = { 
+					#log = "[?v]"
+					#if = { limit = { NOT = { has_tech = var:v }} log = "[This.GetName] not has tech [?v]" }
+					if = {
+						limit = {
+							NOT = { check_variable = { v = 12335 }} #id is first air doc
+							NOT = { check_variable = { v = 13127 }} #id is Combined Arms
+							OR = {
+								check_variable = { v < 28897 } #id is second air doc
+								AND = {
+									check_variable = { v > 28935 } #id is last air doc
+									check_variable = { v < 29160 } #id is first land doc
+								}
+								AND = {
+									check_variable = { v > 29221 } #id is last land doc
+									check_variable = { v < 29252 } #id is first naval doc
+								}
+								check_variable = { v = 29253 }
+								check_variable = { v > 29297 } #id is last naval doc
+							}
+						}
+						set_technology = { var:v = 1 }
+					}
+				}
+			}
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_the_final_reward_tt2
+				hidden_effect = {
+					event_target:KMT_central_gov_tag = {
+						every_state = {
+							limit = { check_variable = { This.KMT_pop_support@Root > 0 }}
+							set_temp_variable = { KMT_ps_temp_convert = KMT_pop_support@Root }
+							set_variable = { KMT_pop_support@Root = 0 }
+							add_to_variable = { KMT_pop_support@PREV = KMT_ps_temp_convert }
+						}
+					}
+				}
+			}
+			every_state = {
+				limit = { 
+					is_core_of = ROOT 
+					NOT = { is_core_of = event_target:KMT_central_gov_tag }
+				}
+				add_core_of = event_target:KMT_central_gov_tag
+				remove_core_of = ROOT
+			}
+			every_state = {
+				limit = { 
+					is_claimed_by = ROOT 
+					NOT = { is_claimed_by = event_target:KMT_central_gov_tag }
+				}
+				add_claim_by = event_target:KMT_central_gov_tag
+				remove_claim_by = ROOT
+			}
+			every_unit_leader = { 
+				set_character_flag = KMT_temp_final_reward_set_nationality_flag 
+				set_nationality = event_target:KMT_central_gov_tag 
+			}
+			every_character = { 
+				limit = { has_character_flag = KMT_temp_final_reward_set_nationality_flag } 
+				set_nationality = event_target:KMT_central_gov_tag 
+				clr_character_flag = KMT_temp_final_reward_set_nationality_flag
+			}
+			event_target:KMT_central_gov_tag = {
+				add_stability = 0.1
+				add_war_support = 0.1
+				add_political_power = 500
+				#country_event = { }
+				annex_country = {
+					target = ROOT
+					transfer_troops = yes
+				}
+			}
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = kmt.655 hours = 5 }
+			}
+			if = {
+				limit = { event_target:KMT_central_gov_tag = { is_ai = yes }}
+				event_target:KMT_central_gov_tag = { change_tag_from = ROOT }
+			}else = {
+				custom_effect_tooltip = GAME_OVER_TT
+			}
+			hidden_effect = {
+				event_target:KMT_central_gov_tag = {
+					if = { limit = { ROOT = { tag = NSM }} set_country_flag = nsm_sumitted }
+					if = { limit = { ROOT = { tag = PGR }} set_country_flag = pgr_sumitted }
+					if = { limit = { ROOT = { tag = MEN }} set_country_flag = men_sumitted }
+					if = { limit = { ROOT = { tag = SDC }} set_country_flag = sdc_sumitted }
+					if = { limit = { ROOT = { tag = SHX }} set_country_flag = shx_sumitted }
+					if = { limit = { ROOT = { tag = XSM }} set_country_flag = xsm_sumitted }
+					if = { limit = { ROOT = { tag = SIK }} set_country_flag = sik_sumitted }
+					if = { limit = { ROOT = { tag = SCC }} set_country_flag = scc_sumitted }
+					if = { limit = { ROOT = { tag = SKC }} set_country_flag = skc_sumitted }
+					if = { limit = { ROOT = { tag = XIA }} set_country_flag = xia_sumitted }
+					if = { limit = { ROOT = { tag = QIA }} set_country_flag = qia_sumitted }
+					if = { limit = { ROOT = { tag = YUN }} set_country_flag = yun_sumitted }
+					if = { limit = { ROOT = { tag = GXC }} set_country_flag = gxc_sumitted }
+					if = { limit = { ROOT = { tag = YUT }} set_country_flag = yut_sumitted }
+					if = { limit = { ROOT = { tag = ZXL }} set_country_flag = zxl_sumitted }
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_struggle_for_power
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = KMT_ostensible_loyalty }
+		x = 1
+		y = 1
+		relative_position_id = KMT_ostensible_loyalty
+		mutually_exclusive = { focus = KMT_devote_to_the_party_and_state }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_struggle_for_power_tt
+			}
+			add_political_power = 120
+		}
+	}
+
+	focus = {
+		id = KMT_spread_propaganda
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = KMT_struggle_for_power }
+		x = 0
+		y = 1
+		relative_position_id = KMT_struggle_for_power
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_spread_propaganda_tt
+				custom_effect_tooltip = KMT_justification_of_our_rulership_tt
+				hidden_effect = {
+					every_owned_state = {
+						limit = {
+							is_controlled_by = ROOT
+							is_in_array = { global.KMT_greater_china_region_states = THIS }
+						}
+					}
+					set_variable = { KMT_pop_support_increment@ROOT = 20 }
+					KMT_increase_pop_supportTHIS = yes
+				}
+			}
+			add_war_support = 0.05
+			add_ideas = KMT_warlord_propaganda_effort
+		}
+	}
+
+	focus = {
+		id = KMT_consolidate_internal_politics
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = KMT_spread_propaganda }
+		x = -1
+		y = 1
+		relative_position_id = KMT_spread_propaganda
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = {  has_government = neutrality }
+				add_popularity = { ideology = neutrality popularity = 0.3 }
+			}else_if = {
+				limit = {  has_government = fascism }
+				add_popularity = { ideology = fascism popularity = 0.3 }
+			}else_if = {
+				limit = {  has_government = democratic }
+				add_popularity = { ideology = democratic popularity = 0.3 }
+			}else = {
+				add_popularity = { ideology = communism popularity = 0.3 }
+			}
+			add_political_power = 150
+		}
+	}
+
+	focus = {
+		id = KMT_maintain_regional_presence
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = KMT_neutral_stance }
+		x = 0
+		y = 1
+		relative_position_id = KMT_neutral_stance
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_maintain_regional_presence_tt
+			}
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+	}
+
+	focus = {
+		id = KMT_strengthen_local_defence
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = KMT_maintain_regional_presence }
+		x = -1
+		y = 1
+		relative_position_id = KMT_maintain_regional_presence
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = KMT_improve_border_defence_tt
+			set_variable = { KMT_warlord_border_war_defender_modifier = 1.75 }
+			add_ideas = KMT_warlord_defensive_posture
+		}
+	}
+
+	focus = {
+		id = KMT_counteroffensive_operations
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = { focus = KMT_maintain_regional_presence }
+		x = 1
+		y = 1
+		relative_position_id = KMT_maintain_regional_presence
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = KMT_counteroffensive_operations_tt
+			custom_effect_tooltip = KMT_improve_border_offence_tt
+			set_variable = { KMT_warlord_border_war_attacker_modifier = 1.6 }
+		}
+	}
+
+	focus = {
+		id = KMT_benefits_from_all_sides
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = KMT_strengthen_local_defence }
+		prerequisite = { focus = KMT_counteroffensive_operations }
+		x = 1
+		y = 1
+		relative_position_id = KMT_strengthen_local_defence
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = KMT_bfas_flag }}
+				set_country_flag = KMT_bfas_flag
+				add_offsite_building = { type = industrial_complex level = 1 }
+			}
+			add_ideas = KMT_warlord_benefits_from_all_sides_idea
+		}
+	}
+
+	focus = {
+		id = KMT_regional_elites
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = KMT_benefits_from_all_sides }
+		x = -1
+		y = 3
+		relative_position_id = KMT_benefits_from_all_sides
+		mutually_exclusive = { focus = KMT_homeland_defence_forces }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			army_experience = 30
+			add_ideas = KMT_warlord_regional_elites_idea
+		}
+	}
+
+	focus = {
+		id = KMT_homeland_defence_forces
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = KMT_benefits_from_all_sides }
+		x = 1
+		y = 3
+		relative_position_id = KMT_benefits_from_all_sides
+		mutually_exclusive = { focus = KMT_regional_elites }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = KMT_warlord_home_land_defence_force_idea
+		}
+	}
+
+	focus = {
+		id = KMT_modernisation_effort
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = KMT_benefits_from_all_sides }
+		x = 0
+		y = 1
+		relative_position_id = KMT_benefits_from_all_sides
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = KMT_warlord_has_completed_me }}
+				set_country_flag = KMT_warlord_has_completed_me
+				add_tech_bonus = {
+					bonus = 1
+					uses = 1
+					category = industry
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}else = { add_political_power = 50 }
+		}
+	}
+
+	focus = {
+		id = KMT_continue_regional_development
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = KMT_modernisation_effort }
+		x = 0
+		y = 1
+		relative_position_id = KMT_modernisation_effort
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+			if = {
+				limit = { NOT = { has_country_flag = KMT_warlord_has_completed_crd }}
+				set_country_flag = KMT_warlord_has_completed_crd
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+				}
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_how_we_fight
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = KMT_regional_elites focus = KMT_homeland_defence_forces }
+		x = 1
+		y = 1
+		relative_position_id = KMT_regional_elites
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_country_flag = KMT_warlord_has_completed_hwf }}
+				set_country_flag = KMT_warlord_has_completed_hwf
+				army_experience = 50
+				add_doctrine_cost_reduction = {
+					cost_reduction = 0.45
+					uses = 2
+					category = land_doctrine
+				}
+			}else = { army_experience = 15 }
+		}
+	}
+
+	focus = {
+		id = KMT_proclaim_opposition
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = KMT_oppose_the_central_government }
+		x = -1
+		y = 1
+		relative_position_id = KMT_oppose_the_central_government
+		mutually_exclusive = { focus = KMT_carry_the_flame }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				OR = {
+					has_country_leader = {
+						character = SDC_han_fuju
+						ruling_only = yes
+					}
+					has_country_leader = {
+						character = SCC_liu_xiang
+						ruling_only = yes
+					}
+				}
+				factor = 1.1
+			}
+			modifier = {
+				event_target:KMT_central_gov_tag = {
+					has_country_leader = {
+						character = CHI_chiang_kaishek
+						ruling_only = yes
+					}
+				}
+				has_country_leader = {
+					character = ZXL_yang_hucheng
+					ruling_only = yes
+				}
+				factor = 1.1
+			}
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			set_variable = { KMT_cg_stance_target@KMT_central_gov_tag = 1 }
+			unlock_decision_tooltip = KMT_reevaluate_relation_with_cg
+			add_opinion_modifier = { target = event_target:KMT_central_gov_tag modifier = KMT_proclaim_opposition_om }
+			event_target:KMT_central_gov_tag = { add_opinion_modifier = { target = ROOT modifier = KMT_proclaim_opposition_om }}
+			set_country_flag = KMT_proclaimed_opposition
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				
+				set_temp_variable = { global.KMT_ps_loyalty_change = -200 }
+				KMT_ps_change_loyalty = yes
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_carry_the_flame
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		prerequisite = { focus = KMT_oppose_the_central_government }
+		x = 5
+		y = 1
+		relative_position_id = KMT_oppose_the_central_government
+		mutually_exclusive = { focus = KMT_proclaim_opposition }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			modifier = { 
+				NOT = { has_government = communism }
+				factor = 0.1
+			}
+			modifier = { 
+				is_historical_focus_on = yes
+				factor = 0.1
+			}
+			modifier = {  
+				has_government = communism 
+				add = 10
+			}
+			modifier = {
+				is_historical_focus_on = yes
+				NOT = { has_government = communism }
+				factor = 0
+			}
+			modifier = {
+				PRC = { 
+					OR = {
+						is_subject = yes
+						NOT = { has_government = communism }
+					}
+				}
+				factor = 0.5
+			}
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { event_target:KMT_central_gov_tag = { NOT = { has_government = communism }}}
+				add_opinion_modifier = { target = event_target:KMT_central_gov_tag modifier = KMT_carry_the_flame_om }
+				event_target:KMT_central_gov_tag = { add_opinion_modifier = { target = ROOT modifier = KMT_carry_the_flame_om }}
+			}
+			if = {
+				limit = { 
+					PRC = { 
+						has_government = communism 
+						exists = yes
+						is_subject = no
+					}
+				}
+				add_opinion_modifier = { target = event_target:KMT_central_gov_tag modifier = KMT_carry_the_flame_om_prc }
+				event_target:KMT_central_gov_tag = { add_opinion_modifier = { target = ROOT modifier = KMT_carry_the_flame_om_prc }}
+			}
+			if = {
+				limit = { NOT = { has_government = communism }}
+				add_stability = -0.1
+			}
+			add_popularity = { ideology = communism popularity = 0.1 }
+			add_ideas = KMT_warlord_carry_the_flame_idea
+		}
+	}
+
+	focus = {
+		id = KMT_two_pronged_approach
+		icon = GFX_goal_molotov_ribbentrop_pact
+		prerequisite = { focus = KMT_proclaim_opposition }
+		x = 0
+		y = 1
+		relative_position_id = KMT_proclaim_opposition
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 100
+			add_command_power = 100
+		}
+	}
+
+	focus = {
+		id = KMT_prepare_for_military_expansion
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = KMT_two_pronged_approach focus = KMT_spread_propaganda }
+		x = -1
+		y = 1
+		relative_position_id = KMT_two_pronged_approach
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+			custom_effect_tooltip = KMT_improve_border_offence_tt
+			custom_effect_tooltip = KMT_improve_border_defence_tt
+			set_variable = { KMT_warlord_border_war_attacker_modifier = 2.5 }
+			set_variable = { KMT_warlord_border_war_defender_modifier = 1.75 }
+		}
+	}
+
+	focus = {
+		id = KMT_military_buildup
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = KMT_two_pronged_approach focus = KMT_spread_propaganda }
+		x = -3
+		y = 1
+		relative_position_id = KMT_two_pronged_approach
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_war_support = 0.05
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						is_in_array = { global.KMT_greater_china_region_states = THIS }
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_in_array = { global.KMT_greater_china_region_states = THIS }
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}else_if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}else = {
+				add_tech_bonus = { 
+					uses = 1
+					bonus = 1
+					category = infantry_weapons
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_sway_the_people
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = KMT_two_pronged_approach  focus = KMT_contact_communists }
+		x = 2
+		y = 1
+		relative_position_id = KMT_two_pronged_approach
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 100
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_sway_the_people_tt
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_promise_of_prosperity
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = KMT_consolidate_internal_politics }
+		prerequisite = { focus = KMT_military_buildup }
+		x = 1
+		y = 1
+		relative_position_id = KMT_consolidate_internal_politics
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 50
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_promise_of_prosperity_tt
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_run_for_presidency
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = KMT_promise_of_prosperity }
+		x = 1
+		y = 1
+		relative_position_id = KMT_promise_of_prosperity
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			country_exists = event_target:KMT_central_gov_tag
+			event_target:KMT_central_gov_tag = {
+				has_completed_focus = KMT_democratic_republic
+				has_completed_focus = KMT_voting_rights
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 150
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_run_for_presidency_tt
+			}
+			event_target:KMT_central_gov_tag = {
+				country_event = { id = kmt_powerstruggle.57 }
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_internal_political_alliances
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = KMT_promise_of_prosperity }
+		x = -1
+		y = 1
+		relative_position_id = KMT_promise_of_prosperity
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+			#TODO
+		}
+
+		completion_reward = {
+			add_ideas = KMT_political_patrons
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_internal_political_alliances_tt
+			}
+			
+		}
+	}
+
+	focus = {
+		id = KMT_demonstrate_martial_prowess
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = KMT_prepare_for_military_expansion }
+		prerequisite = { focus = KMT_two_pronged_approach }
+		x = 0
+		y = 2
+		relative_position_id = KMT_two_pronged_approach
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_demonstrate_martial_prowess_tt
+			}
+			add_country_leader_trait = KMT_militaristic_authoritarian_trait
+		}
+	}
+
+	focus = {
+		id = KMT_suppress_potential_opposition
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		prerequisite = { focus = KMT_demonstrate_martial_prowess }
+		x = -1
+		y = 1
+		relative_position_id = KMT_demonstrate_martial_prowess
+		mutually_exclusive = { focus = KMT_show_leniency }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 150
+			add_ideas = KMT_warlord_opposition_supression_idea
+		}
+	}
+
+	focus = {
+		id = KMT_show_leniency
+		icon = GFX_goal_tripartite_pact
+		prerequisite = { focus = KMT_demonstrate_martial_prowess }
+		prerequisite = { focus = KMT_sway_the_people }
+		x = 1
+		y = 1
+		relative_position_id = KMT_demonstrate_martial_prowess
+		mutually_exclusive = { focus = KMT_suppress_potential_opposition }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = KMT_show_leniency_tt
+			add_ideas = KMT_warlord_leniency_idea
+		}
+	}
+
+	focus = {
+		id = KMT_justification_of_our_rulership
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = KMT_show_leniency focus = KMT_suppress_potential_opposition }
+		x = -1
+		y = 1
+		relative_position_id = KMT_show_leniency
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_justification_of_our_rulership_tt
+			}
+			add_war_support = 0.1
+			add_opinion_modifier = { target = event_target:KMT_central_gov_tag modifier = hostile_status }
+			event_target:KMT_central_gov_tag = { add_opinion_modifier = { target = ROOT modifier = hostile_status }}
+		}
+	}
+
+	focus = {
+		id = KMT_contact_communists
+		icon = GFX_goal_generic_war_with_comintern
+		prerequisite = { focus = KMT_carry_the_flame }
+		x = -2
+		y = 1
+		relative_position_id = KMT_carry_the_flame
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.15 }
+			#unlock decisions
+		}
+	}
+
+	focus = {
+		id = KMT_lift_persecution_on_communists
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = { focus = KMT_carry_the_flame }
+		x = 0
+		y = 1
+		relative_position_id = KMT_carry_the_flame
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = KMT_local_communist_activities
+			#unlock decisions
+		}
+	}
+
+	focus = {
+		id = KMT_tax_reform
+		icon = GFX_focus_mex_privatisation
+		prerequisite = { focus = KMT_carry_the_flame }
+		x = 2
+		y = 1
+		relative_position_id = KMT_carry_the_flame
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.025 }
+			add_political_power = 50
+			add_ideas = KMT_warlord_reformed_tax
+		}
+	}
+
+	focus = {
+		id = KMT_welcome_communist_advisors
+		icon = GFX_focus_por_workers_of_iberia
+		prerequisite = { focus = KMT_contact_communists }
+		prerequisite = { focus = KMT_lift_persecution_on_communists }
+		x = 1
+		y = 1
+		relative_position_id = KMT_contact_communists
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			#allow commie advisors
+			#unlock some decisions
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = KMT_communist_propaganist_advisor
+			show_ideas_tooltip = KMT_head_of_land_department_advisor
+			show_ideas_tooltip = KMT_workers_affairs_supervisor_advisor
+			show_ideas_tooltip = KMT_political_commissar
+		}
+	}
+
+	focus = {
+		id = KMT_land_redistribution
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		prerequisite = { focus = KMT_welcome_communist_advisors }
+		x = 0
+		y = 1
+		relative_position_id = KMT_welcome_communist_advisors
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_popularity = { ideology = communism popularity = 0.05 }
+			add_stability = 0.05
+			add_war_support = 0.05
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_subsidised_farms_and_factories
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = KMT_tax_reform }
+		x = 0
+		y = 2
+		relative_position_id = KMT_tax_reform
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						is_in_array = { global.KMT_greater_china_region_states = THIS }
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_in_array = { global.KMT_greater_china_region_states = THIS }
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}else_if = {
+				limit = {
+					any_owned_state = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			swap_ideas = {
+				remove_idea = KMT_warlord_reformed_tax
+				add_idea = KMT_warlord_government_subsidies
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_encourage_class_struggle
+		icon = GFX_focus_spr_class_war
+		prerequisite = { focus = KMT_land_redistribution }
+		prerequisite = { focus = KMT_subsidised_farms_and_factories }
+		x = 1
+		y = 1
+		relative_position_id = KMT_land_redistribution
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 150
+			if = {
+				limit = { NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }}
+				custom_effect_tooltip = KMT_encourage_class_struggle_tt
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_ally_with_the_prc
+		icon = GFX_focus_chi_cooperation_with_the_communists
+		prerequisite = { focus = KMT_encourage_class_struggle }
+		x = -1
+		y = 1
+		relative_position_id = KMT_encourage_class_struggle
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			PRC = {
+				exists = yes
+				has_government = communism
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
+			OR = {
+				has_government = communism
+				communism > 0.75
+			}
+		}
+
+		bypass = {
+			is_in_faction_with = PRC
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			#prc event
+			PRC = {
+				custom_effect_tooltip = needs_approval
+				effect_tooltip = {
+					create_faction = PRC_chinese_peoples_liberation_front
+					add_to_faction = ROOT
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_seize_the_fruits_of_victory
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = KMT_ally_with_the_prc }
+		mutually_exclusive = { focus = KMT_join_the_ccp }
+		x = -1
+		y = 1
+		relative_position_id = KMT_ally_with_the_prc
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				strength_ratio = {
+					tag = PRC
+					ratio < 0.5
+				}
+				factor = 0
+			}
+		}
+
+		available = {
+			country_exists = PRC
+			OR = {
+				NOT = { country_exists = event_target:KMT_central_gov_tag }
+				AND = {
+					PRC = { has_war_with = event_target:KMT_central_gov_tag }
+					event_target:KMT_central_gov_tag = {
+						surrender_progress > 0.85
+					}
+				}
+				strength_ratio = {
+					tag = PRC
+					ratio > 1.5
+				}
+			}
+		}
+
+		bypass = {
+
+		}
+		will_lead_to_war_with = PRC
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			if = {
+				limit = { is_in_faction_with = PRC }
+				PRC = { remove_from_faction = ROOT }
+			}
+			if = {
+				limit = { is_subject_of = PRC }
+				PRC = { end_puppet = ROOT }
+			}
+			if = {
+				limit = { country_exists = PRC }
+				declare_war_on = {
+					target = PRC
+					type = civil_war
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_new_interpretation_of_marxism
+		icon = GFX_focus_spr_unify_the_london_bureau
+		prerequisite = { focus = KMT_encourage_class_struggle }
+		x = 1
+		y = 1
+		relative_position_id = KMT_encourage_class_struggle
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			NOT = { has_country_flag = KMT_join_prc_faction }
+			custom_trigger_tooltip = {
+				tooltip = KMT_not_alliance_with_PRC
+				NOT = { is_in_array = { PRC.KMT_ps_alliance_array = ROOT }}
+			}
+		}
+
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_opinion_modifier = { target = PRC modifier = KMT_warlord_revisionists }
+			PRC = { add_opinion_modifier = { target = ROOT modifier = KMT_warlord_revisionists }}
+			add_war_support = 0.1
+		}
+	}
+
+	focus = {
+		id = KMT_continue_the_revolution
+		icon = GFX_focus_attack_china
+		prerequisite = { focus = KMT_ally_with_the_prc focus = KMT_new_interpretation_of_marxism }
+		x = 3
+		y = 1
+		relative_position_id = KMT_ally_with_the_prc
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				event_target:KMT_central_gov_tag = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.75
+					}
+				}
+				factor = 0
+			}
+		}
+
+		available = {
+			country_exists = event_target:KMT_central_gov_tag
+			OR = {
+				has_country_flag = KMT_join_prc_faction
+				has_completed_focus = KMT_new_interpretation_of_marxism
+			}
+		}
+
+		bypass = {
+
+		}
+		
+		
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = event_target:KMT_central_gov_tag
+				type = civil_war
+			}
+		}
+	}
+
+	focus = {
+		id = KMT_improve_roadwork
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { }
+		x = 30
+		y = 0
+		#relative_position_id = KMT_ally_with_the_prc
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			any_state = {
+				is_owned_by = ROOT
+				is_controlled_by = ROOT
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_finished_this_focus_before
+				has_country_flag = KMT_improve_roadwork_finished
+			}
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = { add_extra_state_shared_building_slots = 1 }
+			set_country_flag = KMT_improve_roadwork_finished
+		}
+	}
+
+	focus = {
+		id = KMT_utlise_opium_profit
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = KMT_improve_roadwork }
+		x = -4
+		y = 1
+		relative_position_id = KMT_improve_roadwork
+		mutually_exclusive = { focus = KMT_restrict_opium_trade }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_finished_this_focus_before
+				has_country_flag = KMT_utlise_opium_profit_finished
+			}
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = KMT_warlord_opium_profits
+			set_country_flag = KMT_utlise_opium_profit_finished
+		}
+	}
+
+	focus = {
+		id = KMT_restrict_opium_trade
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = KMT_improve_roadwork }
+		x = -2
+		y = 1
+		relative_position_id = KMT_improve_roadwork
+		mutually_exclusive = { focus = KMT_utlise_opium_profit }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_finished_this_focus_before
+				has_country_flag = KMT_restrict_opium_trade_finished
+			}
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 150
+			set_country_flag = KMT_restrict_opium_trade_finished
+		}
+	}
+
+	focus = {
+		id = KMT_improve_local_light_industry
+		icon = GFX_focus_generic_industry_1
+		prerequisite = { focus = KMT_improve_roadwork }
+		x = 0
+		y = 1
+		relative_position_id = KMT_improve_roadwork
+		#mutually_exclusive = { focus = KMT_utlise_opium_profit }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			any_state = { 
+				is_owned_by = ROOT
+				is_controlled_by = ROOT
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_finished_this_focus_before
+				has_country_flag = KMT_improve_local_light_industry_finished
+			}
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = KMT_improve_local_light_industry_finished
+		}
+	}
+
+	focus = {
+		id = KMT_construct_new_schools
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = KMT_improve_roadwork }
+		x = 2
+		y = 1
+		relative_position_id = KMT_improve_roadwork
+		#mutually_exclusive = { focus = KMT_utlise_opium_profit }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			amount_research_slots < 5
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_finished_this_focus_before
+				has_country_flag = KMT_KMT_construct_new_schools_finished
+			}
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+			set_country_flag = KMT_KMT_construct_new_schools_finished
+		}
+	}
+
+	focus = {
+		id = KMT_regional_economic_planning
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = KMT_improve_local_light_industry }
+		x = 0
+		y = 1
+		relative_position_id = KMT_improve_local_light_industry
+		#mutually_exclusive = { focus = KMT_utlise_opium_profit }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_finished_this_focus_before
+				has_country_flag = KMT_regional_economic_planning_finished
+			}
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_ideas = KMT_warlord_regional_economic_planning_idea
+			set_country_flag = KMT_regional_economic_planning_finished
+		}
+	}
+
+	focus = {
+		id = KMT_build_new_airbases
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = KMT_regional_economic_planning }
+		x = -1
+		y = 1
+		relative_position_id = KMT_regional_economic_planning
+		#mutually_exclusive = { focus = KMT_utlise_opium_profit }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_finished_this_focus_before
+				has_country_flag = KMT_build_new_airbases_finished
+			}
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_controlled_state = { 
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_controlled_state = { 
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = KMT_build_new_airbases_finished
+		}
+	}
+
+	focus = {
+		id = KMT_defence_against_air_attacks
+		icon = GFX_focus_generic_air_defense
+		prerequisite = { focus = KMT_regional_economic_planning }
+		x = 1
+		y = 1
+		relative_position_id = KMT_regional_economic_planning
+		#mutually_exclusive = { focus = KMT_utlise_opium_profit }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_finished_this_focus_before
+				has_country_flag = KMT_defence_against_air_attacks_finished
+			}
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			random_controlled_state = { 
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = { 
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_controlled_state = { 
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = KMT_defence_against_air_attacks_finished
+		}
+	}
+
+	focus = {
+		id = KMT_local_militia_recruitment
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = KMT_defence_against_air_attacks focus = KMT_build_new_airbases}
+		x = -1
+		y = 1
+		relative_position_id = KMT_defence_against_air_attacks
+		#mutually_exclusive = { focus = KMT_utlise_opium_profit }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = KMT_finished_this_focus_before
+				has_country_flag = KMT_local_militia_recruitment_finished
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = KMT_local_militia_recruitment_tt
+			set_country_flag = KMT_local_militia_recruitment_finished
+		}
+	}
+
+	focus = {
+		id = KMT_join_the_ccp
+		icon = GFX_focus_YUG_pan_slavic_congress
+		prerequisite = { focus = KMT_ally_with_the_prc }
+		mutually_exclusive = { focus = KMT_seize_the_fruits_of_victory }
+		x = 1
+		y = 1
+		relative_position_id = KMT_ally_with_the_prc
+		#mutually_exclusive = { focus = KMT_utlise_opium_profit }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			PRC = {
+				country_event = { id = kmt.655 hours = 5 }
+				annex_country = { target = ROOT transfer_troops = yes }
+				if = {
+					limit = { is_ai = yes }
+					change_tag_from = ROOT
+				}
+			}
+			
+			
+		}
+	}
+
+	focus = {
+		id = KMT_denounce_dictatorship
+		icon = GFX_focus_usa_voter_registration_act
+		prerequisite = { focus = KMT_internal_political_alliances }
+		x = 0
+		y = 1
+		relative_position_id = KMT_internal_political_alliances
+		#mutually_exclusive = { focus = KMT_utlise_opium_profit }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				event_target:KMT_central_gov_tag = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 1
+					}
+				}
+				factor = 0
+			}
+		}
+
+		available = {
+			country_exists = event_target:KMT_central_gov_tag
+			event_target:KMT_central_gov_tag = {
+				has_completed_focus = KMT_military_dictatorship
+				has_completed_focus = KMT_voting_rights
+			}
+			
+		}
+
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			declare_war_on = {
+				target = event_target:KMT_central_gov_tag
+				type = civil_war
+			}
+		}
+	}
+}

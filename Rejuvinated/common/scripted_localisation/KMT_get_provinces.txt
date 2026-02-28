@@ -1,0 +1,236 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = { 
+	name = Get10068
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_10068_postal
+	}
+	text = {
+		localization_key = KMT_VP_10068_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get10000
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_10000_postal
+	}
+	text = {
+		localization_key = KMT_VP_10000_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get7191
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_7191_postal
+	}
+	text = {
+		localization_key = KMT_VP_7191_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get9974
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_9974_postal
+	}
+	text = {
+		localization_key = KMT_VP_9974_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get10076
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_10076_postal
+	}
+	text = {
+		localization_key = KMT_VP_10076_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get4196
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_4196_postal
+	}
+	text = {
+		localization_key = KMT_VP_4196_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get7071
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_7071_postal
+	}
+	text = {
+		localization_key = KMT_VP_7071_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get1047
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_1047_postal
+	}
+	text = {
+		localization_key = KMT_VP_1047_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get7167
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_7167_postal
+	}
+	text = {
+		localization_key = KMT_VP_7167_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get12356
+	text = {
+		trigger = {
+			has_global_flag = KMT_fusze_to_yenan
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_12356_yenan_postal
+	}
+	text = {
+		trigger = {
+			has_global_flag = KMT_fusze_to_yenan
+		}
+		localization_key = KMT_VP_12356_yenan_pinyin
+	}
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_12356_postal
+	}
+	text = {
+		localization_key = KMT_VP_12356_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get1070
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_1070_postal
+	}
+	text = {
+		localization_key = KMT_VP_1070_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get7162
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_7162_postal
+	}
+	text = {
+		localization_key = KMT_VP_7162_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get7911
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_7911_postal
+	}
+	text = {
+		localization_key = KMT_VP_7911_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get6638
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_6638_postal
+	}
+	text = {
+		localization_key = KMT_VP_6638_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get11771
+	text = {
+		trigger = {
+			has_global_flag = renaming_decided11771
+		}
+		localization_key = KMT_shenyang
+	}
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_11771_postal
+	}
+	text = {
+		localization_key = KMT_VP_11771_pinyin
+	}
+}
+
+defined_text = { 
+	name = Get4174
+	text = {
+		trigger = {
+			has_global_flag = KMT_use_postal_romanisation
+		}
+		localization_key = KMT_VP_4174_postal
+	}
+	text = {
+		localization_key = KMT_VP_4174_pinyin
+	}
+}

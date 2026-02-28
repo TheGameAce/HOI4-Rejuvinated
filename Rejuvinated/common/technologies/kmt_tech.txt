@@ -1,0 +1,48 @@
+technologies = {	
+	
+	dare_to_die_corps = {
+		allow = {
+			always = no
+		}
+		
+			
+		category_light_infantry = {
+			hard_attack = 0.15
+			ap_attack = 0.15
+			breakthrough = 0.05
+		}
+		
+		enable_tactic = tactic_dtd_operation_defense
+		enable_tactic = tactic_dtd_operation_attack
+		
+		research_cost = 0
+		
+		ai_will_do = {
+			factor = 0
+		}
+		
+	}
+
+	KTA_mountain_warfare = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		mountaineers = {
+			mountain = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.1
+			}
+			hills = {
+				attack = 0.1
+				defence = 0.1
+				movement = 0.1
+			}
+		}
+	}	
+}

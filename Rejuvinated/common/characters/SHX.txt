@@ -1,0 +1,130 @@
+characters={
+	SHX_yan_xishan={
+		name=SHX_yan_xishan
+		portraits={
+			civilian={
+				large="GFX_portrait_yan_xishan"
+			}
+			army={
+				small="gfx/interface/ideas/idea_SHX_yan_xishan.dds"
+				large="GFX_portrait_yan_xishan"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SHX_yan_xishan
+			allowed = {
+				original_tag = SHX
+			}
+			traits = {
+				army_chief_morale_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal = {
+			legacy_id = 1009
+			traits = { infantry_officer }
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 3
+			skill = 3
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	
+	SHX_fu_zuoyi={
+		name=SHX_fu_zuoyi
+		portraits={
+			civilian={
+				small = "GFX_idea_generic_political_advisor_asia_1"
+			}
+			army={
+				small = "GFX_idea_fu_zuoyi"
+				large="gfx/leaders/kmt_mod/Portrait_Fu_Zuoyi.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SHX_fu_zuoyi
+			allowed  = {
+				original_tag  = SHX
+			}
+			traits  = {
+				silent_workhorse 
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SHX_fu_zuoyi
+			ledger = army
+			cost = 100 
+			
+			allowed  = {
+				original_tag  = SHX
+			}
+			traits  = {
+				army_infantry_2 
+			}
+		}
+		corps_commander = {
+			legacy_id = 1032
+			traits = { infantry_officer }
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			skill = 3
+		}
+	}
+	
+	SHX_yang_aiyuan={
+		name=SHX_yang_aiyuan
+		portraits={
+			civilian={
+			}
+			army={
+				small = "GFX_idea_yang_aiyuan"
+				large="gfx/leaders/kmt_mod/Yang_Aiyuan.dds"
+			}
+		}
+		corps_commander = {
+			legacy_id = 1059
+			traits = { infantry_officer }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			skill = 2
+		}
+	}
+	
+	SHX_shang_zhen={
+		name=SHX_shang_zhen
+		portraits={
+			civilian={
+			}
+			army={
+				small = "GFX_idea_shang_zhen"
+				large="gfx/leaders/kmt_mod/Shang_Zhen.dds"
+			}
+		}
+		corps_commander = {
+			legacy_id = 1060
+			traits = { infantry_officer }
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			skill = 2
+		}
+	}
+
+}

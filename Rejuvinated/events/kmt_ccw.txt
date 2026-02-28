@@ -1,0 +1,2900 @@
+﻿add_namespace = kmtccw
+
+#accept negotiation?
+country_event = {
+	id = kmtccw.1
+	title = kmtccw.1.t
+	desc = kmtccw.1.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	#accept
+	option = {
+		name = kmtccw.1.a
+		PRC = { country_event = { id = kmtccw.2 }}
+	}
+	
+	#refuse
+	option = {
+		name = kmtccw.1.b
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		set_global_flag = KMTccw_turned_down_first_negotiation
+		add_timed_idea = {
+			idea = KMT_us_military_embargo
+			days = 240
+		}
+		FROM = {
+			country_event = { id = kmtccw.4 }
+			effect_tooltip = {
+				add_opinion_modifier = { modifier = KMT_ccw_no_negotiation target = ROOT }
+				add_opinion_modifier = { modifier = KMT_ccw_no_negotiation_trade target = ROOT }
+			}
+		}
+	}
+}
+
+#accept negotiation?
+country_event = {
+	id = kmtccw.2
+	title = kmtccw.2.t
+	desc = kmtccw.2.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	#accept
+	option = {
+		name = kmtccw.2.a
+		event_target:KMT_ccw_negotiator = {
+			country_event = { id = kmtccw.3 }
+		}
+		FROM = {
+			add_ideas = KMT_ccw_ceasefire
+			country_event = { id = kmtccw.3 }
+			activate_mission = KMTccw_negotiate_mission1
+		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war_with = FROM
+				NOT = { has_idea = KMT_ccw_ceasefire }
+			}
+			add_ideas = KMT_ccw_ceasefire
+		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = FROM
+					is_subject_of = FROM
+					is_in_faction_with = FROM
+				}
+				has_war_with = ROOT
+				NOT = { has_idea = KMT_ccw_ceasefire }
+			}
+			add_ideas = KMT_ccw_ceasefire
+		}
+		activate_mission = KMTccw_negotiate_mission1
+		every_state = {
+			limit = {
+				OWNER = {
+					OR = {
+						tag = FROM
+						is_subject_of = FROM
+						is_in_faction_with = FROM
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = FROM
+						is_subject_of = FROM
+						is_in_faction_with = FROM
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					PREV = { NOT = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+				}
+				PREV = { add_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+			}
+		}
+#		every_country = {
+#			limit = {
+#				OR = {
+#					tag = FROM
+#					is_subject_of = FROM
+#					is_in_faction_with = FROM
+#				}
+#			}
+#			every_country = {
+#				limit = {
+#					OR = {
+#						tag = FROM
+#						is_subject_of = FROM
+#						is_in_faction_with = FROM
+#					}
+#				}
+#				every_country = {
+#					limit = {
+#						OR = {
+#							tag = ROOT
+#							is_subject_of = ROOT
+#							is_in_faction_with = ROOT
+#						}
+#						NOT = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#					}
+#					add_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#					if = {
+#						limit = { PREV = { NOT = { has_relation_modifier = { modifier = KMT_ccw_cease_fire target = PREV }}}}
+#						PREV = { add_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#					}
+#				}
+#			}
+#		}
+			hidden_effect = { news_event = { id = kns.50 }}
+	}
+	
+	#no
+	option = {
+		name = kmtccw.2.b
+		ai_chance = {
+			base = 0
+			modifier = { 
+				FROM = { surrender_progress > 0.45 }
+				add = 50
+			}
+			modifier = { 
+				controls_state = 613
+				add = 50
+			}
+		}
+		event_target:KMT_ccw_negotiator = {
+			country_event = { id = kmtccw.5 }
+		}
+		FROM = {
+			country_event = { id = kmtccw.5 }
+		}
+		set_global_flag = KMT_ccw_broken_negotiation
+		set_global_flag = KMT_ccw_broken_negotiation2
+		hidden_effect = { news_event = { id = kns.52 }}
+		set_global_flag = PRC_no_cooperation_stance
+		set_global_flag = PRC_ccw_withdrawn_from_military_reorg
+	}
+}
+
+#accepted negotiation
+country_event = {
+	id = kmtccw.3
+	title = kmtccw.3.t
+	desc = kmtccw.3.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	#accept
+	option = {
+		name = kmtccw.3.a
+		every_state = {
+			limit = {
+				OWNER = {
+					OR = {
+						tag = FROM
+						is_subject_of = FROM
+						is_in_faction_with = FROM
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = FROM
+						is_subject_of = FROM
+						is_in_faction_with = FROM
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					PREV = { NOT = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+				}
+				PREV = { add_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+			}
+		}
+#		if = {
+#			limit = { NOT = { tag = event_target:KMT_ccw_negotiator }}
+#			effect_tooltip = {
+#				every_country = {
+#					limit = {
+#						OR = {
+#							tag = FROM
+#							is_subject_of = FROM
+#							is_in_faction_with = FROM
+#						}
+#					}
+#					every_country = {
+#						limit = {
+#							OR = {
+#								tag = ROOT
+#								is_subject_of = ROOT
+#								is_in_faction_with = ROOT
+#							}
+#						}
+#						add_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#						PREV = { add_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#					}
+#				}
+#			}
+#		}
+	}
+}
+
+#no accept negotiation withdraw support
+country_event = {
+	id = kmtccw.4
+	title = kmtccw.4.t
+	desc = kmtccw.4.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { KMT_no_more_support@FROM = 1 }
+		hidden_effect = {
+			remove_relation_modifier = { modifier = KMT_industrial_assistance target = FROM }
+			remove_opinion_modifier = {
+				modifier = KMT_offered_assistance
+				target = FROM
+			}
+			FROM = {
+				remove_opinion_modifier = {
+					modifier = KMT_offered_assistance
+					target = ROOT
+				}
+				country_event = { id = kmt.538 }
+			}
+			if = {
+				limit = {
+					any_state = {
+						controller = {
+							OR = {
+								tag = ROOT
+								is_puppet_of = ROOT
+							}
+						}
+						has_state_flag = CHI_needed_for_hanoi_route
+						NOT = { has_state_flag = CHI_hanoi_route_closed_state }
+					}
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							has_state_flag = CHI_needed_for_hanoi_route
+							NOT = { has_state_flag = CHI_hanoi_route_closed_state }
+							OR = {
+								is_controlled_by = ROOT
+								CONTROLLER = { is_subject_of = ROOT }
+							}
+						}
+						set_state_flag = CHI_hanoi_route_closed_state
+					}
+				}
+				random_country = {
+					#Country that had the route
+					limit = { 
+						OR = {
+							has_idea = KMT_yunnan_bahn_idea
+							has_idea = KMT_yunnan_bahn_idea_closed
+						}
+					}
+					country_event = { id = kmt_fsr.10 }
+					custom_effect_tooltip = close_hanoi_route_explanation # Prints the contents of the CHI_hanoi_route_current_level variable
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						controller = {
+							OR = {
+								tag = ROOT
+								is_puppet_of = ROOT
+							}
+						}
+						has_state_flag = CHI_the_hump_closed_state
+						NOT = { has_state_flag = CHI_the_hump_closed_state }
+					}
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							has_state_flag = CHI_needed_for_the_hump
+							NOT = { has_state_flag = CHI_the_hump_closed_state }
+							OR = {
+								is_controlled_by = ROOT
+								CONTROLLER = { is_subject_of = ROOT }
+							}
+						}
+						set_state_flag = CHI_the_hump_closed_state
+					}
+				}
+				random_country = {
+					#Country that had the route
+					limit = { 
+						OR = {
+							has_idea = KMT_the_hump_idea
+							has_idea = KMT_the_hump_idea_closed
+						}
+					}
+					country_event = { id = kmt_fsr.12 }
+					custom_effect_tooltip = close_the_hump_explanation # Prints the contents of the CHI_the_hump_current_level variable
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						controller = {
+							OR = {
+								tag = ROOT
+								is_puppet_of = ROOT
+							}
+						}
+						has_state_flag = CHI_needed_for_ledo_road
+						NOT = { has_state_flag = CHI_ledo_road_closed_state }
+					}
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							has_state_flag = CHI_needed_for_ledo_road
+							NOT = { has_state_flag = CHI_ledo_road_closed_state }
+							OR = {
+								is_controlled_by = ROOT
+								CONTROLLER = { is_subject_of = ROOT }
+							}
+						}
+						set_state_flag = CHI_ledo_road_closed_state
+					}
+				}
+				random_country = {
+					#Country that had the route
+					limit = { 
+						OR = {
+							has_idea = KMT_ledo_road_idea
+							has_idea = KMT_ledo_road_idea_closed
+						}
+					}
+					country_event = { id = kmt_fsr.6 }
+					custom_effect_tooltip = close_ledo_road_explanation # Prints the contents of the CHI_ledo_road_current_level variable
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						controller = {
+							OR = {
+								tag = ROOT
+								is_puppet_of = ROOT
+							}
+						}
+						has_state_flag = CHI_needed_for_burma_road
+						NOT = { has_state_flag = CHI_burma_road_closed_state }
+					}
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							has_state_flag = CHI_needed_for_burma_road
+							NOT = { has_state_flag = CHI_burma_road_closed_state }
+							OR = {
+								is_controlled_by = ROOT
+								CONTROLLER = { is_subject_of = ROOT }
+							}
+						}
+						set_state_flag = CHI_burma_road_closed_state
+					}
+				}
+				random_country = {
+					limit = { 
+						OR = {
+							has_idea = KMT_burma_road_idea 
+							has_idea = KMT_burma_road_idea_closed
+						}				
+					}
+					country_event = { id = kmt_fsr.2 }
+				}
+			}
+			if = {
+				limit = {
+					FROM = { has_volunteers_amount_from = { tag = ROOT count > 0 }}
+				}
+				recall_volunteers_from = FROM
+			}
+			meta_effect = {
+				text = {
+					set_country_flag = KMT_withdrew_support_from_[FromTag]
+				}
+				FromTag = "[From.GetTag]"
+			}
+		}
+	}
+	
+	option = {
+		name = kmtccw.4.a
+		add_opinion_modifier = { modifier = KMT_ccw_no_negotiation target = FROM }
+		add_opinion_modifier = { modifier = KMT_ccw_no_negotiation_trade target = FROM }
+		effect_tooltip = {
+			remove_relation_modifier = { modifier = KMT_industrial_assistance target = FROM }
+			remove_opinion_modifier = {
+				modifier = KMT_offered_assistance
+				target = FROM
+			}
+			FROM = {
+				remove_opinion_modifier = {
+					modifier = KMT_offered_assistance
+					target = ROOT
+				}
+				country_event = { id = kmt.538 }
+			}
+			if = {
+				limit = {
+					any_state = {
+						controller = {
+							OR = {
+								tag = ROOT
+								is_puppet_of = ROOT
+							}
+						}
+						has_state_flag = CHI_needed_for_hanoi_route
+						NOT = { has_state_flag = CHI_hanoi_route_closed_state }
+					}
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							has_state_flag = CHI_needed_for_hanoi_route
+							NOT = { has_state_flag = CHI_hanoi_route_closed_state }
+							OR = {
+								is_controlled_by = ROOT
+								CONTROLLER = { is_subject_of = ROOT }
+							}
+						}
+						set_state_flag = CHI_hanoi_route_closed_state
+					}
+				}
+				random_country = {
+					#Country that had the route
+					limit = { 
+						OR = {
+							has_idea = KMT_yunnan_bahn_idea
+							has_idea = KMT_yunnan_bahn_idea_closed
+						}
+					}
+					country_event = { id = kmt_fsr.10 }
+					custom_effect_tooltip = close_hanoi_route_explanation # Prints the contents of the CHI_hanoi_route_current_level variable
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						controller = {
+							OR = {
+								tag = ROOT
+								is_puppet_of = ROOT
+							}
+						}
+						has_state_flag = CHI_the_hump_closed_state
+						NOT = { has_state_flag = CHI_the_hump_closed_state }
+					}
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							has_state_flag = CHI_needed_for_the_hump
+							NOT = { has_state_flag = CHI_the_hump_closed_state }
+							OR = {
+								is_controlled_by = ROOT
+								CONTROLLER = { is_subject_of = ROOT }
+							}
+						}
+						set_state_flag = CHI_the_hump_closed_state
+					}
+				}
+				random_country = {
+					#Country that had the route
+					limit = { 
+						OR = {
+							has_idea = KMT_the_hump_idea
+							has_idea = KMT_the_hump_idea_closed
+						}
+					}
+					country_event = { id = kmt_fsr.12 }
+					custom_effect_tooltip = close_the_hump_explanation # Prints the contents of the CHI_the_hump_current_level variable
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						controller = {
+							OR = {
+								tag = ROOT
+								is_puppet_of = ROOT
+							}
+						}
+						has_state_flag = CHI_needed_for_ledo_road
+						NOT = { has_state_flag = CHI_ledo_road_closed_state }
+					}
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							has_state_flag = CHI_needed_for_ledo_road
+							NOT = { has_state_flag = CHI_ledo_road_closed_state }
+							OR = {
+								is_controlled_by = ROOT
+								CONTROLLER = { is_subject_of = ROOT }
+							}
+						}
+						set_state_flag = CHI_ledo_road_closed_state
+					}
+				}
+				random_country = {
+					#Country that had the route
+					limit = { 
+						OR = {
+							has_idea = KMT_ledo_road_idea
+							has_idea = KMT_ledo_road_idea_closed
+						}
+					}
+					country_event = { id = kmt_fsr.6 }
+					custom_effect_tooltip = close_ledo_road_explanation # Prints the contents of the CHI_ledo_road_current_level variable
+				}
+			}
+			if = {
+				limit = {
+					any_state = {
+						controller = {
+							OR = {
+								tag = ROOT
+								is_puppet_of = ROOT
+							}
+						}
+						has_state_flag = CHI_needed_for_burma_road
+						NOT = { has_state_flag = CHI_burma_road_closed_state }
+					}
+				}
+				hidden_effect = {
+					every_state = {
+						limit = {
+							has_state_flag = CHI_needed_for_burma_road
+							NOT = { has_state_flag = CHI_burma_road_closed_state }
+							OR = {
+								is_controlled_by = ROOT
+								CONTROLLER = { is_subject_of = ROOT }
+							}
+						}
+						set_state_flag = CHI_burma_road_closed_state
+					}
+				}
+				random_country = {
+					limit = { 
+						OR = {
+							has_idea = KMT_burma_road_idea 
+							has_idea = KMT_burma_road_idea_closed
+						}				
+					}
+					country_event = { id = kmt_fsr.2 }
+				}
+			}
+			if = {
+				limit = {
+					FROM = { has_volunteers_amount_from = { tag = ROOT count > 0 }}
+				}
+				recall_volunteers_from = FROM
+			}
+			meta_effect = {
+				text = {
+					set_country_flag = KMT_withdrew_support_from_[FromTag]
+				}
+				FromTag = "[From.GetTag]"
+			}
+		}
+	}
+}
+
+#from no negotiation
+country_event = {
+	id = kmtccw.5
+	title = kmtccw.5.t
+	desc = kmtccw.5.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.4.a
+	}
+}
+
+#collaborator stuff
+country_event = {
+	id = kmtccw.6
+	title = kmtccw.6.t
+	desc = kmtccw.6.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = kmtccw.6.a
+		if = {
+			limit = { country_exists = PRC }
+			random_owned_state = {
+				limit = {
+					has_state_flag = KMT_collaborator_state
+					OR = {
+						region = 155 
+						region = 242 
+						region = 243 
+					}
+					OR = {
+						any_neighbor_state = { is_controlled_by = PRC }
+						is_controlled_by = PRC
+					}
+				}
+				set_state_flag = KMT_ccw_to_prc_state
+				PRC = { transfer_state = PREV }
+				create_unit = {
+					division = "name = \"Yü-chi-tui\" division_template = \"Yüchitui\" start_experience_factor = 0.5" 
+					owner = PRC
+					count = 10
+				}
+			}
+			random_owned_state = {
+				limit = {
+					has_state_flag = KMT_collaborator_state
+					OR = {
+						region = 155 
+						region = 242 
+						region = 243 
+					}
+					OR = {
+						any_neighbor_state = { is_controlled_by = PRC }
+						is_controlled_by = PRC
+					}
+				}
+				set_state_flag = KMT_ccw_to_prc_state
+				PRC = { transfer_state = PREV }
+				create_unit = {
+					division = "name = \"Yü-chi-tui\" division_template = \"Yüchitui\" start_experience_factor = 0.5" 
+					owner = PRC
+					count = 10
+				}
+			}
+			PRC = { 
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = JAP }
+				add_equipment_to_stockpile = { type = support_equipment amount = 2000 producer = JAP }
+				add_equipment_to_stockpile = { type = support_equipment amount = 300 producer = JAP }
+				add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = SOV }
+				add_equipment_to_stockpile = { type = support_equipment amount = 1000 producer = SOV }
+				add_equipment_to_stockpile = { type = support_equipment amount = 100 producer = SOV }
+				country_event = { id = kmtccw.7 }
+				hidden_effect = { country_event = { id = kmtccw.25 days = 2 }}
+				hidden_effect = { country_event = { id = kmtccw.55 days = 2 }}
+				activate_mission = KMTccw_negotiate_mission2
+			}
+				activate_mission = KMTccw_negotiate_mission2
+		}
+	}
+	
+	option = {
+		name = kmtccw.6.b
+		ai_chance = { 
+			base = 0 
+		}
+		if = {
+			limit = { country_exists = PRC }
+			PRC = { 
+				country_event = { id = kmtccw.8 }
+			}
+			event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.5 }}
+		}
+		every_country = {
+				limit = { any_state = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+			every_state = {
+				limit = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+				remove_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }
+			}
+		}
+#		every_country = {
+#			limit = { any_country = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}}
+#			every_country = {
+#				limit = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#				remove_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#			}
+#		}
+			set_global_flag = KMT_ccw_broken_negotiation
+	}
+}
+
+#get collaborator stuff
+country_event = {
+	id = kmtccw.7
+	title = kmtccw.7.t
+	desc = kmtccw.7.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.7.a
+		effect_tooltip = {
+			every_state = {
+				limit = { has_state_flag = KMT_ccw_to_prc_state }
+				ROOT = { transfer_state = PREV }
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 5000 producer = JAP }
+			add_equipment_to_stockpile = { type = support_equipment amount = 2000 producer = JAP }
+			add_equipment_to_stockpile = { type = support_equipment amount = 300 producer = JAP }
+			add_equipment_to_stockpile = { type = infantry_equipment amount = 3000 producer = SOV }
+			add_equipment_to_stockpile = { type = support_equipment amount = 1000 producer = SOV }
+			add_equipment_to_stockpile = { type = support_equipment amount = 100 producer = SOV }
+			activate_mission = KMTccw_negotiate_mission2
+		}
+	}
+}
+
+#no get collaborator stuff
+country_event = {
+	id = kmtccw.8
+	title = kmtccw.8.t
+	desc = kmtccw.8.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.8.a
+		custom_effect_tooltip = KMTccw_ceasefire_end_tt
+	}
+}
+
+#coalition?
+country_event = {
+	id = kmtccw.9
+	title = kmtccw.9.t
+	desc = kmtccw.9.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = kmtccw.9.a
+		effect_tooltip = {
+			activate_mission = KMTccw_national_constitutional_assembly
+			if = { 
+				limit = { PRC = { NOT = { has_country_flag = PRC_ccw_withdrawn_from_pcc }}}
+				activate_mission = KMTccw_military_reorganisation
+				PRC = { 
+					activate_mission = KMTccw_national_constitutional_assembly 
+					activate_mission = KMTccw_military_reorganisation 
+				}
+			}
+		}
+	}
+}
+
+#coalition yes
+country_event = {
+	id = kmtccw.10
+	title = kmtccw.10.t
+	desc = kmtccw.10.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.10.a
+		effect_tooltip = {
+			set_autonomy = { target = FROM autonomy_state = autonomy_kmt_coalition_government }
+		}
+	}
+}
+
+#coalition no
+country_event = {
+	id = kmtccw.11
+	title = kmtccw.11.t
+	desc = kmtccw.11.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.11.a
+	}
+}
+
+#from break negotiation
+country_event = {
+	id = kmtccw.12
+	title = kmtccw.12.t
+	desc = kmtccw.12.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.12.a
+	}
+}
+
+#prc break negotiation - negotiator notif
+country_event = {
+	id = kmtccw.13
+	title = kmtccw.13.t
+	desc = kmtccw.13.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.13.a
+	}
+}
+
+#final negotiation - peace pls?
+country_event = {
+	id = kmtccw.14
+	title = kmtccw.14.t
+	desc = kmtccw.14.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.14.a
+		set_country_flag = KMTccw_final_negotiation_peace
+		ai_chance = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		if = {
+			limit = {
+				OR = {	
+					AND = {
+						tag = event_target:KMT_central_gov_tag
+						PRC = { has_country_flag = KMTccw_final_negotiation_peace }
+					}
+					AND = {
+						tag = PRC
+						event_target:KMT_central_gov_tag = { has_country_flag = KMTccw_final_negotiation_peace }
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = PRC
+						is_subject_of = PRC
+						is_in_faction_with = PRC
+					}
+				}
+				every_country = {
+					limit = {
+						has_war_with = PREV
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+					}
+					white_peace = PREV
+					diplomatic_relation = { relation = non_aggression_pact country = PREV active = yes }
+				}
+			}
+			if = {
+				limit = { tag = PRC }
+				create_wargoal = {
+					target = event_target:KMT_central_gov_tag
+					type = civil_war
+				}
+				event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.15 }}
+			}else = {
+				PRC = { country_event = { id = kmtccw.15 }}
+				create_wargoal = {
+					target = PRC
+					type = civil_war
+				}
+			}
+			event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.16 }}
+		}
+		every_country = {
+				limit = { any_state = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+			every_state = {
+				limit = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+				remove_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }
+			}
+		}
+#		every_country = {
+#			limit = { any_country = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}}
+#			every_country = {
+#				limit = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#				remove_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#			}
+#		}
+	}
+	
+	option = {
+		name = kmtccw.14.a
+		if = {
+			limit = { tag = PRC }
+			event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.17 }}
+			event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.18 }}
+		}else = {
+			PRC = { country_event = { id = kmtccw.17 }}
+			event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.18 }}
+		}
+		every_country = {
+				limit = { any_state = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+			every_state = {
+					limit = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+				remove_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }
+			}
+		}
+#		every_country = {
+#			limit = { any_country = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}}
+#			every_country = {
+#				limit = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#				remove_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#			}
+#		}
+	}
+}
+
+#final peace - ok
+country_event = {
+	id = kmtccw.15
+	title = kmtccw.15.t
+	desc = kmtccw.15.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.15.a
+		effect_tooltip = { white_peace = FROM }
+	}
+}
+
+#final peace - ok negotiator notif
+country_event = {
+	id = kmtccw.16
+	title = kmtccw.15.t
+	desc = kmtccw.15.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.15.a
+	}
+}
+
+#final peace - no
+country_event = {
+	id = kmtccw.17
+	title = kmtccw.17.t
+	desc = kmtccw.17.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.17.a
+	}
+}
+
+#final peace - no negotiator notif
+country_event = {
+	id = kmtccw.18
+	title = kmtccw.17.t
+	desc = kmtccw.18.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.18.a
+	}
+}
+
+#accept final negotiation?
+country_event = {
+	id = kmtccw.19
+	title = kmtccw.19.t
+	desc = kmtccw.19.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	#accept
+	option = {
+		name = kmtccw.19.a
+		PRC = { country_event = { id = kmtccw.20 }}
+	}
+	
+	#accept
+	option = {
+		name = kmtccw.19.b
+		ai_chance = {
+			factor = 0.5
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		if = {
+			limit = { has_idea = KMT_us_military_embargo }
+			hidden_effect = { remove_ideas = KMT_us_military_embargo }
+		}
+		add_ideas = KMT_us_military_embargo
+		FROM = {
+			country_event = { id = kmtccw.4 }
+			effect_tooltip = {
+				add_opinion_modifier = { modifier = KMT_ccw_no_negotiation target = ROOT }
+				add_opinion_modifier = { modifier = KMT_ccw_no_negotiation_trade target = ROOT }
+			}
+		}
+	}
+}
+
+#accept final negotiation?
+country_event = {
+	id = kmtccw.20
+	title = kmtccw.19.t
+	desc = kmtccw.20.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	#accept
+	option = {
+		name = kmtccw.2.a
+		FROM.FROM = {
+			country_event = { id = kmtccw.21 }
+		}
+		FROM = {
+			country_event = { id = kmtccw.21 }
+			if = {
+				limit = { NOT = { has_idea = KMT_ccw_ceasefire }}
+				add_ideas = KMT_ccw_ceasefire
+				activate_mission = KMTccw_negotiate_mission3
+			}
+		}
+		if = {
+			limit = { NOT = { has_idea = KMT_ccw_ceasefire }}
+			add_ideas = KMT_ccw_ceasefire
+			activate_mission = KMTccw_negotiate_mission3
+		}
+		every_state = { remove_dynamic_modifier = { modifier = KMT_ccw_manchuria_hostility }}
+		every_country = {
+			limit = {
+				OR = {
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
+				}
+				has_war_with = FROM
+				NOT = { has_idea = KMT_ccw_ceasefire }
+			}
+			add_ideas = KMT_ccw_ceasefire
+		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = FROM
+					is_subject_of = FROM
+					is_in_faction_with = FROM
+				}
+				has_war_with = ROOT
+				NOT = { has_idea = KMT_ccw_ceasefire }
+			}
+			add_ideas = KMT_ccw_ceasefire
+		}
+		every_state = {
+			limit = {
+				OWNER = {
+					OR = {
+						tag = FROM
+						is_subject_of = FROM
+						is_in_faction_with = FROM
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = FROM
+						is_subject_of = FROM
+						is_in_faction_with = FROM
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
+					PREV = { NOT = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+				}
+				PREV = { add_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+			}
+		}
+#		every_country = {
+#			limit = {
+#				OR = {
+#					tag = FROM
+#					is_subject_of = FROM
+#					is_in_faction_with = FROM
+#				}
+#			}
+#			every_country = {
+#				limit = {
+#					OR = {
+#						tag = ROOT
+#						is_subject_of = ROOT
+#						is_in_faction_with = ROOT
+#					}
+#					NOT = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#				}
+#				add_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#				if = {
+#					limit = { PREV = { NOT = { has_relation_modifier = { modifier = KMT_ccw_cease_fire target = PREV }}}}
+#					PREV = { add_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#				}
+#			}
+#		}
+	}
+	
+	#no
+	option = {
+		name = kmtccw.2.b
+		ai_chance = {
+			base = 0
+			modifier = { 
+				FROM = { surrender_progress > 0.75 }
+				add = 100
+			}
+			modifier = { 
+				has_country_flag = KMT_ccw_no_more_peace
+				add = 1000
+			}
+		}
+		FROM.FROM = {
+			country_event = { id = kmtccw.5 }
+		}
+		FROM = {
+			country_event = { id = kmtccw.5 }
+		}
+	}
+}
+
+#from final negotiation yes
+country_event = {
+	id = kmtccw.21
+	title = kmtccw.21.t
+	desc = kmtccw.21.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.21.a
+	}
+}
+
+#pcc compromise?
+country_event = {
+	id = kmtccw.22
+	title = kmtccw.22.t
+	desc = kmtccw.22.d
+	picture = GFX_report_zhou_enlai2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.22.a
+		ai_chance = { 
+			base = 0 
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			custom_effect_tooltip = KMT_ccp_angery_tt
+			PRC = { country_event = { id = kmtccw.23 }}
+		}
+	}
+	
+	option = {
+		name = kmtccw.22.b
+		ai_chance = { base = 10 }
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			add_to_variable = { global.PRC_constitutional_autonomy = 1 }
+			add_political_power = -100
+			set_global_flag = KMT_pcc_compromised
+			PRC = { 
+				country_event = { id = kmtccw.24 }
+				add_days_mission_timeout = {
+					mission = KMTccw_negotiate_mission2
+					days = -10
+				}
+			}
+			add_days_mission_timeout = {
+				mission = KMTccw_negotiate_mission2
+				days = -10
+			}
+		}
+	}
+}
+
+#kmt no compromise
+country_event = {
+	id = kmtccw.23
+	title = kmtccw.23.t
+	desc = kmtccw.23.d
+	picture = GFX_report_kmt_meeting
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.23.a
+		ai_chance = { base = 10 }
+		add_war_support = 0.1
+		set_country_flag = PRC_ccw_withdrawn_from_pcc
+		set_global_flag = PRC_no_cooperation_stance
+		custom_effect_tooltip = PRC_no_cooperation_stance_effect_tt
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			FROM = { country_event = { id = kmtccw.26 }}
+		}
+	}
+	
+	option = {
+		name = kmtccw.23.b
+		ai_chance = { 
+			base = 0 
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			add_political_power = -50
+		}
+	}
+}
+
+#kmt compromise
+country_event = {
+	id = kmtccw.24
+	title = kmtccw.24.t
+	desc = kmtccw.24.d
+	picture = GFX_report_zhou_enlai2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.24.a
+		add_political_power = 100
+	}
+}
+
+#disagree on kmt stuff
+country_event = {
+	id = kmtccw.25
+	title = kmtccw.25.t
+	desc = kmtccw.25.d
+	picture = GFX_report_ccp_group
+
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = { NOT = { has_completed_focus = KMT_voting_rights }}
+	}
+	
+	option = {
+		name = kmtccw.25.a
+		ai_chance = { base = 100 }
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.22 }}
+		}
+	}
+	
+	option = {
+		name = kmtccw.25.b
+		ai_chance = { 
+			base = 0 
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			add_political_power = -50
+		}
+	}
+}
+
+#ccp withdraws from pcc
+country_event = {
+	id = kmtccw.26
+	title = kmtccw.26.t
+	desc = kmtccw.26.d
+	picture = GFX_report_zhou_enlai
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.26.a
+		add_days_mission_timeout = {
+			mission = KMTccw_negotiate_mission2
+			days = -5
+		}
+	}
+}
+
+#ccp withdraws from pcc
+country_event = {
+	id = kmtccw.27
+	title = kmtccw.27.t
+	desc = kmtccw.27.d
+	picture = GFX_report_zhou_enlai
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.27.a
+		add_days_mission_timeout = {
+			mission = KMTccw_negotiate_mission2
+			days = -5
+		}
+	}
+}
+
+#fundamentalists dissatisfied over compromise
+country_event = {
+	id = kmtccw.28
+	title = kmtccw.28.t
+	desc = kmtccw.28.d
+	picture = GFX_report_kmt_meeting
+
+	is_triggered_only = yes
+	
+	trigger = { 
+		has_global_flag = KMT_pcc_compromised 
+		NOT = { tag = PRC }
+	}
+	
+	option = {
+		name = kmtccw.28.b
+		ai_chance = { 
+			base = 0 
+			modifier = {
+				is_historical_focus_on = no
+				add = 5
+			}
+		}
+		add_stability = -0.05
+		add_political_power = -25
+		add_timed_idea = {
+			days = 1000
+			idea = KMT_internal_fracture
+		}
+	}
+	
+	option = {
+		name = kmtccw.28.a
+		ai_chance = { base = 10 }
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			add_political_power = -200
+			custom_effect_tooltip = KMT_ccp_angery_tt
+			PRC = { country_event = { id = kmtccw.29 }}
+		}else = {
+			add_political_power = -50
+		}
+	}
+}
+
+#ccp response
+country_event = {
+	id = kmtccw.29
+	title = kmtccw.29.t
+	desc = kmtccw.29.d
+	picture = GFX_report_zhou_enlai
+
+	is_triggered_only = yes
+	
+	trigger = { }
+	
+	option = {
+		name = kmtccw.29.a
+		ai_chance = { 
+			base = 0 
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			add_political_power = -100
+		}
+	}
+	
+	option = {
+		name = kmtccw.29.b
+		ai_chance = { base = 10 }
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			add_war_support = 0.1
+			custom_effect_tooltip = KMTccw_fail_military_reorg_and_no_attend_assembly
+			set_global_flag = PRC_ccw_withdrawn_from_military_reorg
+			FROM = { country_event = { id = kmtccw.30 }}
+		}
+	}
+}
+
+#ccp response
+country_event = {
+	id = kmtccw.30
+	title = kmtccw.30.t
+	desc = kmtccw.30.d
+	picture = GFX_report_zhou_enlai
+
+	is_triggered_only = yes
+	
+	trigger = {  }
+	
+	option = {
+		name = kmtccw.30.a
+		custom_effect_tooltip = KMTccw_fail_military_reorg
+	}
+}
+
+#demand seats
+country_event = {
+	id = kmtccw.31
+	title = kmtccw.31.t
+	desc = kmtccw.31.d
+	picture = GFX_report_pre_pcc_talking
+
+	is_triggered_only = yes
+	
+	trigger = { 
+		tag = PRC
+		NOT = { has_global_flag = KMT_ccw_broken_negotiation }
+	}
+	
+	option = {
+		name = kmtccw.31.a
+		ai_chance = { base = 10 }
+		
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.32 }}
+		}
+	}
+	
+	option = {
+		name = kmtccw.32.a
+		ai_chance = { 
+			base = 0 
+			modifier = {
+				is_historical_focus_on = no
+				add = 1
+			}
+		}
+	}
+}
+
+#ccp demand seats
+country_event = {
+	id = kmtccw.32
+	title = kmtccw.32.t
+	desc = kmtccw.32.d
+	picture = GFX_report_pre_pcc_talking
+
+	is_triggered_only = yes
+	
+	trigger = { 
+		NOT = { has_global_flag = KMT_ccw_broken_negotiation }
+	}
+	
+	option = {
+		name = kmtccw.32.a
+		ai_chance = { base = 10 }
+		
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			add_stability = -0.01
+			add_political_power = -300
+			FROM = { country_event = { id = kmtccw.33 }}
+			add_to_variable = { global.PRC_constitutional_autonomy = 1 }
+		}
+	}
+	
+	option = {
+		name = kmtccw.32.b
+		ai_chance = { 
+			base = 0 
+			modifier = {
+				is_historical_focus_on = no
+				add = 5
+			}
+		}
+		if = { 
+			limit = { NOT = { has_global_flag = KMT_ccw_broken_negotiation }}
+			custom_effect_tooltip = KMT_ccp_angery_tt
+			FROM = { country_event = { id = kmtccw.34 }}
+		}
+	}
+}
+
+#ccp demand seats - yes
+country_event = {
+	id = kmtccw.33
+	title = kmtccw.33.t
+	desc = kmtccw.33.d
+	picture = GFX_report_pre_pcc_talking
+
+	is_triggered_only = yes
+	
+	trigger = { 
+		tag = PRC
+		NOT = { has_global_flag = KMT_ccw_broken_negotiation }
+	}
+	
+	immediate = {
+		hidden_effect = { PRC = { country_event = { id = kmtccw.35 days = 2 }}}
+		set_global_flag = PRC_national_committee_seats_given
+	}
+	
+	option = {
+		name = kmtccw.33.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#ccp demand seats - no
+country_event = {
+	id = kmtccw.34
+	title = kmtccw.34.t
+	desc = kmtccw.34.d
+	picture = GFX_report_pre_pcc_talking
+
+	is_triggered_only = yes
+	
+	trigger = { 
+		tag = PRC
+		NOT = { has_global_flag = KMT_ccw_broken_negotiation }
+	}
+	
+	immediate = {
+		hidden_effect = { PRC = { country_event = { id = kmtccw.35 days = 2 }}}
+	}
+	
+	option = {
+		name = kmtccw.34.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#attend constitutional assembly?
+country_event = {
+	id = kmtccw.35
+	title = kmtccw.35.t
+	desc = kmtccw.35.d
+	picture = GFX_report_cna_building
+
+	is_triggered_only = yes
+	
+	trigger = { 
+		tag = PRC
+		NOT = { has_global_flag = KMT_ccw_broken_negotiation }
+	}
+	
+	option = {
+		name = kmtccw.35.a
+		ai_chance = { 
+			base = 20
+			modifier = {
+				NOT = { has_global_flag = PRC_national_committee_seats_given }
+				add = 100
+			}
+		}
+	}
+	
+	option = {
+		name = kmtccw.35.b
+		ai_chance = { 
+			base = 0 
+			modifier = {
+				is_historical_focus_on = no
+				add = 10
+			}
+			modifier = {
+				NOT = { has_global_flag = PRC_national_committee_seats_given }
+				factor = 0
+			}
+		}
+		set_global_flag = PRC_attend_constitutional_assembly
+		log = "PRC_attend_constitutional_assembly set with kmtccw.35"
+		event_target:KMT_central_gov_tag = {
+			country_event = { id = kmtccw.36 }
+		}
+	}
+}
+
+#ccp attends constitutional assembly
+country_event = {
+	id = kmtccw.36
+	title = kmtccw.36.t
+	desc = kmtccw.36.d
+	picture = GFX_report_cna_open
+
+	is_triggered_only = yes
+	
+	trigger = { 
+		NOT = { has_global_flag = KMT_ccw_broken_negotiation }
+	}
+	
+	option = {
+		name = kmtccw.36.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#constitutional assembly delayed
+country_event = {
+	id = kmtccw.37
+	title = kmtccw.37.t
+	desc = kmtccw.37.d
+	picture = GFX_report_cna_open
+
+	is_triggered_only = yes
+	
+	trigger = { 
+		NOT = { has_global_flag = KMT_ccw_broken_negotiation }
+	}
+	
+	option = {
+		name = kmtccw.37.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#constitutional assembly commenced
+country_event = {
+	id = kmtccw.38
+	title = kmtccw.38.t
+	desc = kmtccw.38.d
+	picture = GFX_report_representatives_at_sun_mausoleum
+
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = KMT_constitutional_assembly_in_session 
+		hidden_effect = { 
+			PRC = { country_event = { id = kmtccw.38 }}
+			if = {
+				limit = { NOT = { tag = PRC }}
+				country_event = { id = kmtccw.40 days = 10 } 
+			}
+		}
+	}
+	
+	option = {
+		name = kmtccw.38.a
+		trigger = { 
+			OR = {
+				has_global_flag = PRC_attend_constitutional_assembly
+				NOT = { tag = PRC }
+			}
+		}
+		ai_chance = { base = 0 }
+	}
+	
+	option = {
+		name = kmtccw.38.p
+		trigger = { 
+			tag = PRC
+			has_global_flag = PRC_no_cooperation_stance 
+		}
+		ai_chance = { base = 0 }
+	}
+	
+	trigger = {
+		OR = {
+			NOT = { tag = PRC }
+			FROM = { NOT = { tag = PRC }}
+		}
+	}
+	
+	#still no
+	option = {
+		name = kmtccw.38.b
+		trigger = { 
+			tag = PRC 
+			NOT = { has_global_flag = PRC_attend_constitutional_assembly }
+			NOT = { has_global_flag = PRC_no_cooperation_stance }
+		}
+		custom_effect_tooltip = PRC_no_cooperation_stance_effect_tt
+		set_global_flag = PRC_no_cooperation_stance
+		ai_chance = { 
+			base = 100 
+			modifier = { 
+				has_global_flag = PRC_national_committee_seats_given 
+				factor = 0.1
+			}
+			modifier = {
+				is_historical_focus_on = no
+				add = 10
+			}
+		}
+	}
+	
+	#guess we'll join
+	option = {
+		name = kmtccw.38.c
+		trigger = { 
+			tag = PRC 
+			NOT = { has_global_flag = PRC_attend_constitutional_assembly }
+			NOT = { has_global_flag = PRC_no_cooperation_stance }
+		}
+		ai_chance = { 
+			base = 0 
+			modifier = { 
+				has_global_flag = PRC_national_committee_seats_given 
+				add = 50
+			}
+			modifier = {
+				is_historical_focus_on = no
+				add = 10
+			}
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		custom_effect_tooltip = PRC_can_only_drop_out_thru_decision
+		if = {
+			limit = { 
+				NOT = { has_global_flag = KMT_ccw_broken_negotiation }
+				has_global_flag = KMT_constitutional_assembly_in_session
+			}
+			set_global_flag = PRC_attend_constitutional_assembly
+			log = "PRC_attend_constitutional_assembly set with kmtccw.38"
+			event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.39 }}
+		}
+	}
+}
+
+#ccp joined assembly last minute
+country_event = {
+	id = kmtccw.39
+	title = kmtccw.39.t
+	desc = kmtccw.39.d
+	picture = GFX_report_cna_open
+
+	is_triggered_only = yes
+	
+	trigger = { 
+		NOT = { has_global_flag = KMT_ccw_broken_negotiation }
+	}
+	
+	option = {
+		name = kmtccw.39.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#constitutional assembly flavour event
+country_event = {
+	id = kmtccw.40
+	title = kmtccw.40.t
+	desc = kmtccw.40.d
+	picture = GFX_report_china_assembly
+
+	is_triggered_only = yes
+
+	
+	immediate = { }
+	
+	option = {
+		name = kmtccw.40.a
+		ai_chance = { base = 100 }
+		trigger = { NOT = { tag = PRC }}
+		hidden_effect = { country_event = { id = kmtccw.41 days = 8 }}
+	}
+	
+	option = {
+		name = kmtccw.40.c
+		ai_chance = { base = 100 }
+		trigger = { tag = PRC }
+	}
+	
+	option = {
+		name = kmtccw.40.b
+		trigger = { NOT = { tag = PRC }}
+		ai_chance = { 
+			base = 0 
+			modifier = {
+				is_historical_focus_on = no
+				add = 10
+			}
+		}
+	
+		hidden_effect = {
+			country_event = { id = kmtccw.47 }
+			PRC = { country_event = { id = kmtccw.47 }}
+			clr_global_flag = PRC_attend_constitutional_assembly
+			every_country = {
+				limit = { has_idea = KMT_ccw_ceasefire }
+				log = "[This.GetName] removes ceasefire spirit"
+				remove_ideas = KMT_ccw_ceasefire
+			}
+			every_country = {
+				limit = { any_state = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+				log = "[This.GetName] is in ccw"
+				every_state = {
+					limit = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+					log = "[This.GetName] removes state dm for [Prev.GetName]"
+					remove_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }
+				}
+			}
+#			every_country = {
+#				limit = { any_country = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}}
+#				every_country = {
+#					limit = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#					remove_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#				}
+#			}
+			if = {
+				limit = { tag = PRC }
+				log = "[Root.GetName] broke neg"
+				event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.12 }}
+				event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.13 }}
+			}else = {
+				log = "[Root.GetName] broke neg"
+				PRC = { country_event = { id = kmtccw.12 }}
+				add_ideas = KMT_us_military_embargo
+				event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.4 }}
+			}
+			set_global_flag = KMT_ccw_broken_negotiation
+			set_global_flag = KMT_ccw_broken_negotiation2
+		hidden_effect = { news_event = { id = kns.52 }}
+		}
+	}
+}
+
+#constitutional assembly ends
+country_event = {
+	id = kmtccw.41
+	title = kmtccw.41.t
+	desc = {
+		text = kmtccw.41.d1
+		trigger = {
+			has_global_flag = PRC_attend_constitutional_assembly
+		}
+	}
+	desc = {
+		text = kmtccw.41.d2
+		trigger = {
+			NOT = { has_global_flag = PRC_attend_constitutional_assembly }
+		}
+	}
+	picture = GFX_report_cna_building
+
+	is_triggered_only = yes
+	
+	immediate = { 
+		set_global_flag = KMT_new_constitution_available 
+		clr_global_flag = KMT_constitutional_assembly_in_session
+		hidden_effect = {
+			CHI = {
+				if = {
+					limit = { has_completed_focus = KMT_military_dictatorship }
+					uncomplete_national_focus = {
+						focus = KMT_military_dictatorship
+						uncomplete_children = yes
+					}
+				}
+				complete_national_focus = KMT_democratic_republic
+			}
+			if = {
+				limit = { 
+					NOT = { 
+						has_global_flag = PRC_attend_constitutional_assembly 
+						has_global_flag = PRC_angry_at_ca
+					}
+				}
+				set_global_flag = PRC_angry_at_ca
+				PRC = { country_event = { id = kmtccw.46 days = 3 }}
+			}
+			if = {
+				limit = { 
+					tag = event_target:KMT_central_gov_tag
+					has_global_flag = PRC_attend_constitutional_assembly 
+				}
+				every_country = {
+					limit = {
+						OR = {
+							tag = PRC
+							is_in_faction_with = PRC
+							is_subject_of = PRC
+						}
+					}
+					every_country = {
+						limit = {
+							OR = {
+								tag = ROOT
+								is_in_faction_with = ROOT
+								is_subject_of = ROOT
+							}
+							has_war_with = PREV
+						}
+						white_peace = PREV
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_global_flag = KMT_constitutional_assembly_effect_triggered }
+					}
+					set_global_flag = KMT_constitutional_assembly_effect_triggered
+					if = {
+						limit = { check_variable = { global.PRC_constitutional_autonomy > 1 }}
+						PRC = {
+							transfer_state = 714
+							transfer_state = 961
+							transfer_state = 950
+						}
+						set_autonomy = { autonomy_state = autonomy_kmt_coalition_government_neutral target = PRC }
+#						event_target:KMT_central_gov_tag = {
+#							if = {
+#								limit = { is_faction_leader = yes }
+#								dismantle_faction = yes
+#							}
+#							if = {
+#								limit = { any_country = { has_country_flag = KMT_ca_faction_member is_chinese_nations_w_HYQ = no }}
+#								create_faction = KMT_nanking_pact
+#							}else = {
+#								create_faction = KMT_republic_of_china
+#								set_country_flag = KMT_republic_of_china_faction
+#							}
+#							add_to_faction = PRC
+#							every_country = {
+#								limit = { has_country_flag = KMT_ca_faction_member }
+#								add_to_faction = THIS
+#							}
+#						}
+#						if = {
+#							limit = { event_target:KMT_central_gov_tag = { is_faction_leader = yes }}
+#							every_country = {
+#								limit = { is_in_faction_with = event_target:KMT_central_gov_tag }
+#								set_country_flag = KMT_ca_faction_member
+#							}
+#						}
+						set_power_balance = {
+							id = KMTPRC_coalition_government
+							left_side = KMTPRC_PRC # will keep the last set side if not specified
+							right_side = KMTPRC_KMT # will keep the last set side if not specified
+							set_default = yes # whether or not to reset the power balance to the initial value, default = no
+							#set_value = 0.25 # if specified will set the value of the power balance, this option will override the effect of set_default so the two options should not be used together. if neither set_default or set_value is specified the current value of the power balance will not change
+						}
+						set_global_flag = KMT_PRC_coalition_gov_faction
+						set_variable = { global.KMT_bop_cg_hostility = 0 }
+						PRC = { 
+							set_country_flag = PRC_coalition_gov_flag 
+							set_variable = { KMT_bop_prc_hostility = 0 }
+							set_power_balance = {
+								id = KMTPRC_coalition_government
+								left_side = KMTPRC_PRC # will keep the last set side if not specified
+								right_side = KMTPRC_KMT # will keep the last set side if not specified
+								set_default = yes # whether or not to reset the power balance to the initial value, default = no
+								#set_value = 0.25 # if specified will set the value of the power balance, this option will override the effect of set_default so the two options should not be used together. if neither set_default or set_value is specified the current value of the power balance will not change
+							}
+						}
+					}else_if = {
+						limit = { check_variable = { global.PRC_constitutional_autonomy = 1 }}
+						every_state = {
+							limit = { 
+								is_owned_by = PRC
+								is_capital = no
+								NOT = { 
+									is_core_of = PRC 
+									region = 155
+									region = 242
+									region = 243
+									region = 244
+									region = 245
+									region = 143
+									region = 235
+									region = 236
+								}
+							}
+							ROOT = {
+								transfer_state = PREV
+							}
+						}
+						set_autonomy = { autonomy_state = autonomy_kmt_coalition_government_neutral target = PRC }
+						set_power_balance = {
+							id = KMTPRC_coalition_government
+							left_side = KMTPRC_PRC # will keep the last set side if not specified
+							right_side = KMTPRC_KMT # will keep the last set side if not specified
+							#set_default = yes # whether or not to reset the power balance to the initial value, default = no
+							set_value = 0.25 # if specified will set the value of the power balance, this option will override the effect of set_default so the two options should not be used together. if neither set_default or set_value is specified the current value of the power balance will not change
+						}
+						set_variable = { global.KMT_bop_cg_hostility = 0 }
+						PRC = { 
+							set_country_flag = PRC_coalition_gov_flag 
+							set_variable = { KMT_bop_prc_hostility = 0 }
+							set_power_balance = {
+								id = KMTPRC_coalition_government
+								left_side = KMTPRC_PRC # will keep the last set side if not specified
+								right_side = KMTPRC_KMT # will keep the last set side if not specified
+								#set_default = yes # whether or not to reset the power balance to the initial value, default = no
+								set_value = 0.25 # if specified will set the value of the power balance, this option will override the effect of set_default so the two options should not be used together. if neither set_default or set_value is specified the current value of the power balance will not change
+							}
+						}
+					}else = {
+						set_autonomy = { autonomy_state = autonomy_kmt_coalition_government2 target = PRC }
+						every_state = {
+							limit = { 
+								is_owned_by = PRC
+								is_capital = no
+								OR = {
+									NOT = { 
+										is_core_of = PRC 
+										region = 155
+										region = 242
+										region = 243
+										region = 244
+										region = 245
+										region = 143
+									}
+									state = 939
+									state = 597
+									state = 743
+									state = 614
+									state = 615
+								}
+							}
+							ROOT = {
+								transfer_state = PREV
+							}
+						}
+						set_variable = { global.KMT_bop_cg_hostility = 0 }
+						set_power_balance = {
+							id = KMTPRC_coalition_government
+							left_side = KMTPRC_PRC # will keep the last set side if not specified
+							right_side = KMTPRC_KMT # will keep the last set side if not specified
+							#set_default = yes # whether or not to reset the power balance to the initial value, default = no
+							set_value = 0.5 # if specified will set the value of the power balance, this option will override the effect of set_default so the two options should not be used together. if neither set_default or set_value is specified the current value of the power balance will not change
+						}
+						PRC = { 
+							set_country_flag = PRC_coalition_gov_flag 
+							set_variable = { KMT_bop_prc_hostility = 0 }
+							set_power_balance = {
+								id = KMTPRC_coalition_government
+								left_side = KMTPRC_PRC # will keep the last set side if not specified
+								right_side = KMTPRC_KMT # will keep the last set side if not specified
+								#set_default = yes # whether or not to reset the power balance to the initial value, default = no
+								set_value = 0.5 # if specified will set the value of the power balance, this option will override the effect of set_default so the two options should not be used together. if neither set_default or set_value is specified the current value of the power balance will not change
+							}
+						}
+					}
+				}else = {
+					effect_tooltip = {
+						if = {
+							limit = { check_variable = { global.PRC_constitutional_autonomy > 1 }}
+							set_autonomy = { autonomy_state = autonomy_kmt_coalition_government_neutral target = PRC }
+						}else_if = {
+							limit = { check_variable = { global.PRC_constitutional_autonomy = 1 }}
+							set_autonomy = { autonomy_state = autonomy_kmt_coalition_government2 target = PRC }
+						}else = {
+							set_autonomy = { autonomy_state = autonomy_KMT_local_administration target = PRC }
+						}
+					}
+				}
+				PRC = {
+					set_cosmetic_tag = PRC_coalition_government
+					complete_national_focus = PRC_institution_reorganization
+					add_ideas = limited_conscription
+					add_ideas = civilian_economy
+				}
+				hidden_effect = { news_event = { id = kns.51 }}
+			}else = {
+				add_stability = 0.05
+				add_political_power = 50
+			}
+		}
+	}
+	
+	option = {
+		name = kmtccw.41.a
+		ai_chance = { base = 0 }
+		effect_tooltip = {
+			if = {
+				limit = { has_global_flag = PRC_attend_constitutional_assembly }
+				every_country = {
+					limit = {
+						OR = {
+							tag = PRC
+							is_in_faction_with = PRC
+							is_subject_of = PRC
+						}
+					}
+					every_country = {
+						limit = {
+							OR = {
+								tag = ROOT
+								is_in_faction_with = ROOT
+								is_subject_of = ROOT
+							}
+							has_war_with = PREV
+						}
+						white_peace = PREV
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_global_flag = KMT_constitutional_assembly_effect_triggered }
+					}
+					set_global_flag = KMT_constitutional_assembly_effect_triggered
+					if = {
+						limit = { check_variable = { global.PRC_constitutional_autonomy > 1 }}
+						if = {
+							limit = { event_target:KMT_central_gov_tag = { is_faction_leader = yes }}
+							every_country = {
+								limit = { is_in_faction_with = event_target:KMT_central_gov_tag }
+								set_country_flag = KMT_ca_faction_member
+							}
+						}
+						PRC = {
+							transfer_state = 714
+							transfer_state = 961
+							transfer_state = 950
+						}
+						event_target:KMT_central_gov_tag = {
+							if = {
+								limit = { is_faction_leader = yes }
+								dismantle_faction = yes
+							}
+							if = {
+								limit = { any_country = { has_country_flag = KMT_ca_faction_member is_chinese_nations_w_HYQ = no }}
+								create_faction = KMT_nanking_pact
+							}else = {
+								create_faction = KMT_republic_of_china
+								set_country_flag = KMT_republic_of_china_faction
+							}
+							add_to_faction = PRC
+							every_country = {
+								limit = { has_country_flag = KMT_ca_faction_member }
+								add_to_faction = THIS
+							}
+						}
+						set_global_flag = KMT_PRC_coalition_gov_faction
+					}else_if = {
+						limit = { check_variable = { global.PRC_constitutional_autonomy = 1 }}
+						set_autonomy = { autonomy_state = autonomy_kmt_coalition_government2 target = PRC }
+					}else = {
+						set_autonomy = { autonomy_state = autonomy_KMT_local_administration target = PRC }
+						every_state = {
+							limit = { 
+								is_owned_by = PRC
+								is_capital = no
+								NOT = { is_core_of = PRC }
+							}
+							ROOT = {
+								transfer_state = PREV
+							}
+						}
+					}
+				}else = {
+					effect_tooltip = {
+						if = {
+							limit = { check_variable = { global.PRC_constitutional_autonomy > 1 }}
+							event_target:KMT_central_gov_tag = {
+								add_to_faction = PRC
+							}
+						}else_if = {
+							limit = { check_variable = { global.PRC_constitutional_autonomy = 1 }}
+							set_autonomy = { autonomy_state = KMT_coalition_government target = PRC }
+						}else = {
+							set_autonomy = { autonomy_state = KMT_local_administration target = PRC }
+						}
+					}
+				}
+				PRC = {
+					set_cosmetic_tag = PRC_coalition_government
+					complete_national_focus = PRC_institution_reorganization
+					add_ideas = limited_conscription
+					add_ideas = civilian_economy
+				}
+			}else = {
+				add_stability = 0.05
+				add_political_power = 50
+			}
+		}
+	}
+}
+
+#seats given
+country_event = {
+	id = kmtccw.42
+	title = kmtccw.42.t
+	desc = kmtccw.42.d
+	picture = GFX_report_pre_pcc_talking
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.42.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#from accepts negotiation
+country_event = {
+	id = kmtccw.43
+	title = kmtccw.43.t
+	desc = kmtccw.43.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.43.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#from try to resume hostility
+country_event = {
+	id = kmtccw.44
+	title = kmtccw.44.t
+	desc = kmtccw.44.d
+	picture = GFX_report_event_china_infiltration
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.44.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#military reorganisation notif
+country_event = {
+	id = kmtccw.45
+	title = kmtccw.45.t
+	desc = kmtccw.45.d
+	picture = GFX_report_event_chinese_army_training
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.45.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#illegitimate constitution, furious ccp attack
+country_event = {
+	id = kmtccw.46
+	title = kmtccw.46.t
+	desc = kmtccw.46.d
+	picture = GFX_report_zhou_enlai
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			clr_global_flag = PRC_attend_constitutional_assembly
+			every_country = {
+				limit = { has_idea = KMT_ccw_ceasefire }
+				remove_ideas = KMT_ccw_ceasefire
+			}
+			every_country = {
+				limit = { any_state = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+				every_state = {
+					limit = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+					remove_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }
+				}
+			}
+#			every_country = {
+#				limit = { any_country = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}}
+#				every_country = {
+#					limit = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#					remove_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#				}
+#			}
+			if = {
+				limit = { tag = PRC }
+				event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.12 }}
+				event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.13 }}
+			}else = {
+				PRC = { country_event = { id = kmtccw.12 }}
+				add_ideas = KMT_us_military_embargo
+				event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.4 }}
+			}
+			set_global_flag = KMT_ccw_broken_negotiation
+			set_global_flag = KMT_ccw_broken_negotiation2
+		hidden_effect = { news_event = { id = kns.52 }}
+		}
+	}
+	
+	option = {
+		name = kmtccw.46.a
+		ai_chance = { base = 0 }
+		effect_tooltip = {
+			clr_global_flag = PRC_attend_constitutional_assembly
+			remove_ideas = KMT_ccw_ceasefire
+			every_country = {
+				limit = { any_state = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+				every_state = {
+					limit = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+					remove_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }
+				}
+			}
+#			every_country = {
+#				limit = { any_country = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}}
+#				every_country = {
+#					limit = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#					remove_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#				}
+#			}
+			if = {
+				limit = { tag = PRC }
+				event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.12 }}
+				event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.13 }}
+			}else = {
+				PRC = { country_event = { id = kmtccw.12 }}
+				add_ideas = KMT_us_military_embargo
+				event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.4 }}
+			}
+		}
+	}
+}
+
+#constituent national assembly failed
+country_event = {
+	id = kmtccw.47
+	title = kmtccw.47.t
+	desc = {
+		text = kmtccw.47.d2
+		trigger = {
+			has_global_flag = PRC_attend_constitutional_assembly
+		}
+	}
+	desc = {
+		text = kmtccw.47.d1
+		trigger = {
+			NOT = { has_global_flag = PRC_attend_constitutional_assembly }
+		}
+	}
+	picture = GFX_report_china_assembly
+	
+	immediate = { 
+		set_global_flag = KMT_cna_failed 
+		log = "[Root.GetName] gets event cna fail"
+	}
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.47.b
+		ai_chance = { base = 0 }
+		trigger = { NOT = { tag = PRC }}
+		add_political_power = -100
+		add_stability = -0.2
+		add_war_support = -0.3
+		effect_tooltip = {
+			clr_global_flag = PRC_attend_constitutional_assembly
+			remove_ideas = KMT_ccw_ceasefire
+			every_country = {
+				limit = { any_state = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+				every_state = {
+					limit = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+					remove_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }
+				}
+			}
+#			every_country = {
+#				limit = { any_country = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}}
+#				every_country = {
+#					limit = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#					remove_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#				}
+#			}
+			if = {
+				limit = { tag = PRC }
+				event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.12 }}
+				event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.13 }}
+			}else = {
+				PRC = { country_event = { id = kmtccw.12 }}
+				add_ideas = KMT_us_military_embargo
+				event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.4 }}
+			}
+		}
+	}
+	
+	option = {
+		name = kmtccw.47.a
+		ai_chance = { base = 0 }
+		trigger = { tag = PRC }
+	}
+}
+
+#3rd party intervention
+country_event = {
+	id = kmtccw.48
+	title = kmtccw.48.t
+	desc = {
+		text = kmtccw.48.d
+		trigger = { FROM = { NOT = { has_country_flag = KMT_ccw_rejected_alliance_df }}}
+	}
+	desc = {
+		text = kmtccw.48.d2
+		trigger = { FROM = { has_country_flag = KMT_ccw_rejected_alliance_df }}
+	}
+	picture = report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+	
+	trigger = { NOT = { has_country_flag = kmtccw48_pending }}
+	
+	immediate = { set_country_flag = kmtccw48_pending }
+	
+	option = {
+		name = kmtccw.48.a
+		ai_chance = { base = 1 }
+		declare_war_on = {
+			target = FROM
+			type = topple_government
+		}
+		if = {
+			limit = { tag = PRC }
+			event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.49 }}
+		}else = {
+			PRC = { country_event = { id = kmtccw.49 }}
+		}
+		clr_country_flag = kmtccw48_pending
+		hidden_effect = { FROM = { clr_country_flag = KMT_ccw_rejected_alliance_df }}
+	}
+	
+	option = {
+		name = kmtccw.48.b
+		ai_chance = { base = 0 }
+		clr_country_flag = kmtccw48_pending
+		hidden_effect = { FROM = { clr_country_flag = KMT_ccw_rejected_alliance_df }}
+	}
+	
+	option = {
+		name = kmtccw.48.c
+		ai_chance = { base = 1 }
+		trigger = { has_idea = KMT_ccw_ceasefire }
+		clr_global_flag = PRC_attend_constitutional_assembly
+		every_country = {
+			limit = { has_idea = KMT_ccw_ceasefire }
+			remove_ideas = KMT_ccw_ceasefire
+		}
+		every_country = {
+				limit = { any_state = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+			every_state = {
+				limit = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+				remove_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }
+			}
+		}
+#		every_country = {
+#			limit = { any_country = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}}
+#			every_country = {
+#				limit = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#				remove_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#			}
+#		}
+		if = {
+			limit = { tag = PRC }
+			event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.12 }}
+			event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.13 }}
+		}else = {
+			PRC = { country_event = { id = kmtccw.12 }}
+				add_ideas = KMT_us_military_embargo
+			event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.4 }}
+		}
+		set_global_flag = KMT_ccw_broken_negotiation
+		set_global_flag = KMT_ccw_broken_negotiation2
+		hidden_effect = { news_event = { id = kns.52 }}
+		if = {
+			limit = { tag = PRC }
+			event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.50 }}
+		}else = {
+			PRC = { country_event = { id = kmtccw.50 }}
+		}
+		set_country_flag = KMT_ccw_no_more_peace
+		clr_country_flag = kmtccw48_pending
+		hidden_effect = { FROM = { clr_country_flag = KMT_ccw_rejected_alliance_df }}
+	}
+	
+	option = {
+		name = kmtccw.48.e
+		ai_chance = { base = 100 }
+		trigger = {
+			FROM = { 
+				OR = {
+					has_government = ROOT 
+					ROOT = { has_government = neutrality }
+				}
+				is_major = yes
+				OR = {
+					is_faction_leader = yes
+					AND = {
+						tag = USA
+						is_subject = no
+						NOT = {
+							any_state = {
+								is_core_of = USA
+								NOT = { is_owned_by = USA }
+							}
+						}
+						num_of_factories > 200
+					}
+					AND = {
+						tag = SOV
+						is_subject = no
+						num_of_factories > 100
+					}
+				}
+				is_in_faction = yes
+				NOT = { has_war_with = ROOT }
+				NOT = { has_country_flag = KMT_ccw_rejected_alliance }
+			}
+		}
+		random_country = { 
+			limit = { has_idea = kmt_planning_the_civil_war }
+			remove_ideas = kmt_planning_the_civil_war 
+		}
+		random_country = { 
+			limit = { has_idea = KMT_chinese_matter }
+			remove_ideas = KMT_chinese_matter 
+		}
+		FROM = { country_event = { id = kmtccw.51 }}
+	}
+}
+
+#bruh moment
+country_event = {
+	id = kmtccw.49
+	title = kmtccw.49.t
+	desc = kmtccw.49.d
+	picture = report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.49.a
+		ai_chance = { base = 1 }
+		effect_tooltip = {
+			FROM = {
+				declare_war_on = {
+					target = FROM.FROM
+					type = topple_government
+				}
+			}
+		}
+	}
+}
+
+#fuck you
+country_event = {
+	id = kmtccw.50
+	title = kmtccw.50.t
+	desc = kmtccw.50.d
+	picture = report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.50.a
+		ai_chance = { base = 1 }
+		effect_tooltip = {
+			remove_ideas = KMT_ccw_ceasefire
+		}
+	}
+}
+
+#accept from?
+country_event = {
+	id = kmtccw.51
+	title = kmtccw.51.t
+	desc = kmtccw.51.d
+	picture = report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.51.a
+		ai_chance = { base = 10 }
+		add_to_faction = FROM
+		FROM = { 
+			clr_country_flag = kmtccw48_pending 
+			country_event = { id = kmtccw.52 }
+		}
+		if = {
+			limit = { FROM = { tag = PRC }}
+			event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.53 }}
+		}else = {
+			PRC = { country_event = { id = kmtccw.53 }}
+		}
+	}
+	
+	option = {
+		name = kmtccw.51.b
+		ai_chance = { base = 0 }
+		set_country_flag = KMT_ccw_rejected_alliance
+		set_country_flag = KMT_ccw_rejected_alliance_df
+		FROM = { country_event = { id = kmtccw.48 }}
+	}
+}
+
+#in faction now
+country_event = {
+	id = kmtccw.52
+	title = kmtccw.52.t
+	desc = kmtccw.52.d
+	picture = report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				remove_ideas = {
+					kmt_planning_the_civil_war
+					KMT_chinese_matter
+				}
+			}
+			if = {
+				limit = { has_idea = KMT_ccw_ceasefire }
+				clr_global_flag = PRC_attend_constitutional_assembly
+				every_country = {
+					limit = { has_idea = KMT_ccw_ceasefire }
+					remove_ideas = KMT_ccw_ceasefire
+				}
+				every_country = {
+				limit = { any_state = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}}
+					every_state = {
+					limit = { has_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }}
+						remove_dynamic_modifier = { modifier = KMT_ccw_ceasefire_state_dm scope = PREV }
+					}
+				}
+#				every_country = {
+#					limit = { any_country = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}}
+#					every_country = {
+#						limit = { has_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }}
+#						remove_relation_modifier = { target = PREV modifier = KMT_ccw_cease_fire }
+#					}
+#				}
+				if = {
+					limit = { tag = PRC }
+					event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.12 }}
+					event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.13 }}
+				}else = {
+					PRC = { country_event = { id = kmtccw.12 }}
+						add_ideas = KMT_us_military_embargo
+					event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.4 }}
+				}
+				set_global_flag = KMT_ccw_broken_negotiation
+				set_global_flag = KMT_ccw_broken_negotiation2
+		hidden_effect = { news_event = { id = kns.52 }}
+			}
+		}
+	}
+	
+	option = {
+		name = kmtccw.52.a
+		ai_chance = { base = 10 }
+		effect_tooltip = {
+			FROM = {
+				add_to_faction = ROOT
+			}
+			PRC = { remove_ideas = kmt_planning_the_civil_war }
+			event_target:KMT_central_gov_tag = { remove_ideas = KMT_chinese_matter }
+		}
+	}
+}
+
+#from in faction now
+country_event = {
+	id = kmtccw.53
+	title = kmtccw.53.t
+	desc = kmtccw.53.d
+	picture = report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.53.a
+		ai_chance = { base = 10 }
+		effect_tooltip = {
+			FROM = {
+				add_to_faction = FROM.FROM
+			}
+			PRC = { remove_ideas = kmt_planning_the_civil_war }
+			event_target:KMT_central_gov_tag = { remove_ideas = KMT_chinese_matter }
+		}
+	}
+}
+
+#from lift mil embargo
+country_event = {
+	id = kmtccw.54
+	title = kmtccw.54.t
+	desc = kmtccw.54.d
+	picture = GFX_report_event_merchant_ship_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.54.a
+		effect_tooltip = {
+			remove_ideas = KMT_us_military_embargo
+		}
+	}
+}
+
+#tell kmt to abolish constitution
+country_event = {
+	id = kmtccw.55
+	title = kmtccw.55.t
+	desc = kmtccw.55.d
+	picture = GFX_report_pre_pcc_talking
+
+	is_triggered_only = yes
+	
+	trigger = {
+		event_target:KMT_central_gov_tag = { has_completed_focus = KMT_voting_rights }
+	}
+	
+	option = {
+		name = kmtccw.55.a
+		ai_chance = { base = 100 }
+		event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.56 }}
+	}
+	
+	option = {
+		name = kmtccw.55.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#prc want to abolish constitution
+country_event = {
+	id = kmtccw.56
+	title = kmtccw.56.t
+	desc = kmtccw.56.d
+	picture = GFX_report_zhou_enlai2
+
+	is_triggered_only = yes
+	
+	option = {
+		trigger = { always = no }
+		name = kmtccw.56.a
+		ai_chance = { base = 0 }
+		PRC = { country_event = { id = kmtccw.57 }}
+		add_political_power = -1000
+		add_command_power = -1000
+		add_stability = -0.5
+		add_war_support = -0.5
+		custom_effect_tooltip = KMT_abolished_constitution_35percent_desertion
+		set_country_flag = crisis_in_progress
+		add_ideas = mutiny_2
+		add_ideas = strikes_2
+		add_ideas = draft_dodging_2
+		hidden_effect = {
+			transfer_units_fraction = {
+				target = ZZZ
+				size = 0
+				army_ratio = 0.35
+			}
+		}
+		add_popularity = { ideology = neutrality popularity = -0.35 }
+		add_timed_idea = {
+			idea = KMT_abolished_constitution
+			days = 600
+		}
+	}
+	
+	option = {
+		name = kmtccw.56.b
+		ai_chance = { base = 100 }
+		PRC = { country_event = { id = kmtccw.58 }}
+		every_country = {
+			limit = { has_idea = KMT_ccw_ceasefire }
+			remove_ideas = KMT_ccw_ceasefire
+		}
+		if = {
+			limit = { tag = PRC }
+			log = "[Root.GetName] broke neg"
+			event_target:KMT_central_gov_tag = { country_event = { id = kmtccw.12 }}
+			event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.13 }}
+		}else = {
+			log = "[Root.GetName] broke neg"
+			PRC = { country_event = { id = kmtccw.12 }}
+			event_target:KMT_ccw_negotiator = { country_event = { id = kmtccw.4 }}
+		}
+		set_global_flag = KMT_ccw_broken_negotiation
+	}
+}
+
+#constitution abolished
+country_event = {
+	id = kmtccw.57
+	title = kmtccw.57.t
+	desc = kmtccw.57.d
+	picture = GFX_report_zhou_enlai
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.57.a
+		ai_chance = { base = 0 }
+	}
+}
+
+#resume civil war
+country_event = {
+	id = kmtccw.58
+	title = kmtccw.58.t
+	desc = kmtccw.58.d
+	picture = GFX_report_zhou_enlai
+
+	is_triggered_only = yes
+	
+	option = {
+		name = kmtccw.58.a
+		ai_chance = { base = 0 }
+		effect_tooltip = {
+			remove_ideas = KMT_ccw_ceasefire
+		}
+	}
+}

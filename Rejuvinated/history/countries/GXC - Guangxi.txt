@@ -1,0 +1,99 @@
+﻿capital = 599
+set_country_flag = KMT_is_china_tag
+
+oob = "GXC_1936"
+
+recruit_character = GXC_li_zongren
+recruit_character = GXC_bai_chongxi
+recruit_character = GXC_li_pinxian
+recruit_character = GXC_xia_wei
+recruit_character = GXC_liao_lei
+recruit_character = GXC_huang_shaohong
+recruit_character = GXC_huang_xuchu
+recruit_character = GXC_wang_shuming
+
+every_character = { set_character_flag = KMT_real_character }
+
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	mass_assault = 1
+}
+
+add_ideas = {
+	public_iliteracy
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	cg_warlords
+	limited_exports
+	limited_conscription
+	KMT_corrupted_government
+	KMT_weak_army
+}
+
+set_country_flag = is_warlords
+
+set_convoys = 5
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 100
+}
+
+1939.1.1 = {
+
+	add_political_power = 1198
+	
+	#generic focuses
+	complete_national_focus = KMT_ostensible_loyalty
+	complete_national_focus = KMT_struggle_for_power
+
+	add_ideas = {
+		#laws
+		tot_economic_mobilisation
+		service_by_requirement
+		closed_economy
+		KMT_united_front
+	}
+	add_to_war = {
+		targeted_alliance = CHI
+		enemy = JAP
+	}
+
+	oob = "GXC_1939"
+	
+	set_technology = {
+		#doctrines
+		air_superiority = 1
+		pocket_defence = 1
+		defence_in_depth = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+		basic_encryption = 1
+		basic_decryption = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		construction1 = 1
+		construction2 = 1
+		construction3 = 1
+		concentrated_industry = 1
+		concentrated_industry2 = 1
+		concentrated_industry3 = 1
+	}
+}

@@ -1,0 +1,19 @@
+
+
+debug_decisions = {
+
+	KMT_test_border_war = {
+		ai_will_do = { base = 0 }
+		
+		available = {
+			has_character = CHI_feng_yuxiang
+		}
+		
+		priority = 5000
+		
+		complete_effect = { 
+		ROOT = {
+			CHI_xu_fulin = { promote_character = constitutionalism }
+		}}
+	}
+}

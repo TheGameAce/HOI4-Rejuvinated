@@ -1,0 +1,148 @@
+#	Example:
+# 
+#	example_trigger = {
+#		tag = GER
+#		is_ai = no
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+# 
+#	THIS FILE IS FOR TRIGGERS SPECIFICALLY FOR THE GER TAG
+
+JAP_or_friend_controls_big_part_of_CHI_or_peace = {
+	OR = {
+		NOT = { has_war_with = CHI }
+		OR = {
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 328
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 525
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 527
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 597
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 608
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 610
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 611
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 612
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 614
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 714
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 715
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 716
+			}
+			any_country = {
+				OR = {
+					is_in_faction_with = JAP
+					tag = JAP
+					is_puppet_of = JAP
+				}
+				controls_state = 717
+			}
+		}
+	}
+}
+
+MCK_no_help_scripted_trigger = {
+	ROOT = {
+		custom_trigger_tooltip = {
+			tooltip = MCK_no_help_tt
+			AND = {
+				has_completed_focus = MCK_turn_to_the_bolshelviks
+				has_completed_focus = MCK_head_towards_democracy
+				has_completed_focus = MCK_china_help
+				NOT = { 
+					any_country = { 
+						OR = {
+							has_country_flag = MCK_helping_independence 
+							has_active_mission = MCK_response_deadline
+						}
+					}
+				}
+			}
+		}
+	}
+}

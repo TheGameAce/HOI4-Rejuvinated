@@ -1,0 +1,126 @@
+﻿###########################
+# kmt Events
+###########################
+
+add_namespace = guerrilla
+
+			###############
+			###PRC EVENT###
+			###############
+
+#tick up guerrilla cell strength
+state_event = {
+	id = guerrilla.1
+	hidden = yes
+	
+	picture = GFX_report_event_soviet_tanks
+	
+	trigger = {
+		always = no
+		FROM = {
+			has_state_flag = KMT_PRC_state_has_guerrilla_cell
+			OR = {
+				NOT = {
+					has_state_flag = KMT_PRC_cell_str_increase_cd
+				}
+				has_state_flag = {
+					flag = KMT_PRC_cell_str_increase_cd
+					days > 2
+				}
+			}
+		}
+		CONTROLLER = {
+			NOT = { owns_state = FROM }
+		}
+	}
+#	
+#	mean_time_to_happen = { 
+#		days = 10
+#		modifier = {
+#			infrastructure < 9
+#			infrastructure > 6
+#			factor = 0.8
+#		}
+#		modifier = {
+#			infrastructure < 7
+#			infrastructure > 4
+#			factor = 0.6
+#		}
+#		modifier = {
+#			infrastructure < 5
+#			infrastructure > 2
+#			factor = 0.4
+#		}
+#		modifier = {
+#			infrastructure < 3
+#			infrastructure > 0
+#			factor = 0.2
+#		}
+#	}
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			add_to_variable = { var = PRC_state_guerrilla_cell_strength value = 1 }
+			clr_state_flag = KMT_PRC_cell_str_increase_cd
+			set_state_flag = KMT_PRC_cell_str_increase_cd
+		}
+	}
+	
+	option = {
+	}
+}
+
+#update estimated cell str
+state_event = {
+	id = guerrilla.2
+	hidden = yes
+	
+	picture = GFX_report_event_soviet_tanks
+	
+	trigger = {
+		always = no
+		has_state_flag = KMT_PRC_state_has_guerrilla_cell
+		has_state_flag = KMT_PRC_state_cell_detected
+		CONTROLLER = {
+			controls_state = FROM
+			NOT = { owns_state = FROM }
+			divisions_in_state = {
+				state = FROM
+				size > 1
+			}
+		}
+	}
+#	
+#	mean_time_to_happen = { 
+#		days = 6
+#	}
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			set_variable = { var = PRC_state_estimated_cell_strength value = PRC_state_guerrilla_cell_strength }
+		}
+	}
+	
+	option = {
+	}
+}
+
+#update estimated cell str
+state_event = {
+	id = guerrilla.3
+	title = guerrilla.3.t
+	desc = guerrilla.3.d
+	
+	picture = GFX_report_event_soviet_tanks
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = guerrilla.3.a
+		ROOT = {
+			unlock_decision_category_tooltip = PRC_dcat_sweep_commie_cell
+		}
+	}
+}

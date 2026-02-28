@@ -1,0 +1,52 @@
+﻿division_template = {
+	name = "Sanjiao Jun"			
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+}
+
+### OOB ###
+units = {
+	division = {
+		name = "Shanghai Chuchun"
+		location = 7014
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Suchow Chuchun"
+		location = 11973
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Hofei Chuchun"
+		location = 10017
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Wuchang Chuchun"
+		location = 1036
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Hankow Chuchun"
+		location = 7167
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "Nanking Chuchun"
+		location = 11913
+		division_template = "Sanjiao Jun"
+		start_experience_factor = 0.2
+	}
+}

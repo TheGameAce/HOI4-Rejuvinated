@@ -1,0 +1,6502 @@
+defined_text = { 
+	name = GetAllCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_get_all_location_and_cell_strength
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetAllEstimatedCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_get_all_location_and_ecell_strength
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetAllCellLocationAndStrengthCW
+	text = {
+		trigger = {
+			any_state = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_get_all_location_and_ecell_strengthCS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetCellStatusTT
+	text = {
+		trigger = {
+			event_target:PRC_temp_sweep_decision_target_state = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+			}
+		}
+		localization_key = PRC_cell_still_active_tt
+	}
+	text = {
+		localization_key = PRC_cell_destroyed_tt
+	}
+}
+
+##############################################
+##### REGION CELLS LOCATION AND STRENGTH #####
+##############################################
+
+defined_text = { 
+	name = GetEasternIndiaCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 141
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_EINDIA_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetNorthernChinaCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 143
+					region = 244
+					region = 245
+				}
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_NCHINA_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetWesternChinaCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 144
+					region = 244
+					region = 245
+				}
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_WCHINA_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetEastTurkestanCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 145
+					region = 252
+				}
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_ETURKESTAN_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHimalayaCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 146
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_HIMALAYA_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetMongoliaCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 152
+					region = 266
+				}
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_MONGOLIA_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetManchuriaCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 155
+					region = 242
+					region = 243
+				}
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_MANCHURIA_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetKiangnanCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 164
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_KIANGNAN_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetKwangsiKwangtungCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 165
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_KWANGSIKWANGTUNG_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetBurmaCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 189
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_BURMA_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetTsinghaiTibetCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 200
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_TSINGHAITIBET_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetMinKanCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 228
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_MINKAN_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHunanCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 229
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_HUNAN_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYunkweiPlateauCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 230
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_YUNKWEIPLATEAU_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSzechwanSikangCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 231
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_SZECHWANSIKANG_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHupehCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 232
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_HUPEH_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetLowerYangtzeCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 233
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_LOWERYANGTZE_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHonanCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 234
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_HONAN_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHuangtuPlateauCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 235
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_HUANGTUPLATEAU_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetGobiDesertCellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 236
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_GOBIDESERT_CELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+#################################################################
+##### REGION DETECTED CELLS LOCATION AND ESTIMATED STRENGTH #####
+#################################################################
+
+defined_text = { 
+	name = GetEasternIndiaECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 141
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_EINDIA_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetNorthernChinaECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 143
+					region = 244
+					region = 245
+				}
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_NCHINA_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetWesternChinaECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 144
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_WCHINA_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetEastTurkestanECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 145
+					region = 252
+				}
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_ETURKESTAN_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHimalayaECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 146
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_HIMALAYA_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetMongoliaECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 266
+					region = 152
+				}
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_MONGOLIA_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetManchuriaECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 155
+					region = 242
+					region = 243
+				}
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_MANCHURIA_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetKiangnanECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 164
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_KIANGNAN_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetKwangsiKwangtungECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 165
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_KWANGSIKWANGTUNG_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetBurmaECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 189
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_BURMA_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetTsinghaiTibetECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 200
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_TSINGHAITIBET_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetMinKanECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 228
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_MINKAN_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHunanECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 229
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_HUNAN_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYunkweiPlateauECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 230
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_YUNKWEIPLATEAU_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSzechwanSikangECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 231
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_SZECHWANSIKANG_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHupehECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 232
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_HUPEH_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetLowerYangtzeECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 233
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_LOWERYANGTZE_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHonanECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 234
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_HONAN_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHuangtuPlateauECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 235
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_HUANGTUPLATEAU_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetGobiDesertECellLocationAndStrength
+	text = {
+		trigger = {
+			any_state = {
+				region = 236
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_GOBIDESERT_ECELL_ORT_AND_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+####################################################################
+##### REGION DETECTED CELLS LOCATION AND ESTIMATED STRENGTH CS #####
+####################################################################
+
+defined_text = { 
+	name = GetEasternIndiaCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 141
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_EINDIA_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetNorthernChinaCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 143
+					region = 244
+					region = 245
+				}
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_NCHINA_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetWesternChinaCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 144
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_WCHINA_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetEastTurkestanCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 145
+					region = 252
+				}
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_ETURKESTAN_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHimalayaCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 146
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_HIMALAYA_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetMongoliaCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 152
+					region = 266
+				}
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_MONGOLIA_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetManchuriaCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				OR = {
+					region = 155
+					region = 242
+					region = 243
+				}
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_MANCHURIA_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetKiangnanCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 164
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_KIANGNAN_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetKwangsiKwangtungCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 165
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_KWANGSIKWANGTUNG_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetBurmaCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 189
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_BURMA_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetTsinghaiTibetCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 200
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_TSINGHAITIBET_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetMinKanCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 228
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_MINKAN_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHunanCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 229
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_HUNAN_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetYunkweiPlateauCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 230
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_YUNKWEIPLATEAU_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetSzechwanSikangCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 231
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_SZECHWANSIKANG_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHupehCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 232
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_HUPEH_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetLowerYangtzeCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 233
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_LOWERYANGTZE_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHonanCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 234
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_HONAN_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetHuangtuPlateauCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 235
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_HUANGTUPLATEAU_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = GetGobiDesertCellLocationAndStrengthCS
+	text = {
+		trigger = {
+			any_state = {
+				region = 236
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_GOBIDESERT_CELL_ORT_AND_STR_CS
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 141 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get434CellStrength
+	text = {
+		trigger = {
+			434 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_434_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 143 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get597CellStrength
+	text = {
+		trigger = {
+			597 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_597_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get608CellStrength
+	text = {
+		trigger = {
+			608 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_608_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get609CellStrength
+	text = {
+		trigger = {
+			609 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_609_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get610CellStrength
+	text = {
+		trigger = {
+			610 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_610_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get611CellStrength
+	text = {
+		trigger = {
+			611 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_611_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get612CellStrength
+	text = {
+		trigger = {
+			612 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_612_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get614CellStrength
+	text = {
+		trigger = {
+			614 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_614_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get615CellStrength
+	text = {
+		trigger = {
+			615 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_615_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get743CellStrength
+	text = {
+		trigger = {
+			743 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_743_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get937CellStrength
+	text = {
+		trigger = {
+			937 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_937_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get939CellStrength
+	text = {
+		trigger = {
+			939 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_939_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get283CellStrength
+	text = {
+		trigger = {
+			283 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_283_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 144 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get283CellStrength
+	text = {
+		trigger = {
+			283 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_283_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get605CellStrength
+	text = {
+		trigger = {
+			605 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_605_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get616CellStrength
+	text = {
+		trigger = {
+			616 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_616_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get621CellStrength
+	text = {
+		trigger = {
+			621 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_621_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get622CellStrength
+	text = {
+		trigger = {
+			622 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_622_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get744CellStrength
+	text = {
+		trigger = {
+			744 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_744_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get746CellStrength
+	text = {
+		trigger = {
+			746 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_746_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get753CellStrength
+	text = {
+		trigger = {
+			753 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_753_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get756CellStrength
+	text = {
+		trigger = {
+			756 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_756_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get955CellStrength
+	text = {
+		trigger = {
+			955 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_955_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+##################################################
+##### 145 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get287CellStrength
+	text = {
+		trigger = {
+			287 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_287_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get617CellStrength
+	text = {
+		trigger = {
+			617 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_617_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get618CellStrength
+	text = {
+		trigger = {
+			618 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_618_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get619CellStrength
+	text = {
+		trigger = {
+			619 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_619_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get759CellStrength
+	text = {
+		trigger = {
+			759 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_759_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get760CellStrength
+	text = {
+		trigger = {
+			760 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_760_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 146 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get322CellStrength
+	text = {
+		trigger = {
+			322 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_322_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get757CellStrength
+	text = {
+		trigger = {
+			757 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_757_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get758CellStrength
+	text = {
+		trigger = {
+			758 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_758_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get802CellStrength
+	text = {
+		trigger = {
+			802 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_802_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 152 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get329CellStrength
+	text = {
+		trigger = {
+			329 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_329_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get330CellStrength
+	text = {
+		trigger = {
+			330 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_330_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 155 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get328CellStrength
+	text = {
+		trigger = {
+			328 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_328_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get714CellStrength
+	text = {
+		trigger = {
+			714 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_714_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get715CellStrength
+	text = {
+		trigger = {
+			715 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_715_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get716CellStrength
+	text = {
+		trigger = {
+			716 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_716_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get717CellStrength
+	text = {
+		trigger = {
+			717 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_717_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get745CellStrength
+	text = {
+		trigger = {
+			745 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_745_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get761CellStrength
+	text = {
+		trigger = {
+			761 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_761_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get936CellStrength
+	text = {
+		trigger = {
+			936 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_936_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get964CellStrengthCS
+	text = {
+		trigger = {
+			964 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_964_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get965CellStrengthCS
+	text = {
+		trigger = {
+			965 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_965_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get976CellStrengthCS
+	text = {
+		trigger = {
+			976 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_976_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get963CellStrengthCS
+	text = {
+		trigger = {
+			963 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_963_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get973CellStrengthCS
+	text = {
+		trigger = {
+			973 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_973_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get974CellStrengthCS
+	text = {
+		trigger = {
+			974 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_974_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get975CellStrengthCS
+	text = {
+		trigger = {
+			975 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_975_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get976CellStrengthCS
+	text = {
+		trigger = {
+			976 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_976_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 164 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get595CellStrength
+	text = {
+		trigger = {
+			595 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_595_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get596CellStrength
+	text = {
+		trigger = {
+			596 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_596_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get598CellStrength
+	text = {
+		trigger = {
+			598 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_598_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get600CellStrength
+	text = {
+		trigger = {
+			600 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_600_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get606CellStrength
+	text = {
+		trigger = {
+			606 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_606_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get607CellStrength
+	text = {
+		trigger = {
+			607 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_607_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get613CellStrength
+	text = {
+		trigger = {
+			613 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_613_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get620CellStrength
+	text = {
+		trigger = {
+			620 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_620_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get749CellStrength
+	text = {
+		trigger = {
+			749 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_749_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get980CellStrength
+	text = {
+		trigger = {
+			980 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_980_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get938CellStrength
+	text = {
+		trigger = {
+			938 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_938_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get940CellStrength
+	text = {
+		trigger = {
+			940 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_940_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 165 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get325CellStrength
+	text = {
+		trigger = {
+			325 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_325_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get326CellStrength
+	text = {
+		trigger = {
+			326 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_326_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get591CellStrength
+	text = {
+		trigger = {
+			591 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_591_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get592CellStrength
+	text = {
+		trigger = {
+			592 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_592_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get593CellStrength
+	text = {
+		trigger = {
+			593 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_593_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get594CellStrength
+	text = {
+		trigger = {
+			594 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_594_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get599CellStrength
+	text = {
+		trigger = {
+			599 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_599_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get602CellStrength
+	text = {
+		trigger = {
+			602 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_602_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get603CellStrength
+	text = {
+		trigger = {
+			603 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_603_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get728CellStrength
+	text = {
+		trigger = {
+			728 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_728_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get729CellStrength
+	text = {
+		trigger = {
+			729 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_729_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get747CellStrength
+	text = {
+		trigger = {
+			747 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_747_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get748CellStrength
+	text = {
+		trigger = {
+			748 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_748_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get750CellStrength
+	text = {
+		trigger = {
+			750 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_750_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get944CellStrength
+	text = {
+		trigger = {
+			944 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_944_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get978CellStrength
+	text = {
+		trigger = {
+			978 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_978_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get957CellStrength
+	text = {
+		trigger = {
+			957 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_957_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get956CellStrength
+	text = {
+		trigger = {
+			956 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_956_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get959CellStrengthCS
+	text = {
+		trigger = {
+			959 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_959_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 200 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get601CellStrength
+	text = {
+		trigger = {
+			601 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_601_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get604CellStrength
+	text = {
+		trigger = {
+			604 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_604_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get751CellStrength
+	text = {
+		trigger = {
+			751 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_751_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get752CellStrength
+	text = {
+		trigger = {
+			752 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_752_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get754CellStrength
+	text = {
+		trigger = {
+			754 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_754_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get755CellStrength
+	text = {
+		trigger = {
+			755 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_755_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get979CellStrength
+	text = {
+		trigger = {
+			979 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_979_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get977CellStrength
+	text = {
+		trigger = {
+			977 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_977_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get941CellStrength
+	text = {
+		trigger = {
+			941 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_941_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get942CellStrength
+	text = {
+		trigger = {
+			942 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_942_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get943CellStrength
+	text = {
+		trigger = {
+			943 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_943_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get945CellStrength
+	text = {
+		trigger = {
+			945 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_945_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get946CellStrength
+	text = {
+		trigger = {
+			946 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_946_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get818CellStrength
+	text = {
+		trigger = {
+			818 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_818_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get820CellStrength
+	text = {
+		trigger = {
+			820 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_820_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get817CellStrength
+	text = {
+		trigger = {
+			817 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_817_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get819CellStrength
+	text = {
+		trigger = {
+			819 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_819_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get950CellStrength
+	text = {
+		trigger = {
+			950 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_950_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get951CellStrength
+	text = {
+		trigger = {
+			951 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_951_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+defined_text = { 
+	name = Get947CellStrength
+	text = {
+		trigger = {
+			947 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_947_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+defined_text = { 
+	name = Get948CellStrength
+	text = {
+		trigger = {
+			948 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_948_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+defined_text = { 
+	name = Get949CellStrength
+	text = {
+		trigger = {
+			949 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_949_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get955CellStrength
+	text = {
+		trigger = {
+			955 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_955_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get956CellStrength
+	text = {
+		trigger = {
+			956 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_956_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get957CellStrength
+	text = {
+		trigger = {
+			957 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_957_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get958CellStrength
+	text = {
+		trigger = {
+			958 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_958_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = Get959CellStrength
+	text = {
+		trigger = {
+			959 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_959_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get960CellStrength
+	text = {
+		trigger = {
+			960 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_960_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get961CellStrength
+	text = {
+		trigger = {
+			961 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_961_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get963CellStrength
+	text = {
+		trigger = {
+			963 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_963_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get964CellStrength
+	text = {
+		trigger = {
+			964 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_964_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get965CellStrength
+	text = {
+		trigger = {
+			965 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_965_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get966CellStrength
+	text = {
+		trigger = {
+			966 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_966_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+##################################################
+##### 141 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get434ECellStrength
+	text = {
+		trigger = {
+			434 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_434_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 143 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get597ECellStrength
+	text = {
+		trigger = {
+			597 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_597_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get608ECellStrength
+	text = {
+		trigger = {
+			608 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_608_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get609ECellStrength
+	text = {
+		trigger = {
+			609 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_609_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get610ECellStrength
+	text = {
+		trigger = {
+			610 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_610_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get611ECellStrength
+	text = {
+		trigger = {
+			611 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_611_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get612ECellStrength
+	text = {
+		trigger = {
+			612 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_612_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get614ECellStrength
+	text = {
+		trigger = {
+			614 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_614_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get615ECellStrength
+	text = {
+		trigger = {
+			615 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_615_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get743ECellStrength
+	text = {
+		trigger = {
+			743 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_743_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get937ECellStrength
+	text = {
+		trigger = {
+			937 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_937_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get939ECellStrength
+	text = {
+		trigger = {
+			939 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_939_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get283ECellStrength
+	text = {
+		trigger = {
+			283 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_283_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 144 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get283ECellStrength
+	text = {
+		trigger = {
+			283 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_283_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get605ECellStrength
+	text = {
+		trigger = {
+			605 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_605_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get616ECellStrength
+	text = {
+		trigger = {
+			616 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_616_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get621ECellStrength
+	text = {
+		trigger = {
+			621 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_621_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get622ECellStrength
+	text = {
+		trigger = {
+			622 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_622_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get744ECellStrength
+	text = {
+		trigger = {
+			744 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_744_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get746ECellStrength
+	text = {
+		trigger = {
+			746 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_746_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get753ECellStrength
+	text = {
+		trigger = {
+			753 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_753_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get756ECellStrength
+	text = {
+		trigger = {
+			756 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_756_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get955ECellStrength
+	text = {
+		trigger = {
+			955 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_955_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 145 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get287ECellStrength
+	text = {
+		trigger = {
+			287 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_287_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get617ECellStrength
+	text = {
+		trigger = {
+			617 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_617_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get618ECellStrength
+	text = {
+		trigger = {
+			618 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_618_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get619ECellStrength
+	text = {
+		trigger = {
+			619 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_619_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get759ECellStrength
+	text = {
+		trigger = {
+			759 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_759_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get760ECellStrength
+	text = {
+		trigger = {
+			760 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_760_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 146 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get322ECellStrength
+	text = {
+		trigger = {
+			322 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_322_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get757ECellStrength
+	text = {
+		trigger = {
+			757 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_757_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get758ECellStrength
+	text = {
+		trigger = {
+			758 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_758_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get802ECellStrength
+	text = {
+		trigger = {
+			802 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_802_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 452 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get329ECellStrength
+	text = {
+		trigger = {
+			329 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_329_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get330ECellStrength
+	text = {
+		trigger = {
+			330 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_330_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 155 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get328ECellStrength
+	text = {
+		trigger = {
+			328 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_328_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get714ECellStrength
+	text = {
+		trigger = {
+			714 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_714_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get715ECellStrength
+	text = {
+		trigger = {
+			715 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_715_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get716ECellStrength
+	text = {
+		trigger = {
+			716 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_716_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get717ECellStrength
+	text = {
+		trigger = {
+			717 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_717_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get745ECellStrength
+	text = {
+		trigger = {
+			745 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_745_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get761ECellStrength
+	text = {
+		trigger = {
+			761 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_761_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get936ECellStrength
+	text = {
+		trigger = {
+			936 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_936_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get964ECellStrength
+	text = {
+		trigger = {
+			964 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_964_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get965ECellStrength
+	text = {
+		trigger = {
+			965 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_965_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get966ECellStrength
+	text = {
+		trigger = {
+			966 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_966_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get976ECellStrength
+	text = {
+		trigger = {
+			976 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_976_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get963ECellStrength
+	text = {
+		trigger = {
+			963 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_963_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get973ECellStrength
+	text = {
+		trigger = {
+			973 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_973_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get974ECellStrength
+	text = {
+		trigger = {
+			974 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_974_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get975ECellStrength
+	text = {
+		trigger = {
+			975 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_975_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get976ECellStrength
+	text = {
+		trigger = {
+			976 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_976_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 164 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get595ECellStrength
+	text = {
+		trigger = {
+			595 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_595_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get596ECellStrength
+	text = {
+		trigger = {
+			596 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_596_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get598ECellStrength
+	text = {
+		trigger = {
+			598 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_598_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get600ECellStrength
+	text = {
+		trigger = {
+			600 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_600_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get606ECellStrength
+	text = {
+		trigger = {
+			606 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_606_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get607ECellStrength
+	text = {
+		trigger = {
+			607 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_607_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get613ECellStrength
+	text = {
+		trigger = {
+			613 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_613_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get620ECellStrength
+	text = {
+		trigger = {
+			620 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_620_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get749ECellStrength
+	text = {
+		trigger = {
+			749 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_749_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get980ECellStrength
+	text = {
+		trigger = {
+			980 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_980_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get938ECellStrength
+	text = {
+		trigger = {
+			938 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_938_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get940ECellStrength
+	text = {
+		trigger = {
+			940 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_940_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 165 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get325ECellStrength
+	text = {
+		trigger = {
+			325 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_325_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get326ECellStrength
+	text = {
+		trigger = {
+			326 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_326_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get591ECellStrength
+	text = {
+		trigger = {
+			591 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_591_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get592ECellStrength
+	text = {
+		trigger = {
+			592 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_592_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get593ECellStrength
+	text = {
+		trigger = {
+			593 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_593_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get594ECellStrength
+	text = {
+		trigger = {
+			594 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_594_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get599ECellStrength
+	text = {
+		trigger = {
+			599 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_599_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get602ECellStrength
+	text = {
+		trigger = {
+			602 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_602_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get603ECellStrength
+	text = {
+		trigger = {
+			603 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_603_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get728ECellStrength
+	text = {
+		trigger = {
+			728 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_728_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get729ECellStrength
+	text = {
+		trigger = {
+			729 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_729_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get747ECellStrength
+	text = {
+		trigger = {
+			747 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_747_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get748ECellStrength
+	text = {
+		trigger = {
+			748 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_748_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get750ECellStrength
+	text = {
+		trigger = {
+			750 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_750_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get944ECellStrength
+	text = {
+		trigger = {
+			944 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_944_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get978ECellStrength
+	text = {
+		trigger = {
+			978 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_978_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get957ECellStrength
+	text = {
+		trigger = {
+			957 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_957_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get956ECellStrength
+	text = {
+		trigger = {
+			956 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_956_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get959ECellStrength
+	text = {
+		trigger = {
+			959 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_959_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 200 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get601ECellStrength
+	text = {
+		trigger = {
+			601 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_601_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get604ECellStrength
+	text = {
+		trigger = {
+			604 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_604_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get751ECellStrength
+	text = {
+		trigger = {
+			751 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_751_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get752ECellStrength
+	text = {
+		trigger = {
+			752 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_752_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get754ECellStrength
+	text = {
+		trigger = {
+			754 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_754_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get755ECellStrength
+	text = {
+		trigger = {
+			755 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_755_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get979ECellStrength
+	text = {
+		trigger = {
+			979 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_979_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get977ECellStrength
+	text = {
+		trigger = {
+			977 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_977_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get941ECellStrength
+	text = {
+		trigger = {
+			941 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_941_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get942ECellStrength
+	text = {
+		trigger = {
+			942 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_942_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get943ECellStrength
+	text = {
+		trigger = {
+			943 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_943_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get945ECellStrength
+	text = {
+		trigger = {
+			945 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_945_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get946ECellStrength
+	text = {
+		trigger = {
+			946 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_946_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get820ECellStrength
+	text = {
+		trigger = {
+			820 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_820_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get818ECellStrength
+	text = {
+		trigger = {
+			818 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_818_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get817ECellStrength
+	text = {
+		trigger = {
+			817 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_817_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get819ECellStrength
+	text = {
+		trigger = {
+			819 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_819_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get950ECellStrength
+	text = {
+		trigger = {
+			950 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_950_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get951ECellStrength
+	text = {
+		trigger = {
+			951 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_951_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+defined_text = { 
+	name = Get947ECellStrength
+	text = {
+		trigger = {
+			947 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_947_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+defined_text = { 
+	name = Get948ECellStrength
+	text = {
+		trigger = {
+			948 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_948_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+defined_text = { 
+	name = Get949ECellStrength
+	text = {
+		trigger = {
+			949 = {
+				has_state_flag = KMT_PRC_state_cell_detected
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		localization_key = PRC_GET_949_ECELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+##################################################
+##### 141 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get434CellStrengthCS
+	text = {
+		trigger = {
+			434 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_434_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 143 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get597CellStrengthCS
+	text = {
+		trigger = {
+			597 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_597_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get608CellStrengthCS
+	text = {
+		trigger = {
+			608 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_608_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get609CellStrengthCS
+	text = {
+		trigger = {
+			609 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_609_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get610CellStrengthCS
+	text = {
+		trigger = {
+			610 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_610_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get611CellStrengthCS
+	text = {
+		trigger = {
+			611 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_611_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get612CellStrengthCS
+	text = {
+		trigger = {
+			612 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_612_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get614CellStrengthCS
+	text = {
+		trigger = {
+			614 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_614_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get615CellStrengthCS
+	text = {
+		trigger = {
+			615 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_615_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get743CellStrengthCS
+	text = {
+		trigger = {
+			743 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_743_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get937CellStrengthCS
+	text = {
+		trigger = {
+			937 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_937_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get939CellStrengthCS
+	text = {
+		trigger = {
+			939 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_939_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get283CellStrengthCS
+	text = {
+		trigger = {
+			283 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_283_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 144 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get283CellStrengthCS
+	text = {
+		trigger = {
+			283 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_283_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get605CellStrengthCS
+	text = {
+		trigger = {
+			605 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_605_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get616CellStrengthCS
+	text = {
+		trigger = {
+			616 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_616_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get621CellStrengthCS
+	text = {
+		trigger = {
+			621 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_621_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get622CellStrengthCS
+	text = {
+		trigger = {
+			622 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_622_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get744CellStrengthCS
+	text = {
+		trigger = {
+			744 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_744_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get746CellStrengthCS
+	text = {
+		trigger = {
+			746 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_746_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get753CellStrengthCS
+	text = {
+		trigger = {
+			753 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_753_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get756CellStrengthCS
+	text = {
+		trigger = {
+			756 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_756_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get955CellStrengthCS
+	text = {
+		trigger = {
+			955 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_955_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 145 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get287CellStrengthCS
+	text = {
+		trigger = {
+			287 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_287_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get617CellStrengthCS
+	text = {
+		trigger = {
+			617 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_617_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get618CellStrengthCS
+	text = {
+		trigger = {
+			618 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_618_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get619CellStrengthCS
+	text = {
+		trigger = {
+			619 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_619_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get759CellStrengthCS
+	text = {
+		trigger = {
+			759 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_759_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get760CellStrengthCS
+	text = {
+		trigger = {
+			760 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_760_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 146 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get322CellStrengthCS
+	text = {
+		trigger = {
+			322 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_322_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get757CellStrengthCS
+	text = {
+		trigger = {
+			757 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_757_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get758CellStrengthCS
+	text = {
+		trigger = {
+			758 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_758_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get802CellStrengthCS
+	text = {
+		trigger = {
+			802 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_802_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 152 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get329CellStrengthCS
+	text = {
+		trigger = {
+			329 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_329_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get330CellStrengthCS
+	text = {
+		trigger = {
+			330 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_330_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 155 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get328CellStrengthCS
+	text = {
+		trigger = {
+			328 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_328_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get714CellStrengthCS
+	text = {
+		trigger = {
+			714 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_714_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get715CellStrengthCS
+	text = {
+		trigger = {
+			715 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_715_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get716CellStrengthCS
+	text = {
+		trigger = {
+			716 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_716_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get717CellStrengthCS
+	text = {
+		trigger = {
+			717 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_717_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get745CellStrengthCS
+	text = {
+		trigger = {
+			745 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_745_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get761CellStrengthCS
+	text = {
+		trigger = {
+			761 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_761_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get936CellStrengthCS
+	text = {
+		trigger = {
+			936 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_936_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get964CellStrengthCS
+	text = {
+		trigger = {
+			964 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_964_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get965CellStrengthCS
+	text = {
+		trigger = {
+			965 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_965_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get976CellStrengthCS
+	text = {
+		trigger = {
+			976 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_976_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get963CellStrengthCS
+	text = {
+		trigger = {
+			963 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_963_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get973CellStrengthCS
+	text = {
+		trigger = {
+			973 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_973_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get974CellStrengthCS
+	text = {
+		trigger = {
+			974 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_974_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get975CellStrengthCS
+	text = {
+		trigger = {
+			975 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_975_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get976CellStrengthCS
+	text = {
+		trigger = {
+			976 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_976_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 164 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get595CellStrengthCS
+	text = {
+		trigger = {
+			595 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_595_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get596CellStrengthCS
+	text = {
+		trigger = {
+			596 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_596_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get598CellStrengthCS
+	text = {
+		trigger = {
+			598 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_598_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get600CellStrengthCS
+	text = {
+		trigger = {
+			600 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_600_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get606CellStrengthCS
+	text = {
+		trigger = {
+			606 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_606_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get607CellStrengthCS
+	text = {
+		trigger = {
+			607 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_607_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get613CellStrengthCS
+	text = {
+		trigger = {
+			613 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_613_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get620CellStrengthCS
+	text = {
+		trigger = {
+			620 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_620_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get749CellStrengthCS
+	text = {
+		trigger = {
+			749 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_749_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get980CellStrengthCS
+	text = {
+		trigger = {
+			980 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_980_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get938CellStrengthCS
+	text = {
+		trigger = {
+			938 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_938_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get940CellStrengthCS
+	text = {
+		trigger = {
+			940 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_940_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 165 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get325CellStrengthCS
+	text = {
+		trigger = {
+			325 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_325_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get326CellStrengthCS
+	text = {
+		trigger = {
+			326 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_326_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get591CellStrengthCS
+	text = {
+		trigger = {
+			591 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_591_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get592CellStrengthCS
+	text = {
+		trigger = {
+			592 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_592_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get593CellStrengthCS
+	text = {
+		trigger = {
+			593 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_593_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get594CellStrengthCS
+	text = {
+		trigger = {
+			594 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_594_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get599CellStrengthCS
+	text = {
+		trigger = {
+			599 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_599_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get602CellStrengthCS
+	text = {
+		trigger = {
+			602 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_602_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get603CellStrengthCS
+	text = {
+		trigger = {
+			603 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_603_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get728CellStrengthCS
+	text = {
+		trigger = {
+			728 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_728_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get729CellStrengthCS
+	text = {
+		trigger = {
+			729 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_729_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get747CellStrengthCS
+	text = {
+		trigger = {
+			747 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_747_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get748CellStrengthCS
+	text = {
+		trigger = {
+			748 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_748_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get750CellStrengthCS
+	text = {
+		trigger = {
+			750 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_750_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get944CellStrengthCS
+	text = {
+		trigger = {
+			944 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_944_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get978CellStrengthCS
+	text = {
+		trigger = {
+			978 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_978_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get957CellStrengthCS
+	text = {
+		trigger = {
+			957 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_957_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get956CellStrengthCS
+	text = {
+		trigger = {
+			956 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_956_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get959CellStrengthCS
+	text = {
+		trigger = {
+			959 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_959_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+##################################################
+##### 200 STATES CELLS LOCATION AND STRENGTH #####
+##################################################
+
+defined_text = { 
+	name = Get601CellStrengthCS
+	text = {
+		trigger = {
+			601 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_601_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get604CellStrengthCS
+	text = {
+		trigger = {
+			604 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_604_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get751CellStrengthCS
+	text = {
+		trigger = {
+			751 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_751_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get752CellStrengthCS
+	text = {
+		trigger = {
+			752 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_752_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get754CellStrengthCS
+	text = {
+		trigger = {
+			754 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_754_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get755CellStrengthCS
+	text = {
+		trigger = {
+			755 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_755_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get979CellStrengthCS
+	text = {
+		trigger = {
+			979 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_979_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get977CellStrengthCS
+	text = {
+		trigger = {
+			977 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_977_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get941CellStrengthCS
+	text = {
+		trigger = {
+			941 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_941_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get942CellStrengthCS
+	text = {
+		trigger = {
+			942 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_942_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get943CellStrengthCS
+	text = {
+		trigger = {
+			943 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_943_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get945CellStrengthCS
+	text = {
+		trigger = {
+			945 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_945_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get946CellStrengthCS
+	text = {
+		trigger = {
+			946 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_946_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get820CellStrengthCS
+	text = {
+		trigger = {
+			820 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_820_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get818CellStrengthCS
+	text = {
+		trigger = {
+			818 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_818_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get817CellStrengthCS
+	text = {
+		trigger = {
+			817 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_817_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get819CellStrengthCS
+	text = {
+		trigger = {
+			819 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_819_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get950CellStrengthCS
+	text = {
+		trigger = {
+			950 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_950_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = { 
+	name = Get951CellStrengthCS
+	text = {
+		trigger = {
+			951 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_951_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+defined_text = { 
+	name = Get947CellStrengthCS
+	text = {
+		trigger = {
+			947 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_947_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+defined_text = { 
+	name = Get948CellStrengthCS
+	text = {
+		trigger = {
+			948 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_948_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+defined_text = { 
+	name = Get949CellStrengthCS
+	text = {
+		trigger = {
+			949 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_949_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+defined_text = { 
+	name = Get966CellStrengthCS
+	text = {
+		trigger = {
+			966 = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				is_controlled_by = ROOT
+			}
+		}
+		localization_key = PRC_GET_966_CELL_STR
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+
+#####################################################
+#						MISC						#
+#####################################################
+
+defined_text = {
+	name = GetOriginState
+	text = {
+		trigger = {
+			has_event_target = PRC_relocate_FROM_state
+		}
+		localization_key = PRC_relocate_FROM_state_name
+	}
+	text = {
+		localization_key = PRC_relocate_FROM_state_none
+	}
+}
+
+defined_text = {
+	name = GetCellStrengthSGUIS
+	text = {
+		trigger = {
+			has_state_flag = KMT_PRC_state_has_guerrilla_cell
+		}
+		localization_key = PRC_sgc_state_gui_title_has_cell
+	}
+	text = {
+		localization_key = ""
+	}
+}

@@ -1,0 +1,13 @@
+﻿### OOB ###
+units = {
+	fleet = {
+		name = "Dai 1 Lam Dui"
+		naval_base = 1047
+		task_force = {
+			name = "Dai 1 Lam Dui"
+			location = 1047
+			ship = { name = "Hoi Chow" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = YUT version_name = "Hoi Chow Class"} } } #decommissioned British minesweeper, bought by Chen Chi-teng. Was called a cruiser after installing a 4.7 inch cannon.
+			ship = { name = "Kwong Chin" definition = destroyer equipment = { ship_hull_light_1 = {amount = 1 owner = YUT version_name = "Kwong Chin Class"} } }
+		}
+	}
+}

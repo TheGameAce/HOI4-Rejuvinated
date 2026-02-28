@@ -1,0 +1,814 @@
+KMT_dcat_war_of_resistance = {
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	icon = SOV_propaganda
+	priority = 1050
+	visible = {
+		has_defensive_war_with = JAP
+		tag = event_target:KMT_central_gov_tag
+		is_subject = no
+	}
+}
+
+KMT_dcat_nine_power_treaty = {
+	icon = SOV_propaganda
+	priority = 1000
+	visible = {
+	}
+	
+	allowed = {
+		always = no
+	}
+}
+
+KMT_dcat_postal_romanisation = {
+	icon = generic_political_actions
+	
+	priority = 0
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+
+	visible = {
+		is_chinese_nations_w_HYQ = yes
+		OR = {
+			is_ai = no
+			NOT = {
+				any_country = {
+					is_chinese_nations_w_HYQ = yes
+					is_ai = no
+				}
+			}
+		}
+		NOT = {
+			any_country = {
+				NOT = { tag = ROOT }
+				is_chinese_nations_w_HYQ = yes
+				is_ai = no
+			}
+		}
+	}
+}
+
+KMT_dcat_increase_compliance_in_chinese_provinces = {
+	icon = eng_move_to_secure_the_dominions
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	
+	priority = 150
+
+	visible = {
+		is_valid_power_struggle_participant = yes
+		OR = {
+			has_completed_focus = PRC_enforce_obedience
+			NOT = {
+				has_idea = PRC_communists_bandits
+			}
+		}
+	}
+}
+
+KMT_dcat_rail_way_construction = {
+	icon = generic_industry
+	
+	allowed = {
+		tag = CHI
+	}
+	
+	priority = 500
+
+	visible = {
+	}
+}
+
+KMT_dcat_incompetent_industry = {
+	icon = generic_industry
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+
+	visible = {
+		OR = {
+			has_idea = incompetent_industry_real
+			has_idea = incompetent_industry_real_2
+			has_idea = incompetent_industry_real_3
+			has_idea = incompetent_industry_real_4
+			has_idea = incompetent_industry_real_5
+		}
+	}
+}
+
+KMT_dcat_incompetent_army = {
+	icon = army_reform
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+
+	visible = {
+	}
+}
+
+KMT_dcat_national_treasure = {
+	icon = generic_propaganda
+	
+	allowed = { always = no }
+
+	visible = {
+		tag = CHI
+		has_war_with = JAP
+		JAP = { has_government = fascism }
+		NOT = { 
+			has_country_flag = treasures_abroad 
+			has_country_flag = treasure_ransacked 
+		}
+	}
+}
+
+KMT_dcat_west_expedition = {
+	icon = border_conflicts
+	priority = 90
+	allowed = { 
+		original_tag = PRC
+	}
+}
+
+KMT_dcat_rename_reconquered_cities = {
+	icon = generic
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+
+	visible = {
+		is_chinese_nations_w_HYQ = yes
+	}
+}
+
+KMT_dcat_liberate_korea = {
+	icon = generic_independence
+
+	visible = {
+		NOT = { tag = KOR }
+		NOT = { tag = DPK }
+		OR = {
+			OR = {
+				divisions_in_state = {
+					state = 527
+					size > 0
+				}
+				controls_state = 527
+			}
+			OR = {
+				divisions_in_state = {
+					state = 525
+					size > 0
+				}
+				controls_state = 525
+			}
+		}
+	}
+}
+
+KMT_dcat_support_china = {
+	icon = generic
+
+	visible = {
+		always = yes
+	}
+}
+
+KMT_dcat_japanese_civil_war = {
+	icon = jap_southern_expansion
+
+	visible = {
+		has_global_flag = jap_civil_war_sf_duration
+		JAP = {
+			has_civil_war = yes
+		}
+	}
+}
+
+KMT_dcat_resources_in_china = {
+	icon = generic_prospect_for_resources
+
+	allowed = {
+	}
+}
+
+KMT_dcat_industrial_evacuation = {
+	icon = generic_industry
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+}
+
+KMT_dcat_central_government = {
+	icon = usa_congress
+	visible_when_empty = yes
+	on_map_area = {
+		state = 622
+		name = KMT_ps_tips
+		zoom = 1000
+	}
+	priority = 1000
+	visible = {
+		NOT = { has_global_flag = KMT_disable_power_struggle_mechanics }
+		is_valid_power_struggle_participant = yes
+	}
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+
+	scripted_gui = KMT_ps_modifiers
+}
+
+KMT_dcat_central_government_nomaps = {
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	icon = usa_congress
+	visible_when_empty = yes
+	priority = 1000
+	visible = {
+		has_global_flag = KMT_disable_power_struggle_mechanics
+		is_valid_power_struggle_participant = yes
+	}
+	allowed = {
+	}
+
+	scripted_gui = KMT_ps_modifiers_nomap
+}
+
+KMT_dcat_spread_revolution = {
+	icon = generic_communism
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	
+	visible = {
+		has_country_flag = KMT_spread_the_revolution_flag
+	}
+}
+
+KMT_dcat_annex_warlords_for_vp = {
+	icon = generic_prospect_for_resources
+	allowed = {
+		always = no
+	}
+	
+	visible = {
+		always = no
+		has_war = yes
+		any_country = {
+			has_idea = cg_warlords
+			has_idea = KMT_united_front
+			has_war_together_with = ROOT
+		}
+		tag = event_target:KMT_central_gov_tag
+	}
+}
+
+KMT_dcat_GER_withdraw_advisor = {
+	icon = military_operation
+	
+	allowed = {
+		OR = {
+			original_tag = GER
+			is_chinese_nations_w_HYQ_allowed = yes
+		}
+	}
+	
+	visible = {
+		CHI = {
+			OR = {
+				has_idea = KMT_sino_german_joint_research
+				has_idea = KMT_sino_german_joint_research_ger_adv
+				has_idea = german_advisors
+			}
+		}
+	}
+}
+
+KMT_dcat_integrate_the_communists = {
+	icon = military_operation
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+}
+
+KMT_dcat_seek_foreign_supports = {
+	icon = military_operation
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+}
+
+KMT_dcat_economic_reforms = {
+	icon = military_operation
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	allowed = { always = no }
+}
+
+KMT_dcat_chinese_ports = {
+	icon = generic_fascism
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+}
+
+KMT_dcat_oust_the_colonisers = {
+	icon = saf_anti_colonialist_crusade
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	
+	allowed = {  }
+	
+	visible = {
+		has_completed_focus = KMT_oust_the_colonizers
+	}
+}
+
+KMT_dcat_fate_of_collaborators = {
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	
+	visible = {
+		NOT = { has_idea = KMT_trautmann_peace }
+	}
+	icon = generic_fascism
+}
+
+KMT_dcat_chinese_civil_war = {
+
+	icon = power_struggle
+	picture = GFX_decision_cat_picture_chi_political_support
+	priority = 500
+	
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes 
+			original_tag = ENG
+			original_tag = USA
+			original_tag = GER
+			original_tag = SOV
+			original_tag = JAP
+			original_tag = FRA
+		}
+	}
+	
+	visible = {
+		has_global_flag = PRC_restart_CHI_war
+		#PRC = { has_war_with = event_target:KMT_central_gov_tag }
+	}
+}
+
+KMT_dcat_chinese_focus = {
+	icon = jap_intervene_in_china
+	picture = GFX_decision_cat_picture_chi_political_support
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+}
+
+KMT_dcat_skirmishes_with_commies = {
+	
+	allowed = {
+		tag = ZXL
+	}
+
+	priority = 90
+	icon = border_conflicts
+	visible = { tag = ZXL }
+	
+}
+
+KMT_dcat_liangguang_incident = {
+	visible = {
+		has_global_flag = liangguang_incident
+		is_valid_power_struggle_participant = yes
+		is_subject = no
+		hidden_trigger = {
+			event_target:KMT_central_gov_tag = {
+				NOT = {
+					has_country_flag = KMT_pro_japanese_coup
+					has_country_flag = KMT_red_coup_finish
+				}
+			}
+		}
+	}
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+
+	priority = 100
+	icon = generic_crisis
+	
+}
+
+KMT_dcat_xian_incident = {
+	visible = {
+		has_global_flag = cks_held
+		OR = {
+			tag = ZXL
+			tag = event_target:KMT_central_gov_tag
+		}
+		NOT = {
+			has_global_flag = cks_killed_xian
+			has_global_flag = xian_negotiation_concluded
+		}
+		country_exists = ZXL
+		AND = {
+			has_event_target = KMT_central_gov_tag
+			country_exists = event_target:KMT_central_gov_tag
+		}
+		hidden_trigger = {
+			event_target:KMT_central_gov_tag = {
+				NOT = {
+					has_country_flag = KMT_pro_japanese_coup
+					has_country_flag = KMT_red_coup_finish
+				}
+			}
+		}
+	}
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	priority = 99
+	icon = generic_crisis
+	
+}
+
+KMT_dcat_corruption = {
+	visible = {
+		OR = {
+			has_idea = KMT_corrupted_government
+			has_idea = KMT_corrupted_government_wartime
+			has_idea = KMT_hhk
+			has_idea = KMT_soong_tv
+		}
+	}
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	priority = 99
+	icon = generic_economy
+	
+}
+
+KMT_dcat_operation_national_glory = {
+	priority = 1000
+	visible = {
+		has_country_flag = KMT_national_glory_start_planning
+	}
+	icon = border_conflicts
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	
+}
+
+KMT_dcat_trautmann_mediation = {
+	priority = 1100
+	icon = generic_political_actions
+	
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes 
+			original_tag = JAP
+		}
+	}
+}
+
+KMT_dcat_presidential_election = {
+	priority = 998
+	icon = power_struggle
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	
+	custom_icon = {
+		tag = HYQ
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			HYQ = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = CHI
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			CHI = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = GXC
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			GXC = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = YUN
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			YUN = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = SHX
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			SHX = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = XSM
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			XSM = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = SIK
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			SIK = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = MEN
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			MEN = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = ZXL
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			ZXL = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = SDC
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			SDC = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = PGR
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			PGR = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = NSM
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			has_event_target = scope_SIK
+		}
+	}
+	
+	custom_icon = {
+		tag = SKC
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			SKC = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = SCC
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			SCC = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = YUT
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			YUT = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = QIA
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			QIA = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = XIA
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			XIA = { 
+				OR = { 
+					has_completed_focus = KMT_run_for_presidency 
+					tag = event_target:KMT_central_gov_tag
+				}
+			}
+		}
+	}
+	
+	custom_icon = {
+		tag = PRC
+		value = KMT_presidential_support
+		desc = KMT_presidential_election_custom_icon_desc_tt
+
+		visible = {
+			always = no
+		}
+	}
+}
+
+KMT_dcat_ps_border_conflict = {
+	icon = border_war
+	priority = 999
+	visible_when_empty = yes
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	
+	visible = {
+		OR = {
+			AND = {
+				OR = {
+					tag = event_target:KMT_central_gov_tag
+					has_completed_focus = KMT_counteroffensive_operations
+				}
+				any_country = {
+					NOT = { tag = ROOT }
+					check_variable = { THIS.KMT_psbw_attacked_target@ROOT = 1 }
+				}
+			}
+			has_completed_focus = KMT_prepare_for_military_expansion
+			has_completed_focus = PRC_subvert_our_enemies_dominance
+		}
+	}
+}
+
+KMT_dcat_bop_KMTPRC = {
+	visible_when_empty = yes
+	
+	allowed = {
+		is_chinese_nations_w_HYQ_allowed = yes 
+	}
+	
+	visible = {
+		has_power_balance = { id = KMTPRC_coalition_government }
+	}
+}

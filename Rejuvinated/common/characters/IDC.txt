@@ -1,0 +1,619 @@
+characters={
+	IDC_rene_robin = {
+		name = IDC_rene_robin
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/kmt_mod/rene_robin.dds"
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "1965.1.1"
+		}
+	}
+	
+	IDC_jules_brevie = {
+		name = IDC_jules_brevie
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/kmt_mod/jules_brevie.dds"
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+			expire = "1965.1.1"
+		}
+	}
+	
+	IDC_georges_ayme = {
+		name = IDC_georges_ayme
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = IDC_georges_ayme
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				army_chief_defensive_2
+			}
+			
+			visible = { NOT = { has_country_flag = IDC_no_more_french }}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	IDC_jean_decoux = {
+		name = IDC_jean_decoux
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/kmt_mod/jean_decoux.dds"
+			}
+			army = {
+				small = "GFX_idea_generic_navy_europe_2"
+				large = "gfx/leaders/kmt_mod/jean_decoux.dds"
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			cost = 100
+			idea_token = IDC_jean_decoux
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				navy_chief_decisive_battle_2
+			}
+			
+			visible = { NOT = { has_country_flag = IDC_no_more_french }}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		navy_leader = {
+			legacy_id = 1921
+			traits = { }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+		country_leader = {
+			expire = "1960.1.1"
+			ideology = oligarchism
+			traits = {
+			}
+		}
+	}
+	IDC_georges_catroux = {
+		name = IDC_georges_catroux
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/kmt_mod/georges_catroux.dds"
+			}
+			army = {
+				small = "GFX_idea_generic_army_europe_2"
+				large = "gfx/leaders/kmt_mod/georges_catroux.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = IDC_georges_catroux
+			ledger = army
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				army_regrouping_2
+			}
+			
+			available = { 
+				has_country_leader = {
+					character = IDC_georges_catroux
+					ruling_only = yes
+				}
+			}
+			
+			visible = { NOT = { has_country_flag = IDC_no_more_french }}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader = {
+			expire = "1960.1.1"
+			ideology = oligarchism
+			traits = {
+			}
+		}
+	}
+	IDC_eugene_mordant = {
+		name = IDC_eugene_mordant
+		portraits = {
+			civilian = {
+			}
+			army = {
+				small = "GFX_idea_generic_army_europe_1"
+				large = "gfx/leaders/kmt_mod/eugene_mordant.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 50
+			idea_token = IDC_eugene_mordant
+			ledger = army
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				army_commando_1
+			}
+			
+			visible = { NOT = { has_country_flag = IDC_no_more_french }}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { trait_reckless }
+			legacy_id = 1919
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			skill = 2
+		}
+	}
+	IDC_marcel_alessandri = {
+		name = IDC_marcel_alessandri
+		portraits = {
+			civilian = {
+			}
+			army = {
+				small = "GFX_idea_generic_army_europe_3"
+				large = "gfx/leaders/kmt_mod/eugene_mordant.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = IDC_marcel_alessandri
+			ledger = army
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				army_infantry_2
+			}
+			
+			visible = { NOT = { has_country_flag = IDC_no_more_french }}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	IDC_gabriel_sabattier = {
+		name = IDC_gabriel_sabattier
+		portraits = {
+			civilian = {
+			}
+			army = {
+				small = "GFX_idea_generic_army_europe_1"
+				large = "gfx/leaders/kmt_mod/gabriel_sabattier.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = IDC_gabriel_sabattier
+			ledger = army
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				army_chief_maneuver_2
+			}
+			
+			visible = { NOT = { has_country_flag = IDC_no_more_french }}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { }
+			legacy_id = 1920
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			skill = 2
+		}
+	}
+	
+	### generics ###
+	IDC_generic_army_chief = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_asia_2"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			cost = 100
+			idea_token = IDC_generic_army_chief
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				army_chief_reform_2
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	IDC_generic_navy_chief = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_navy_asia_2"
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			cost = 100
+			idea_token = IDC_generic_navy_chief
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				navy_chief_reform_2
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	IDC_generic_air_chief = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_asia_2"
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			cost = 100
+			idea_token = IDC_generic_air_chief
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				air_chief_reform_2
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	IDC_generic_high_command1 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_asia_3"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = IDC_generic_high_command1
+			ledger = army
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				army_armored_1
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	IDC_generic_high_command2 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_asia_1"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 200
+			idea_token = IDC_generic_high_command2
+			ledger = army
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				army_commando_3
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	IDC_generic_high_command3 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_navy_asia_2"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = IDC_generic_high_command3
+			ledger = navy
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				navy_submarine_2
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	IDC_generic_high_command4 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_asia_2"
+			}
+		}
+		advisor = {
+			slot = high_command
+			cost = 100
+			idea_token = IDC_generic_high_command4
+			ledger = navy
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				air_air_superiority_2
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	IDC_generic_pa1 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = IDC_generic_pa1
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				captain_of_industry
+			}
+			
+			visible = { NOT = { has_country_flag = IDC_no_more_french }}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	IDC_generic_pa2 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = IDC_generic_pa2
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				armaments_organizer
+			}
+			
+			visible = { NOT = { has_country_flag = IDC_no_more_french }}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	IDC_generic_pa3 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = IDC_generic_pa3
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				quartermaster_general
+			}
+			
+			visible = { NOT = { has_country_flag = IDC_no_more_french }}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	IDC_generic_pa4 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = IDC_generic_pa4
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				war_industrialist
+			}
+			
+			visible = { NOT = { has_country_flag = IDC_no_more_french }}
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	IDC_generic_pa5 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_asia_4"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = IDC_generic_pa5
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				silent_workhorse
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	IDC_generic_pa6 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_asia_1"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = IDC_generic_pa6
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				smooth_talking_charmer
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	IDC_generic_pa7 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_asia_3"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = IDC_generic_pa7
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				ideological_crusader
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	
+	IDC_generic_pa8 = {
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_asia_2"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			cost = 150
+			idea_token = IDC_generic_pa8
+			
+			allowed = { tag = IDC }
+			
+			traits = {
+				economist
+			}
+			
+			visible = { has_country_flag = IDC_no_more_french }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

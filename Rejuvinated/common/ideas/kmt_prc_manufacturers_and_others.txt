@@ -1,0 +1,2188 @@
+ideas = {
+	
+	industrial_concern = {
+		
+		PRC_wuhan_ins_corp = {
+			
+			picture = wuhan_ins_corp
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_the_first_five_year_plan
+			}
+			
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}	
+		
+		PRC_first_ministry_of_machine_building_material = {
+			
+			picture = generic_electronics_concern_1
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_ndcprc
+			}
+			
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { electronics_concern }
+			
+		}
+		
+		PRC_mukden_university = {
+			
+			picture = generic_electronics_concern_2
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_expand_unversity
+			}
+			
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				electronics = 0.05
+				industry = 0.05
+			}
+			
+			traits = { 
+				mukden_u	
+			}
+			
+		}
+		
+		PRC_republic_university_konzern = {
+			
+			picture = generic_electronics_concern_1
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_republic_university
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				electronics = 0.05
+				industry = 0.05
+			}
+			
+			traits = { 
+				PRC_republic_u	
+			}
+			
+		}
+		
+		PRC_war_effort_overseer_group = {
+			
+			picture = generic_industrial_concern_2
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_military_above_all
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				excavation_tech = 0.05
+				industry = 0.05
+			}
+			
+			traits = { 
+				PRC_war_effort_overseer_group_trait	
+			}
+			
+		}
+		
+		PRC_construction_regulation_committee = {
+			
+			picture = generic_industrial_concern_1
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_utilitarian_architecture
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				industry = 0.1
+			}
+			
+			traits = { 
+				PRC_construction_regulation_committee_trait	
+			}
+			
+		}
+		
+		PRC_ministry_of_propaganda = {
+			
+			picture = usa_magic
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_propaganda_management_committee
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				computing_tech = 0.1
+				encryption_tech = 0.05
+				decryption_tech = 0.05
+			}
+			
+			traits = { 
+				PRC_ministry_of_propaganda_trait	
+			}
+			
+		}
+		
+		PRC_huzu_factory = {
+			
+			picture = generic_industrial_concern_1
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_169_projects
+			}
+			
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { 
+				industrial_concern	
+			}
+			
+		}
+		
+		PRC_peoples_electricity = {
+			
+			picture = generic_electronics_concern_3
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_169_projects
+			}
+			
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				electronics = 0.15
+			}
+			
+			traits = { 
+				electronics_concern	
+			}
+			
+		}
+		
+		PRC_ngsd_ic = {
+			
+			picture = generic_refining_concern_1
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_national_geological_surveilance_department
+			}
+			
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				excavation_tech = 0.15
+			}
+			
+			traits = { 
+				PRC_ngsd_trait
+			}
+			
+		}
+		
+		PRC_mupd = {
+			picture = generic_central_management
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_ministry_of_urban_planning_and_development
+			}
+			
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				industry = 0.1
+			}
+			
+			traits = { 
+				PRC_mupd
+			}
+		}
+		
+		PRC_mpoc_company = {
+			picture = generic_license_production
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_military_production_overseer_committee
+			}
+			
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				industry = 0.1
+			}
+			
+			traits = { 
+				PRC_mpoc
+			}
+		}
+		
+		PRC_naval_development_bureau = {
+			picture = generic_coastal_defense_ships2
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_increase_naval_budget
+			}
+			
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+			}
+			
+			traits = { 
+				PRC_naval_development_bureau_trait
+			}
+		}
+	}
+	
+	materiel_manufacturer = {
+		
+		designer = yes
+		
+		PRC_faw_group = {
+			
+			picture = faw_group
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_the_first_five_year_plan
+			}
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+			
+		}
+		
+		PRC_taiyuan_arsenal = {
+			
+			picture = generic_artillery_manufacturer_2
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_expand_taiyuan_arsenal
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { taiyuan_artillery }
+			
+		}
+		
+		PRC_mukden_arsenal_rifle = {
+			
+			picture = generic_infantry_equipment_manufacturer_2
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_revive_arsenals
+			}
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { mukden_rifles }
+			
+		}
+		
+		PRC_harbin_machinery = {
+			
+			picture = generic_motorized_equipment_manufacturer_1
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_revive_arsenals
+			}
+			
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { harbin_motorised }
+			
+		}
+		
+		PRC_asa_iw = {
+			
+			picture = generic_infantry_equipment_manufacturer_2
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_armament_standard_agency
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			research_bonus = {
+				infantry_weapons = 0.1
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_asa_infantry_trait }
+			
+		}
+		
+		PRC_asa_arti = {
+			
+			picture = generic_artillery_manufacturer_1
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_armament_standard_agency
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			research_bonus = {
+				artillery = 0.1
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_asa_artillery_trait }
+			
+		}
+		
+		PRC_1st_arsenal = {
+			
+			picture = generic_infantry_equipment_manufacturer_3
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_new_arsenals_construction
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_1st_arsenal_iw }
+			
+		}
+		
+		PRC_2nd_arsenal = {
+			
+			picture = generic_artillery_manufacturer_2
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_new_arsenals_construction
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_2nd_arsenal_iw }
+			
+		}
+		
+		PRC_republic_equipment_research_department = {
+			
+			picture = generic_infantry_equipment_manufacturer_1
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_the_partys_spear_and_shield
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+				artillery = 0.15
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { 
+				infantry_equipment_manufacturer 
+				artillery_manufacturer 
+			}
+			
+		}
+		
+		PRC_red_militia_program_board = {
+			
+			picture = MEX_revolutionary_army
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_red_militia
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_red_militia_rifles }
+			
+		}
+		
+		PRC_red_army_production_facilities = {
+			
+			picture = generic_communist_army
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_property_nationalisation
+			}
+			
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_red_army_production_facility_trait }
+			
+		}
+		
+		PRC_equipment_improvement_committee = {
+			
+			picture = generic_war_preparation
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_army_equipment_improvement
+			}
+			
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { PRC_equipment_improvement_committee_trait }
+			
+		}
+		
+		PRC_chengdu_production_group = {
+			
+			picture = generic_artillery_regiments
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_central_military_commission
+			}
+			
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				artillery = 0.1
+			}
+			
+			traits = { PRC_ap_artillery_rounds }
+			
+		}
+		
+		PRC_hefei_arsenal = {
+			
+			picture = generic_infantry_equipment_manufacturer_2
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_new_arsenals_construction
+			}
+			
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				infantry_weapons = 0.05
+				artillery = 0.05
+				support_tech = 0.05
+			}
+			
+			traits = { PRC_reliable_equipment }
+			
+		}
+		
+		PRC_linyi_machineries = {
+			
+			picture = FRA_motorized_focus
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_new_arsenals_construction
+			}
+			
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				motorized_equipment = 0.05
+			}
+			
+			traits = { PRC_fast_motorised }
+			
+		}
+		
+		PRC_armament_innovation_bureau = {
+			
+			picture = generic_communist_army
+			allowed = {
+				tag = PRC
+			}
+			available = {
+				has_completed_focus = PRC_army_equipment_improvement
+			}
+			
+			visible = { 
+				#has_completed_focus = PRC_rise_of_wang_ming 
+				always = no
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				motorized_equipment = 0.1
+			}
+			
+			traits = { PRC_antiair_motorised }
+			
+		}
+	}	
+	
+	naval_manufacturer = { 
+	
+		designer = yes
+	
+		PRC_first_ministry_of_machine_building_navy = {
+			
+			picture = generic_naval_manufacturer_1
+
+			allowed = {
+				tag = PRC
+			}
+			
+			available = {
+				has_completed_focus = PRC_ndcprc
+			}
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				naval_equipment = 0.1
+			}
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+	
+		PRC_bohai_shipyard_group = {
+			
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			available = {
+				OR = {
+					has_completed_focus = PRC_ndcprc
+					has_completed_focus = PRC_revive_the_navy_and_air_force
+				}
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.1
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { raiding_fleet_naval_manufacturer }
+		}
+	
+		PRC_wppo_naval_hign_command = {
+			
+			picture = generic_naval_manufacturer_3
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			available = {
+				has_completed_focus = PRC_west_pacific_alliance
+				is_faction_leader = yes
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.2
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { pacific_fleet_naval_manufacturer }
+		}
+	
+		PRC_1st_shipbuilding_group = {
+			
+			picture = generic_naval_manufacturer_1
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				has_completed_focus = PRC_wpra_maritime_forces
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.1
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+	
+		PRC_asa_navy = {
+			
+			picture = generic_coastal_defense_ships2
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				has_completed_focus = PRC_wpra_maritime_forces
+				has_completed_focus = PRC_armament_standard_agency
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_asa_ship_trait }
+		}
+	
+		PRC_coastal_defense_department = {
+			
+			picture = generic_coastal_navy
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				OR = {
+					has_completed_focus = PRC_coastline_protection
+					has_completed_focus = PRC_coastal_defense_focus
+				}
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+	
+		PRC_highseas_operation_department = {
+			
+			picture = generic_sea_focused_navy
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				OR = {
+					has_completed_focus = PRC_naval_power_projection
+					has_completed_focus = PRC_communism_across_the_seas
+				}
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { pacific_fleet_naval_manufacturer }
+		}
+	
+		PRC_republic_shipyard = {
+			
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				OR = {
+					has_completed_focus = PRC_wpra_maritime_forces
+					has_completed_focus = PRC_wprn
+				}
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { naval_manufacturer }
+		}
+	
+		PRC_friendship_shipyard = {
+			
+			picture = generic_naval_manufacturer_3
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_169_projects
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { naval_manufacturer }
+		}
+	
+		PRC_coastal_defense_department_wm = {
+			name = PRC_coastal_defense_department
+			
+			picture = generic_coastal_navy
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_secure_our_coast
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { coastal_defence_naval_manufacturer }
+		}
+	
+		PRC_naval_lab = {
+			
+			picture = hol_naval_heritage
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_new_naval_design_experiements
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+	
+		PRC_jingjin_shipyard = {
+			
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_increase_naval_budget
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { raiding_fleet_naval_manufacturer }
+		}
+	
+		PRC_lianyun_shipyard = {
+			
+			picture = generic_naval_manufacturer_1
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_increase_naval_budget
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { battlefleet_designer }
+		}
+	
+		PRC_fujian_shipyard = {
+			
+			picture = brooklyn_naval_yard
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_naval_aviation_focus
+			}
+			
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { pacific_fleet_naval_manufacturer }
+		}
+	}
+
+	aircraft_manufacturer = { 
+	
+		designer = yes
+	
+		PRC_shenyang_air = {
+			
+			picture = generic_air_manufacturer_3
+
+			allowed = {
+				tag = PRC
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			available = {
+				has_completed_focus = PRC_invest_in_new_companies
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+	
+		PRC_chengdu_air = {
+			
+			picture = generic_air_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			
+			available = {
+				has_completed_focus = PRC_ndcprc
+			}
+			
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			cost = 150
+			removal_cost = 10
+			
+			traits = { medium_aircraft_manufacturer }
+		}
+	
+		PRC_guizhou_air = {
+			
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			available = {
+				has_completed_focus = PRC_invest_in_new_companies
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+	
+		PRC_first_ministry_of_machine_building_air = {
+			
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				tag = PRC
+			}
+			
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			available = {
+				has_completed_focus = PRC_ndcprc
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { light_aircraft_manufacturer }
+		}
+	
+		PRC_dbj_heavy_air = {
+			
+			picture = generic_air_manufacturer_3
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			available = {
+				has_completed_focus = PRC_revive_the_navy_and_air_force
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+	
+		PRC_dbj_med_air = {
+			
+			picture = generic_air_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			available = {
+				has_completed_focus = PRC_revive_the_navy_and_air_force
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { medium_aircraft_manufacturer }
+		}
+	
+		PRC_dbj_nav_air = {
+			
+			picture = generic_naval_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			available = {
+				has_completed_focus = PRC_revive_the_navy_and_air_force
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+	
+		PRC_dbj_light_air = {
+			
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = { 
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			available = {
+				has_completed_focus = PRC_revive_the_navy_and_air_force
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { light_aircraft_manufacturer }
+		}
+	
+		PRC_asa_air = {
+			
+			picture = generic_air_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				has_completed_focus = PRC_armament_standard_agency
+				has_completed_focus = PRC_wpra_aerial_forces
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_asa_air_trait }
+		}
+	
+		PRC_17th_arsenal = {
+			
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				has_completed_focus = PRC_armament_standard_agency
+				has_completed_focus = PRC_wpra_aerial_forces
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.1
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { light_aircraft_manufacturer }
+		}
+	
+		PRC_national_aircraft_production_group = {
+			
+			picture = generic_air_manufacturer_3
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				has_completed_focus = PRC_wpra_aerial_forces
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.1
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { fuel_efficient_aircraft_manufacturer }
+		}
+	
+		PRC_changchiang_aircraft_group = {
+			
+			picture = generic_air_research
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				has_completed_focus = PRC_wpra_aerial_forces
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.1
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+	
+		PRC_republic_aircraft_production_department = {
+			
+			picture = generic_air_payment
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				has_completed_focus = PRC_wpraf
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { CAS_manufacturer }
+		}
+	
+		PRC_republilc_aerounautical_research_department = {
+			
+			picture = generic_air_bonus
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				has_completed_focus = PRC_wpraf
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.2
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { aircraft_manufacturer }
+		}
+	
+		PRC_republic_air_safety_committee = {
+			
+			picture = man_five_year_plan_air
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				has_completed_focus = PRC_wpraf
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_republic_air_safety_trait }
+		}
+	
+		PRC_air_guerrilla_dispatch = {
+			
+			picture = strategic_bombing_focus
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_zgt_purge_focus }
+			
+			available = {
+				has_completed_focus = PRC_destructive_bombardment
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_air_guerrilla }
+		}
+	
+		PRC_union_arsenal_air = {
+			name = PRC_union_arsenal
+			
+			picture = generic_industrial_concern_3
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_169_projects
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.15
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { aircraft_manufacturer }
+		}
+	
+		PRC_huabei_arsenal = {
+			
+			picture = generic_air_manufacturer_1
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_air_superiority_fighter_production
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { light_aircraft_manufacturer }
+		}
+	
+		PRC_hubei_arsenal = {
+			
+			picture = generic_air_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_set_up_plane_assembly_plants
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { medium_aircraft_manufacturer }
+		}
+	
+		PRC_19th_arsenal = {
+			
+			picture = man_five_year_plan_air
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_strategic_destruction
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+	
+		PRC_20th_arsenal = {
+			
+			picture = generic_air_manufacturer_3
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_battlefield_support
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { CAS_manufacturer }
+		}
+	
+		PRC_64th_arsenal = {
+			
+			picture = generic_air_bonus
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_multipurpose_aircraft_focus
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { fuel_efficient_aircraft_manufacturer }
+		}
+	
+		PRC_republic_navy = {
+			
+			picture = generic_navy_carrier_bonus
+
+			allowed = {
+				tag = PRC
+			}
+			visible = { has_completed_focus = PRC_rise_of_wang_ming }
+			
+			available = {
+				has_completed_focus = PRC_first_carrier_battle_group
+			}
+			
+			research_bonus = { 
+				air_equipment = 0.05
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+	}
+		
+	tank_manufacturer = { 
+	
+		designer = yes
+		
+		PRC_yto = {
+			
+			picture = yto
+			
+			allowed = {
+				tag = PRC
+			}
+			
+			available = {
+				has_completed_focus = PRC_invest_in_new_companies
+			}
+			
+			visible = {
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { medium_tank_manufacturer }
+			
+			modifier = {
+			}
+		}	
+		
+		PRC_harbin_1machine_group = {
+			
+			picture = generic_tank_manufacturer_1
+			
+			allowed = {
+				tag = PRC
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			available = {
+				has_completed_focus = PRC_ndcprc
+			}
+			
+			visible = {
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			traits = { fast_tank_manufacturer }
+			
+			modifier = {
+			}
+		}	
+	
+		PRC_first_ministry_of_machine_building_armor = {
+			
+			picture = generic_tank_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			
+			available = {
+				has_completed_focus = PRC_ndcprc
+			}
+			
+			visible = {
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { tank_manufacturer }
+		}
+	
+		PRC_border_defense_department = {
+			
+			picture = generic_tank_manufacturer_1
+
+			allowed = {
+				tag = PRC
+			}
+			
+			available = {
+				has_completed_focus = PRC_king_of_dongbei
+			}
+			
+			visible = {
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			traits = { tank_manufacturer }
+		}
+	
+		PRC_mukden_arsenal_tank = {
+			
+			picture = generic_tank_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			
+			available = {
+				has_completed_focus = PRC_revive_arsenals
+			}
+			
+			visible = {
+				NOT = { has_completed_focus = PRC_zgt_purge_focus }
+				NOT = { has_completed_focus = PRC_rise_of_wang_ming }
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { medium_tank_manufacturer }
+		}
+	
+		PRC_asa_tank = {
+			
+			picture = generic_armor
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = {
+				has_completed_focus = PRC_zgt_purge_focus
+			}
+			
+			available = {
+				has_completed_focus = PRC_armament_standard_agency
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_asa_tank_trait }
+		}
+	
+		PRC_chungking_arsenal = {
+			
+			picture = generic_tank_manufacturer_1
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = {
+				has_completed_focus = PRC_zgt_purge_focus
+			}
+			
+			available = {
+				has_completed_focus = PRC_armament_standard_agency
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { medium_tank_manufacturer }
+		}
+	
+		PRC_3rd_arsenal = {
+			
+			picture = generic_tank_manufacturer_3
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = {
+				has_completed_focus = PRC_zgt_purge_focus
+			}
+			
+			
+			available = {
+				has_completed_focus = PRC_new_arsenals_construction
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { fast_tank_manufacturer }
+		}
+	
+		PRC_republic_arsenal = {
+			
+			picture = generic_tank_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = {
+				has_completed_focus = PRC_zgt_purge_focus
+			}
+			
+			
+			available = {
+				has_completed_focus = PRC_the_partys_spear_and_shield
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { infantry_tank_manufacturer }
+		}
+	
+		PRC_peoples_machine = {
+			
+			picture = man_five_year_plan_tank
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = {
+				has_completed_focus = PRC_zgt_purge_focus
+			}
+			
+			
+			available = {
+				has_completed_focus = PRC_the_partys_spear_and_shield
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_peoples_machine_tank }
+		}
+	
+		PRC_union_arsenal = {
+			
+			picture = generic_industrial_concern_3
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = {
+				has_completed_focus = PRC_rise_of_wang_ming
+			}
+			
+			
+			available = {
+				has_completed_focus = PRC_169_projects
+			}
+			
+			research_bonus = {
+				armor = 0.15
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { medium_tank_manufacturer }
+		}
+	
+		PRC_capital_arsenal = {
+			
+			picture = man_five_year_plan_tank
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = {
+				has_completed_focus = PRC_rise_of_wang_ming
+			}
+			
+			
+			available = {
+				has_completed_focus = PRC_new_arsenals_construction
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { fast_tank_manufacturer }
+		}
+	
+		PRC_huanan_arsenal = {
+			
+			picture = generic_tank_manufacturer_3
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = {
+				has_completed_focus = PRC_rise_of_wang_ming
+			}
+			
+			
+			available = {
+				has_completed_focus = PRC_new_arsenals_construction
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { infantry_tank_manufacturer }
+		}
+	
+		PRC_xuzhou_arsenal = {
+			
+			picture = generic_tank_manufacturer_2
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = {
+				has_completed_focus = PRC_rise_of_wang_ming
+			}
+			
+			
+			available = {
+				has_completed_focus = PRC_new_arsenals_construction
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { heavy_tank_manufacturer }
+		}
+	
+		PRC_7th_arsenal = {
+			
+			picture = generic_acquire_tanks
+
+			allowed = {
+				tag = PRC
+			}
+			
+			visible = {
+				has_completed_focus = PRC_rise_of_wang_ming
+			}
+			
+			
+			available = {
+				has_completed_focus = PRC_tank_manufacturing
+			}
+			
+			cost = 150
+			removal_cost = 10
+			
+			traits = { PRC_more_tanks }
+		}
+	}
+	
+	political_advisor = {
+		
+	}
+	
+	air_chief = {
+	}
+	
+	high_command = {
+	}
+	
+	trade_laws = {
+		law = yes
+		use_list_view = yes
+		
+		PRC_domestic_circulation = {
+		
+			picture = generic_flexible_foreign_policy2
+		
+			allowed = { always = no }
+			
+			allowed_to_remove = { always = no }
+
+			available = {
+				has_completed_focus = PRC_self_sufficient_economy
+			}
+			
+			removal_cost = -1
+			
+			modifier = {
+				min_export = -1
+				local_resources_factor = 0.05
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				production_speed_buildings_factor = 0.1
+				research_speed_factor = 0.033
+				civilian_intel_to_others = -25.0
+				army_intel_to_others = -25.0
+			}
+
+			rule = {
+				can_access_market = no
+				desc = can_not_access_market_closed_economy
+			}
+			
+			cancel_if_invalid = no
+
+		}
+	}
+
+
+	economy = { 
+		law = yes
+		use_list_view = yes
+		
+		PRC_guerrilla_warfare = {
+			removal_cost = -1
+			
+			picture = guerrilla_warfare_law
+
+			allowed = {
+				always = no
+			}
+			
+			on_remove = { add_research_slot = 1 }
+			
+			modifier = {
+				supply_consumption_factor = -0.35
+				no_supply_grace = 240
+				consumer_goods_expected_value = -1
+				conversion_cost_civ_to_mil_factor = -0.75
+				conversion_cost_mil_to_civ_factor = 1.25
+				global_building_slots_factor = -0.25
+				max_command_power = -20
+				ai_get_ally_desire_factor = -10000
+				generate_wargoal_tension = 1.1
+				join_faction_tension = 1.1
+				lend_lease_tension = 1.1
+				guarantee_tension = 1.1
+				attrition = -0.35
+				production_lack_of_resource_penalty_factor = -0.6
+				cat_mass_assault_cost_factor = -0.15
+				agency_upgrade_time = -0.15
+			}
+			
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.2
+					instant = yes
+				}
+			}
+			
+			rule = {
+				can_create_factions = no
+				can_send_volunteers = no
+				can_puppet = no	
+				can_join_factions = no
+				can_access_market = no
+			}
+			
+			research_bonus = {
+			}
+			
+			cancel_if_invalid = no
+			
+			allowed_to_remove = {
+				has_country_flag = prc_nation_founded
+			}
+		}
+		
+		PRC_militarised_economy_law = {
+			removal_cost = -1
+			
+			picture = generic_acquire_tanks
+
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				consumer_goods_expected_value = 0.1
+				mobilization_speed = 0.05
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = 0.5
+				production_speed_dockyard_factor = 0.5
+				conversion_cost_civ_to_mil_factor= -0.5
+				conversion_cost_mil_to_civ_factor= 1
+				max_fuel_factor = 1
+				fuel_gain_factor = 0.25
+				custom_modifier_tooltip = PRC_militarised_economy_forbids_free_trade_tt
+				agency_upgrade_time = -0.5
+			}
+			
+			rule = {
+			}
+			
+			research_bonus = {
+			}
+			
+			cancel_if_invalid = no
+			
+			allowed_to_remove = {
+				always = no
+			}
+		}
+	}
+	
+	mobilization_laws = { 
+		law = yes
+		use_list_view = yes
+		
+		propaganda_recruits = {
+			
+			picture = propaganda_recruit
+			
+			allowed = {
+				always = no		
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.035
+				conscription_factor = 0.25
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+				training_time_factor = 0.1
+				communism_drift = 0.25
+				army_morale_factor = 0.1
+				drift_defence_factor = 3
+			}
+			
+			cancel_if_invalid = no
+			
+			allowed_to_remove = {
+				has_country_flag = prc_nation_founded
+			}
+		}
+		
+		political_mobilisation_idea = {
+			
+			picture = political_mobilisation_law
+			
+			allowed = {
+				always = no		
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.05
+				conscription_factor = 0.5
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+				training_time_factor = 0.1
+				communism_drift = 0.5
+				army_morale_factor = 0.2
+				drift_defence_factor = 5
+				political_power_factor = 0.1
+			}
+			
+			cancel_if_invalid = no
+			
+			allowed_to_remove = {
+				has_country_flag = prc_nation_founded
+			}
+		}
+		
+		most_desperate_hours = {
+			
+			picture = FRA_matignon_agreements
+			
+			allowed = {
+				always = no		
+			}
+			
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.45
+				conscription_factor = 0.25
+				industrial_capacity_factory = -0.25
+				production_speed_buildings_factor = -0.25
+				communism_drift = 0.5
+				army_morale_factor = 0.35
+				drift_defence_factor = 10
+				army_org_factor = 0.25
+				consumer_goods_expected_value = -1
+			}
+			
+			cancel_if_invalid = no
+			
+			allowed_to_remove = {
+				has_country_flag = prc_nation_founded
+			}
+		}
+		
+	}
+
+	army_chief = {
+		
+	}
+	
+	theorist = {
+	}
+}

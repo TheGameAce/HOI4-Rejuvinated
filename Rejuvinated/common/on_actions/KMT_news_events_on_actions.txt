@@ -1,0 +1,427 @@
+on_actions = {
+	on_join_facton = {
+	}
+	
+	on_civil_war_end = {
+		effect = {
+			# end of jap civil war
+			if = {
+				limit = {
+					has_global_flag = jap_civil_war_sf
+					original_tag = JAP
+				}
+				news_event = { id = kns.2 days = 2 }
+			}
+		}
+	}
+	
+	on_state_control_changed = {
+		effect = {
+			# fall of peiping jap
+			if = {
+				limit = {
+					FROM.FROM = { state = 608 }
+					OR = {
+						tag = JAP 
+						is_subject_of = JAP
+					}
+					FROM = { 
+						owns_state = FROM.FROM
+						is_valid_power_struggle_participant = yes 
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_beijing_jap }
+				}
+				news_event = { id = kns.3 hours = 6 }
+			}
+			
+			# fall of shanghai jap
+			if = {
+				limit = {
+					FROM.FROM = { state = 938 }
+					OR = {
+						tag = JAP 
+						is_subject_of = JAP
+					}
+					FROM = { 
+						owns_state = FROM.FROM
+						is_valid_power_struggle_participant = yes 
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_shanghai_jap }
+				}
+				news_event = { id = kns.11 hours = 6 }
+			}
+			
+			# fall of chungking jap
+			if = {
+				limit = {
+					FROM.FROM = { state = 605 }
+					OR = {
+						tag = JAP 
+						is_subject_of = JAP
+					}
+					FROM = { 
+						owns_state = FROM.FROM
+						is_valid_power_struggle_participant = yes 
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_chungking_jap }
+				}
+				news_event = { id = kns.17 hours = 6 }
+			}
+			
+			# fall of wuhan jap
+			if = {
+				limit = {
+					FROM.FROM = { state = 980 }
+					OR = {
+						tag = JAP 
+						is_subject_of = JAP
+					}
+					FROM = { 
+						owns_state = FROM.FROM
+						is_valid_power_struggle_participant = yes 
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_wuhan_jap }
+				}
+				news_event = { id = kns.31 hours = 6 }
+			}
+			
+			# fall of canton jap
+			if = {
+				limit = {
+					FROM.FROM = { state = 592 }
+					OR = {
+						tag = JAP 
+						is_subject_of = JAP
+					}
+					FROM = { 
+						owns_state = FROM.FROM
+						is_valid_power_struggle_participant = yes 
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_canton_jap }
+				}
+				news_event = { id = kns.32 hours = 6 }
+			}
+			
+			# fall of shanghai prc
+			if = {
+				limit = {
+					FROM.FROM = { state = 938 }
+					OR = {
+						tag = PRC
+						is_subject_of = PRC
+					}
+					PRC = { has_government = communism }
+					FROM = { 
+						owns_state = FROM.FROM
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_shanghai_prc }
+				}
+				news_event = { id = kns.13 hours = 6 }
+			}
+			
+			# fall of nanking prc
+			if = {
+				limit = {
+					FROM.FROM = { state = 613 }
+					OR = {
+						tag = PRC
+						is_subject_of = PRC
+					}
+					PRC = { has_government = communism }
+					FROM = { 
+						owns_state = FROM.FROM
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_nanking_prc }
+				}
+				news_event = { id = kns.12 hours = 6 }
+			}
+			
+			# fall of canton prc
+			if = {
+				limit = {
+					FROM.FROM = { state = 592 }
+					OR = {
+						tag = PRC
+						is_subject_of = PRC
+					}
+					PRC = { has_government = communism }
+					FROM = { 
+						owns_state = FROM.FROM
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_canton_prc }
+				}
+				news_event = { id = kns.14 hours = 6 }
+			}
+			
+			# fall of taiwan prc
+			if = {
+				limit = {
+					FROM.FROM = { state = 524 }
+					OR = {
+						tag = PRC
+						is_subject_of = PRC
+					}
+					PRC = { has_government = communism }
+					FROM = { 
+						owns_state = FROM.FROM
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_taiwan_prc }
+				}
+				news_event = { id = kns.15 hours = 6 }
+			}
+			
+			# fall of wuhan prc
+			if = {
+				limit = {
+					FROM.FROM = { state = 980 }
+					OR = {
+						tag = PRC
+						is_subject_of = PRC
+					}
+					PRC = { has_government = communism }
+					FROM = { 
+						owns_state = FROM.FROM
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_wuhan_prc }
+				}
+				news_event = { id = kns.36 hours = 6 }
+			}
+			
+			# fall of lanzhou prc
+			if = {
+				limit = {
+					FROM.FROM = { state = 283 }
+					OR = {
+						tag = PRC
+						is_subject_of = PRC
+					}
+					PRC = { has_government = communism }
+					FROM = { 
+						owns_state = FROM.FROM
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_lanzhou_prc }
+				}
+				news_event = { id = kns.37 hours = 6 }
+			}
+			
+			# fall of shengyang prc
+			if = {
+				limit = {
+					FROM.FROM = { state = 716 }
+					OR = {
+						tag = PRC
+						is_subject_of = PRC
+					}
+					PRC = { has_government = communism }
+					FROM = { 
+						owns_state = FROM.FROM
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_shenyang_prc }
+				}
+				news_event = { id = kns.41 hours = 6 }
+			}
+			
+			# fall of hainan prc
+			if = {
+				limit = {
+					FROM.FROM = { state = 591 }
+					OR = {
+						tag = PRC
+						is_subject_of = PRC
+					}
+					PRC = { has_government = communism }
+					FROM = { 
+						owns_state = FROM.FROM
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_hainan_prc }
+				}
+				news_event = { id = kns.38 hours = 6 }
+			}
+			
+			# fall of peiping prc
+			if = {
+				limit = {
+					FROM.FROM = { state = 608 }
+					OR = {
+						tag = PRC
+						is_subject_of = PRC
+					}
+					PRC = { has_government = communism }
+					FROM = { 
+						owns_state = FROM.FROM
+						is_chinese_nations_w_HYQ = yes
+						OR = {
+							tag = event_target:KMT_central_gov_tag
+							is_subject_of = event_target:KMT_central_gov_tag
+							is_in_faction_with = event_target:KMT_central_gov_tag
+						}
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_peiping_prc }
+				}
+				news_event = { id = kns.42 hours = 6 }
+			}
+			
+			# fall of nanking chi
+			if = {
+				limit = {
+					FROM.FROM = { state = 613 }
+					OR = {
+						tag = event_target:KMT_central_gov_tag 
+						is_subject_of = event_target:KMT_central_gov_tag
+						is_in_faction_with = event_target:KMT_central_gov_tag
+					}
+					FROM = { 
+						owns_state = FROM.FROM
+						tag = PRC
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_nanking_chi }
+					has_global_flag = fall_of_nanking_prc
+				}
+				news_event = { id = kns.33 hours = 6 }
+			}
+			
+			# fall of peking chi
+			if = {
+				limit = {
+					FROM.FROM = { state = 608 }
+					OR = {
+						tag = event_target:KMT_central_gov_tag 
+						is_subject_of = event_target:KMT_central_gov_tag
+						is_in_faction_with = event_target:KMT_central_gov_tag
+					}
+					FROM = { 
+						owns_state = FROM.FROM
+						tag = PRC
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_peiping_chi }
+					has_global_flag = fall_of_peiping_prc
+				}
+				news_event = { id = kns.34 hours = 6 }
+			}
+			
+			# fall of wuhan chi
+			if = {
+				limit = {
+					FROM.FROM = { state = 980 }
+					OR = {
+						tag = event_target:KMT_central_gov_tag 
+						is_subject_of = event_target:KMT_central_gov_tag
+						is_in_faction_with = event_target:KMT_central_gov_tag
+					}
+					FROM = { 
+						owns_state = FROM.FROM
+						tag = PRC
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_wuhan_chi }
+					has_global_flag = fall_of_wuhan_prc
+				}
+				news_event = { id = kns.35 hours = 6 }
+			}
+			
+			# fall of canton chi
+			if = {
+				limit = {
+					FROM.FROM = { state = 592 }
+					OR = {
+						tag = event_target:KMT_central_gov_tag 
+						is_subject_of = event_target:KMT_central_gov_tag
+						is_in_faction_with = event_target:KMT_central_gov_tag
+					}
+					FROM = { 
+						owns_state = FROM.FROM
+						tag = PRC
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_canton_chi }
+					has_global_flag = fall_of_canton_prc
+				}
+				news_event = { id = kns.39 hours = 6 }
+			}
+			
+			# fall of yanan chi
+			if = {
+				limit = {
+					date > 1940.1.1
+					FROM.FROM = { state = 622 }
+					OR = {
+						tag = event_target:KMT_central_gov_tag 
+						is_subject_of = event_target:KMT_central_gov_tag
+						is_in_faction_with = event_target:KMT_central_gov_tag
+					}
+					FROM = { 
+						owns_state = FROM.FROM
+						tag = PRC
+						has_war_with = ROOT
+					}
+					NOT = { has_global_flag = fall_of_yanan_chi }
+				}
+				news_event = { id = kns.40 hours = 6 }
+			}
+		}
+	}
+}

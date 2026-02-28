@@ -1,0 +1,20 @@
+JAP_dcat_invasion_of_china = {
+	icon = jap_intervene_in_china
+	priority = 1000
+	allowed = {
+		original_tag = JAP
+	}
+}
+
+MEN_dcat_suiyuan_campaign = {
+	icon = jap_intervene_in_china
+	priority = 800
+	visible = { NOT = { has_global_flag = MEN_suiyuan_campaign_end }}
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes 
+			original_tag = JAP
+			original_tag = MEN
+		}
+	}
+}

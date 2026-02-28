@@ -1,0 +1,172 @@
+﻿
+capital = 613
+set_country_flag = JAP_puppet
+
+add_ideas = {
+	limited_exports
+	extensive_conscription
+	public_iliteracy
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	KMT_weak_army
+	KMT_corrupted_government
+}
+
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "1937.12.14"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	fascism = 100
+}
+
+
+create_country_leader = {
+	name = "Liang Hung-chih"
+	desc = "POLITICS_LIANG_HONGZHI_DESC"
+	picture = "gfx/leaders/kmt_mod/liang_hungchi.tga"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+	}
+}
+
+1939.1.1 = {
+	
+
+	add_ideas = {
+		limited_exports
+		limited_conscription
+		war_economy
+		KMT_JAP_puppet_no_surrender
+	}
+	
+	
+	oob = "RGR_1939"
+
+	JAP = { 
+		puppet = RGR
+	}
+
+	MEN = { 
+		diplomatic_relation = {
+			relation = military_access
+			country = RGR
+			active = yes
+		}
+	}
+
+	PGR = { 
+		diplomatic_relation = {
+			relation = military_access
+			country = RGR
+			active = yes
+		}
+	}
+
+	
+	diplomatic_relation = {
+		relation = military_access
+		country = MEN
+		active = yes
+	}
+	
+	diplomatic_relation = {
+		relation = military_access
+		country = MCK
+		active = yes
+	}
+	
+	diplomatic_relation = {
+		relation = military_access
+		country = PGR
+		active = yes
+	}
+
+	add_political_power = 1198
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	set_technology = {
+		infantry_weapons1 = 1
+		support_weapons = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		construction1 = 1
+		dispersed_industry = 1
+	}
+
+	set_politics = {		
+		ruling_party = fascism
+		last_election = "1937.12.14"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	set_popularities = {
+		fascism = 100
+	}
+	613 = {
+		start_resistance = yes
+		set_compliance = 10
+		set_resistance = 60
+		set_garrison_strength = 1.0
+	}
+	818 = {
+		start_resistance = yes
+		set_compliance = 10
+		set_resistance = 60
+		set_garrison_strength = 1.0
+	}
+	598 = {
+		start_resistance = yes
+		set_compliance = 5
+		set_resistance = 55
+		set_garrison_strength = 1.0
+	}
+	606 = {
+		start_resistance = yes
+		set_compliance = 0
+		set_resistance = 50
+		set_garrison_strength = 1.0
+	}
+	933 = {
+		start_resistance = yes
+		set_compliance = 0
+		set_resistance = 40
+		set_garrison_strength = 1.0
+	}
+	620 = {
+		start_resistance = yes
+		set_compliance = 0
+		set_resistance = 45
+		set_garrison_strength = 1.0
+	}
+	600 = {
+		start_resistance = yes
+		set_compliance = 0
+		set_resistance = 45
+		set_garrison_strength = 1.0
+	}
+}

@@ -1,0 +1,920 @@
+#####################
+
+###  ##  #  # # #  ## 
+ #  #  # ## # # # #   
+ #  #### # ## ##   #  
+ #  #  # #  # # #   # 
+ #  #  # #  # # # ## 
+
+ #################### 
+
+KMT_hanyang_arsenal_tank_mio = {
+	name = KMT_hanyang_arsenal
+	include = generic_tank_organization
+	icon = GFX_idea_generic_tank_manufacturer_2
+	allowed = {	
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 980
+				owns_state = 980
+			}
+		}
+	}
+	
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			has_completed_focus = KMT_increase_funding_of_german_weaponary
+			OR = {
+				controls_state = 980
+				AND = {
+					owns_state = 980
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+		
+KMT_steel_lion_armour_mio = {
+	name = KMT_steel_lion_armour
+	include = generic_mobile_tank_organization
+	icon = GFX_idea_generic_tank_manufacturer_1
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		FROM = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				has_country_flag = KMT_red_coup_finish
+				has_country_flag = KMT_pro_japanese_coup
+			}
+		}
+	}
+	
+	available = {
+		FROM = { has_completed_focus = KMT_joint_tank_dev }
+	}
+}	
+
+#####################
+
+ ## #  # ### ###   ## 
+#   #  #  #  #  # #   
+ #  ####  #  ###   #  
+  # #  #  #  #      # 
+##  #  # ### #    ##  
+ 
+#####################
+
+KMT_jiangnan_shipyard_group_mio = {
+	name = KMT_jiangnan_shipyard_group
+	include = generic_raider_ship_organization
+	icon = GFX_idea_generic_naval_manufacturer_3
+			
+	allowed = {
+		original_tag = CHI
+	}
+			
+	available = {
+		FROM = { has_completed_focus = KMT_revive_jiangnan_shipyard }
+	}
+}
+
+KMT_dagu_dock_mio = {
+	name = KMT_dagu_dock
+	include = generic_refurbishment_repair_organization
+	icon = GFX_idea_generic_naval_manufacturer_2
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 608
+				owns_state = 608
+			}
+		}
+	}
+	
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 608
+				AND = {
+					owns_state = 608
+					has_completed_focus = KMT_the_big_rear_concept
+					any_controlled_state = { is_coastal = yes }
+				}
+			}
+		}
+	}
+}
+
+KMT_foochow_shipping_bureau_mio = {
+	name = KMT_foochow_shipping_bureau
+	include = generic_escort_ship_organization
+	icon = GFX_idea_generic_naval_manufacturer_3
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 595
+				owns_state = 595
+			}
+		}
+	}
+	
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 595
+				AND = {
+					owns_state = 595
+					has_completed_focus = KMT_the_big_rear_concept
+					any_controlled_state = { is_coastal = yes }
+				}
+			}
+		}
+	}
+}
+
+###########################
+
+###  #    ##  #  # ###  ## 
+#  # #   #  # ## # #   #   
+###  #   #### # ## ##   #  
+#    #   #  # #  # #     # 
+#    ### #  # #  # ### ##  
+
+###########################
+
+KMT_aircraft_research_department_mio = {
+	name = KMT_aircraft_research_department
+	include = generic_general_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_1
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		FROM = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				has_country_flag = KMT_red_coup_finish
+				has_country_flag = KMT_pro_japanese_coup
+			}
+		}
+	}
+}
+KMT_camco_light_mio = {
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_CHI_camco
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		FROM = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				has_country_flag = KMT_red_coup_finish
+				has_country_flag = KMT_pro_japanese_coup
+			}
+		}
+	}
+			
+	available = {
+		FROM = { 
+			has_completed_focus = KMT_local_fighter_prod
+			has_completed_focus = KMT_local_bomber_prod
+		}
+	}
+}
+KMT_camco_fighter_mio = {
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_CHI_camco
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		FROM = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				has_country_flag = KMT_red_coup_finish
+				has_country_flag = KMT_pro_japanese_coup
+			}
+		}
+	}
+			
+	available = {
+		FROM = { has_completed_focus = KMT_local_fighter_prod }
+	}
+}
+KMT_camco_bomber_mio = {
+	include = generic_cas_aircraft_organization
+	icon = GFX_idea_CHI_camco
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		FROM = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				has_country_flag = KMT_red_coup_finish
+				has_country_flag = KMT_pro_japanese_coup
+			}
+		}
+	}
+			
+	available = {
+		FROM = { has_completed_focus = KMT_local_bomber_prod }
+	}
+}
+KMT_air_command_mio = {
+	name = KMT_air_command_light
+	include = generic_light_aircraft_organization
+	icon = GFX_idea_generic_air_manufacturer_2
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		FROM = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				has_country_flag = KMT_red_coup_finish
+				has_country_flag = KMT_pro_japanese_coup
+			}
+		}
+	}
+	
+	available = {
+		FROM = {
+			OR = {
+				has_completed_focus = KMT_ministry_of_national_defense
+				has_country_flag = KMT_promoted_new_officers
+				has_completed_focus = KMT_militarism_focus
+			}
+		}
+	}
+}
+KMT_leouchow_machinery_mio = {
+	name = KMT_leouchow_machinery
+	include = generic_multi_role_aircraft_organization
+	icon = GFX_idea_generic_air_payment
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 599
+				owns_state = 599
+			}
+		}
+	}
+	
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 599
+				AND = {
+					owns_state = 599
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+KMT_foochow_shipping_bureau_air_mio = {
+	name = KMT_foochow_shipping_bureau
+	include = generic_naval_aircraft_organization
+	icon = GFX_idea_generic_naval_manufacturer_3
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 595
+				owns_state = 595
+			}
+		}
+	}
+	
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 595
+				AND = {
+					owns_state = 595
+					has_completed_focus = KMT_the_big_rear_concept
+					any_controlled_state = { is_coastal = yes }
+				}
+			}
+		}
+	}
+}
+
+################################### 
+
+#   #  ##  ### ### ###  ### ### #   
+## ## #  #  #  #   #  #  #  #   #   
+# # # ####  #  ##  ###   #  ##  #   
+#   # #  #  #  #   #  #  #  #   #   
+#   # #  #  #  ### #  # ### ### ### 
+
+
+###################################
+KMT_hanyang_arsenal_mio = {
+	name = KMT_hanyang_arsenal
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_1
+	
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 980
+					owns_state = 980
+			}
+		}
+	}
+	
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 980
+				AND = {
+					owns_state = 980
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+	
+}
+KMT_taiyuan_arsenal_mio = {
+	name = PRC_taiyuan_arsenal
+	include = generic_artillery_organization
+	icon = GFX_idea_generic_artillery_manufacturer_2
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 615
+				owns_state = 615
+			}
+		}
+	}
+	
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 615
+				AND = {
+					owns_state = 615
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+
+KMT_kunghsien_arsenal_mio = {
+	name = KMT_kunghsien_arsenal
+	include = generic_support_equipment_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_2
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 607
+				owns_state = 607
+			}
+		}
+	}
+
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 607
+				AND = {
+					owns_state = 607
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+
+KMT_kwangsi_arsenal_mio = {
+	name = KMT_kwangsi_arsenal
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_generic_infantry_equipment_manufacturer_3
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 594
+				owns_state = 594
+			}
+		}
+	}
+
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 594
+				AND = {
+					owns_state = 594
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+
+KMT_tsinan_arsenal_mio = {
+	name = KMT_tsinan_arsenal
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_generic_war_preparation
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 939
+				owns_state = 939
+			}
+		}
+	}
+
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 939
+				AND = {
+					owns_state = 939
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+
+KMT_chinling_arsenal_mio = {
+	name = KMT_chinling_arsenal
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_HUN_secret_rearmament
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 613
+				owns_state = 613
+			}
+		}
+	}
+
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 613
+				AND = {
+					owns_state = 613
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+
+KMT_chuchow_artillery_mio = {
+	name = KMT_chuchow_artillery_plant
+	include = generic_artillery_organization
+	icon = GFX_idea_generic_artillery_regiments
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 602
+				owns_state = 602
+			}
+		}
+	}
+
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 602
+				AND = {
+					owns_state = 602
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+
+KMT_huahsing_manufacturing_mio = {
+	name = KMT_huahsing_manufacturing
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_generic_motorized_equipment_manufacturer_3
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 605
+				owns_state = 605
+			}
+		}
+	}
+
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 605
+				AND = {
+					owns_state = 605
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+
+KMT_shekcheng_arsenal_mio = {
+	name = KMT_shekcheng_arsenal
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_ast_volunteer_defence_corps
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 592
+				owns_state = 592
+			}
+		}
+	}
+
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 592
+				AND = {
+					owns_state = 592
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+
+KMT_mukden_arsenal_mio = {
+	name = KMT_mukden_arsenal
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_SOV_third_five_year_plan_military
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+			tag = MCK
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 716
+				owns_state = 716
+			}
+		}
+	}
+
+	available = {
+		any_country = {
+			OR = {
+				tag = FROM
+				is_subject_of = FROM
+				is_in_faction_with = FROM
+			}
+			OR = {
+				controls_state = 716
+				AND = {
+					owns_state = 716
+					has_completed_focus = KMT_the_big_rear_concept
+				}
+			}
+		}
+	}
+}
+
+KMT_central_manchinery_mio = {
+	name = KMT_central_manchinery
+	include = generic_support_equipment_organization
+	icon = GFX_idea_generic_industrial_concern_2
+			
+	allowed = {
+		OR = {
+			is_chinese_nations_w_HYQ_allowed = yes
+			tag = PGR
+		}
+		NOT = { tag = PRC }
+	}
+
+	visible = {
+		FROM = {
+			OR = {
+				tag = event_target:KMT_central_gov_tag
+				has_country_flag = KMT_red_coup_finish
+				has_country_flag = KMT_pro_japanese_coup
+			}
+		}
+	}
+}

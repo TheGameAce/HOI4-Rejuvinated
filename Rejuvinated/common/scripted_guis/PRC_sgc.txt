@@ -1,0 +1,705 @@
+scripted_gui = {
+
+	PRC_sgc_state_interactions = {
+		context_type = selected_state_context
+		
+		window_name = "PRC_sgc_state_interactions_container"
+		
+		visible = {
+			ROOT = { 
+				tag = PRC
+				OR = {
+					#always = yes
+					has_completed_focus = PRCkmt_infiltration
+					has_completed_focus = PRC_infiltration_tactics
+					has_completed_focus = PRC_front_line_behind_enemy_line
+					#has_completed_focus = PRC_front_line_behind_enemy_line_gr
+					has_completed_focus = PRC_infiltration_tactics_wm
+				}
+				NOT = {
+					has_country_flag = PRC_no_more_infiltration
+				}
+			}
+			is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+		}
+		
+		effects = {
+			PRC_sgc_state_interaction_set_up_click = {
+				set_variable = { var = PRC_state_guerrilla_cell_strength value = 0 }
+				ROOT = { 
+					add_political_power = -50 
+					add_command_power = -50
+				}
+				custom_effect_tooltip = PRC_set_up_tt
+				set_state_flag = PRC_cell_establishing_in_progress
+				log = "[This.GetName]: PRC set up guerrilla cell"
+			}
+			
+			PRC_sgc_state_interaction_send_eq_click = {
+				ROOT = { add_equipment_to_stockpile = { type = infantry_equipment amount = -100 }}
+				ROOT = { 
+					add_political_power = -25
+				}
+				custom_effect_tooltip = PRC_target_state_add_cell_strength_scripted_guis_tt
+				set_variable = { var = PRC_send_eq_progress value = 0 }
+				set_state_flag = PRC_send_eq_in_progress
+				log = "[This.GetName]: PRC send equip to guerrilla cell"
+			}
+			
+			PRC_sgc_state_interaction_sabotage_click = {
+				set_state_flag = PRC_sabotaged_state
+				ROOT = { 
+					add_political_power = -25 
+					add_command_power = -5
+				}
+				save_global_event_target_as = PRC_temp_decision_target_state
+				PRC_guerrilla_cell_sabotage_effect = yes
+				if = {
+					limit = { 
+						NOT = {
+							has_state_flag = KMT_PRC_state_cell_detected
+						}
+					}
+					set_state_flag = KMT_PRC_state_cell_detected
+				}
+				hidden_effect = {
+					log = "[Root.GetName]: Sabotage in [This.GetName]"
+					controller = { country_event = { id = prc.159 }}
+					set_variable = { var = PRC_state_estimated_cell_strength value = PRC_state_guerrilla_cell_strength }
+				}
+			}
+			
+			PRC_sgc_state_interaction_uprise_click = {
+				set_state_flag = PRC_uprised_state
+				save_global_event_target_as = PRC_temp_decision_target_state
+				ROOT = { 
+					add_political_power = -25
+					add_command_power = -15
+				}
+				custom_effect_tooltip = PRC_uprise_tt
+				hidden_effect = {
+					PRC_uprise_in_state_effect = yes
+				}
+				subtract_from_variable = { var = PRC_state_guerrilla_cell_strength value = PRC_state_cell_uprise_cost }
+				set_temp_variable = { var = PRC_target_minus_cell_strength_amount value = PRC_state_cell_uprise_cost }
+				custom_effect_tooltip = PRC_target_state_minus_cell_strength_tt
+				set_variable = { var = PRC_state_estimated_cell_strength value = PRC_state_guerrilla_cell_strength }
+				if = {
+					limit = { 
+						NOT = {
+							has_state_flag = KMT_PRC_state_cell_detected
+						}
+					}
+					set_state_flag = KMT_PRC_state_cell_detected
+				}
+				hidden_effect = {
+					log = "[Root.GetName]: Uprise in [This.GetName]"
+					controller = { country_event = { id = prc.159 }}
+					set_variable = { var = PRC_state_estimated_cell_strength value = PRC_state_guerrilla_cell_strength }
+				}
+			}
+			
+			PRC_sgc_state_interaction_relocate_FROM_click = {
+				save_global_event_target_as = PRC_relocate_FROM_state
+				hidden_effect = {
+					every_state = {
+						limit = { has_state_flag = PRC_gcs_origin }
+						clr_state_flag = PRC_gcs_origin
+					}
+					set_state_flag = PRC_gcs_origin
+				}
+				custom_effect_tooltip = PRC_set_as_origin_tt
+				log = "[This.GetName]: PRC selects as orgigin to relocate"
+			}
+			
+			PRC_sgc_state_interaction_relocate_TARG_click = {
+				ROOT = {
+					add_political_power = -25
+					add_command_power = -10
+				}
+				if = {
+					limit = {
+						has_event_target = PRC_relocate_FROM_state
+					}
+					event_target:PRC_relocate_FROM_state = {
+						set_temp_variable = { var = PRC_guerrilla_cell_strength_to_relocate value = PRC_state_guerrilla_cell_strength }
+						subtract_from_variable = { var = PRC_state_guerrilla_cell_strength value = PRC_guerrilla_cell_strength_to_relocate }
+						clr_state_flag = KMT_PRC_state_has_guerrilla_cell
+					}
+				}
+				save_global_event_target_as = PRC_temp_decision_relocate_target_state
+				if = {
+					limit = {
+						NOT = { has_state_flag = KMT_PRC_state_has_guerrilla_cell }
+					}
+					set_state_flag = KMT_PRC_state_has_guerrilla_cell
+					set_variable = { var = PRC_state_guerrilla_cell_strength value = PRC_relocate_FROM_state.PRC_guerrilla_cell_strength_to_relocate }
+					else = {
+						add_to_variable = { var = PRC_state_guerrilla_cell_strength value = PRC_relocate_FROM_state.PRC_guerrilla_cell_strength_to_relocate }
+					}
+				}
+				custom_effect_tooltip = PRC_relocate_cell_strength_tt
+				hidden_effect = {
+					every_state = {
+						clr_state_flag = PRC_gcs_origin
+					}
+					clear_global_event_target = PRC_relocate_FROM_state
+				}
+				log = "[This.GetName]: PRC relocate cell with strength of [?PRC_relocate_FROM_state.PRC_guerrilla_cell_strength_to_relocate] from [PRC_relocate_FROM_state.GetName], now having total of [?This.PRC_state_guerrilla_cell_strength] strength"
+			}
+			
+			PRC_panel_detail_expand_click = {
+				ROOT = { set_country_flag = PRC_guerrilla_panel_detail_expanded }
+			}
+			
+			PRC_panel_detail_retract_click = {
+				ROOT = { clr_country_flag = PRC_guerrilla_panel_detail_expanded }
+			}
+		}
+		
+		triggers = {
+			PRC_sgc_state_interaction_set_up_click_enabled = {
+				NOT = { has_state_flag = KMT_PRC_state_has_guerrilla_cell }
+				NOT = { has_state_flag = PRC_cell_establishing_in_progress }
+				OR = {
+					#hidden_trigger = { ROOT = { is_ai = yes has_political_power > 24 }}
+					ROOT = { 
+						has_political_power > 49 
+						command_power > 49
+					}
+				}
+				OR = {
+					AND = {
+						OR = {
+							owner = { has_war_with = ROOT }
+							controller = { has_war_with = ROOT }
+						}
+						ROOT = {
+							OR = {
+								has_completed_focus = PRC_infiltration_tactics
+								has_completed_focus = PRC_front_line_behind_enemy_line
+								#has_completed_focus = PRC_front_line_behind_enemy_line_gr
+							}
+						}
+					}
+					AND = {
+						CONTROLLER = { tag = PRC }
+						custom_trigger_tooltip = {
+							tooltip = PRC_is_considered_inalienable_part_tt
+							is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+						}
+						ROOT = {
+							OR = {
+								has_completed_focus = PRCkmt_infiltration
+								has_completed_focus = PRC_infiltration_tactics
+							}
+						}
+					}
+					AND = {
+						ROOT = {
+							OR = {
+								has_completed_focus = PRCkmt_infiltration
+								has_completed_focus = PRC_infiltration_tactics
+								has_completed_focus = PRC_infiltration_tactics_wm
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = PRC_is_china_tt
+							owner = {
+								is_valid_power_struggle_participant = yes
+								NOT = { tag = ROOT }
+							}
+						}
+					}	
+				}
+				any_neighbor_state = {
+					OR = {
+						has_state_flag = KMT_PRC_state_has_guerrilla_cell
+						CONTROLLER = { 
+							OR = {
+								tag = ROOT 
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+						OWNER = { 
+							OR = {
+								tag = ROOT 
+								is_subject_of = ROOT
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+				}
+			}
+			
+			PRC_sgc_state_interaction_send_eq_click_enabled = {
+				NOT = { has_state_flag = PRC_send_eq_in_progress }
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				ROOT = { 
+					has_political_power > 24 
+					has_equipment = { infantry_equipment > 99 }
+				}
+				custom_trigger_tooltip = {
+					tooltip = PRC_not_sent_eq_in_past_30_days
+					OR = {
+						NOT = {
+							has_state_flag = PRC_sent_eq_to_state
+						}
+						has_state_flag = {
+							flag = PRC_sent_eq_to_state
+							days > 30
+						}
+					}
+				}
+				if = {
+					limit = {
+						SOV = {
+							is_subject = no
+							has_government = communism
+							NOT = { has_war_with = PRC }
+							has_idea = KMT_SOV_JAP_neutrality
+						}
+						CONTROLLER = {
+							OR = {
+								tag = JAP
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+						#PRC = { NOT = { has_country_flag = PRC_refused_sov_jap_neutrality_order }}
+						NOT = { any_neighbor_state = { is_controlled_by = PRC }}
+					}
+					custom_trigger_tooltip = {
+						tooltip = PRC_no_action_in_manchuria_tt
+						NOT = { region = 155 }
+						NOT = { region = 243 }
+						NOT = { region = 242 }
+					}
+				}
+			}
+			
+			PRC_sgc_state_interaction_sabotage_click_enabled = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				ROOT = { 
+					has_political_power > 24 
+					command_power > 4 
+				}
+				custom_trigger_tooltip = {
+					tooltip = PRC_guerrilla_cell_requirement4_tt
+					check_variable = { 
+						var = PRC_state_guerrilla_cell_strength 
+						value = 4
+						compare = greater_than_or_equals
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = PRC_not_sabotaged_in_past_30_days
+					OR = {
+						NOT = {
+							has_state_flag = PRC_sabotaged_state
+						}
+						has_state_flag = {
+							flag = PRC_sabotaged_state
+							days > 30
+						}
+					}
+				}
+				if = {
+					limit = {
+						SOV = {
+							is_subject = no
+							has_government = communism
+							NOT = { has_war_with = PRC }
+							has_idea = KMT_SOV_JAP_neutrality
+						}
+						CONTROLLER = {
+							OR = {
+								tag = JAP
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+						#PRC = { NOT = { has_country_flag = PRC_refused_sov_jap_neutrality_order }}
+						NOT = { any_neighbor_state = { is_controlled_by = PRC }}
+					}
+					custom_trigger_tooltip = {
+						tooltip = PRC_no_action_in_manchuria_tt
+						NOT = { region = 155 }
+						NOT = { region = 243 }
+						NOT = { region = 242 }
+					}
+				}
+			}
+			
+			PRC_sgc_state_interaction_uprise_click_enabled = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				ROOT = { 
+					has_political_power > 24 
+					command_power > 14 
+				}
+				custom_trigger_tooltip = {
+					tooltip = PRC_guerrilla_cell_requirement10_tt
+					check_variable = { 
+						var = PRC_state_guerrilla_cell_strength 
+						value = 10
+						compare = greater_than_or_equals
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = PRC_not_uprised_in_past_30_days
+					OR = {
+						NOT = {
+							has_state_flag = PRC_uprised_state
+						}
+						has_state_flag = {
+							flag = PRC_uprised_state
+							days > 30
+						}
+					}
+				}
+				CONTROLLER = { has_war_with = PRC }
+				impassable = no
+				if = {
+					limit = {
+						SOV = {
+							is_subject = no
+							has_government = communism
+							NOT = { has_war_with = PRC }
+							has_idea = KMT_SOV_JAP_neutrality
+						}
+						CONTROLLER = {
+							OR = {
+								tag = JAP
+								is_subject_of = JAP
+								is_in_faction_with = JAP
+							}
+						}
+						#PRC = { NOT = { has_country_flag = PRC_refused_sov_jap_neutrality_order }}
+						NOT = { any_neighbor_state = { is_controlled_by = PRC }}
+					}
+					custom_trigger_tooltip = {
+						tooltip = PRC_no_action_in_manchuria_tt
+						NOT = { region = 155 }
+						NOT = { region = 243 }
+						NOT = { region = 242 }
+					}
+				}
+			}
+			
+			PRC_sgc_state_interaction_relocate_FROM_click_enabled = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+				custom_trigger_tooltip = {
+					tooltip = PRC_guerrilla_cell_requirement_tt
+					check_variable = { 
+						var = PRC_state_guerrilla_cell_strength 
+						value = 1
+						compare = greater_than_or_equals
+					}
+				}
+			}
+			
+			PRC_sgc_state_interaction_relocate_TARG_click_enabled = {
+				ROOT = {
+					has_political_power > 24
+					command_power > 9 
+				}
+				custom_trigger_tooltip = {
+					tooltip = PRC_relocate_FROM_state_neighbor_tt
+					any_neighbor_state = {
+						has_state_flag = PRC_gcs_origin
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = PRC_relocate_FROM_state_tt
+					has_event_target = PRC_relocate_FROM_state
+				}
+			}
+			
+			PRC_panel_detail_expand_visible = {
+				ROOT = {
+					NOT = { has_country_flag = PRC_guerrilla_panel_detail_expanded }
+				}
+			}
+			
+			PRC_panel_detail_retract_visible = {
+				ROOT = {
+					has_country_flag = PRC_guerrilla_panel_detail_expanded
+				}
+			}
+		
+			PRC_guerrilla_panel_detail_bg_visible = {
+				ROOT = { has_country_flag = PRC_guerrilla_panel_detail_expanded }
+			}
+		
+			PRC_guerrilla_panel_details_visible = {
+				ROOT = { has_country_flag = PRC_guerrilla_panel_detail_expanded }
+			}
+		}
+		
+		ai_enabled = {
+			tag = PRC
+		}
+		
+		ai_check_scope = {
+			is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+		}
+		
+		ai_weights = {
+			PRC_sgc_state_interaction_set_up_click = {
+				ai_will_do = {
+					base = 1
+					modifier = {
+						OR = {
+							region = 143
+							region = 155
+							region = 242
+							region = 243
+							region = 244
+							region = 245
+							state = 598
+							state = 746
+							state = 621
+							state = 966
+						}
+						add = 1
+					}
+					modifier = {
+						is_historical_focus_on = yes
+						OR = {
+							region = 143
+							region = 155
+							region = 242
+							region = 243
+							region = 244
+							region = 245
+							state = 598
+							state = 746
+							state = 621
+							state = 966
+						}
+						factor = 5
+					}
+					modifier = {
+						OR = {
+							ROOT = { has_completed_focus = PRC_found_our_nation }
+							check_variable = { ROOT.num_controlled_states > 40 }
+						}
+						factor = 0
+					}
+				}
+			}
+			PRC_sgc_state_interaction_sabotage_click = {
+				ai_will_do = {
+					base = 0
+					modifier = {
+						rail_way > 1
+						add = 0.5
+					}
+					modifier = {
+						rail_way > 3
+						add = 0.5
+					}
+					modifier = {
+						check_variable = { PRC_state_guerrilla_cell_strength < 85 }
+						factor = 0
+					}
+					modifier = {
+						check_variable = { PRC_state_guerrilla_cell_strength < 85 }
+						factor = 0
+					}
+					modifier = {
+						has_state_flag = { 
+							flag = PRC_sabotaged_state
+							days < 210
+						}
+						factor = 0
+					}
+					modifier = {
+						CONTROLLER = { NOT = { has_war_with = PRC }}
+						factor = 0
+					}
+				}
+			}
+			PRC_sgc_state_interaction_uprise_click = {
+				ai_will_do = {
+					base = 0
+#					modifier = {
+#						check_variable = { PRC_state_guerrilla_cell_strength > 14 }
+#						add = 0.1
+#					}
+#					modifier = {
+#						check_variable = { PRC_state_guerrilla_cell_strength > 24 }
+#						add = 0.1
+#					}
+#					modifier = {
+#						check_variable = { PRC_state_guerrilla_cell_strength > 34 }
+#						add = 0.1
+#					}
+#					modifier = {
+#						CONTROLLER = { has_war_with = ROOT }
+#						any_neighbor_state = { 
+#							CONTROLLER = { 
+#								OR = {
+#									tag = ROOT
+#									is_subject_of = ROOT
+#									is_in_faction_with = ROOT
+#								}
+#								divisions_in_state = {
+#									state = PREV
+#									size > 10
+#								}
+#							}
+#						}
+#						factor = 2
+#					}
+#					modifier = {
+#						ROOT = { has_capitulated = yes }
+#						factor = 2
+#					}
+#					modifier = {
+#						ROOT = { is_in_faction_with = event_target:KMT_central_gov_tag }
+#						event_target:KMT_central_gov_tag = { surrender_progress > 0.84 }
+#						factor = 2
+#					}
+#					modifier = {
+#						CONTROLLER = { NOT = { has_war_with = ROOT }}
+#						factor = 0
+#					}
+#					modifier = {
+#						NOT = {
+#							any_neighbor_state = { 
+#								any_country = { 
+#									OR = {
+#										tag = ROOT
+#										is_subject_of = ROOT
+#										is_in_faction_with = ROOT
+#									}
+#									divisions_in_state = {
+#										state = PREV
+#										size > 4
+#									}
+#								}
+#							}
+#						}
+#						factor = 0
+#					}
+#					modifier = {
+#						NOT = {
+#							any_neighbor_state = { 
+#								any_country = { 
+#									OR = {
+#										tag = ROOT
+#										is_subject_of = ROOT
+#										is_in_faction_with = ROOT
+#									}
+#									divisions_in_state = {
+#										state = PREV
+#										size > 4
+#									}
+#								}
+#							}
+#						}
+#						factor = 0
+#					}
+					modifier = {
+						check_variable = { PRC_state_guerrilla_cell_strength > 89 }
+						add = 0.9
+					}
+					modifier = {
+						CONTROLLER = {
+							NOT = { has_war_with = ROOT }
+						}
+						factor = 0
+					}
+					modifier = {
+						any_state = {
+							OR = {
+								region = 143
+								region = 155
+								region = 243
+								region = 242
+								region = 245
+								region = 244
+								state = 598
+								state = 746
+								state = 621
+								state = 966
+							}
+							NOT = { has_state_flag = KMT_PRC_state_has_guerrilla_cell }
+						}
+						factor = 0
+					}
+				}
+			}
+		}
+	}
+	
+	PRC_dcat_states = {
+		context_type = decision_category
+		
+		window_name = "PRC_guerrilla_cells_location"
+		
+		dynamic_lists = {
+			PRC_map_gridbox = {
+				array = PRC.KMT_considered_inalienable_parts
+				change_scope = yes
+				entry_container = PRC_gcs_dcat_state_container
+			}
+		}
+		
+		visible = {
+		}
+		
+		triggers = {
+			PRC_gcs_states_tga_click_enabled = {
+				has_state_flag = KMT_PRC_state_has_guerrilla_cell
+			}
+			PRC_gcs_states_tga_click_visible = {
+				is_in_array = { PRC.KMT_considered_inalienable_parts = THIS }
+			}
+		}
+		
+		properties = {
+			PRC_gcs_states_tga = {
+				image = "GFX_dcat_state_[?This.KMT_dcat_sprite_id_num]"
+			}
+		}
+		
+		ai_enabled = {
+			always = no
+		}
+	}
+	
+	PRC_zgt_dcat_states = {
+		context_type = decision_category
+		
+		window_name = "PRC_reactionary_hideout_location"
+		
+		dynamic_lists = {
+			PRC_zgt_map_gridbox = {
+				array = global.PRC_zgt_reactionary_hideout_array
+				change_scope = yes
+				entry_container = PRC_zgt_dcat_state_container
+			}
+		}
+		
+		visible = {
+		}
+		
+		triggers = {
+		}
+		
+		properties = {
+			PRC_zgt_states_tga = {
+				image = "GFX_dcat_state_[?This.KMT_dcat_sprite_id_num]"
+			}
+		}
+		
+		ai_enabled = {
+			always = no
+		}
+	}
+	
+}
+

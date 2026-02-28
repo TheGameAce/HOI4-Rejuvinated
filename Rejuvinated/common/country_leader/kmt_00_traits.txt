@@ -1,0 +1,611 @@
+leader_traits = {
+	
+	german_training = {
+		sprite = 14
+		random = no
+		
+		training_time_army_factor = -0.1
+		experience_gain_army_factor = 0.5
+		experience_gain_army = 0.1
+		planning_speed = 0.05
+		land_doctrine_cost_factor = -0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+		
+	warlords = {
+		random = no
+		ai_get_ally_desire_factor = -10000
+	}
+	
+	JAP_toseiha_trait = {
+		random = no
+		
+			ai_strategy = {
+				type = antagonize
+				id = "CHI"			
+				value = 1000
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "PRC"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "SHX"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "GXC"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "YUN"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "XSM"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "ENG"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "USA"			
+				value = 200
+			}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_toseiha_trait_chi_ally = {
+		random = no
+		
+			ai_strategy = {
+				type = alliance
+				id = "CHI"			
+				value = 200
+			}
+			ai_strategy = {
+				type = befriend
+				id = "CHI"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "PRC"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "SHX"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "GXC"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "YUN"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "XSM"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "ENG"			
+				value = 200
+			}
+			ai_strategy = {
+				type = antagonize
+				id = "USA"			
+				value = 200
+			}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_kodoha_trait = {
+		random = no
+		
+			ai_strategy = {
+				type = antagonize
+				id = "SOV"			
+				value = 200
+			}
+			ai_strategy = {
+				type = ignore
+				id = "CHI"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "SHX"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "PRC"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "XSM"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "GXC"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "YUN"			
+				value = 50
+			}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	JAP_kodoha_trait_chi_ally = {
+		random = no
+		
+			ai_strategy = {
+				type = antagonize
+				id = "SOV"			
+				value = 200
+			}
+			ai_strategy = {
+				type = alliance
+				id = "CHI"			
+				value = 200
+			}
+			ai_strategy = {
+				type = befriend
+				id = "CHI"			
+				value = 200
+			}
+			ai_strategy = {
+				type = ignore
+				id = "SHX"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "PRC"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "XSM"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "GXC"			
+				value = 50
+			}
+			ai_strategy = {
+				type = ignore
+				id = "YUN"			
+				value = 50
+			}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	rommel_of_the_east = {
+		sprite = 14
+		random = no
+		
+		army_morale_factor = 0.08
+		army_org_factor = 0.08
+		#experience_gain_army = 0.1
+		
+		command_cap = 30
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	unavailable_trait = {
+		random = no
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	KMT_opportunitist_trait = {
+		random = no
+		
+		communism_acceptance = 100
+		fascism_acceptance = 50
+		neutrality_acceptance = 30
+		democratic_acceptance = 5
+		drift_defence_factor = -0.75
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	KMT_dislike_communism = {
+		random = no
+		
+		communism_acceptance = -150
+		communism_drift = -0.05
+		
+		ai_strategy = {
+			type = antagonize
+			id = "PRC"			
+			value = 200
+		}
+		ai_strategy = {
+			type = antagonize
+			id = "SOV"			
+			value = 200
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	KMT_lzr_defensive_focus = {
+		random = no
+		
+		army_defence_factor = 0.1
+		army_attack_factor = -0.05
+		experience_gain_army = 0.05
+		max_dig_in = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	KMT_fyx_democracy_fighter = {
+		random = no
+		
+		
+		democratic_acceptance = 20
+		democratic_drift = 0.01
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	KMT_infrastructure_engineer = {
+		sprite = 10
+		
+		random = yes
+		
+		production_speed_infrastructure_factor = 0.15
+		production_speed_air_base_factor = 0.15
+		production_speed_naval_base_factor = 0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	KMT_geologist = {
+		sprite = 10
+		
+		random = yes
+		
+		local_resources_factor = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	KMT_talented_economist = {
+		sprite = 10
+		
+		random = yes
+		
+		consumer_goods_factor = -0.15
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	KMT_arrogant_capitalist = {
+		sprite = 10
+		
+		random = no
+		
+		stability_factor = -0.05
+		political_power_factor = -0.05
+		consumer_goods_factor = 0.1
+		production_speed_buildings_factor = 0.15
+		trade_opinion_factor = 0.2
+		trade_laws_cost_factor = 0.2
+		
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 2
+			}
+		}
+	}
+	
+	KMT_generalissimo_dictator = {
+		sprite = 10
+		
+		random = no
+		
+		political_power_factor = 0.1
+		fascism_drift = 0.05
+		democratic_drift = -0.1
+		democratic_acceptance = -100
+		justify_war_goal_time = -0.1
+		
+	}
+	
+	KMT_cks_generallissimo = {
+		sprite = 10
+		
+		random = no
+		
+		max_command_power = 30
+		command_power_gain = 0.2
+		command_power_gain_mult = 0.2
+		surrender_limit = 0.1
+		ai_focus_defense_factor = 0.5
+		
+	}
+	
+	KMT_corrupt_banker = {
+		sprite = 10
+		
+		random = no
+		
+		stability_factor = -0.05
+		political_power_factor = -0.05
+		consumer_goods_factor = 0.1
+		production_speed_industrial_complex_factor = 0.25
+		trade_laws_cost_factor = 0.2
+	}
+	
+	KMT_outstanding_diplomat = {
+		sprite = 13
+		
+		random = no
+		
+		improve_relations_maintain_cost_factor = -0.5
+		enemy_justify_war_goal_time = 0.1
+		opinion_gain_monthly_factor = 0.1
+		war_support_factor = 0.05
+	}
+	
+	KMT_anti_communists_patriot = {
+		sprite = 12
+		
+		random = no
+		
+		communism_drift = -0.05
+		communism_acceptance = -200
+		#political_power_factor = 0.05
+		stability_factor = 0.1
+		
+		ai_strategy = {
+			type = antagonize
+			id = "PRC"			
+			value = 200
+		}
+		ai_strategy = {
+			type = antagonize
+			id = "SOV"			
+			value = 200
+		}
+		ai_strategy = {
+			type = contain
+			id = "PRC"			
+			value = 200
+		}
+		ai_strategy = {
+			type = contain
+			id = "SOV"			
+			value = 200
+		}
+	}
+	
+	KMT_spirit_of_whampoa = {
+		sprite = 14
+		
+		random = no
+		
+		command_cap = 20
+		
+		experience_gain_army = 0.35
+		
+		army_org_factor = 0.08
+		land_reinforce_rate = 0.02
+	}
+	
+	KMT_bane_of_red_army = {
+		sprite = 14
+		
+		random = no
+		
+		targeted_modifier = {
+			tag = PRC
+			attack_bonus_against = 0.05
+			defense_bonus_against = 0.025
+		}
+		max_planning = 0.1
+		planning_speed = 0.1
+	}
+	
+	KMT_incapable_officer = {
+		
+		random = no
+		
+		max_planning = -0.1
+	}
+	
+	KMT_seasoned_general = {
+		
+		random = no
+		
+		planning_speed = 0.05
+		army_attack_factor = 0.025
+		army_defence_factor = 0.025
+	
+		ai_desired_divisions_factor = 1.5
+	}
+	
+	KMT_thai_nationalist = {
+		
+		random = no
+		
+		fascism_drift = 0.25
+		war_support_factor = 0.1
+	}
+	
+	KMT_thai_military_dictator = {
+		
+		random = no
+		
+		political_power_factor = 0.15
+		max_command_power = 50
+		command_power_gain_mult = 1
+	}
+	
+	KMT_thai_anti_communist = {
+		
+		random = no
+		
+		fascism_drift = 0.05
+		communism_drift = -0.15
+		communism_acceptance = -200
+	}
+	
+	KMT_militaristic_authoritarian_trait = {
+		
+		random = no
+		
+		max_command_power = 35
+		war_support_factor = 0.05
+		democratic_drift = -0.01
+		democratic_acceptance = -25
+		
+		high_command_cost_factor = -0.1
+		army_chief_cost_factor = -0.1
+	}
+	
+	KMT_communist_propagandist = {
+		sprite = 12
+		
+		random = no
+		
+		communism_drift = 0.075
+	}
+	
+	KMT_military_commissar = {
+		sprite = 12
+		
+		random = no
+		
+		communism_drift = 0.01
+		max_command_power = 15
+		land_reinforce_rate = 0.01
+	}
+	
+	KMT_head_of_land_department = {
+		sprite = 12
+		
+		random = no
+		
+		communism_drift = 0.01
+		production_speed_buildings_factor = 0.05
+		consumer_goods_factor = -0.05
+	}
+	
+	KMT_workers_affairs_supervisor = {
+		sprite = 12
+		
+		random = no
+		
+		communism_drift = 0.01
+		industrial_capacity_factory = 0.025
+		production_factory_efficiency_gain_factor = 0.01
+	}
+	
+	KMT_communist_advisors = {
+		
+		random = no
+		
+		political_power_cost = 0.05
+	}
+	
+	KMT_head_of_national_defence_council = {
+		
+		random = no
+		
+		army_chief_cost_factor = -0.2
+		navy_chief_cost_factor = -0.2
+		air_chief_cost_factor = -0.2
+		high_command_cost_factor = -0.2
+		theorist_cost_factor = -0.2
+		industrial_concern_cost_factor = -0.33
+		tank_manufacturer_cost_factor = -0.33
+		naval_manufacturer_cost_factor = -0.33
+		aircraft_manufacturer_cost_factor = -0.33
+		materiel_manufacturer_cost_factor = -0.33
+	}
+	
+	KMT_chiang_generalissimo_hc = {
+		
+		random = no
+		
+		max_command_power = 50
+		command_power_gain = 0.15
+	}
+	
+	KMT_dai_li_trait = {
+		
+		random = no
+		
+		operative_slot = 2
+		agency_upgrade_time = -0.15
+		
+		enemy_operative_detection_chance = 0.1
+		enemy_operative_capture_chance_factor = 0.05
+		operation_cost = -0.25
+		operation_outcome = 0.25
+		operation_risk = -0.25
+	}
+	
+}

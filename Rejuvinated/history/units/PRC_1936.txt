@@ -1,0 +1,112 @@
+﻿division_template = {
+	name = "Chünt'uan"				
+	division_names_group = PRC_INF_01
+									
+	regiments = {
+		infantry = { x = 0 y = 0 }	
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	
+	is_locked = yes
+
+}
+
+division_template = {
+	name = "Chün"				
+	division_names_group = PRC_INF_02
+									
+	regiments = {
+		infantry = { x = 0 y = 0 }	
+		infantry = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Ch'iping T'uan"			
+									
+	regiments = {
+		cavalry = { x = 0 y = 0 }	
+	}
+}
+
+division_template = {
+	name = "Yüchitui"		
+	is_locked = yes		
+
+	regiments = {
+		irregular_infantry = { x = 0 y = 0 }
+		#infantry = { x = 0 y = 1 }
+	}
+	priority = 0
+}
+
+units = {
+	
+	##### 1st Chünt'uan #####
+	division = { 
+		name = "1. Chün"
+		location = 7208
+		division_template = "Chün"		
+		start_equipment_factor = 0.8
+
+	}
+	division = { 
+		name = "2. Chün"
+		location = 12356
+		division_template = "Chün"		
+		start_equipment_factor = 0.8
+	}
+	division = { 
+		name = "4. Chün"
+		location = 12356
+		division_template = "Chün"		
+		start_equipment_factor = 0.8
+	}
+	
+	##### 15th Chünt'uan #####
+	division = { 
+		name = "25. Chün"
+		location = 7208
+		division_template = "Chün"		
+		start_equipment_factor = 0.6
+
+	}
+	division = { 
+		name = "26. Chün"
+		location = 7208
+		division_template = "Chün"		
+		start_equipment_factor = 0.6
+
+	}
+	division = { 
+		name = "27. Chün"
+		location = 12356
+		division_template = "Chün"		
+		start_equipment_factor = 0.6
+	}
+	division = { 
+		name = "26. Chün Ch'iping T'uan"
+		location = 12356
+		division_template = "Ch'iping T'uan"		
+		start_equipment_factor = 0.6
+	}
+}
+
+##### STARTING PRODUCTION #####
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "PRC"
+		}
+		requested_factories = 2
+		progress = 0.33
+		efficiency = 100
+	}
+}

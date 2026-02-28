@@ -1,0 +1,543 @@
+﻿division_template = {
+	name = "Chengpian Shih"			
+	division_names_group = CHI_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 0 y = 4 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+		infantry = { x = 1 y = 4 }
+		artillery_brigade = { x = 2 y = 0 }
+		artillery_brigade = { x = 2 y = 1 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+		artillery = { x = 0 y = 1 } 
+		signal_company = { x = 0 y = 2 } 
+		recon = { x = 0 y = 3 } 
+		logistics_company = { x = 0 y = 4 } 
+	}
+}
+
+## 60 division, skip over the 90 phase ##
+## 10 divisions for ccp ##
+### OOB ###
+units = {
+
+	#### central - 10 divs ####
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 11913
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 11913
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 10076
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 7016
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 7191
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 9974
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 4619
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 8
+		}
+		location = 10446
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 9
+		}
+		location = 9958
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 12
+		}
+		location = 11973
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	#### manchuria - 14 divs ####
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 13
+		}
+		location = 13399
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 14
+		}
+		location = 13399
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 15
+		}
+		location = 13399
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 16
+		}
+		location = 11771
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 17
+		}
+		location = 11771
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 18
+		}
+		location = 11771
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 19
+		}
+		location = 10433
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 20
+		}
+		location = 10433
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 21
+		}
+		location = 10433
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 22
+		}
+		location = 6837
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 23
+		}
+		location = 9835
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 24
+		}
+		location = 11764
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 25
+		}
+		location = 6811
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 26
+		}
+		location = 3783
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	#### northwest - 9 divs ####
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 28
+		}
+		location = 1976
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 29
+		}
+		location = 6999
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 30
+		}
+		location = 7911
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 31
+		}
+		location = 12732
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 32
+		}
+		location = 6638
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 33
+		}
+		location = 6638
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+
+#in another oob check for sinkiang
+#	division = {
+#		division_name = {
+#			is_name_ordered = yes
+#			name_order = 31
+#		}
+#		location = 12656
+#		division_template = "Chengpian Shih"		
+#		start_experience_factor = 0.45
+#	}	
+#	
+#	division = {
+#		division_name = {
+#			is_name_ordered = yes
+#			name_order = 32
+#		}
+#		location = 12656
+#		division_template = "Chengpian Shih"		
+#		start_experience_factor = 0.45
+#	}	
+#	
+#	division = {
+#		division_name = {
+#			is_name_ordered = yes
+#			name_order = 33
+#		}
+#		location = 12656
+#		division_template = "Chengpian Shih"		
+#		start_experience_factor = 0.45
+#	}	
+	
+	#### north - 11 divs ####
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 37
+		}
+		location = 9843
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 38
+		}
+		location = 9846
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 40
+		}
+		location = 10068
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 41
+		}
+		location = 4190
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 42
+		}
+		location = 7109
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 43
+		}
+		location = 4174
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 44
+		}
+		location = 4174
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 45
+		}
+		location = 1034
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 46
+		}
+		location = 1069
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 49
+		}
+		location = 10000
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 52
+		}
+		location = 1590
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	#### south - 6 divs ####
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 55
+		}
+		location = 1047
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 56
+		}
+		location = 4196
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+
+#in another oob file that check for taiwan	
+#	division = {
+#		division_name = {
+#			is_name_ordered = yes
+#			name_order = 57
+#		}
+#		location = 11822
+#		division_template = "Chengpian Shih"		
+#		start_experience_factor = 0.45
+#	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 58
+		}
+		location = 10404
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 59
+		}
+		location = 1319
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+	
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 60
+		}
+		location = 7137
+		division_template = "Chengpian Shih"		
+		start_experience_factor = 0.45
+	}	
+}

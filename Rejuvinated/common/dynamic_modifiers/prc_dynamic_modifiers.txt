@@ -1,0 +1,436 @@
+#	Example:
+# 
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+PRC_long_march_debuff = {
+	icon = "GFX_idea_prc_the_long_march2"
+	enable = { 
+		always = yes
+	}
+	
+	remove_trigger = { 
+		always = no
+	}
+	
+	conscription = PRC.PRC_long_march_debuff_conscription
+	conscription_factor = PRC.PRC_long_march_debuff_conscription_factor
+	land_reinforce_rate = PRC.PRC_long_march_debuff_reinforce_rate
+	army_org_factor = PRC.PRC_long_march_debuff_organisation
+	army_attack_factor = PRC.PRC_long_march_debuff_attack
+	army_defence_factor = PRC.PRC_long_march_debuff_defense
+	planning_speed = PRC.PRC_long_march_debuff_planning_speed
+	training_time_factor = PRC.PRC_long_march_debuff_training_time
+	stability_factor = PRC.PRC_long_march_debuff_stability
+	war_support_factor = PRC.PRC_long_march_debuff_war_support
+}
+
+PRC_recent_bloody_purge = {
+	icon = GFX_modifiers_sabotaged_resource
+	
+	remove_trigger = { 
+		has_resistance = no
+	}
+	
+	compliance_gain = 0.75
+	resistance_target = -0.25
+}
+
+PRC_military_administrative_region_modifier = {
+	icon = GFX_decision_spr_political_assassination
+	
+	enable = { 
+		is_controlled_by = PRC
+	}
+	
+	custom_modifier_tooltip = PRC_only_active_when_owned_tt
+	
+	state_resources_factor = 0.05
+	state_production_speed_arms_factory_factor = 0.1
+	state_production_speed_air_base_factor = 0.1
+	state_production_speed_anti_air_building_factor = 0.1
+	state_production_speed_rocket_site_factor = 0.1
+	state_production_speed_radar_station_factor = 0.1
+}
+
+PRC_military_administrative_region_modifier2 = {
+	icon = GFX_decision_spr_political_assassination
+	
+	enable = { 
+		is_controlled_by = PRC
+	}
+	
+	custom_modifier_tooltip = PRC_only_active_when_owned_tt
+	
+	state_resources_factor = 0.05
+	compliance_gain = 0.01
+	resistance_growth = -0.1
+	resistance_decay = 0.15
+	recruitable_population_factor = 0.25
+	state_repair_speed_infrastructure_factor = 0.5
+	state_repair_speed_arms_factory_factor = 0.5
+	state_production_speed_infrastructure_factor = 0.1
+	state_production_speed_arms_factory_factor = 0.1
+	state_production_speed_air_base_factor = 0.1
+	state_production_speed_anti_air_building_factor = 0.1
+	state_production_speed_rocket_site_factor = 0.1
+	state_production_speed_radar_station_factor = 0.1
+}
+
+PRC_rising_popular_support = {
+	icon = GFX_icon_collaboration_and_exiles
+	
+	enable = { 
+		has_resistance = yes
+		occupation_law = PRC_consolidate_support
+	}
+	
+	custom_modifier_tooltip = PRC_only_active_when_cs_ol_tt
+	
+	no_compliance_gain = 0
+	compliance_gain 				= 0.1
+	resistance_damage_to_garrison 	= -0.5
+	resistance_target 				= -0.1
+	resistance_growth 				= -0.5
+	resistance_decay				= 1
+	required_garrison_factor		= -0.7
+}
+
+PRC_military_intervention_agency_state_modifier = {
+	
+	enable = { 
+		has_resistance = yes
+		is_controlled_by = PRC
+		PRC = { divisions_in_state = { state = THIS size > 0 }}
+	}
+	
+	resistance_target 				= -0.05
+	resistance_growth 				= -0.1
+}
+
+PRC_positive_guerrilla_effect = {
+	
+	enable = { 
+		has_resistance = yes
+		is_controlled_by = PRC
+		has_state_flag = KMT_PRC_state_has_guerrilla_cell
+	}
+	
+	compliance_gain 				= 0.5
+	resistance_target 				= -0.1
+	resistance_growth 				= -1.5
+	resistance_decay				= 2
+}
+
+PRC_hostile_guerrilla_effect = {
+	
+	enable = { 
+		has_resistance = yes
+		CONTROLLER = { has_war_with = PRC }
+		has_state_flag = KMT_PRC_state_has_guerrilla_cell
+		check_variable = { PRC_state_guerrilla_cell_strength > 10 }
+		NOT = { check_variable = { PRC_state_guerrilla_cell_strength > 20 }}
+	}
+	
+	resistance_target = 0.05
+	compliance_gain = -0.03
+	attrition_for_controller = 0.025
+}
+
+PRC_hostile_guerrilla_effect2 = {
+	
+	enable = { 
+		has_resistance = yes
+		CONTROLLER = { has_war_with = PRC }
+		has_state_flag = KMT_PRC_state_has_guerrilla_cell
+		check_variable = { PRC_state_guerrilla_cell_strength > 20 }
+		NOT = { check_variable = { PRC_state_guerrilla_cell_strength > 30 }}
+	}
+	
+	resistance_target = 0.1
+	compliance_gain = -0.05
+	attrition_for_controller = 0.05
+}
+
+PRC_hostile_guerrilla_effect3 = {
+	
+	enable = { 
+		has_resistance = yes
+		CONTROLLER = { has_war_with = PRC }
+		has_state_flag = KMT_PRC_state_has_guerrilla_cell
+		check_variable = { PRC_state_guerrilla_cell_strength > 30 }
+		NOT = { check_variable = { PRC_state_guerrilla_cell_strength > 40 }}
+	}
+	
+	resistance_target = 0.15
+	compliance_gain = -0.07
+	attrition_for_controller = 0.075
+}
+
+PRC_hostile_guerrilla_effect4 = {
+	
+	enable = { 
+		has_resistance = yes
+		CONTROLLER = { has_war_with = PRC }
+		has_state_flag = KMT_PRC_state_has_guerrilla_cell
+		check_variable = { PRC_state_guerrilla_cell_strength > 40 }
+		NOT = { check_variable = { PRC_state_guerrilla_cell_strength > 50 }}
+	}
+	
+	resistance_target = 0.2
+	compliance_gain = -0.09
+	attrition_for_controller = 0.1
+}
+
+PRC_hostile_guerrilla_effect5 = {
+	
+	enable = { 
+		has_resistance = yes
+		CONTROLLER = { has_war_with = PRC }
+		has_state_flag = KMT_PRC_state_has_guerrilla_cell
+		check_variable = { PRC_state_guerrilla_cell_strength > 50 }
+	}
+	
+	resistance_target = 0.25
+	compliance_gain = -0.11
+	attrition_for_controller = 0.15
+}
+
+PRC_zgt_reactionary_hideout = {
+	icon = GFX_decision_revolt
+	
+	enable = { 
+	}
+	
+	state_production_speed_buildings_factor = -0.33
+	recruitable_population_factor = -0.33
+	attrition_for_controller = 0.025
+	local_org_regain = -0.1
+	resistance_target = 0.15
+	compliance_gain = -0.1
+}
+
+PRC_famine = {
+	icon = GFX_idea_raj_risk_of_famine
+	
+	enable = { 
+	}
+	
+	state_production_speed_buildings_factor = -0.9
+	recruitable_population_factor = -0.9
+	local_org_regain = -0.05
+}
+
+PRC_mao_hideout = {
+	icon = GFX_decision_revolt
+	
+	enable = { 
+	}
+	
+	state_production_speed_buildings_factor = -0.5
+	recruitable_population_factor = -0.9
+	disable_strategic_redeployment = 1
+	resistance_target = 0.05
+	compliance_gain = -0.15
+}
+
+PRC_zgt_hideout = {
+	icon = GFX_decision_revolt
+	
+	enable = { 
+	}
+	
+	attrition_for_controller = 0.1
+	local_org_regain = -0.1
+	resistance_target = 0.2
+	compliance_gain = -0.05
+}
+
+PRC_national_defence_government_legitimacy = {
+	icon = GFX_idea_YUG_federal_defense_council
+	
+	enable = { 
+	}
+	
+	remove_trigger = { is_subject = yes }
+	
+	stability_factor = global.PRC_ndglegi_stab
+	war_support_factor = global.PRC_ndglegi_ws
+	conscription = global.PRC_ndglegi_recruitment
+	consumer_goods_factor = global.PRC_ndglegi_bread
+}
+
+PRC_together_we_stand_bonus = {
+	
+	enable = { 
+	}
+	
+	political_power_factor = global.PRC_tws_pp
+	war_support_factor = global.PRC_tws_ws
+	army_attack_factor = global.PRC_tws_att
+	army_defence_factor = global.PRC_tws_def
+	research_speed_factor = global.PRC_tws_res
+}
+
+PRC_comintern_autonomy_effect_0 = {
+	
+	enable = { 
+		check_variable = { global.PRC_comintern_autonomy < 1 }
+	}
+	
+	political_power_factor = 0.1
+	stability_factor = 0.05
+	war_support_factor = 0.05
+}
+
+PRC_comintern_autonomy_effect_1 = {
+	
+	enable = { 
+		check_variable = { global.PRC_comintern_autonomy = 1 }
+		NOT = {	has_country_flag = PRC_broken_tie_with_SOV }
+	}
+	
+	political_power_factor = 0.05
+}
+
+PRC_comintern_autonomy_effect_2 = {
+	
+	enable = { 
+		check_variable = { global.PRC_comintern_autonomy = 2 }
+		NOT = {	has_country_flag = PRC_broken_tie_with_SOV }
+	}
+	
+	communism_drift = 0.05
+}
+
+PRC_comintern_autonomy_effect_3 = {
+	
+	enable = { 
+		check_variable = { global.PRC_comintern_autonomy = 3 }
+		NOT = {	has_country_flag = PRC_broken_tie_with_SOV }
+	}
+	
+	political_power_factor = -0.05
+	communism_drift = 0.05
+}
+
+PRC_comintern_autonomy_effect_4 = {
+	
+	enable = { 
+		check_variable = { global.PRC_comintern_autonomy = 4 }
+		NOT = {	has_country_flag = PRC_broken_tie_with_SOV }
+	}
+	
+	political_power_factor = -0.1
+	communism_drift = 0.1
+}
+
+PRC_comintern_autonomy_effect_5 = {
+	
+	enable = { 
+		check_variable = { global.PRC_comintern_autonomy > 4 }
+		NOT = {	has_country_flag = PRC_broken_tie_with_SOV }
+	}
+	
+	political_power_factor = -0.25
+	stability_factor = 0.1
+	communism_drift = 0.1
+}
+
+PRC_collectivised_farm1 = {
+	icon = generic_agrarian_reform
+	
+	enable = { 
+		controller = { tag = PRC }
+	}
+	
+	global_building_slots = -1
+	state_production_speed_infrastructure_factor = 0.05
+	local_supplies = 0.05
+}
+
+PRC_collectivised_farm2 = {
+	icon = generic_agrarian_reform
+	
+	enable = { 
+		controller = { tag = PRC }
+	}
+	
+	global_building_slots = -2
+	state_production_speed_infrastructure_factor = 0.075
+	local_supplies = 0.05
+	resistance_decay = 0.1
+}
+
+PRC_defend_manchuria = {
+	icon = GFX_modifiers_generic_bunker_build_speed
+	
+	enable = { 
+	}
+	
+	army_attack_factor = 0.05
+	army_defence_factor = 0.1
+	army_core_defence_factor = 0.25
+	state_production_speed_bunker_factor = 0.6
+	state_production_speed_coastal_bunker_factor = 0.6
+}
+
+PRC_retreat_from_yenan_dm = {
+	icon = GFX_modifiers_SOV_invaders_must_die
+	
+	enable = { 
+	}
+	
+	army_defence_factor = -0.05
+	army_speed_factor = 0.15
+}
+
+PRC_military_offensive = {
+	icon = GFX_modifiers_generic_military_plans
+	
+	enable = { 
+	}
+	
+	army_attack_factor = 0.1
+	army_defence_factor = 0.1
+	breakthrough_factor = 0.15
+	army_speed_factor = 0.1
+	winter_attrition = -0.75
+}
+
+PRC_military_offensive_secondary = {
+	icon = GFX_modifiers_generic_military_plans
+	
+	enable = { 
+	}
+	
+	remove_trigger = {
+		THIS = { has_dynamic_modifier = { modifier = PRC_military_offensive }}
+	}
+	
+	army_attack_factor = 0.05
+	army_defence_factor = 0.05
+	breakthrough_factor = 0.075
+	army_speed_factor = 0.05
+}

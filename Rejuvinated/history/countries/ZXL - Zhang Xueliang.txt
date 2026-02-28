@@ -1,0 +1,88 @@
+﻿capital = 744
+set_country_flag = KMT_is_china_tag
+diplomatic_relation = { country = SHX relation = military_access active = yes }
+SHX = { diplomatic_relation = { country = ZXL relation = military_access active = yes }}
+diplomatic_relation = { country = NSM relation = military_access active = yes }
+NSM = { diplomatic_relation = { country = ZXL relation = military_access active = yes }}
+diplomatic_relation = { country = XSM relation = military_access active = yes }
+XSM = { diplomatic_relation = { country = ZXL relation = military_access active = yes }}
+set_cosmetic_tag = NWBSHQ
+
+oob = "ZXL_1936"
+
+recruit_character = ZXL_li_bo_hai
+recruit_character = ZXL_zhang_xueliang
+recruit_character = ZXL_yang_hucheng
+recruit_character = ZXL_he_zhuguo
+recruit_character = ZXL_yu_xuezhong
+recruit_character = ZXL_wang_tehan
+recruit_character = ZXL_xu_lanzhou
+recruit_character = ZXL_mazhanshan
+recruit_character = ZXL_liu_duo_quan
+recruit_character = ZXL_deng_bao_shan
+
+every_character = { set_character_flag = KMT_real_character }
+
+ZXL_yu_xuezhong = { set_character_flag = PRC_potential_defectors }
+ZXL_zhang_xueliang = { set_character_flag = PRC_potential_defectors }
+ZXL_he_zhuguo = { set_character_flag = PRC_potential_defectors }
+ZXL_yang_hucheng = { set_character_flag = PRC_potential_defectors }
+
+
+add_manpower = 100000
+
+set_technology = {
+	infantry_weapons = 1
+	mass_assault = 1
+	basic_train = 1
+}
+
+add_ideas = {
+	public_iliteracy
+	incompetent_industry_fake
+	incompetent_industry_fake_navy
+	closed_economy
+	service_by_requirement
+	tot_economic_mobilisation
+	cg_warlords
+	KMT_weak_army
+	KMT_corrupted_government
+}
+
+add_opinion_modifier = {
+	modifier = KMT_discontent
+	target = CHI
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	fascism = 7
+	neutrality = 93
+}
+
+set_country_flag = is_warlords
+
+1937.1.1 = {
+	drop_cosmetic_tag = yes
+}
+
+1939.1.1 = {
+	diplomatic_relation = { country = SHX relation = military_access active = no }
+	SHX = { diplomatic_relation = { country = ZXL relation = military_access active = no }}
+	diplomatic_relation = { country = NSM relation = military_access active = no }
+	NSM = { diplomatic_relation = { country = ZXL relation = military_access active = no }}
+	diplomatic_relation = { country = XSM relation = military_access active = no }
+	XSM = { diplomatic_relation = { country = ZXL relation = military_access active = no }}
+	
+	retire_character = ZXL_zhang_xueliang
+	retire_character = ZXL_yang_hucheng
+	
+	ZXL_he_zhuguo = { set_nationality = CHI }
+	ZXL_yu_xuezhong = { set_nationality = CHI }
+	
+}

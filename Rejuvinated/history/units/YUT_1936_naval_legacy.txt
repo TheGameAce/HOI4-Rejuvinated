@@ -1,0 +1,13 @@
+﻿### OOB ###
+units = {
+	fleet = {
+		name = "Di 1 Jiandui"
+		naval_base = 1047
+		task_force = {
+			name = "Di 1 Jiandui"
+			location = 1047
+			ship = { name = "Haizhou" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = YUT } } } #decommissioned British minesweeper, bought by Chen Chi-teng. Was called a cruiser after installing a 4.7 inch cannon.
+			ship = { name = "Guangjin" definition = destroyer equipment = { destroyer_1 = {amount = 1 owner = YUT } } }
+		}
+	}
+}

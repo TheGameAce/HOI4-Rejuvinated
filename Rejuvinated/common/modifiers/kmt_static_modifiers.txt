@@ -1,0 +1,159 @@
+PRC_slight_att_bonus = {
+	attack_bonus_against = 0.05
+}
+
+PRC_warplan_bonus = {
+	attack_bonus_against = 0.1
+	defense_bonus_against = 0.15
+}
+
+PRC_new_china_att_def_bonus = {
+	attack_bonus_against = 0.15
+	defense_bonus_against = 0.15
+	breakthrough_bonus_against = 0.15
+}
+
+PRC_zgt_ico_enemy_debuff = {
+	attack_bonus_against = -0.05
+	defense_bonus_against = -0.05
+}
+
+PRC_zgt_ico_self_buff = {
+	attack_bonus_against = 0.025
+	defense_bonus_against = 0.1
+}
+
+PRC_studied_tactics = {
+	attack_bonus_against = 0.05
+	defense_bonus_against = 0.05
+}
+
+PRC_international_volunteers = {
+	send_volunteer_divisions_required = -0.33
+	send_volunteer_factor = 0.75
+	send_volunteer_size = 2
+	send_volunteers_tension = -1
+}
+
+PRC_ccp_infiltrated_military = {
+	attack_bonus_against = 0.05
+	defense_bonus_against = 0.05
+	encryption = 0.5
+	decryption = 0.5
+	army_intel_decryption_bonus = 0.6
+}
+
+KMT_industrial_assistance = {
+	cic_to_target_factor = 0.01
+	mic_to_target_factor = 0.02
+}
+
+JAP_shanghai_reinforcements = {
+	#army_attack_factor = 0.2
+	army_defence_factor = 1
+	local_org_regain = 10
+	air_cas_present_factor = 1
+	ground_attack_factor = 1
+}
+
+KMT_JAP_tora_tora_tora = {
+	attack_bonus_against = 0.25
+	defense_bonus_against = 0.1
+	breakthrough_bonus_against = 0.1
+}
+
+KMT_harder_justification = {
+	justify_war_goal_time = 1
+	generate_wargoal_tension_against = 1
+}
+
+MCK_intelligence_exchange = {
+	attack_bonus_against = 0.05
+	defense_bonus_against = 0.05
+	encryption = 0.5
+	decryption = 0.5
+}
+
+MCK_intelligence_exchange2 = {
+	attack_bonus_against = 0.1
+	defense_bonus_against = 0.1
+	encryption = 1
+	decryption = 1
+}
+
+KMT_ccw_cease_fire = {
+	attack_bonus_against = -1
+	breakthrough_bonus_against = -1
+}
+
+MCK_burn_to_ash = {
+	resistance_target = -0.15
+	resistance_growth = -0.15
+	resistance_decay = 0.25
+	compliance_gain = -0.075
+}
+
+MCK_seek_collaborators = {
+	resistance_growth = -0.15
+	resistance_damage_to_garrison = -0.35
+	required_garrison_factor = -0.15
+	compliance_growth = 0.5
+}
+
+MCK_seek_collaborators_WJW = {
+	resistance_target = -0.05
+	resistance_growth = -0.25
+	resistance_damage_to_garrison = -0.5
+	required_garrison_factor = -0.5
+	compliance_gain = 0.05
+}
+
+PRC_zgt_destroy_warlords_rm = {
+	resistance_target = -0.05
+	resistance_decay = 0.15
+	attack_bonus_against = 0.025
+	defense_bonus_against = 0.025
+	breakthrough_bonus_against = 0.025
+}
+
+
+KMT_diff_strong_ai_jap = {
+	
+	command_power_gain = 5
+	
+	offence = 0.1
+	defence = 0.1
+	experience_loss_factor = -0.25
+	acclimatization_cold_climate_gain_factor = 0.5
+	acclimatization_hot_climate_gain_factor = 0.5
+	land_night_attack = 0.25
+	pocket_penalty = -0.15
+	terrain_penalty_reduction = 0.3
+	amphibious_invasion = 0.15
+	naval_invasion_penalty = -0.35
+	naval_invasion_capacity = 10
+	
+	air_agility_factor = 0.15
+	air_attack_factor = 0.15
+	air_defence_factor = 0.15
+	air_night_penalty = -0.15
+	
+	critical_receive_chance = -0.25
+	carrier_capacity_penalty_reduction = -1
+	
+	conscription = 0.05
+	conscription_factor = 0.5
+	weekly_manpower = 5000
+	minimum_training_level = -0.25
+	supply_node_range = 0.15
+	
+	fuel_gain = 1000
+	fuel_gain_factor = 0.5
+	
+	line_change_production_efficiency_factor = 0.5
+	consumer_goods_factor = -0.1
+	
+	encryption = 2
+	enemy_operative_detection_chance = 25
+	
+}

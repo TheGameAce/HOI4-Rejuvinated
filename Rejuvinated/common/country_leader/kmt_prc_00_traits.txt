@@ -1,0 +1,290 @@
+leader_traits = {
+
+		
+	the_great_chairman = {
+		random = no
+		foreign_subversive_activites = -0.5
+		army_morale_factor = 0.1
+		drift_defence_factor = 1.5
+		stability_factor = 0.35
+		war_support_factor = 0.05
+		war_stability_factor = 0.35
+	}
+	
+	generalissimo = {
+		random = no
+		
+		army_morale_factor = 0.1
+		army_attack_factor = 0.1
+		army_defence_factor = 0.1
+		army_speed_factor = 0.1
+		experience_gain_army = 0.05
+		planning_speed = 0.25
+		justify_war_goal_time = -0.25
+		
+		
+	}
+	
+	prc_jack_of_all_trade = {
+		random = no
+		
+		sprite = 13
+		ai_will_do = {
+			factor = 1
+		}
+		
+		stability_factor = 0.07
+		war_support_factor = 0.07
+		political_power_factor = 0.1
+		army_morale_factor = 0.025
+		opinion_gain_monthly_same_ideology_factor = 1.75
+		trade_opinion_factor = 0.1
+	
+		
+	}
+	
+	sov_power_truggle = {
+		random = no
+		
+		political_power_factor = -0.5
+		stability_factor = -0.2
+		army_morale_factor = -0.1
+		justify_war_goal_time = 10
+		ai_get_ally_desire_factor = -100
+	
+		
+	}
+	
+	questionable_agenda = {
+		random = no
+		
+		#unity_factor = -0.1
+		drift_defence_factor = -0.75
+	}
+	
+	liberty_fighter_prc = {
+		random = no
+		
+		drift_defence_factor = 0.6
+		democratic_drift = 0.05
+		communism_acceptance = -100
+	}
+	
+	effective_propagation = {
+		random = no
+		
+		conscription = 0.02
+		fascism_drift = 0.05
+		communism_acceptance = -100
+	}
+	
+	fascism_follower = {
+		random = no
+		
+		fascism_drift = 0.1
+		fascism_acceptance = 100
+	}
+	
+	the_generals_that_dont_resist = {
+		random = no
+		
+		stability_factor = -0.15
+		political_power_factor = -0.25
+	}
+	
+	PRC_trotskyist = {
+		random = no
+		sprite = 13
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		subversive_activites_upkeep = -0.25
+		drift_defence_factor = 0.15
+		communism_drift = 0.1
+	}
+	
+	PRC_communism_follower = {
+		random = no
+		
+		communism_drift = 0.2
+		communism_acceptance = 150
+	}
+	
+	PRC_propaganda_master = {
+		random = yes
+		sprite = 13
+		
+		stability_factor = 0.05
+		war_support_factor = 0.1
+	}
+	
+	PRC_soviet_dogmatist = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = -0.05
+		communism_drift = 0.1
+		opinion_gain_monthly_same_ideology_factor = 0.5
+	}
+	
+	PRC_army_leader = {
+		random = yes
+		
+		max_command_power = 25
+		command_power_gain_mult = 0.2
+		experience_gain_army = 0.05
+	}
+	
+	PRC_military_dictator = {
+		random = yes
+		
+		max_command_power = 50
+		political_power_factor = 0.15
+		war_support_factor = 0.05
+	}
+	
+	PRC_ruthless_usurper = {
+		random = yes
+		
+		political_power_factor = 0.25
+		resistance_damage_to_garrison = -0.25
+	}
+	
+	PRC_leader_of_fourth_red_army = {
+		random = no
+		sprite = 5
+		
+		political_power_factor = -0.05
+		max_command_power = 15
+		command_power_gain_mult = 0.025
+	}
+	
+	PRC_managerial_mastermind = {
+		random = no
+		sprite = 12
+		
+		political_power_factor = 0.05
+		production_speed_buildings_factor = 0.05
+		industrial_capacity_factory = 0.05
+		industrial_capacity_dockyard = 0.05
+	}
+	
+	PRC_reformist = {
+		random = no
+		
+		political_power_factor = 0.15
+		opinion_gain_monthly_factor = 0.1
+		trade_opinion_factor = 0.1
+		production_speed_industrial_complex_factor = 0.1
+		production_speed_infrastructure_factor = 0.1
+	}
+	
+	PRC_capable_recruiter = {
+		random = yes
+		sprite = 5
+		
+		conscription = 0.015
+	}
+	
+	PRC_charismatic_leader = {
+		random = yes
+		sprite = 13
+		
+		political_power_factor = 0.1
+		conscription = 0.01
+		army_morale_factor = 0.1
+	}
+	
+	PRC_28nhalf_bolsheviks = {
+		random = no
+		sprite = 13
+		
+		communism_drift = 0.15
+		drift_defence_factor = 0.3
+		political_power_factor = -0.05
+		
+		ai_strategy = {
+			type = befriend
+			id = SOV
+			value = 250
+		}
+	}
+	
+	PRC_internationalist_camp_leader = {
+		random = no
+		sprite = 13
+		
+		political_power_factor = 0.05
+		opinion_gain_monthly_same_ideology_factor = 0.15
+		
+		ai_strategy = {
+			type = befriend
+			id = SOV
+			value = 250
+		}
+	}
+	
+	PRC_wang_limited_support = {
+		random = no
+		
+		stability_factor = -0.1
+		war_support_factor = -0.1
+		political_power_factor = -0.1
+		conscription_factor = -0.2
+		max_command_power = -15
+		command_power_gain_mult = -0.15
+		
+		army_org_factor = -0.05
+		army_morale_factor = -0.05
+		max_planning = -0.05
+		planning_speed = -0.1
+		army_attack_factor = -0.05
+		army_defence_factor = -0.05
+	}
+	
+	PRC_wang_limited_support2 = {
+		random = no
+		
+		stability_factor = -0.05
+		war_support_factor = -0.05
+		political_power_factor = -0.05
+		conscription_factor = -0.1
+		max_command_power = -7.5
+		command_power_gain_mult = -0.075
+		
+		army_org_factor = -0.025
+		army_morale_factor = -0.025
+		max_planning = -0.025
+		planning_speed = -0.05
+		army_attack_factor = -0.025
+		army_defence_factor = -0.025
+	}
+	
+	PRC_peoples_generalissimo = {
+		random = no
+		
+		political_power_factor = 0.25
+		max_command_power = 15
+		command_power_gain_mult = 0.5
+	}
+	
+	PRC_internationalist = {
+	}
+	
+	PRC_general_secretary = {
+	}
+	
+	PRC_kang_sheng_trait = {
+		random = no
+		
+		operative_slot = 2
+		agency_upgrade_time = -0.15
+		
+		own_operative_detection_chance = -0.1
+		own_operative_capture_chance_factor = -0.05
+		enemy_operative_recruitment_chance = 0.15
+	}
+	
+}
