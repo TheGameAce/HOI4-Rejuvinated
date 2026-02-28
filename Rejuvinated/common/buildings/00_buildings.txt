@@ -208,8 +208,10 @@ buildings = {
 		infrastructure_construction_effect = yes
 		level_cap = {
 			state_max = 1
-			shares_slots = yes
 		}
+		anti_air = yes
+		air_defence = 1
+		damage_factor = 0.1
 		hide_if_missing_tech = yes
 		show_modifier = yes
 		state_modifiers = {
@@ -219,6 +221,8 @@ buildings = {
 			enemy_attrition = 0.1
 			state_production_speed_bunker_factor = 0.1
 			state_production_speed_coastal_bunker_factor = 0.1
+			land_bunker_effectiveness_factor = 0.05
+			coastal_bunker_effectiveness_factor = 0.05
 		}		
 	}
 
@@ -290,7 +294,7 @@ buildings = {
 		show_modifier = yes
 		country_modifiers = {
 			modifiers = {
-				max_fuel_building = 100.0 #k
+				max_fuel_building = 150.0 #k
 			}
 		}
 		
@@ -712,6 +716,22 @@ buildings = {
 			local_resource_gain_efficiency_per_infrastructure = 0.10
 		}
 	}
+
+	########REJUVINATED BUILDINGS###########
+
+	#steelworks = {
+	#	show_on_map = 1
+	#	base_cost = 12000
+	#	icon_frame = 34
+	#	local_resources_steel = 12
+	#	refinery = yes
+	#	value = 5
+	#	infrastructure_construction_effect = yes
+	#	level_cap = {
+	#		shares_slots = yes
+	#		state_max = 20
+	#	}
+	#}
 }
 
 spawn_points = {
