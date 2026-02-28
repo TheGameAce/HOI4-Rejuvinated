@@ -156,6 +156,11 @@ country_event = { #Gomez Impeached - Triggers via the Nine Cent Law focus - Fede
 		promote_character = {
 			character = CUB_federico_bru
 		}
+		set_party_name = { 
+		    ideology = democratic 
+		    long_name = cuba_tripartite_coalition_party_long
+		    name = cuba_tripartite_coalition_party_long
+		}	
 	}
 }
 
