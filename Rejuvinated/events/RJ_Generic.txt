@@ -1,0 +1,68 @@
+﻿###########################
+# Generic Events
+###########################
+
+add_namespace = generic
+
+
+country_event = {
+	id = generic.100
+	title = generic.100.t
+	desc = generic.100.d
+	picture = GFX_report_event_ast_parliament_house
+	fire_only_once = no
+
+	is_triggered_only = yes
+
+	option = {
+		name = "A Land Facility!"
+		ai_chance = {
+			factor = 1
+		}
+		random_owned_controlled_state = {
+			construct_building_in_random_province = {
+				land_facility = 1
+			}
+		}
+	}
+
+	option = {
+		name = "A Naval Facility!"
+		ai_chance = {
+			factor = 1
+		}
+		random_owned_controlled_state = {
+			construct_building_in_random_province = {
+				naval_facility = 1
+			}
+		}
+	}
+
+	option = {
+		name = "An Air Facility!"
+		ai_chance = {
+			factor = 1
+		}
+		random_owned_controlled_state = {
+			construct_building_in_random_province = {
+				air_facility = 1
+			}
+		}
+	}
+
+	option = {
+		name = "A Nuclear Facility!"
+		ai_chance = {
+			factor = 0
+			modifier = {
+				has_tech = atomic_research
+				factor = 2
+			}
+		}
+		random_owned_controlled_state = {
+			construct_building_in_random_province = {
+				nuclear_facility = 1
+			}
+		}
+	}
+}
