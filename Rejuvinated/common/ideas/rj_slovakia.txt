@@ -1,0 +1,35 @@
+ideas = {
+
+	country = {
+
+		SLO_schutzvertrag_ns = {
+
+			picture = triumphant_will
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				is_subject_of = GER.original_tag
+			}
+
+			cancel = {
+				NOT = {
+					is_subject_of = GER
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				autonomy_gain_ll_to_subject_factor = -0.15
+				master_build_autonomy_factor = -0.15
+				cic_to_overlord_factor = -0.1
+			}
+
+		}
+
+	}
+
+}
