@@ -1,0 +1,17 @@
+characters = {
+
+	CYP_richmond_palmer = { # Historical Governor General of Madagascar from 1930 - 1939, as well as part of 40 - 41.
+		name = "Sir Richmond Palmer"
+		portraits={
+			civilian={
+				large = "gfx/leaders/CYP/Richmond_Palmer.dds"
+			}
+		}
+		country_leader={
+			ideology= conservatism_neutrality
+			traits={ governor_general }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
+}

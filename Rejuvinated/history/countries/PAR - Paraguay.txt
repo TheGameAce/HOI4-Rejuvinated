@@ -18,7 +18,6 @@ IF = {
 	}
 }
 
-set_research_slots = 2
 # TODO JA, add the correct dlc-requirments
 IF = {
 	limit = {
@@ -41,6 +40,7 @@ set_technology = {
 }
 
 set_stability = 0.26
+set_research_slots = 3
 
 IF = {
 	limit = {
@@ -114,14 +114,16 @@ IF = {
 	ELSE = {
 
 		set_politics = {
-			ruling_party = communism
+			ruling_party = democratic
 			last_election = "1936.1.1"
 			election_frequency = 48
 			elections_allowed = yes
 		}
 		set_popularities = {
-			democratic = 25
-			communism = 75
+			democratic = 55
+			neutrality = 20
+			communism = 19
+			fascism = 6
 		}
 
 		recruit_character = PAR_rafael_franco

@@ -230,19 +230,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
-			
-			if = {
+
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
@@ -1061,7 +1061,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_imprison_batista
-		icon = GFX_focus_BEL_prisoner_king
+		icon = GFX_focus_RJ_CUB_imprison_batista
 		cost = 5
 		prerequisite = { focus = CUB_establish_the_dgi }
 		mutually_exclusive = { focus = CUB_continued_collaboration_with_batista }
@@ -1086,7 +1086,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_continued_collaboration_with_batista
-		icon = GFX_focus_generic_communist
+		icon = GFX_focus_RJ_CUB_batista_collaboration
 		cost = 5
 		prerequisite = { focus = CUB_establish_the_dgi }
 		mutually_exclusive = { focus = CUB_imprison_batista }
@@ -1575,7 +1575,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_communism_in_the_caribbean
 		icon = GFX_focus_ITA_il_sol_dell_avvenire
-		cost = 14.4
+		cost = 10
 		prerequisite = { focus = CUB_demand_colonial_withdrawals }
 		relative_position_id = CUB_demand_colonial_withdrawals
 		x = 1
@@ -1725,19 +1725,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
@@ -1800,7 +1800,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_new_rural_roads
 		icon = GFX_focus_RJ_industry4
-		cost = 10
+		cost = 7.2
 		prerequisite = { focus = CUB_rural_industrialization }
 		relative_position_id = CUB_rural_industrialization
 		x = 0
@@ -1908,7 +1908,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_industrialize_the_islands
 		icon = GFX_focus_RJ_CUB_island_development
-		cost = 25
+		cost = 14.4
 		prerequisite = { focus = CUB_expand_the_plantations }
 		prerequisite = { focus = CUB_communism_in_the_caribbean }
 		relative_position_id = CUB_expand_the_plantations
@@ -2016,7 +2016,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		
 		completion_reward = {
 			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = CUB_antonio_avendano
+			show_ideas_tooltip = CUB_avendano
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -2124,7 +2124,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 	focus = {
 		id = CUB_deal_with_batista
-		icon = GFX_focus_generic_military_mission
+		icon = GFX_focus_RJ_CUB_deal_with_batista
 		cost = 5
 		prerequisite = { focus = CUB_secure_power }
 		relative_position_id = CUB_secure_power
@@ -2263,19 +2263,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
@@ -2878,7 +2878,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 		relative_position_id = CUB_amphibious_invasion_preparation
 
-		cost = 14.4
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -3102,7 +3102,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		y = 1
 		prerequisite = { focus = CUB_subjugate_hispaniola }
 		relative_position_id = CUB_subjugate_hispaniola
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -3219,7 +3219,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		y = 1
 		prerequisite = { focus = CUB_lay_claim_to_curacao_and_trinidad }
 		relative_position_id = CUB_lay_claim_to_curacao_and_trinidad
-		cost = 20
+		cost = 10
 
 		ai_will_do = {
 			factor = 2
@@ -3772,7 +3772,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		prerequisite = { focus = CUB_demand_the_eastern_isles }
 		prerequisite = { focus = CUB_demand_jamaica_and_the_bahamas}
 		relative_position_id = CUB_demand_the_eastern_isles
-		cost = 20
+		cost = 10
 
 		ai_will_do = {
 			factor = 3
@@ -3970,7 +3970,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		prerequisite = { focus = CUB_deal_with_batista focus = CUB_external_interests }
 		x = -1
 		y = 1
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -4456,19 +4456,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
@@ -5377,7 +5377,12 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		completion_reward = {
 			add_resource = {
 				type = steel
-				amount = 12
+				amount = 16
+				state = 1048
+			}
+			add_resource = {
+				type = chromium
+				amount = 10
 				state = 1048
 			}
 		}
@@ -5591,7 +5596,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_bolster_tourism
 		icon = GFX_focus_RJ_CUB_tourism
-		cost = 7.2
+		cost = 5
 
 		prerequisite = {
 			focus = CUB_industrial_investments
@@ -5735,19 +5740,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}
@@ -5839,19 +5844,19 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 
-			if = {
+			else_if = {
 				limit = { has_idea = CUB_recovering_sugar_industry_1 }
 				remove_ideas = CUB_recovering_sugar_industry_1
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					NOT = { has_idea = CUB_recovering_sugar_industry_1 has_idea = CUB_recovering_sugar_industry}
 				}
 				add_ideas = CUB_recovered_sugar_industry_idea
 			}
 
-			if = {
+			else_if = {
 				limit = {
 					has_idea = CUB_recovered_sugar_industry_idea
 				}

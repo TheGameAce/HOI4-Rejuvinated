@@ -39,4 +39,79 @@ technologies = {
 			}
 		}
 	}
+
+	GENERIC_terrain_training = {
+
+		research_cost = 1
+
+		# Focus Exclusive! #####
+		allow = {
+			always = no
+		}
+
+		category_all_infantry = {
+			amphibious = {
+				attack = 0.05
+				defence = 0.05
+			}
+			mountain = {
+				movement = 0.1
+				attack = 0.05
+				defence = 0.05
+			}
+			desert = {
+				movement = 0.1
+				attack = 0.05
+				defence = 0.05
+			}
+		}
+		cavalry = {
+			amphibious = {
+				attack = 0.05
+				defence = 0.05
+			}
+			mountain = {
+				movement = 0.1
+				attack = 0.05
+				defence = 0.05
+			}
+			desert = {
+				movement = 0.1
+				attack = 0.05
+				defence = 0.05
+			}
+		}
+		motorized = {
+			amphibious = {
+				attack = 0.05
+				defence = 0.05
+			}
+			mountain = {
+				movement = 0.1
+				attack = 0.05
+				defence = 0.05
+			}
+			desert = {
+				movement = 0.1
+				attack = 0.05
+				defence = 0.05
+			}
+		}
+		armored_car = {
+			amphibious = {
+				attack = 0.05
+				defence = 0.05
+			}
+			mountain = {
+				movement = 0.1
+				attack = 0.05
+				defence = 0.05
+			}
+			desert = {
+				movement = 0.1
+				attack = 0.05
+				defence = 0.05
+			}
+		}
+	}
 }

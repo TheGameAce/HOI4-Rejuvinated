@@ -21,7 +21,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = chi_war_of_resistance3
+			picture = RJ_CUB_batistas_influence
 	
 			modifier = {
 				stability_factor = -0.20
@@ -159,7 +159,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = chi_war_of_resistance
+			picture = RJ_CUB_batistas_influence_reduced
 	
 			modifier = {
 				stability_factor = -0.10
@@ -1077,8 +1077,8 @@ ideas = {
 	
 			modifier = {
 				communism_drift = -0.05
-				fascism_drift = 0.05
-				stability_weekly = -0.01
+				fascism_drift = 0.07
+				stability_weekly = -0.0025
 			}
 		}
 
@@ -1094,7 +1094,7 @@ ideas = {
 			
 			removal_cost = -1
 
-			picture = SOV_romanov_reconstruction_ccp_sov_compatibility
+			picture = RJ_CUB_batistas_cooperation
 	
 			modifier = {
 				training_time_army_factor = -0.10
@@ -1158,8 +1158,8 @@ ideas = {
 			picture = ETH_coffee_exports
 			
 			modifier = {
-				consumer_goods_factor = -0.10
-				army_morale_factor = 0.03
+				consumer_goods_factor = -0.08
+				army_morale_factor = 0.05
 			}
 		}
 
@@ -1400,7 +1400,7 @@ ideas = {
 				train_tech = 0.15
 			}
 			
-			traits = { }
+			traits = { railway_company }
 			
 			modifier = {
 			}
@@ -1408,7 +1408,7 @@ ideas = {
 	}
 
 	naval_manufacturer = {
-		USA_higgins_industries = {
+		CUB_higgins_industries = {
 			picture = generic_tank_manufacturer_2
 
 			allowed = {
@@ -1425,12 +1425,9 @@ ideas = {
 				naval_equipment = 0.15
 			}
 			
-			traits = { }
+			traits = { transport_specialists }
 			
-			modifier = {
-				transport_capacity = -0.15
-				naval_invasion_capacity = 5
-			}
+			modifier = { }
 		}
 
 		CUB_ward_line = {
@@ -1448,14 +1445,9 @@ ideas = {
 				naval_equipment = 0.10
 			}
 			
-			traits = { transportation_company }
+			traits = { transport_specialists }
 			
-			modifier = {
-				#invasion_preparation = -0.1
-				transport_capacity = -0.05
-				#amphibious_invasion_defence = 0.05
-				naval_invasion_capacity = 3
-			}
+			modifier = { }
 		}
 	}
 }
