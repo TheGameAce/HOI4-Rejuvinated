@@ -139,31 +139,6 @@ on_actions = {
 				}
 			}
 		}
-		effect = {
-			if = {
-				limit = {
-					has_dlc = "Trial of Allegiance"
-					BRA = {
-						has_completed_focus = BRA_expand_fordlandia
-						NOT = {	
-							OR = {
-								has_government = communism 
-								has_country_flag = BRA_ford_event_has_happened
-							}
-						}
-					}
-					USA = {
-						has_government = communism
-					}
-				}
-				BRA = {
-					country_event = {
-						id = JUNO_brazil_events.180
-						days = 14
-					}
-				}
-			}
-		}
 	}
 	on_startup = {
 		effect = {

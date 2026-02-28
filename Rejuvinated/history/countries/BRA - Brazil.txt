@@ -1,0 +1,278 @@
+﻿capital = 500
+
+oob = "BRA_1936"
+
+IF = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "BRA_1936_air_bba"
+	ELSE = {
+		set_air_oob = "BRA_1936_air_legacy"
+	}
+}
+
+country_event = { days = 1 id = bra.10 }
+set_convoys = 200
+
+set_stability = 0.4
+set_war_support = 0.2
+set_research_slots = 3
+
+
+
+
+###### Political Advisors #####
+recruit_character = BRA_franscisco_morato
+recruit_character = BRA_gustavo_capanema
+recruit_character = BRA_lindolfo_collor
+recruit_character = BRA_alfredo_de_almeida
+recruit_character = BRA_osvaldo_aranha
+recruit_character = BRA_afranio_de_mello_franco
+recruit_character = BRA_oswald_de_andrade
+recruit_character = BRA_guimaraes_rosa
+recruit_character = BRA_menotti_del_picchia
+recruit_character = BRA_monteiro_lobato
+recruit_character = BRA_arlindo_veiga
+
+###### Theorists ######
+recruit_character = BRA_eduardo_gomes
+recruit_character = BRA_newton_cavalcanti
+
+###### Army & Navy Chiefs + High Command ######
+recruit_character = BRA_epaminondas_dos_santos_vfb
+recruit_character = BRA_francisco_correa_vfb
+recruit_character = BRA_artur_da_costa_e_silva_vfb
+recruit_character = BRA_joao_neves_da_fontoura_vfb
+recruit_character = BRA_nero_fiuza_de_castro_vfb
+recruit_character = BRA_salgado_filho_vfb
+recruit_character = BRA_armando_trompowsky_vfb
+recruit_character = BRA_joao_candido_vfb
+recruit_character = BRA_protogenes_guimaraes_vfb
+recruit_character = BRA_pedro_max_vfb
+recruit_character = BRA_aristides_guilhem_vfb
+
+
+
+
+###### Generals & Admirals ######
+recruit_character = BRA_gaspar_dutra
+recruit_character = BRA_pedro_aurelio
+recruit_character = BRA_jose_pessoa
+recruit_character = BRA_joao_de_segadas
+recruit_character = BRA_euclides_zenobio
+recruit_character = BRA_joao_batista
+recruit_character = BRA_newton_de_andrade
+recruit_character = BRA_joao_gomes
+recruit_character = BRA_alvaro_fiuza
+recruit_character = BRA_canrobert_pereira
+recruit_character = BRA_newton_estillac
+recruit_character = BRA_olimpio_mourao
+recruit_character = BRA_odilio_denys
+recruit_character = BRA_amaury_kruel
+recruit_character = BRA_jair_dantas
+recruit_character = BRA_jose_fernandes
+recruit_character = BRA_augusto_inacio
+recruit_character = BRA_cyro_do_espirito
+recruit_character = BRA_augusto_hamann
+recruit_character = BRA_adalberto_de_barros
+recruit_character = BRA_antonio_alves
+
+
+
+
+###### Country Leaders ######
+recruit_character = BRA_getulio_vargas
+recruit_character = BRA_plinio_salgado
+recruit_character = BRA_luis_carlos_prestes
+recruit_character = BRA_congresso_nacional
+
+
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1		
+	tech_engineers = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	fuel_silos = 1
+	tech_trucks = 1	
+	basic_train = 1
+}
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_technology = {
+			iw_small_airframe = 1
+			iw_medium_airframe = 1
+			bba_early_transport_plane = 1
+			early_bombs = 1
+			aircraft_construction = 1
+			air_torpedoe_1 = 1
+			aa_lmg = 1
+			engines_1 = 1
+		}
+	else = {
+		set_technology = {
+			early_fighter = 1
+			cv_early_fighter = 1
+			early_transport_plane = 1
+			CAS1 = 1
+		}
+	}
+}
+
+IF = {
+	limit = {
+		NOT = { has_dlc = "Man the Guns"}
+	}
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		transport = 1
+	}
+	set_naval_oob = "BRA_1936_naval_legacy"
+}
+IF = {
+	limit = { has_dlc = "Man the Guns"}
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_battery = 1
+		basic_torpedo = 1
+		mtg_transport = 1
+	}
+	set_naval_oob = "BRA_1936_naval"	
+}
+
+IF = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+	}
+}
+IF = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+	}
+}
+
+set_country_flag = monroe_doctrine
+
+add_ideas = { 
+	bra_antropofagia
+	bra_bandeirantes
+	bra_1930 
+	bra_rural_elite
+	free_trade
+	limited_conscription
+}
+
+remove_ideas = {
+	generic_tank_manufacturer
+	generic_naval_manufacturer
+	generic_light_aircraft_manufacturer
+	generic_medium_aircraft_manufacturer
+	generic_heavy_aircraft_manufacturer
+	generic_naval_aircraft_manufacturer
+	generic_industrial_concern
+	generic_electronics_concern
+	generic_motorized_equipment_manufacturer
+	generic_infantry_equipment_manufacturer
+	generic_artillery_manufacturer
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1934.7.17"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 70
+	fascism = 10
+	communism = 10
+	democratic = 10
+}
+
+
+IF = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	create_equipment_variant = {
+		name = "Minas Geras Class"
+		type = ship_hull_heavy_1
+		name_group = BRA_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_heavy_battery_1
+		}
+	}
+	create_equipment_variant = {
+		name = "Bahia Class"
+		type = ship_hull_cruiser_1
+		name_group = BRA_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = ship_light_battery_1
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "Para Class"
+		type = ship_hull_light_1
+		name_group = BRA_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Humaytá Class"
+		type = ship_hull_submarine_2
+		name_group = BRA_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_2
+			rear_1_custom_slot = ship_mine_layer_sub
+		}
+	}
+}
