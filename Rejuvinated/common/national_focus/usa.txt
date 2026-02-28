@@ -1458,9 +1458,162 @@ focus_tree = {
 		}
 	}
 	
-    focus = {
-		id = USA_industrialize_china
-		icon = GFX_focus_chi_one_china_policy
+	focus = {
+		id = RJ_USA_the_china_desicion
+		icon = GFX_focus_attack_japan
+		x = 0
+		y = 1
+		prerequisite = { focus = RJ_USA_end_german_fascism }
+		relative_position_id = RJ_USA_end_german_fascism
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			any_country = {
+				SOV_is_free_chinese_tag = yes
+				has_war_with = JAP
+			}
+			is_subject = no
+		}
+		
+		completion_reward = {
+			JAP = { add_opinion_modifier = { target = USA modifier = SOV_supported_china_bad } }
+			every_other_country = {
+				limit = {
+					SOV_is_free_chinese_tag = yes
+				}
+					add_opinion_modifier = { target = USA modifier = SOV_supported_china_good }
+		}
+	}
+	}
+	
+	focus = {
+		id = RJ_USA_bet_on_sinkiang
+		icon = GFX_focus_generic_befriend_sinkiang
+		x = -2
+		y = 1
+		prerequisite = { focus = RJ_USA_the_china_desicion }
+		relative_position_id = RJ_USA_the_china_desicion
+		mutually_exclusive = { focus = RJ_USA_support_the_prc focus = RJ_USA_the_republican_gamble }
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			country_exists = SIK
+		}
+		
+		completion_reward = {
+		SIK = {
+				add_opinion_modifier = { #
+					target = ROOT
+					modifier = SOV_cooperating_with_us
+				}
+		}
+			if = {
+		limit = {	
+		SIK = { has_idea = USA_SOV_SIK_support_idea1 }
+			}
+		SIK = { swap_ideas = {
+		remove_idea = USA_SOV_SIK_support_idea1
+		add_idea = USA_SOV_SIK_support_idea2
+			}	
+		}
+	}
+		else = { SIK = { add_ideas = USA_SOV_SIK_support_idea1	} }
+	}
+	}
+	
+	focus = {
+		id = RJ_USA_support_the_prc
+		icon = GFX_focus_chi_cooperation_with_the_communists
+		x = 0
+		y = 1
+		prerequisite = { focus = RJ_USA_the_china_desicion }
+		relative_position_id = RJ_USA_the_china_desicion
+		mutually_exclusive = { focus = RJ_USA_bet_on_sinkiang focus = RJ_USA_the_republican_gamble }
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			country_exists = PRC
+		}
+		
+		completion_reward = {
+		PRC = {
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = SOV_cooperating_with_us
+				}
+		}
+			if = {
+		limit = {	
+		PRC = { has_idea = USA_SOV_SIK_support_idea1 }
+			}
+		PRC = { swap_ideas = {
+		remove_idea = USA_SOV_PRC_support_idea1
+		add_idea = USA_SOV_PRC_support_idea2
+			}	
+		}
+	}
+		else = { PRC = { add_ideas = USA_SOV_PRC_support_idea1	} }
+	}
+	}
+	
+	focus = {
+		id = RJ_USA_the_republican_gamble
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		x = 2
+		y = 1
+		prerequisite = { focus = RJ_USA_the_china_desicion }
+		relative_position_id = RJ_USA_the_china_desicion
+		mutually_exclusive = { focus = RJ_USA_bet_on_sinkiang focus = RJ_USA_support_the_prc }
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			country_exists = CHI
+		}
+		
+		completion_reward = {
+		CHI = {
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = SOV_cooperating_with_us
+				}
+		}
+			if = {
+		limit = {	
+		CHI = { has_idea = USA_SOV_CHI_support_idea1 }
+			}
+		CHI = { swap_ideas = {
+		remove_idea = USA_SOV_CHI_support_idea1
+		add_idea = USA_SOV_CHI_support_idea2
+			}	
+		}
+	}
+		else = { CHI = { add_ideas = USA_SOV_CHI_support_idea1	} }
+	}
+	}
+	
+
+	
+	
+	
+    focus = {	
+      	id = RJ_USA_industrialize_china
+		icon = GFX_focus_generic_communist_industry
 		x = 0
 		y = 1
 		prerequisite = { focus = RJ_USA_repeal_the_chinese_exclusion_act }

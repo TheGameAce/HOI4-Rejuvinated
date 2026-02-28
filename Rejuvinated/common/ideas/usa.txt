@@ -1407,6 +1407,283 @@ ideas = {
 				communism_acceptance = 50
 			}			
 		}
+		
+		USA_SOV_SIK_support_idea1 = {
+			picture = idea_tur_kemalist_officers
+
+			allowed = {
+				original_tag = SIK
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_core_defence_factor = 0.10
+				army_morale_factor = 0.07
+				army_org_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = KHM
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			
+			targeted_modifier = {
+				tag = NXM
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}	
+			
+			targeted_modifier = {
+				tag = XSM
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}	
+			targeted_modifier = {
+				tag = GSM
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}	
+		}
+		
+		USA_SOV_SIK_support_idea2 = {
+			picture = idea_tur_kemalist_officers
+
+			allowed = {
+				original_tag = SIK
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_core_defence_factor = 0.20
+				army_morale_factor = 0.15
+				army_org_factor = 0.10
+			}
+			targeted_modifier = {
+				tag = KHM
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+			
+			targeted_modifier = {
+				tag = NXM
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}	
+			
+			targeted_modifier = {
+				tag = XSM
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}	
+			targeted_modifier = {
+				tag = GSM
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}	
+		}
+		
+		USA_SOV_PRC_support_idea1 = {
+			picture = idea_tur_kemalist_officers
+
+			allowed = {
+				original_tag = PRC
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_core_defence_factor = 0.10
+				army_morale_factor = 0.07
+				army_org_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = SHX
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			
+			targeted_modifier = {
+				tag = NXM
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}	
+			
+			targeted_modifier = {
+				tag = XIC
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}	
+			targeted_modifier = {
+				tag = CHI
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			
+		}
+		
+		USA_SOV_PRC_support_idea2 = {
+			picture = idea_tur_kemalist_officers
+
+			allowed = {
+				original_tag = PRC
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_core_defence_factor = 0.20
+				army_morale_factor = 0.15
+				army_org_factor = 0.10
+			}
+			targeted_modifier = {
+				tag = SHX
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+			
+			targeted_modifier = {
+				tag = NXM
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}	
+			
+			targeted_modifier = {
+				tag = XIC
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}	
+			targeted_modifier = {
+				tag = CHI
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+			
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+			
+		}
+		
+		USA_SOV_CHI_support_idea1 = {
+			picture = idea_tur_kemalist_officers
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_core_defence_factor = 0.10
+				army_morale_factor = 0.07
+				army_org_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = SHX
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			
+			targeted_modifier = {
+				tag = SND
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}	
+			
+			targeted_modifier = {
+				tag = XIC
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}	
+			targeted_modifier = {
+				tag = PRC
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			
+		}
+		
+		USA_SOV_CHI_support_idea2 = {
+			picture = idea_tur_kemalist_officers
+
+			allowed = {
+				original_tag = CHI
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_core_defence_factor = 0.20
+				army_morale_factor = 0.15
+				army_org_factor = 0.10
+			}
+			targeted_modifier = {
+				tag = SHX
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+			
+			targeted_modifier = {
+				tag = SND
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}	
+			
+			targeted_modifier = {
+				tag = XIC
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}	
+			targeted_modifier = {
+				tag = PRC
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+			targeted_modifier = {
+				tag = JAP
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+			
+		}
 
 		USA_silver_legion_rallies_idea = {
 			picture = generic_fascism_drift_bonus
