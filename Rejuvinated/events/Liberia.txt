@@ -1,0 +1,309 @@
+add_namespace = liberia
+
+country_event = { #Annual Rubber Event 1
+	id = liberia.101
+	title = liberia.101.t
+	desc = liberia.101.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1937.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 10
+			state = 298
+		}
+	}
+}
+
+country_event = { #Annual Rubber Event 2
+	id = liberia.102
+	title = liberia.102.t
+	desc = liberia.102.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1938.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 15
+			state = 298
+		}
+	}
+}
+
+country_event = { #Annual Rubber Event 3
+	id = liberia.103
+	title = liberia.103.t
+	desc = liberia.103.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1939.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 20
+			state = 298
+		}
+	}
+}
+
+country_event = { #Annual Rubber Event 4
+	id = liberia.104
+	title = liberia.104.t
+	desc = liberia.104.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1940.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 20
+			state = 298
+		}
+	}
+}
+
+country_event = { #Annual Rubber Event 5
+	id = liberia.105
+	title = liberia.105.t
+	desc = liberia.105.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1941.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 20
+			state = 298
+		}
+	}
+}
+
+country_event = { #Annual Rubber Event 6
+	id = liberia.106
+	title = liberia.106.t
+	desc = liberia.106.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1942.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 20
+			state = 298
+		}
+	}
+}
+
+country_event = { #Annual Rubber Event 7
+	id = liberia.107
+	title = liberia.107.t
+	desc = liberia.107.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1943.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 20
+			state = 298
+		}
+	}
+}
+
+country_event = { #Annual Rubber Event 8
+	id = liberia.108
+	title = liberia.108.t
+	desc = liberia.108.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1944.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 20
+			state = 298
+		}
+	}
+}
+
+country_event = { #Annual Rubber Event 9
+	id = liberia.109
+	title = liberia.109.t
+	desc = liberia.109.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1945.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 20
+			state = 298
+		}
+	}
+}
+
+country_event = { #Annual Rubber Event 10
+	id = liberia.110
+	title = liberia.110.t
+	desc = liberia.110.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1946.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 20
+			state = 298
+		}
+	}
+}
+
+country_event = { #Annual Rubber Event 11
+	id = liberia.111
+	title = liberia.111.t
+	desc = liberia.111.d
+	picture = GFX_rubber_plantation
+
+	trigger = {
+		date > 1947.01.10
+		controls_state = 298
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	fire_only_once = yes
+
+	option = {
+		name = "Hooray for Rubber!"
+		ai_chance = {
+			factor = 1
+		}
+		add_resource = {
+			type = rubber
+			amount = 20
+			state = 298
+		}
+	}
+}

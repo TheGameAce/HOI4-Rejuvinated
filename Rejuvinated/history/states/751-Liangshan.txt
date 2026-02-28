@@ -25,8 +25,14 @@ state = {
 			10841 3 # Ya'An 
 		}
 
-			victory_points = {
-			4925 10 # Chengdu
+		1936.1.1 = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				transfer_state_to = SIC
+				add_core_of = SIC
+			}
 		}
 
 		1938.10.25 = {
@@ -51,7 +57,7 @@ state = {
 	}
 
 	provinces = {
-		2067 7294 10726 10841 12141 1395 12819
+		1395 2067 7294 10726 10841 12141 12819 
 	}
 	local_supplies = 1.0 
 }

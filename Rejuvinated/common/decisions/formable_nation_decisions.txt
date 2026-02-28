@@ -15656,6 +15656,12 @@ antilles_category = {
 
 		icon = generic_form_nation
 
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 695
+			}
+		}
+
 		allowed = {
 			OR = {
 				original_tag = HAI # Haiti
@@ -15723,6 +15729,12 @@ antilles_category = {
 	integrate_trinidad_and_tobago = { 
 
 		icon = generic_form_nation
+
+		highlight_states = { 
+			highlight_state_targets = {
+				state = 691
+			}
+		}
 
 		allowed = {
 			OR = {

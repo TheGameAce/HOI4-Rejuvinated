@@ -1,0 +1,1 @@
+FOR %%a IN (*.tga) DO nvdxt -u8888 -file %%a
