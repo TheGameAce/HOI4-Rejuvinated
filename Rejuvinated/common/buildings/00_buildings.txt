@@ -719,19 +719,19 @@ buildings = {
 
 	########REJUVINATED BUILDINGS###########
 
-	steelworks = {
-		show_on_map = 1
-		base_cost = 12000
-		icon_frame = 34
-		local_resources_steel = 12
-		refinery = yes
-		value = 5
-		infrastructure_construction_effect = yes
-		level_cap = {
-			shares_slots = yes
-			state_max = 20
-		}
-	}
+	#steelworks = {
+	#	show_on_map = 1
+	#	base_cost = 12000
+	#	icon_frame = 34
+	#	local_resources_steel = 12
+	#	refinery = yes
+	#	value = 5
+	#	infrastructure_construction_effect = yes
+	#	level_cap = {
+	#		shares_slots = yes
+	#		state_max = 20
+	#	}
+	#}
 }
 
 spawn_points = {
