@@ -11,373 +11,370 @@ characters = {
 			ideology = fascism_ideology
 			expire = "1965.1.1"
 			id = -1
-			traits  = {
-				SLO_vodca_trait 
+			traits = {
+				SLO_vodca_trait
 			}
 		}
 	}
 
-	SLO_jaroslav_kratochvil={
-		advisor={
+	SLO_jaroslav_kratochvil = {
+		name = SLO_jaroslav_kratochvil
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_europe_2"
+			}
+		}
+		advisor = {
 			slot = political_advisor
 			idea_token = SLO_jaroslav_kratochvil
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					war_industrialist 
-				}
-		}
-		name="Jaroslav Kratochvil"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_2"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				war_industrialist
 			}
 		}
 	}
-	SLO_vojtech_daubner={
-		advisor={
+
+	SLO_vojtech_daubner = {
+		name = SLO_vojtech_daubner
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor = {
 			slot = theorist
 			idea_token = SLO_vojtech_daubner
-			ledger  = air 
-				allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					air_warfare_theorist 
-				}
-		}
-		name="Vojtech Daubner"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_europe_1"
+			ledger = air
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				air_warfare_theorist
 			}
 		}
 	}
-	SLO_jozef_hora={
-		advisor={
+
+	SLO_jozef_hora = {
+		name = SLO_jozef_hora
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor = {
 			slot = theorist
 			idea_token = SLO_jozef_hora
-			ledger  = navy 
-				allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					naval_theorist 
-				}
-		}
-		name="Jozef Hora"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_1"
+			ledger = navy
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				naval_theorist
 			}
 		}
 	}
-	SLO_frano_kral={
-		advisor={
+
+	SLO_frano_kral = {
+		name = SLO_frano_kral
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_europe_5"
+			}
+		}
+		advisor = {
 			slot = political_advisor
 			idea_token = SLO_frano_kral
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					popular_figurehead 
-				}
-		}
-		name="Frano Kral"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_5"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				popular_figurehead
 			}
 		}
 	}
-	SLO_fritz_gejza={
-		advisor={
+
+	SLO_fritz_gejza = {
+		name = SLO_fritz_gejza
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_europe_3"
+			}
+		}
+		advisor = {
 			slot = high_command
 			idea_token = SLO_fritz_gejza
-			ledger  = air 
-				allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					air_strategic_bombing_2 
-				}
-				ai_will_do  = {
-					factor  = 1.000
-				}
-		}
-		name="Fritz Gejza"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_europe_3"
+			ledger = air
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				air_strategic_bombing_2
+			}
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
-	SLO_frantisek_sadek={
-		advisor={
+
+	SLO_jozef_turanec = {
+		name = SLO_jozef_turanec
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor = {
 			slot = high_command
-			idea_token = SLO_frantisek_sadek
-			ledger  = army 
-				allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					army_armored_2 
-				}
-				ai_will_do  = {
-					factor  = 1.000
-				}
-		}
-		name="Frantisek Sadek"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_2"
+			idea_token = SLO_jozef_turanec
+			ledger = army
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				army_armored_2
+			}
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
-	SLO_stefan_tiso={
-		advisor={
+
+	SLO_stefan_tiso = {
+		name = SLO_stefan_tiso
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_europe_3"
+			}
+		}
+		advisor = {
 			slot = political_advisor
 			idea_token = SLO_stefan_tiso
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					backroom_backstabber 
-				}
-				ai_will_do  = {
-					factor  = 0.000
-				}
-		}
-		name="Stefan Tiso"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_3"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				backroom_backstabber
+			}
+			ai_will_do = {
+				factor = 0.000
 			}
 		}
 	}
-	SLO_cyril_kuchta={
-		advisor={
+
+	SLO_cyril_kuchta = {
+		advisor = {
 			slot = high_command
 			idea_token = SLO_cyril_kuchta
-			ledger  = air 
-				allowed  = {
-					original_tag  = SLO
+			ledger = air
+				allowed = {
+					original_tag = SLO
 				}
-				traits  = {
-					air_bomber_interception_2 
+				traits = {
+					air_bomber_interception_2
 				}
-				ai_will_do  = {
-					factor  = 1.000
+				ai_will_do = {
+					factor = 1.000
 				}
 		}
-		name="Cyril Kuchta"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_europe_1"
+		name = "Cyril Kuchta"
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_europe_1"
 			}
 		}
 	}
-	SLO_jindrich_honzl={
-		advisor={
+
+	SLO_jindrich_honzl = {
+		name = SLO_jindrich_honzl
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_navy_europe_3"
+			}
+		}
+		advisor = {
 			slot = navy_chief
 			idea_token = SLO_jindrich_honzl
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					navy_chief_maneuver_2 
-				}
-				ai_will_do  = {
-					factor  = 1.000
-				}
-		}
-		name="Jindrich Honzl"
-		portraits={
-			army={
-				small="GFX_idea_generic_navy_europe_3"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				navy_chief_maneuver_2
+			}
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
-	SLO_frantisek_straka={
-		advisor={
+
+	SLO_frantisek_straka = {
+		name = SLO_frantisek_straka
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_europe_1"
+			}
+		}
+		advisor = {
 			slot = air_chief
 			idea_token = SLO_frantisek_straka
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					air_chief_safety_2 
-				}
-				ai_will_do  = {
-					factor  = 1.000
-				}
-		}
-		name="Frantisek Straka"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_europe_1"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				air_chief_safety_2
+			}
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
-	SLO_karol_sidor={
-		advisor={
+
+	SLO_karol_sidor = {
+		name = SLO_karol_sidor
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_europe_1"
+			}
+		}
+		advisor = {
 			slot = political_advisor
 			idea_token = SLO_karol_sidor
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					silent_workhorse 
-				}
-		}
-		name="Karol Sidor"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_1"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				silent_workhorse
 			}
 		}
 	}
-	SLO_emil_lendvay={
-		advisor={
+
+	SLO_emil_lendvay = {
+		name = SLO_emil_lendvay
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_europe_6"
+			}
+		}
+		advisor = {
 			slot = theorist
 			idea_token = SLO_emil_lendvay
-			ledger  = army 
-				allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					military_theorist 
-				}
-		}
-		name="Emil Lendvay"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_6"
+			ledger = army
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				military_theorist
 			}
 		}
 	}
-	SLO_jozef_turanec={
-		advisor={
-			slot = navy_chief
-			idea_token = SLO_jozef_turanec
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					navy_chief_reform_2 
-				}
-				ai_will_do  = {
-					factor  = 1.000
-				}
-		}
-		name="Jozef Turanec"
-		portraits={
-			army={
-				small="GFX_idea_generic_navy_europe_1"
+
+	SLO_gustav_malar = {
+		name = SLO_gustav_malar
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_europe_3"
 			}
 		}
-	}
-	SLO_gustav_malar={
-		advisor={
+		advisor = {
 			slot = army_chief
 			idea_token = SLO_gustav_malar
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					army_chief_maneuver_2 
-				}
-				ai_will_do  = {
-					factor  = 1.000
-				}
-		}
-		name="Gustav Malar"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_3"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				army_chief_maneuver_2
+			}
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
-	SLO_rudolf_viest={
-		advisor={
+
+	SLO_rudolf_viest = {
+		name = SLO_rudolf_viest
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_europe_1"
+			}
+		}
+		advisor = {
 			slot = army_chief
 			idea_token = SLO_rudolf_viest
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					army_chief_offensive_3 
-				}
-				ai_will_do  = {
-					factor  = 1.000
-				}
-		}
-		name="Rudolf Viest"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_1"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				army_chief_offensive_3
+			}
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
-	SLO_janko_jesensky={
-		advisor={
+
+	SLO_janko_jesensky = {
+		name = SLO_janko_jesensky
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_political_advisor_europe_6"
+			}
+		}
+		advisor = {
 			slot = political_advisor
 			idea_token = SLO_janko_jesensky
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					compassionate_gentleman 
-				}
-		}
-		name="Janko Jesensky"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_6"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				compassionate_gentleman
 			}
 		}
 	}
-	SLO_ferdinand_catlos={
-		advisor={
+
+	SLO_ferdinand_catlos = {
+		name = SLO_ferdinand_catlos
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_army_europe_2"
+			}
+		}
+		advisor = {
 			slot = army_chief
 			idea_token = SLO_ferdinand_catlos
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					army_chief_organizational_2 
-				}
-				ai_will_do  = {
-					factor  = 1.000
-				}
-		}
-		name="Ferdinand Catlos"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_europe_2"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				army_chief_organizational_2
+			}
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
-	SLO_anton_pulanick={
-		advisor={
+
+	SLO_anton_pulanick = {
+		name = SLO_anton_pulanick
+		portraits = {
+			army = {
+				small = "GFX_idea_generic_air_europe_2"
+			}
+		}
+		advisor = {
 			slot = air_chief
 			idea_token = SLO_anton_pulanick
-			allowed  = {
-					original_tag  = SLO
-				}
-				traits  = {
-					air_chief_ground_support_2 
-				}
-				ai_will_do  = {
-					factor  = 1.000
-				}
-		}
-		name="Anton Pulanick"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_europe_2"
+			allowed = {
+				original_tag = SLO
+			}
+			traits = {
+				air_chief_ground_support_2
+			}
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
+
 	}
+
 }
