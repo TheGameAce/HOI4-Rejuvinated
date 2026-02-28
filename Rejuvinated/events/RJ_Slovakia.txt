@@ -1,0 +1,22 @@
+###########################
+# Slovak Events
+###########################
+
+add_namespace = rj_slovakia
+
+country_event = {
+	id = rj_slovakia.1
+	title = rj_slovakia.1.t
+	desc = rj_slovakia.1.desc
+	#picture = GFX_
+
+	is_triggered_only = yes
+
+	option = {
+		name = rj_slovakia.1.a
+	}
+
+	option = {
+		name = rj_slovakia.1.b
+	}
+}
