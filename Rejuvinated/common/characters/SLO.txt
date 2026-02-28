@@ -122,7 +122,21 @@ characters = {
 		name = SLO_jozef_turanec
 		portraits = {
 			army = {
-				small = "GFX_idea_generic_army_europe_2"
+				large = GFX_rj_portrait_SLO_jozef_turanec
+				small = GFX_rj_portrait_SLO_jozef_turanec_small
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer career_officer }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+			visible = {
+				NOT = {
+					has_character_flag = SLO_imprisoned_flag
+				}
 			}
 		}
 		advisor = {
