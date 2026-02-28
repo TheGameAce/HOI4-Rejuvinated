@@ -334,7 +334,7 @@ NCountry = {
 	CONVOY_INTERNATIONAL_MARKET_RANGE_FACTOR = 1,	-- How much range affects convoy need for international market
 	NAVY_USE_HOME_BASE_FOR_RANGE = true,			-- If true, will calculate task force range from home base, otherwise will calculate from any friendly naval base
 	CONVOY_CONTROLLED_ROUTE_COST_REDUCTION_FACTOR = 0.25,	-- How much fewer convoys you need shipping through areas you control
-	LOCAL_MANPOWER_ACCESSIBLE_NON_CORE_FACTOR = 0.02,  -- accessible recruitable factor base
+	LOCAL_MANPOWER_ACCESSIBLE_NON_CORE_FACTOR = 0.03,  -- accessible recruitable factor base
 	MAX_NON_CORE_MANPOWER_FACTOR = 1.0,				-- max clamp for recruitable local non core manpower factor for states
 	DEFAULT_STABILITY = 0.5,						-- Default stability if not scripted otherwise.
 	DEFAULT_WAR_SUPPORT = 0.5,						-- Default war support if not scripted otherwise.
@@ -878,6 +878,8 @@ NMilitary = {
 	LAND_COMBAT_STR_DICE_SIZE = 2,                 -- nr of damage dice
 	LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.060,       -- global damage modifier... but some equipment is returned at end of battles see : EQUIPMENT_COMBAT_LOSS_FACTOR
 	LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.053,       -- global damage modifier
+	LAND_AIR_COMBAT_STR_DICE_SIZE = 2,                 -- nr of damage dice (used by air to ground)
+	LAND_AIR_COMBAT_ORG_DICE_SIZE = 5,                 -- nr of damage dice (used by air to ground)
 	LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.05,    -- air global strength damage modifier
 	LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.10,    	-- air global organization damage modifier
 	LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 3, -- how many CAS/TAC can enter a combat depending on enemy width there
@@ -1611,7 +1613,7 @@ NNavy = {
 	BASE_NAVAL_INVASION_DIVISION_CAP = 4,							-- base cap of divisions that can be assigned in a naval invasion
 	NAVAL_COMBAT_RESULT_TIMEOUT_YEARS = 2,							-- after that many years, we clear the naval combat results, so they don't get stuck forever in the memory.
 	CONVOY_LOSS_HISTORY_TIMEOUT_MONTHS = 24,						-- after this many months remove the history of lost convoys to not bloat savegames and memory since there is no way to see them anyway
-	NAVAL_TRANSFER_BASE_SPEED = 16,                                  -- base speed of units on water being transported
+	NAVAL_TRANSFER_BASE_SPEED = 14,                                  -- base speed of units on water being transported
 	NAVAL_TRANSFER_BASE_NAVAL_DIST_ADD = 100,						-- Extra cost for naval movement ( compared to land movement ) when deciding what ports to use for a naval transfer
 	NAVAL_TRANSFER_BASE_NAVAL_DIST_MULT = 20,						-- Multiplier for the cost of naval movement ( compared to land movement ) when deciding what ports to use for naval transfer
 	
@@ -1727,6 +1729,35 @@ NNavy = {
 		0.9,	-- medium
 		2.0,	-- high
 		10000,	-- I am death incarnate!
+	},
+
+	AGGRESSION_LEVEL_BY_MISSION_WEAKER = { -- the aggression level per mission when the AI has a weaker navy than its opponent
+		---- values correspond to the indexes of the AGGRESSION_SETTINGS_VALUES. 0 = do not engage, 1 = low, 2 = medium, etc. 
+		---- If set to (-1), will use the hardcoded behavior (low if navy is generally weaker than opponent, medium if stronger)
+		-1, -- HOLD
+		0, -- PATROL
+		2, -- STRIKE FORCE
+		2, -- CONVOY RAIDING
+		1, -- CONVOY ESCORT
+		-1, -- MINES PLANTING
+		-1, -- MINES SWEEPING
+		-1, -- TRAINING
+		-1, -- RESERVE_FLEET
+		2, -- NAVAL_INVASION_SUPPORT
+	},
+	AGGRESSION_LEVEL_BY_MISSION_STRONGER_OR_EQUAL = { -- the aggression level per mission when the AI has a stronger navy than its opponent
+		---- values correspond to the indexes of the AGGRESSION_SETTINGS_VALUES. 0 = do not engage, 1 = low, 2 = medium, etc. 
+		---- If set to (-1), will use the hardcoded behavior (low if navy is generally weaker than opponent, medium if stronger)
+		-1, -- HOLD
+		2, -- PATROL
+		4, -- STRIKE FORCE
+		2, -- CONVOY RAIDING
+		2, -- CONVOY ESCORT
+		-1, -- MINES PLANTING
+		-1, -- MINES SWEEPING
+		-1, -- TRAINING
+		-1, -- RESERVE_FLEET
+		3, -- NAVAL_INVASION_SUPPORT
 	},
 
 	AGGRESION_MULTIPLIER_FOR_COMBAT = 1.2,				-- ships are more aggresive in combat
@@ -2011,6 +2042,8 @@ NNavy = {
 	},
 
 	-- NOTE: you can see the effect of changing the values down below by running the command tfria with a task force selected
+	MIN_MINE_CAPABLE_RATIO_FOR_ROLE_ASSIGNMENT = 0.6,					-- minimum ratio of mine laying/sweeping capable ships needed for a taskforce to get that icon assigned
+	MAX_SHIP_COUNT_FOR_DOMINANCE_PATROL_ROLE_ASSIGNMENT = 15,			-- define the maximum number of ships that should be in a task force for it to be considered a dominance building patrol (provided they have any capitals as well)
 	MIN_SHIP_COUNT_FOR_TASK_FORCE_ROLE_ASSIGNMENT = 4,					-- define the minimum number of ship that should be in a task force for it to be considered a patrol or an escort task force (used to the insignia assignment, see TASK_FORCE_ROLE_TO_INSIGNIA)
 	SURFACE_DETECTION_STAT_FOR_SHIP_TO_BE_PATROL = 16,					-- amount of surface detection required for a ship to be considered as part of a patrol task force
 	DEPTH_CHARGE_STAT_FOR_SHIP_TO_BE_SUB_HUNTER = 15,					-- amount of depth charge required for a ship to be considred a sub hunter and so good for convoy escort
@@ -3431,9 +3464,20 @@ NAI = {
     CONVOY_DANGER_FOR_MAX_IMPORTANCE = 50,                  -- When deciding whether to protect a convoy route, the importance will scale with convoy danger up to this value
     NUM_CONVOYS_FOR_MAX_PROTECTION = 50,                    -- When deciding whether to protect a convoy route, the importance will scale with the number of convoys up to this value
     CONVOY_RAIDING_TARGET_RECALC_DAYS = 3,                  -- Each X days, the AI will reevaluate which regions to convoy raid (because enemy convoy usage or trade routes might change)
+	STRIKE_FORCE_TARGET_RECALC_DAYS = 5,					-- Each X days, the AI will reevaluate which regions to put strike forces in (because patrol coverage will change)
     AI_OBJECTIVE_DEFAULT_TARGET_RECALC_DAYS = 0,            -- Each X days, the AI will reevaluate which regions to target for naval missions (this is the default value, but can be overriden by specific objectives, see CONVOY_RAIDING_TARGET_RECALC_DAYS)
 	DANGEROUS_ENEMY_ARMY_SIZE = 100,						-- If the size of the enemy's army of the attacking country is more than this value, the AI will add naval invasion defense importance
 	DANGEROUS_DISTANCE_TO_CAPITAL = 1000.0,					-- Distance in pixels from the target province to capital location where the AI will add the naval invasion defense importance
+
+	NAVAL_STRIKE_FORCE_OBJECTIVE_IMPORTANCE = {				-- ordering of this list is important!
+		0.1875,	-- invasion suppport
+		0.25,	-- invasion defense
+		0,0,	-- others ( MineSweeping, MineLaying )
+		0.0625,	-- generic coast defense
+		0,0,	-- others ( ConvoyRaiding, ConvoyProtection )
+		0.125,	-- naval dominance strategy
+		0,0,0	-- others ( Training, NavalBlockade, StrikeForce )
+	},
 	
 	MIN_FACTORIES_TO_WANT_TO_IMPORT = {  -- minimum number of civilian factories the AI must have to consider importing a resource - per strategic resource. Default 0, array -should- be updated with new resources, or if the order changes.
 		0, -- oil
