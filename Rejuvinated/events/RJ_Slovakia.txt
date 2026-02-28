@@ -16,7 +16,7 @@ country_event = {
 	option = {
 		name = rj_slovakia.1.a
 		add_autonomy_score = {
-			value = 100
+			value = -100
 			localization = SLO_salzburg_conference
 		}
 		FROM = {
@@ -78,10 +78,12 @@ country_event = {
 
 	option = {
 		name = rj_slovakia.3.a
-		SLO = {
-			add_autonomy_score = {
-				value = 100
-				localization = SLO_salzburg_conference
+		effect_tooltip = {
+			SLO = {
+				add_autonomy_score = {
+					value = -100
+					localization = SLO_salzburg_conference
+				}
 			}
 		}
 	}
