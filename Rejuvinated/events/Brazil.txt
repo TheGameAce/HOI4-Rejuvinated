@@ -3,29 +3,6 @@ add_namespace = election_BRA
 add_namespace = news_BRA
 
 country_event = {
-	id = bra.21
-	title = bra.21.t
-	desc = bra.21.d
-	picture = GFX_bra.21
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = bra.21.a
-		ai_chance = { factor = 100 }
-		hidden_effect = { set_global_flag = bra_viacao_modificadores_flag }
-		custom_effect_tooltip = bra.21.a_tt
-	}
-	
-	option = {
-		name = bra.21.b
-		ai_chance = { factor = 0 }
-		custom_effect_tooltip = bra.21.b_tt
-	}
-	
-}
-
-country_event = {
 	id = bra.2
 	title = bra.2.t
 	desc = bra.2.d
