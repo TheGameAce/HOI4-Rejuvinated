@@ -354,9 +354,11 @@ characters={
 	EGY_aziz_ezzat = {
 		name = "Aziz Ezzat"
 		portraits = {
+			civilian = {
+				small="gfx/advisors/EGY/Portrait_Egypt_Aziz_Ezzat.dds"
+			}
 			army = {
 				large="gfx/leaders/EGY/Portrait_Egypt_Aziz_Ezzat.dds"
-				small="gfx/advisors/EGY/Portrait_Egypt_Aziz_Ezzat.dds"
 			}
 		}
 		advisor={

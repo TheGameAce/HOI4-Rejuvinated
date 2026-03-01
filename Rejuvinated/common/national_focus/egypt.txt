@@ -140,12 +140,9 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				has_country_leader = {
-					character = EGY_farouk_muhammad_ali
-					ruling_only = yes
-				}
-				has_idea = EGY_farouk_muhammad_ali_mt
+			has_country_leader = {
+				character = EGY_farouk_muhammad_ali
+				ruling_only = yes
 			}
 		}
 		bypass = {
