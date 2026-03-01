@@ -1,0 +1,21 @@
+###########################
+# News Events
+###########################
+
+add_namespace = rj_news
+
+# Ahmed Fuad Dead!
+news_event = {
+	id = rj_news.1
+	title = rj_news.1.t
+	desc = rj_news.1.desc
+	picture = GFX_news_event_PLACEHOLDER
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = rj_news.1.a
+	}
+}

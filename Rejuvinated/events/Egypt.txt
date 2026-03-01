@@ -16,13 +16,14 @@ country_event = {
 
 	option = {
 		name = egypt.1.a
+		effect_tooltip = {
+			kill_country_leader = yes
+		}
+		promote_character = EGY_farouk_muhammad_ali
 		hidden_effect = {
-			remove_country_leader_role = {
-				character = EGY_fuad_i
-				ideology = despotism
-			}
+			retire_character = EGY_fuad_i
 			set_global_flag = ahmed_fuad_dead
-			activate_advisor = EGY_farouk_muhammad_ali_mt
+			news_event = { id = rj_news.1 hours = 6 }
 		}
 		ai_chance = {
 			base = 10
@@ -42,9 +43,9 @@ country_event = {
 
 	option = {
 		name = egypt.2.a
-		hidden_effect = {
-			news_event = BI_news.28
-		}
+		#hidden_effect = {
+		#	news_event = BI_news.28
+		#}
 		give_guarantee = EGY
 		ai_chance = {
 			base = 10
@@ -53,9 +54,9 @@ country_event = {
 
 	option = {
 		name = egypt.2.b
-		hidden_effect = {
-			news_event = BI_news.29
-		}
+		#hidden_effect = {
+		#	news_event = BI_news.29
+		#}
 		ai_chance = {
 			base = 0
 			modifier = {
@@ -78,9 +79,9 @@ country_event = {
 
 	option = {
 		name = egypt.3.a
-		hidden_effect = {
-			news_event = BI_news.30
-		}
+		#hidden_effect = {
+		#	news_event = BI_news.30
+		#}
 		ROOT = {
 			transfer_state = 446
 			add_opinion_modifier = {

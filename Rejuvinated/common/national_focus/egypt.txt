@@ -4,10 +4,10 @@ focus_tree = {
 	country = {
 		factor = 0
 		
-		modifier = {
-			add = 10
-			tag = EGY
-		}
+		#modifier = { #Disabled - Should be revisited - Error Free - WIP
+		#	add = 10
+		#	tag = EGY
+		#}
 	}
 	
 	default = no
@@ -92,7 +92,7 @@ focus_tree = {
 
 	focus = {
 		id = EGY_empower_the_parliament
-		icon = GFX_goal_EGY_democracy
+		icon = GFX_focus_PLACEHOLDER
 		x = 0
 		y = 1
 		relative_position_id = EGY_egyptian_westminster
@@ -116,16 +116,16 @@ focus_tree = {
 				remove_idea = EGY_republican_opposition
 				add_idea = EGY_anti_arabist
 			}
-			swap_ideas = {
-				remove_idea = censored_press
-				add_idea = free_press
-			}
+			#swap_ideas = {
+			#	remove_idea = censored_press
+			#	add_idea = free_press
+			#}
 		}
 	}
 
 	focus = {
 		id = EGY_farouk_i_focus
-		icon = GFX_goal_EGY_farouk
+		icon = GFX_focus_PLACEHOLDER
 		x = 2
 		y = 1
 		relative_position_id = EGY_go_with_birts
@@ -156,7 +156,7 @@ focus_tree = {
 
 	focus = {
 		id = EGY_consolidate_power
-		icon = GFX_goal_EGY_monarchy
+		icon = GFX_focus_PLACEHOLDER
 		x = 0
 		y = 1
 		relative_position_id = EGY_farouk_i_focus
