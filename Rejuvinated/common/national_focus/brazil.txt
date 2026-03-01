@@ -1865,6 +1865,11 @@ focus_tree = {
 		ai_will_do = {
 			factor = 40
 		}
+		available = {
+			controls_state = 280
+			controls_state = 504
+			controls_state = 505
+		}
 		completion_reward = {
 			280 = {
 				add_building_construction = {
@@ -1919,6 +1924,10 @@ focus_tree = {
 		cost = 5
 		ai_will_do = {
 			factor = 40
+		}
+		available = {
+			controls_state = 495
+			controls_state = 497
 		}
 		completion_reward = {
 			495 = {
