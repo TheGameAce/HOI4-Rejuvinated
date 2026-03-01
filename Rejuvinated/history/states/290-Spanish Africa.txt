@@ -1,10 +1,10 @@
 state={
 	id=290
 	name="STATE_290"
-	manpower = 494000
+	manpower = 1244000
 	
 	
-	state_category = large_town
+	state_category = town
 	
 	resources={
 		steel=40 #was:23 was: 20 . Changed to 23 (from 15) due to Portugal Setup
@@ -20,8 +20,12 @@ state={
 		victory_points = {
 			12100 2
 		}
+		victory_points = {
+			12087 1
+		}
 		buildings = {
 			infrastructure = 2
+			air_base = 3
 			12100 = {
 				naval_base = 3
 			}
@@ -32,7 +36,7 @@ state={
 	}
 
 	provinces = {
-		9945 12100
+		4199 7215 9945 10113 12087 12100 
 	}
 
 	local_supplies = 0.0 
