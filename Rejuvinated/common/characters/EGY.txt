@@ -89,27 +89,6 @@ characters={
 			expire="1936.4.28.1"
 			id=-1
 		}
-		advisor={
-			slot = monarch
-			idea_token = EGY_fuad_i_mt
-			allowed = {
-				original_tag = EGY
-			}
-			traits = {
-				#divisive_absolute_monarch #will be back after Egypt update
-			}
-			visible = {
-				NOT = {
-					has_global_flag = ahmed_fuad_dead
-				}
-			}
-			allowed_to_remove = {
-				has_government = communism
-			}
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
 	}
 	EGY_farouk_muhammad_ali={
 		name="Farouk I"
@@ -121,28 +100,9 @@ characters={
 		}
 		country_leader={
 			ideology=despotism
-			traits = { conservative_nationalist }
+			traits = { farouk }
 			expire="1965.1.1.1"
 			id=-1
-		}
-		advisor={
-			slot = monarch
-			idea_token = EGY_farouk_muhammad_ali_mt
-			allowed = {
-				original_tag = EGY
-			}
-			traits = {
-				#conservative_nationalist #will be back after Egypt update
-			}
-			visible = {
-				has_global_flag = ahmed_fuad_dead
-			}
-			allowed_to_remove = {
-				has_government = communism
-			}
-			ai_will_do = {
-				factor = 1.000
-			}
 		}
 	}
 	EGY_mohamed_tawfik_naseem={
@@ -168,7 +128,7 @@ characters={
 		}
 		country_leader={
 			ideology=liberalism
-			traits = { silent_lawyer }
+			traits = { JUNO_popular_lawyer }
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -202,12 +162,12 @@ characters={
 				original_tag = EGY
 			}
 			traits = {
-				foreign_trade_advocate
+				SWE_minister_of_trade
 			}
 		}
 		country_leader={
 			ideology=liberalism
-			traits = { foreign_trade_advocate }
+			traits = { SWE_minister_of_trade }
 			expire="1941.1.1.1"
 			id=-1
 		}
