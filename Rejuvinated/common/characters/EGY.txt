@@ -1,0 +1,421 @@
+characters={
+	EGY_muhammad_naguib={
+		name="Muhammad Naguib"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/Portrait_Egypt_Muhammad_Naguib.dds"
+			}
+			army={
+				large="gfx/leaders/EGY/Portrait_Egypt_Muhammad_Naguib.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Muhammad_Naguib.dds"
+			}
+		}
+		#country_leader={
+		#	ideology=liberalism
+		#	expire="1965.1.1.1"
+		#	id=-1
+		#}
+		advisor={
+			cost = 100
+			slot = theorist
+			idea_token = EGY_mohamed_naguib
+			ledger = army
+			allowed = {
+				original_tag = EGY
+			}
+			traits = {
+				military_theorist
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits = { war_hero politically_connected career_officer armor_officer infantry_leader desert_fox }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	EGY_ahmed_husayn={
+		name="Ahmed Hussein"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/Portrait_Egypt_Ahmed_Hussein.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Ahmed_Hussein.dds"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = EGY_ahmed_hussayn
+			allowed = {
+				original_tag = EGY
+			}
+			traits = {
+				sharp_tongued_lawyer
+			}
+			cost = 150
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits = { politically_connected infantry_officer harsh_leader }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	EGY_fuad_i={
+		name="Ahmed Fuad I"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/Portrait_Egypt_Fuad_I.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Fuad_I.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits = { divisive_absolute_monarch }
+			expire="1936.4.28.1"
+			id=-1
+		}
+		advisor={
+			slot = monarch
+			idea_token = EGY_fuad_i_mt
+			allowed = {
+				original_tag = EGY
+			}
+			traits = {
+				#divisive_absolute_monarch #will be back after Egypt update
+			}
+			visible = {
+				NOT = {
+					has_global_flag = ahmed_fuad_dead
+				}
+			}
+			allowed_to_remove = {
+				has_government = communism
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	EGY_farouk_muhammad_ali={
+		name="Farouk I"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/Portrait_Egypt_Farouk_I.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Farouk_I.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits = { conservative_nationalist }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		advisor={
+			slot = monarch
+			idea_token = EGY_farouk_muhammad_ali_mt
+			allowed = {
+				original_tag = EGY
+			}
+			traits = {
+				#conservative_nationalist #will be back after Egypt update
+			}
+			visible = {
+				has_global_flag = ahmed_fuad_dead
+			}
+			allowed_to_remove = {
+				has_government = communism
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	EGY_mohamed_tawfik_naseem={
+		name="Mohamed Tawfik Naseem"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/Portrait_Egypt_Mohamed_Tawfik_Naseem.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits = { }
+			expire="1938.3.8.1"
+			id=-1
+		}
+	}
+	EGY_mostafa_el_nahas={
+		name="Mostafa El-Nahas"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/Portrait_Egypt_Mostafa_El_Nahas.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			traits = { silent_lawyer }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	EGY_mohamed_mahmoud={
+		name="Mohamed Mahmoud"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/Portrait_Egypt_Mohamed_Mahmoud.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			traits = { SWI_diplomat }
+			expire="1941.1.1.1"
+			id=-1
+		}
+	}
+	EGY_aly_maher_pasha = {
+		name="Aly Maher Pasha"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/Portrait_Egypt_Gamel_Aly_Maher_Pasha.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Gamel_Aly_Maher_Pasha.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = EGY_aly_maher_pasha
+			allowed = {
+				original_tag = EGY
+			}
+			traits = {
+				foreign_trade_advocate
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			traits = { foreign_trade_advocate }
+			expire="1941.1.1.1"
+			id=-1
+		}
+	}
+	EGY_hosni_alarabi={
+		name="Hosni al-Arabi"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/Portrait_Egypt_Hosni_Al_Arabi.dds"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	EGY_gamal_abdel_nasser = {
+		name="Gamal Abdel Nasser"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/Portrait_Egypt_Gamel_Abdel_Nasser.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Gamel_Abdel_Nasser.dds"
+			}
+			army={
+				large="gfx/leaders/EGY/Portrait_Egypt_Gamel_Abdel_Nasser.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Gamel_Abdel_Nasser.dds"
+			}
+		}
+		corps_commander={
+			traits = { career_officer media_personality }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	EGY_abdel_hakim_amer = {
+		name="Abdel Hakim Amer"
+		portraits={
+			army={
+				large="gfx/leaders/EGY/Portrait_Egypt_Abdel_Hakim_Amer.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Abdel_Hakim_Amer.dds"
+			}
+		}
+		corps_commander={
+			traits = { trait_reckless career_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	EGY_abdul_munim_riad = {
+		name="Abdul Munim Riad"
+		portraits={
+			army={
+				large="gfx/leaders/EGY/Portrait_Egypt_Abdul_Munim_Riad.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Abdul_Munim_Riad.dds"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = high_command
+			idea_token = EGY_abdul_munim_riad
+			ledger = army
+			allowed = {
+				original_tag = EGY
+			}
+			traits = {
+				army_artillery_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits = { organizer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	EGY_ahmad_smail_ali = { 
+		name="Ahmad Ismail Ali"
+		portraits={
+			army={
+				large="gfx/leaders/EGY/Portrait_Egypt_Ahmad_Smail_Ali.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Ahmad_Smail_Ali.dds"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = EGY_ahmad_smail_ali
+			ledger = army
+			allowed = {
+				original_tag = EGY
+			}
+			traits = {
+				army_chief_offensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits = { infantry_officer inflexible_strategist }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	EGY_ahmed_ali_al_mwawi = {
+		name="Ahmed Ali al-Mwawi"
+		portraits={
+			army={
+				large="gfx/leaders/EGY/Portrait_Egypt_Ahmed_Abdullah_Al_Mwawi.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Ahmed_Abdullah_Al_Mwawi.dds"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = high_command
+			idea_token = EGY_ahmed_ali_al_mwawi
+			ledger = army
+			allowed = {
+				original_tag = EGY
+			}
+			traits = {
+				army_logistics_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits = { infantry_officer trait_cautious career_officer trait_engineer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	EGY_hussein_el_shafei = {
+		name="Hussein el-Shafei"
+		portraits={
+			army={
+				large="gfx/leaders/EGY/Portrait_Egypt_Hussein_El_Shafei.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Hussein_El_Shafei.dds"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = high_command
+			idea_token = EGY_hussein_el_shafei
+			ledger = army
+			allowed = {
+				original_tag = EGY
+			}
+			traits = {
+				army_cavalry_2
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits = { career_officer cavalry_officer trait_reckless media_personality }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	EGY_aziz_ezzat = {
+		name = "Aziz Ezzat"
+		portraits = {
+			army = {
+				large="gfx/leaders/EGY/Portrait_Egypt_Aziz_Ezzat.dds"
+				small="gfx/advisors/EGY/Portrait_Egypt_Aziz_Ezzat.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = EGY_aziz_ezzat
+			allowed = {
+				original_tag = EGY
+			}
+			traits = {
+				smooth_talking_charmer
+			}
+		}
+		field_marshal = {
+			traits = { old_guard cavalry_officer politically_connected }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+}

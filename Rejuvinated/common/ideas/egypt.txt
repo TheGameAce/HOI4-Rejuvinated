@@ -1,0 +1,75 @@
+ideas = {
+	
+	country = {
+
+		EGY_republican_opposition = {
+
+			picture = TODO
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				democratic_drift = 0.05
+				fascism_drift = 0.05
+				stability_factor = -0.35
+				political_power_cost = 1
+			}
+		}
+
+		EGY_westminster_system = {
+
+			picture = TODO
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = {
+					OR = {
+						has_government = democratic
+						has_government = neutrality
+					}
+				}
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.05
+				democratic_drift = 0.05
+			}
+		}
+
+		EGY_anti_arabist = {
+
+			picture = TODO
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = fascism
+			}
+
+			removal_cost = -1
+
+			modifier = {
+				fascism_drift = -0.01
+			}
+		}
+
+	}
+
+}

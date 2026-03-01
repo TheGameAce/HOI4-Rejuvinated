@@ -4,10 +4,8 @@ on_actions = {
 		effect = {
 			if = {
 				limit = { 
-					AND = {
-						original_tag = MOR
-						is_subject_of = FRA
-					}
+					original_tag = MOR
+					is_subject_of = FRA
 				}
 				set_cosmetic_tag = MOR_FRA_puppet
 			}

@@ -1,0 +1,81 @@
+upgrade_state_category_2 = {
+	IF = {
+		limit = { has_state_category = wasteland }
+		set_state_category = rural
+	}
+	ELSE_IF = {
+		limit = { has_state_category = pastoral }
+		set_state_category = town
+	}
+	ELSE_IF = {
+		limit = { has_state_category = rural }
+		set_state_category = large_town
+	}
+	ELSE_IF = {
+		limit = { has_state_category = town }
+		set_state_category = city
+	}
+	ELSE_IF = {
+		limit = { has_state_category = large_town }
+		set_state_category = large_city
+	}
+	ELSE_IF = {
+		limit = { has_state_category = city }
+		set_state_category = metropolis
+	}
+	ELSE_IF = {
+		limit = { has_state_category = large_city }
+		set_state_category = megalopolis
+	}
+	ELSE_IF = {
+		limit = { has_state_category = metropolis }
+		set_state_category = megalopolis
+	}
+}
+upgrade_state_category_3 = {
+	IF = {
+		limit = { has_state_category = wasteland }
+		set_state_category = town
+	}
+	ELSE_IF = {
+		limit = { has_state_category = pastoral }
+		set_state_category = large_town
+	}
+	ELSE_IF = {
+		limit = { has_state_category = rural }
+		set_state_category = city
+	}
+	ELSE_IF = {
+		limit = { has_state_category = town }
+		set_state_category = large_city
+	}
+	ELSE_IF = {
+		limit = { has_state_category = large_town }
+		set_state_category = metropolis
+	}
+	ELSE_IF = {
+		limit = { has_state_category = city }
+		set_state_category = megalopolis
+	}
+	ELSE_IF = {
+		limit = { has_state_category = large_city }
+		set_state_category = megalopolis
+	}
+	ELSE_IF = {
+		limit = { has_state_category = metropolis }
+		set_state_category = megalopolis
+	}
+}
+upgrade_illiteracy = {
+	IF = {
+		limit = { has_idea = GEN_illiteracy }
+		swap_ideas = {
+			add_idea = GEN_illiteracy_2
+			remove_idea = GEN_illiteracy
+		}
+	}
+	ELSE_IF = {
+		limit = { has_idea = GEN_illiteracy_2 }
+		remove_ideas = GEN_illiteracy_2
+	}
+}
