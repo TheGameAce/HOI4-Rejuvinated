@@ -2059,14 +2059,16 @@ focus_tree = {
 			factor = 160
 		}
 		completion_reward = {
-			every_owned_state = {
+			every_controlled_state = {
 				limit = {
+					is_owned_by = BRA
 					is_core_of = BRA
 				}
-				add_state_modifier = {
-					modifier = { army_speed_factor_for_controller = 0.10 }
+				add_dynamic_modifier = {
+					modifier = bra_anhanguera
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			501 = {
 				set_building_level = {
 					type = infrastructure
