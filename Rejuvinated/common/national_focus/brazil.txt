@@ -58,13 +58,14 @@ focus_tree = {
 			factor = 320
 		}
 		completion_reward = {
-			
 			add_political_power = 75
-			
-			country_event = { id = bra.2 }
-			
-			#custom_effect_tooltip = bra_aviso_tooltip
-
+			add_popularity = { ideology = neutrality popularity = -0.3 }
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = bra_instabilidade
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_timed_idea = { idea = bra_polaca_idea days = 90 } 
+			custom_effect_tooltip = generic_skip_one_line_tt
+			country_event = { id = bra.2 hours = 6 }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -97,7 +98,10 @@ focus_tree = {
 			has_idea = bra_instabilidade
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = bra_instabilidade add_idea = bra_instabilidade_2 }
+			swap_ideas = {
+				remove_idea = bra_instabilidade
+				add_idea = bra_instabilidade_2
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }

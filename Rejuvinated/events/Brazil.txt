@@ -12,48 +12,47 @@ country_event = {
 	
 	option = { #fasc
 		name = bra.2.a
-		ai_chance = { factor = 60 }
-		add_popularity = { ideology = fascism popularity = 0.1 }
-		country_event = { days = 1 id = bra.3 }
+		ai_chance = {
+			base = 60
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
 	}
 	
 	option = { #com
 		name = bra.2.b
-		ai_chance = { factor = 10 }
-		add_popularity = { ideology = communism popularity = 0.1 }
-		country_event = { days = 1 id = bra.3 }
+		ai_chance = {
+			base = 10
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.1
+		}
 	}
 	
 	option = { #en
 		name = bra.2.c
-		ai_chance = { factor = 30 }
+		ai_chance = {
+			base = 30
+		}
 		add_political_power = 75
-		add_popularity = { ideology = neutrality popularity = -0.1 }
-		country_event = { days = 1 id = bra.3 }
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
 	}
 	
 	option = { #dem
 		name = bra.2.e
-		ai_chance = { factor = 10 }
-		add_popularity = { ideology = democratic popularity = 0.1 }
-		country_event = { days = 1 id = bra.3 }
-	}
-}
-
-country_event = {
-	id = bra.3
-	title = bra.3.t
-	desc = bra.3.d
-	picture = GFX_bra.3
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = bra.3.a
-		ai_chance = { factor = 100 }
-		add_popularity = { ideology = neutrality popularity = -0.3 }
-		add_ideas = bra_instabilidade
-		add_timed_idea = { idea = bra_polaca_idea days = 90 } 
+		ai_chance = {
+			base = 10
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
 	}
 }
 
