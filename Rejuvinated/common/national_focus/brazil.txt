@@ -23,7 +23,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = 0.10
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_proclamacao_so_1 } }
 		}
 
 		search_filters = { FOCUS_FILTER_STABILITY }
@@ -41,7 +40,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 75
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_a_voz_do_brasil } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -66,8 +64,6 @@ focus_tree = {
 			country_event = { id = bra.2 }
 			
 			#custom_effect_tooltip = bra_aviso_tooltip
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_quereismo } }
 
 		}
 
@@ -102,7 +98,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_instabilidade add_idea = bra_instabilidade_2 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_populism } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -127,7 +122,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_antropofagia add_idea = bra_antropofagia_com_1 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_2_prestes_column } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -146,7 +140,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_antropofagia_com_1 add_idea = bra_antropofagia_com_2 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_plan_cohen } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -165,7 +158,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = bra.13 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_cosmopolitanism } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -199,7 +191,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_instabilidade add_idea = bra_instabilidade_2 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_tecnocratic_reform } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -224,7 +215,6 @@ focus_tree = {
 		available = { has_government = neutrality }
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_antropofagia add_idea = bra_antropofagia_fasc_1 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_brazilian_action } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -247,7 +237,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_antropofagia_fasc_1 add_idea = bra_antropofagia_fasc_2 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_dreams_of_an_empire } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -270,7 +259,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			country_event = { id = bra.14 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_equip_ind } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -295,7 +283,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_antropofagia add_idea = bra_antropofagia_dem_1 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_regionalism } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -314,7 +301,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_antropofagia_dem_1 add_idea = bra_antropofagia_dem_2 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_abertura } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -333,7 +319,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = bra.16 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_tecnocratic_reform } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -359,8 +344,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_antropofagia add_idea = bra_antropofagia_neu_1 }
-
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_quereismo } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -379,7 +362,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_antropofagia_neu_1 add_idea = bra_antropofagia_neu_2 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_estado_novo } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -398,7 +380,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = bra.15 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_populism } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -472,9 +453,7 @@ focus_tree = {
 		
 			remove_ideas = bra_1930_2
 			remove_ideas = bra_instabilidade_2
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_brasilia } }
-			
+
 			hidden_effect = {
 					
 				if = { limit = { BRA = { has_government = fascism } }
@@ -767,8 +746,6 @@ focus_tree = {
 					logistics_skill = 6
 				}
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_vacinado_2 } }
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
@@ -790,7 +767,6 @@ focus_tree = {
 				uses = 1
 				category = industry
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
 	}
 	
@@ -807,7 +783,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_research_slot = 1
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_uni_so_1 } }
 		}
 	}
 	
@@ -828,7 +803,6 @@ focus_tree = {
 				uses = 1
 				category = industry
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
 	}
 	
@@ -850,7 +824,6 @@ focus_tree = {
 				uses = 1
 				category = construction_tech
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
 	}
 	
@@ -872,7 +845,6 @@ focus_tree = {
 				uses = 1
 				category = electronics
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
 	}
 	
@@ -894,7 +866,6 @@ focus_tree = {
 				uses = 1
 				category = infantry_weapons
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_art } }
 		}
 	}
 
@@ -930,7 +901,6 @@ focus_tree = {
 					uses = 1
 					category = signal_company_tech
 				}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
 	}
 	
@@ -950,7 +920,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = BRA_ministry_of_sciences_and_technology_idea
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
 	}
 	
@@ -988,7 +957,6 @@ focus_tree = {
 				remove_idea = BRA_ministry_of_sciences_and_technology_idea
 				add_idea = BRA_ministry_of_sciences_and_technology_idea_2
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_nuclear_research_bureau } }
 		}
 	}
 	
@@ -1005,7 +973,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_research_slot = 1
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
 	}
 	
@@ -1022,7 +989,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_research_slot = 1
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_research_generic } }
 		}
 	}
 	
@@ -1037,7 +1003,6 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_1930 add_idea = bra_1930_2 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_proclamacao_so_2 } }
 		}
 	}
 
@@ -1058,7 +1023,6 @@ focus_tree = {
 				uses = 1
 				category = military_police_tech
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_paris_belfort_so_1 } }
 		}
 	}
 	
@@ -1132,7 +1096,6 @@ focus_tree = {
 				}			
 				
 			custom_effect_tooltip =  bra_tropas_1932_tooltip
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_hino_const_so_2 } }
 		}
 	}
 	
@@ -1212,7 +1175,6 @@ focus_tree = {
 				}
 			}
 			custom_effect_tooltip = bra_modernizacao_marinha_tooltip
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_cisne_branco_so_1 } }
 		}
 	}
 	
@@ -1235,9 +1197,7 @@ focus_tree = {
 				surname = "Gomes"
 				callsign = "O Brigadeiro"
 				type = bomber_genius
-				is_female = no
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_hino_aviador_so_1 } }
 		}
 	}
 	
@@ -1260,7 +1220,6 @@ focus_tree = {
 				uses = 2
 				category = cat_superior_firepower
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_paris_belfort_so_2 } }
 		}
 	}
 	
@@ -1283,7 +1242,6 @@ focus_tree = {
 				uses = 2
 				category = cat_mobile_warfare
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_paris_belfort_so_1 } }
 		}
 	}
 
@@ -1317,7 +1275,6 @@ focus_tree = {
 				uses = 1
 				category = cat_ship_heavy_battery
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_cisne_branco_so_2 } }
 		}
 	}
 
@@ -1341,7 +1298,6 @@ focus_tree = {
 				uses = 2
 				category = mio_cat_tech_all_submarine_and_modules
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_cisne_branco_so_3 } }
 		}
 	}
 	
@@ -1363,7 +1319,6 @@ focus_tree = {
 				uses = 2
 				category = mio_cat_tech_all_cruiser_and_modules
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_cisne_branco_so_4 } }
 		}
 	}
 	
@@ -1417,7 +1372,6 @@ focus_tree = {
 					category = cat_strategic_bomber
 				}
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_hino_aviador_so_2 } }
 		}
 	}
 	
@@ -1434,7 +1388,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = BRA_ministry_of_aeronautics_idea
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_hino_aviador_so_3 } }
 		}
 	}
 	
@@ -1482,7 +1435,6 @@ focus_tree = {
 					category = light_air
 				}
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_hino_aviador_so_4 } }
 		}
 	}
 
@@ -1499,7 +1451,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_bandeirantes add_idea = bra_bandeirantes_mg_1 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_equip_ind } }
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1523,7 +1474,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_bandeirantes_mg_1 add_idea = bra_bandeirantes_mg_2 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_art } }
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1547,7 +1497,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_bandeirantes add_idea = bra_bandeirantes_sp_1 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_mot } }
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1571,7 +1520,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_bandeirantes_sp_1 add_idea = bra_bandeirantes_sp_2 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_mec } }
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1596,7 +1544,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = BRA_agulhas_negras_idea
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_mec } }
 		}
 	}
 	
@@ -1626,7 +1573,6 @@ focus_tree = {
 				uses = 1
 				category = cat_mechanized_equipment
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_armor } }
 		}
 	}
 
@@ -1642,8 +1588,6 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_rural_elite add_idea = bra_eficiencia_1 }
-
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_CTEF_CLT } }
 		}
 	}
 
@@ -1674,9 +1618,6 @@ focus_tree = {
 					level = 1
 				}
 			}
-			
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_sub_priv } }
 		}
 	}
 
@@ -1714,9 +1655,6 @@ focus_tree = {
 					level = 1
 				}
 			}
-
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_obras_exterior } }
 		}
 	}
 
@@ -1740,8 +1678,6 @@ focus_tree = {
 					level = 2
 				}
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_assovio_1 } }
 		}
 	}
 	
@@ -1769,8 +1705,6 @@ focus_tree = {
 					level = 3
 				}
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_assovio_1 } }
 		}
 	}
 	
@@ -1795,8 +1729,6 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_hino_const_so_1 } }
 		}
 	}
 	
@@ -1821,8 +1753,6 @@ focus_tree = {
 				}
 				add_building_construction = { type = naval_base province = 12853 level = 3 instant_build = yes }
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_belem_porto } }
 		}
 	}
 	
@@ -1846,8 +1776,6 @@ focus_tree = {
 				add_building_construction = { type = dockyard level = 3 instant_build = yes }
 				add_building_construction = { type = naval_base province = 10933 level = 4 instant_build = yes }
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_belem_porto } }
 		}
 	}
 
@@ -1919,8 +1847,6 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 1
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_transamazonica_so_2 } }
 		}
 	}
 
@@ -1960,8 +1886,6 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 1
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_rodovia_so_1 } }
 		}
 	}
 	
@@ -1978,8 +1902,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = bra_eficiencia_5
-
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_vacinado_1 } }
 		}
 	}
 	
@@ -2011,8 +1933,6 @@ focus_tree = {
 				}
 				add_extra_state_shared_building_slots = 1
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_transamazonica_so_1 } }
 		}
 	}
 	
@@ -2041,7 +1961,6 @@ focus_tree = {
 			unlock_decision_tooltip = bra_codeba
 			unlock_decision_tooltip = bra_transposicao
 			unlock_decision_tooltip = bra_anra
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_transamazonica_so_1 } }
 		}
 	}
 	
@@ -2063,7 +1982,6 @@ focus_tree = {
 				uses = 1
 				category = industry
 			}
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_assovio_1 } }
 		}
 	}
 	
@@ -2081,8 +1999,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_eficiencia_5 add_idea = bra_eficiencia_7 }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_vacinado_1 } }
 		}
 	}
 
@@ -2106,8 +2022,6 @@ focus_tree = {
 			swap_ideas = { remove_idea = bra_eficiencia_7 add_idea = bra_eficiencia_8 }
 			
 			country_event = { id = bra.9 }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_mobilizacao_ind_so } }
 		}
 	}
 	
@@ -2126,8 +2040,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_eficiencia_3 add_idea = bra_eficiencia_4 }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_assovio_1 } }
 		}
 	}
 	
@@ -2159,8 +2071,6 @@ focus_tree = {
 				}
 				increase_state_category = yes
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_anhanguera } }
 		}
 	}
 
@@ -2178,7 +2088,6 @@ focus_tree = {
 		completion_reward = {
 			set_rule = { can_send_volunteers = yes }
 			add_ideas = { bra_feb_idea }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_feb } }
 		}
 	}
 
@@ -2233,8 +2142,6 @@ focus_tree = {
 				}
 				add_ideas = export_focus
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect = bra_assovio_2 } }
 		}
 	}
 	
@@ -2253,8 +2160,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			add_resource = { type = oil amount = 5 state = 499 }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect = bra_assovio_2 } }
 		}
 	}
 
@@ -2272,8 +2177,6 @@ focus_tree = {
 		completion_reward = {
 			add_resource = { type = steel amount = 16 state = 496 }
 			add_resource = { type = steel amount = 16 state = 501 }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect = bra_assovio_2 } }
 		}
 	}
 	
@@ -2291,8 +2194,6 @@ focus_tree = {
 		completion_reward = {
 			add_resource = { type = steel amount = 16 state = 496 }
 			add_resource = { type = steel amount = 16 state = 502 }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect = bra_assovio_2 } }
 		}
 	}
 	
@@ -2310,8 +2211,6 @@ focus_tree = {
 		completion_reward = {
 			add_resource = { type = steel amount = 16 state = 496 }
 			add_resource = { type = steel amount = 16 state = 503 }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect = bra_assovio_2 } }
 		}
 	}
 	
@@ -2328,8 +2227,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_resource = { type = oil amount = 5 state = 499 }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect = bra_assovio_2 } }
 		}
 	}
 	
@@ -2349,8 +2246,6 @@ focus_tree = {
 		completion_reward = {
 			add_resource = { type = steel amount = 16 state = 496 }
 			add_resource = { type = steel amount = 16 state = 500 }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect = bra_assovio_2 } }
 		}
 	}
 	
@@ -2371,8 +2266,6 @@ focus_tree = {
 			add_resource = { type = tungsten amount = 32 state = 498 }
 			add_resource = { type = chromium amount = 32 state = 495 }
 			add_resource = { type = aluminium amount = 32 state = 497 }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_vale } }
 		}
 	}
 	
@@ -2392,8 +2285,6 @@ focus_tree = {
 			add_resource = { type = oil amount = 5 state = 500 }
 			add_resource = { type = oil amount = 5 state = 504 }
 			
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect = bra_assovio_2 } }
 		}
 	}
 	
@@ -2416,8 +2307,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_eficiencia_4 add_idea = bra_eficiencia_bndes }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_bndes } }
 		}
 	}
 	
@@ -2437,8 +2326,6 @@ focus_tree = {
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_eficiencia_bndes add_idea = bra_eficiencia_gerdau_1 }
 			
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_assovio_1 } }
 		}
 	}
 	
@@ -2456,9 +2343,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_eficiencia_bndes add_idea = bra_eficiencia_tenenge_1 }
-			
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_rodovia_so_2 } }
 		}
 	}
 	
@@ -2487,8 +2371,6 @@ focus_tree = {
 				}
 				increase_state_category = yes
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_infra_generic } }
 		}
 	}
 	
@@ -2536,8 +2418,6 @@ focus_tree = {
 				}
 				increase_state_category = yes
 			}
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_itaipu } }
 		}
 	}
 	
@@ -2554,8 +2434,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			495 = { add_extra_state_shared_building_slots = 2 increase_state_category = yes }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_infra_generic } }
 		}
 	}
 	
@@ -2572,8 +2450,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = bra_ciclocana_idea
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_feito_nos } }
 		}
 	}
 	
@@ -2591,8 +2467,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_ciclocana_idea add_idea = bra_ciclosoja_idea }
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_transamazonica_so_3 } }
 		}
 	}
 	
@@ -2627,8 +2501,6 @@ focus_tree = {
 			}
 			
 			custom_effect_tooltip = bra_etanol_focus_tooltip
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_etanol_so } }
 		}
 	}
 	
@@ -2648,8 +2520,6 @@ focus_tree = {
 			set_technology = { selva_tech = 1 }
 			
 			custom_effect_tooltip = BRA_selva_tech_effect
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect = bra_sentinela_brasil_so_2 } }
 		}
 	}
 	
@@ -2675,10 +2545,6 @@ focus_tree = {
 					modifier = { coordination_bonus = 0.10}
 				}
 			}
-		
-
-			
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_itaipu } }
 		}
 	}
 	
@@ -3161,7 +3027,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			custom_effect_tooltip = bra_uiracu_tooltip
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_marcha_de_guerra_so_1 } }
 		}
 	}
 	
@@ -3277,7 +3142,6 @@ focus_tree = {
 		cost = 5
 		completion_reward = {
 			create_wargoal = { type = annex_everything target = USA }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_proclamacao_so_3 } }
 		}
 	}
 	
@@ -3398,7 +3262,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = bra.17 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_piano } }
 		}
 	}
 	
@@ -3423,7 +3286,6 @@ focus_tree = {
 			custom_effect_tooltip = bra_patri_5_tooltip
 			remove_ideas = bra_instabilidade_2
 			add_popularity = { ideology = neutrality popularity = 0.05 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_piano } }
 		}
 	}
 	
@@ -3448,7 +3310,6 @@ focus_tree = {
 			custom_effect_tooltip = bra_patri_6_tooltip
 			remove_ideas = bra_instabilidade_2
 			add_popularity = { ideology = fascism popularity = 0.05 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_piano } }
 		}
 	}
 	
@@ -3470,7 +3331,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = bra.18 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_sentinela_brasil_so_2 } }
 		}
 	}
 	
@@ -3492,7 +3352,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = bra.18 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_sentinela_brasil_so_2 } }
 		}
 	}
 	
@@ -3515,7 +3374,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = bra.19 }
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_monarquia_focus } }
 		}
 	}
 }
