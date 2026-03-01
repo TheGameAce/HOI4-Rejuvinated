@@ -6883,7 +6883,7 @@ focus_tree = {
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = USA_air_war_plans_division }
 		mutually_exclusive = { focus = USA_strategic_bombing }
-		x = -1
+		x = 3
 		y = 1
 		relative_position_id = USA_air_war_plans_division
 		cost = 10
@@ -6903,7 +6903,7 @@ focus_tree = {
 		icon = GFX_goal_generic_occupy_start_war
 		prerequisite = { focus = USA_air_war_plans_division }
 		mutually_exclusive = { focus = USA_air_support }
-		x = 1
+		x = -1
 		y = 1
 		relative_position_id = USA_air_war_plans_division
 		cost = 10
@@ -7151,8 +7151,8 @@ focus_tree = {
 	focus = {
 		id = USA_two_ocean_navy_act
 		icon = GFX_focus_RJ_USA_two_ocean_navy_act
-		x = 1
-		y = 1
+		x = 0
+		y = 2
 		prerequisite = { focus = USA_bureau_of_ships }
 		relative_position_id = USA_bureau_of_ships
 		cost = 10
@@ -7263,7 +7263,7 @@ focus_tree = {
 	focus = {
 		id = USA_maritime_commission
 		icon = GFX_focus_RJ_USA_maritime_commission
-		x = 3
+		x = 2
 		y = 1
 		prerequisite = { focus = USA_bureau_of_ships }
 		relative_position_id = USA_bureau_of_ships
@@ -7316,115 +7316,6 @@ focus_tree = {
 			custom_effect_tooltip = liberty_ships_DM_tt
 		}
 	}
-	
-	focus = {
-		id = USA_battleship_primacy
-		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = USA_bureau_of_ships }
-		x = 7
-		y = 1
-		relative_position_id = USA_bureau_of_ships
-		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-
-		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
-
-		completion_reward = {
-			add_breakthrough_progress = {
-				specialization = specialization_naval
-				value = 0.25
-			}
-			add_tech_bonus = {
-				name = USA_battleship_primacy
-				bonus = 1.0
-				uses = 2
-				category = bb_tech
-			}
-		}
-	}
-
-	focus = {
-		id = USA_advanced_mahanian_doctrine
-		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = USA_battleship_primacy }
-		x = 0
-		y = 1
-		relative_position_id = USA_battleship_primacy
-		cost = 10
-		#ai_will_do = {
-		#	factor = 1
-		#}
-
-		available_if_capitulated = yes
-
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-
-			add_mastery_bonus = {
-				name = USA_advanced_mahanian_doctrine
-				bonus = 0.1
-				days = 180
-				track = capital_ships
-			}
-		}
-	}
-
-	focus = {
-		id = USA_advanced_basing
-		icon = GFX_goal_generic_occupy_states_coastal
-		x = 0
-		y = 2
-		prerequisite = { focus = USA_advanced_mahanian_doctrine }
-		relative_position_id = USA_battleship_primacy
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			638 = {
-				add_building_construction = {
-					type = naval_base
-					province = 12140
-					level = 2
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = {
-					327 = {
-						CONTROLLER = {
-							is_subject_of = ROOT
-						}
-					}
-				}
-				327 = {
-					add_building_construction = {
-						type = naval_base
-						province = 10265
-						level = 2
-						instant_build = yes
-					}
-				}
-			}
-		}
-	}
 
 	focus = {
 		id = USA_carrier_primacy
@@ -7458,7 +7349,7 @@ focus_tree = {
 	focus = {
 		id = USA_bureau_of_aeronautics
 		icon = GFX_focus_RJ_USA_bureau_of_aeronautics
-		prerequisite = { focus = USA_carrier_primacy }
+		prerequisite = { focus = USA_carrier_primacy focus = USA_air_support }
 		x = -1
 		y = 1
 		relative_position_id = USA_carrier_primacy
@@ -7471,25 +7362,21 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			add_tech_bonus = {
-				name = USA_bureau_of_aeronautics
-				bonus = 1.0
-				uses = 1
-				category = naval_bomber
-				category = naval_air
+			custom_effect_tooltip = bureau_of_aeronautics_DM_tt
+			add_to_variable = {
+				RJ_USA_navy_naval_air_efficiency = 0.15
 			}
 		}
 	}
 
 	focus = {
-		id = RJ_USA_navy_air_placeholder
-		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = USA_bureau_of_aeronautics }
-		prerequisite = { focus = RJ_USA_carrier_taskforces }
+		id = RJ_USA_naval_aircraft_advancements
+		icon = GFX_focus_RJ_naval_bomber
+		prerequisite = { focus = USA_bureau_of_aeronautics focus = RJ_USA_carrier_taskforces }
 		x = 1
 		y = 1
 		relative_position_id = USA_bureau_of_aeronautics
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -7499,20 +7386,26 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
 			add_tech_bonus = {
-				name = USA_bureau_of_aeronautics
+				name = USA_air_bonus1
 				bonus = 1.0
 				uses = 1
 				category = naval_bomber
 				category = naval_air
+			}
+			add_tech_bonus = {
+				name = USA_air_bonus2
+				bonus = 0.30
+				uses = 1
+				category = plane_modules_tech
 			}
 		}
 	}
 
 	focus = {
 		id = USA_naval_radar
-		icon = GFX_goal_generic_radar
-		x = -1
-		y = 1
+		icon = GFX_focus_RJ_USA_MAGIC
+		x = 0
+		y = 2
 		prerequisite = { focus = USA_bureau_of_aeronautics }
 		relative_position_id = USA_bureau_of_aeronautics
 		cost = 10
@@ -7557,12 +7450,12 @@ focus_tree = {
 
 	focus = {
 		id = RJ_USA_combat_information_center
-		icon = GFX_goal_generic_radar
+		icon = GFX_goal_generic_navy_doctrines_tactics
 		x = 0
 		y = 1
 		prerequisite = { focus = USA_naval_radar }
 		relative_position_id = USA_naval_radar
-		cost = 10
+		cost = 14.4
 
 		ai_will_do = {
 			factor = 1
@@ -7582,23 +7475,13 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-
-			add_breakthrough_progress = {
-				specialization = specialization_naval
-				value = 0.25
+			custom_effect_tooltip = CIC_DM_tt
+			add_to_variable = {
+				RJ_USA_navy_coordination = 0.15
+				RJ_USA_navy_accidents_chance = -0.10
+				RJ_USA_navy_night_attack = 0.15
+				RJ_USA_navy_organization = 0.15
 			}
-			add_breakthrough_progress = {
-				specialization = specialization_air
-				value = 0.5
-			}
-
-			add_tech_bonus = {
-				name = USA_naval_radar
-				uses = 1 # was 2
-				bonus = 1.0
-				category = radar_tech
-			}
-			
 		}
 	}
 
@@ -7606,7 +7489,7 @@ focus_tree = {
 		id = USA_escort_effort
 		icon = GFX_goal_generic_navy_anti_submarine
 		prerequisite = { focus = USA_bureau_of_ships }
-		x = 5
+		x = 4
 		y = 1
 		relative_position_id = USA_bureau_of_ships
 		cost = 10
@@ -7618,15 +7501,26 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = escort_effort_focus
-			
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_tech_bonus = {
+				name = escort_bonus
+				bonus = 0.50
+				uses = 3
+				category = mio_cat_tech_all_screen_ship_and_modules
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_breakthrough_progress = {
+				specialization = specialization_naval
+				value = 0.25
+			}
 		}
 	}
 
 	focus = {
-		id = USA_convoy_tactics
-		icon = GFX_goal_generic_navy_cruiser
+		id = RJ_USA_hunter_killer_groups
+		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = USA_escort_effort }
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = USA_escort_effort
 		cost = 10
@@ -7636,21 +7530,60 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			navy_experience = 25
-			add_mastery = {
-				amount = 50
-				track = screens
-			}
-			add_mastery_bonus = {
-				name = USA_convoy_tactics
-				bonus = 0.1
-				days = 180
-				track = screens
+			custom_effect_tooltip = hunter_killer_groups_DM_tt
+			add_to_variable = {
+				RJ_USA_navy_sub_detection = 0.15
 			}
 		}
 	}
+
+	focus = {
+		id = RJ_USA_the_bucket_brigade_system
+		icon = GFX_focus_RJ_USA_bucket_brigade_system
+		prerequisite = { focus = USA_escort_effort focus = USA_liberty_ships }
+		x = 0
+		y = 2
+		relative_position_id = USA_escort_effort
+		cost = 5
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = bucket_brigade_system_DM_tt
+			add_to_variable = {
+				RJ_USA_navy_escort_efficiency = 0.10
+				RJ_USA_navy_convoy_retreat = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_USA_interlocking_convoy_system
+		icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
+		prerequisite = { focus = RJ_USA_the_bucket_brigade_system }
+		x = 0
+		y = 1
+		relative_position_id = RJ_USA_the_bucket_brigade_system
+		cost = 7.2
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = interlocking_convoy_system_DM_tt
+			add_to_variable = {
+				RJ_USA_navy_escort_efficiency = 0.10
+				RJ_USA_navy_convoy_retreat = 0.10
+			}
+		}
+	}
+
 	focus = {
 		id = USA_fleet_submarines
 		icon = GFX_goal_generic_navy_submarine
@@ -7697,62 +7630,6 @@ focus_tree = {
 			}	
 		}
 	}
-
-	focus = {
-		id = USA_unrestricted_submarine_warfare
-		icon = GFX_goal_generic_wolf_pack
-		x = 1
-		y = 1
-		prerequisite = { focus = USA_fleet_submarines }
-		prerequisite = { focus = RJ_USA_wolfpack_tactics }
-		relative_position_id = RJ_USA_wolfpack_tactics
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		completion_reward = {
-			add_ideas = USA_unrestricted_submarine_warfare
-		}
-	}
-
-	#focus = {
-	#	id = USA_fund_the_navy
-	#	icon = GFX_goal_generic_construct_naval_dockyard
-	#	x = 13
-	#	y = 1
-	#	relative_position_id = USA_two_ocean_navy_act
-	#	cost = 10
-	#	prerequisite = { focus = USA_two_ocean_navy_act }
-	#	ai_will_do = {
-	#		factor = 1
-	#	}
-	#
-	#	available_if_capitulated = yes
-	#
-	#	search_filters = {FOCUS_FILTER_RESEARCH}
-	#			completion_reward = {
-	#		add_doctrine_cost_reduction = {
-	#			name = USA_fund_the_navy
-	#			uses = 3
-	#			cost_reduction = 0.5
-	#			category = naval_doctrine
-	#		}
-	#	}
-	#}
 
 	focus = {
 		id = RJ_USA_doctrinal_refinements
@@ -7863,7 +7740,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = RJ_USA_doctrinal_refinements
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -7872,7 +7749,42 @@ focus_tree = {
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			
+			custom_effect_tooltip = wolfpack_tactics_DM_tt
+			add_to_variable = {
+				RJ_USA_navy_convoy_raiding_efficiency = 0.10
+				RJ_USA_navy_torpedo_hit_chance = 0.10
+			}
+		}
+	}
+
+	focus = {
+		id = USA_unrestricted_submarine_warfare
+		icon = GFX_goal_generic_wolf_pack
+		x = 1
+		y = 1
+		prerequisite = { focus = USA_fleet_submarines }
+		prerequisite = { focus = RJ_USA_wolfpack_tactics }
+		relative_position_id = RJ_USA_wolfpack_tactics
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = USA_unrestricted_submarine_warfare
 		}
 	}
 
@@ -7892,7 +7804,11 @@ focus_tree = {
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			
+			custom_effect_tooltip = carrier_taskforces_DM_tt
+			add_to_variable = {
+				RJ_USA_navy_sortie_efficiency = 0.15
+				RJ_USA_navy_screening_efficiency = 0.10
+			}
 		}
 	}
 }
