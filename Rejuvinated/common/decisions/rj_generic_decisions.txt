@@ -6,12 +6,12 @@ economy_decisions = {
 
 		available = {
 			custom_trigger_tooltip = {
-				has_idea = GEN_illiteracy
+				has_idea = rj_generic_illiteracy
 			}
 			hidden_trigger = { # hidden to not confuse players there's thew same requirement twice
 				OR = {
-					has_idea = GEN_illiteracy
-					has_idea = GEN_illiteracy_2
+					has_idea = rj_generic_illiteracy
+					has_idea = rj_generic_illiteracy_2
 				}
 			}
 			num_of_civilian_factories_available_for_projects > 4
@@ -30,8 +30,8 @@ economy_decisions = {
 
 		visible = {
 			OR = {
-				has_idea = GEN_illiteracy
-				has_idea = GEN_illiteracy_2
+				has_idea = rj_generic_illiteracy
+				has_idea = rj_generic_illiteracy_2
 			}
 		}
 
