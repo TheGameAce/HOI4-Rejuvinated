@@ -58,10 +58,7 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_timed_idea = {
-			idea = MLT_italian_help_idea
-			days = 730
-			}
+			add_ideas = MLT_italian_help_idea
 
 		}
 	}
@@ -119,29 +116,7 @@ focus = {
 		available_if_capitulated = no
 		available = {
 			NOT = { has_idea = MLT_infiltration_ongoing }
-			num_of_available_civilian_factories > 2
-		}
-
-		completion_reward = {
-           add_timed_idea = {
-			idea = MLT_infiltration_ongoing
-			days = 150
-			}
-		}
-	}
-	focus = {
-		id = MLT_infiltrate_ITA_civilian_sector
-		icon = GFX_goal_generic_consumer_goods
-		x = -1
-		y = 1
-		cost = 5
-		relative_position_id = MLT_the_grand_plan
-		prerequisite = { focus = MLT_the_grand_plan }
-
-		available_if_capitulated = no
-		available = {
-			NOT = { has_idea = MLT_infiltration_ongoing }
-			num_of_available_civilian_factories > 2
+			num_of_available_civilian_factories > 0
 		}
 
 		completion_reward = {
@@ -164,7 +139,7 @@ focus = {
 		available_if_capitulated = no
 		available = {
 			NOT = { has_idea = MLT_infiltration_ongoing }
-			num_of_available_civilian_factories > 2
+			num_of_available_civilian_factories > 1
 		}
 
 		completion_reward = {
@@ -209,6 +184,77 @@ focus = {
 
 		completion_reward = {
           add_ideas = MLT_friends_in_high_places
+	}
+	}
+	
+	focus = {
+		id = MLT_make_our_move
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 20
+		relative_position_id = MLT_friends_in_high_places
+		prerequisite = { focus = MLT_friends_in_high_places }
+		available = {
+			has_political_power > 1900
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+          ITA = {
+		  end_puppet = MLT
+		  }
+		  puppet = ITA
+		  add_political_power = -1900
+	}
+	
+	}
+	
+	focus = {
+		id = MLT_integrate_italy
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 20
+		relative_position_id = MLT_make_our_move
+		prerequisite = { focus = MLT_make_our_move }
+		available = {
+			has_political_power > 1900
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_state_core = 115
+			add_state_core = 114
+			add_state_core = 156
+			add_state_core = 117
+			add_state_core = 849
+			add_state_core = 157
+			add_state_core = 2
+			add_state_core = 162
+			add_state_core = 161
+			add_state_core = 160
+			add_state_core = 850
+			add_state_core = 39
+			add_state_core = 736
+			add_state_core = 852
+			add_state_core = 159
+			add_state_core = 158
+          if = {
+				limit = { country_exists = ITA }
+				annex_country = {
+					target = ITA
+					transfer_troops = yes
+				}
+				ITA = {
+					every_unit_leader = {
+						set_nationality = ROOT
+					}
+				}
+			}
+		  add_political_power = -1900
 	}
 	
 	}
