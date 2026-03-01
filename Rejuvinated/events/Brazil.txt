@@ -119,48 +119,6 @@ country_event = {
 		add_opinion_modifier = { target = BRA modifier = bra_inimigo_modifier }
 	}
 }
-
-country_event = {
-	id = bra.10
-	title = bra.10.t
-	desc = bra.10.d
-	picture = GFX_bra.10
-	
-	is_triggered_only = yes
-	fire_only_once = yes 
-	
-	option = {
-		name = bra.10.a
-		hidden_effect = {
-			set_party_name = { ideology = fascism long_name = "Ação Integralista Brasileira" name = "AIB" }
-			set_party_name = { ideology = democratic long_name = "Partido Constitucionalista" name = "Constitucionalistas" }
-			set_party_name = { ideology = communism long_name = "Aliança Nacional Libertadora" name = "ANL" }
-			set_party_name = { ideology = neutrality long_name = "Aliança Liberal" name = "Aliança Liberal" }
-			501 = { 
-				add_building_construction = { type = dockyard level = 2 instant_build = yes }
-				add_building_construction = { type = naval_base province = 5112 level = 3 instant_build = yes }
-			}
-		}
-		hidden_effect = {
-			496 = { 
-				add_building_construction = { type = naval_base province = 10999 level = 2 instant_build = yes }
-			}
-			497 = { 
-				add_building_construction = { type = naval_base province = 12933 level = 3 instant_build = yes }
-				add_building_construction = { type = naval_base province = 12853 level = 1 instant_build = yes }
-			}
-			498 = { 
-				add_building_construction = { type = naval_base province = 5168 level = 2 instant_build = yes }
-			}
-			499 = { 
-				add_building_construction = { type = naval_base province = 10946 level = 2 instant_build = yes }
-			}
-			503 = { 
-				add_building_construction = { type = naval_base province = 4533 level = 3 instant_build = yes }
-			}
-		}
-	}
-}
 	
 country_event = {
 	id = bra.13
@@ -173,26 +131,20 @@ country_event = {
 	
 	option = {
 		name = bra.13.a
-		
-		kill_country_leader = yes
-		
-		hidden_effect = {
-			create_country_leader = {
-				name = "Eurico Gaspar Dutra"
-				desc = "POLITICS_DUTRA_DESC"
-				picture = "gfx/leaders/BRA/Dutra.dds"
-				expire = "1965.1.1"
-				ideology = moderatism
-				traits = {
-					
-				}
-			}
+
+		effect_tooltip = {
+			kill_country_leader = yes
 		}
-		
+		hidden_effect = {
+			retire_character = BRA_getulio_vargas
+
+			promote_character = BRA_eurico_gaspar_dutra
+		}
+
 		set_politics = { ruling_party = communism elections_allowed = no }
-		
+
 		add_popularity = { ideology = communism popularity = 0.1 }
-		
+
 		add_political_power = 150
 	}
 }
@@ -208,26 +160,17 @@ country_event = {
 	
 	option = {
 		name = bra.14.a
-		
-		retire_country_leader = yes
-		
+
+		retire_character = BRA_getulio_vargas
+
 		hidden_effect = {
-			create_country_leader = {
-				name = "Eurico Gaspar Dutra"
-				desc = "POLITICS_DUTRA_DESC"
-				picture = "gfx/leaders/BRA/Dutra.dds"
-				expire = "1965.1.1"
-				ideology = moderatism
-				traits = {
-					
-				}
-			}
+			promote_character = BRA_eurico_gaspar_dutra
 		}
-		
+
 		set_politics = { ruling_party = fascism elections_allowed = no }
-		
+
 		add_popularity = { ideology = fascism popularity = 0.1 }
-		
+
 		add_political_power = 150
 	}
 }
@@ -267,28 +210,19 @@ country_event = {
 	
 	option = {
 		name = bra.16.a
-		
-		retire_country_leader = yes
-		
+
+		retire_character = BRA_getulio_vargas
+
 		hidden_effect = {
-			create_country_leader = {
-				name = "Eurico Gaspar Dutra"
-				desc = "POLITICS_DUTRA_DESC"
-				picture = "gfx/leaders/BRA/Dutra.dds"
-				expire = "1965.1.1"
-				ideology = moderatism
-				traits = {
-					
-				}
-			}
+			promote_character = BRA_eurico_gaspar_dutra
 		}
-		
+
 		set_politics = { ruling_party = democratic elections_allowed = no }
-		
+
 		set_party_name = { ideology = democratic long_name = "União Democrática Nacional" name = "UDN" }
-	
+
 		add_popularity = { ideology = democratic popularity = 0.1 }
-		
+
 		add_political_power = 150
 	}
 }

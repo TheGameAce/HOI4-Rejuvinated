@@ -91,17 +91,7 @@ BRA_elect_neutrality = {
 			
 			hidden_effect = { kill_country_leader = yes }
 			
-			create_country_leader = {
-				name = "Eurico Gaspar Dutra"
-				desc = "POLITICS_DUTRA_DESC"
-				picture = "gfx/leaders/BRA/Dutra.dds"
-				expire = "1965.1.1"
-				ideology = moderatism
-				traits = {
-					vfb_trait_dutra
-					vfb_trait_officer
-				}
-			}
+			promote_character = BRA_eurico_gaspar_dutra
 		}
 		
 		remove_effect = {

@@ -64,10 +64,35 @@ characters = {
 		}
 	}
 
-
-
-
-
+	BRA_eurico_gaspar_dutra = {
+		name="Eurico Gaspar Dutra"
+		portraits={
+			civilian={
+				large = "gfx/leaders/BRA/Portrait_BRA_eurico_dutra.dds"
+			}
+			army={
+				small = "GFX_idea_generic_navy_south_america_5"
+				large = "gfx/leaders/BRA/Portrait_BRA_eurico_dutra.dds"
+			}
+		}
+		country_leader = {
+			desc = "POLITICS_DUTRA_DESC"
+			expire = "1965.1.1"
+			ideology = moderatism
+			traits = {
+				vfb_trait_dutra
+				vfb_trait_officer
+			}
+		}
+		field_marshal = {
+			traits = { career_officer politically_connected skilled_staffer expert_delegator organisational_leader defensive_doctrine }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+		}
+	}
 
 	#################################################################################################################################################################
 	################################ Advisors Only ##########################################
@@ -805,24 +830,6 @@ characters = {
 	######################################################################################################
 	################################### GENERALS & ADMIRALS ##############################################
 	######################################################################################################
-
-	BRA_gaspar_dutra = { #Field Marshal in-game.
-		name="Eurico Gaspar Dutra"
-		portraits={
-			army={
-				small = "GFX_idea_generic_navy_south_america_5"
-				large = "gfx/leaders/BRA/Portrait_BRA_eurico_dutra.dds"
-			}
-		}		
-		field_marshal = {
-			traits = { career_officer politically_connected skilled_staffer expert_delegator organisational_leader defensive_doctrine }
-			skill = 4
-			attack_skill = 2
-			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 4
-		}
-	}
 
 	BRA_pedro_aurelio = {
 		name="Pedro Aurélio de Góis Monteiro"
