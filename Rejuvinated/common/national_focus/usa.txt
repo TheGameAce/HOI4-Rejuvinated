@@ -7131,19 +7131,21 @@ focus_tree = {
 			navy_experience = 50
 			add_ideas = bureau_of_ships_focus
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = bureau_of_ships_DM_tt
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
+			add_to_variable = {
+				RJ_USA_navy_naval_equipment_cost = -0.10
+				tooltip = naval_equipment_upgrade_xp_cost_tt
+			}
+			add_to_variable = {
+				RJ_USA_navy_torpedo_hit_chance = 0.10
+				tooltip = naval_torpedo_hit_chance_factor_tt
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			USA_chester_w_nimitz = {
 				add_skill_level = 1
 			}
 			USA_william_halsey_jr = {
 				add_skill_level = 1
-			}
-
-			add_to_variable = {
-				RJ_USA_navy_naval_equipment_cost = 0.10
-				RJ_USA_navy_torpedo_hit_chance = 0.10
 			}
 		}
 	}
@@ -7204,11 +7206,15 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_USA_CONGRESS}
 		completion_reward = {
-			custom_effect_tooltip = two_ocean_navy_act_DM_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
+			add_to_variable = {
+				RJ_USA_navy_dockyard_output = 0.15
+				tooltip = industrial_capacity_dockyard_tt
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
-					 has_war_support < 0.4 
+					has_war_support < 0.4 
 				}
 				USA_congress_medium_opposition = yes
 			}
@@ -7254,9 +7260,6 @@ focus_tree = {
 			USA_ernest_king = {
 				add_skill_level = 1
 			}
-			add_to_variable = {
-				RJ_USA_navy_dockyard_output = 0.15
-			}
 		}
 	}
 
@@ -7286,9 +7289,10 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			custom_effect_tooltip = maritime_commission_DM_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
 				RJ_USA_navy_dockyard_construction_speed = 0.10
+				tooltip = production_speed_dockyard_factor_tt
 			}
 		}
 	}
@@ -7310,10 +7314,11 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = liberty_ships_focus
 			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = USA_modify_us_army_tt
 			add_to_variable = {
 				RJ_USA_army_supply_range = 0.05
+				tooltip = supply_node_range_tt
 			}
-			custom_effect_tooltip = liberty_ships_DM_tt
 		}
 	}
 
@@ -7362,9 +7367,10 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			custom_effect_tooltip = bureau_of_aeronautics_DM_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
 				RJ_USA_navy_naval_air_efficiency = 0.15
+				tooltip = air_nav_efficiency_tt
 			}
 		}
 	}
@@ -7475,12 +7481,22 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			custom_effect_tooltip = CIC_DM_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
 				RJ_USA_navy_coordination = 0.15
+				tooltip = naval_coordination_tt
+			}
+			add_to_variable = {
 				RJ_USA_navy_accidents_chance = -0.10
+				tooltip = naval_accidents_chance_tt
+			}
+			add_to_variable = {
 				RJ_USA_navy_night_attack = 0.15
+				tooltip = naval_night_attack_tt
+			}
+			add_to_variable = {
 				RJ_USA_navy_organization = 0.15
+				tooltip = navy_org_factor_tt
 			}
 		}
 	}
@@ -7531,9 +7547,10 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			custom_effect_tooltip = hunter_killer_groups_DM_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
 				RJ_USA_navy_sub_detection = 0.15
+				tooltip = naval_detection_tt
 			}
 		}
 	}
@@ -7553,10 +7570,14 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			custom_effect_tooltip = bucket_brigade_system_DM_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
 				RJ_USA_navy_escort_efficiency = 0.10
+				tooltip = convoy_escort_efficiency_tt
+			}
+			add_to_variable = {
 				RJ_USA_navy_convoy_retreat = 0.05
+				tooltip = convoy_retreat_speed_tt
 			}
 		}
 	}
@@ -7576,10 +7597,14 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			custom_effect_tooltip = interlocking_convoy_system_DM_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
 				RJ_USA_navy_escort_efficiency = 0.10
+				tooltip = convoy_escort_efficiency_tt
+			}
+			add_to_variable = {
 				RJ_USA_navy_convoy_retreat = 0.10
+				tooltip = convoy_retreat_speed_tt
 			}
 		}
 	}
@@ -7672,10 +7697,11 @@ focus_tree = {
 
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
+			custom_effect_tooltip = USA_modify_us_army_tt
 			add_to_variable = {
 				RJ_USA_army_SF_cap = 0.25
+				tooltip = special_forces_cap_tt
 			}
-			custom_effect_tooltip = expand_the_USMC_DM_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
@@ -7753,10 +7779,14 @@ focus_tree = {
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			custom_effect_tooltip = wolfpack_tactics_DM_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
 				RJ_USA_navy_convoy_raiding_efficiency = 0.10
+				tooltip = convoy_raiding_efficiency_factor_tt
+			}
+			add_to_variable = {
 				RJ_USA_navy_torpedo_hit_chance = 0.10
+				tooltip = naval_torpedo_hit_chance_factor_tt
 			}
 		}
 	}
@@ -7808,10 +7838,14 @@ focus_tree = {
 		
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			custom_effect_tooltip = carrier_taskforces_DM_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
 				RJ_USA_navy_sortie_efficiency = 0.15
+				tooltip = sortie_efficiency_tt
+			}
+			add_to_variable = {
 				RJ_USA_navy_screening_efficiency = 0.10
+				tooltip = screening_efficiency_tt
 			}
 		}
 	}
