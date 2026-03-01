@@ -79,7 +79,6 @@ BRA_elect_neutrality = {
 				has_completed_focus = bra_brasilia
 				has_government = neutrality
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -144,7 +143,6 @@ BRA_elect_neutrality = {
 				has_completed_focus = bra_brasilia
 				has_government = neutrality
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -210,7 +208,6 @@ BRA_elect_neutrality = {
 				has_completed_focus = bra_brasilia
 				has_government = neutrality
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -274,7 +271,6 @@ BRA_elect_neutrality = {
 				has_completed_focus = bra_brasilia
 				has_government = neutrality
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -340,7 +336,6 @@ BRA_elect_neutrality = {
 				has_completed_focus = bra_brasilia
 				has_government = neutrality
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -408,7 +403,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -472,7 +466,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -537,7 +530,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -601,7 +593,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -665,7 +656,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -729,7 +719,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -793,7 +782,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -857,7 +845,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -921,7 +908,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -989,7 +975,6 @@ BRA_elect_fascism = {
 				has_completed_focus = bra_brasilia
 				has_government = fascism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1055,7 +1040,6 @@ BRA_elect_fascism = {
 				has_completed_focus = bra_brasilia
 				has_government = fascism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1121,7 +1105,6 @@ BRA_elect_fascism = {
 				has_completed_focus = bra_brasilia
 				has_government = fascism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1187,7 +1170,6 @@ BRA_elect_fascism = {
 				has_completed_focus = bra_brasilia
 				has_government = fascism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1253,7 +1235,6 @@ BRA_elect_fascism = {
 				has_completed_focus = bra_brasilia
 				has_government = fascism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1322,7 +1303,6 @@ BRA_elect_communism = {
 				has_completed_focus = bra_brasilia
 				has_government = communism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1386,7 +1366,6 @@ BRA_elect_communism = {
 				has_completed_focus = bra_brasilia
 				has_government = communism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1451,7 +1430,6 @@ BRA_elect_communism = {
 				has_completed_focus = bra_brasilia
 				has_government = communism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1499,7 +1477,7 @@ BRA_uiracu = {
 			ARG = {
 				AND = {
 					exists = yes
-					is_puppet = no
+					is_subject = no
 					is_in_faction = no
 					NOT = { has_non_aggression_pact_with = BRA }
 					is_neighbor_of = BRA
@@ -1522,7 +1500,6 @@ BRA_uiracu = {
 		
 		visible = {
 			has_completed_focus = BRA_the_uiracu
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1551,7 +1528,7 @@ BRA_uiracu = {
 			BOL = {
 				AND = {
 					exists = yes
-					is_puppet = no
+					is_subject = no
 					is_in_faction = no
 					NOT = { has_non_aggression_pact_with = BRA }
 					is_neighbor_of = BRA
@@ -1574,7 +1551,6 @@ BRA_uiracu = {
 		
 		visible = {
 			has_completed_focus = BRA_the_uiracu
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1603,7 +1579,7 @@ BRA_uiracu = {
 			PAR = {
 				AND = {
 					exists = yes
-					is_puppet = no
+					is_subject = no
 					is_in_faction = no
 					NOT = { has_non_aggression_pact_with = BRA }
 					is_neighbor_of = BRA
@@ -1626,7 +1602,6 @@ BRA_uiracu = {
 		
 		visible = {
 			has_completed_focus = BRA_the_uiracu
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1655,7 +1630,7 @@ BRA_uiracu = {
 			URG = {
 				AND = {
 					exists = yes
-					is_puppet = no
+					is_subject = no
 					is_in_faction = no
 					NOT = { has_non_aggression_pact_with = BRA }
 					is_neighbor_of = BRA
@@ -1678,7 +1653,6 @@ BRA_uiracu = {
 		
 		visible = {
 			has_completed_focus = BRA_the_uiracu
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1729,7 +1703,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1793,7 +1766,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1849,7 +1821,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1915,7 +1886,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1970,7 +1940,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2025,7 +1994,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2087,7 +2055,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2151,7 +2118,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2215,7 +2181,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2281,7 +2246,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2343,7 +2307,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2404,7 +2367,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao 
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2462,7 +2424,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2522,7 +2483,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2590,7 +2550,6 @@ economy_decisions = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2656,10 +2615,6 @@ BRA_cat_proalcool = {
 			factor = 4000
 		}
 		
-		visible = {
-			original_tag = BRA
-		}
-		
 		modifier = {
 			civilian_factory_use = 5
 			#politicalpowergainplaceholder
@@ -2717,10 +2672,6 @@ BRA_cat_proalcool = {
 		
 		ai_will_do = {
 			factor = 4000
-		}
-		
-		visible = {
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2783,10 +2734,6 @@ BRA_cat_proalcool = {
 			factor = 4000
 		}
 		
-		visible = {
-			original_tag = BRA
-		}
-		
 		modifier = {
 			civilian_factory_use = 5
 			#politicalpowergainplaceholder
@@ -2847,10 +2794,6 @@ BRA_cat_proalcool = {
 			factor = 4000
 		}
 		
-		visible = {
-			original_tag = BRA
-		}
-		
 		modifier = {
 			civilian_factory_use = 5
 			#politicalpowergainplaceholder
@@ -2909,10 +2852,6 @@ BRA_cat_proalcool = {
 		
 		ai_will_do = {
 			factor = 4000
-		}
-		
-		visible = {
-			original_tag = BRA
 		}
 		
 		modifier = {
