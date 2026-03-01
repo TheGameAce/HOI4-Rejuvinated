@@ -68,6 +68,13 @@ if = {
 	}
 }
 
+
+set_autonomy = {
+	target = SMR
+	autonomous_state = autonomy_colony
+}
+
+
 set_country_flag = hispanic
 
 if = {
