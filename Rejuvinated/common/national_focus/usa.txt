@@ -7723,13 +7723,17 @@ focus_tree = {
 				category = tp_tech 
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
 				RJ_USA_navy_shore_bombardment_bonus = 0.10
-				RJ_USA_army_naval_invasion_penalty = -0.10
+				tooltip = shore_bombardment_bonus_tt
 			}
-			custom_effect_tooltip = fleet_landing_army_DM_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = fleet_landing_navy_DM_tt
+			custom_effect_tooltip = USA_modify_us_army_tt
+			add_to_variable = {
+				RJ_USA_army_naval_invasion_penalty = -0.10
+				tooltip = naval_invasion_penalty_tt
+			}
 		}
 	}
 
