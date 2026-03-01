@@ -1,0 +1,295 @@
+﻿focus_tree = {
+	id = malta_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = MLT
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 1500 }
+	
+focus = {
+		id = MLT_state_of_the_nation
+		icon = GFX_goal_generic_consumer_goods
+		x = 3
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	
+	focus = {
+		id = MLT_italian_irredentism
+		icon = GFX_goal_generic_consumer_goods
+		x = 5
+		y = 1
+		cost = 5
+		relative_position_id = MLT_state_of_the_nation
+		prerequisite = { focus = MLT_state_of_the_nation }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = ITA
+			ITA = {  give_guarantee = MLT	}
+
+		}
+	}
+	
+	focus = {
+		id = MLT_italian_help_with_independence
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_italian_irredentism
+		prerequisite = { focus = MLT_italian_irredentism }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_timed_idea = {
+			idea = MLT_italian_help_idea
+			days = 730
+			}
+
+		}
+	}
+	
+	focus = {
+		id = MLT_subjogation_by_italy
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_italian_help_with_independence
+		prerequisite = { focus = MLT_italian_help_with_independence }
+
+		available_if_capitulated = no
+		available = {
+			is_subject = no
+		}
+
+		completion_reward = {
+			ITA = {
+			puppet = MLT
+			}
+
+		}
+	}
+	
+	focus = {
+		id = MLT_the_grand_plan
+		icon = GFX_goal_generic_consumer_goods
+		x = 3
+		y = 1
+		cost = 5
+		relative_position_id = MLT_subjogation_by_italy
+		prerequisite = { focus = MLT_subjogation_by_italy }
+
+		available_if_capitulated = no
+		available = {
+			has_political_power > 500
+		}
+
+		completion_reward = {
+         add_political_power = -500
+		}
+	}
+	
+	focus = {
+		id = MLT_infiltrate_ITA_civilian_sector
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = MLT_the_grand_plan
+		prerequisite = { focus = MLT_the_grand_plan }
+
+		available_if_capitulated = no
+		available = {
+			NOT = { has_idea = MLT_infiltration_ongoing }
+			num_of_available_civilian_factories > 2
+		}
+
+		completion_reward = {
+           add_timed_idea = {
+			idea = MLT_infiltration_ongoing
+			days = 150
+			}
+		}
+	}
+	focus = {
+		id = MLT_infiltrate_ITA_civilian_sector
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = MLT_the_grand_plan
+		prerequisite = { focus = MLT_the_grand_plan }
+
+		available_if_capitulated = no
+		available = {
+			NOT = { has_idea = MLT_infiltration_ongoing }
+			num_of_available_civilian_factories > 2
+		}
+
+		completion_reward = {
+           add_timed_idea = {
+			idea = MLT_infiltration_ongoing
+			days = 150
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_infiltrate_ITA_military
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = MLT_the_grand_plan
+		prerequisite = { focus = MLT_the_grand_plan }
+
+		available_if_capitulated = no
+		available = {
+			NOT = { has_idea = MLT_infiltration_ongoing }
+			num_of_available_civilian_factories > 2
+		}
+
+		completion_reward = {
+           add_timed_idea = {
+			idea = MLT_infiltration_ongoing
+			days = 150
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_redirect_italian_industrial_resources
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = MLT_infiltrate_ITA_civilian_sector
+		prerequisite = { focus = MLT_infiltrate_ITA_civilian_sector }
+		prerequisite = { focus = MLT_infiltrate_ITA_military }
+
+		available_if_capitulated = no
+		available = {
+			NOT = { has_idea = MLT_infiltration_ongoing }
+		}
+
+		completion_reward = {
+          add_offsite_building = { type = arms_factory level = 2 }
+		  add_offsite_building = { type = industrial_complex level = 2 }
+	}
+    }
+	
+	focus = {
+		id = MLT_friends_in_high_places
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_redirect_italian_industrial_resources
+		prerequisite = { focus = MLT_redirect_italian_industrial_resources }
+
+		available_if_capitulated = no
+
+		completion_reward = {
+          add_ideas = MLT_friends_in_high_places
+	}
+	
+	}
+	
+	focus = {
+		id = MLT_italian_trade_investments
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 2
+		cost = 5
+		relative_position_id = MLT_subjogation_by_italy
+		prerequisite = { focus = MLT_subjogation_by_italy }
+
+		available_if_capitulated = no
+
+		completion_reward = {
+        add_ideas = MLT_italian_trade_investments_idea
+		}
+	}
+	
+	focus = {
+		id = MLT_italian_industry_in_malta
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_italian_trade_investments
+		prerequisite = { focus = MLT_italian_trade_investments }
+
+		available_if_capitulated = no
+
+		completion_reward = {
+        116 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
