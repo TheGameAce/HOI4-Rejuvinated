@@ -1,0 +1,323 @@
+focus_tree = {
+	id = egypt_focus
+	
+	country = {
+		factor = 0
+		
+		#modifier = { #Disabled - Should be revisited - Error Free - WIP
+		#	add = 10
+		#	tag = EGY
+		#}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 1500 }
+
+	focus = {
+		id = EGY_get_rid_of_brits
+		icon = GFX_focus_ARG_cut_ties_with_britain
+		x = 5
+		y = 0
+		prerequisite = { }
+		mutually_exclusive = { focus = EGY_go_with_birts }
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+		bypass = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = EGY_go_with_birts
+		icon = GFX_focus_generic_british_trade
+		x = 10
+		y = 0
+		prerequisite = { }
+		mutually_exclusive = { focus = EGY_get_rid_of_brits }
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 20
+		}
+
+		available = {
+		}
+		bypass = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = EGY_egyptian_westminster
+		icon = GFX_goal_support_democracy
+		x = -2
+		y = 1
+		relative_position_id = EGY_go_with_birts
+
+		prerequisite = { focus = EGY_go_with_birts }
+		mutually_exclusive = { focus = EGY_farouk_i_focus }
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 1.5
+		}
+
+		available = {
+
+		}
+		bypass = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		completion_reward = {
+			add_ideas = EGY_westminster_system
+		}
+	}
+
+	focus = {
+		id = EGY_empower_the_parliament
+		icon = GFX_focus_PLACEHOLDER
+		x = 0
+		y = 1
+		relative_position_id = EGY_egyptian_westminster
+
+		prerequisite = { focus = EGY_egyptian_westminster }
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 1.5
+		}
+
+		available = {
+		}
+		bypass = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = EGY_republican_opposition
+				add_idea = EGY_anti_arabist
+			}
+			#swap_ideas = {
+			#	remove_idea = censored_press
+			#	add_idea = free_press
+			#}
+		}
+	}
+
+	focus = {
+		id = EGY_farouk_i_focus
+		icon = GFX_focus_PLACEHOLDER
+		x = 2
+		y = 1
+		relative_position_id = EGY_go_with_birts
+
+		prerequisite = { focus = EGY_go_with_birts }
+		mutually_exclusive = { focus = EGY_egyptian_westminster }
+
+		cost = 0.8
+
+		ai_will_do = {
+			factor = 1.5
+		}
+
+		available = {
+			has_country_leader = {
+				character = EGY_farouk_muhammad_ali
+				ruling_only = yes
+			}
+		}
+		bypass = {
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = EGY_consolidate_power
+		icon = GFX_focus_PLACEHOLDER
+		x = 0
+		y = 1
+		relative_position_id = EGY_farouk_i_focus
+
+		prerequisite = { focus = EGY_farouk_i_focus }
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 1.5
+		}
+
+		available = {
+		}
+		bypass = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			remove_ideas = EGY_republican_opposition
+		}
+	}
+
+	focus = {
+		id = EGY_empower_farouk
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = EGY_consolidate_power
+
+		prerequisite = { focus = EGY_consolidate_power }
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 1.5
+		}
+
+		available = {
+		}
+		bypass = {
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+		completion_reward = {
+			random_list = {
+				0 = {
+					set_politics = {
+						ruling_party = neutrality
+						last_election = "1929.12.21"
+						election_frequency = 78
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = neutrality
+						popularity = 0.73
+					}
+					add_stability = -0.05
+				}
+				100 = {
+					set_global_flag = EGY_civil_war_royalist
+					start_civil_war = {
+						ruling_party = neutrality
+						# Original country's ideology changes to communism
+						ideology = fascism
+						# Breakaway gets old ideology of ROOT
+						size = 0.4
+						capital = 282
+						states = {
+							452 552 456 457
+						}
+						keep_political_leader = yes
+						keep_political_party_members = yes
+					}
+					add_stability = -0.1
+					every_state = {
+						limit = {
+							is_core_of = SUD
+						}
+						set_state_owner_to = SUD
+						set_state_controller_to = SUD
+					}
+					SUD = {
+						#load_oob = SUD_1936
+						declare_war_on = {
+							target = EGY
+							type = annex_everything
+						}
+					}
+					every_country = {
+						limit = {
+							original_tag = EGY
+							NOT = { tag = EGY }
+						}
+						declare_war_on = {
+							target = SUD
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = EGY_protection_brits
+		icon = GFX_focus_chi_british_cooperation
+		x = -2
+		y = 1
+		relative_position_id = EGY_consolidate_power
+
+		prerequisite = { focus = EGY_consolidate_power focus = EGY_empower_the_parliament }
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 1.5
+		}
+
+		available = {
+		}
+		bypass = {
+		}
+
+		search_filters = { FOCUS_FILTER_DIPLOMATIC }
+		completion_reward = {
+			ENG = {
+				country_event = egypt.2
+			}
+		}
+	}
+
+	focus = {
+		id = EGY_suez_return
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = EGY_protection_brits
+
+		prerequisite = { focus = EGY_protection_brits }
+
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 1.5
+		}
+
+		available = {
+		}
+		bypass = {
+		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+		completion_reward = {
+			every_country = {
+				limit = {
+					controls_state = 446
+				}
+				country_event = egypt.3
+			}
+		}
+	}
+
+}

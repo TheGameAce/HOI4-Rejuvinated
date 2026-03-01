@@ -27,6 +27,16 @@ set_convoys = 20
 
 #set_cosmetic_tag = EGY_brit_puppet
 
+add_ideas = {
+	#EGY_republican_opposition
+	rj_generic_illiteracy_2
+	#censored_press
+}
+
+country_event = { # Ahmed Fuad I dead
+	id = egypt.1
+	days = 118
+}
 
 set_politics = {
 	ruling_party = neutrality
@@ -41,42 +51,19 @@ set_popularities = {
 	neutrality = 50
 }
 
-create_country_leader = {
-	name = "Muhammad Naguib"
-	desc = ""
-	picture = GFX_portrait_Muhammad_Naguib
-	ideology = liberalism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Ahmed Husayn"
-	desc = ""
-	picture = GFX_portrait_Ahmed_Husayn
-	ideology = fascism_ideology
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Farouk Muhammad Ali"
-	desc = ""
-	picture = "GFX_portrait_egy_faud_i"
-	ideology = monarchy
-	traits = {
-		farouk
-	}
-}
-
-create_country_leader = {
-	name = "Hosni al-Arabi"
-	desc = ""
-	picture = GFX_portrait_Hosni_al_Arabi
-	ideology = leninism
-	traits = {
-		#
-	}
-}
+recruit_character = EGY_muhammad_naguib
+recruit_character = EGY_ahmed_husayn
+recruit_character = EGY_fuad_i
+recruit_character = EGY_farouk_muhammad_ali
+recruit_character = EGY_mohamed_tawfik_naseem
+recruit_character = EGY_mostafa_el_nahas
+recruit_character = EGY_mohamed_mahmoud
+recruit_character = EGY_aly_maher_pasha
+recruit_character = EGY_hosni_alarabi
+recruit_character = EGY_gamal_abdel_nasser
+recruit_character = EGY_abdel_hakim_amer
+recruit_character = EGY_abdul_munim_riad
+recruit_character = EGY_ahmad_smail_ali
+recruit_character = EGY_ahmed_ali_al_mwawi
+recruit_character = EGY_hussein_el_shafei
+recruit_character = EGY_aziz_ezzat

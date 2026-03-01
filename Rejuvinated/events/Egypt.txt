@@ -1,0 +1,117 @@
+﻿###########################
+# Egyptian Events
+###########################
+
+add_namespace = egypt
+
+# Ahmed Fuad Dead
+country_event = {
+	id = egypt.1
+	title = egypt.1.t
+	desc = egypt.1.d
+	picture = GFX_report_event_BEL_van_zeeland_angry
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = egypt.1.a
+		effect_tooltip = {
+			kill_country_leader = yes
+		}
+		promote_character = EGY_farouk_muhammad_ali
+		hidden_effect = {
+			retire_character = EGY_fuad_i
+			set_global_flag = ahmed_fuad_dead
+			news_event = { id = rj_news.1 hours = 6 }
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+# Protection - For Brits
+country_event = {
+	id = egypt.2
+	title = egypt.2.t
+	desc = egypt.2.d
+	picture = GFX_report_event_BEL_van_zeeland_angry
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = egypt.2.a
+		#hidden_effect = {
+		#	news_event = BI_news.28
+		#}
+		give_guarantee = EGY
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	option = {
+		name = egypt.2.b
+		#hidden_effect = {
+		#	news_event = BI_news.29
+		#}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				is_historical_focus_on = no
+			}
+		}
+	}
+}
+
+# Suez Return - For Brits
+country_event = {
+	id = egypt.3
+	title = egypt.3.t
+	desc = egypt.3.d
+	picture = GFX_report_event_BEL_van_zeeland_angry
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = egypt.3.a
+		#hidden_effect = {
+		#	news_event = BI_news.30
+		#}
+		ROOT = {
+			transfer_state = 446
+			add_opinion_modifier = {
+				target = ENG
+				modifier = POL_draw_closer_to_britain
+			}
+		}
+		add_opinion_modifier = {
+			target = ROOT
+			modifier = POL_draw_closer_to_britain
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+
+	option = {
+		name = egypt.3.b
+		ROOT = {
+			add_opinion_modifier = {
+				target = ENG
+				modifier = protest_action_strong
+			}
+		}
+		add_opinion_modifier = {
+			target = ROOT
+			modifier = protest_action_strong
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
