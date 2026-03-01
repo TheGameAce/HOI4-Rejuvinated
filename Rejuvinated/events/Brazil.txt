@@ -121,20 +121,6 @@ country_event = {
 }
 
 country_event = {
-	id = bra.9
-	title = bra.9.t
-	desc = bra.9.d
-	picture = GFX_bra.9
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = bra.9.a
-		hidden_effect = { load_oob = BRA_atacado }
-	}
-}
-
-country_event = {
 	id = bra.10
 	title = bra.10.t
 	desc = bra.10.d

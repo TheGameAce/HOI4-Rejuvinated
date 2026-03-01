@@ -384,12 +384,14 @@ ideas = {
 			picture = generic_energy_concern
 
 			modifier = {
-				industrial_capacity_dockyard = 0.2
-				industrial_capacity_factory = 0.2
-				war_support_factor = 0.1
+				industrial_capacity_dockyard = 0.15
+				industrial_capacity_factory = 0.15
+				war_support_factor = 0.05
 				stability_factor = 0.05
-				conversion_cost_civ_to_mil_factor = -0.125
-				conversion_cost_mil_to_civ_factor = -0.125
+				conversion_cost_civ_to_mil_factor = -0.1
+				conversion_cost_mil_to_civ_factor = -0.1
+				production_speed_energy_infrastructure_factor = 0.15
+				production_speed_industrial_infrastructure_factor = 0.15
 			}
 		}
 

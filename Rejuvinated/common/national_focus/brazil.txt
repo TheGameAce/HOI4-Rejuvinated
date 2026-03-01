@@ -394,37 +394,28 @@ focus_tree = {
 		icon = GFX_focus_BRA_new_capital
 		prerequisite = { focus = bra_patriotic_effort focus = bra_vital_espace focus = bra_tecnocratic_reform focus = bra_cosmopolitanism }
 		available = { 
-			
 			if = { 
 				limit = { 
 					has_government = neutrality
 				}
 				neutrality > 0.5
-			}
-			
-			if = { 
-				limit = { 
-					has_government = democratic
+				else_if = { 
+					limit = { 
+						has_government = democratic
+					}
+					democratic > 0.5
 				}
-				democratic > 0.5
-			}
-
-			if = { 
-				limit = { 
-					has_government = communism
+				else_if = { 
+					limit = { 
+						has_government = communism
+					}
+					communism > 0.5
 				}
-				communism > 0.5
-			}
-			
-			if = { 
-				limit = { 
-					has_government = fascism
+				else = { 
+					fascism > 0.5
 				}
-				fascism > 0.5
 			}
-			
 			has_civil_war = no
-			
 			AND = {
 				NOT = {
 					has_country_leader = {
@@ -1603,12 +1594,19 @@ focus_tree = {
 		relative_position_id = bra_CTEF_CLT
 		x = -5
 		y = 1
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 160
 		}
 		completion_reward = {
 			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -1616,10 +1614,17 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 				}
 			}
 		}
@@ -1669,13 +1674,20 @@ focus_tree = {
 		relative_position_id = bra_sub_priv
 		x = -1
 		y = 1
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
 		completion_reward = {
 			swap_ideas = { remove_idea = bra_eficiencia_1 add_idea = bra_eficiencia_2 }
 			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -1719,12 +1731,14 @@ focus_tree = {
 		relative_position_id = bra_IRFM
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
+		available = {
+			controls_state = 501
+		}
 		completion_reward = {
-		
 			501 = {
 				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
@@ -1905,7 +1919,7 @@ focus_tree = {
 		relative_position_id = bra_natal_porto
 		x = -2
 		y = 1
-		cost = 5
+		cost = 10
 		ai_will_do = {
 			factor = 40
 		}
@@ -2006,7 +2020,7 @@ focus_tree = {
 		relative_position_id = bra_elet_1
 		x = 1
 		y = 1
-		cost = 7.2
+		cost = 5
 		ai_will_do = {
 			factor = 40
 		}
@@ -2023,7 +2037,7 @@ focus_tree = {
 		relative_position_id = bra_elet_2
 		x = -1
 		y = 1
-		cost = 5
+		cost = 10
 		cancel_if_invalid = no
 		ai_will_do = {
 			factor = 320
@@ -2032,9 +2046,76 @@ focus_tree = {
 			has_war = yes
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = bra_eficiencia_7 add_idea = bra_eficiencia_8 }
-			
-			country_event = { id = bra.9 }
+			swap_ideas = {
+				remove_idea = bra_eficiencia_7
+				add_idea = bra_eficiencia_8
+			}
+			943 = {
+				create_unit = {
+					division = "name = \"Polícia Militar do Espírito Santo\" division_template = \"Batalhão de Infantaria\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+			501 = {
+				create_unit = {
+					division = "name = \"Polícia Militar de São Paulo\" division_template = \"Batalhão de Infantaria\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+			496 = {
+				create_unit = {
+					division = "name = \"Polícia Militar de Minas Gerais\" division_template = \"Batalhão de Infantaria\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+					owner = ROOT
+				}
+			}
+			500 = {
+				create_unit = {
+					division = "name = \"Polícia Militar de Rio de Janeiro\" division_template = \"Batalhão de Infantaria\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+					owner = ROOT
+				}
+			}
+			502 = {
+				create_unit = {
+					division = "name = \"Polícia Militar do Rio Grande do Sul\" division_template = \"Batalhão de Infantaria\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+			500 = {
+				create_unit = {
+					division = "name = \"Tiro de Guerra - Rio de Janeiro\" division_template = \"Regimento de Cavalaria\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+			501 = {
+				create_unit = {
+					division = "name = \"Tiro de Guerra - São Paulo\" division_template = \"Regimento de Cavalaria\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+			502 = {
+				create_unit = {
+					division = "name = \"Tiro de Guerra - orto Alegre\" division_template = \"Regimento de Cavalaria\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+			501 = {
+				create_unit = {
+					division = "name = \"Voluntários de São Paulo\" division_template = \"Regimento de Cavalaria Blindada\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+			501 = {
+				create_unit = {
+					division = "name = \"Linha Sorocabana\" division_template = \"Regimento de Cavalaria Blindada\" start_experience_factor = 0.5 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
+			501 = {
+				create_unit = {
+					division = "name = \"Legião Tenentista\" division_template = \"Regimento de Cavalaria Blindada\" start_experience_factor = 1 start_equipment_factor = 1"
+					owner = ROOT
+				}
+			}
 		}
 	}
 	
@@ -2531,9 +2612,9 @@ focus_tree = {
 		y = 1
 		cost = 14.4
 		completion_reward = {
-			
-			set_technology = { selva_tech = 1 }
-			
+			hidden_effect = {
+				set_technology = { selva_tech = 1 }
+			}
 			custom_effect_tooltip = BRA_selva_tech_effect
 		}
 	}
