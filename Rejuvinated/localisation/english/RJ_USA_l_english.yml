@@ -38,6 +38,8 @@
  USA_SOV_PRC_support_idea2:0 "Foreign Support"
  USA_SOV_CHI_support_idea1:0 "Foreign Support"
  USA_SOV_CHI_support_idea2:0 "Foreign Support"
+ USA_air_corps_expansion_program_idea:0 "Air Corps Expansion Program"
+ USA_flying_fortress_idea:0 "Flying Fortresses"
 
 
  ##############################################################################################################################
@@ -59,6 +61,12 @@
  RJ_USA_air_force_name_1:0 "United States Army Air Force"
  RJ_USA_air_force_name_2:0 "United States Air Force"
  RJ_USA_air_force_name_default:0 "United States Army Air Corps"
+ air_corps_expansion_program_DM_tt:0 "Modify §Y[RJ_USA_air_force_name_dynamic]§! by\nDaily Air Experience Gain: §G+0.05§! \nAir Training Experience Gain: §G+10%§!"
+ air_DM_tt:0 "Modify §Y[RJ_USA_air_force_name_dynamic]§! by\n"
+ army_air_force_DM_tt:0 "Daily Air Experience Gain: §G+0.05§!"
+ payload1_DM_tt:0 "Strategic Bombing Efficiency: §G+10%§!"
+ payload2_DM_tt:0 "Ground Support Efficiency: §G+10%§!"
+ payload3_DM_tt:0 "Ground Attack: §G+5%§!"
 
 
 
@@ -120,6 +128,12 @@
  RJ_USA_interlocking_convoy_system_desc:0 "While the Bucket Brigade System was a drastic improvement to our convoy defensive tactics, there's still room for improvement. The latest doctrinal improvement that's been conceptualized, is the Interlocking Convoy System. It utilizes a carefully planned network of escorts for shipping, synchronized in such a way to create a continous protected flow of convoys."
  RJ_USA_hunter_killer_groups:0 "Hunter-Killer Groups"
  RJ_USA_hunter_killer_groups_desc:0 "We've come up with a solution to the ever prevalent threat of submarines. These 'hunter-killer' groups are specifically designed to track down & eliminate enemy submarine threats, with great efficiency!"
+ RJ_USA_air_corps_expansion_program:0 "Air Corps Expansion Program"
+ RJ_USA_air_corps_expansion_program_desc:0 "A recent review of our air forces has led some of our military leaders to express concerns regarding what they call 'an utterly inadequate' defense capability. With the increasing tensions across the globe, we can't afford to ignore such an important matter. We'll direct $300,000,000 to an air corps expansion program in an effort to modernize as quickly as possible!"
+ RJ_USA_a_flying_fortress:0 "A Flying Fortress"
+ RJ_USA_a_flying_fortress_desc:0 "Large bombers are powerful, but they're also very slow with poor maneuverability. This leaves them particularly vulnerable to being shot down by enemy fighters & anti-air. To compensate, we can increase armoring & improve gunner turrets."
+ RJ_USA_stronger_payloads:0 "Stronger Payloads"
+ RJ_USA_stronger_payloads_desc:0 "Increasing the payloads of bombs used by our aircraft, we can increase their damage potential with every run. Larger explosions also make it easier to hit enemy targets, albeit with somewhat higher potential for collateral damage..."
 
 
 

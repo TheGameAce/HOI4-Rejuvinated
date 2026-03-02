@@ -46,6 +46,10 @@ RJ_USA_united_states_air_force = {
 	icon = GFX_idea_RJ_idea_USA_army_air_corps
 	
 	experience_gain_air = RJ_USA_air_force_daily_experience_gain #Base value of 0
+	air_training_xp_gain_factor = RJ_USA_air_force_air_training_xp_gain_factor
+	air_strategic_bomber_bombing_factor = RJ_USA_air_force_strat_bombing_efficiency
+	air_cas_efficiency = RJ_USA_air_force_CAS_efficiency
+	ground_attack_factor = RJ_USA_air_force_ground_attack
 }
 
 RJ_USA_united_states_navy = {
