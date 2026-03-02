@@ -80,10 +80,16 @@ if = {
 		autonomous_state = autonomy_colony
 		freedom_level = 0.5
 	}
+	    set_autonomy = {
+	    target = MOR
+	    autonomous_state = autonomy_dominion
+	    freedom_level = 0.5
+	}
 	else = {
 		puppet = SYR
 		puppet = LEB
 		puppet = MAD
+		puppet = MOR
 	}
 }
 

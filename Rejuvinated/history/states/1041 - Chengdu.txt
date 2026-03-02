@@ -7,9 +7,10 @@ state = {
 
 	history = {
 
-		owner = CHI
+		owner = SIC
 		add_core_of = CHI
 		add_core_of = PRC
+		add_core_of = SIC
 		
 		buildings = {
 			infrastructure = 2
@@ -18,21 +19,7 @@ state = {
 		}
 
 		victory_points = {
-			4925 10 # Chengdu
-		}
-
-		victory_points = {
 			1367 1 # Guanghan
-		}
-
-		1936.1.1 = {
-			IF = {
-				limit = {
-					has_dlc = "No Compromise, No Surrender"
-				}
-				transfer_state_to = SIC
-				add_core_of = SIC
-			}
 		}
 
 		1938.10.25 = {
@@ -58,7 +45,7 @@ state = {
 	}
 
 	provinces = {
-		1367 1395 4925 8026 10132 12141 12767 12819
+		1367 4925 8026 10132 12767 2030 12274 2091 7256
 	}
 	manpower = 16448874
 	buildings_max_level_factor = 1.000
