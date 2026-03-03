@@ -4,11 +4,11 @@ characters = {
 	################################### COUNTRY LEADERS ####################################################
 	########################################################################################################
 
-	BRA_getulio_vargas = { #Starting Leader
-		name = "Getúlio Vargas"
-		portraits={
-			civilian={
-				large=GFX_portrait_BRA_getulio_vargas
+	BRA_getulio_vargas = {
+		name = BRA_getulio_vargas
+		portraits = {
+			civilian = {
+				large = GFX_portrait_BRA_getulio_vargas
 			}
 		}
 		country_leader={
@@ -20,10 +20,10 @@ characters = {
 	}
 
 	BRA_plinio_salgado = {
-		name = "Plínio Salgado"
-		portraits={
+		name = BRA_plinio_salgado
+		portraits = {
 			civilian={
-				large= "gfx/leaders/BRA/Portrait_BRA_plinio_salgado_newer.dds"
+				large = GFX_portrait_BRA_plinio_salgado
 			}
 		}
 		country_leader={
@@ -35,10 +35,10 @@ characters = {
 	}
 
 	BRA_luis_carlos_prestes = {
-		name = "Luís Carlos Prestes"
+		name = BRA_luis_carlos_prestes
 		portraits={
 			civilian={
-				large = "gfx/leaders/BRA/Portrait_BRA_luis_carlos_prestes.dds"
+				large = GFX_rj_portrait_BRA_luis_carlos_prestes
 			}
 		}
 		country_leader={
@@ -51,9 +51,9 @@ characters = {
 
 	BRA_congresso_nacional = {
 		name = "Congresso Nacional"
-		portraits={
-			civilian={
-				large = "gfx/leaders/BRA/Senado.dds"
+		portraits = {
+			civilian = {
+				large = GFX_rj_portrait_BRA_senado
 			}
 		}
 		country_leader={
@@ -64,10 +64,33 @@ characters = {
 		}
 	}
 
-
-
-
-
+	BRA_eurico_gaspar_dutra = {
+		name = BRA_eurico_gaspar_dutra
+		portraits = {
+			civilian = {
+				large = GFX_kr_portrait_BRA_eurico_gaspar_dutra
+			}
+			army = {
+				large = GFX_kr_portrait_BRA_eurico_gaspar_dutra
+				small = GFX_kr_portrait_BRA_eurico_gaspar_dutra_small
+			}
+		}
+		country_leader = {
+			ideology = moderatism
+			traits = { vfb_trait_dutra vfb_trait_officer }
+			expire = "1965.1.1"
+			id = -1
+		}
+		field_marshal = {
+			traits = { career_officer politically_connected skilled_staffer expert_delegator organisational_leader defensive_doctrine }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			legacy_id = -1
+		}
+	}
 
 	#################################################################################################################################################################
 	################################ Advisors Only ##########################################
@@ -805,24 +828,6 @@ characters = {
 	######################################################################################################
 	################################### GENERALS & ADMIRALS ##############################################
 	######################################################################################################
-
-	BRA_gaspar_dutra = { #Field Marshal in-game.
-		name="Eurico Gaspar Dutra"
-		portraits={
-			army={
-				small = "GFX_idea_generic_navy_south_america_5"
-				large = "gfx/leaders/BRA/Portrait_BRA_eurico_dutra.dds"
-			}
-		}		
-		field_marshal = {
-			traits = { career_officer politically_connected skilled_staffer expert_delegator organisational_leader defensive_doctrine }
-			skill = 4
-			attack_skill = 2
-			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 4
-		}
-	}
 
 	BRA_pedro_aurelio = {
 		name="Pedro Aurélio de Góis Monteiro"

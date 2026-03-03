@@ -250,6 +250,21 @@ bookmarks = {
 			}
 		}
 
+		EGY = {
+			minor = yes
+			history = "EGY_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				EGY_republican_opposition
+				rj_generic_illiteracy_2
+			}
+			focuses = {
+				EGY_suez_return
+				#EGY_
+				#EGY_
+			}
+		}
+
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }

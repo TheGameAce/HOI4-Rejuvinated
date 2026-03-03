@@ -79,7 +79,6 @@ BRA_elect_neutrality = {
 				has_completed_focus = bra_brasilia
 				has_government = neutrality
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -88,23 +87,11 @@ BRA_elect_neutrality = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
 			
-			create_country_leader = {
-				name = "Eurico Gaspar Dutra"
-				desc = "POLITICS_DUTRA_DESC"
-				picture = "gfx/leaders/BRA/Dutra.dds"
-				expire = "1965.1.1"
-				ideology = moderatism
-				traits = {
-					vfb_trait_dutra
-					vfb_trait_officer
-				}
-			}
+			promote_character = BRA_eurico_gaspar_dutra
 		}
 		
 		remove_effect = {
@@ -146,7 +133,6 @@ BRA_elect_neutrality = {
 				has_completed_focus = bra_brasilia
 				has_government = neutrality
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -155,8 +141,6 @@ BRA_elect_neutrality = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -214,7 +198,6 @@ BRA_elect_neutrality = {
 				has_completed_focus = bra_brasilia
 				has_government = neutrality
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -223,8 +206,6 @@ BRA_elect_neutrality = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -280,7 +261,6 @@ BRA_elect_neutrality = {
 				has_completed_focus = bra_brasilia
 				has_government = neutrality
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -289,8 +269,6 @@ BRA_elect_neutrality = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -348,7 +326,6 @@ BRA_elect_neutrality = {
 				has_completed_focus = bra_brasilia
 				has_government = neutrality
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -357,8 +334,6 @@ BRA_elect_neutrality = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -418,7 +393,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -427,8 +401,6 @@ BRA_elect_democratic = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -484,7 +456,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -493,8 +464,6 @@ BRA_elect_democratic = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -551,7 +520,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -560,8 +528,6 @@ BRA_elect_democratic = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -617,7 +583,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -626,8 +591,6 @@ BRA_elect_democratic = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -683,7 +646,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -692,8 +654,6 @@ BRA_elect_democratic = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -749,7 +709,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -758,8 +717,6 @@ BRA_elect_democratic = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -815,7 +772,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -824,8 +780,6 @@ BRA_elect_democratic = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -881,7 +835,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -890,8 +843,6 @@ BRA_elect_democratic = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -947,7 +898,6 @@ BRA_elect_democratic = {
 				has_completed_focus = bra_brasilia
 				has_government = democratic
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -956,8 +906,6 @@ BRA_elect_democratic = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -1017,7 +965,6 @@ BRA_elect_fascism = {
 				has_completed_focus = bra_brasilia
 				has_government = fascism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1026,8 +973,6 @@ BRA_elect_fascism = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -1085,7 +1030,6 @@ BRA_elect_fascism = {
 				has_completed_focus = bra_brasilia
 				has_government = fascism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1094,8 +1038,6 @@ BRA_elect_fascism = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -1153,7 +1095,6 @@ BRA_elect_fascism = {
 				has_completed_focus = bra_brasilia
 				has_government = fascism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1162,8 +1103,6 @@ BRA_elect_fascism = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -1221,7 +1160,6 @@ BRA_elect_fascism = {
 				has_completed_focus = bra_brasilia
 				has_government = fascism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1230,8 +1168,6 @@ BRA_elect_fascism = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -1289,7 +1225,6 @@ BRA_elect_fascism = {
 				has_completed_focus = bra_brasilia
 				has_government = fascism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1298,8 +1233,6 @@ BRA_elect_fascism = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -1360,7 +1293,6 @@ BRA_elect_communism = {
 				has_completed_focus = bra_brasilia
 				has_government = communism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1369,8 +1301,6 @@ BRA_elect_communism = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -1426,7 +1356,6 @@ BRA_elect_communism = {
 				has_completed_focus = bra_brasilia
 				has_government = communism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1435,8 +1364,6 @@ BRA_elect_communism = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -1493,7 +1420,6 @@ BRA_elect_communism = {
 				has_completed_focus = bra_brasilia
 				has_government = communism
 			}
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1502,8 +1428,6 @@ BRA_elect_communism = {
 		}
 		
 		complete_effect = {
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_posse_so } }
-			
 			hidden_effect = { set_country_flag = bra_elect_flag } 
 			
 			hidden_effect = { kill_country_leader = yes }
@@ -1543,7 +1467,7 @@ BRA_uiracu = {
 			ARG = {
 				AND = {
 					exists = yes
-					is_puppet = no
+					is_subject = no
 					is_in_faction = no
 					NOT = { has_non_aggression_pact_with = BRA }
 					is_neighbor_of = BRA
@@ -1566,15 +1490,13 @@ BRA_uiracu = {
 		
 		visible = {
 			has_completed_focus = BRA_the_uiracu
-			original_tag = BRA
 		}
 		
 		modifier = {
 			political_power_gain = -1
 		}
 		
-		remove_effect = {	
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_marcha_de_guerra_so_2 } }
+		remove_effect = {
 			add_threat = 5
 			declare_war_on = {
 				target = ARG
@@ -1596,7 +1518,7 @@ BRA_uiracu = {
 			BOL = {
 				AND = {
 					exists = yes
-					is_puppet = no
+					is_subject = no
 					is_in_faction = no
 					NOT = { has_non_aggression_pact_with = BRA }
 					is_neighbor_of = BRA
@@ -1619,15 +1541,13 @@ BRA_uiracu = {
 		
 		visible = {
 			has_completed_focus = BRA_the_uiracu
-			original_tag = BRA
 		}
 		
 		modifier = {
 			political_power_gain = -1
 		}
 		
-		remove_effect = {	
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_marcha_de_guerra_so_3 } }
+		remove_effect = {
 			add_threat = 5
 			declare_war_on = {
 				target = BOL
@@ -1649,7 +1569,7 @@ BRA_uiracu = {
 			PAR = {
 				AND = {
 					exists = yes
-					is_puppet = no
+					is_subject = no
 					is_in_faction = no
 					NOT = { has_non_aggression_pact_with = BRA }
 					is_neighbor_of = BRA
@@ -1672,15 +1592,13 @@ BRA_uiracu = {
 		
 		visible = {
 			has_completed_focus = BRA_the_uiracu
-			original_tag = BRA
 		}
 		
 		modifier = {
 			political_power_gain = -1
 		}
 		
-		remove_effect = {	
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_marcha_de_guerra_so_4 } }
+		remove_effect = {
 			add_threat = 5
 			declare_war_on = {
 				target = PAR
@@ -1702,7 +1620,7 @@ BRA_uiracu = {
 			URG = {
 				AND = {
 					exists = yes
-					is_puppet = no
+					is_subject = no
 					is_in_faction = no
 					NOT = { has_non_aggression_pact_with = BRA }
 					is_neighbor_of = BRA
@@ -1725,15 +1643,13 @@ BRA_uiracu = {
 		
 		visible = {
 			has_completed_focus = BRA_the_uiracu
-			original_tag = BRA
 		}
 		
 		modifier = {
 			political_power_gain = -1
 		}
 		
-		remove_effect = {	
-			hidden_effect = { if = { limit = { BRA = { AND = { is_ai = no has_country_flag = bra_voz_ligada_flag } } } sound_effect =  bra_marcha_de_guerra_so_5 } }
+		remove_effect = {
 			add_threat = 5
 			declare_war_on = {
 				target = URG
@@ -1743,54 +1659,7 @@ BRA_uiracu = {
 	}
 }
 
-BRA_metas = {
-
-	#######################################################################
-
-	bra_modificadores_construcao_decision = {
-	
-		icon = generic_power_struggle
-		
-		allowed = {
-			original_tag = BRA
-		}
-		
-		available = {
-			#AVAILIABLEMODIFIER
-			has_completed_focus = bra_sub_priv
-		}
-		
-		cost = 150
-		days_remove = 150 #fire_only_once = yes
-
-		ai_will_do = {
-			factor = 160
-			modifier = {
-				political_power_daily < 0.5
-				factor = 0
-			}
-		}
-		
-		visible = {
-			has_completed_focus = bra_viacao
-			has_global_flag = bra_viacao_modificadores_flag
-			original_tag = BRA
-		}
-		
-		modifier = {
-			#civilian_factory_use = 5
-			production_speed_buildings_factor = 0.2
-			#politicalpowergainplaceholder
-		}
-		
-		complete_effect = {
-
-		}
-
-		remove_effect = {
-			
-		}
-	}
+economy_decisions = {
 	
 	#######################################################################
 
@@ -1824,8 +1693,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1889,8 +1756,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -1946,8 +1811,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2013,8 +1876,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2069,8 +1930,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2125,8 +1984,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2188,8 +2045,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2253,8 +2108,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2318,8 +2171,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2385,8 +2236,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2448,8 +2297,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2510,8 +2357,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao 
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2569,8 +2414,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2630,8 +2473,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2699,8 +2540,6 @@ BRA_metas = {
 		
 		visible = {
 			has_completed_focus = bra_viacao
-			NOT = { has_global_flag = bra_viacao_modificadores_flag }
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2743,70 +2582,6 @@ BRA_metas = {
 	}
 }
 
-BRA_voz_ligada_cat = {
-	
-	bra_voz_ligada_on = {
-	
-		icon = generic_power_struggle
-		
-		allowed = {
-			original_tag = BRA
-		}
-		
-		available = {
-			NOT = { has_country_flag = bra_voz_ligada_flag }
-		}
-		
-		cost = 0
-		
-		ai_will_do = {
-			factor = 0
-		}
-		
-		visible = {
-			original_tag = BRA
-			is_ai = no
-		}
-		
-		complete_effect = {	
-			hidden_effect = { set_country_flag = bra_voz_ligada_flag }
-			custom_effect_tooltip =  bra_voz_ligada_on_tooltip
-		}
-
-	}
-	
-	bra_voz_ligada_off = {
-	
-		icon = generic_power_struggle
-		
-		allowed = {
-			original_tag = BRA
-		}
-		
-		available = {
-			has_country_flag = bra_voz_ligada_flag
-		}
-		
-		cost = 0
-		
-		ai_will_do = {
-			factor = 4000
-		}
-		
-		visible = {
-			original_tag = BRA
-			is_ai = no
-		}
-		
-		complete_effect = {	
-			hidden_effect = { clr_country_flag = bra_voz_ligada_flag }
-			custom_effect_tooltip =  bra_voz_ligada_off_tooltip
-		}
-
-	}
-	
-}
-
 BRA_cat_proalcool = {
 	
 	bra_proalcool_2 = {
@@ -2828,10 +2603,6 @@ BRA_cat_proalcool = {
 		
 		ai_will_do = {
 			factor = 4000
-		}
-		
-		visible = {
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2891,10 +2662,6 @@ BRA_cat_proalcool = {
 		
 		ai_will_do = {
 			factor = 4000
-		}
-		
-		visible = {
-			original_tag = BRA
 		}
 		
 		modifier = {
@@ -2957,10 +2724,6 @@ BRA_cat_proalcool = {
 			factor = 4000
 		}
 		
-		visible = {
-			original_tag = BRA
-		}
-		
 		modifier = {
 			civilian_factory_use = 5
 			#politicalpowergainplaceholder
@@ -3021,10 +2784,6 @@ BRA_cat_proalcool = {
 			factor = 4000
 		}
 		
-		visible = {
-			original_tag = BRA
-		}
-		
 		modifier = {
 			civilian_factory_use = 5
 			#politicalpowergainplaceholder
@@ -3083,10 +2842,6 @@ BRA_cat_proalcool = {
 		
 		ai_will_do = {
 			factor = 4000
-		}
-		
-		visible = {
-			original_tag = BRA
 		}
 		
 		modifier = {

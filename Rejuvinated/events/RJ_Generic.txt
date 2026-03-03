@@ -2,22 +2,21 @@
 # Generic Events
 ###########################
 
-add_namespace = generic
+add_namespace = rj_generic
 
-
+# Facility Construction
 country_event = {
-	id = generic.100
-	title = generic.100.t
-	desc = generic.100.d
+	id = rj_generic.1
+	title = rj_generic.1.t
+	desc = rj_generic.1.d
 	picture = GFX_report_event_ast_parliament_house
-	fire_only_once = no
 
 	is_triggered_only = yes
 
 	option = {
 		name = "A Land Facility!"
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		random_owned_controlled_state = {
 			construct_building_in_random_province = {
@@ -29,7 +28,7 @@ country_event = {
 	option = {
 		name = "A Naval Facility!"
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		random_owned_controlled_state = {
 			construct_building_in_random_province = {
@@ -41,7 +40,7 @@ country_event = {
 	option = {
 		name = "An Air Facility!"
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		random_owned_controlled_state = {
 			construct_building_in_random_province = {
@@ -53,10 +52,10 @@ country_event = {
 	option = {
 		name = "A Nuclear Facility!"
 		ai_chance = {
-			factor = 0
+			base = 0
 			modifier = {
 				has_tech = atomic_research
-				factor = 2
+				add = 2
 			}
 		}
 		random_owned_controlled_state = {
