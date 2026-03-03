@@ -58,7 +58,10 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_ideas = MLT_italian_help_idea
+			add_timed_idea = {
+			idea = MLT_italian_help_idea
+			days = 545
+			}
 
 		}
 	}

@@ -6,9 +6,6 @@ ideas = {
 			
 			allowed = {
 				original_tag = MLT
-				NOT = {
-				is_subject = no
-				}
 			}
 
 			allowed_civil_war = {
@@ -94,8 +91,12 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				compliance_gain = 0.1
-				local_non_core_manpower = 0.1
+				compliance_gain = 0.2
+				local_non_core_manpower = 0.2
+				resistance_decay = 0.15
+				required_garrison_factor = -0.9
+				resistance_growth = -0.3
+
 			}
 		}
 		
@@ -114,8 +115,11 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				compliance_gain = 0.25
-				local_non_core_manpower = 0.2
+				compliance_gain = 0.35
+				local_non_core_manpower = 0.35
+				resistance_decay = 0.25
+				required_garrison_factor = -0.9
+				resistance_growth = -0.5
 			}
 		}
 		
