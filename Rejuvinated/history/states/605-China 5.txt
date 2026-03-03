@@ -7,8 +7,8 @@ state = {
 
 	history = {
 
-		owner = CHI
-		add_core_of = CHI
+		owner = SIC
+		add_core_of = SIC
 		add_core_of = PRC
 
 		victory_points = {
@@ -18,16 +18,6 @@ state = {
 		buildings = {
 			infrastructure = 2
 			arms_factory = 1
-		}
-
-		1936.1.1 = {
-			IF = {
-				limit = {
-					has_dlc = "No Compromise, No Surrender"
-				}
-				transfer_state_to = SIC
-				add_core_of = SIC
-			}
 		}
 
 		1938.10.25 = {
@@ -53,7 +43,7 @@ state = {
 	}
 
 	provinces = {
-		1893 2030 2091 4041 4141 5048 7256 7948 10144 10304 10822 11865 12274  
+		1893 4041 4141 5048 7948 10144 10304 10822 11865  
 	}
 	manpower = 13724437
 	buildings_max_level_factor = 1.000

@@ -14,8 +14,8 @@ focus_tree = {
 
 	focus = {
 		id = bra_polaca
-		icon = GFX_focus_bra_polaca
-		x = 30
+		icon = GFX_focus_BRA_the_polaca
+		x = 19
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -63,7 +63,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_a_voz_do_brasil
-		icon = GFX_focus_bra_a_voz_do_brasil
+		icon = GFX_focus_generic_radio_communication
 		relative_position_id = bra_polaca
 		x = 2
 		y = 0
@@ -81,7 +81,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_populism
-		icon = GFX_focus_bra_populism
+		icon = GFX_focus_RAJ_special_economic_zones
 		prerequisite = { focus = bra_polaca }
 		prerequisite = { focus = bra_a_voz_do_brasil }
 		prerequisite = { focus = bra_national_security_law }
@@ -117,7 +117,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_2_prestes_column
-		icon = GFX_focus_bra_2_prestes_column 
+		icon = GFX_goal_support_communism 
 		prerequisite = { focus = bra_populism }
 		mutually_exclusive = { focus = bra_quereismo }
 		available = { has_government = neutrality }
@@ -180,7 +180,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_federalism
-		icon = GFX_focus_bra_federalism
+		icon = GFX_focus_RAJ_trickle_down_economics
 		prerequisite = { focus = bra_polaca }
 		prerequisite = { focus = bra_a_voz_do_brasil }
 		prerequisite = { focus = bra_national_security_law }
@@ -312,7 +312,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_abertura
-		icon = GFX_focus_bra_abertura
+		icon = GFX_focus_ETH_freedom_at_gunpoint
 		prerequisite = { focus = bra_regionalism }
 		relative_position_id = bra_regionalism
 		x = 0
@@ -785,8 +785,8 @@ focus_tree = {
 
 	focus = {
 		id = bra_federal_institutes
-		icon = GFX_focus_bra_federal_institutes
-		x = 55
+		icon = GFX_focus_research
+		x = 44
 		y = 0
 		cost = 5
 		ai_will_do = {
@@ -845,7 +845,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_politechnical_colleges
-		icon = GFX_focus_bra_politechnical_colleges
+		icon = GFX_focus_generic_university_3
 		prerequisite = { focus = bra_technical_schools }
 		relative_position_id = bra_technical_schools
 		x = 1
@@ -867,7 +867,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_national_institutes
-		icon = GFX_focus_bra_national_institutes
+		icon = GFX_focus_SWE_institute_of_technology
 		prerequisite = { focus = bra_federal_institutes }
 		relative_position_id = bra_federal_institutes
 		x = -1
@@ -889,7 +889,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_military_projects
-		icon = GFX_focus_bra_military_projects
+		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = bra_politechnical_colleges }
 		relative_position_id = bra_politechnical_colleges
 		x = 0
@@ -1005,7 +1005,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_r_s_1
-		icon = GFX_focus_bra_r_s_1
+		icon = GFX_focus_generic_university_2
 		prerequisite = { focus = bra_more_federal_universities }
 		relative_position_id = bra_more_federal_universities
 		x = -2
@@ -1022,7 +1022,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_r_s_2
-		icon = GFX_focus_bra_r_s_2
+		icon = GFX_focus_generic_university_1
 		prerequisite = { focus = bra_more_federal_universities }
 		relative_position_id = bra_more_federal_universities
 		x = 2
@@ -1040,7 +1040,7 @@ focus_tree = {
 	focus = {
 		id = bra_modernizacao_armadas
 		icon = GFX_focus_BRA_army
-		x = 14
+		x = 3
 		y = 0
 		ai_will_do = {
 			factor = 320
@@ -1054,7 +1054,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_pm
-		icon = GFX_focus_bra_pm
+		icon = GFX_focus_generic_national_security
 		relative_position_id = bra_modernizacao_armadas
 		x = 3
 		y = 0
@@ -1076,7 +1076,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_ana_guerra_civil
-		icon = GFX_focus_bra_ana_guerra_civil
+		icon = GFX_focus_generic_advanced_military_studies
 		prerequisite = { focus = bra_modernizacao_armadas }
 		prerequisite = { focus = bra_pm }
 		relative_position_id = bra_modernizacao_armadas
@@ -1255,7 +1255,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_ana_mineira
-		icon = GFX_focus_bra_ana_mineira
+		icon = GFX_focus_generic_tank_air_support
 		prerequisite = { focus = bra_ana_guerra_civil }
 		mutually_exclusive = { focus = bra_ana_paulista }
 		relative_position_id = bra_ana_guerra_civil
@@ -1278,7 +1278,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_ana_paulista
-		icon = GFX_focus_bra_ana_paulista
+		icon = GFX_focus_generic_tank_assault
 		prerequisite = { focus = bra_ana_guerra_civil }
 		mutually_exclusive = { focus = bra_ana_mineira }
 		relative_position_id = bra_ana_guerra_civil
@@ -1381,7 +1381,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_bombardeiro
-		icon = GFX_focus_bra_bombardeiro
+		icon = GFX_focus_SWE_marauder_bombers
 		prerequisite = { focus = bra_modernizacao_aerea }
 		relative_position_id = bra_modernizacao_aerea
 		x = 0
@@ -1645,8 +1645,8 @@ focus_tree = {
 
 	focus = {
 		id = bra_CTEF_CLT
-		icon = GFX_focus_bra_CTEF_CLT
-		x = 43
+		icon = GFX_focus_generic_economic_recovery
+		x = 32
 		y = 0
 		ai_will_do = {
 			factor = 160
@@ -1665,7 +1665,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_sub_priv
-		icon = GFX_focus_bra_sub_priv
+		icon = GFX_focus_DEN_limited_regulations
 		prerequisite = { focus = bra_CTEF_CLT }
 		prerequisite = { focus = bra_viacao }
 		relative_position_id = bra_CTEF_CLT
@@ -1719,7 +1719,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_obras_exterior
-		icon = GFX_focus_bra_obras_exterior
+		icon = GFX_focus_generic_road_investment
 		prerequisite = { focus = bra_CTEF_CLT }
 		prerequisite = { focus = bra_viacao }
 		relative_position_id = bra_CTEF_CLT
@@ -1778,7 +1778,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_eng_mart
-		icon = GFX_focus_bra_eng_mart
+		icon = GFX_focus_generic_industry_2
 		prerequisite = { focus = bra_sub_priv }
 		relative_position_id = bra_sub_priv
 		x = -1
@@ -1824,7 +1824,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_IRFM
-		icon = GFX_focus_bra_IRFM
+		icon = GFX_focus_generic_industry_3
 		prerequisite = { focus = bra_eng_mart }
 		relative_position_id = bra_eng_mart
 		x = 0
@@ -1968,7 +1968,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_natal_porto
-		icon = GFX_focus_bra_porto_gen
+		icon = GFX_goal_generic_construct_naval_dockyard
 		prerequisite = { focus = bra_belem_porto focus = bra_mod_soroc }
 		relative_position_id = bra_belem_porto
 		x = 0
@@ -2108,7 +2108,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_mod_sb
-		icon = GFX_focus_bra_infra_gen
+		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = bra_mod_soroc focus = bra_belem_porto }
 		relative_position_id = bra_mod_soroc
 		x = 0
@@ -2210,7 +2210,7 @@ focus_tree = {
 	focus = {
 		id = bra_mod_mad_mamo
 		prerequisite = { focus = bra_mod_sb }
-		icon = GFX_focus_bra_infra_gen
+		icon = GFX_goal_generic_construct_infrastructure
 		relative_position_id = bra_mod_sb
 		x = 0
 		y = 1
@@ -2263,7 +2263,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_viacao
-		icon = GFX_focus_bra_viacao
+		icon = GFX_focus_generic_railroad
 		relative_position_id = bra_CTEF_CLT
 		x = -4
 		y = 0
@@ -2281,7 +2281,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_iti
-		icon = GFX_focus_bra_iti
+		icon = GFX_focus_AFG_a_modern_economy
 		prerequisite = { focus = bra_national_institutes }
 		relative_position_id = bra_national_institutes
 		x = 0
@@ -2389,7 +2389,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_fiesp
-		icon = GFX_focus_bra_fiesp
+		icon = GFX_focus_generic_monetary_union
 		prerequisite = { focus = bra_cmsp }
 		prerequisite = { focus = bra_elet_1 }
 		relative_position_id = bra_elet_1
@@ -2430,7 +2430,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_anhanguera
-		icon = GFX_focus_bra_infra_gen
+		icon = GFX_goal_reichsautobahn
 		prerequisite = { focus = bra_mod_mad_mamo }
 		relative_position_id = bra_mod_mad_mamo
 		x = 0
@@ -2502,7 +2502,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_monarquia_focus
-		icon = GFX_focus_bra_monarquia_focus
+		icon = GFX_focus_generic_monarchy_2
 		prerequisite = { focus = bra_national_security_law }
 		prerequisite = { focus = bra_polaca }
 		prerequisite = { focus = bra_a_voz_do_brasil }
@@ -2622,7 +2622,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_cosipa
-		icon = GFX_focus_bra_cosipa
+		icon = GFX_focus_generic_steel
 		prerequisite = { focus = bra_itabira }
 		relative_position_id = bra_itabira
 		x = -2
@@ -2662,7 +2662,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_acogerdau
-		icon = GFX_focus_bra_acogerdau
+		icon = GFX_focus_generic_steel
 		prerequisite = { focus = bra_itabira }
 		relative_position_id = bra_itabira
 		x = 0
@@ -2702,7 +2702,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_acominas
-		icon = GFX_focus_bra_acominas
+		icon = GFX_focus_generic_steel
 		prerequisite = { focus = bra_itabira }
 		relative_position_id = bra_itabira
 		x = 2
@@ -2742,7 +2742,7 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_national_petroleum_council
-		icon = GFX_focus_bra_salvador
+		icon = GFX_focus_generic_offshore_oil_rig
 		prerequisite = { focus = bra_lobato }
 		relative_position_id = bra_lobato
 		x = 0
@@ -2823,7 +2823,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_vale
-		icon = GFX_focus_bra_vale
+		icon = GFX_focus_generic_resource_extraction
 		prerequisite = { focus = bra_cosipa }
 		prerequisite = { focus = bra_acogerdau }
 		prerequisite = { focus = bra_acominas }
@@ -2954,7 +2954,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_gerdau
-		icon = GFX_focus_bra_gerdau
+		icon = GFX_goal_generic_construction
 		prerequisite = { focus = bra_bndes }
 		mutually_exclusive = { focus = bra_tenenge }
 		relative_position_id = bra_bndes
@@ -2995,7 +2995,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_tenenge
-		icon = GFX_focus_bra_tenenge
+		icon = GFX_goal_generic_construct_civilian
 		prerequisite = { focus = bra_bndes }
 		mutually_exclusive = { focus = bra_gerdau }
 		relative_position_id = bra_bndes
@@ -3037,7 +3037,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_chsf
-		icon = GFX_focus_bra_elet_gen
+		icon = GFX_focus_generic_hydroelectric_energy
 		prerequisite = { focus = bra_bndes }
 		relative_position_id = bra_bndes
 		x = -2
@@ -3194,7 +3194,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_ciclocana
-		icon = GFX_focus_bra_agro_gen
+		icon = GFX_focus_AFG_sugar_factory
 		prerequisite = { focus = bra_anhanguera }
 		relative_position_id = bra_anhanguera
 		x = -1
@@ -3233,7 +3233,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_ciclosoja
-		icon = GFX_focus_bra_agro_gen
+		icon = GFX_focus_generic_agricultural_subsidies
 		prerequisite = { focus = bra_anhanguera }
 		available = { has_idea = bra_ciclocana_idea }
 		relative_position_id = bra_anhanguera
@@ -3273,7 +3273,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_etanol
-		icon = GFX_focus_bra_etanol
+		icon = GFX_goal_generic_oil_refinery 
 		prerequisite = { focus = bra_anhanguera }
 		available = { has_idea = bra_ciclosoja_idea }
 		relative_position_id = bra_anhanguera
@@ -3351,7 +3351,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_eletrobras
-		icon = GFX_focus_bra_elet_gen
+		icon = GFX_focus_generic_radio_communication
 		prerequisite = { focus = bra_itaipu }
 		prerequisite = { focus = bra_zfm }
 		prerequisite = { focus = bra_chsf }
@@ -3399,8 +3399,8 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_itamaraty
-		icon = GFX_focus_bra_diplomacia
-		x = 62
+		icon = GFX_focus_PER_limit_foreign_influence
+		x = 52
 		y = 0
 		ai_will_do = {
 			factor = 160
@@ -3416,7 +3416,7 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_global_politics
-		icon = GFX_focus_bra_heal_wounds
+		icon = GFX_focus_BRA_international_crisis
 		prerequisite = { focus = BRA_itamaraty }
 		mutually_exclusive = { focus = BRA_the_uiracu }
 		relative_position_id = BRA_itamaraty
@@ -3745,7 +3745,7 @@ focus_tree = {
 
 	focus = {
 		id = BRA_the_crux
-		icon = GFX_focus_bra_guide_latam
+		icon = GFX_focus_generic_south_america
 		prerequisite = { focus = BRA_itamaraty }
 		relative_position_id = BRA_itamaraty
 		x = 4
@@ -3865,7 +3865,7 @@ focus_tree = {
 	
 	focus = {
 		id = BRA_the_uiracu
-		icon = GFX_focus_bra_sem_eixo
+		icon = GFX_focus_BRA_north_and_south_america
 		mutually_exclusive = { focus = BRA_global_politics }
 		prerequisite = { focus = BRA_itamaraty }
 		relative_position_id = BRA_itamaraty
@@ -4047,7 +4047,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_patri_2_focus
-		icon = GFX_focus_bra_patri_2_focus
+		icon = GFX_focus_generic_military_dictatorship
 		relative_position_id = bra_monarquia_2_focus
 		x = 0
 		y = 1
@@ -4071,7 +4071,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_patri_3_focus
-		icon = GFX_focus_bra_patri_3_focus
+		icon = GFX_goal_continuous_boost_freedom
 		relative_position_id = bra_monarquia_2_focus
 		x = 2
 		y = 1
@@ -4094,7 +4094,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_patri_4_focus
-		icon = GFX_focus_bra_patri_4_focus
+		icon = GFX_focus_generic_total_war
 		relative_position_id = bra_patri_2_focus
 		x = 0
 		y = 1
@@ -4122,7 +4122,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_patri_5_focus
-		icon = GFX_focus_bra_patri_5_focus
+		icon = GFX_focus_mex_restore_the_army_of_christ
 		relative_position_id = bra_patri_4_focus
 		x = -1
 		y = 1
@@ -4147,7 +4147,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_patri_6_focus
-		icon = GFX_focus_bra_patri_6_focus
+		icon = GFX_goal_generic_major_alliance
 		relative_position_id = bra_patri_4_focus
 		x = 1
 		y = 1
