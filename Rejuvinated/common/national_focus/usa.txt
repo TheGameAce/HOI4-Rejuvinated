@@ -6938,14 +6938,20 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 	
 		completion_reward = {
-			air_experience = 25
-			add_doctrine_cost_reduction = {
-				name = USA_air_war_plans_division
-				cost_reduction = 0.5
-				uses = 2
-				category = air_doctrine
-			} # REVISIT May use modifier?
-			add_ideas = air_war_plans_division_focus
+			custom_effect_tooltip = air_DM_tt
+			custom_effect_tooltip = air_plans_DM_tt
+			add_to_variable = {
+				RJ_USA_air_force_air_accidents = -0.10
+			}
+			add_to_variable = {
+				RJ_USA_air_force_air_efficiency = 0.15
+			}
+			add_to_variable = {
+				RJ_USA_air_force_air_mission_XP_gain = 0.15
+			}
+			add_to_variable = {
+				RJ_USA_air_force_air_mastery_gain = 0.10
+			}
 		}
 	}
 
@@ -7025,14 +7031,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = USA_CAS
-		text = CAS_effort
+		id = RJ_USA_ground_support
 		icon = GFX_focus_generic_cas_aircraft
 		prerequisite = { focus = USA_air_support }
 		x = -1
 		y = 1
 		relative_position_id = USA_air_support
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -7041,18 +7046,19 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = CAS_effort
-				uses = 1
-				bonus = 1.0
-				category = cas_bomber
+			custom_effect_tooltip = air_DM_tt
+			custom_effect_tooltip = ground_support_DM_tt
+			add_to_variable = {
+				RJ_USA_air_force_ground_support = 0.10
+			}
+			add_to_variable = {
+				RJ_USA_air_force_ground_attack = 0.05
 			}
 		}
 	}
 
 	focus = {
 		id = RJ_USA_placeholder_one
-		text = CAS_effort
 		icon = GFX_focus_generic_cas_aircraft
 		prerequisite = { focus = USA_air_support }
 		x = 0
@@ -7073,12 +7079,11 @@ focus_tree = {
 
 	focus = {
 		id = RJ_USA_placeholder_two
-		text = CAS_effort
 		icon = GFX_focus_generic_cas_aircraft
-		prerequisite = { focus = USA_CAS }
+		prerequisite = { focus = RJ_USA_ground_support }
 		x = 0
 		y = 2
-		relative_position_id = USA_CAS
+		relative_position_id = RJ_USA_ground_support
 		cost = 10
 		#ai_will_do = {
 		#	factor = 1
@@ -7189,8 +7194,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RJ_USA_placeholder_four
-		icon = GFX_focus_SWE_marauder_bombers
+		id = RJ_USA_lessons_learned
+		icon = GFX_focus_usa_escort_fighters
 		prerequisite = { focus = USA_combined_bomber_offensive }
 		available = {
 
@@ -7207,7 +7212,20 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			
+			add_tech_bonus = {
+				name = heavy_fighter_bonus
+				bonus = 1
+				uses = 2
+				category = cat_heavy_fighter
+				category = cat_air_guns
+				category = cat_air_engine
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_to_variable = {
+				RJ_USA_air_force_air_escort_efficiency = 0.15
+			}
+			custom_effect_tooltip = air_DM_tt
+			custom_effect_tooltip = lessons_learned_DM_tt
 		}
 	}
 	
@@ -7218,7 +7236,7 @@ focus_tree = {
 		y = 2
 		prerequisite = { focus = USA_air_war_plans_division }
 		relative_position_id = USA_air_war_plans_division
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -7238,7 +7256,54 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			add_ideas = USA_us_air_force
+			custom_effect_tooltip = air_DM_tt
+			custom_effect_tooltip = us_air_force_DM_tt
+			add_to_variable = {
+				RJ_USA_air_force_air_mastery_gain = 0.15
+			}
+			add_to_variable = {
+				RJ_USA_air_force_ace_generation_chance = 0.15
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_USA_a_new_age_of_aircraft
+		icon = GFX_focus_generic_jet_planes
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_us_air_force }
+		relative_position_id = USA_us_air_force
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_RESEARCH}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_bonus_us
+				bonus = 1
+				uses = 2
+				category = jet_technology
+			}
+			add_breakthrough_progress = {
+				value = 0.50
+				specialization = specialization_air
+			}
 		}
 	}
 
