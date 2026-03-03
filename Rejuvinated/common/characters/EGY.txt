@@ -39,12 +39,12 @@ characters={
 #  			logistics_skill = 2
 #  		}
 #  	}
-	EGY_ahmed_husayn={
+	EGY_ahmed_hussein={
 		name="Ahmed Hussein"
 		portraits={
 			civilian={
-				#large="gfx/leaders/EGY/Portrait_Egypt_Ahmed_Hussein.dds"
-				#small="gfx/advisors/EGY/Portrait_Egypt_Ahmed_Hussein.dds"
+				large = GFX_portrait_Ahmed_Husayn
+				small = GFX_idea_europe_generic_2
 			}
 		}
 		country_leader={
@@ -54,7 +54,7 @@ characters={
 		}
 		advisor={
 			slot = political_advisor
-			idea_token = EGY_ahmed_hussayn
+			idea_token = EGY_ahmed_hussein
 			allowed = {
 				original_tag = EGY
 			}
@@ -90,7 +90,7 @@ characters={
 			id=-1
 		}
 	}
-	EGY_farouk_muhammad_ali={
+	EGY_farouk_i={
 		name="Farouk I"
 		portraits={
 			civilian={
@@ -108,7 +108,7 @@ characters={
 		name="Mohamed Tawfik Naseem"
 		portraits={
 			civilian={
-				#large="gfx/leaders/EGY/Portrait_Egypt_Mohamed_Tawfik_Naseem.dds"
+				large = GFX_portrait_Muhammad_Naguib
 			}
 		}
 		country_leader={
@@ -171,19 +171,19 @@ characters={
 #  			id=-1
 #  		}
 #  	}
-#  	EGY_hosni_alarabi={
-#  		name="Hosni al-Arabi"
-#  		portraits={
-#  			civilian={
-#  				#large="gfx/leaders/EGY/Portrait_Egypt_Hosni_Al_Arabi.dds"
-#  			}
-#  		}
-#  		country_leader={
-#  			ideology=leninism
-#  			expire="1965.1.1.1"
-#  			id=-1
-#  		}
-#  	}
+	EGY_hosni_al_arabi={
+		name="Hosni al-Arabi"
+		portraits={
+			civilian={
+				large = GFX_portrait_Hosni_al_Arabi
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
 #  	EGY_gamal_abdel_nasser = {
 #  		name="Gamal Abdel Nasser"
 #  		portraits={
