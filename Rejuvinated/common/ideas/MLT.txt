@@ -92,9 +92,9 @@ ideas = {
 			
 			modifier = {
 				compliance_gain = 0.2
-				local_non_core_manpower = 0.2
+				non_core_manpower = 0.2
 				resistance_decay = 0.15
-				required_garrison_factor = -0.9
+				required_garrison_factor = -0.3
 				resistance_growth = -0.3
 
 			}
@@ -116,9 +116,9 @@ ideas = {
 			
 			modifier = {
 				compliance_gain = 0.35
-				local_non_core_manpower = 0.35
+				non_core_manpower = 0.35
 				resistance_decay = 0.25
-				required_garrison_factor = -0.9
+				required_garrison_factor = -0.5
 				resistance_growth = -0.5
 			}
 		}
@@ -146,4 +146,5 @@ ideas = {
 		
 		
 		
+}
 }
