@@ -4,6 +4,16 @@ economy_decisions = {
 
 		icon = GEN_book
 
+		allowed = { # This is here for optimization
+			OR = {
+				original_tag = EGY
+				original_tag = LIB
+				original_tag = MAD
+				original_tag = MOR
+				original_tag = SMR
+			}
+		}
+
 		available = {
 			custom_trigger_tooltip = {
 				has_idea = rj_generic_illiteracy

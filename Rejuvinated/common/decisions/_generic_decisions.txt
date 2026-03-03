@@ -2023,7 +2023,7 @@ foreign_politics = {
 	object_to_attaches = {
 
 		allowed = {
-            has_dlc = "Waking the Tiger"
+			always = no # Laggy and annoying TODO: Maybe rework as event with an on action trigger?
         }
 
         cost = 50
