@@ -80,6 +80,46 @@ ideas = {
 		}
 		
 		
+		MLT_new_colonial_administration_idea1 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				original_tag = MLT
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				compliance_gain = 0.1
+				local_non_core_manpower = 0.1
+			}
+		}
+		
+		
+	MLT_new_colonial_administration_idea2 = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				original_tag = MLT
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				compliance_gain = 0.25
+				local_non_core_manpower = 0.2
+			}
+		}
+		
+		
 		
 		
 		

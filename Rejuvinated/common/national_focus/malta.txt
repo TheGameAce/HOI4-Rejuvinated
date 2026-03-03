@@ -299,6 +299,221 @@ focus = {
 		}
 	}
 	
+	focus = {
+		id = MLT_make_ourselves_useful
+		icon = GFX_goal_generic_consumer_goods
+		x = -3
+		y = 1
+		cost = 5
+		relative_position_id = MLT_subjogation_by_italy
+		prerequisite = { focus = MLT_subjogation_by_italy }
+
+		available_if_capitulated = no
+		available = {
+		448 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		661 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		}
+
+		completion_reward = {
+		MLT = {
+		     transfer_state = 448
+			 transfer_state = 661
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_a_new_colonial_administration
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = MLT_make_ourselves_useful
+		prerequisite = { focus = MLT_make_ourselves_useful }
+
+		available_if_capitulated = no
+		completion_reward = {
+		 add_ideas = MLT_new_colonial_administration_idea1
+		}
+	}
+	
+	focus = {
+		id = MLT_the_libyan_colonial_administration
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 15
+		relative_position_id = MLT_a_new_colonial_administration
+		prerequisite = { focus = MLT_a_new_colonial_administration }
+
+		available_if_capitulated = no
+		available = {
+		449 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		450 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		451 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		662 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		663 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		
+		}
+
+		completion_reward = {
+		MLT = {
+		     transfer_state = 449
+			 transfer_state = 450
+			 transfer_state = 451
+			 transfer_state = 662
+			 transfer_state = 663
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_the_eritrean_colonial_administration
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = MLT_the_libyan_colonial_administration
+		prerequisite = { focus = MLT_the_libyan_colonial_administration }
+
+		available_if_capitulated = no
+		available = {
+		550 = {
+			is_fully_controlled_by = ITA
+		}
+		}
+
+		completion_reward = {
+		MLT = {
+		     transfer_state = 550
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_the_somalian_colonial_administration
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = MLT_the_libyan_colonial_administration
+		prerequisite = { focus = MLT_the_libyan_colonial_administration }
+
+		available_if_capitulated = no
+		available = {
+		559 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		844 = {
+			is_fully_controlled_by = ITA
+		}
+		}
+
+		completion_reward = {
+		MLT = {
+		     transfer_state = 559
+			 transfer_state = 844 
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_the_abbyssinian_colonial_administration
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = MLT_the_eritrean_colonial_administration
+		prerequisite = { focus = MLT_the_eritrean_colonial_administration}
+		prerequisite = { focus = MLT_the_somalian_colonial_administration}
+
+		available_if_capitulated = no
+		available = {
+		908 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		842 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		841 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		840 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		843 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		835 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		836 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		837 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		838 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		839 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		271 = {
+			is_fully_controlled_by = ITA
+		}
+		}
+
+		completion_reward = {
+		MLT = {
+		     transfer_state = 908
+			 transfer_state = 842
+			 transfer_state = 841
+			 transfer_state = 840
+			 transfer_state = 843
+			 transfer_state = 835
+			 transfer_state = 836
+			 transfer_state = 837
+			 transfer_state = 838
+			 transfer_state = 839
+			 transfer_state = 271
+			 
+			}
+		}
+	}
+	
 	
 	
 	
