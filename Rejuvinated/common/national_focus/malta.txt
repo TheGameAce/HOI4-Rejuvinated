@@ -88,6 +88,7 @@ focus = {
 	focus = {
 		id = MLT_the_grand_plan
 		icon = GFX_goal_generic_consumer_goods
+		mutually_exclusive = { focus = MLT_make_ourselves_useful }
 		x = 3
 		y = 1
 		cost = 5
@@ -302,6 +303,7 @@ focus = {
 	focus = {
 		id = MLT_make_ourselves_useful
 		icon = GFX_goal_generic_consumer_goods
+		mutually_exclusive = { focus = MLT_the_grand_plan }
 		x = -3
 		y = 1
 		cost = 5
@@ -374,6 +376,10 @@ focus = {
 			is_fully_controlled_by = ITA
 		}
 		
+		1113 = {
+			is_fully_controlled_by = ITA
+		}
+		
 		
 		}
 
@@ -384,6 +390,8 @@ focus = {
 			 transfer_state = 451
 			 transfer_state = 662
 			 transfer_state = 663
+			 transfer_state = 1113
+			 
 			}
 		}
 	}
@@ -510,6 +518,25 @@ focus = {
 			 transfer_state = 839
 			 transfer_state = 271
 			 
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_model_colonies_everywhere
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_the_abbyssinian_colonial_administration
+		prerequisite = { focus = MLT_the_abbyssinian_colonial_administration }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = MLT_new_colonial_administration_idea1
+			add_idea = MLT_new_colonial_administration_idea2
 			}
 		}
 	}
