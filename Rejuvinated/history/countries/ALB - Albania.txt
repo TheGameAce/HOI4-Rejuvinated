@@ -10,6 +10,7 @@ set_technology = {
 }
 
 recruit_character = ALB_king_zog
+recruit_character = ALB_shefqet_verlaci
 recruit_character = ALB_enver_hoxha
 recruit_character = ALB_xhemal_aranitasi
 recruit_character = ALB_eqrem_belishi
@@ -47,14 +48,14 @@ set_popularities = {
 }
 
 add_ideas = {
-	av_aggressive_italian_pressure
-	av_political_opposition
-	av_disarmed_tribes
-	av_balkan_immigration
+	rj_aggressive_italian_pressure
+	rj_political_opposition
+	rj_disarmed_tribes
+	rj_balkan_immigration
 }
 
 add_timed_idea = {
-	idea = av_italian_dockyard_investments
+	idea = rj_italian_dockyard_investments
 	days = 365
 }
 

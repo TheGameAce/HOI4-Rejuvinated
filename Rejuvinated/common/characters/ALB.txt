@@ -8,8 +8,8 @@ characters = {
 		}
 		country_leader = {
 			traits = {
-				av_self_proclaimed_monarch
-				av_albanian_nationalist
+				rj_self_proclaimed_monarch
+				rj_albanian_nationalist
 			}
 			ideology = monarchy
 			expire="1965.1.1.1"
@@ -25,7 +25,7 @@ characters = {
 		}
 		country_leader = {
 			traits = {
-				av_skanderbeg_ii
+				rj_skanderbeg_ii
 			}
 			ideology = despotism
 			traits = { skanderbeg_ii }
@@ -58,6 +58,22 @@ characters = {
 			ideology=socialism
 			expire="1941.1.1.12"
 			id=-1
+		}
+	}
+	ALB_shefqet_verlaci = {
+		name = ALB_shefqet_verlaci
+		portraits = {
+			civilian = {
+				large = GFX_portrait_ALB_tefik_mborja
+			}
+		}
+		country_leader = {
+			ideology = nazism
+			traits = { 
+				rj_albanian_nationalist
+			}
+			expire = "1946.7.21.12"
+			id = -1
 		}
 	}
 	# TEFIK MBORJA

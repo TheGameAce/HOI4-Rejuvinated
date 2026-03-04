@@ -16,29 +16,149 @@
 	initial_show_position = {
 	}
 	
-	focus = {
-		id = av_ALB_another_coup
+	focus = { ###Cave To Italy###
+		id = rj_ALB_cave_to_italy
+		icon = GFX_goal_support_fascism
+		x = 10
+		y = 0
+		cost = 10
+		
+		completion_reward = {
+			add_political_power = 150
+			swap_ideas = {
+				remove_idea = rj_aggressive_italian_pressure
+				add_idea = rj_italianization
+			}
+			ITA = {
+				add_opinion_modifier = {
+					target = ALB
+					modifier = ALB_cooperative_mod
+				}
+			}
+		}
+	}
+	
+	focus = { ###Shefqet Verlaci Path###
+		id = rj_ALB_another_coup
+		icon = GFX_goal_support_fascism
+		relative_position_id = rj_ALB_cave_to_italy
+		x = -5
+		y = 1
+		cost = 10
+		
+		prerequisite = { focus = rj_ALB_cave_to_italy }
+		mutually_exclusive = { focus = rj_ALB_restore_the_republic }
+		
+		completion_reward = {
+			add_stability = -0.10
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.25
+			}
+			remove_ideas = rj_disarmed_tribes
+			set_politics = {	
+				ruling_party = fascism
+				elections_allowed = no
+				last_election = "1933.3.5"
+			}
+		}
+	}
+	
+	focus = { ###Restore Republic Path###
+		id = rj_ALB_restore_the_republic
+		icon = GFX_goal_support_fascism
+		relative_position_id = rj_ALB_cave_to_italy
+		x = 3
+		y = 1
+		cost = 10
+		
+		prerequisite = { focus = rj_ALB_cave_to_italy }
+		mutually_exclusive = { focus = rj_ALB_another_coup }
+		
+		completion_reward = {
+			add_political_power = 150
+			swap_ideas = {
+				remove_idea = rj_aggressive_italian_pressure
+				add_idea = rj_italianization
+			}
+			ITA = {
+				add_opinion_modifier = {
+					target = ALB
+					modifier = ALB_cooperative_mod
+				}
+			}
+		}
+	}
+	
+	focus = { ###Stand Against Italy###
+		id = rj_ALB_stand_against_italy
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 20
+		y = 0
+		cost = 10
+		
+		completion_reward = {
+			add_political_power = 75
+			swap_ideas = {
+				remove_idea = rj_aggressive_italian_pressure
+				add_idea = rj_de_italianization
+			}
+			ITA = {
+				add_opinion_modifier = {
+					target = ALB
+					modifier = ALB_rebellious_mod
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	#focus = {
+		id = rj_ALB_another_coup
 		icon = gfx
 		x = 5
 		y = 0
 		cost = 10
 		
-		mutually_exclusive = { focus = av_ALB_root_out_opposition }
+		mutually_exclusive = { focus = rj_ALB_root_out_opposition }
 		
 		completion_reward = {
-			remove_ideas = av_political_opposition
+			remove_ideas = rj_political_opposition
 			retire_character = ALB_king_zog
 		}
 	}
 	
 	focus = {
-		id = av_ALB_root_out_opposition
+		id = rj_ALB_root_out_opposition
 		icon = GFX_goal_generic_major_war
 		x = 15 
 		y = 0
 		cost = 10
 		
-		mutually_exclusive = { focus = av_ALB_another_coup }
+		mutually_exclusive = { focus = rj_ALB_another_coup }
 		
 		ai_will_do = {
 			factor = 0
@@ -49,25 +169,25 @@
 		}
 		
 		completion_reward = {
-			remove_ideas = av_political_opposition
+			remove_ideas = rj_political_opposition
 			add_timed_idea = {
-				idea = av_destroy_political_opponents
+				idea = rj_destroy_political_opponents
 				days = 210
 			}
 		}
 	}
 	
 	focus = {
-		id = av_ALB_our_place_in_balkans
+		id = rj_ALB_our_place_in_balkans
 		icon = GFX_focus_BUL_free_balkan_states
-		relative_position_id = av_ALB_root_out_opposition
+		relative_position_id = rj_ALB_root_out_opposition
 		x = -5 
 		y = 1
-		cost = 10
+		cost = 3
 		
 		prerequisite = { 
-			focus = av_ALB_root_out_opposition
-			focus = av_ALB_another_coup
+			focus = rj_ALB_root_out_opposition
+			focus = rj_ALB_another_coup
 		}
 		
 		completion_reward = {
@@ -76,18 +196,18 @@
 	}
 	
 	focus = {
-		id = av_ALB_balkan_cooperation
+		id = rj_ALB_balkan_cooperation
 		icon = GFX_focus_generic_balkan_diplomacy
-		relative_position_id = av_ALB_our_place_in_balkans
+		relative_position_id = rj_ALB_our_place_in_balkans
 		x = -3 
 		y = 1
 		cost = 10
 		
 		prerequisite = { 
-			focus = av_ALB_our_place_in_balkans
+			focus = rj_ALB_our_place_in_balkans
 		}
 		
-		mutually_exclusive = { focus = av_ALB_balkan_dominance }
+		mutually_exclusive = { focus = rj_ALB_balkan_dominance }
 		
 		completion_reward = {
 			every_other_country = {
@@ -108,18 +228,18 @@
 	}
 	
 	focus = {
-		id = av_ALB_epirus_for_protection
+		id = rj_ALB_epirus_for_protection
 		icon = GFX_focus_generic_concessions
-		relative_position_id = av_ALB_balkan_cooperation
+		relative_position_id = rj_ALB_balkan_cooperation
 		x = -1
 		y = 1
 		cost = 10
 		
 		prerequisite = { 
-			focus = av_ALB_balkan_cooperation
+			focus = rj_ALB_balkan_cooperation
 		}
 		
-		mutually_exclusive = { focus = av_ALB_balkan_dominance }
+		mutually_exclusive = { focus = rj_ALB_balkan_dominance }
 		
 		completion_reward = {
 			GRE = {	country_event = { id = rj_albania.1 days = 1 } }
@@ -127,18 +247,18 @@
 	}
 	
 	focus = {
-		id = av_ALB_balkan_dominance
+		id = rj_ALB_balkan_dominance
 		icon = GFX_goal_generic_occupy_states_ongoing_war
-		relative_position_id = av_ALB_our_place_in_balkans
+		relative_position_id = rj_ALB_our_place_in_balkans
 		x = 3
 		y = 1
 		cost = 10
 		
 		prerequisite = { 
-			focus = av_ALB_our_place_in_balkans
+			focus = rj_ALB_our_place_in_balkans
 		}
 		
-		mutually_exclusive = { focus = av_ALB_balkan_cooperation }
+		mutually_exclusive = { focus = rj_ALB_balkan_cooperation }
 		
 		completion_reward = {
 			add_political_power = 50
@@ -160,20 +280,20 @@
 	}
 	
 	focus = {
-		id = av_ALB_stand_against_italy
+		id = rj_ALB_stand_against_italy
 		icon = GFX_focus_generic_anti_fascist_diplomacy
-		relative_position_id = av_ALB_root_out_opposition
+		relative_position_id = rj_ALB_root_out_opposition
 		x = 5
 		y = 1
 		cost = 10
 		
-		prerequisite = { focus = av_ALB_root_out_opposition }
+		prerequisite = { focus = rj_ALB_root_out_opposition }
 		
 		completion_reward = {
 			add_political_power = 100
 			swap_ideas = {
-				remove_idea = av_aggressive_italian_pressure
-				add_idea = av_aggressive_italian_pressure2
+				remove_idea = rj_aggressive_italian_pressure
+				add_idea = rj_aggressive_italian_pressure2
 			}
 			ITA = {
 				add_opinion_modifier = {
@@ -185,32 +305,32 @@
 	}
 	
 	focus = {
-		id = av_ALB_bunker_plan
+		id = rj_ALB_bunker_plan
 		icon = GFX_goal_fortify_the_westwall
-		relative_position_id = av_ALB_stand_against_italy
+		relative_position_id = rj_ALB_stand_against_italy
 		x = -3
 		y = 1
 		cost = 10
 		
 		prerequisite = { 
-			focus = av_ALB_stand_against_italy 
-			focus = av_ALB_our_place_in_balkans
+			focus = rj_ALB_stand_against_italy 
+			focus = rj_ALB_our_place_in_balkans
 		}
 		
 		completion_reward = {
-			add_ideas = av_bunker_plan
+			add_ideas = rj_bunker_plan
 		}
 	}
 	
 	focus = {
-		id = av_ALB_city_defence
+		id = rj_ALB_city_defence
 		icon = GFX_goal_generic_fortify_city
-		relative_position_id = av_ALB_bunker_plan
+		relative_position_id = rj_ALB_bunker_plan
 		x = 0
 		y = 1
 		cost = 10
 		
-		prerequisite = { focus = av_ALB_bunker_plan }
+		prerequisite = { focus = rj_ALB_bunker_plan }
 		
 		available = {
 			threat > 0.10
@@ -278,14 +398,14 @@
 	}
 	
 	focus = {
-		id = av_ALB_secure_coasts
+		id = rj_ALB_secure_coasts
 		icon = GFX_focus_generic_coastal_fort
-		relative_position_id = av_ALB_city_defence
+		relative_position_id = rj_ALB_city_defence
 		x = 0
 		y = 1
 		cost = 10
 		
-		prerequisite = { focus = av_ALB_city_defence }
+		prerequisite = { focus = rj_ALB_city_defence }
 		
 		available = {
 			threat > 0.10
@@ -347,57 +467,57 @@
 	}
 	
 	focus = {
-		id = av_ALB_deitalianize_albanian_schools
+		id = rj_ALB_deitalianize_albanian_schools
 		icon = GFX_focus_generic_military_academy
-		relative_position_id = av_ALB_stand_against_italy
+		relative_position_id = rj_ALB_stand_against_italy
 		x = 0
 		y = 1
 		cost = 10
 		
-		prerequisite = { focus = av_ALB_stand_against_italy }
+		prerequisite = { focus = rj_ALB_stand_against_italy }
 		
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = av_aggressive_italian_pressure2
-				add_idea = av_aggressive_italian_pressure3
+				remove_idea = rj_aggressive_italian_pressure2
+				add_idea = rj_aggressive_italian_pressure3
 			}
 		}
 	}
 	
 	focus = {
-		id = av_ALB_train_albanian_military
+		id = rj_ALB_train_albanian_military
 		icon = GFX_focus_generic_military_academy
-		relative_position_id = av_ALB_deitalianize_albanian_schools
+		relative_position_id = rj_ALB_deitalianize_albanian_schools
 		x = 0
 		y = 1
 		cost = 10
 		
-		prerequisite = { focus = av_ALB_deitalianize_albanian_schools }
+		prerequisite = { focus = rj_ALB_deitalianize_albanian_schools }
 		
 		completion_reward = {
 			army_experience = 10
 			add_command_power = 25
 			swap_ideas = {
-				remove_idea = av_aggressive_italian_pressure3
-				add_idea = av_aggressive_italian_pressure4
+				remove_idea = rj_aggressive_italian_pressure3
+				add_idea = rj_aggressive_italian_pressure4
 			}
 		}
 	}
 	
 	focus = {
-		id = av_ALB_albania_is_albanian
+		id = rj_ALB_albania_is_albanian
 		icon = GFX_SOV_bringing_breakaways_back_to_the_fold_ccp_2d_sov_compatibility
-		relative_position_id = av_ALB_train_albanian_military
+		relative_position_id = rj_ALB_train_albanian_military
 		x = 0
 		y = 1
 		cost = 10
 		
-		prerequisite = { focus = av_ALB_train_albanian_military }
+		prerequisite = { focus = rj_ALB_train_albanian_military }
 		
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = av_aggressive_italian_pressure4
-				add_idea = av_albanian_nationalism
+				remove_idea = rj_aggressive_italian_pressure4
+				add_idea = rj_ALBanian_nationalism
 			}
 		}
 	}
@@ -971,7 +1091,7 @@
 	}
 
 	focus = {
-		id = NAV_effort
+		id = Nrj_effort
 		icon = GFX_goal_generic_air_naval_bomber
 		prerequisite = { focus = aviation_effort_2 }
 		prerequisite = { focus = flexible_navy }
@@ -986,7 +1106,7 @@
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = nav_bomber_bonus
+				name = nrj_bomber_bonus
 				bonus = 1.0
 				ahead_reduction = 2
 				uses = 1
