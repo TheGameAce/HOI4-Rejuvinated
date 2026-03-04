@@ -12,10 +12,6 @@ focus_tree = {
 
 	initial_show_position = {
 		focus = USA_continue_the_new_deal
-		offset = {
-			x = 1
-			y = 0
-		}
 	}
 	
 	country = {
@@ -33,41 +29,6 @@ focus_tree = {
 	}
 	continuous_focus_position = { x = 50 y = 1600 }
 	default = no
-#	focus = {
-#		id = USA_
-#		#icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
 
 	focus = {
 		id = USA_continue_the_new_deal
@@ -6346,6 +6307,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = USA_war_department
+			custom_effect_tooltip = generic_skip_one_line_tt
+			army_experience = 25
+			air_experience = 25
+			navy_experience = 25
 		}
 
 		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
@@ -6353,12 +6318,12 @@ focus_tree = {
 
 	focus = {
 		id = USA_selective_training_act
-		icon = GFX_focus_generic_military_mission
-		x = -5
+		icon = GFX_focus_RJ_military
+		x = -7
 		y = 1
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_war_department
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -6410,8 +6375,15 @@ focus_tree = {
 				}
 				USA_congress_medium_opposition = yes
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = USA_modify_us_army_tt
+			custom_effect_tooltip = selective_training_DM_tt
+			add_to_variable = {
+				training_time_army_factor = -0.10
+			}
 		}
 	}
+
 	focus = {
 		id = USA_first_special_service_force
 		icon = GFX_goal_generic_special_forces
@@ -6471,11 +6443,11 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			army_experience = 20
+			army_experience = 30
 			add_doctrine_cost_reduction = {
 				name = USA_louisiana_maneuvers
 				cost_reduction = 0.5
-				uses = 1
+				uses = 2
 				category = land_doctrine
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -6590,11 +6562,40 @@ focus_tree = {
 			add_ideas = USA_womens_armed_service_integration_act
 		}
 	}
+
+	focus = {
+		id = RJ_USA_services_of_supply
+		icon = GFX_focus_RJ_USA_services_of_supply
+		x = 2
+		y = 1
+		relative_position_id = USA_selective_training_act
+		cost = 7.2
+		prerequisite = { focus = USA_selective_training_act }
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			custom_effect_tooltip = USA_modify_us_army_tt
+			custom_effect_tooltip = supply_of_services_DM_tt
+			add_to_variable = {
+				RJ_USA_army_fuel_capacity = 0.10
+			}
+			add_to_variable = {
+				RJ_USA_army_attrition = -0.15
+			}
+			add_to_variable = {
+				RJ_USA_army_supply_range = 0.15
+			}
+		}
+	}
 	
 	focus = {
 		id = USA_support_rock_island
-		icon = GFX_goal_generic_army_artillery
-		x = 2
+		icon = GFX_focus_RJ_USA_rock_island_arsenal
+		x = 4
 		y = 1
 		relative_position_id = USA_selective_training_act
 		cost = 10
@@ -6611,7 +6612,15 @@ focus_tree = {
 				uses = 2
 				bonus = 1.0
 				category = artillery
-				category = support_tech
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = USA_modify_us_army_tt
+			custom_effect_tooltip = rock_island_DM_tt
+			add_to_variable = {
+				RJ_USA_army_factory_output = 0.15
+			}
+			add_to_variable = {
+				RJ_USA_army_artillery_attack = 0.10
 			}
 		}
 	}
@@ -6619,10 +6628,10 @@ focus_tree = {
 	focus = {
 		id = USA_tank_experiments
 		icon = GFX_goal_generic_army_tanks
-		x = 2
-		y = 2
+		x = 1
+		y = 1
 		prerequisite = { focus = USA_support_rock_island }
-		relative_position_id = USA_selective_training_act
+		relative_position_id = USA_support_rock_island
 		cost = 10
 
 		ai_will_do = {
@@ -6780,7 +6789,7 @@ focus_tree = {
 	focus = {
 		id = USA_build_the_pentagon
 		icon = GFX_focus_RJ_USA_build_the_pentagon
-		x = -1
+		x = 0
 		y = 1
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_war_department
@@ -6812,10 +6821,10 @@ focus_tree = {
 	focus = {
 		id = USA_department_of_defense
 		icon = GFX_focus_RJ_USA_department_of_defense
-		x = -1
-		y = 2
+		x = 0
+		y = 1
 		prerequisite = { focus = USA_build_the_pentagon }
-		relative_position_id = USA_war_department
+		relative_position_id = USA_build_the_pentagon
 		cost = 5
 
 		ai_will_do = {
@@ -6855,7 +6864,7 @@ focus_tree = {
 	focus = {
 		id = RJ_USA_air_corps_expansion_program
 		icon = GFX_focus_RJ_USA_air_corps_expansion_program
-		x = 3
+		x = 4
 		y = 1
 		cost = 10
 		#ai_will_do = {
@@ -6888,7 +6897,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = RJ_USA_air_corps_expansion_program }
 		relative_position_id = RJ_USA_air_corps_expansion_program
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -6928,7 +6937,7 @@ focus_tree = {
 		icon = GFX_focus_RJ_USA_air_war_plans_division
 		x = 0
 		y = 2
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -6962,7 +6971,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = RJ_USA_air_corps_expansion_program
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -7002,7 +7011,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = RJ_USA_air_corps_expansion_program
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -7032,12 +7041,12 @@ focus_tree = {
 
 	focus = {
 		id = RJ_USA_ground_support
-		icon = GFX_focus_generic_cas_aircraft
+		icon = GFX_focus_generic_tank_air_support
 		prerequisite = { focus = USA_air_support }
 		x = -1
 		y = 1
 		relative_position_id = USA_air_support
-		cost = 7.2
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -7058,8 +7067,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RJ_USA_placeholder_one
-		icon = GFX_focus_generic_cas_aircraft
+		id = RJ_USA_fighter_sweeps
+		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = USA_air_support }
 		x = 0
 		y = 2
@@ -7073,18 +7082,25 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			
+			custom_effect_tooltip = air_DM_tt
+			custom_effect_tooltip = fighter_sweeps_DM_tt
+			add_to_variable = {
+				RJ_USA_air_force_fighter_detection = 0.15
+			}
+			add_to_variable = {
+				RJ_USA_air_force_intercept_efficiency = 0.10
+			}
 		}
 	}
 
 	focus = {
-		id = RJ_USA_placeholder_two
-		icon = GFX_focus_generic_cas_aircraft
-		prerequisite = { focus = RJ_USA_ground_support }
-		x = 0
-		y = 2
-		relative_position_id = RJ_USA_ground_support
-		cost = 10
+		id = RJ_USA_drop_tank_program
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = USA_air_support }
+		x = 1
+		y = 1
+		relative_position_id = USA_air_support
+		cost = 5
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -7093,7 +7109,45 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 
 		completion_reward = {
-			
+			set_technology = {
+				range_improvements = yes
+			}
+			add_to_variable = {
+				RJ_USA_air_force_air_range = 0.08
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = air_DM_tt
+			custom_effect_tooltip = drop_tank_program_DM_tt
+		}
+	}
+
+	focus = {
+		id = RJ_USA_cab_rank_adaptation
+		icon = GFX_focus_generic_cas_aircraft
+		prerequisite = { focus = RJ_USA_ground_support }
+		x = 0
+		y = 2
+		relative_position_id = RJ_USA_ground_support
+		cost = 7.2
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+
+		completion_reward = {
+			custom_effect_tooltip = air_DM_tt
+			custom_effect_tooltip = cab_rank_DM_tt
+			add_to_variable = {
+				RJ_USA_air_force_CAS_efficiency = 0.10
+			}
+			add_to_variable = {
+				RJ_USA_air_force_weather_penalty = -0.05
+			}
+			add_to_variable = {
+				RJ_USA_air_force_ground_attack = 0.05
+			}
 		}
 	}
 
@@ -7115,7 +7169,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = USA_strategic_bombing
-		cost = 10
+		cost = 7.2
 		#ai_will_do = {
 		#	factor = 1
 		#}
@@ -7235,6 +7289,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		prerequisite = { focus = USA_air_war_plans_division }
+		prerequisite = { focus = RJ_USA_cab_rank_adaptation focus = RJ_USA_lessons_learned }
 		relative_position_id = USA_air_war_plans_division
 		cost = 7.2
 
@@ -7315,7 +7370,7 @@ focus_tree = {
 	focus = {
 		id = USA_bureau_of_ships
 		icon = GFX_focus_RJ_navy
-		x = 13
+		x = 15
 		y = 1
 		cost = 10
 		#ai_will_do = {
@@ -7659,7 +7714,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = USA_naval_radar }
 		relative_position_id = USA_naval_radar
-		cost = 14.4
+		cost = 10
 
 		ai_will_do = {
 			factor = 1
@@ -7690,7 +7745,7 @@ focus_tree = {
 			}
 			add_to_variable = {
 				RJ_USA_navy_night_attack = 0.15
-				tooltip = naval_night_attack_tt
+				tooltip = night_navy_DM_tt
 			}
 			add_to_variable = {
 				RJ_USA_navy_organization = 0.15

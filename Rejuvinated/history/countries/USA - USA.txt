@@ -76,7 +76,7 @@ set_variable = { RJ_USA_army_recruitable_population = 0 }
 set_variable = { RJ_USA_training_time_army = 0 }
 set_variable = { RJ_USA_max_training = 0 }
 set_variable = { RJ_USA_SF_training_time = 0 }
-set_variable = { RJ_USA_land_doctrine_cost_factor = 0.50 }
+set_variable = { RJ_USA_land_doctrine_cost_factor = 0 }
 set_variable = { RJ_USA_land_doctrine_mastery_gain = 0 }
 set_variable = { RJ_USA_army_leader_starting_level = 0 }
 set_variable = { RJ_USA_army_leader_starting_attack_level = 0 }
@@ -86,6 +86,8 @@ set_variable = { RJ_USA_army_leader_starting_logistics_level = 0 }
 set_variable = { RJ_USA_army_medal_cost = 0 }
 set_variable = { RJ_USA_army_mobilization_speed = 0 }
 set_variable = { RJ_USA_army_supply_range = 0 }
+set_variable = { RJ_USA_army_factory_output = 0 }
+set_variable = { RJ_USA_army_attrition = 0 }
 
 set_variable = { RJ_USA_army_attack = 0 }
 set_variable = { RJ_USA_army_defense = 0 }
@@ -106,6 +108,8 @@ set_variable = { RJ_USA_army_SF_cap = 0 }
 set_variable = { RJ_USA_army_terrain_penalty_reduction = 0 }
 set_variable = { RJ_USA_army_movement_org_loss = 0 }
 set_variable = { RJ_USA_army_naval_invasion_penalty = 0 }
+set_variable = { RJ_USA_army_artillery_attack = 0 }
+set_variable = { RJ_USA_army_fuel_capacity = 0 }
 
 
 ################# U.S. NAVY DYNAMIC MODIFIER VARIABLES ########################
@@ -143,6 +147,10 @@ set_variable = { RJ_USA_air_force_air_efficiency = 0 }
 set_variable = { RJ_USA_air_force_air_mission_XP_gain = 0 }
 set_variable = { RJ_USA_air_force_air_escort_efficiency = 0 }
 set_variable = { RJ_USA_air_force_ground_support = 0 }
+set_variable = { RJ_USA_air_force_air_range = 0 }
+set_variable = { RJ_USA_air_force_fighter_detection = 0 }
+set_variable = { RJ_USA_air_force_intercept_efficiency = 0 }
+set_variable = { RJ_USA_air_force_weather_penalty = 0 }
 
 
 
