@@ -6405,7 +6405,7 @@ focus_tree = {
 		id = USA_first_special_service_force
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = USA_selective_training_act }
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = USA_selective_training_act
 		cost = 10
@@ -6416,32 +6416,37 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			army_experience = 5
 			add_tech_bonus = {
 				name = special_bonus
 				bonus = 1.0
-				uses = 1
-				technology = paratroopers
-				technology = paratroopers2
-				technology = tech_mountaineers
-				technology = tech_mountaineers2
-				technology = tech_engineers
-				technology = tech_engineers2
-				technology = tech_engineers3
-				technology = tech_recon
-				technology = tech_recon2
-				technology = tech_recon3
+				uses = 2
+				category = cat_special_forces_generic
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = USA_modify_us_army_tt
+			add_to_variable = {
+				RJ_USA_SF_training_time = -0.10
+				tooltip = special_forces_training_time_factor_tt
+			}
+			add_to_variable = {
+				RJ_USA_army_terrain_penalty_reduction = 0.05
+				tooltip = sf_focus_DM_tt
+			}
+			add_to_variable = {
+				RJ_USA_army_SF_cap = 0.15
+				tooltip = special_forces_cap_tt
 			}
 		}
 	}
+
 	focus = {
 		id = USA_louisiana_maneuvers
 		icon = GFX_goal_generic_cavalry
-		x = 0
+		x = -1
 		y = 1
 		prerequisite = { focus = USA_selective_training_act }
 		relative_position_id = USA_selective_training_act
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -6473,14 +6478,15 @@ focus_tree = {
 			}	
 		}
 	}
+
 	focus = {
-		id = USA_airborne_divisions
-		icon = GFX_focus_generic_paratrooper
-		x = -2
-		y = 2
+		id = RJ_USA_the_backpack_radio
+		icon = GFX_focus_RJ_USA_radio_backpack
+		x = 2
+		y = 1
 		prerequisite = { focus = USA_louisiana_maneuvers }
-		relative_position_id = USA_selective_training_act
-		cost = 10
+		relative_position_id = USA_louisiana_maneuvers
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -6497,31 +6503,35 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-
+		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			add_ideas = USA_airborne_divisions
-			if = {
-				limit = {
-					has_dlc = "Arms Against Tyranny"
-				}
-				add_potential_special_forces_tree = yes
-				add_doctrine_cost_reduction = {
-					name = USA_airborne_divisions
-					cost_reduction = 0.25
-					uses = 2
-					category = special_forces_doctrine
-				}
+			add_tech_bonus = {
+				name = radio_bonus_backpack
+				bonus = 1
+				uses = 1
+				category = electronics
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = USA_modify_us_army_tt
+			add_to_variable = {
+				RJ_USA_army_coordination = 0.10
+				tooltip = coordination_bonus_tt
+			}
+			add_to_variable = {
+				RJ_USA_army_org_regain = 0.05
+				tooltip = army_org_regain_tt
 			}
 		}
 	}
+
 	focus = {
-		id = USA_army_of_the_united_states
-		icon = GFX_focus_generic_little_entente
-		x = 0
-		y = 2
+		id = USA_airborne_divisions
+		icon = GFX_focus_RJ_USA_airborne_divisions
+		x = -2
+		y = 1
 		prerequisite = { focus = USA_louisiana_maneuvers }
-		relative_position_id = USA_selective_training_act
-		cost = 10
+		relative_position_id = USA_louisiana_maneuvers
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -6540,24 +6550,75 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
-			add_ideas = USA_army_of_the_united_states
-			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = USA_modify_us_army_tt
+			add_to_variable = {
+				RJ_USA_army_paradrop_org = 0.15
+				tooltip = paradrop_org_tt
+			}
+			add_to_variable = {
+				RJ_USA_army_paratrooper_supply_grace = 48
+				tooltip = paratrooper_supply_grace_DM_tt
+			}
+		}
+	}
+
+	focus = {
+		id = USA_army_of_the_united_states
+		icon = GFX_focus_RJ_USA_army_of_the_united_states
+		x = 0
+		y = 1
+		prerequisite = { focus = USA_louisiana_maneuvers }
+		relative_position_id = USA_louisiana_maneuvers
+		cost = 7.2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
 			USA_omar_bradley = {
 				add_skill_level = 1
 			}
 			USA_mark_clark = {
 				add_skill_level = 1
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = USA_modify_us_army_tt
+			add_to_variable = {
+				RJ_USA_army_mobilization_speed = 0.25
+				tooltip = mobilization_speed_tt
+			}
+			add_to_variable = {
+				RJ_USA_army_core_defense = 0.10
+				tooltip = army_core_defence_factor_tt
+			}
+			add_to_variable = {
+				RJ_USA_army_core_attack = 0.05
+				tooltip = army_core_attack_factor_tt
+			}
 		}
 	}
+
 	focus = {
 		id = USA_womens_armed_service_integration_act
-		icon = GFX_focus_generic_treaty
-		x = 0
-		y = 3
+		icon = GFX_focus_RJ_USA_WASIA
+		x = 1
+		y = 1
 		prerequisite = { focus = USA_army_of_the_united_states }
-		relative_position_id = USA_selective_training_act
-		cost = 10
+		relative_position_id = USA_army_of_the_united_states
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -6576,7 +6637,57 @@ focus_tree = {
 		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_MANPOWER}
 		completion_reward = {
-			add_ideas = USA_womens_armed_service_integration_act
+			custom_effect_tooltip = USA_modify_us_army_tt
+			add_to_variable = {
+				RJ_USA_army_conscription = 0.02
+				tooltip = conscription_tt
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_USA_ninety_division_gamble
+		icon = GFX_focus_RJ_USA_ninety_division_gamble
+		x = -1
+		y = 1
+		prerequisite = { focus = USA_army_of_the_united_states }
+		relative_position_id = USA_army_of_the_united_states
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		completion_reward = {
+			custom_effect_tooltip = USA_modify_us_army_tt
+			add_to_variable = {
+				RJ_USA_army_conscription = 0.01
+				tooltip = conscription_tt
+			}
+			add_to_variable = {
+				RJ_USA_army_attack = 0.05
+				tooltip = army_attack_factor_tt
+			}
+			add_to_variable = {
+				RJ_USA_army_defense = 0.05
+				tooltip = army_defence_factor_tt
+			}
+			add_to_variable = {
+				RJ_USA_army_org_factor = 0.10
+				tooltip = army_org_factor_tt
+			}
 		}
 	}
 
@@ -6674,7 +6785,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = USA_tank_experiments
-				uses = 1
+				uses = 2
 				bonus = 1.0
 				category = armor
 			}
@@ -6682,14 +6793,82 @@ focus_tree = {
 	}
 
 	focus = {
+		id = RJ_USA_mechanization_experiments
+		icon = GFX_focus_generic_mechanized
+		x = -1
+		y = 1
+		prerequisite = { focus = USA_support_rock_island }
+		relative_position_id = USA_support_rock_island
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 0.5
+			}
+			add_tech_bonus = {
+				name = USA_tank_experiments
+				uses = 2
+				bonus = 1.0
+				category = cat_mechanized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_USA_mechanize_the_army
+		icon = GFX_focus_generic_purchase_mechanized_equipment
+		x = -1
+		y = 1
+		prerequisite = { focus = RJ_USA_mechanization_experiments }
+		relative_position_id = RJ_USA_mechanization_experiments
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_ideas = USA_mechanize_the_army_idea
+		}
+	}
+
+	focus = {
 		id = USA_tank_destroyer_doctrine
 		icon = GFX_focus_usa_tank_destroyer_doctrine
-		x = 2
-		y = 3
+		x = -1
+		y = 1
 		prerequisite = { focus = USA_tank_experiments }
-		mutually_exclusive = { focus = USA_main_battle_tanks }
-		relative_position_id = USA_selective_training_act
-		cost = 5
+		relative_position_id = USA_tank_experiments
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -6727,13 +6906,12 @@ focus_tree = {
 	}
 	focus = {
 		id = USA_main_battle_tanks
-		icon = GFX_focus_generic_combined_arms
-		x = 4
-		y = 3
+		icon = GFX_focus_RJ_USA_tank_experiments
+		x = 1
+		y = 1
 		prerequisite = { focus = USA_tank_experiments }
-		mutually_exclusive = { focus = USA_tank_destroyer_doctrine }
-		relative_position_id = USA_selective_training_act
-		cost = 5
+		relative_position_id = USA_tank_experiments
+		cost = 3
 
 		ai_will_do = {
 			factor = 1
@@ -6765,40 +6943,6 @@ focus_tree = {
 			ELSE = {
 				custom_effect_tooltip = available_designer
 				show_ideas_tooltip = detroit_arsenal
-			}
-		}
-	}
-	focus = {
-		id = USA_armored_infantry
-		icon = GFX_goal_generic_build_tank
-		x = 3
-		y = 4
-		prerequisite = { focus = USA_main_battle_tanks focus = USA_tank_destroyer_doctrine }
-		relative_position_id = USA_selective_training_act
-		cost = 10
-
-		ai_will_do = {
-			factor = 1
-		}
-
-		available = {
-
-		}
-		
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_RESEARCH}
-		completion_reward = {
-			add_tech_bonus = {
-				name = USA_armored_infantry
-				uses = 2
-				bonus = 1.0
-				category = motorized_equipment
 			}
 		}
 	}
