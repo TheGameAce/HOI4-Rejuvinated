@@ -1219,6 +1219,23 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+		PRC = {
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = SOV_cooperating_with_us
+				}
+		}
+			if = {
+		limit = {	
+		PRC = { has_idea = USA_SOV_SIK_support_idea1 }
+			}
+		PRC = { swap_ideas = {
+		remove_idea = USA_SOV_PRC_support_idea1
+		add_idea = USA_SOV_PRC_support_idea2
+			}	
+		}
+	}
+		else = { PRC = { add_ideas = USA_SOV_PRC_support_idea1	} }
 			if = {
 				limit = {
 					event_target:WTT_communist_china = {
