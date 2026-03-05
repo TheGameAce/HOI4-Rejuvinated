@@ -267,7 +267,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				special_forces_cap = 0.05	
+				special_forces_cap = 0.05
 			}
 		}
 		USA_womens_armed_service_integration_act = {
@@ -2008,6 +2008,28 @@ ideas = {
 					air_defence = 0.20
 					air_attack = 0.20
 					reliability_factor = 0.10
+				}
+			}
+		}
+
+		USA_mechanize_the_army_idea = {
+			picture = RJ_idea_USA_mechanize_the_army
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				mechanized = {
+					build_cost_ic = -0.15
+					hardness = 0.10
+					instant = yes
 				}
 			}
 		}
