@@ -361,7 +361,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_DIPLOMACY }
 		completion_reward = {
 			add_ideas = USA_spread_our_ideals_idea
 		}
@@ -636,7 +636,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+		search_filters = { FOCUS_FILTER_DIPLOMACY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 	focus = {
 		id = USA_pacific_decolonisation
@@ -694,7 +694,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_EVENT FOCUS_FILTER_ANNEXATION }
+		search_filters = { FOCUS_FILTER_EVENT FOCUS_FILTER_ANNEXATION FOCUS_FILTER_DIPLOMACY }
 	}
 	
 #  # #  # ###  ##  #  #     ###  ### ###  ###  ###  ## ### #  # ###  ##  ### ###  ##  #  # 
@@ -1174,7 +1174,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -1256,7 +1256,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_DIPLOMACY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
 	focus = {
@@ -1362,7 +1362,7 @@ focus_tree = {
 			add_ideas = USA_chinese_exclusion_act_repealed_idea
 		}
 
-		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT }
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -1434,6 +1434,8 @@ focus_tree = {
 				type = puppet_wargoal_focus
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_ANNEXATION	}
 	}
 	
 	focus = {
@@ -1466,6 +1468,8 @@ focus_tree = {
 				add_opinion_modifier = { target = USA modifier = SOV_supported_china_good }
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 	
 	focus = {
@@ -1476,7 +1480,7 @@ focus_tree = {
 		prerequisite = { focus = RJ_USA_the_china_decision }
 		relative_position_id = RJ_USA_the_china_decision
 		mutually_exclusive = { focus = RJ_USA_support_the_prc focus = RJ_USA_the_republican_gamble }
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -1506,8 +1510,7 @@ focus_tree = {
 			}
 			else = { SIK = { add_ideas = USA_SOV_SIK_support_idea1	} }
 		}
-		
-		
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_DIPLOMACY }		
 	}
 	
 	focus = {
@@ -1518,7 +1521,7 @@ focus_tree = {
 		prerequisite = { focus = RJ_USA_the_china_decision }
 		relative_position_id = RJ_USA_the_china_decision
 		mutually_exclusive = { focus = RJ_USA_bet_on_sinkiang focus = RJ_USA_the_republican_gamble }
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -1547,6 +1550,7 @@ focus_tree = {
 	}
 		else = { PRC = { add_ideas = USA_SOV_PRC_support_idea1	} }
 	}
+	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_DIPLOMACY }
 	}
 	
 	focus = {
@@ -1557,7 +1561,7 @@ focus_tree = {
 		prerequisite = { focus = RJ_USA_the_china_decision }
 		relative_position_id = RJ_USA_the_china_decision
 		mutually_exclusive = { focus = RJ_USA_bet_on_sinkiang focus = RJ_USA_support_the_prc }
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -1586,6 +1590,7 @@ focus_tree = {
 	}
 		else = { CHI = { add_ideas = USA_SOV_CHI_support_idea1	} }
 	}
+	search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_DIPLOMACY }
 	}
 	
     focus = {	
@@ -1595,7 +1600,7 @@ focus_tree = {
 		y = 1
 		prerequisite = { focus = RJ_USA_repeal_the_chinese_exclusion_act }
 		relative_position_id = RJ_USA_repeal_the_chinese_exclusion_act
-		cost = 20
+		cost = 14.4
 
 		ai_will_do = {
 			factor = 1
@@ -1657,8 +1662,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			custom_effect_tooltip = "PRC states with significant populations will recieve factories."
+			custom_effect_tooltip = RJ_USA_prc_industrial_tt
 		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
 	
  #	#   # ## #  
@@ -2073,7 +2080,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_STABILITY FOCUS_FILTER_NATIONAL_SPIRIT }
+		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_STABILITY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -2602,7 +2609,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -2689,7 +2696,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_DIPLOMACY }
 		completion_reward = {
 			ENG = {
 				add_opinion_modifier = {
@@ -4254,7 +4261,7 @@ focus_tree = {
 			custom_effect_tooltip = USA_foreign_support_tt
 		}
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -4286,9 +4293,16 @@ focus_tree = {
 			air_experience = 75
 			custom_effect_tooltip = available_chief_of_airforce
 			show_ideas_tooltip = USA_charles_lindbergh
+			custom_effect_tooltip = generic_skip_one_line_tt
+			GER = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = large_increase
+				}
+			}
 		}
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_AIR_XP }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_AIR_XP FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -4317,7 +4331,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_DIPLOMACY }
 		completion_reward = {
 			add_stability = 0.05
 			add_war_support = 0.05
@@ -4511,7 +4525,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_ANNEXATION }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -4570,7 +4584,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -4630,7 +4644,7 @@ focus_tree = {
 			473 = { CONTROLLER = { country_event = mtg_usa_canadian_corridor.1 } }
 		}
 
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -4643,7 +4657,7 @@ focus_tree = {
 		relative_position_id = USA_war_powers_act
 		cost = 10
 
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
 
 		ai_will_do = {
 			factor = 1
@@ -4901,7 +4915,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
 	}
 	focus = {
 		id = USA_protect_south_america
@@ -5010,7 +5024,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
 	}
 	focus = {
 		id = USA_pacific_pacification
@@ -5156,7 +5170,7 @@ focus_tree = {
 			}	
 		}
 
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -5297,7 +5311,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT }
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -6330,7 +6344,7 @@ focus_tree = {
 			navy_experience = 25
 		}
 
-		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP FOCUS_FILTER_NAVY_XP FOCUS_FILTER_AIR_XP }
 	}
 
 	focus = {
@@ -6366,7 +6380,7 @@ focus_tree = {
 		cancel_if_invalid = no
 		continue_if_invalid = yes
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			if = {
 				limit = {
@@ -6384,7 +6398,7 @@ focus_tree = {
 				limit = {
 					has_war_support < 0.1
 				}
-				set_war_support = 0.1
+				add_war_support = 0.1
 			}
 			if = {
 				limit = {
@@ -6414,7 +6428,7 @@ focus_tree = {
 		}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			add_tech_bonus = {
 				name = special_bonus
@@ -6463,7 +6477,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_ARMY_XP }
 		completion_reward = {
 			army_experience = 30
 			add_doctrine_cost_reduction = {
@@ -6503,7 +6517,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			add_tech_bonus = {
 				name = radio_bonus_backpack
@@ -6560,6 +6574,8 @@ focus_tree = {
 				tooltip = paratrooper_supply_grace_DM_tt
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
 	focus = {
@@ -6609,6 +6625,8 @@ focus_tree = {
 				tooltip = army_core_attack_factor_tt
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
 	focus = {
@@ -6635,7 +6653,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_MANPOWER}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			custom_effect_tooltip = USA_modify_us_army_tt
 			add_to_variable = {
@@ -6669,7 +6687,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_MANPOWER}
+		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			custom_effect_tooltip = USA_modify_us_army_tt
 			add_to_variable = {
@@ -6704,7 +6722,7 @@ focus_tree = {
 		}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			custom_effect_tooltip = USA_modify_us_army_tt
 			custom_effect_tooltip = supply_of_services_DM_tt
@@ -6733,7 +6751,7 @@ focus_tree = {
 		}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			add_tech_bonus = {
 				name = USA_support_rock_island
@@ -6777,7 +6795,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
 		completion_reward = {
 			add_breakthrough_progress = {
 				specialization = specialization_land
@@ -6816,7 +6834,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_ARMY }
 		completion_reward = {
 			add_breakthrough_progress = {
 				specialization = specialization_land
@@ -6855,7 +6873,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_ARMY }
 		completion_reward = {
 			add_ideas = USA_mechanize_the_army_idea
 		}
@@ -6903,7 +6921,9 @@ focus_tree = {
 			}
 			
 		}
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
+
 	focus = {
 		id = USA_main_battle_tanks
 		icon = GFX_focus_RJ_USA_tank_experiments
@@ -6945,6 +6965,7 @@ focus_tree = {
 				show_ideas_tooltip = detroit_arsenal
 			}
 		}
+		search_filters = { FOCUS_FILTER_ARMY }
 	}
 
 	focus = {
@@ -7034,7 +7055,7 @@ focus_tree = {
 		prerequisite = { focus = USA_war_department }
 		relative_position_id = USA_war_department
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_AIR_XP }
 	
 		completion_reward = {
 			air_experience = 50
@@ -7075,7 +7096,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_AIR_XP FOCUS_FILTER_AIRFORCE }
 
 		completion_reward = {
 			add_doctrine_cost_reduction = {
@@ -7105,7 +7126,7 @@ focus_tree = {
 		prerequisite = { focus = USA_us_army_airforce }
 		relative_position_id = USA_us_army_airforce
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
 	
 		completion_reward = {
 			custom_effect_tooltip = air_DM_tt
@@ -7163,6 +7184,8 @@ focus_tree = {
 				category = cat_air_engine
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_RESEARCH }
 	}
 
 	focus = {
@@ -7198,6 +7221,8 @@ focus_tree = {
 				category = cat_air_bombs
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_RESEARCH }
 	}
 
 	focus = {
@@ -7213,7 +7238,7 @@ focus_tree = {
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
 
 		completion_reward = {
 			custom_effect_tooltip = air_DM_tt
@@ -7240,7 +7265,7 @@ focus_tree = {
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
 
 		completion_reward = {
 			custom_effect_tooltip = air_DM_tt
@@ -7267,7 +7292,7 @@ focus_tree = {
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
 
 		completion_reward = {
 			set_technology = {
@@ -7295,7 +7320,7 @@ focus_tree = {
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
 
 		completion_reward = {
 			custom_effect_tooltip = air_DM_tt
@@ -7336,7 +7361,7 @@ focus_tree = {
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
 
 		completion_reward = {
 			air_experience = 25
@@ -7366,7 +7391,7 @@ focus_tree = {
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
 
 		completion_reward = {
 			custom_effect_tooltip = air_DM_tt
@@ -7401,7 +7426,7 @@ focus_tree = {
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
 
 		completion_reward = {
 			add_ideas = USA_flying_fortress_idea
@@ -7424,7 +7449,7 @@ focus_tree = {
 		#}
 
 		available_if_capitulated = yes
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -7469,7 +7494,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_AIRFORCE FOCUS_FILTER_NATIONAL_SPIRIT }
 
 		completion_reward = {
 			custom_effect_tooltip = air_DM_tt
@@ -7507,7 +7532,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -7562,6 +7587,8 @@ focus_tree = {
 				add_skill_level = 1
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_NAVY_XP }
 	}
 
 	focus = {
@@ -7618,7 +7645,7 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = {FOCUS_FILTER_USA_CONGRESS}
+		search_filters = { FOCUS_FILTER_USA_CONGRESS FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_INDUSTRY FOCUS_FILTER_NAVY }
 		completion_reward = {
 			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
@@ -7709,6 +7736,8 @@ focus_tree = {
 				tooltip = production_speed_dockyard_factor_tt
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 	
 	focus = {
@@ -7734,6 +7763,8 @@ focus_tree = {
 				tooltip = supply_node_range_tt
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
 	focus = {
@@ -7750,7 +7781,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY }
 		completion_reward = {
 			add_breakthrough_progress = {
 				specialization = specialization_naval
@@ -7779,7 +7810,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
@@ -7803,7 +7834,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 		completion_reward = {
 			add_tech_bonus = {
 				name = USA_air_bonus1
@@ -7846,7 +7877,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY FOCUS_FILTER_AIRFORCE }
 		completion_reward = {
 
 			add_breakthrough_progress = {
@@ -7893,7 +7924,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
@@ -7944,6 +7975,8 @@ focus_tree = {
 				value = 0.25
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_RESEARCH }
 	}
 
 	focus = {
@@ -7967,6 +8000,8 @@ focus_tree = {
 				tooltip = naval_detection_tt
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
 	focus = {
@@ -7994,6 +8029,8 @@ focus_tree = {
 				tooltip = convoy_retreat_speed_tt
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
 	focus = {
@@ -8021,6 +8058,8 @@ focus_tree = {
 				tooltip = convoy_retreat_speed_tt
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
 	focus = {
@@ -8044,7 +8083,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			add_tech_bonus = {
 				name = USA_fleet_submarines
@@ -8092,7 +8131,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_NAVY }
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_RESEARCH }
 	}
 
 	focus = {
@@ -8109,7 +8148,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			custom_effect_tooltip = USA_modify_us_army_tt
 			add_to_variable = {
@@ -8154,7 +8193,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 		
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_tech_bonus = {
 				name = USA_amphibious_operations
@@ -8191,7 +8230,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 		
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
@@ -8234,6 +8273,8 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = USA_unrestricted_submarine_warfare
 		}
+
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 	}
 
 	focus = {
@@ -8250,7 +8291,7 @@ focus_tree = {
 
 		available_if_capitulated = yes
 		
-		search_filters = {FOCUS_FILTER_RESEARCH}
+		search_filters = { FOCUS_FILTER_NAVY FOCUS_FILTER_NATIONAL_SPIRIT }
 		completion_reward = {
 			custom_effect_tooltip = USA_modify_us_navy_tt
 			add_to_variable = {
