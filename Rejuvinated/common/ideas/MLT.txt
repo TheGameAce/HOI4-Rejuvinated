@@ -21,6 +21,24 @@ ideas = {
 			}
 		}
 		
+		MLT_italian_refugees_idea = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				original_tag = MLT
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				weekly_manpower = 750
+			}
+		}
+		
 		MLT_italian_trade_investments_idea = {
 			picture = usa_great_depression_3
 			
@@ -36,6 +54,25 @@ ideas = {
 			
 			modifier = {
 				consumer_goods_factor = -0.2
+			}
+		}
+		
+		MLT_british_investments_idea = {
+			picture = usa_great_depression_3
+			
+			allowed = {
+				original_tag = MLT
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.15
+				industrial_capacity_dockyard = 0.1
 			}
 		}
 		
