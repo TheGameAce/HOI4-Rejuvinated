@@ -1,0 +1,16 @@
+ENG_historical_ai = {
+	OR = {
+		AND = {
+			is_historical_focus_on = yes
+			has_game_rule = {
+				rule = ENG_AI_BEHAVIOR
+				option = DEFAULT
+			}
+		}
+		has_country_flag = ENG_AI_DEMOCRATIC_HISTORICAL
+		has_game_rule = {
+			rule = ENG_ai_behavior
+			option = DEMOCRATIC_HISTORICAL
+		}
+	}
+}
