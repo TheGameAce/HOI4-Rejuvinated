@@ -333,7 +333,6 @@ focus_tree = {
 
 		cost = 10
 
-		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -354,26 +353,11 @@ focus_tree = {
 		id = air_defense_focus
 		prerequisite = { focus = limited_rearmament_focus }
 		available = {
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				OR = {
-					threat > 0.05
-					has_war = yes
-					has_idea = ENG_no_further_appeasement_idea
-					NOT = { has_government = democratic }
-				}
-			}
-			if = {
-				limit = {
-					NOT = { has_dlc = "Man the Guns" }
-				}
-				OR = {
-					threat > 0.05
-					has_war = yes
-					NOT = { has_government = democratic }
-				}
+			OR = {
+				threat > 0.05
+				has_war = yes
+				has_idea = ENG_no_further_appeasement_idea
+				NOT = { has_government = democratic }
 			}
 		}
 
@@ -661,26 +645,11 @@ focus_tree = {
 		prerequisite = { focus = limited_rearmament_focus }
 
 		available = {
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				OR = {
-					threat > 0.05
-					has_war = yes
-					has_idea = ENG_no_further_appeasement_idea
-					NOT = { has_government = democratic }
-				}
-			}
-			if = {
-				limit = {
-					NOT = { has_dlc = "Man the Guns" }
-				}
-				OR = {
-					threat > 0.05
-					has_war = yes
-					NOT = { has_government = democratic }
-				}
+			OR = {
+				threat > 0.05
+				has_war = yes
+				has_idea = ENG_no_further_appeasement_idea
+				NOT = { has_government = democratic }
 			}
 		}
 
@@ -769,7 +738,6 @@ focus_tree = {
 
 		cost = 5
 
-		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -832,26 +800,11 @@ focus_tree = {
 		id = general_rearmament_focus
 		prerequisite = { focus = limited_rearmament_focus }
 		available = {
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
-				}
-				OR = {
-					threat > 0.1 
-					has_war = yes
-					has_idea = ENG_no_further_appeasement_idea
-					NOT = { has_government = democratic }
-				}
-			}
-			if = {
-				limit = {
-					NOT = { has_dlc = "Man the Guns" }
-				}
-				OR = {
-					threat > 0.1 
-					has_war = yes
-					NOT = { has_government = democratic }
-				}
+			OR = {
+				threat > 0.1 
+				has_war = yes
+				has_idea = ENG_no_further_appeasement_idea
+				NOT = { has_government = democratic }
 			}
 		}
 
@@ -926,38 +879,17 @@ focus_tree = {
 	focus = {
 		id = royal_ordinance_focus
 		available = {
-			if = {
-				limit = {
-					has_dlc = "Man the Guns"
+			OR = {
+				any_other_country = {
+					has_war_with = ROOT
+					num_of_factories > 30
 				}
-				OR = {
-					any_other_country = {
-						has_war_with = ROOT
-						num_of_factories > 30
-					}
-					GER = {
-						has_completed_focus = GER_remilitarize_the_rhineland
-					}
-					threat > 0.2
-					has_idea = ENG_no_further_appeasement_idea
-					NOT = { has_government = democratic }
+				GER = {
+					has_completed_focus = GER_remilitarize_the_rhineland
 				}
-			}
-			if = {
-				limit = {
-					NOT = { has_dlc = "Man the Guns" }
-				}
-				OR = {
-					any_other_country = {
-						has_war_with = ROOT
-						num_of_factories > 30
-					}
-					GER = {
-						has_completed_focus = GER_remilitarize_the_rhineland
-					}
-					threat > 0.2
-					NOT = { has_government = democratic }
-				}
+				threat > 0.2
+				has_idea = ENG_no_further_appeasement_idea
+				NOT = { has_government = democratic }
 			}
 		} #at war with major or ger in rhineland or high threat
 		prerequisite = { focus = uk_industrial_focus }
@@ -1652,10 +1584,6 @@ focus_tree = {
 			factor = 1
 		}
 
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
-
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
@@ -1681,20 +1609,12 @@ focus_tree = {
 		icon = GFX_focus_generic_cruiser2
 		x = 3
 		y = 2
-		offset = {
-			x = -1
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
 		relative_position_id = naval_rearmament_focus
 		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
-		available_if_capitulated = no
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
 			add_tech_bonus = {
@@ -1746,9 +1666,6 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
 			add_tech_bonus = {
@@ -1786,13 +1703,6 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		x = 0
 		y = 2
-		offset = {
-			x = 0
-			y = -1
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
 		relative_position_id = uk_convoy_focus
 		cost = 10
 		ai_will_do = {
@@ -1929,10 +1839,6 @@ focus_tree = {
 			factor = 1
 		}
 
-		allow_branch = {
-			has_dlc = "Man the Guns"
-		}
-
 		available_if_capitulated = yes
 
 		complete_tooltip = {
@@ -1981,10 +1887,6 @@ focus_tree = {
 		cost = 10
 		ai_will_do = {
 			factor = 1
-		}
-
-		allow_branch = {
-			has_dlc = "Man the Guns"
 		}
 
 		available = {
@@ -2090,16 +1992,11 @@ focus_tree = {
 			x = -2
 			y = 0
 			trigger = {
-				OR = {
-					NOT = { has_dlc = "Man the Guns" }
-					AND = {
-						has_game_rule = {
-							rule = obsolete_focus_branches_visibility
-							option = HIDE
-						}
-						has_completed_focus = uk_empire_focus
-					}
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
 				}
+				has_completed_focus = uk_empire_focus
 			}
 		}
 		cost = 10
@@ -2119,7 +2016,6 @@ focus_tree = {
 			hidden_effect = {
 				if = {
 					limit = {
-						has_dlc = "Man the Guns"
 						has_game_rule = {
 							rule = obsolete_focus_branches_visibility
 							option = HIDE
@@ -2144,16 +2040,11 @@ focus_tree = {
 			x = 2
 			y = 0
 			trigger = {
-				OR = {
-					NOT = { has_dlc = "Man the Guns" }
-					AND = {
-						has_game_rule = {
-							rule = obsolete_focus_branches_visibility
-							option = HIDE
-						}
-						has_completed_focus = uk_empire_focus
-					}
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
 				}
+				has_completed_focus = uk_empire_focus
 			}
 		}
 		relative_position_id = uk_empire_focus
@@ -2930,7 +2821,6 @@ focus_tree = {
 		mutually_exclusive = { focus = uk_empire_focus }
 
 		allow_branch = {
-			has_dlc = "Man the Guns"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -3587,7 +3477,6 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_dlc = "Together for Victory"
 					RAJ = {
 						is_subject = yes
 						NOT = {
@@ -3614,7 +3503,6 @@ focus_tree = {
 
 			if = {
 				limit = {
-					has_dlc = "Together for Victory"
 					BAN = {
 						is_subject = yes
 						NOT = { has_autonomy_state = autonomy_dominion }
@@ -3624,7 +3512,6 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					has_dlc = "Together for Victory"
 					PAK = {
 						is_subject = yes
 						NOT = { has_autonomy_state = autonomy_dominion }
@@ -3875,8 +3762,6 @@ focus_tree = {
 			}
 		}
 
-		continue_if_invalid = no
-
 		icon = GFX_focus_generic_self_management
 		x = -1
 		y = 1
@@ -3894,18 +3779,7 @@ focus_tree = {
 					has_full_control_of_state = 116
 				}
 				release = MLT
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = { target = MLT autonomy_state = autonomy_dominion }
-				}
-				if = {
-					limit = {
-						NOT = { has_dlc = "Together for Victory" }
-					}
-					puppet = MLT
-				}
+				set_autonomy = { target = MLT autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -3922,18 +3796,7 @@ focus_tree = {
 					has_full_control_of_state = 183
 				}
 				release = CYP
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = { target = CYP autonomy_state = autonomy_dominion }
-				}
-				if = {
-					limit = {
-						NOT = { has_dlc = "Together for Victory" }
-					}
-					puppet = CYP
-				}
+				set_autonomy = { target = CYP autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -4017,8 +3880,6 @@ focus_tree = {
 			#}
 		}
 
-		continue_if_invalid = no
-
 		icon = GFX_focus_generic_self_management
 		x = 0
 		y = 2
@@ -4043,18 +3904,7 @@ focus_tree = {
 					has_full_control_of_state = 887
 				}
 				release = SUD
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = { target = SUD autonomy_state = autonomy_dominion }
-				}
-				if = {
-					limit = {
-						NOT = { has_dlc = "Together for Victory" }
-					}
-					puppet = SUD
-				}
+				set_autonomy = { target = SUD autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -4088,18 +3938,7 @@ focus_tree = {
 						KEN = { transfer_state = PREV }
 					}
 				}
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = { target = KEN autonomy_state = autonomy_dominion }
-				}
-				if = {
-					limit = {
-						NOT = { has_dlc = "Together for Victory" }
-					}
-					puppet = KEN
-				}
+				set_autonomy = { target = KEN autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -4116,23 +3955,7 @@ focus_tree = {
 					has_full_control_of_state = 269
 				}
 				release = SOM
-				if = {
-					limit = {
-						SOM = { is_subject = no }
-					}
-					if = {
-						limit = {
-							has_dlc = "Together for Victory"
-						}
-						set_autonomy = { target = SOM autonomy_state = autonomy_dominion }
-					}
-					if = {
-						limit = {
-							NOT = { has_dlc = "Together for Victory" }
-						}
-						puppet = SOM
-					}
-				}
+				set_autonomy = { target = SOM autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -4149,18 +3972,7 @@ focus_tree = {
 					has_full_control_of_state = 548
 				}
 				release = UGA
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = { target = UGA autonomy_state = autonomy_dominion }
-				}
-				if = {
-					limit = {
-						NOT = { has_dlc = "Together for Victory" }
-					}
-					puppet = UGA
-				}
+				set_autonomy = { target = UGA autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -4177,18 +3989,7 @@ focus_tree = {
 					has_full_control_of_state = 546
 				}
 				release = TZN
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = { target = TZN autonomy_state = autonomy_dominion }
-				}
-				if = {
-					limit = {
-						NOT = { has_dlc = "Together for Victory" }
-					}
-					puppet = TZN
-				}
+				set_autonomy = { target = TZN autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -4206,18 +4007,7 @@ focus_tree = {
 					has_full_control_of_state = 981
 				}
 				release = ZAM
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = { target = ZAM autonomy_state = autonomy_dominion }
-				}
-				if = {
-					limit = {
-						NOT = { has_dlc = "Together for Victory" }
-					}
-					puppet = ZAM
-				}
+				set_autonomy = { target = ZAM autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -4234,18 +4024,7 @@ focus_tree = {
 					has_full_control_of_state = 770
 				}
 				release = MLW
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = { target = MLW autonomy_state = autonomy_dominion }
-				}
-				if = {
-					limit = {
-						NOT = { has_dlc = "Together for Victory" }
-					}
-					puppet = MLW
-				}
+				set_autonomy = { target = MLW autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -4262,18 +4041,7 @@ focus_tree = {
 					has_full_control_of_state = 545
 				}
 				release = ZIM
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = { target = ZIM autonomy_state = autonomy_dominion }
-				}
-				if = {
-					limit = {
-						NOT = { has_dlc = "Together for Victory" }
-					}
-					puppet = ZIM
-				}
+				set_autonomy = { target = ZIM autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -4290,18 +4058,7 @@ focus_tree = {
 					has_full_control_of_state = 542
 				}
 				release = BOT
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = { target = BOT autonomy_state = autonomy_dominion }
-				}
-				if = {
-					limit = {
-						NOT = { has_dlc = "Together for Victory" }
-					}
-					puppet = BOT
-				}
+				set_autonomy = { target = BOT autonomy_state = autonomy_dominion }
 				hidden_effect = {
 					every_other_country = {
 						limit = {
@@ -4473,8 +4230,6 @@ focus_tree = {
 				}
 			}
 		}
-
-		continue_if_invalid = no
 
 		icon = GFX_focus_generic_self_management
 		x = 1
@@ -4789,8 +4544,6 @@ focus_tree = {
 			}
 		}
 
-		continue_if_invalid = no
-
 		icon = GFX_focus_generic_self_management
 		x = 0
 		y = 1
@@ -5040,8 +4793,6 @@ focus_tree = {
 				}
 			}
 		}
-
-		continue_if_invalid = no
 
 		icon = GFX_focus_generic_self_management
 		x = 0
@@ -5360,7 +5111,6 @@ focus_tree = {
 				hidden_effect = {
 					if = {
 						limit = {
-							has_dlc = "Together for Victory"
 							ENG = { has_completed_focus = ENG_the_three_nation_solution }
 							OR = {
 								has_idea = RAJ_marginalized_muslim_community
@@ -6874,29 +6624,19 @@ focus_tree = {
 		prerequisite = { focus = uk_india_focus }
 		mutually_exclusive = { focus = ENG_indian_autonomy }
 		available = {
-			if = {
-				limit = { has_dlc = "Together for Victory" }
-				OR = {
-					AND = {
-						date > 1943.10.01
-						RAJ = {
-							is_subject_of = ENG
-							has_war = no
-						}
-					}
-					AND = {
-						NOT = { has_government = democratic }
-						RAJ = {
-							is_subject_of = ENG
-							has_war = no
-						}
+			OR = {
+				AND = {
+					date > 1943.10.01
+					RAJ = {
+						is_subject_of = ENG
+						has_war = no
 					}
 				}
-				else = {				
-					has_global_flag = indian_national_army_setup
-					has_government = democratic
+				AND = {
+					NOT = { has_government = democratic }
 					RAJ = {
-						is_puppet_of = ENG
+						is_subject_of = ENG
+						has_war = no
 					}
 				}
 			}
@@ -6904,35 +6644,21 @@ focus_tree = {
 		icon = GFX_goal_generic_improve_relations
 		x = -1
 		y = 1
-		offset = {
-			x = 1
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
 		relative_position_id = uk_india_focus
 		cost = 10
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			if = {
-				limit = { has_dlc = "Together for Victory" }
-				ROOT = {
-					set_autonomy = {
-						target = RAJ
-						autonomy_state = autonomy_free
-					}
-				}
-				else = {					
-					set_global_flag = indian_independence_promised
-					add_timed_idea = { idea = indian_independence_promised_idea days = 1460 }
-					RAJ = {
-						remove_ideas = RAJ_azad_hind
-					}				
-				}
-			}
+			set_autonomy = {
+				target = RAJ
+				autonomy_state = autonomy_free
+			}				
+			#set_global_flag = indian_independence_promised
+			#add_timed_idea = { idea = indian_independence_promised_idea days = 1460 }
+			#RAJ = {
+			#	remove_ideas = RAJ_azad_hind
+			#}
 		}
 	}
 	
@@ -7582,7 +7308,6 @@ focus_tree = {
 		mutually_exclusive = { focus = uk_free_india_focus }
 
 		allow_branch = {
-			has_dlc = "Man the Guns"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -7601,8 +7326,6 @@ focus_tree = {
 				is_subject_of = ENG
 			}
 		}
-
-		continue_if_invalid = no
 
 		icon = GFX_focus_RAJ_british_investors
 
@@ -7635,7 +7358,6 @@ focus_tree = {
 		prerequisite = { focus = uk_south_africa_focus }
 
 		allow_branch = {
-			has_dlc = "Man the Guns"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -7747,8 +7469,6 @@ focus_tree = {
 			}
 		}
 
-		continue_if_invalid = no
-
 		icon = GFX_goal_generic_national_unity
 
 		x = 0
@@ -7803,113 +7523,67 @@ focus_tree = {
 		id = ENG_imperial_federation
 		prerequisite = { focus = ENG_imperial_conference }
 		available = {
+			CAN = {
+				OR = {
+					AND = {
+						is_subject_of = ENG
+						OR = {
+							has_autonomy_state = autonomy_integrated_puppet
+							has_autonomy_state = autonomy_reichskommissariat
+						}
+					}
+					AND = {
+						exists = no
+						NOT = {
+							any_state = {
+								is_core_of = CAN
+								NOT = { is_owned_by = ROOT }
+							}
+						}
+					}
+				}
+			}
+			SAF = {
+				OR = {
+					AND = {
+						is_subject_of = ENG
+						OR = {
+							has_autonomy_state = autonomy_integrated_puppet
+							has_autonomy_state = autonomy_reichskommissariat
+						}
+					}
+					AND = {
+						exists = no
+						NOT = {
+							any_state = {
+								is_core_of = SAF
+								NOT = { is_owned_by = ROOT }
+							}
+						}
+					}
+				}
+			}
 			if = {
 				limit = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Death or Dishonor"
+					RAJ = { has_country_flag = ENG_accepted_federation }
 				}
-				CAN = {
+				RAJ = {
 					OR = {
 						AND = {
 							is_subject_of = ENG
 							OR = {
 								has_autonomy_state = autonomy_integrated_puppet
 								has_autonomy_state = autonomy_reichskommissariat
+								ROOT = { has_country_leader_with_trait = viceroy_emeritus }
 							}
 						}
 						AND = {
 							exists = no
 							NOT = {
 								any_state = {
-									is_core_of = CAN
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				SAF = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							OR = {
-								has_autonomy_state = autonomy_integrated_puppet
-								has_autonomy_state = autonomy_reichskommissariat
-							}
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = SAF
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						RAJ = { has_country_flag = ENG_accepted_federation }
-					}
-					RAJ = {
-						OR = {
-							AND = {
-								is_subject_of = ENG
-								OR = {
-									has_autonomy_state = autonomy_integrated_puppet
-									has_autonomy_state = autonomy_reichskommissariat
-									ROOT = { has_country_leader_with_trait = viceroy_emeritus }
-								}
-							}
-							AND = {
-								exists = no
-								NOT = {
-									any_state = {
-										is_core_of = RAJ
-										NOT = { state = 320 }
-										NOT = { state = 321 }
-										NOT = { is_owned_by = ROOT }
-									}
-								}
-							}
-						}
-					}
-				}
-				AST = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							OR = {
-								has_autonomy_state = autonomy_integrated_puppet
-								has_autonomy_state = autonomy_reichskommissariat
-							}
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = AST
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				NZL = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							OR = {
-								has_autonomy_state = autonomy_integrated_puppet
-								has_autonomy_state = autonomy_reichskommissariat
-							}
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = NZL
+									is_core_of = RAJ
+									NOT = { state = 320 }
+									NOT = { state = 321 }
 									NOT = { is_owned_by = ROOT }
 								}
 							}
@@ -7917,292 +7591,41 @@ focus_tree = {
 					}
 				}
 			}
-			else_if = {
-				limit = {
-					has_dlc = "Together for Victory"
-					NOT = { has_dlc = "Death or Dishonor" }
-				}
-				CAN = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_autonomy_state = autonomy_integrated_puppet
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = CAN
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				SAF = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_autonomy_state = autonomy_integrated_puppet
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = SAF
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						RAJ = { has_country_flag = ENG_accepted_federation }
-					}
-					RAJ = {
+			AST = {
+				OR = {
+					AND = {
+						is_subject_of = ENG
 						OR = {
-							AND = {
-								is_subject_of = ENG
-								has_autonomy_state = autonomy_integrated_puppet
-							}
-							AND = {
-								exists = no
-								NOT = {
-									any_state = {
-										is_core_of = RAJ
-										NOT = { state = 320 }
-										NOT = { state = 321 }
-										NOT = { is_owned_by = ROOT }
-									}
-								}
-							}
+							has_autonomy_state = autonomy_integrated_puppet
+							has_autonomy_state = autonomy_reichskommissariat
 						}
 					}
-				}
-				AST = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_autonomy_state = autonomy_integrated_puppet
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = AST
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				NZL = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_autonomy_state = autonomy_integrated_puppet
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = NZL
-									NOT = { is_owned_by = ROOT }
-								}
+					AND = {
+						exists = no
+						NOT = {
+							any_state = {
+								is_core_of = AST
+								NOT = { is_owned_by = ROOT }
 							}
 						}
 					}
 				}
 			}
-			else_if = {
-				limit = {
-					NOT = { has_dlc = "Together for Victory" }
-					has_dlc = "Death or Dishonor"
-					has_government = fascism
-				}
-				CAN = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_autonomy_state = autonomy_reichskommissariat
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = CAN
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				SAF = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_autonomy_state = autonomy_reichskommissariat
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = SAF
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						RAJ = { has_country_flag = ENG_accepted_federation }
-					}
-					RAJ = {
+			NZL = {
+				OR = {
+					AND = {
+						is_subject_of = ENG
 						OR = {
-							AND = {
-								is_subject_of = ENG
-								has_autonomy_state = autonomy_reichskommissariat
-							}
-							AND = {
-								exists = no
-								NOT = {
-									any_state = {
-										is_core_of = RAJ
-										NOT = { state = 320 }
-										NOT = { state = 321 }
-										NOT = { is_owned_by = ROOT }
-									}
-								}
-							}
-						}
-					}
-				}
-				AST = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
+							has_autonomy_state = autonomy_integrated_puppet
 							has_autonomy_state = autonomy_reichskommissariat
 						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = AST
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
 					}
-				}
-				NZL = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							has_autonomy_state = autonomy_reichskommissariat
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = NZL
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-			}
-			else = {
-				CAN = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							compare_autonomy_progress_ratio < 0.1
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = CAN
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				SAF = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							compare_autonomy_progress_ratio < 0.1
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = SAF
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						RAJ = { has_country_flag = ENG_accepted_federation }
-					}
-					RAJ = {
-						OR = {
-							AND = {
-								is_subject_of = ENG
-								compare_autonomy_progress_ratio < 0.1
-							}
-							AND = {
-								exists = no
-								NOT = {
-									any_state = {
-										is_core_of = RAJ
-										NOT = { state = 320 }
-										NOT = { state = 321 }
-										NOT = { is_owned_by = ROOT }
-									}
-								}
-							}
-						}
-					}
-				}
-				AST = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							compare_autonomy_progress_ratio < 0.1
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = AST
-									NOT = { is_owned_by = ROOT }
-								}
-							}
-						}
-					}
-				}
-				NZL = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							compare_autonomy_progress_ratio < 0.1
-						}
-						AND = {
-							exists = no
-							NOT = {
-								any_state = {
-									is_core_of = NZL
-									NOT = { is_owned_by = ROOT }
-								}
+					AND = {
+						exists = no
+						NOT = {
+							any_state = {
+								is_core_of = NZL
+								NOT = { is_owned_by = ROOT }
 							}
 						}
 					}
@@ -8388,17 +7811,9 @@ focus_tree = {
 		relative_position_id = ENG_revisit_colonial_policy
 
 		offset = {
-			x = -7
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
-		offset = {
 			x = -5
 			y = 0
 			trigger = {
-				has_dlc = "Man the Guns"
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
@@ -8460,7 +7875,6 @@ focus_tree = {
 				NOT = { has_country_flag = edward_viii_refused_to_abdicate_flag }
 			}
 		}
-		cancel_if_invalid = yes
 
 		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}	
 		completion_reward = {
@@ -8468,7 +7882,6 @@ focus_tree = {
 			hidden_effect = {
 				if = {
 					limit = {
-						has_dlc = "Man the Guns"
 						has_game_rule = {
 							rule = obsolete_focus_branches_visibility
 							option = HIDE
@@ -8488,7 +7901,6 @@ focus_tree = {
 		mutually_exclusive = { focus = ENG_home_defence }
 
 		allow_branch = {
-			has_dlc = "Man the Guns"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -8980,39 +8392,34 @@ focus_tree = {
 				uses = 3
 				category = naval_doctrine
 			}
-			if = {
-				limit = {
-					has_dlc = "Together for Victory"
+			CAN = {
+				if = {
+					limit = { is_in_faction_with = ENG }
+					add_ideas = ENG_maintaining_imperial_integrity_idea
 				}
-				CAN = {
-					if = {
-						limit = { is_in_faction_with = ENG }
-						add_ideas = ENG_maintaining_imperial_integrity_idea
-					}
+			}
+			AST = {
+				if = {
+					limit = { is_in_faction_with = ENG }
+					add_ideas = ENG_maintaining_imperial_integrity_idea
 				}
-				AST = {
-					if = {
-						limit = { is_in_faction_with = ENG }
-						add_ideas = ENG_maintaining_imperial_integrity_idea
-					}
+			}
+			NZL = {
+				if = {
+					limit = { is_in_faction_with = ENG }
+					add_ideas = ENG_maintaining_imperial_integrity_idea
 				}
-				NZL = {
-					if = {
-						limit = { is_in_faction_with = ENG }
-						add_ideas = ENG_maintaining_imperial_integrity_idea
-					}
+			}
+			SAF = {
+				if = {
+					limit = { is_in_faction_with = ENG }
+					add_ideas = ENG_maintaining_imperial_integrity_idea
 				}
-				SAF = {
-					if = {
-						limit = { is_in_faction_with = ENG }
-						add_ideas = ENG_maintaining_imperial_integrity_idea
-					}
-				}
-				RAJ = {
-					if = {
-						limit = { is_in_faction_with = ENG }
-						add_ideas = ENG_maintaining_imperial_integrity_idea
-					}
+			}
+			RAJ = {
+				if = {
+					limit = { is_in_faction_with = ENG }
+					add_ideas = ENG_maintaining_imperial_integrity_idea
 				}
 			}
 			FRA = {
@@ -9185,18 +8592,10 @@ focus_tree = {
 			x = -5
 			y = 0
 			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
-		offset = {
-			x = -5
-			y = 0
-			trigger = {
 				has_game_rule = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
 				}
-				has_dlc = "Man the Guns"
 				has_completed_focus = ENG_home_defence
 			}
 		}
@@ -9370,13 +8769,6 @@ focus_tree = {
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		x = -6
 		y = 1
-		offset = {
-			x = 1
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
 		relative_position_id = ENG_home_defence
 		cost = 10
 		ai_will_do = {
@@ -9560,13 +8952,6 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_military
 		x = 4
 		y = 1
-		offset = {
-			x = 1
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
 		relative_position_id = ENG_home_defence
 		cost = 10
 		ai_will_do = {
@@ -9700,13 +9085,6 @@ focus_tree = {
 		icon = GFX_goal_generic_position_armies
 		x = -3
 		y = 1
-		offset = {
-			x = 1
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
 		relative_position_id = ENG_home_defence
 		cost = 10
 		ai_will_do = {
@@ -9894,13 +9272,6 @@ focus_tree = {
 
 		x = -1
 		y = 1
-		offset = {
-			x = 1
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
 		relative_position_id = ENG_home_defence
 
 		cost = 10
@@ -9955,13 +9326,6 @@ focus_tree = {
 		icon = GFX_goal_generic_position_armies
 		x = 1
 		y = 1
-		offset = {
-			x = 1
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
 		relative_position_id = ENG_home_defence
 		cost = 10
 		ai_will_do = {
@@ -10060,7 +9424,6 @@ focus_tree = {
 		mutually_exclusive = { focus = ENG_steady_as_she_goes }
 
 		allow_branch = {
-			has_dlc = "Man the Guns"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -10296,7 +9659,6 @@ focus_tree = {
 		mutually_exclusive = { focus = ENG_organize_the_blackshirts focus = ENG_concessions_to_the_trade_unions }
 
 		allow_branch = {
-			has_dlc = "Man the Guns"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -10597,7 +9959,6 @@ focus_tree = {
 		mutually_exclusive = { focus = ENG_the_kings_party focus = ENG_concessions_to_the_trade_unions }
 
 		allow_branch = {
-			has_dlc = "Man the Guns"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -10641,7 +10002,6 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = ENG_a_change_in_course
-		cancel_if_invalid = yes
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -11944,7 +11304,6 @@ focus_tree = {
 		mutually_exclusive = { focus = ENG_the_kings_party focus = ENG_organize_the_blackshirts }
 
 		allow_branch = {
-			has_dlc = "Man the Guns"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -11988,7 +11347,6 @@ focus_tree = {
 		x = 5
 		y = 1
 		relative_position_id = ENG_a_change_in_course
-		cancel_if_invalid = yes
 		cost = 10
 		ai_will_do = {
 			factor = 1
