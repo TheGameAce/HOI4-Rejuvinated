@@ -12,20 +12,15 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_winston_churchill
-			available  = {
+			available = {
 				if = {
 					limit = {
 						original_tag = ENG
 					}
-					has_government  = neutrality 
-					has_completed_focus  = ENG_the_kings_party 
-					if  = {
-						limit  = {
-							has_dlc = "Man the Guns"
-						}
-						NOT = {
-							has_autonomy_state  = autonomy_supervised_state
-						}
+					has_government = neutrality 
+					has_completed_focus = ENG_the_kings_party 
+					NOT = {
+						has_autonomy_state = autonomy_supervised_state
 					}
 				}
 				else_if = {
@@ -38,12 +33,9 @@ characters={
 					}
 				}
 			}
-			allowed  = {
+			allowed = {
 				OR = {
-					AND = {
-						has_dlc = "Man the Guns"
-						original_tag = ENG
-					}
+					original_tag = ENG
 					AND = {
 						has_dlc = "Graveyard of Empires"
 						original_tag = RAJ
@@ -58,10 +50,10 @@ characters={
 					NOT = { has_character_flag = RAJ_churchill_as_country_leader_flag }
 				}
 			}
-			traits  = {
+			traits = {
 				royalist_bulldog 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 1
 			}
 		}
@@ -104,18 +96,17 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_oswald_mosley
-			available  = {
-				has_government  = neutrality 
-				has_completed_focus  = ENG_the_kings_party 
+			available = {
+				has_government = neutrality 
+				has_completed_focus = ENG_the_kings_party 
 			}
-			allowed  = {
-				original_tag  = ENG
-				has_dlc = "Man the Guns"
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				economic_organizer 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 1
 			}
 		}
@@ -141,34 +132,24 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = harry_pollitt
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			available  = {
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					has_government  = communism 
-				}
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_autonomy_state  = autonomy_supervised_state
-					}
+			available = {
+				has_government = communism 
+				NOT = {
+					has_autonomy_state = autonomy_supervised_state
 				}
 			}
-			traits  = {
+			traits = {
 				communist_revolutionary 
 			}
-			do_effect  = {
+			do_effect = {
 				NOT = {
-					has_government  = communism 
+					has_government = communism 
 				}
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 0
 			}
 		}
@@ -1117,7 +1098,7 @@ characters={
 				grand_fleet_proponent
 			}
 
-			ai_will_do  = {
+			ai_will_do = {
 				base = 1
 			}
 		}
@@ -1139,7 +1120,7 @@ characters={
 				original_tag = ENG
 			}
 			traits = { naval_theorist }
-			ai_will_do  = {
+			ai_will_do = {
 				base = 0.5
 			}
 		}
@@ -1164,7 +1145,7 @@ characters={
 				air_warfare_theorist
 			}
 
-			ai_will_do  = {
+			ai_will_do = {
 				base = 0.5
 			}
 		}
@@ -1190,7 +1171,7 @@ characters={
 				victory_through_airpower
 			}
 
-			ai_will_do  = {
+			ai_will_do = {
 				base = 0.25
 			}
 		}
@@ -1213,7 +1194,6 @@ characters={
 			}
 			allowed = {
 				original_tag = ENG
-				has_dlc = "Man the Guns"
 			}
 			
 			traits = {
@@ -1361,7 +1341,7 @@ characters={
 			traits = {
 				navy_chief_decisive_battle_1
 			}
-			cost =  50
+			cost = 50
 			ai_will_do = {
 				base = 1
 
@@ -1679,36 +1659,24 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = clement_attlee
-			available  = {
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_completed_focus  = ENG_a_change_in_course 
-					}
-				}
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_autonomy_state  = autonomy_supervised_state
-					}
+			available = {
+				NOT = {
+					has_completed_focus = ENG_a_change_in_course 
+					has_autonomy_state = autonomy_supervised_state
 				}
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				democratic_reformer 
 			}
-			do_effect  = {
+			do_effect = {
 				NOT = {
-					has_government  = democratic 
+					has_government = democratic 
 				}
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 0
 			}
 		}		
@@ -1724,34 +1692,24 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = john_beckett
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			available  = {
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					has_government  = fascism 
-				}
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_autonomy_state  = autonomy_supervised_state
-					}
+			available = {
+				has_government = fascism 
+				NOT = {
+					has_autonomy_state = autonomy_supervised_state
 				}
 			}
-			traits  = {
+			traits = {
 				fascist_demagogue 
 			}
-			do_effect  = {
+			do_effect = {
 				NOT = {
-					has_government  = fascism 
+					has_government = fascism 
 				}
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 0
 			}
 		}
@@ -1767,26 +1725,21 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_philip_kerr
-			available  = {
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_completed_focus  = ENG_no_further_appeasement 
-					}
-					has_government  = democratic 
+			available = {
+				NOT = {
+					has_completed_focus = ENG_no_further_appeasement 
 				}
+				has_government = democratic 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				silent_workhorse 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 2
-				modifier  = {
+				modifier = {
 					has_country_leader = {
 						character = ENG_stanley_baldwin
 						ruling_only = yes 
@@ -1807,13 +1760,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_nevile_henderson
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				backroom_backstabber 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 0.5
 			}
 		}
@@ -1829,13 +1782,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_maxwell_aitken
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				war_industrialist 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 2
 			}
 		}
@@ -1851,13 +1804,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_leslie_hore_belisha
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				armaments_organizer 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 0
 			}
 		}
@@ -1873,13 +1826,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_ernest_bevin
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				quartermaster_general 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 1.000
 			}
 		}
@@ -1895,17 +1848,16 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_mary_sophia_allen
-			available  = {
-				has_government  = fascism 
+			available = {
+				has_government = fascism 
 			}
-			allowed  = {
-				original_tag  = ENG
-				has_dlc = "Man the Guns"
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				princess_of_terror 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 1.5
 			}
 		}
@@ -1921,25 +1873,19 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_george_orwell
-			available  = {
-				has_government  = communism 
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_autonomy_state  = autonomy_supervised_state
-					}
+			available = {
+				has_government = communism
+				NOT = {
+					has_autonomy_state = autonomy_supervised_state
 				}
 			}
-			allowed  = {
-				original_tag  = ENG
-				has_dlc = "Man the Guns"
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				socialist_novelist 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 1.5
 			}
 		}
@@ -1956,18 +1902,15 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_sylvia_pankhurst
-			available  = {
+			available = {
 				OR = {
-					has_government  = communism 
+					has_government = communism 
 					SWE_refuge_for_revolutionaries_trigger = yes
 				}
 			}
-			allowed  = {
+			allowed = {
 				OR = {
-					AND = {
-						original_tag  = ENG
-						has_dlc = "Man the Guns"
-					}
+					original_tag = ENG
 					AND = {
 						original_tag = ETH
 						has_dlc = "By Blood Alone"
@@ -1980,10 +1923,10 @@ characters={
 				}
 				
 			}
-			traits  = {
+			traits = {
 				red_suffragette 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 1
 			}
 			on_add = {
@@ -2014,18 +1957,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_david_lloyd_george
-			available  = {
-				has_government  = neutrality 
-				has_completed_focus  = ENG_the_kings_party 
+			allowed = {
+				original_tag = ENG
 			}
-			allowed  = {
-				original_tag  = ENG
-				has_dlc = "Man the Guns"
-			}
-			traits  = {
+			traits = {
 				old_figurehead 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 1
 			}
 		}
@@ -2042,13 +1980,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_1
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_1 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_1 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				propaganda_bungler 
 			}
 		}
@@ -2062,13 +2000,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_2
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_2 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_2 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				silent_mule 
 			}
 		}
@@ -2082,13 +2020,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_3
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_3 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_3 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				baron_of_terror 
 			}
 		}
@@ -2102,13 +2040,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_4
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_4 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_4 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				compassionate_commoner 
 			}
 		}
@@ -2122,13 +2060,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_5
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_5 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_5 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				backroom_windbag 
 			}
 		}
@@ -2142,13 +2080,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_6
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_6 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_6 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				smooth_talking_con_man 
 			}
 		}
@@ -2162,13 +2100,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_7
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_7 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_7 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				ideological_groupie 
 			}
 		}
@@ -2183,13 +2121,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_8
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_8 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_8 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				fortification_armchair_general 
 			}
 		}
@@ -2203,13 +2141,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_9
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_9 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_9 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				war_profiteer 
 			}
 		}
@@ -2224,13 +2162,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_10
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_10 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_10 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				lieutenant_of_industry 
 			}
 		}
@@ -2245,13 +2183,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_11
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_11 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_11 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				finance_graduate 
 			}
 		}
@@ -2266,13 +2204,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_12
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_12 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_12 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				armaments_aficionado 
 			}
 		}
@@ -2287,13 +2225,13 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_random_communist_minister_13
-			visible  = {
-				has_country_flag  = ENG_trade_unions_demand_minister_appointment_13 
+			visible = {
+				has_country_flag = ENG_trade_unions_demand_minister_appointment_13 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				quartermaster_trainee 
 			}
 		}
@@ -2309,29 +2247,28 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_corgis_1
-			available  = {
-				has_government  = neutrality 
-				has_completed_focus  = ENG_the_kings_party 
-				has_country_leader  = {
+			available = {
+				has_government = neutrality 
+				has_completed_focus = ENG_the_kings_party 
+				has_country_leader = {
 					name = "Elizabeth II"
-					ruling_only  = yes 
+					ruling_only = yes 
 				}
 			}
-			visible  = {
-				has_country_leader  = {
+			visible = {
+				has_country_leader = {
 					name = "Elizabeth II"
-					ruling_only  = yes 
+					ruling_only = yes 
 				}
 			}
-			allowed  = {
-				original_tag  = ENG
-				has_dlc = "Man the Guns"
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				face_licker 
 			}
-			ai_will_do  = {
-				factor  = 1.000
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
@@ -2346,29 +2283,28 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_corgis_2
-			available  = {
-				has_government  = neutrality 
-				has_completed_focus  = ENG_the_kings_party 
-				has_country_leader  = {
+			available = {
+				has_government = neutrality 
+				has_completed_focus = ENG_the_kings_party 
+				has_country_leader = {
 					name = "Elizabeth II"
-					ruling_only  = yes 
+					ruling_only = yes 
 				}
 			}
-			visible  = {
-				has_country_leader  = {
+			visible = {
+				has_country_leader = {
 					name = "Elizabeth II"
-					ruling_only  = yes 
+					ruling_only = yes 
 				}
 			}
-			allowed  = {
-				original_tag  = ENG
-				has_dlc = "Man the Guns"
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				heels_nipper 
 			}
-			ai_will_do  = {
-				factor  = 1.000
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
@@ -2383,29 +2319,28 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_corgis_3
-			available  = {
-				has_government  = neutrality 
-				has_completed_focus  = ENG_the_kings_party 
-				has_country_leader  = {
+			available = {
+				has_government = neutrality 
+				has_completed_focus = ENG_the_kings_party 
+				has_country_leader = {
 					name = "Elizabeth II"
-					ruling_only  = yes 
+					ruling_only = yes 
 				}
 			}
-			visible  = {
-				has_country_leader  = {
+			visible = {
+				has_country_leader = {
 					name = "Elizabeth II"
-					ruling_only  = yes 
+					ruling_only = yes 
 				}
 			}
-			allowed  = {
-				original_tag  = ENG
-				has_dlc = "Man the Guns"
+			allowed = {
+				original_tag = ENG
 			}
-			traits  = {
+			traits = {
 				snuggler 
 			}
-			ai_will_do  = {
-				factor  = 1.000
+			ai_will_do = {
+				factor = 1.000
 			}
 		}
 	}
@@ -2420,17 +2355,17 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = eng_stewart_menzies
-			available  = {
-				has_intelligence_agency  = yes 
+			available = {
+				has_intelligence_agency = yes 
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 				has_dlc = "La Resistance"
 			}
-			traits  = {
+			traits = {
 				head_of_intelligence 
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 0.5
 			}
 		}
@@ -2446,25 +2381,25 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = eng_alan_turing
-			available  = {
-				has_intelligence_agency  = yes 
-				custom_trigger_tooltip  = {
-					tooltip  = cyptology_tooltip_tt
-					has_done_agency_upgrade  = upgrade_form_department 
+			available = {
+				has_intelligence_agency = yes 
+				custom_trigger_tooltip = {
+					tooltip = cyptology_tooltip_tt
+					has_done_agency_upgrade = upgrade_form_department 
 				}
 			}
-			ai_will_do  = {
+			ai_will_do = {
 				base = 1
-				modifier  = {
+				modifier = {
 					has_political_power < 200
 					factor = 0
 				}
 			}
-			allowed  = {
-				original_tag  = ENG
+			allowed = {
+				original_tag = ENG
 				has_dlc = "La Resistance"
 			}
-			traits  = {
+			traits = {
 				mastermind_code_cracker 
 			}
 		}
