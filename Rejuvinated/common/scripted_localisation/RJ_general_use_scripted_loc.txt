@@ -1,0 +1,18 @@
+defined_text = {
+    name = RJ_USA_air_force_name_dynamic
+    text = {
+        trigger = {
+            has_completed_focus = USA_us_army_airforce
+        }
+        localization_key = RJ_USA_air_force_name_1
+    }
+	text = {
+        trigger = {
+            has_completed_focus = USA_us_air_force
+        }
+        localization_key = RJ_USA_air_force_name_2
+    }
+    text = {
+        localization_key = RJ_USA_air_force_name_default
+    }
+}
