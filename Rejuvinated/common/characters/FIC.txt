@@ -1,0 +1,19 @@
+characters={
+	FIC_Renatus_Robin={
+		name=FIC_Renatus_Robin
+		portraits={
+			civilian={
+				large=GFX_portrait_FIC_Renatus_Robin
+			}
+			army={
+				small="GFX_idea_AFA_mohamed_yayyo_small"
+			}
+		}
+		country_leader={
+			ideology= conservatism_neutrality
+			traits={ governor_general }
+			expire="1954.1.1.12"
+			id=-1
+		}
+	}
+}
