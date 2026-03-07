@@ -2545,4 +2545,62 @@ characters={
 			}
 		}
 	}
+
+	########################
+	### HOI4 Rejuvinated ###
+	########################
+
+	ENG_surat_alley={
+		name=ENG_surat_alley
+		portraits={
+			army={
+				small=GFX_idea_generic_political_advisor_india_2
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ENG_surat_alley
+			allowed = {
+				OR = {
+					original_tag = ENG
+				}
+			}
+			available = {
+				if = {
+					limit = {
+						original_tag = ENG
+					}
+					has_completed_focus = ENG_revisit_colonial_policy
+					has_subject = RAJ
+				}
+			}
+			traits = {
+				independence_activist
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+
+	ENG_bill_alexander={
+		name=ENG_bill_alexander
+		portraits={
+			army={
+				large = GFX_Portrait_Britain_Generic_land_2
+				small = GFX_Portrait_Britain_Generic_land_2_small
+			}
+		}
+		corps_commander = {
+			traits = { politically_connected brave }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 1
+			visible = {
+				has_government = communism
+			}
+		}
+	}
 }

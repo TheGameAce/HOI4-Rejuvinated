@@ -2880,6 +2880,14 @@ focus_tree = {
 			add_popularity = { ideology = communism popularity = 0.05 }
 			add_political_power = 80
 			custom_effect_tooltip = ENG_concessions_to_the_trade_unions_tt_2
+			if = {
+				limit = {
+					has_character = ENG_surat_alley
+					has_subject = RAJ
+				}
+				custom_effect_tooltip = available_political_advisor
+				show_ideas_tooltip = ENG_surat_alley
+			}
 			hidden_effect = { news_event = { id = mtg_news.14 days = 1 } }
 			hidden_effect = {
 				if = {
@@ -11580,8 +11588,10 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			remove_ideas = ENG_the_war_to_end_all_wars
-			add_ideas = ENG_for_the_good_of_the_revolution_idea
+			swap_ideas = {
+				remove_idea = ENG_the_war_to_end_all_wars
+				add_idea = ENG_for_the_good_of_the_revolution_idea
+			}
 		}
 	}
 
