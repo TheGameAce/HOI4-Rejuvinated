@@ -1,6 +1,17 @@
 spriteTypes = {
-        SpriteType = {
+
+    SpriteType = {
 		name = "GFX_advanced_fortification_engineering_medium"
 		texturefile = "gfx/interface/technologies/RJ_tech/RJ_advanced_fortification_engineering.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_semi_modern_rubber_processing_medium"
+		texturefile = "gfx/interface/technologies/modern_rubber_processing.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_semi_modern_oil_processing_medium"
+		texturefile = "gfx/interface/technologies/modern_oil_processing.dds"
 	}
 }
