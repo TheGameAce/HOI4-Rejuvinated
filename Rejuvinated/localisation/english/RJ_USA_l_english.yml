@@ -1,0 +1,197 @@
+﻿l_english:
+ RJ_suspend_the_persecution_tt:0 "If §OFascist§! support becomes too high (15% or more), certain focuses will trigger events leading up to civil war!"
+ RJ_focus_limit_tt:0 "§CCompleting this focus will make it impossible to go down either the Communist or Fascist paths. You've been warned!§!"
+ RJ_USA_end_monarchism_tt:0 "§CGenerates Puppet wargoals against all countries that currently have any form of Monarchy.§!"
+
+ RJ_silver_shirts_completed_tt:0 "§CMust not have bypassed Ally With the Silver Shirts to go down this path.§!"
+ RJ_fascist_civil_war_tt:0 "Completion of this focus without the government being §OFascist§! will spark events leading up to civil war!"
+ RJ_USA_prc_industrial_tt:0 "§YAll of [PRC.GetNameDef]'s states with significant populations will receive factories.§!"
+
+ ##############################################################################################################################
+ ############### IDEAS ########################################################################################################
+ ##############################################################################################################################
+ USA_WPA_idea:0 "Works Progress Administration"
+ USA_popular_front_idea:0 "American Popular Front"
+ USA_union_representation_act_idea:0 "Union Representation Act"
+ USA_philippine_socialist_influence_idea:0 "American Socialist Influence"
+ USA_silver_legion_rallies_idea:0 "Silver Legion Rallies"
+ USA_spread_our_ideals_idea:0 "Spread Our Ideals"
+ USA_USACE_idea:0 "USACE"
+ USA_taft_hartley_act_idea:0 "Taft-Hartley Act"
+ USA_protectionist_tariffs_idea:0 "Protectionist Tariffs"
+ USA_foreign_agents_registration_act_idea:0 "Foreign Agents Registration Act"
+ USA_national_prosperity_program_idea:0 "National Prosperity Program"
+ USA_the_tva_model_idea:0 "The TVA Model"
+ USA_expanded_bureau_of_mines_idea:0 "Expanded Bureau of Mines"
+ USA_establish_the_cmr_idea:0 "Committee on Medical Research"
+ USA_chinese_exclusion_act_repealed_idea:0 "Chinese Exclusion Act Repealed"
+ USA_military_collaboration_idea:0 "Military Collaboration"
+ USA_intervention_in_asia_idea:0 "Intervention in Asia"
+ USA_SOV_SIK_support_idea1:0 "Foreign Support"
+ USA_SOV_SIK_support_idea2:0 "Foreign Support"
+ USA_SOV_PRC_support_idea1:0 "Foreign Support"
+ USA_SOV_PRC_support_idea2:0 "Foreign Support"
+ USA_SOV_CHI_support_idea1:0 "Foreign Support"
+ USA_SOV_CHI_support_idea2:0 "Foreign Support"
+ USA_SOV_SIK_support_idea1:0 "Foreign Support"
+ USA_SOV_SIK_support_idea2:0 "Foreign Support"
+ USA_SOV_PRC_support_idea1:0 "Foreign Support"
+ USA_SOV_PRC_support_idea2:0 "Foreign Support"
+ USA_SOV_CHI_support_idea1:0 "Foreign Support"
+ USA_SOV_CHI_support_idea2:0 "Foreign Support"
+ USA_air_corps_expansion_program_idea:0 "Air Corps Expansion Program"
+ USA_flying_fortress_idea:0 "Flying Fortresses"
+ USA_mechanize_the_army_idea:0 "Mechanize the Army"
+
+
+ ##############################################################################################################################
+ ############### DYNAMIC MODIFIERS ############################################################################################
+ ##############################################################################################################################
+
+ RJ_USA_united_states_army:0 "United States Army"
+ USA_modify_us_army_tt:0 "Modify §YUnited States Army§! by\n"
+ desegregate_the_armed_forces_DM_tt:0 "Modify §YUnited States Army§! by \nRecruitable Population: §Y+2.00%§!"
+ full_desegregation_DM_tt:0 "Modify §YUnited States Army§! by \nRecruitable Population: §Y+1.00%§! \nRecruitable Population Factor: §G+30%§!"
+ militia_mobilization_act_DM_tt:0 "Modify §YUnited States Army§! by \nDivision Training Time: §Y-10%§! \nRecruitable Population Factor: §G+20%§! \nMobilization Speed: §G+15%§!"
+ fleet_landing_army_DM_tt:0 "Modify §YUnited States Army§! by \nInvasion Penalty: §G-10%§!"
+ selective_training_DM_tt:0 "Division Training Time: §Y-10%§!"
+ rock_island_DM_tt:0 "Factory Output: §G+15%§!\nArtillery Attack:§G+10%§!"
+ supply_of_services_DM_tt:0 "Supply Range: §G+15%§!\nAttrition:§G-15%§!\nArmy Fuel Capacity: §G+10%§!"
+
+
+
+
+
+ RJ_USA_united_states_air_force:0 "[RJ_USA_air_force_name_dynamic]"
+ RJ_USA_air_force_name_1:0 "United States Army Air Force"
+ RJ_USA_air_force_name_2:0 "United States Air Force"
+ RJ_USA_air_force_name_default:0 "United States Army Air Corps"
+ air_corps_expansion_program_DM_tt:0 "Modify §Y[RJ_USA_air_force_name_dynamic]§! by\nDaily Air Experience Gain: §G+0.05§! \nAir Training Experience Gain: §G+10%§!"
+ air_DM_tt:0 "Modify §Y[RJ_USA_air_force_name_dynamic]§! by\n"
+ army_air_force_DM_tt:0 "Daily Air Experience Gain: §G+0.05§!"
+ payload1_DM_tt:0 "Strategic Bombing Efficiency: §G+10%§!"
+ payload2_DM_tt:0 "Ground Support Efficiency: §G+10%§!"
+ payload3_DM_tt:0 "Ground Attack: §G+5%§!"
+ air_plans_DM_tt:0 "Air Accidents Chance: §G-10%§!\nAir Mission Experience Gain: §G+15%§!\nAir Mission Efficiency: §G+15%§!\nAir Mastery Gain Factor: §G+10%§!"
+ lessons_learned_DM_tt:0 "Air Escort Efficiency: §G+15%§!"
+ us_air_force_DM_tt:0 "Air Mastery Gain Factor: §G+15%§!\nAce Generation Chance: §G+15%§!"
+ ground_support_DM_tt:0 "Ground Support: §G+10%§!\nGround Attack: §G+5%§!"
+ drop_tank_program_DM_tt:0 "Air Range: §G+8%§!"
+ fighter_sweeps_DM_tt:0 "Fighter Detection: §G+15%§!\nIntercept Efficiency: §G+10%§!"
+ cab_rank_DM_tt:0 "Ground Support Efficiency: §G+10%§!\nGround Attack: §G+5%§!\nBad Weather Penalty:§G-5%§!"
+ paradrop_org_tt:0 "Paradrop Organization: §G+15%§!"
+ paratrooper_supply_grace_DM_tt:0 "Paratrooper Supply Grace: §G+48 Hours§!"
+ sf_focus_DM_tt:0 "Terrain Penalty Reduction: §G-5%§!"
+
+
+
+
+ RJ_USA_united_states_navy:0 "United States Navy"
+ USA_modify_us_navy_tt:0 "Modify §YUnited States Navy§! by\n"
+ fleet_landing_navy_DM_tt:0 "Modify §YUnited States Navy§! by \nShore Bombardment Bonus: §G+10%§!"
+ night_navy_DM_tt:0 " Navy Night Attack: §G+15%§!"
+
+
+
+
+
+ ##############################################################################################################################
+ ############### FOCUSES ######################################################################################################
+ ##############################################################################################################################
+
+ RJ_USA_the_american_popular_front:0 "The American Popular Front"
+ RJ_USA_the_american_popular_front_desc:0 "The premise of the Popular Front is that we have enough in common with the liberals & progressives to work with them, & them with us. By reaching out to & working with these elements of American society, we can strengthen our own position & gain a manner of security & favor with traditionally democratic elements."
+ RJ_USA_stamp_out_the_silver_legion:0 "Stamp Out the Silver Legion"
+ RJ_USA_stamp_out_the_silver_legion_desc:0 "The Silver Legion has caused enough troubles for us! Now that we're in charge, it's high time that we stamp them out. For the good of our party, & for the good of our nation!"
+ RJ_USA_spread_our_ideals:0 "Spread Our Ideals"
+ RJ_USA_spread_our_ideals_desc:0 "As we come together under the banner of American Socialism, we should extend this banner to those less fortunate than us. A gift like this must be shared with the world!"
+ RJ_USA_taft_hartley_act:0 "Taft-Hartley Act"
+ RJ_USA_taft_hartley_act_desc:0 "The National Labor Relations Act was signed into law by FDR in 1935. It provided far too much leniance to unions & their activities, which they've already taken the opportunity to abuse! The Taft-Hartley act will amend the NLRA, putting an end to unfair labor practices."
+ RJ_USA_foreign_agents_registration_act:0 "Foreign Agents Registration Act"
+ RJ_USA_foreign_agents_registration_act_desc:0 "Many come into our country with the intent to influence, or perhaps even destabilize, our country. Unfortunately they blend in with those acting in good faith. Due to this, it's in our best interests to have manditory registration for such foreign individuals, giving us better security with the knowledge of who's entering our borders. It will make it substantially harder for foreign agents to gain a foothold."
+ RJ_USA_expand_the_bureau_of_mines:0 "Expand the Bureau of Mines"
+ RJ_USA_expand_the_bureau_of_mines_desc:0 "The Bureau of Mines was originally established in 1910 with the goal of enhancing the efficiency & safety of mining operations in the United States. Expanding this bureau & increasing it's funding will provide an avenue for enhancing our current mining techniques & equipment, benefitting both the workers & the corporations."
+ RJ_USA_establish_the_cmr:0 "Establish the CMR"
+ RJ_USA_establish_the_cmr_desc:0 "By establishing a Committee for Medical Research, we can make much greater strides in the field of medicine, which should be of good benefit to both our citizens & troops!"
+ RJ_USA_repeal_the_chinese_exclusion_act:0 "Repeal the Chinese Exclusion Act"
+ RJ_USA_repeal_the_chinese_exclusion_act_desc:0 "The Chinese Exclusion Act is an abhorrent & outdated law, discriminating against Chinese citizens that would seek shelter in our country. It's time to end it once & for all!"
+ RJ_USA_military_collaboration:0 "Military Collaboration"
+ RJ_USA_military_collaboration_desc:0 "We have a great deal we can learn from the Soviet Union, & they have a great deal they can teach us. Allowing our top military leaders to collaborate together will benefit both sides, strengthening our tactics!"
+ RJ_USA_doctrinal_refinements:0 "Doctrinal Refinements"
+ RJ_USA_doctrinal_refinements_desc:0 "As our navy continues to expand & new ship technologies develop, we need to refine our current doctrines a bit further, accommodating newer elements such as carriers & submarine warfare. We can't be left insufficiently prepared in the event of war!"
+ RJ_USA_wolfpack_tactics:0 "Wolfpack Tactics"
+ RJ_USA_wolfpack_tactics_desc:0 "The modern age of the navy has introduced us to a new, stealthier, form of warfare: Submarine Raids. One of the proposed strategies is using 'wolfpack' style tactics: Sending our submarines out in small, well-coordinated groups to ambush enemy ships & convoys."
+ RJ_USA_carrier_taskforces:0 "Carrier Taskforces"
+ RJ_USA_carrier_taskforces_desc:0 "It's become clear to us that our carriers can no longer simply function as forward scouts, but as a key component of taskforce composition! By grouping them together with a strong screening force, we can coordinate effectively between air, sea, & land!"
+ RJ_USA_combat_information_center:0 "Combat Information Centers"
+ RJ_USA_combat_information_center_desc:0 "Thanks to advancements in a number of fields, including radar, radio, & far better refined doctrines, we've come up with a new concept we've labeled as the CIC: Combat Information Center. Implementing these on every ship in the fleet will allow for greatly increased organization & coordination, especially at night. A huge improvement!"
+ RJ_USA_end_german_fascism:0 "End German Fascism"
+ RJ_USA_end_german_fascism_desc:0 "Fascism is at this point heavily entrenched in german society, as is the russophobia and slavophobia that reaches beyond what is conventionally fascist, nothing short of a communist revolution could stop these forces from festering withing germany even more. And so, with our partners in the USSR, we must end this monstrosity at once!"
+ RJ_USA_industrialize_china:0 "Industrialize china"
+ RJ_USA_industrialize_china_desc:0 "Our ally in China has a long road ahead of it when it comes to industrializing it's economy. We have a great deal of industrial might, & as their allies, we ought to help them develop their own!"
+ RJ_USA_the_china_decision:0 "The China Decision"
+ RJ_USA_the_china_decision_desc:0 "Placeholder"
+ RJ_USA_the_republican_gamble:0 "The Republican Gamble"
+ RJ_USA_the_republican_gamble_desc:0 "The chinese communists have proven themselves too weak, while the chinese republicans stand in the perfect position to unify China, if we want to have influence over China after it unifies in order to push for a communist revolution within the country, we should support the republicans"
+ RJ_USA_support_the_prc:0 "Support [PRC.GetNameDef]"
+ RJ_USA_support_the_prc_desc:0 "[PRC.GetNameDef] is the obvious choice on which faction to support in china, they are determined, battle hardened and of course, communist, which makes them the perfect candidate for pooling our resources into."
+ RJ_USA_bet_on_sinkiang:0 "Bet on Sinkiang"
+ RJ_USA_bet_on_sinkiang_desc:0 "While picking Sinkiang as the faction in China to support may seem like a strange choice, their direct proximity to the soviet union makes them logistically simple to support. With our weight put behind them, they might just achieve great things."
+ RJ_USA_naval_aircraft_advancements:0 "Naval Aircraft Advancements"
+ RJ_USA_naval_aircraft_advancements_desc:0 "Aircraft are playing an ever-increasing role in maritime activities. They serve as scouts, hit strategic targets other planes can't reach, & serve as a backbone for carrier operations. Some new advancements for these types of craft strengthen those activities."
+ RJ_USA_the_bucket_brigade_system:0 "The Bucket Brigade System"
+ RJ_USA_the_bucket_brigade_system_desc:0 "Our convoys in the Atlantic have proven to be particularly vulnerable with our current tactics. By sailing during the day & taking refuge at night within protected harbors, we can drastically reduce convoy losses & improve our escort methods."
+ RJ_USA_interlocking_convoy_system:0 "Interlocking Convoy System"
+ RJ_USA_interlocking_convoy_system_desc:0 "While the Bucket Brigade System was a drastic improvement to our convoy defensive tactics, there's still room for improvement. The latest doctrinal improvement that's been conceptualized, is the Interlocking Convoy System. It utilizes a carefully planned network of escorts for shipping, synchronized in such a way to create a continous protected flow of convoys."
+ RJ_USA_hunter_killer_groups:0 "Hunter-Killer Groups"
+ RJ_USA_hunter_killer_groups_desc:0 "We've come up with a solution to the ever prevalent threat of submarines. These 'hunter-killer' groups are specifically designed to track down & eliminate enemy submarine threats, with great efficiency!"
+ RJ_USA_air_corps_expansion_program:0 "Air Corps Expansion Program"
+ RJ_USA_air_corps_expansion_program_desc:0 "A recent review of our air forces has led some of our military leaders to express concerns regarding what they call 'an utterly inadequate' defense capability. With the increasing tensions across the globe, we can't afford to ignore such an important matter. We'll direct $300,000,000 to an air corps expansion program in an effort to modernize as quickly as possible!"
+ RJ_USA_a_flying_fortress:0 "A Flying Fortress"
+ RJ_USA_a_flying_fortress_desc:0 "Large bombers are powerful, but they're also very slow with poor maneuverability. This leaves them particularly vulnerable to being shot down by enemy fighters & anti-air. To compensate, we can increase armoring & improve gunner turrets."
+ RJ_USA_stronger_payloads:0 "Stronger Payloads"
+ RJ_USA_stronger_payloads_desc:0 "Increasing the payloads of bombs used by our aircraft, we can increase their damage potential with every run. Larger explosions also make it easier to hit enemy targets, albeit with somewhat higher potential for collateral damage..."
+ RJ_USA_lessons_learned:0 "Lessons Learned"
+ RJ_USA_lessons_learned_desc:0 "The Combined Bomber Offensive campaign had a rough start. While bombers are more than capable of operating on their own, the cost is too great. Sending an escort of a more durable, 'heavy fighter', with the bombers, should help them deal with airborne threats."
+ RJ_USA_a_new_age_of_aircraft:0 "A New Age of Aircraft"
+ RJ_USA_a_new_age_of_aircraft_desc:0 "With the rapid innovations in air research & the full independence of the United States Air Force granting aircraft a permanent importance, we've entered a new age of technology & experimentation. The focus now is Jet Propulsion: A significant step forward in aviation."
+ RJ_USA_ground_support:0 "Ground Support"
+ RJ_USA_ground_support_desc:0 "Supporting our troops on the ground has become a real possibility with aircraft. It's even become it's own form of combat, being labeled 'close air support', wherein planes strafe or bomb enemy troops. It's been highly effective, & something we ought to utilize more regularly to achieve victory."
+ RJ_USA_fighter_sweeps:0 "Fighter Sweeps"
+ RJ_USA_fighter_sweeps_desc:0 "Being the predators in the air is better than being the prey. Our fighters should make larger formations of hunting groups, to perform aerial sweeps of enemy territory, taking out enemy planes swiftly & efficiently, making the way clear for other aerial missions to be carried out with minimal interference."
+ RJ_USA_drop_tank_program:0 "Drop Tank Program"
+ RJ_USA_drop_tank_program_desc:0 "One of the current challenges in avionics, is the effective operating range of aircraft. The solution we've come up with is what we call 'drop tanks'; disposable additional fuel reserves, enabling aircraft to operate for extended periods of time. While other nations have developed their own, we've had successful experiments with creating these out of paper, allowing far greater fuel capacity!"
+ RJ_USA_cab_rank_adaptation:0 "Cab Rank Adaptation"
+ RJ_USA_cab_rank_adaptation_desc:0 "The British RAF has developed what they call a 'Cab Rank' system for close air support, which has been highly effective at supporting ground troops! We can adapt such a system to our own air forces."
+ RJ_USA_services_of_supply:0 "Services of Supply"
+ RJ_USA_services_of_supply_desc:0 "By authorization of the office of President of the United States, executive order 9082, the United States Army Services of Supply is created. This new autonomous branch of the army will be responsible for managing all supply needs, it is hereby declared!"
+ RJ_USA_mechanization_experiments:0 "Mechanization Experiments"
+ RJ_USA_mechanization_experiments_desc:0 "Mechanization provides a great battlefield advantage to our soldiers. A better means of mass transportation, shelter from enemy fire, & all sorts of additional tools at their disposal. We should do some research into furthering mechanized technologies."
+ RJ_USA_the_backpack_radio:0 "The Backpack Radio"
+ RJ_USA_the_backpack_radio_desc:0 "We've been working on the development & deployment of a new, more compact & mobile, form of radio: The backpack radio! This will revolutionize troop movements on the battlefield."
+ RJ_USA_ninety_division_gamble:0 "90 Division Gamble"
+ RJ_USA_ninety_division_gamble_desc:0 "General Marshal suggests a bold strategy of maintaining a lesser amount of overall divisions, focusing on manpower replacements & enhancement of strength for each division."
+ RJ_USA_mechanize_the_army:0 "Mechanize the Army"
+ RJ_USA_mechanize_the_army_desc: "With ever-growing industrial capacity, we have more than enough ability to begin mechanization of our armed forces!"
+
+
+
+
+
+ ##############################################################################################################################
+ ############### Events #######################################################################################################
+ ##############################################################################################################################
+ rj_usa.1.t:0 "Silver Legion Rallies"
+ rj_usa.1.d:0 "The Silver Legion has been a largely lethargic & ineffectual organization, having fallen to a mere 5,000 members nation-wide in recent times. But with our latest actions, we've legitamized some of their claims, which has allowed them to begin growing their support. They've begun holding rallies in various states, especially in the south. If their support grows too strongly, they could pose a serious threat to national unity..."
+ rj_usa.2.t:0 "The Socialist States of America Demand Our Territory!"
+ rj_usa.2.d:0 "The Socialist States of America have made demands that we withdraw from Indonesia, claiming they must safeguard them from our 'colonial exploitation'. They say that if we don't comply, they'll 'liberate' the territory by force! \n\nWhat should our response be?"
+ rj_usa.2a.t:0 "We've Been Denied!"
+ rj_usa.2a.d:0 "Our demands for Indonesia have been rejected out of hand! How shall we respond?"
+ rj_usa.2b.t:0 "Indonesia is Ours!"
+ rj_usa.2b.d:0 "The colonial government in Indonesia has been withdrawn, allowing us to now move in. This is a great day for the Socialist States of America!"
+ rj_usa.3.t:0 "The Socialist States of America Demand Our Territory!"
+ rj_usa.3.d:0 "The Socialist States of America have made demands that we withdraw from Indonesia, claiming they must safeguard them from our 'colonial exploitation'. They say that if we don't comply, they'll 'liberate' the territory by force! \n\nWhat should our response be?"
+ rj_usa.3a.t:0 "We've Been Denied!"
+ rj_usa.3a.d:0 "Our demands for Malaysia have been rejected out of hand! How shall we respond?"
+ rj_usa.3b.t:0 "Malaysia is Ours!"
+ rj_usa.3b.d:0 "The colonial government in Malaysia has been withdrawn, allowing us to now move in. This is a great day for the Socialist States of America!"
