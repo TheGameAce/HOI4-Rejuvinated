@@ -1299,7 +1299,27 @@ on_actions = {
 						option = CARIBBEAN_UNITED
 					}
 				}
-				#WIP
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = CUB
+							is_core_of = JAM
+							is_core_of = BAH
+							is_core_of = HAI
+							is_core_of = DOM
+							is_core_of = PUE
+							is_core_of = GDL
+							is_core_of = BAS
+							is_core_of = TRI
+							is_core_of = CRC
+						}
+					}
+					add_core_of = HAI
+					transfer_state_to = HAI
+				}
+				HAI = {
+					set_cosmetic_tag = greater_caribbean
+				}
 			}
 			if = {
 				limit ={
