@@ -14904,111 +14904,32 @@ ai_will_do = {
 		mutually_exclusive = { focus = SOV_two_red_flags focus = SOV_support_the_kuomintang }
 
 		available = {
-			#SOV controls the states in which railway lines will be built
-			controls_state = 405 #TASHKENT
-			controls_state = 404 #KYZYL ORDA
-			controls_state = 732 #PAMIR
-			controls_state = 586 #ALMA-ATA
-
-			OR = {
-				AND = { #Relevant states under Soviet control
-					controls_state = 617 #URUMQI
-					controls_state = 618 #DZUNGARIA
-				}
-				SIK = { #Relevant states under Sinkiang control
-					NOT = { has_war_with = ROOT }
-					controls_state = 617 #URUMQI
-					controls_state = 618 #DZUNGARIA
-				}
-			}
-
-			is_subject = no
+			country_exists = SIK
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			hidden_effect = { #Decrease SIK's desire to join Chinese faction (and other AI strategies)
-				SOV_approach_sinkiang_diplomacy_effect = yes
-				SIK = {
-					add_ai_strategy = { #This is added in Gobi Gambit + all 3 investment decisions
-						type = alliance
-						id = SOV		
-						value = 4
-					}
+		
+		SIK = {
+				add_opinion_modifier = { #
+					target = ROOT
+					modifier = SOV_cooperating_with_us
 				}
+		}
+			if = {
+		limit = {	
+		SIK = { has_idea = USA_SOV_SIK_support_idea1 }
 			}
-			if = { #If SOV controls the relevant states (for whatever weird reason -.-), then insta-build
-				limit = {
-					controls_state = 617 #URUMQI
-					controls_state = 618 #DZUNGARIA
-				}
-				# Tashkent - Frunze - Alma-Ata - Urumqi
-				build_railway = {
-					path = { 1459 10148 10366 12397 12340 12640 7706 12583 4224 1591 10547 10619 12529 7866 1783 10674 4709 } #1840 12526 4770 4709
-				}
-				#Supply Hub in Alma-Ata
-				586 = {
-					add_building_construction = {
-						type = supply_node
-						level = 1
-						province = 1591
-						instant_build = yes
-					}
-				}
-				custom_effect_tooltip = SOV_sinkiang_decisions_available_tt
-			}
-			else = { #If SIK in control of them
-				SIK = { country_event = { id = NSB_soviet_foreign_politics_events.270 hours = 6 random_hours = 6 } }
-				# IF THEY ACCEPT
-				custom_effect_tooltip = if_they_accept_tt
-				effect_tooltip = {
-					add_opinion_modifier = {
-						target = SIK
-						modifier = SOV_complied_with_our_demands
-					}
-					
-					# Tashkent - Frunze - Alma-Ata - Urumqi
-					build_railway = {
-						path = { 1459 10148 10366 12397 12340 12640 7706 12583 4224 1591 10547 10619 12529 7866 1783 10674 4709 }
-					}
-					#Supply Hub in Alma-Ata
-					586 = {
-						add_building_construction = {
-							type = supply_node
-							level = 1
-							province = 1591
-							instant_build = yes
-						}
-					}
-					custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sov
-					custom_effect_tooltip = SOV_sinkiang_decisions_available_tt
-				}
-				# IF THEY REFUSE
-				custom_effect_tooltip = if_they_refuse_tt
-				effect_tooltip = {
-					add_opinion_modifier = {
-						target = SIK
-						modifier = SOV_rejected_our_demands
-					}
-					# Tashkent - Frunze - Alma-Ata
-					build_railway = {
-						path = { 1459 10148 10366 12397 12340 12640 7706 12583 4224 1591 }
-					}
-					#Supply Hub in Alma-Ata
-					586 = {
-						add_building_construction = {
-							type = supply_node
-							level = 1
-							province = 1591
-							instant_build = yes
-						}
-					}
-					custom_effect_tooltip = SOV_sinikiang_influence_refuse_tt
-				}
-			}
-			custom_effect_tooltip = SOV_volunteers_allowed_sinkiang_tt
+		SIK = { swap_ideas = {
+		remove_idea = USA_SOV_SIK_support_idea1
+		add_idea = USA_SOV_SIK_support_idea2
+			}	
 		}
 	}
+			
+		else = { SIK = { add_ideas = USA_SOV_SIK_support_idea1	} }
+	}
+}
 
 	focus = {
 		id = SOV_two_red_flags
@@ -15052,28 +14973,24 @@ ai_will_do = {
 		search_filters = {}
 
 		completion_reward = {
-			PRC = {
-				add_opinion_modifier = { #Good relations with Mao
+		PRC = {
+				add_opinion_modifier = { 
 					target = ROOT
 					modifier = SOV_cooperating_with_us
 				}
-				add_relation_modifier = {
-					target = ROOT
-					modifier = SOV_soviet_chinese_relations
-				}
-				every_other_country = {
-					limit = {
-						SOV_is_free_chinese_tag = yes
-					}
-					add_opinion_modifier = { #Bad Relations with other Chinese tags
-						target = ROOT
-						modifier = SOV_cooperating_with_other
-					}
-				}
-			}
-			activate_targeted_decision = { target = PRC decision = SOV_send_infantry_equipment_asia }
-			custom_effect_tooltip = SOV_volunteers_allowed_mao_tt
 		}
+			if = {
+		limit = {	
+		PRC = { has_idea = USA_SOV_SIK_support_idea1 }
+			}
+		PRC = { swap_ideas = {
+		remove_idea = USA_SOV_PRC_support_idea1
+		add_idea = USA_SOV_PRC_support_idea2
+			}	
+		}
+	}
+		else = { PRC = { add_ideas = USA_SOV_PRC_support_idea1	} }
+	}
 	}
 
 	focus = {
@@ -15121,28 +15038,24 @@ ai_will_do = {
 		search_filters = {}
 
 		completion_reward = {
-			CHI = {
-				add_opinion_modifier = { #Good relations with Mao
+		CHI = {
+				add_opinion_modifier = { 
 					target = ROOT
 					modifier = SOV_cooperating_with_us
 				}
-				add_relation_modifier = {
-					target = ROOT
-					modifier = SOV_soviet_chinese_relations
-				}
-				every_other_country = {
-					limit = {
-						SOV_is_free_chinese_tag = yes
-					}
-					add_opinion_modifier = { #Bad Relations with other Chinese tags
-						target = ROOT
-						modifier = SOV_cooperating_with_other
-					}
-				}
-			}
-			activate_targeted_decision = { target = CHI decision = SOV_send_infantry_equipment_asia }
-			custom_effect_tooltip = SOV_volunteers_allowed_kuomintang_tt
 		}
+			if = {
+		limit = {	
+		CHI = { has_idea = USA_SOV_CHI_support_idea1 }
+			}
+		CHI = { swap_ideas = {
+		remove_idea = USA_SOV_CHI_support_idea1
+		add_idea = USA_SOV_CHI_support_idea2
+			}	
+		}
+	}
+		else = { CHI = { add_ideas = USA_SOV_CHI_support_idea1	} }
+	}
 	}
 
 	focus = {
