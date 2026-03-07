@@ -1,0 +1,96 @@
+RJ_USA_united_states_army = {
+	enable = { always = yes }
+
+	icon = GFX_idea_RJ_idea_USA_army
+	
+	experience_gain_army = RJ_USA_army_daily_experience_gain #Base value of 0
+	conscription = RJ_USA_army_conscription
+	conscription_factor = RJ_USA_army_recruitable_population
+	land_reinforce_rate = RJ_USA_army_reinforce
+	training_time_army_factor = RJ_USA_training_time_army
+	max_training = RJ_USA_max_training
+	special_forces_training_time_factor = RJ_USA_SF_training_time
+	land_doctrine_cost_factor = RJ_USA_land_doctrine_cost_factor
+	land_mastery_gain_factor = RJ_USA_land_doctrine_mastery_gain
+	army_leader_start_level = RJ_USA_army_leader_starting_level
+	army_leader_start_attack_level = RJ_USA_army_leader_starting_attack_level
+	army_leader_start_defense_level = RJ_USA_army_leader_starting_defense_level
+	army_leader_start_logistics_level = RJ_USA_army_leader_starting_logistics_level
+	army_leader_start_planning_level = RJ_USA_army_leader_starting_planning_level
+	grant_medal_cost_factor = RJ_USA_army_medal_cost
+	army_attack_factor = RJ_USA_army_attack
+	army_defence_factor = RJ_USA_army_defense
+	army_core_attack_factor = RJ_USA_army_core_attack
+	army_core_defence_factor = RJ_USA_army_core_defense
+	acclimatization_cold_climate_gain_factor = RJ_USA_army_cold_acclimatization
+	acclimatization_hot_climate_gain_factor = RJ_USA_army_hot_acclimatization
+	army_speed_factor = RJ_USA_army_division_speed
+	army_morale_factor = RJ_USA_army_recovery_rate_factor
+	army_org_factor = RJ_USA_army_org_factor
+	breakthrough_factor = RJ_USA_army_breakthrough
+	dig_in_speed_factor = RJ_USA_army_entrenchment_speed
+	experience_gain_army_unit_factor = RJ_USA_army_unit_experience_gain_speed
+	experience_loss_factor = RJ_USA_army_unit_experience_loss
+	max_dig_in_factor = RJ_USA_army_max_entrenchment
+	special_forces_cap = RJ_USA_army_SF_cap
+	terrain_penalty_reduction = RJ_USA_army_terrain_penalty_reduction
+	org_loss_when_moving = RJ_USA_army_movement_org_loss
+	mobilization_speed = RJ_USA_army_mobilization_speed
+	supply_node_range = RJ_USA_army_supply_range
+	naval_invasion_penalty = RJ_USA_army_naval_invasion_penalty
+	industrial_capacity_factory = RJ_USA_army_factory_output
+	army_artillery_attack_factor = RJ_USA_army_artillery_attack
+	army_fuel_capacity_factor = RJ_USA_army_fuel_capacity
+	attrition = RJ_USA_army_attrition
+	paradrop_organization_factor = RJ_USA_army_paradrop_org
+	extra_paratrooper_supply_grace = RJ_USA_army_paratrooper_supply_grace
+	coordination_bonus = RJ_USA_army_coordination
+	army_org_regain = RJ_USA_army_org_regain
+}
+
+RJ_USA_united_states_air_force = {
+	enable = { always = yes }
+
+	icon = GFX_idea_RJ_idea_USA_army_air_corps
+	
+	experience_gain_air = RJ_USA_air_force_daily_experience_gain #Base value of 0
+	air_training_xp_gain_factor = RJ_USA_air_force_air_training_xp_gain_factor
+	air_strategic_bomber_bombing_factor = RJ_USA_air_force_strat_bombing_efficiency
+	air_cas_efficiency = RJ_USA_air_force_CAS_efficiency
+	ground_attack_factor = RJ_USA_air_force_ground_attack
+	air_accidents_factor = RJ_USA_air_force_air_accidents
+	air_mission_efficiency = RJ_USA_air_force_air_efficiency
+	air_mission_xp_gain_factor = RJ_USA_air_force_air_mission_XP_gain
+	air_mastery_gain_factor = RJ_USA_air_force_air_mastery_gain
+	air_escort_efficiency = RJ_USA_air_force_air_escort_efficiency
+	air_ace_generation_chance_factor = RJ_USA_air_force_ace_generation_chance
+	air_cas_present_factor = RJ_USA_air_force_ground_support
+	air_range_factor = RJ_USA_air_force_air_range
+	air_superiority_detect_factor = RJ_USA_air_force_fighter_detection
+	air_intercept_efficiency = RJ_USA_air_force_intercept_efficiency
+	air_weather_penalty = RJ_USA_air_force_weather_penalty
+}
+
+RJ_USA_united_states_navy = {
+	enable = { always = yes }
+
+	icon = GFX_idea_RJ_idea_USA_navy
+	
+	experience_gain_navy = RJ_USA_navy_daily_experience_gain #Base value of 0
+	industrial_capacity_dockyard = RJ_USA_navy_dockyard_output
+	production_speed_dockyard_factor = RJ_USA_navy_dockyard_construction_speed
+	naval_torpedo_hit_chance_factor = RJ_USA_navy_torpedo_hit_chance #Base value of -15% (-0.15)
+	naval_equipment_upgrade_xp_cost = RJ_USA_navy_naval_equipment_cost
+	shore_bombardment_bonus = RJ_USA_navy_shore_bombardment_bonus
+	convoy_raiding_efficiency_factor = RJ_USA_navy_convoy_raiding_efficiency
+	sortie_efficiency = RJ_USA_navy_sortie_efficiency
+	screening_efficiency = RJ_USA_navy_screening_efficiency
+	air_nav_efficiency = RJ_USA_navy_naval_air_efficiency
+	naval_coordination = RJ_USA_navy_coordination
+	naval_accidents_chance = RJ_USA_navy_accidents_chance
+	naval_night_attack = RJ_USA_navy_night_attack
+	navy_org_factor = RJ_USA_navy_organization
+	convoy_escort_efficiency = RJ_USA_navy_escort_efficiency
+	convoy_retreat_speed = RJ_USA_navy_convoy_retreat
+	naval_detection = RJ_USA_navy_sub_detection
+}

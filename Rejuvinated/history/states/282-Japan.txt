@@ -20,6 +20,9 @@ state = {
 			industrial_complex = 4
 			arms_factory = 2
 			dockyard = 4
+			1113 = {
+				dam = 1 #Lake Inawashiro Hydropower Stations
+			}
 
 			9998 = {
 				naval_base = 6
@@ -59,5 +62,5 @@ state = {
 		993 1097 1113 1182 4000 4100 4184 4188 7016 9998 11908 
 	}
 
-	local_supplies = 0.0 
+	local_supplies = 10.0 
 }

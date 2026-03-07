@@ -31,21 +31,10 @@ state={
 			infrastructure = 2
 			arms_factory = 1
 			industrial_complex = 3
-
-		}
-		1938.10.25 = {
-			if = {
-				limit = {
-					NOT = {
-						has_dlc = "Waking the Tiger" 
-					}
-				}
-				CHI = {
-					transfer_state = PREV
-				}
+			7446 = {
+				dam = 1 #Shilongba Hydropower Station
 			}
 		}
-
 	}
 
 	provinces={
