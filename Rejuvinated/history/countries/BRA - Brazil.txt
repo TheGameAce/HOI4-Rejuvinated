@@ -10,15 +10,18 @@ IF = {
 	}
 }
 
-country_event = { days = 1 id = bra.10 }
 set_convoys = 200
 
 set_stability = 0.4
 set_war_support = 0.2
 set_research_slots = 3
 
-
-
+###### Country Leaders ######
+recruit_character = BRA_getulio_vargas
+recruit_character = BRA_plinio_salgado
+recruit_character = BRA_luis_carlos_prestes
+recruit_character = BRA_congresso_nacional
+recruit_character = BRA_eurico_gaspar_dutra
 
 ###### Political Advisors #####
 recruit_character = BRA_franscisco_morato
@@ -50,11 +53,7 @@ recruit_character = BRA_protogenes_guimaraes_vfb
 recruit_character = BRA_pedro_max_vfb
 recruit_character = BRA_aristides_guilhem_vfb
 
-
-
-
 ###### Generals & Admirals ######
-recruit_character = BRA_gaspar_dutra
 recruit_character = BRA_pedro_aurelio
 recruit_character = BRA_jose_pessoa
 recruit_character = BRA_joao_de_segadas
@@ -75,17 +74,6 @@ recruit_character = BRA_cyro_do_espirito
 recruit_character = BRA_augusto_hamann
 recruit_character = BRA_adalberto_de_barros
 recruit_character = BRA_antonio_alves
-
-
-
-
-###### Country Leaders ######
-recruit_character = BRA_getulio_vargas
-recruit_character = BRA_plinio_salgado
-recruit_character = BRA_luis_carlos_prestes
-recruit_character = BRA_congresso_nacional
-
-
 
 # Starting tech
 set_technology = {
@@ -179,20 +167,6 @@ add_ideas = {
 	limited_conscription
 }
 
-remove_ideas = {
-	generic_tank_manufacturer
-	generic_naval_manufacturer
-	generic_light_aircraft_manufacturer
-	generic_medium_aircraft_manufacturer
-	generic_heavy_aircraft_manufacturer
-	generic_naval_aircraft_manufacturer
-	generic_industrial_concern
-	generic_electronics_concern
-	generic_motorized_equipment_manufacturer
-	generic_infantry_equipment_manufacturer
-	generic_artillery_manufacturer
-}
-
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1934.7.17"
@@ -206,7 +180,6 @@ set_popularities = {
 	communism = 10
 	democratic = 10
 }
-
 
 IF = {
 	limit = {

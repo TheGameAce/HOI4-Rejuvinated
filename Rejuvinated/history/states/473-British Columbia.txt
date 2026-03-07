@@ -3,8 +3,9 @@ state={
 	name="STATE_473"
 	manpower = 863165
 	resources={
-		oil=1 # was: 2
-		coal=4 # initial distribtuion = with infra 6.4 / 36 total
+		coal=4
+		tungsten = 40
+		aluminium = 90
 	}
 	
 	state_category = large_town
@@ -19,6 +20,9 @@ state={
 			air_base = 3
 			1408 = {
 				naval_base = 5
+			}
+			4428 = {
+				dam = 1 #Ruskin Dam and Powerhouse
 			}
 		}
 		add_core_of = CAN

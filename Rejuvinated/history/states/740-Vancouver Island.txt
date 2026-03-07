@@ -2,6 +2,9 @@ state = {
 	id = 740
 	name = "STATE_740"
 	manpower = 259612
+	resources = {
+		coal = 12
+	}
 	
 	state_category = rural
 
@@ -12,6 +15,9 @@ state = {
 
 		buildings = {
 			infrastructure = 1
+			7259 = {
+				naval_base = 1
+			}
 		}
 
 		victory_points = {
@@ -25,5 +31,5 @@ state = {
 	}
 	
 
-	local_supplies = 0.0 
+	local_supplies = 2.0 
 }

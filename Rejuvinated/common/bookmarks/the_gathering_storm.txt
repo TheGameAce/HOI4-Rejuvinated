@@ -46,8 +46,8 @@ bookmarks = {
 				undisturbed_isolation
 			}
 			focuses = {
-				USA_war_plan_black
-				USA_limited_intervention
+				USA_continue_the_new_deal
+				USA_wpa
 				USA_reestablish_the_gold_standard
 			}
 		}
@@ -262,6 +262,21 @@ bookmarks = {
 			focuses = {
 				ICE_the_kingdom_of_iceland
 				ICE_republicanism
+			}
+		}
+
+		EGY = {
+			minor = yes
+			history = "EGY_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				EGY_republican_opposition
+				rj_generic_illiteracy_2
+			}
+			focuses = {
+				EGY_suez_return
+				#EGY_
+				#EGY_
 			}
 		}
 
