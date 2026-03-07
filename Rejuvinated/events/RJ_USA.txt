@@ -1,0 +1,205 @@
+add_namespace = rj_usa
+
+country_event = { #Silver Legion Rallies - Suspend the Persecution
+	id = rj_usa.1
+	title = rj_usa.1.t
+	desc = rj_usa.1.d
+	picture = GFX_report_event_gathering_protest
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We should keep an eye on them..."
+		ai_chance = {
+			factor = 1
+		}
+		add_ideas = USA_silver_legion_rallies_idea
+	}
+}
+
+country_event = { #Pacific Decolonization - Indonesia
+	id = rj_usa.2
+	title = rj_usa.2.t
+	desc = rj_usa.2.d
+	picture = GFX_report_event_usa_heavy_cruiser
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "How dare they?! We won't give it up to them!"
+		ai_chance = {
+			factor = 1
+		}
+		USA = {
+			country_event = rj_usa.2a
+		}
+	}
+
+	option = {
+		name = "It's really not worth the risk..."
+		ai_chance = {
+			factor = 1
+			modifier = {
+				if = {
+					limit = {
+						INS = {
+							OVERLORD = {
+								has_capitulated = yes
+							}
+						}
+					}
+				}
+				factor = 4
+			}
+		}
+		USA = {
+			country_event = rj_usa.2b
+			INS = {
+				OVERLORD = {
+					end_puppet = INS
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Pacific Decolonization - Indonesia - Negative Response
+	id = rj_usa.2a
+	title = rj_usa.2a.t
+	desc = rj_usa.2a.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Blast Them! They'll regret that!"
+		ai_chance = {
+			factor = 1
+		}
+		create_wargoal = {
+			target = INS
+			type = puppet_wargoal_focus
+		}
+	}
+
+	option = {
+		name = "I didn't want that land anyways..."
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = { #Pacific Decolonization - Indonesia - Positive Response
+	id = rj_usa.2b
+	title = rj_usa.2b.t
+	desc = rj_usa.2b.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Indonesia is mine! Err... I mean ours, comrades!"
+		ai_chance = {
+			factor = 1
+		}
+		puppet = INS
+	}
+}
+
+country_event = { #Pacific Decolonization - Malaysia
+	id = rj_usa.3
+	title = rj_usa.3.t
+	desc = rj_usa.3.d
+	picture = GFX_report_event_usa_heavy_cruiser
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "How dare they?! We won't give it up to them!"
+		ai_chance = {
+			factor = 1
+		}
+		USA = {
+			country_event = rj_usa.3a
+		}
+	}
+
+	option = {
+		name = "It's really not worth the risk..."
+		ai_chance = {
+			factor = 1
+			modifier = {
+				if = {
+					limit = {
+						MAL = {
+							OVERLORD = {
+								has_capitulated = yes
+							}
+						}
+					}
+				}
+				factor = 4
+			}
+		}
+		USA = {
+			country_event = rj_usa.3b
+			INS = {
+				OVERLORD = {
+					end_puppet = MAL
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Pacific Decolonization - Malaysia - Negative Response
+	id = rj_usa.3a
+	title = rj_usa.3a.t
+	desc = rj_usa.3a.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Blast Them! They'll regret that!"
+		ai_chance = {
+			factor = 1
+		}
+		create_wargoal = {
+			target = MAL
+			type = puppet_wargoal_focus
+		}
+	}
+
+	option = {
+		name = "I didn't want that land anyways..."
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = { #Pacific Decolonization - Malaysia - Positive Response
+	id = rj_usa.3b
+	title = rj_usa.3b.t
+	desc = rj_usa.3b.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Indonesia is mine! Err... I mean ours, comrades!"
+		ai_chance = {
+			factor = 1
+		}
+		puppet = MAL
+	}
+}

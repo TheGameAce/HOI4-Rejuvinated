@@ -13,11 +13,14 @@ state = {
 		buildings = {
 			industrial_complex = 1 
 			infrastructure = 3
+			3094 = {
+				dam = 1 #Vemork
+			}
 		}
 	}
 	provinces={
 		100 3059 3094 6080 6184 9036 9204 11029 9174 6151
 	}
 
-	local_supplies = 0.000
+	local_supplies = 1.000
 }
