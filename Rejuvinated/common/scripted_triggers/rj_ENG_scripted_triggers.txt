@@ -14,3 +14,15 @@ ENG_historical_ai = {
 		}
 	}
 }
+
+rj_ENG_has_sectarian_violence = {
+	custom_override_tooltip = {
+		has_idea = rj_ENG_sectarian_violence
+	}
+	hidden_trigger = {
+		OR = {
+			has_idea = rj_ENG_sectarian_violence
+			has_idea = rj_ENG_sectarian_violence_2
+		}
+	}
+}

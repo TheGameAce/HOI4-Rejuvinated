@@ -7901,6 +7901,48 @@ focus_tree = {
 		}
 	}
 
+	focus = {
+		id = rj_ENG_land_registration_act
+		icon = GFX_focus_PLACEHOLDER
+		cost = 5
+		prerequisite = { focus = ENG_steady_as_she_goes }
+
+		x = 0
+		y = 15
+		relative_position_id = ENG_steady_as_she_goes
+
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_global_building_slots_factor = 0.1
+				tooltip = global_building_slots_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = rj_ENG_enact_financial_reforms
+		icon = GFX_focus_PLACEHOLDER
+		cost = 5
+		prerequisite = { focus = rj_ENG_land_registration_act }
+
+		x = 2
+		y = 1
+		relative_position_id = rj_ENG_land_registration_act
+
+		available = {
+			has_country_leader_ideology = conservatism
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_consumer_goods_factor = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+	}
+
 	### GLOBAL DEFENSE BRANCH ###
 
 	focus = {

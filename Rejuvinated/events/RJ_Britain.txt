@@ -34,7 +34,7 @@ country_event = {
 			base = 50
 			modifier = {
 				factor = 0
-				BEL_historical_ai = yes
+				ENG_historical_ai = yes
 			}
 		}
 		add_stability = -0.05
@@ -72,9 +72,45 @@ country_event = {
 	#		base = 50
 	#		modifier = {
 	#			factor = 0
-	#			BEL_historical_ai = yes
+	#			ENG_historical_ai = yes
 	#		}
 	#	}
 	#	add_stability = -0.05
 	#}
+}
+
+# The Battle of Cable Street
+country_event = {
+	id = rj_britain.3
+	title = rj_britain.3.t
+	desc = rj_britain.3.desc
+	picture = GFX_report_event_PLACEHOLDER
+
+	is_triggered_only = yes
+
+	option = {
+		name = rj_britain.3.a
+		ai_chance = {
+			base = 50
+		}
+		add_stability = -0.05
+		add_war_support = -0.05
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.05
+		}
+		set_country_flag = ENG_public_order_act_1936_flag
+	}
+
+	option = {
+		name = rj_britain.3.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				ENG_historical_ai = yes
+			}
+		}
+		add_stability = -0.1
+	}
 }
