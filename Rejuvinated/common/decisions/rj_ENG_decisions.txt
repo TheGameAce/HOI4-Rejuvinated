@@ -1,0 +1,91 @@
+foreign_policy = {
+
+	rj_ENG_secure_iran = {
+
+		name = uk_iran_focus
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = ENG_secure_the_oil_imports
+		}
+
+		available = {
+			has_completed_focus = ENG_secure_the_oil_imports
+			has_war_with_major = yes
+		}
+
+		cost = 50
+
+		complete_effect = {
+			PER = {
+				set_country_flag = SOV_ultimatum_sent_flag
+				country_event = { id = 	PER_foreign_policy_events.1 hours = 16 	random_hours = 8 }
+			}
+
+			effect_tooltip = {
+				custom_effect_tooltip = if_they_accept_tt
+				ROOT = {
+					puppet = PER
+				}
+
+				custom_effect_tooltip = if_they_refuse_tt
+				effect_tooltip = {
+					activate_mission = 	SOV_preparations_for_operation_countenance
+					custom_effect_tooltip = SOV_preparations_for_operation_countenance_tt
+				}
+				custom_effect_tooltip = PER_preemptive_invasion_of_iran_tt
+			}
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				has_civil_war = yes
+			}
+			modifier = {
+				factor = 0
+				PER = {
+					has_government = ROOT
+				}
+			}
+		}
+
+	}
+
+	rj_ENG_secure_iraq = {
+
+		name = uk_iraq_focus
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = ENG_secure_the_oil_imports
+		}
+
+		available = {
+			has_completed_focus = ENG_secure_the_oil_imports
+			has_war_with_major = yes
+		}
+
+		cost = 50
+
+		complete_effect = {
+			create_wargoal = {
+				target = IRQ
+				type = topple_government
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+	}
+
+}
