@@ -107,7 +107,7 @@ on_actions = {
 				unlock_national_focus = limited_rearmament_focus
 				unlock_national_focus = shadow_scheme_focus
 				unlock_national_focus = uk_industrial_focus
-				unlock_national_focus = royal_ordnance_factories
+				unlock_national_focus = royal_ordinance_focus
 				if = {
 					limit = {
 						amount_research_slots > 4
@@ -784,8 +784,8 @@ on_actions = {
 			IF = {
 				limit = {
 					has_game_rule = {
-						rule = s_american_colonization_status
-						option = S_AMERICAN_DEIMPERIALIZED
+						rule = s_americas_colonization_status
+						option = S_AMERICAS_DEIMPERIALIZED
 					}
 				}
 				every_state = {
@@ -1159,15 +1159,15 @@ on_actions = {
 								state = 955
 								state = 512
 							}
-							is_controlled_by = ROOT
+							is_controlled_by = PREV
 						}
 						create_unit = {
 						    division = "name = \"Los Insurgentes Primeros de Mapuche de Esteban Romero Sandoval\" division_template = \"Los Insurgentes Mapuche de Esteban Romero Sandoval\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
-						    owner = ROOT 
+						    owner = PREV 
 						}
 						create_unit = {
 						    division = "name = \"Los Insurgentes Segundo de Mapuche de Esteban Romero Sandoval\" division_template = \"Los Insurgentes Mapuche de Esteban Romero Sandoval\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
-						    owner = ROOT 
+						    owner = PREV 
 						}
 					}
 
@@ -1196,11 +1196,11 @@ on_actions = {
 								state = 955
 								state = 512
 							}
-							is_controlled_by = ROOT
+							is_controlled_by = PREV
 						}
 						create_unit = {
 						    division = "name = \"Guerreros Abajinos\" division_template = \"Guerreros Abajinos\" start_experience_factor = 0.5 start_equipment_factor = 1"
-						    owner = ROOT 
+						    owner = PREV
 						}
 					}
 
@@ -1318,8 +1318,8 @@ on_actions = {
 			IF = {
 				limit = {
 					has_game_rule = {
-						rule = central_americas_colonization_status
-						option = CENTRAL_AMERICAS_DEIMPERIALIZED
+						rule = central_america_colonization_status
+						option = CENTRAL_AMERICA_DEIMPERIALIZED
 					}
 				}
 				every_state = {
@@ -1385,7 +1385,7 @@ on_actions = {
 				} 
 			}
 			if = {
-				limit ={
+				limit = {
 					has_game_rule = {
 						rule = CENTRAL_AMERICA_COLONIZATION_STATUS
 						option = CENTRAL_AMERICA_UNITED
@@ -1409,8 +1409,10 @@ on_actions = {
 					}
 					add_core_of = ELS
 					transfer_state_to = ELS
-				} 
-				set_cosmetic_tag = USC_UNIFIED
+				}
+				ELS = {
+					set_cosmetic_tag = USC_UNIFIED
+				}
 				set_global_flag = form_united_central_america_flag
 			}
 			IF = {
@@ -2365,9 +2367,9 @@ on_actions = {
 					abandon_colony_tag = yes
 				}
 				YEM = {
-					set_state_owner 992
-					set_state_owner 656
-					set_state_owner 906
+					transfer_state = 992
+					transfer_state = 656
+					transfer_state = 906
 				}
 			}
 			IF = {
@@ -2384,8 +2386,8 @@ on_actions = {
 					}
 				}
 				ENG = {
-					release BRN
-					release SNG
+					release = BRN
+					release = SNG
 					set_autonomy = {
 						target = MAL
 						autonomous_state = autonomy_free
@@ -3490,16 +3492,14 @@ on_actions = {
 						}
 					}
 					NOT = {
-						OR = {
-							tag = USA
-							tag = ENG
-							tag = GER
-							tag = ITA
-							tag = FRA
-							tag = SOV
-							tag = JAP
-							tag = CHI
-						}
+						tag = USA
+						tag = ENG
+						tag = GER
+						tag = ITA
+						tag = FRA
+						tag = SOV
+						tag = JAP
+						tag = CHI
 					}
 				}
 				set_country_flag = assuming_direct_control_achievement_flag
