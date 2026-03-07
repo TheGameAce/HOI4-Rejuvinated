@@ -26,11 +26,11 @@ state = {
 
 			9909 = {
 				naval_base = 2
-			}	
+			}
 
-			# Tignes Dam
-			#9745 = { dam = 1 }
-
+			764 = {
+				dam_mountain = 1 #Bissorte Dam
+			}
 		}
 
 	}
@@ -41,5 +41,5 @@ state = {
 	
 	buildings_max_level_factor = 1.000
 
-	local_supplies = 0.0 
+	local_supplies = 1.0 
 }

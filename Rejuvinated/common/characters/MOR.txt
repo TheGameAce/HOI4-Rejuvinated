@@ -1,0 +1,17 @@
+characters = {
+
+	MOR_mohammed_v = { # Historical Ruler of Morocco at the time - The portrait is technically him from the early 50s, but sources to work with were limited (& I didn't realize it initially). Will try to do a new, younger version, in the future.
+		name = "Mohammed V"
+		portraits={
+			civilian={
+				large = "gfx/leaders/MOR/Mohammed_V.dds"
+			}
+		}
+		country_leader={
+			ideology = monarchy
+			traits={ sultan_of_morocco }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
+}
