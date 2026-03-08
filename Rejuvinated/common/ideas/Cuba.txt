@@ -594,6 +594,75 @@ ideas = {
 				experience_gain_army_unit_factor = 0.05
 			}
 		}
+		
+		CUB_soviet_and_american_military_advisors_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = saf_soviet_advisers
+			
+			modifier = {
+				army_morale_factor = 0.15
+				planning_speed = 0.15
+				max_planning = 0.20
+				experience_gain_army_unit_factor = 0.1
+				army_attack_factor = 0.05
+				army_core_defence_factor = 0.1
+				training_time_army_factor = -0.05
+			}
+		}
+		
+		CUB_american_industrial_improvements_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = idea_man_five_year_plan_industry
+			
+			modifier = {
+				industrial_capacity_dockyard = 0.15
+				industrial_capacity_factory = 0.1
+		}
+		}
+		
+		CUB_american_military_advisors_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = saf_soviet_advisers
+			
+			modifier = {
+				army_artillery_defence_factor = 0.2
+				army_artillery_attack_factor = 0.1
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.15
+				army_attack_against_major_factor = 0.2
+				army_breakthrough_against_major_factor = 0.1
+		}
+		}
 
 		CUB_communism_in_the_caribbean_idea = {
 
