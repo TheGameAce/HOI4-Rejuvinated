@@ -813,7 +813,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		prerequisite = { focus = CUB_victory_for_garcia_menocal	}
 		mutually_exclusive = { focus = CUB_seek_falangist_support }
 		relative_position_id = CUB_victory_for_garcia_menocal
-		x = 8
+		x = 10
 		y = 1
 
 		ai_will_do = {
@@ -990,7 +990,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		cost = 10
 		prerequisite = { focus = CUB_overthrow_the_menocal_government }
 		relative_position_id = CUB_overthrow_the_menocal_government
-		x = 0
+		x = 6
 		y = 1
 
 		ai_will_do = {
@@ -1015,7 +1015,8 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		cost = 4
 		prerequisite = { focus = CUB_overthrow_the_menocal_government }
 		relative_position_id = CUB_overthrow_the_menocal_government
-		x = -4
+		mutually_exclusive = { focus = CUB_our_northern_comrades }
+		x = -6
 		y = 1
 
 		ai_will_do = {
@@ -1058,7 +1059,186 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		search_filters = { FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
 
 	}
+	
+	focus = {
+		id = CUB_our_northern_comrades
+		icon = GFX_focus_RJ_USA_socialist_states_of_america
+		cost = 4
+		prerequisite = { focus = CUB_overthrow_the_menocal_government }
+		relative_position_id = CUB_overthrow_the_menocal_government
+		mutually_exclusive = { focus = CUB_reaffirm_comintern_ties }
+		x = 0
+		y = 1
 
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			USA = {
+				exists = yes
+				has_government = communism
+				is_faction_leader = yes
+			}
+		}
+
+
+		completion_reward = {
+			USA = {
+				add_opinion_modifier = {
+					target = CUB
+					modifier = large_increase
+				}
+			}
+			CUB = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = large_increase
+				}
+			}			
+		}
+
+		search_filters = { FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
+
+	}
+	
+	focus = {
+		id = CUB_study_american_shipbuilding
+		icon = GFX_focus_generic_refit_civilian_ships
+		cost = 10
+		prerequisite = { focus = CUB_our_northern_comrades }
+		relative_position_id = CUB_our_northern_comrades
+		x = -1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			USA = {
+				exists = yes
+				has_government = communism
+			}
+		}
+
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.80
+				uses = 3
+				category = naval_equipment
+			}			
+		}
+
+		search_filters = { FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
+
+	}
+	
+	focus = {
+		id = CUB_american_shipyard_investments
+		icon = GFX_goal_generic_construct_naval_dockyard
+		cost = 10
+		prerequisite = { focus = CUB_our_northern_comrades }
+		relative_position_id = CUB_our_northern_comrades
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			USA = {
+				exists = yes
+				has_government = communism
+			}
+		}
+
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}			
+		}
+
+		search_filters = { FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
+
+	}
+	
+	focus = {
+		id = CUB_american_industrial_improvements_in_cuba
+		icon = GFX_focus_RJ_USA_worker_management_act
+		cost = 10
+		prerequisite = { focus = CUB_study_american_shipbuilding }
+		prerequisite = { focus = CUB_american_shipyard_investments }
+		relative_position_id = CUB_study_american_shipbuilding
+		x = 1
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			USA = {
+				exists = yes
+				has_government = communism
+			}
+		}
+
+
+		completion_reward = {
+			add_ideas = CUB_american_industrial_improvements_idea
+		}
+
+		search_filters = { FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
+
+	}
+	
+	focus = {
+		id = CUB_american_military_advisors
+		icon = GFX_focus_RJ_USA_war_plans_division
+		cost = 10
+		prerequisite = { focus = CUB_american_industrial_improvements_in_cuba }
+		relative_position_id = CUB_american_industrial_improvements_in_cuba
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			USA = {
+				exists = yes
+				has_government = communism
+			}
+		}
+
+
+		completion_reward = {
+			add_ideas = CUB_american_military_advisors_idea
+		}
+
+		search_filters = { FOCUS_FILTER_EVENT FOCUS_FILTER_DIPLOMACY }
+
+	}
 	focus = {
 		id = CUB_imprison_batista
 		icon = GFX_focus_RJ_CUB_imprison_batista
@@ -1211,7 +1391,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		cost = 10
 		prerequisite = { focus = CUB_reaffirm_comintern_ties }
 		relative_position_id = CUB_reaffirm_comintern_ties
-		x = 1
+		x = 2
 		y = 1
 
 		ai_will_do = {
@@ -1227,6 +1407,38 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 		completion_reward = {
 			add_ideas = CUB_soviet_military_advisors_idea
+		}
+
+		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
+
+	}
+	
+	focus = {
+		id = CUB_soviet_american_military_mission_in_cuba
+		icon = GFX_focus_RJ_communist_advisor
+		cost = 10
+		prerequisite = { focus = CUB_soviet_military_advisors }
+		relative_position_id = CUB_soviet_military_advisors
+		x = 0
+		y = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			SOV = {
+				exists = yes
+				has_government = communism
+				is_in_faction_with = USA
+			}
+		}
+
+		completion_reward = {
+		swap_ideas = {
+					remove_idea = CUB_soviet_military_advisors_idea
+					add_idea = CUB_soviet_and_american_military_advisors_idea
+				}
 		}
 
 		search_filters = { FOCUS_FILTER_ARMY FOCUS_FILTER_NATIONAL_SPIRIT }
@@ -1321,7 +1533,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		cost = 10
 		prerequisite = { focus = CUB_overthrow_the_menocal_government }
 		relative_position_id = CUB_overthrow_the_menocal_government
-		x = -2
+		x = 4
 		y = 1
 
 		ai_will_do = {
@@ -1343,7 +1555,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		cost = 4
 		prerequisite = { focus = CUB_overthrow_the_menocal_government }
 		relative_position_id = CUB_overthrow_the_menocal_government
-		x = 2
+		x = 8
 		y = 1
 
 		ai_will_do = {
@@ -1382,7 +1594,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		cost = 10
 		prerequisite = { focus = CUB_overthrow_the_menocal_government }
 		relative_position_id = CUB_overthrow_the_menocal_government
-		x = 6
+		x = 12
 		y = 1
 
 		ai_will_do = {
@@ -1424,7 +1636,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		cost = 7.2
 		prerequisite = { focus = CUB_overthrow_the_menocal_government }
 		relative_position_id = CUB_overthrow_the_menocal_government
-		x = 8
+		x = 14
 		y = 1
 
 		ai_will_do = {
@@ -1688,7 +1900,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		cost = 10
 		prerequisite = { focus = CUB_overthrow_the_menocal_government }
 		relative_position_id = CUB_overthrow_the_menocal_government
-		x = 4
+		x = 10
 		y = 1
 
 		ai_will_do = {
