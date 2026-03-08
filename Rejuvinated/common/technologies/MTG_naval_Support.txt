@@ -73,6 +73,8 @@ technologies = {
 			mio_cat_tech_all_carrier_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -120,6 +122,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -181,6 +185,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -233,6 +239,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -293,6 +301,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -334,6 +344,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -609,6 +621,8 @@ technologies = {
 			ship_modules_tech
 			cat_ship_heavy_battery
 			mio_cat_tech_all_capital_ship_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -659,6 +673,8 @@ technologies = {
 			ship_modules_tech
 			cat_ship_heavy_battery
 			mio_cat_tech_all_capital_ship_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -704,6 +720,8 @@ technologies = {
 			ship_modules_tech
 			cat_ship_heavy_battery
 			mio_cat_tech_all_capital_ship_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -750,6 +768,8 @@ technologies = {
 			naval_artillery
 			naval_equipment
 			mio_cat_tech_all_capital_ship_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -795,6 +815,8 @@ technologies = {
 			naval_artillery
 			naval_equipment
 			mio_cat_tech_all_capital_ship_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -847,6 +869,8 @@ technologies = {
 			mio_cat_tech_all_carrier_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -897,6 +921,8 @@ technologies = {
 			mio_cat_tech_all_carrier_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -943,6 +969,8 @@ technologies = {
 			mio_cat_tech_all_carrier_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_gunnery_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1041,11 +1069,13 @@ technologies = {
 		categories = {
 			naval_equipment
 			ship_modules_tech
-			cat_torpedoes
+			cat_torpedoes #Legacy
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
 			mio_cat_tech_all_submarine_and_modules #Not really Sub but unlocks tech improving Subs torpedo stuff later
+			ship_tech
+			ship_torpedo_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1122,6 +1152,8 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
 			mio_cat_tech_all_submarine_and_modules
+			ship_tech
+			ship_torpedo_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1180,6 +1212,8 @@ technologies = {
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
 			mio_cat_tech_all_submarine_and_modules
+			ship_tech
+			ship_torpedo_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1225,6 +1259,7 @@ technologies = {
 	#	}
 	#	special_project_specialization = { specialization_naval }
 	#}
+
 	improved_ship_torpedo_launcher = {
 
 		research_cost = 1.5
@@ -1266,9 +1301,12 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_torpedo_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
+
 	advanced_ship_torpedo_launcher = {
 
 		research_cost = 1.5
@@ -1312,9 +1350,12 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_torpedo_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
+
 	modern_ship_torpedo_launcher = {
 
 		research_cost = 1.5
@@ -1351,6 +1392,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_torpedo_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1410,6 +1453,8 @@ technologies = {
 			mio_cat_tech_all_carrier_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_damage_control_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1457,6 +1502,8 @@ technologies = {
 			mio_cat_tech_all_carrier_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_damage_control_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1505,6 +1552,8 @@ technologies = {
 			mio_cat_tech_all_carrier_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_damage_control_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1563,6 +1612,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules #Not really but for further tech
 			mio_cat_tech_all_cruiser_and_modules #Not really but for further tech
 			mio_cat_tech_all_destroyer_and_modules #Not really but for further tech
+			ship_tech
+			ship_fire_control_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1613,6 +1664,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules #Not really but for further tech
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules #Not really but for further tech
+			ship_tech
+			ship_fire_control_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1667,6 +1720,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_fire_control_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1735,6 +1790,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_mine_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1778,6 +1835,8 @@ technologies = {
 			naval_equipment
 			ship_modules_tech
 			mio_cat_tech_all_submarine_and_modules
+			ship_tech
+			ship_mine_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1816,6 +1875,8 @@ technologies = {
 			naval_equipment
 			ship_modules_tech
 			mio_cat_tech_all_submarine_and_modules
+			ship_tech
+			ship_mine_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1872,6 +1933,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_mine_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1923,6 +1986,8 @@ technologies = {
 			mio_cat_tech_all_carrier_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_mine_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -1979,6 +2044,8 @@ technologies = {
 			mio_cat_tech_all_screen_ship_and_modules
 			mio_cat_tech_all_cruiser_and_modules
 			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_mine_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -2023,6 +2090,10 @@ technologies = {
 			naval_mines
 			naval_minelaying
 			naval_equipment
+			ship_tech
+			ship_mine_tech
+			plane_tech
+			plane_modules_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -2062,6 +2133,10 @@ technologies = {
 			naval_mines
 			naval_minelaying
 			naval_equipment
+			ship_tech
+			ship_mine_tech
+			plane_tech
+			plane_modules_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -2136,6 +2211,10 @@ technologies = {
 			naval_mines
 			naval_minesweeping
 			naval_equipment
+			ship_tech
+			ship_mine_tech
+			plane_tech
+			plane_modules_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -2166,6 +2245,10 @@ technologies = {
 			naval_mines
 			naval_minesweeping
 			naval_equipment
+			ship_tech
+			ship_mine_tech
+			plane_tech
+			plane_modules_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -2233,6 +2316,8 @@ technologies = {
 		categories = {
 			naval_equipment
 			tp_tech
+			ship_tech
+			ship_transport_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -2320,6 +2405,8 @@ technologies = {
 		categories = {
 			naval_equipment
 			tp_tech
+			ship_tech
+			ship_transport_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -2370,6 +2457,8 @@ technologies = {
 		categories = {
 			naval_equipment
 			tp_tech
+			ship_tech
+			ship_transport_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -2415,6 +2504,7 @@ technologies = {
 		categories = {
 			naval_equipment
 			tp_tech
+			ship_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -2451,6 +2541,7 @@ technologies = {
 		categories = {
 			naval_equipment
 			tp_tech
+			ship_tech
 		}
 		special_project_specialization = { specialization_naval }	
 	}
@@ -2487,6 +2578,7 @@ technologies = {
 		categories = {
 			naval_equipment
 			tp_tech
+			ship_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
@@ -2521,6 +2613,7 @@ technologies = {
 		categories = {
 			naval_equipment
 			tp_tech
+			ship_tech
 		}
 		special_project_specialization = { specialization_naval }
 	}
