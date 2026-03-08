@@ -672,28 +672,17 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = shadow_scheme_focus_tt
-			IF = {
-				limit = {
-					NOT = {
-						has_idea = ENG_prepare_for_the_inevitable_idea
-					}
-				}
-				custom_effect_tooltip = generic_skip_one_line_tt
-				add_ideas = wartime_industry_focus
-			}
-			ELSE = {
-				custom_effect_tooltip = generic_skip_one_line_tt
-				swap_ideas = {
-					remove_idea = ENG_prepare_for_the_inevitable_idea
-					add_idea = ENG_prepare_for_the_inevitable_and_wartime_industry_idea
-				}	
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_conversion_cost_civ_to_mil_factor = -0.5
+				tooltip = conversion_cost_civ_to_mil_factor_tt
 			}
 		}
 	}
 
 	focus = {
 		id = uk_industrial_focus
-		text = industrial_effort
 		prerequisite = { focus = shadow_scheme_focus }
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 0
@@ -707,11 +696,14 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 1.0
-				uses = 2
-				category = industry
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_consumer_goods_factor = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_industrial_complex_factor = 0.05
+				tooltip = production_speed_industrial_complex_factor_tt
 			}
 		}
 	}
@@ -820,7 +812,11 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
-			add_ideas = british_austerity_idea
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_consumer_goods_factor = -0.15
+				tooltip = consumer_goods_factor_tt
+			}
 		}
 	}
 
@@ -8677,19 +8673,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }	
 
 		completion_reward = {
-			IF = {
-				limit = {
-					NOT = {
-						has_idea = wartime_industry_focus
-					}
-				}
-				add_ideas = ENG_prepare_for_the_inevitable_idea
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_arms_factory_factor = 0.1
+				tooltip = production_speed_arms_factory_factor_tt
 			}
-			ELSE = {
-				swap_ideas = {
-					remove_idea = wartime_industry_focus
-					add_idea = ENG_prepare_for_the_inevitable_and_wartime_industry_idea
-				}	
+			add_to_variable = {
+				rj_ENG_the_economy_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt
 			}
 		}
 	}
