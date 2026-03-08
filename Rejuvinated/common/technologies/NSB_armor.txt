@@ -152,6 +152,8 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_light_armor
 			mio_cat_tech_light_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -243,6 +245,9 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_light_armor
 			mio_cat_tech_light_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			light_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -366,6 +371,8 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_light_armor
 			mio_cat_tech_light_armor_and_modules
+			tanks_tech
+			light_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -431,6 +438,10 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			tp_tech
 			mio_cat_tech_light_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			amphibious_tank_tech
+			amphibious_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -494,6 +505,10 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			tp_tech
 			mio_cat_tech_light_armor_and_modules
+			tanks_tech
+			amphibious_tank_tech
+			amphibious_tech
+			tank_modules_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -549,6 +564,9 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_light_armor
 			mio_cat_tech_light_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			light_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -682,6 +700,9 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_medium_armor
 			mio_cat_tech_medium_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			medium_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -838,6 +859,9 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_medium_armor
 			mio_cat_tech_medium_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			medium_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -964,6 +988,9 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_medium_armor
 			mio_cat_tech_medium_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			medium_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1019,6 +1046,9 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_medium_armor
 			mio_cat_tech_medium_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			modern_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1113,6 +1143,9 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_heavy_armor
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			heavy_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1197,6 +1230,9 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_heavy_armor
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			heavy_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1269,6 +1305,9 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_heavy_armor
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			heavy_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1410,6 +1449,9 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_heavy_armor
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			superheavy_tank_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1470,6 +1512,9 @@ technologies = {
 			mio_cat_tech_light_armor_and_modules
 			mio_cat_tech_medium_armor_and_modules
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
+			tank_armor_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1530,6 +1575,9 @@ technologies = {
 			mio_cat_tech_light_armor_and_modules
 			mio_cat_tech_medium_armor_and_modules
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
+			tank_armor_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1591,6 +1639,9 @@ technologies = {
 			mio_cat_tech_light_armor_and_modules
 			mio_cat_tech_medium_armor_and_modules
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
+			tank_armor_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1643,6 +1694,9 @@ technologies = {
 			mio_cat_tech_light_armor_and_modules
 			mio_cat_tech_medium_armor_and_modules
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
+			tank_armor_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1699,6 +1753,9 @@ technologies = {
 			mio_cat_tech_light_armor_and_modules
 			mio_cat_tech_medium_armor_and_modules
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
+			tank_engine_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1757,6 +1814,9 @@ technologies = {
 			mio_cat_tech_light_armor_and_modules
 			mio_cat_tech_medium_armor_and_modules
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
+			tank_engine_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1813,6 +1873,9 @@ technologies = {
 			mio_cat_tech_light_armor_and_modules
 			mio_cat_tech_medium_armor_and_modules
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
+			tank_engine_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -1863,6 +1926,9 @@ technologies = {
 			mio_cat_tech_light_armor_and_modules
 			mio_cat_tech_medium_armor_and_modules
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
+			tank_engine_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -2010,6 +2076,8 @@ technologies = {
 			mio_cat_tech_light_armor_and_modules
 			mio_cat_tech_medium_armor_and_modules
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -2084,6 +2152,8 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_heavy_armor
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -2178,6 +2248,8 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_heavy_armor
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -2248,6 +2320,8 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_heavy_armor
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -2312,6 +2386,8 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_heavy_armor
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
@@ -2370,6 +2446,8 @@ technologies = {
 			mio_cat_tech_all_armor_and_modules
 			cat_heavy_armor
 			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_modules_tech
 		}
 		special_project_specialization = { specialization_land }
 	}
