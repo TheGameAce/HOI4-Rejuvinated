@@ -319,16 +319,16 @@ set_autonomy = {
 	autonomous_state = autonomy_dominion
 	freedom_level = 0.2
 }
-set_autonomy = {
-	target = MLT
-	autonomous_state = autonomy_colony
-	freedom_level = 0.6
-}
-set_autonomy = {
-	target = CYP
-	autonomous_state = autonomy_colony
-	freedom_level = 0.3
-}
+#set_autonomy = {
+#	target = MLT
+#	autonomous_state = autonomy_colony
+#	freedom_level = 0.6
+#}
+#set_autonomy = {
+#	target = CYP
+#	autonomous_state = autonomy_colony
+#	freedom_level = 0.3
+#}
 
 add_to_tech_sharing_group = commonwealth_research
 
