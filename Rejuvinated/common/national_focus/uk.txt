@@ -9263,7 +9263,7 @@ focus_tree = {
 			country_exists = ITA
 			NOT = { is_in_faction_with = ITA }
 		}
-		icon = GFX_goal_generic_major_war
+		icon = GFX_focus_attack_italy
 		will_lead_to_war_with = ITA
 		x = -1
 		y = 1
@@ -9496,7 +9496,7 @@ focus_tree = {
 			}
 		}
 
-		icon = GFX_goal_generic_major_alliance
+		icon = GFX_focus_befriend_italy
 		x = 0
 		y = 1
 		relative_position_id = ENG_the_british_path_to_fascism
@@ -9603,7 +9603,7 @@ focus_tree = {
 			}
 			has_global_flag = scw_over
 		}
-		icon = GFX_goal_generic_dangerous_deal
+		icon = GFX_focus_intervention_spain_nationalists
 		x = -1
 		y = 1
 		relative_position_id = ENG_secure_the_italian_alliance
@@ -9685,7 +9685,7 @@ focus_tree = {
 			}
 			has_global_flag = scw_over
 		}
-		icon = GFX_goal_generic_more_territorial_claims
+		icon = GFX_focus_focus_fra_intervention_spain
 		x = 1
 		y = 1
 		relative_position_id = ENG_secure_the_italian_alliance
@@ -9764,7 +9764,7 @@ focus_tree = {
 			NOT = { is_in_faction_with = GER }
 		}
 		will_lead_to_war_with = GER
-		icon = GFX_goal_generic_major_war
+		icon = GFX_focus_attack_germany
 		x = 1
 		y = 1
 		relative_position_id = ENG_gibraltar_for_spanish_support
@@ -9947,7 +9947,7 @@ focus_tree = {
 			}
 		}
 
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_generic_navy_battleship2
 		x = -1
 		y = 1
 		relative_position_id = ENG_god_save_the_king
@@ -10931,7 +10931,7 @@ focus_tree = {
 			NOT = { is_in_faction_with = SOU }
 		}
 
-		icon = GFX_focus_generic_join_comintern
+		icon = GFX_focus_spr_unify_the_london_bureau
 		x = -2
 		y = 1
 		relative_position_id = ENG_for_the_good_of_the_revolution
@@ -11646,7 +11646,7 @@ focus_tree = {
 				}
 			}
 		}
-		icon = GFX_goal_support_communism
+		icon = GFX_focus_fra_loyalty_stalin
 		x = 2
 		y = 1
 		relative_position_id = ENG_for_the_good_of_the_revolution
@@ -11777,7 +11777,7 @@ focus_tree = {
 		available = {
 			has_full_control_of_state = 696
 		}
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_generic_navy_battleship2
 		x = 0
 		y = 1
 		relative_position_id = ENG_tackle_capitalism
