@@ -1467,6 +1467,34 @@ focus_tree = {
 				}
 				add_opinion_modifier = { target = USA modifier = SOV_supported_china_good }
 			}
+			
+			
+			if = {
+				limit = {
+					SOV = {
+					has_completed_focus = SOV_the_gobi_gambit
+					}
+				}
+			country_event = rj_usa.4
+			}
+			
+			if = {
+				limit = {
+					SOV = {
+					has_completed_focus = SOV_two_red_flags
+					}
+				}
+			country_event = rj_usa.5
+			}
+			
+			if = {
+				limit = {
+					SOV = {
+					has_completed_focus = SOV_support_the_kuomintang
+					}
+				}
+			country_event = rj_usa.6
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_DIPLOMACY }
