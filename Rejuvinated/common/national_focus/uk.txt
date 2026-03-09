@@ -7858,7 +7858,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}	
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_HISTORICAL }	
 		completion_reward = {
 			add_timed_idea = { idea = ENG_steady_as_she_goes_idea days = 365 }
 			hidden_effect = {
@@ -7890,7 +7890,7 @@ focus_tree = {
 			factor = 1
 		}
 
-		search_filters = {FOCUS_FILTER_WAR_SUPPORT}	
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_HISTORICAL}	
 
 		completion_reward = {
 
@@ -8031,7 +8031,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	}
 
 	focus = {
@@ -8054,7 +8054,7 @@ focus_tree = {
 			add_stability = 0.05
 		}
 
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY FOCUS_FILTER_HISTORICAL }
 	}
 
 	focus = {
@@ -8075,7 +8075,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 	}
 
 	focus = {
@@ -8098,7 +8098,7 @@ focus_tree = {
 			add_stability = 0.05
 		}
 
-		search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_HISTORICAL }
 	}
 
 	focus = {
@@ -8115,7 +8115,7 @@ focus_tree = {
 			add_stability = 0.05
 		}
 
-		search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_HISTORICAL }
 	}
 
 	### GLOBAL DEFENSE BRANCH ###
@@ -8293,6 +8293,8 @@ focus_tree = {
 				}
 			}
 		}
+
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}
 
 	focus = {
@@ -8324,6 +8326,7 @@ focus_tree = {
 			add_ideas = ENG_no_further_appeasement_idea
 			hidden_effect = { news_event = { id = mtg_news.16 days = 1 } }
 		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}
 
 	focus = {
@@ -8521,7 +8524,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
-		search_filters = {FOCUS_FILTER_RESEARCH}	
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_HISTORICAL }	
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				name = land_doc_bonus
@@ -8628,7 +8631,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY }	
+		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_STABILITY FOCUS_FILTER_HISTORICAL }	
 		completion_reward = {
 			add_war_support = 0.05
 			add_stability = 0.05
@@ -8661,6 +8664,7 @@ focus_tree = {
 			remove_ideas = ENG_the_war_to_end_all_wars
 			set_rule = { can_send_volunteers = yes }
 		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}
 
 	focus = {
@@ -8689,6 +8693,7 @@ focus_tree = {
 			send_embargo = GER
 			custom_effect_tooltip = embargo_relation_tt
 		}
+		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}
 
 	### END ROAD TO WAR WITH GERMANY ###
@@ -8711,7 +8716,7 @@ focus_tree = {
 			factor = 1
 		}
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }	
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }	
 
 		completion_reward = {
 			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
@@ -8738,7 +8743,7 @@ focus_tree = {
 			factor = 1
 		}
 
-		search_filters = { FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL }
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -8812,6 +8817,8 @@ focus_tree = {
 			unlock_decision_tooltip = rj_ENG_secure_iran
 			unlock_decision_tooltip = rj_ENG_secure_iraq
 		}
+
+		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_HISTORICAL }
 
 	}
 
