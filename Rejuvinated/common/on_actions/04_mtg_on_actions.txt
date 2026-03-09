@@ -2199,12 +2199,6 @@ on_actions = {
 					drop_cosmetic_tag = yes
 					retire_country_leader = yes
 				}
-				LEB = {
-					drop_cosmetic_tag = yes
-				}
-				SYR = {
-					drop_cosmetic_tag = yes
-				}
 				JOR = {
 					drop_cosmetic_tag = yes
 				}
@@ -2225,8 +2219,8 @@ on_actions = {
 					release = VIN
 					release = CAM
 					release = LAO
-					set_autonomy = { target = LEB autonomy_state = autonomy_free }
-					set_autonomy = { target = SYR autonomy_state = autonomy_free }
+					release = LEB
+					release = SYR
 				}
 				OMA = {
 					release = IMO  
@@ -2351,14 +2345,8 @@ on_actions = {
 					delete_unit = { state = 659 }
 				}
 				FRA = {
-					set_autonomy = {
-						target = LEB
-						autonomous_state = autonomy_free
-					}
-					set_autonomy = {
-						target = SYR
-						autonomous_state = autonomy_free
-					}
+					release = LEB
+					release = SYR
 					delete_unit = { state = 553 }
 				}
 				CYP = {
@@ -2378,12 +2366,6 @@ on_actions = {
 					abandon_colony_tag = yes
 				}
 				EGY = {
-					abandon_colony_tag = yes
-				}
-				LEB = {
-					abandon_colony_tag = yes
-				}
-				SYR = {
 					abandon_colony_tag = yes
 				}
 				YEM = {
