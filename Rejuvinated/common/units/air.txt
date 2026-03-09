@@ -8,7 +8,7 @@ sub_units = {
 		type = fighter
 		need = { small_plane_airframe = 1 }
 		categories = { category_fighter }
-		land_air_wing_size = 16
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 10
 	}
 	cv_fighter = {
@@ -20,7 +20,7 @@ sub_units = {
 		categories = { category_fighter category_carrier_fighter }
 		carrier_air_wing_size = 10
 		submarine_carrier_air_wing_size = 3
-		land_air_wing_size = 16
+		land_air_wing_size = 20
 		mega_carrier_air_wing_size = 10
 	}
 
@@ -31,7 +31,7 @@ sub_units = {
 		type = cas
 		need = { small_plane_cas_airframe = 1 }
 		categories = { category_cas }
-		land_air_wing_size = 16
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 10
 	}
 	cv_cas = {
@@ -43,7 +43,7 @@ sub_units = {
 		categories = { category_cas category_carrier_cas }
 		carrier_air_wing_size = 10
 		submarine_carrier_air_wing_size = 3
-		land_air_wing_size = 16
+		land_air_wing_size = 20
 		mega_carrier_air_wing_size = 10
 	}
 
@@ -54,7 +54,7 @@ sub_units = {
 		type = naval_bomber
 		need = { small_plane_naval_bomber_airframe = 1 }
 		categories = { category_nav_bomber }
-		land_air_wing_size = 16
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 10
 	}
 	cv_nav_bomber = {
@@ -66,7 +66,7 @@ sub_units = {
 		categories = { category_nav_bomber category_carrier_nav_bomber }
 		carrier_air_wing_size = 10
 		submarine_carrier_air_wing_size = 3
-		land_air_wing_size = 16
+		land_air_wing_size = 20
 		mega_carrier_air_wing_size = 10
 	}
 
@@ -76,7 +76,7 @@ sub_units = {
 		active = yes
 		type = suicide
 		need = { small_plane_suicide_airframe = 1 }
-		land_air_wing_size = 16
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 10
 	}
 	cv_suicide_craft = {
@@ -87,7 +87,7 @@ sub_units = {
 		need = { cv_small_plane_suicide_airframe = 1 }
 		carrier_air_wing_size = 10
 		submarine_carrier_air_wing_size = 3
-		land_air_wing_size = 16
+		land_air_wing_size = 20
 		mega_carrier_air_wing_size = 10
 	}
 
@@ -100,7 +100,7 @@ sub_units = {
 		type = tactical_bomber
 		need = { medium_plane_airframe = 1 }
 		categories = { category_tac_bomber }
-		land_air_wing_size = 24
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 10
 	}
 
@@ -111,7 +111,7 @@ sub_units = {
 		type = heavy_fighter
 		need = { medium_plane_fighter_airframe = 1 }
 		categories = { category_heavy_fighter }
-		land_air_wing_size = 24
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 5
 	}
 
@@ -135,7 +135,7 @@ sub_units = {
 		type = strategic_bomber
 		need = { large_plane_airframe = 1 }
 		categories = { category_strat_bomber }
-		land_air_wing_size = 18
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 5
 	}
 
@@ -146,7 +146,7 @@ sub_units = {
 		type = maritime_patrol_plane
 		need = { large_plane_maritime_patrol_plane_airframe = 1 }
 		categories = { category_strat_bomber category_maritime_patrol_bomber }
-		land_air_wing_size = 12
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 10
 	}
 
@@ -161,7 +161,7 @@ sub_units = {
 		type = fighter
 		need = { jet_fighter_equipment = 1 }
 		categories = { category_fighter }
-		land_air_wing_size = 16
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 10
 	}
 
@@ -172,7 +172,7 @@ sub_units = {
 		type = tactical_bomber
 		need = { jet_tac_bomber_equipment = 1 }
 		categories = { category_tac_bomber }
-		land_air_wing_size = 24
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 10
 	}
 
@@ -183,7 +183,7 @@ sub_units = {
 		type = strategic_bomber
 		need = { jet_strat_bomber_equipment = 1 }
 		categories = { category_strat_bomber }
-		land_air_wing_size = 18
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 10
 	}
 
@@ -193,7 +193,7 @@ sub_units = {
 		active = yes
 		type = interceptor
 		need = { rocket_interceptor_equipment = 1 }
-		land_air_wing_size = 16
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 10
 	}
 
@@ -205,7 +205,7 @@ sub_units = {
 		active = yes
 		type = air_transport
 		need = { transport_plane_equipment = 1 }
-		land_air_wing_size = 30
+		land_air_wing_size = 50
 	}
 
 	guided_missile = {
@@ -279,7 +279,7 @@ sub_units = {
 		type = strategic_bomber
 		need = { strat_bomber_intercontinental_equipment = 1 }
 		categories = { category_strat_bomber }
-		land_air_wing_size = 18
+		land_air_wing_size = 50
 		mega_carrier_air_wing_size = 5
 	}
 
