@@ -3698,7 +3698,7 @@ country_event = {
 				or = {
 					state = 70
 					state = 71
-					state = 1125
+					state = 1111
 					state = 73
 					state = 664
 				}
@@ -3768,24 +3768,24 @@ country_event = {
 
 		if = {
 			limit = {
-				1125 = {
+				1111 = {
 					OR = {
 						is_controlled_by = CZE
 						is_controlled_by = GER
 					}
 				}
 			}
-			SLO = { transfer_state = 1125 }
+			SLO = { transfer_state = 1111 }
 		}
 		else_if = { #Don't transfer ownership of the state if it's controlled by an ally
 			limit = {
-				1125 = {
+				1111 = {
 					is_controlled_by_ROOT_or_ally = no
 				}
 			}
 			#This is purely here to inform the player that SLO will have claims on this state, since it's already a core
 			effect_tooltip = {
-				SLO = { add_state_claim = 1125 }
+				SLO = { add_state_claim = 1111 }
 			}
 		}
 
@@ -3894,7 +3894,7 @@ country_event = {
 					or = {
 						state = 70
 						state = 71
-						state = 1125
+						state = 1111
 						state = 73
 						state = 664
 					}
@@ -3998,7 +3998,7 @@ country_event = {
 				or = {
 					state = 70
 					state = 71
-					state = 1125
+					state = 1111
 					state = 73
 				}
 				NOT = {
@@ -4193,7 +4193,7 @@ country_event = {
 				OR = {
 					state = 70
 					state = 71
-					state = 1125
+					state = 1111
 					state = 73
 				}
 				OR = {
@@ -4269,14 +4269,14 @@ country_event = {
 		}
 		if = {
 			limit = {
-				1125 = {
+				1111 = {
 					OR = {
 						is_owned_by = CZE
 						is_owned_by = GER
 					}
 				}
 			}
-			SLO = { transfer_state = 1125 }
+			SLO = { transfer_state = 1111 }
 		}
 		if = {
 			limit = {
@@ -6660,8 +6660,8 @@ country_event = {
 				transfer_state = 71
 			}
 			if = {
-				limit = { GER = { owns_state = 1125 } }
-				transfer_state = 1125
+				limit = { GER = { owns_state = 1111 } }
+				transfer_state = 1111
 			}
 			if = {
 				limit = { GER = { owns_state = 73 } }
@@ -6748,8 +6748,8 @@ country_event = {
 			POL = { transfer_state = 71 }
 		}
 		if = {
-			limit = { owns_state = 1125 }
-			POL = { transfer_state = 1125 }
+			limit = { owns_state = 1111 }
+			POL = { transfer_state = 1111 }
 		}
 		if = {
 			limit = { owns_state = 73 }
