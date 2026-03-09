@@ -8481,6 +8481,9 @@ focus_tree = {
 		prerequisite = { focus = ENG_maintaining_imperial_integrity }
 		available = { 
 			is_subject = no
+			has_navy_size = { # Let's add a sanity check here ;)
+				size > 299
+			}
 		}
 
 		continue_if_invalid = yes
