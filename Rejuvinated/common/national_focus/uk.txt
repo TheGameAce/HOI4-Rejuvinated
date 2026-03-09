@@ -7880,7 +7880,7 @@ focus_tree = {
 		prerequisite = { focus = ENG_steady_as_she_goes }
 		icon = GFX_focus_generic_home_defense
 
-		x = 2
+		x = 0
 		y = 1
 		relative_position_id = ENG_steady_as_she_goes
 
@@ -8019,7 +8019,7 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = ENG_steady_as_she_goes }
 
-		x = 6
+		x = 5
 		y = 1
 		relative_position_id = ENG_steady_as_she_goes
 
@@ -8235,7 +8235,6 @@ focus_tree = {
 	focus = {
 		id = ENG_no_further_appeasement
 		prerequisite = { focus = ENG_global_defense }
-		mutually_exclusive = { focus = rj_ENG_appease_even_further }
 		available = { 
 			is_subject = no
 		}
@@ -8243,7 +8242,7 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_focus_generic_strike_at_democracy1
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = ENG_global_defense
 		cost = 5
@@ -8265,30 +8264,6 @@ focus_tree = {
 	}
 
 	focus = {
-		id = rj_ENG_appease_even_further
-		prerequisite = { focus = ENG_global_defense }
-		mutually_exclusive = { focus = ENG_no_further_appeasement }
-		available = { 
-			is_subject = no
-		}
-
-		continue_if_invalid = yes
-
-		icon = GFX_focus_PLACEHOLDER
-		x = -1
-		y = 1
-		relative_position_id = ENG_global_defense
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			add_war_support = -0.10
-		}
-		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
-	}
-
-	focus = {
 		id = ENG_embargo_ussr 
 		prerequisite = { focus = ENG_no_further_appeasement }
 
@@ -8303,7 +8278,7 @@ focus_tree = {
 		}
 
 		icon = GFX_goal_generic_trade
-		x = 3
+		x = 2
 		y = 1
 		relative_position_id = ENG_no_further_appeasement
 		cost = 5
@@ -8366,7 +8341,7 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_focus_chi_british_cooperation
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = ENG_no_further_appeasement
 		cost = 5
@@ -8464,7 +8439,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_maintaining_the_balance_of_power
-		prerequisite = { focus = ENG_no_further_appeasement focus = rj_ENG_appease_even_further }
+		prerequisite = { focus = ENG_no_further_appeasement }
 		mutually_exclusive = { focus = ENG_maintaining_imperial_integrity }
 		available = { 
 			is_subject = no
@@ -8473,7 +8448,7 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_goal_generic_neutrality_focus
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = ENG_no_further_appeasement
 		cost = 5
