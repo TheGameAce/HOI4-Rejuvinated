@@ -203,3 +203,54 @@ country_event = { #Pacific Decolonization - Malaysia - Positive Response
 		puppet = MAL
 	}
 }
+
+country_event = { #Our Ally Has Chosen Sinkiang
+	id = rj_usa.4
+	title = rj_usa.4.t
+	desc = rj_usa.4.d
+	picture = GFX_report_event_PLACEHOLDER
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Okay!"
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = { #Our Ally Has Chosen The PRC
+	id = rj_usa.5
+	title = rj_usa.5.t
+	desc = rj_usa.5.d
+	picture = GFX_report_event_PLACEHOLDER
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Okay!"
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+country_event = { #Our Ally Has Chosen The Chinese Republicans
+	id = rj_usa.6
+	title = rj_usa.6.t
+	desc = rj_usa.6.d
+	picture = GFX_report_event_PLACEHOLDER
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Okay!"
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
