@@ -14877,6 +14877,33 @@ ai_will_do = {
 				}
 				add_opinion_modifier = { target = SOV modifier = SOV_supported_china_good }
 			}
+			
+			if = {
+				limit = {
+					USA = {
+					has_completed_focus = RJ_USA_bet_on_sinkiang
+					}
+				}
+			country_event = rj_usa.4
+			}
+			
+			if = {
+				limit = {
+					USA = {
+					has_completed_focus = RJ_USA_support_the_prc
+					}
+				}
+			country_event = rj_usa.5
+			}
+			
+			if = {
+				limit = {
+					USA = {
+					has_completed_focus = RJ_USA_the_republican_gamble
+					}
+				}
+			country_event = rj_usa.6
+			}
 		}
 	}
 
