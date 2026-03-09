@@ -8035,14 +8035,37 @@ focus_tree = {
 	}
 
 	focus = {
-		id = rj_ENG_enact_financial_reforms
+		id = rj_ENG_protect_the_british_currency
 		icon = GFX_focus_PLACEHOLDER
-		cost = 5
+		cost = 10
 		prerequisite = { focus = rj_ENG_land_registration_act }
 
 		x = 1
 		y = 1
 		relative_position_id = rj_ENG_land_registration_act
+
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_consumer_goods_factor = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.05
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY }
+	}
+
+	focus = {
+		id = rj_ENG_enact_financial_reforms
+		icon = GFX_focus_PLACEHOLDER
+		cost = 5
+		prerequisite = { focus = rj_ENG_protect_the_british_currency }
+
+		x = 0
+		y = 1
+		relative_position_id = rj_ENG_protect_the_british_currency
 
 		completion_reward = {
 			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
