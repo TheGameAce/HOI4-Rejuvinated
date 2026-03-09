@@ -122,7 +122,7 @@ technologies = {
 			radio_tech
 		}
 
-		special_project_specialization = { specialization_air }
+		special_project_specialization = { specialization_air specialization_land }
 	}
 
 	improved_radio = {
@@ -171,27 +171,32 @@ technologies = {
 			radio_tech
 		}
 
-		special_project_specialization = { specialization_air }
+		special_project_specialization = { specialization_air specialization_land }
 	}
 
 	advanced_radio = {
 
 		# units with radios can more efficiently join combats when there is room
-		land_reinforce_rate = 0.01
+		land_reinforce_rate = 0.02
 		coordination_bonus = 0.02
 		
-		start_year = 1941
+		start_year = 1940
 		
 		research_cost = 2
 		
 		folder = {
 			name = electronics_folder
-			position = { x = @radio y = 12 }
+			position = { x = @radio y = 10 }
+		}
+
+		path = {
+			leads_to_tech = semi_modern_radio
+			research_cost_coeff = 1
 		}
 		
 		enable_equipment_modules = { 
 			tank_radio_3
-			lc_radio_3 #Module for Land Cruiser
+			lc_radio_3
 		}
 		
 		ai_will_do = {
@@ -216,7 +221,101 @@ technologies = {
 			radio_tech
 		}
 
-		special_project_specialization = { specialization_air }
+		special_project_specialization = { specialization_air specialization_land }
+	}
+
+	semi_modern_radio = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.02
+		coordination_bonus = 0.02
+		
+		start_year = 1942
+		
+		research_cost = 2
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @radio y = 14 }
+		}
+
+		path = {
+			leads_to_tech = modern_radio
+		}
+		
+		enable_equipment_modules = { 
+			tank_radio_4
+			lc_radio_4
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 6
+				has_war = yes
+			}
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+			modifier = {
+				factor = 5
+				date > "1941.8.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			radio_tech
+		}
+
+		special_project_specialization = { specialization_air specialization_land }
+	}
+
+	modern_radio = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.02
+		coordination_bonus = 0.02
+		
+		start_year = 1944
+		
+		research_cost = 2
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @radio y = 18 }
+		}
+		
+		enable_equipment_modules = { 
+			tank_radio_5
+			lc_radio_5
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 6
+				has_war = yes
+			}
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+			modifier = {
+				factor = 5
+				date > "1943.8.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			radio_tech
+		}
+
+		special_project_specialization = { specialization_air specialization_land }
 	}
 	
 	radio_detection = {
@@ -685,6 +784,10 @@ technologies = {
 		}
 		path = {
 			leads_to_tech = next_gen_computing_machine
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = modern_fire_control_system 
 			research_cost_coeff = 1
 		}
 		
@@ -1181,6 +1284,42 @@ technologies = {
 		folder = {
 			name = electronics_folder
 			position = { x = @firecontrol y = 12 }
+		}
+		
+		ai_will_do = {
+			factor = 0.75
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = JAP
+				}
+				factor = 3
+			}
+			
+		}
+		
+		categories = {
+			electronics
+			computing_tech
+			naval_equipment
+		}
+	}
+
+	modern_fire_control_system = {
+
+		enable_equipment_modules = { 
+			ship_fire_control_system_4
+		}
+		allow_branch = {
+			has_dlc = "Man the Guns"
+		}
+		
+		research_cost = 1
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @firecontrol y = 16 }
 		}
 		
 		ai_will_do = {

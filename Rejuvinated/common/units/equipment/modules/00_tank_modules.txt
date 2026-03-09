@@ -1312,6 +1312,38 @@ equipment_modules = {
 		}
 	}
 
+	tank_radio_4 = {
+		abbreviation = "rad4"
+		category = tank_radio_module
+		parent = tank_radio_3
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 3
+		}
+		xp_cost = 1
+		multiply_stats = {
+			defense = 0.80
+			breakthrough = 0.50
+		}
+	}
+
+	tank_radio_5 = {
+		abbreviation = "rad5"
+		category = tank_radio_module
+		parent = tank_radio_4
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 3.5
+		}
+		xp_cost = 1
+		multiply_stats = {
+			defense = 1
+			breakthrough = 0.60
+		}
+	}
+
 	amphibious_drive = {
 		abbreviation = "amph"
 		category = tank_special_module
@@ -2006,7 +2038,7 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_turret
 
 		add_stats = {
-			build_cost_ic = 2 #was 1
+			build_cost_ic = 1
 		}
 		xp_cost = 1
 		multiply_stats = {
@@ -2022,7 +2054,7 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_turret
 		
 		add_stats = {
-			build_cost_ic = 4 #was 2
+			build_cost_ic = 2
 		}
 		xp_cost = 1
 		multiply_stats = {
@@ -2038,12 +2070,44 @@ equipment_modules = {
 		sfx = sfx_ui_sd_module_turret
 
 		add_stats = {
-			build_cost_ic = 6 #was 3
+			build_cost_ic = 3
 		}
 		xp_cost = 1
 		multiply_stats = {
 			defense = 0.60
 			breakthrough = 0.40
+		}
+	}
+
+	lc_radio_4 = {
+		abbreviation = "lcrad4"
+		category = lc_radio_module
+		parent = lc_radio_3
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 3.5
+		}
+		xp_cost = 1
+		multiply_stats = {
+			defense = 0.80
+			breakthrough = 0.50
+		}
+	}
+
+	lc_radio_5 = {
+		abbreviation = "lcrad5"
+		category = lc_radio_module
+		parent = lc_radio_4
+		sfx = sfx_ui_sd_module_turret
+
+		add_stats = {
+			build_cost_ic = 4
+		}
+		xp_cost = 1
+		multiply_stats = {
+			defense = 1
+			breakthrough = 0.60
 		}
 	}
 

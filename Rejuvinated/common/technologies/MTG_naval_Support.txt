@@ -1518,12 +1518,59 @@ technologies = {
 		xp_research_bonus = 1.50
 		path = {
 			leads_to_tech = sp_improved_repair_ship
+			leads_to_tech = damage_control_4
 			research_cost_coeff = 1
 		}
 
 		folder = {
 			name = mtgnavalsupportfolder
 			position = { x = 0 y = 12 }
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				is_historical_focus_on = yes
+				tag = JAP
+				factor = 0.25
+			}
+			modifier = {
+				tag = USA
+				factor = 3
+			}
+			modifier = {
+				has_war = yes
+				factor = 2
+			}
+		}
+
+		categories = {
+			naval_equipment
+			ship_modules_tech
+			mio_cat_tech_all_capital_ship_and_modules
+			mio_cat_tech_all_screen_ship_and_modules
+			mio_cat_tech_all_submarine_and_modules
+			mio_cat_tech_all_carrier_and_modules
+			mio_cat_tech_all_cruiser_and_modules
+			mio_cat_tech_all_destroyer_and_modules
+			ship_tech
+			ship_damage_control_tech
+		}
+		special_project_specialization = { specialization_naval }
+	}
+
+	damage_control_4 = {
+
+		research_cost = 2.5
+		critical_receive_chance = -0.1
+		naval_critical_effect_factor = -0.1
+		xp_research_type = navy
+		xp_boost_cost = 50
+		xp_research_bonus = 1.50
+
+		folder = {
+			name = mtgnavalsupportfolder
+			position = { x = 0 y = 18 }
 		}
 
 		ai_will_do = {

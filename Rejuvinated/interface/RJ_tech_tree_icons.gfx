@@ -4,6 +4,16 @@ spriteTypes = {
 		name = "GFX_advanced_fortification_engineering_medium"
 		texturefile = "gfx/interface/technologies/RJ_tech/RJ_advanced_fortification_engineering.dds"
 	}
+	
+	SpriteType = {
+		name = "GFX_semi_modern_radio_medium"
+		texturefile = "gfx/interface/technologies/radio.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_modern_radio_medium"
+		texturefile = "gfx/interface/technologies/radio.dds"
+	}
 
 	SpriteType = {
 		name = "GFX_semi_modern_rubber_processing_medium"
@@ -138,5 +148,15 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_modern_machine_tools_medium"
 		texturefile = "gfx/interface/technologies/RJ_tech/RJ_modern_machine_tools.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_modern_fire_control_system_medium"
+		texturefile = "gfx/interface/technologies/RJ_tech/RJ_modern_fire_control_system.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_damage_control_4_medium"
+		texturefile = "gfx/interface/technologies/RJ_tech/RJ_damage_control_4.dds"
 	}
 }
