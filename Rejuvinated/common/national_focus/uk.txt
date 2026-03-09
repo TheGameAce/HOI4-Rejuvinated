@@ -8017,10 +8017,10 @@ focus_tree = {
 		id = rj_ENG_land_registration_act
 		icon = GFX_focus_PLACEHOLDER
 		cost = 5
-		prerequisite = { focus = ENG_steady_as_she_goes }
+		prerequisite = { focus = ENG_steady_as_she_goes focus = ENG_the_kings_party }
 
-		x = 5
-		y = 1
+		x = 4
+		y = 2
 		relative_position_id = ENG_steady_as_she_goes
 
 		completion_reward = {
@@ -8076,6 +8076,46 @@ focus_tree = {
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = rj_ENG_make_britain_healthy
+		icon = GFX_focus_PLACEHOLDER
+		cost = 10
+		prerequisite = { focus = rj_ENG_land_registration_act }
+
+		x = -1
+		y = 1
+		relative_position_id = rj_ENG_land_registration_act
+
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_monthly_population = 0.25
+				tooltip = monthly_population_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_stability = 0.05
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY }
+	}
+
+	focus = {
+		id = rj_ENG_initiate_further_labor_reforms
+		icon = GFX_focus_PLACEHOLDER
+		cost = 5
+		prerequisite = { focus = rj_ENG_make_britain_healthy }
+
+		x = 0
+		y = 1
+		relative_position_id = rj_ENG_make_britain_healthy
+
+		completion_reward = {
+			add_stability = 0.05
+		}
+
+		search_filters = { FOCUS_FILTER_STABILITY }
 	}
 
 	### GLOBAL DEFENSE BRANCH ###
@@ -8796,12 +8836,12 @@ focus_tree = {
 
 		}
 		icon = GFX_focus_generic_strike_at_democracy2
-		x = 18
+		x = 14
 		y = 0
 		relative_position_id = ENG_steady_as_she_goes
 
 		offset = {
-			x = -18
+			x = -14
 			y = 0
 			trigger = {
 				has_game_rule = {
