@@ -300,16 +300,16 @@ if = {
 		autonomous_state = autonomy_dominion
 		freedom_level = 0.2
 	}
-	set_autonomy = {
-		target = MLT
-		autonomous_state = autonomy_colony
-		freedom_level = 0.6
-	}
-	set_autonomy = {
-		target = CYP
-		autonomous_state = autonomy_colony
-		freedom_level = 0.3
-	}
+	#set_autonomy = {
+	#	target = MLT
+	#	autonomous_state = autonomy_colony
+	#	freedom_level = 0.6
+	#}
+	#set_autonomy = {
+	#	target = CYP
+	#	autonomous_state = autonomy_colony
+	#	freedom_level = 0.3
+	#}
 
 	else = {
 		puppet = MAL
@@ -318,8 +318,8 @@ if = {
 		puppet = PAL
 		puppet = EGY
 		puppet = OMA
-		puppet = MLT
-		puppet = CYP
+		#puppet = MLT
+		#puppet = CYP
 	}
 }
 
