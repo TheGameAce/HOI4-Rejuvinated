@@ -2,7 +2,7 @@ state = {
 	id = 540
 	name = "STATE_540"
 	manpower = 1880000
-	state_category = rural
+	state_category = city
 
 	history = {
 
@@ -10,14 +10,15 @@ state = {
 		add_core_of = ANG
 
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 			8248 = {
-				naval_base = 1
+				naval_base = 6
+				naval_supply_hub = 1
 			}
 		}
 
 		victory_points = {
-			8248 1 # Luanda
+			8248 3 # Luanda
 		}
 
 	}
@@ -28,5 +29,5 @@ state = {
 
 	buildings_max_level_factor = 1.000
 	
-	local_supplies = 0.000
+	local_supplies = 5.000
 }

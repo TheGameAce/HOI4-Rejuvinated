@@ -2,11 +2,12 @@ state = {
 	id = 889
 	name = "STATE_889"
 	manpower = 708190
-	state_category = pastoral
+	state_category = large_town
 
 	resources = {
 		tungsten = 2
 		coal = 4
+		steel = 13
 	}
 
 	history = {
@@ -24,7 +25,7 @@ state = {
 		}
 
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 		}
 
 		add_core_of = COG
@@ -41,5 +42,5 @@ state = {
 	}
 
 	buildings_max_level_factor = 1.000
-	local_supplies = 0.000
+	local_supplies = 5.000
 }

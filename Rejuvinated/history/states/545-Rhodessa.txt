@@ -1,9 +1,15 @@
 state={
 	id=545
 	
-	state_category = pastoral
+	state_category = town
 	
 	name="STATE_545"
+
+	resources = {
+		chromium = 230
+		coal = 33
+		steel = 2
+	}
 
 	history={
 		owner = ENG
