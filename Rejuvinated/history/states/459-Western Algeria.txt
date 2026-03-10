@@ -2,12 +2,7 @@ state={
 	id=459
 	name="STATE_459" # Algiers
 	manpower = 3589944
-	state_category = town
-	
-	resources={
-		steel=65 # was:26 was: 36
-		coal = 2 #initial distribution
-	}
+	state_category = city
 
 	history={
 		owner = FRA
@@ -35,5 +30,5 @@ state={
 		1013 1145 4116 4131 4146 7132 9964 11923 11939 12760 
 	}
 
-	local_supplies=0.0 
+	local_supplies=5.0 
 }
