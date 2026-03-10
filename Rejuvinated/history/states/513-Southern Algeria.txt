@@ -3,7 +3,13 @@ state={
 	name="STATE_513" # Tlmecen
 	manpower = 911486
 	
-	state_category = wasteland
+	state_category = pastoral
+
+	resources = {
+		tungsten = 2
+		aluminium = 2
+		coal = 3
+	}
 
 	history={
 		owner = FRA

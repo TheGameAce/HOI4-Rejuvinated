@@ -3,7 +3,13 @@ state = {
 	name = "STATE_462"
 	manpower = 2145552
 	
-	state_category = wasteland
+	state_category = large_town
+
+	resources = {
+		steel = 15
+		tungsten = 10
+		aluminium = 10
+	}
 
 	history = {
 
@@ -15,7 +21,7 @@ state = {
 		}
 
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 		}
 	}
 
@@ -23,5 +29,5 @@ state = {
 		1102 1152 1207 1989 4022 4108 4154 4933 5046 7203 7908 7958 8046 10107 
 	}
 
-	local_supplies = 0.0 
+	local_supplies = 2.0 
 }

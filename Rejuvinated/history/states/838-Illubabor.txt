@@ -2,11 +2,8 @@ state = {
 	id = 838 # Illubabor-Kaffa
 	name = "STATE_838"
 	manpower = 1400000
-	resources = {
-		rubber = 2
-	}
 	
-	state_category = pastoral
+	state_category = rural
 
 	history = {
 		set_variable = { ETH_state_development_production_speed = -0.3 }
@@ -48,5 +45,5 @@ state = {
  		7912 13244 13245
  	}
 
-	local_supplies = 0.0 
+	local_supplies = 1.0 
 }

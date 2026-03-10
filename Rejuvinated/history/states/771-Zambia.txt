@@ -2,12 +2,13 @@ state = {
 	id = 771
 	name = "STATE_771" # Zambia
 	
-	state_category = rural
+	state_category = town
 	manpower = 890045
 
 	resources = {
-		chromium = 18 # was: 64.000, then 35
-		tungsten = 4 # was: 16.000, then 8
+		aluminium = 8
+		tungsten = 7
+		steel = 5
 	}
 
 	history = {
@@ -36,5 +37,5 @@ state = {
 	}
 	
 	buildings_max_level_factor = 1.000
-	local_supplies = 0.0 
+	local_supplies = 2.0 
 }

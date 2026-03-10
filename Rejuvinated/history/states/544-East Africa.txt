@@ -5,15 +5,16 @@ state={
 	history={
 		owner = POR
 		buildings = {
-			infrastructure = 2
-			industrial_complex = 1
+			infrastructure = 3
+			industrial_complex = 2
 			8245 = {
-				naval_base = 1
+				naval_base = 7
+				naval_supply_hub = 1
 			}
 
 		}
 		victory_points = {
-			8245 1 
+			8245 5
 		}
 		add_core_of = MZB
 
@@ -24,6 +25,6 @@ state={
 	}
 
 	buildings_max_level_factor=1.000
-	state_category=rural
-	local_supplies=0.000
+	state_category = large_city
+	local_supplies = 10.000
 }
