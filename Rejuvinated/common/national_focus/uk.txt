@@ -2877,7 +2877,7 @@ focus_tree = {
 			add_stability = -0.05
 			add_popularity = { ideology = communism popularity = 0.05 }
 			add_political_power = 80
-			custom_effect_tooltip = ENG_concessions_to_the_trade_unions_tt_2
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					has_character = ENG_surat_alley
@@ -2885,7 +2885,9 @@ focus_tree = {
 				}
 				custom_effect_tooltip = available_political_advisor
 				show_ideas_tooltip = ENG_surat_alley
+				custom_effect_tooltip = generic_skip_one_line_tt
 			}
+			custom_effect_tooltip = ENG_concessions_to_the_trade_unions_tt_2
 			hidden_effect = { news_event = { id = mtg_news.14 days = 1 } }
 			hidden_effect = {
 				if = {
