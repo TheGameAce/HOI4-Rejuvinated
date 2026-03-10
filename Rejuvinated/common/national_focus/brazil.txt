@@ -436,20 +436,14 @@ focus_tree = {
 			has_civil_war = no
 			AND = {
 				NOT = {
-					has_country_leader = {
-						name = "Prince Pedro of Orleáns-Bragança"
-						ruling_only = yes
-					}
-				}
-				NOT = {
 					has_country_leader = {	
-						name = "Pedro III"
+						character = BRA_pedro_henrique
 						ruling_only = yes
 					}
 				}
 				NOT = {
 					has_country_leader = {
-						name = "Arlindo Veiga dos Santos"
+						character = BRA_arlindo_veiga_dos_santos
 						ruling_only = yes
 					}
 				}
