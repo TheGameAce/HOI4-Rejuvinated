@@ -7,7 +7,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = populism
+			ideology = populism_neutrality
 			expire = "1965.1.1"
 			id=-1
 			traits = {
@@ -777,8 +777,7 @@ characters={
 		name=BRA_lindolfo_collor
 		portraits={
 			army={
-				small="GFX_portrait_BRA_lindolfo_collor_small"
-				large="GFX_portrait_BRA_lindolfo_collor"
+				small="GFX_idea_advisor_collor"
 			}
 		}
 		advisor={
@@ -824,14 +823,6 @@ characters={
 				small="GFX_portrait_BRA_ansio_teixeira_small"
 			}
 		}
-		#country_leader = {
-		#	expire = "1965.1.1"
-		#	ideology = liberalism
-		#	id=-1
-		#	traits = {
-		#		BRA_education_pioneer
-		#	}
-		#}
 		advisor={
 			slot = political_advisor
 			idea_token = BRA_anisio_teixeira
