@@ -445,3 +445,38 @@ adjacency_rule = {
 	icon = 7211
 	offset = { -5 0 4 }
 }
+
+#Bab al-Mandab Strait
+adjacency_rule = {
+	name = "Bab al-Mandab Strait" 
+
+	contested = {
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	enemy = {
+		army = no
+		navy = no
+		submarine = yes
+		trade = no
+	}
+	friend = {
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral = {
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 4985 10752 }
+		
+	icon = 4985
+	offset = { 7 0 8 }
+}
