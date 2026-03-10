@@ -1,0 +1,59 @@
+rj_ENG_integrate_american_workers_cat = {
+
+	rj_ENG_integrate_american_state = {
+
+		icon = generic_construction
+
+		ai_will_do = {
+			base = 10
+		}
+
+		state_target = yes
+
+		target_trigger = {
+			FROM = {
+				OR = {
+					region = 198
+					state = 816
+					state = 391
+					state = 392
+					state = 389
+					state = 390
+					state = 388
+				}
+			}
+		}
+
+		target_root_trigger = {
+			original_tag = ENG
+			has_completed_focus = rj_ENG_integrate_american_workers
+		}
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		available = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+
+		visible = {
+			FROM = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+
+		cancel_if_not_visible = no
+
+		cost = 50
+
+		days_remove = 360
+
+		remove_effect = {
+			add_state_core = FROM
+		}
+	}
+
+}

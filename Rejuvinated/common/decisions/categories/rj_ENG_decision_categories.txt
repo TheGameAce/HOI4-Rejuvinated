@@ -1,0 +1,15 @@
+################
+##### ENG ######
+################
+
+rj_ENG_integrate_american_workers_cat = {
+	icon = eng_move_to_secure_the_dominions
+
+	allowed = {
+		original_tag = ENG
+	}
+
+	visible = {
+		has_completed_focus = rj_ENG_integrate_american_workers
+	}
+}
