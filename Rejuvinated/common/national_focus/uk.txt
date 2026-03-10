@@ -11919,10 +11919,7 @@ focus_tree = {
 		prerequisite = { focus = ENG_crush_the_dream }
 		available = {
 			is_subject = no
-			NOT = { is_in_faction_with = USA }
-			USA = { has_government = democratic }
 		}
-		will_lead_to_war_with = USA
 		icon = GFX_focus_PLACEHOLDER
 		x = 0
 		y = 1
