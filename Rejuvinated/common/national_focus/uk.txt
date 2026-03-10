@@ -2269,7 +2269,7 @@ focus_tree = {
 			factor = 1
 		}
 
-		search_filters = { FOCUS_FILTER_POLITICAL }	
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 
 		completion_reward = {
 			# + relations with SPA/SPR - they become more democratic and like fascist/commies less
@@ -2487,7 +2487,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
-		search_filters = {FOCUS_FILTER_POLITICAL}
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 		completion_reward = {
 			every_country = {
 				limit = {
@@ -2552,7 +2552,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = uk_balkan_strategy
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -2565,6 +2565,7 @@ focus_tree = {
 				add_opinion_modifier = { target = ENG modifier = sanctions_relations } 
 			}
 		}
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 	focus = {
 		id = ENG_war_with_italy
@@ -2594,6 +2595,7 @@ focus_tree = {
 				expire = 0
 			} 
 		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}	
 
 	focus = {
@@ -2625,7 +2627,7 @@ focus_tree = {
 			factor = 1
 		}	
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 
 		completion_reward = {
 			# + relations with TUR - they become more democratic and like fascist/commies less
@@ -2705,7 +2707,7 @@ focus_tree = {
 
 		cost = 10
 
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 
 		completion_reward = {
 			if = {
@@ -5769,6 +5771,7 @@ focus_tree = {
 				expire = 0
 			} 
 		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 
@@ -6237,7 +6240,7 @@ focus_tree = {
 			}
 		}
 
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY }
+		search_filters = { FOCUS_FILTER_DIPLOMACY FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
 			event_target:WTT_current_china_leader = {
@@ -8846,12 +8849,12 @@ focus_tree = {
 
 		}
 		icon = GFX_focus_generic_strike_at_democracy2
-		x = 14
+		x = 16
 		y = 0
 		relative_position_id = ENG_steady_as_she_goes
 
 		offset = {
-			x = -14
+			x = -16
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -9082,7 +9085,7 @@ focus_tree = {
 		}
 
 		offset = {
-			x = 5
+			x = 7
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -9101,7 +9104,7 @@ focus_tree = {
 
 		icon = GFX_focus_eng_the_kings_party
 
-		x = -5
+		x = -7
 		y = 1
 		relative_position_id = ENG_a_change_in_course
 
@@ -9299,6 +9302,7 @@ focus_tree = {
 			add_stability = alliance_with_germany_var
 			GER = { country_event = { id = mtg_britain.27 hours = 6 } }
 		}
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -9326,6 +9330,7 @@ focus_tree = {
 		completion_reward = {
 			GER = { country_event = { id = mtg_britain.30 hours = 6 } }
 		}
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -9379,18 +9384,6 @@ focus_tree = {
 			}
 		}
 
-		offset = {
-			x = 1
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ENG_organize_the_blackshirts
-			}
-		}
-
 		available = {
 			is_subject = no
 			has_war = no
@@ -9402,7 +9395,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_eng_organise_the_blackshirts
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = ENG_a_change_in_course
 		cost = 10
@@ -9505,6 +9498,47 @@ focus_tree = {
 	}
 
 	focus = {
+		id = rj_ENG_initiate_the_london_berlin_axis
+		prerequisite = { focus = ENG_organize_the_blackshirts }
+		mutually_exclusive = { focus = ENG_secure_the_italian_alliance }
+		available = {
+			is_subject = no
+			has_government = fascism
+			GER = {
+				is_subject = no
+				has_government = fascism
+			}
+		}
+		icon = GFX_focus_chi_mission_to_germany
+		x = -2
+		y = 2
+		relative_position_id = ENG_organize_the_blackshirts
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
+		completion_reward = {
+			if = {
+				limit = {
+					GER = {
+						is_faction_leader = yes
+					}
+				}
+				GER = {
+					country_event = generic.2
+				}
+			}
+			else = {
+				create_faction_from_template = faction_template_axis
+				GER = {
+					country_event = generic.5
+				}
+			}
+		}
+	}
+
+	focus = {
 		id = ENG_the_british_path_to_fascism
 		prerequisite = { focus = ENG_organize_the_blackshirts }
 		available = {
@@ -9512,32 +9546,25 @@ focus_tree = {
 			has_government = fascism
 		}
 		icon = GFX_goal_support_fascism
-		x = 1
+		x = 2
 		y = 1
 		relative_position_id = ENG_organize_the_blackshirts
 		cost = 10
 		ai_will_do = {
 			factor = 1
-		}	
+		}
 		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT}
 		completion_reward = {
 			remove_ideas = ENG_the_war_to_end_all_wars
 			add_stability = 0.05
 			add_war_support = 0.05
-			GER = {
-				if = {
-					limit = {
-						has_government = fascism
-					}
-					add_opinion_modifier = { target = ENG modifier = ENG_the_british_path_to_fascism }
-				}
-			}
 		}
 	}
 
 	focus = {
 		id = ENG_secure_the_italian_alliance
 		prerequisite = { focus = ENG_the_british_path_to_fascism }
+		mutually_exclusive = { focus = rj_ENG_initiate_the_london_berlin_axis }
 
 		available = {
 			is_subject = no
@@ -9581,6 +9608,16 @@ focus_tree = {
 		}	
 
 		completion_reward = {
+
+			GER = {
+				if = {
+					limit = {
+						has_government = fascism
+					}
+					add_opinion_modifier = { target = ENG modifier = ENG_the_british_path_to_fascism }
+					custom_effect_tooltip = generic_skip_one_line_tt
+				}
+			}
 
 			add_ai_strategy = {
 				type = antagonize
@@ -9640,17 +9677,20 @@ focus_tree = {
 						has_government = fascism
 					}
 					add_opinion_modifier = { target = ENG modifier = ENG_broke_french_relations }
+					custom_effect_tooltip = generic_skip_one_line_tt
 				}
 			}
 
 			ITA = { country_event = { id = mtg_britain.36 hours = 6 } }
 
 		}
+
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
 		id = ENG_gibraltar_for_spanish_support
-		prerequisite = { focus = ENG_secure_the_italian_alliance }
+		prerequisite = { focus = ENG_secure_the_italian_alliance focus = rj_ENG_initiate_the_london_berlin_axis }
 		mutually_exclusive = { focus = ENG_pre_empt_spanish_alignment }
 		available = {
 			is_subject = no
@@ -9677,7 +9717,7 @@ focus_tree = {
 			has_global_flag = scw_over
 		}
 		icon = GFX_focus_intervention_spain_nationalists
-		x = -1
+		x = -3
 		y = 1
 		relative_position_id = ENG_secure_the_italian_alliance
 		cost = 10
@@ -9703,11 +9743,12 @@ focus_tree = {
 				}
 			}
 		}
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
 		id = ENG_pre_empt_spanish_alignment
-		prerequisite = { focus = ENG_secure_the_italian_alliance }
+		prerequisite = { focus = ENG_secure_the_italian_alliance focus = rj_ENG_initiate_the_london_berlin_axis }
 		mutually_exclusive = { focus = ENG_gibraltar_for_spanish_support }
 		available = {
 			is_subject = no
@@ -9759,7 +9800,7 @@ focus_tree = {
 			has_global_flag = scw_over
 		}
 		icon = GFX_focus_focus_fra_intervention_spain
-		x = 1
+		x = -1
 		y = 1
 		relative_position_id = ENG_secure_the_italian_alliance
 		cost = 10
@@ -9831,6 +9872,7 @@ focus_tree = {
 	focus = {
 		id = ENG_prevent_a_continental_hegemony
 		prerequisite = { focus = ENG_gibraltar_for_spanish_support focus = ENG_pre_empt_spanish_alignment }
+		prerequisite = { focus = ENG_secure_the_italian_alliance }
 		available = {
 			is_subject = no
 			country_exists = GER
@@ -9840,7 +9882,7 @@ focus_tree = {
 		icon = GFX_focus_attack_germany
 		x = 1
 		y = 1
-		relative_position_id = ENG_gibraltar_for_spanish_support
+		relative_position_id = ENG_pre_empt_spanish_alignment
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -9893,7 +9935,7 @@ focus_tree = {
 				}
 			}
 		}
-		search_filters = {FOCUS_FILTER_INDUSTRY}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			if = {
 				limit = {
@@ -9901,8 +9943,13 @@ focus_tree = {
 					NOT = { has_idea = closed_economy }
 				}
 				add_ideas = limited_exports
+				custom_effect_tooltip = generic_skip_one_line_tt
 			}
-			add_ideas = ENG_the_mosley_memorandum_idea
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_infrastructure_factor = 0.15
+				tooltip = production_speed_infrastructure_factor_tt
+			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
@@ -10384,6 +10431,7 @@ focus_tree = {
 				}
 			}
 		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
 
 	focus = {
@@ -10725,7 +10773,7 @@ focus_tree = {
 		}
 
 		offset = {
-			x = -5
+			x = -7
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -10747,7 +10795,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		x = 5
+		x = 7
 		y = 1
 		relative_position_id = ENG_a_change_in_course
 		cost = 10
@@ -10870,7 +10918,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_eng_move_to_secure_the_dominions
-		x = 3
+		x = 4
 		y = 1
 		relative_position_id = ENG_organize_the_blackshirts
 		cost = 5
@@ -11660,6 +11708,7 @@ focus_tree = {
 				}
 			}
 		}
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {
@@ -11958,6 +12007,7 @@ focus_tree = {
 				country_event = generic.5
 			}
 		}
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
 
 	focus = {

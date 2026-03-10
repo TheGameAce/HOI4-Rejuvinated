@@ -7,6 +7,15 @@ defined_text = {
 		localization_key = ENG_spirit_of_the_industrial_revolution
 	}
 	text = {
+		trigger = {
+			has_country_leader = {
+				character = ENG_oswald_mosley
+				ruling_only = yes
+			}
+		}
+		localization_key = ENG_the_mosley_memorandum_idea
+	}
+	text = {
 		localization_key = rj_ENG_the_economy_default
 	}
 }
