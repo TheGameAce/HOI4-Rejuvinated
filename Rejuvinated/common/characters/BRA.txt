@@ -288,6 +288,315 @@ characters={
 		}
 	}
 
+
+	### ARMY CHIEFS ###
+
+	BRA_nero_fiuza_de_castro={
+		name=BRA_nero_fiuza_de_castro
+		portraits={
+			army={
+				small="GFX_idea_advisor_nero"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = BRA_nero_fiuza_de_castro
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				army_chief_drill_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+
+	### NAVY CHIEFS ###
+
+	BRA_aristides_guilhem={
+		name=BRA_aristides_guilhem
+		portraits={
+			army={
+				small="GFX_idea_advisor_aristides"
+			}
+		}
+		advisor={		
+			slot = navy_chief
+			idea_token = BRA_aristides_guilhem
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				navy_chief_maneuver_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+	BRA_jorge_martins={
+		name=BRA_jorge_martins
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_south_america_1"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = BRA_jorge_martins
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				navy_chief_commerce_raiding_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+
+
+	### AIR CHIEFS ###
+
+	BRA_salgado_filho={
+		name=BRA_salgado_filho
+		portraits={
+			army={
+				small="GFX_idea_advisor_salgado"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = BRA_salgado_filho
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+				modifier = {
+					has_completed_focus = bra_quereismo
+					factor = 160
+				}
+			}
+		}
+	}
+
+	BRA_ismael_motta_paes={
+		name=BRA_ismael_motta_paes
+		portraits={
+			army={
+				small="GFX_idea_generic_air_south_america_2"
+			}
+		}
+		advisor={	
+			slot = air_chief
+			idea_token = BRA_ismael_motta_paes
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				air_chief_night_operations_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+
+	### MILITARY HIGH COMMAND ###
+
+	BRA_epaminondas_dos_santos={
+		name=BRA_epaminondas_dos_santos
+		portraits={
+			army={
+				small="GFX_idea_advisor_epaminondas"
+			}
+		}
+		advisor={	
+			slot = high_command
+			idea_token = BRA_epaminondas_dos_santos
+			ledger = air
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				air_air_combat_training_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+	BRA_agliberto_vieira={
+		name=BRA_agliberto_vieira
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_south_america_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BRA_agliberto_vieira
+			ledger = navy
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				navy_naval_air_defense_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+	
+	BRA_artur_da_costa_e_silva={
+		name=BRA_artur_da_costa_e_silva
+		portraits={
+			army={
+				large = GFX_rj_portrait_BRA_artur_da_costa_e_silva
+				small = GFX_rj_portrait_BRA_artur_da_costa_e_silva_small
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BRA_artur_da_costa_e_silva
+			ledger = army
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				army_infantry_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 0
+				modifier = {
+					has_completed_focus = bra_brazilian_action
+					factor = 160
+				}
+			}
+		}
+		corps_commander = {
+			traits = { trait_reckless politically_connected trickster }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+
+	BRA_moreira_lima={
+		name=BRA_moreira_lima
+		portraits={
+			army={
+				small="GFX_idea_advisor_moreira"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = BRA_moreira_lima
+			ledger = air
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				air_air_superiority_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}		
+	}
+
+
+	### POLITICAL ADVISORS ###
+
+	BRA_washington_luis_pereira={
+		name=BRA_washington_luis_pereira
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BRA_washington_luis_pereira
+			allowed = {
+				original_tag = BRA
+			}
+			traits = {
+				backroom_backstabber #TOA: BRA_deposed_former_president
+			}
+		}
+	}
+
+	BRA_osvaldo_aranha={
+		name=BRA_osvaldo_aranha
+		portraits={
+			civilian={
+				small="GFX_idea_advisor_aranha"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BRA_osvaldo_aranha
+			allowed = {
+				original_tag = BRA
+			}
+			available = {
+				has_completed_focus = BRA_global_politics
+			}
+			traits = {
+				vfb_trait_aranha #TOA: BRA_renowned_ambassador
+			}
+		}
+	}
+	
+	BRA_afranio_de_mello_franco={
+		name=BRA_afranio_de_mello_franco
+		portraits={
+			army={
+				small="GFX_idea_advisor_franco"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BRA_afranio_de_mello_franco
+			allowed = {
+				original_tag = BRA
+			}
+			available = {
+				has_completed_focus = BRA_the_crux
+			}
+			traits = {
+				vfb_trait_afranio #TOA: BRA_nobel_peace_prize_nominee
+			}
+			on_add = {
+				BRA = { set_rule = { can_send_volunteers = yes } }
+			}
+		}
+	}
+
 	#################################################################################################################################################################
 	################################ Advisors Only ##########################################
 	#################################################################################################################################################################
@@ -402,68 +711,6 @@ characters={
 				factor = 80
 			}
 		}			
-	}
-
-	BRA_osvaldo_aranha = {
-		name = "Osvaldo Aranha"
-		portraits = {
-			army = {
-				small = "GFX_idea_advisor_aranha"
-			}
-		}
-
-		advisor = {
-			cost = 150
-
-			slot = political_advisor
-			idea_token = BRA_osvaldo_aranha
-			ledger = civilian
-
-			allowed = {
-				original_tag = BRA
-			}
-			
-			available = {
-				has_completed_focus = BRA_global_politics
-			}
-
-			traits = { vfb_trait_aranha }
-
-			ai_will_do = {
-				factor = 80
-			}
-		}
-	}
-
-	BRA_afranio_de_mello_franco = {
-		name = "Afranio de Mello-Franco"
-		portraits = {
-			army = {
-				small = "GFX_idea_advisor_franco"
-			}
-		}
-
-		advisor = {
-			cost = 150
-
-			slot = political_advisor
-			idea_token = BRA_afranio_de_mello_franco
-			ledger = civilian
-
-			allowed = {
-				original_tag = BRA
-			}
-			
-			available = {
-				has_completed_focus = BRA_the_crux
-			}
-
-			traits = { vfb_trait_afranio }
-
-			ai_will_do = {
-				factor = 80
-			}
-		}
 	}
 
 	BRA_oswald_de_andrade = {
@@ -594,35 +841,6 @@ characters={
 	########################################## ARMY CHIEFS + HIGH COMMAND ##########################################
 	################################################################################################################
 
-	BRA_epaminondas_dos_santos_vfb = {
-		name = "Epaminondas dos Santos"
-		portraits={
-			army={
-				small="GFX_idea_advisor_epaminondas"
-			}
-		}
-
-		advisor={
-			slot = high_command
-			idea_token = BRA_epaminondas_dos_santos
-			ledger = army
-
-			allowed = {
-				original_tag = BRA
-			}
-
-			traits = {
-				air_air_combat_training_2
-			}
-
-			cost = 150
-
-			ai_will_do = {
-				factor = 80
-			}
-		}
-	}
-
 	BRA_francisco_correa_vfb = {
 		name = "Francisco Correa"
 		portraits={
@@ -653,49 +871,6 @@ characters={
 					factor = 160
 				}
 			}
-		}
-	}
-
-	BRA_artur_da_costa_e_silva_vfb = {
-		name = "Artur da Costa e Silva"
-		portraits={
-			army={
-				small="GFX_idea_advisor_costaesilva"
-				large = "gfx/leaders/BRA/G4.dds"
-			}
-		}
-
-		advisor={
-			slot = high_command
-			idea_token = BRA_francisco_correa
-			ledger = army
-
-			allowed = {
-				original_tag = BRA
-			}
-
-			traits = {
-				army_infantry_2
-			}
-
-			cost = 150
-
-			ai_will_do = {
-			factor = 0
-				modifier = {
-					has_completed_focus = bra_brazilian_action
-					factor = 160
-				}
-			}
-		}
-
-		corps_commander = {
-			traits = { trait_reckless politically_connected trickster }
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 3
 		}
 	}
 
@@ -739,61 +914,6 @@ characters={
 		}
 	}
 
-	BRA_nero_fiuza_de_castro_vfb = {
-		name = "Nero Fiuza de Castro"
-		portraits={
-			army={
-				small="GFX_idea_advisor_nero"
-			}
-		}
-
-		advisor={
-			slot = army_chief
-			idea_token = BRA_nero_fiuza_de_castro
-			ledger = army
-			allowed = {
-				original_tag = BRA
-			}
-			traits = {
-				army_chief_drill_2
-			}
-			cost = 150
-
-			ai_will_do = {
-				factor = 80
-			}
-		}
-	}
-
-	BRA_salgado_filho_vfb = {
-		name = "Salgado Filho"
-		portraits={
-			army={
-				small="GFX_idea_advisor_salgado"
-			}
-		}
-
-		advisor={
-			slot = air_chief
-			idea_token = BRA_salgado_filho
-			ledger = air
-			allowed = {
-				original_tag = BRA
-			}
-			traits = {
-				air_chief_reform_2
-			}
-			cost = 125
-			ai_will_do = {
-				factor = 0
-				modifier = {
-					has_completed_focus = bra_quereismo
-					factor = 160
-				}
-			}
-		}
-	}
-
 	BRA_armando_trompowsky_vfb = {
 		name = "Armando Trompowsky"
 		portraits={
@@ -813,31 +933,6 @@ characters={
 				air_chief_safety_1
 			}
 			cost = 75
-			ai_will_do = {
-				factor = 80
-			}
-		}
-	}
-
-	BRA_aristides_guilhem_vfb = {
-		name = "Aristides Guilhem"
-		portraits={
-			army={
-				small="GFX_idea_advisor_aristides"
-			}
-		}
-
-		advisor={
-			slot = navy_chief
-			idea_token = BRA_aristides_guilhem
-			ledger = navy
-			allowed = {
-				original_tag = BRA
-			}
-			traits = {
-				navy_chief_maneuver_2
-			}
-			cost = 150
 			ai_will_do = {
 				factor = 80
 			}
