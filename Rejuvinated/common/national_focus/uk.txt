@@ -11982,7 +11982,23 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}	
 		completion_reward = {
-			add_ideas = ENG_spirit_of_the_industrial_revolution_idea
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_industrial_capacity_factory = 0.25
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_industrial_capacity_dockyard = 0.25
+				tooltip = industrial_capacity_dockyard_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_buildings_factor = 0.15
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_global_building_slots_factor = 0.1
+				tooltip = global_building_slots_factor_tt
+			}
 		}
 	}
 

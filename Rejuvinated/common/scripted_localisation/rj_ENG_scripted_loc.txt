@@ -1,0 +1,12 @@
+defined_text = {
+	name = rj_ENG_the_economy_name
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = ENG_spirit_of_the_industrial_revolution
+	}
+	text = {
+		localization_key = rj_ENG_the_economy_default
+	}
+}

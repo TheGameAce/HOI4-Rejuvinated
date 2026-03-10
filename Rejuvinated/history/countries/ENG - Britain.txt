@@ -266,6 +266,15 @@ set_variable = {
 set_variable = {
 	rj_ENG_the_economy_industrial_capacity_factory = 0
 }
+set_variable = {
+	rj_ENG_the_economy_industrial_capacity_dockyard = 0
+}
+set_variable = {
+	rj_ENG_the_economy_monthly_population = 0
+}
+set_variable = {
+	rj_ENG_the_economy_production_speed_buildings_factor = 0
+}
 
 set_convoys = 1000
 
@@ -362,10 +371,10 @@ add_to_faction = SAF
 add_to_faction = RAJ
 add_to_faction = MAL
 add_to_faction = EGY
-add_to_faction = PAL
-add_to_faction = JOR
-add_to_faction = MLT
-add_to_faction = CYP
+#add_to_faction = PAL
+#add_to_faction = JOR
+#add_to_faction = MLT
+#add_to_faction = CYP
 
 # Order matters - here Chamberlain becomes starting leader
 recruit_character = ENG_oswald_mosley
