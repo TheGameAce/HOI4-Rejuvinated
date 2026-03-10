@@ -2,10 +2,11 @@ state = {
 	id = 890
 	name = "STATE_890"
 	manpower = 710035
-	state_category = pastoral
+	state_category = rural
 	
 	resources = {
 		rubber = 3.000
+		tungsten = 12
 	}
 	
 	history = {
@@ -38,5 +39,5 @@ state = {
 	}
 	
 	buildings_max_level_factor = 1.000
-	local_supplies = 0.000
+	local_supplies = 1.000
 }

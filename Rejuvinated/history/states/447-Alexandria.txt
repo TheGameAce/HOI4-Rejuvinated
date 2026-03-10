@@ -3,14 +3,8 @@ state={
 	id=447
 	name="STATE_447"
 	manpower = 4159239
-	resources={
-		oil=1 # was: 2
-		tungsten = 3 #maganese
-		steel = 3 #Maganese
-		
-	}
 	
-	state_category = town
+	state_category = metropolis
 
 	history={
 		owner = EGY
@@ -39,5 +33,5 @@ state={
 		1071 4076 4145 7091 7164 10073 11964  
 	}
 
-	local_supplies=0.0 
+	local_supplies=15.0 
 }
