@@ -188,6 +188,106 @@ characters={
 		}
 	}
 
+	BRA_mascarenhas_de_morais={
+		name=BRA_mascarenhas_de_morais
+		portraits={
+			army={
+				large=GFX_portrait_BRA_mascarenhas_de_morais_1
+				small=GFX_portrait_BRA_mascarenhas_de_morais_1_small
+			}
+		}
+		corps_commander={
+			traits={ organizer infantry_leader hill_fighter }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+
+	BRA_augusto_rademaker={
+		name=BRA_augusto_rademaker
+		portraits={
+			army={
+				large=GFX_rj_portrait_BRA_augusto_rademaker
+				small=GFX_rj_portrait_BRA_augusto_rademaker_small
+			}
+		}
+		navy_leader={
+			traits = { navy_career_officer fleet_protector }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=3
+			coordination_skill=3
+			legacy_id=-1
+		}
+	}
+
+
+	### THEORISTS ###
+
+	BRA_newton_cavalcanti={
+		name=BRA_newton_cavalcanti
+		portraits={
+			army={
+				small="GFX_idea_advisor_newton"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = theorist
+			idea_token = BRA_newton_cavalcanti
+			ledger = army
+			allowed = {
+				OR = {
+					original_tag = POR
+					original_tag = BRA
+				}
+			}
+			traits = {
+				military_theorist
+			}
+			ai_will_do = {
+				base = 10
+			}
+		}
+	}
+
+	BRA_eduardo_gomes={
+		name=BRA_eduardo_gomes
+		portraits={
+			army={
+				small="GFX_idea_advisor_eduardogomes"
+			}
+		}
+		advisor={
+			cost = 100
+			slot = theorist
+			idea_token = BRA_eduardo_gomes
+			ledger = air
+			allowed = {
+				OR = {
+					original_tag = BRA
+					original_tag = POR
+				}
+			}
+			available = {
+				if = {
+					limit = {
+						original_tag = BRA
+					}
+					has_completed_focus = bra_regionalism
+				}
+			}
+			traits = {
+				air_warfare_theorist
+			}
+		}
+	}
+
 	#################################################################################################################################################################
 	################################ Advisors Only ##########################################
 	#################################################################################################################################################################
@@ -488,66 +588,6 @@ characters={
 				factor = 160
 			}
 		}	
-	}
-
-	################################################################################################################
-	########################################## THEORISTS ###########################################################
-	################################################################################################################
-
-	BRA_newton_cavalcanti = {
-		name = "Newton Cavalcanti"
-		portraits={
-			army={
-				small="GFX_idea_advisor_newton"
-			}
-		}
-
-		advisor={
-			slot = theorist
-			idea_token = BRA_newton_cavalcanti
-			ledger = army
-
-			allowed = {
-				original_tag  = BRA
-			}
-
-			traits  = {	military_theorist }
-			cost = 150
-
-			ai_will_do = {
-				factor = 80
-			}
-		}
-	}
-
-	BRA_eduardo_gomes = {
-		name = "Eduardo Gomes"
-		portraits={
-			army={
-				small="GFX_idea_advisor_eduardogomes"
-			}
-		}
-
-		advisor={
-			slot = theorist
-			idea_token = BRA_eduardo_gomes
-			ledger = army
-
-			allowed = {
-				original_tag  = BRA
-			}
-
-			available = {
-				has_completed_focus = bra_regionalism
-			}
-
-			traits  = {	air_warfare_theorist }
-			cost = 150
-
-			ai_will_do = {
-				factor = 160
-			}
-		}
 	}
 
 	################################################################################################################
@@ -966,24 +1006,6 @@ characters={
 		}
 	}
 
-	BRA_joao_batista = {
-		name="João Batista Mascarenhas de Morais"
-		portraits={
-			army={
-				small = "GFX_idea_generic_navy_south_america_5"
-				large = "gfx/leaders/BRA/Moraes.dds"
-			}
-		}		
-		corps_commander = {
-			traits = { organizer infantry_leader hill_fighter }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 4
-		}
-	}
-
 	BRA_newton_de_andrade = {
 		name="Newton de Andrade Cavalcanti"
 		portraits={
@@ -1197,25 +1219,6 @@ characters={
 			defense_skill = 2
 			planning_skill = 3
 			logistics_skill = 2
-		}
-	}
-
-	BRA_augusto_hamann = {
-		name="Augusto Hamann Rademaker Grünewald"
-		portraits={
-			army={
-				small = "GFX_idea_generic_navy_south_america_5"
-				large = "gfx/leaders/BRA/Rademaker.dds"
-			}
-		}		
-		navy_leader = {
-			traits={ fleet_protector }
-			skill=2
-			attack_skill=2
-			defense_skill=2
-			maneuvering_skill=3
-			coordination_skill=3
-			legacy_id=-1
 		}
 	}
 
