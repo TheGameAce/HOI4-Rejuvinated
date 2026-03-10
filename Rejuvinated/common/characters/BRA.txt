@@ -1,56 +1,119 @@
-characters = {
-
-	########################################################################################################
-	################################### COUNTRY LEADERS ####################################################
-	########################################################################################################
-
-	BRA_getulio_vargas = {
-		name = BRA_getulio_vargas
-		portraits = {
-			civilian = {
-				large = GFX_portrait_BRA_getulio_vargas
-			}
-		}
-		country_leader={
-			ideology = despotism
-			traits = { vfb_trait_vargas_1 vfb_trait_vargas_2 lawyer }
-			expire="1965.1.1.1"
-			id=-1
-		}
-	}
-
-	BRA_plinio_salgado = {
-		name = BRA_plinio_salgado
-		portraits = {
-			civilian={
-				large = GFX_portrait_BRA_plinio_salgado
-			}
-		}
-		country_leader={
-			ideology = fascism_ideology
-			traits = { vfb_trait_salgado_1 vfb_trait_salgado_2 }
-			expire="1965.1.1.1"
-			id=-1
-		}
-	}
-
-	BRA_luis_carlos_prestes = {
-		name = BRA_luis_carlos_prestes
+characters={
+	BRA_getulio_vargas={
+		name=BRA_getulio_vargas
 		portraits={
 			civilian={
-				large = GFX_rj_portrait_BRA_luis_carlos_prestes
+				large=GFX_portrait_BRA_getulio_vargas
+			}
+		}
+		country_leader = {
+			ideology = populism
+			expire = "1965.1.1"
+			id=-1
+			traits = {
+				#BRA_authoritarian_populist
+				vfb_trait_vargas_1
+				vfb_trait_vargas_2
+				lawyer
+			}
+		}
+	}
+
+	BRA_arlindo_veiga_dos_santos={
+		name=BRA_arlindo_veiga_dos_santos
+		portraits={
+			civilian={
+				large=GFX_portrait_BRA_arlindo_veiga_dos_santos
+				small = GFX_idea_advisor_arlindo
+			}
+		}
+		country_leader = {
+			expire = "1954.8.24"
+			ideology = despotism
+			id=-1
+			traits = {
+				staunch_monarchist
+			}
+		}
+		advisor = {
+			cost = 150
+			slot = political_advisor
+			idea_token = BRA_arlindo_veiga_dos_santos
+			ledger = civilian
+			allowed = {
+				original_tag = BRA
+			}
+			available = {
+				has_completed_focus = bra_monarquia_2_focus
+			}
+			traits = { vfb_trait_arlindo vfb_trait_escritor }
+			ai_will_do = {
+				factor = 160
+			}
+		}
+	}
+	
+	BRA_plinio_salgado={
+		name=BRA_plinio_salgado	
+		portraits={
+			civilian={
+				large=GFX_portrait_BRA_plinio_salgado
 			}
 		}
 		country_leader={
-			ideology = leninism
-			traits = { vfb_trait_prestes_1 vfb_trait_prestes_2 }
+			ideology=fascism_ideology
 			expire="1965.1.1.1"
 			id=-1
+			traits = {
+				#dictator
+				vfb_trait_salgado_1
+				vfb_trait_salgado_2
+			}
+		}
+	}
+
+	BRA_luis_carlos_prestes={
+		name=BRA_luis_carlos_prestes
+		portraits={
+			civilian={
+				large=GFX_kr_portrait_BRA_luis_carlos_prestes
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			expire="1965.1.1.1"
+			id=-1
+			traits = {
+				#JUNO_aligned_with_stalin
+				vfb_trait_prestes_1
+				vfb_trait_prestes_2
+			}
+		}
+	}
+
+	# INDIGENOUS BRAZILIAN COUNCIL
+	BRA_indigenous_council = { 
+		name = BRA_indigenous_council
+		portraits = {
+			civilian = {
+				large = GFX_portrait_indigenous_brazil_council
+			}
+			
+		}
+		
+	}
+
+	BRA_alianca_nacional_libertadora_council = { #shell character to be promoted to country leader for ANL
+		name = BRA_alianca_nacional_libertadora_council
+		portraits = {
+			civilian = {
+				large = GFX_portrait_SWE_nordic_defense_council #TODO request art and switch this one out
+			}
 		}
 	}
 
 	BRA_congresso_nacional = {
-		name = "Congresso Nacional"
+		name = BRA_congresso_nacional
 		portraits = {
 			civilian = {
 				large = GFX_rj_portrait_BRA_senado
@@ -64,15 +127,31 @@ characters = {
 		}
 	}
 
-	BRA_eurico_gaspar_dutra = {
-		name = BRA_eurico_gaspar_dutra
-		portraits = {
-			civilian = {
-				large = GFX_kr_portrait_BRA_eurico_gaspar_dutra
+	BRA_pedro_henrique={
+		name=BRA_pedro_henrique
+		portraits={
+			civilian={
+				large=GFX_kr_portrait_BRA_pedro_henrique
 			}
-			army = {
-				large = GFX_kr_portrait_BRA_eurico_gaspar_dutra
-				small = GFX_kr_portrait_BRA_eurico_gaspar_dutra_small
+		}
+		#country_leader = {
+		#	ideology = despotism
+		#	expire = "1965.1.1"
+		#	id=-1
+		#	traits = {
+		#	}
+		#}
+	}
+
+	BRA_eurico_gaspar_dutra = {
+		name=BRA_eurico_gaspar_dutra
+		portraits={
+			army={
+				large=GFX_kr_portrait_BRA_eurico_gaspar_dutra
+			}
+			civilian={
+				large=GFX_kr_portrait_BRA_eurico_gaspar_dutra
+				small=GFX_kr_portrait_BRA_eurico_gaspar_dutra_small
 			}
 		}
 		country_leader = {
@@ -81,14 +160,31 @@ characters = {
 			expire = "1965.1.1"
 			id = -1
 		}
-		field_marshal = {
-			traits = { career_officer politically_connected skilled_staffer expert_delegator organisational_leader defensive_doctrine }
-			skill = 4
-			attack_skill = 2
-			defense_skill = 4
-			planning_skill = 3
-			logistics_skill = 4
-			legacy_id = -1
+		advisor={
+			cost = 150
+			slot = political_advisor 
+			idea_token = BRA_eurico_gaspar_dutra
+			allowed = {
+				OR = {
+					original_tag = BRA
+					original_tag = POR
+				}
+			}
+			available = {
+				is_country_leader = no
+			}
+			traits = {
+				BRA_minister_of_defense
+			}
+		}
+		field_marshal={
+			traits={ ranger career_officer politically_connected skilled_staffer expert_delegator organisational_leader defensive_doctrine }
+			skill=4
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
 		}
 	}
 
@@ -392,37 +488,6 @@ characters = {
 				factor = 160
 			}
 		}	
-	}
-
-	BRA_arlindo_veiga = {
-		name = "Arlindo Veiga"
-		portraits = {
-			army = {
-				small = "GFX_idea_advisor_arlindo"
-			}
-		}
-
-		advisor = {
-			cost = 150
-
-			slot = political_advisor
-			idea_token = BRA_arlindo_veiga
-			ledger = civilian
-
-			allowed = {
-				original_tag = BRA
-			}
-			
-			available = {
-				has_completed_focus = bra_monarquia_2_focus
-			}
-
-			traits = { vfb_trait_arlindo vfb_trait_escritor }
-
-			ai_will_do = {
-				factor = 160
-			}
-		}		
 	}
 
 	################################################################################################################
