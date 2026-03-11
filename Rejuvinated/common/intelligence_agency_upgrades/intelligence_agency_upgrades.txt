@@ -1,46 +1,6 @@
 # List of intelligence agency upgrades, and their effects
 # For documentation, there is a file _documentation.info in the same folder.
 
-#	is_spymaster = yes
-#	is_major = yes 
-#	num_of_operatives > 1
-#	is_in_faction = yes
-#	is_faction_leader = yes
-#	any_owned_state = {	resistance > 0	}
-#	has_done_agency_upgrade = upgrade_army_department
-#	has_defensive_war = yes
-#	has_offensive_war = yes
-#	has_war = yes
-#	threat > 30
-#	agency_upgrade_number > 4
-# 	num_of_civilian_factories > 10
-#	num_of_available_civilian_factories > 10
-#	num_of_civilian_factories_available_for_projects > 10
-#	any_neighbor_country = { has_stability > 0.8 }
-#	any_claim = yes
-#	is_island_state = yes
-
-#	any_state = {
-#		is_coastal = yes
-#	}
-
-
-#	modifier = {
-#		factor = temp 
-#		set_temp_variable = { temp = num_occupied_states }
-#		divide_temp_variable = { temp = 10 }
-#		add_to_temp_variable = { temp = 1 }
-#	}
-
-#	modifier = {
-#		factor = temp
-#		set_temp_variable = { temp = num_of_operatives }
-#	}
-
-
-#TALL unused Assets
-#		picture = GFX_agency_communications_security
-
 branch_intelligence = {
 
 	upgrade_economy_civilian = {
@@ -87,6 +47,15 @@ branch_intelligence = {
 				civilian_intel_factor = 0.25
 			}
 		}
+
+		level = {
+			modifier = {
+				civilian_intel_factor = 0.05
+				compliance_growth = 0.01
+				lend_lease_tension = -0.05
+				consumer_goods_factor = -0.01
+			}
+		}
 	}
 	
 	upgrade_army_department = {
@@ -118,7 +87,7 @@ branch_intelligence = {
 					any_neighbor_country = {
 						has_war = yes
 					}
-					threat > 30
+					threat > 0.3
 				}
 			}
 			modifier = {
@@ -140,6 +109,15 @@ branch_intelligence = {
 		level = {
 			modifier = {
 				army_intel_factor = 0.25
+			}
+		}
+
+		level = {
+			modifier = {
+				army_intel_factor = 0.05
+				max_planning = 0.02
+				special_forces_cap = 0.01
+				planning_speed = 0.02
 			}
 		}
 		
@@ -177,7 +155,7 @@ branch_intelligence = {
 							is_island_state = yes
 						}
 					}
-					threat > 40
+					threat > 0.4
 				}
 			}
 			modifier = {
@@ -205,6 +183,15 @@ branch_intelligence = {
 		level = {
 			modifier = {
 				navy_intel_factor = 0.25
+			}
+		}
+
+		level = {
+			modifier = {
+				navy_intel_factor = 0.05
+				naval_coordination = 0.02
+				positioning = 0.02
+				spotting_chance = 0.02
 			}
 		}
 		
@@ -239,7 +226,7 @@ branch_intelligence = {
 					any_neighbor_country = {
 						has_war = yes
 					}
-					threat > 40
+					threat > 0.4
 				}
 			}
 			modifier = {
@@ -261,6 +248,15 @@ branch_intelligence = {
 		level = {
 			modifier = {
 				airforce_intel_factor = 0.25
+			}
+		}
+
+		level = {
+			modifier = {
+				airforce_intel_factor = 0.05
+				air_intercept_efficiency = 0.02
+				air_strategic_bomber_bombing_factor = 0.01
+				air_superiority_detect_factor = 0.02
 			}
 		}
 		
@@ -297,7 +293,7 @@ branch_defense = {
 					any_neighbor_country = {
 						has_war = yes
 					}
-					threat > 40
+					threat > 0.4
 				}
 			}
 			modifier = {
@@ -401,7 +397,7 @@ branch_defense = {
 			modifier = {
 				factor = 2
 				OR = {
-					threat > 50
+					threat > 0.5
 					is_major = yes
 					is_faction_leader = yes
 				}
@@ -425,38 +421,338 @@ branch_defense = {
 		level = {
 			modifier = {
 				enemy_intel_network_gain_factor_over_occupied_tag = -0.1
-				enemy_operative_capture_chance_factor = 0.25
-				enemy_operative_intel_extraction_rate = 0.1
 			}
 		}
 		
 		level = {
 			modifier = {
 				enemy_intel_network_gain_factor_over_occupied_tag = -0.1
-				enemy_operative_capture_chance_factor = 0.25
-				enemy_operative_intel_extraction_rate = 0.05
 			}
 		}
 		
 		level = {
 			modifier = {
 				enemy_intel_network_gain_factor_over_occupied_tag = -0.1
-				enemy_operative_capture_chance_factor = 0.25
-				enemy_operative_intel_extraction_rate = 0.05
 			}
 		}
 		
 		level = {
 			modifier = {
 				enemy_intel_network_gain_factor_over_occupied_tag = -0.1
-				enemy_operative_capture_chance_factor = 0.25
-				enemy_operative_intel_extraction_rate = 0.05
 			}
 		}
 		
 	}
 
-	upgrade_training_centers = { #moved from operative branch and rebranded "Operative Recruitment"
+	upgrade_rf_interference = {
+	
+		picture = GFX_agency_communications_security
+		sound = Spy_Agency_Defense_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = temp
+				set_temp_variable = { temp = num_of_operatives }
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					num_of_civilian_factories_available_for_projects > 15
+					is_spymaster = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					threat > 0.5
+					is_major = yes
+					is_faction_leader = yes
+				}
+			}
+			modifier = {
+				factor = 0.2
+				OR = {
+					num_of_civilian_factories_available_for_projects < 10
+					AND = {
+						is_subject = yes
+						is_spymaster = no
+					}
+				}
+			}
+		}
+
+		available = {
+			has_done_agency_upgrade = upgrade_portable_radios
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 3
+		}
+		
+		level = {
+			modifier = {
+				enemy_intel_network_gain_factor_over_occupied_tag = -0.05
+			}
+		}
+
+		level = {
+			modifier = {
+				enemy_intel_network_gain_factor_over_occupied_tag = -0.05
+			}
+		}
+		
+	}
+	
+}
+
+branch_operation = {
+	
+	upgrade_blueprint_stealing = {
+	
+		picture = GFX_agency_steal_blueprints
+		sound = Spy_Agency_Operations_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				operation_steal_tech_outcome = 0.15
+				defense_impact_on_blueprint_stealing = -0.15
+			}
+		}
+		
+		level = {
+			modifier = {
+				operation_steal_tech_outcome = 0.10
+				defense_impact_on_blueprint_stealing = -0.1
+			}
+		}
+		
+	}
+	
+	upgrade_portable_radios = {
+	
+		picture = GFX_agency_portable_radios
+		sound = Spy_Agency_Operations_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 2
+
+			modifier = {
+				factor = 2
+				OR = {
+					has_war = yes 
+					threat > 0.5
+				}
+			}
+
+			modifier = {
+				factor = 2
+				OR = {
+					is_spymaster = yes 
+					is_faction_leader = yes
+					is_major = yes
+					num_of_civilian_factories_available_for_projects > 15
+				}
+			}
+			modifier = {
+				factor = 0.1
+				OR = {
+					num_of_civilian_factories_available_for_projects < 10
+					AND = {
+						is_subject = yes
+						is_spymaster = no
+					}
+				}
+			}
+		}
+	
+		available = {
+			has_tech = radio
+		}
+
+		modifiers_during_progress = {
+			civilian_factory_use = 8
+		}
+		
+		level = {
+			modifier = {
+				operation_coordinated_strike_outcome = 1
+			}
+		}
+		
+	}
+	
+	upgrade_invisible_ink = {
+	
+		picture = GFX_agency_invisible_ink
+		sound = Spy_Agency_Operations_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 2
+				OR = {
+					is_spymaster = yes 
+					is_faction_leader = yes
+					is_major = yes
+					num_of_civilian_factories_available_for_projects > 15
+				}
+			}
+			modifier = {
+				factor = temp
+				set_temp_variable = { temp = num_of_operatives }
+			}
+			modifier = {
+				factor = 0.1
+				OR = {
+					num_of_civilian_factories_available_for_projects < 10
+					AND = {
+						is_subject = yes
+						is_spymaster = no
+					}
+				}
+			}
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				intel_from_operatives_factor = 0.2
+				operation_steal_tech_risk = -0.25
+			}
+		}
+		
+	}
+	
+	upgrade_plastic_explosives = {
+	
+		picture = GFX_agency_plastic_explosives
+		sound = Spy_Agency_Operations_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 1.5
+				num_of_operatives > 2
+				has_war = yes
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					is_spymaster = yes 
+					is_faction_leader = yes
+					is_major = yes
+					num_of_civilian_factories_available_for_projects > 15
+				}
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					any_neighbor_country = {
+						has_war = yes
+					}
+					threat > 0.3
+				}
+			}
+			modifier = {
+				factor = 0.1
+				OR = {
+					num_of_civilian_factories_available_for_projects < 10
+					AND = {
+						is_subject = yes
+						is_spymaster = no
+					}
+				}
+			}
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 8
+		}
+		
+		level = {
+			modifier = {
+				target_sabotage_factor = 0.25
+				boost_resistance_factor = 0.25
+			}
+		}
+		
+	}
+	
+	upgrade_suicide_pills = {
+	
+		picture = GFX_agency_suicide_pills
+		sound = Spy_Agency_Operations_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				OR = {
+					is_spymaster = yes 
+					is_faction_leader = yes
+					is_major = yes
+					num_of_civilian_factories_available_for_projects > 15
+				}
+			}
+			modifier = {
+				factor = temp
+				set_temp_variable = { temp = num_of_operatives }
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					any_neighbor_country = {
+						has_war = yes
+					}
+					threat > 0.4
+					has_war = yes
+				}
+			}
+			modifier = {
+				factor = 0.1
+				OR = {
+					num_of_civilian_factories_available_for_projects < 10
+					AND = {
+						is_subject = yes
+						is_spymaster = no
+					}
+				}
+			}
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				operative_death_on_capture_chance = 0.1
+				own_operative_detection_chance = -0.05
+			}
+		}
+		
+	}
+	
+}
+
+branch_operative = {
+	
+	upgrade_training_centers = {
 	
 		picture = GFX_agency_localized_training_center
 		Sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
@@ -497,142 +793,67 @@ branch_defense = {
 		
 		level = {
 			modifier = {
-				enemy_operative_recruitment_chance = 0.10
-				occupied_operative_recruitment_chance = 0.15
+				enemy_operative_recruitment_chance = 0.05
+				occupied_operative_recruitment_chance = 0.1
+			}
+
+			complete_effect = {
+				unlock_decision_category_tooltip = lar_local_recruitment
+			}
+		}
+		level = {
+			modifier = {
+				enemy_operative_recruitment_chance = 0.05
+				occupied_operative_recruitment_chance = 0.1
 				new_operative_slot_bonus = 1
 			}
 		}
 		level = {
 			modifier = {
-				enemy_operative_recruitment_chance = 0.10
-				occupied_operative_recruitment_chance = 0.15
+				enemy_operative_recruitment_chance = 0.05
+				occupied_operative_recruitment_chance = 0.1
 				new_operative_slot_bonus = 1
 			}
 		}
 		level = {
 			modifier = {
-				enemy_operative_recruitment_chance = 0.10
-				occupied_operative_recruitment_chance = 0.15
+				enemy_operative_recruitment_chance = 0.05
+				occupied_operative_recruitment_chance = 0.1
 				new_operative_slot_bonus = 1
-			}
-		}
-		level = {
-			modifier = {
-				enemy_operative_recruitment_chance = 0.10
-				occupied_operative_recruitment_chance = 0.15
-				new_operative_slot_bonus = 1
-			}
-		}
-		
-	}
-}
-
-branch_operation = { #TALLeis - re-branded as "Department Expansions"
-
-	upgrade_civil_intel = {
-		picture = GFX_agency_econ_intel
-		sound = Spy_Agency_Intel_Upgrades_Confirm
-		
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 1.5
-				OR = {
-					is_spymaster = yes 
-					is_faction_leader = yes
-				}
-			}
-			modifier = {
-				factor = 1.5
-				OR = {
-					num_of_civilian_factories_available_for_projects > 15
-					is_major = yes
-				}
-			}
-			modifier = {
-				factor = 0.1
-				OR = {
-					num_of_civilian_factories_available_for_projects < 10
-					AND = {
-						is_subject = yes
-						is_spymaster = no
-					}
-				}
-			}
-		}
-
-		available = {
-			has_done_agency_upgrade = upgrade_economy_civilian
-		}
-		
-		modifiers_during_progress = {
-			civilian_factory_use = 8
-		}
-		
-		level = {
-			modifier = {
-				civilian_intel_factor = 0.1
-				compliance_growth = 0.01
-				lend_lease_tension = -0.05
-				consumer_goods_factor = -0.01
-			}
-		}
-		level = {
-			modifier = {
-				civilian_intel_factor = 0.05
-				compliance_growth = 0.01
-				lend_lease_tension = -0.05
-				consumer_goods_factor = -0.01
-			}
-		}
-		level = {
-			modifier = {
-				civilian_intel_factor = 0.05
-				compliance_growth = 0.01
-				lend_lease_tension = -0.05
-				consumer_goods_factor = -0.01
-			}
-		}
-		level = {
-			modifier = {
-				civilian_intel_factor = 0.05
-				compliance_growth = 0.01
-				lend_lease_tension = -0.05
-				consumer_goods_factor = -0.01
 			}
 		}
 		
 	}
 	
-	upgrade_military_intel = {
-		picture = GFX_agency_army_intel
-		sound = Spy_Agency_Intel_Upgrades_Confirm
-		
+	upgrade_commando_training = {
+	
+		picture = GFX_agency_commando_training
+		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm	
+
 		ai_will_do = {
 			factor = 1
 
 			modifier = {
 				factor = 1.5
-				OR = {
-					is_spymaster = yes 
-					is_faction_leader = yes
-				}
+				num_of_operatives > 2
+				has_war = yes
 			}
 			modifier = {
 				factor = 1.5
 				OR = {
-					num_of_civilian_factories_available_for_projects > 15
+					is_spymaster = yes 
+					is_faction_leader = yes
 					is_major = yes
+					num_of_civilian_factories_available_for_projects > 15
 				}
 			}
 			modifier = {
-				factor = 2
+				factor = 1.5
 				OR = {
 					any_neighbor_country = {
 						has_war = yes
 					}
-					threat > 50
+					threat > 0.3
 				}
 			}
 			modifier = {
@@ -646,81 +867,44 @@ branch_operation = { #TALLeis - re-branded as "Department Expansions"
 				}
 			}
 		}
-
-		available = {
-			has_done_agency_upgrade = upgrade_army_department
-		}
 		
 		modifiers_during_progress = {
-			civilian_factory_use = 8
+			civilian_factory_use = 5
 		}
 		
 		level = {
 			modifier = {
-				army_intel_factor = 0.1
-				max_planning = 0.02
-				special_forces_cap = 0.01
-				planning_speed = 0.02
-			}
-		}
-		level = {
-			modifier = {
-				army_intel_factor = 0.05
-				max_planning = 0.02
-				special_forces_cap = 0.01
-				planning_speed = 0.02
-			}
-		}
-		level = {
-			modifier = {
-				army_intel_factor = 0.05
-				max_planning = 0.02
-				special_forces_cap = 0.01
-				planning_speed = 0.02
-			}
-		}
-		level = {
-			modifier = {
-				army_intel_factor = 0.05
-				max_planning = 0.02
-				special_forces_cap = 0.01
-				planning_speed = 0.02
+				commando_trait_chance_factor = 1 # +100%
 			}
 		}
 		
 	}
 	
-	upgrade_maritime_intel = {
-		picture = GFX_agency_navy_intel
-		sound = Spy_Agency_Intel_Upgrades_Confirm
-		
+	upgrade_interrogation_techniques = {
+	
+		picture = GFX_agency_interrogation_techniques
+		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
+
 		ai_will_do = {
 			factor = 1
 
 			modifier = {
-				factor = 1.5
-				OR = {
-					is_spymaster = yes 
-					is_faction_leader = yes
-				}
+				factor = temp
+				set_temp_variable = { temp = num_of_operatives }
 			}
 			modifier = {
 				factor = 1.5
 				OR = {
 					num_of_civilian_factories_available_for_projects > 15
-					is_major = yes
+					is_spymaster = yes
 				}
 			}
 			modifier = {
 				factor = 2
-				AND = {
-					any_controlled_state = {
-						OR = {
-							is_coastal = yes
-							is_island_state = yes
-						}
-					}
-					threat > 40
+				OR = {
+					threat > 0.5
+					is_major = yes
+					is_faction_leader = yes
 				}
 			}
 			modifier = {
@@ -733,148 +917,22 @@ branch_operation = { #TALLeis - re-branded as "Department Expansions"
 					}
 				}
 			}
-			modifier = {
-				factor = 0
-				any_controlled_state = {
-					is_coastal = no
-				}
-			}
-
-		}
-
-		available = {
-			has_done_agency_upgrade = upgrade_naval_department
 		}
 		
 		modifiers_during_progress = {
-			civilian_factory_use = 8
+			civilian_factory_use = 5
 		}
 		
 		level = {
 			modifier = {
-				navy_intel_factor = 0.1
-				naval_coordination = 0.02
-				positioning = 0.02
-				spotting_chance = 0.02
-			}
-		}
-		level = {
-			modifier = {
-				navy_intel_factor = 0.05
-				naval_coordination = 0.02
-				positioning = 0.02
-				spotting_chance = 0.02
-			}
-		}
-		level = {
-			modifier = {
-				navy_intel_factor = 0.05
-				naval_coordination = 0.02
-				positioning = 0.02
-				spotting_chance = 0.02
-			}
-		}
-		level = {
-			modifier = {
-				navy_intel_factor = 0.05
-				naval_coordination = 0.02
-				positioning = 0.02
-				spotting_chance = 0.02
+				enemy_operative_capture_chance_factor = 1 # +100%
+				enemy_operative_intel_extraction_rate = 0.25 # +25%
 			}
 		}
 		
 	}
 	
-	upgrade_air_recon = {
-		picture = GFX_agency_air_intel
-		sound = Spy_Agency_Intel_Upgrades_Confirm
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 1.5
-				OR = {
-					is_spymaster = yes 
-					is_faction_leader = yes
-				}
-			}
-			modifier = {
-				factor = 1.5
-				OR = {
-					num_of_civilian_factories_available_for_projects > 15
-					is_major = yes
-				}
-			}
-			modifier = {
-				factor = 1.5
-				OR = {
-					any_neighbor_country = {
-						has_war = yes
-					}
-					threat > 40
-				}
-			}
-			modifier = {
-				factor = 0.1
-				OR = {
-					num_of_civilian_factories_available_for_projects < 10
-					AND = {
-						is_subject = yes
-						is_spymaster = no
-					}
-				}
-			}
-		}
-
-		available = {
-			has_done_agency_upgrade = upgrade_airforce_department
-		}
-		
-		modifiers_during_progress = {
-			civilian_factory_use = 8
-		}
-		
-		level = {
-			modifier = {
-				airforce_intel_factor = 0.1
-				air_intercept_efficiency = 0.02
-				air_strategic_bomber_bombing_factor = 0.01
-				air_superiority_detect_factor = 0.02
-			}
-		}
-		level = {
-			modifier = {
-				airforce_intel_factor = 0.05
-				air_intercept_efficiency = 0.02
-				air_strategic_bomber_bombing_factor = 0.01
-				air_superiority_detect_factor = 0.02
-			}
-		}
-		level = {
-			modifier = {
-				airforce_intel_factor = 0.05
-				air_intercept_efficiency = 0.02
-				air_strategic_bomber_bombing_factor = 0.01
-				air_superiority_detect_factor = 0.02
-			}
-		}
-		level = {
-			modifier = {
-				airforce_intel_factor = 0.05
-				air_intercept_efficiency = 0.02
-				air_strategic_bomber_bombing_factor = 0.01
-				air_superiority_detect_factor = 0.02
-			}
-		}
-		
-	}
-}
-
-branch_operative = { #TALLeis - re-branded as "Agency Disciplines"
-
-#TALLeis - HUMINT branch contains entries for diplomatic training, psychological warfare & (partaly) invisible Ink	
-	upgrade_humint = {
+	upgrade_diplo_training = {
 	
 		picture = GFX_agency_diplomatic_training
 		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
@@ -913,156 +971,21 @@ branch_operative = { #TALLeis - re-branded as "Agency Disciplines"
 		
 		level = {
 			modifier = {
-				control_trade_mission_factor = 0.10
-				diplomatic_pressure_mission_factor = 0.10
-				propaganda_mission_factor = 0.10
-				boost_ideology_mission_factor = 0.10
-				intel_from_operatives_factor = 0.1
-			}
-		}
-
-		level = {
-			modifier = {
-				control_trade_mission_factor = 0.10
-				diplomatic_pressure_mission_factor = 0.10
-				propaganda_mission_factor = 0.10
-				boost_ideology_mission_factor = 0.10
-			}
-		}
-
-		level = {
-			modifier = {
-				control_trade_mission_factor = 0.05
-				diplomatic_pressure_mission_factor = 0.05
-				propaganda_mission_factor = 0.05
-				boost_ideology_mission_factor = 0.05
-				intel_from_operatives_factor = 0.1
+				control_trade_mission_factor = 0.25
+				diplomatic_pressure_mission_factor = 0.25
 			}
 		}
 		
 	}
-
-#TALLeis - SIGINT branch contains entry for portable radios along with additional upgrades, as 'operation_coordinated_strike_outcome' is partly useless and (currently) unmoddable the other additions are more relevent
-	upgrade_sigint = {
 	
-		picture = GFX_agency_portable_radios
-		sound = Spy_Agency_Operations_Upgrades_Confirm
-		
-		ai_will_do = {
-			factor = 2
-
-			modifier = {
-				factor = 2
-				OR = {
-					has_war = yes 
-					threat > 50
-				}
-			}
-
-			modifier = {
-				factor = 2
-				OR = {
-					is_spymaster = yes 
-					is_faction_leader = yes
-					is_major = yes
-					num_of_civilian_factories_available_for_projects > 15
-				}
-			}
-			modifier = {
-				factor = 0.1
-				OR = {
-					num_of_civilian_factories_available_for_projects < 10
-					AND = {
-						is_subject = yes
-						is_spymaster = no
-					}
-				}
-			}
-		}
+	upgrade_psycho_warfare = {
 	
-		available = {
-			has_tech = radio
-		}
-
-		modifiers_during_progress = {
-			civilian_factory_use = 5
-		}
-		
-		level = {
-			modifier = {
-				operation_coordinated_strike_outcome = 0.5
-				intel_network_gain_factor = 0.1
-				decryption_power = 5
-			}
-		}
-
-		level = {
-			modifier = {
-				operation_coordinated_strike_outcome = 0.5
-				intel_network_gain_factor = 0.1
-				decryption_power = 5
-			}
-		}
-
-		level = {
-			modifier = {
-				operation_coordinated_strike_outcome = 0.5
-				intel_network_gain_factor = 0.1
-				decryption_power = 5
-			}
-		}
-
-		level = {
-			modifier = {
-				operation_coordinated_strike_outcome = 0.5
-				intel_network_gain_factor = 0.1
-				decryption_power = 5
-			}
-		}
-		
-	}
-
-#TALLeis - MASINT branch contains entries for blueprint stealing and (partialy) invisible ink
-	upgrade_masint = {
-	
-		picture = GFX_agency_steal_blueprints
+		picture = GFX_agency_psychological_warfare
 		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
-
+		
 		ai_will_do = {
 			factor = 1
-		}
-		
-		modifiers_during_progress = {
-			civilian_factory_use = 5
-		}
-		
-		level = {
-			modifier = {
-				operation_steal_tech_outcome = 0.15
-				operation_steal_tech_risk = -0.15
-				defense_impact_on_blueprint_stealing = -0.15
-			}
-		}
-		
-		level = {
-			modifier = {
-				operation_steal_tech_outcome = 0.10
-				operation_steal_tech_risk = -0.10
-				defense_impact_on_blueprint_stealing = -0.1
-			}
-		}
-		
-	}
 
-#TALLeis - OPSEC branch contains entries from suicide pills along with other new entries
-	upgrade_opsec = {
-	
-		picture = GFX_agency_opsec
-		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
-
-		ai_will_do = {
-			factor = 1
-			
 			modifier = {
 				factor = 2
 				OR = {
@@ -1075,105 +998,6 @@ branch_operative = { #TALLeis - re-branded as "Agency Disciplines"
 			modifier = {
 				factor = temp
 				set_temp_variable = { temp = num_of_operatives }
-			}
-			modifier = {
-				factor = 1.5
-				OR = {
-					any_neighbor_country = {
-						has_war = yes
-					}
-					threat > 40
-					has_war = yes
-				}
-			}
-			modifier = {
-				factor = 0.1
-				OR = {
-					num_of_civilian_factories_available_for_projects < 10
-					AND = {
-						is_subject = yes
-						is_spymaster = no
-					}
-				}
-			}
-		}
-		
-		modifiers_during_progress = {
-			civilian_factory_use = 5
-		}
-		
-		level = {
-			modifier = {
-				own_operative_detection_chance = -0.05
-				airforce_intel_to_others = -10
-				civilian_intel_to_others = -10
-				navy_intel_to_others = -10
-				army_intel_to_others = -10
-			}
-		}
-		
-		level = {
-			modifier = {
-				own_operative_detection_chance = -0.05
-				airforce_intel_to_others = -10
-				civilian_intel_to_others = -10
-				navy_intel_to_others = -10
-				army_intel_to_others = -10
-			}
-		}
-
-		level = {
-			modifier = {
-				own_operative_detection_chance = -0.05
-				airforce_intel_to_others = -10
-				civilian_intel_to_others = -10
-				navy_intel_to_others = -10
-				army_intel_to_others = -10
-			}
-		}
-		
-		level = {
-			modifier = {
-				crypto_strength = 1
-				airforce_intel_to_others = -10
-				civilian_intel_to_others = -10
-				navy_intel_to_others = -10
-				army_intel_to_others = -10
-			}
-		}
-		
-	}
-#TALLeis - The Special Activities branch contains entries from suicide pills, plastic Explosives and Commando Training
-	upgrade_commando_training = {
-	
-		picture = GFX_agency_specops
-		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 1.5
-				num_of_operatives > 2
-				has_war = yes
-			}
-			modifier = {
-				factor = 1.5
-				OR = {
-					is_spymaster = yes 
-					is_faction_leader = yes
-					is_major = yes
-					num_of_civilian_factories_available_for_projects > 15
-				}
-			}
-			modifier = {
-				factor = 1.5
-				OR = {
-					any_neighbor_country = {
-						has_war = yes
-					}
-					threat > 30
-				}
 			}
 			modifier = {
 				factor = 0.1
@@ -1193,28 +1017,13 @@ branch_operative = { #TALLeis - re-branded as "Agency Disciplines"
 		
 		level = {
 			modifier = {
-				operation_outcome = 0.1
-				target_sabotage_factor = 0.15
-				boost_resistance_factor = 0.15
-				operative_death_on_capture_chance = 0.05
-			}
-			complete_effect = {
-				hidden_effect = {
-					set_country_flag = upgrade_linguistic_training_flag
-				}
+				propaganda_mission_factor = 0.25
+				boost_ideology_mission_factor = 0.25
 			}
 		}
 		
-		level = {
-			modifier = {
-				target_sabotage_factor = 0.10
-				boost_resistance_factor = 0.10
-				commando_trait_chance_factor = 1 # +100%
-				operative_death_on_capture_chance = 0.05
-			}
-
-		}
 	}
+	
 }
 
 branch_crypto = {
@@ -1248,7 +1057,7 @@ branch_crypto = {
 				factor = 2
 				OR = {
 					has_war = yes 
-					threat > 30
+					threat > 0.3
 				}
 			}
 
@@ -1306,7 +1115,7 @@ branch_crypto = {
 				factor = 2
 				OR = {
 					has_war = yes 
-					threat > 30
+					threat > 0.3
 				}
 			}
 
@@ -1377,7 +1186,7 @@ branch_crypto = {
 				factor = 2
 				OR = {
 					has_war = yes 
-					threat > 30
+					threat > 0.3
 				}
 			}
 
@@ -1450,7 +1259,7 @@ branch_crypto = {
 				factor = 2
 				OR = {
 					has_war = yes 
-					threat > 30
+					threat > 0.3
 				}
 			}
 
@@ -1485,7 +1294,6 @@ branch_crypto = {
 				crypto_strength = 1
 			}
 		}
-		
 	}
 	
 	upgrade_crypto_strength_2 = {
@@ -1516,7 +1324,7 @@ branch_crypto = {
 				factor = 2
 				OR = {
 					has_war = yes 
-					threat > 30
+					threat > 0.3
 				}
 			}
 
@@ -1558,179 +1366,6 @@ branch_crypto = {
 				crypto_strength = 2
 			}
 		}
-		
 	}
+	
 }
-################################
-##### Deactivated Upgrades #####
-################################
-
-#The below branches are original agency upgrades, these have been replaced, and are listed here for refrence
-
-#branch_intelligence = { #The first category has been re-branded as “Department Upgrades”
-	#all contained branch upgrades within are (for the most part) included within the core mod and remain mostly unchanged 
-#branch_defense = { #The second category has been re-branded as “Domestic Operations”
-	#Passive Defense & Anti partisan remain unchanged from vanila
-#branch_operation = { #The third category has been re-branded as “Department Expansions”
-	#all contained branch expansions have been fully replaced and moved, notes are jointed with each below
-
-#TALLeis - Blueprint Stealing has been fully incorporated into the TECHINT branch upgrade
-#	upgrade_blueprint_stealing = {
-#		picture = GFX_agency_steal_blueprints
-#		sound = Spy_Agency_Operations_Upgrades_Confirm
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		modifiers_during_progress = {
-#			civilian_factory_use = 5
-#		}
-#		level = {
-#			modifier = {
-#				operation_steal_tech_outcome = 0.25
-#			}
-#		}
-#	}
-#TALLeis - Portable Radios has been fully incorporated into the SIGINT branch upgrade
-#	upgrade_portable_radios = {
-#		picture = GFX_agency_portable_radios
-#		sound = Spy_Agency_Operations_Upgrades_Confirm
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		available = {
-#			has_tech = radio
-#		}
-#		modifiers_during_progress = {
-#			civilian_factory_use = 8
-#		}
-#		level = {
-#			modifier = {
-#				operation_coordinated_strike_outcome = 1
-#			}
-#		}
-#	}
-#TALLeis - Invisible Ink has been fully incorporated into the TECHINT and HUMINT branch upgrade
-#	upgrade_invisible_ink = {
-#		picture = GFX_agency_invisible_ink
-#		sound = Spy_Agency_Operations_Upgrades_Confirm
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		modifiers_during_progress = {
-#			civilian_factory_use = 5
-#		}
-#		level = {
-#			modifier = {
-#				intel_from_operatives_factor = 0.2
-#				operation_steal_tech_risk = -0.25
-#			}
-#		}
-#	}
-#TALLeis - Plastic Explosives has been fully incorporated into the Special Activities branch upgrade
-#	upgrade_plastic_explosives = {
-#		picture = GFX_agency_plastic_explosives
-#		sound = Spy_Agency_Operations_Upgrades_Confirm
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		modifiers_during_progress = {
-#			civilian_factory_use = 8
-#		}
-#		level = {
-#			modifier = {
-#				target_sabotage_factor = 0.25
-#				boost_resistance_factor = 0.25
-#			}
-#		}
-#	}
-#TALLeis - SUicide Pills has been fully incorporated into the OPSEC and Special Activities branch upgrades
-#	upgrade_suicide_pills = {
-#		picture = GFX_agency_suicide_pills
-#		sound = Spy_Agency_Operations_Upgrades_Confirm
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		modifiers_during_progress = {
-#			civilian_factory_use = 5
-#		}
-#		level = {
-#			modifier = {
-#				operative_death_on_capture_chance = 0.1
-#				own_operative_detection_chance = -0.05
-#			}
-#		}
-#	}
-#}
-#branch_operative = { #The forth category has been re-branded as “Agency Disciplines" and contains most of the content from both this and the previous branch
-	#all contained branch expansions have been fully replaced and moved, notes are jointed with each below
-#Training Centers hase been moved to Domestic Operations and Department Upgrades then re-branded and split between Operative Recruitment and Forign Operations
-#TALLeis - Commando training has been fully incorporated into the special activities branch upgrade
-#	upgrade_commando_training = {
-#		picture = GFX_agency_commando_training
-#		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm	
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		modifiers_during_progress = {
-#			civilian_factory_use = 5
-#		}
-#		level = {
-#			modifier = {
-#				commando_trait_chance_factor = 1 # +100%
-#			}
-#		}
-#	}
-#TALLeis - Interrogation Techniquest is fully incorporated into the Internal Security Branch Upgrade
-#	upgrade_interrogation_techniques = {
-#		picture = GFX_agency_interrogation_techniques
-#		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		modifiers_during_progress = {
-#			civilian_factory_use = 5
-#		}
-#		level = {
-#			modifier = {
-#				enemy_operative_capture_chance_factor = 1 # +100%
-#				enemy_operative_intel_extraction_rate = 0.25 # +25%
-#			}
-#		}
-#	}
-#TALLeis - Diplo Training has been fully incorporated into the HUMINT branch upgrade	
-#	upgrade_diplo_training = {
-#		picture = GFX_agency_diplomatic_training
-#		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		modifiers_during_progress = {
-#			civilian_factory_use = 5
-#		}
-#		level = {
-#			modifier = {
-#				control_trade_mission_factor = 0.25
-#				diplomatic_pressure_mission_factor = 0.25
-#			}
-#		}
-#	}
-#TALLeis - Psycho Warfare has been fully incorporated into the HUMINT branch upgrade	
-#	upgrade_psycho_warfare = {
-#		picture = GFX_agency_psychological_warfare
-#		sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
-#		ai_will_do = {
-#			factor = 1
-#		}
-#		modifiers_during_progress = {
-#			civilian_factory_use = 8
-#		}
-#		level = {
-#			modifier = {
-#				propaganda_mission_factor = 0.25
-#				boost_ideology_mission_factor = 0.25
-#			}
-#		}
-#	}
-#}
-#branch_crypto = { #retains its name, organization, and branches.  it is not included here as it remains largely unchanged
-#}
