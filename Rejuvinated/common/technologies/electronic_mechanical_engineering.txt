@@ -212,7 +212,7 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > "1939.8.1"
+				date > "1940.8.1"
 			}
 		}
 		
@@ -262,7 +262,7 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > "1941.8.1"
+				date > "1942.8.1"
 			}
 		}
 		
@@ -293,6 +293,11 @@ technologies = {
 			tank_radio_5
 			lc_radio_5
 		}
+
+		path = {
+			leads_to_tech = technical_radio_improvements
+			research_cost_coeff = 1
+		}
 		
 		ai_will_do = {
 			factor = 3
@@ -307,7 +312,47 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > "1943.8.1"
+				date > "1944.8.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			radio_tech
+		}
+
+		special_project_specialization = { specialization_air specialization_land }
+	}
+
+	technical_radio_improvements = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.01
+		coordination_bonus = 0.02
+		
+		start_year = 1945
+		
+		research_cost = 1.8
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @radio y = 20 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 6
+				has_war = yes
+			}
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+			modifier = {
+				factor = 5
+				date > "1945.8.1"
 			}
 		}
 		
@@ -387,6 +432,11 @@ technologies = {
 			leads_to_tech = centimetric_radar 
 			research_cost_coeff = 1
 		}
+
+		path = {
+			leads_to_tech = identification_friend_or_foe_system_1
+			research_cost_coeff = 1
+		}
 		
 		ai_will_do = {
 			factor = 1
@@ -411,6 +461,124 @@ technologies = {
 		enable_building = {
 			building = radar_station
 			level = 2
+		}
+	}
+
+	identification_friend_or_foe_system_1 = {
+
+		is_special_project_tech = yes
+		
+		coordination_bonus = 0.01
+		research_cost = 0.6
+		start_year = 1938
+		enable_equipment_modules = { 
+			
+		}
+
+		path = {
+			leads_to_tech = identification_friend_or_foe_system_2
+			research_cost_coeff = 1
+		}
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 6 }
+		}
+
+		special_project_specialization = { specialization_air }
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = GER
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			electronics
+			radar_tech
+		}
+	}
+
+	identification_friend_or_foe_system_2 = {
+
+		is_special_project_tech = yes
+		
+		coordination_bonus = 0.01
+		research_cost = 0.6
+		start_year = 1939
+		enable_equipment_modules = { 
+			
+		}
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 8 }
+		}
+
+		path = {
+			leads_to_tech = identification_friend_or_foe_system_3
+			research_cost_coeff = 1
+		}
+
+		special_project_specialization = { specialization_air }
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = GER
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			electronics
+			radar_tech
+		}
+	}
+
+	identification_friend_or_foe_system_3 = {
+
+		is_special_project_tech = yes
+		
+		coordination_bonus = 0.01
+		research_cost = 0.6
+		start_year = 1940
+		enable_equipment_modules = { 
+			
+		}
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 10 }
+		}
+
+		special_project_specialization = { specialization_air }
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = GER
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			electronics
+			radar_tech
 		}
 	}
 	
@@ -600,6 +768,96 @@ technologies = {
 		folder = {
 			name = electronics_folder
 			position = { x = @radar y = 14 }
+		}
+
+		path = {
+			leads_to_tech = pulse_doppler_radar
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			electronics
+			radar_tech
+		}
+	}
+
+	pulse_doppler_radar = {
+		is_special_project_tech = yes
+		# radar boost in air/sea combat depends on radar level
+		allow = {
+			ROOT = {
+				is_special_project_completed = sp:sp_air_radar
+			}
+		}
+		coordination_bonus = 0.01
+		enable_equipment_modules = { 
+			
+		}
+		special_project_specialization = { specialization_air specialization_nuclear }
+
+		path = {
+			leads_to_tech = technical_radar_improvements
+			research_cost_coeff = 1
+		}
+		
+		static_anti_air_hit_chance_factor = 0.2
+		
+		research_cost = 1.25
+		start_year = 1943
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @radar y = 16 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			electronics
+			radar_tech
+		}
+	}
+
+	technical_radar_improvements = {
+		is_special_project_tech = yes
+		# radar boost in air/sea combat depends on radar level
+		allow = {
+			ROOT = {
+				is_special_project_completed = sp:sp_air_radar
+			}
+		}
+		coordination_bonus = 0.01
+		
+		special_project_specialization = { specialization_air specialization_nuclear }
+		
+		static_anti_air_hit_chance_factor = 0.2
+		
+		research_cost = 1
+		start_year = 1944
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @radar y = 18 }
 		}
 		
 		ai_will_do = {
