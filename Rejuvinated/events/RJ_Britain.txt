@@ -91,17 +91,17 @@ country_event = {
 		promote_character = ENG_winston_churchill
 	}
 
-	#option = { #WIP
-	#	name = rj_britain.2.b
-	#	ai_chance = {
-	#		base = 50
-	#		modifier = {
-	#			factor = 0
-	#			ENG_historical_ai = yes
-	#		}
-	#	}
-	#	add_stability = -0.05
-	#}
+	option = {
+		name = rj_britain.2.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				ENG_historical_ai = yes
+			}
+		}
+		promote_character = ENG_edward_halifax
+	}
 }
 
 # The Battle of Cable Street

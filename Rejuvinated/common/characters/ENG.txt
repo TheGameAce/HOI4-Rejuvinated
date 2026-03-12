@@ -2550,6 +2550,21 @@ characters={
 	### HOI4 Rejuvinated ###
 	########################
 
+	ENG_edward_halifax={
+		name=ENG_edward_halifax
+		portraits={
+			civilian={
+				large=GFX_portrait_Lord_Edward_Halifax
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits={ viceroy_emeritus cautious_arbiter }
+			expire="1938.1.1.1"
+			id=-1
+		}
+	}
+
 	ENG_surat_alley={
 		name=ENG_surat_alley
 		portraits={
