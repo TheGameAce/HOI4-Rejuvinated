@@ -225,60 +225,6 @@ country_event = {
 	}
 }
 
-# Chamberlain Resigns
-country_event = {
-	id = britain.9
-	title = britain.9.t
-	desc = britain.9.d
-	picture = GFX_report_event_chamberlain
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = ENG
-		has_war = yes
-		has_government = democratic
-		NOT = {
-			has_completed_focus = uk_scandinavian_focus
-		}
-		POL = { has_capitulated = yes }
-		OR = {
-			has_global_flag = fall_of_france
-			FRA = { surrender_progress > 0.1 }
-			HOL = { surrender_progress > 0.1 }
-			BEL = { surrender_progress > 0.1 }
-			LUX = { surrender_progress > 0.1 }
-			DEN = { surrender_progress > 0.1 }
-			NOR = { surrender_progress > 0.1 }
-			AND = {
-				110 = { is_controlled_by = GER }
-				NOT = { is_in_faction_with = GER }
-			}
-		}
-		NOT = { has_country_flag = chamberlain_died }
-		has_country_leader = {
-			character = ENG_neville_chamberlain
-			ruling_only = yes
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 2
-	}
-
-	immediate = { set_country_flag = chamberlain_resigned }
-	
-	option = {
-		name = britain.9.a
-		promote_character = ENG_winston_churchill
-		retire_character = ENG_neville_chamberlain
-		add_stability = 0.1
-		add_war_support = 0.1
-
-	}
-}
-
-
 # Chamberlain Passes Away
 country_event = {
 	id = britain.10
