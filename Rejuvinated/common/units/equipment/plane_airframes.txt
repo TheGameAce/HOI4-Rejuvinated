@@ -2345,7 +2345,7 @@ equipments = {
 		naval_strike_targetting = 1
 		lend_lease_cost = 10
 		manpower = 35
-		fuel_consumption = 0.16
+		fuel_consumption = 0.01
 		build_cost_ic = 14
 		resources = {
 			aluminium = 3
@@ -2879,7 +2879,7 @@ equipments = {
 	large_plane_airframe_3 = { #Advanced
 		abbreviation = "afl3"
 		derived_variant_name = strat_bomber_equipment_3
-		year = 1942
+		year = 1941
 
 		archetype = large_plane_airframe
 		parent = large_plane_airframe_2
@@ -3045,7 +3045,7 @@ equipments = {
 	large_plane_airframe_4 = { #Modern
 		abbreviation = "afl4"
 		derived_variant_name = jet_strat_bomber_equipment_1
-		year = 1945
+		year = 1943
 
 		archetype = large_plane_airframe
 		parent = large_plane_airframe_3
@@ -3059,6 +3059,172 @@ equipments = {
 		naval_strike_attack = 1
 		naval_strike_targetting = 1
 		build_cost_ic = 20
+		resources = {
+			aluminium = 6
+			rubber = 2
+		}
+		module_slots = {
+			fixed_main_weapon_slot = {
+				required = yes
+				allowed_module_categories = {
+					strat_weapon
+					nav_bomber_weapon
+				}
+			}
+
+			fixed_auxiliary_weapon_slot_1 = { 
+				required = no
+				allowed_module_categories = {
+					strat_weapon
+					recon_camera
+					nav_bomber_weapon
+					mine_warfare_offense
+					
+				}
+			}
+			fixed_auxiliary_weapon_slot_2 = { 
+				required = no
+				allowed_module_categories = {
+					strat_weapon
+					recon_camera
+					nav_bomber_weapon
+					mine_warfare_offense
+					
+				}
+			}
+			fixed_auxiliary_weapon_slot_3 = { 
+				required = no
+				allowed_module_categories = {
+					strat_weapon
+					recon_camera
+					nav_bomber_weapon
+					mine_warfare_offense
+					
+				}
+			}
+			fixed_auxiliary_weapon_slot_4 = { 
+				required = no
+				allowed_module_categories = {
+					strat_weapon
+					recon_camera
+					nav_bomber_weapon
+					mine_warfare_offense
+					
+				}
+			}
+
+			engine_type_slot = {
+				required = yes
+				allowed_module_categories = {
+					quad_large_plane_engine_type
+					large_plane_engine_type
+					quad_large_plane_jet_engine_type
+					large_plane_jet_engine_type
+				}
+			}
+
+			special_type_slot_1 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_defense_turret
+					plane_special_module_defense_turret_x2
+					plane_special_module_large
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					mine_warfare_defense
+				}
+			}
+
+			special_type_slot_2 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_defense_turret
+					plane_special_module_defense_turret_x2
+					plane_special_module_large
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					mine_warfare_defense
+				}
+			}
+			special_type_slot_3 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_defense_turret
+					plane_special_module_defense_turret_x2
+					plane_special_module_large
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					mine_warfare_defense
+				}
+			}
+
+			special_type_slot_4 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_defense_turret
+					plane_special_module_defense_turret_x2
+					plane_special_module_large
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					mine_warfare_defense
+				}
+			}
+
+			special_type_slot_5 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_defense_turret
+					plane_special_module_defense_turret_x2
+					plane_special_module_large
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					mine_warfare_defense
+				}
+			}
+
+			special_type_slot_6 = {
+				required = no
+				allowed_module_categories = {
+					plane_special_module_defense_turret
+					plane_special_module_defense_turret_x2
+					plane_special_module_large
+					plane_special_module_bomb_sights
+					plane_special_module_radio_navigation
+					plane_special_module_air_ground_radar
+					plane_special_module_air_air_radar
+					mine_warfare_defense
+				}
+			}
+		}
+	}
+
+	large_plane_airframe_5 = { #Modern II
+		abbreviation = "afl5"
+		derived_variant_name = jet_strat_bomber_equipment_1
+		year = 1945
+
+		archetype = large_plane_airframe
+		parent = large_plane_airframe_4
+		priority = 5
+
+		air_range = 4200
+		maximum_speed = 500
+		air_agility = 45
+		air_defence = 64
+		weight = 24
+		naval_strike_attack = 1
+		naval_strike_targetting = 1
+		build_cost_ic = 22
 		resources = {
 			aluminium = 6
 			rubber = 2

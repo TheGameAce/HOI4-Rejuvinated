@@ -819,7 +819,7 @@ sp_air_jet_engine = {
 	}
 	
 	breakthrough_cost = {
-		specialization_air = 3
+		specialization_air = 2
 	}
 
 	resource_cost = {
@@ -830,9 +830,9 @@ sp_air_jet_engine = {
 		}
 	}
 
-	prototype_time = sp_time.prototype.long
+	prototype_time = sp_time.prototype.medium
 
-	complexity = sp_complexity.large
+	complexity = sp_complexity.medium
 
 	project_output = {
 
@@ -936,7 +936,7 @@ sp_air_jet_engine = {
 			fire_only_once = yes
 
 			threshold = { 
-				min = 40
+				min = 30
 				max = 90
 			}
 
@@ -1099,7 +1099,7 @@ sp_air_axial_jet_engine = {
 	}
 	
 	breakthrough_cost = {
-		specialization_air = 2
+		specialization_air = 1
 	}
 
 	resource_cost = {
@@ -1110,9 +1110,9 @@ sp_air_axial_jet_engine = {
 		}
 	}
 
-	prototype_time = sp_time.prototype.long
+	prototype_time = sp_time.prototype.medium
 
-	complexity = sp_complexity.large
+	complexity = sp_complexity.medium
 
 	project_output = {
 		country_effects = {
@@ -1225,7 +1225,7 @@ sp_air_axial_jet_engine = {
 			fire_only_once = yes
 
 			threshold = { 
-				min = 40
+				min = 30
 				max = 90
 			}
 
