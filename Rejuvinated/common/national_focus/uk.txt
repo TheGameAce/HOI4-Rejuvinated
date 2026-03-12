@@ -8020,7 +8020,7 @@ focus_tree = {
 
 	focus = {
 		id = rj_ENG_land_registration_act
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_farmland
 		cost = 5
 		prerequisite = { focus = ENG_steady_as_she_goes focus = ENG_the_kings_party }
 
@@ -8041,7 +8041,7 @@ focus_tree = {
 
 	focus = {
 		id = rj_ENG_protect_the_british_currency
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_currency_reforms
 		cost = 10
 		prerequisite = { focus = rj_ENG_land_registration_act }
 
@@ -8064,7 +8064,7 @@ focus_tree = {
 
 	focus = {
 		id = rj_ENG_enact_financial_reforms
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_economic_recovery
 		cost = 5
 		prerequisite = { focus = rj_ENG_protect_the_british_currency }
 
@@ -8085,7 +8085,7 @@ focus_tree = {
 
 	focus = {
 		id = rj_ENG_make_britain_healthy
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_generic_bad_medical
 		cost = 10
 		prerequisite = { focus = rj_ENG_land_registration_act }
 
@@ -8108,7 +8108,7 @@ focus_tree = {
 
 	focus = {
 		id = rj_ENG_initiate_further_labor_reforms
-		icon = GFX_focus_PLACEHOLDER
+		icon = GFX_focus_ICE_embrace_the_workers_revolution
 		cost = 5
 		prerequisite = { focus = rj_ENG_make_britain_healthy }
 
