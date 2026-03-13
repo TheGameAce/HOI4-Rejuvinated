@@ -2669,6 +2669,12 @@ technologies = {
 			aerial_rockets_1g
 			aerial_rockets_1s
 		}
+
+		allow = {
+			ROOT = {
+				has_tech = experimental_rockets
+			}
+		}
 		
 		research_cost = 1.5
 		start_year = 1936
