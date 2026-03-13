@@ -409,7 +409,7 @@ technologies = {
 
 		allow = { 	 		
 			ROOT = {
-				is_special_project_completed = sp:sp_air_axial_jet_engine
+				is_special_project_completed = sp:sp_air_jet_engine
 			} 
 		}
 
@@ -480,14 +480,14 @@ technologies = {
 		is_special_project_tech = yes
 
 		enable_equipments = {
-			small_plane_airframe_4
-			small_plane_cas_airframe_4
-			small_plane_naval_bomber_airframe_4
-			small_plane_suicide_airframe_4
-			cv_small_plane_airframe_4
-			cv_small_plane_cas_airframe_4
-			cv_small_plane_naval_bomber_airframe_4
-			cv_small_plane_suicide_airframe_4
+			small_plane_airframe_6
+			small_plane_cas_airframe_6
+			small_plane_naval_bomber_airframe_6
+			small_plane_suicide_airframe_6
+			cv_small_plane_airframe_5
+			cv_small_plane_cas_airframe_5
+			cv_small_plane_naval_bomber_airframe_5
+			cv_small_plane_suicide_airframe_5
 		}
 
 		research_cost = 2
@@ -781,7 +781,7 @@ technologies = {
 
 		allow = { 	 		
 			ROOT = {
-				is_special_project_completed = sp:sp_air_axial_jet_engine
+				is_special_project_completed = sp:sp_air_jet_engine
 			} 
 		}
 
@@ -837,9 +837,9 @@ technologies = {
 		is_special_project_tech = yes
 
 		enable_equipments = {
-			medium_plane_airframe_4
-			medium_plane_fighter_airframe_4
-			medium_plane_scout_plane_airframe_4
+			medium_plane_airframe_5
+			medium_plane_fighter_airframe_5
+			medium_plane_scout_plane_airframe_5
 		}
 		
 		research_cost = 2
@@ -1078,7 +1078,7 @@ technologies = {
 
 		allow = { 	 		
 			ROOT = {
-				is_special_project_completed = sp:sp_air_axial_jet_engine
+				is_special_project_completed = sp:sp_air_jet_engine
 			} 
 		}
 
@@ -1137,7 +1137,7 @@ technologies = {
 
 		enable_equipments = {
 			large_plane_airframe_5
-			large_plane_maritime_patrol_plane_airframe_4
+			large_plane_maritime_patrol_plane_airframe_5
 		}
 		
 		research_cost = 2
@@ -2666,6 +2666,8 @@ technologies = {
 
 		enable_equipment_modules = {
 			aerial_rockets_1
+			aerial_rockets_1g
+			aerial_rockets_1s
 		}
 		
 		research_cost = 1.5
@@ -2713,6 +2715,8 @@ technologies = {
 
 		enable_equipment_modules = {
 			aerial_rockets_2
+			aerial_rockets_2g
+			aerial_rockets_2s
 		}
 		
 		research_cost = 1.5
@@ -2760,6 +2764,8 @@ technologies = {
 
 		enable_equipment_modules = {
 			aerial_rockets_3
+			aerial_rockets_3g
+			aerial_rockets_3s
 		}
 		
 		research_cost = 1.5
@@ -2807,6 +2813,8 @@ technologies = {
 
 		enable_equipment_modules = {
 			aerial_rockets_4
+			aerial_rockets_4g
+			aerial_rockets_4s
 		}
 		
 		research_cost = 1.5
