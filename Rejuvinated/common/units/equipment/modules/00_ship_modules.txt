@@ -1270,6 +1270,7 @@ equipment_modules = {
 			convert_cost_ic = 60
 		}
 	}
+
 	ship_anti_air_3 = {
 		abbreviation = "sbd"
 		category = ship_anti_air
@@ -1295,6 +1296,7 @@ equipment_modules = {
 			convert_cost_ic = 60
 		}
 	}
+
 	ship_anti_air_4 = {
 		abbreviation = "sbe"
 		category = ship_anti_air
@@ -1309,6 +1311,29 @@ equipment_modules = {
 		
 		multiply_stats = {
 			naval_speed = -0.005
+		}
+
+		can_convert_from = {
+			module_category = ship_anti_air
+			convert_cost_ic = 120
+		}
+
+		can_convert_from = {
+			module = ship_anti_air_3
+			convert_cost_ic = 50
+		}
+	}
+
+	ship_anti_air_5 = {
+		abbreviation = "saa5"
+		category = ship_anti_air
+		parent = ship_anti_air_4
+		sfx = sfx_ui_sd_module_turret
+
+		add_equipment_type = anti_air
+		add_stats = {
+			anti_air_attack = 7
+			build_cost_ic = 200
 		}
 
 		can_convert_from = {

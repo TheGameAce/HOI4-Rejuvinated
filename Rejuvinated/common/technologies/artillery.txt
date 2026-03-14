@@ -307,6 +307,8 @@ technologies = {
 
 		enable_equipment_modules = {
 			tank_medium_howitzer_2
+			tank_heavy_howitzer
+			tank_medium_cannon_2
 		}
 		path = {
 			leads_to_tech = artillery4
@@ -357,7 +359,7 @@ technologies = {
 		}
 
 		enable_equipment_modules = {
-			tank_medium_cannon_2
+			tank_super_heavy_howitzer
 		}
 
 		path = {
@@ -420,7 +422,7 @@ technologies = {
 
 		enable_equipment_modules = {
 			auto_loader
-			tank_heavy_howitzer
+			tank_medium_cannon_3
 		}
 
 		path = {
@@ -481,7 +483,8 @@ technologies = {
 		}
 
 		enable_equipment_modules = {
-			
+			tank_heavy_howitzer_2
+			tank_medium_howitzer_3
 		}
 
 		research_cost = 1
@@ -538,7 +541,7 @@ technologies = {
 		}
 
 		enable_equipment_modules = {
-			
+			tank_super_heavy_howitzer_2
 		}
 
 		research_cost = 2
@@ -878,6 +881,10 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
+		enable_equipment_modules = {
+			tank_rocket_launcher_3
+		}
+
 		research_cost = 1
 
 		start_year = 1945
@@ -910,9 +917,6 @@ technologies = {
 		}
 		motorized_rocket_brigade = {
 			soft_attack = 0.3
-		}
-		enable_equipment_modules = {
-			tank_rocket_launcher_2
 		}
 
 		research_cost = 1
@@ -1276,6 +1280,7 @@ technologies = {
 			tank_anti_air_cannon_3
 			auto_loader
 			lc_heavy_anti_air_platform #Module for Land Cruiser
+			tank_auto_cannon_3
 		}
 
 		path = {
@@ -1378,6 +1383,10 @@ technologies = {
 
 	antiair7 = {
 
+		enable_equipment_modules = {
+			tank_heavy_cannon_4
+		}
+
 		anti_air = {
 			air_attack = 0.1
 		}
@@ -1445,11 +1454,7 @@ technologies = {
 		static_anti_air_damage_factor = 0.1
 
 		enable_equipment_modules = {
-			ship_anti_air_4
-			tank_heavy_cannon_3
-			tank_anti_air_cannon_3
-			auto_loader
-			lc_heavy_anti_air_platform #Module for Land Cruiser
+			ship_anti_air_5
 		}
 
 		path = {
@@ -1748,6 +1753,7 @@ technologies = {
 	antitank3 = {
 		enable_equipment_modules = {
 			tank_medium_cannon_2
+			tank_high_velocity_cannon_2
 		}
 		
 		category_anti_tank = {
@@ -1826,7 +1832,7 @@ technologies = {
 
 	antitank4 = {
 		enable_equipment_modules = {
-			tank_high_velocity_cannon_2
+			
 		}
 		
 		category_anti_tank = {
@@ -1907,6 +1913,7 @@ technologies = {
 		}	
 		enable_equipment_modules = {
 			tank_high_velocity_cannon_3
+			tank_medium_cannon_3
 			tank_heavy_cannon_3
 			auto_loader
 			lc_heavy_high_velocity_cannons #Module for Land Cruiser
@@ -2050,7 +2057,8 @@ technologies = {
 
 	antitank7 = {
 		enable_equipment_modules = {
-			
+			tank_heavy_cannon_4
+			tank_high_velocity_cannon_4
 		}
 		
 		category_anti_tank = {
