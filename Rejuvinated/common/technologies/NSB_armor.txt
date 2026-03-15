@@ -64,6 +64,11 @@ technologies = {
 			wet_ammo_storage
 			smoke_launchers
 			expanded_fuel_tank
+			improved_optics
+			binocular_telescope
+			improved_grousers
+			enhanced_rotation_mechanism
+			gun_ramming_mechanism
 		}
 		enable_subunits = {
 			light_armor
@@ -523,11 +528,73 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 1941
+		start_year = 1940
+
+		path = {
+			leads_to_tech = modern_light_tank_chassis
+		}
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = -1 y = 8 }
+			position = { x = -1 y = 7 }
+		}
+
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				is_major = no
+				factor = 2  # Minors prefer light tanks
+			}
+			modifier = {
+				factor = 8
+				# M24 Chaffee was designed and entered production in 1943
+				tag = USA
+				date > 1943.3.1
+			}
+
+			modifier = {
+				factor = 1.1
+				date > 1942.1.1
+			}
+
+			modifier = {
+				factor = 1.1
+				date > 1943.1.1
+			}
+
+			modifier = {
+				factor = 1.1
+				date > 1944.1.1
+			}
+		}
+
+		categories = {
+			armor
+			mio_cat_tech_all_armor_and_modules
+			cat_light_armor
+			mio_cat_tech_light_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			light_tank_tech
+		}
+		special_project_specialization = { specialization_land }
+	}
+
+	modern_light_tank_chassis = { #Chaffee Equivalent
+
+		enable_equipments = {
+			light_tank_chassis_4
+			light_tank_destroyer_chassis_4
+			light_tank_artillery_chassis_4
+			light_tank_aa_chassis_4
+		}
+
+		research_cost = 2
+		start_year = 1943
+
+		folder = {
+			name = nsb_armour_folder
+			position = { x = -1 y = 10 }
 		}
 
 		ai_will_do = {
@@ -881,11 +948,11 @@ technologies = {
 		}
 
 		research_cost = 2
-		start_year = 1943
+		start_year = 1942
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @1943 }
+			position = { x = 2 y = 9 }
 		}
 
 		on_research_complete = {
@@ -996,43 +1063,40 @@ technologies = {
 	}
 
 	main_battle_tank_chassis = { #E-50
-
+	
 		enable_equipments = {
-			modern_tank_chassis_1
-			modern_tank_destroyer_chassis_1
-			modern_tank_artillery_chassis_1
-			modern_tank_aa_chassis_1
+			medium_tank_chassis_4
+			medium_tank_destroyer_chassis_4
+			medium_tank_artillery_chassis_4
+			medium_tank_aa_chassis_4
 		}
-		enable_subunits = {
-			modern_armor
-		}
-
+	
 		research_cost = 2.5
-		start_year = 1945
-
+		start_year = 1944
+	
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 2 y = @1945 }
+			position = { x = 2 y = 12 }
 		}
-
+	
 		ai_will_do = {
 			factor = 1
-
+	
 			modifier = {
 				factor = 2
 				date > 1946.1.1
 			}
-
+	
 			modifier = {
 				factor = 2
 				date > 1947.1.1
 			}
-
+	
 			modifier = {
 				factor = 2
 				date > 1948.1.1
 			}
-
+	
 			modifier = {
 				factor = 6
 				# Centurion was designed and entered production in 1945-1946
@@ -1040,7 +1104,7 @@ technologies = {
 				date > 1944.9.1
 			}
 		}
-
+	
 		categories = {
 			armor
 			mio_cat_tech_all_armor_and_modules
@@ -1170,11 +1234,11 @@ technologies = {
 		}
 
 		research_cost = 2.5
-		start_year = 1940
+		start_year = 1939
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 5 y = @1940 }
+			position = { x = 5 y = 6 }
 		}
 
 		on_research_complete = {
@@ -1253,11 +1317,11 @@ technologies = {
 		}
 
 		research_cost = 2.5
-		start_year = 1943
+		start_year = 1942
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 5 y = @1943 }
+			position = { x = 5 y = 9 }
 		}
 
 		on_research_complete = {
@@ -1329,7 +1393,7 @@ technologies = {
 			tank_super_heavy_cannon
 		}
 
-		research_cost = 3
+		research_cost = 2.8
 		start_year = 1941
 		folder = {
 			name = nsb_armour_folder
@@ -1353,6 +1417,11 @@ technologies = {
 
 		path = {
 			leads_to_tech = sp_armored_lc_specialized_field_manuals_tech
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = super_heavy_tank_chassis_2
 			research_cost_coeff = 1
 		}
 
@@ -1419,6 +1488,61 @@ technologies = {
 					PROJECT = sp_land_land_cruiser
 				}
 			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 1
+				date > 1943.9.1
+				NOT = { has_government = democratic }
+				num_of_military_factories > 150
+			}
+			modifier = {
+				add = 2
+				original_tag = GER
+				date > 1944.5.1
+				surrender_progress < 0.1
+				has_government = fascism
+				has_war_with = SOV
+			}
+			modifier = {
+				factor = 10
+				tag = GER
+				is_historical_focus_on = yes 
+			}
+		}
+
+		categories = {
+			armor
+			mio_cat_tech_all_armor_and_modules
+			cat_heavy_armor
+			mio_cat_tech_heavy_armor_and_modules
+			tanks_tech
+			tank_chassis_tech
+			superheavy_tank_tech
+		}
+		special_project_specialization = { specialization_land }
+	}
+
+	super_heavy_tank_chassis_2 = {
+
+		enable_equipments = {
+			super_heavy_tank_chassis_2
+			super_heavy_tank_destroyer_chassis_2
+			super_heavy_tank_artillery_chassis_2
+			super_heavy_tank_aa_chassis_2
+		}
+
+		enable_equipment_modules = {
+			tank_super_heavy_cannon_2
+		}
+
+		research_cost = 2.8
+		start_year = 1943
+		folder = {
+			name = nsb_armour_folder
+			position = { x = 9 y = @1943 }
 		}
 
 		ai_will_do = {
@@ -2115,7 +2239,7 @@ technologies = {
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 7 y = @1943 }
+			position = { x = 12 y = @1943 }
 		}
 
 		folder = {
@@ -2211,7 +2335,7 @@ technologies = {
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 9 y = @1943 }
+			position = { x = 14 y = @1943 }
 		}
 
 		folder = {
@@ -2283,7 +2407,7 @@ technologies = {
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 11 y = @1943 }
+			position = { x = 16 y = @1943 }
 		}
 
 		folder = {
@@ -2349,7 +2473,7 @@ technologies = {
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 9 y = @1945 }
+			position = { x = 14 y = @1945 }
 		}
 
 		folder = {
@@ -2410,7 +2534,7 @@ technologies = {
 
 		folder = {
 			name = nsb_armour_folder
-			position = { x = 13 y = @1943 }
+			position = { x = 18 y = @1943 }
 		}
 
 		enable_equipment_modules = {
