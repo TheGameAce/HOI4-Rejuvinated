@@ -5,12 +5,13 @@ state={
 	manpower=2312500
 	resources={
 		steel=3 # was: 4
-		chromium=12 # was: 22
+		chromium=50
 		aluminium=30 # was: 58
 		tungsten = 10 # was: 20
+		coal = 11
 	}
 	
-	state_category = city
+	state_category = large_city
 
 	history={
 		owner = GRE
@@ -54,5 +55,5 @@ state={
 		863 976 1109 3864 3973 3988 4109 6930 7127 
 	}
 
-	local_supplies=0.0 
+	local_supplies=8.0 
 }
