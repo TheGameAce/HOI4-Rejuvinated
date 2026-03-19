@@ -121,9 +121,9 @@ ideas = {
 				always = yes
 			}
 
-			removal_cost = 1000
+			removal_cost = -1
 
-			picture = BRA_influencia_comunista_idea
+			picture = idea_generic_acquire_tanks
 
 			equipment_bonus =  {
 				  heavy_tank_chassis = {
@@ -136,6 +136,57 @@ ideas = {
 			      maximum_speed = 0.15
 		          }			  
 			}
+
+		}
+		
+		bra_light_and_medium_armor_design_improvements_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = idea_generic_acquire_tanks
+
+			modifier = {
+				army_armor_attack_factor = 0.15
+				army_armor_defence_factor = 0.10
+			}
+
+		}
+		
+		bra_light_and_medium_armor_design_improvements2_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = idea_generic_acquire_tanks
+
+			modifier = {
+				army_armor_attack_factor = 0.15
+				army_armor_defence_factor = 0.10
+			}
+			equipment_bonus =  {
+			medium_tank_chassis = {
+			     build_cost_ic = 0.4
+		    } 
+			
+			light_tank_chassis = {
+			     build_cost_ic = 0.2
+		    } 
+		} 
 
 		}
 
