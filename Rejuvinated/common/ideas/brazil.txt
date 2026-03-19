@@ -110,6 +110,34 @@ ideas = {
 			}
 
 		}
+		
+		bra_heavy_armor_engine_improvements_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = 1000
+
+			picture = BRA_influencia_comunista_idea
+
+			equipment_bonus =  {
+				  heavy_tank_chassis = {
+			      maximum_speed = 0.15
+		          } 
+				  super_heavy_tank_chassis = {
+			      maximum_speed = 0.15
+		          }	
+				  land_cruiser_equipment_1 = {
+			      maximum_speed = 0.15
+		          }			  
+			}
+
+		}
 
 		bra_instabilidade = {
 			allowed = {
