@@ -1620,8 +1620,9 @@ focus_tree = {
 		id = bra_heavy_armor
 		icon = GFX_focus_generic_tank_assault
 		prerequisite = { focus = bra_armor }
+		mutually_exclusive = { focus = bra_medium_and_light_armor }
 		relative_position_id = bra_armor
-		x = 3
+		x = 1
 		y = 1
 		cost = 5
 		ai_will_do = {
@@ -1651,6 +1652,41 @@ focus_tree = {
 				ahead_reduction = 1
 				uses = 1
 				category = cat_heavy_armor
+			}
+		}
+	}
+	
+	focus = {
+		id = bra_medium_and_light_armor
+		icon = GFX_focus_generic_tank_assault
+		prerequisite = { focus = bra_armor }
+		mutually_exclusive = { focus = bra_heavy_armor }
+		relative_position_id = bra_armor
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			add_ideas = bra_light_and_medium_armor_design_improvements_idea
+		}
+	}
+	
+	focus = {
+		id = bra_medium_and_light_armor2
+		icon = GFX_focus_generic_tank_assault
+		prerequisite = { focus = bra_medium_and_light_armor }
+		relative_position_id = bra_medium_and_light_armor
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 40
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = bra_light_and_medium_armor_design_improvements2_idea 
+			add_idea = bra_light_and_medium_armor_design_improvements_idea 
 			}
 		}
 	}
