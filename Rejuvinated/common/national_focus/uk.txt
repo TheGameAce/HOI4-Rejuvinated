@@ -9541,6 +9541,37 @@ focus_tree = {
 	}
 
 	focus = {
+		id = rj_ENG_the_road_to_paris
+		prerequisite = { focus = ENG_gibraltar_for_spanish_support focus = ENG_pre_empt_spanish_alignment }
+		prerequisite = { focus = rj_ENG_initiate_the_london_berlin_axis }
+		available = {
+			is_subject = no
+		}
+		bypass = {
+			NOT = {
+				country_exists = FRA
+			}
+		}
+		will_lead_to_war_with = FRA
+		icon = GFX_focus_attack_france
+		x = 0
+		y = 2
+		relative_position_id = rj_ENG_initiate_the_london_berlin_axis
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = { FOCUS_FILTER_DIPLOMACY }
+		completion_reward = {
+			ENG_mosley_pacifism_level_down = yes
+			create_wargoal = {
+				target = FRA
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
 		id = ENG_the_british_path_to_fascism
 		prerequisite = { focus = ENG_organize_the_blackshirts }
 		available = {
@@ -9867,6 +9898,35 @@ focus_tree = {
 						expire = 0
 					}
 				}
+			}
+		}
+	}
+
+	focus = {
+		id = rj_ENG_reconquer_the_isle
+		prerequisite = { focus = ENG_gibraltar_for_spanish_support focus = ENG_pre_empt_spanish_alignment }
+		available = {
+			is_subject = no
+		}
+		bypass = {
+			NOT = {
+				country_exists = IRE
+			}
+		}
+		will_lead_to_war_with = IRE
+		icon = GFX_focus_PLACEHOLDER
+		x = 1
+		y = 1
+		relative_position_id = ENG_gibraltar_for_spanish_support
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			ENG_mosley_pacifism_level_down = yes
+			create_wargoal = {
+				target = IRE
+				type = annex_everything
 			}
 		}
 	}
