@@ -3,7 +3,11 @@ state={
 	name="STATE_457" # Arabian Desert
 	manpower = 7194
 	
-	state_category = wasteland
+	state_category = pastoral
+
+	resources = {
+		oil = 120
+	}
 	
 	history = {
 		owner = EGY
