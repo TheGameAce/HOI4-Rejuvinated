@@ -3,8 +3,10 @@ state={
 	name="STATE_84"
 	manpower = 1886300
 	resources={
-		steel=3 # was: 4
-		coal = 3 # initial distribution
+		steel=9
+		coal = 17
+		tungsten = 5
+		aluminium = 6
 	}
 	
 	state_category = town
@@ -27,5 +29,5 @@ state={
 		676 690 693 3665 3676 3694 6679 6709 9619 11622 11639 
 	}
 
-	local_supplies=0.0 
+	local_supplies=2.0 
 }

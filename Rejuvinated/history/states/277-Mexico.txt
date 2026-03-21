@@ -3,10 +3,11 @@ state={
 	name="STATE_277"
 	manpower = 4067736
 	
-	state_category = city
+	state_category = large_city
 
 	resources={
-		steel=6 #was 2 before Mexican steel production was centralized to allow oil concessions
+		steel=15
+		tungsten = 67
 	}
 	
 	history={
@@ -34,5 +35,5 @@ state={
 	}
 	
 
-	local_supplies=5.0 
+	local_supplies=7.0 
 }
