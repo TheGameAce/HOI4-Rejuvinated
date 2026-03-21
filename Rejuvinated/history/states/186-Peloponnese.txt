@@ -3,7 +3,11 @@ state={
 	name="STATE_186"
 	manpower=1259000
 	
-	state_category = town
+	state_category = large_city
+
+	resources = {
+		steel = 12
+	}
 
 	history={
 		victory_points = {
@@ -27,6 +31,8 @@ state={
 				naval_base = 2
 
 			}
+			dockyard = 1
+			industrial_complex = 1
 
 		}
 		add_core_of = GRE
@@ -37,5 +43,5 @@ state={
 		1173 4078 4178 4193 7096 7211 11965 
 	}
 
-	local_supplies=0.0 
+	local_supplies=8.0 
 }

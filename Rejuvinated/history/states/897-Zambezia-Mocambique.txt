@@ -2,17 +2,30 @@ state={
 	id=897
 	name="STATE_897"
 	manpower = 2086000
-	state_category = rural
+	state_category = large_town
+
+	resources = {
+		coal = 3
+	}
 
 	history={
 		owner = POR
 		buildings = {
 			infrastructure = 2
 			2123 = {
-				naval_base = 1
+				naval_base = 2
 
 			}
+			12971 = {
+				naval_base = 2
+			}
+		}
 
+		victory_points = {
+			12971 1
+		}
+		victory_points = {
+			2123 1
 		}
 
 		add_core_of = MZB
@@ -23,5 +36,5 @@ state={
 	}
 
 	buildings_max_level_factor=1.000
-	local_supplies=0.000
+	local_supplies=5.000
 }

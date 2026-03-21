@@ -2,13 +2,8 @@ state = {
 	id = 981
 	name = "STATE_981" # Barotseland
 	
-	state_category = rural
+	state_category = town
 	manpower = 810043
-
-	resources = {
-		chromium = 16
-		tungsten = 4
-	}
 
 	history = {
 
@@ -30,5 +25,5 @@ state = {
 	}
 	
 	buildings_max_level_factor = 1.000
-	local_supplies = 0.0 
+	local_supplies = 1.0 
 }
