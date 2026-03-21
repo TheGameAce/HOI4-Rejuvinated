@@ -7,6 +7,9 @@
 ### search_filters = {FOCUS_FILTER_ANNEXATION}
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
 
+#!gfx:interface/RJ_goals.gfx
+#!gfx:interface/RJ_USA_goals.gfx
+
 focus_tree = {
 	id = usa_focus
 
@@ -39,15 +42,12 @@ focus_tree = {
 			x = -12
 			y = 0
 			trigger = {
-				OR = {
-					NOT = { has_dlc = "Man the Guns" }
-					AND = {
-						has_game_rule = {
-							rule = obsolete_focus_branches_visibility
-							option = HIDE
-						}
-						has_completed_focus = USA_reestablish_the_gold_standard
+				AND = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
 					}
+					has_completed_focus = USA_reestablish_the_gold_standard
 				}
 			}
 		}
@@ -127,7 +127,6 @@ focus_tree = {
 			factor = 1
 		}
 		allow_branch = {
-			has_dlc = "Man the Guns"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -3444,15 +3443,12 @@ focus_tree = {
 			x = -12
 			y = 0
 			trigger = {
-				OR = {
-					NOT = { has_dlc = "Man the Guns" }
-					AND = {
-						has_game_rule = {
-							rule = obsolete_focus_branches_visibility
-							option = HIDE
-						}
-						has_completed_focus = USA_reestablish_the_gold_standard
+				AND = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
 					}
+					has_completed_focus = USA_reestablish_the_gold_standard
 				}
 			}
 		}
@@ -3779,7 +3775,6 @@ focus_tree = {
 			factor = 1
 		}
 		allow_branch = {
-			has_dlc = "Man the Guns"
 			if = {
 				limit = {
 					has_game_rule = {
@@ -5407,13 +5402,6 @@ focus_tree = {
 		x = 44
 		y = 0
 		offset = {
-			x = -26
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
-		offset = {
 			x = -17
 			y = 0
 			trigger = {
@@ -5421,19 +5409,6 @@ focus_tree = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
 				}
-				has_dlc = "Man the Guns"
-				has_completed_focus = USA_continue_the_new_deal
-			}
-		}
-		offset = {
-			x = -2
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				NOT = { has_dlc = "Man the Guns" }
 				has_completed_focus = USA_continue_the_new_deal
 			}
 		}
@@ -5445,19 +5420,6 @@ focus_tree = {
 					rule = obsolete_focus_branches_visibility
 					option = HIDE
 				}
-				has_dlc = "Man the Guns"
-				has_completed_focus = USA_reestablish_the_gold_standard
-			}
-		}
-		offset = {
-			x = -2
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				NOT = { has_dlc = "Man the Guns" }
 				has_completed_focus = USA_reestablish_the_gold_standard
 			}
 		}
