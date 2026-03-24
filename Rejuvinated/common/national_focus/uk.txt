@@ -7883,7 +7883,7 @@ focus_tree = {
 	focus = {
 		id = ENG_home_defence
 		prerequisite = { focus = ENG_steady_as_she_goes }
-		icon = GFX_focus_generic_home_defense
+		icon = GFX_focus_RJ_ENG_home_defense
 
 		x = 0
 		y = 1
@@ -8628,7 +8628,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		prerequisite = { focus = ENG_home_defence }
-		icon = GFX_goal_generic_construct_military
+		icon = GFX_focus_RJ_ENG_issue_gas_masks
 		x = 1
 		y = 1
 		relative_position_id = ENG_home_defence
@@ -8657,7 +8657,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		prerequisite = { focus = ENG_issue_gasmasks }
-		icon = GFX_focus_generic_commonwealth_build_infantry
+		icon = GFX_focus_RJ_military
 		x = 0
 		y = 1
 		relative_position_id = ENG_issue_gasmasks
@@ -8666,8 +8666,11 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			remove_ideas = ENG_the_war_to_end_all_wars
 			set_rule = { can_send_volunteers = yes }
+			swap_ideas = {
+				remove_idea = ENG_the_war_to_end_all_wars
+				add_idea = military_training_act_idea
+			}
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}
@@ -8686,7 +8689,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		prerequisite = { focus = ENG_military_training_act }
-		icon = GFX_goal_generic_trade
+		icon = GFX_focus_RJ_ENG_embargo_germany
 		x = 0
 		y = 1
 		relative_position_id = ENG_military_training_act
@@ -8697,6 +8700,7 @@ focus_tree = {
 		completion_reward = {
 			send_embargo = GER
 			custom_effect_tooltip = embargo_relation_tt
+			add_political_power = 25
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}
@@ -8715,7 +8719,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ENG_home_defence
 
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = {
 			factor = 1
@@ -8739,7 +8743,7 @@ focus_tree = {
 	focus = {
 		id = ENG_kickstart_the_war_industry
 		prerequisite = { focus = ENG_prepare_for_the_inevitable }
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_focus_RJ_USA_military_construction
 		x = 0
 		y = 1
 		relative_position_id = ENG_prepare_for_the_inevitable
@@ -8806,7 +8810,7 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_goal_generic_occupy_states_ongoing_war
+		icon = GFX_focus_IRQ_anglo_iraqi_oil_expansion
 
 		x = 0
 		y = 1
