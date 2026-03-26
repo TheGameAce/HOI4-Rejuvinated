@@ -5910,7 +5910,7 @@ focus_tree = {
 		}
 	}
 
-focus = {
+	focus = {
 		id = POR_monarchist_uprising_in_brazil
 		available = {
 			BRA = {
@@ -5983,16 +5983,7 @@ focus = {
 					#		anti_communist
 					#	}					
 					#}
-					create_country_leader = {
-						name = "Arlindo Veiga dos Santos"
-						desc = "POLITICS_ARLINDO_VEIGA_DOS_SANTOS_DESC"
-						picture = "gfx/leaders/BRA/portrait_bra_arlindo_veiga_dos_santos.dds"
-						expire = "1954.8.24"
-						ideology = despotism
-						traits = {
-							staunch_monarchist
-						}					
-					}
+					promote_character = BRA_arlindo_veiga_dos_santos
 				}
 			}
 		}
