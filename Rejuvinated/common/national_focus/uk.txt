@@ -12054,7 +12054,7 @@ focus_tree = {
 
 	focus = {
 		id = rj_ENG_ally_with_browder
-		prerequisite = { focus = ENG_bermuda_invasion_launch_point }
+		prerequisite = { focus = ENG_bermuda_invasion_launch_point focus = ENG_tackle_fascism }
 		mutually_exclusive = { focus = ENG_crush_the_dream }
 		available = {
 			is_subject = no
