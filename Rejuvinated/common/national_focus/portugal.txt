@@ -512,9 +512,9 @@ focus_tree = {
 		}
 	}
 
-		focus = {
+	focus = {
 		id = POR_invest_angola
-		icon = GFX_goal_invest_angola
+		icon = GFX_goal_POR_angola
 		prerequisite = { focus = POR_colony_infraestructure }
 		
 		x = 1
@@ -544,7 +544,7 @@ focus_tree = {
 
 	focus = {
 		id = POR_invest_mozambique
-		icon = GFX_goal_invest_mozambique
+		icon = GFX_goal_POR_mozambique
 		prerequisite = { focus = POR_colony_infraestructure }
 		
 		x = 3
@@ -3868,7 +3868,7 @@ focus = {
 	}
 
 	focus = {
-		id = POR_Concordata
+		id = POR_concordat_with_the_holy_see
 		icon = GFX_focus_por_concordat
 		prerequisite = { focus = POR_president_salazar focus = POR_salazar_lives }
 
@@ -4965,7 +4965,7 @@ focus = {
 
 	focus = {
 		id = POR_portugal_strong
-		icon = GFX_por_sucess
+		icon = GFX_goal_portugal
 		prerequisite = { focus = POR_another_aljubarrota }
 		prerequisite = { focus = POR_from_luanda_lourenco }
 
