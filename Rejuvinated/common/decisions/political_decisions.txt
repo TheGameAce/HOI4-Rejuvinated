@@ -1978,11 +1978,21 @@ political_actions = {
 			}
 			if = {
 				limit = {
-					has_aat = yes 
+					has_dlc = "Arms Against Tyranny"
 					original_tag = NOR 
 				}
 				NOT = { 
 					has_idea = NOR_anti_communist_sentiment_ns
+				}
+			}
+			if = {
+				limit = {
+					original_tag = POR
+					has_idea = POR_oscar_carmona1
+				}
+				custom_trigger_tooltip = {
+					always = yes
+					tooltip = POR_anti_fascist_raids_carmona_tt
 				}
 			}
         }
@@ -2012,6 +2022,13 @@ political_actions = {
 		}
 
 		complete_effect = {
+			if = {
+				limit = {
+					original_tag = POR
+					has_idea = POR_oscar_carmona1
+				}
+				hidden_effect = { set_country_flag = freemason_3 }
+			}
 			add_stability = -0.1
 		}
 		
@@ -2096,6 +2113,16 @@ political_actions = {
 					has_idea = SPR_political_violence
 				}
 			}
+			if = {
+				limit = {
+					original_tag = POR
+					has_idea = POR_oscar_carmona1
+				}
+				custom_trigger_tooltip = {
+					always = yes
+					tooltip = POR_anti_fascist_raids_carmona_tt
+				}
+			}
         }
 	
 		modifier = {
@@ -2107,6 +2134,13 @@ political_actions = {
 		cost = 50
 
 		complete_effect = {
+			if = {
+				limit = {
+					original_tag = POR
+					has_idea = POR_oscar_carmona1
+				}
+				hidden_effect = { set_country_flag = freemason_2 }
+			}
 			add_stability = -0.1
 		}
 		
@@ -2142,6 +2176,16 @@ political_actions = {
 					has_idea = SPR_political_violence
 				}
 			}
+			if = {
+				limit = {
+					original_tag = POR
+					has_idea = POR_oscar_carmona1
+				}
+				custom_trigger_tooltip = {
+					always = yes
+					tooltip = POR_anti_fascist_raids_carmona_tt
+				}
+			}
         }
 	
 		modifier = {
@@ -2153,6 +2197,13 @@ political_actions = {
 		cost = 50
 
 		complete_effect = {
+			if = {
+				limit = {
+					original_tag = POR
+					has_idea = POR_oscar_carmona1
+				}
+				hidden_effect = { set_country_flag = freemason_1 }
+			}
 			add_stability = -0.1
 		}
 		
@@ -2211,6 +2262,16 @@ political_actions = {
 					has_idea = SPR_political_violence
 				}
 			}
+			if = {
+				limit = {
+					original_tag = POR
+					has_idea = POR_oscar_carmona1
+				}
+				custom_trigger_tooltip = {
+					always = yes
+					tooltip = POR_anti_fascist_raids_carmona_tt
+				}
+			}
         }
 	
 		modifier = {
@@ -2222,6 +2283,13 @@ political_actions = {
 		cost = 50
 
 		complete_effect = {
+			if = {
+				limit = {
+					original_tag = POR
+					has_idea = POR_oscar_carmona1
+				}
+				hidden_effect = { set_country_flag = freemason_0 }
+			}
 			add_stability = -0.1
 		}
 		
@@ -2289,6 +2357,13 @@ political_actions = {
 					original_tag = RAJ
 					has_dlc = "Graveyard of Empires"
 				}
+			}
+
+			if = {
+				limit = {
+					original_tag = POR
+				}
+				NOT = { has_idea = POR_oscar_carmona1 }
 			}
 		}
 
@@ -2389,6 +2464,13 @@ political_actions = {
 					has_idea = SPR_political_violence
 				}
 			}
+
+			if = {
+				limit = {
+					original_tag = POR
+				}
+				NOT = { has_idea = POR_oscar_carmona1 }
+			}
 		}
 
 		visible = {
@@ -2484,6 +2566,13 @@ political_actions = {
 						}
 					}
 				}
+			}
+
+			if = {
+				limit = {
+					original_tag = POR
+				}
+				NOT = { has_idea = POR_oscar_carmona1 }
 			}
 		}
 
@@ -2588,6 +2677,13 @@ political_actions = {
 				NOT = {
 					has_idea = SPR_political_violence
 				}
+			}
+
+			if = {
+				limit = {
+					original_tag = POR
+				}
+				NOT = { has_idea = POR_oscar_carmona1 }
 			}
 		}
 
@@ -2733,6 +2829,9 @@ political_actions = {
 					has_dlc = "Battle for the Bosporus"
 				}
 				NOT = { original_tag = GRE }
+			}
+			NOT = {
+				has_completed_focus = POR_no_censorship
 			}
 		}
 		

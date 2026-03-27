@@ -1,0 +1,274 @@
+﻿start_equipment_factor = 0.25
+division_template = {
+	name = "Guarda Nacional Republicana"		# Infantry Division
+	division_names_group = POR_GNR_01
+	# Note: each regiment could also mobilize a 3rd battalion if called up
+	regiments = {
+		GNR = { x = 0 y = 0 }
+		GNR = { x = 0 y = 1 }
+		GNR = { x = 1 y = 0 }
+		GNR = { x = 1 y = 1 }
+	}
+	
+}
+division_template = {
+	name = "Divisão de Infantaria"			# Infantry Division
+	division_names_group = POR_INF_01 
+	# Note: also represents Guards, Fortress divisions
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 } 
+	}
+}
+division_template = { 
+	name = "Divisão Colonial" 
+	division_names_group = POR_COL_01 
+
+	# Represents lesser-equipped colonial units
+	regiments = { 
+		infantry = { x = 0 y = 0 } 
+		infantry = { x = 0 y = 1 } 
+		infantry = { x = 0 y = 2 } 
+		infantry = { x = 1 y = 0 } 
+		infantry = { x = 1 y = 1 } 
+		infantry = { x = 1 y = 2 } 
+	} 
+} 
+
+division_template = {
+	name = "Brigada de Cavalaria" 		# Cavalry Brigade
+	division_names_group = POR_CAV_01
+	# Note: Cavalry regiments included about 5 squadrons/companies
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Fuzileiros Navais"
+	division_names_group = POR_MAR_01
+
+	regiments = {
+		marine = { x = 0 y = 0 }
+		marine = { x = 0 y = 1 }
+		marine = { x = 1 y = 0 }
+		marine = { x = 1 y = 1 }
+	}
+	priority = 2
+}
+
+units = {
+	###### Exército Portugues (CO: Cabral) #####
+	# Governo Militar Portugues (CO: Cunha) #
+	division = {
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 11805
+		division_template = "Divisão de Infantaria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division = { # "Brigada de Cavalaria"
+		name = "Brigada de Cavalaria de Lisboa"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 11805
+		division_template = "Brigada de Cavalaria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.8
+		
+	}
+	division = { # "Guarda Nacional Republicana"
+		name = "Guarda Nacional Republicana de Lisboa"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 11805
+		division_template = "Guarda Nacional Republicana"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division = { # "Guarda Nacional Republicana"
+		name = "Guarda Nacional Republicana do Porto"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 9817
+		division_template = "Guarda Nacional Republicana"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division = { # "1o Regimento de Fuzileiros Navais"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 9817
+		division_template = "Fuzileiros Navais"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.7
+	}
+
+	# 2a Distrito Militar (CO: Franco) #
+	division = { # "2a Divisão de Infantaria"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 844
+		division_template = "Divisão de Infantaria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division = { # "2o Regimento de Fuzileiros Navais"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 9817
+		division_template = "Fuzileiros Navais"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+
+	# 3a Distrito Militar )CO: Meneses) #
+	division = { # "3a Divisão de Infantaria"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 3
+		}
+		location = 844
+		division_template = "Divisão de Infantaria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division = { # "3o Regimento de Fuzileiros Navais"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 3
+		}
+		location = 9817
+		division_template = "Fuzileiros Navais"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.7
+	}
+
+	# 4a Distrito Militar (CO: Correia) #
+	division = { # "4a Divisão de Infantaria"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 4
+		}
+		location = 844
+		division_template = "Divisão de Infantaria"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+
+	division = { # "1a Divisão Colonial de Angola"
+		name = "1a Divisão Colonial de Angola"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8248
+		division_template = "Divisão Colonial"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division = { # "2a Divisão Colonial de Angola"
+		name = "2a Divisão Colonial de Angola"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 8248
+		division_template = "Divisão Colonial"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division = { # "1a Divisão Colonial de Moçambique"
+		name = "1a Divisão Colonial de Moçambique"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 1
+		}
+		location = 8245
+		division_template = "Divisão Colonial"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+
+	}
+
+	division = { # "2a Divisão Colonial de Moçambique"
+		name = "2a Divisão Colonial de Moçambique"
+		division_name = {
+				is_name_ordered = yes
+				name_order = 2
+		}
+		location = 8245
+		division_template = "Divisão Colonial"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.3
+		}
+	}
+
+### Aeronáutica Militar ###
+air_wings = {
+	112 = {
+		fighter_equipment_0 = {
+			owner = "POR" 
+			amount = 20
+		}
+	}
+}
+instant_effect = {
+	add_manpower = 40000
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "POR"
+		}
+		requested_factories = 2
+		progress = 1
+		efficiency = 100
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "POR"
+		}
+		requested_factories = 1
+		progress = 1
+		efficiency = 100
+	}
+}
