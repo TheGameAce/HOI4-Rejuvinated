@@ -1,0 +1,15 @@
+﻿units = {
+	    fleet = {
+		        name = "Latvijas Kara Flote"
+		        naval_base = 9340
+		        task_force = {
+			                 name = "Latvijas Kara Flote"
+			                 location =  9340
+			                 ship = { name = "Ronis" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = LAT version_name = "Loire-Simonet" }}}
+			                 ship = { name = "Spidola" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = LAT version_name = "Loire-Simonet" }}}
+			                 ship = { name = "Virsaitis" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = LAT version_name = "Minensuchboot 1916" }}}
+	                         ship = { name = "Imanta" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = LAT version_name = "Mīnu Aizžogotājtraleris" }}}
+	                         ship = { name = "Viesturs" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = LAT version_name = "Mīnu Aizžogotājtraleris" }}}
+		                     }
+	            }
+}

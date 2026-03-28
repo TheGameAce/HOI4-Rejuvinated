@@ -1,0 +1,91 @@
+﻿division_template = {
+	                name = "Kājnieku Divīzija"
+	                division_names_group = LAT_INF_01
+	                regiments = {
+		                        infantry = { x = 0 y = 0 }
+		                        infantry = { x = 0 y = 1 }
+		                        infantry = { x = 0 y = 2 }
+		                        infantry = { x = 1 y = 0 }
+		                        infantry = { x = 1 y = 1 }
+		                        infantry = { x = 1 y = 2 }
+		                        infantry = { x = 2 y = 0 }
+		                        infantry = { x = 2 y = 1 }
+		                        infantry = { x = 2 y = 2 }
+	                }
+	                support = {
+		                      artillery = { x = 0 y = 0 }
+	                }
+}
+
+division_template = {
+	                name = "Autotanku Brigāde"
+	                division_names_group = LAT_ARM_01
+	                regiments = {
+		                        light_armor = { x = 0 y = 0 }
+		                        light_armor = { x = 0 y = 1 }
+		                        motorized = { x = 1 y = 0 }
+		                        motorized = { x = 1 y = 1 }
+	                }
+	                support = {
+		                      artillery = { x = 0 y = 0 }
+	                }
+}
+
+units = {
+	    division = {
+		           location = 9340
+		           division_template = "Kājnieku Divīzija"
+		           force_equipment_variants = { infantry_equipment_0 = { owner = "LAT" } }
+		           }
+	    division = {
+		           location = 9340
+		           division_template = "Kājnieku Divīzija"
+		           force_equipment_variants = { infantry_equipment_0 = { owner = "LAT" } }
+                   }
+	    division = {
+		           location = 310
+		           division_template = "Kājnieku Divīzija"
+		           force_equipment_variants = { infantry_equipment_0 = { owner = "LAT" } }
+                   }
+	    division = {
+		           location = 265
+		           division_template = "Kājnieku Divīzija"
+		           force_equipment_variants = { infantry_equipment_0 = { owner = "LAT" } }
+                   }
+	    division = {
+		           location = 9340
+		           division_template = "Autotanku Brigāde"
+		           force_equipment_variants = { infantry_equipment_0 = { owner = "LAT" } }
+                   }
+}					
+
+air_wings = {
+	        12 = {
+		         fighter_equipment_0 = {
+			                           owner = "LAT" 
+			                           amount = 39
+		                               }
+		         name = "Latvijas Aviācijas Pulks"
+	             }
+}
+
+instant_effect = {
+	             add_equipment_production = {
+		                                    equipment = {
+			                                            type = infantry_equipment_1
+			                                            creator = "LAT"
+		                                                }
+		                                    requested_factories = 1
+		                                    progress = 0.25
+		                                    efficiency = 100
+	             }
+	             add_equipment_production = {
+		                                    equipment = {
+			                                            type = artillery_equipment_1
+			                                            creator = "LAT"
+		                                                }
+		                                    requested_factories = 1
+		                                    progress = 0.25
+		                                    efficiency = 100
+	             }
+}
