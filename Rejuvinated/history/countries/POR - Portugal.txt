@@ -8,33 +8,37 @@ if = {
 		set_naval_oob = "POR_1936_naval_legacy"
 	}
 }
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "POR_1936_air_bba"
+	else = {
+		set_air_oob = "POR_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			early_bomber = 1
+			CAS1 = 1
+		}
+	}
+}
 
 set_research_slots = 3
-set_stability = 0.65
-set_war_support = 0.50
 
 set_technology = {
-	gnr = 1
 	infantry_weapons = 1
 	infantry_weapons1 = 1
+	tech_trucks = 1
 	gw_artillery = 1
 	interwar_antiair = 1
 	tech_support = 1		
 	tech_engineers = 1
-	early_fighter = 1
-	early_bomber = 1
-	marines  = 1
+	basic_train = 1
 }
-
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
 	set_technology = {
 		early_submarine = 1
 		basic_submarine = 1
 		early_destroyer = 1
-		basic_destroyer = 1
-		early_light_cruiser = 1
-		early_heavy_cruiser = 1
 		transport = 1
 	}
 }
@@ -47,11 +51,46 @@ if = {
 		basic_ship_hull_light = 1
 		early_ship_hull_submarine = 1
 		basic_ship_hull_submarine = 1
-		early_ship_hull_cruiser = 1
 		basic_battery = 1
 		basic_torpedo = 1
 		basic_depth_charges = 1
 		mtg_transport = 1
+	}
+}
+
+add_ideas = {
+	POR_oscar_carmona
+	estado_novo
+	POR_disorganized_army
+	POR_holy_see
+	limited_conscription
+}
+
+ENG = {
+	add_opinion_modifier = {
+		target = POR 
+		modifier  = POR_anglo_portuguese_alliance
+	}
+}
+
+POR = {
+	add_opinion_modifier = {
+		target = ENG 
+		modifier  = POR_anglo_portuguese_alliance
+	}
+}
+
+GER = {
+	add_opinion_modifier = {
+		target = POR
+		modifier = fascism_leanings_good
+	}
+}
+
+ITA = {
+	add_opinion_modifier = {
+		target = POR
+		modifier = fascism_leanings_good
 	}
 }
 
@@ -61,14 +100,17 @@ set_variable = { var = eng_pink_map_berlim value = 100 }
 
 1939.1.1 = {
 
-	add_political_power = 599
+	add_political_power = 1198
+	add_command_power = 100
 
 	#adding ministers
 	add_ideas = {
 		limited_conscription
 		partial_economic_mobilisation
 	}
-	remove_ideas = { POR_disorganized_army }
+	remove_ideas = {
+		POR_disorganized_army
+	}
 	
 	complete_national_focus = POR_assassination_attempt
 	complete_national_focus = POR_salazar_lives
@@ -90,24 +132,24 @@ set_variable = { var = eng_pink_map_berlim value = 100 }
 			set_naval_oob = "POR_1939_naval_legacy"
 		}
 	}
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_air_oob = "POR_1939_air_bba"
+		else = {
+			set_air_oob = "POR_1939_air_legacy"
+		}
+	}
 	set_technology = {
 		interwar_artillery = 1
-		interwar_antiair = 1
 		infantry_weapons2 = 1
 		support_weapons = 1
 
 		#doctrines
-		air_superiority = 1
-		trench_warfare = 1
-		fleet_in_being = 1
-		battlefleet_concentration = 1
-		convoy_sailing = 1
-		submarine_operations = 1
+		#air_superiority = 1
 
 		#electronics
 		electronic_mechanical_engineering = 1
 		radio = 1
-		radio_detection = 1
 		mechanical_computing = 1
 		computing_machine = 1
 
@@ -116,54 +158,52 @@ set_variable = { var = eng_pink_map_berlim value = 100 }
 		improved_machine_tools = 1
 		advanced_machine_tools = 1
 		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
 		construction1 = 1
 		construction2 = 1
 		dispersed_industry = 1
 		dispersed_industry2 = 1
 	}
-}
 
-add_ideas = {
-	POR_oscar_carmona
-	estado_novo
-	POR_disorganized_army
-	POR_holy_see
-	limited_conscription
+set_grand_doctrine = grand_battleplan
+set_grand_doctrine = new_fleet_in_being
+set_grand_doctrine = new_strategic_destruction
+
+	complete_special_project = {
+		project = sp:sp_air_radar
+	}
 }
 
 set_convoys = 50
-
-set_popularities = {
-	democratic = 0
-	fascism = 5
-	communism = 5
-	neutrality = 90
-}
-
 set_politics = {
-	
 	ruling_party = neutrality
 	last_election = "1933.3.5"
 	election_frequency = 48
 	elections_allowed = no
 }
-
-1939.1.1 = {
-	set_popularities = {
-	democratic = 0
+set_popularities = {
 	fascism = 5
 	communism = 5
 	neutrality = 90
+	democratic = 0
 }
-	set_politics = {	
-	
+
+1939.1.1 = {
+	set_politics = {
 		ruling_party = neutrality
-		last_election = "1932.07.05"
+		last_election = "1938.10.30"
+		election_frequency = 48
 		elections_allowed = no
+	}
+	set_popularities = {
+		neutrality = 100
 	}
 }
 
 set_convoys = 100
+set_stability = 0.65
 
 recruit_character = POR_antonio_de_oliveira_salazar
 recruit_character = POR_bento_goncalves
@@ -367,7 +407,7 @@ if = {
 	}
 	create_equipment_variant = {
 		name = "Douro Class"	
-		type = ship_hull_light_2
+		type = ship_hull_light_1
 		name_group = POR_DD_HISTORICAL
 		parent_version = 0
 		modules = {
@@ -376,8 +416,8 @@ if = {
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
 			fixed_ship_radar_slot = empty
 			fixed_ship_engine_slot = light_ship_engine_2
-			fixed_ship_torpedo_slot = empty
-			mid_1_custom_slot = empty
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
 			rear_1_custom_slot = ship_depth_charge_1
 		}
 	}
