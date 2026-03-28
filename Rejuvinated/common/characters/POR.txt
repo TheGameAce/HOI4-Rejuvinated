@@ -393,74 +393,32 @@ characters = {
 	}
 
 	POR_jose_norton_de_matos = {
-		instance = {
-			allowed = {
-				has_dlc = "La Resistance"
+		name = POR_jose_norton_de_matos
+		portraits = {
+			civilian = {
+				large = "GFX_portrait_POR_jose_norton_de_matos"
 			}
-			advisor = {
-			cost = 100
-			
-				slot = theorist
-				idea_token = POR_jose_norton_de_matos
-				ledger = army
-				allowed = {
-					original_tag = POR
-					has_dlc = "La Resistance"
-				}
-				name = "POR_jose_norton_de_matos"
-				
-				traits = {
-					military_theorist
-				}
-			}
-			name = POR_jose_norton_de_matos
-			portraits = {
-				civilian = {
-					large = GFX_portrait_POR_jose_norton_de_matos
-				}
-				army = {
-					small = "GFX_idea_por_jose_norton_de_matos"
-				}
-			}
-			country_leader = {
-				ideology=liberalism
-				traits = { democratic_reformer }
-				expire = "1965.1.1.1"
-				id = -1
+			army = {
+				large = "GFX_portrait_POR_jose_norton_de_matos"
+				small = "GFX_portrait_POR_jose_norton_de_matos_small"
 			}
 		}
-		instance = {
+		country_leader = {
+			ideology=liberalism
+			traits = { popular_figurehead2 }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			cost = 100
+			slot = theorist
+			ledger = army
+			idea_token = POR_jose_norton_de_matos
 			allowed = {
-				NOT = { has_dlc = "La Resistance" }
+				original_tag = POR
 			}
-			advisor = {
-				cost = 100
-				slot = theorist
-				idea_token = POR_jose_norton_de_matos
-				allowed = {
-					original_tag = POR
-					NOT = {
-						has_dlc = "La Resistance"
-					}
-				}
-				ledger = army
-				traits = {
-					military_theorist
-				}
-			}
-			name = POR_jose_norton_de_matos
-			portraits = {
-				civilian = {
-					large = GFX_portrait_POR_jose_norton_de_matos
-				}
-				army = {
-					small = "GFX_idea_generic_army_europe_1"
-				}
-			}
-			country_leader = {
-				ideology=liberalism
-				expire = "1965.1.1.1"
-				id = -1
+			traits = {
+				military_theorist
 			}
 		}
 	}
@@ -689,28 +647,35 @@ characters = {
 	}
 
 	POR_lobato_guerra = {
+		name = POR_lobato_guerra
+		portraits = {
+			army = {
+				large = "GFX_rj_portrait_POR_lobato_guerra"
+				small = "GFX_rj_portrait_POR_lobato_guerra_small"
+			}
+		}
 		advisor = {
 			slot = army_chief
 			idea_token = POR_lobato_guerra
 			allowed = {
 				original_tag = POR
-				NOT = {
-					has_dlc = "La Resistance"
-				}
 			}
 			traits = {
-				army_chief_defensive_2
+				army_chief_planning_2
 			}
 			cost = 100
 			ai_will_do = {
 				factor = 1.000
 			}
 		}
-		name = POR_lobato_guerra
-		portraits = {
-			army = {
-				small = "GFX_idea_generic_army_europe_4"
-			}
+		field_marshal = {
+			traits = { brilliant_strategist politically_connected }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
 		}
 	}
 

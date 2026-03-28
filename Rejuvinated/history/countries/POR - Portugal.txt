@@ -169,17 +169,8 @@ recruit_character = POR_antonio_de_oliveira_salazar
 recruit_character = POR_bento_goncalves
 recruit_character = POR_jose_vicente_de_freitas
 recruit_character = POR_rolao_preto
-
-create_country_leader = {
-	name = "José Norton de Matos"
-	desc = "POLITICS_JOSE_MATOS_DESC"
-	picture = "Portrait_Portugal_Jose_Norton_Matos.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		popular_figurehead2
-	}
-}
+recruit_character = POR_jose_norton_de_matos
+recruit_character = POR_lobato_guerra
 
 create_corps_commander = { #Auto-Generated
 	name = "Eugénio Augusto de Almada e Castro Bilstein Menezes"
@@ -278,18 +269,6 @@ create_corps_commander = {
 	defense_skill = 1
 	planning_skill = 2
 	logistics_skill = 1
-}
-
-create_field_marshal = {
-	name = "José Augusto Lobato Guerra"
-	portrait_path = "gfx/leaders/POR/Portrait_Portugal_Lobato_Guerra.dds"
-	traits = { brilliant_strategist politically_connected }
-	skill = 2
-
-	attack_skill = 1
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 2
 }
 
 create_field_marshal = {

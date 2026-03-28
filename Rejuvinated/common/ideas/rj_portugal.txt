@@ -226,21 +226,6 @@ ideas = {
 			}
 		}
 
-		POR_lobato_guerra = {
-			
-			picture = lobato_guerra
-			
-			allowed = {
-				original_tag = POR
-			}
-			
-			traits = { army_chief_planning_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
 		POR_fernado_costa = {
 			
 			picture = generic_army_europe_6
@@ -919,25 +904,6 @@ ideas = {
 	}
 
 	theorist = {
-
-		POR_jose_norton_de_matos = {
-			
-			picture = jose_norton_de_matos
-
-			allowed = {
-				original_tag = POR
-			}
-			
-			research_bonus = {
-				land_doctrine = 0.1
-			}
-			
-			traits = { military_theorist }
-		
-			ai_will_do = {
-				factor = 1
-			}
-		}
 		
 		POR_sarmento_de_beires = {
 			
