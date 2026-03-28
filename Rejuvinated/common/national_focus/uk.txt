@@ -613,7 +613,7 @@ focus_tree = {
 	focus = {
 		id = radar_focus
 		prerequisite = { focus = air_defense_focus }
-		icon = GFX_goal_generic_radar
+		icon = GFX_focus_RJ_ENG_RADAR
 		x = 0
 		y = 1
 		relative_position_id = air_defense_focus
@@ -684,11 +684,11 @@ focus_tree = {
 	focus = {
 		id = uk_industrial_focus
 		prerequisite = { focus = shadow_scheme_focus }
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_RJ_industry1
 		x = 0
 		y = 1
 		relative_position_id = shadow_scheme_focus
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}	
@@ -702,7 +702,7 @@ focus_tree = {
 				tooltip = consumer_goods_factor_tt
 			}
 			add_to_variable = {
-				rj_ENG_the_economy_production_speed_industrial_complex_factor = 0.05
+				rj_ENG_the_economy_production_speed_industrial_complex_factor = 0.10
 				tooltip = production_speed_industrial_complex_factor_tt
 			}
 		}
@@ -773,8 +773,7 @@ focus_tree = {
 
 	focus = {
 		id = uk_extra_tech_slot
-		text = extra_tech_slot
-		icon = GFX_focus_research
+		icon = GFX_focus_RJ_ENG_direct_funding_to_cambridge
 		prerequisite = { focus = uk_industrial_focus }
 		x = 0
 		y = 1
@@ -785,6 +784,16 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
 			add_research_slot = 1
+			add_tech_bonus = {
+				name = radar_cambridge
+				bonus = 0.25
+				uses = 1
+				category = support_tech
+			}
+			add_breakthrough_progress = {
+				value = 0.25
+				specialization = specialization_land
+			}
 		}
 	}
 	
