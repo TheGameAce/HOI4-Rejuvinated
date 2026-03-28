@@ -5169,20 +5169,20 @@ focus = {
 		prerequisite = { focus = POR_rekindle_feuds focus = POR_spanish_king focus = POR_portugal_strong }
 		
 		available = {
-		OR= {
-			if = {
-			has_completed_focus = POR_rekindle_feuds
-			owns_state = 290
-			}
-			if = {
-			has_completed_focus = POR_spanish_king
-			has_navy_size = {
-    			size > 59
-			}
-			}
-			if = {
-			has_completed_focus = POR_portugal_strong
-			has_army_manpower = { size > 799999 }
+			OR = {
+				AND = {
+					has_completed_focus = POR_rekindle_feuds
+					owns_state = 290
+				}
+				AND = {
+					has_completed_focus = POR_spanish_king
+					has_navy_size = {
+						size > 59
+					}
+				}
+				AND = {
+					has_completed_focus = POR_portugal_strong
+					has_army_manpower = { size > 799999 }
 				}
 			}
 		}
