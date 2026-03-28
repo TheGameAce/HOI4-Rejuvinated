@@ -208,27 +208,6 @@ ideas = {
 	
 	#MILITARY STAFF
 	army_chief = {
-		
-
-		POR_rolao_preto = {
-			
-			picture = rolao_pretea
-			
-			allowed = {
-				original_tag = POR
-			}
-
-			available ={
-				has_global_flag = scw_over
-				NOT = { has_government = communism }
-			}
-			
-			traits = { army_chief_morale_3 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
 
 		POR_silva_bastos = {
 			

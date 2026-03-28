@@ -5221,7 +5221,7 @@ focus = {
 		}
 		
 		x = 26
-		y = 12
+		y = 11
 		
 		cost = 1
 		
@@ -5237,6 +5237,54 @@ focus = {
 			unlock_decision_category_tooltip = POR_colonial_empire
 		}
 	}	
+
+	focus = {
+		id = POR_luso_tropicalism
+		available = {
+			NOT = { has_government = fascism }
+			OR = {
+				has_full_control_of_state = 796 #North Angola
+				has_full_control_of_state = 540 #Luanda
+				has_full_control_of_state = 891 #South West Angola
+				has_full_control_of_state = 892 #Zambesi
+				has_full_control_of_state = 544 #Mozambique
+				has_full_control_of_state = 896 #Manica e Sofala
+				has_full_control_of_state = 897 #Zambeziá-Mozambique
+			}
+		}
+
+		allow_branch = { #ported from DLC
+			has_dlc = "La Resistance"
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				add = 1
+				OR = {
+					has_government = neutrality
+					has_government = fascism
+					has_government = communism
+				}
+			}
+		}
+
+		bypass = {		
+		}
+		prerequisite = { focus = POR_ukpba }
+			
+		icon = GFX_focus_por_luso_tropicalism
+		x = 0
+		y = 1
+
+		relative_position_id = POR_ukpba
+		cost = 10
+		search_filters = {FOCUS_FILTER_ANNEXATION}
+		completion_reward = {
+			unlock_decision_tooltip = POR_mozambique_overseas_territory
+			unlock_decision_tooltip = POR_angola_overseas_province
+		}
+	}
 
 	
 ######################################
