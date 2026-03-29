@@ -321,7 +321,9 @@ ideas = {
 			
 			equipment_bonus = {
 				infantry_equipment = {
-					build_cost_ic = -0.1 instant = yes
+					build_cost_ic = -0.15
+					reliability = 0.05
+					instant = yes
 				}
 			}
 		}
@@ -1882,7 +1884,35 @@ ideas = {
 			}
 		}
 
+		ENG_secret_weapons_idea = {
+
+			picture = generic_rocket_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+			
+			removal_cost = -1
+						
+			modifier = {
+				special_project_speed_factor = 0.10
+				scientist_breakthrough_bonus_factor = 0.05
+			}
+			research_bonus = {
+				rocketry = 0.25
+				nuclear = 0.25
+			}
+		}
+
 	}
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
 	
 	naval_manufacturer = {
 		

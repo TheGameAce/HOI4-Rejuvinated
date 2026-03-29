@@ -45,9 +45,9 @@ focus_tree = {
 		}
 		
 		icon = GFX_focus_generic_cryptologic_bomb
-		x = 0
+		x = -1
 		y = 0
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -102,10 +102,11 @@ focus_tree = {
 		} 
 		prerequisite = { focus = crypto_bomb_focus }
 		prerequisite = { focus = radar_focus }
+		prerequisite = { focus = uk_extra_tech_slot }
 		icon = GFX_goal_generic_scientific_exchange
-		x = 0
-		y = 3
-		relative_position_id = crypto_bomb_focus
+		x = -1
+		y = 2
+		relative_position_id = radar_focus
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -614,7 +615,7 @@ focus_tree = {
 		id = radar_focus
 		prerequisite = { focus = air_defense_focus }
 		icon = GFX_focus_RJ_ENG_RADAR
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = air_defense_focus
 		cost = 10
@@ -723,8 +724,8 @@ focus_tree = {
 
 		icon = GFX_focus_generic_aircraft_production
 
-		x = 1
-		y = 2
+		x = 2
+		y = 1
 		
 		relative_position_id = uk_industrial_focus
 
@@ -775,7 +776,7 @@ focus_tree = {
 		id = uk_extra_tech_slot
 		icon = GFX_focus_RJ_ENG_direct_funding_to_cambridge
 		prerequisite = { focus = uk_industrial_focus }
-		x = 0
+		x = -2
 		y = 1
 		relative_position_id = uk_industrial_focus
 		cost = 10
@@ -899,8 +900,8 @@ focus_tree = {
 		} #at war with major or ger in rhineland or high threat
 		prerequisite = { focus = uk_industrial_focus }
 		icon = GFX_goal_generic_construct_mil_factory
-		x = -1
-		y = 2
+		x = 0
+		y = 1
 		relative_position_id = uk_industrial_focus
 		cost = 10
 		ai_will_do = {
@@ -1000,7 +1001,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = royal_ordinance_focus
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -1014,12 +1015,11 @@ focus_tree = {
 
 	focus = {
 		id = UK_secret_focus
-		prerequisite = { focus = royal_ordinance_focus }
 		prerequisite = { focus = maud_focus }
 		icon = GFX_goal_generic_secret_weapon
-		x = -1
+		x = 0
 		y = 1
-		relative_position_id = royal_ordinance_focus
+		relative_position_id = maud_focus
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -1028,20 +1028,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-
-			add_ideas = generic_secret_weapons_ns
-			add_tech_bonus = {
-				name = UK_secret_focus
-				bonus = 0.5 # was 1
-				uses = 1 # was 2
-				category = rocketry
-			}
-			add_tech_bonus = {
-				name = UK_secret_focus
-				bonus = 0.5 # was 1
-				uses = 1
-				category = nuclear
-			}
+			add_ideas = ENG_secret_weapons_idea
 		}
 	}
 
