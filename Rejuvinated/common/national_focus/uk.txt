@@ -100,8 +100,7 @@ focus_tree = {
 			}
 			
 		} 
-		prerequisite = { focus = crypto_bomb_focus }
-		prerequisite = { focus = radar_focus }
+		prerequisite = { focus = radar_focus focus = crypto_bomb_focus }
 		prerequisite = { focus = uk_extra_tech_slot }
 		icon = GFX_goal_generic_scientific_exchange
 		x = -1
@@ -268,10 +267,10 @@ focus_tree = {
 		available = { 			
 		}
 		icon = GFX_goal_generic_army_motorized
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = limited_rearmament_focus
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -292,10 +291,10 @@ focus_tree = {
 		id = ENG_tank_focus
 		prerequisite = { focus = ENG_motorized_focus }
 		icon = GFX_goal_generic_army_tanks
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = ENG_motorized_focus
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -305,9 +304,33 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = armor_bonus
-				bonus = 1.0
-				uses = 1
+				bonus = 0.75
+				uses = 2
 				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_armored_car_development
+		prerequisite = { focus = ENG_motorized_focus }
+		icon = GFX_focus_RJ_ENG_armored_car
+		x = -1
+		y = 1
+		relative_position_id = ENG_motorized_focus
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.75
+				uses = 2
+				category = cat_armored_cars
 			}
 		}
 	}
@@ -326,9 +349,9 @@ focus_tree = {
 			has_dlc = "La Resistance"
 		}
 
-		icon = GFX_focus_generic_secret_service_agency
+		icon = GFX_focus_RJ_ENG_SIS
 
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = limited_rearmament_focus
 
@@ -365,7 +388,7 @@ focus_tree = {
 		continue_if_invalid = yes
 		available_if_capitulated = yes
 
-		icon = GFX_goal_generic_construct_military
+		icon = GFX_focus_RJ_ENG_air_defense
 		x = -4
 		y = 1
 		relative_position_id = limited_rearmament_focus
@@ -724,7 +747,7 @@ focus_tree = {
 
 		icon = GFX_focus_generic_aircraft_production
 
-		x = 2
+		x = 0
 		y = 1
 		
 		relative_position_id = uk_industrial_focus
@@ -795,6 +818,22 @@ focus_tree = {
 				value = 0.25
 				specialization = specialization_land
 			}
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_more_funding_for_oxford
+		icon = GFX_focus_RJ_ENG_Oxford
+		prerequisite = { focus = uk_industrial_focus }
+		x = 0
+		y = 1
+		relative_position_id = uk_extra_tech_slot
+		cost = 7.2
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			add_ideas = ENG_research_funding_idea
 		}
 	}
 	
@@ -899,8 +938,8 @@ focus_tree = {
 			}
 		} #at war with major or ger in rhineland or high threat
 		prerequisite = { focus = uk_industrial_focus }
-		icon = GFX_goal_generic_construct_mil_factory
-		x = 0
+		icon = GFX_focus_RJ_ENG_royal_ordinance_factories
+		x = 2
 		y = 1
 		relative_position_id = uk_industrial_focus
 		cost = 10
@@ -997,8 +1036,8 @@ focus_tree = {
 	focus = {
 		id = uk_small_arms_focus
 		prerequisite = { focus = royal_ordinance_focus }
-		icon = GFX_goal_generic_production2
-		x = 1
+		icon = GFX_focus_RJ_ENG_BSA
+		x = 0
 		y = 1
 		relative_position_id = royal_ordinance_focus
 		cost = 7.2
@@ -1016,7 +1055,7 @@ focus_tree = {
 	focus = {
 		id = UK_secret_focus
 		prerequisite = { focus = maud_focus }
-		icon = GFX_goal_generic_secret_weapon
+		icon = GFX_focus_NORDIC_com_selector_research
 		x = 0
 		y = 1
 		relative_position_id = maud_focus
