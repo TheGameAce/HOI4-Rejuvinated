@@ -36,6 +36,56 @@ ideas = {
 				research_speed_factor = 0.05
 			}
 		}
+
+		ENG_motorized_army_idea = {
+			picture = FRA_motorized_focus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.10
+					reliability = 0.05
+				}
+			}
+		}
+
+		ENG_air_rearmament_idea = {
+			picture = RJ_idea_USA_air_corps_expansion_program
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				medium_plane_airframe = {
+					build_cost_ic = -0.10
+					instant = yes
+				}
+				large_plane_airframe = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+		}
 	}
 
 }

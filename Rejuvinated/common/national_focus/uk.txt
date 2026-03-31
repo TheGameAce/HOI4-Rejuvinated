@@ -270,7 +270,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = limited_rearmament_focus
-		cost = 5
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -284,6 +284,8 @@ focus_tree = {
 				uses = 1
 				category = motorized_equipment
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ENG_motorized_army_idea
 		}
 	}
 
@@ -432,6 +434,13 @@ focus_tree = {
 
 		completion_reward = {
 			air_experience = 25
+			add_tech_bonus = {
+				name = aa_bonus
+				bonus = 0.75
+				uses = 1
+				category = cat_anti_air
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			if = {
 				limit = {
 					NOT = {
@@ -851,7 +860,7 @@ focus_tree = {
 
 		continue_if_invalid = yes
 
-		icon = GFX_goal_generic_consumer_goods
+		icon = GFX_focus_RJ_munitions_factory
 		x = 5
 		y = 1
 		relative_position_id = limited_rearmament_focus
@@ -882,7 +891,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = general_rearmament_focus
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}	
@@ -906,7 +915,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = ENG_special_air_service
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}	
@@ -1074,7 +1083,7 @@ focus_tree = {
 	focus = {
 		id = air_rearmament_focus
 		prerequisite = { focus = general_rearmament_focus }
-		icon = GFX_goal_generic_air_doctrine
+		icon = GFX_focus_RJ_USA_air_corps_expansion_program
 		x = -2
 		y = 2
 		relative_position_id = general_rearmament_focus
@@ -1110,6 +1119,8 @@ focus_tree = {
 
 		completion_reward = {
 			air_experience = 25
+			add_ideas = ENG_air_rearmament_idea
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
