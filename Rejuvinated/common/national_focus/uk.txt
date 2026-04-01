@@ -1305,7 +1305,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = air_rearmament_focus
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}	
@@ -1364,13 +1364,16 @@ focus_tree = {
 					uses = 1
 					category = air_doctrine
 				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				add_ideas = ENG_fighter_command_idea
 			}
 		}
 	}
+
 	focus = {
 		id = bomber_command_focus
 		prerequisite = { focus = air_rearmament_focus }
-		icon = GFX_goal_generic_air_bomber
+		icon = GFX_focus_SWE_marauder_bombers
 		x = 0
 		y = 1
 		relative_position_id = air_rearmament_focus
@@ -1414,12 +1417,15 @@ focus_tree = {
 					category = air_doctrine
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ENG_bomber_command_idea
 		}
 	}
+
 	focus = {
 		id = coastal_command_focus
 		prerequisite = { focus = air_rearmament_focus }
-		icon = GFX_goal_generic_air_naval_bomber
+		icon = GFX_focus_RJ_naval_bomber
 		x = 1
 		y = 2
 		relative_position_id = air_rearmament_focus
@@ -1463,8 +1469,11 @@ focus_tree = {
 					category = air_doctrine
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ENG_coastal_command_idea
 		}
 	}
+
 	focus = {
 		id = aircraft_production_focus
 		prerequisite = { focus = fighter_command_focus focus = bomber_command_focus focus = coastal_command_focus }
@@ -1472,7 +1481,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = fighter_command_focus
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 3
 		}
@@ -1480,13 +1489,16 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			add_ideas = british_fighter_discount
+			swap_ideas = {
+				remove_idea = ENG_air_rearmament_idea
+				add_idea = ENG_aircraft_production_group_idea
+			}
 		}
 	}
 	focus = {
 		id = uk_jet_focus
 		prerequisite = { focus = aircraft_production_focus }
-		icon = GFX_goal_generic_build_airforce
+		icon = GFX_focus_generic_jet_planes
 		x = 0
 		y = 1
 		relative_position_id = aircraft_production_focus
@@ -1517,7 +1529,7 @@ focus_tree = {
 	focus = {
 		id = naval_rearmament_focus
 		prerequisite = { focus = general_rearmament_focus }
-		icon = GFX_goal_generic_construct_naval_dockyard 
+		icon = GFX_focus_RJ_ENG_naval_rearmament
 		x = 2
 		y = 2
 		relative_position_id = general_rearmament_focus
@@ -1557,6 +1569,12 @@ focus_tree = {
 
 		completion_reward = {
 			navy_experience = 50
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_dockyard_output = 0.20
+				tooltip = industrial_capacity_dockyard_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {
 					is_coastal = yes
