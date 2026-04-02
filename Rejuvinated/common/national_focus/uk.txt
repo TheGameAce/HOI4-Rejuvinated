@@ -1635,11 +1635,11 @@ focus_tree = {
 	focus = {
 		id = ENG_anti_non_contact_committee
 		prerequisite = { focus = naval_rearmament_focus }
-		icon = GFX_goal_generic_occupy_states_coastal
+		icon = GFX_focus_RJ_ENG_anti_non_contact
 		x = 2
 		y = 1
 		relative_position_id = naval_rearmament_focus
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -1659,6 +1659,8 @@ focus_tree = {
 				uses = 2
 				category = naval_minesweeping
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ENG_anti_non_contact_idea
 		}
 	}
 
@@ -1786,7 +1788,7 @@ focus_tree = {
 	focus = {
 		id = uk_waves_focus
 		prerequisite = { focus = naval_rearmament_focus }
-		icon = GFX_goal_generic_navy_doctrines_tactics
+		icon = GFX_focus_RJ_ENG_britannia_rules_the_waves
 		x = 1
 		y = 2
 		relative_position_id = naval_rearmament_focus
@@ -1801,16 +1803,17 @@ focus_tree = {
 			add_doctrine_cost_reduction = {
 				name = uk_waves_focus
 				cost_reduction = 0.5
-				uses = 3
+				uses = 2
 				category = naval_doctrine
 			}
+			add_ideas = ENG_britannia_rules_the_waves_idea
 		}
 	}
 	focus = {
 		id = uk_carrier_focus
 		prerequisite = { focus = uk_waves_focus }
 		mutually_exclusive = { focus = uk_battleship_focus }
-		icon = GFX_goal_generic_navy_carrier
+		icon = GFX_focus_generic_air_carrier
 		x = -1
 		y = 1
 		relative_position_id = uk_waves_focus
@@ -1860,7 +1863,7 @@ focus_tree = {
 	focus = {
 		id = uk_amphibious_focus
 		prerequisite = { focus = naval_rearmament_focus }
-		icon = GFX_goal_generic_amphibious_assault
+		icon = GFX_focus_generic_naval_invasion
 		x = 0
 		y = 1
 		relative_position_id = naval_rearmament_focus
@@ -1884,6 +1887,8 @@ focus_tree = {
 				uses = 2
 				category = tp_tech
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ENG_amphibious_warfare_idea
 		}
 	}
 
