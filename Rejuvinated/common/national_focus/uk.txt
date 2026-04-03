@@ -5644,7 +5644,7 @@ focus_tree = {
 
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 
-		x = -7
+		x = -5
 		y = 1
 		relative_position_id = uk_empire_focus
 
@@ -5749,8 +5749,8 @@ focus_tree = {
 	focus = {
 		id = RJ_ENG_colonial_development
 		prerequisite = { focus = uk_commonwealth_focus }
-		icon = GFX_focus_research2
-		x = -1
+		icon = GFX_focus_RJ_industry2
+		x = -3
 		y = 1
 		relative_position_id = uk_commonwealth_focus
 		cost = 10
@@ -5766,7 +5766,7 @@ focus_tree = {
 		id = uk_colonial_focus 
 		prerequisite = { focus = uk_commonwealth_focus }
 		icon = GFX_focus_research2
-		x = 1
+		x = -1
 		y = 1
 		relative_position_id = uk_commonwealth_focus
 		cost = 10
@@ -6602,7 +6602,7 @@ focus_tree = {
 		id = ENG_british_commonwealth_air_training_plan
 		prerequisite = { focus = uk_commonwealth_focus }
 		icon = GFX_goal_generic_air_fighter2
-		x = 3
+		x = 1
 		y = 1
 		relative_position_id = uk_commonwealth_focus
 		cost = 10
@@ -6654,7 +6654,7 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_goal_generic_construct_civ_factory
-		x = -4
+		x = 4
 		y = 1
 		relative_position_id = RJ_ENG_colonial_development
 		cost = 10
@@ -6841,7 +6841,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_goal_generic_construct_civilian
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = RJ_ENG_colonial_development
 		cost = 10
@@ -7126,7 +7126,7 @@ focus_tree = {
 
 	focus = {
 		id = uk_canada_focus 
-		prerequisite = { focus = uk_commonwealth_focus }
+		prerequisite = { focus = RJ_ENG_colonial_development }
 		available = {
 			any_country = {
 				original_tag = CAN
@@ -7161,9 +7161,9 @@ focus_tree = {
 			}
 		}
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 0
-		y = 3
-		relative_position_id = uk_commonwealth_focus
+		x = 2
+		y = 1
+		relative_position_id = RJ_ENG_colonial_development
 		cost = 10
 
 		available_if_capitulated = yes
@@ -7285,7 +7285,7 @@ focus_tree = {
 
 	focus = {
 		id = uk_south_africa_focus
-		prerequisite = { focus = uk_commonwealth_focus }
+		prerequisite = { focus = RJ_ENG_colonial_development }
 		available = {
 			any_country = {
 				original_tag = SAF
@@ -7320,9 +7320,9 @@ focus_tree = {
 			}
 		}
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 2
-		y = 3
-		relative_position_id = uk_commonwealth_focus
+		x = -2
+		y = 1
+		relative_position_id = RJ_ENG_colonial_development
 		cost = 10
 
 		available_if_capitulated = yes
@@ -7493,9 +7493,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_imperial_conference
-		prerequisite = { focus = uk_canada_focus }
 		prerequisite = { focus = uk_new_zealand_focus }
-		prerequisite = { focus = uk_south_africa_focus }
 
 		allow_branch = {
 			if = {
