@@ -5758,7 +5758,13 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
 		completion_reward = {
-			
+			add_ideas = ENG_colonial_development_idea_main
+			custom_effect_tooltip = generic_skip_one_line_tt
+			ENG = {
+				every_subject_country = {
+					add_ideas = ENG_colonial_development_idea_secondary
+				}
+			}
 		}
 	}
 	

@@ -309,5 +309,46 @@ ideas = {
 				production_speed_anti_air_building_factor = 0.10
 			}
 		}
+
+		ENG_colonial_development_idea_main = {
+			picture = generic_fortify_the_borders
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.15
+				production_speed_rail_way_factor = 0.15
+				production_speed_supply_node_factor = 0.10
+			}
+		}
+
+		ENG_colonial_development_idea_secondary = {
+			picture = generic_fortify_the_borders
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.10
+				production_speed_rail_way_factor = 0.10
+				production_speed_supply_node_factor = 0.10
+				production_speed_buildings_factor = 0.05
+			}
+		}
 	}
 }
