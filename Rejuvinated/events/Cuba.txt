@@ -37,7 +37,7 @@ country_event = { #Election Results
 	option = {
 		name = cuba.1.b
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				is_historical_focus_on = yes
 				factor = 0
@@ -75,12 +75,10 @@ country_event = { #Gomez' Inauguration
 	option = {
 		name = cuba.2.a
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		set_country_flag = gomez_inaugurated_flag
-		promote_character = {
-			character = CUB_miguel_mariano_gomez
-		}
+		promote_character = CUB_miguel_mariano_gomez
 		set_party_name = { 
 		    ideology = democratic 
 		    long_name = cuba_tripartite_coalition_party_long
@@ -114,12 +112,10 @@ country_event = { #Mario García Menocal's Innauguration
 	option = {
 		name = cuba.3.a
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		set_country_flag = garcia_menocal_inaugurated_flag
-		promote_character = {
-			character = CUB_mario_garcia_menocal
-		}
+		promote_character = CUB_mario_garcia_menocal
 		set_party_name = { 
 		    ideology = democratic 
 		    long_name = cuba_democratic_national_association_party_long 
@@ -150,12 +146,10 @@ country_event = { #Gomez Impeached - Triggers via the Nine Cent Law focus - Fede
 	option = {
 		name = cuba.5.a
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		set_country_flag = gomez_impeached_flag
-		promote_character = {
-			character = CUB_federico_bru
-		}
+		promote_character = CUB_federico_bru
 		set_party_name = { 
 		    ideology = democratic 
 		    long_name = cuba_tripartite_coalition_party_long
@@ -176,7 +170,7 @@ country_event = { #Operation Hemingway
 	option = {
 		name = cuba.6.a
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				is_historical_focus_on = yes
 				factor = 0
@@ -200,7 +194,7 @@ country_event = { #Operation Hemingway
 	option = {
 		name = cuba.6.b
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		CUB = {
 			country_event = cuba.7
@@ -220,7 +214,7 @@ country_event = { #Operation Hemingway Refused
 	option = {
 		name = cuba.7.a
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 	}
 }
@@ -237,7 +231,7 @@ country_event = { #Attempted Dominican Coup - I don't recall what the heck initi
 	option = {
 		name = cuba.9.a
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		declare_war_on = {
 		    target = DOM
@@ -248,7 +242,7 @@ country_event = { #Attempted Dominican Coup - I don't recall what the heck initi
 	option = {
 		name = cuba.9.b
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 	}
 }
@@ -265,7 +259,7 @@ country_event = { #Proposition of Falangist alliance with Spain.
 	option = {
 		name = "A fascinating proposition... We accept."
 		ai_chance = {
-			factor = 3
+			base = 3
 		}
 		CUB = {
 			add_to_faction = SPR
@@ -276,7 +270,7 @@ country_event = { #Proposition of Falangist alliance with Spain.
 	option = {
 		name = "This is not in our best interests."
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		country_event = {
 			id = cuba.13
@@ -295,7 +289,7 @@ country_event = {
 	
 	option = {
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		name = "¡Viva la alianza!"
 	}
@@ -312,7 +306,7 @@ country_event = {
 	
 	option = {
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		name = "I didn't like them anyways..."
 	}
@@ -330,7 +324,7 @@ country_event = { #Annexation Demands for Haiti & the Dominican Republic
 	option = {
 		name = "What choice do we have?"
 		ai_chance = {
-			factor = 3
+			base = 3
 		}
 		CUB = {
 			annex_country = {
@@ -343,7 +337,7 @@ country_event = { #Annexation Demands for Haiti & the Dominican Republic
 	option = {
 		name = "We won't give in to these illegitimate claims!"
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		CUB = {
 			create_wargoal = {
@@ -368,7 +362,7 @@ country_event = { #Deal With Batista
 	option = {
 		name = cuba.14.a
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		retire_character = CUB_fulgencio_batista
 		remove_ideas = { CUB_batistas_influence }
@@ -379,7 +373,7 @@ country_event = { #Deal With Batista
 	option = {
 		name = cuba.14.b
 		ai_chance = {
-			factor = 2
+			base = 2
 		}
 		swap_ideas = {
 			remove_idea = CUB_batistas_influence
@@ -400,7 +394,7 @@ country_event = { #Proposal for Hispaniolan Unification
 	option = {
 		name = cuba.15.a
 		ai_chance = {
-			factor = 4
+			base = 4
 		}
 		DOM = {
 			annex_country = {
@@ -416,7 +410,7 @@ country_event = { #Proposal for Hispaniolan Unification
 	option = {
 		name = cuba.15.b
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 	}
 }
@@ -433,7 +427,7 @@ country_event = { #Proposal for Caribbean Unity
 	option = {
 		name = cuba.16.a
 		ai_chance = {
-			factor = 4
+			base = 4
 		}
 		CUB = {
 			annex_country = {
@@ -446,7 +440,7 @@ country_event = { #Proposal for Caribbean Unity
 	option = {
 		name = cuba.16.b
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 	}
 }
@@ -463,7 +457,7 @@ country_event = { #Proposal to the Soviets or Russians to trade Sugar for Oil
 	option = {
 		name = cuba.17.a
 		ai_chance = {
-			factor = 2
+			base = 2
 			modifier = {
 				is_in_faction_with = CUB
 				factor = 10
@@ -485,7 +479,7 @@ country_event = { #Proposal to the Soviets or Russians to trade Sugar for Oil
 	option = {
 		name = cuba.17.b
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 	}
 }
@@ -501,7 +495,7 @@ country_event = { #Soviet acceptance response for sugar trade
 	option = {
 		name = cuba.18.a
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 	}
 }
@@ -518,7 +512,7 @@ country_event = { #Annexation Demands for the French Caribbean
 	option = {
 		name = "Fine, they can have them..."
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				FRA = {
 					has_opinion = {
@@ -537,7 +531,7 @@ country_event = { #Annexation Demands for the French Caribbean
 	option = {
 		name = "We won't give in to these illegitimate claims!"
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				FRA = {
 					has_opinion = {
@@ -571,7 +565,7 @@ country_event = { #Annexation Demands for the Windward & Leeward Isles
 	option = {
 		name = "Fine, they can have them..."
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				ENG = {
 					has_opinion = {
@@ -591,7 +585,7 @@ country_event = { #Annexation Demands for the Windward & Leeward Isles
 	option = {
 		name = "We won't give in to these illegitimate claims!"
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				ENG = {
 					has_opinion = {
@@ -625,7 +619,7 @@ country_event = { #Annexation Demands for the Windward & Leeward Isles
 	option = {
 		name = "Again? Really? Fine..."
 		ai_chance = {
-			factor = 3
+			base = 3
 			modifier = {
 				ENG = {
 					has_opinion = {
@@ -646,7 +640,7 @@ country_event = { #Annexation Demands for the Windward & Leeward Isles
 	option = {
 		name = "We won't give in to these illegitimate claims!"
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				ENG = {
 					has_opinion = {
@@ -680,7 +674,7 @@ country_event = { #Annexation Demands for Trinidad & Tobago.
 	option = {
 		name = "Oh for the love of... Just take it and leave us alone."
 		ai_chance = {
-			factor = 2
+			base = 2
 			modifier = {
 				ENG = {
 					has_opinion = {
@@ -699,7 +693,7 @@ country_event = { #Annexation Demands for Trinidad & Tobago.
 	option = {
 		name = "You've harassed us for the last time!"
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				ENG = {
 					has_opinion = {
@@ -733,7 +727,7 @@ country_event = { #Annexation Demands for the ABC Islands.
 	option = {
 		name = "Fine, they can have them..."
 		ai_chance = {
-			factor = 3
+			base = 3
 			modifier = {
 				HOL = {
 					has_opinion = {
@@ -752,7 +746,7 @@ country_event = { #Annexation Demands for the ABC Islands.
 	option = {
 		name = "We won't give in to these illegitimate claims!"
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				HOL = {
 					has_opinion = {
@@ -786,7 +780,7 @@ country_event = { #Sugar Gift
 	option = {
 		name = "How thoughtful!"
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		ENG = {
 			add_ideas = CUB_sugar_gift_idea
@@ -806,7 +800,7 @@ country_event = { #Trujillo Invitation to the Allies
 	option = {
 		name = "War is a fun hobby!"
 		ai_chance = {
-			factor = 3
+			base = 3
 		}
 		if = {
 			limit = {
@@ -841,7 +835,7 @@ country_event = { #Trujillo Invitation to the Allies
 	option = {
 		name = "Eh... Maybe in the next war..."
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		CUB = {
 			country_event = cuba.26
@@ -860,7 +854,7 @@ country_event = {
 	option = {
 		name = "It was worth a try."
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 	}
 }
@@ -877,7 +871,7 @@ country_event = { #Annexation Demands for Puerto Rico
 	option = {
 		name = "Fine, they can have them..."
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				USA = {
 					has_opinion = {
@@ -896,7 +890,7 @@ country_event = { #Annexation Demands for Puerto Rico
 	option = {
 		name = "We won't give in to these illegitimate claims!"
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				USA = {
 					has_opinion = {
@@ -930,7 +924,7 @@ country_event = { #Withdrawal from the Caribbean - UK
 	option = {
 		name = "We should take this threat seriously. Let's withdraw."
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				ENG = {
 					has_opinion = {
@@ -953,7 +947,7 @@ country_event = { #Withdrawal from the Caribbean - UK
 	option = {
 		name = "Who do they think they are, anyways?"
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				ENG = {
 					has_opinion = {
@@ -987,7 +981,7 @@ country_event = { #Withdrawal from the Caribbean - France
 	option = {
 		name = "We should take this threat seriously. Let's withdraw."
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				FRA = {
 					has_opinion = {
@@ -1006,7 +1000,7 @@ country_event = { #Withdrawal from the Caribbean - France
 	option = {
 		name = "Who do they think they are, anyways?"
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				FRA = {
 					has_opinion = {
@@ -1040,7 +1034,7 @@ country_event = { #Withdrawal from the Caribbean - USA
 	option = {
 		name = "We should take this threat seriously. Let's withdraw."
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				USA = {
 					has_opinion = {
@@ -1060,7 +1054,7 @@ country_event = { #Withdrawal from the Caribbean - USA
 	option = {
 		name = "Who do they think they are, anyways?"
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				USA = {
 					has_opinion = {
@@ -1094,7 +1088,7 @@ country_event = { #Withdrawal from the Caribbean - Netherlands
 	option = {
 		name = "We should take this threat seriously. Let's withdraw."
 		ai_chance = {
-			factor = 4
+			base = 4
 			modifier = {
 				HOL = {
 					has_opinion = {
@@ -1113,7 +1107,7 @@ country_event = { #Withdrawal from the Caribbean - Netherlands
 	option = {
 		name = "Who do they think they are, anyways?"
 		ai_chance = {
-			factor = 1
+			base = 1
 			modifier = {
 				HOL = {
 					has_opinion = {
@@ -1155,7 +1149,7 @@ news_event = { #Death of Gerardo Machado
 
 	option = {
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		name = "Good Riddance"
 		add_stability = 0.01
@@ -1183,7 +1177,7 @@ country_event = { #MS St. Louis Affair
 	option = {
 		name = "Surely we have room for those seeking refuge from tyranny."
 		ai_chance = {
-			factor = 5
+			base = 5
 			modifier = {
 				is_historical_focus_on = yes
 				factor = 0
@@ -1197,7 +1191,7 @@ country_event = { #MS St. Louis Affair
 	option = {
 		name = "Turn them away. This will only cause trouble for us."
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		add_stability = -0.01
 		add_political_power = 50
