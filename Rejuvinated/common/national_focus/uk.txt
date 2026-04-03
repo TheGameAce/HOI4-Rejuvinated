@@ -1667,7 +1667,7 @@ focus_tree = {
 	focus = {
 		id = ENG_secure_the_imperial_shipping_routes
 		prerequisite = { focus = naval_rearmament_focus }
-		prerequisite = { focus = uk_service_focus }
+		prerequisite = { focus = RJ_ENG_colonial_development }
 		icon = GFX_focus_generic_cruiser2
 		x = 3
 		y = 2
@@ -1697,7 +1697,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = naval_rearmament_focus
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -1707,7 +1707,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = dd_bonus
-				bonus = 1.0
+				bonus = 1
 				uses = 2
 				category = dd_tech
 			}
@@ -1715,13 +1715,48 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ENG_a_s_warfare
+		id = uk_convoy_focus
 		prerequisite = { focus = uk_destroyer_focus }
-		icon = GFX_goal_generic_navy_anti_submarine
-		x = 0
-		y = 2
+		icon = GFX_goal_generic_navy_cruiser
+		x = -1
+		y = 1
 		relative_position_id = uk_destroyer_focus
 		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = ENG_the_convoy_system_idea
+			add_tech_bonus = {
+				name = ASW_bonus
+				bonus = 0.5
+				uses = 1
+				technology = improved_depth_charges
+				technology = advanced_depth_charges
+				technology = modern_depth_charges
+			}
+			add_tech_bonus = {
+				name = ASW_bonus2
+				bonus = 0.5
+				uses = 1
+				technology = improved_sonar
+				technology = advanced_sonar
+				technology = modern_sonar
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_a_s_warfare
+		prerequisite = { focus = uk_convoy_focus }
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = 1
+		y = 1
+		relative_position_id = uk_convoy_focus
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -1741,32 +1776,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = uk_convoy_focus
-		prerequisite = { focus = uk_destroyer_focus }
-		icon = GFX_goal_generic_navy_cruiser
-		x = -1
-		y = 1
-		relative_position_id = uk_destroyer_focus
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_ideas = british_convoy_discount
-		}
-	}
-
-	focus = {
 		id = ENG_anti_submarine_training_school
 		prerequisite = { focus = uk_convoy_focus }
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		x = 0
 		y = 2
 		relative_position_id = uk_convoy_focus
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -1895,11 +1911,11 @@ focus_tree = {
 	focus = {
 		id = ENG_expand_the_repair_yards
 		prerequisite = { focus = uk_battleship_focus focus = uk_carrier_focus }
-		icon = GFX_goal_generic_production
+		icon = GFX_focus_POL_develop_polish_shipbuilding
 		x = -1
 		y = 1
 		relative_position_id = uk_battleship_focus
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -1949,7 +1965,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = uk_battleship_focus
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -2050,7 +2066,7 @@ focus_tree = {
 			}
 		}
 
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_RJ_ENG_reinforce_the_empire
 		x = 29
 		y = 0
 		offset = {
@@ -2064,7 +2080,7 @@ focus_tree = {
 				has_completed_focus = uk_empire_focus
 			}
 		}
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -2093,13 +2109,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = uk_service_focus 
+		id = RJ_ENG_reinforce_the_empire
 		prerequisite = { focus = uk_empire_focus }
 		available = {
 			
 		} 
 		icon = GFX_goal_generic_position_armies
-		x = -2
+		x = 5
 		y = 1
 		offset = {
 			x = 2
@@ -2118,6 +2134,36 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			add_ideas = ENG_fortify_the_empire_idea
+		}
+	}
+
+	focus = {
+		id = uk_service_focus 
+		prerequisite = { focus = RJ_ENG_reinforce_the_empire }
+		relative_position_id = RJ_ENG_reinforce_the_empire
+		available = {
+			
+		} 
+		icon = GFX_goal_generic_position_armies
+		x = 0
+		y = 1
+		offset = {
+			x = 2
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = uk_empire_focus
+			}
+		}
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
 			army_experience = 5
 			navy_experience = 25
 			air_experience = 25
@@ -2128,7 +2174,7 @@ focus_tree = {
 
 	focus = {
 		id = uk_mediterranean_focus 
-		prerequisite = { focus = uk_service_focus }
+		prerequisite = { focus = RJ_ENG_reinforce_the_empire }
 		available = {
 			447 = {
 				CONTROLLER = {
@@ -2140,9 +2186,9 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_goal_generic_construct_military
-		x = 5
+		x = 4
 		y = 1
-		relative_position_id = uk_service_focus
+		relative_position_id = RJ_ENG_reinforce_the_empire
 		cost = 10
 		completion_reward = {
 			if = {
@@ -2912,7 +2958,7 @@ focus_tree = {
 		continue_if_invalid = yes
 
 		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
-		x = 34
+		x = 42
 		y = 0
 
 		offset = {
@@ -5494,14 +5540,235 @@ focus_tree = {
 	}
 
 	### END OF DECOLONIZATION ###
+
+	focus = {
+		id = uk_commonwealth_focus 
+		prerequisite = { focus = uk_empire_focus }
+
+		available = {
+			OR = {
+				any_country = {
+					original_tag = NZL
+					is_in_faction_with = ROOT
+				}
+				any_country = {
+					original_tag = SAF
+					is_in_faction_with = ROOT
+				}
+				any_country = {
+					original_tag = RAJ
+					is_in_faction_with = ROOT
+				}
+				any_country = {
+					original_tag = AST
+					is_in_faction_with = ROOT
+				}
+				any_country = {
+					original_tag = CAN
+					is_in_faction_with = ROOT
+				}
+				any_country = {
+					original_tag = MAL
+					is_in_faction_with = ROOT
+				}
+				any_country = {
+					original_tag = PAL
+					is_in_faction_with = ROOT
+				}
+				any_country = {
+					original_tag = JOR
+					is_in_faction_with = ROOT
+				}
+				any_country = {
+					original_tag = KUW
+					is_in_faction_with = ROOT
+				}
+				any_country = {
+					original_tag = BRM
+					is_in_faction_with = ROOT
+				}
+			}
+		}
+
+		bypass = {
+			CAN = {
+				exists = no
+			}
+			SAF = {
+				exists = no
+			}
+			RAJ = {
+				exists = no
+			}
+			AST = {
+				exists = no
+			}
+			NZL = {
+				exists = no
+			}
+			MAL = {
+				exists = no
+			}
+			PAL = {
+				exists = no
+			}
+			JOR = {
+				exists = no
+			}
+			KUW = {
+				exists = no
+			}
+			BRM = {
+				exists = no
+			}
+			NOT = {
+				any_state = {
+					OR = {
+						is_core_of = ENG
+						is_core_of = CAN
+						is_core_of = SAF
+						is_core_of = AST
+						is_core_of = NZL
+						is_core_of = RAJ
+						is_core_of = MAL
+						is_core_of = BRM
+					}
+					NOT = { state = 320 }
+					NOT = { state = 321 }
+					OWNER = {
+						NOT = { tag = ENG }
+					}
+				}
+			}
+		}
+
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+
+		x = -7
+		y = 1
+		relative_position_id = uk_empire_focus
+
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_country = {
+				limit = {
+					original_tag = CAN
+					exists = yes
+					is_in_faction_with = ROOT
+				}
+				add_political_power = 50
+				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
+			}
+			random_country = {
+				limit = {
+					original_tag = AST
+					exists = yes
+					is_in_faction_with = ROOT
+				}
+				add_political_power = 50
+				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
+			}
+			random_country = {
+				limit = {
+					original_tag = RAJ
+					exists = yes
+					is_in_faction_with = ROOT
+				}
+				add_political_power = 50
+				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
+			}
+			random_country = {
+				limit = {
+					original_tag = NZL
+					exists = yes
+					is_in_faction_with = ROOT
+				}
+				add_political_power = 50
+				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
+			}
+			random_country = {
+				limit = {
+					original_tag = SAF
+					exists = yes
+					is_in_faction_with = ROOT
+				}
+				add_political_power = 50
+				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
+			}
+			random_country = {
+				limit = {
+					original_tag = MAL
+					exists = yes
+					is_in_faction_with = ROOT
+				}
+				add_political_power = 50
+				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
+			}
+			random_country = {
+				limit = {
+					original_tag = PAL
+					exists = yes
+					is_in_faction_with = ROOT
+				}
+				add_political_power = 50
+				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
+			}
+			random_country = {
+				limit = {
+					original_tag = JOR
+					exists = yes
+					is_in_faction_with = ROOT
+				}
+				add_political_power = 50
+				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
+			}
+			random_country = {
+				limit = {
+					original_tag = KUW
+					exists = yes
+					is_in_faction_with = ROOT
+				}
+				add_political_power = 50
+				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
+			}
+			random_country = {
+				limit = {
+					original_tag = BRM
+					exists = yes
+					is_in_faction_with = ROOT
+				}
+				add_political_power = 50
+				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_colonial_development
+		prerequisite = { focus = uk_commonwealth_focus }
+		icon = GFX_focus_research2
+		x = -1
+		y = 1
+		relative_position_id = uk_commonwealth_focus
+		cost = 10
+
+		available_if_capitulated = yes
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		completion_reward = {
+			
+		}
+	}
 	
 	focus = {
 		id = uk_colonial_focus 
-		prerequisite = { focus = uk_service_focus }
+		prerequisite = { focus = uk_commonwealth_focus }
 		icon = GFX_focus_research2
-		x = -5
+		x = 1
 		y = 1
-		relative_position_id = uk_service_focus
+		relative_position_id = uk_commonwealth_focus
 		cost = 10
 
 		available_if_capitulated = yes
@@ -5510,10 +5777,16 @@ focus_tree = {
 			add_ideas = { ENG_colonial_elite }
 		}
 	}
+	
 
 	focus = {
 		id = uk_asia_focus 
-		prerequisite = { focus = uk_colonial_focus }
+		prerequisite = { focus = RJ_ENG_reinforce_the_empire }
+		icon = GFX_goal_generic_construct_civilian
+		x = -4
+		y = 1
+		relative_position_id = RJ_ENG_reinforce_the_empire
+		cost = 10
 		
 		available = {
 			336 = {
@@ -5533,12 +5806,6 @@ focus_tree = {
 				}
 			}
 		}
-
-		icon = GFX_goal_generic_construct_civilian
-		x = -4
-		y = 1
-		relative_position_id = uk_colonial_focus
-		cost = 10
 
 		available_if_capitulated = yes
 
@@ -6330,217 +6597,12 @@ focus_tree = {
 			}
 		}
 	}
-	
-	focus = {
-		id = uk_commonwealth_focus 
-		prerequisite = { focus = uk_colonial_focus }
-
-		available = {
-			OR = {
-				any_country = {
-					original_tag = NZL
-					is_in_faction_with = ROOT
-				}
-				any_country = {
-					original_tag = SAF
-					is_in_faction_with = ROOT
-				}
-				any_country = {
-					original_tag = RAJ
-					is_in_faction_with = ROOT
-				}
-				any_country = {
-					original_tag = AST
-					is_in_faction_with = ROOT
-				}
-				any_country = {
-					original_tag = CAN
-					is_in_faction_with = ROOT
-				}
-				any_country = {
-					original_tag = MAL
-					is_in_faction_with = ROOT
-				}
-				any_country = {
-					original_tag = PAL
-					is_in_faction_with = ROOT
-				}
-				any_country = {
-					original_tag = JOR
-					is_in_faction_with = ROOT
-				}
-				any_country = {
-					original_tag = KUW
-					is_in_faction_with = ROOT
-				}
-				any_country = {
-					original_tag = BRM
-					is_in_faction_with = ROOT
-				}
-			}
-		}
-
-		bypass = {
-			CAN = {
-				exists = no
-			}
-			SAF = {
-				exists = no
-			}
-			RAJ = {
-				exists = no
-			}
-			AST = {
-				exists = no
-			}
-			NZL = {
-				exists = no
-			}
-			MAL = {
-				exists = no
-			}
-			PAL = {
-				exists = no
-			}
-			JOR = {
-				exists = no
-			}
-			KUW = {
-				exists = no
-			}
-			BRM = {
-				exists = no
-			}
-			NOT = {
-				any_state = {
-					OR = {
-						is_core_of = ENG
-						is_core_of = CAN
-						is_core_of = SAF
-						is_core_of = AST
-						is_core_of = NZL
-						is_core_of = RAJ
-						is_core_of = MAL
-						is_core_of = BRM
-					}
-					NOT = { state = 320 }
-					NOT = { state = 321 }
-					OWNER = {
-						NOT = { tag = ENG }
-					}
-				}
-			}
-		}
-
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-
-		x = 4
-		y = 1
-		relative_position_id = uk_colonial_focus
-
-		cost = 5
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			random_country = {
-				limit = {
-					original_tag = CAN
-					exists = yes
-					is_in_faction_with = ROOT
-				}
-				add_political_power = 50
-				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
-			}
-			random_country = {
-				limit = {
-					original_tag = AST
-					exists = yes
-					is_in_faction_with = ROOT
-				}
-				add_political_power = 50
-				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
-			}
-			random_country = {
-				limit = {
-					original_tag = RAJ
-					exists = yes
-					is_in_faction_with = ROOT
-				}
-				add_political_power = 50
-				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
-			}
-			random_country = {
-				limit = {
-					original_tag = NZL
-					exists = yes
-					is_in_faction_with = ROOT
-				}
-				add_political_power = 50
-				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
-			}
-			random_country = {
-				limit = {
-					original_tag = SAF
-					exists = yes
-					is_in_faction_with = ROOT
-				}
-				add_political_power = 50
-				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
-			}
-			random_country = {
-				limit = {
-					original_tag = MAL
-					exists = yes
-					is_in_faction_with = ROOT
-				}
-				add_political_power = 50
-				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
-			}
-			random_country = {
-				limit = {
-					original_tag = PAL
-					exists = yes
-					is_in_faction_with = ROOT
-				}
-				add_political_power = 50
-				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
-			}
-			random_country = {
-				limit = {
-					original_tag = JOR
-					exists = yes
-					is_in_faction_with = ROOT
-				}
-				add_political_power = 50
-				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
-			}
-			random_country = {
-				limit = {
-					original_tag = KUW
-					exists = yes
-					is_in_faction_with = ROOT
-				}
-				add_political_power = 50
-				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
-			}
-			random_country = {
-				limit = {
-					original_tag = BRM
-					exists = yes
-					is_in_faction_with = ROOT
-				}
-				add_political_power = 50
-				add_opinion_modifier = { target = ENG modifier = ENG_commonwealth_ties }
-			}
-		}
-	}
 
 	focus = {
 		id = ENG_british_commonwealth_air_training_plan
 		prerequisite = { focus = uk_commonwealth_focus }
 		icon = GFX_goal_generic_air_fighter2
-		x = -1
+		x = 3
 		y = 1
 		relative_position_id = uk_commonwealth_focus
 		cost = 10
@@ -6584,7 +6646,7 @@ focus_tree = {
 
 	focus = {
 		id = uk_india_focus 
-		prerequisite = { focus = uk_commonwealth_focus }
+		prerequisite = { focus = RJ_ENG_colonial_development }
 		available = {
 			any_country = {
 				original_tag = RAJ
@@ -6592,9 +6654,9 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_goal_generic_construct_civ_factory
-		x = -3
+		x = -4
 		y = 1
-		relative_position_id = uk_commonwealth_focus
+		relative_position_id = RJ_ENG_colonial_development
 		cost = 10
 
 		available_if_capitulated = yes
@@ -6743,7 +6805,7 @@ focus_tree = {
 	
 	focus = {
 		id = uk_australia_focus 
-		prerequisite = { focus = uk_commonwealth_focus }
+		prerequisite = { focus = RJ_ENG_colonial_development }
 		available = {
 			any_country = {
 				original_tag = AST
@@ -6779,9 +6841,9 @@ focus_tree = {
 			}
 		}
 		icon = GFX_goal_generic_construct_civilian
-		x = 1
+		x = -1
 		y = 1
-		relative_position_id = uk_commonwealth_focus
+		relative_position_id = RJ_ENG_colonial_development
 		cost = 10
 
 		available_if_capitulated = yes
@@ -7884,7 +7946,7 @@ focus_tree = {
 			}
 		}
 
-		x = 14
+		x = 20
 		y = 0
 		relative_position_id = ENG_revisit_colonial_policy
 
@@ -8924,7 +8986,7 @@ focus_tree = {
 
 		}
 		icon = GFX_focus_generic_strike_at_democracy2
-		x = 16
+		x = 20
 		y = 0
 		relative_position_id = ENG_steady_as_she_goes
 
