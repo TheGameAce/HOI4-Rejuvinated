@@ -103,9 +103,9 @@ focus_tree = {
 		prerequisite = { focus = radar_focus focus = crypto_bomb_focus }
 		prerequisite = { focus = uk_extra_tech_slot }
 		icon = GFX_goal_generic_scientific_exchange
-		x = -1
-		y = 2
-		relative_position_id = radar_focus
+		x = 0
+		y = 4
+		relative_position_id = crypto_bomb_focus
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -1571,7 +1571,7 @@ focus_tree = {
 			navy_experience = 50
 			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
 			add_to_variable = {
-				rj_ENG_the_economy_dockyard_output = 0.20
+				rj_ENG_the_economy_industrial_capacity_dockyard = 0.20
 				tooltip = industrial_capacity_dockyard_tt
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
