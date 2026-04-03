@@ -1,0 +1,23 @@
+ideas = {
+	
+	country = {
+		military_training_act_idea = {
+			picture = AFG_adopt_nufus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				conscription_factor = 0.15
+			}
+		}
+	}
+
+}
