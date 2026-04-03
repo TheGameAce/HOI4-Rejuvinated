@@ -22,7 +22,7 @@ country_event = {
 	option = { # back down, for now
 		name = mtg_usa_civil_war_fascists.1.a
 		ai_chance = {
-			factor = 80
+			base = 80
 		}
 		add_stability = -0.1
 		
@@ -30,7 +30,7 @@ country_event = {
 	option = { # Aggressive response
 		name = mtg_usa_civil_war_fascists.1.b
 		ai_chance = {
-			factor = 20
+			base = 20
 		}
 		custom_effect_tooltip = mtg_usa_civil_war_warning_tt
 		add_political_power = -120
@@ -653,11 +653,9 @@ country_event = {
 					limit = {
 						has_government = democratic
 						not = {
-							OR = {
-								has_completed_focus = ENG_organize_the_blackshirts
-								has_completed_focus = FRA_right_wing_rhetoric
-								has_completed_focus = FRA_utilize_the_leagues
-							}
+							has_completed_focus = ENG_organize_the_blackshirts
+							has_completed_focus = FRA_right_wing_rhetoric
+							has_completed_focus = FRA_utilize_the_leagues
 						}
 						is_major = yes
 					}
@@ -759,7 +757,7 @@ country_event = {
 	option = {
 		name = mtg_usa_civil_war_fascists.22.a #can't even deal with this right now
 		ai_chance = {
-			factor = 1
+			base = 1
 		}
 		USA = {
 			give_guarantee = USB
@@ -771,7 +769,7 @@ country_event = {
 	option = {
 		name = mtg_usa_civil_war_fascists.22.b #traitors all
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		add_stability = -0.1
 		add_war_support = -0.1
@@ -883,7 +881,7 @@ state_event = {
 	option = {
 		name = mtg_usa_civil_war_fascists.201.a #form separate units
 		ai_chance = {
-			factor = 75
+			base = 75
 		}
 		if = {
 			limit = {
@@ -926,7 +924,7 @@ state_event = {
 	option = {
 		name = mtg_usa_civil_war_fascists.201.b #integrate them into the army
 		ai_chance = {
-			factor = 25
+			base = 25
 			modifier = {
 				CSA = { has_manpower < 100000 }
 				factor = 3
@@ -950,7 +948,7 @@ state_event = {
 	option = {
 		name = mtg_usa_civil_war_fascists.201.a #form separate units
 		ai_chance = {
-			factor = 75
+			base = 75
 		}
 		if = {
 			limit = {
@@ -993,7 +991,7 @@ state_event = {
 	option = {
 		name = mtg_usa_civil_war_fascists.201.b #integrate them into the army
 		ai_chance = {
-			factor = 25
+			base = 25
 			modifier = {
 				USA = { has_manpower < 100000 }
 				factor = 3
@@ -1069,7 +1067,7 @@ country_event = {
 	option = { # back down, for now
 		name = mtg_usa_civil_war_democrats.1.a
 		ai_chance = {
-			factor = 80
+			base = 80
 		}
 		add_stability = -0.1
 		add_war_support = -0.1	
@@ -1120,7 +1118,7 @@ country_event = {
 	option = { #
 		name = mtg_usa_civil_war_democrats.2.a
 		ai_chance = {
-			factor = 80
+			base = 80
 		}
 		add_stability = -0.1
 		add_war_support = -0.1	
@@ -2346,7 +2344,7 @@ country_event = {
 	#accept
 	option = {
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 		name = mtg_usa_civil_war_democrats.40.a
 		
@@ -2382,7 +2380,7 @@ country_event = {
 	#no thanks
 	option = {
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		name = mtg_usa_civil_war_democrats.40.b
 		
@@ -2407,7 +2405,7 @@ country_event = {
 	option = {
 		name = mtg_usa_civil_war_democrats.41.a
 		ai_chance = {
-			factor = 70
+			base = 70
 			modifier = {
 				has_war = yes
 				factor = 0.5
@@ -2418,7 +2416,7 @@ country_event = {
 	#no thanks
 	option = {
 		ai_chance = {
-			factor = 30
+			base = 30
 			modifier = {
 				has_global_flag = MTG_flag_955
 				factor = 0
@@ -2431,12 +2429,11 @@ country_event = {
 			has_global_flag = MTG_flag_955
 		}
 		ai_chance = {
-			factor = 30
+			base = 30
 		}
 		name = mtg_usa_civil_war_democrats.41.c
 		create_country_leader = {
 			name = "Adam Hilt"
-			desc = "POLITICS_DOUGLAS_MACARTHUR_DESC"
 			picture = GFX_portrait_USA_mr_hilt
 			expire = "1965.1.1"
 			ideology = nazism
@@ -2450,7 +2447,7 @@ country_event = {
 			has_completed_focus = USA_send_lindbergh_to_germany
 		}
 		ai_chance = {
-			factor = 30
+			base = 30
 		}
 		name = mtg_usa_civil_war_democrats.41.d
 
@@ -2542,7 +2539,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_canadian_corridor.1.a
 		ai_chance = {
-			factor = 30
+			base = 30
 			modifier = {
 				is_in_faction = no
 				not = { has_global_flag = mtg_usa_north_american_dominion_refused_faction }
@@ -2566,7 +2563,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_canadian_corridor.1.b
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		add_war_support = 0.05
 		set_country_flag = north_american_dominion_refused
@@ -2628,7 +2625,7 @@ country_event = {
 	option = { #war!
 		name = mtg_usa_canadian_corridor.3.a
 		ai_chance = {
-			factor = 90
+			base = 90
 			modifier = {
 				has_war = yes
 				factor = 0
@@ -2643,7 +2640,7 @@ country_event = {
 	option = { #no war!
 		name = mtg_usa_canadian_corridor.3.b
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		add_war_support = -0.1
 	}
@@ -2668,7 +2665,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_southern_threat.1.a
 		ai_chance = {
-			factor = 40
+			base = 40
 			modifier = {
 				is_in_faction = no
 				not = { has_global_flag = mtg_usa_north_american_dominion_refused_faction }
@@ -2688,7 +2685,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_southern_threat.1.b
 		ai_chance = {
-			factor = 60
+			base = 60
 		}
 		add_war_support = 0.05
 		set_country_flag = north_american_dominion_refused
@@ -2744,7 +2741,7 @@ country_event = {
 	option = { #war!
 		name = mtg_usa_southern_threat.3.a
 		ai_chance = {
-			factor = 90
+			base = 90
 			modifier = {
 				has_war = yes
 				factor = 0
@@ -2758,7 +2755,7 @@ country_event = {
 	option = { #no war!
 		name = mtg_usa_southern_threat.3.b
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		add_war_support = -0.1
 	}
@@ -2783,7 +2780,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_north_american_dominion.1.a
 		ai_chance = {
-			factor = 30
+			base = 30
 			modifier = {
 				is_in_faction = no
 				not = { has_global_flag = mtg_usa_north_american_dominion_refused_faction }
@@ -2802,7 +2799,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_southern_threat.1.b
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		FROM = {
 			country_event = mtg_usa_north_american_dominion.3
@@ -2856,7 +2853,7 @@ country_event = {
 	option = { #war!
 		name = mtg_usa_north_american_dominion.3.a
 		ai_chance = {
-			factor = 90
+			base = 90
 			modifier = {
 				has_war = yes
 				factor = 0
@@ -2870,7 +2867,7 @@ country_event = {
 	option = { #no war!
 		name = mtg_usa_north_american_dominion.3.b
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		add_war_support = -0.1
 	}
@@ -2896,7 +2893,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_strategic_interests.1.a
 		ai_chance = {
-			factor = 30
+			base = 30
 			modifier = {
 				is_in_faction = no
 				not = { has_global_flag = mtg_usa_north_american_dominion_refused_faction }
@@ -2954,7 +2951,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_strategic_interests.1.b
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		FROM = {
 			country_event = mtg_usa_strategic_interests.3
@@ -3043,7 +3040,7 @@ country_event = {
 	option = { #war!
 		name = mtg_usa_strategic_interests.3.a
 		ai_chance = {
-			factor = 90
+			base = 90
 			modifier = {
 				has_war = yes
 				factor = 0
@@ -3057,7 +3054,7 @@ country_event = {
 	option = { #no war!
 		name = mtg_usa_strategic_interests.3.b
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		add_war_support = -0.1
 	}
@@ -3110,7 +3107,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_pacific_pacification.1.a
 		ai_chance = {
-			factor = 30
+			base = 30
 			modifier = {
 				is_in_faction = no
 				not = { has_global_flag = mtg_usa_north_american_dominion_refused_faction }
@@ -3134,7 +3131,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_pacific_pacification.1.b
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		FROM = {
 			country_event = mtg_usa_pacific_pacification.3
@@ -3214,7 +3211,7 @@ country_event = {
 	option = { #war!
 		name = mtg_usa_pacific_pacification.3.a
 		ai_chance = {
-			factor = 90
+			base = 90
 			modifier = {
 				has_war = yes
 				factor = 0
@@ -3228,7 +3225,7 @@ country_event = {
 	option = { #no war!
 		name = mtg_usa_pacific_pacification.3.b
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		add_war_support = -0.1
 	}
@@ -3254,7 +3251,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_secure_asia.1.a
 		ai_chance = {
-			factor = 30
+			base = 30
 			modifier = {
 				is_in_faction = no
 				not = { has_global_flag = mtg_usa_north_american_dominion_refused_faction }
@@ -3274,7 +3271,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_secure_asia.1.b
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		add_war_support = 0.05
 		FROM = {
@@ -3330,7 +3327,7 @@ country_event = {
 	option = { #war!
 		name = mtg_usa_secure_asia.3.a
 		ai_chance = {
-			factor = 90
+			base = 90
 			modifier = {
 				has_war = yes
 				factor = 0
@@ -3344,7 +3341,7 @@ country_event = {
 	option = { #no war!
 		name = mtg_usa_secure_asia.3.b
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		add_war_support = -0.1
 	}
@@ -3362,7 +3359,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_secure_asia.4.a
 		ai_chance = {
-			factor = 30
+			base = 30
 			modifier = {
 				is_in_faction = no
 				not = { has_global_flag = mtg_usa_north_american_dominion_refused_faction }
@@ -3382,7 +3379,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_secure_asia.4.b
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		add_war_support = 0.05
 		set_country_flag = north_american_dominion_refused
@@ -3438,7 +3435,7 @@ country_event = {
 	option = { #war!
 		name = mtg_usa_secure_asia.6.a
 		ai_chance = {
-			factor = 90
+			base = 90
 			modifier = {
 				has_war = yes
 				factor = 0
@@ -3452,7 +3449,7 @@ country_event = {
 	option = { #no war!
 		name = mtg_usa_secure_asia.6.b
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		add_war_support = -0.1
 	}
@@ -3470,7 +3467,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_secure_asia.7.a
 		ai_chance = {
-			factor = 30
+			base = 30
 			modifier = {
 				is_in_faction = no
 				not = { has_global_flag = mtg_usa_north_american_dominion_refused_faction }
@@ -3494,7 +3491,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_secure_asia.7.b
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		add_war_support = 0.05
 		set_country_flag = north_american_dominion_refused
@@ -3554,7 +3551,7 @@ country_event = {
 	option = { #war!
 		name = mtg_usa_secure_asia.9.a
 		ai_chance = {
-			factor = 90
+			base = 90
 			modifier = {
 				has_war = yes
 				factor = 0
@@ -3568,7 +3565,7 @@ country_event = {
 	option = { #no war!
 		name = mtg_usa_secure_asia.9.b
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		add_war_support = -0.1
 	}
@@ -3594,7 +3591,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_protect_south_america.1.a
 		ai_chance = {
-			factor = 30
+			base = 30
 			modifier = {
 				is_in_faction = no
 				not = { has_global_flag = mtg_usa_north_american_dominion_refused_faction }
@@ -3614,7 +3611,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_protect_south_america.1.b
 		ai_chance = {
-			factor = 70
+			base = 70
 			modifier = {
 				factor = 2
 				not = { has_government = FROM }
@@ -3684,7 +3681,7 @@ country_event = {
 	option = { #war!
 		name = mtg_usa_protect_south_america.3.a
 		ai_chance = {
-			factor = 90
+			base = 90
 			modifier = {
 				has_war = yes
 				factor = 0
@@ -3698,7 +3695,7 @@ country_event = {
 	option = { #no war!
 		name = mtg_usa_protect_south_america.3.b
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		add_war_support = -0.1
 	}
@@ -3724,7 +3721,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.1.a
 		ai_chance = {
-			factor = 70
+			base = 70
 			
 		}
 		add_political_power = 25
@@ -3741,7 +3738,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_foreign_support.1.b
 		ai_chance = {
-			factor = 30
+			base = 30
 		}
 		add_political_power = -25
 		FROM = {
@@ -3760,7 +3757,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.2.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		add_offsite_building = { type = industrial_complex level = 1 }	
 	}
@@ -3776,7 +3773,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.3.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 	}
 }
@@ -3792,7 +3789,7 @@ country_event = {
 	option = { #agree to send some rifles
 		name = mtg_usa_foreign_support.4.a
 		ai_chance = {
-			factor = 50
+			base = 50
 			
 		}
 		add_political_power = 25
@@ -3811,7 +3808,7 @@ country_event = {
 	option = { #agree to send artillery
 		name = mtg_usa_foreign_support.4.b
 		ai_chance = {
-			factor = 20	
+			base = 20	
 		}
 		add_political_power = 25
 		FROM = {
@@ -3829,7 +3826,7 @@ country_event = {
 	option = { #agree to send tanks
 		name = mtg_usa_foreign_support.4.b
 		ai_chance = {
-			factor = 10	
+			base = 10	
 		}
 		trigger = {
 			OR = {
@@ -3853,7 +3850,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_foreign_support.4.d
 		ai_chance = {
-			factor = 20
+			base = 20
 		}
 		add_political_power = -25
 		FROM = {
@@ -3872,7 +3869,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.5.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		add_to_variable = { var = smuggled_weapons value = 1000 }
 	}
@@ -3888,7 +3885,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.6.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 	}
 }
@@ -3903,7 +3900,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.7.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		add_to_variable = { var = smuggled_artillery value = 50 }
 	}
@@ -3919,7 +3916,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.8.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		add_to_variable = { var = smuggled_tanks value = 50 }
 	}
@@ -3936,7 +3933,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.9.a
 		ai_chance = {
-			factor = 70
+			base = 70
 			
 		}
 		add_political_power = 25
@@ -3953,7 +3950,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_foreign_support.9.b
 		ai_chance = {
-			factor = 30
+			base = 30
 		}
 		add_political_power = -25
 		FROM = {
@@ -3972,7 +3969,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.10.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		set_country_flag = us_training_@FROM	
 		FROM = {
@@ -4000,7 +3997,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.11.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 	}
 }
@@ -4016,7 +4013,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.12.a
 		ai_chance = {
-			factor = 70
+			base = 70
 			
 		}
 		add_political_power = 25
@@ -4033,7 +4030,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_foreign_support.12.b
 		ai_chance = {
-			factor = 30
+			base = 30
 		}
 		add_political_power = -25
 		FROM = {
@@ -4052,7 +4049,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.13.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		custom_effect_tooltip = us_pilot_training_tt	
 		FROM = {
@@ -4080,7 +4077,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.14.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 	}
 }
@@ -4096,7 +4093,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.15.a
 		ai_chance = {
-			factor = 70
+			base = 70
 			
 		}
 		add_political_power = 25
@@ -4112,7 +4109,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_foreign_support.15.b
 		ai_chance = {
-			factor = 30
+			base = 30
 		}
 		add_political_power = -25
 		FROM = {
@@ -4131,7 +4128,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.16.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		add_offsite_building = { type = dockyard level = 1 }
 	}
@@ -4147,7 +4144,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_foreign_support.17.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 	}
 }
@@ -4163,7 +4160,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_diplomatic_protest.1.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 	}
 }
@@ -4179,7 +4176,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_diplomatic_protest.2.a
 		ai_chance = {
-			factor = 30
+			base = 30
 		}
 		FROM = {
 			country_event = mtg_usa_diplomatic_protest.3
@@ -4201,7 +4198,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_diplomatic_protest.2.b
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		FROM = {
 			country_event = mtg_usa_diplomatic_protest.4
@@ -4227,7 +4224,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_diplomatic_protest.3.a
 		ai_chance = {
-			factor = 30
+			base = 30
 		}
 		FROM = {
 			every_owned_state = {
@@ -4255,7 +4252,7 @@ country_event = {
 	option = { #agree
 		name = mtg_usa_diplomatic_protest.4.a
 		ai_chance = {
-			factor = 70
+			base = 70
 		}
 		FROM = {
 			ROOT = {
@@ -4270,7 +4267,7 @@ country_event = {
 	option = { #refuse
 		name = mtg_usa_diplomatic_protest.4.b
 		ai_chance = {
-			factor = 30
+			base = 30
 		}
 		FROM = { set_country_flag = USA_monroe_backed_down } #to prevent US from demanding the same thing over and over again
 	}
@@ -4403,7 +4400,7 @@ country_event = {
 		custom_effect_tooltip = panay_incident.2.a.tt
 		trigger = { has_war_support < 0.4 }
 		ai_chance = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 0
 				USA_is_on_historical_plan_trigger = yes
@@ -4425,7 +4422,7 @@ country_event = {
 		custom_effect_tooltip = panay_incident.2.e.tt
 		trigger = { has_war_support > 0.39 }
 		ai_chance = {
-			factor = 2
+			base = 2
 			modifier = {
 				factor = 0
 				USA_is_on_historical_plan_trigger = yes
@@ -4438,7 +4435,7 @@ country_event = {
 	option = { #Demand compensation
 		name = panay_incident.2.b
 		custom_effect_tooltip = panay_incident.2.b.tt
-		ai_chance = { factor = 85 }
+		ai_chance = { base = 85 }
 		add_war_support = 0.05
 		set_country_flag = { flag = USA_panay_window days = 90 value = 1 }
 		hidden_effect = { JAP = { country_event = { id = panay_incident.3 days = 2 } } } #Delay added so events are spaced out - historically it took months to get JAP to agree to compensation, but that'd be a bit hard to follow in-game, so timelines compressed.
@@ -4448,7 +4445,7 @@ country_event = {
 		name = panay_incident.2.c
 		custom_effect_tooltip = panay_incident.2.c.tt
 		ai_chance = {
-			factor = 5
+			base = 5
 			modifier = {
 				factor = 0
 				USA_is_on_historical_plan_trigger = yes
@@ -4487,7 +4484,7 @@ country_event = {
 
 	option = { #Pay compensation
 		name = panay_incident.3.a
-		ai_chance = { factor = 70 }
+		ai_chance = { base = 70 }
 		add_political_power = -100
 		hidden_effect = { USA = { country_event = { id = panay_incident.4 days = 2 } } } #Delay added to space things out
 	}
@@ -4495,7 +4492,7 @@ country_event = {
 		name = panay_incident.3.b
 		custom_effect_tooltip = panay_incident.3.b.tt
 		ai_chance = {
-			factor = 30
+			base = 30
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
@@ -4532,7 +4529,7 @@ country_event = {
 
 	option = {
 		name = panay_incident.5.a
-		ai_chance = { factor = 60 }
+		ai_chance = { base = 60 }
 		add_political_power = -10
 		add_war_support = -0.02
 		add_stability = 0.05
@@ -4540,7 +4537,7 @@ country_event = {
 	option = {
 		name = panay_incident.5.b
 		ai_chance = {
-			factor = 40
+			base = 40
 		}
 		if = {
 			limit = {
@@ -4551,15 +4548,10 @@ country_event = {
 			add_war_support = -0.05
 			add_stability = -0.1
 		}
-		if = {
-			limit = {
-
-			}
-		}
 		create_wargoal = {
-				target = JAP
-				type = topple_government
-			}
+			target = JAP
+			type = topple_government
+		}
 		add_state_claim = 633
 		add_state_claim = 684
 		add_state_claim = 645
