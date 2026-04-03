@@ -4,7 +4,7 @@ bookmarks = {
 		desc = "GATHERING_STORM_DESC"
 		date = 1936.1.1.12
 		picture = "GFX_select_date_1936"
-		default_country = "CUB"
+		default_country = "ENG"
 		default = yes
 		
 		"FRA"={
@@ -37,6 +37,7 @@ bookmarks = {
 				FRA_je_suis_la_deluge
 			}
 		}
+
 		USA = {
 			history = "USA_GATHERING_STORM_DESC"
 			ideology = democratic
@@ -52,10 +53,11 @@ bookmarks = {
 				USA_reestablish_the_gold_standard
 			}
 		}
-		"ENG"={
+
+		ENG = {
 			history = "ENG_GATHERING_STORM_DESC"
 			ideology = democratic
-			available = { has_dlc = "Man the Guns" }
+			new_content = yes
 			ideas = {
 				stiff_upper_lip
 				ENG_the_war_to_end_all_wars
@@ -65,21 +67,6 @@ bookmarks = {
 				ENG_imperial_federation
 				ENG_the_kings_party
 				ENG_organize_the_blackshirts
-			}
-		}
-		"ENG"={
-			history = "ENG_GATHERING_STORM_DESC"
-			ideology = democratic
-			available = { NOT = { has_dlc = "Man the Guns" } }
-			ideas = {
-				stiff_upper_lip
-				ENG_the_war_to_end_all_wars
-				george_v
-			}
-			focuses = {
-				tizard_mission_focus
-				ENG_war_with_germany
-				ENG_war_with_italy
 			}
 		}
 

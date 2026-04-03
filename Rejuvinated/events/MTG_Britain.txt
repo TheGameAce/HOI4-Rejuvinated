@@ -16,7 +16,6 @@ country_event = {
 		has_country_flag = ENG_king_died
 		date > 1936.6.1
 		NOT = { has_country_flag = ENG_edward_abdicating }
-		has_dlc = "Man the Guns"
 	}
 	
 	fire_only_once = yes
@@ -27,7 +26,7 @@ country_event = {
 	option = {
 		name = mtg_britain.1.c
 		ai_chance = {
-			factor = 70
+			base = 70
 			modifier = {
 				factor = 0
 				OR = {
@@ -49,15 +48,13 @@ country_event = {
 		name = mtg_britain.1.b
 		trigger = {
 			NOT = {
-				OR = {
-					has_completed_focus = ENG_organize_the_blackshirts
-					has_completed_focus = ENG_concessions_to_the_trade_unions
-					has_completed_focus = ENG_steady_as_she_goes
-				}
+				has_completed_focus = ENG_organize_the_blackshirts
+				has_completed_focus = ENG_concessions_to_the_trade_unions
+				has_completed_focus = ENG_steady_as_she_goes
 			}
 		}
 		ai_chance = {
-			factor = 20
+			base = 20
 			modifier = {
 				factor = 0
 				ENG_is_on_historical_plan_trigger = yes
@@ -134,7 +131,7 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 10
+			base = 10
 			modifier = {
 				factor = 0
 				ENG_is_on_historical_plan_trigger = yes
@@ -222,7 +219,7 @@ country_event = {
 	option = {
 		name = mtg_britain.2.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		country_event = { id = mtg_britain.14 days = 40 random_days = 10 }
 		set_country_flag = ENG_abdication_crisis_changed_mind
@@ -247,7 +244,6 @@ country_event = {
 		add_political_power = -150
 		create_country_leader = {
 			name = "Fallen Government"
-			desc = "POLITICS_FALLEN_GOVERNMENT_DESC"
 			picture = GFX_portrait_Fallen_Government
 			expire = "1965.1.1"
 			ideology = conservatism
@@ -264,7 +260,7 @@ country_event = {
 	option = {
 		name = mtg_britain.2.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		country_event = { id = mtg_britain.14 days = 40 random_days = 10 }
 		set_country_flag = ENG_abdication_crisis_changed_mind
@@ -703,7 +699,7 @@ country_event = {
 			NOT = { has_country_flag = ENG_abdication_crisis_government_fell }
 		}
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		country_event = { id = mtg_britain.14 days = 40 random_days = 10 }
 		set_country_flag = ENG_abdication_crisis_changed_mind
@@ -751,7 +747,7 @@ country_event = {
 			NOT = { has_country_flag = ENG_abdication_crisis_government_fell }
 		}
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		country_event = { id = mtg_britain.14 days = 40 random_days = 10 }
 		set_country_flag = ENG_abdication_crisis_changed_mind
@@ -800,7 +796,7 @@ country_event = {
 			NOT = { has_country_flag = ENG_abdication_crisis_government_fell }
 		}
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		country_event = { id = mtg_britain.14 days = 40 random_days = 10 }
 		set_country_flag = ENG_abdication_crisis_changed_mind
@@ -846,7 +842,7 @@ country_event = {
 			NOT = { has_country_flag = ENG_abdication_crisis_government_fell }
 		}
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		country_event = { id = mtg_britain.14 days = 40 random_days = 10 }
 		set_country_flag = ENG_abdication_crisis_changed_mind
@@ -894,7 +890,7 @@ country_event = {
 			NOT = { has_country_flag = ENG_abdication_crisis_government_fell }
 		}
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		country_event = { id = mtg_britain.14 days = 40 random_days = 10 }
 		set_country_flag = ENG_abdication_crisis_changed_mind
@@ -941,7 +937,7 @@ country_event = {
 			NOT = { has_country_flag = ENG_abdication_crisis_government_fell }
 		}
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		country_event = { id = mtg_britain.14 days = 40 random_days = 10 }
 		set_country_flag = ENG_abdication_crisis_changed_mind
@@ -985,7 +981,7 @@ country_event = {
 			NOT = { has_country_flag = ENG_abdication_crisis_government_fell }
 		}
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		country_event = { id = mtg_britain.14 days = 40 random_days = 10 }
 		set_country_flag = ENG_abdication_crisis_changed_mind
@@ -1044,7 +1040,7 @@ country_event = {
 	option = {
 		name = mtg_britain.15.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		custom_effect_tooltip = mtg_britain.15_tt_2
 		set_country_flag = ENG_abdication_crisis_dominion_will_stay
@@ -1608,7 +1604,6 @@ country_event = {
 		retire_country_leader = yes
 		create_country_leader = {
 			name = "Winston Churchill"
-			desc = "POLITICS_WINSTON_CHURCHILL_DESC"
 			picture = GFX_portrait_Winston_Churchill
 			expire = "1965.1.1"
 			ideology = conservatism
@@ -1678,7 +1673,7 @@ country_event = {
 	option = {
 		name = mtg_britain.23.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		FROM = { country_event = { id = mtg_britain.26 hours = 6 } }
 	}
@@ -1794,7 +1789,7 @@ country_event = {
 	option = {
 		name = mtg_britain.27.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		FROM = { country_event = { id = mtg_britain.29 hours = 6 } }
 	}
@@ -1898,7 +1893,7 @@ country_event = {
 	option = {
 		name = mtg_britain.30.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		FROM = { country_event = { id = mtg_britain.32 hours = 6 } }
 	}
@@ -2472,7 +2467,7 @@ country_event = {
 	option = {
 		name = mtg_britain.40.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		FROM = { country_event = { id = mtg_britain.37 hours = 6 } }
 	}
@@ -2526,7 +2521,7 @@ country_event = {
 	option = {
 		name = mtg_britain.43.a
 		ai_chance = {
-			factor = 75
+			base = 75
 		}
 		add_timed_idea = { idea = ENG_confiscated_royal_wealth days = 365 }
 		remove_ideas = ENG_george_vi
@@ -2542,7 +2537,7 @@ country_event = {
 	option = {
 		name = mtg_britain.43.b
 		ai_chance = {
-			factor = 25
+			base = 25
 		}
 		add_timed_idea = { idea = ENG_confiscated_royal_wealth days = 365 }
 		add_stability = -0.1
@@ -2676,7 +2671,7 @@ country_event = {
 	option = {
 		name = mtg_britain.46.a
 		ai_chance = {
-			factor = 34
+			base = 34
 			modifier = {
 				factor = 1.5
 				strength_ratio = {
@@ -3632,7 +3627,7 @@ country_event = {
 	option = {
 		name = mtg_britain.46.b
 		ai_chance = {
-			factor = 66
+			base = 66
 			modifier = {
 				factor = 1.5
 				strength_ratio = {
@@ -3728,7 +3723,7 @@ country_event = {
 	option = {
 		name = mtg_britain.49.a
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 0
 				has_war = yes
@@ -3754,7 +3749,7 @@ country_event = {
 	option = {
 		name = mtg_britain.49.b
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 0
 				has_war = no
@@ -3830,7 +3825,7 @@ country_event = {
 	option = {
 		name = mtg_britain.52.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		FROM = { country_event = { id = mtg_britain.54 hours = 6 } }
 	}
@@ -3963,7 +3958,6 @@ country_event = {
 				}
 				create_country_leader = {
 					name = ENG_harry_pollitt
-					desc = "POLITICS_HARRY_POLLITT_DESC"
 					picture = GFX_portrait_Harry_Pollitt
 					expire = "1965.1.1"
 					ideology = leninism
@@ -3978,7 +3972,6 @@ country_event = {
 				}
 				create_country_leader = {
 					name = "Rajani Palme Dutt"
-					desc = "POLITICS_PALME_DUTT_DESC"
 					picture = GFX_portrait_Rajani_Palme_Dutt
 					expire = "1965.1.1"
 					ideology = leninism
@@ -4763,13 +4756,10 @@ country_event = {
 		ENG = { has_civil_war = no }
 		NOT = { has_country_flag = ENG_cannot_leave_faction }
 		NOT = { ENG = { has_country_flag = ENG_switched_to_fascism_communism_dominions_timer_flag } }
-		has_dlc = "Man the Guns"
 		NOT = { has_country_flag = ENG_dominions_stayed_with_fascist_britain_flag }
 		NOT = { has_country_flag = britain_enforced_our_loyalty }
 		NOT = { has_country_flag = ENG_already_left_faction_flag }
 	}
-	
-	fire_only_once = no
 
 	mean_time_to_happen = { days = 30 }
 	
@@ -4777,7 +4767,7 @@ country_event = {
 	option = {
 		name = mtg_britain.66.a
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		set_country_flag = ENG_dominions_stayed_with_fascist_britain_flag
 	}
@@ -4937,7 +4927,7 @@ country_event = {
 	option = {
 		name = mtg_britain.68.a
 		ai_chance = {
-			factor = 66
+			base = 66
 			modifier = {
 				factor = 1.5
 				strength_ratio = {
@@ -4974,7 +4964,7 @@ country_event = {
 	option = {
 		name = mtg_britain.68.b
 		ai_chance = {
-			factor = 34
+			base = 34
 			modifier = {
 				factor = 1.5
 				strength_ratio = {
@@ -5013,7 +5003,7 @@ country_event = {
 	option = {
 		name = mtg_britain.69.a
 		ai_chance = {
-			factor = 34
+			base = 34
 		}
 		FROM = { country_event = { id = mtg_britain.70 hours = 6 } }
 	}
@@ -5022,7 +5012,7 @@ country_event = {
 	option = {
 		name = mtg_britain.69.b
 		ai_chance = {
-			factor = 66
+			base = 66
 		}
 		custom_effect_tooltip = mtg_britain.68_tt
 		FROM = { country_event = { id = mtg_britain.71 hours = 6 } }
@@ -5054,7 +5044,7 @@ country_event = {
 	option = {
 		name = mtg_britain.70.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 	}
 }
@@ -5088,14 +5078,10 @@ country_event = {
 		NOT = {
 			OR = {
 				ENG = { has_completed_focus = ENG_the_three_nation_solution }
-				AND = {
-					has_dlc = "Together for Victory"
-					has_completed_focus = RAJ_two_nation_theory
-				}
+				has_completed_focus = RAJ_two_nation_theory
 			}
 		}
 		is_subject = no
-		has_dlc = "Man the Guns"
 		NOT = { has_dlc = "Graveyard of Empires" }
 	}
 
@@ -5658,7 +5644,7 @@ country_event = {
 	option = {
 		name = mtg_britain.73.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		release = PAK
 		hidden_effect = { country_event = { id = mtg_britain.109 days = 5 random_days = 5 } }
@@ -5728,7 +5714,7 @@ country_event = {
 	option = {
 		name = mtg_britain.74.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		add_war_support = -0.1
 	}
@@ -5783,7 +5769,6 @@ country_event = {
 		NOT = { ENG = { has_completed_focus = ENG_the_three_nation_solution } }
 		is_subject = no
 		has_war = no
-		has_dlc = "Man the Guns"
 		NOT = { has_dlc = "Graveyard of Empires" }
 	}
 	
@@ -5887,7 +5872,7 @@ country_event = {
 	option = {
 		name = mtg_britain.76.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		release = BAN
 		set_country_flag = PAK_civil_war
@@ -5918,7 +5903,7 @@ country_event = {
 	option = {
 		name = mtg_britain.77.b
 		ai_chance = {
-			factor = 0
+			base = 0
 		}
 		add_war_support = -0.1
 	}
@@ -6259,7 +6244,7 @@ country_event = {
 	option = {
 		name = mtg_britain.84.a
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 2
 				FROM = { has_country_flag = ENG_diplomatic_pressure_flag }
@@ -6303,7 +6288,7 @@ country_event = {
 	option = {
 		name = mtg_britain.84.b
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 0.8
 				has_opinion = { target = ENG value > 0 }
@@ -6537,7 +6522,7 @@ country_event = {
 	option = {
 		name = mtg_britain.88.a
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 2
 				FROM = { has_country_flag = ENG_diplomatic_pressure_flag }
@@ -6560,7 +6545,7 @@ country_event = {
 	option = {
 		name = mtg_britain.88.b
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 0.8
 				has_opinion = { target = ENG value > 0 }
@@ -6793,7 +6778,7 @@ country_event = {
 	option = {
 		name = mtg_britain.92.a
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 2
 				FROM = { has_country_flag = ENG_diplomatic_pressure_flag }
@@ -6837,7 +6822,7 @@ country_event = {
 	option = {
 		name = mtg_britain.92.b
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 0.8
 				has_opinion = { target = ENG value > 0 }
@@ -7071,7 +7056,7 @@ country_event = {
 	option = {
 		name = mtg_britain.96.a
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 2
 				FROM = { has_country_flag = ENG_diplomatic_pressure_flag }
@@ -7095,7 +7080,7 @@ country_event = {
 	option = {
 		name = mtg_britain.96.b
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 0.8
 				has_opinion = { target = ENG value > 0 }
@@ -7329,7 +7314,7 @@ country_event = {
 	option = {
 		name = mtg_britain.100.a
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 2
 				FROM = { has_country_flag = ENG_diplomatic_pressure_flag }
@@ -7342,10 +7327,8 @@ country_event = {
 				factor = 0
 				tag = RAJ
 				ENG = {
-					AND = {
-						NOT = { has_completed_focus = ENG_indian_autonomy } 
-						NOT = { has_country_leader_with_trait = viceroy_emeritus }
-					}
+					NOT = { has_completed_focus = ENG_indian_autonomy } 
+					NOT = { has_country_leader_with_trait = viceroy_emeritus }
 				}
 			}
 		}
@@ -7359,7 +7342,7 @@ country_event = {
 	option = {
 		name = mtg_britain.100.b
 		ai_chance = {
-			factor = 50
+			base = 50
 			modifier = {
 				factor = 0.8
 				has_opinion = { target = ENG value > 0 }
@@ -7994,7 +7977,6 @@ country_event = {
 	trigger = {
 		tag = ENG
 		has_country_flag = ENG_king_died
-		has_dlc = "Man the Guns"
 		has_country_flag = ENG_abdication_crisis_morganatic_marriage
 		has_country_flag = edward_viii_married_wallis_simpson
 		126 = {
@@ -8012,7 +7994,6 @@ country_event = {
 		kill_country_leader = yes
 		create_country_leader = {
 			name = "George VI"
-			desc = "POLITICS_GEORGE_VI_DESC"
 			picture = GFX_portrait_George_VI
 			expire = "1965.1.1"
 			ideology = despotism
@@ -8048,7 +8029,6 @@ country_event = {
 		kill_country_leader = yes
 		create_country_leader = {
 			name = "Elizabeth II"
-			desc = "POLITICS_ELIZABETH_II_DESC"
 			picture = "GFX_portrait_eng_elizabeth_ii"
 			expire = "1965.1.1"
 			ideology = despotism
