@@ -870,7 +870,36 @@ on_actions = {
 							has_completed_focus = FRA_utilize_the_leagues
 						}
 					}
-					country_event = { id = france.32 }
+					if = {
+						limit = {
+							NOT = { has_dlc = "La Resistance" }
+						}
+						random_other_country = {
+							limit = {
+								original_tag = SPR
+								has_government = fascism
+							}
+							FRA = {
+								add_ai_strategy = {
+									type = befriend
+									id = PREV
+									value = 200
+								}
+							}
+						}
+					}
+					if = {
+						limit = {
+							has_dlc = "La Resistance"
+						}
+						FRA = {
+							add_ai_strategy = {
+								type = befriend
+								id = "SPA"
+								value = 200
+							}
+						}
+					}
 				}
 			}
 		}
