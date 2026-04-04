@@ -5767,6 +5767,268 @@ focus_tree = {
 			}
 		}
 	}
+
+	focus = {
+		id = RJ_ENG_south_african_development
+		prerequisite = { focus = RJ_ENG_colonial_development }
+		icon = GFX_focus_RJ_ENG_SAF_development
+		x = -4
+		y = 1
+		relative_position_id = RJ_ENG_colonial_development
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			any_country = {
+				original_tag = SAF
+				OR = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+
+		completion_reward = {
+			SAF = {
+				add_opinion_modifier = { target = ENG modifier = aided_industry }
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+					}
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+					}
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+					}
+				}
+				random_owned_controlled_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				build_railway = {
+					path = { 10415 4528 5154 2229 2207 10978 8136 }
+					start_province = 10415
+					target_province = 8136
+					level = 2
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+				895 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 8136
+					}
+				}
+				add_autonomy_ratio = {
+					value = -0.05
+					localization = uk_south_africa_focus
+				}
+				894 = {
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						province = 10978
+					}
+				}
+			}
+		}
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = RJ_ENG_improve_south_african_military_industry
+		prerequisite = { focus = RJ_ENG_south_african_development }
+		icon = GFX_focus_RJ_USA_military_construction
+		x = -1
+		y = 1
+		relative_position_id = RJ_ENG_south_african_development
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			any_country = {
+				original_tag = SAF
+				OR = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+		}
+
+		completion_reward = {
+			SAF = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 1
+							include_locked = yes
+						}
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = dockyard
+						level = 2
+						instant_build = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = dockyard
+							size > 0
+							include_locked = yes
+						}
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
+
+	focus = {
+		id = RJ_ENG_transfer_control_of_local_administrations
+		prerequisite = { focus = RJ_ENG_south_african_development }
+		icon = GFX_goal_tfv_saf_secure_interests_in_africa
+		x = 0
+		y = 2
+		relative_position_id = RJ_ENG_south_african_development
+		cost = 3
+
+		available_if_capitulated = yes
+
+		available = {
+			any_country = {
+				original_tag = SAF
+				OR = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+			}
+			ENG = {
+				owns_state = 542
+				controls_state = 542
+				owns_state = 545
+				controls_state = 545
+				owns_state = 981
+				controls_state = 981
+				owns_state = 771
+				controls_state = 771
+				owns_state = 770
+				controls_state = 770
+			}
+		}
+
+		completion_reward = {
+			SAF = {
+				transfer_state = 542
+				542 = {
+					add_core_of = SAF
+				}
+				transfer_state = 545
+				545 = {
+					add_core_of = SAF
+				}
+				transfer_state = 981
+				981 = {
+					add_core_of = SAF
+				}
+				transfer_state = 771
+				771 = {
+					add_core_of = SAF
+				}
+				transfer_state = 770
+				770 = {
+					add_core_of = SAF
+				}
+			}
+		}
+
+		search_filters = {FOCUS_FILTER_INDUSTRY}
+	}
 	
 	focus = {
 		id = uk_colonial_focus 
@@ -7284,165 +7546,6 @@ focus_tree = {
 				add_autonomy_ratio = {
 					value = -0.05
 					localization = uk_canada_focus
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = uk_south_africa_focus
-		prerequisite = { focus = RJ_ENG_colonial_development }
-		available = {
-			any_country = {
-				original_tag = SAF
-				is_in_faction_with = ROOT
-			}
-		}
-		bypass = {
-			OR = {
-				SAF = { exists = no }
-				SAF = {
-					custom_trigger_tooltip = {
-						tooltip = construction_effort_tt
-						all_owned_state = {
-							free_building_slots = {
-								building = industrial_complex
-								size < 1
-								include_locked = yes
-							}
-						}
-					}
-					custom_trigger_tooltip = {
-						tooltip = naval_effort_tt
-						all_owned_state = {
-							free_building_slots = {
-								building = dockyard
-								size < 1
-								include_locked = yes
-							}
-						}
-					}
-				}
-			}
-		}
-		icon = GFX_goal_generic_construct_civ_factory
-		x = -2
-		y = 1
-		relative_position_id = RJ_ENG_colonial_development
-		cost = 10
-
-		available_if_capitulated = yes
-
-		complete_tooltip = {
-			random_country = {
-				limit = {
-					original_tag = SAF
-					is_in_faction_with = ROOT
-				}
-				add_opinion_modifier = { target = ENG modifier = aided_industry }
-				every_state = { limit = { has_state_flag = ENG_uk_south_africa_focus_2IC }
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-				}
-				every_state = { limit = { has_state_flag = ENG_uk_south_africa_focus_1IC }
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
-					}
-				}
-				every_state = { limit = { has_state_flag = ENG_uk_south_africa_focus_1dockyard }
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = dockyard
-						level = 1
-						instant_build = yes
-					}
-				}
-				add_autonomy_ratio = {
-					value = -0.05
-					localization = uk_south_africa_focus
-				}
-			}
-		}
-		search_filters = {FOCUS_FILTER_INDUSTRY}
-		completion_reward = {
-			SAF = {
-				add_opinion_modifier = { target = ENG modifier = aided_industry }
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 1
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 2
-					add_building_construction = {
-						type = industrial_complex
-						level = 2
-						instant_build = yes
-					}
-					set_state_flag = ENG_uk_south_africa_focus_2IC
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = industrial_complex
-							size > 0
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = industrial_complex
-						level = 1
-						instant_build = yes
-					}
-					set_state_flag = ENG_uk_south_africa_focus_1IC
-				}
-				random_owned_controlled_state = {
-					limit = {
-						is_coastal = yes
-						free_building_slots = {
-							building = dockyard
-							size > 0
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = dockyard
-						level = 1
-						instant_build = yes
-					}
-					set_state_flag = ENG_uk_south_africa_focus_1dockyard
-				}
-				random_owned_controlled_state = {
-					limit = {
-						is_coastal = yes
-						free_building_slots = {
-							building = dockyard
-							size > 0
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-						type = dockyard
-						level = 1
-						instant_build = yes
-					}
-					set_state_flag = ENG_uk_south_africa_focus_1dockyard
-				}
-				add_autonomy_ratio = {
-					value = -0.05
-					localization = uk_south_africa_focus
 				}
 			}
 		}
