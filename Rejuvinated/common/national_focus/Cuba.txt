@@ -912,7 +912,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_unionize_the_sugar_mills
 		icon = GFX_focus_RJ_communist_industry
-		cost = 10
+		cost = 5
 		prerequisite = { focus = CUB_ctc_recruitment }
 		relative_position_id = CUB_ctc_recruitment
 		x = -1
@@ -933,7 +933,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_form_an_alliance_with_batista
 		icon = GFX_goal_molotov_ribbentrop_pact
-		cost = 10
+		cost = 5
 		prerequisite = { focus = CUB_ctc_recruitment }
 		relative_position_id = CUB_ctc_recruitment
 		x = 1
@@ -957,7 +957,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_overthrow_the_menocal_government
 		icon = GFX_focus_GER_proletarian_solidarity
-		cost = 10
+		cost = 5
 		prerequisite = { focus = CUB_form_an_alliance_with_batista focus = CUB_unionize_the_sugar_mills }
 		relative_position_id = CUB_form_an_alliance_with_batista
 		x = -1
@@ -967,7 +967,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			factor = 1
 		}
 
-		available = { communism > 0.45 }
+		available = { communism > 0.40 }
 
 		completion_reward = {
 			set_politics = {
@@ -4799,7 +4799,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_the_cuban_armed_forces
 		icon = GFX_focus_RJ_CUB_armed_forces
-		cost = 10
+		cost = 5
 
 		x = 75
 		y = 0
@@ -4828,7 +4828,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_update_our_equipment
 		icon = GFX_focus_RJ_army_equipment
-		cost = 10
+		cost = 5
 
 		prerequisite = {
 			focus = CUB_the_cuban_armed_forces
@@ -4945,7 +4945,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_memories_of_san_juan_hill
 		icon = GFX_focus_RJ_CUB_san_juan_hill
-		cost = 10
+		cost = 5
 
 		prerequisite = {
 			focus = CUB_update_our_equipment
@@ -4977,7 +4977,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 	focus = {
 		id = CUB_the_new_rough_riders
 		icon = GFX_focus_RJ_cavalry
-		cost = 10
+		cost = 5
 
 		prerequisite = {
 			focus = CUB_memories_of_san_juan_hill
