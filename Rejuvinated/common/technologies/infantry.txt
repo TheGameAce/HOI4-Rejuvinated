@@ -472,6 +472,11 @@ technologies = {
 			leads_to_tech = paratroopers2
 			research_cost_coeff = 1
 		}
+		
+		path = {
+			leads_to_tech = paratroopercar
+			research_cost_coeff = 1
+		}
 
 		research_cost = 2
 		start_year = 1936
@@ -623,6 +628,42 @@ technologies = {
 			}
 		}
 	}
+	
+	paratroopercar = {
+
+		enable_subunits = {
+			paratrooper_armored_car
+		}
+
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = paratrooper_armored_car
+			}
+		}
+		
+		dependencies = {
+		armored_car1 = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = infantry_folder
+			position = { x = 3 y = @1936 }
+		}
+
+		categories = {
+			para_tech
+			cat_special_forces_generic
+			armor
+			cat_armored_cars
+		}
+
+		ai_will_do = {
+			factor = 1
+
+		}
+	}
 
 	marines = {
 
@@ -633,7 +674,11 @@ technologies = {
 
 		on_research_complete_limit = {
 			NOT = {
+			    OR ={
 				has_template_containing_unit = marine
+				has_template_containing_unit = marine_cavalry
+				
+				}
 			}
 		}
 		on_research_complete = {
@@ -646,6 +691,10 @@ technologies = {
 		path = {
 			leads_to_tech = marines2
 			research_cost_coeff = 1
+		}
+		path = {
+		leads_to_tech = marinecar
+		research_cost_coeff = 1
 		}
 
 		research_cost = 2
@@ -750,6 +799,56 @@ technologies = {
 			}
 		}
 	}
+	
+	marinecar = {
+
+		enable_subunits = {
+			marine_armored_car
+		}
+
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = marine_armored_car
+			}
+		}
+		
+		dependencies = {
+		armored_car1 = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = infantry_folder
+			position = { x = 4 y = @1936 }
+		}
+
+		categories = {
+			marine_tech
+			cat_special_forces_generic
+			armor
+			cat_armored_cars
+		}
+
+		ai_will_do = {
+			factor = 0.7
+
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
+
+			modifier = {
+				factor = 5
+				tag = ENG
+			}
+		}
+	}
 
 	tech_mountaineers = {
 
@@ -774,12 +873,17 @@ technologies = {
 			leads_to_tech = tech_mountaineers2
 			research_cost_coeff = 1
 		}
+		
+		path = {
+			leads_to_tech = mountaineercar
+			research_cost_coeff = 1
+		}
 
 		research_cost = 2
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x = 5 y = @1936 }
+			position = { x = 6 y = @1936 }
 		}
 
 		categories = {
@@ -808,7 +912,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = infantry_folder
-			position = { x = 5 y = @1939 }
+			position = { x = 6 y = @1939 }
 		}
 
 		categories = {
@@ -831,7 +935,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = infantry_folder
-			position = { x = 5 y = @1943 }
+			position = { x = 6 y = @1943 }
 		}
 
 		categories = {
@@ -842,6 +946,41 @@ technologies = {
 
 		ai_will_do = {
 			factor = 0.7
+		}
+	}
+	
+	mountaineercar = {
+
+		enable_subunits = {
+			mountaineer_armored_car
+		}
+
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = mountaineer_armored_car
+			}
+		}
+		
+		dependencies = {
+		armored_car1 = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = infantry_folder
+			position = { x = 7 y = @1936 }
+		}
+
+		categories = {
+			mountaineers_tech
+			cat_special_forces_generic
+			armor
+			cat_armored_cars
+		}
+
+		ai_will_do = {
+			factor = 1
 		}
 	}
 
@@ -872,12 +1011,17 @@ technologies = {
 			leads_to_tech = rangers_tech2
 			research_cost_coeff = 1
 		}
+		
+		path = {
+			leads_to_tech = rangercar
+			research_cost_coeff = 1
+		}
 
 		research_cost = 2
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x = 4 y = @1936 }
+			position = { x = 7 y = @1936 }
 		}
 		
 		categories = {
@@ -926,7 +1070,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = infantry_folder
-			position = { x = 4 y = @1939 }
+			position = { x = 7 y = @1939 }
 		}
 		
 		categories = {
@@ -950,7 +1094,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = infantry_folder
-			position = { x = 4 y = @1943 }
+			position = { x = 7 y = @1943 }
 		}
 		
 		categories = {
@@ -961,6 +1105,56 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.7
+		}
+	}
+	
+	rangercar = {
+
+		enable_subunits = {
+			ranger_armored_car
+		}
+
+		on_research_complete_limit = {
+			NOT = {
+				has_template_containing_unit = ranger_armored_car
+			}
+		}
+		
+		dependencies = {
+		armored_car1 = 1
+		}
+
+		research_cost = 2
+		start_year = 1936
+		folder = {
+			name = infantry_folder
+			position = { x = 8 y = @1936 }
+		}
+
+		categories = {
+			rangers_tech_cat
+			cat_special_forces_generic
+			armor
+			cat_armored_cars
+		}
+
+		ai_will_do = {
+			factor = 0.7
+
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
+
+			modifier = {
+				factor = 5
+				tag = ENG
+			}
 		}
 	}
 
