@@ -139,3 +139,36 @@ country_event = {
 		add_stability = -0.1
 	}
 }
+
+
+country_event = {
+	id = rj_britain.4
+	title = rj_britain.4.t
+	desc = rj_britain.4.d
+	picture = GFX_report_event_generic_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Splendid Idea! We accept."
+		ai_chance = {
+			base = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		set_autonomy = {
+			target = OMA
+			autonomy_state = autonomy_dominion
+		}
+	}
+
+	option = {
+		name = "With all due respect, we'd rather not."
+		ai_chance = {
+			base = 5
+		}
+		add_political_power = 25
+	}
+}
