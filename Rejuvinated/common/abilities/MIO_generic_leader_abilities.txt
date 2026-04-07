@@ -1,0 +1,38 @@
+ability = {
+	#玉碎
+	abilities_Gyokusai = {
+		name = abilities_abilities_Gyokusai
+		desc = abilities_abilities_Gyokusai_DESC
+	
+		sound_effect = command_power_ability_offensive
+	
+		type = army_leader
+	
+		allowed = {
+			is_border_war = no
+			#OWNER = {
+			#}
+			or = {
+				OWNER ={
+				    has_country_flag = Mobile_enable_Gyokusai_flag
+				}
+			}
+		}
+		
+		cost = 0.04
+	
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.2
+				org_damage_multiplier = -1.0
+				str_damage_multiplier = 1.0
+				war_support_reduction_on_damage = 1.0
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 7
+				tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+	
+}

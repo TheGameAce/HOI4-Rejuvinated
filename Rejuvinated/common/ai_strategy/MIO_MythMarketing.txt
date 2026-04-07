@@ -1,0 +1,251 @@
+MIO_AI_buy_from_player = {
+    allowed = {
+        has_dlc = "Arms Against Tyranny"          # 需要国际军火市场DLC
+    }
+    
+    # 启用条件：检测玩家是否点了卖装备学说
+    enable = {
+        any_country = {
+            is_ai = no                            # 确保是玩家
+			has_doctrine = Mio_War_Profiteer # 检测玩家是否点了卖装备学说
+        }
+    }
+
+    abort_when_not_enabled = yes                  # 条件不满足时自动中止
+    
+    # 增加购买装备的预算
+    ai_strategy = {
+        type = equipment_market_max_civs_for_purchases_ratio
+        value = 0.3                               # 用30%的民用工厂产能买装备
+    }
+    
+    # 增加从玩家处购买装备的倾向
+    ai_strategy = {
+        type = equipment_market_trade_desire                                 
+		target_country = PREV  
+        value = 9999                               # 高倾向值
+    }
+    ai_strategy = {
+		type = equipment_market_spend_factories
+		value = 5
+	}
+	 ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = convoy
+		value = 100
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = infantry_equipment
+		value = 10000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = support_equipment
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = artillery_equipment
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = rocket_artillery_equipment
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = anti_air_equipment
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = anti_tank_equipment
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = motorized_equipment
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = armored_car_equipment
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = mechanized_equipment
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = light_tank_chassis
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = light_tank_flame_chassis
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = medium_tank_chassis
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = medium_tank_flame_chassis
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = heavy_tank_chassis
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = heavy_tank_flame_chassis
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = modern_tank_chassis
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = small_plane_airframe
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = small_plane_cas_airframe
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = small_plane_naval_bomber_airframe
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = cv_small_plane_airframe
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = cv_small_plane_cas_airframe
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = cv_small_plane_naval_bomber_airframe
+		value = 1000
+	}
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = medium_plane_airframe
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = medium_plane_fighter_airframe
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = large_plane_airframe
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = transport_plane_equipment
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = railway_gun_equipment
+		value = 1000
+	}
+
+    ai_strategy = {
+		type = equipment_market_buying_threshold
+		id = train_equipment
+		value = 1000
+	}
+}
+
+MythMarketing_ask_ai_buy_equipment_45 = {
+    allowed = {
+        has_dlc = "Arms Against Tyranny"
+    }
+    enable = {
+        num_of_civilian_factories > 45
+		any_country = {
+            is_ai = no                            # 确保是玩家
+			has_doctrine = Mio_War_Profiteer # 检测玩家是否点了卖装备学说
+        }
+    }
+	abort = {
+		OR = {
+			num_of_civilian_factories < 45
+		}
+	}
+    abort_when_not_enabled = yes
+	# 增加从玩家处购买装备的倾向
+    ai_strategy = {
+        type = equipment_market_trade_desire                                 
+		target_country = PREV  
+        value = 9999                               # 高倾向值
+    }
+    ai_strategy = {
+		type = equipment_market_spend_factories
+		value = 90
+	}
+}
+MythMarketing_ask_ai_buy_equipment_30 = {
+    allowed = {
+        has_dlc = "Arms Against Tyranny"
+    }
+    enable = {
+        num_of_civilian_factories > 30
+		any_country = {
+            is_ai = no                            # 确保是玩家
+			has_doctrine = Mio_War_Profiteer # 检测玩家是否点了卖装备学说
+        }
+    }
+	abort = {
+		OR = {
+			num_of_civilian_factories < 30
+		}
+	}
+    abort_when_not_enabled = yes
+    ai_strategy = {
+		type = equipment_market_spend_factories
+		value = 60
+	}
+}
+MythMarketing_ask_ai_buy_equipment_15 = {
+    allowed = {
+        has_dlc = "Arms Against Tyranny"
+    }
+    enable = {
+        num_of_civilian_factories > 15
+		any_country = {
+            is_ai = no                            # 确保是玩家
+			has_doctrine = Mio_War_Profiteer # 检测玩家是否点了卖装备学说
+        }
+    }
+	abort = {
+		OR = {
+			num_of_civilian_factories < 15
+		}
+	}
+    abort_when_not_enabled = yes
+    ai_strategy = {
+		type = equipment_market_spend_factories
+		value = 30
+	}
+}

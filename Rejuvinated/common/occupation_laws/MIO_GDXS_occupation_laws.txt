@@ -1,0 +1,66 @@
+#伪军督管
+Puppet_Army_Supervisor = {
+	icon = GFX_Puppet_Army_Supervisor_cost
+	sound_effect = "Martial_Law_Interface_No_Garrison"
+	
+	fallback_law = foreign_civilian_oversight
+	
+	state_modifier = {
+		resistance_target 				= -0.15
+		compliance_gain 				= -0.04
+		required_garrison_factor 		= -0.35
+		resistance_damage_to_garrison 	= -0.15
+		LOCAL_NON_CORE_MANPOWER 		= 0.08
+	}
+	
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 95
+			OR = {
+                original_tag = JAP
+                original_tag = GER
+				original_tag = USA
+            }
+		}
+
+	}
+	
+}
+#就地征召
+occupation_laws_Local_conscription = {
+	icon = GFX_Local_conscription_cost
+	sound_effect = "Martial_Law_Interface_No_Garrison"
+	
+	fallback_law = Puppet_Army_Supervisor
+
+	state_modifier = {
+		resistance_target 				= -0.15
+		compliance_gain 				= -0.045
+		required_garrison_factor 		= -0.35
+		resistance_damage_to_garrison 	= 0.00
+		LOCAL_NON_CORE_MANPOWER 		= 0.2
+	}
+
+
+	visible = {
+		has_doctrine = Local_conscription
+	}
+	
+	#available = { 
+				#has_doctrine = Local_conscription
+			#}
+
+	ai_will_do = {
+		base = 1
+		modifier = {
+			factor = 95
+			OR = {
+                original_tag = JAP
+                original_tag = GER
+				original_tag = USA
+            }
+		}
+
+	}
+}

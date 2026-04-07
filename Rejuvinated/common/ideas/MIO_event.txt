@@ -1,0 +1,26 @@
+ideas = {
+	hidden_ideas = {
+		#空天装甲
+		GEN_Mio_Airborne_Armor = {
+			allowed = {
+				always = no # Triggered via tech
+			}
+			picture = generic_fascism_drift_bonus
+			enable_subunits = {
+				airborne_light_armor
+				airborne_light_armor_brigade
+			}
+			equipment_bonus = {
+				amphibious_mechanized_equipment = {
+					build_cost_ic = -0.15 instant = yes
+				}
+				enable_subunits = {
+					airborne_light_armor_brigade
+				}
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+}

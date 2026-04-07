@@ -1,0 +1,63 @@
+equipments = {
+
+	#to make sure that an airframe appears in the air designer make sure to add it in interface/equipmentdesigner/planes/plane_blueprints_generic.gui, otherwise it will not show up
+	small_plane_airframe = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_small
+			count < 2
+		}	
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_medium
+			count < 2
+		}	
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_large
+			count < 2
+		}	
+	}
+
+
+	cv_small_plane_airframe = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_small
+			count < 2
+		}	
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_medium
+			count < 2
+		}	
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_large
+			count < 2
+		}	
+	}
+
+	medium_plane_airframe = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_small
+			count < 2
+		}	
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_medium
+			count < 2
+		}	
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_large
+			count < 2
+		}	
+	}
+
+	large_plane_airframe = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_small
+			count < 2
+		}	
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_medium
+			count < 2
+		}	
+		module_count_limit = {
+			module = MIO_Shoddy_Refit_large
+			count < 2
+		}	
+}

@@ -1,0 +1,44 @@
+ideas = {
+
+	economy = {
+		law = yes
+		use_list_view = yes
+#总玉碎
+		economy_Total_Gyokusai = { 
+		
+			visible = {
+				#NOT = {
+					has_doctrine = Total_Gyokusai
+				#}
+			}
+			
+			available = { 
+				has_doctrine = Total_Gyokusai
+					or = {
+						OWNER ={
+							has_country_flag = Mobile_enable_economy_Gyokusai_flag
+						}
+					}
+			}
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_expected_value = 0.1
+				conscription = -0.05
+				#production_speed_arms_factory_factor = 0.2
+				#production_speed_dockyard_factor = 0.2
+				#conversion_cost_civ_to_mil_factor= -0.33
+				#conversion_cost_mil_to_civ_factor = -0.33
+				industrial_capacity_factory = 0.3
+				industrial_capacity_dockyard = 0.3
+				factory_energy_consumption = 0.5
+				stability_weekly = -0.005
+			}
+		}
+		
+		
+		
+	}
+}

@@ -1,0 +1,1122 @@
+#更多学说
+#战术
+	# EFFECTS
+	
+	# modifier
+	
+	#OTHER BASE REWARDS
+#认知战
+#Mio_Information_Warfare = {
+#}
+
+#科技至上
+Mio_Technology_Supremacy = {
+	track = operations
+    name = SUBDOCTRINE_Mio_Technology_Supremacy
+    description = SUBDOCTRINE_Mio_Technology_Supremacy_DESC
+    icon = GFX_Mio_Technology_Supremacy_medium
+	
+	xp_cost = 100
+    xp_type = army
+	
+	mastery = {
+        categories = {
+            category_army
+        }
+    }
+	
+	visible = {
+	#显示条件
+	}
+	
+    available = {
+        NOT = {
+			has_doctrine = Mio_Technology_Supremacy
+		}
+    }
+	
+	ai_will_do = {
+        base = 0
+	}
+	
+	# EFFECTS
+	effect = {
+		add_daily_mastery = {
+			amount = 0.3
+			days = 1800
+			name = SUBDOCTRINE_Mio_Technology_Supremacy
+			#folder = land
+			#grand_doctrine = mass_assault
+			sub_doctrine = Mio_Technology_Supremacy
+			#track = infantry
+			}
+    }
+	effect = {
+		add_tech_bonus = {
+			#ahead_reduction = 2
+			bonus = 0.75
+			uses = 2
+			category = electronics
+			name = SUBDOCTRINE_Mio_Technology_Supremacy
+		}
+	}
+	# modifier
+	modifier = {
+		research_speed_factor = 0.15
+	}
+	#OTHER BASE REWARDS
+	
+	rewards = {
+		DESC_A = {
+			mastery = 100
+			military_industrial_organization_funds_gain = 0.20
+			effect = {
+				add_tech_bonus = {
+					#ahead_reduction = 2
+					bonus = 0.75
+					uses = 2
+					category = industry
+					name = SUBDOCTRINE_Mio_Technology_Supremacy
+				}
+				add_tech_bonus = {
+					ahead_reduction = 2
+					bonus = 0.75
+					uses = 1
+					category = electronics
+					name = SUBDOCTRINE_Mio_Technology_Supremacy
+				}
+			}
+		}
+		DESC_B = {
+			mastery = 100
+			effect = {
+				add_tech_bonus = {
+					#ahead_reduction = 2
+					bonus = 0.75
+					uses = 2
+					category = infantry_weapons
+					name = SUBDOCTRINE_Mio_Technology_Supremacy
+				}
+			}
+			effect = {
+				add_tech_bonus = {
+					#ahead_reduction = 2
+					bonus = 1.00
+					uses = 2
+					category = support_tech
+					name = SUBDOCTRINE_Mio_Technology_Supremacy
+				}
+				add_breakthrough_progress = {
+					specialization = specialization_naval
+					value = 1.0
+				}
+			}
+			
+		}
+		DESC_C = {
+			mastery = 100
+			effect = {
+				add_tech_bonus = {
+					#ahead_reduction = 2
+					bonus = 1.00
+					uses = 2
+					category = armor
+					name = SUBDOCTRINE_Mio_Technology_Supremacy
+				}
+			}
+			effect = {
+				add_tech_bonus = {
+					ahead_reduction = 2
+					bonus = 0.75
+					uses = 1
+					category = motorized_equipment
+					name = SUBDOCTRINE_Mio_Technology_Supremacy
+				}
+				add_breakthrough_progress = {
+					specialization = specialization_land
+					value = 1.0
+				}
+			}
+		}
+		DESC_D = {
+			mastery = 100
+			EFFECT = {
+				add_tech_bonus = {
+					ahead_reduction = 2
+					bonus = 0.75
+					uses = 2
+					category = artillery
+					name = SUBDOCTRINE_Mio_Technology_Supremacy
+				}
+				add_breakthrough_progress = {
+					specialization = specialization_air
+					value = 1.0
+				}
+			}
+		}
+		DESC_E = {
+			mastery = 100
+			#military_industrial_organization_funds_gain = 0.1
+			modifier = {
+				#research_speed_factor = 0.05
+			}
+			EFFECT = {
+				add_research_slot = 1
+				add_breakthrough_progress = {
+					specialization = specialization_nuclear
+					value = 1.0
+				}
+			}
+		}
+	}
+}
+#钢铁纪律
+mio_Steel_Discipline = {
+	track = operations
+    name = SUBDOCTRINE_mio_Steel_Discipline
+    description = SUBDOCTRINE_mio_Steel_Discipline_DESC
+    icon = GFX_mio_Steel_Discipline_medium
+	
+	xp_cost = 100
+    xp_type = army
+	
+	mastery = {
+        categories = {
+            category_army
+        }
+    }
+	
+	visible = {
+	#显示条件
+	}
+	
+    available = {
+        NOT = {
+			has_doctrine = mio_Steel_Discipline
+		}
+    }
+
+    ai_will_do = {
+        base = 1
+        modifier = {
+			factor = 95
+			date > 1941.1.1
+			original_tag = GER
+			original_tag = SOV
+        }
+		modifier = {
+			factor = 0.5
+			is_major = NO
+		}
+	}
+	
+	# EFFECTS
+	effect = {
+		add_daily_mastery = {
+			amount = 0.8
+			days = 720
+			name = SUBDOCTRINE_mio_Steel_Discipline
+			#folder = land
+			#grand_doctrine = mass_assault
+			sub_doctrine = mio_Steel_Discipline
+			#track = infantry
+			}
+    }
+	# modifier
+	modifier = {
+		#operative_slot = 1
+		#encryption = 1
+		intelligence_agency_defense = 2.0
+		ENEMY_INTEL_NETWORK_GAIN_FACTOR_OVER_OCCUPIED_TAG = -0.2
+		CRYPTO_STRENGTH = 1
+		CRYPTO_DEPARTMENT_ENABLED = 1 #解锁密码部门
+	}
+	#OTHER BASE REWARDS
+	
+	rewards = {
+		DESC_A = {
+			modifier = {
+			army_intel_to_others = -50
+			navy_intel_to_others = -50
+			airforce_intel_to_others = -50
+			civilian_intel_to_others = -50
+			foreign_subversive_activites = -0.25
+			}
+		}
+		DESC_B = {
+			modifier = {
+				operative_death_on_capture_chance = 0.1
+				own_operative_detection_chance = -0.05
+			}
+			modifier = {
+				OWN_OPERATIVE_DETECTION_CHANCE_FACTOR = -0.1
+				#enemy_operative_intel_extraction_rate = -0.5
+			}
+			modifier = {
+				ENEMY_INTEL_NETWORK_GAIN_FACTOR_OVER_OCCUPIED_TAG = -0.15
+			}
+		}
+		DESC_C = {
+			modifier = {
+				party_popularity_stability_factor = 0.15
+				resistance_target = -0.15
+				RESISTANCE_GROWTH = -0.5
+				COMPLIANCE_GROWTH = -0.1
+				ROOT_OUT_RESISTANCE_EFFECTIVENESS_FACTOR = 1
+			}
+		}
+		DESC_D = {
+			modifier = {
+				operative_slot = 1
+				intelligence_agency_defense = 1.25
+			}
+			modifier = {
+				ENEMY_OPERATIVE_FORCED_INTO_HIDING_TIME_FACTOR = 1.0
+				ENEMY_INTEL_NETWORK_GAIN_FACTOR_OVER_OCCUPIED_TAG = -0.15
+			}
+		}
+		DESC_E = {
+			modifier = {
+				#encryption = 1
+				CRYPTO_STRENGTH = 1
+				enemy_operative_detection_chance_factor = 0.75
+				enemy_operative_capture_chance_factor = 0.75
+			}
+		}
+	}
+}
+
+#先军主义
+Military_First_Policy = {
+    track = operations
+    name = SUBDOCTRINE_Military_First_Policy
+    description = SUBDOCTRINE_Military_First_Policy_DESC
+    icon = GFX_Military_First_Policy_medium
+	
+    xp_type = army
+	
+	visible = {
+	#显示条件
+	}
+	available = {
+		has_political_power > 99
+		OR = {
+				#TAG = KOR
+				has_war_support > 0.5
+				has_government = communism
+				has_government = fascism
+				has_war = yes
+		}
+		NOT = {
+			has_doctrine = Military_First_Policy
+		}
+		NOT = {
+			has_doctrine = Mio_War_Profiteer
+		}
+    }
+	
+	ai_will_do = {
+        base = 1
+		modifier = {
+			factor = 95
+			has_government = communism
+			OR = {
+				original_tag = KOR
+			}
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+		}
+	}
+	
+	# EFFECTS
+	effect = {
+		add_political_power = -100
+	}
+	effect = {
+		add_daily_mastery = {
+			amount = 0.3
+			days = 1800
+			name = SUBDOCTRINE_Military_First_Policy
+			#folder = land
+			#grand_doctrine = mass_assault
+			sub_doctrine = Military_First_Policy
+			#track = operations
+		}
+    }
+	# modifier
+	
+	#OTHER BASE REWARDS
+	political_power_factor = -0.15
+	experience_gain_army = 0.3
+	conscription = 0.05
+	additional_brigade_column_size = 1
+	
+	
+	rewards = {
+		Military_First_Policy_DESC_A = {
+			modifier = {
+					LOCAL_RESOURCES_FACTOR = 0.1
+			}
+			effect = {
+				#custom_effect_tooltip = GER_gain_autarkic_economy_lock_free_trade_tt
+				add_ideas = MIO_trade_Autarky
+				hidden_effect = { #变量
+					set_country_flag = Mobile_trade_Autarky_flag
+				}
+			}
+		
+		}
+		Military_First_Policy_DESC_B = {
+			effect = {
+				add_tech_bonus = {
+					bonus = 0.75
+					uses = 2
+					category = infantry_weapons
+					category = artillery
+					name = SUBDOCTRINE_Military_First_Policy
+				}
+			}
+			minimum_training_level = -0.2
+			modifier = {
+					training_time_army_factor = -0.15
+			}
+		}
+		Military_First_Policy_DESC_C = {
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+			production_factory_max_efficiency_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+		}
+		Military_First_Policy_DESC_D = {
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+			industrial_capacity_factory = 0.15
+			equipment_conversion_speed = 0.2
+		}
+		Military_First_Policy_DESC_E = {
+			army_core_defence_factor = 0.1
+			army_attack_factor = 0.1
+		}
+	}
+}
+
+#论持久战
+On_Proteacted_War = {
+	track = operations
+    name = SUBDOCTRINE_On_Proteacted_War
+    description = SUBDOCTRINE_On_Proteacted_War_DESC
+    icon = GFX_On_Proteacted_War_medium
+	
+	xp_cost = 100
+    xp_type = army
+
+	mastery = {
+        categories = {
+            category_army
+        }
+    }
+
+	visible = {
+	#显示条件
+	}
+
+    available = {
+	#允许条件
+		has_government = communism
+		tag = PRC
+		NOT = {
+			has_doctrine = On_Proteacted_War
+		}
+    }
+	
+	visible = {
+	#显示条件
+		has_government = communism
+		tag = PRC
+	}
+	
+	ai_will_do = {
+        base = 95
+        modifier = {
+			add = 95
+			original_tag = PRC
+        }
+}
+	
+	# EFFECTS
+	effect = {
+		add_daily_mastery = {
+			amount = 0.3
+			days = 1800
+			name = SUBDOCTRINE_On_Proteacted_War
+			#folder = land
+			#grand_doctrine = mass_assault
+			sub_doctrine = On_Proteacted_War
+			#track = operations
+		}
+    }
+	
+	# modifier
+	
+	# OTHER BASE REWARDS
+	army_core_defence_factor = 0.15
+	category_army = {
+		reliability = 0.05
+	}
+	
+	rewards = {
+		On_Proteacted_War_DESC_A = {
+		#1
+			modifier = {
+				resistance_target_on_our_occupied_states = 0.25
+				resistance_damage_to_garrison_on_our_occupied_states = 0.2
+			}
+		}
+		
+		On_Proteacted_War_DESC_B = {
+		#2
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.4
+				resistance_damage_to_garrison_on_our_occupied_states = 0.2
+			}
+			category_army = {
+				max_organisation = 5
+			}
+		}
+		
+		On_Proteacted_War_DESC_C = {
+		#3
+			army_core_attack_factor = 0.15
+		}
+		
+		On_Proteacted_War_DESC_D = {
+		#4
+			modifier = {
+				resistance_target_on_our_occupied_states = 0.15
+			}
+			category_army = {
+				default_morale = 0.1
+			}
+		}
+		
+		On_Proteacted_War_DESC_E = {
+		#5
+			army_attack_against_major_factor = 0.10
+			army_defence_against_major_factor = 0.10
+		}
+	}
+}
+#总玉碎
+Total_Gyokusai = {
+    track = operations
+    name = SUBDOCTRINE_Total_Gyokusai
+    description = SUBDOCTRINE_Total_Gyokusai_DESC
+    icon = GFX_Total_Gyokusai_medium
+
+    xp_cost = 100
+    xp_type = army
+	
+	mastery = {
+        categories = {
+            category_army
+        }
+    }
+	
+	available = {
+        #always = yes
+		OR = {
+			TAG = JAP
+			custom_trigger_tooltip = { tooltip = or_clarification_tooltip always = no }
+			IF ={
+				has_government = fascism
+				has_war_support > 0.6
+			}
+			custom_trigger_tooltip = { tooltip = or_clarification_tooltip always = no }
+			AND = {
+				enemies_strength_ratio > 1
+				has_war = yes
+				has_war_support > 0.8
+				any_enemy_country = {
+					ic_ratio = {
+						tag = ROOT
+						ratio > 0.5
+					}
+				}
+			}
+		}
+		NOT = {
+			has_doctrine = Total_Gyokusai
+		}
+    }
+	
+	ai_will_do = {
+        base = 0
+        modifier = {
+			add = 100
+			date > 1941.1.1
+			original_tag = JAP
+        }
+}
+
+	# EFFECTS
+	effect = {
+		add_daily_mastery = {
+			amount = 0.8
+			days = 720
+			name = SUBDOCTRINE_Total_Gyokusai
+			#folder = land
+			#grand_doctrine = mass_assault
+			sub_doctrine = Total_Gyokusai
+			#track = operations
+		}
+    }
+	effect = { #动员法案
+		custom_effect_tooltip = generic_skip_one_line_tt
+
+		#custom_effect_tooltip = MIO_gain_mobilization_laws_Total_Gyokusai_remove_total_mob_tt
+		add_ideas = mobilization_laws_Total_Gyokusai
+		
+		hidden_effect = { #变量
+			set_country_flag = Mobile_enable_mobilization_laws_Gyokusai_flag
+		}
+	}
+	
+	# modifier
+	
+	# OTHER BASE REWARDS
+	enable_tactic = tactic_Gyokusai
+	minimum_training_level = -0.2
+	
+	rewards = {
+		Total_Gyokusai_DESC_A = {
+			modifier = {
+				mobilization_speed = 0.2
+			}
+			effect = { #经济法案
+				custom_effect_tooltip = generic_skip_one_line_tt
+
+				#custom_effect_tooltip = MIO_gain_economy_Total_Gyokusai_remove_total_mob_tt
+				add_ideas = economy_Total_Gyokusai
+				hidden_effect = {
+					set_country_flag = Mobile_enable_economy_Gyokusai_flag
+				}
+				activate_decision = women_in_the_workforce
+			}
+		}
+		Total_Gyokusai_DESC_B = {
+			land_reinforce_rate = 0.08
+			effect = {
+				custom_effect_tooltip = "ABILITY_Total_Gyokusai_A"
+				custom_effect_tooltip = "ABILITY_Total_Gyokusai_B"
+				hidden_effect = {
+					set_country_flag = Mobile_enable_Gyokusai_flag
+				}
+			}
+		}
+		Total_Gyokusai_DESC_C = {
+			modifier = {
+					army_strength_factor = -0.10
+			}
+			modifier = {
+				conscription = 0.25
+				org_loss_at_low_org_factor = -0.40
+			}
+		}
+		Total_Gyokusai_DESC_D = {
+			category_army = {
+				default_morale = 0.6
+				breakthrough = -0.2
+				DEFENSE = -0.5
+			}
+		}
+		Total_Gyokusai_DESC_E = {
+			modifier = {
+				conscription_FACTOR = 1.0
+				army_strength_factor = -0.10
+			}
+			category_army = {
+				max_organisation = 20
+			}
+		}
+		
+	}
+}
+
+#战争贩子
+Mio_War_Profiteer = {
+	track = operations
+    name = SUBDOCTRINE_Mio_War_Profiteer
+    description = SUBDOCTRINE_Mio_War_Profiteer_DESC
+    icon = GFX_Mio_War_Profiteer_medium
+	
+	xp_cost = 50
+    xp_type = army
+	
+	mastery = {
+        categories = {
+            category_army
+        }
+    }
+	
+	visible = {
+	#显示条件
+	}
+	
+    available = {
+		NOT = {
+			has_doctrine = Mio_War_Profiteer
+		}
+		NOT = {
+			has_doctrine = Military_First_Policy
+		}
+    }
+	
+	ai_will_do = {
+        base = 0
+	}
+	
+	# EFFECTS
+	effect = {
+		add_daily_mastery = {
+			amount = 0.4
+			days = 720
+			name = SUBDOCTRINE_Mio_War_Profiteer
+			#folder = land
+			#grand_doctrine = mass_assault
+			sub_doctrine = Mio_War_Profiteer
+			#track = infantry
+			}
+    }
+	effect = {
+	}
+	# modifier
+	modifier = {
+		TRADE_OPINION_FACTOR = 0.4
+		cic_construction_boost_factor = 0.20
+		#cic_construction_boost = 0.1
+		improve_relations_maintain_cost_factor = -1.0
+	}
+	#OTHER BASE REWARDS
+	send_volunteers_tension = -1 #派遣志愿军的紧张度限制
+	LEND_LEASE_TENSION = -1 #租借法案的紧张度限制
+	send_volunteer_divisions_required = -1 #派遣志愿军需要的陆军师数量
+	
+	rewards = {
+	
+		DESC_A = {
+			mastery = 50
+			EFFECT = {
+				add_cic = 10800
+				set_technology = {
+					#NOR_rikstanken_tech = 1
+					technologies_Commercial_Modification = 1
+				}
+			}
+		}
+		DESC_B = {
+			mastery = 50
+			modifier = {
+				TRADE_OPINION_FACTOR = 0.4
+				operative_slot = 1
+				DIPLOMATIC_PRESSURE_MISSION_FACTOR = 1
+				CONTROL_TRADE_MISSION_FACTOR = 1
+			}
+		}
+		DESC_C = {
+			mastery = 50
+			modifier = {
+				production_factory_start_efficiency_factor = 0.15
+				LINE_CHANGE_PRODUCTION_EFFICIENCY_FACTOR = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		DESC_D = {
+			mastery = 50
+			EFFECT = {
+				add_cic = 10800
+			}
+			modifier = {
+				cic_construction_boost_factor = 0.20
+				cic_construction_boost = 0.15
+			}
+		}
+		DESC_E = {
+			mastery = 50
+			EFFECT = {
+				add_cic = 10800
+			}
+			industrial_capacity_factory = 0.15
+		}
+		
+	}
+	
+}
+
+#运动战
+Sports_Tactics = {
+    track = operations
+    name = SUBDOCTRINE_Sports_Tactics
+    description = SUBDOCTRINE_Sports_Tactics_DESC
+    icon = GFX_Sports_Tactics_medium
+
+    xp_cost = 50
+    xp_type = army
+	
+	visible = {
+	#显示条件
+	}
+	
+    available = {
+        NOT = {
+			has_doctrine = Sports_Tactics
+		}
+    }
+
+    ai_will_do = {
+        base = 1
+		 modifier = {
+			factor = 95
+			original_tag = PRC
+        }
+        modifier = {
+			factor = 10
+			date > 1941.1.1
+			original_tag = GER
+			original_tag = SOV
+        }
+		modifier = {
+			factor = 0.5
+			is_major = YES
+		}
+}
+
+
+    # EFFECTS
+    effect = {
+	
+    }
+    #OTHER BASE REWARDS
+	mio_asymmetric_warfare_mastery_gain_factor = 0.1
+	depth_penetration_mastery_gain_factor = 0.15
+	enable_tactic = tactic_tactical_withdrawal
+	modifier = {
+		ARMY_RETREAT_SPEED_FACTOR = 0.5
+	}
+	no_supply_grace = 24
+	
+
+	    rewards = {
+		Sports_Tactics_DESC_A = {
+		#1
+			mastery = 50
+			land_reinforce_rate = 0.02
+			category_light_infantry = {
+				default_morale = 0.3
+			}
+			}
+		Sports_Tactics_DESC_B = {
+		#2
+			mastery = 50
+			category_light_infantry = {
+				maximum_speed = 0.6
+				supply_consumption = -0.01
+				}
+			category_line_artillery = {
+				maximum_speed = 0.6
+				supply_consumption = -0.01
+			}
+			}
+		Sports_Tactics_DESC_C = {
+		#3
+			mastery = 50
+			out_of_supply_factor = -0.20
+			no_supply_grace = 24
+		}
+		Sports_Tactics_DESC_D = {
+		#4
+			mastery = 50
+			modifier = {
+				org_loss_when_moving = -0.3
+				initiative_factor = 0.08
+			}
+			category_all_infantry = {
+				soft_attack = 0.1
+			}
+			}
+		Sports_Tactics_DESC_E = {
+		#5
+			mastery = 50
+			max_planning = 0.1
+			planning_decay_rate_factor = -0.2
+			}
+    }
+}
+#微操大师
+Micro_master = {
+    track = operations
+    name = SUBDOCTRINE_Micro_master
+    description = SUBDOCTRINE_Micro_master_DESC
+    icon = GFX_Micro_master_medium
+
+    xp_cost = 50
+    xp_type = army
+
+	visible = {
+	#显示条件
+	}
+
+    available = {
+        NOT = {
+			has_doctrine = Micro_master
+		}
+    }
+
+    ai_will_do = {
+        base = 0
+		modifier = {
+			ADD = 100
+			original_tag = CHI
+		}
+		modifier = {
+			ADD = 10
+			date > 1939.1.1
+			OR = {
+				original_tag = GER
+				original_tag = JAP
+			}
+		}
+}
+
+
+
+    # EFFECTS
+    effect = {
+	
+    }
+   
+    #OTHER BASE REWARDS
+	
+	enable_tactic = TACTIC_DESC
+	enable_tactic = tactic_basic_attack
+	enable_tactic = tactic_basic_defend
+	enable_tactic = tactic_assault
+	enable_tactic = tactic_cc_attack
+	enable_tactic = tactic_cc_defend
+	enable_tactic = tactic_cc_storm
+	enable_tactic = tactic_cc_local_strong_point
+	enable_tactic = tactic_cc_withdraw
+	enable_tactic = tactic_delay
+	enable_tactic = tactic_tw_attack
+	enable_tactic = tactic_tw_defend
+	enable_tactic = tactic_tw_chase
+	enable_tactic = tactic_tw_intercept
+	enable_tactic = tactic_seize_bridge
+	enable_tactic = tactic_attacker_sb_hold
+	enable_tactic = tactic_attacker_sb_skillful_defence
+	enable_tactic = tactic_defender_sb_assault
+	enable_tactic = tactic_defender_sb_reckless_assault
+	enable_tactic = tactic_defender_sb_retake_bridge
+	enable_tactic = tactic_hold_bridge
+	enable_tactic = tactic_attacker_hb_attack
+	enable_tactic = tactic_attacker_hb_rush
+	enable_tactic = tactic_attacker_hb_storm
+	enable_tactic = tactic_defender_hb_hold
+	enable_tactic = tactic_defender_hb_skillful_defence
+	enable_tactic = tactic_banzai_charge
+	enable_tactic = tactic_infantry_charge
+	enable_tactic = tactic_planned_attack
+	enable_tactic = tactic_relentless_assault
+	enable_tactic = tactic_unexpected_thrust
+	enable_tactic = tactic_overwhelming_fire
+	enable_tactic = tactic_urban_defense
+	enable_tactic = tactic_sf_storm
+	enable_tactic = tactic_sf_defense
+	enable_tactic = tactic_sf_mouse_holing
+	enable_tactic = tactic_sf_barrage
+	enable_tactic = tactic_sf_armor_supported_assault
+	enable_tactic = tactic_sf_fortify
+	enable_tactic = tactic_sf_ambush
+	
+	    rewards = {
+		
+		    Micro_master_DESC_A = {
+			#1
+			    mastery = 50
+				MAX_COMMAND_POWER = 80
+				#modifier = {
+					#choose_preferred_tactics_cost = -15
+				#}
+			}
+			Micro_master_DESC_B = {
+			#2
+			    mastery = 150
+				enable_tactic = tactic_shock
+				enable_tactic = tactic_blitz
+				enable_tactic = tactic_human_wave_tactics
+				enable_tactic = tactic_barrage
+				enable_tactic = tactic_grand_banzai_charge
+				
+				enable_tactic = tactic_counterattack
+				enable_tactic = tactic_tw_evade
+				enable_tactic = tactic_ambush
+				enable_tactic = tactic_elastic_defense
+				enable_tactic = tactic_guerrilla_tactics
+			}
+			Micro_master_DESC_C = {
+			#3
+			    mastery = 100
+				land_reinforce_rate = 0.02
+				category_army = {
+				    default_morale = 0.3
+				}
+			}
+			Micro_master_DESC_D = {
+			#4
+			    mastery = 100
+				enable_tactic = tactic_encirclement
+				enable_tactic = tactic_breakthrough
+				enable_tactic = tactic_masterful_blitz
+				
+				enable_tactic = tactic_backhand_blow
+				enable_tactic = tactic_tactical_withdrawal
+				
+			}
+			Micro_master_DESC_E = {
+			#5
+			    mastery = 100
+				COMMAND_POWER_GAIN = 0.2
+				coordination_bonus = 0.2
+				effect = {
+					custom_effect_tooltip = "Micro_master_DESC_E_A"
+			}
+			}
+			
+        }
+}
+
+#敌后作战
+Behind_enemy_lines = {
+	track = operations
+    name = SUBDOCTRINE_Behind_enemy_lines
+    description = SUBDOCTRINE_Behind_enemy_lines_DESC
+    icon = GFX_Behind_enemy_lines_medium
+	
+	xp_cost = 50
+    xp_type = army
+
+	mastery = {
+        categories = {
+            category_army
+        }
+    }
+
+	visible = {
+	#显示条件
+	}
+
+    available = {
+	#允许条件
+		not = { tag = PRC }
+		OR = {
+			has_government = communism
+			has_defensive_war = yes
+		}
+		NOT = {
+			has_doctrine = Behind_enemy_lines
+		}
+    }
+	
+	visible = {
+	#显示条件
+		not = { tag = PRC }
+	}
+	
+	ai_will_do = {
+        base = 0
+		modifier = {
+			factor = 95
+			date > 1941.1.1
+			OR = {
+				original_tag = SOV
+			}
+		}
+		modifier = {
+			factor = 0.5
+			is_major = YES
+		}
+		modifier = {
+			factor = 2
+			is_major = NO
+		}
+	}
+	
+	# EFFECTS
+	effect = {
+		add_daily_mastery = {
+			amount = 0.2
+			days = 1080
+			name =  SUBDOCTRINE_Behind_enemy_lines
+			#folder = land
+			#grand_doctrine = mass_assault
+			sub_doctrine = Behind_enemy_lines
+			#track = operations
+		}
+    }
+	# modifier
+	modifier = {
+	    custom_modifier_tooltip = Behind_enemy_lines_A
+	}
+	modifier = {
+		resistance_target_on_our_occupied_states = 0.25
+	}
+	
+	# OTHER BASE REWARDS
+	mio_asymmetric_warfare_mastery_gain_factor = 0.1
+	
+	rewards = {
+		Behind_enemy_lines_DESC_A = {
+		#1
+			mastery = 50
+			army_core_defence_factor = 0.1
+			category_light_infantry = {
+				max_organisation = 10
+			}
+		}
+		
+		Behind_enemy_lines_DESC_B = {
+		#2
+			mastery = 50
+			modifier = {
+				resistance_growth_on_our_occupied_states = 0.5
+				resistance_damage_to_garrison_on_our_occupied_states = 0.2
+			}
+		}
+		
+		Behind_enemy_lines_DESC_C = {
+		#3
+			mastery = 50
+			army_core_attack_factor = 0.1
+			category_light_infantry = {
+				default_morale = 0.3
+			}
+		}
+		
+		Behind_enemy_lines_DESC_D = {
+		#4
+			mastery = 50
+			modifier = {
+				resistance_target_on_our_occupied_states = 0.15
+				resistance_damage_to_garrison_on_our_occupied_states = 0.2
+			}
+		}
+		
+	}
+}
+

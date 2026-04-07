@@ -1,0 +1,26 @@
+ideas = {
+
+	country = {
+		occupation_laws_Local_conscription_fake_idea = {
+		#就地征召
+			
+			removal_cost = -1
+				
+			allowed = {
+				always = no
+			}
+			
+			modifier = {
+				resistance_target 				= -0.15
+				compliance_gain 				= -0.045
+				required_garrison_factor 		= -0.35
+				resistance_damage_to_garrison 	= 0.00
+				LOCAL_NON_CORE_MANPOWER 		= 0.2
+			}
+		}
+	}
+
+
+	
+
+}

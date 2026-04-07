@@ -1,0 +1,41 @@
+ideas = {
+
+	mobilization_laws = {
+		law = yes
+		use_list_view = yes
+
+		mobilization_laws_Total_Gyokusai = { #总玉碎
+		
+			visible = {
+				#NOT = {
+					has_doctrine = Total_Gyokusai
+				#}
+			}
+			
+			available = { 
+				has_doctrine = Total_Gyokusai
+					or = {
+						OWNER ={
+							has_country_flag = Mobile_enable_mobilization_laws_Gyokusai_flag
+						}
+					}
+			}
+			
+			cost = 150
+			removal_cost = -1
+			
+			modifier = {
+				conscription = 1.00
+				industrial_capacity_factory = -0.45
+				industrial_capacity_dockyard = -0.45
+				production_speed_buildings_factor = -0.5
+				training_time_factor = 1.0
+				factory_energy_consumption = -0.5
+				army_strength_factor = -0.10
+				WAR_SUPPORT_WEEKLY = -0.005
+			}
+		}
+	}
+
+
+}

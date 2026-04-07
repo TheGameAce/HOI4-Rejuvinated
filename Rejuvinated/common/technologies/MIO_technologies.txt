@@ -1,0 +1,426 @@
+technologies = {
+
+	@1918 = 0
+	@1924 = 1
+	@1936 = 2
+	@1938 = 4
+	@1939 = 6
+	@1940 = 8
+	@1941 = 10
+	@1942 = 12
+	@1943 = 14
+	@1944 = 16
+	@1945 = 18
+	@1946 = 20
+
+	technologies_Commercial_Modification = {#商用改装
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+		enable_equipment_modules = {
+			MIO_Shoddy_Refit
+			MIO_Shoddy_Refit_small
+			MIO_Shoddy_Refit_medium
+			MIO_Shoddy_Refit_large
+		}
+		
+		allowed_modules = {
+			#MIO_Shoddy_Refit
+		}
+	}
+	
+	technologies_desert_logistics_support = {#沙漠后勤连
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			desert_logistics_support
+		}
+	}
+
+	technologies_blackshirt_assault_battalion = {#突击营
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			blackshirt_assault_battalion
+			#sturmtruppe_battalion
+		}
+	}
+
+	technologies_Bayonet_infantry_brigade = {#大刀营
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			Bayonet_infantry_brigade
+		}
+	}
+
+	MIO_irregular_infantry = {#非正规步兵
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			irregular_infantry
+		}
+	}
+	
+	MIO_militia = {#民兵
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			militia
+		}
+	}
+	
+	MIO_irregular_militia = {#非正规军及民兵
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			militia
+			irregular_infantry
+		}
+	}
+
+	MIO_rangers_support = {#侦察游骑兵
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			rangers_support
+		}
+	}
+
+	MIO_airborne_light_armor = {#空降轻装甲
+	
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			airborne_light_armor
+		}
+	}
+
+	Technologies_Airborne_Armor = {#空天装甲
+
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			airborne_light_armor_brigade
+		}
+	}
+	
+	Technologies_super_heavy_armor_0 = {#超重型坦克使用减少
+				allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		super_heavy_armor = {
+			need = {
+				super_heavy_tank_chassis = -17
+			}
+		}
+		super_heavy_tank_destroyer_brigade = {
+			need = {
+				super_heavy_tank_destroyer_chassis = -17
+			}
+		}
+		super_heavy_sp_artillery_brigade = {
+			need = {
+				super_heavy_tank_artillery_chassis = -17
+			}
+		}
+		super_heavy_sp_anti_air_brigade = {
+			need = {
+				super_heavy_tank_aa_chassis = -17
+			}
+		}
+	}
+	Technologies_super_heavy_armor_1 = {#超重型坦克地形适应
+
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		super_heavy_armor = {
+			maximum_speed = 0.30
+			reliability = 0.05
+			soft_attack = 0.2
+			urban = { #城市
+				DEFENCE = 0.30
+			}
+			jungle = { #丛林
+				DEFENCE = 0.2
+			}
+			hills = { #丘陵
+				DEFENCE = 0.15
+			}
+			mountain = { #山地
+				DEFENCE = 0.10
+			}
+			marsh = { #沼泽
+				DEFENCE = 0.15
+			}
+			river = { #河流
+				DEFENCE = 0.25
+			}
+		}
+		super_heavy_tank_destroyer_brigade = {
+			maximum_speed = 0.30
+			urban = { #城市
+				DEFENCE = 0.20
+			}
+		}
+		super_heavy_sp_artillery_brigade = {
+			maximum_speed = 0.30
+			fort = { #要塞
+				DEFENCE = 0.05
+			}
+			urban = { #城市
+				DEFENCE = 0.20
+			}
+		}
+		super_heavy_sp_anti_air_brigade = {
+			maximum_speed = 0.30
+			fort = { #要塞
+				DEFENCE = 0.05
+			}
+			urban = { #城市
+				DEFENCE = 0.20
+			}
+		}
+	}
+	
+	Technologies_super_heavy_armor_2 = {#超重型越野坦克
+
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		super_heavy_armor = {
+			urban = { #城市
+				ATTACK = 0.30
+			}
+			forest = { #森林
+				ATTACK = 0.25
+			}
+			jungle = { #丛林
+				ATTACK = 0.2
+			}
+			hills = { #丘陵
+				ATTACK = 0.10
+			}
+			mountain = { #山地
+				ATTACK = 0.10
+			}
+			river = { #河流
+				ATTACK = 0.20
+			}
+		}
+		super_heavy_tank_destroyer_brigade = {
+			urban = { #城市
+				ATTACK = 0.60
+			}
+			forest = { #森林
+				ATTACK = 0.45
+			}
+			jungle = { #丛林
+				ATTACK = 0.55
+			}
+			hills = { #丘陵
+				ATTACK = 0.25
+			}
+			mountain = { #山地
+				ATTACK = 0.30
+			}
+			river = { #河流
+				ATTACK = 0.45
+			}
+		}
+		super_heavy_sp_artillery_brigade = {
+			fort = { #要塞
+				ATTACK = 0.1
+			}
+			urban = { #城市
+				ATTACK = 0.60
+			}
+			forest = { #森林
+				ATTACK = 0.45
+			}
+			jungle = { #丛林
+				ATTACK = 0.55
+			}
+			hills = { #丘陵
+				ATTACK = 0.25
+			}
+			mountain = { #山地
+				ATTACK = 0.30
+			}
+			river = { #河流
+				ATTACK = 0.45
+			}
+		}
+		super_heavy_sp_anti_air_brigade = {
+			urban = { #城市
+				ATTACK = 0.60
+			}
+			forest = { #森林
+				ATTACK = 0.45
+			}
+			jungle = { #丛林
+				ATTACK = 0.55
+			}
+			hills = { #丘陵
+				ATTACK = 0.25
+			}
+			mountain = { #山地
+				ATTACK = 0.30
+			}
+			river = { #河流
+				ATTACK = 0.45
+			}
+		}
+	}
+	
+	Technologies_land_land_cruiser = {#陆地巡洋舰
+
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+		
+		enable_subunits = {
+			land_cruiser
+		}
+
+		enable_equipments = {
+			land_cruiser_chassis_1
+		}
+
+		enable_equipments = {
+			#land_cruiser_equipment_1
+		}
+		
+		enable_equipment_modules = {
+			lc_heavy_naval_guns
+			#lc_super_heavy_railway_gun
+			#lc_high_impact_obliterator_cannon
+			#lc_heavy_anti_air_platform
+			#lc_medium_naval_guns
+			#lc_hull_mounted_railway_gun
+			#lc_super_heavy_howitzer
+			#lc_heavy_high_velocity_cannons
+			#lc_heavy_anti_air_battery
+			#lc_medium_cannon_turret
+			#lc_assault_gun
+			#lc_high_velocity_cannon_turret
+			#lc_light_anti_air_battery
+			#lc_flamethrower_turret
+			#lc_rocket_launcher
+			#lc_radio_1
+			#lc_radio_2
+			#lc_radio_3
+			#lc_command_center
+			#lc_radar
+			lc_aircraft_catapult
+			#lc_helipad
+			lc_armored_skirts
+			#lc_bunker_emplacement
+			#lc_obstacle_clearance_gear
+			lc_internal_fuel_tanks
+			lc_internal_ammunition_compartments
+			lc_wet_ammunition_storage
+			lc_smoke_generators
+			lc_stabilizers
+		}
+		allowed_modules = {
+			
+			lc_heavy_naval_guns
+			lc_super_heavy_railway_gun
+			lc_high_impact_obliterator_cannon
+			lc_heavy_anti_air_platform
+			lc_medium_naval_guns
+			lc_hull_mounted_railway_gun
+			lc_super_heavy_howitzer
+			lc_heavy_high_velocity_cannons
+			lc_heavy_anti_air_battery
+			lc_medium_cannon_turret
+			lc_assault_gun
+			lc_high_velocity_cannon_turret
+			lc_light_anti_air_battery
+			lc_flamethrower_turret
+			lc_rocket_launcher
+			lc_radio_1
+			lc_radio_2
+			lc_radio_3
+			lc_command_center
+			lc_radar
+			lc_aircraft_catapult
+			lc_helipad
+			lc_armored_skirts
+			lc_bunker_emplacement
+			lc_obstacle_clearance_gear
+			lc_internal_fuel_tanks
+			lc_internal_ammunition_compartments
+			lc_wet_ammunition_storage
+			lc_smoke_generators
+			lc_stabilizers
+		}
+	}
+
+}

@@ -1,0 +1,69 @@
+equipments = {#坦克底盘
+	
+	### Helpful handy information: modules that depend on other modules (ie, big guns require fixed turrets)
+	### require that the module slots for their equipment archetype are defined in operational order for AI + historical templates.
+	### tldr; If your gun requires a specific turret: define the turret slot first.
+	
+	light_tank_chassis = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit
+			count < 2
+		}	
+
+	}
+
+	medium_tank_chassis = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit
+			count < 2
+		}	
+
+	}
+
+	heavy_tank_chassis = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit
+			count < 2
+		}	
+
+	}
+
+	modern_tank_chassis = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit
+			count < 2
+		}	
+	}
+
+
+	super_heavy_tank_chassis = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit
+			count < 2
+		}	
+	}
+
+
+	amphibious_tank_chassis = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit
+			count < 2
+		}	
+
+	}
+
+
+
+	###################################
+	######## SPECIAL PROJECTS #########
+	###################################
+
+	land_cruiser_chassis = {
+		module_count_limit = {
+			module = MIO_Shoddy_Refit
+			count < 2
+		}	
+	}
+
+
+}

@@ -1,0 +1,93 @@
+sub_units = {
+
+#空天装甲营
+	airborne_light_armor_brigade = {
+		abbreviation = "LTAB"
+		sprite = light_armor
+		map_icon_category = armored
+		special_forces = yes
+		#mountaineers = yes
+		
+		priority = 2
+		ai_priority = 2
+		active = no
+		
+		type = {
+			armor
+		}
+		
+		group = armor
+		
+		categories = {
+			category_tanks
+			category_front_line
+			category_all_armor
+			category_army
+			category_paratroopers
+			category_special_forces
+		}
+		
+		combat_width = 2
+		
+		need = {
+			light_tank_chassis = 36
+			support_equipment = 36
+		}
+		
+		#Size Definitions
+		manpower = 500
+		max_strength = 2
+		max_organisation = 10
+		default_morale = 0.4
+		
+		#Misc Abilities
+		training_time = 200
+		weight = 1
+		suppression = 2.0
+		supply_consumption = 0.20
+		
+		can_be_parachuted = yes
+		
+		breakthrough = 0.15	
+		
+		plains = {#平原
+			attack = -0.1
+		}
+		desert = {#沙漠
+			attack = -0.1
+		}
+		forest = {#森林
+		    attack = -0.3
+			movement = -0.4
+		}
+		hills = { #丘陵
+			ATTACK = -0.1
+		}
+		mountain = 	{#山地
+		    attack = -0.2
+		}
+		jungle = {#丛林
+		    attack = -0.4
+			movement = -0.4
+		}
+		marsh = {#沼泽
+		    attack = -0.2
+			movement = -0.2
+		}
+		urban = {#城市
+			attack = -0.3
+			DEFENCE = -0.1
+		}
+		fort = { #要塞
+			ATTACK = 0.1
+		}
+		river = { #河流
+			attack = -0.3
+			movement = -0.3
+		}
+		amphibious = { #两栖
+			attack = -0.8
+		}
+	}
+
+}
