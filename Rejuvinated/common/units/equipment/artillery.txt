@@ -85,6 +85,25 @@ equipments = {
 		}
 	}
 
+	artillery_equipment_4 = {
+		year = 1945
+
+		archetype = artillery_equipment
+		parent = artillery_equipment_3
+		priority = 50
+		visual_level = 3
+		
+		defense = 21
+		breakthrough = 9
+		soft_attack = 40
+		
+		build_cost_ic = 5
+		resources = {
+			tungsten = 1
+			steel = 3
+		}
+	}
+
 	# Nebelwerfers!
 	rocket_artillery_equipment = {
 		year = 1940
@@ -148,6 +167,25 @@ equipments = {
 			steel = 1
 		}
 	}
+
+	rocket_artillery_equipment_3 = {
+		year = 1946
+
+		archetype = rocket_artillery_equipment
+		parent = rocket_artillery_equipment_2
+		priority = 60
+		visual_level = 2
+		
+		defense = 18
+		breakthrough = 15
+		soft_attack = 45
+		
+		build_cost_ic = 6
+		resources = {
+			tungsten = 2
+			steel = 1
+		}
+	}
 	
 	#Katyusha 
 	motorized_rocket_equipment = {
@@ -191,7 +229,7 @@ equipments = {
 	}
 	
 	motorized_rocket_equipment_1 = {
-		year = 1939
+		year = 1938
 
 		archetype = motorized_rocket_equipment
 		priority = 70

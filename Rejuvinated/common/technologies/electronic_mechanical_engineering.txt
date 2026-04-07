@@ -57,6 +57,7 @@ technologies = {
 		
 		categories = {
 			electronics
+			computing_tech
 		}
 
 		on_research_complete = {
@@ -118,9 +119,10 @@ technologies = {
 		
 		categories = {
 			electronics
+			radio_tech
 		}
 
-		special_project_specialization = { specialization_air }
+		special_project_specialization = { specialization_air specialization_land }
 	}
 
 	improved_radio = {
@@ -166,29 +168,35 @@ technologies = {
 		
 		categories = {
 			electronics
+			radio_tech
 		}
 
-		special_project_specialization = { specialization_air }
+		special_project_specialization = { specialization_air specialization_land }
 	}
 
 	advanced_radio = {
 
 		# units with radios can more efficiently join combats when there is room
-		land_reinforce_rate = 0.01
+		land_reinforce_rate = 0.02
 		coordination_bonus = 0.02
 		
-		start_year = 1941
+		start_year = 1940
 		
 		research_cost = 2
 		
 		folder = {
 			name = electronics_folder
-			position = { x = @radio y = 12 }
+			position = { x = @radio y = 10 }
+		}
+
+		path = {
+			leads_to_tech = semi_modern_radio
+			research_cost_coeff = 1
 		}
 		
 		enable_equipment_modules = { 
 			tank_radio_3
-			lc_radio_3 #Module for Land Cruiser
+			lc_radio_3
 		}
 		
 		ai_will_do = {
@@ -204,15 +212,156 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > "1939.8.1"
+				date > "1940.8.1"
 			}
 		}
 		
 		categories = {
 			electronics
+			radio_tech
 		}
 
-		special_project_specialization = { specialization_air }
+		special_project_specialization = { specialization_air specialization_land }
+	}
+
+	semi_modern_radio = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.02
+		coordination_bonus = 0.02
+		
+		start_year = 1942
+		
+		research_cost = 2
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @radio y = 14 }
+		}
+
+		path = {
+			leads_to_tech = modern_radio
+		}
+		
+		enable_equipment_modules = { 
+			tank_radio_4
+			lc_radio_4
+			radio_navigation_3
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 6
+				has_war = yes
+			}
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+			modifier = {
+				factor = 5
+				date > "1942.8.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			radio_tech
+		}
+
+		special_project_specialization = { specialization_air specialization_land }
+	}
+
+	modern_radio = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.02
+		coordination_bonus = 0.02
+		
+		start_year = 1944
+		
+		research_cost = 2
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @radio y = 18 }
+		}
+		
+		enable_equipment_modules = { 
+			tank_radio_5
+			lc_radio_5
+		}
+
+		path = {
+			leads_to_tech = technical_radio_improvements
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 6
+				has_war = yes
+			}
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+			modifier = {
+				factor = 5
+				date > "1944.8.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			radio_tech
+		}
+
+		special_project_specialization = { specialization_air specialization_land }
+	}
+
+	technical_radio_improvements = {
+
+		# units with radios can more efficiently join combats when there is room
+		land_reinforce_rate = 0.01
+		coordination_bonus = 0.02
+		
+		start_year = 1945
+		
+		research_cost = 1.8
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @radio y = 20 }
+		}
+		
+		ai_will_do = {
+			factor = 3
+			
+			modifier = {
+				factor = 6
+				has_war = yes
+			}
+			modifier = {
+				is_major = yes
+				factor = 2
+			}
+			modifier = {
+				factor = 5
+				date > "1945.8.1"
+			}
+		}
+		
+		categories = {
+			electronics
+			radio_tech
+		}
+
+		special_project_specialization = { specialization_air specialization_land }
 	}
 	
 	radio_detection = {
@@ -283,6 +432,11 @@ technologies = {
 			leads_to_tech = centimetric_radar 
 			research_cost_coeff = 1
 		}
+
+		path = {
+			leads_to_tech = identification_friend_or_foe_system_1
+			research_cost_coeff = 1
+		}
 		
 		ai_will_do = {
 			factor = 1
@@ -307,6 +461,124 @@ technologies = {
 		enable_building = {
 			building = radar_station
 			level = 2
+		}
+	}
+
+	identification_friend_or_foe_system_1 = {
+
+		is_special_project_tech = yes
+		
+		air_accidents_factor = -0.025
+		air_superiority_detect_factor = 0.01
+		research_cost = 0.6
+		start_year = 1938
+
+		path = {
+			leads_to_tech = identification_friend_or_foe_system_2
+			research_cost_coeff = 1
+		}
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 6 }
+		}
+
+		special_project_specialization = { specialization_air }
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = GER
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			electronics
+			radar_tech
+		}
+	}
+
+	identification_friend_or_foe_system_2 = {
+
+		is_special_project_tech = yes
+		
+		air_accidents_factor = -0.025
+		air_superiority_detect_factor = 0.01
+		research_cost = 0.6
+		start_year = 1939
+		enable_equipment_modules = { 
+			
+		}
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 8 }
+		}
+
+		path = {
+			leads_to_tech = identification_friend_or_foe_system_3
+			research_cost_coeff = 1
+		}
+
+		special_project_specialization = { specialization_air }
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = GER
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			electronics
+			radar_tech
+		}
+	}
+
+	identification_friend_or_foe_system_3 = {
+
+		is_special_project_tech = yes
+		
+		air_accidents_factor = -0.025
+		air_superiority_detect_factor = 0.01
+		research_cost = 0.6
+		start_year = 1940
+		enable_equipment_modules = { 
+			
+		}
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 1 y = 10 }
+		}
+
+		special_project_specialization = { specialization_air }
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = GER
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			electronics
+			radar_tech
 		}
 	}
 	
@@ -497,6 +769,98 @@ technologies = {
 			name = electronics_folder
 			position = { x = @radar y = 14 }
 		}
+
+		path = {
+			leads_to_tech = pulse_doppler_radar
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			electronics
+			radar_tech
+		}
+	}
+
+	pulse_doppler_radar = {
+		is_special_project_tech = yes
+		allow = {
+			ROOT = {
+				is_special_project_completed = sp:sp_air_radar
+			}
+		}
+		coordination_bonus = 0.01
+		enable_equipment_modules = { 
+			air_air_radar_3
+			air_ground_radar_3
+		}
+		special_project_specialization = { specialization_air specialization_nuclear }
+
+		path = {
+			leads_to_tech = technical_radar_improvements
+			research_cost_coeff = 1
+		}
+		
+		static_anti_air_hit_chance_factor = 0.2
+		
+		research_cost = 1.25
+		start_year = 1943
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @radar y = 16 }
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+				}
+				factor = 5
+			}
+		}
+		
+		categories = {
+			electronics
+			radar_tech
+		}
+	}
+
+	technical_radar_improvements = {
+		is_special_project_tech = yes
+		# radar boost in air/sea combat depends on radar level
+		allow = {
+			ROOT = {
+				is_special_project_completed = sp:sp_air_radar
+			}
+		}
+		coordination_bonus = 0.01
+		
+		special_project_specialization = { specialization_air specialization_nuclear }
+		
+		static_anti_air_hit_chance_factor = 0.1
+		air_detection = 0.05
+		naval_coordination = 0.03
+		
+		research_cost = 1
+		start_year = 1944
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @radar y = 18 }
+		}
 		
 		ai_will_do = {
 			factor = 1
@@ -681,6 +1045,10 @@ technologies = {
 		}
 		path = {
 			leads_to_tech = next_gen_computing_machine
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = modern_fire_control_system 
 			research_cost_coeff = 1
 		}
 		
@@ -1120,6 +1488,10 @@ technologies = {
 			computing_tech
 			naval_equipment
 		}
+
+		special_project_specialization = {
+			specialization_naval
+		}
 	}
 
 	improved_fire_control_system = {
@@ -1161,6 +1533,10 @@ technologies = {
 			computing_tech
 			naval_equipment
 		}
+
+		special_project_specialization = {
+			specialization_naval
+		}
 	}
 
 	advanced_fire_control_system = {
@@ -1196,6 +1572,50 @@ technologies = {
 			electronics
 			computing_tech
 			naval_equipment
+		}
+
+		special_project_specialization = {
+			specialization_naval
+		}
+	}
+
+	modern_fire_control_system = {
+
+		enable_equipment_modules = { 
+			ship_fire_control_system_4
+		}
+		allow_branch = {
+			has_dlc = "Man the Guns"
+		}
+		
+		research_cost = 1
+		
+		folder = {
+			name = electronics_folder
+			position = { x = @firecontrol y = 16 }
+		}
+		
+		ai_will_do = {
+			factor = 0.75
+			modifier = {
+				OR = {
+					tag = ENG
+					tag = USA
+					tag = JAP
+				}
+				factor = 3
+			}
+			
+		}
+		
+		categories = {
+			electronics
+			computing_tech
+			naval_equipment
+		}
+
+		special_project_specialization = {
+			specialization_naval
 		}
 	}
 
@@ -1244,7 +1664,8 @@ technologies = {
 		}
 		
 		categories = {
-			cat_fortification
+			fortification_tech
+			cat_fortification #Legacy - Here to prevent breaks.
 		}
 
 	}
@@ -1276,7 +1697,8 @@ technologies = {
 		}
 		
 		categories = {
-			cat_fortification
+			fortification_tech
+			cat_fortification #Legacy - Here to prevent breaks.
 		}
 		
 
@@ -1304,7 +1726,8 @@ technologies = {
 		}
 		
 		categories = {
-			cat_fortification
+			fortification_tech
+			cat_fortification #Legacy - Here to prevent breaks.
 		}
 		
 
@@ -1334,7 +1757,8 @@ technologies = {
 		}
 		
 		categories = {
-			cat_fortification
+			fortification_tech
+			cat_fortification #Legacy - Here to prevent breaks.
 		}
 		
 
@@ -1362,14 +1786,15 @@ technologies = {
 		}
 		
 		categories = {
-			cat_fortification
+			fortification_tech
+			cat_fortification #Legacy - Here to prevent breaks.
 		}
 		
 
 	}
 
 	advanced_fortification_engineering = {
-
+		
 		land_bunker_effectiveness_factor = 0.05
 		coastal_bunker_effectiveness_factor = 0.05
 		production_speed_stronghold_network_factor = 0.1
@@ -1386,7 +1811,8 @@ technologies = {
 		}
 		
 		categories = {
-			cat_fortification
+			fortification_tech
+			cat_fortification #Legacy - Here to prevent breaks.
 		}
 		
 
