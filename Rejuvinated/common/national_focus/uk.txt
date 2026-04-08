@@ -7968,18 +7968,6 @@ focus_tree = {
 			}
 		}
 
-		offset = {
-			x = 7
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ENG_the_kings_party
-			}
-		}
-
 		available = {
 			has_country_flag = edward_viii_married_wallis_simpson
 			is_subject = no
@@ -7988,7 +7976,7 @@ focus_tree = {
 
 		icon = GFX_focus_eng_the_kings_party
 
-		x = -7
+		x = -10
 		y = 1
 		relative_position_id = ENG_a_change_in_course
 
@@ -8058,11 +8046,11 @@ focus_tree = {
 				has_war_together_with = FRA 
 			}
 		}
-		icon = GFX_goal_generic_position_armies
+		icon = GFX_focus_GER_european_confederation
 		x = -1
 		y = 1
 		relative_position_id = ENG_the_kings_party
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -8949,10 +8937,10 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_eng_god_save_the_king
-		x = 2
+		x = 4
 		y = 1
 		relative_position_id = ENG_the_kings_party
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}
@@ -9475,7 +9463,6 @@ focus_tree = {
 					country_exists = AST
 					country_exists = NZL
 				}
-				has_completed_focus = ENG_towards_dominion_independence
 			}
 		}
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
