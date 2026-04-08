@@ -351,7 +351,7 @@ ideas = {
 			}
 		}
 
-		RJ_ENG_imperial_conscription_idea = {
+		ENG_colonial_conscription_idea = {
 			picture = eng_imperial_conscription
 
 			allowed = {
@@ -367,6 +367,24 @@ ideas = {
 			modifier = {
 				non_core_manpower = 0.10
 				conscription = 0.01
+			}
+		}
+
+		RJ_ENG_lend_lease_china_idea = {
+			picture = chi_chinese_unity
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				lend_lease_tension = -0.30
 			}
 		}
 	}
