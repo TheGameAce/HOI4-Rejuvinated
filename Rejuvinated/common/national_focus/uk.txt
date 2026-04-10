@@ -2853,6 +2853,10 @@ focus_tree = {
 					has_government = ROOT
 					exists = no
 				}
+				OR = {
+					has_completed_focus = RJ_ENG_noninterference_treaty_with_italy
+					has_completed_focus = RJ_ENG_the_anglo_italian_alliance
+				}
 			}
 		}
 		prerequisite = { focus = uk_sanction_italy_focus }
@@ -7734,7 +7738,7 @@ focus_tree = {
 
 		}
 		icon = GFX_focus_generic_strike_at_democracy2
-		x = 24
+		x = 27
 		y = 0
 		relative_position_id = ENG_steady_as_she_goes
 
@@ -8062,7 +8066,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_GER_european_confederation
-		x = -3
+		x = -5
 		y = 1
 		relative_position_id = ENG_the_kings_party
 		cost = 7.2
@@ -8148,6 +8152,23 @@ focus_tree = {
 		cost = 5
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				GER = {
+					has_government = neutrality
+				}
+				factor = 3
+			}
+			modifier = {
+				GER = {
+					NOT = {
+						OR = {
+							has_government = neutrality
+							has_government = fascism
+						}
+					}
+				}
+				factor = 0.5
+			}
 		}	
 		completion_reward = {
 			GER = { country_event = { id = mtg_britain.23 hours = 6 } }
@@ -8179,6 +8200,23 @@ focus_tree = {
 		cost = 5
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				ITA = {
+					has_government = neutrality
+				}
+				factor = 3
+			}
+			modifier = {
+				ITA = {
+					NOT = {
+						OR = {
+							has_government = neutrality
+							has_government = fascism
+						}
+					}
+				}
+				factor = 0.5
+			}
 		}	
 		completion_reward = {
 			
@@ -8223,7 +8261,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = ENG_alliance_with_germany_tt
 			add_stability = alliance_with_germany_var
-			ITA = { country_event = { id = mtg_britain.27 hours = 6 } }
+			ITA = { country_event = { id = rj_britain.6 hours = 6 } }
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
@@ -8250,7 +8288,7 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			ITA = { country_event = { id = mtg_britain.30 hours = 6 } }
+			ITA = { country_event = { id = rj_britain.5 hours = 6 } }
 		}
 		search_filters = { FOCUS_FILTER_DIPLOMACY }
 	}
@@ -8335,10 +8373,11 @@ focus_tree = {
 			is_subject = no
 			country_exists = ITA
 			NOT = { is_in_faction_with = ITA }
+			NOT = { has_non_aggression_pact_with = ITA }
 		}
 		icon = GFX_focus_RJ_ENG_target_regia_marina
 		will_lead_to_war_with = ITA
-		x = -1
+		x = 0
 		y = 2
 		relative_position_id = ENG_noninterference_treaty_with_germany
 		cost = 10
@@ -8351,6 +8390,35 @@ focus_tree = {
 				target = ITA
 				expire = 0
 			}
+			add_ideas = ENG_against_the_regia_marina_idea
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_subdue_the_wehrmacht
+		prerequisite = { focus = RJ_ENG_noninterference_treaty_with_italy focus = RJ_ENG_the_anglo_italian_alliance focus = RJ_ENG_our_old_rival }
+		available = {
+			is_subject = no
+			country_exists = GER
+			NOT = { is_in_faction_with = GER }
+			NOT = { has_non_aggression_pact_with = GER }
+		}
+		icon = GFX_focus_GER_subdue_the_wehrmacht_historical
+		will_lead_to_war_with = GER
+		x = 0
+		y = 2
+		relative_position_id = RJ_ENG_noninterference_treaty_with_italy
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = GER
+				expire = 0
+			}
+			add_ideas = ENG_subdue_the_wehrmacht_idea
 		}
 	}
 
@@ -8361,12 +8429,18 @@ focus_tree = {
 			is_subject = no
 			country_exists = FRA
 			NOT = { is_in_faction_with = FRA }
+			FRA = {
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
+			}
 		}
 		icon = GFX_focus_chi_reach_out_to_france
 		x = 1
 		y = 1
 		relative_position_id = ENG_noninterference_treaty_with_germany
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}	
@@ -9072,7 +9146,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_god_save_the_king
-		prerequisite = { focus = ENG_the_kings_party focus = ENG_organize_the_blackshirts }
+		prerequisite = { focus = ENG_the_kings_party }
 		available = {
 			is_subject = no
 			OR = {
@@ -9081,7 +9155,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_eng_god_save_the_king
-		x = 4
+		x = 1
 		y = 1
 		relative_position_id = ENG_the_kings_party
 		cost = 7.2
@@ -9273,7 +9347,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_pre_empt_the_ideological_threat
-		prerequisite = { focus = ENG_imperial_conscription focus = ENG_take_out_the_regia_marina }	
+		prerequisite = { focus = ENG_imperial_conscription focus = ENG_take_out_the_regia_marina focus = RJ_ENG_our_old_rival focus = RJ_ENG_subdue_the_wehrmacht }	
 		available = {
 			is_subject = no
 			country_exists = SOV
@@ -9282,10 +9356,10 @@ focus_tree = {
 		}
 		will_lead_to_war_with = SOU
 		icon = GFX_focus_attack_soviet
-		x = -2
+		x = 1
 		y = 1
-		relative_position_id = ENG_imperial_conscription
-		cost = 10
+		relative_position_id = ENG_take_out_the_regia_marina
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -9322,10 +9396,10 @@ focus_tree = {
 		will_lead_to_war_with = PER
 		will_lead_to_war_with = AFG
 		icon = GFX_focus_eng_expose_the_belly_of_the_bear
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = ENG_pre_empt_the_ideological_threat
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 		}	

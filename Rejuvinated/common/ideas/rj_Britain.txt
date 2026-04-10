@@ -387,5 +387,68 @@ ideas = {
 				lend_lease_tension = -0.30
 			}
 		}
+
+		ENG_against_the_regia_marina_idea = {
+			picture = ITA_regia_marina_3
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				spotting_chance = 0.10
+				night_spotting_chance = 0.05
+				naval_coordination = 0.05
+				naval_hit_chance = 0.10
+			}
+		}
+
+		ENG_subdue_the_wehrmacht_idea = {
+			picture = SWE_neither_death_nor_dishonor
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_factor = 0.10
+				army_org_regain = 0.10
+			}
+			targeted_modifier = {
+				tag = GER
+				attack_bonus_against = 0.05
+				defense_bonus_against = 0.05
+			}
+		}
+
+		RJ_ENG_lend_lease_china_idea = {
+			picture = chi_chinese_unity
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				lend_lease_tension = -0.30
+			}
+		}
 	}
 }

@@ -30,6 +30,8 @@
  ENG_colonial_development_idea_secondary: "Colonial Development"
  ENG_colonial_conscription_idea: "Colonial Conscription"
  RJ_ENG_lend_lease_china_idea: "Support for China"
+ ENG_against_the_regia_marina_idea: "Attack the Regia Marina"
+ ENG_subdue_the_wehrmacht_idea: "Subdue the Wehrmacht"
 
 
 
@@ -74,6 +76,14 @@
  rj_britain.3.a: "Pass the Public Order Act 1936"
  rj_britain.3.b: "Leave it be..."
  rj_britain.4.t: "Omani Dominionship?"
+ rj_britain.5.t: "[From.GetName] Asks for Non-Interference"
+ rj_britain.5.d: "[From.GetNameDefCap] proposes a non-interference treaty, allowing us free reign on the continent, if we will only turn a blind eye to British activity in the region, as well as ignoring the Germans."
+ rj_britain.5a.t: "[From.GetNameDefCap] Accepts Non-Interference"
+ rj_britain.5a.d: "[From.GetAdjective] officials inform us that they have accepted our proposal of a non-interference treaty. They will turn a blind eye to our activities in Europe and with Germany, while we will leave them to their devices on the continent."
+ rj_britain.5news.t: "Anglo-Italian Pact"
+ rj_britain.5news.d: "The [ENG.GetAdjective] and [ITA.GetAdjective] governments have announced a pact of non-aggression and non-interference. Further stipulations include a clause indicating their intention to "respect the other's sphere of interest". Not all may be surprised to see this development after [ITA.GetNameDef]'s increasingly pro-[ENG.GetAdjective] rhetoric in recent months, but critics still warn of what this could mean for Europe."
+ rj_britain.6.t: "The [ENG.GetAdjective] Propose an Alliance"
+ rj_britain.6.d: "The [ENG.GetAdjective] have come to us in secret with a surprising proposal for an Anglo-Italian alliance. They suggest that, together, we could readily challenge any of the other world powers, even making the Germans a potential target. While this is very unexpected, it's not necessarily a bad idea, & it's worth some thought at minimum."
 
 #Tooltips
  rj_ENG_modify_the_economy_tt: "Modify §Y$rj_ENG_the_economy$§! by\n"
@@ -132,6 +142,8 @@
  RJ_ENG_the_anglo_italian_alliance: "The Anglo-Italian Alliance"
  RJ_ENG_the_anglo_italian_alliance_desc: "With the Germans out of the way diplomatically, we can now propose a proper alliance with the Italians. If we can work together, even the Germans will think twice about attacking us."
  RJ_ENG_our_old_rival: "Our Old Rival"
- RJ_ENG_our_old_rival_desc: ""
+ RJ_ENG_our_old_rival_desc: "France has historically been a rival to us, competing for colonial territories & facing us in numerous wars. It's time to decide whether they remain a rival, or if they'll become a friend to us."
  RJ_ENG_noninterference_treaty_with_italy: "Non-Interference Treaty with Italy"
- RJ_ENG_noninterference_treaty_with_italy_desc: ""
+ RJ_ENG_noninterference_treaty_with_italy_desc: "Alliances aren't everything. Sometimes it's more beneficial to simply make a respectful peace treaty with another power, & let them tend to their own business while they let us tend to ours."
+ RJ_ENG_subdue_the_wehrmacht: "Subdue the Wehrmacht"
+ RJ_ENG_subdue_the_wehrmacht_desc: "The time has come to make our move against Germany. If we're to win, however, we must subdue the Wehrmacht!"
