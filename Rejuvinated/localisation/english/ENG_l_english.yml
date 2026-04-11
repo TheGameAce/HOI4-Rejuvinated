@@ -5,6 +5,10 @@
  ENG_bill_alexander: "Bill Alexander"
 
 
+ #Country Flags
+ ENG_italy_rejected_isolate_the_german_threat: "Italy rejected conspiring against the Germans."
+
+
 
  ######################################################################################################################################################################
  ######## IDEAS #######################################################################################################################################################
@@ -32,6 +36,7 @@
  RJ_ENG_lend_lease_china_idea: "Support for China"
  ENG_against_the_regia_marina_idea: "Attack the Regia Marina"
  ENG_subdue_the_wehrmacht_idea: "Subdue the Wehrmacht"
+ ENG_god_save_the_king_idea: "God Save the King!"
 
 
 
@@ -84,6 +89,30 @@
  rj_britain.5news.d: "The [ENG.GetAdjective] and [ITA.GetAdjective] governments have announced a pact of non-aggression and non-interference. Further stipulations include a clause indicating their intention to "respect the other's sphere of interest". Not all may be surprised to see this development after [ITA.GetNameDef]'s increasingly pro-[ENG.GetAdjective] rhetoric in recent months, but critics still warn of what this could mean for Europe."
  rj_britain.6.t: "The [ENG.GetAdjective] Propose an Alliance"
  rj_britain.6.d: "The [ENG.GetAdjective] have come to us in secret with a surprising proposal for an Anglo-Italian alliance. They suggest that, together, we could readily challenge any of the other world powers, even making the Germans a potential target. While this is very unexpected, it's not necessarily a bad idea, & it's worth some thought at minimum."
+ rj_britain.7.t: "Conspire Against the Reich"
+ rj_britain.7.d: "[From.GetNameDefCap] has contacted us with the request that we diplomatically isolate the Germans. They've indicated this would strengthen the possibility of some manner of alliance with us in the future."
+ rj_britain.7a.t:1 "[From.GetName] Abandons [GER.GetName]"
+ rj_britain.7a.d:1 "[From.GetNameDefCap] informs us that they have cut off diplomatic relations with [GER.GetNameDef]."
+ rj_britain.7news.t: "[GER.GetAdjective] Diplomatic Isolation"
+ rj_britain.7news.d: "Diplomatic relations between [GER.GetNameDef] and [ITA.GetNameDef] have taken a turn for the worse recently, with a string of minor diplomatic incidents being seized upon by the [ITA.GetAdjective] government to fuel hostile rhetoric. Though Italo-German relations had begun to improve in recent years, these new developments seem to effectively preclude any future cooperation between the two European powers.\n\nCritics point out the concurrent improvements in Anglo-Italian relations, as well as the 'convenience' this [GER.GetAdjective] diplomatic isolation provides to the British, which may indicate back room deals between the two nations."
+ rj_britain.7b.t:1 "Italian-British Rapprochement"
+ rj_britain.7b.d:1 "[From.GetNameDefCap] informs us that, on [ENG.GetAdjective] instigation, they have cut off diplomatic relations with us."
+ rj_britain.7c.t:1 "[From.GetName] Supports [GER.GetName]"
+ rj_britain.7c.d:1 "[From.GetNameDefCap] informs us that they have decided not to cut off diplomatic relations with [GER.GetNameDef]."
+ rj_britain.8.t: "Our Old Rival"
+ rj_britain.8.d: "While we've been seeking out compatible partners for alliance under our current government, it's come to our attention that we've overlooked the French. Historically they've been a rival to us, but in more recent years they've also shown to be capable of friendship with us as well. What shall we do in regards to them?"
+ rj_britain.8a.t: "The British Propose an Alliance"
+ rj_britain.8a.d: "The British have come to us with proposal of an alliance, citing the compatibilities between our two governments, as well as a desire to put aside old rivalries between our nations. This could be of benefit to us, but it could just as easily be some sort of British scheme. What should our response be?"
+ rj_britain.8b.t: "The French Accept!"
+ rj_britain.8b.d: "The French have accepted our proposal for alliance!"
+ rj_britain.8c.t: "The French Reject!"
+ rj_britain.8c.d: "The French have rejected our proposal for alliance!"
+ rj_britain.8d.t: "The British Propose Non-Aggression"
+ rj_britain.8d.d: "In an interesting turn of events, the British have come to us proposing a pact of non-aggression between our two nations. They state that since we have similar spheres of influence & similar interests, that it would benefit us both to simply respect one another's sovereignty, allowing both of us to go about our business as we please."
+ rj_britain.8e.t: "The French Accept!"
+ rj_britain.8e.d: "The French have signed the proposed non-aggression pact, bringing a lasting peace between our nations!"
+ rj_britain.8f.t: "The French Reject!"
+ rj_britain.8f.d: "The French have rejected our proposal for non-aggression. What fools!"
 
 #Tooltips
  rj_ENG_modify_the_economy_tt: "Modify §Y$rj_ENG_the_economy$§! by\n"

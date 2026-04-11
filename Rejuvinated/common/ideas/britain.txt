@@ -740,7 +740,8 @@ ideas = {
 			}
 
 			modifier = {
-				non_core_manpower = 0.1
+				non_core_manpower = 0.05
+				conscription = 0.03
 			}
 
 			picture = eng_imperial_conscription
@@ -762,7 +763,8 @@ ideas = {
 			}
 
 			modifier = {
-				autonomy_gain = -1
+				autonomy_gain = -0.5
+				conscription = 0.02
 			}
 
 			picture = eng_imperial_conscription
@@ -785,16 +787,20 @@ ideas = {
 
 			equipment_bonus = {
 				screen_ship = {
-					naval_speed = 0.1 naval_range = 0.25
+					naval_speed = 0.1 naval_range = 0.30
+					instant = yes
 				}
 				carrier = {
-					naval_speed = 0.1 naval_range = 0.25
+					naval_speed = 0.1 naval_range = 0.30
+					instant = yes
 				}
 				capital_ship = {
-					naval_speed = 0.1 naval_range = 0.25
+					naval_speed = 0.1 naval_range = 0.30
+					instant = yes
 				}
 				submarine = {
-					naval_speed = 0.1 naval_range = 0.25
+					naval_speed = 0.1 naval_range = 0.30
+					instant = yes
 				}
 			}
 

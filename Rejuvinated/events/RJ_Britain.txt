@@ -376,3 +376,423 @@ country_event = { #Anglo-Italian Alliance - Borrowed from MTG_britain.36.
 		FROM = { country_event = { id = mtg_britain.38 hours = 6 } }
 	}
 }
+
+country_event = { #Conspire Against the Reich
+	id = rj_britain.7
+	title = rj_britain.7.t
+	desc = rj_britain.7.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+	
+	# We will drop the Germans
+	option = {
+		name = "This has potential!"
+		if = {
+			limit = {
+				GER = { is_in_faction_with = ITA }
+				GER = { has_war = no }
+				has_war = no
+			}
+			ITA = {
+				if = {
+					limit = {
+						is_in_faction_with = GER
+						is_faction_leader = no
+					}
+				}
+				leave_faction = yes
+				else = {
+					remove_from_faction = GER
+				}
+			}
+		}
+		FROM = { country_event = { id = rj_britain.7a hours = 6 } }
+		GER = { country_event = { id = rj_britain.7b hours = 6 } }
+		hidden_effect = {
+			ITA = {
+				add_ai_strategy = {
+					type = befriend
+					id = GER
+					value = -200
+				}
+				add_ai_strategy = {
+					type = protect
+					id = GER
+					value = -200
+				}
+				add_ai_strategy = {
+					type = send_volunteers_desire
+					id = GER
+					value = -200
+				}
+				add_ai_strategy = {
+					type = support
+					id = GER
+					value = -200
+				}
+				add_ai_strategy = {
+					type = alliance
+					id = GER
+					value = -200
+				}
+			}
+			set_country_flag = ENG_ditched_the_germans_flag
+			GER = { set_country_flag = ENG_ditched_by_the_italians_flag }
+		}
+	}
+
+	# We will stick by the Germans
+	option = {
+		name = "Antipatico British! We want nothing to do with this!"
+		ai_chance = {
+			base = 0
+		}
+		FROM = { country_event = { id = rj_britain.7c hours = 6 } }
+	}
+}
+
+country_event = { #Italy Accepts
+	id = rj_britain.7a
+	title = rj_britain.7a.t
+	desc = rj_britain.7a.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+	
+	# Ok
+	option = {
+		name = "Smashing!"
+		hidden_effect = { news_event = { id = rj_britain.7news days = 1 } }
+	}
+}
+
+news_event = { #Germany Isolated Event - Borrowed from mtg_news.20
+	id = rj_britain.7news
+	title = rj_britain.7news.t
+	desc = rj_britain.7news.d
+	picture = GFX_news_event_generic_sign_treaty3
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Just what we were hoping for!"
+		trigger = {
+			original_tag = ENG
+		}
+	}
+
+	option = {
+		name = "Verdammt! Those scheming British must be behind this!"
+		trigger = {
+			original_tag = GER
+		}
+	}
+
+	option = {
+		name = "It does serve our interests, after all."
+		trigger = {
+			original_tag = ITA
+		}
+	}
+
+	option = {
+		name = "Well well well... The British have been busy."
+		trigger = { 
+			NOT = { original_tag = ENG }
+			NOT = { original_tag = GER }
+			NOT = { original_tag = ITA }
+		}
+	}
+}
+
+# Isolate the Mediterranean Threat notification event for Germany - Italy dumps them
+country_event = {
+	id = rj_britain.7b
+	title = rj_britain.7b.t
+	desc = rj_britain.7b.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+	
+	# Ok
+	option = {
+		name = "Ach du lieber... Gullible Italians!"
+		hidden_effect = {
+			add_ai_strategy = {
+				type = befriend
+				id = ITA
+				value = -200
+			}
+			add_ai_strategy = {
+				type = protect
+				id = ITA
+				value = -200
+			}
+			add_ai_strategy = {
+				type = send_volunteers_desire
+				id = ITA
+				value = -200
+			}
+			add_ai_strategy = {
+				type = support
+				id = ITA
+				value = -200
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = ITA
+				value = -200
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = ITA
+				value = 200
+			}
+		}
+	}
+}
+
+country_event = { #Italy Rejects
+	id = rj_britain.7c
+	title = rj_britain.7c.t
+	desc = rj_britain.7c.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+	
+	# Ok
+	option = {
+		name = "Not exactly as we'd planned..."
+		set_country_flag = ENG_italy_rejected_isolate_the_german_threat
+	}
+}
+
+country_event = { #Our Old Rival Event
+	id = rj_britain.8
+	title = rj_britain.8.t
+	desc = rj_britain.8.d
+	picture = GFX_report_event_french_british_officers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Propose an Alliance!"
+		ai_chance = {
+			base = 1
+			modifier = {
+				FRA = {
+					has_government = neutrality
+				}
+				factor = 3
+			}
+		}
+
+		FRA = {
+			country_event = {
+				id = rj_britain.8a
+				hours = 6
+			}
+		}
+	}
+
+	option = {
+		name = "Propose a Non-Aggression Pact!"
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = { #Our Old Rival Event - Alliance Proposed (France)
+	id = rj_britain.8a
+	title = rj_britain.8a.t
+	desc = rj_britain.8a.d
+	picture = GFX_report_event_french_british_officers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Surprisingly agreeable. We accept!"
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 5
+				FRA = {
+					has_government = neutrality
+				}
+			}
+		}
+
+		FROM = {
+			IF = {
+				limit = {
+					is_in_faction = no
+				}
+				create_faction_from_template = faction_template_european_dominance_monarchist
+			}
+			add_to_faction = ROOT
+			country_event = { id = rj_britain.8b hours = 6 }
+			hidden_effect = {
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 200
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = ROOT
+					value = 200
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = ROOT
+					value = -200
+				}
+			}
+		}
+		#French subjects join the faction
+		every_subject_country = {
+			FROM = {
+				add_to_faction = PREV
+			}
+		}
+		hidden_effect = {
+			add_ai_strategy = {
+				type = alliance
+				id = FROM
+				value = 200
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = FROM
+				value = 200
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = FROM
+				value = -200
+			}
+		}
+	}
+
+	option = { #Alliance Rejection
+		name = "We'd rather keep our options open for now..."
+
+		ai_chance = {
+			base = 1
+		}
+
+		FROM = { country_event = { id = rj_britain.8c hours = 6 } }
+	}	
+}
+
+country_event = { #Our Old Rival Event - Alliance Proposed (Accepted)
+	id = rj_britain.8b
+	title = rj_britain.8b.t
+	desc = rj_britain.8b.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Cheers to our new French allies!"
+	}
+}
+
+country_event = { #Our Old Rival Event - Alliance Proposed (Rejected)
+	id = rj_britain.8c
+	title = rj_britain.8c.t
+	desc = rj_britain.8c.d
+	picture = GFX_report_event_french_british_officers
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Well it was worth a shot."
+	}
+}
+
+country_event = { #Our Old Rival Event - Non-Aggression Pact Proposed (France)
+	id = rj_britain.8d
+	title = rj_britain.8d.t
+	desc = rj_britain.8d.d
+	picture = GFX_report_event_french_british_officers
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "A benefit to the both of us!"
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				add = 5
+				FRA = {
+					has_government = neutrality
+				}
+			}
+		}
+
+		FROM = {
+			country_event = { id = rj_britain.8e hours = 6 }
+			hidden_effect = {
+				add_ai_strategy = {
+					type = antagonize
+					id = ROOT
+					value = -200
+				}
+			}
+		}
+		diplomatic_relation = {
+			country = ENG
+			relation = non_aggression_pact
+		}
+		hidden_effect = {
+			add_ai_strategy = {
+				type = antagonize
+				id = FROM
+				value = -200
+			}
+		}
+	}
+
+	option = { #Peace Rejection
+		name = "I don't want peace, I want war!"
+
+		ai_chance = {
+			base = 1
+		}
+
+		FROM = { country_event = { id = rj_britain.8f hours = 6 } }
+	}	
+}
+
+country_event = { #Our Old Rival Event - Non-Aggression Proposed (Accepted)
+	id = rj_britain.8e
+	title = rj_britain.8e.t
+	desc = rj_britain.8e.d
+	picture = GFX_report_event_generic_sign_treaty3
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Now we can focus our attention to where it matters most!"
+	}
+}
+
+country_event = { #Our Old Rival Event - Non-Aggression Proposed (Rejected)
+	id = rj_britain.8f
+	title = rj_britain.8f.t
+	desc = rj_britain.8f.d
+	picture = GFX_report_event_french_british_officers
+
+	is_triggered_only = yes
+
+	option = {
+		name = "I didn't like the French anyways..."
+	}
+}
