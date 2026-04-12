@@ -9158,7 +9158,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_eng_god_save_the_king
-		x = 3
+		x = 4
 		y = 1
 		relative_position_id = ENG_the_kings_party
 		cost = 7.2
@@ -9223,7 +9223,7 @@ focus_tree = {
 		}
 
 		icon = GFX_focus_RJ_ENG_ceylon_forward_operating_base
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = ENG_the_sun_never_sets
 		cost = 7.2
@@ -9281,7 +9281,7 @@ focus_tree = {
 		}
 		will_lead_to_war_with = JAP
 		icon = GFX_focus_attack_japan
-		x = -1
+		x = -2
 		y = 2
 		relative_position_id = ENG_the_sun_never_sets
 		cost = 7.2
@@ -9303,34 +9303,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ENG_imperial_conscription
-		prerequisite = { focus = ENG_god_save_the_king }	
-		available = {
-
-		}
-		icon = GFX_focus_generic_commonwealth_build_infantry
-		x = 2
-		y = 1
-		relative_position_id = ENG_god_save_the_king
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		search_filters = {FOCUS_FILTER_MANPOWER}	
-		completion_reward = {
-			add_ideas = ENG_imperial_conscription_idea
-			every_country = {
-				limit = {
-					is_subject_of = ENG
-				}
-				add_ideas = ENG_imperial_conscription_subject_idea
-			}
-		}
-	}
-
-	focus = {
 		id = ENG_consolidate_the_british_isles
-		prerequisite = { focus = ENG_imperial_conscription }	
+		prerequisite = { focus = ENG_the_sun_never_sets }	
 		available = {
 			is_subject = no
 			country_exists = IRE
@@ -9340,18 +9314,12 @@ focus_tree = {
 			owns_state = 113
 			owns_state = 134
 			owns_state = 135
-			owns_state = 119
-			owns_state = 122
-			owns_state = 133
-			owns_state = 121
-			owns_state = 136
-			owns_state = 120
 		}
 		will_lead_to_war_with = IRE
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 1
+		icon = GFX_focus_RJ_ENG_take_ireland
+		x = 0
 		y = 2
-		relative_position_id = ENG_imperial_conscription
+		relative_position_id = ENG_the_sun_never_sets
 		cost = 7.2
 		ai_will_do = {
 			factor = 1
@@ -9384,6 +9352,162 @@ focus_tree = {
 			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = RJ_ENG_reclaim_angevin_lands
+		prerequisite = { focus = ENG_consolidate_the_british_isles }	
+		available = {
+			is_subject = no
+			NOT = {
+				is_in_faction_with = FRA
+				has_non_aggression_pact_with = FRA
+			}
+		}
+		icon = GFX_focus_attack_france
+		x = -1
+		y = 1
+		relative_position_id = ENG_consolidate_the_british_isles
+		will_lead_to_war_with = FRA
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			FRA = {
+				add_opinion_modifier = {
+					target = ENG
+					modifier = large_decrease
+				}
+			}
+			add_state_claim = 14
+			add_state_claim = 15
+			add_state_claim = 30
+			add_state_claim = 23
+			add_state_claim = 19
+			add_state_claim = 806
+			add_state_claim = 31
+			add_state_claim = 25
+			add_state_claim = 33
+			add_state_claim = 22
+			add_state_claim = 26
+
+			create_wargoal = {
+				target = var:14.owner
+				type = annex_everything
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = RJ_ENG_integration_of_angevin_lands
+		prerequisite = { focus = RJ_ENG_reclaim_angevin_lands }	
+		available = {
+			has_capitulated = no
+			controls_state = 14
+			controls_state = 15
+			controls_state = 30
+			controls_state = 23
+			controls_state = 19
+			controls_state = 806
+			controls_state = 31
+			controls_state = 25
+			controls_state = 33
+			controls_state = 22
+			controls_state = 26
+			controls_state = 113
+			controls_state = 135
+		}
+		icon = GFX_focus_RJ_ENG_integrate_angevin_lands
+		x = 0
+		y = 1
+		relative_position_id = RJ_ENG_reclaim_angevin_lands
+		will_lead_to_war_with = FRA
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			14 = {
+				add_core_of = ENG
+			}
+			15 = {
+				add_core_of = ENG
+			}
+			30 = {
+				add_core_of = ENG
+			}
+			23 = {
+				add_core_of = ENG
+			}
+			19 = {
+				add_core_of = ENG
+			}
+			806 = {
+				add_core_of = ENG
+			}
+			31 = {
+				add_core_of = ENG
+			}
+			25 = {
+				add_core_of = ENG
+			}
+			33 = {
+				add_core_of = ENG
+			}
+			22 = {
+				add_core_of = ENG
+			}
+			26 = {
+				add_core_of = ENG
+			}
+			if = {
+				limit = {
+					113 = {
+						NOT = {
+							is_core_of = ENG
+						}
+					}
+				}
+				113 = {
+					add_core_of = ENG
+				}
+			}
+			if = {
+				limit = {
+					135 = {
+						NOT = {
+							is_core_of = ENG
+						}
+					}
+				}
+				135 = {
+					add_core_of = ENG
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_ANNEXATION }
+	}
+
+	focus = {
+		id = ENG_imperial_conscription
+		prerequisite = { focus = ENG_the_sun_never_sets }	
+		available = {
+
+		}
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		x = 2
+		y = 1
+		relative_position_id = ENG_the_sun_never_sets
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_MANPOWER}	
+		completion_reward = {
+			add_ideas = ENG_imperial_conscription_idea
+		}
 	}
 
 	focus = {
@@ -9504,7 +9628,7 @@ focus_tree = {
 		will_lead_to_war_with = NZL
 		icon = GFX_focus_eng_bring_the_dominions_back_into_the_fold
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = ENG_appeal_to_imperial_loyalists
 		cost = 10
 		ai_will_do = {
@@ -9609,7 +9733,7 @@ focus_tree = {
 				}
 			}
 		}
-		icon = GFX_goal_generic_occupy_states_ongoing_war
+		icon = GFX_focus_RJ_ENG_reclaim_burma
 		will_lead_to_war_with = BRM
 		x = 1
 		y = 1
@@ -9755,10 +9879,10 @@ focus_tree = {
 		}
 		will_lead_to_war_with = USA
 		icon = GFX_focus_eng_unite_the_anglosphere
-		x = 1
-		y = 1
+		x = 0
+		y = 2
 		relative_position_id = ENG_bring_the_dominions_back_into_the_fold
-		cost = 10
+		cost = 7.2
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -9864,6 +9988,83 @@ focus_tree = {
 					country_event = { id = mtg_britain.79 hours = 6 }
 				} 
 			}
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_maintain_absolute_power
+		prerequisite = { focus = ENG_god_save_the_king }	
+		mutually_exclusive = {
+			focus = RJ_ENG_restore_the_parliament
+		}
+		icon = GFX_focus_generic_monarchy_2
+		x = 3
+		y = 1
+		relative_position_id = ENG_god_save_the_king
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}	
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_restore_royal_titles
+		prerequisite = { focus = RJ_ENG_maintain_absolute_power }	
+		mutually_exclusive = {
+			focus = RJ_ENG_restore_the_parliament
+		}
+		icon = GFX_focus_generic_monarchy_2
+		x = -1
+		y = 1
+		relative_position_id = RJ_ENG_maintain_absolute_power
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}	
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_restore_the_parliament
+		prerequisite = { focus = ENG_god_save_the_king }
+		mutually_exclusive = {
+			focus = RJ_ENG_maintain_absolute_power
+		}
+		icon = GFX_focus_ETH_re-convene_the_parliament
+		x = 5
+		y = 1
+		relative_position_id = ENG_god_save_the_king
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}	
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_demand_union_with_hanover
+		prerequisite = { focus = RJ_ENG_maintain_absolute_power focus = RJ_ENG_restore_the_parliament }
+		icon = GFX_focus_RJ_ENG_union_with_hanover
+		x = 1
+		y = 1
+		relative_position_id = RJ_ENG_maintain_absolute_power
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}	
+		completion_reward = {
+			
 		}
 	}
 
