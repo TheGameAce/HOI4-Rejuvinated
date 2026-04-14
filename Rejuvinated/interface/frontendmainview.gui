@@ -215,11 +215,16 @@ guiTypes = {
 		animation_time = 1000
 		size = { width = 256 height = 768}
 		
-		iconType =
-		{
+		iconType = {
 			name ="frontend_game_logo"
 			spriteType = "GFX_frontend_game_logo"
 			position = { x= 20 y = 20 }
+		}
+
+		iconType = {
+			name ="rejuvenated_logo"
+			spriteType = "GFX_rj_logo"
+			position = { x= 1135 y = 70 }
 		}
 		
 	}
