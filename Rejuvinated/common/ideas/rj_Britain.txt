@@ -434,7 +434,7 @@ ideas = {
 		}
 
 		ENG_god_save_the_king_idea = {
-			picture = chi_chinese_unity
+			picture = RJ_idea_ENG_god_save_the_king
 
 			allowed = {
 				always = no
@@ -447,10 +447,52 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				army_core_defence_factor = 0.10
+				stability_factor = 0.05
+				political_power_factor = 0.05
+			}
+		}
+
+		ENG_god_save_the_king2_idea = {
+			picture = RJ_idea_ENG_god_save_the_king
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
 				stability_factor = 0.10
-				war_support_factor = 0.05
-				political_power_factor = 0.10
+				political_power_factor = 0.15
+				democratic_acceptance = 20
+				justify_war_goal_time = -0.10
+			}
+		}
+
+		ENG_god_save_the_king3_idea = {
+			picture = RJ_idea_ENG_god_save_the_king
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = 0.10
+				political_power_factor = 0.15
+				democratic_acceptance = 20
+				justify_war_goal_time = -0.15
+				war_support_factor = 0.10
+				army_core_defence_factor = 0.10
 			}
 		}
 	}

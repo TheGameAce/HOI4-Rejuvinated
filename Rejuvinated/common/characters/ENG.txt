@@ -69,6 +69,28 @@ characters={
 		}
 	}
 
+	ENG_edward_viii = {
+		name = "Edward VIII"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_Edward_VIII
+			}
+			army = {
+				large = GFX_portrait_Edward_VIII
+			}
+		}
+
+		country_leader = {
+			ideology = monarchy
+			traits = {
+				inexperienced_imperialist
+				ENG_edward_1
+			}
+			desc = "POLITICS_EDWARD_EDWARD_DESC"
+			expire = "1965.1.1"
+		}
+	}
+
 	ENG_david_lloyd_george={
 		name=ENG_david_lloyd_george
 		portraits={
