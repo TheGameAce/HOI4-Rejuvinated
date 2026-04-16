@@ -109,7 +109,7 @@ IRQ = {
 		}
 		diplomatic_relation = { 
 			country = ENG
-			relation = OFFER_AIR_BASE_ACCESS 
+			relation = air_base_access 
 			active = yes
 		}
 	}
@@ -226,110 +226,124 @@ if = {
 		mtg_transport = 1
 		basic_fire_control_system = 1
 		basic_dp_light_battery = 1
+		coastal_defense_ships = 1
 	}
-	add_ideas = MTG_naval_treaty_adherent
-	set_global_flag = MTG_second_london_conference
-	set_global_flag = { flag = MTG_naval_treaty_signatories value = 5 }
 }
-
-set_variable = { var = eng_gateway_to_europe_influence value = 0 }
 
 add_ideas = {
 	stiff_upper_lip
 	ENG_the_war_to_end_all_wars
 	george_v
+	MTG_naval_treaty_adherent
 }
-	
+
+set_global_flag = MTG_second_london_conference
+set_global_flag = {
+	flag = MTG_naval_treaty_signatories value = 5
+}
+
+set_variable = {
+	eng_gateway_to_europe_influence = 0
+}
+
+add_dynamic_modifier = {
+	modifier = rj_ENG_the_economy
+}
+set_variable = {
+	rj_ENG_the_economy_global_building_slots_factor = 0
+}
+set_variable = {
+	rj_ENG_the_economy_consumer_goods_factor = 0.1
+}
+set_variable = {
+	rj_ENG_the_economy_conversion_cost_civ_to_mil_factor = 0
+}
+set_variable = {
+	rj_ENG_the_economy_production_speed_arms_factory_factor = 0
+}
+set_variable = {
+	rj_ENG_the_economy_production_speed_industrial_complex_factor = 0
+}
+set_variable = {
+	rj_ENG_the_economy_production_speed_infrastructure_factor = 0
+}
+set_variable = {
+	rj_ENG_the_economy_industrial_capacity_factory = 0
+}
+set_variable = {
+	rj_ENG_the_economy_industrial_capacity_dockyard = 0
+}
+set_variable = {
+	rj_ENG_the_economy_monthly_population = 0
+}
+set_variable = {
+	rj_ENG_the_economy_production_speed_buildings_factor = 0
+}
 
 set_convoys = 1000
 
 # DIPLOMACY
-if = {
-	limit = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Man the Guns"
-		}
-	}
-	set_autonomy = {
-		target = MAL
-		autonomous_state = autonomy_colony
-	}
-	set_autonomy = {
-		target = RAJ
-		autonomous_state = autonomy_colony
-		freedom_level = 0.35
-	}
-	set_autonomy = {
-		target = OMA
-		autonomous_state = autonomy_colony
-		freedom_level = 0.35
-	}
-	set_autonomy = {
-		target = CAN
-		autonomous_state = autonomy_dominion
-		freedom_level = 0.4
-	}
-	set_autonomy = {
-		target = SAF
-		autonomous_state = autonomy_dominion
-		freedom_level = 0.4
-	}
-	set_autonomy = {
-		target = AST
-		autonomous_state = autonomy_dominion
-		freedom_level = 0.2
-	}
-	set_autonomy = {
-		target = NZL
-		autonomous_state = autonomy_dominion
-		freedom_level = 0.2
-	}
-	set_autonomy = {
-		target = EGY
-		autonomous_state = autonomy_dominion
-		freedom_level = 0.2
-	}
-	set_autonomy = {
-		target = PAL
-		autonomous_state = autonomy_integrated_puppet
-		freedom_level = 0.5
-	}
-	set_autonomy = {
-		target = JOR
-		autonomous_state = autonomy_dominion
-		freedom_level = 0.2
-	}
-	#set_autonomy = {
-	#	target = MLT
-	#	autonomous_state = autonomy_colony
-	#	freedom_level = 0.6
-	#}
-	#set_autonomy = {
-	#	target = CYP
-	#	autonomous_state = autonomy_colony
-	#	freedom_level = 0.3
-	#}
-
-	else = {
-		puppet = MAL
-		puppet = RAJ
-		puppet = JOR
-		puppet = PAL
-		puppet = EGY
-		puppet = OMA
-		#puppet = MLT
-		#puppet = CYP
-	}
+set_autonomy = {
+	target = MAL
+	autonomous_state = autonomy_colony
 }
-
-
-if = {
-	limit = { has_dlc = "Together for Victory" }
-
-	add_to_tech_sharing_group = commonwealth_research
+set_autonomy = {
+	target = RAJ
+	autonomous_state = autonomy_colony
+	freedom_level = 0.35
 }
+set_autonomy = {
+	target = OMA
+	autonomous_state = autonomy_colony
+	freedom_level = 0.35
+}
+set_autonomy = {
+	target = CAN
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.4
+}
+set_autonomy = {
+	target = SAF
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.4
+}
+set_autonomy = {
+	target = AST
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.2
+}
+set_autonomy = {
+	target = NZL
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.2
+}
+set_autonomy = {
+	target = EGY
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.2
+}
+set_autonomy = {
+	target = PAL
+	autonomous_state = autonomy_integrated_puppet
+	freedom_level = 0.5
+}
+set_autonomy = {
+	target = JOR
+	autonomous_state = autonomy_dominion
+	freedom_level = 0.2
+}
+#set_autonomy = {
+#	target = MLT
+#	autonomous_state = autonomy_colony
+#	freedom_level = 0.6
+#}
+#set_autonomy = {
+#	target = CYP
+#	autonomous_state = autonomy_colony
+#	freedom_level = 0.3
+#}
 
+add_to_tech_sharing_group = commonwealth_research
 
 set_politics = {
 	ruling_party = democratic
@@ -343,29 +357,28 @@ set_popularities = {
 	communism = 1
 }
 
-
 create_faction_from_template = faction_template_allies
-IF= {
+if = {
 	limit = {
 		has_dlc = "No Compromise, No Surrender"
 	}
 	add_faction_goal_slot = {
-		category  = long_term
+		category = long_term
 		value = 1 
 	}
 }
 add_to_faction = ENG
-#add_to_faction = FRA
 add_to_faction = CAN
 add_to_faction = AST
 add_to_faction = NZL
 add_to_faction = SAF
-
-give_military_access = RAJ
-add_to_faction = RAJ		# Must be after puppet
+add_to_faction = RAJ
 add_to_faction = MAL
-
-#give_guarantee = CZE
+add_to_faction = EGY
+#add_to_faction = PAL
+#add_to_faction = JOR
+#add_to_faction = MLT
+#add_to_faction = CYP
 
 # Order matters - here Chamberlain becomes starting leader
 recruit_character = ENG_oswald_mosley
@@ -467,6 +480,11 @@ recruit_character = ENG_john_cockcroft
 recruit_character = ENG_charles_goodeve
 recruit_character = ENG_nevil_shute
 recruit_character = ENG_robert_watson_watt
+
+#RJ Characters
+recruit_character = ENG_edward_halifax
+recruit_character = ENG_surat_alley
+recruit_character = ENG_bill_alexander
 
 if = {
 	limit = {
@@ -617,6 +635,35 @@ if = {
 			ship_gun_upgrade = 2
 		}
 	}
+
+	# Coastal Defense Ships #
+	create_equipment_variant = {
+		name = "Erebus Class"
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = ENG_BM_HISTORICAL
+		parent_version = 0
+		design_team = mio:ENG_harland_wolff_organization
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_secondaries_slot = empty
+			fixed_ship_armor_slot = ship_armor_cruiser_2
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		optional_assets = {
+			{
+				icon = "GFX_commonwealth_heavy_cruiser_erebus"
+				model = "commonwealth_gfx_heavy_cruiser_2_entity"
+			}
+		}
+		obsolete = yes
+	}
+
 	# Battleships #
 	create_equipment_variant = {
 		name = "Nelson Class"
@@ -949,6 +996,32 @@ if = {
 			rear_1_custom_slot = ship_mine_layer_1
 		}
 	}
+	create_equipment_variant = {
+			name = "Erebus Class"
+			type = ship_hull_cruiser_coastal_defense_ship
+			name_group = ENG_BM_HISTORICAL
+			parent_version = 0
+			design_team = mio:ENG_harland_wolff_organization
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_2
+				mid_1_custom_slot = empty
+				mid_2_custom_slot = empty
+				rear_1_custom_slot = empty
+			}
+			optional_assets = {
+				{
+					icon = "GFX_commonwealth_heavy_cruiser_erebus"
+					model = "commonwealth_gfx_heavy_cruiser_2_entity"
+				}
+			}
+			obsolete = yes
+		}
 	create_equipment_variant = {
 			name = "Town Class"
 			type = ship_hull_cruiser_2

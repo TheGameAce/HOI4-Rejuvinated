@@ -1,0 +1,141 @@
+add_namespace = rj_britain
+
+# Motion of No Confidence (Chamberlain)
+country_event = {
+	id = rj_britain.1
+	title = rj_britain.1.t
+	desc = rj_britain.1.desc
+	picture = GFX_report_event_chamberlain
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_country_leader =  {
+			character = ENG_neville_chamberlain
+			ruling_only = yes
+		}
+		has_war_with_major = yes
+		casualties_k > 5
+		CZE = {
+			if = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				has_capitulated = yes
+			}
+		}
+		POL = {
+			if = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				has_capitulated = yes
+			}
+		}
+		AUS = {
+			if = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				has_capitulated = yes
+			}
+		}
+		any_allied_country = {
+			OR = {
+				original_tag = NOR
+				original_tag = BEL
+				original_tag = HOL
+				original_tag = LUX
+			}
+			surrender_progress > 0.1
+		}
+	}
+
+	option = {
+		name = rj_britain.1.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				ENG_historical_ai = yes
+			}
+		}
+		add_stability = -0.05
+	}
+
+	option = {
+		name = rj_britain.1.b
+		ai_chance = {
+			base = 50
+		}
+		set_country_flag = chamberlain_resigned
+		country_event = { id = rj_britain.2 hours = 6 }
+	}
+}
+
+# Motion of No Confidence (Chamberlain)
+country_event = {
+	id = rj_britain.2
+	title = rj_britain.2.t
+	desc = rj_britain.2.desc
+	picture = GFX_report_event_PLACEHOLDER
+
+	is_triggered_only = yes
+
+	option = {
+		name = rj_britain.2.a
+		ai_chance = {
+			base = 50
+		}
+		promote_character = ENG_winston_churchill
+	}
+
+	option = {
+		name = rj_britain.2.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				ENG_historical_ai = yes
+			}
+		}
+		promote_character = ENG_edward_halifax
+	}
+}
+
+# The Battle of Cable Street
+country_event = {
+	id = rj_britain.3
+	title = rj_britain.3.t
+	desc = rj_britain.3.desc
+	picture = GFX_report_event_PLACEHOLDER
+
+	is_triggered_only = yes
+
+	option = {
+		name = rj_britain.3.a
+		ai_chance = {
+			base = 50
+		}
+		add_stability = -0.05
+		add_war_support = -0.05
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.05
+		}
+		set_country_flag = ENG_public_order_act_1936_flag
+	}
+
+	option = {
+		name = rj_britain.3.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				ENG_historical_ai = yes
+			}
+		}
+		add_stability = -0.1
+	}
+}
