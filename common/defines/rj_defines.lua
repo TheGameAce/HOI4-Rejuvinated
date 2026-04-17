@@ -21,6 +21,7 @@ NDefines.NProduction.EQUIPMENT_MODULE_ADD_XP_COST = 3.0 -- XP cost for adding a 
 NDefines.NProduction.EQUIPMENT_MODULE_REPLACE_XP_COST = 4.0 -- XP cost for replacing one equipment module with an unrelated module when creating an equipment variant.
 NDefines.NProduction.EQUIPMENT_MODULE_CONVERT_XP_COST = 2.0 -- XP cost for converting one equipment module to a related module when creating an equipment variant.
 NDefines.NProduction.MINIMUM_NUMBER_OF_FACTORIES_TAKEN_BY_CONSUMER_GOODS_PERCENT = 0.05 -- The minimum number of factories we have to put on consumer goods, in percent.
+NDefines.NProduction.MAX_EQUIPMENT_RESOURCES_NEED = 4
 
 -- NPolitics
 NDefines.NPolitics.ARMY_LEADER_MAX_COST = 50 -- max cost BEFORE modifiers
