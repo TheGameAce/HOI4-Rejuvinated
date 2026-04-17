@@ -57,8 +57,8 @@ focus_tree = {
 	##############################
 
 	focus = {
-		id = rj_CZE_ask_for_comintern_funding
-		icon = GFX_goal_generic_intelligence_exchange
+		id = rj_CZE_ask_for_comintern_help
+		icon = GFX_goal_support_communism
 		x = 6
 		y = 0
 
@@ -80,8 +80,6 @@ focus_tree = {
 
 		}
 
-		available_if_capitulated = yes
-
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
@@ -89,7 +87,44 @@ focus_tree = {
 				idea = rj_CZE_comintern_interference_ns
 				days = 360
 			}
-			
+			unlock_decision_category_tooltip = rj_CZE_communist_propaganda_cat
+		}
+	}
+
+	focus = {
+		id = rj_CZE_increase_pravda_funding
+		icon = GFX_goal_generic_propaganda_film
+		prerequisite = { focus = rj_CZE_ask_for_comintern_help }
+		x = 0
+		y = 1
+		relative_position_id = rj_CZE_ask_for_comintern_help
+
+		cost = 5
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0.1
+				HABSBURG_joint_trigger = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			modify_timed_idea = {
+				idea = rj_CZE_comintern_interference_ns
+				days = 30
+			}
+			unlock_decision_tooltip = rj_CZE_fund_pravda
 		}
 	}
 
