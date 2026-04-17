@@ -796,3 +796,188 @@ country_event = { #Our Old Rival Event - Non-Aggression Proposed (Rejected)
 		name = "I didn't like the French anyways..."
 	}
 }
+
+country_event = { #Coal Miners Event
+	id = rj_britain.9
+	title = rj_britain.9.t
+	desc = rj_britain.9.d
+	picture = GFX_coal_miners
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Fund mining operations!"
+
+		ai_chance = {
+			base = 1
+		}
+
+		add_resource = {
+			type = coal
+			amount = 30
+			state = 131
+		}
+		add_stability = 0.05
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+		add_to_variable = {
+			rj_ENG_the_economy_consumer_goods_factor = -0.03
+			tooltip = consumer_goods_factor_tt
+		}
+		add_to_variable = {
+			rj_ENG_the_economy_local_resources_factor = 0.15
+			tooltip = local_resources_factor_tt
+		}
+	}
+
+	option = {
+		name = "Perhaps some new factories to work in?"
+
+		ai_chance = {
+			base = 1
+		}
+
+		random_core_state = {
+			prioritize = {
+				131
+			}
+			add_extra_state_shared_building_slots = 5
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		add_stability = 0.03
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+		add_to_variable = {
+			rj_ENG_the_economy_industrial_capacity_factory = 0.10
+			tooltip = industrial_capacity_factory_tt
+		}
+	}
+
+	option = {
+		name = "We could start a work program!"
+
+		ai_chance = {
+			base = 1
+		}
+
+		add_stability = 0.03
+
+		custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+		add_to_variable = {
+			rj_ENG_the_economy_production_speed_infrastructure_factor = 0.20
+			tooltip = production_speed_infrastructure_factor_tt
+		}
+		add_to_variable = {
+			rj_ENG_the_economy_production_speed_buildings_factor = 0.15
+			tooltip = production_speed_buildings_factor_tt
+		}
+	}
+}
+
+country_event = { #Demand Union w/ Hanover - Initial Event
+	id = rj_britain.10
+	title = rj_britain.10.t
+	desc = rj_britain.10.d
+	picture = GFX_report_event_SOV_demands
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Hanover is ours!"
+		
+		ai_chance = {
+			base = 1
+		}
+
+		ENG = {
+			country_event = rj_britain.10a
+		}
+	}
+
+	option = {
+		name = "What's it to us? Let them have it."
+
+		ai_chance = {
+			base = 2
+			modifier = {
+				if = {
+					limit = {
+						ROOT = {
+							has_government = neutrality
+						}
+					}
+				}
+				factor = 3
+			}
+		}
+
+		ENG = {
+			country_event = rj_britain.10b
+		}
+	}
+}
+
+country_event = { #Demand Union w/ Hanover - Negative Response
+	id = rj_britain.10a
+	title = rj_britain.10a.t
+	desc = rj_britain.10a.d
+	picture = GFX_report_event_SOV_demands
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Time to take it the hard way."
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_war_support > 24
+				factor = 3
+			}
+		}
+
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+		59 = {
+			add_claim_by = ENG
+		}
+	}
+
+	option = {
+		name = "Hmmph. Well, it's not worth an all-out war..."
+
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = { #Demand Union w/ Hanover - Positive Response
+	id = rj_britain.10b
+	title = rj_britain.10b.t
+	desc = rj_britain.10b.d
+	picture = GFX_report_event_second_vienna_award_pact
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Splendid!"
+		59 = {
+			transfer_state_to = ENG
+			add_core_of = ENG
+		}
+		add_country_leader_trait = ENG_hanover_trait
+	}
+}

@@ -9279,6 +9279,11 @@ focus_tree = {
 	focus = {
 		id = RJ_ENG_demand_union_with_hanover
 		prerequisite = { focus = RJ_ENG_power_over_parliament }
+		available = {
+			NOT = {
+				owns_state = 59
+			}
+		}
 		icon = GFX_focus_RJ_ENG_union_with_hanover
 		x = 0
 		y = 3
@@ -9289,7 +9294,11 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_RESEARCH}	
 		completion_reward = {
-			
+			59 = {
+				OWNER = {
+					country_event = rj_britain.10
+				}
+			}
 		}
 	}
 
@@ -9300,7 +9309,7 @@ focus_tree = {
 			has_war = yes
 		}
 		icon = GFX_focus_RAJ_kingmaker
-		x = 3
+		x = 1
 		y = 1
 		relative_position_id = RJ_ENG_power_over_parliament
 		cost = 5
@@ -9329,19 +9338,42 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RJ_ENG_address_the_plight_of_the_coal_miners
-		prerequisite = { focus = RJ_ENG_power_over_parliament }
-		icon = GFX_focus_generic_coal_mining
-		x = 1
+		id = RJ_ENG_in_service_of_the_king
+		prerequisite = { focus = RJ_ENG_the_kings_command }
+		available = {
+			has_war = yes
+		}
+		icon = GFX_focus_RJ_ENG_in_service_of_the_king
+		x = 0
 		y = 1
-		relative_position_id = RJ_ENG_power_over_parliament
-		cost = 7.2
+		relative_position_id = RJ_ENG_the_kings_command
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 		search_filters = {FOCUS_FILTER_RESEARCH}	
 		completion_reward = {
-			
+			swap_ideas = {
+				remove_idea = ENG_god_save_the_king3_idea
+				add_idea = ENG_god_save_the_king4_idea
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_address_the_plight_of_the_coal_miners
+		prerequisite = { focus = RJ_ENG_power_over_parliament }
+		icon = GFX_focus_generic_coal_mining
+		x = 3
+		y = 1
+		relative_position_id = RJ_ENG_power_over_parliament
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		search_filters = {FOCUS_FILTER_RESEARCH}	
+		completion_reward = {
+			country_event = rj_britain.9
 		}
 	}
 
