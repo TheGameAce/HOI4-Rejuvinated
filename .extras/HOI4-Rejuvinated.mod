@@ -1,0 +1,17 @@
+version="26.4.0"
+picture="thumbnail.png"
+tags={
+	"Alternative History"
+	"Events"
+	"Balance"
+	"Military"
+	"Map"
+	"Historical"
+	"Gameplay"
+	"National Focuses"
+	"Technologies"
+}
+name="Rejuvenated"
+supported_version="1.17.4.1"
+path="mod/HOI4-Rejuvinated"
+remote_file_id="3672337715"

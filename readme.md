@@ -66,9 +66,9 @@ If you'd like to either contribute to this project or you're simply interested i
 
 # HOW TO SETUP THE GITHUB INSTALATION
 ## STEP 1
-Clone the GitHub repository into "C:\Users\%username%\Documents\Paradox Interactive\Hearts of Iron IV\mod\Rejuvenated" directory on Windows. For Linux Ubuntu users (Ubuntu, Mint, Debian), this directory is "/home/%username%/.local/share/Paradox Interactive/Hearts of Iron IV/mod/Rejuvenated".
+Clone the GitHub repository into "C:\Users\%username%\Documents\Paradox Interactive\Hearts of Iron IV\mod\HOI4-Rejuvinated" directory on Windows. For Linux Ubuntu users (Ubuntu, Mint, Debian), this directory is "/home/%username%/.local/share/Paradox Interactive/Hearts of Iron IV/mod/HOI4-Rejuvinated".
 ## STEP 2
-Copy the "Rejuvenated.mod" file found in the .extras folder in the mod into the "C:\Users\%username%\Documents\Paradox Interactive\Hearts of Iron IV\mod" directory on Windows. For Linux Ubuntu users (Ubuntu, Mint, Debian), this directory is "/home/%username%/.local/share/Paradox Interactive/Hearts of Iron IV/mod".
+Copy the "HOI4-Rejuvinated.mod" file found in the .extras folder in the mod into the "C:\Users\%username%\Documents\Paradox Interactive\Hearts of Iron IV\mod" directory on Windows. For Linux Ubuntu users (Ubuntu, Mint, Debian), this directory is "/home/%username%/.local/share/Paradox Interactive/Hearts of Iron IV/mod".
 ## STEP 3
 Go to the launcher and click "Mod library". In there click at the reload button in top right, tick "Also clear out cached information and update from server" and click reload.
 ## STEP 4
