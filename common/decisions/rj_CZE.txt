@@ -1,0 +1,43 @@
+rj_CZE_communist_propaganda_cat = {
+
+	rj_CZE_fund_pravda = {
+
+		icon = infiltrate_state
+
+		ai_will_do = {
+			base = 10
+		}
+
+		allowed = {
+			original_tag = CZE
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = rj_CZE_communist_propaganda_ongoing_flag
+			}
+		}
+
+		visible = {
+			has_completed_focus = rj_CZE_ask_for_comintern_funding
+		}
+
+		cost = 50
+
+		days_remove = 30
+
+		modifier = {
+			communism_drift = 0.05
+			political_power_factor = -0.05
+		}
+
+		complete_effect = {
+			set_country_flag = rj_CZE_communist_propaganda_ongoing_flag
+		}
+
+		remove_effect = {
+			clr_country_flag = rj_CZE_communist_propaganda_ongoing_flag
+		}
+	}
+
+}

@@ -52,6 +52,47 @@ focus_tree = {
 #		}
 #	}
 
+	##############################
+	#### POLITICS - COMMUNISM ####
+	##############################
+
+	focus = {
+		id = rj_CZE_ask_for_comintern_funding
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 6
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0.1
+				HABSBURG_joint_trigger = yes
+			}
+		}
+
+		available = {
+			is_subject = no
+		}
+
+		bypass = {
+
+		}
+
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = rj_CZE_comintern_interference_ns
+				days = 360
+			}
+			
+		}
+	}
+
 	############################
 	##### Fortification focuses#
 	############################
@@ -60,7 +101,7 @@ focus_tree = {
 		id = CZE_fortification_studies
 		icon = GFX_focus_hol_the_foundations_of_defense
 		x = 3
-		y = 0
+		y = 12
 
 		cost = 10
 

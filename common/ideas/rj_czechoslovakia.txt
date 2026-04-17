@@ -1,0 +1,26 @@
+ideas = {
+
+	country = {
+
+		rj_CZE_comintern_interference_ns = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				has_government = communism
+			}
+
+			picture = generic_communism_drift_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.05
+			}
+		}
+
+	}
+
+}

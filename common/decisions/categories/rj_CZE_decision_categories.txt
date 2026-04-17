@@ -1,0 +1,15 @@
+################
+##### CZE ######
+################
+
+rj_CZE_communist_propaganda_cat = {
+	icon = GFX_decision_category_generic_communism
+
+	allowed = {
+		original_tag = CZE
+	}
+
+	visible = {
+		has_completed_focus = rj_CZE_ask_for_comintern_funding
+	}
+}
