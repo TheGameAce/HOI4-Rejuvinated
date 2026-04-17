@@ -1,0 +1,92 @@
+technologies = {
+
+    gnr = {
+        enable_subunits = {
+            GNR
+        }
+
+        research_cost = 1
+        start_year = 1936
+
+        # not researchable #####
+        allow = {
+           always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+	
+    grp = {
+        enable_subunits = {
+            GRP
+        }
+
+        research_cost = 1
+        start_year = 1936
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    ofp = {
+        enable_subunits = {
+            OFP
+        }
+
+        research_cost = 1
+        start_year = 1936
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+	fec = {
+        enable_subunits = {
+            FEC
+        }
+
+        research_cost = 1
+        start_year = 1936
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+    ocl = {
+        enable_subunits = {
+            OCL
+        }
+
+        research_cost = 1
+        start_year = 1936
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}

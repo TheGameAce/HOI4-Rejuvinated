@@ -4,7 +4,7 @@ bookmarks = {
 		desc = "GATHERING_STORM_DESC"
 		date = 1936.1.1.12
 		picture = "GFX_select_date_1936"
-		default_country = "ENG"
+		default_country = "POR"
 		default = yes
 		
 		"FRA"={
@@ -57,7 +57,6 @@ bookmarks = {
 		ENG = {
 			history = "ENG_GATHERING_STORM_DESC"
 			ideology = democratic
-			new_content = yes
 			ideas = {
 				stiff_upper_lip
 				ENG_the_war_to_end_all_wars
@@ -208,7 +207,6 @@ bookmarks = {
 			minor = yes
 			history = "CUB_GATHERING_STORM_DESC"
 			ideology = democratic
-			new_content = yes
 			ideas = {
 				CUB_batistas_influence
 				CUB_recovering_sugar_industry
@@ -225,7 +223,6 @@ bookmarks = {
 			minor = yes
 			history = "BRA_GATHERING_STORM_DESC"
 			ideology = neutrality
-			new_content = yes
 			ideas = {
 				bra_bandeirantes
 				bra_1930
@@ -235,6 +232,23 @@ bookmarks = {
 				bra_quereismo
 				bra_monarquia_2_focus
 				bra_a_voz_do_brasil
+			}
+		}
+
+		"POR"={
+			minor = yes
+			history = "POR_BLITZKRIEG_DESC"
+			ideology = neutrality
+			new_content = yes
+			ideas = {
+				estado_novo
+				POR_disorganized_army
+				POR_holy_see
+			}
+			focuses = {
+				POR_concordat_with_the_holy_see
+				POR_legiao_portuguesa
+				POR_miguelist_constitution
 			}
 		}
 
