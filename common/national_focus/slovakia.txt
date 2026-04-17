@@ -1,0 +1,156 @@
+focus_tree = {
+	id = slovakia_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SLO
+		}
+	}
+
+	focus = {
+		id = SLO_proudly_alone
+		icon = GFX_focus_PLACEHOLDER
+		mutually_exclusive = { focus = SLO_submit_to_germany }
+		cost = 10
+		x = 6
+		y = 0
+
+		available = {
+
+		}
+
+		completion_reward = {
+
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = SLO_submit_to_germany
+		icon = GFX_focus_PLACEHOLDER
+		mutually_exclusive = { focus = SLO_proudly_alone }
+		cost = 10
+		x = 2
+		y = 0
+		relative_position_id = SLO_proudly_alone
+
+		available = {
+
+		}
+
+		completion_reward = {
+			add_ideas = SLO_schutzvertrag_ns
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+	}
+
+	focus = {
+		id = SLO_democracy_communism_1
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = SLO_proudly_alone focus = SLO_submit_to_germany }
+		mutually_exclusive = { focus = SLO_monarchy_1 focus = SLO_fascism_1 }
+		cost = 10
+		x = -4
+		y = 1
+		relative_position_id = SLO_proudly_alone
+
+		available = {
+			OR = {
+				is_subject = no
+				OVERLORD = {
+					OR = {
+						has_government = democratic
+						has_government = communism
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = SLO_monarchy_1
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = SLO_proudly_alone focus = SLO_submit_to_germany }
+		mutually_exclusive = { focus = SLO_democracy_communism_1 focus = SLO_fascism_1 }
+		cost = 10
+		x = 1
+		y = 1
+		relative_position_id = SLO_proudly_alone
+
+		available = {
+			OR = {
+				is_subject = no
+				OVERLORD = {
+					OR = {
+						has_idea = GER_wilhelm_iii
+						has_government = neutrality
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = SLO_fascism_1
+		icon = GFX_focus_PLACEHOLDER
+		prerequisite = { focus = SLO_proudly_alone focus = SLO_submit_to_germany }
+		mutually_exclusive = { focus = SLO_democracy_communism_1 focus = SLO_monarchy_1 }
+		cost = 10
+		x = 4
+		y = 1
+		relative_position_id = SLO_submit_to_germany
+
+		available = {
+			OR = {
+				is_subject = no
+				OVERLORD = {
+					has_government = fascism
+				}
+			}
+		}
+
+		completion_reward = {
+
+		}
+
+		ai_will_do = {
+			base = 1
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
+	}
+
+}
