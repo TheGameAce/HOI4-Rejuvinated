@@ -1,0 +1,339 @@
+ideas = {
+
+	country = {
+	}
+	
+	political_advisor = {
+
+		ENG_eric_roberts = {
+			allowed = {
+				original_tag = ENG
+				has_intelligence_agency = yes
+			}
+			traits = { spy_hunter }
+		}
+
+		ENG_william_stephenson = {
+			available = {
+				has_intelligence_agency = yes
+			}
+			
+			allowed = {
+				original_tag = ENG
+				has_dlc = "La Resistance"
+			}
+			
+			traits = { spymaster }
+		}
+
+		FRA_louis_rivet = {
+			available = {
+				has_intelligence_agency = yes
+			}
+			
+			allowed = {
+				original_tag = FRA
+				has_dlc = "La Resistance"
+			}
+			
+			traits = { spymaster }
+		}
+
+		GER_otto_skorzeny = {
+			available = {
+				has_intelligence_agency = yes
+			}
+			
+			allowed = {
+				original_tag = GER
+				has_dlc = "La Resistance"
+			}
+			
+			traits = { spymaster }
+		}
+		
+		GER_reinhard_heydrich = {
+
+			available = {
+				has_completed_focus = GER_rhineland
+			}			
+
+			cost = 250
+
+			allowed = {
+				original_tag = GER
+				has_dlc = "La Resistance"
+			}
+			
+			traits = { iron_heart }
+		}
+
+		ITA_cesare_ame = {
+			available = {
+				has_intelligence_agency = yes
+			}
+			
+			allowed = {
+				original_tag = ITA
+				has_dlc = "La Resistance"
+			}
+			
+			traits = { spymaster }
+		}
+		
+		JAP_hideo_iwakuro = {
+			available = {
+				has_intelligence_agency = yes
+			}
+			
+			allowed = {
+				original_tag = JAP
+				has_dlc = "La Resistance"
+			}
+			
+			traits = { spymaster }
+		}
+		
+		SOV_pavel_sudoplatov = {
+			allowed = {
+				original_tag = SOV
+				has_dlc = "La Resistance"
+			}
+
+			available = 
+			{
+				custom_trigger_tooltip = {
+					tooltip =  SOV_beria_idea
+					has_country_flag = purge_2_group_a
+				}
+				has_intelligence_agency = yes
+				NOT = { 
+					has_country_flag = counter_purge
+				}
+			}
+			
+			traits = { spymaster }
+		}
+
+		SOV_viktor_abakumov = {
+
+			allowed = {
+				original_tag = SOV
+			}
+
+			available = 
+			{
+				custom_trigger_tooltip = {
+					tooltip = SOV_beria_idea
+					has_country_flag = purge_2_group_a
+				}
+				NOT = { 
+					has_country_flag = counter_purge
+				}
+			}
+			
+			traits = { baron_of_terror }
+		}
+
+		SOV_yan_karlovich_berzin = {
+			available = {
+				has_intelligence_agency = yes
+				NOT = { has_country_flag = counter_purge }
+				NOT = { has_country_flag = purge_2_group_a }
+			}
+			
+			allowed = {
+				original_tag = SOV
+				has_dlc = "La Resistance"
+			}
+			
+			traits = { spymaster }
+		}
+
+		TUR_sukru_ali_ogel = {
+			available = {
+				has_intelligence_agency = yes
+			}
+			
+			allowed = {
+				original_tag = TUR
+				has_dlc = "La Resistance"
+			}
+			
+			traits = { spymaster }
+		}
+
+		USA_john_j_mccloy = {
+			allowed = {
+				original_tag = USA
+			}
+			
+			traits = { prince_of_terror }
+		}
+		
+		USA_william_n_elizebeth_friedman = {
+			allowed = {
+				original_tag = USA
+				has_intelligence_agency = yes
+			}
+			
+			traits = { mastermind_code_cracker }
+		}
+	}
+	
+	army_chief = {
+	}
+	
+	air_chief = {
+	}
+	
+	navy_chief = {
+	}
+	
+	
+	high_command = {
+
+		ENG_william_fairbairn = {
+			ledger = army
+
+			available = {
+				has_completed_focus = ENG_special_air_service
+			}
+			
+			allowed = {
+				original_tag = ENG
+			}
+			
+			traits = { army_specops_instructor_3 }
+			
+			ai_will_do = {
+				factor = 0.2
+			}
+		}
+		
+		FIN_simo_hayha = {
+			ledger = army
+
+			allowed = {
+				original_tag = FIN
+			}
+			
+			traits = { army_sniper_adherent }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		GER_theodor_von_hippel = {
+			ledger = army
+
+			available = {
+				has_intelligence_agency = yes
+			}
+			
+			allowed = {
+				original_tag = GER
+			}
+			
+			traits = { army_commando_1 }
+			
+			ai_will_do = {
+				factor = 0.1
+			}
+		}		
+
+		ITA_paolo_aloisi = {
+			ledger = army
+
+			available = {
+				has_intelligence_agency = yes
+			}
+			
+			allowed = {
+				original_tag = ITA
+			}
+			
+			traits = { army_commando_1 }
+			
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+
+		SOV_viktor_leonov = {
+			ledger = army
+
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { army_commando_2 }
+			
+			ai_will_do = {
+				factor = 0.2
+			}
+		}
+		
+		SOV_vasily_zaitsev = {
+			ledger = army
+
+			allowed = {
+				original_tag = SOV
+			}
+			
+			traits = { army_sniper_adherent }
+			
+			ai_will_do = {
+				factor = 0.3
+			}
+		}
+		
+		USA_jack_h_taylor = {
+			ledger = army
+
+
+			available = {
+				has_intelligence_agency = yes
+				has_completed_focus = USA_first_special_service_force
+				has_completed_focus = USA_expand_the_USMC
+			}
+			
+			cost = 250
+			
+			allowed = {
+				original_tag = USA
+			}
+			
+			traits = { 
+				army_commando_2 
+				navy_amphibious_assault_1
+			}
+			
+			ai_will_do = {
+				factor = 0.1
+			}
+		}
+	}
+		
+	tank_manufacturer = { 
+	}
+	
+	naval_manufacturer = { 
+	}
+	
+	aircraft_manufacturer = { 
+	}
+	
+	
+	materiel_manufacturer = {
+	}
+	
+	industrial_concern = {
+	}
+	
+	
+	theorist = {
+	}
+	
+}

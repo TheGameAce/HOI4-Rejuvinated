@@ -1,0 +1,887 @@
+### operations are sorted by order of 
+### 1) no. of required operatives
+### 2) required network strength
+### eg. 1/70 comes before 2/40
+
+#TALLeis - All Navy spacific Operations
+#Token Generating Operations = 1 of 1
+#Navy Targeting Oparations = 4 of 5
+#the planed "Gather Navy Intel" mission has been abandoned for the foreseeable future
+
+	###################################
+	### Token Generating Operations ###
+	###################################
+
+#TALL - The 'infiltrate navy' mission is part of vanila HOI4
+operation_infiltrate_armed_forces_navy = { ### 5 1/55
+	icon = GFX_operations_infiltrate_naval_forces
+	map_icon = GFX_operations_infiltrate_naval_forces_map
+	name = operation_infiltrate_armed_forces_navy
+	desc = operation_infiltrate_armed_forces_navy_desc
+	priority = 4
+	
+	days = 120  #TALL original - 75
+	network_strength = 50
+	operatives = 2
+
+	visible = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		NOT = {
+			has_operation_token = {
+				tag = FROM
+				token = token_navy
+			}
+		}
+		FROM = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}		
+		has_done_agency_upgrade = upgrade_naval_department
+	}
+
+	equipment = {
+		
+	}
+
+	available = {
+		#NOT = {
+		#	has_operation_token = {
+		#		tag = FROM
+		#		token = token_navy
+		#	}
+		#}
+		#FROM = {
+		#	any_owned_state = {
+		#		is_coastal = yes
+		#	}
+		#}
+	}
+
+	awarded_tokens = {
+		token_navy
+	}
+	risk_chance = 0.1
+	outcome_extra_chance = 0.25
+	risk_modifiers = { operation_infiltrate_risk operation_risk }
+	outcome_modifiers = { operation_infiltrate_outcome operation_outcome }
+	cost_modifiers = { operation_infiltrate_cost operation_cost }
+	outcome_execute = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_navy
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		random_list = {
+			33 = {
+				ROOT = {
+					add_operation_token = {
+						tag = FROM
+						token = token_navy
+					}
+					navy_experience = 10
+					add_intel = {
+						target = FROM
+						navy_intel = 10
+					}
+				}
+			}
+			67 = {
+				ROOT = {
+					add_operation_token = {
+						tag = FROM
+						token = token_navy
+					}
+					navy_experience = 10
+				}
+			}
+		}
+	}
+	outcome_potential = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_navy
+			}
+		}
+	}
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+		}
+	}
+	phases = { #infiltrate military
+		infiltrate_military_bribe = { base = 25 }
+		infiltrate_military_seduction = { base = 25 }
+		infiltrate_military_turned_pow = {
+			base = 25
+			modifier = {
+				FROM = { has_war = no }
+				factor = 0
+			}
+		}
+		infiltrate_military_ideological_supporter = {
+			base = 25
+			modifier = {
+				FROM = { has_government = ROOT }
+				factor = 0
+			}
+		}
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+	#################################
+	### Navy Targeting Operations ###
+	#################################
+
+#TALL - The 'steal navy tech' mission is part of vanila HOI4
+operation_steal_tech_navy = { ### 17 3/55
+	icon = GFX_operations_steal_blueprints
+	map_icon = GFX_operations_steal_blueprints_map
+	name = operation_steal_tech_navy
+	desc = operation_steal_tech_navy_desc
+	priority = 16
+
+	days = 60 #TALL original value = 120
+	network_strength = 50
+	operatives = 3
+	cost_multiplier = 0.05
+
+	visible = {
+		num_of_operatives > 1
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+
+		has_operation_token = {
+			tag = FROM
+			token = token_navy
+		}
+	}
+
+	equipment = {
+		
+	}
+
+	required_tokens = {
+		token_navy
+	}
+
+	risk_chance = 0.2
+	experience = 4 #TALL original value = 2
+	outcome_extra_chance = 0.25
+	risk_modifiers = { operation_steal_tech_risk operation_risk }
+	outcome_modifiers = { operation_steal_tech_outcome operation_outcome }
+	cost_modifiers = { operation_cost }
+
+	outcome_execute = {
+		if = {
+  			limit = { has_dlc = "Man the Guns"} 
+  			ROOT = {
+				steal_random_tech_bonus = {
+					folder = mtgnavalfolder
+					bonus = 2.0 #TALL original value = 3.0
+					dynamic = yes
+					instant = yes
+					name = operation_steal_tech_navy
+					target = FROM
+					uses = 1
+				}
+				remove_operation_token = {
+					tag = FROM
+					token = token_navy
+				}
+			}
+  		}
+  		else = {
+	  		ROOT = {
+				steal_random_tech_bonus = {
+					folder = naval_folder
+					bonus = 2.0 #TALL original value = 3.0
+					dynamic = yes
+					instant = yes
+					name = operation_steal_tech_navy
+					target = FROM
+					uses = 1
+				}
+				remove_operation_token = {
+					tag = FROM
+					token = token_navy
+				}
+			}
+  		}	
+	}
+
+	outcome_extra_execute = { # SCOPE_OPERATION
+
+		random_list = {
+			33 = {
+				if = {
+  					limit = { has_dlc = "Man the Guns"} 
+
+  					ROOT = {
+						steal_random_tech_bonus = {
+							folder = mtgnavalfolder
+							bonus = 2.0 #TALL original value = 3.0
+							ahead_reduction = 2
+							dynamic = yes
+							instant = yes
+							name = operation_steal_tech_navy
+							target = FROM
+							uses = 1
+						}
+					}
+  				}
+  				else = {
+					ROOT = {
+						steal_random_tech_bonus = {
+							folder = naval_folder
+							bonus = 2.0 #TALL original value = 3.0
+							ahead_reduction = 2
+							dynamic = yes
+							instant = yes
+							name = operation_steal_tech_navy
+							target = FROM
+							uses = 1
+						}
+					}
+  				}				
+			}
+			67 = {
+				if = {
+  					limit = { has_dlc = "Man the Guns"} 
+
+					ROOT = {
+						steal_random_tech_bonus = {
+							folder = mtgnavalfolder
+							bonus = 2.0 #TALL original value = 3.0
+							ahead_reduction = 1
+							dynamic = yes
+							instant = yes
+							name = operation_steal_tech_navy
+							target = FROM
+							uses = 1
+						}
+					}
+				}
+				else = {
+					ROOT = {
+						steal_random_tech_bonus = {
+							folder = naval_folder
+							bonus = 2.0 #TALL original value = 3.0
+							ahead_reduction = 1
+							dynamic = yes
+							instant = yes
+							name = operation_steal_tech_navy
+							target = FROM
+							uses = 1
+						}
+					}
+				}
+			}
+		}
+	}
+	outcome_potential = {
+		ROOT = {
+			steal_random_tech_bonus = {
+				folder = naval_folder
+				folder = mtgnavalfolder
+				bonus = 2.0 #TALL original value = 3.0
+				dynamic = yes
+				instant = yes
+				name = operation_steal_tech_navy
+				target = FROM
+				uses = 1
+			}
+		}
+		custom_effect_tooltip = operation_outcome_consumes_token_tt
+	}
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = { #blueprint theft
+		steal_blueprints_bribe = { base = 40 }
+		steal_blueprints_seduction = { base = 40 }
+		steal_blueprints_infiltrate_naval_design_office = { base = 20 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+#TALL - The 'sabotage dockyard' mission is new, and part of 'The Agency'
+operation_targeted_sabotage_dockyard = { 
+	icon = GFX_operations_targeted_sabotage
+	map_icon = GFX_operations_targeted_sabotage_map
+	name = operation_targeted_sabotage_dockyard
+	desc = operation_targeted_sabotage_dockyard_desc
+	priority = 27
+
+	days = 45
+	network_strength = 40
+	operatives = 2
+
+	visible = {
+		num_of_operatives > 1
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+
+		has_operation_token = {
+			tag = FROM
+			token = token_civilian
+			token = token_navy
+			token = token_prep_sabotage
+		}
+
+		FROM = {
+			any_controlled_state = {
+				dockyard > 0
+			}
+		}
+	}	
+
+	requirements = {
+
+		has_operation_token = {
+			tag = FROM
+			token = token_prep_sabotage
+		}
+	}
+
+	selection_target_state = {
+		dockyard > 0
+	}
+
+	selection_target = {
+		targets = { FROM }
+	}
+
+	required_tokens = { token_prep_sabotage }
+	equipment = {
+		support_equipment = 40
+	}
+	risk_chance = 0.2
+	experience = 4
+	outcome_extra_chance = 0.25
+	outcome_modifiers = { target_sabotage_factor operation_risk }
+	risk_modifiers = { target_sabotage_risk operation_outcome }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+	
+	outcome_execute = {
+		FROM.FROM = {
+			damage_building = {
+				type = dockyard
+				damage = 1
+			}
+		}
+		ROOT = {
+			remove_operation_token = {
+				tag = FROM
+				token = token_prep_sabotage
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		random_list = {
+			56 = {
+				FROM.FROM = {
+					damage_building = {
+						type = dockyard
+						damage = 2
+					}
+				}
+			}
+			44 = {
+				FROM.FROM = {
+					damage_building = {
+						type = dockyard
+						damage = 3
+					}
+				}
+			}
+		}
+	}
+	outcome_potential = {
+		custom_effect_tooltip = operation_outcome_sabotage_dockyard_tt
+		custom_effect_tooltip = operation_outcome_consumes_token_tt
+	}
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = {
+		targeted_sabotage_plant_explosives = { base = 100 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+#TALL - The 'sabotage naval base' mission is new, and part of 'The Agency'
+operation_targeted_naval_base = { 
+	icon = GFX_operations_targeted_sabotage
+	map_icon = GFX_operations_targeted_sabotage_map
+	name = operation_targeted_sabotage_naval_base
+	desc = operation_targeted_sabotage_naval_base_desc
+	priority = 28
+
+	days = 45
+	network_strength = 40
+	operatives = 2
+
+	visible = {
+		num_of_operatives > 1
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+
+		has_operation_token = {
+			tag = FROM
+			token = token_civilian
+			token = token_navy
+			token = token_prep_sabotage
+		}
+
+		FROM = {
+			any_controlled_state = {
+				naval_base > 0
+			}
+		}
+
+	}	
+
+	requirements = {
+
+		has_operation_token = {
+			tag = FROM
+			token = token_prep_sabotage
+		}
+	}
+
+	selection_target_state = {
+		naval_base > 0
+	}
+
+	selection_target = {
+		targets = { FROM }
+	}
+
+	required_tokens = { token_prep_sabotage }
+	equipment = {
+		support_equipment = 40
+	}
+	risk_chance = 0.2
+	experience = 4
+	outcome_extra_chance = 0.25
+	outcome_modifiers = { target_sabotage_factor operation_risk }
+	risk_modifiers = { target_sabotage_risk operation_outcome }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+	
+	outcome_execute = {
+		FROM.FROM = {
+			damage_building = {
+				type = naval_base
+				damage = 1
+			}
+		}
+		ROOT = {
+			remove_operation_token = {
+				tag = FROM
+				token = token_prep_sabotage
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		random_list = {
+			56 = {
+				FROM.FROM = {
+					damage_building = {
+						type = naval_base
+						damage = 2
+					}
+				}
+			}
+			44 = {
+				FROM.FROM = {
+					damage_building = {
+						type = naval_base
+						damage = 3
+					}
+				}
+			}
+		}
+	}
+	outcome_potential = {
+		custom_effect_tooltip = operation_outcome_sabotage_dockyard_tt
+		custom_effect_tooltip = operation_outcome_consumes_token_tt
+	}
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = {
+		targeted_sabotage_plant_explosives = { base = 100 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+#TALL - The 'sabotage navy ship' mission is new, and part of 'The Agency'
+operation_blow_ship = { ### 16 3/55
+	icon = GFX_operations_infiltrate_naval_forces
+	map_icon = GFX_operations_infiltrate_naval_forces_map
+	name = operation_blow_ship
+	desc = operation_blow_ship_desc
+	priority = 29
+
+	days = 60
+	network_strength = 75
+	operatives = 3
+
+	visible = {
+		num_of_operatives > 2
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+
+		has_operation_token = {
+			tag = FROM
+			token = token_navy
+			token = token_prep_sabotage
+		}
+		FROM = {
+			any_controlled_state = {
+				naval_base > 0
+			}
+		}
+	}
+
+	requirements = {
+
+		has_operation_token = {
+			tag = FROM
+			token = token_prep_sabotage
+		}
+	}
+
+	equipment = {
+		convoy = 5
+		support_equipment = 50
+	}
+
+	required_tokens = {
+		token_navy
+		token_prep_sabotage
+	}
+
+	risk_chance = 0.4
+	experience = 6
+	outcome_modifiers = { target_sabotage_factor operation_outcome }
+	risk_modifiers = { target_sabotage_risk operation_risk }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+	outcome_extra_chance = 0.33
+	outcome_execute = {
+		FROM = {
+			destroy_ships = {
+				type = ship_hull_light
+				count = 1
+			}
+		}
+		ROOT = {
+			remove_operation_token = {
+				tag = FROM
+				token = token_navy
+			}
+			remove_operation_token = {
+				tag = FROM
+				token = token_prep_sabotage
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		random_list = {
+			40 = {
+				FROM = {
+					destroy_ships = {
+						type = ship_hull_light
+						count = 1
+					}
+				}
+			}
+			45 = {
+				FROM = {
+					destroy_ships = {
+						type = ship_hull_light
+						count = 1
+					}
+				}
+				ROOT = {
+					remove_operation_token = {
+						tag = FROM
+						token = token_navy
+					}
+					remove_operation_token = {
+						tag = FROM
+						token = token_prep_sabotage
+					}
+				}
+			}
+			10 = {
+				FROM = {
+					destroy_ships = {
+						type = ship_hull_light
+						count = 1
+					}
+				}
+			}
+			5 = {
+				FROM = {
+					destroy_ships = {
+						type = ship_hull_light
+						count = 1
+					}
+					random_navy_leader = {
+						limit = {
+							is_assigned = yes
+						}
+						add_timed_unit_leader_trait = {
+							trait = wounded
+							days = 30
+						}
+					}
+				}
+			}
+		}
+	}
+
+	outcome_potential = {
+		FROM = {
+			destroy_ships = {
+				type = ship_hull_light
+				count = 1
+			}
+		}		
+		custom_effect_tooltip = operation_outcome_consumes_token_tt
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = { 
+		coordinate_strike_mark_targets = { base = 20 }
+		infiltrate_military_seduction = { base = 40 }
+		infiltrate_military_ideological_supporter = { base = 40 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 20 }
+		exfiltration_submarine_pickup = { base = 60 }
+	}
+}

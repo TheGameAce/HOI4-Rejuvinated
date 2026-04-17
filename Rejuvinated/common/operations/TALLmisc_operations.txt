@@ -1,0 +1,546 @@
+### operations are sorted by order of 
+### 1) no. of required operatives
+### 2) required network strength
+### eg. 1/70 comes before 2/40
+
+#TALLeis - All miscellaneous Operations
+#Miscellaneous Operations = 3 of 3
+
+	################################
+	### Miscellaneous Operations ###
+	################################
+
+# The 'Rescue Operative' mission is part of vanila HOI4
+operation_rescue_operative = { ### 0 1/35
+	icon = GFX_operations_rescue_captured_operative
+	map_icon = GFX_operations_rescue_captured_operative_map
+	name = operation_rescue_operative
+	desc = operation_rescue_operative_desc
+	priority = 1
+	prevent_captured_operative_to_die = yes
+
+
+	days = 35
+	network_strength = 30
+	operatives = 1
+
+	visible = {
+		FROM = {
+			has_captured_operative = ROOT
+		}
+	}
+
+	available = {
+		
+	}
+
+	requirements = {
+		FROM = {
+			has_captured_operative = ROOT
+		}
+	}
+
+
+	equipment = {
+		
+	}
+	risk_chance = 0.1
+	experience = 4 # TALL - original value = 2
+	cost_multiplier = 0 # we dont scale in cost for rescues
+
+	outcome_execute = { # SCOPE_OPERATION
+		ROOT = {
+			free_random_operative = {
+				captured_by = FROM
+				all = yes
+			}
+		}
+		ROOT = {
+			hidden_effect = {
+				set_country_flag = just_freed_operative_flag
+			}
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			free_random_operative = {
+				captured_by = FROM
+				all = yes
+			}
+		}
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = {
+		free_operative_free_in_transit = { base = 33 }
+		free_operative_liberate_camp = { base = 33 }
+		free_operative_smuggle_in_escape_gear = { base = 33 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+# The 'capture cipher' mission is part of vanila HOI4
+operation_capture_cipher = { ### 3 1/55
+	icon = GFX_operations_capture_ciphers
+	map_icon = GFX_operations_capture_ciphers_map
+	name = operation_capture_cipher
+	desc = operation_capture_cipher_desc
+	priority = 8
+
+	days = 75
+	network_strength = 40
+	operatives = 3 #TALL-original = 2
+
+	visible = {
+		network_strength = {
+			target = FROM
+			value > 25
+		}
+		has_tech = mechanical_computing
+		has_done_agency_upgrade = upgrade_form_department
+		NOT = {
+			ROOT = { is_fully_decrypted = FROM }
+		}
+	}
+
+	equipment = {
+		
+	}
+	risk_chance = 0.3
+	outcome_extra_chance = 0.25
+	outcome_execute = {
+		ROOT = {
+			add_decryption = {
+				target = FROM
+				ratio = 0.1
+			}
+		}
+###TALL - TESTING PLACEHOLDER - Improved decryption results####################
+		ROOT = {
+			if = {
+				limit = {
+					ROOT = {
+						has_operation_token = {
+							tag = FROM
+							token = token_airforce
+						}
+					}
+				}
+				ROOT = {
+					add_decryption = {
+						target = FROM
+						ratio = 0.1
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						has_operation_token = {
+							tag = FROM
+							token = token_army
+						}
+					}
+				}
+				ROOT = {
+					add_decryption = {
+						target = FROM
+						ratio = 0.1
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						has_operation_token = {
+							tag = FROM
+							token = token_navy
+						}
+					}
+				}
+				ROOT = {
+					add_decryption = {
+						target = FROM
+						ratio = 0.1
+					}
+				}
+			}
+		}
+###END PLACEHOLDER - Improved decryption results####################
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		random_list = {
+			33 = {
+				ROOT = {
+					add_decryption = {
+						target = FROM
+						ratio = 0.2
+					}
+					random_list = {
+						25 = {
+							add_intel = {
+								target = FROM
+								civilian_intel = 10
+							}
+						}
+						25 = {
+							add_intel = {
+								target = FROM
+								army_intel = 10
+							}
+						}
+						25 = {
+							add_intel = {
+								target = FROM
+								navy_intel = 10
+							}
+						}
+						25 = {
+							add_intel = {
+								target = FROM
+								airforce_intel = 10
+							}
+						}
+					}
+				}
+###TALL - TESTING PLACEHOLDER - Improved decryption results####################
+				ROOT = {
+					if = {
+						limit = {
+							ROOT = {
+								has_operation_token = {
+									tag = FROM
+									token = token_airforce
+								}
+							}
+						}
+						ROOT = {
+							add_decryption = {
+								target = FROM
+								ratio = 0.15
+							}
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_operation_token = {
+									tag = FROM
+									token = token_army
+								}
+							}
+						}
+						ROOT = {
+							add_decryption = {
+								target = FROM
+								ratio = 0.15
+							}
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_operation_token = {
+									tag = FROM
+									token = token_navy
+								}
+							}
+						}
+						ROOT = {
+							add_decryption = {
+								target = FROM
+								ratio = 0.15
+							}
+						}
+					}
+				}
+###END PLACEHOLDER - Improved decryption results####################
+			}
+			67 = {
+				ROOT = {
+					add_decryption = {
+						target = FROM
+						ratio = 0.2
+					}
+				}
+###TALL - TESTING PLACEHOLDER - Improved decryption results####################
+				ROOT = {
+					if = {
+						limit = {
+							ROOT = {
+								has_operation_token = {
+									tag = FROM
+									token = token_airforce
+								}
+							}
+						}
+						ROOT = {
+							add_decryption = {
+								target = FROM
+								ratio = 0.15
+							}
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_operation_token = {
+									tag = FROM
+									token = token_army
+								}
+							}
+						}
+						ROOT = {
+							add_decryption = {
+								target = FROM
+								ratio = 0.15
+							}
+						}
+					}
+					if = {
+						limit = {
+							ROOT = {
+								has_operation_token = {
+									tag = FROM
+									token = token_navy
+								}
+							}
+						}
+						ROOT = {
+							add_decryption = {
+								target = FROM
+								ratio = 0.15
+							}
+						}
+					}
+				}
+###END PLACEHOLDER - Improved decryption results####################
+			}
+		}	
+	}
+
+	outcome_potential = {
+		ROOT = {
+			add_decryption = {
+				target = FROM
+				ratio = 0.2
+			}
+		}
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+		}
+	}
+	phases = { #capturing cyphers
+		capture_cyphers_bribe = { base = 20 }
+		capture_cyphers_raid = {
+			base = 20
+			modifier = {
+				ROOT = { has_war = no }
+				factor = 0
+			}
+		}
+		capture_cyphers_seduction = { base = 20 }
+		capture_cyphers_smuggle = { base = 20 }
+		capture_cyphers_reverse_engineer = { base = 20 }
+	}
+
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+#TALL - The 'coordinated strike' mission is part of vanila HOI4.  Its effects are hardcoded, otherwise there whould be many more changes here
+operation_coordinated_strike = { ### 11 2/70
+	icon = GFX_operations_coordinated_strike
+	map_icon = GFX_operations_coordinated_strike_map
+	name = operation_coordinated_strike
+	desc = operation_coordinated_strike_desc
+	priority = 9
+
+	days = 3
+	network_strength = 70
+	operatives = 2
+
+	visible = {
+		network_strength = {
+			target = FROM
+			value > 35
+		}
+		has_wargoal_against = FROM
+		can_declare_war_on = FROM
+		NOT = {
+			has_war_with = FROM
+		}
+	}
+
+	equipment = {
+		civilian_factories = {
+			amount = 15
+			days = 5
+		}
+	}
+
+	available = {
+		NOT = {
+			has_war_with = FROM
+		}
+		has_wargoal_against = FROM
+		can_declare_war_on = FROM
+	}
+
+	target_type = strategic_region
+
+	selection_target = {
+		targets = { FROM }
+	}
+
+	# Coordinated Strike will lead to a war with the target
+	will_lead_to_war_with = yes
+	risk_chance = 0.3
+#TALL-EIS, original value = 2
+	experience = 4
+	outcome_execute = { # SCOPE_OPERATION
+		ROOT = {
+			declare_war_on = { target = FROM type = annex_everything }
+		}
+		
+		execute_operation_coordinated_strike = {
+			# Amount determines how often the mission simulation is run
+			amount = 12 #1 attack per 6 hours --> 12 attacks = 3 days
+		}
+	}
+
+	outcome_potential = {
+		custom_effect_tooltip = coordinated_strike_tt
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+		}
+	}
+	phases = { #preparing
+		coordinated_strike_scout_target = { base = 50 }
+		coordinate_strike_mark_targets = { base = 50 }
+	}
+
+	phases = { #execution
+		coordinated_strike_sabotage_communications = { base = 34 }
+		coordinated_strike_direct_units = { base = 34 }
+		coordinated_strike_occupy_bridges = { 
+			base = 34 
+			modifier = {
+				NOT = {
+					FROM = {
+						any_neighbor_country = {
+							tag = ROOT #no land connection between FROM and ROOT
+						}
+					}
+				}
+				factor = 0
+			}
+		}
+	}
+}

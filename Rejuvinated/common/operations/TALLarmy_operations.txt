@@ -1,0 +1,719 @@
+### operations are sorted by order of 
+### 1) no. of required operatives
+### 2) required network strength
+### eg. 1/70 comes before 2/40
+
+#TALLeis - All Army spacific Operations
+#Token Generating Operations = 1 of 1
+#Civilian/Industrial Operations = 3 of 5
+#the planed "Gather Military Intel" mission has been abandoned for the foreseeable future
+#the planed "Sabotage Equipment Stockpile" mission is also abandoned but may be resurrected in future versions
+
+	###################################
+	### Token Generating Operations ###
+	###################################
+
+#TALL - The 'infiltrate army' mission is part of vanila HOI4
+operation_infiltrate_armed_forces_army = { ### 4 1/55
+	icon = GFX_operations_infiltrate_armed_forces
+	map_icon = GFX_operations_infiltrate_armed_forces_map
+	name = operation_infiltrate_armed_forces_army
+	desc = operation_infiltrate_armed_forces_army_desc
+	priority = 3
+	
+	days = 120 #TALL-original = 75
+	network_strength = 50
+	operatives = 2
+
+	visible = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		NOT = {
+			has_operation_token = {
+				tag = FROM
+				token = token_army
+			}
+		}
+		has_done_agency_upgrade = upgrade_army_department
+	}
+
+	equipment = {
+		
+	}
+
+	available = {
+		#NOT = {
+		#	has_operation_token = {
+		#		tag = FROM
+		#		token = token_army
+		#	}
+		#}
+	}
+	
+	awarded_tokens = {
+		token_army
+	}
+
+	risk_chance = 0.1
+	risk_modifiers = { operation_infiltrate_risk operation_risk }
+	outcome_extra_chance = 0.25
+	outcome_modifiers = { operation_infiltrate_outcome operation_outcome }
+	cost_modifiers = { operation_infiltrate_cost operation_cost }
+	outcome_execute = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_army
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		random_list = {
+			33 = {
+				ROOT = {
+					add_operation_token = {
+						tag = FROM
+						token = token_army
+					}
+					army_experience = 10
+					add_intel = {
+						target = FROM
+						army_intel = 10
+					}
+				}
+			}
+			67 = {
+				ROOT = {
+					add_operation_token = {
+						tag = FROM
+						token = token_army
+					}
+					army_experience = 10
+				}
+			}
+		}
+	}
+	outcome_potential = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_army
+			}
+		}
+	}
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+		}
+	}
+	phases = { #infiltrate military
+		infiltrate_military_bribe = { base = 25 }
+		infiltrate_military_seduction = { base = 25 }
+		infiltrate_military_turned_pow = {
+			base = 25
+			modifier = {
+				FROM = { has_war = no }
+				factor = 0
+			}
+		}
+		infiltrate_military_ideological_supporter = {
+			base = 25
+			modifier = {
+				FROM = { has_government = ROOT }
+				factor = 0
+			}
+		}
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+	#################################
+	### Army Targeting Operations ###
+	#################################
+
+#TALL - The 'steal military tech' mission is part of vanila HOI4
+operation_steal_tech_army = { ### 16 3/55
+	icon = GFX_operations_steal_blueprints
+	map_icon = GFX_operations_steal_blueprints_map
+	name = operation_steal_tech_army
+	desc = operation_steal_tech_army_desc
+	priority = 15
+
+	days = 60 #TALL original value = 120
+	network_strength = 50
+	operatives = 3
+	cost_multiplier = 0.05
+
+	visible = {
+		num_of_operatives > 1
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+
+		has_operation_token = {
+			tag = FROM
+			token = token_army
+		}
+	}
+
+	equipment = {
+		
+	}
+
+	required_tokens = {
+		token_army
+	}
+
+	risk_chance = 0.2
+	experience = 4 #TALL original value = 2
+	outcome_extra_chance = 0.25
+	risk_modifiers = { operation_steal_tech_risk operation_risk }
+	outcome_modifiers = { operation_steal_tech_outcome operation_outcome }
+	cost_modifiers = { operation_cost }
+
+	outcome_execute = {
+		ROOT = {
+			steal_random_tech_bonus = {
+				folder = armour_folder
+				folder = artillery_folder
+				folder = infantry_folder
+				folder = support_folder
+				bonus = 2.0 #TALL original value = 3.0
+				dynamic = yes
+				instant = yes
+				name = operation_steal_tech_army
+				target = FROM
+				uses = 1
+			}
+			remove_operation_token = {
+				tag = FROM
+				token = token_army
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		random_list = {
+			33 = {
+				ROOT = {
+					steal_random_tech_bonus = {
+						folder = armour_folder
+						folder = artillery_folder
+						folder = infantry_folder
+						folder = support_folder
+						bonus = 2.0 #TALL original value = 3.0
+						ahead_reduction = 2
+						dynamic = yes
+						instant = yes
+						name = operation_steal_tech_army
+						target = FROM
+						uses = 1
+					}
+				}
+			}
+			67 = {
+				ROOT = {
+					steal_random_tech_bonus = {
+						folder = armour_folder
+						folder = artillery_folder
+						folder = infantry_folder
+						folder = support_folder
+						bonus = 2.0 #TALL original value = 3.0
+						dynamic = yes
+						instant = yes
+						ahead_reduction = 1
+						name = operation_steal_tech_army
+						target = FROM
+						uses = 1
+					}
+				}
+			}
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			steal_random_tech_bonus = {
+				folder = armour_folder
+				folder = artillery_folder
+				folder = infantry_folder
+				folder = support_folder
+				bonus = 2.0 #TALL original value = 3.0
+				dynamic = yes
+				instant = yes
+				name = operation_steal_tech_army
+				target = FROM
+				uses = 1
+			}
+		}
+		custom_effect_tooltip = operation_outcome_consumes_token_tt
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = { #blueprint theft
+		steal_blueprints_bribe = { base = 50 }
+		steal_blueprints_seduction = { base = 50 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+#TALL - The 'sabotage fuel' mission is new, and part of 'The Agency'
+operation_blow_fuel = { ### 18 2/35
+	icon = GFX_operations_targeted_sabotage
+	map_icon = GFX_operations_targeted_sabotage_map
+	name = operation_blow_fuel
+	desc = operation_blow_fuel_desc
+	priority = 25
+
+	days = 45
+	network_strength = 40
+	operatives = 2
+	
+	visible = {
+		num_of_operatives > 1
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+
+		has_operation_token = {
+			tag = FROM
+			token = token_civilian
+			token = token_army
+			token = token_prep_sabotage
+		}
+
+		FROM = {
+			fuel_silo > 0
+		}
+	}
+
+	requirements = {
+		has_operation_token = {
+			tag = FROM
+			token = token_prep_sabotage
+		}
+	}
+
+	selection_target_state = {
+		IF = {
+			limit = {
+				FROM = {
+					fuel_silo > 0
+				}
+			}
+			fuel_silo > 0
+		}
+		else = {
+			is_capital = yes
+		}			
+	}
+	selection_target = {
+		targets = { FROM }
+	}
+	required_tokens = { token_prep_sabotage }
+	equipment = {
+		support_equipment = 40
+	}
+	risk_chance = 0.2
+	experience = 4
+	outcome_extra_chance = 0.25
+	outcome_modifiers = { target_sabotage_factor operation_risk }
+	risk_modifiers = { target_sabotage_risk operation_outcome }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+	
+	outcome_execute = {
+		FROM.FROM = {
+			IF = {
+				limit = {
+					fuel_silo > 0
+				}
+				damage_building = {
+					type = fuel_silo
+					damage = 1
+				}				
+			}
+			ELSE = {
+				FROM = {
+					IF = {
+						limit = {
+							has_fuel > 3750
+						}
+						add_fuel = -3750
+						
+					}
+					ELSE = {
+						set_fuel_ratio = 0.0
+					}
+				}
+			}
+		}
+		ROOT = {
+			remove_operation_token = {
+				tag = FROM
+				token = token_resistance_contacts
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		random_list = {
+			33 = {
+				FROM.FROM = {
+					IF = {
+						limit = {
+							fuel_silo > 0
+						}
+						damage_building = {
+							type = fuel_silo
+							damage = 1
+						}
+						FROM = {						
+							IF = {
+
+								limit = {
+									has_fuel > 3750
+								}
+								add_fuel = -3750
+							}
+							ELSE = {
+								set_fuel_ratio = 0.0
+							}	
+						}
+					}
+					ELSE = {
+						FROM = {
+							IF = {
+								limit = {
+									has_fuel > 5625
+								}
+								add_fuel = -5625
+							}
+							ELSE = {
+								set_fuel_ratio = 0.0
+							}
+						}
+					}
+				}
+			}
+			67 = {
+				FROM.FROM = {
+					IF = {
+						limit = {
+							fuel_silo > 0
+						}
+						damage_building = {
+							type = fuel_silo
+							damage = 1
+						}	
+						FROM = {
+							IF = {
+								limit = {
+									has_fuel > 5625
+								}
+								add_fuel = -5625
+							}
+							ELSE = {
+								set_fuel_ratio = 0.0
+							}
+						}
+					}
+					ELSE = {
+						FROM = {
+							IF = {
+								limit = {
+									has_fuel > 7500
+								}
+								add_fuel = -7500
+							}
+							ELSE = {
+								set_fuel_ratio = 0.0
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	outcome_potential = {
+		custom_effect_tooltip = operation_outcome_sabotage_fuel_silo_tt
+		custom_effect_tooltip = operation_outcome_consumes_token_tt
+	}
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = { #the mission
+		targeted_sabotage_plant_explosives = { base = 70 }
+		targeted_sabotage_burn_storage = { base = 30 }
+	}
+	phases = { #the escape
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+#TALL - The 'fake intel' mission is part of vanila HOI4
+operation_fake_intel = { ### 2 1/40
+	icon = GFX_operations_fake_intel
+	map_icon = GFX_operations_fake_intel_map
+	name = operation_fake_intel
+	desc = operation_fake_intel_desc
+	priority = 18
+
+	days = 30 #TALL-original = 60
+	network_strength = 40
+	operatives = 3 #TALL-Original = 2
+
+	visible = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+
+		has_operation_token = {
+			tag = FROM
+			token = token_army
+		}
+		FROM = {
+			has_war_with = ROOT
+		}
+	}
+	
+	scale_cost_independent_of_target = yes
+	
+	available = {
+		ROOT = {
+			# check if we have at most x2.5 amount units we will generate
+			set_temp_variable = { num_max_fake_intel_unit = num_armies }
+			multiply_temp_variable = { num_max_fake_intel_unit = 0.25 }
+			round_temp_variable = num_max_fake_intel_unit
+			add_to_temp_variable = { num_max_fake_intel_unit = 1 }
+			clamp_temp_variable = {
+				var = num_max_fake_intel_unit
+				min = 24
+			}
+			multiply_temp_variable = { num_max_fake_intel_unit = 2.5 } 
+			round_temp_variable = num_max_fake_intel_unit
+			
+			num_fake_intel_divisions < num_max_fake_intel_unit
+			
+			# if enemy has high intel, don't do mission at all
+			all_enemy_country = {
+				intel_level_over = {
+					target = PREV
+					army_intel < 0.8
+				}
+			}
+		}
+	}
+	
+	equipment = {
+
+	}
+
+	required_tokens = {
+		
+	}
+	risk_chance = 0 #there shouldn't be any risk
+	experience = 2 #TALL-original = 0.5
+	outcome_execute = { # SCOPE_OPERATION
+		ROOT = {
+			hidden_effect = {
+				if = {
+					# create template if not exist
+					limit = {
+						not = {
+							has_country_flag = fake_intel_template_created
+						}
+					}
+					division_template = {
+						name = "Fake Intel Division"
+						
+						is_fake_intel_division = yes
+						is_locked = yes
+						regiments = {
+							fake_intel_unit = { x = 0 y = 0 }
+						}
+					}
+					set_country_flag = fake_intel_template_created
+				}
+				
+				# give it an id and store id & current date so it can be deleted later
+				if = {
+					limit = { NOT = { has_variable = fake_intel_id } }
+					set_variable = { fake_intel_id = 1000 }
+				}
+				set_temp_variable = { id_to_set = fake_intel_id }
+				add_to_variable = { fake_intel_id = 1 }
+				add_to_array = {
+					fake_intel_ids_to_delete = id_to_set
+				}
+				set_variable = { num_days_for_fake_intel_id@var:id_to_set = global.num_days }
+				
+				# minimum of 0.25 of current armies or 24
+				set_temp_variable = { num_to_create = num_armies }
+				multiply_temp_variable = { num_to_create = 0.1875 } #TALL-original = 0.25
+				round_temp_variable = num_to_create
+				add_to_temp_variable = { num_to_create = 1 }
+				clamp_temp_variable = {
+					var = num_to_create
+					min = 18 #TALL-original = 24
+				}
+				
+				# create actual units
+				capital_scope = {
+					create_unit = {
+						division = "division_template = \"Fake Intel Division\" start_experience_factor = 0.5" 
+						owner = PREV
+						count = num_to_create
+						id = id_to_set
+					}
+				}
+				
+				# will delete them after 90 days
+				country_event = { id = lar_fake_intel_units.1 days = 90 }
+			}
+		}
+		custom_effect_tooltip = CUSTOM_EFFECT_CREATE_FAKE_ARMIES_RESULT
+	}
+
+	outcome_potential = {
+		custom_effect_tooltip = CUSTOM_EFFECT_CREATE_FAKE_ARMIES
+	}
+	
+	#since this operation is taking place in friendly territory, no infiltration/exfiltration is necessary
+	phases = { #
+		fake_intel_decoy_tanks = { base = 33 }
+		fake_intel_radio_deception = { base = 33 }
+		fake_intel_deliberate_leaks = { base = 33 }
+	}
+	phases = { #fake intel
+		fake_intel_press_releases = { base = 50 }
+		fake_intel_utilize_double_agents = { base = 50 }
+	}
+	phases = { #
+		fake_intel_plant_evidence = { base = 50 }
+		fake_intel_release_pow = { base = 50 }
+	}
+}

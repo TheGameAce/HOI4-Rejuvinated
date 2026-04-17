@@ -1,0 +1,181 @@
+# leader_traits contain a list of UnitLeaderTrait with the following structure:
+# trait_key = {
+# 	type = all # or either of field_marshal, corps_commander, navy
+#	trait_type = basic_trait # or either of status_trait, personality_trait, assignable_trait, basic_terrain_trait, assignable_terrain_trait, exile
+#	attack_skill = 0 # integer
+#	defense_skill = 0 # integer
+#	logistics_skill = 0 # integer
+#	planning_skill = 0 # integer
+#	maneuvering_skill = 0 # integer
+#	coordination_skill = 0 # integer
+#	attack_skill_factor = 0.0 # decimal
+#	defense_skill_factor = 0.0 # decimal
+#	logistics_skill_factor = 0.0 # decimal
+#	planning_skill_factor = 0.0 # decimal
+#	maneuvering_skill_factor = 0.0 # decimal
+#	coordination_skill_factor = 0.0 # decimal
+#	show_in_combat = yes # boolean
+#	override_effect_tooltip = "" # loc key
+#	custom_effect_tooltip = "" # loc key
+#	custom_prerequisite_tooltip = "" # loc key
+#	custom_gain_xp_trigger_tooltip = "" # loc key
+#	mutually_exclusive = other_trait # trait key
+#	parent = other_trait # trait key
+#	num_parents_needed = -1 # integer, -1 means "all"
+#	gui_row = -1 # integer, starts at 0, -1 means auto
+#	gui_column = -1 # integer, starts at 0, -1 means auto
+#	allowed = trigger # scope is a unit leader
+#	prerequisites = trigger # scope is an unit leader
+#	gain_xp = trigger # scope is a combatant
+#	gain_xp_leader = trigger # scope is a unit leader. ROOT is country you are from and FROM is any target nationality for agents
+#	gain_xp_on_spotting = 0 # integer
+#	modifier = { } # list of modifiers
+#	non_shared_modifier = {} #
+#	corps_commander_modifier = {} #
+#	field_marshal_modifier = {} #
+#	sub_unit_modifiers = { # list of sub unit def
+#		# e.g.
+#		submarine {
+#			units = {} # list of adjusters
+#			# list of modifiers e.g.
+#			naval_visibility = -0.1
+#		}
+#	}
+#	trait_xp_factor = {} # list of trait_key/decimal
+#	on_add = effect # scope is an unit leader
+#	on_remove = effect # scope is an unit leader
+#	daily_effect = effect # scope is an unit leader
+#	cost = 1000 # integer
+#	ai_will_do = {} # weight
+#	new_commander_weight = {} # weight
+#	enable_ability = ability_key
+#}
+leader_traits = {
+
+##################################
+# operative traits
+##################################
+
+	operative_revolutionary = {
+		type = operative
+		trait_type = personality_trait
+
+		#new_commander_weight = {
+		#}
+
+		modifier = {
+			boost_ideology_mission_factor = 0.25
+			operation_coup_government_outcome = 0.25
+			operation_collaboration_government_outcome = 0.25
+		
+		}
+	}
+
+	operative_scientist = {
+		type = operative
+		trait_type = personality_trait
+
+		new_commander_weight = {
+			factor = 0.5
+		}
+
+		modifier = {
+			operation_capture_cipher_risk = -0.15
+			operation_capture_cipher_outcome = 0.15
+			operation_steal_tech_risk = -0.15
+			operation_steal_tech_outcome = 0.15
+		
+		}
+	}
+
+	operative_insurgent = {
+		type = operative
+		trait_type = basic_trait
+
+		#new_commander_weight = {
+		#}
+
+		modifier = {
+			operation_boost_resistance_risk = -0.15
+			operation_boost_resistance_outcome = 0.15
+			operation_make_resistance_contacts_risk = -0.15
+			operation_make_resistance_contacts_cost = -0.15
+			target_sabotage_factor = 0.15
+		}
+
+		cost = 400
+		gain_xp_leader = {
+			OR = {
+				operative_leader_operation = operation_targeted_sabotage_industry
+				operative_leader_operation = operation_targeted_sabotage_infrastructure
+				operative_leader_operation = operation_targeted_sabotage_resources
+				operative_leader_operation = operation_make_resistance_contacts
+				operative_leader_operation = operation_coup_government
+			}
+		}
+	}
+
+	operative_web_of_lies = {
+		type = operative
+		trait_type = basic_trait
+
+		#new_commander_weight = {
+		#}
+
+		modifier = {
+			intel_network_gain_factor = 0.3
+		}
+
+		cost = 800
+		gain_xp_leader = {
+			OR = {
+				operative_leader_operation = operation_infiltrate_civilian
+				operative_leader_operation = operation_infiltrate_armed_forces_army
+				operative_leader_operation = operation_infiltrate_armed_forces_navy
+				operative_leader_operation = operation_infiltrate_armed_forces_airforce
+				operative_leader_operation = operation_fake_intel
+				operative_leader_mission =  build_intel_network
+			}
+		}
+	}
+#TALLeis - taken from the R56 mod - changes moved to 00_traits
+#	operative_linguist = {
+#		type = operative
+#	}
+
+	operative_spyhunter = {
+		type = operative
+		trait_type = basic_trait
+
+		new_commander_weight = {
+			factor = 0.5
+		}
+
+		modifier = {
+			enemy_operative_capture_chance_factor = 0.10
+			enemy_operative_detection_chance_factor = 0.10
+			enemy_intel_network_gain_factor_over_occupied_tag = -0.10
+		}
+
+		cost = 800
+		gain_xp_leader = {
+			OR = {
+				operative_leader_mission = root_out_resistance
+				operative_leader_mission = counter_intelligence
+			}
+		}
+	}
+
+#TALL - this trait is broken and has no effect in game.  may come back and work on it again in the future but for now, it is kept for refrence value only.	
+#	operative_codebreaker = {
+#		type = operative
+#		trait_type = personality_trait
+#		new_commander_weight = {
+#			factor = 0.5	
+#		}
+#		modifier = {
+#			decryption_factor = 0.05
+#			encryption_factor = 0.05
+#		}
+#	}
+}

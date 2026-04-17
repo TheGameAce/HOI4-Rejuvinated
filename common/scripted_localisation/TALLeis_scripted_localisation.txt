@@ -1,0 +1,95 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+
+defined_text = {
+	name = GetToken/Airforce
+	text = {
+		trigger = { 
+			ROOT = {
+				has_operation_token = {
+					tag = PREV
+					token = token_airforce
+				}
+			}
+		}
+		localization_key = "TOKEN_AIRFORCE_ICON"
+	}
+}
+defined_text = {
+	name = GetToken/Army 
+	text = {
+		trigger = { 
+			ROOT = {
+				has_operation_token = {
+					tag = PREV
+					token = token_army
+				}
+			}
+		}
+		localization_key = "TOKEN_ARMY_ICON"
+	}
+}
+defined_text = {
+	name = GetToken/Civilian
+	text = {
+		trigger = { 
+			ROOT = {
+				has_operation_token = {
+					tag = PREV
+					token = token_civilian
+				}
+			}
+		}
+		localization_key = "TOKEN_CIVILIAN_ICON"
+	}
+}
+defined_text = {
+	name = GetToken/Navy
+	text = {
+		trigger = { 
+			ROOT = {
+				has_operation_token = {
+					tag = PREV
+					token = token_navy
+				}
+			}
+		}
+		localization_key = "TOKEN_NAVY_ICON"
+	}
+}
+defined_text = {
+	name = GetToken/Resistance
+	text = {
+		trigger = { 
+			ROOT = {
+				has_operation_token = {
+					tag = PREV
+					token = token_resistance_contacts
+				}
+			}
+		}
+		localization_key = "TOKEN_RESISTANCE_ICON"
+	}
+}
+defined_text = {
+	name = GetToken/Sabotage
+	text = {
+		trigger = { 
+			ROOT = {
+				has_operation_token = {
+					tag = PREV
+					token = token_prep_sabotage
+				}
+			}
+		}
+		localization_key = "TOKEN_SABOTAGE_ICON"
+	}
+}

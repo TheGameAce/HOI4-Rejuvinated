@@ -1,0 +1,1149 @@
+### operations are sorted by order of 
+### 1) no. of required operatives
+### 2) required network strength
+### eg. 1/70 comes before 2/40
+
+#TALLeis - All Civ spacific Operations
+#Token Generating Operations = 1 of 1
+#Civilian/Industrial Operations = 6 of 9
+#the planed "Gather Industry Intel" mission has been abandoned for the foreseeable future
+#the planed "Sabotage Nuclear Plant" and “Sabotage Rocket Site” missions are also abandoned but may be resurrected in future versions
+
+	###################################
+	### Token Generating Operations ###
+	###################################
+
+#TALL - The 'infiltrate civilian' mission is part of vanila HOI4
+operation_infiltrate_civilian = { ### 1 1/35
+	icon = GFX_operations_infiltrate_civilian_govt
+	map_icon = GFX_operations_infiltrate_civilian_govt_map
+	name = operation_infiltrate_civilian
+	desc = operation_infiltrate_civilian_desc
+	priority = 2
+
+	days = 120 #TALL - original 90
+	network_strength = 35
+	operatives = 2
+
+	visible = {
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		NOT = {
+			has_operation_token = {
+				tag = FROM
+				token = token_civilian
+			}
+		}
+		has_done_agency_upgrade = upgrade_economy_civilian
+	}
+
+	equipment = {
+		
+	}
+
+	available = {
+		#NOT = {
+			#has_operation_token = {
+			#	tag = FROM
+			#	token = token_civilian
+			#}
+		#}
+	}
+
+	awarded_tokens = {
+		token_civilian
+	}
+	risk_chance = 0.1
+	outcome_extra_chance = 0.25
+	risk_modifiers = { operation_infiltrate_risk operation_risk }
+	outcome_modifiers = { operation_infiltrate_outcome operation_outcome }
+	cost_modifiers = { operation_infiltrate_cost operation_cost }
+	outcome_execute = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_civilian
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		random_list = {
+			33 = {
+				ROOT = {
+					add_operation_token = {
+						tag = FROM
+						token = token_civilian
+					}
+					add_political_power = 25
+					add_intel = {
+						target = FROM
+						civilian_intel = 10
+					}
+				}
+			}
+			67 = {
+				ROOT = {
+					add_operation_token = {
+						tag = FROM
+						token = token_civilian
+					}
+					add_political_power = 25
+				}	
+			}
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			add_operation_token = {
+				tag = FROM
+				token = token_civilian
+			}
+		}
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+		}
+	}
+	phases = { #infiltrate military
+		infiltrate_military_bribe = { base = 25 }
+		infiltrate_military_seduction = { base = 25 }
+		infiltrate_military_ideological_supporter = {
+			base = 25
+			modifier = {
+				FROM = { has_government = ROOT }
+				factor = 0
+			}
+		}
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+	######################################
+	### Civilian/Industrial Operations ###
+	######################################
+
+#TALL - The 'collaberation government' mission is part of vanila HOI4
+operation_collaboration_government = { ### 10 2/55
+	icon = GFX_operations_collaboration_government
+	map_icon = GFX_operations_collaboration_government_map
+	name = operation_collaboration_government
+	desc = operation_collaboration_government_desc
+	priority = 20
+
+	days = 60 #TALL original = 90
+	network_strength = 50
+	operatives = 2
+	
+	cost_multiplier = 0.25
+	
+	visible = {
+		network_strength = {
+			target = FROM
+			value > 25
+		}
+		has_operation_token = {
+			tag = FROM
+			token = token_civilian
+		}
+	}
+
+	equipment = {
+
+		support_equipment = 100 #TALL original = 200
+		infantry_equipment = 500 #TALL original = 1000
+		civilian_factories = {
+			amount = 6 #TALL original = 10
+			days = 40 #TALL original = 60
+		}
+	}
+
+	allowed = {
+		has_rule = can_create_collaboration_government
+	}
+
+	available = {
+		has_collaboration = {
+			target = FROM
+			value < 1.0
+		}
+	}
+	risk_chance = 0.1
+	experience = 3 #TALL original = 1.5
+	outcome_extra_chance = 0.33
+	outcome_execute = { # SCOPE_OPERATION
+		ROOT = {
+			add_collaboration = {
+				target = FROM
+				value = 0.2 #TALL original = 0.3
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		ROOT = {
+			add_collaboration = {
+				target = FROM
+				value = 0.27 #TALL original = 0.45
+			}
+		}
+	}
+
+	outcome_potential = {
+		ROOT = {
+			add_collaboration = {
+				target = FROM
+				value = 0.2 #TALL original = 0.3
+			}
+		}
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+		}
+	}
+	phases = {
+		collaboration_government_set_up_planning_committees = { base = 33 }
+		collaboration_government_train_paramilitary_forces = { base = 33 }
+		collaboration_government_contact_military_officers = { base = 33 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+#TALL - The 'coup government' mission is part of vanila HOI4
+operation_coup_government = { ### 7 1/70
+	icon = GFX_operations_coup_government
+	map_icon = GFX_operations_coup_government_map
+	name = operation_coup_government
+	desc = operation_coup_government_desc
+	priority = 21
+
+	days = 180
+	network_strength = 70
+	operatives = 2
+
+	visible = {
+		network_strength = {
+			target = FROM
+			value > 35
+		}
+
+		NOT = { has_completed_focus = SPR_regional_defense_council_of_aragon }
+
+		has_operation_token = {
+			tag = FROM
+			token = token_civilian
+		}
+	}
+
+	equipment = {
+		infantry_equipment = 6000 #TALL original  = 12000
+	}
+	# Cannot spawn a civil war in the capital
+	selection_target_state = {
+		is_capital = no
+	}
+	selection_target = {
+		targets = { FROM }
+	}
+	allowed = {
+		NOT = {
+			has_game_rule = {
+				rule = allow_coups
+				option = BLOCKED
+			}
+		}
+	}
+
+	available = {
+		
+		FROM = {
+			has_civil_war = no
+			NOT = {
+				has_government = var:PREV.ROOT.current_party_ideology_group
+			}
+			if = {
+				limit = {
+					PREV.ROOT = { has_government = fascism }
+				}
+				fascism > 0.2
+			}
+			if = {
+				limit = {
+					PREV.ROOT = { has_government = communism }
+				}
+				communism > 0.2
+			}
+			if = {
+				limit = {
+					PREV.ROOT = { has_government = democratic }
+				}
+				democratic > 0.2
+			}
+			if = {
+				limit = {
+					PREV.ROOT = { has_government = neutrality }
+				}
+				neutrality > 0.2
+			}
+				#set_temp_variable = { coup_ideology@ROOT = PREV.ROOT.current_party_ideology_group }
+				#set_temp_variable = { coup_ideology_popularity@ROOT = party_popularity@ROOT.coup_ideology }
+				#check_variable = { ROOT.coup_ideology_popularity > 0.2 }
+			
+			OR = {
+				AND = {
+					is_major = no
+					has_war = no
+					has_stability < 0.7 #majors are harder to coup
+				}
+				AND = {
+					has_war = no
+					has_stability < 0.5
+				}
+				has_stability < 0.35 #can always coup at low stability
+			}
+		}
+		OR = {
+			has_game_rule = {
+				rule = allow_coups
+				option = FREE
+			}
+			AND = {
+				has_game_rule = {
+					rule = allow_coups
+					option = AI_ONLY
+				}
+				FROM = {
+					is_ai = yes
+				}
+			}
+		}
+	}
+
+	required_tokens = {
+		token_civilian
+	}
+
+	on_start = { #SCOPE_OPERATION
+		FROM = {
+			set_variable = { coup_operation_party@ROOT = PREV.ROOT.current_party_ideology_group }
+		}
+	}
+	risk_chance = 0.3
+	experience = 5 #TALL original = 2.5
+	cost_modifiers = { operation_coup_cost }
+	outcome_execute = { # SCOPE_OPERATION
+		FROM = {
+			if = {
+				limit = {
+					controls_state = FROM.FROM
+				}
+				set_temp_variable = { coup_civil_war_capital = FROM.FROM }
+			}
+			else = {
+				random_controlled_state = {
+					FROM = { set_temp_variable = { coup_civil_war_capital = PREV } }
+				}
+			}
+
+			# Exploit prevention: Make sure ruling party is not the same as the saved one, otherwise change it!
+			if = {
+				limit = {
+					has_government = var:coup_operation_party@ROOT
+				}
+				set_variable = { coup_operation_party@ROOT = PREV.ROOT.current_party_ideology_group }
+			}
+
+			set_temp_variable = { ideology = coup_operation_party@ROOT }
+			set_temp_variable = { civil_war_size = party_popularity@var:ideology }
+			clamp_temp_variable = {
+				var = civil_war_size
+				min = 0.1
+			}
+			set_temp_variable = { civil_war_airforce_fraction = civil_war_size }
+			set_temp_variable = { civil_war_navy_fraction = civil_war_size }
+			set_temp_variable = { civil_war_army_fraction = civil_war_size }
+
+			# If ROOT has infiltrated a service, the revolter gets additional troops
+			if = {
+				limit = {
+					ROOT = {
+						has_operation_token = {
+							tag = FROM
+							token = token_airforce
+						}
+					}
+				}
+				add_to_temp_variable = { civil_war_airforce_fraction = 0.15 }
+			}
+			if = {
+				limit = {
+					ROOT = {
+						has_operation_token = {
+							tag = FROM
+							token = token_army
+						}
+					}
+				}
+				add_to_temp_variable = { civil_war_army_fraction = 0.15 }
+			}
+			if = {
+				limit = {
+					ROOT = {
+						has_operation_token = {
+							tag = FROM
+							token = token_navy
+						}
+						
+					}
+				}
+				add_to_temp_variable = { civil_war_navy_fraction = 0.15 }
+			}
+
+			# create different civil wars depending on ROOT ideology
+			start_civil_war = {
+				capital = coup_civil_war_capital
+				size = civil_war_size
+				ideology = var:coup_operation_party@ROOT
+				army_ratio = civil_war_army_fraction
+				navy_ratio = civil_war_navy_fraction
+				air_ratio = civil_war_airforce_fraction
+			}
+
+			# Clear State
+			clear_variable = coup_operation_party@ROOT
+			hidden_effect = {
+				ROOT = {
+					every_operative = {
+						if = {
+							limit = {
+								has_trait = operative_seducer
+							}
+							ROOT = { set_country_flag = achievement_seducer_spy }
+						}
+					}
+					add_to_variable = {
+						var = total_coups
+						value = 1
+					}
+				}
+			}
+			ROOT = {
+				remove_operation_token = {
+					tag = FROM
+					token = token_civilian
+				}
+			}
+		}
+	}
+
+	outcome_potential = {
+		FROM = {
+			if = {
+				limit = {
+					has_variable = coup_operation_party@ROOT
+				}
+
+				# Display the locked in variable if the operation has already started
+				# This is because politics can change and it would display the wrong party if someone looked at the generated tooltip it in that situation
+				set_temp_variable = { civil_war_party = coup_operation_party@ROOT }
+			}
+			else = {
+				set_temp_variable = { civil_war_party = PREV.ROOT.current_party_ideology_group }
+			}
+
+			start_civil_war = {
+				ideology = var:civil_war_party
+			}
+		}
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+		}
+	}
+	phases = { lar_fra_coup_pre_position_units = { base = 100 } }
+	phases = { lar_fra_launch_coup = { base = 100 } }
+}
+
+#TALL - The 'steal industrial tech' mission is part of vanila HOI4
+operation_steal_tech_civilian = { ### 12 3/35
+	icon = GFX_operations_steal_blueprints
+	map_icon = GFX_operations_steal_blueprints_map
+	name = operation_steal_tech_civilian
+	desc = operation_steal_tech_civilian_desc
+	priority = 14
+
+	days = 60 #TALL original value = 120
+	network_strength = 45
+	operatives = 3
+	cost_multiplier = 0.05
+
+	visible = {
+		num_of_operatives > 1
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+
+		has_operation_token = {
+			tag = FROM
+			token = token_civilian
+		}
+	}
+	
+	equipment = {
+		
+	}
+
+	required_tokens = {
+		token_civilian
+	}
+	risk_chance = 0.2
+	experience = 4 #TALL original value = 2
+	outcome_extra_chance = 0.25
+	risk_modifiers = { operation_steal_tech_risk operation_risk }
+	outcome_modifiers = { operation_steal_tech_outcome operation_outcome }
+	cost_modifiers = { operation_cost }
+
+	outcome_execute = {
+		ROOT = {
+			steal_random_tech_bonus = {
+				folder = electronics_folder
+				folder = industry_folder
+				bonus = 2.0 #TALL original value = 3.0
+				name = operation_steal_tech_civilian
+				target = FROM
+				dynamic = yes
+				instant = yes
+				uses = 1
+			}
+			remove_operation_token = {
+				tag = FROM
+				token = token_civilian
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		random_list = {
+			33 = {
+				ROOT = {
+					steal_random_tech_bonus = {
+						folder = electronics_folder
+						folder = industry_folder
+						bonus = 2.0 #TALL original value = 2
+						ahead_reduction = 2
+						dynamic = yes
+						instant = yes
+						name = operation_steal_tech_civilian
+						target = FROM
+						uses = 1
+					}
+				}
+			}
+			67 = {
+				ROOT = {
+					steal_random_tech_bonus = {
+						folder = electronics_folder
+						folder = industry_folder
+						bonus = 2.0 #TALL original value = 3.0
+						ahead_reduction = 1
+						dynamic = yes
+						instant = yes
+						name = operation_steal_tech_civilian
+						target = FROM
+						uses = 1
+					}
+				}
+			}
+		}	
+	}
+
+	outcome_potential = {
+		ROOT = {
+			steal_random_tech_bonus = {
+				folder = electronics_folder
+				folder = industry_folder
+				bonus = 2.0 #TALL original value = 3.0
+				dynamic = yes
+				instant = yes
+				name = operation_steal_tech_civilian
+				target = FROM
+				uses = 1
+			}
+		}
+		custom_effect_tooltip = operation_outcome_consumes_token_tt
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = { #blueprint theft
+		steal_blueprints_bribe = { base = 40 }
+		steal_blueprints_seduction = { base = 40 }
+		steal_blueprints_middle_manager = { base = 20 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+#TALL - The 'sabotage industry' mission is part of vanila HOI4
+operation_targeted_sabotage_industry = { ### 13 3/35
+	icon = GFX_operations_targeted_sabotage
+	map_icon = GFX_operations_targeted_sabotage_map
+	name = operation_targeted_sabotage_industry
+	desc = operation_targeted_sabotage_industry_desc
+	priority = 22
+	
+	days = 45
+	network_strength = 35
+	operatives = 2
+
+	visible = {
+		num_of_operatives > 1
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		has_operation_token = {
+			tag = FROM
+			token = token_civilian
+			token = token_prep_sabotage
+		}
+	}
+
+	requirements = {
+		FROM = {
+			any_controlled_state = {
+				has_resistance = yes
+			}
+		}
+	
+		has_operation_token = {
+			tag = FROM
+			token = token_prep_sabotage
+		}
+	}
+
+	selection_target = {
+		targets = { FROM }
+	}
+
+	selection_target_state = {
+		has_resistance = yes
+	}
+
+	required_tokens = { token_prep_sabotage }
+
+	equipment = {
+		support_equipment = 40
+	}
+
+	risk_chance = 0.2
+	experience = 4 #TALL original value = 2
+	outcome_extra_chance = 0.25
+	outcome_modifiers = { target_sabotage_factor operation_risk }
+	risk_modifiers = { target_sabotage_risk operation_outcome }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+
+	outcome_execute = {
+		FROM.FROM = {
+			add_to_variable = {
+				var = targeted_sabotage_industry
+				value = 4 #TALL original value = 5
+			}
+			custom_effect_tooltip = targeted_sabotage_industry_2_tt
+		}
+		ROOT = {
+			remove_operation_token = {
+				tag = FROM
+				token = token_prep_sabotage
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		
+		FROM.FROM = {
+			add_to_variable = {
+				var = targeted_sabotage_industry
+				value = 6 #TALL original value = 8
+			}
+			custom_effect_tooltip = targeted_sabotage_industry_3_tt
+		}		
+	}
+
+	outcome_potential = {
+		custom_effect_tooltip = operation_outcome_sabotage_industry_tt
+		custom_effect_tooltip = operation_outcome_consumes_token_tt
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = { #exfiltration
+		targeted_sabotage_plant_explosives = { base = 90 }
+		targeted_sabotage_organize_more_meetings = { base = 10 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+			factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+#TALL - The 'sabotage infrastructure' mission is part of vanila HOI4
+operation_targeted_sabotage_infrastructure = { ### 14 3/35
+	icon = GFX_operations_targeted_sabotage
+	map_icon = GFX_operations_targeted_sabotage_map
+	name = operation_targeted_sabotage_infrastructure
+	desc = operation_targeted_sabotage_infrastructure_desc
+	priority = 23
+	
+	days = 45
+	network_strength = 35
+	operatives = 2
+
+	visible = {
+		num_of_operatives > 1
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		has_operation_token = {
+			tag = FROM
+			token = token_civilian
+			token = token_prep_sabotage
+		}
+	}
+
+	requirements = {
+		FROM = {
+			any_controlled_state = {
+				has_resistance = yes
+			}
+		}
+	
+		has_operation_token = {
+			tag = FROM
+			token = token_prep_sabotage
+		}
+	}
+
+	selection_target_state = {
+		has_resistance = yes
+	}
+	selection_target = {
+		targets = { FROM }
+	}
+
+	required_tokens = { token_prep_sabotage }
+
+	equipment = {
+		support_equipment = 40
+	}
+	risk_chance = 0.2
+	experience = 4 #TALL original value = 2
+	outcome_extra_chance = 0.25
+	outcome_modifiers = { target_sabotage_factor operation_risk }
+	risk_modifiers = { target_sabotage_risk operation_outcome }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+	
+	outcome_execute = {
+		FROM.FROM = {
+			add_to_variable = {
+				var = targeted_sabotage_infrastructure
+				value = 4 #TALL original value = 5
+			}
+			custom_effect_tooltip = targeted_sabotage_infrastructure_2_tt
+		}
+		ROOT = {
+			remove_operation_token = {
+				tag = FROM
+				token = token_prep_sabotage
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		FROM.FROM = {
+			add_to_variable = {
+				var = targeted_sabotage_infrastructure
+				value = 6 #TALL original value = 8
+			}
+			custom_effect_tooltip = targeted_sabotage_infrastructure_3_tt
+		}
+	}
+	
+	outcome_potential = {
+		custom_effect_tooltip = operation_outcome_sabotage_infrastructure_tt
+		custom_effect_tooltip = operation_outcome_consumes_token_tt
+	}
+	
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = {
+		targeted_sabotage_destroy_bridge = { base = 25 }
+		targeted_sabotage_collapse_tunnel = { base = 25 }
+		targeted_sabotage_remove_roadsigns = { base = 25 }
+		targeted_sabotage_immobilize_rolling_stock = { base = 25 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}
+
+#TALL - The 'sabotage resources' mission is part of vanila HOI4
+operation_targeted_sabotage_resources = { ### 15 3/35
+	icon = GFX_operations_targeted_sabotage
+	map_icon = GFX_operations_targeted_sabotage_map
+	name = operation_targeted_sabotage_resources
+	desc = operation_targeted_sabotage_resources_desc
+	priority = 24
+	
+	days = 45
+	network_strength = 35
+	operatives = 2
+
+	visible = {
+		num_of_operatives > 1
+		network_national_coverage = {
+			target = FROM
+			value > 0
+		}
+		has_operation_token = {
+			tag = FROM
+			token = token_civilian
+			token = token_prep_sabotage
+		}
+	}
+	
+	requirements = {
+		FROM = {
+			any_controlled_state = {
+				has_resistance = yes
+			}
+		}
+	
+		has_operation_token = {
+			tag = FROM
+			token = token_prep_sabotage
+		}
+	}
+
+	selection_target_state = {
+		has_resistance = yes
+	}
+	selection_target = {
+		targets = { FROM }
+	}
+	required_tokens = { token_prep_sabotage }
+	
+	equipment = {
+		support_equipment = 40
+	}
+	risk_chance = 0.2
+	experience = 4 #TALL original value = 2
+	outcome_extra_chance = 0.25
+	outcome_modifiers = { target_sabotage_factor operation_outcome }
+	risk_modifiers = { target_sabotage_risk operation_risk }
+	cost_modifiers = { target_sabotage_cost operation_cost }
+
+	outcome_execute = {
+		FROM.FROM = {
+			add_to_variable = {
+				var = targeted_sabotage_resources
+				value = 4 #TALL original value = 5
+			}
+			custom_effect_tooltip = targeted_sabotage_resources_2_tt
+		}
+		ROOT = {
+			remove_operation_token = {
+				tag = FROM
+				token = token_resistance_contacts
+			}
+		}
+	}
+	outcome_extra_execute = { # SCOPE_OPERATION
+		FROM.FROM = {
+			add_to_variable = {
+				var = targeted_sabotage_resources
+				value = 6 #TALL original value = 8
+			}
+			custom_effect_tooltip = targeted_sabotage_resources_2_tt
+		}
+	}
+
+	outcome_potential = {
+		custom_effect_tooltip = operation_outcome_sabotage_resources_tt
+		custom_effect_tooltip = operation_outcome_consumes_token_tt
+	}
+
+	phases = { #infiltration
+		infiltration_border = { base = 25 }
+		infiltration_submarine = { base = 25 }
+		infiltration_paradrop = { 
+			base = 25 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		infiltration_diplomatic = {
+			base = 25
+			modifier = {
+				factor = 20
+				ROOT = { has_war = no }
+				FROM = {
+					has_war = no
+				}
+			}
+			modifier = {
+				FROM = {
+					has_war_with = ROOT
+				}
+				factor = 0
+			}
+		}
+	}
+	phases = {
+		targeted_sabotage_burn_storage = { base = 50 }
+		targeted_sabotage_destroy_mining_equipment = { base = 50 }
+	}
+	phases = { #exfiltration
+		exfiltration_air_pickup = { 
+			base = 15 
+			modifier = {
+				ROOT = { 
+					has_equipment = {
+						transport_plane_equipment < 1
+					}
+				}
+				factor = 0.1 #less likely if we have no transports
+			}
+		}
+		exfiltration_border = { base = 30 }
+		exfiltration_go_to_ground = { base = 30 }
+		exfiltration_submarine_pickup = { base = 25 }
+	}
+}

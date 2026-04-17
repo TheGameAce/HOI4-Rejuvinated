@@ -91,13 +91,13 @@ on_actions = {
 			}
 			random_list = {
 				log = yes
-				90 = { #regular
+				85 = { #regular #was 90
 					operative_leader_event = {
 						id = lar_operative_event.1
 						set_from_from = ROOT
 					}
 				}
-				10 = { #operative turned
+				15 = { #operative turned #was 10
 					modifier = {
 						has_trait = operative_tough
 						factor = 0 #tough operatives never get turned
