@@ -1,4 +1,5 @@
-version="0.0.1"
+version="26.4.0"
+picture="thumbnail.png"
 tags={
 	"Alternative History"
 	"Events"
@@ -10,7 +11,7 @@ tags={
 	"National Focuses"
 	"Technologies"
 }
-name="HOI4 Rejuvinated"
+name="Rejuvenated"
 supported_version="1.17.4.1"
-path="mod/Rejuvinated"
+path="mod/HOI4-Rejuvinated"
 remote_file_id="3672337715"
