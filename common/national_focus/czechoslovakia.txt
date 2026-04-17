@@ -1,4 +1,4 @@
-﻿focus_tree = {
+focus_tree = {
 	id = czech_focus
 	
 	country = {
@@ -7,7 +7,6 @@
 		modifier = {
 			add = 10
 			tag = CZE
-			has_dlc = "Death or Dishonor"
 		}
 	}
 	
@@ -80,10 +79,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
@@ -124,10 +119,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -238,10 +229,6 @@
 				}
 			}
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
@@ -420,10 +407,6 @@
 				}
 			}
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
@@ -612,10 +595,6 @@
 				}
 			}
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
@@ -751,10 +730,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {    
 
 			army_experience = 30
@@ -809,10 +784,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 
 			army_experience = 30
@@ -863,10 +834,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 
 		completion_reward = {
 
@@ -919,10 +886,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -979,10 +942,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1031,10 +990,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1083,10 +1038,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1144,10 +1095,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1201,10 +1148,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1258,10 +1201,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1314,10 +1253,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
 
 		completion_reward = {
@@ -1366,10 +1301,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1410,10 +1341,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1454,10 +1381,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -1494,9 +1417,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
@@ -1539,9 +1461,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
@@ -1612,9 +1533,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY }
 
 		completion_reward = {
@@ -1653,9 +1573,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_MANPOWER }
 
 		completion_reward = {
@@ -1689,9 +1608,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
@@ -1733,8 +1651,6 @@
 			is_in_faction_with = SOV
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -1768,10 +1684,6 @@
 			NOT = { can_declare_war_on = ROM }
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			SOV = { country_event = { hours = 1 id = czech.4 } }
 		}
@@ -1802,10 +1714,6 @@
 		bypass = {
 			NOT = { can_declare_war_on = POL }
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 
 		completion_reward = {
 			SOV = { country_event = { hours = 1 id = czech.7 } }
@@ -1843,9 +1751,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT }
 
 		completion_reward = {
@@ -1880,9 +1787,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_RESEARCH FOCUS_FILTER_WAR_SUPPORT }
 
 		completion_reward = {
@@ -1921,10 +1827,6 @@
 			}
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			add_ideas = extensive_conscription
 		}
@@ -1956,10 +1858,6 @@
 		bypass = {
 			
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_research_slot = 1
@@ -2002,8 +1900,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -2073,9 +1969,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
@@ -2109,8 +2004,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -2150,10 +2043,6 @@
 				has_war_with = POL
 			}
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 
 		completion_reward = {
 			GER = { country_event = { hours = 1 id = czech.10 } }
@@ -2196,8 +2085,6 @@
 			}
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -2255,8 +2142,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -2299,8 +2184,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -2351,8 +2234,6 @@
 			is_in_faction_with = GER
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -2389,9 +2270,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
@@ -2434,8 +2314,6 @@
 			
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -2477,8 +2355,6 @@
 			is_subject_of = GER
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -2520,10 +2396,6 @@
 				HUN = { is_subject_of = CZE}
 			}
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 
 		completion_reward = {
 			create_wargoal = {
@@ -2581,10 +2453,6 @@
 			}
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			GER = { country_event = { hours = 1 id = czech.22 } }
 		}
@@ -2615,10 +2483,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -2661,8 +2525,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -2727,9 +2589,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -2768,9 +2629,8 @@
 			NOT = { amount_research_slots < 5 }
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -2805,10 +2665,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -2858,10 +2714,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -2921,8 +2773,6 @@
 			is_in_faction_with = FRA
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -2969,8 +2819,6 @@
 			}
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -3012,8 +2860,6 @@
 			}
 		}	
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -3057,9 +2903,8 @@
 			is_faction_leader = no
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_to_tech_sharing_group = little_entente_research_group
@@ -3106,8 +2951,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -3153,8 +2996,6 @@
 			HUN = { is_subject_of = CZE }
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
 
 		completion_reward = {
@@ -3201,10 +3042,6 @@
 			
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
@@ -3245,10 +3082,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			HUN = { country_event = { hours = 1 id = czech.32 } }
 		}
@@ -3279,10 +3112,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 
 		completion_reward = {
 			set_rule = {
@@ -3320,10 +3149,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			army_experience = 50
 			add_breakthrough_progress = {
@@ -3358,10 +3183,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3400,10 +3221,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3442,10 +3259,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3490,10 +3303,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3534,9 +3343,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3574,10 +3382,6 @@
 		bypass = {
 			has_tech = motorised_infantry
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3614,10 +3418,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3655,10 +3455,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3696,10 +3492,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3739,9 +3531,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3780,10 +3571,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3827,10 +3614,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			air_experience = 100
 			add_breakthrough_progress = {
@@ -3865,10 +3648,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3908,10 +3687,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3950,10 +3725,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -3992,10 +3763,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			add_ideas = CZE_air_focus
 		}
@@ -4029,9 +3796,8 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
 		available_if_capitulated = yes
+
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -4069,10 +3835,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -4112,10 +3874,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -4154,10 +3912,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -4201,10 +3955,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			navy_experience = 100
 			add_breakthrough_progress = {
@@ -4241,10 +3991,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
@@ -4309,10 +4055,6 @@
 
 		}
 
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
 		completion_reward = {
 			add_ideas = CZE_naval_focus
 		}
@@ -4343,14 +4085,11 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
 			add_tech_bonus = {
+				name = bb_bonus
 				bonus = 1.0
 				uses = 2
 				category = bb_tech
@@ -4383,14 +4122,11 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
 			add_tech_bonus = {
+				name = dd_bonus
 				bonus = 1.0
 				uses = 2
 				category = dd_tech
@@ -4423,14 +4159,11 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
 			add_tech_bonus = {
+				name = ca_tech
 				bonus = 1.0
 				uses = 2
 				category = ca_tech
@@ -4465,10 +4198,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
@@ -4521,10 +4250,6 @@
 		bypass = {
 
 		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
 		search_filters = { FOCUS_FILTER_RESEARCH }
 
 		completion_reward = {
