@@ -12,6 +12,7 @@ characters={
 		advisor={
 			slot = political_advisor
 			idea_token = ENG_winston_churchill
+			cost = 75
 			available = {
 				if = {
 					limit = {
@@ -68,6 +69,55 @@ characters={
 		}
 	}
 
+	ENG_edward_viii = {
+		name = "Edward VIII"
+		portraits = {
+			civilian = {
+				large = GFX_portrait_Edward_VIII
+			}
+			army = {
+				large = GFX_portrait_Edward_VIII
+			}
+		}
+
+		country_leader = {
+			ideology = monarchy
+			traits = {
+				inexperienced_imperialist
+				ENG_edward_1
+			}
+			desc = "POLITICS_EDWARD_EDWARD_DESC"
+			expire = "1965.1.1"
+		}
+	}
+
+	ENG_david_lloyd_george={
+		name=ENG_david_lloyd_george
+		portraits={
+			army={
+				small="GFX_idea_RJ_ENG_david_lloyd_george"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ENG_david_lloyd_george
+			available = {
+				has_completed_focus = ENG_the_kings_party
+				has_government = neutrality
+			}
+			allowed = {
+				original_tag = ENG
+			}
+			traits = {
+				old_figurehead 
+			}
+			ai_will_do = {
+				base = 1
+			}
+			cost = 75
+		}
+	}
+
 	ENG_stanley_baldwin={
 		name=ENG_stanley_baldwin
 		portraits={
@@ -104,16 +154,17 @@ characters={
 				original_tag = ENG
 			}
 			traits = {
-				economic_organizer 
+				RJ_economic_reformer
 			}
 			ai_will_do = {
 				base = 1
 			}
+			cost = 75
 		}
 		
 		country_leader={
 			ideology=fascism_ideology
-			traits={ champion_of_peace_1 economic_reformer }
+			traits={ champion_of_peace_1 RJ_economic_reformer }
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -1943,28 +1994,6 @@ characters={
 						}
 					}				
 				}
-			}
-		}
-	}
-
-	ENG_david_lloyd_george={
-		name=ENG_david_lloyd_george
-		portraits={
-			army={
-				small="GFX_idea_ENG_david_lloyd_george"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = ENG_david_lloyd_george
-			allowed = {
-				original_tag = ENG
-			}
-			traits = {
-				old_figurehead 
-			}
-			ai_will_do = {
-				base = 1
 			}
 		}
 	}

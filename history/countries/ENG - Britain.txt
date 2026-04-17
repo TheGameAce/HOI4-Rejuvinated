@@ -246,39 +246,20 @@ set_variable = {
 	eng_gateway_to_europe_influence = 0
 }
 
-add_dynamic_modifier = {
-	modifier = rj_ENG_the_economy
-}
-set_variable = {
-	rj_ENG_the_economy_global_building_slots_factor = 0
-}
-set_variable = {
-	rj_ENG_the_economy_consumer_goods_factor = 0.1
-}
-set_variable = {
-	rj_ENG_the_economy_conversion_cost_civ_to_mil_factor = 0
-}
-set_variable = {
-	rj_ENG_the_economy_production_speed_arms_factory_factor = 0
-}
-set_variable = {
-	rj_ENG_the_economy_production_speed_industrial_complex_factor = 0
-}
-set_variable = {
-	rj_ENG_the_economy_production_speed_infrastructure_factor = 0
-}
-set_variable = {
-	rj_ENG_the_economy_industrial_capacity_factory = 0
-}
-set_variable = {
-	rj_ENG_the_economy_industrial_capacity_dockyard = 0
-}
-set_variable = {
-	rj_ENG_the_economy_monthly_population = 0
-}
-set_variable = {
-	rj_ENG_the_economy_production_speed_buildings_factor = 0
-}
+add_dynamic_modifier = { modifier = rj_ENG_the_economy }
+
+set_variable = { rj_ENG_the_economy_global_building_slots_factor = 0 }
+set_variable = { rj_ENG_the_economy_consumer_goods_factor = 0.1 }
+set_variable = { rj_ENG_the_economy_conversion_cost_civ_to_mil_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_arms_factory_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_industrial_complex_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_infrastructure_factor = 0 }
+set_variable = { rj_ENG_the_economy_industrial_capacity_factory = 0 }
+set_variable = { rj_ENG_the_economy_industrial_capacity_dockyard = 0 }
+set_variable = { rj_ENG_the_economy_monthly_population = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_buildings_factor = 0 }
+set_variable = { rj_ENG_the_economy_industrial_capacity_dockyard = 0 }
+set_variable = { rj_ENG_the_economy_local_resources_factor = 0 }
 
 set_convoys = 1000
 
@@ -382,6 +363,7 @@ add_to_faction = EGY
 
 # Order matters - here Chamberlain becomes starting leader
 recruit_character = ENG_oswald_mosley
+recruit_character = ENG_edward_viii
 recruit_character = ENG_stanley_baldwin
 recruit_character = ENG_winston_churchill
 recruit_character = ENG_harry_pollitt
