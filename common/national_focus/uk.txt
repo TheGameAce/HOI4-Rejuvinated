@@ -9518,30 +9518,8 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			every_other_country = {
-				limit = {
-					OR = {
-						owns_state = 113
-						owns_state = 134
-						owns_state = 135
-						owns_state = 119
-						owns_state = 122
-						owns_state = 133
-						owns_state = 121
-						owns_state = 136
-						owns_state = 120
-					}
-				}
-				ENG = {
-					add_state_claim = 113
-					add_state_claim = 134
-					add_state_claim = 135
-					create_wargoal = {
-						type = annex_everything
-						target = PREV
-						expire = 0
-					}
-				}
+			IRE = {
+				country_event = rj_britain.11
 			}
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -9689,7 +9667,7 @@ focus_tree = {
 		available = {
 
 		}
-		icon = GFX_focus_generic_commonwealth_build_infantry
+		icon = GFX_focus_RJ_ENG_imperial_conscription
 		x = 2
 		y = 1
 		relative_position_id = ENG_the_sun_never_sets
@@ -10063,7 +10041,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ENG_unite_the_anglosphere
+		id = RJ_ENG_the_empire_strikes_back
 		prerequisite = { focus = ENG_bring_the_dominions_back_into_the_fold }
 		available = {
 			is_subject = no
@@ -10071,7 +10049,7 @@ focus_tree = {
 			NOT = { is_in_faction_with = USA }
 		}
 		will_lead_to_war_with = USA
-		icon = GFX_focus_eng_unite_the_anglosphere
+		icon = GFX_focus_RJ_ENG_the_empire_strikes_back
 		x = 0
 		y = 2
 		relative_position_id = ENG_bring_the_dominions_back_into_the_fold
@@ -10084,21 +10062,108 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
-			ENG_mosley_pacifism_level_down = yes
-			if = {
-				limit = {
-					owns_state = 113
-					owns_state = 134
-					owns_state = 135
-				}
-				113 = { add_core_of = ENG }
-				134 = { add_core_of = ENG }
-				135 = { add_core_of = ENG }
-			}
 			create_wargoal = {
 				type = annex_everything
 				target = USA
 				expire = 0
+			}
+			ENG = {
+				add_state_claim = 1103
+				add_state_claim = 1102
+				add_state_claim = 357
+				add_state_claim = 358
+				add_state_claim = 359
+				add_state_claim = 360
+				add_state_claim = 361
+				add_state_claim = 362
+				add_state_claim = 816
+				add_state_claim = 363
+				add_state_claim = 364
+				add_state_claim = 365
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_reintegrate_the_colonies
+		prerequisite = { focus = RJ_ENG_the_empire_strikes_back }
+		available = {
+			1103 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			1102 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			357 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			358 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			359 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			360 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			361 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			362 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			816 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			363 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			364 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+			365 = {
+				is_controlled_by = ENG
+				compliance > 49
+			}
+		}
+		will_lead_to_war_with = USA
+		icon = GFX_focus_eng_unite_the_anglosphere
+		x = 0
+		y = 1
+		relative_position_id = RJ_ENG_the_empire_strikes_back
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}	
+		completion_reward = {
+			ENG = {
+				add_state_core = 1103
+				add_state_core = 1102
+				add_state_core = 357
+				add_state_core = 358
+				add_state_core = 359
+				add_state_core = 360
+				add_state_core = 361
+				add_state_core = 362
+				add_state_core = 816
+				add_state_core = 363
+				add_state_core = 364
+				add_state_core = 365
 			}
 		}
 	}

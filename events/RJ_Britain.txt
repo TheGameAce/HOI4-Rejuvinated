@@ -981,3 +981,121 @@ country_event = { #Demand Union w/ Hanover - Positive Response
 		add_country_leader_trait = ENG_hanover_trait
 	}
 }
+
+country_event = { #Consolidate the British Isles - Demands sent to Ireland.
+	id = rj_britain.11
+	title = rj_britain.11.t
+	desc = rj_britain.11.d
+	picture = GFX_report_event_SOV_demands
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Become a Dominion - At least we retain most of our independence."
+
+		ai_chance = {
+			base = 3
+		}
+
+		ENG = {
+			set_autonomy = {
+				target = IRE
+				autonomy_state = autonomy_dominion
+				freedom_level = 25
+			}
+			country_event = rj_britain.11a
+		}
+	}
+
+	option = {
+		name = "Full Consolidation - We'll have full citizenship at least."
+
+		ai_chance = {
+			base = 2
+		}
+
+		ENG = {
+			annex_country = {
+				target = IRE
+			}
+			add_state_core = 113
+			add_state_core = 134
+			add_state_core = 135
+
+			country_event = rj_britain.11b
+		}
+	}
+
+	option = {
+		name = "We won't give up our freedom without a fight!"
+		ai_chance = {
+			base = 1
+		}
+		ENG = {
+			country_event = rj_britain.11c
+		}
+	}
+}
+
+country_event = { #Consolidate the British Isles - Ireland Becomes Dominion
+	id = rj_britain.11a
+	title = rj_britain.11a.t
+	desc = rj_britain.11a.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Smashing!"
+	}
+}
+
+country_event = { #Consolidate the British Isles - Ireland Consolidates
+	id = rj_britain.11b
+	title = rj_britain.11b.t
+	desc = rj_britain.11b.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Smashing!"
+	}
+}
+
+country_event = { #Consolidate the British Isles - Ireland Refuses
+	id = rj_britain.11c
+	title = rj_britain.11c.t
+	desc = rj_britain.11c.d
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Drat! Well it's not worth starting another war..."
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_war = yes
+				factor = 0.5
+			}
+		}
+	}
+
+	option = {
+		name = "We shall take them by force, then!"
+
+		ai_chance = {
+			base = 2
+		}
+
+		add_state_claim = 113
+		add_state_claim = 134
+		add_state_claim = 135
+		create_wargoal = {
+			target = IRE
+			type = annex_everything
+		}
+	}
+}
