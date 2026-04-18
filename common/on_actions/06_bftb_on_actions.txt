@@ -27,10 +27,8 @@ on_actions = {
 				limit = {
 					original_tag = TUR
 					TUR = { 
-						AND = {
-							has_completed_focus = TUR_invite_german_officers_to_izmir
-							NOT = { has_completed_focus = TUR_integrate_german_officers_into_the_army }
-						}
+						has_completed_focus = TUR_invite_german_officers_to_izmir
+						NOT = { has_completed_focus = TUR_integrate_german_officers_into_the_army }
 						has_war_with = GER
 						has_unit_leader = 75
 					}
@@ -44,10 +42,8 @@ on_actions = {
 				limit = {
 					original_tag = TUR
 					TUR = { 
-						AND = {
-							has_completed_focus = TUR_invite_german_officers_to_izmir
-							NOT = { has_completed_focus = TUR_integrate_german_officers_into_the_army }
-						}
+						has_completed_focus = TUR_invite_german_officers_to_izmir
+						NOT = { has_completed_focus = TUR_integrate_german_officers_into_the_army }
 						has_war_with = GER
 						has_unit_leader = 76
 					}
@@ -115,10 +111,8 @@ on_actions = {
 			if = {
 				limit = {
 					FROM.FROM = { 
-						AND = { 
-							is_owned_and_controlled_by = TUR
-							TUR_has_former_turkish_state_modifier = yes
-						}
+						is_owned_and_controlled_by = TUR
+						TUR_has_former_turkish_state_modifier = yes
 					}
 				}
 				FROM.FROM = {
@@ -306,11 +300,9 @@ on_actions = {
 			}
 			if = {
 				limit = {
-					any_country = { 
-						AND = { 
-							has_country_flag = TUR_iraqi_government_flag 
-							exists = yes
-						}
+					any_country = {
+						has_country_flag = TUR_iraqi_government_flag
+						exists = yes
 					}
 				}
 				TUR = {  
@@ -322,11 +314,9 @@ on_actions = {
 			}
 			else_if = {
 				limit = {
-					any_country = { 
-						AND = { 
-							has_country_flag = TUR_iraqi_fascists_flag 
-							exists = yes
-						}
+					any_country = {
+						has_country_flag = TUR_iraqi_fascists_flag
+						exists = yes
 					}
 				}
 				ENG = { 
@@ -592,9 +582,6 @@ on_actions = {
 						set_cosmetic_tag = TBE_third_bulgarian_empire_fascism
 					}
 					else = {
-						limit = {
-							has_government = neutrality
-						}
 						set_cosmetic_tag = TBE_third_bulgarian_empire_neutrality
 					}
 				}
@@ -621,9 +608,6 @@ on_actions = {
 						set_cosmetic_tag = UBF_united_balkan_federation_fascism
 					}
 					else = {
-						limit = {
-							has_government = neutrality
-						}
 						set_cosmetic_tag = UBF_united_balkan_federation_neutrality
 					}
 				}
@@ -679,9 +663,6 @@ on_actions = {
 						set_cosmetic_tag = BUL_fascism
 					}
 					else = {
-						limit = {
-							has_government = neutrality
-						}
 						if = {
 							limit = {
 								has_cosmetic_tag = BUL_ff_bulgaria #Remove FF cosmetic
@@ -719,9 +700,6 @@ on_actions = {
 						set_cosmetic_tag = BYZ_UNIFIED_fascism
 					}
 					else = {
-						limit = {
-							has_government = neutrality
-						}
 						set_cosmetic_tag = BYZ_UNIFIED_neutrality
 					}
 				}
@@ -754,9 +732,6 @@ on_actions = {
 						set_cosmetic_tag = GRE_GREATER_GREECE_fascism
 					}
 					else = {
-						limit = {
-							has_government = neutrality
-						}
 						set_cosmetic_tag = GRE_GREATER_GREECE_neutrality
 					}
 				}
@@ -783,9 +758,6 @@ on_actions = {
 						set_cosmetic_tag = GRE_dem_monarchy_fascism
 					}
 					else = {
-						limit = {
-							has_government = neutrality
-						}
 						set_cosmetic_tag = GRE_dem_monarchy_neutrality
 					}
 				}
@@ -818,9 +790,6 @@ on_actions = {
 						set_cosmetic_tag = GRE_com_independent_fascism
 					}
 					else = {
-						limit = {
-							has_government = neutrality
-						}
 						set_cosmetic_tag = GRE_com_independent_neutrality
 					}
 				}
@@ -847,9 +816,6 @@ on_actions = {
 						set_cosmetic_tag = MAE_fascism
 					}
 					else = {
-						limit = {
-							has_government = neutrality
-						}
 						set_cosmetic_tag = MAE_neutrality
 					}
 				}
@@ -873,9 +839,6 @@ on_actions = {
 						set_cosmetic_tag = GRE_fascism
 					}
 					else = {
-						limit = {
-							has_government = neutrality
-						}
 						set_cosmetic_tag = GRE_neutrality
 					}
 				}

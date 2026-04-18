@@ -2475,6 +2475,7 @@ focus_tree = {
 				uses = 1
 				category = artillery
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = HOL_modernize_our_infantry_equipment_tt
 		}
 	}
@@ -2501,9 +2502,6 @@ focus_tree = {
 
 	focus = {
 		id = HOL_light_tanks_for_the_colonies
-		allow_branch = {
-			always = yes
-		}
 		prerequisite = { focus = HOL_modernize_our_infantry_equipment focus = HOL_production_under_license }
 		icon = GFX_goal_generic_army_tanks
 		x = -1
@@ -2562,9 +2560,6 @@ focus_tree = {
 			}
 			has_war = no
 		}
-		allow_branch = {
-			always = yes
-		}
 		prerequisite = { focus = HOL_modernize_our_infantry_equipment focus = HOL_production_under_license }
 		icon = GFX_goal_generic_intelligence_exchange
 		x = 1
@@ -2582,9 +2577,6 @@ focus_tree = {
 
 	focus = {
 		id = HOL_anti_tank_guns_for_the_continent
-		allow_branch = {
-			always = yes
-		}
 		prerequisite = { focus = HOL_modernize_our_infantry_equipment focus = HOL_production_under_license }
 		icon = GFX_goal_generic_army_artillery2
 		x = 3

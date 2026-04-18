@@ -59,12 +59,10 @@ on_actions = {
 				#If Fascist Horthy or Nazi Franz is leading a fascist side. Get rid of the neutral guy.
 				if = {
 					limit = {
-						AND = {
-							FROM = {
-								has_country_leader = { id = 502 } #Nazi Franz
-							}
-							has_country_leader = { id = 501 } #Neutral Franz
+						FROM = {
+							has_country_leader = { id = 502 } #Nazi Franz
 						}
+						has_country_leader = { id = 501 } #Neutral Franz
 					}
 					retire_country_leader = yes
 					#Neutral Horthy no longer likes fascist if a civil war breaks out because of them
@@ -94,12 +92,10 @@ on_actions = {
 
 				if = {
 					limit = {
-						AND = {
-							FROM = {
-								has_country_leader = { id = 503 } #Horthy fascist
-							}
-							has_country_leader = { id = 500 } #Horthy Neutral
+						FROM = {
+							has_country_leader = { id = 503 } #Horthy fascist
 						}
+						has_country_leader = { id = 500 } #Horthy Neutral
 					}
 					retire_country_leader = yes
 				}
