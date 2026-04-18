@@ -7589,80 +7589,36 @@ country_event = {
 	# Ok
 	option = {
 		name = mtg_britain.103.a
-		if = {
+		every_country = {
 			limit = {
 				OR = {
-					has_dlc = "Together for Victory"
 					AND = {
-						has_dlc = "Death or Dishonor"
-						has_government = fascism
+						is_subject_of = ENG
+						tag = CAN
+					}
+					AND = {
+						is_subject_of = ENG
+						tag = SAF
+					}
+					AND = {
+						is_subject_of = ENG
+						tag = RAJ
+					}
+					AND = {
+						is_subject_of = ENG
+						tag = AST
+					}
+					AND = {
+						is_subject_of = ENG
+						tag = NZL
+					}
+					AND = {
+						is_subject_of = ENG
+						tag = MAL
 					}
 				}
 			}
-			every_country = {
-				limit = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							tag = CAN
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = SAF
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = RAJ
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = AST
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = NZL
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = MAL
-						}
-					}
-				}
-				add_ideas = ENG_federal_integration
-			}
-		}
-		else = {
-			every_country = {
-				limit = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							tag = CAN
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = SAF
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = RAJ
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = AST
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = NZL
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = MAL
-						}
-					}
-				}
-				add_ideas = ENG_federal_integration_tfv
-			}
+			add_ideas = ENG_federal_integration
 		}
 		set_country_flag = ENG_dominions_accepted_federation
 	}
@@ -7680,72 +7636,32 @@ country_event = {
 	# Go through with it anyway - give India independence
 	option = {
 		name = mtg_britain.104.a
-		if = {
+		every_country = {
 			limit = {
 				OR = {
-					has_dlc = "Together for Victory"
 					AND = {
-						has_dlc = "Death or Dishonor"
-						has_government = fascism
+						is_subject_of = ENG
+						tag = CAN
+					}
+					AND = {
+						is_subject_of = ENG
+						tag = SAF
+					}
+					AND = {
+						is_subject_of = ENG
+						tag = AST
+					}
+					AND = {
+						is_subject_of = ENG
+						tag = NZL
+					}
+					AND = {
+						is_subject_of = ENG
+						tag = MAL
 					}
 				}
 			}
-			every_country = {
-				limit = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							tag = CAN
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = SAF
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = AST
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = NZL
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = MAL
-						}
-					}
-				}
-				add_ideas = ENG_federal_integration
-			}
-		}
-		else = {
-			every_country = {
-				limit = {
-					OR = {
-						AND = {
-							is_subject_of = ENG
-							tag = CAN
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = SAF
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = AST
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = NZL
-						}
-						AND = {
-							is_subject_of = ENG
-							tag = MAL
-						}
-					}
-				}
-				add_ideas = ENG_federal_integration_tfv
-			}
+			add_ideas = ENG_federal_integration
 		}
 		set_country_flag = ENG_dominions_accepted_federation
 		set_autonomy = {
