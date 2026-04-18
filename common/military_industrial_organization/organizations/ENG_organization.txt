@@ -129,13 +129,7 @@ ENG_vauxhall_organization = {
 		OR = {
 			tag = ENG
 			tag = SAF
-			AND = {
-				tag = POL # If Poland sets up a local one
-				OR = {
-					has_dlc = "Poland: United and Ready"
-					has_dlc = "No Step Back"
-				}
-			}
+			tag = POL # If Poland sets up a local one
 			AND = {
 				tag = BUL
 				has_dlc = "Battle for the Bosporus"
@@ -803,10 +797,7 @@ ENG_vauxhall_automotive_organization = {
 		OR = {
 			tag = ENG
 			tag = POL # If Poland sets up a local one
-			AND = {
-				tag = ROM
-				has_dlc = "Death or Dishonor"
-			}
+			tag = ROM
 			AND = {
 				tag = BUL
 				has_dlc = "Battle for the Bosporus"

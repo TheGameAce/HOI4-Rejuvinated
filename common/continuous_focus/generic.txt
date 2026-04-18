@@ -238,8 +238,6 @@ continuous_focus_palette = {
 		icon = GFX_goal_continuous_research
 		
 		available = {
-			hidden_trigger = { has_dlc = "Together for Victory" }
-			
 		}
 
 		enable = {
@@ -283,7 +281,6 @@ continuous_focus_palette = {
 		icon = GFX_goal_continuous_boost_freedom
 		
 		available = {
-			hidden_trigger = { has_dlc = "Together for Victory" }
 			is_subject = yes			
 		}
 		
@@ -308,7 +305,6 @@ continuous_focus_palette = {
 		icon = GFX_goal_continuous_restrict_freedom
 		
 		available = {
-			hidden_trigger = { has_dlc = "Together for Victory" }
 		}
 
 		enable = {

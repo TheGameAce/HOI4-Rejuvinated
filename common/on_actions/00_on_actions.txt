@@ -486,16 +486,6 @@ on_actions = {
 				clr_country_flag = TO_joined_brussels_treaty
 			}
 
-			if = {
-				limit = {
-					AND = {
-						tag = CAN
-						NOT = { has_dlc = "Together for Victory" }
-					}
-				}
-				abandon_colony_tag = yes
-			}
-
 			IF = {
 				limit = {
 					NOT = {
@@ -1428,7 +1418,6 @@ on_actions = {
 			#End of Balkan war
 			if = {
 				limit = {
-					has_dlc = "Death or Dishonor"
 					original_tag = YUG
 				}
 				every_other_country = {
@@ -2290,7 +2279,6 @@ on_actions = {
 			ROM = {
 				if = {
 					limit = {
-						has_dlc = "Death or Dishonor"
 						OR = {
 							AND = {
 								is_historical_focus_on = no
@@ -2344,7 +2332,6 @@ on_actions = {
 			HUN = {
 				IF = {
 					limit = {
-						has_dlc = "Death or Dishonor"
 						NOT = {
 							has_dlc = "Gotterdammerung"
 						}
@@ -2527,7 +2514,6 @@ on_actions = {
 			CZE = {
 				if = {
 					limit = {
-						has_dlc = "Death or Dishonor"
 						OR = {
 							AND = {
 								is_historical_focus_on = no
@@ -2589,7 +2575,6 @@ on_actions = {
 			YUG = {
 				if = {
 					limit = {
-						has_dlc = "Death or Dishonor"
 						OR = {
 							AND = {
 								is_historical_focus_on = no
@@ -2643,7 +2628,6 @@ on_actions = {
 			AST = {
 				if = {
 					limit = {
-						has_dlc = "Together for Victory"
 						OR = {
 							AND = {
 								is_historical_focus_on = no
@@ -2669,7 +2653,6 @@ on_actions = {
 			CAN = {
 				if = {
 					limit = {
-						has_dlc = "Together for Victory"
 						OR = {
 							AND = {
 								is_historical_focus_on = no
@@ -2695,7 +2678,6 @@ on_actions = {
 			SAF = {
 				if = {
 					limit = {
-						has_dlc = "Together for Victory"
 						OR = {
 							AND = {
 								is_historical_focus_on = no
@@ -2721,7 +2703,6 @@ on_actions = {
 			NZL = {
 				if = {
 					limit = {
-						has_dlc = "Together for Victory"
 						OR = {
 							AND = {
 								is_historical_focus_on = no
@@ -2747,7 +2728,6 @@ on_actions = {
 			RAJ = {
 				if = {
 					limit = {
-						has_dlc = "Together for Victory"
 						NOT = { has_dlc = "Graveyard of Empires" }
 						OR = {
 							AND = {
@@ -2868,10 +2848,6 @@ on_actions = {
 			POL = {
 				if = {
 					limit = {
-						OR = {
-							has_dlc = "Poland: United and Ready"
-							has_dlc = "No Step Back"
-						}
 						OR = {
 							AND = {
 								is_historical_focus_on = no
@@ -3904,8 +3880,7 @@ on_actions = {
 			}
 			RAJ = {
 				if = {
-					limit = { 
-						has_dlc = "Together for Victory" 
+					limit = {  
 						NOT = { has_dlc = "Graveyard of Empires" }
 					}
 					
