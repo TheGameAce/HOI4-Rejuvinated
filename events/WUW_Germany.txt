@@ -234,8 +234,8 @@ country_event = { #Charlie Brown and Franz Stigler incident (GER)
 		}	
 
 		add_ace = {
-			name = Franz
-			surname = Stigler
+			name = "Franz"
+			surname = "Stigler"
 			callsign = "Kugel" #Made up. means "bullet" in German... none of which flew :D
 			type = fighter_unique
 		}
@@ -600,7 +600,7 @@ country_event = { #FROM has foiled our influencing efforts
 						}
 					}
 					remove_ideas = {
-						idea = fascist_influence
+						fascist_influence
 					}
 				}		
 				ELSE_IF = {
@@ -610,7 +610,7 @@ country_event = { #FROM has foiled our influencing efforts
 						}
 					}
 					remove_ideas = {
-						idea = democratic_influence
+						democratic_influence
 					}
 				}
 				ELSE_IF = {
@@ -620,7 +620,7 @@ country_event = { #FROM has foiled our influencing efforts
 						}
 					}
 					remove_ideas = {
-						idea = neutrality_influence
+						neutrality_influence
 					}
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
@@ -941,6 +941,7 @@ country_event = { #FROM wants their old colonies back (ROOT is Japan)
 		}
 		
 		add_tech_bonus = {
+			name = armor_bonus
 			bonus = 0.5
 			uses = 1
 			category = armor
@@ -1098,6 +1099,7 @@ country_event = { #Japanese transfer of old colonies to Germany
 			
 			FROM = {
 				add_tech_bonus = {
+					name = armor_bonus
 					bonus = 0.5
 					uses = 1
 					category = armor
@@ -3432,8 +3434,6 @@ country_event = {
 
 	is_triggered_only = yes
 
-	fire_only_once = no
-
 	immediate = {
 	}
 
@@ -3511,7 +3511,7 @@ country_event = {
 			base = 15
 			modifier = {
 				factor = 0
-				threat > 30
+				threat > 0.3
 			}
 		}		
 
@@ -3533,8 +3533,6 @@ country_event = {
 	title = wuw_GER_diplomacy.65.t
 	desc = wuw_GER_diplomacy.65.desc 
 	picture = GFX_report_event_generic_sign_treaty2
-
-	fire_only_once = no
 
 	is_triggered_only = yes
 
@@ -3633,8 +3631,6 @@ country_event = {
 	desc = wuw_GER_diplomacy.66.desc 
 	picture = GFX_report_event_generic_sign_treaty1
 
-	fire_only_once = no
-
 	is_triggered_only = yes
 
 	immediate = {
@@ -3670,8 +3666,6 @@ country_event = {
 	picture = GFX_report_event_vienna_award_negotiations
 
 	is_triggered_only = yes
-
-	fire_only_once = no
 
 	immediate = {
 	}
@@ -3866,8 +3860,6 @@ country_event = {
 
 	is_triggered_only = yes
 
-	fire_only_once = no
-
 	immediate = {
 	}
 
@@ -4009,8 +4001,6 @@ country_event = {
 
 	is_triggered_only = yes
 
-	fire_only_once = no
-
 	immediate = {
 	}
 
@@ -4037,8 +4027,6 @@ country_event = {
 	picture = GFX_report_event_german_reichstag_gathering
 
 	is_triggered_only = yes
-
-	fire_only_once = no
 
 	immediate = {
 	}
@@ -5626,11 +5614,11 @@ country_event = { #SOV asked about resources for industry
 									include_locked = yes
 								}
 							}
-						}
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
 						}
 					}
 				}
@@ -5718,11 +5706,11 @@ country_event = { #SOV asked about resources for industry
 									include_locked = yes
 								}
 							}
-						}
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
 						}
 					}
 				}
@@ -5809,11 +5797,11 @@ country_event = { #SOV asked about resources for industry
 									include_locked = yes
 								}
 							}
-						}
-						add_building_construction = {
-							type = industrial_complex
-							level = 1
-							instant_build = yes
+							add_building_construction = {
+								type = industrial_complex
+								level = 1
+								instant_build = yes
+							}
 						}
 					}
 				}
@@ -7001,50 +6989,40 @@ country_event = {
 				295 = {
 					OWNER = {
 						NOT = {
-							OR = {
-								original_tag = COG
-								original_tag = BEL
-							}
+							original_tag = COG
+							original_tag = BEL
 						}
 					}
 				}
 				889 = {
 					OWNER = {
 						NOT = {
-							OR = {
-								original_tag = COG
-								original_tag = BEL
-							}
+							original_tag = COG
+							original_tag = BEL
 						}
 					}
 				}
 				718 = {
 					OWNER = {
 						NOT = {
-							OR = {
-								original_tag = COG
-								original_tag = BEL
-							}
+							original_tag = COG
+							original_tag = BEL
 						}
 					}
 				}
 				890 = {
 					OWNER = {
 						NOT = {
-							OR = {
-								original_tag = COG
-								original_tag = BEL
-							}
+							original_tag = COG
+							original_tag = BEL
 						}
 					}
 				}
 				768 = {
 					OWNER = {
 						NOT = {
-							OR = {
-								original_tag = COG
-								original_tag = BEL
-							}
+							original_tag = COG
+							original_tag = BEL
 						}
 					}
 				}
@@ -7073,10 +7051,8 @@ country_event = {
 						owns_state = 718
 					}
 					NOT = {
-						OR = {
-							is_subject_of = GER
-							is_in_faction_with = GER
-						}
+						is_subject_of = GER
+						is_in_faction_with = GER
 					}
 				}
 				GER = {
@@ -7105,10 +7081,8 @@ country_event = {
 						owns_state = 888
 					}
 					NOT = {
-						OR = {
-							is_subject_of = ROOT
-							is_in_faction_with = ROOT
-						}
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
 					}
 				}
 				ROOT = {
@@ -7590,8 +7564,6 @@ country_event = {
 
 	is_triggered_only = yes
 
-	fire_only_once = no
-
 	option = { # Perfect
 		name = wuw_GER_weltpolitik.8.a
 		
@@ -7643,8 +7615,6 @@ country_event = {
 	title = wuw_GER_weltpolitik.9.t
 	desc = wuw_GER_weltpolitik.9.desc 
 	picture = GFX_report_event_gre_diplomacy
-
-	fire_only_once = no
 
 	is_triggered_only = yes
 
@@ -7747,8 +7717,6 @@ country_event = {
 	title = wuw_GER_weltpolitik.10.t
 	desc = wuw_GER_weltpolitik.10.desc 
 	picture = GFX_report_event_gre_diplomacy
-
-	fire_only_once = no
 
 	is_triggered_only = yes
 
@@ -8402,14 +8370,12 @@ country_event = {
 	picture = GFX_report_event_GER_grenzshutz_forces
 	
 	is_triggered_only = yes
-
-	fire_only_once = no
 	
 	# It is not worth shedding blood over
 	option = { 
 		name = wuw_GER_weltpolitik.19.a
 		ai_chance = {
-			factor = 60
+			base = 60
 			modifier = {
 				factor = 0.3
 				original_tag = ANG
@@ -8435,7 +8401,7 @@ country_event = {
 	option = { 
 		name = wuw_GER_weltpolitik.19.b
 		ai_chance = {
-			factor = 40
+			base = 40
 			modifier = {
 				factor = 1.5
 				original_tag = ANG
@@ -8466,14 +8432,12 @@ country_event = {
 	picture = GFX_report_event_generic_sign_treaty1
 	
 	is_triggered_only = yes
-
-	fire_only_once = no
 	
 	# This is a great day!
 	option = { 
 		name = wuw_GER_weltpolitik.20.a
 		ai_chance = {
-			factor = 100
+			base = 100
 		}
 
 		add_war_support = 0.01
@@ -8498,14 +8462,12 @@ country_event = {
 	picture = GFX_report_event_GER_black_reichswehr_forces
 	
 	is_triggered_only = yes
-
-	fire_only_once = no
 	
 	# They will regret their decision
 	option = { 
 		name = wuw_GER_weltpolitik.21.a
 		ai_chance = {
-			factor = 80
+			base = 80
 		}
 
 		add_war_support = 0.02
@@ -8521,7 +8483,7 @@ country_event = {
 	option = { 
 		name = wuw_GER_weltpolitik.21.b
 		ai_chance = {
-			factor = 20
+			base = 20
 		}
 
 		add_political_power = 25
@@ -9968,12 +9930,10 @@ country_event = {
 						state = 251
 					}
 					NOT = {
-						OR = {
-							is_owned_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								owns_state = PREV
-							}
+						is_owned_by = ROOT
+						any_country = {
+							is_subject_of = ROOT
+							owns_state = PREV
 						}
 					}
 				}
@@ -10080,12 +10040,10 @@ country_event = {
 				limit = {
 					GER_is_RK_south_urals_state = yes
 					NOT = {
-						OR = {
-							is_owned_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								owns_state = PREV
-							}
+						is_owned_by = ROOT
+						any_country = {
+							is_subject_of = ROOT
+							owns_state = PREV
 						}
 					}
 				}
@@ -10161,12 +10119,10 @@ country_event = {
 				limit = {
 					GER_is_RK_south_urals_state = yes
 					NOT = {
-						OR = {
-							is_owned_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								owns_state = PREV
-							}
+						is_owned_by = ROOT
+						any_country = {
+							is_subject_of = ROOT
+							owns_state = PREV
 						}
 					}
 				}
@@ -10314,12 +10270,10 @@ country_event = {
 						GER_is_additional_soviet_greater_finland_state = yes
 					}
 					NOT = {
-						OR = {
-							is_owned_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								owns_state = PREV
-							}
+						is_owned_by = ROOT
+						any_country = {
+							is_subject_of = ROOT
+							owns_state = PREV
 						}
 					}
 					OR = {
@@ -11257,12 +11211,10 @@ country_event = {
 				limit = {
 					GER_is_far_north_RKC_state = yes
 					NOT = {
-						OR = {
-							is_owned_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								owns_state = PREV
-							}
+						is_owned_by = ROOT
+						any_country = {
+							is_subject_of = ROOT
+							owns_state = PREV
 						}
 					}
 					OR = {
@@ -11284,13 +11236,11 @@ country_event = {
 	option = { # It should be incorporated into Böhmen-Mähren
 		name = wuw_GER_reichskommissariats.17.c
 		trigger = {
-			AND = {
-				RKH = {
-					exists = yes
-				}
-				SLO = {
-					exists = no
-				}
+			RKH = {
+				exists = yes
+			}
+			SLO = {
+				exists = no
 			}
 		}
 		ai_chance = {
@@ -11317,12 +11267,10 @@ country_event = {
 				limit = {
 					GER_is_far_north_RKC_state = yes
 					NOT = {
-						OR = {
-							is_owned_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								owns_state = PREV
-							}
+						is_owned_by = ROOT
+						any_country = {
+							is_subject_of = ROOT
+							owns_state = PREV
 						}
 					}
 					OR = {
@@ -11344,25 +11292,23 @@ country_event = {
 	option = { # It should be incorporated into Germany
 		name = wuw_GER_reichskommissariats.17.d
 		trigger = {
-			AND = {
-				73 = {
-					is_owned_and_controlled_by = ROOT
-				}
-				664 = {
-					is_owned_and_controlled_by = ROOT
-				}
-				71 = {
-					is_owned_and_controlled_by = ROOT
-				}
-				70 = {
-					is_owned_and_controlled_by = ROOT
-				}
-				72 = {
-					is_owned_and_controlled_by = ROOT
-				}
-				4 = {
-					is_owned_and_controlled_by = ROOT
-				}
+			73 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			664 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			71 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			70 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			72 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			4 = {
+				is_owned_and_controlled_by = ROOT
 			}
 		}
 		ai_chance = {
@@ -12406,12 +12352,10 @@ country_event = {
 				limit = {
 					GER_is_west_coast_north_america_state = yes
 					NOT = {
-						OR = {
-							is_owned_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								owns_state = PREV
-							}
+						is_owned_by = ROOT
+						any_country = {
+							is_subject_of = ROOT
+							owns_state = PREV
 						}
 					}
 					OR = {
@@ -12461,12 +12405,10 @@ country_event = {
 				limit = {
 					GER_is_west_coast_north_america_state = yes
 					NOT = {
-						OR = {
-							is_owned_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								owns_state = PREV
-							}
+						is_owned_by = ROOT
+						any_country = {
+							is_subject_of = ROOT
+							owns_state = PREV
 						}
 					}
 					OR = {
@@ -13394,7 +13336,7 @@ country_event = {
 			GER_ernst_thalmann = {
 				set_portraits = {
 					civilian = {
-						small = GFX_portrait_GER_ernst_thalmann_small
+						small = GFX_idea_ernst_thalmann
 					}
 				}
 			}
@@ -18741,11 +18683,9 @@ country_event = {
 
 			IF = {
 				limit = {
-					NOT = { 
-						OR = {
-							has_completed_focus = AUS_reinstate_the_imperial_council
-							has_global_flag = HUN_otto_von_habsburg_has_joined_hungary_flag
-						}
+					NOT = {
+						has_completed_focus = AUS_reinstate_the_imperial_council
+						has_global_flag = HUN_otto_von_habsburg_has_joined_hungary_flag
 					}
 				}
 				HUN = {
@@ -19642,14 +19582,12 @@ country_event = {
 	picture = GFX_report_event_GER_black_reichswehr_forces
 	
 	is_triggered_only = yes
-
-	fire_only_once = no
 	
 	# It is not worth shedding blood over
 	option = { 
 		name = wuw_GER_realpolitik.51.a
 		ai_chance = {
-			factor = 80
+			base = 80
 			modifier = {
 				strength_ratio = { tag = GER ratio < 1 }
 				factor = 2
@@ -19712,7 +19650,7 @@ country_event = {
 	option = { 
 		name = wuw_GER_realpolitik.51.b
 		ai_chance = {
-			factor = 20
+			base = 20
 			modifier = {
 				strength_ratio = { tag = GER ratio > 1 }
 				factor = 2
@@ -19747,8 +19685,6 @@ country_event = {
 	picture = GFX_report_event_GER_black_reichswehr_forces
 	
 	is_triggered_only = yes
-
-	fire_only_once = no
 	
 	# This is a great day!
 	option = { 
@@ -19820,14 +19756,12 @@ country_event = {
 	picture = GFX_report_event_generic_polish_machinegunners
 	
 	is_triggered_only = yes
-
-	fire_only_once = no
 	
 	# They will regret their decision
 	option = { 
 		name = wuw_GER_realpolitik.53.a
 		ai_chance = {
-			factor = 95
+			base = 95
 		}
 
 		if = {
@@ -19868,7 +19802,7 @@ country_event = {
 	option = { 
 		name = wuw_GER_realpolitik.53.b
 		ai_chance = {
-			factor = 5
+			base = 5
 		}
 
 		add_political_power = 25
@@ -19886,14 +19820,12 @@ country_event = {
 	picture = GFX_report_event_GER_black_reichswehr_forces
 	
 	is_triggered_only = yes
-
-	fire_only_once = no
 	
 	# It is not worth shedding blood over
 	option = { 
 		name = wuw_GER_realpolitik.54.a
 		ai_chance = {
-			factor = 80
+			base = 80
 			modifier = {
 				strength_ratio = { tag = GER ratio < 1 }
 				factor = 2
@@ -19960,7 +19892,7 @@ country_event = {
 	option = { 
 		name = wuw_GER_realpolitik.54.b
 		ai_chance = {
-			factor = 20
+			base = 20
 			modifier = {
 				strength_ratio = { tag = GER ratio > 1 }
 				factor = 2
@@ -19995,8 +19927,6 @@ country_event = {
 	picture = GFX_report_event_GER_black_reichswehr_forces
 	
 	is_triggered_only = yes
-
-	fire_only_once = no
 	
 	# This is a great day!
 	option = { 
@@ -20074,14 +20004,12 @@ country_event = {
 	picture = GFX_report_event_generic_polish_machinegunners
 	
 	is_triggered_only = yes
-
-	fire_only_once = no
 	
 	# They will regret their decision
 	option = { 
 		name = wuw_GER_realpolitik.56.a
 		ai_chance = {
-			factor = 95
+			base = 95
 		}
 
 		create_wargoal = {
@@ -20095,7 +20023,7 @@ country_event = {
 	option = { 
 		name = wuw_GER_realpolitik.56.b
 		ai_chance = {
-			factor = 5
+			base = 5
 		}
 
 		add_political_power = 25
@@ -20924,8 +20852,6 @@ news_event = {
 	desc = wuw_GER_news.2.desc
 	picture = GFX_news_event_generic_silesian_rebels
 	
-	major = no
-	
 	is_triggered_only = yes
 	
 	# An interesting turn of events (for everyone except Germany, Silesia and Poland)
@@ -20936,11 +20862,9 @@ news_event = {
 		}
 		trigger = {
 			NOT = {
-				OR = {
-					original_tag = GER
-					original_tag = SIL
-					original_tag = POL
-				}
+				original_tag = GER
+				original_tag = SIL
+				original_tag = POL
 			}
 		}
 	}
@@ -21043,8 +20967,6 @@ country_event = {
 	}
 
 	mean_time_to_happen = { days = 14 }
-
-	hidden = no
 
 	fire_only_once = yes
 
@@ -24477,8 +24399,6 @@ country_event = { #[FROM.GetNameDefCap] Demands Our Subjugation
 	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
 
-	fire_only_once = no
-
 	option = { #sounds good
 		name = GOT_GER_fading_eagle.01.a
 		ai_chance = {
@@ -24531,8 +24451,6 @@ country_event = { #[FROM.GetNameDefCap] Accepts our Demands
 	picture = GFX_report_event_generic_handshake
 	is_triggered_only = yes
 
-	fire_only_once = no
-
 	option = { #great!
 		name = GOT_GER_fading_eagle.02.a
 
@@ -24551,8 +24469,6 @@ country_event = { #[FROM.GetNameDefCap] Rejects our Demands
 	desc = GOT_GER_fading_eagle.03.desc
 	picture = GFX_report_event_generic_riot
 	is_triggered_only = yes
-
-	fire_only_once = no
 
 	option = { #it was not a question!
 		name = GOT_GER_fading_eagle.03.a
