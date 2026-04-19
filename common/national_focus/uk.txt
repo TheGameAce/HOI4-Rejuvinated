@@ -8587,7 +8587,7 @@ focus_tree = {
 			is_subject = no
 			has_government = fascism
 		}
-		icon = GFX_goal_support_fascism
+		icon = GFX_focus_RJ_ENG_british_path_to_fascism
 		x = 0
 		y = 1
 		relative_position_id = ENG_organize_the_blackshirts
@@ -8606,7 +8606,7 @@ focus_tree = {
 	focus = {
 		id = ENG_secure_the_italian_alliance
 		prerequisite = { focus = ENG_the_british_path_to_fascism }
-		mutually_exclusive = { focus = rj_ENG_initiate_the_london_berlin_axis focus = ENG_gibraltar_for_spanish_support }
+		mutually_exclusive = { focus = rj_ENG_initiate_the_london_berlin_axis }
 
 		available = {
 			is_subject = no
@@ -8643,88 +8643,14 @@ focus_tree = {
 		y = 1
 		relative_position_id = ENG_the_british_path_to_fascism
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
 		}	
 
 		completion_reward = {
-
-			GER = {
-				if = {
-					limit = {
-						has_government = fascism
-					}
-					add_opinion_modifier = { target = ENG modifier = ENG_the_british_path_to_fascism }
-					custom_effect_tooltip = generic_skip_one_line_tt
-				}
-			}
-
-			add_ai_strategy = {
-				type = antagonize
-				id = GER
-				value = 200
-			}
-			add_ai_strategy = {
-				type = alliance
-				id = GER
-				value = -200
-			}
-			add_ai_strategy = {
-				type = befriend
-				id = GER
-				value = -200
-			}
-			add_ai_strategy = {
-				type = protect
-				id = GER
-				value = -200
-			}
-
-			GER = {
-				add_ai_strategy = {
-					type = antagonize
-					id = ROOT
-					value = 200
-				}
-				add_ai_strategy = {
-					type = alliance
-					id = ROOT
-					value = -200
-				}
-				add_ai_strategy = {
-					type = befriend
-					id = ROOT
-					value = -200
-				}
-				add_ai_strategy = {
-					type = protect
-					id = ROOT
-					value = -200
-				}
-			}
-
-			IF = {
-				limit = {
-					is_in_faction_with = FRA
-					has_war = no
-				}
-				remove_from_faction = FRA
-			}
-
-			ITA = {
-				IF = {
-					limit = {
-						has_government = fascism
-					}
-					add_opinion_modifier = { target = ENG modifier = ENG_broke_french_relations }
-					custom_effect_tooltip = generic_skip_one_line_tt
-				}
-			}
-
 			ITA = { country_event = { id = mtg_britain.36 hours = 6 } }
-
 		}
 
 		search_filters = { FOCUS_FILTER_DIPLOMACY }
@@ -8733,7 +8659,7 @@ focus_tree = {
 	focus = {
 		id = rj_ENG_initiate_the_london_berlin_axis
 		prerequisite = { focus = ENG_the_british_path_to_fascism }
-		mutually_exclusive = { focus = ENG_secure_the_italian_alliance focus = ENG_gibraltar_for_spanish_support }
+		mutually_exclusive = { focus = ENG_secure_the_italian_alliance }
 		available = {
 			is_subject = no
 			has_government = fascism
@@ -8743,10 +8669,10 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_chi_mission_to_germany
-		x = -7
+		x = -6
 		y = 1
 		relative_position_id = ENG_the_british_path_to_fascism
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -8773,9 +8699,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_gibraltar_for_spanish_support
-		prerequisite = { focus = ENG_the_british_path_to_fascism }
-		mutually_exclusive = { focus = ENG_secure_the_italian_alliance }
-		mutually_exclusive = { focus = rj_ENG_initiate_the_london_berlin_axis }
+		prerequisite = { focus = ENG_secure_the_italian_alliance focus = rj_ENG_initiate_the_london_berlin_axis }
 		available = {
 			is_subject = no
 			if = {
@@ -8801,10 +8725,10 @@ focus_tree = {
 			has_global_flag = scw_over
 		}
 		icon = GFX_focus_intervention_spain_nationalists
-		x = -10
+		x = -1
 		y = 1
-		relative_position_id = ENG_the_british_path_to_fascism
-		cost = 10
+		relative_position_id = ENG_secure_the_italian_alliance
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}	
@@ -8836,7 +8760,7 @@ focus_tree = {
 		available = {
 
 		}
-		icon = GFX_goal_generic_construct_mil_factory
+		icon = GFX_focus_RJ_ENG_mosley_manifesto
 		x = 0
 		y = 1
 		relative_position_id = ENG_the_british_path_to_fascism
@@ -8880,8 +8804,8 @@ focus_tree = {
 				tooltip = production_speed_infrastructure_factor_tt
 			}
 			add_to_variable = {
-				rj_ENG_the_economy_consumer_goods_factor = -0.05
-				tooltip = consumer_goods_factor_tt
+				rj_ENG_the_economy_production_speed_buildings_factor = 0.05
+				tooltip = production_speed_buildings_factor_tt
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
