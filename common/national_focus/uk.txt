@@ -8614,6 +8614,9 @@ focus_tree = {
 			NOT = { has_war_together_with = FRA }
 			NOT = { has_war_with = ITA }
 			ITA = { is_in_faction = no }
+			NOT = {
+				has_completed_focus = RJ_ENG_europe_a_nation
+			}
 		}
 
 		bypass = {
@@ -8639,7 +8642,7 @@ focus_tree = {
 		}
 
 		icon = GFX_focus_befriend_italy
-		x = -4
+		x = -7
 		y = 1
 		relative_position_id = ENG_the_british_path_to_fascism
 
@@ -8669,9 +8672,12 @@ focus_tree = {
 				is_subject = no
 				has_government = fascism
 			}
+			NOT = {
+				has_completed_focus = RJ_ENG_europe_a_nation
+			}
 		}
 		icon = GFX_focus_chi_mission_to_germany
-		x = -6
+		x = -9
 		y = 1
 		relative_position_id = ENG_the_british_path_to_fascism
 		cost = 5
@@ -8772,26 +8778,6 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}	
-		complete_tooltip = {
-			every_state = {
-				limit = { has_state_flag = enact_the_mosley_memorandum_2IC }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			every_state = {
-				limit = { has_state_flag = enact_the_mosley_memorandum_2AF }
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			if = {
@@ -8850,6 +8836,107 @@ focus_tree = {
 	}
 
 	focus = {
+		id = RJ_ENG_power_to_the_king
+		prerequisite = { focus = ENG_the_british_path_to_fascism }
+		available = {
+
+		}
+		icon = GFX_focus_eng_god_save_the_king
+		x = 2
+		y = 1
+		relative_position_id = ENG_the_british_path_to_fascism
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}	
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = ENG_power_to_the_king_idea
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_reform_the_parliament
+		prerequisite = { focus = ENG_the_british_path_to_fascism }
+		available = {
+
+		}
+		icon = GFX_focus_AFG_parliamentary_democracy
+		x = -2
+		y = 1
+		relative_position_id = ENG_the_british_path_to_fascism
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}	
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_political_power = 200
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_the_agricultural_plan
+		prerequisite = { focus = ENG_enact_the_mosley_manifesto }
+		available = {
+
+		}
+		icon = GFX_focus_generic_farmland
+		x = 1
+		y = 1
+		relative_position_id = ENG_enact_the_mosley_manifesto
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}	
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_establish_a_council_of_corporations
+		prerequisite = { focus = ENG_enact_the_mosley_manifesto }
+		available = {
+
+		}
+		icon = GFX_focus_generic_farmland
+		x = -1
+		y = 1
+		relative_position_id = ENG_enact_the_mosley_manifesto
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}	
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_the_mobile_labour_corps
+		prerequisite = { focus = ENG_enact_the_mosley_manifesto }
+		available = {
+
+		}
+		icon = GFX_focus_generic_farmland
+		x = 0
+		y = 2
+		relative_position_id = ENG_enact_the_mosley_manifesto
+		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}	
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			
+		}
+	}
+
+	focus = {
 		id = RJ_ENG_europe_a_nation
 		prerequisite = { focus = ENG_the_british_path_to_fascism }
 		relative_position_id = ENG_the_british_path_to_fascism
@@ -8880,6 +8967,8 @@ focus_tree = {
 			add_dynamic_modifier = {
 				modifier = RJ_ENG_the_european_nation
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = europe_a_nation_decision_unlock_tt
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }

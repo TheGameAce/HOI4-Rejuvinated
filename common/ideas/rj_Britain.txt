@@ -496,8 +496,8 @@ ideas = {
 			}
 		}
 
-		RJ_testing_idea = {
-			picture = RJ_idea_ENG_european_nation
+		ENG_god_save_the_king4_idea = {
+			picture = RJ_idea_ENG_god_save_the_king
 
 			allowed = {
 				always = no
@@ -510,7 +510,34 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				recruitable_population_factor = 0.10
+				stability_factor = 0.10
+				political_power_factor = 0.15
+				democratic_acceptance = 20
+				justify_war_goal_time = -0.15
+				war_support_factor = 0.10
+				army_core_defence_factor = 0.10
+				army_core_attack_factor = 0.10
+				army_org_factor = 0.10
+				org_loss_when_moving = -0.15
+			}
+		}
+
+		ENG_power_to_the_king_idea = {
+			picture = RJ_idea_ENG_god_save_the_king
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = ENG
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.20
+				stability_factor = 0.05
 			}
 		}
 	}
