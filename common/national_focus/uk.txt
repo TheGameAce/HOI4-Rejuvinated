@@ -837,7 +837,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = uk_extra_tech_slot
-		cost = 7.2
+		cost = 10
 
 		available_if_capitulated = yes
 		search_filters = {FOCUS_FILTER_RESEARCH}
@@ -8865,7 +8865,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = ENG_the_british_path_to_fascism
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
@@ -8892,7 +8892,85 @@ focus_tree = {
 		}	
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_monthly_population = 0.50
+				tooltip = monthly_population_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_consumer_goods_factor = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_rural_development_aid
+		prerequisite = { focus = RJ_ENG_the_agricultural_plan }
+		available = {
+			controls_state = 123
+			controls_state = 931
+			controls_state = 136
+			controls_state = 120
+		}
+		icon = GFX_focus_ITA_grande_rivolta_rurale
+		x = 0
+		y = 1
+		relative_position_id = RJ_ENG_the_agricultural_plan
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}	
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			123 = {
+				increase_state_category = yes
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			931 = {
+				increase_state_category = yes
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			136 = {
+				increase_state_category = yes
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			120 = {
+				increase_state_category = yes
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}
+			}
 		}
 	}
 
@@ -8902,11 +8980,34 @@ focus_tree = {
 		available = {
 
 		}
-		icon = GFX_focus_generic_farmland
+		icon = GFX_focus_ICE_state_corporatism
 		x = -1
 		y = 1
 		relative_position_id = ENG_enact_the_mosley_manifesto
 		cost = 7.2
+		ai_will_do = {
+			factor = 1
+		}	
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_military_industrial_organization_industrial_manufacturer_assign_cost = -0.50
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_industrial_streamlining
+		prerequisite = { focus = RJ_ENG_establish_a_council_of_corporations }
+		available = {
+
+		}
+		icon = GFX_focus_RJ_ENG_industrial_streamlining
+		x = 0
+		y = 1
+		relative_position_id = RJ_ENG_establish_a_council_of_corporations
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
@@ -8922,16 +9023,110 @@ focus_tree = {
 		available = {
 
 		}
-		icon = GFX_focus_generic_farmland
+		icon = GFX_focus_RJ_ENG_mobile_labour_corps
 		x = 0
-		y = 2
+		y = 3
 		relative_position_id = ENG_enact_the_mosley_manifesto
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}	
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_buildings_factor = 0.10
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_rail_way_factor = 0.15
+				tooltip = production_speed_rail_way_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_supply_node_factor = 0.10
+				tooltip = production_speed_supply_node_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_authorize_military_project_work
+		prerequisite = { focus = RJ_ENG_the_mobile_labour_corps }
+		available = {
+
+		}
+		icon = GFX_focus_generic_military_industry
+		x = 1
+		y = 1
+		relative_position_id = RJ_ENG_the_mobile_labour_corps
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}	
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_arms_factory_factor = 0.10
+				tooltip = production_speed_arms_factory_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_dockyard_factor = 0.10
+				tooltip = production_speed_dockyard_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_naval_base_factor = 0.15
+				tooltip = production_speed_naval_base_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_naval_supply_hub_factor = 0.15
+				tooltip = production_speed_naval_supply_hub_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_air_base_factor = 0.15
+				tooltip = production_speed_air_base_factor_tt
+			}
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_authorize_secret_projects
+		prerequisite = { focus = RJ_ENG_the_mobile_labour_corps }
+		available = {
+
+		}
+		icon = GFX_focus_NORDIC_com_selector_research
+		x = -1
+		y = 1
+		relative_position_id = RJ_ENG_the_mobile_labour_corps
+		cost = 14.4
+		ai_will_do = {
+			factor = 1
+		}	
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			
+		}
+	}
+
+	focus = {
+		id = RJ_ENG_british_autarky
+		prerequisite = { focus = RJ_ENG_the_mobile_labour_corps }
+		available = {
+
+		}
+		icon = GFX_focus_GER_autarky_achieved
+		x = 0
+		y = 2
+		relative_position_id = RJ_ENG_the_mobile_labour_corps
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}	
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
 			
 		}
 	}
