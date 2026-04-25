@@ -8611,7 +8611,7 @@ focus_tree = {
 		available = {
 			is_subject = no
 			country_exists = ITA
-			NOT = { has_war_together_with = FRA }
+			has_government = fascism
 			NOT = { has_war_with = ITA }
 			ITA = { is_in_faction = no }
 			NOT = {
@@ -8641,7 +8641,7 @@ focus_tree = {
 			}
 		}
 
-		icon = GFX_focus_befriend_italy
+		icon = GFX_focus_RJ_ENG_italian_british_alliance
 		x = -7
 		y = 1
 		relative_position_id = ENG_the_british_path_to_fascism
@@ -8675,8 +8675,11 @@ focus_tree = {
 			NOT = {
 				has_completed_focus = RJ_ENG_europe_a_nation
 			}
+			NOT = {
+				has_war_with = GER
+			}
 		}
-		icon = GFX_focus_chi_mission_to_germany
+		icon = GFX_focus_RJ_ENG_german_british_alliance
 		x = -9
 		y = 1
 		relative_position_id = ENG_the_british_path_to_fascism
