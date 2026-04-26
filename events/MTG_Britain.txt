@@ -2531,6 +2531,7 @@ country_event = {
 				add_ideas = ENG_exiled_royal_family
 			}
 		}
+		add_political_power = 100
 	}
 
 	# Execute them all
@@ -2538,11 +2539,20 @@ country_event = {
 		name = mtg_britain.43.b
 		ai_chance = {
 			base = 25
+			modifier = {
+				has_stability < 50
+				factor = 0.25
+			}
+			modifier = {
+				has_stability < 25
+				factor = 0
+			}
 		}
 		add_timed_idea = { idea = ENG_confiscated_royal_wealth days = 365 }
 		add_stability = -0.1
 		remove_ideas = ENG_george_vi
 		hidden_effect = { news_event = { id = mtg_news.35 days = 1 } }
+		add_political_power = 150
 	}
 }
 
@@ -2575,6 +2585,10 @@ country_event = {
 	# Get rid of them all
 	option = {
 		name = mtg_britain.45.a
+
+		ai_chance = {
+			base = 1
+		}
 		
 		retire_character = ENG_alan_brooke
 		retire_character = ENG_bernard_montgomery
@@ -2655,6 +2669,17 @@ country_event = {
 			}
 			set_state_flag = ENG_upper_classes_2AF
 		}
+	}
+
+	option = {
+		name = "Perhaps they can be reformed, instead?"
+
+		ai_chance = {
+			base = 1
+		}
+
+		add_political_power = 25
+		add_stability = 0.05
 	}
 }
 
@@ -3863,150 +3888,150 @@ country_event = {
 }
 
 # Communist civil war event
-country_event = {
-	id = mtg_britain.55
-	title = mtg_britain.55.t
-	desc = mtg_britain.55.d
-	picture = GFX_report_event_ger_civil_war
-
-	# Is now fired through mission failure instead, for clarity to the player
-
-	#trigger = {
-	#	tag = ENG
-	#	has_completed_focus = ENG_concessions_to_the_trade_unions
-	#	NOT = { has_completed_focus = ENG_decolonization }
-	#	has_government = communism
-	#	has_country_flag = ENG_switched_to_communism_civil_war_flag
-	#	NOT = { has_country_flag = ENG_switched_to_communism_civil_war_timer_flag }
-	#}
-	
-	#mean_time_to_happen = {
-	#	days = 2
-	#}
-
-	is_triggered_only = yes
-
-	immediate = {
-		hidden_effect = {
-			if = {
-				limit = {
-					has_country_leader = {
-						character = ENG_harry_pollitt
-						ruling_only = yes
-					}
-				}
-				set_country_flag = harry_pollitt
-			}
-			if = {
-				limit = {
-					has_country_leader = {
-						name = "Rajani Palme Dutt"
-						ruling_only = yes
-					}
-				}
-				set_country_flag = rajani_palme_dutt
-			}
-			set_country_flag = ENG_communist_civil_war
-			set_variable = {
-				var = civil_war_size_var
-				value = party_popularity@communism
-			}
-			if = {
-				limit = {
-					check_variable = {
-						var = civil_war_size_var
-						value = 0.5
-						compare = less_than
-					}
-				}
-				set_variable = {
-					var = civil_war_size_var
-					value = 0.5
-				}
-			}
-			start_civil_war = {
-				ruling_party = communism
-				ideology = communism
-				size = civil_war_size_var
-			}
-			random_other_country = {
-				limit = {
-					original_tag = ENG
-					has_government = communism
-				}
-				retire_country_leader = yes
-				retire_country_leader = yes
-				set_cosmetic_tag = ENG_communist_civil_war
-				set_country_flag = ENG_communist_civil_war
-				civil_war_anti_exploiter_punitive_action = yes
-			}
-			add_popularity = {
-				ideology = communism
-				popularity = 0.4
-			}
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.1
-			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = 0.2
-			}
-			if = {
-				limit = {
-					has_country_flag = harry_pollitt
-				}
-				create_country_leader = {
-					name = ENG_harry_pollitt
-					picture = GFX_portrait_Harry_Pollitt
-					expire = "1965.1.1"
-					ideology = leninism
-					traits = {
-						staunch_stalinist
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_country_flag = rajani_palme_dutt
-				}
-				create_country_leader = {
-					name = "Rajani Palme Dutt"
-					picture = GFX_portrait_Rajani_Palme_Dutt
-					expire = "1965.1.1"
-					ideology = leninism
-					traits = {
-						comintern_workhorse
-					}
-				}
-			}
-		}
-	}
-	
-	# Ok
-	option = {
-		name = mtg_britain.55.a
-		custom_effect_tooltip = ENG_communist_civil_war_tt
-		clr_country_flag = ENG_switched_to_communism_civil_war_flag
-		hidden_effect = { news_event = { id = mtg_news.43 days = 1 } }
-	}
-}
+#country_event = {
+#	id = mtg_britain.55
+#	title = mtg_britain.55.t
+#	desc = mtg_britain.55.d
+#	picture = GFX_report_event_ger_civil_war
+#
+#	# Is now fired through mission failure instead, for clarity to the player
+#
+#	#trigger = {
+#	#	tag = ENG
+#	#	has_completed_focus = ENG_concessions_to_the_trade_unions
+#	#	NOT = { has_completed_focus = ENG_decolonization }
+#	#	has_government = communism
+#	#	has_country_flag = ENG_switched_to_communism_civil_war_flag
+#	#	NOT = { has_country_flag = ENG_switched_to_communism_civil_war_timer_flag }
+#	#}
+#	
+#	#mean_time_to_happen = {
+#	#	days = 2
+#	#}
+#
+#	is_triggered_only = yes
+#
+#	immediate = {
+#		hidden_effect = {
+#			if = {
+#				limit = {
+#					has_country_leader = {
+#						character = ENG_harry_pollitt
+#						ruling_only = yes
+#					}
+#				}
+#				set_country_flag = harry_pollitt
+#			}
+#			if = {
+#				limit = {
+#					has_country_leader = {
+#						name = "Rajani Palme Dutt"
+#						ruling_only = yes
+#					}
+#				}
+#				set_country_flag = rajani_palme_dutt
+#			}
+#			set_country_flag = ENG_communist_civil_war
+#			set_variable = {
+#				var = civil_war_size_var
+#				value = party_popularity@communism
+#			}
+#			if = {
+#				limit = {
+#					check_variable = {
+#						var = civil_war_size_var
+#						value = 0.5
+#						compare = less_than
+#					}
+#				}
+#				set_variable = {
+#					var = civil_war_size_var
+#					value = 0.5
+#				}
+#			}
+#			start_civil_war = {
+#				ruling_party = communism
+#				ideology = communism
+#				size = civil_war_size_var
+#			}
+#			random_other_country = {
+#				limit = {
+#					original_tag = ENG
+#					has_government = communism
+#				}
+#				retire_country_leader = yes
+#				retire_country_leader = yes
+#				set_cosmetic_tag = ENG_communist_civil_war
+#				set_country_flag = ENG_communist_civil_war
+#				civil_war_anti_exploiter_punitive_action = yes
+#			}
+#			add_popularity = {
+#				ideology = communism
+#				popularity = 0.4
+#			}
+#			add_popularity = {
+#				ideology = fascism
+#				popularity = 0.1
+#			}
+#			add_popularity = {
+#				ideology = neutrality
+#				popularity = 0.2
+#			}
+#			if = {
+#				limit = {
+#					has_country_flag = harry_pollitt
+#				}
+#				create_country_leader = {
+#					name = ENG_harry_pollitt
+#					picture = GFX_portrait_Harry_Pollitt
+#					expire = "1965.1.1"
+#					ideology = leninism
+#					traits = {
+#						staunch_stalinist
+#					}
+#				}
+#			}
+#			if = {
+#				limit = {
+#					has_country_flag = rajani_palme_dutt
+#				}
+#				create_country_leader = {
+#					name = "Rajani Palme Dutt"
+#					picture = GFX_portrait_Rajani_Palme_Dutt
+#					expire = "1965.1.1"
+#					ideology = leninism
+#					traits = {
+#						comintern_workhorse
+#					}
+#				}
+#			}
+#		}
+#	}
+#	
+#	# Ok
+#	option = {
+#		name = mtg_britain.55.a
+#		custom_effect_tooltip = ENG_communist_civil_war_tt
+#		clr_country_flag = ENG_switched_to_communism_civil_war_flag
+#		hidden_effect = { news_event = { id = mtg_news.43 days = 1 } }
+#	}
+#}
 
 # Communist civil war ends
-country_event = {
-	id = mtg_britain.56
-	title = mtg_britain.56.t
-	desc = mtg_britain.56.d
-	picture = GFX_report_event_communists_cheer
-
-	is_triggered_only = yes
-	
-	# Ok
-	option = {
-		name = mtg_britain.56.a
-		clr_country_flag = ENG_communist_civil_war
-	}
-}
+#country_event = {
+#	id = mtg_britain.56
+#	title = mtg_britain.56.t
+#	desc = mtg_britain.56.d
+#	picture = GFX_report_event_communists_cheer
+#
+#	is_triggered_only = yes
+#	
+#	# Ok
+#	option = {
+#		name = mtg_britain.56.a
+#		clr_country_flag = ENG_communist_civil_war
+#	}
+#}
 
 # Blackshirt great March in [statenamehere]!
 country_event = {

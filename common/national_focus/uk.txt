@@ -9236,6 +9236,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = europe_a_nation_decision_unlock_tt
+			ENG_mosley_pacifism_level_down = yes
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -9268,6 +9269,7 @@ focus_tree = {
 				add_state_claim = 134
 				add_state_claim = 135
 			}
+			ENG_mosley_pacifism_level_down = yes
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -9312,6 +9314,7 @@ focus_tree = {
 				}
 				add_claim_by = ENG
 			}
+			ENG_mosley_pacifism_level_down = yes
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -9389,6 +9392,7 @@ focus_tree = {
 				}
 				add_claim_by = ENG
 			}
+			ENG_mosley_pacifism_level_down = yes
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -9444,6 +9448,7 @@ focus_tree = {
 				}
 				add_claim_by = ENG
 			}
+			ENG_mosley_pacifism_level_down = yes
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -9477,6 +9482,7 @@ focus_tree = {
 				}
 				add_claim_by = ENG
 			}
+			ENG_mosley_pacifism_level_down = yes
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -9510,6 +9516,7 @@ focus_tree = {
 				}
 				add_claim_by = ENG
 			}
+			ENG_mosley_pacifism_level_down = yes
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -9543,6 +9550,7 @@ focus_tree = {
 				}
 				add_claim_by = ENG
 			}
+			ENG_mosley_pacifism_level_down = yes
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -9839,6 +9847,7 @@ focus_tree = {
 				RJ_ENG_the_european_nation_conscription = 0.05
 				tooltip = conscription_tt
 			}
+			ENG_mosley_pacifism_level_down = yes
 		}
 
 		search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -10373,7 +10382,6 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
-			ENG_mosley_pacifism_level_down = yes
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = JAP
@@ -10629,7 +10637,6 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			ENG_mosley_pacifism_level_down = yes
 			custom_effect_tooltip = ENG_appeal_to_imperial_loyalists_tt
 		}
 	}
@@ -10693,7 +10700,6 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			ENG_mosley_pacifism_level_down = yes
 			if = {
 				limit = {
 					NOT = { is_in_faction_with = CAN }
@@ -10801,7 +10807,6 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			ENG_mosley_pacifism_level_down = yes
 			every_state = {
 				limit = {
 					OR = {
@@ -10882,7 +10887,6 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			ENG_mosley_pacifism_level_down = yes
 			every_state = {
 				limit = {
 					OR = {
@@ -11078,7 +11082,6 @@ focus_tree = {
 			}
 		}	
 		completion_reward = {
-			ENG_mosley_pacifism_level_down = yes
 			create_wargoal = {
 				type = puppet_wargoal_focus
 				target = SOV
@@ -11114,7 +11117,6 @@ focus_tree = {
 			factor = 1
 		}	
 		completion_reward = {
-			ENG_mosley_pacifism_level_down = yes
 			PER = {
 				if = {
 					limit = {
@@ -11184,7 +11186,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		x = 33
+		x = 35
 		y = 1
 		relative_position_id = ENG_a_change_in_course
 		cost = 10
@@ -11390,7 +11392,7 @@ focus_tree = {
 		available = {
 			has_government = communism
 		}
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_RJ_ENG_eliminate_the_upper_class
 		x = 1
 		y = 1
 		relative_position_id = ENG_concessions_to_the_trade_unions
@@ -11400,7 +11402,7 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_POLITICAL}	
 		completion_reward = {
-			add_political_power = 60
+			add_political_power = 100
 			custom_effect_tooltip = ENG_eliminate_the_upper_class_tt
 			country_event = { id = mtg_britain.45 }
 		}
@@ -11413,7 +11415,7 @@ focus_tree = {
 		available = {
 
 		}
-		icon = GFX_focus_generic_soviet_politics
+		icon = GFX_focus_SWE_refuge_for_revolutionaries
 		x = 1
 		y = 1
 		relative_position_id = ENG_the_fate_of_the_royal_family
@@ -11442,7 +11444,7 @@ focus_tree = {
 		}
 
 		icon = GFX_focus_spr_unify_the_london_bureau
-		x = -2
+		x = -5
 		y = 1
 		relative_position_id = ENG_for_the_good_of_the_revolution
 		cost = 5
@@ -11518,12 +11520,34 @@ focus_tree = {
 	}
 
 	focus = {
+		id = RJ_ENG_begin_economic_planning
+
+		prerequisite = { focus = ENG_the_british_communist_alternative focus = ENG_follow_moscow }
+		relative_position_id = ENG_the_british_communist_alternative
+		x = 5
+		y = 1
+		icon = GFX_focus_RJ_ENG_begin_economic_planning
+		cost = 7.2
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			
+		}
+		
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
 		id = ENG_enforce_decolonization
 		prerequisite = { focus = ENG_the_british_communist_alternative }
 		mutually_exclusive = { focus = ENG_reach_out_across_the_channel }
 		available = {
 			is_subject = no
-			has_completed_focus = ENG_decolonization
 		}
 		icon = GFX_goal_generic_forceful_treaty
 		x = -1
@@ -12158,7 +12182,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_fra_loyalty_stalin
-		x = 2
+		x = 5
 		y = 1
 		relative_position_id = ENG_for_the_good_of_the_revolution
 		cost = 5
@@ -12401,12 +12425,12 @@ focus_tree = {
 
 	focus = {
 		id = ENG_socialist_science_pool
-		prerequisite = { focus = ENG_follow_moscow }
+		prerequisite = { focus = ENG_follow_moscow focus = ENG_the_british_communist_alternative }
 		available = {
-			is_in_faction_with = SOV
+			
 		}
 		icon = GFX_focus_generic_socialist_science
-		x = 3
+		x = -3
 		y = 1
 		relative_position_id = ENG_follow_moscow
 		cost = 10
@@ -12428,7 +12452,7 @@ focus_tree = {
 
 	focus = {
 		id = ENG_liberate_the_home_of_marx
-		prerequisite = { focus = ENG_the_one_true_revolution focus = ENG_preparing_the_second_front }
+		prerequisite = { focus = ENG_the_one_true_revolution }
 		available = {
 			is_subject = no
 			country_exists = GER
@@ -12436,7 +12460,7 @@ focus_tree = {
 		}
 		will_lead_to_war_with = GER
 		icon = GFX_focus_eng_liberate_the_home_of_marx
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = ENG_the_one_true_revolution
 		cost = 10
