@@ -8216,6 +8216,7 @@ focus_tree = {
 	focus = {
 		id = RJ_ENG_the_anglo_italian_alliance
 		prerequisite = { focus = RJ_ENG_conspire_against_the_reich }
+		mutually_exclusive = { focus = RJ_ENG_noninterference_treaty_with_italy }
 		available = {
 			is_subject = no
 			country_exists = ITA
@@ -8478,7 +8479,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_RJ_ENG_british_union_of_fascists
-		x = 14
+		x = 11
 		y = 1
 		relative_position_id = ENG_a_change_in_course
 		cost = 10
@@ -8603,169 +8604,169 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = ENG_secure_the_italian_alliance
-		prerequisite = { focus = ENG_the_british_path_to_fascism }
-		mutually_exclusive = { focus = rj_ENG_initiate_the_london_berlin_axis }
+#	focus = {
+#		id = ENG_secure_the_italian_alliance
+#		prerequisite = { focus = ENG_the_british_path_to_fascism }
+#		mutually_exclusive = { focus = rj_ENG_initiate_the_london_berlin_axis }
+#
+#		available = {
+#			is_subject = no
+#			country_exists = ITA
+#			has_government = fascism
+#			NOT = { has_war_with = ITA }
+#			ITA = { is_in_faction = no }
+#			NOT = {
+#				has_completed_focus = RJ_ENG_europe_a_nation
+#			}
+#		}
+#
+#		bypass = {
+#			OR = {
+#				ITA = {	exists = no }
+#				ITA = { is_subject = yes }
+#				ITA = { is_in_faction = yes }
+#				if = {
+#					limit = {
+#						has_dlc = "By Blood Alone"
+#					}
+#					ITA = {
+#						OR = {
+#							has_completed_focus = ITA_defy_the_duce
+#							custom_trigger_tooltip = {
+#								tooltip = ITA_RDS_exists_tt
+#								tag = RDS
+#							}
+#						}
+#					}
+#				}
+#			}
+#		}
+#
+#		icon = GFX_focus_RJ_ENG_italian_british_alliance
+#		x = -7
+#		y = 1
+#		relative_position_id = ENG_the_british_path_to_fascism
+#
+#		cost = 5
+#
+#		ai_will_do = {
+#			factor = 1
+#		}	
+#
+#		completion_reward = {
+#			ITA = { country_event = { id = mtg_britain.36 hours = 6 } }
+#			custom_effect_tooltip = generic_skip_one_line_tt
+#			custom_effect_tooltip = europe_a_nation_tt
+#		}
+#
+#		search_filters = { FOCUS_FILTER_DIPLOMACY }
+#	}
 
-		available = {
-			is_subject = no
-			country_exists = ITA
-			has_government = fascism
-			NOT = { has_war_with = ITA }
-			ITA = { is_in_faction = no }
-			NOT = {
-				has_completed_focus = RJ_ENG_europe_a_nation
-			}
-		}
+#	focus = {
+#		id = rj_ENG_initiate_the_london_berlin_axis
+#		prerequisite = { focus = ENG_the_british_path_to_fascism }
+#		mutually_exclusive = { focus = ENG_secure_the_italian_alliance }
+#		available = {
+#			is_subject = no
+#			has_government = fascism
+#			GER = {
+#				is_subject = no
+#				has_government = fascism
+#			}
+#			NOT = {
+#				has_completed_focus = RJ_ENG_europe_a_nation
+#			}
+#			NOT = {
+#				has_war_with = GER
+#			}
+#		}
+#		icon = GFX_focus_RJ_ENG_german_british_alliance
+#		x = -9
+#		y = 1
+#		relative_position_id = ENG_the_british_path_to_fascism
+#		cost = 5
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		search_filters = { FOCUS_FILTER_DIPLOMACY }
+#		completion_reward = {
+#			if = {
+#				limit = {
+#					GER = {
+#						is_faction_leader = yes
+#					}
+#				}
+#				GER = {
+#					country_event = generic.2
+#				}
+#			}
+#			else = {
+#				create_faction_from_template = faction_template_axis
+#				GER = {
+#					country_event = generic.5
+#				}
+#			}
+#			custom_effect_tooltip = generic_skip_one_line_tt
+#			custom_effect_tooltip = europe_a_nation_tt
+#		}
+#	}
 
-		bypass = {
-			OR = {
-				ITA = {	exists = no }
-				ITA = { is_subject = yes }
-				ITA = { is_in_faction = yes }
-				if = {
-					limit = {
-						has_dlc = "By Blood Alone"
-					}
-					ITA = {
-						OR = {
-							has_completed_focus = ITA_defy_the_duce
-							custom_trigger_tooltip = {
-								tooltip = ITA_RDS_exists_tt
-								tag = RDS
-							}
-						}
-					}
-				}
-			}
-		}
-
-		icon = GFX_focus_RJ_ENG_italian_british_alliance
-		x = -7
-		y = 1
-		relative_position_id = ENG_the_british_path_to_fascism
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 1
-		}	
-
-		completion_reward = {
-			ITA = { country_event = { id = mtg_britain.36 hours = 6 } }
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = europe_a_nation_tt
-		}
-
-		search_filters = { FOCUS_FILTER_DIPLOMACY }
-	}
-
-	focus = {
-		id = rj_ENG_initiate_the_london_berlin_axis
-		prerequisite = { focus = ENG_the_british_path_to_fascism }
-		mutually_exclusive = { focus = ENG_secure_the_italian_alliance }
-		available = {
-			is_subject = no
-			has_government = fascism
-			GER = {
-				is_subject = no
-				has_government = fascism
-			}
-			NOT = {
-				has_completed_focus = RJ_ENG_europe_a_nation
-			}
-			NOT = {
-				has_war_with = GER
-			}
-		}
-		icon = GFX_focus_RJ_ENG_german_british_alliance
-		x = -9
-		y = 1
-		relative_position_id = ENG_the_british_path_to_fascism
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
-		search_filters = { FOCUS_FILTER_DIPLOMACY }
-		completion_reward = {
-			if = {
-				limit = {
-					GER = {
-						is_faction_leader = yes
-					}
-				}
-				GER = {
-					country_event = generic.2
-				}
-			}
-			else = {
-				create_faction_from_template = faction_template_axis
-				GER = {
-					country_event = generic.5
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			custom_effect_tooltip = europe_a_nation_tt
-		}
-	}
-
-	focus = {
-		id = ENG_gibraltar_for_spanish_support
-		prerequisite = { focus = ENG_secure_the_italian_alliance focus = rj_ENG_initiate_the_london_berlin_axis }
-		available = {
-			is_subject = no
-			if = {
-				limit = {
-					NOT = { has_dlc = "La Resistance" }
-				}
-				any_country = {
-					original_tag = SPR
-					has_government = fascism
-					exists = yes
-					NOT = { is_in_faction_with = ENG }
-				}
-			}
-			if = {
-				limit = {
-					has_dlc = "La Resistance"
-				}
-				SPA = {
-					exists = yes
-					NOT = { is_in_faction_with = ENG }
-				}
-			}
-			has_global_flag = scw_over
-		}
-		icon = GFX_focus_intervention_spain_nationalists
-		x = -1
-		y = 1
-		relative_position_id = ENG_secure_the_italian_alliance
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}	
-		completion_reward = {
-			if = {
-				limit = {
-					NOT = { has_dlc = "La Resistance" }
-				}
-				random_country = {
-					limit = {
-						original_tag = SPR
-						has_government = fascism
-					}
-					country_event = { id = mtg_britain.40 hours = 6 }
-				}
-			}
-			ELSE = {
-				SPA = {
-					country_event = { id = mtg_britain.40 hours = 6 }
-				}
-			}
-		}
-		search_filters = { FOCUS_FILTER_DIPLOMACY }
-	}
+#	focus = {
+#		id = ENG_gibraltar_for_spanish_support
+#		prerequisite = { focus = ENG_secure_the_italian_alliance focus = rj_ENG_initiate_the_london_berlin_axis }
+#		available = {
+#			is_subject = no
+#			if = {
+#				limit = {
+#					NOT = { has_dlc = "La Resistance" }
+#				}
+#				any_country = {
+#					original_tag = SPR
+#					has_government = fascism
+#					exists = yes
+#					NOT = { is_in_faction_with = ENG }
+#				}
+#			}
+#			if = {
+#				limit = {
+#					has_dlc = "La Resistance"
+#				}
+#				SPA = {
+#					exists = yes
+#					NOT = { is_in_faction_with = ENG }
+#				}
+#			}
+#			has_global_flag = scw_over
+#		}
+#		icon = GFX_focus_intervention_spain_nationalists
+#		x = -1
+#		y = 1
+#		relative_position_id = ENG_secure_the_italian_alliance
+#		cost = 5
+#		ai_will_do = {
+#			factor = 1
+#		}	
+#		completion_reward = {
+#			if = {
+#				limit = {
+#					NOT = { has_dlc = "La Resistance" }
+#				}
+#				random_country = {
+#					limit = {
+#						original_tag = SPR
+#						has_government = fascism
+#					}
+#					country_event = { id = mtg_britain.40 hours = 6 }
+#				}
+#			}
+#			ELSE = {
+#				SPA = {
+#					country_event = { id = mtg_britain.40 hours = 6 }
+#				}
+#			}
+#		}
+#		search_filters = { FOCUS_FILTER_DIPLOMACY }
+#	}
 
 	focus = {
 		id = ENG_enact_the_mosley_manifesto
@@ -9207,16 +9208,12 @@ focus_tree = {
 		id = RJ_ENG_europe_a_nation
 		prerequisite = { focus = ENG_the_british_path_to_fascism }
 		relative_position_id = ENG_the_british_path_to_fascism
-		x = 7
+		x = -6
 		y = 1
 		icon = GFX_focus_GER_european_confederation
 		cost = 10
 		available = {
 			NOT = {
-				OR = {
-					has_completed_focus = rj_ENG_initiate_the_london_berlin_axis
-					has_completed_focus = ENG_secure_the_italian_alliance
-				}
 				OR = {
 					is_in_faction_with = FRA
 					is_in_faction_with = GER
@@ -11186,7 +11183,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		x = 35
+		x = 27
 		y = 1
 		relative_position_id = ENG_a_change_in_course
 		cost = 10
@@ -11209,7 +11206,6 @@ focus_tree = {
 			add_stability = 0.1
 			custom_effect_tooltip = ENG_concessions_to_the_trade_unions_tt
 			custom_effect_tooltip = ENG_concessions_to_the_trade_unions_tt_3
-			custom_effect_tooltip = ENG_concessions_to_the_trade_unions_tt_2
 			hidden_effect = {
 				random_list = {
 					10 = {
@@ -11309,7 +11305,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_eng_move_to_secure_the_dominions
-		x = 4
+		x = 8
 		y = 1
 		relative_position_id = ENG_organize_the_blackshirts
 		cost = 5
@@ -11520,6 +11516,39 @@ focus_tree = {
 	}
 
 	focus = {
+		id = RJ_ENG_replace_parliament_with_workers_councils
+
+		prerequisite = { focus = ENG_the_british_communist_alternative focus = ENG_follow_moscow }
+		relative_position_id = ENG_the_british_communist_alternative
+		x = 3
+		y = 1
+		icon = GFX_focus_generic_workers
+		cost = 7.2
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_industrial_capacity_dockyard = 0.05
+				tooltip = industrial_capacity_dockyard_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ENG_workers_councils_idea
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
 		id = RJ_ENG_begin_economic_planning
 
 		prerequisite = { focus = ENG_the_british_communist_alternative focus = ENG_follow_moscow }
@@ -11527,6 +11556,67 @@ focus_tree = {
 		x = 5
 		y = 1
 		icon = GFX_focus_RJ_ENG_begin_economic_planning
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus_ENG
+				uses = 3
+				bonus = 0.5
+				category = industry
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_production_speed_buildings_factor = 0.10
+				tooltip = production_speed_buildings_factor_tt
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = RJ_ENG_nationalize_the_banks
+
+		prerequisite = { focus = RJ_ENG_begin_economic_planning }
+		relative_position_id = RJ_ENG_begin_economic_planning
+		x = 0
+		y = 1
+		icon = GFX_focus_RJ_ENG_nationalize_the_banks
+		cost = 7.2
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_consumer_goods_factor = -0.10
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = RJ_ENG_nationalize_factories_and_mines
+
+		prerequisite = { focus = RJ_ENG_nationalize_the_banks }
+		relative_position_id = RJ_ENG_nationalize_the_banks
+		x = 0
+		y = 1
+		icon = GFX_focus_RJ_communist_industry
 		cost = 7.2
 		ai_will_do = {
 			base = 1

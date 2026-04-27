@@ -541,5 +541,24 @@ ideas = {
 				stability_factor = 0.05
 			}
 		}
+
+		ENG_workers_councils_idea = {
+			picture = SOV_our_slavic_commitments_ccp_sov_compatibility
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = ENG
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_power_factor = 0.15
+				communism_drift = 0.10
+			}
+		}
 	}
 }
