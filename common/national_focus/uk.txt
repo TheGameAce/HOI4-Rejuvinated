@@ -11440,7 +11440,7 @@ focus_tree = {
 		}
 
 		icon = GFX_focus_spr_unify_the_london_bureau
-		x = -5
+		x = -7
 		y = 1
 		relative_position_id = ENG_for_the_good_of_the_revolution
 		cost = 5
@@ -11549,11 +11549,58 @@ focus_tree = {
 	}
 
 	focus = {
-		id = RJ_ENG_begin_economic_planning
+		id = RJ_ENG_equal_rights_for_women
 
 		prerequisite = { focus = ENG_the_british_communist_alternative focus = ENG_follow_moscow }
 		relative_position_id = ENG_the_british_communist_alternative
 		x = 5
+		y = 1
+		icon = GFX_focus_AUS_womens_education_initiative
+		cost = 7.2
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			
+		}
+		
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = ENG_womens_rights_idea
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = RJ_ENG_convert_estates_into_state_farms
+
+		prerequisite = { focus = ENG_the_british_communist_alternative focus = ENG_follow_moscow }
+		relative_position_id = ENG_the_british_communist_alternative
+		x = 9
+		y = 1
+		icon = GFX_focus_generic_workers_and_farmers_rise
+		cost = 7.2
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			
+		}
+		
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = RJ_ENG_begin_economic_planning
+
+		prerequisite = { focus = ENG_the_british_communist_alternative focus = ENG_follow_moscow }
+		relative_position_id = ENG_the_british_communist_alternative
+		x = 7
 		y = 1
 		icon = GFX_focus_RJ_ENG_begin_economic_planning
 		cost = 10
@@ -12288,7 +12335,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_fra_loyalty_stalin
-		x = 5
+		x = 7
 		y = 1
 		relative_position_id = ENG_for_the_good_of_the_revolution
 		cost = 5

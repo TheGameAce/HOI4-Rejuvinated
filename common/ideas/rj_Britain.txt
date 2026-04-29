@@ -579,5 +579,24 @@ ideas = {
 				communism_drift = 0.03
 			}
 		}
+
+		ENG_womens_rights_idea = {
+			picture = AUS_women_in_academia
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				recruitable_population_factor = 0.15
+				conscription = 0.03
+			}
+		}
 	}
 }
