@@ -11657,6 +11657,72 @@ focus_tree = {
 	}
 
 	focus = {
+		id = RJ_ENG_unemployment_welfare
+
+		prerequisite = { focus = RJ_ENG_begin_economic_planning }
+		relative_position_id = RJ_ENG_begin_economic_planning
+		x = -2
+		y = 1
+		icon = GFX_focus_RJ_ENG_nationalize_the_banks
+		cost = 7.2
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_consumer_goods_factor = -0.10
+				tooltip = consumer_goods_factor_tt
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = RJ_ENG_socialize_healthcare
+
+		prerequisite = { focus = RJ_ENG_unemployment_welfare }
+		relative_position_id = RJ_ENG_unemployment_welfare
+		x = 0
+		y = 1
+		icon = GFX_focus_RJ_communist_industry
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_local_resources_factor = 0.20
+				tooltip = local_resources_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_industrial_capacity_factory = 0.05
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_production_factory_max_efficiency_factor = 0.10
+				tooltip = production_factory_max_efficiency_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_industrial_capacity_dockyard = 0.05
+				tooltip = industrial_capacity_dockyard_tt
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
 		id = RJ_ENG_nationalize_factories_and_mines
 
 		prerequisite = { focus = RJ_ENG_nationalize_the_banks }
@@ -12634,14 +12700,14 @@ focus_tree = {
 
 	focus = {
 		id = ENG_spirit_of_the_industrial_revolution
-		prerequisite = { focus = ENG_soviet_cooperation focus = ENG_liberate_the_home_of_marx focus = ENG_crush_the_dream focus = rj_ENG_ally_with_browder }
+		prerequisite = { focus = RJ_ENG_nationalize_factories_and_mines }
 		available = {
 
 		}
 		icon = GFX_goal_generic_soviet_construction
-		x = -3
+		x = 0
 		y = 1
-		relative_position_id = ENG_liberate_the_home_of_marx
+		relative_position_id = RJ_ENG_nationalize_factories_and_mines
 		cost = 10
 		ai_will_do = {
 			factor = 1
