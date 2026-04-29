@@ -560,5 +560,24 @@ ideas = {
 				communism_drift = 0.10
 			}
 		}
+
+		ENG_socialist_science_pool_idea = {
+			picture = socialist_science_focus
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				research_speed_factor = 0.08
+				communism_drift = 0.03
+			}
+		}
 	}
 }
