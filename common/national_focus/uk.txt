@@ -11663,7 +11663,7 @@ focus_tree = {
 		relative_position_id = RJ_ENG_begin_economic_planning
 		x = -2
 		y = 1
-		icon = GFX_focus_RJ_ENG_nationalize_the_banks
+		icon = GFX_focus_generic_welfare
 		cost = 7.2
 		ai_will_do = {
 			base = 1
@@ -11675,9 +11675,11 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
 			add_to_variable = {
-				rj_ENG_the_economy_consumer_goods_factor = -0.10
+				rj_ENG_the_economy_consumer_goods_factor = 0.05
 				tooltip = consumer_goods_factor_tt
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ENG_welfare_idea
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
@@ -11690,7 +11692,7 @@ focus_tree = {
 		relative_position_id = RJ_ENG_unemployment_welfare
 		x = 0
 		y = 1
-		icon = GFX_focus_RJ_communist_industry
+		icon = GFX_focus_generic_field_hostpital
 		cost = 10
 		ai_will_do = {
 			base = 1
@@ -11702,20 +11704,102 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
 			add_to_variable = {
-				rj_ENG_the_economy_local_resources_factor = 0.20
-				tooltip = local_resources_factor_tt
+				rj_ENG_the_economy_monthly_population = 0.50
+				tooltip = monthly_population_tt
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ENG_socialized_healthcare_idea
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = RJ_ENG_public_works_projects
+
+		prerequisite = { focus = RJ_ENG_begin_economic_planning }
+		relative_position_id = RJ_ENG_begin_economic_planning
+		x = 2
+		y = 1
+		icon = GFX_focus_RJ_industry4
+		cost = 7.2
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
 			add_to_variable = {
-				rj_ENG_the_economy_industrial_capacity_factory = 0.05
-				tooltip = industrial_capacity_factory_tt
+				rj_ENG_the_economy_production_speed_infrastructure_factor = 0.20
+				tooltip = production_speed_infrastructure_factor_tt
 			}
-			add_to_variable = {
-				rj_ENG_the_economy_production_factory_max_efficiency_factor = 0.10
-				tooltip = production_factory_max_efficiency_factor_tt
+			random_core_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
 			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+				}
+			}
+		}
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+	}
+
+	focus = {
+		id = RJ_ENG_expand_public_transportation
+
+		prerequisite = { focus = RJ_ENG_public_works_projects }
+		relative_position_id = RJ_ENG_public_works_projects
+		x = 0
+		y = 1
+		icon = GFX_focus_RJ_ENG_expand_public_transportation
+		cost = 10
+		ai_will_do = {
+			base = 1
+		}
+		available = {
+			
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
 			add_to_variable = {
-				rj_ENG_the_economy_industrial_capacity_dockyard = 0.05
-				tooltip = industrial_capacity_dockyard_tt
+				rj_ENG_the_economy_production_speed_rail_way_factor = 0.25
+				tooltip = production_speed_rail_way_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_ideas = ENG_expanded_public_transportation_idea
+			every_core_state = {
+				add_state_modifier = {
+					modifier = {
+						army_speed_factor_for_controller = 0.15
+						truck_attrition_factor = -0.25
+					}
+				}
 			}
 		}
 
@@ -12701,6 +12785,8 @@ focus_tree = {
 	focus = {
 		id = ENG_spirit_of_the_industrial_revolution
 		prerequisite = { focus = RJ_ENG_nationalize_factories_and_mines }
+		prerequisite = { focus = RJ_ENG_expand_public_transportation }
+		prerequisite = { focus = RJ_ENG_socialize_healthcare }
 		available = {
 
 		}

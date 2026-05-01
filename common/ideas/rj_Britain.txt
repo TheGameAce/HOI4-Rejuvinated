@@ -598,5 +598,68 @@ ideas = {
 				conscription = 0.03
 			}
 		}
+
+		ENG_welfare_idea = {
+			picture = FIN_socialist_welfare
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = ENG
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_weekly_factor = 0.001
+				party_popularity_stability_factor = 0.10
+			}
+		}
+
+		ENG_socialized_healthcare_idea = {
+			picture = ARG_social_welfare_fund_ns
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = ENG
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				experience_loss_factor = -0.10
+				recruitable_population_factor = 0.10
+			}
+
+			equipment_bonus = {
+				support_equipment = {
+					build_cost_ic = -0.10
+					reliability = 0.05
+				}
+			}
+		}
+
+		ENG_expanded_public_transportation_idea = {
+			picture = SPR_anarchist_public_transport
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				original_tag = ENG
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_speed_factor = 0.10
+			}
+		}
 	}
 }
