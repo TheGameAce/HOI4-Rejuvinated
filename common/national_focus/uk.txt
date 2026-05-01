@@ -11589,7 +11589,15 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			
+			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
+			add_to_variable = {
+				rj_ENG_the_economy_global_building_slots_factor = 0.20
+				tooltip = global_building_slots_factor_tt
+			}
+			add_to_variable = {
+				rj_ENG_the_economy_consumer_goods_factor = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
