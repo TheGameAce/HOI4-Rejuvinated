@@ -89,3 +89,1075 @@ foreign_politics = {
 	}
 
 }
+
+RJ_ENG_europe_a_nation_cat = {
+
+	RJ_ENG_integrate_malta = {
+		name = "Integrate Malta"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			controls_state = 116
+			116 = {
+				compliance > 59
+			}
+		}
+
+		cost = 10
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			116 = {
+				add_core_of = ENG
+			}
+		}
+	}
+
+	RJ_ENG_integrate_ireland = {
+		name = "Integrate Ireland"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			IRE = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 25
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			IRE = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_portugal = {
+		name = "Integrate Portugal"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			POR = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			POR = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_spain = {
+		name = "Integrate Spain"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			SPR = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			SPR = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_iceland = {
+		name = "Integrate Iceland"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			ICE = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 25
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			ICE = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_denmark = {
+		name = "Integrate Denmark"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			DEN = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			DEN = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_norway = {
+		name = "Integrate Norway"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			NOR = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			NOR = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_sweden = {
+		name = "Integrate Sweden"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			SWE = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			SWE = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_finland = {
+		name = "Integrate Finland"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			FIN = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			FIN = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_luxembourg = {
+		name = "Integrate Luxembourg"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			LUX = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 10
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			LUX = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_belgium = {
+		name = "Integrate Belgium"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			BEL = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			BEL = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_netherlands = {
+		name = "Integrate the Netherlands"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			HOL = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			HOL = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_france = {
+		name = "Integrate France"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			FRA = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			FRA = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_italy = {
+		name = "Integrate Italy"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			ITA = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			ITA = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_germany = {
+		name = "Integrate Germany"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			GER = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			GER = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_switzerland = {
+		name = "Integrate Switzerland"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			SWI = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			SWI = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_austria = {
+		name = "Integrate Austria"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			AUS = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			AUS = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_yugoslavia = {
+		name = "Integrate Yugoslavia"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			YUG = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			YUG = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_albania = {
+		name = "Integrate Albania"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			ALB = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 25
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			ALB = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_greece = {
+		name = "Integrate Greece"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			GRE = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			GRE = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_bulgaria = {
+		name = "Integrate Bulgaria"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			BUL = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			BUL = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_hungary = {
+		name = "Integrate Hungary"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			HUN = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			HUN = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_romania = {
+		name = "Integrate Romania"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			ROM = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			ROM = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_czechoslovakia = {
+		name = "Integrate Czechoslovakia"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			CZE = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			CZE = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_poland = {
+		name = "Integrate Poland"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			POL = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			POL = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_lithuania = {
+		name = "Integrate Lithuania"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			LIT = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			LIT = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_latvia = {
+		name = "Integrate Latvia"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			LAT = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			LAT = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_estonia = {
+		name = "Integrate Estonia"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			EST = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			EST = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+
+	RJ_ENG_integrate_soviets = {
+		name = "Integrate the Soviet Union"
+
+		allowed = {
+			original_tag = ENG
+		}
+
+		visible = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+		}
+
+		available = {
+			has_completed_focus = RJ_ENG_europe_a_nation
+			SOV = {
+				all_core_state = {
+					is_controlled_by = ENG
+					compliance > 59
+				}
+			}
+		}
+
+		cost = 50
+		days_remove = 30
+
+		ai_will_do = {
+			base = 1
+		}
+
+		complete_effect = {
+			SOV = {
+				every_core_state = {
+					add_core_of = ENG
+				}
+			}
+		}
+	}
+}
