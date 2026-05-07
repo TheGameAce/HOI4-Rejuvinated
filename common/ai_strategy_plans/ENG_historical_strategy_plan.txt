@@ -31,14 +31,17 @@ ENG_historical_plan = {
 	ai_national_focuses = {
 		limited_rearmament_focus #March 10 1936	
 		uk_empire_focus #May 20 1936
+		RJ_ENG_reinforce_the_empire
 		uk_service_focus #July 30 1936
+		RJ_ENG_colonial_conscription
 		shadow_scheme_focus #October 10 1936
 		uk_industrial_focus #October 10 1936	
 		general_rearmament_focus #December 20 1936
 		royal_ordinance_focus #February 30 1937
 		ENG_vickers_experimental_facility_focus # Everything after will be pushed back slightly by this 35 day focus but is is one that it better the earlier it is done
 		uk_small_arms_focus #May 10 1937	
-		uk_extra_tech_slot #July 20 1937 
+		uk_extra_tech_slot #July 20 1937
+		RJ_ENG_more_funding_for_oxford
 		uk_colonial_focus #September 30 1937	
 		uk_asia_focus #December 10 1937
 		uk_burma_focus #February 20 1938	
@@ -46,6 +49,9 @@ ENG_historical_plan = {
 		radar_focus #July 10 1938
 		air_rearmament_focus#September 20 1938
 		ENG_steady_as_she_goes #November 30 1938
+		rj_ENG_land_registration_act
+		rj_ENG_protect_the_british_currency
+		rj_ENG_enact_financial_reforms
 		ENG_prepare_for_the_inevitable #February 10 1939
 		ENG_global_defense #NEW
 		ENG_no_further_appeasement #NEW
@@ -61,6 +67,8 @@ ENG_historical_plan = {
 		crypto_bomb_focus #January 20 1941	
 		tizard_mission_focus#March 30 1941	
 		ENG_special_air_service#June 10 1941
+		rj_ENG_make_britain_healthy
+		rj_ENG_initiate_further_labor_reforms
 		uk_destroyer_focus#August 20 1941
 		uk_waves_focus#October 30 1941
 		uk_convoy_focus#January 10
@@ -78,10 +86,19 @@ ENG_historical_plan = {
  		uk_protect_suez
 		uk_malta_focus
 		uk_commonwealth_focus
-		
+		RJ_ENG_colonial_development
+		RJ_ENG_canadian_development
+		RJ_ENG_south_african_development
+		RJ_ENG_australian_development
+		RJ_ENG_development_of_the_raj
+		RJ_ENG_improve_canadian_military_industry
+		RJ_ENG_improve_south_african_military_industry
+		RJ_ENG_improve_australian_military_industry
+		RJ_ENG_improve_the_raj_military_industry
 		UK_secret_focus
 		uk_jet_focus
 		ENG_tank_focus
+		RJ_ENG_armored_car_development
 		ENG_maintaining_the_balance_of_power
 	}
 
