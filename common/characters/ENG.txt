@@ -1927,7 +1927,10 @@ characters={
 			available = {
 				has_government = communism
 				NOT = {
-					has_autonomy_state = autonomy_supervised_state
+					OR = {
+						has_autonomy_state = autonomy_supervised_state
+						has_completed_focus = ENG_follow_moscow
+					}
 				}
 			}
 			allowed = {
@@ -2614,7 +2617,6 @@ characters={
 					limit = {
 						original_tag = ENG
 					}
-					has_completed_focus = ENG_revisit_colonial_policy
 					has_subject = RAJ
 				}
 			}
