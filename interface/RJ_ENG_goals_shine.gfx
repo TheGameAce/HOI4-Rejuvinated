@@ -930,11 +930,11 @@ spriteTypes = {
 	}
 
 	SpriteType = {
-		name = "GFX_focus_RJ_ENG_fortify_the_naval_stronghold_shine"
-		texturefile = "gfx/interface/goals/eng/RJ_ENG_fortify_the_naval_stronghold.dds"
+		name = "GFX_focus_RJ_ENG_the_naval_stronghold_shine"
+		texturefile = "gfx/interface/goals/eng/RJ_ENG_the_naval_stronghold.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
 		animation = {
-			animationmaskfile = "gfx/interface/goals/eng/RJ_ENG_fortify_the_naval_stronghold.dds"
+			animationmaskfile = "gfx/interface/goals/eng/RJ_ENG_the_naval_stronghold.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = -90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)
@@ -946,7 +946,7 @@ spriteTypes = {
 			animationtexturescale = { x = 2.0 y = 1.0 } 
 		}
 		animation = {
-			animationmaskfile = "gfx/interface/goals/eng/RJ_ENG_fortify_the_naval_stronghold.dds"
+			animationmaskfile = "gfx/interface/goals/eng/RJ_ENG_the_naval_stronghold.dds"
 			animationtexturefile = "gfx/interface/goals/shine_overlay.dds" 	# <- the animated file
 			animationrotation = 90.0		# -90 clockwise 90 counterclockwise(by default)
 			animationlooping = no			# yes or no ;)

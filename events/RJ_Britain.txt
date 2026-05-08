@@ -393,18 +393,15 @@ country_event = { #Conspire Against the Reich
 				GER = { is_in_faction_with = ITA }
 				GER = { has_war = no }
 				has_war = no
+				is_in_faction_with = GER
 			}
 			ITA = {
-				if = {
-					limit = {
-						is_in_faction_with = GER
-						is_faction_leader = no
-					}
-				}
 				leave_faction = yes
-				else = {
-					remove_from_faction = GER
-				}
+			}
+		}
+		else = {
+			ITA = {
+				remove_from_faction = GER
 			}
 		}
 		FROM = { country_event = { id = rj_britain.7a hours = 6 } }
