@@ -3292,7 +3292,10 @@ GER_opel_organization = {
 	allowed = {	
 		OR = {
 			original_tag = GER
-			original_tag = ROM
+			AND = {
+				original_tag = ROM
+				has_dlc = "Death or Dishonor"
+			}
 			AND = {
 				original_tag = BUL
 				has_dlc = "Battle for the Bosporus"

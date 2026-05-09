@@ -21554,15 +21554,20 @@ focus_tree = {
 				category = air_equipment
 			}
 
-			every_other_country = {
+			if = {
 				limit = {
-					is_in_faction_with = ROOT
-					is_major = yes
+					has_dlc = "Death or Dishonor"
 				}
-				ROOT = {
-					add_relation_modifier = {
-						target = PREV
-						modifier = ITA_military_agreements
+				every_other_country = {
+					limit = {
+						is_in_faction_with = ROOT
+						is_major = yes
+					}
+					ROOT = {
+						add_relation_modifier = {
+							target = PREV
+							modifier = ITA_military_agreements
+						}
 					}
 				}
 			}

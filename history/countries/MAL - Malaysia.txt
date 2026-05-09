@@ -1,4 +1,4 @@
-capital = 336 #Kuala Lumpur
+﻿capital = 336 #Kuala Lumpur
 
 oob = "MAL_1936"
 
@@ -110,7 +110,11 @@ if = {
 }
 set_convoys = 25
 
-add_to_tech_sharing_group = commonwealth_research
+if = {
+	limit = { has_dlc = "Together for Victory" }
+
+	add_to_tech_sharing_group = commonwealth_research
+}
 
 set_popularities = {
 	democratic = 33
@@ -124,3 +128,4 @@ set_cosmetic_tag = MAL_UK # British Malaya
 set_grand_doctrine = grand_battleplan
 set_grand_doctrine = new_fleet_in_being
 set_grand_doctrine = new_strategic_destruction
+

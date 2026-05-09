@@ -22,10 +22,12 @@ on_actions = {
 						limit = {
 							has_dynamic_modifier = { modifier = AFG_electrification_modifier }
 							NOT = {
-								is_island_state = yes
-								has_state_category = large_island
-								has_state_category = small_island
-								has_state_category = tiny_island
+								OR = {
+									is_island_state = yes
+									has_state_category = large_island
+									has_state_category = small_island
+									has_state_category = tiny_island
+								}
 							}
 						}
 						random_neighbor_state = {
@@ -334,7 +336,7 @@ on_actions = {
 					min = 3000 # optional 
 					max = 6500 # optional 
 				}
-				round_variable = global.RAJ_GOE_william_rhodes_davis_fuel
+				round_variable = global.RAJ_GOE_william_rhodes_davis_fuelvariable_name
 				GER = { #ready for duty, C-80
 
 					add_fuel = var:global.RAJ_GOE_william_rhodes_davis_fuel
@@ -362,10 +364,12 @@ on_actions = {
 					}
 					FROM = { original_tag = ENG }
 					NOT = {
-						has_completed_focus = RAJ_red_in_the_shadows
-						has_completed_focus = RAJ_great_depression_price_controls
-						has_completed_focus = RAJ_forward_bloc
-						has_completed_focus = RAJ_his_majestys_loyal_government
+						OR = {
+							has_completed_focus = RAJ_red_in_the_shadows
+							has_completed_focus = RAJ_great_depression_price_controls
+							has_completed_focus = RAJ_forward_bloc
+							has_completed_focus = RAJ_his_majestys_loyal_government
+						}
 					}
 
 				}
@@ -479,6 +483,9 @@ on_actions = {
 							irregular_infantry = { x = 1 y = 1 }
 							
 						}
+						support = {
+							
+						}
 					}
 					if = {
 						limit = {
@@ -550,15 +557,17 @@ on_actions = {
 
 			if = {
 				limit = {
-					ROOT = {
-						original_tag = PER
-						has_country_flag = PER_sold_oil_flag
-					}
-					FROM = { 
-						NOT = {
+					AND = {
+						ROOT = {
 							original_tag = PER
+							has_country_flag = PER_sold_oil_flag
 						}
-						has_country_flag = PER_has_PER_resource_rights
+						FROM = { 
+							NOT = {
+								original_tag = PER
+							}
+							has_country_flag = PER_has_PER_resource_rights
+						}
 					}
 				}
 				FROM = {
@@ -660,44 +669,51 @@ on_actions = {
 					}
 
 					division_template = {
-						name = "Princely Security Forces"
-						is_locked = no
-						#division_names_group = NAMELIST_ID # optional
-						priority = 1 # optional 
-						#template_counter = <INT> # optional
-						regiments = {
-							infantry = { x = 0 y = 0 }
-							infantry = { x = 0 y = 1 }
-							infantry = { x = 0 y = 2 }
-							infantry = { x = 1 y = 0 }
-							infantry = { x = 1 y = 1 }
-							infantry = { x = 1 y = 2 }
-						}
-					}
+					 	name = "Princely Security Forces"
+					 	is_locked = no
+					 	#division_names_group = NAMELIST_ID # optional
+					 	priority = 1 # optional 
+					 	#template_counter = <INT> # optional
+					 	regiments = {
+					 		infantry = { x = 0 y = 0 }
+					 		infantry = { x = 0 y = 1 }
+					 		infantry = { x = 0 y = 2 }
+					 		infantry = { x = 1 y = 0 }
+					 		infantry = { x = 1 y = 1 }
+					 		infantry = { x = 1 y = 2 }
+					 		
+					 	}
+					 	support = {
+					 		
+					 	}
+					 }
 
-					capital_scope = {
-						create_unit = {
-							division = "name = \"Princely Security Forces\" division_template = \"Princely Security Forces\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-							owner = PREV
-							allow_spawning_on_enemy_provs = yes 
-							count = 3
+					 capital_scope = {
+ 						create_unit = {
+						  	division = "name = \"Princely Security Forces\" division_template = \"Princely Security Forces\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
+						  	owner = PREV
+						  	allow_spawning_on_enemy_provs = yes 
+						  	count = 3
+
 						} 
-						if = {
-							limit = {
-								owner = { #These are bigger and needs more divisions
-									tag = HYD
-									tag = RJP
-									tag = MYS
-								}
+					 	if = {
+					 		limit = {
+					 			owner = { #These are bigger and needs more divisions
+					 				tag = HYD
+					 				tag = RJP
+					 				tag = MYS
+					 			}
+					 		}
+
+	 						create_unit = {
+							  	division = "name = \"Princely Security Forces\" division_template = \"Princely Security Forces\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
+							  	owner = PREV
+							  	allow_spawning_on_enemy_provs = yes 
+							  	count = 3
+
 							}
-							create_unit = {
-								division = "name = \"Princely Security Forces\" division_template = \"Princely Security Forces\" start_experience_factor = 0.1 start_equipment_factor = 1 start_manpower_factor = 1"
-								owner = PREV
-								allow_spawning_on_enemy_provs = yes 
-								count = 3
-							}
-						}
-					}
+					 	}
+					 }
 
 				}
 			}
@@ -1169,24 +1185,26 @@ on_actions = {
 			IF = {
 				limit = {
 					has_dlc = "Graveyard of Empires"
-					OR = {
-						FROM = {
-							original_tag = AFG
-							has_country_flag = AFG_signed_oil_deal_flag
+					AND = {
+						OR = {
+							FROM = {
+								original_tag = AFG
+								has_country_flag = AFG_signed_oil_deal_flag
+							}
+							ROOT = {
+								original_tag = AFG
+								has_country_flag = AFG_signed_oil_deal_flag
+							}
 						}
-						ROOT = {
-							original_tag = AFG
-							has_country_flag = AFG_signed_oil_deal_flag
+						OR = {
+							FROM = {
+								has_country_flag = made_oil_deal_with_afg_flag
+							}
+							ROOT = {
+								has_country_flag = made_oil_deal_with_afg_flag
+							}
 						}
-					}
-					OR = {
-						FROM = {
-							has_country_flag = made_oil_deal_with_afg_flag
-						}
-						ROOT = {
-							has_country_flag = made_oil_deal_with_afg_flag
-						}
-					}
+					}	
 				}
 				IF = {
 					limit = {
@@ -1584,6 +1602,7 @@ on_actions = {
 				FROM.FROM = {
 					remove_dynamic_modifier = {
 						modifier = idea_RAJ_mughal_influence
+						days = 1400
 					}
 				}
 			}
@@ -1627,7 +1646,9 @@ on_actions = {
 					}
 				}
 				FROM = {
-					remove_ideas = neutrality_idea
+					remove_ideas = {
+						idea = neutrality_idea
+					}
 				}
 			}
 		}
@@ -1640,13 +1661,14 @@ on_actions = {
 				limit = {
 					ROOT = { 
 						has_completed_focus = RAJ_a_private_military 
-						NOT = {
+						NOT = { 
 							is_in_array = {
-								array = pmc_recievers
-								value = FROM
-							} 
+							 	array = pmc_recievers
+							 	value = FROM
+							 } 
 						}
 					}
+					
 				}
 
 				ROOT = { 
@@ -1666,18 +1688,20 @@ on_actions = {
 		effect = {
 			IF = {
 				limit = {
-					kurdistan_exists = no
-					1000 = {
-						is_owned_by = SOU
-					}
-					420 = {
-						is_owned_by = SOU
-					}
-					419 = {
-						is_owned_by = SOU
-					}
-					SOU = {
-						has_government = communism
+					AND = {
+						kurdistan_exists = no
+						1000 = {
+							is_owned_by = SOU
+						}
+						420 = {
+							is_owned_by = SOU
+						}
+						419 = {
+							is_owned_by = SOU
+						}
+						SOU = {
+							has_government = communism
+						}
 					}
 				}
 				SOU = {

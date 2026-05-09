@@ -188,20 +188,39 @@ focus_tree = {
 				}	
 			}
 
-			POR = {
+			if = {
+				limit = {
+					OR = {
+						has_dlc = "Together for Victory"
+						has_dlc = "Man the Guns"
+					}
+				}
+
+				POR = {
+					if = {
+						limit = { has_country_flag = POR_released_angola_flag }
+						set_autonomy = {
+						    target = ANG
+						    autonomy_state = autonomy_integrated_puppet
+						}
+					}
+					if = {
+						limit = { has_country_flag = POR_released_mozambique_flag }
+						set_autonomy = {
+						    target = MZB
+						    autonomy_state = autonomy_integrated_puppet
+						}
+					}
+				}
+			}
+			else = {
 				if = {
 					limit = { has_country_flag = POR_released_angola_flag }
-					set_autonomy = {
-						target = ANG
-						autonomy_state = autonomy_integrated_puppet
-					}
+					POR = { puppet = ANG }
 				}
 				if = {
 					limit = { has_country_flag = POR_released_mozambique_flag }
-					set_autonomy = {
-						target = MZB
-						autonomy_state = autonomy_integrated_puppet
-					}
+					POR = { puppet = MZB }
 				}
 			}			
 
