@@ -3,7 +3,7 @@ state = {
 	name = "STATE_120"
 	manpower = 731206
 	
-	state_category = rural
+	state_category = town
 
 	resources={
 		chromium=1 # was: 2
@@ -15,15 +15,18 @@ state = {
 		add_core_of = SCO
 		owner = ENG
 		victory_points = {
-			6062 1 #Skye/Stornoway
+			6062 5 #Skye/Stornoway
 		}
 		victory_points = {
-			284 1 #Oban
+			284 3 #Oban
 		}
 		victory_points = {
-			9075 1 #Inverness
+			9075 10 #Inverness
 		}
-		victory_points = { 11064 1 }
+		victory_points = {
+			13270 3 #Wick
+		}
+		victory_points = { 11064 8 }
 		buildings = {
 			infrastructure = 2
 			anti_air_building = 2
@@ -36,6 +39,15 @@ state = {
 			11161 = {
 				dam_mountain = 1 #Lochaber hydroelectric scheme
 			}
+			9075 = {
+				naval_base = 3
+			}
+			6062 = {
+				naval_base = 2
+			}
+			13270 = {
+				naval_base = 1
+			}
 		}
 		add_core_of = ENG
 	}
@@ -44,5 +56,5 @@ state = {
 		131 284 3159 3178 3373 6046 6062 6104 6205 9075 9090 11064 11161 11266 13269 13270
 	}
 
-	local_supplies=1.0 
+	local_supplies=3.0 
 }

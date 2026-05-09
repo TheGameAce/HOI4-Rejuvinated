@@ -246,39 +246,55 @@ set_variable = {
 	eng_gateway_to_europe_influence = 0
 }
 
-add_dynamic_modifier = {
-	modifier = rj_ENG_the_economy
-}
-set_variable = {
-	rj_ENG_the_economy_global_building_slots_factor = 0
-}
-set_variable = {
-	rj_ENG_the_economy_consumer_goods_factor = 0.1
-}
-set_variable = {
-	rj_ENG_the_economy_conversion_cost_civ_to_mil_factor = 0
-}
-set_variable = {
-	rj_ENG_the_economy_production_speed_arms_factory_factor = 0
-}
-set_variable = {
-	rj_ENG_the_economy_production_speed_industrial_complex_factor = 0
-}
-set_variable = {
-	rj_ENG_the_economy_production_speed_infrastructure_factor = 0
-}
-set_variable = {
-	rj_ENG_the_economy_industrial_capacity_factory = 0
-}
-set_variable = {
-	rj_ENG_the_economy_industrial_capacity_dockyard = 0
-}
-set_variable = {
-	rj_ENG_the_economy_monthly_population = 0
-}
-set_variable = {
-	rj_ENG_the_economy_production_speed_buildings_factor = 0
-}
+add_dynamic_modifier = { modifier = rj_ENG_the_economy }
+
+set_variable = { rj_ENG_the_economy_global_building_slots_factor = 0 }
+set_variable = { rj_ENG_the_economy_consumer_goods_factor = 0.1 }
+set_variable = { rj_ENG_the_economy_conversion_cost_civ_to_mil_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_arms_factory_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_industrial_complex_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_infrastructure_factor = 0 }
+set_variable = { rj_ENG_the_economy_industrial_capacity_factory = 0 }
+set_variable = { rj_ENG_the_economy_industrial_capacity_dockyard = 0 }
+set_variable = { rj_ENG_the_economy_monthly_population = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_buildings_factor = 0 }
+set_variable = { rj_ENG_the_economy_industrial_capacity_dockyard = 0 }
+set_variable = { rj_ENG_the_economy_local_resources_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_rail_way_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_supply_node_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_dockyard_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_naval_base_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_naval_supply_hub_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_air_base_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_anti_air_building_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_land_facility_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_naval_facility_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_air_facility_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_nuclear_facility_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_speed_nuclear_reactor_factor = 0 }
+set_variable = { rj_ENG_the_economy_tank_manufacturer_cost_factor = 0 }
+set_variable = { rj_ENG_the_economy_aircraft_manufacturer_cost_factor = 0 }
+set_variable = { rj_ENG_the_economy_naval_manufacturer_cost_factor = 0 }
+set_variable = { rj_ENG_the_economy_materiel_manufacturer_cost_factor = 0 }
+set_variable = { rj_ENG_the_economy_industrial_concern_cost_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_factory_efficiency_gain_factor = 0 }
+set_variable = { rj_ENG_the_economy_production_factory_max_efficiency_factor = 0 }
+
+set_variable = { RJ_ENG_the_european_nation_ai_desired_divisions_factor = 1 }
+set_variable = { RJ_ENG_the_european_nation_war_stability_factor = 0.2 }
+set_variable = { RJ_ENG_the_european_nation_justify_war_goal_time = -0.5 }
+set_variable = { RJ_ENG_the_european_nation_annex_cost_factor = -0.5 }
+set_variable = { RJ_ENG_the_european_nation_war_support_factor = 0.1 }
+set_variable = { RJ_ENG_the_european_nation_compliance_gain = 0.05 }
+set_variable = { RJ_ENG_the_european_nation_training_time_army_factor = 0 }
+set_variable = { RJ_ENG_the_european_nation_conscription = 0 }
+set_variable = { RJ_ENG_the_european_nation_required_garrison_factor = 0 }
+set_variable = { RJ_ENG_the_european_nation_resistance_decay = 0 }
+set_variable = { RJ_ENG_the_european_nation_local_non_core_manpower = 0 }
+set_variable = { RJ_ENG_the_european_nation_recruitable_population_factor = 0 }
+set_variable = { RJ_ENG_the_european_nation_army_org_factor = 0 }
+set_variable = { RJ_ENG_the_european_nation_army_core_attack_factor = 0 }
+set_variable = { RJ_ENG_the_european_nation_army_core_defence_factor = 0 }
 
 set_convoys = 1000
 
@@ -382,6 +398,7 @@ add_to_faction = EGY
 
 # Order matters - here Chamberlain becomes starting leader
 recruit_character = ENG_oswald_mosley
+recruit_character = ENG_edward_viii
 recruit_character = ENG_stanley_baldwin
 recruit_character = ENG_winston_churchill
 recruit_character = ENG_harry_pollitt

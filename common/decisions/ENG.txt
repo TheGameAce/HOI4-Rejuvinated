@@ -7274,44 +7274,6 @@ ENG_concessions_to_the_trade_unions = {
 			factor = 0
 		}
 	}
-
-	ENG_expected_decolonization = { # timer for the player to see how much longer they have to decolonize before they get a civil war
-
-		icon = eng_abdication_crisis
-		
-		available = {
-			has_completed_focus = ENG_decolonization
-		}
-
-		days_mission_timeout = 730
-
-		fire_only_once = yes
-
-		activation = {
-			tag = ENG
-			has_completed_focus = ENG_concessions_to_the_trade_unions
-			NOT = { has_completed_focus = ENG_decolonization }
-			has_government = communism
-			has_country_flag = ENG_switched_to_communism_civil_war_flag
-		}
-
-		visible = {
-			tag = ENG
-			NOT = { has_completed_focus = ENG_decolonization }
-		}
-
-		cancel_if_not_visible = yes
-
-		is_good = no
-
-		complete_effect = {
-			custom_effect_tooltip = ENG_expected_decolonization_tt
-		}
-
-		timeout_effect = {
-			country_event = { id = mtg_britain.55 }
-		}
-	}
 }
 
 ENG_move_to_secure_the_dominions = {
@@ -9626,7 +9588,7 @@ political_actions = {
 			has_country_flag = ENG_abdication_crisis_normal_marriage
 			has_country_flag = edward_viii_married_wallis_simpson
 			NOT = { has_country_flag = created_american_monarchy }
-			has_completed_focus = ENG_unite_the_anglosphere
+			has_completed_focus = RJ_ENG_the_empire_strikes_back
 		}
 
 		complete_effect = {
@@ -9681,7 +9643,7 @@ political_actions = {
 			has_country_flag = ENG_abdication_crisis_normal_marriage
 			has_country_flag = edward_viii_married_wallis_simpson
 			NOT = { has_country_flag = created_american_monarchy }
-			has_completed_focus = ENG_unite_the_anglosphere
+			has_completed_focus = RJ_ENG_the_empire_strikes_back
 		}
 
 		complete_effect = {
@@ -9752,7 +9714,7 @@ political_actions = {
 				is_controlled_by = ENG
 			}
 			NOT = { has_country_flag = created_american_monarchy }
-			has_completed_focus = ENG_unite_the_anglosphere
+			has_completed_focus = RJ_ENG_the_empire_strikes_back
 		}
 
 		complete_effect = {

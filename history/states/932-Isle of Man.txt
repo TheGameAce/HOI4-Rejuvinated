@@ -2,13 +2,13 @@ state = {
 	id = 932
 	manpower = 51000
 	name = "STATE_932"
-	state_category = small_island
+	state_category = town
 	history = {
 		owner = ENG
 		add_core_of = ENG
 		
 		victory_points = {
-			3311 1 #Douglas
+			3311 2 #Douglas
 		}
 		buildings = {
 			infrastructure = 3 #was: 6
@@ -22,5 +22,5 @@ state = {
 	}
 	
 
-	local_supplies=0.000
+	local_supplies=3.000
 }

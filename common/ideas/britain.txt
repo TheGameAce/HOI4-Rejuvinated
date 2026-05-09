@@ -145,6 +145,9 @@ ideas = {
 			
 			modifier = {
 				drift_defence_factor = 0.5
+				weekly_bombing_war_support = 0.001
+				weekly_casualties_war_support = 0.0005
+				war_stability_factor = 0.05
 			}
 			
 			rule = {
@@ -321,7 +324,9 @@ ideas = {
 			
 			equipment_bonus = {
 				infantry_equipment = {
-					build_cost_ic = -0.1 instant = yes
+					build_cost_ic = -0.15
+					reliability = 0.05
+					instant = yes
 				}
 			}
 		}
@@ -402,7 +407,7 @@ ideas = {
 			}
 
 			modifier = {
-				special_forces_cap = 0.05
+				special_forces_cap = 0.15
 				special_forces_training_time_factor = -0.1
 			}
 
@@ -735,7 +740,8 @@ ideas = {
 			}
 
 			modifier = {
-				non_core_manpower = 0.1
+				non_core_manpower = 0.05
+				conscription = 0.03
 			}
 
 			picture = eng_imperial_conscription
@@ -757,7 +763,8 @@ ideas = {
 			}
 
 			modifier = {
-				autonomy_gain = -1
+				autonomy_gain = -0.5
+				conscription = 0.02
 			}
 
 			picture = eng_imperial_conscription
@@ -780,16 +787,20 @@ ideas = {
 
 			equipment_bonus = {
 				screen_ship = {
-					naval_speed = 0.1 naval_range = 0.25
+					naval_speed = 0.1 naval_range = 0.30
+					instant = yes
 				}
 				carrier = {
-					naval_speed = 0.1 naval_range = 0.25
+					naval_speed = 0.1 naval_range = 0.30
+					instant = yes
 				}
 				capital_ship = {
-					naval_speed = 0.1 naval_range = 0.25
+					naval_speed = 0.1 naval_range = 0.30
+					instant = yes
 				}
 				submarine = {
-					naval_speed = 0.1 naval_range = 0.25
+					naval_speed = 0.1 naval_range = 0.30
+					instant = yes
 				}
 			}
 
@@ -1341,7 +1352,7 @@ ideas = {
 			}
 			
 			modifier = {
-				acclimatization_hot_climate_gain_factor = 0.1
+				acclimatization_hot_climate_gain_factor = 0.15
 			}
 
 			picture = eng_service_overseas
@@ -1761,9 +1772,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				experience_gain_air = 0.05
-				experience_gain_air_factor = 0.1
-				air_mission_xp_gain_factor = 0.05
+				experience_gain_air = 0.10
+				experience_gain_air_factor = 0.15
+				air_mission_xp_gain_factor = 0.10
 				air_training_xp_gain_factor = 0.2
 			}
 		}
@@ -1791,9 +1802,9 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				experience_gain_air = 0.05
-				experience_gain_air_factor = 0.1
-				air_mission_xp_gain_factor = 0.1
+				experience_gain_air = 0.10
+				experience_gain_air_factor = 0.15
+				air_mission_xp_gain_factor = 0.15
 				air_training_xp_gain_factor = 0.2
 			}
 		}
@@ -1835,6 +1846,9 @@ ideas = {
 			equipment_bonus = {
 				ship_hull_cruiser = {
 					build_cost_ic = -0.1 instant = yes
+					reliability = 0.05
+					sub_detection = 0.10
+					naval_range = 0.15
 				}
 			}
 		}
@@ -1860,7 +1874,35 @@ ideas = {
 			}
 		}
 
+		ENG_secret_weapons_idea = {
+
+			picture = generic_rocket_bonus
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				NOT = { has_government = communism }
+			}
+			
+			removal_cost = -1
+						
+			modifier = {
+				special_project_speed_factor = 0.10
+				scientist_breakthrough_bonus_factor = 0.05
+			}
+			research_bonus = {
+				rocketry = 0.25
+				nuclear = 0.25
+			}
+		}
+
 	}
+
+##########################################################################################################
+##########################################################################################################
+##########################################################################################################
 	
 	naval_manufacturer = {
 		
