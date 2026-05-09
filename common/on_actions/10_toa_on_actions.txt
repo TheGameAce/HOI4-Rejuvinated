@@ -685,10 +685,12 @@ on_actions = {
 						exists = yes
 						has_idea = USA_monroe_doctrine_enforcer
 						NOT = {
-							has_war_with = FROM
-							has_war_with = ROOT
-							is_in_faction_with = ROOT
-							is_in_faction_with = FROM
+							OR = { 
+								has_war_with = FROM
+								has_war_with = ROOT
+								is_in_faction_with = ROOT
+								is_in_faction_with = FROM
+							}
 						}
 					}
 					FROM = {
@@ -752,17 +754,19 @@ on_actions = {
 			
 			IF = {
 				limit = {
-					649 = {
-						is_owned_and_controlled_by = ROOT
-					}
-					305 = {
-						NOT = {
+					AND = {
+						649 = {
 							is_owned_and_controlled_by = ROOT
 						}
-					}
-					490 = {
-						NOT = {
-							is_owned_and_controlled_by = ROOT
+						305 = {
+							NOT = {
+								is_owned_and_controlled_by = ROOT
+							}
+						}
+						490 = {
+							NOT = {
+								is_owned_and_controlled_by = ROOT
+							}
 						}
 					}
 					ROOT = {

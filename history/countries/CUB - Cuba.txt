@@ -1,4 +1,4 @@
-capital = 315
+﻿capital = 315
 
 oob = "CUB_1936"
 
@@ -53,11 +53,6 @@ add_ideas = {
 add_dynamic_modifier = { modifier = PHI_island_nation_dynamic_modifier }
 set_variable = { PHI_island_nation_convoy_retreat_speed = 0.15 }
 set_variable = { PHI_island_nation_navy_visibility = -0.05 }
-
-#Dated Events
-country_event = { id = cuba.1 days = 10 } #General Election
-country_event = { id = cuba.2 days = 141 } #Gomez' Inauguration - Conditioned
-country_event = { id = cuba.3 days = 141 } #Mario García Menocal's Innauguration - Conditioned
 
 ###Country Leaders###
 recruit_character = CUB_josé_agripino_barnet

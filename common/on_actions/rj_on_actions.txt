@@ -1,17 +1,5 @@
 on_actions = {
 
-	on_war = {
-		effect = {
-			if = {
-				limit = {
-					original_tag = ENG
-					has_completed_focus = shadow_scheme_focus
-				}
-				country_event = { id = britain.24 hours = 6 }
-			}
-		}
-	}
-
 	on_puppet = {
 		effect = {
 			if = {
