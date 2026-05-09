@@ -482,14 +482,14 @@ focus_tree = {
 				add_to_variable = { SOV_fyp_production_factory_efficiency_gain_factor = 0.05 }
 				add_to_variable = { SOV_fyp_consumer_goods_factor = 0.10 }
 			}
+			hidden_effect = {
+				#Swap dynamic modifier to change icon
+				remove_dynamic_modifier = { modifier = SOV_second_five_year_plan_dynamic_modifier }
+				add_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
+			}
 			if = {
 				limit = {
 					has_government = communism
-				}
-				hidden_effect = {
-					#Swap dynamic modifier to change icon
-					remove_dynamic_modifier = { modifier = SOV_second_five_year_plan_dynamic_modifier }
-					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
 				}
 				custom_effect_tooltip = SOV_third_five_year_plan_ns_tt
 
@@ -502,11 +502,6 @@ focus_tree = {
 			}
 			else = {
 				custom_effect_tooltip = SOV_third_five_year_plan_ns_alt_tt
-				hidden_effect = {
-					#Swap dynamic modifier to change icon
-					remove_dynamic_modifier = { modifier = SOV_second_five_year_plan_dynamic_modifier }
-					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier_alt }
-				}
 
 				add_tech_bonus = {
 					name = SOV_third_five_year_plan_alt
@@ -546,14 +541,14 @@ focus_tree = {
 				add_to_variable = { SOV_fyp_consumer_goods_factor = -0.05 }
 			}
 			custom_effect_tooltip = SOV_reorganize_the_pc_of_heavy_industry_ns_tt
+			hidden_effect = {
+				#Swap dynamic modifier to change icon
+				remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
+				add_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier }
+			}
 			if = {
 				limit = {
 					has_government = communism
-				}
-				hidden_effect = {
-					#Swap dynamic modifier to change icon
-					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
-					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier }
 				}
 
 				add_tech_bonus = {
@@ -565,11 +560,6 @@ focus_tree = {
 				}
 			}
 			else = {
-				hidden_effect = {
-					#Swap dynamic modifier to change icon
-					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier_alt}
-					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier_alt }
-				}
 
 				add_tech_bonus = {
 					name = SOV_reorganize_the_pc_of_heavy_industry_name_alt
@@ -723,22 +713,10 @@ focus_tree = {
 			hidden_effect = {
 				set_variable = { SOV_fyp_production_speed_industrial_complex_factor = 0 } #Remove Civ constr speed
 			}
-			if = {
-				limit = {
-					has_government = communism
-				}
-				hidden_effect = {
-					#Swap dynamic modifier to change icon
-					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
-					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier }
-				}
-			}
-			else = {
-				hidden_effect = {
-					#Swap dynamic modifier to change icon
-					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier_alt }
-					add_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier_alt }
-				}
+			hidden_effect = {
+				#Swap dynamic modifier to change icon
+				remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
+				add_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier }
 			}
 			custom_effect_tooltip = SOV_shift_to_armaments_production_ns_tt
 
@@ -1102,52 +1080,24 @@ focus_tree = {
 			hidden_effect = {
 				add_to_variable = { SOV_fyp_consumer_goods_factor = -0.05 } #Bonus to CG
 				add_to_variable = { SOV_fyp_production_factory_max_efficiency_factor = 0.05 } #Bonus to max efficicency
+				#Swap dynamic modifier to change icon
 				if = {
 					limit = {
-						has_government = communism
+						has_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier }
 					}
-					#Swap dynamic modifier to change icon
-					if = {
-						limit = {
-							has_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier }
-						}
-						remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier }
-					}
-					else_if = {
-						limit = {
-							has_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier }
-						}
-						remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier }
-					}
-					else_if = {
-						limit = {
-							has_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
-						}
-						remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
-					}
-					add_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_dynamic_modifier }
+					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier }
 				}
-				else = {
-					#Swap dynamic modifier to change icon
-					if = {
-						limit = {
-							has_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier_alt }
-						}
-						remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_civilian_dynamic_modifier_alt }
+				else_if = {
+					limit = {
+						has_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier }
 					}
-					else_if = {
-						limit = {
-							has_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier_alt }
-						}
-						remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier_alt }
+					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_military_dynamic_modifier }
+				}
+				else_if = {
+					limit = {
+						has_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
 					}
-					else_if = {
-						limit = {
-							has_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier_alt }
-						}
-						remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier_alt }
-					}
-					add_dynamic_modifier = { modifier = SOV_fourth_five_year_plan_dynamic_modifier_alt }
+					remove_dynamic_modifier = { modifier = SOV_third_five_year_plan_dynamic_modifier }
 				}
 			}
 			custom_effect_tooltip = SOV_fourth_five_year_plan_ns_tt
@@ -10636,14 +10586,9 @@ focus_tree = {
 				effect_tooltip = {
 					add_ideas = SOV_for_the_common_good_allies
 
-					if = {
-						limit = {
-							has_dlc = "Death or Dishonor"
-						}
-						add_relation_modifier = {
-							target = ROOT
-							modifier = SOV_for_the_common_good_relation
-						}
+					add_relation_modifier = {
+						target = ROOT
+						modifier = SOV_for_the_common_good_relation
 					}
 				}
 			}

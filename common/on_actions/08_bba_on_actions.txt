@@ -86,7 +86,7 @@ on_actions = {
 							tag = SPR
 							tag = SWE
 							tag = SWI
-							tag = URU
+							tag = URG
 							tag = VEN
 							tag = YUG
 							### 1920
@@ -199,10 +199,8 @@ on_actions = {
 					has_completed_focus = ETH_declare_for_italy
 					ITA = {
 						NOT = {
-							OR = {
-								has_government = communism
-								has_government = democratic
-							}
+							has_government = communism
+							has_government = democratic
 						}
 					}
 				}
@@ -436,7 +434,7 @@ on_actions = {
 					SWI_swiss_neutrality
 					SWI_citizen_militia_1
 				}
-				remove_ideas = { SWI_old_switzerland_idea }
+				remove_ideas = SWI_old_switzerland_idea
 				retire_character = SWI_henri_guisan
 			}
 

@@ -100,7 +100,6 @@ country_event = {
 
 		if = {
 			limit = {
-				has_dlc = "Death or Dishonor"
 				country_exists = YUG
 				YUG = { has_war = no }
 			}
@@ -487,7 +486,7 @@ country_event = {
 			set_country_flag = { flag = USA_MR_window days = 60 value = 1 }
 		}
 		hidden_effect = {
-			country_event = { hours = 6 id = news.32 }
+			news_event = { hours = 6 id = news.32 }
 		}
 	}
 }
@@ -3198,7 +3197,7 @@ country_event = {
 		}
 
 		hidden_effect = {
-			country_event = { hours = 6 id = news.58 }
+			news_event = { hours = 6 id = news.58 }
 			# Hitler has faced resistance and showed now
 			add_to_variable = { 
 				GER_hitlers_blunders_variable = 1
@@ -3243,7 +3242,7 @@ country_event = {
 		}
 
 		hidden_effect = {
-			country_event = { hours = 6 id = news.59 }
+			news_event = { hours = 6 id = news.59 }
 			# Hitler has faced resistance and showed now
 			add_to_variable = { 
 				GER_hitlers_blunders_variable = 1
@@ -3315,10 +3314,9 @@ country_event = {
 		GER_seize_gold_reserves_in_europe_peacefully = yes
 
 		hidden_effect = {
-			country_event = { hours = 6 id = news.56 }
+			news_event = { hours = 6 id = news.56 }
 			if = {
 				limit = {
-					has_dlc = "Death or Dishonor"
 					country_exists = YUG
 					YUG = { has_war = no }
 					ENG = { NOT = { has_war_with = YUG } }
@@ -3514,7 +3512,6 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_DLC = "Death or Dishonor"
 				country_exists = YUG
 				YUG = { has_war = no }
 			}
@@ -3957,7 +3954,7 @@ country_event = {
 		add_to_variable = { var = GER_mefo_bill_counter value = -10 }
 
 		hidden_effect = {
-			country_event = { hours = 6 id = news.60 }
+			news_event = { hours = 6 id = news.60 }
 			every_state = {
 				limit = {
 					is_controlled_by = SLO
@@ -4132,7 +4129,7 @@ country_event = {
 			HUN = { country_event = DOD_hungary.106 }
 		}
 		hidden_effect = {
-			country_event = { hours = 6 id = news.62 }
+			news_event = { hours = 6 id = news.62 }
 		}
 
 		if = {
@@ -4217,7 +4214,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			country_event = { hours = 6 id = news.61 }
+			news_event = { hours = 6 id = news.61 }
 		}
 	}
 	option = {
@@ -4337,7 +4334,7 @@ country_event = {
 			POL = { transfer_state = 72 } # Give Poland Zaolzie
 		}
 		hidden_effect = {
-			country_event = { hours = 6 id = news.60 }
+			news_event = { hours = 6 id = news.60 }
 		}
 	}
 	option = {
@@ -4349,7 +4346,7 @@ country_event = {
 			annex_country = { target = CZE }
 		}
 		hidden_effect = {
-			country_event = { hours = 6 id = news.62 }
+			news_event = { hours = 6 id = news.62 }
 		}
 	}
 }

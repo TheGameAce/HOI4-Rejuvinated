@@ -326,13 +326,7 @@ FRA_somua_organization = {
 	allowed = {	
 		OR = {
 			tag = FRA 
-			AND = {
-				tag = POL # If Poland sets up a local one
-				OR = {
-					has_dlc = "Poland: United and Ready"
-					has_dlc = "No Step Back"
-				}
-			}
+			tag = POL # If Poland sets up a local one
 		}
 	}
 

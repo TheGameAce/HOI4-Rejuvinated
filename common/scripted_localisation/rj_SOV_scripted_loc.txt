@@ -1,0 +1,14 @@
+defined_text = {
+	name = GetFypName
+	text = {
+		trigger = {
+			ROOT = {
+				has_government = communism
+			}
+		}
+		localization_key = SOV_second_five_year_plan_dynamic_modifier
+	}
+	text = {
+		localization_key = SOV_third_five_year_plan_dynamic_modifier_alt
+	}
+}

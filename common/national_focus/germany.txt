@@ -4809,6 +4809,7 @@ focus_tree = {
 				limit = { has_dlc = "Gotterdammerung" }
 				custom_effect_tooltip = generic_skip_one_line_tt
 				custom_effect_tooltip = GER_unlocks_eben_emael_raid_tt
+
 				if = {
 					limit = {
 						NOT = {
@@ -8606,6 +8607,7 @@ focus_tree = {
 			modifier = {
 				factor = 4
 				CZE = {
+					has_completed_focus = CZE_deliver_sudetenland
 					OR = {
 						has_completed_focus = CZE_deliver_sudetenland
 						has_completed_focus = CZE_feeding_the_alligator
@@ -8630,6 +8632,55 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL }
 
 		completion_reward = {
+			CZE = {
+				country_event = { id = wuw_GER_diplomacy.10 hours = 6 }
+			}
+
+			custom_effect_tooltip = if_they_accept_tt
+
+			CZE = {
+				effect_tooltip = {
+					IF = {
+						limit = {
+							PREV = {
+								has_government = fascism
+							}
+						}
+						add_timed_idea = {
+							idea = GER_fascism_influence
+							days = 730
+						}
+					}		
+					ELSE_IF = {
+						limit = {
+							PREV = {
+								has_government = democratic
+							}
+						}
+						add_timed_idea = {
+							idea = GER_democratic_influence
+							days = 730
+						}
+					}
+					ELSE_IF = {
+						limit = {
+							PREV = {
+								has_government = neutrality
+							}
+						}
+						add_timed_idea = {
+							idea = GER_neutrality_influence
+							days = 730
+						}
+					}
+					add_opinion_modifier = { target = GER modifier = ger_cze_diplomatic_focus }
+				}
+			}
+			hidden_effect = {
+				CZE = {
+					set_country_flag = GER_influencing_CZE_flag
+				}
+				news_event = { hours = 6 id = news.200 }
 			if = {
 				limit = {
 					CZE = {
@@ -8752,6 +8803,8 @@ focus_tree = {
 					OR = {
 						has_completed_focus = CZE_german_minor_ally
 						has_completed_focus = CZE_german_puppet
+					}
+				}
 						has_completed_focus = CZE_complete_capitulation
 					}
 				}
