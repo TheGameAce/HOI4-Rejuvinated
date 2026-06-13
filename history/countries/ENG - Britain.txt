@@ -501,6 +501,9 @@ recruit_character = ENG_robert_watson_watt
 #RJ Characters
 recruit_character = ENG_edward_halifax
 recruit_character = ENG_surat_alley
+recruit_character = ENG_eric_roberts
+recruit_character = ENG_william_stephenson
+recruit_character = ENG_william_fairbairn
 recruit_character = ENG_bill_alexander
 
 if = {
@@ -522,7 +525,7 @@ if = {
 		traits = { operative_escape_artist }
 		bypass_recruitment = no
 		available_to_spy_master = yes
-		female = yes
+		gender = female
 		nationalities = { ENG }
 	}
 
@@ -532,7 +535,7 @@ if = {
 		traits = { }
 		bypass_recruitment = no
 		available_to_spy_master = yes
-		female = yes
+		gender = female
 		nationalities = { ENG }
 	}
 

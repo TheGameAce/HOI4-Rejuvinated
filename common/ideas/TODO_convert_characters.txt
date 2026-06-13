@@ -5,27 +5,6 @@ ideas = {
 	
 	political_advisor = {
 
-		ENG_eric_roberts = {
-			allowed = {
-				original_tag = ENG
-				has_intelligence_agency = yes
-			}
-			traits = { spy_hunter }
-		}
-
-		ENG_william_stephenson = {
-			available = {
-				has_intelligence_agency = yes
-			}
-			
-			allowed = {
-				original_tag = ENG
-				has_dlc = "La Resistance"
-			}
-			
-			traits = { spymaster }
-		}
-
 		FRA_louis_rivet = {
 			available = {
 				has_intelligence_agency = yes
@@ -192,24 +171,6 @@ ideas = {
 	
 	
 	high_command = {
-
-		ENG_william_fairbairn = {
-			ledger = army
-
-			available = {
-				has_completed_focus = ENG_special_air_service
-			}
-			
-			allowed = {
-				original_tag = ENG
-			}
-			
-			traits = { army_specops_instructor_3 }
-			
-			ai_will_do = {
-				factor = 0.2
-			}
-		}
 		
 		FIN_simo_hayha = {
 			ledger = army

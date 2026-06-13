@@ -2629,6 +2629,85 @@ characters={
 		}
 	}
 
+	ENG_eric_roberts={
+		name=ENG_eric_roberts
+		portraits={
+			army={
+				small=GFX_rj_portrait_ENG_eric_roberts_small
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ENG_eric_roberts
+			allowed = {
+				original_tag = ENG
+				has_dlc = "La Resistance"
+			}
+			available = {
+				has_intelligence_agency = yes
+			}
+			traits = {
+				spy_hunter
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+
+	ENG_william_stephenson={
+		name=ENG_william_stephenson
+		portraits={
+			army={
+				small=GFX_rj_portrait_ENG_william_stephenson_small
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ENG_william_stephenson
+			allowed = {
+				original_tag = ENG
+				has_dlc = "La Resistance"
+			}
+			available = {
+				has_intelligence_agency = yes
+			}
+			traits = {
+				spymaster
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+
+	ENG_william_fairbairn={
+		name=ENG_william_fairbairn
+		portraits={
+			army={
+				small=GFX_rj_portrait_ENG_william_fairbairn_small
+			}
+		}
+		advisor={
+			slot = high_command
+			ledger = army
+			idea_token = ENG_william_fairbairn
+			cost = 100
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				has_completed_focus = ENG_special_air_service
+			}
+			traits = {
+				army_specops_instructor_3
+			}
+			ai_will_do = {
+				base = 1
+			}
+		}
+	}
+
 	ENG_bill_alexander={
 		name=ENG_bill_alexander
 		portraits={
