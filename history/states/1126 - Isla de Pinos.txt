@@ -1,0 +1,25 @@
+state= {
+	id=1126
+	name="STATE_1126"
+	manpower = 9600
+	
+	state_category = small_island
+
+	history= {
+		owner = CUB
+		buildings = {
+			infrastructure = 2
+			13414 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			13414 1
+		}
+		add_core_of = CUB
+
+	}
+	provinces={	13414 }
+
+	local_supplies=0.0 
+}
