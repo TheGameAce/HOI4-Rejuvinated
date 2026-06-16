@@ -8637,7 +8637,7 @@ form_majapahit_empire_category = {
 				state = 1098
 				state = 1099
 				state = 1095
-				state = 1093
+				state = 1056
 				state = 1094
 				state = 1088
 				state = 1089
@@ -8672,7 +8672,7 @@ form_majapahit_empire_category = {
 				controls_state = 1095
 				controls_state = 1099
 				controls_state = 1098
-				controls_state = 1093
+				controls_state = 1056
 				controls_state = 1094
 			}
 			# British Malaya
@@ -8709,7 +8709,7 @@ form_majapahit_empire_category = {
 				669 = { add_core_of = ROOT }
 				1091 = { add_core_of = ROOT }
 				1092 = { add_core_of = ROOT }
-				1093 = { add_core_of = ROOT }
+				1056 = { add_core_of = ROOT }
 				1094 = { add_core_of = ROOT }
 				1095 = { add_core_of = ROOT }
 				1096 = { add_core_of = ROOT }
@@ -9171,11 +9171,13 @@ form_rattanakosin_kingdom_category = {
 				state = 724
 				state = 741
 				state = 670
+				state = 1067
+				state = 1068
+				state = 1069
 				state = 1082
 				state = 1083
 				state = 1084
 				state = 1085
-				state = 1086
 				state = 1087
 			}
 		}
@@ -9193,11 +9195,13 @@ form_rattanakosin_kingdom_category = {
 			controls_state = 724
 			controls_state = 741
 			controls_state = 670
+			controls_state = 1067
+			controls_state = 1068
+			controls_state = 1069
 			controls_state = 1082
 			controls_state = 1083
 			controls_state = 1084
 			controls_state = 1085
-			controls_state = 1086
 			controls_state = 1087
 		}
 
@@ -9210,9 +9214,11 @@ form_rattanakosin_kingdom_category = {
 			set_cosmetic_tag = RAT_UNIFIED
 			741 = { add_core_of = ROOT }
 			670 = { add_core_of = ROOT }
+			1067 = { add_core_of = ROOT }
+			1068 = { add_core_of = ROOT }
+			1069 = { add_core_of = ROOT }
 			1084 = { add_core_of = ROOT }
 			1085 = { add_core_of = ROOT }
-			1086 = { add_core_of = ROOT }
 			1087 = { add_core_of = ROOT }
 			hidden_effect = {
 				news_event = { id = wtt_news.69 hours = 6 }
@@ -10838,8 +10844,8 @@ form_polynesia_category = {
 				state = 1156
 				state = 1157
 				state = 1158
-				state = 1159
-				state = 1160
+				state = 1086
+				state = 1093
 			}
 		}
 
@@ -10875,8 +10881,8 @@ form_polynesia_category = {
 			controls_state = 1156
 			controls_state = 1157
 			controls_state = 1158
-			controls_state = 1159
-			controls_state = 1160
+			controls_state = 1086
+			controls_state = 1093
 		}
 
 		visible = {
@@ -14035,7 +14041,7 @@ form_ethiopian_empire_category  = {
 			}
 			454 = {
 				add_victory_points = {
-					province = 1086
+					province = 1068
 					value = 9
 				}
 				ETH_upgrade_state_category = yes 
