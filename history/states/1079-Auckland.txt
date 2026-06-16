@@ -5,7 +5,7 @@ state = {
 	manpower = 449918
 	
 	resources = {
-		coal = 1
+		coal = 44
 	}
 	state_category = city
 	
@@ -16,12 +16,17 @@ state = {
 
 		buildings = {
 			infrastructure = 3 
-			arms_factory = 1
+			arms_factory = 2
 			industrial_complex = 2
+			dockyard = 2
 			air_base = 2
 
 			4543 = {
-				naval_base = 3
+				naval_base = 5
+			}
+
+			7887 = {
+				dam = 1 #Arapuni Power Station
 			}
 
 		}
@@ -42,8 +47,8 @@ state = {
 	}
 
 	provinces = {
-		4615 10334 10373 4543 1565 12362 12664 7887 4718 10710 7742 4748 1713 1746 10609 1786 
+		1746 1713 10710 7742 4718 7887 12664 12362 1565 4543 10373 10334 4615 
 	}
 
-	local_supplies=0.0 
+	local_supplies=9.0 
 }
