@@ -1,4 +1,4 @@
-version="26.4.0"
+version="1.3.0"
 picture="thumbnail.png"
 tags={
 	"Alternative History"
@@ -10,6 +10,7 @@ tags={
 	"Gameplay"
 	"National Focuses"
 	"Technologies"
+	"Ideologies"
 }
-name="Rejuvenated"
-supported_version="1.17.4.1"
+name="Rejuvenated Local"
+supported_version="1.18.2.0"
