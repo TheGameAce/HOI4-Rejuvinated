@@ -1,6 +1,6 @@
-state = {
+state = { #South Sumatra
 	id = 672
-	name = "STATE_672" # South Sumatra
+	name = "STATE_672"
 	manpower = 5122400
 	
 	state_category = large_town
@@ -18,22 +18,26 @@ state = {
 		add_core_of = INS
 		
 		victory_points = {
-			12268 1 # Palembang
+			10322 10
+		}
+		
+		victory_points = {
+			4361 2
 		}
 
 		buildings = {
-
 			infrastructure = 2
 			industrial_complex = 1
 			air_base = 1
-
-			12268 = {
+			12165 = {
 				naval_base = 1
 			}
 		}
 	}
 
-	provinces = { 1342 4361 4320 12209 1313 12165 1246 4276 12296 1401 7384 7396 4211 12268 10322 1274 7308 10150 12138 4381 }
+	provinces = {
+		4381 12268 12138 10150 10322 1401 12296 4276 12165 1342 4361 4320 12209 7308 1274 1313 1246
+	}
 
 	local_supplies = 3.0 
 }
