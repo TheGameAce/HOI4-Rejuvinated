@@ -1,0 +1,54 @@
+
+state = {
+	id = 1079
+	name = "STATE_1079" # Auckland
+	manpower = 449918
+	
+	resources = {
+		coal = 44
+	}
+	state_category = city
+	
+	history = {
+
+		owner = NZL
+		add_core_of = NZL
+
+		buildings = {
+			infrastructure = 3 
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 2
+			air_base = 2
+
+			4543 = {
+				naval_base = 5
+			}
+
+			7887 = {
+				dam = 1 #Arapuni Power Station
+			}
+
+		}
+		
+		victory_points = {
+			4543 5 # Auckland 
+		}
+
+		victory_points = {
+			7887 1 # Hamilton 
+		}
+
+		victory_points = {
+			4718 1 # Tauranga 
+		}
+
+		
+	}
+
+	provinces = {
+		1746 1713 10710 7742 4718 7887 12664 12362 1565 4543 10373 10334 4615 
+	}
+
+	local_supplies=9.0 
+}

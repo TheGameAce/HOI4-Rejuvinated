@@ -1,0 +1,43 @@
+state = { #South Sumatra
+	id = 672
+	name = "STATE_672"
+	manpower = 5122400
+	
+	state_category = large_town
+	
+	resources = {
+		rubber = 203
+		oil = 197
+		tungsten =  100
+		coal = 39
+	}
+
+	history = {
+
+		owner = INS
+		add_core_of = INS
+		
+		victory_points = {
+			10322 10
+		}
+		
+		victory_points = {
+			4361 2
+		}
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+			12165 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = {
+		4381 12268 12138 10150 10322 1401 12296 4276 12165 1342 4361 4320 12209 7308 1274 1313 1246
+	}
+
+	local_supplies = 3.0 
+}

@@ -1,26 +1,37 @@
-state={
-	id=723
-	name="STATE_723"
-	manpower = 217198
+state = {
+	id = 723
+	name = "STATE_723" # Canterbury 
+	manpower = 347198
 	resources={
-		coal = 28
+		coal = 34
 	}
 
 	state_category = rural
 
 
-	history={
-		owner = NZL
-		buildings = {
-			infrastructure = 1
-			industrial_complex = 1
-			4819 = {
-				dam_mountain = 1 #Roaring Meg hydro scheme
-			}
-		}
-		add_core_of = NZL
-	}
-	provinces={	8204 7839 4819 12632 10650 }
+	history = {
 
-	local_supplies=2.0 
+		owner = NZL
+		add_core_of = NZL
+
+		buildings = {
+			infrastructure = 2
+			air_base = 1
+
+			2197 = {
+				naval_base = 1
+			}
+
+		}
+
+		victory_points = {
+			2197 3 # Christchurch
+		}
+		
+	}
+	provinces = {
+		2197 2203 5195 8212 12966 12974   
+	}
+
+	local_supplies = 0.0 
 }

@@ -1,0 +1,36 @@
+
+state={
+	id=335
+	name="STATE_335" # Java
+	manpower = 15872819
+	
+	state_category = large_town
+	
+	resources={
+		rubber = 70
+		oil = 11
+		coal = 30
+	}
+
+	history={
+		owner = INS
+		add_core_of = INS
+		victory_points = {
+			7421 15
+		}
+		victory_points = {
+			4434 1
+		}
+
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+
+	provinces={
+		1398 10307 1386 13382 7421 1425 4621 4434 10279
+	}
+
+	local_supplies=5.0 
+}

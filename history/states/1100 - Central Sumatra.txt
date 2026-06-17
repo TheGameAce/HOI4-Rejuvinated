@@ -11,9 +11,17 @@ state = {
 	}
 
 	history = {
-
 		owner = INS
-		add_core_of = INS
+		add_core_of = SSI
+		set_resistance = 0
+		set_compliance = 80
+
+		victory_points = {
+			10382 5
+		}
+		victory_points = {
+			12212 1
+		}
 
 		buildings = {
 			infrastructure = 2

@@ -1,0 +1,29 @@
+state={
+	id=1125
+	name="STATE_1125"
+	manpower = 500000
+	
+	state_category = town
+
+	resources = {
+		rubber = 2
+	}
+	
+	history={
+		add_core_of = MAD
+		owner = FRA
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+			5222 1
+		}
+
+	}
+
+	provinces={	5222 }
+
+	local_supplies=1.0
+}
