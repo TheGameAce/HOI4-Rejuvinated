@@ -1,14 +1,9 @@
 state = {
 	id = 336
-	name = "STATE_336" #This is actually the base state of peninsular Malaysia. Were the devs on crack when doing Malaysia work?
-	manpower = 3350000
+	name = "STATE_336"
+	manpower = 556200
 	
-	state_category = large_city
-	
-	resources = {
-		tungsten = 124
-		coal = 27
-	}
+	state_category = town
 
 	history = {
 
@@ -16,16 +11,18 @@ state = {
 		add_core_of = MAL
 
 		victory_points = {
-			10297 3 # Kuala Lumpur
+			10297 5 # Kuala Lumpur
+		}
+
+		victory_points = {
+			4412 1 # Seremban 
 		}
 
 		buildings = {
 
 			infrastructure = 2
-			industrial_complex = 1
-			air_base = 2
-			arms_factory = 2
-			dockyard = 2
+			industrial_complex = 2
+			air_base = 1
 
 			10297 = {
 				naval_base = 5
@@ -35,7 +32,9 @@ state = {
 		
 	}
 
-	provinces = { 4310 1364 12215 1392 7399 12255 4384 1376 10297 4412 12271 }
+	provinces = {
+		4412 10297 13409    
+	}
 
-	local_supplies = 3.0 
+	local_supplies = 0.0 
 }
