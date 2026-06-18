@@ -9,7 +9,7 @@ hispaniola_category = {
 			highlight_state_targets = {
 				state = 318
 				state = 319
-				state = 1059
+				state = 1138
 			}
 		}
 
@@ -26,7 +26,7 @@ hispaniola_category = {
 				is_controlled_by = ROOT
 			}
 
-			1059 = {
+			1138 = {
 				is_controlled_by = ROOT
 			}
 
@@ -73,7 +73,7 @@ hispaniola_category = {
 						}
 					}
 				}
-				1059 = { add_core_of = ROOT }
+				1138 = { add_core_of = ROOT }
 			}
 			
 			IF =  {
@@ -152,6 +152,26 @@ peru_bolivia_category = {
 
 			# Tacna
 			947 = {
+				is_owned_and_controlled_by = ROOT
+			}
+
+			# Pando
+			1142 = {
+				is_owned_and_controlled_by = ROOT
+			}
+
+			# Beni
+			1143 = {
+				is_owned_and_controlled_by = ROOT
+			}
+
+			# Potosi
+			1144 = {
+				is_owned_and_controlled_by = ROOT
+			}
+
+			# Chuquisaca
+			1145 = {
 				is_owned_and_controlled_by = ROOT
 			}
 
@@ -348,6 +368,50 @@ peru_bolivia_category = {
 					}
 				}
 				942 = { add_core_of = ROOT }
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+						1142 = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				1142 = { add_core_of = ROOT }
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+						1143 = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				1143 = { add_core_of = ROOT }
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+						1144 = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				1144 = { add_core_of = ROOT }
+			}
+
+			IF =  {
+				limit = {
+					NOT = {
+						1145 = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				1145 = { add_core_of = ROOT }
 			}
 
 			hidden_effect = {

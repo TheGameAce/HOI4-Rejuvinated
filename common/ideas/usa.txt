@@ -2655,6 +2655,64 @@ ideas = {
 			modifier = {
 			}
 		}
+
+		USA_baldwin_locomotive_works_manufacturer = {
+
+			name = "USA_baldwin_locomotive_works_organization"
+
+			picture = USA_blw
+
+			allowed = {
+				original_tag = USA
+			}
+
+			available = {
+			}
+
+			visible = {
+			}
+
+			research_bonus = {
+				train_tech = 0.15
+				support_tech = 0.07
+			}
+
+			equipment_bonus = {
+				train_equipment = {
+					build_cost_ic = -0.10
+					armor_value = 0.10
+					air_attack = 0.10
+					instant = yes
+				}
+			}
+
+			cost = 150
+
+			traits = { train_equipment_manufacturer }
+
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+		USA_sikorsky = {
+
+			name = "USA_sikorsky_organization"
+
+			picture = generic_helicopter_1
+
+			allowed = {
+				original_tag = USA
+				has_dlc = "Gotterdammerung"
+			}
+
+			research_bonus = {
+				support_tech = 0.05
+				air_equipment = 0.05
+			}
+
+			traits = { helicopter_equipment_manufacturer }
+		}
 	}
 	
 
@@ -2713,11 +2771,18 @@ ideas = {
 			
 			picture = usa_general_motors
 			allowed = {
-				original_tag = USA
-				original_tag = CUB
+				OR = {
+					original_tag = USA
+					original_tag = CUB
+				}
 			}
 			available = {
-				has_completed_focus = USA_wartime_industry
+				if = {
+					limit = {
+						original_tag = USA
+					}
+					has_completed_focus = USA_wartime_industry
+				}
 				if = {
 					limit = {
 						original_tag = CUB
@@ -2735,7 +2800,7 @@ ideas = {
 			traits = { industrial_concern }
 			
 			modifier = {
-				industrial_capacity_factory = 0.10
+				industrial_capacity_factory = 0.05
 			}
 		}
 		USA_union_pacific_railway = {

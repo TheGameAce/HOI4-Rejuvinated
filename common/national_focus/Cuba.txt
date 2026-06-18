@@ -569,7 +569,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 			random_owned_controlled_state = {
-				prioritize = {1048}
+				prioritize = {1127}
 				add_building_construction = {
 					type = air_base
 					level = 3
@@ -1986,7 +1986,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 1049 }
+				prioritize = { 1128 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1995,7 +1995,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				increase_state_category = yes
 			}
 			random_owned_controlled_state = {
-				prioritize = { 1047 }
+				prioritize = { 1126 }
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -2024,7 +2024,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 1049 }
+				prioritize = { 1128 }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = infrastructure
@@ -2032,7 +2032,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				}
 			}
 			random_owned_controlled_state = {
-				prioritize = { 1047 }
+				prioritize = { 1126 }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = infrastructure
@@ -2138,7 +2138,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				has_full_control_of_state = 693
 				has_full_control_of_state = 318
 				has_full_control_of_state = 319
-				has_full_control_of_state = 1059
+				has_full_control_of_state = 1138
 				has_full_control_of_state = 686
 				has_full_control_of_state = 694
 				has_full_control_of_state = 308
@@ -2157,7 +2157,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 						state = 693
 						state = 318
 						state = 319
-						state = 1059
+						state = 1138
 						state = 686
 						state = 694
 						state = 308
@@ -3443,7 +3443,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			has_full_control_of_state = 693
 			has_full_control_of_state = 318
 			has_full_control_of_state = 319
-			has_full_control_of_state = 1059
+			has_full_control_of_state = 1138
 			has_full_control_of_state = 686
 			has_full_control_of_state = 694
 			has_full_control_of_state = 308
@@ -3553,7 +3553,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 						level = 2
 					}
 				}
-				1059 = {
+				1138 = {
 					add_building_construction = {
 						type = anti_air_building
 						level = 1
@@ -3784,21 +3784,21 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		available = {
 			has_full_control_of_state = 489
 			has_full_control_of_state = 307
-			has_full_control_of_state = 1062
-			has_full_control_of_state = 1061
-			has_full_control_of_state = 1060
+			has_full_control_of_state = 1141
+			has_full_control_of_state = 1140
+			has_full_control_of_state = 1139
 		}
 		bypass = {
 				
 		}
 
 		completion_reward = {
-			1060 = {
+			1139 = {
 				increase_state_category = yes
 				add_extra_state_shared_building_slots = 1
 			}
 			random_owned_controlled_state = {
-				prioritize = { 1061	}
+				prioritize = { 1140	}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -3841,12 +3841,12 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		available = {
-			has_full_control_of_state = 1055
+			has_full_control_of_state = 1134
 			has_full_control_of_state = 493
-			has_full_control_of_state = 1056
+			has_full_control_of_state = 1135
 			has_full_control_of_state = 306
-			has_full_control_of_state = 1057
-			has_full_control_of_state = 1058
+			has_full_control_of_state = 1136
+			has_full_control_of_state = 1137
 			has_full_control_of_state = 486
 		}
 		bypass = {
@@ -3855,7 +3855,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 
 		completion_reward = {
 			random_owned_controlled_state = {
-				prioritize = { 1057 }
+				prioritize = { 1136 }
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -3871,7 +3871,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 					level = 1
 				}
 			}
-			1056 = {
+			1135 = {
 				increase_state_category = yes
 				add_building_construction = {
 					type = infrastructure
@@ -3904,14 +3904,14 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		}
 
 		available = {
-			has_full_control_of_state = 1057
+			has_full_control_of_state = 1136
 		}
 		bypass = {
 				
 		}
 
 		completion_reward = {		
-			1057 = {
+			1136 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -3944,9 +3944,9 @@ continuous_focus_position = { x = 5950 y = 2800 }
 		available = {
 			has_full_control_of_state = 489
 			has_full_control_of_state = 307
-			has_full_control_of_state = 1062
-			has_full_control_of_state = 1061
-			has_full_control_of_state = 1060
+			has_full_control_of_state = 1141
+			has_full_control_of_state = 1140
+			has_full_control_of_state = 1139
 		}
 		bypass = {
 				
@@ -3965,7 +3965,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 					level = 2
 				}
 			}
-			1061 = {
+			1140 = {
 				add_building_construction = {
 					type = fuel_silo
 					level = 1
@@ -3997,7 +3997,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 				has_full_control_of_state = 693
 				has_full_control_of_state = 318
 				has_full_control_of_state = 319
-				has_full_control_of_state = 1059
+				has_full_control_of_state = 1138
 				has_full_control_of_state = 686
 				has_full_control_of_state = 694
 				has_full_control_of_state = 308
@@ -4019,7 +4019,7 @@ continuous_focus_position = { x = 5950 y = 2800 }
 						state = 693
 						state = 318
 						state = 319
-						state = 1059
+						state = 1138
 						state = 686
 						state = 694
 						state = 308
@@ -5590,12 +5590,12 @@ continuous_focus_position = { x = 5950 y = 2800 }
 			add_resource = {
 				type = steel
 				amount = 16
-				state = 1048
+				state = 1127
 			}
 			add_resource = {
 				type = chromium
 				amount = 10
-				state = 1048
+				state = 1127
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESOURCES	}
