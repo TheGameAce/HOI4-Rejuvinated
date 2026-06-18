@@ -6815,6 +6815,10 @@ CHL_mapuche_nationalism_decisions = {
 			highlight_state_targets = {
 				state = 487
 				state = 302
+				state = 1142
+				state = 1143
+				state = 1144
+				state = 1145
 			}
 		}
 
@@ -6846,6 +6850,38 @@ CHL_mapuche_nationalism_decisions = {
 						any_country = {
 							is_subject_of = ROOT
 							controls_state = 302 
+						}
+					}
+					OR = {
+						controls_state = 1142 
+							
+						any_country = {
+							is_subject_of = ROOT
+							controls_state = 1142 
+						}
+					}
+					OR = {
+						controls_state = 1143 
+							
+						any_country = {
+							is_subject_of = ROOT
+							controls_state = 1143 
+						}
+					}
+					OR = {
+						controls_state = 1144 
+							
+						any_country = {
+							is_subject_of = ROOT
+							controls_state = 1144 
+						}
+					}
+					OR = {
+						controls_state = 1145 
+							
+						any_country = {
+							is_subject_of = ROOT
+							controls_state = 1145 
 						}
 					}
 				}

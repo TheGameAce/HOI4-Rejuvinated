@@ -214,7 +214,7 @@ form_nordic_league_category = {
 				state = 929
 				state = 930
 				state = 100
-				state = 1067
+				state = 1146
 				state = 1106
 			}
 		}
@@ -502,7 +502,7 @@ form_nordic_league_category = {
 			custom_effect_tooltip = form_country_iceland_coring_states_tt
 			hidden_effect = {
 				100 = { add_core_of = ROOT }
-				1067 = { add_core_of = ROOT }
+				1146 = { add_core_of = ROOT }
 				1106 = { add_core_of = ROOT }
 			}
 			
@@ -975,10 +975,10 @@ form_gran_colombia_category = {
 				controls_state = 486
 				controls_state = 306
 				controls_state = 493
-				controls_state = 1055
-				controls_state = 1056
-				controls_state = 1057
-				controls_state = 1058
+				controls_state = 1134
+				controls_state = 1135
+				controls_state = 1136
+				controls_state = 1137
 			}
 			# Venezuela
 			custom_trigger_tooltip = {
@@ -986,9 +986,9 @@ form_gran_colombia_category = {
 				controls_state = 489
 				controls_state = 307
 				controls_state = 488
-				controls_state = 1062
-				controls_state = 1060
-				controls_state = 1061
+				controls_state = 1141
+				controls_state = 1139
+				controls_state = 1140
 			}
 		}
 
@@ -1023,10 +1023,10 @@ form_gran_colombia_category = {
 				486 = { add_core_of = ROOT }
 				306 = { add_core_of = ROOT }
 				493 = { add_core_of = ROOT }
-				1055 = { add_core_of = ROOT }
-				1056 = { add_core_of = ROOT }
-				1057 = { add_core_of = ROOT }
-				1058 = { add_core_of = ROOT }
+				1134 = { add_core_of = ROOT }
+				1135 = { add_core_of = ROOT }
+				1136 = { add_core_of = ROOT }
+				1137 = { add_core_of = ROOT }
 			}
 			# Venezuela
 			custom_effect_tooltip = form_country_venezuela_coring_states_tt
@@ -1034,9 +1034,9 @@ form_gran_colombia_category = {
 				489 = { add_core_of = ROOT }
 				307 = { add_core_of = ROOT }
 				488 = { add_core_of = ROOT }
-				1060 = { add_core_of = ROOT }
-				1061 = { add_core_of = ROOT }
-				1062 = { add_core_of = ROOT }
+				1139 = { add_core_of = ROOT }
+				1140 = { add_core_of = ROOT }
+				1141 = { add_core_of = ROOT }
 			}
 
 			hidden_effect = {
@@ -1620,8 +1620,8 @@ form_united_central_america_category = {
 				state = 312
 				state = 317
 				state = 316
-				state = 1053
-				state = 1054
+				state = 1132
+				state = 1133
 			}
 		}
 
@@ -1644,8 +1644,8 @@ form_united_central_america_category = {
 			controls_state = 312
 			controls_state = 317
 			controls_state = 316
-			controls_state = 1053
-			controls_state = 1054
+			controls_state = 1132
+			controls_state = 1133
 		}
 
 		visible = {
@@ -1668,8 +1668,8 @@ form_united_central_america_category = {
 			317 = { add_core_of = ROOT }
 			316 = { add_core_of = ROOT }
 			311 = { add_core_of = ROOT }
-			1053 = { add_core_of = ROOT }
-			1054 = { add_core_of = ROOT }
+			1132 = { add_core_of = ROOT }
+			1133 = { add_core_of = ROOT }
 			hidden_effect = {
 				news_event = { id = wtt_news.59 hours = 6 }
 				set_global_flag = form_united_central_america_flag
@@ -1720,8 +1720,8 @@ form_united_central_america_category = {
 		complete_effect = {
 			304 = { add_core_of = ROOT }
 			685 = { add_core_of = ROOT }
-			1051 = { add_core_of = ROOT }
-			1052 = { add_core_of = ROOT }
+			1130 = { add_core_of = ROOT }
+			1131 = { add_core_of = ROOT }
 			hidden_effect = {
 				set_global_flag = integrated_panama_flag
 			}
@@ -8636,8 +8636,8 @@ form_majapahit_empire_category = {
 				state = 1097
 				state = 1098
 				state = 1099
-				state = 1095
-				state = 1093
+				state = 1054
+				state = 1056
 				state = 1094
 				state = 1088
 				state = 1089
@@ -8669,10 +8669,10 @@ form_majapahit_empire_category = {
 				controls_state = 1100
 				controls_state = 1096
 				controls_state = 1097
-				controls_state = 1095
+				controls_state = 1054
 				controls_state = 1099
 				controls_state = 1098
-				controls_state = 1093
+				controls_state = 1056
 				controls_state = 1094
 			}
 			# British Malaya
@@ -8709,9 +8709,9 @@ form_majapahit_empire_category = {
 				669 = { add_core_of = ROOT }
 				1091 = { add_core_of = ROOT }
 				1092 = { add_core_of = ROOT }
-				1093 = { add_core_of = ROOT }
+				1056 = { add_core_of = ROOT }
 				1094 = { add_core_of = ROOT }
-				1095 = { add_core_of = ROOT }
+				1054 = { add_core_of = ROOT }
 				1096 = { add_core_of = ROOT }
 				1097 = { add_core_of = ROOT }
 				1098 = { add_core_of = ROOT }
@@ -9171,11 +9171,13 @@ form_rattanakosin_kingdom_category = {
 				state = 724
 				state = 741
 				state = 670
-				state = 1082
+				state = 1067
+				state = 1068
+				state = 1069
+				state = 1078
 				state = 1083
 				state = 1084
 				state = 1085
-				state = 1086
 				state = 1087
 			}
 		}
@@ -9193,11 +9195,13 @@ form_rattanakosin_kingdom_category = {
 			controls_state = 724
 			controls_state = 741
 			controls_state = 670
-			controls_state = 1082
+			controls_state = 1067
+			controls_state = 1068
+			controls_state = 1069
+			controls_state = 1078
 			controls_state = 1083
 			controls_state = 1084
 			controls_state = 1085
-			controls_state = 1086
 			controls_state = 1087
 		}
 
@@ -9210,9 +9214,11 @@ form_rattanakosin_kingdom_category = {
 			set_cosmetic_tag = RAT_UNIFIED
 			741 = { add_core_of = ROOT }
 			670 = { add_core_of = ROOT }
+			1067 = { add_core_of = ROOT }
+			1068 = { add_core_of = ROOT }
+			1069 = { add_core_of = ROOT }
 			1084 = { add_core_of = ROOT }
 			1085 = { add_core_of = ROOT }
-			1086 = { add_core_of = ROOT }
 			1087 = { add_core_of = ROOT }
 			hidden_effect = {
 				news_event = { id = wtt_news.69 hours = 6 }
@@ -10835,11 +10841,11 @@ form_polynesia_category = {
 				state = 646
 				state = 723
 				state = 726
-				state = 1077
-				state = 1078
+				state = 1156
+				state = 1157
+				state = 1088
+				state = 1086
 				state = 1079
-				state = 1080
-				state = 1081
 			}
 		}
 
@@ -10872,11 +10878,11 @@ form_polynesia_category = {
 			controls_state = 646 #Saipan
 			controls_state = 723 #South Island
 			controls_state = 726 #Samoa
-			controls_state = 1077
-			controls_state = 1078
+			controls_state = 1156
+			controls_state = 1157
+			controls_state = 1088
+			controls_state = 1086
 			controls_state = 1079
-			controls_state = 1080
-			controls_state = 1081
 		}
 
 		visible = {
@@ -14035,7 +14041,7 @@ form_ethiopian_empire_category  = {
 			}
 			454 = {
 				add_victory_points = {
-					province = 1086
+					province = 1068
 					value = 9
 				}
 				ETH_upgrade_state_category = yes 
@@ -15392,11 +15398,11 @@ antilles_category = {
 				state = 319
 				state = 318
 				state = 315
-				state = 1047
-				state = 1048
-				state = 1049
-				state = 1050
-				state = 1059
+				state = 1126
+				state = 1127
+				state = 1128
+				state = 1129
+				state = 1138
 			}
 		}
 
@@ -15443,23 +15449,23 @@ antilles_category = {
 				is_fully_controlled_by = ROOT
 			}
 
-			1047 = {
+			1126 = {
 				is_fully_controlled_by = ROOT
 			}
 
-			1048 = {
+			1127 = {
 				is_fully_controlled_by = ROOT
 			}
 
-			1049 = {
+			1128 = {
 				is_fully_controlled_by = ROOT
 			}
 
-			1050 = {
+			1129 = {
 				is_fully_controlled_by = ROOT
 			}
 
-			1059 = {
+			1138 = {
 				is_fully_controlled_by = ROOT
 			}
 
@@ -15485,12 +15491,12 @@ antilles_category = {
 			IF =  {
 				limit = {
 					NOT = {
-						1059 = {
+						1138 = {
 							is_core_of = ROOT
 						}
 					}
 				}
-				1059 = { add_core_of = ROOT }
+				1138 = { add_core_of = ROOT }
 			}
 			
 			# Haiti
@@ -15520,45 +15526,45 @@ antilles_category = {
 			IF =  {
 				limit = {
 					NOT = {
-						1047 = {
+						1126 = {
 							is_core_of = ROOT
 						}
 					}
 				}
-				1047 = { add_core_of = ROOT }
+				1126 = { add_core_of = ROOT }
 			}
 
 			IF =  {
 				limit = {
 					NOT = {
-						1048 = {
+						1127 = {
 							is_core_of = ROOT
 						}
 					}
 				}
-				1048 = { add_core_of = ROOT }
+				1127 = { add_core_of = ROOT }
 			}
 
 			IF =  {
 				limit = {
 					NOT = {
-						1049 = {
+						1128 = {
 							is_core_of = ROOT
 						}
 					}
 				}
-				1049 = { add_core_of = ROOT }
+				1128 = { add_core_of = ROOT }
 			}
 
 			IF =  {
 				limit = {
 					NOT = {
-						1050 = {
+						1129 = {
 							is_core_of = ROOT
 						}
 					}
 				}
-				1050 = { add_core_of = ROOT }
+				1129 = { add_core_of = ROOT }
 			}
 
 			# Jamaica
@@ -17850,8 +17856,8 @@ greater_mongolia_category = {
 				state = 616
 				state = 1043 
 				state = 1040
-				state = 1075
-				state = 1076
+				state = 1090
+				state = 1089
 			}
 		}
 
@@ -17883,8 +17889,8 @@ greater_mongolia_category = {
 			add_state_core = 616
 			add_state_core = 1043 
 			add_state_core = 1040
-			add_state_core = 1075
-			add_state_core = 1076
+			add_state_core = 1090
+			add_state_core = 1089
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
