@@ -1,4 +1,4 @@
-version="26.4.0"
+version="1.3.0"
 picture="thumbnail.png"
 tags={
 	"Alternative History"
@@ -10,8 +10,9 @@ tags={
 	"Gameplay"
 	"National Focuses"
 	"Technologies"
+	"Ideologies"
 }
-name="Rejuvenated"
-supported_version="1.17.4.1"
-path="mod/HOI4-Rejuvinated"
+name="Rejuvenated Local"
+supported_version="1.19.*"
+path="mod/HOI4-Rejuvenated"
 remote_file_id="3672337715"

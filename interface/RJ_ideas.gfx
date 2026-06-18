@@ -2,137 +2,558 @@ spriteTypes = {
 
     spriteType = {
 		name = "GFX_idea_RJ_american_influence"
-		texturefile = "gfx/interface/rejuvinated_ideas/RJ_idea_american_influence.dds"
+		texturefile = "gfx/interface/ideas/RJ_idea_american_influence.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_financial_law"
-		texturefile = "gfx/interface/rejuvinated_ideas/RJ_idea_financial_law.dds"
+		texturefile = "gfx/interface/ideas/RJ_idea_financial_law.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_financial_law2"
-		texturefile = "gfx/interface/rejuvinated_ideas/RJ_idea_financial_law2.dds"
+		texturefile = "gfx/interface/ideas/RJ_idea_financial_law2.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_medical"
-		texturefile = "gfx/interface/rejuvinated_ideas/RJ_idea_medical.dds"
+		texturefile = "gfx/interface/ideas/RJ_idea_medical.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_communist_ship"
-		texturefile = "gfx/interface/rejuvinated_ideas/RJ_idea_communist_ship.dds"
+		texturefile = "gfx/interface/ideas/RJ_idea_communist_ship.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_communist_globe"
-		texturefile = "gfx/interface/rejuvinated_ideas/RJ_idea_communist_globe.dds"
+		texturefile = "gfx/interface/ideas/RJ_idea_communist_globe.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_communist_industry"
-		texturefile = "gfx/interface/rejuvinated_ideas/RJ_idea_communist_industry.dds"
+		texturefile = "gfx/interface/ideas/RJ_idea_communist_industry.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_army_money"
-		texturefile = "gfx/interface/rejuvinated_ideas/RJ_idea_army_money.dds"
+		texturefile = "gfx/interface/ideas/RJ_idea_army_money.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_anti_communism"
-		texturefile = "gfx/interface/rejuvinated_ideas/RJ_idea_anti_communism.dds"
+		texturefile = "gfx/interface/ideas/RJ_idea_anti_communism.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_fishing"
-		texturefile = "gfx/interface/rejuvinated_ideas/RJ_idea_fishing.dds"
+		texturefile = "gfx/interface/ideas/RJ_idea_fishing.dds"
 	}
 
+	##############
+	### BRAZIL ###
+	##############
 
+	SpriteType = {
+		name = "GFX_idea_bra_influencia_comunista_idea"
+		texturefile = "gfx/interface/ideas/bra/idea_bra_influencia_comunista_idea.dds"
+	}
 
+	SpriteType = {
+		name = "GFX_idea_BRA_feb"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_feb.dds"
+	}
 
+	SpriteType = {
+		name = "GFX_idea_BRA_1930"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_1930.dds"
+	}
 
+	SpriteType = {
+		name = "GFX_idea_BRA_antropofagia"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_antropofagia.dds"
+	}
 
+	SpriteType = {
+		name = "GFX_idea_BRA_antropofagia_neu"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_antropofagia_neu.dds"
+	}
 
+	SpriteType = {
+		name = "GFX_idea_BRA_antropofagia_dem"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_antropofagia_dem.dds"
+	}
 
+	SpriteType = {
+		name = "GFX_idea_BRA_antropofagia_fasc"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_antropofagia_fasc.dds"
+	}
 
+	SpriteType = {
+		name = "GFX_idea_BRA_antropofagia_com"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_antropofagia_com.dds"
+	}
 
-	
+	SpriteType = {
+		name = "GFX_idea_BRA_march_in_silence"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_march_in_silence.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_antropofagia_imp"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_antropofagia_imp.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_bandeirantes"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_bandeirantes.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_bandeirantes_art"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_bandeirantes_art.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_bandeirantes_mot"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_bandeirantes_mot.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_coffeebarons"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_coffee_barons.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_instabilidade_1"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_instabilidade_1.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_instabilidade_2"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_instabilidade_2.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_mem1"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_mem1.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_mem2"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_mem2.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_natdev"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_natdev.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_polaca"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_polaca.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_proalcool"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_proalcool.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_cap"
+		texturefile = "gfx/interface/ideas/bra/idea_cap.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_cfsp"
+		texturefile = "gfx/interface/ideas/bra/idea_cfsp.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ep"
+		texturefile = "gfx/interface/ideas/bra/idea_ep.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_engesa"
+		texturefile = "gfx/interface/ideas/bra/idea_engesa.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_fnm"
+		texturefile = "gfx/interface/ideas/bra/idea_fnm.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_tenenge"
+		texturefile = "gfx/interface/ideas/bra/idea_tenenge.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_imbel"
+		texturefile = "gfx/interface/ideas/bra/idea_imbel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_light"
+		texturefile = "gfx/interface/ideas/bra/idea_light.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_petrobras"
+		texturefile = "gfx/interface/ideas/bra/idea_petrobras.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_santos"
+		texturefile = "gfx/interface/ideas/bra/idea_santos.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_amn"
+		texturefile = "gfx/interface/ideas/bra/idea_amn.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_varig"
+		texturefile = "gfx/interface/ideas/bra/idea_varig.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_anfab"
+		texturefile = "gfx/interface/ideas/bra/idea_anfab.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_apfab"
+		texturefile = "gfx/interface/ideas/bra/idea_apfab.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_afranio"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_afranio.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_alfredo"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_alfredo.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_aranha"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_aranha.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_aristides"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_aristides.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_eduardogomes"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_eduardogomes.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_epaminondas"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_epaminondas.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_fontoura"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_fontoura.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_francisco"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_francisco.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_franco"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_franco.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_lobato"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_lobato.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_advisor_morato"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_morato.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_capanema"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_capanema.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_collor"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_collor.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_moreira"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_moreira.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_nero"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_nero.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_newton"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_newton.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_oswald"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_oswald.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_pedro"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_pedro.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_picchia"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_picchia.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_arlindo"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_arlindo.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_protogenes"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_protogenes.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_rosa"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_rosa.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_salgado"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_salgado.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_trompowsky"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_trompowsky.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_advisor_candido"
+		texturefile = "gfx/interface/ideas/bra/idea_advisor_candido.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_entreguismo_idea"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_entreguismo_idea.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_idea_BRA_mercosul_idea_outro"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_mercosul_idea_outro.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_BRA_air_force"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_air_force.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_BRA_army"
+		texturefile = "gfx/interface/ideas/bra/idea_BRA_army.dds"
+	}
+
+	############
+	### CUBA ###
+	############
+
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_sugar_industry"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_sugar_industry.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_sugar_industry.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_sugar_industry1"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_sugar_industry1.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_sugar_industry1.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_sugar_industry_recovered"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_sugar_industry_recovered.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_sugar_industry_recovered.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_sugar_industry_strong"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_sugar_industry_strong.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_sugar_industry_strong.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_CTC"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_CTC.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_CTC.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_DGI"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_DGI.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_DGI.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_mafia_influence"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_mafia_influence.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_mafia_influence.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_caribbean_brothers"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_caribbean_brothers.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_caribbean_brothers.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_caribbean_dominance"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_caribbean_dominance.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_caribbean_dominance.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_caribbean_guard"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_caribbean_guard.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_caribbean_guard.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_rough_riders"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_rough_riders.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_rough_riders.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_tourism"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_tourism.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_tourism.dds"
 	}
 	
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_batistas_influence"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_batistas_influence.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_batistas_influence.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_batistas_influence_reduced"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_batistas_influence_reduced.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_batistas_influence_reduced.dds"
 	}
 
 	spriteType = {
 		name = "GFX_idea_RJ_CUB_batistas_cooperation"
-		texturefile = "gfx/interface/rejuvinated_ideas/Cuba/RJ_idea_CUB_batistas_cooperation.dds"
+		texturefile = "gfx/interface/ideas/cub/RJ_idea_CUB_batistas_cooperation.dds"
+	}
+
+	##########
+	### UK ###
+	##########
+
+	spriteType = {
+		name = "GFX_idea_RJ_ENG_britannia"
+		texturefile = "gfx/interface/ideas/eng/RJ_idea_ENG_britannia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_ENG_david_lloyd_george"
+		texturefile = "gfx/interface/ideas/eng/RJ_idea_ENG_david_lloyd_george.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_ENG_god_save_the_king"
+		texturefile = "gfx/interface/ideas/eng/RJ_idea_ENG_god_save_the_king.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_ENG_european_nation"
+		texturefile = "gfx/interface/ideas/eng/RJ_idea_ENG_european_nation.dds"
+	}
+
+	###########
+	### USA ###
+	###########
+
+    spriteType = {
+		name = "GFX_idea_RJ_idea_USA_home_of_the_free"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_home_of_the_free.dds"
+	}
+
+    spriteType = {
+		name = "GFX_idea_RJ_idea_USA_popular_front"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_popular_front.dds"
+	}
+
+    spriteType = {
+		name = "GFX_idea_RJ_idea_USA_union_representation_act"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_union_representation_act.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_spread_our_ideals"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_spread_our_ideals.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_USACE"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_USACE.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_taft_hartley_act"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_taft_hartley_act.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_protectionist_tariffs"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_protectionist_tariffs.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_foreign_agents_registration_act"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_foreign_agents_registration_act.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_national_prosperity_program"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_national_prosperity_program.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_army_air_corps"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_army_air_corps.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_navy"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_navy.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_army"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_army.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_air_corps_expansion_program"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_air_corps_expansion_program.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_flying_fortresses"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_flying_fortresses.dds"
+	}
+
+	spriteType = {
+		name = "GFX_idea_RJ_idea_USA_mechanize_the_army"
+		texturefile = "gfx/interface/ideas/usa/RJ_idea_USA_mechanize_the_army.dds"
 	}
 	
 }
