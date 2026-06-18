@@ -2408,20 +2408,20 @@ prospect_for_resources = {
 
 		highlight_states = {
 			highlight_state_targets = {
-				state = 1048
+				state = 1127
 			}
 		}
 
 		available = {
 			has_tech = excavation3
 			num_of_civilian_factories_available_for_projects > 2
-			owns_state = 1048
-			controls_state = 1048
+			owns_state = 1127
+			controls_state = 1127
 		}
 
 		visible = {
-			owns_state = 1048
-			controls_state = 1048
+			owns_state = 1127
+			controls_state = 1127
 			315 = {
 				NOT = {
 					has_state_flag = cuba_steel_developed
@@ -2471,10 +2471,10 @@ prospect_for_resources = {
 		}
 
 		remove_effect = {
-			1048 = {
+			1127 = {
 				set_state_flag = cuba_steel_developed
 			}
-			1048 = {
+			1127 = {
 				add_resource = {
 					type = steel
 					amount = 8
