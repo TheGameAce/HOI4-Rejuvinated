@@ -414,7 +414,7 @@ focus_tree = {
 	
 	focus = {
 		id = IRE_DBR
-		icon = GFX_IRE_Zinc
+		icon = GFX_focus_generic_mineral_prospecting
 		x = 0
 		y = 3
 		relative_position_id = IRE_IEAA
@@ -453,7 +453,7 @@ focus_tree = {
 	}
 	focus = {
 		id = IRE_GGLF
-		icon = GFX_goal_military_research
+		icon = GFX_goal_military_research_old
 		x = 0
 		y = 5
 		relative_position_id = IRE_IEAA
@@ -2542,7 +2542,7 @@ focus_tree = {
 	# choosing a king - a king of our own  - flexible path
 	focus = { # makes the IRA less loyal
 		id = IRE_a_king_of_our_own
-		icon = GFX_goal_IRE_monarchy
+		icon = GFX_goal_IRE_the_restoration
 		prerequisite = { focus = IRE_crush_the_IRA focus = IRE_integrate_the_IRA }
 		mutually_exclusive = { focus = IRE_the_prussian_prince }
 		mutually_exclusive = { focus = IRE_the_dual_monarchy }
@@ -3215,7 +3215,7 @@ focus_tree = {
 	}
 	focus = {
 		id = IRE_HEAVYINDUSTRY
-		icon = GFX_IRE_heavy_industry
+		icon = GFX_generic_heavy_industry
 		x = -12
 		y = 3
 		relative_position_id = IRE_ARMYTREE
@@ -3275,7 +3275,7 @@ focus_tree = {
 	}
 	focus = {
 		id = IRE_NORMALINDUSTRY
-		icon = GFX_IRE_medium_industry
+		icon = GFX_generic_medium_industry
 		x = -8
 		y = 3
 		relative_position_id = IRE_ARMYTREE
@@ -3459,7 +3459,7 @@ focus_tree = {
 	# Airforce Tree
 	focus = {
 		id = IRE_AIRFORCE
-		icon = GFX_goal_irish_air
+		icon = GFX_goal_IRE_irish_air
 		x = -5
 		y = 1
 		relative_position_id = IRE_ARMYTREE
@@ -3665,7 +3665,7 @@ focus_tree = {
 	# Infantry Tree
 	focus = {
 		id = IRE_INFANTRY
-		icon = GFX_goal_irish_army
+		icon = GFX_goal_IRE_irish_army
 		x = 1
 		y = 1
 		relative_position_id = IRE_ARMYTREE
@@ -3851,7 +3851,15 @@ focus_tree = {
 	}
 	focus = {
 		id = IRE_APEOPLESARMY
-		icon = GFX_IRE_peoples_army
+		icon = {
+			GFX_goal_IRE_peoples_army_monarchist = {
+				OR = {
+					has_government = theocratic_monarchy
+					has_government = monarchy
+				}
+			}
+			GFX_goal_IRE_peoples_army = yes
+		}
 		x = 3
 		y = 2
 		relative_position_id = IRE_ARMYTREE
@@ -3974,7 +3982,7 @@ focus_tree = {
 	# Navy Tree
 	focus = {
 		id = IRE_NAVY
-		icon = GFX_goal_irish_navy
+		icon = GFX_goal_IRE_irish_navy
 		x = 8
 		y = 1
 		relative_position_id = IRE_ARMYTREE

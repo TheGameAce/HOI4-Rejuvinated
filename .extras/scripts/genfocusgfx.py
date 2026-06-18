@@ -426,15 +426,15 @@ def format_sprite(focus_id: str, icon_path: str, args, indent_level: int = 1) ->
     indent = ' ' * (args.indent * indent_level)
     
     if args.output_format == 'compact':
-        return f'{indent}spriteType = {{ name = GFX_{focus_id} texturefile = {icon_path} }}\n spriteType = {{ name = GFX_{focus_id}_shine texturefile = {icon_path} }}\n'
+        return f'{indent}SpriteType = {{ name = GFX_{focus_id} texturefile = {icon_path} }}\n SpriteType = {{ name = GFX_{focus_id}_shine texturefile = {icon_path} }}\n'
     elif args.output_format == 'pretty':
         lines = [
-            f'{indent}spriteType = {{',
+            f'{indent}SpriteType = {{',
             f'{indent}    name = GFX_{focus_id}',
             f'{indent}    texturefile = {icon_path}',
             f'{indent}}}'
         ] + [
-            f'{indent}spriteType = {{',
+            f'{indent}SpriteType = {{',
             f'{indent}    name = GFX_{focus_id}_shine',
             f'{indent}    texturefile = {icon_path}',
             f'{indent}}}'
@@ -442,12 +442,12 @@ def format_sprite(focus_id: str, icon_path: str, args, indent_level: int = 1) ->
         return '\n'.join(lines) + '\n'
     else:  # standard format
         lines = [
-            f'{indent}spriteType = {{',
+            f'{indent}SpriteType = {{',
             f'{indent}    name = GFX_{focus_id}',
             f'{indent}    texturefile = {icon_path}',
             f'{indent}}}'
         ] + [
-            f'{indent}spriteType = {{',
+            f'{indent}SpriteType = {{',
             f'{indent}{indent}name = GFX_{focus_id}_shine',
             f'{indent}{indent}texturefile = {icon_path}',
             f'{indent}{indent}animation = {{',
