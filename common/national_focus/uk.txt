@@ -2065,17 +2065,6 @@ focus_tree = {
 		icon = GFX_focus_RJ_ENG_reinforce_the_empire
 		x = 29
 		y = 0
-		offset = {
-			x = -2
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = uk_empire_focus
-			}
-		}
 		cost = 7.2
 		ai_will_do = {
 			factor = 1
@@ -2113,17 +2102,6 @@ focus_tree = {
 		icon = GFX_focus_RJ_ENG_fortify_the_empire
 		x = 10
 		y = 1
-		offset = {
-			x = 2
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = uk_empire_focus
-			}
-		}
 		relative_position_id = uk_empire_focus
 		cost = 7.2
 
@@ -2144,17 +2122,6 @@ focus_tree = {
 		icon = GFX_goal_generic_position_armies
 		x = 0
 		y = 1
-		offset = {
-			x = 2
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = uk_empire_focus
-			}
-		}
 		cost = 5
 
 		available_if_capitulated = yes
@@ -6703,31 +6670,9 @@ focus_tree = {
 			}
 		}
 
-		x = 30
+		x = 26
 		y = 0
 		relative_position_id = uk_empire_focus
-
-		offset = {
-			x = -5
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = uk_empire_focus
-			}
-		}
-		offset = {
-			x = -3
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-			}
-		}
 
 		cost = 5
 		ai_will_do = {
@@ -6914,6 +6859,18 @@ focus_tree = {
 		x = 4
 		y = 2
 		relative_position_id = ENG_steady_as_she_goes
+
+		offset = {
+			x = -10
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = ENG_a_change_in_course
+			}
+		}
 
 		completion_reward = {
 			custom_effect_tooltip = rj_ENG_modify_the_economy_tt
@@ -7738,12 +7695,12 @@ focus_tree = {
 
 		}
 		icon = GFX_focus_generic_strike_at_democracy2
-		x = 27
+		x = 24
 		y = 0
 		relative_position_id = ENG_steady_as_she_goes
 
 		offset = {
-			x = -16
+			x = -10
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -7753,9 +7710,8 @@ focus_tree = {
 				has_completed_focus = ENG_a_change_in_course
 			}
 		}
-
 		offset = {
-			x = -5
+			x = -10
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -7765,9 +7721,8 @@ focus_tree = {
 				has_completed_focus = ENG_the_kings_party
 			}
 		}
-
 		offset = {
-			x = 1
+			x = -14
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -7775,12 +7730,10 @@ focus_tree = {
 					option = HIDE
 				}
 				has_completed_focus = ENG_organize_the_blackshirts
-				has_completed_focus = uk_empire_focus
 			}
 		}
-
 		offset = {
-			x = -4
+			x = -13
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -7974,7 +7927,7 @@ focus_tree = {
 		}
 
 		offset = {
-			x = 7
+			x = 10
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -8056,7 +8009,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_GER_european_confederation
-		x = -5
+		x = -4
 		y = 1
 		relative_position_id = ENG_the_kings_party
 		cost = 7.2
@@ -8483,6 +8436,17 @@ focus_tree = {
 		y = 1
 		relative_position_id = ENG_a_change_in_course
 		cost = 10
+		offset = {
+			x = -11
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = ENG_organize_the_blackshirts
+			}
+		}
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -11161,7 +11125,7 @@ focus_tree = {
 		}
 
 		offset = {
-			x = -7
+			x = -24
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -11183,7 +11147,7 @@ focus_tree = {
 			}
 		}
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		x = 27
+		x = 24
 		y = 1
 		relative_position_id = ENG_a_change_in_course
 		cost = 10
@@ -11278,7 +11242,7 @@ focus_tree = {
 		prerequisite = { focus = ENG_organize_the_blackshirts focus = ENG_concessions_to_the_trade_unions }
 
 		offset = {
-			x = -5
+			x = -22
 			y = 0
 			trigger = {
 				has_game_rule = {
@@ -11286,6 +11250,17 @@ focus_tree = {
 					option = HIDE
 				}
 				has_completed_focus = ENG_concessions_to_the_trade_unions
+			}
+		}
+		offset = {
+			x = -6
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = ENG_organize_the_blackshirts
 			}
 		}
 
