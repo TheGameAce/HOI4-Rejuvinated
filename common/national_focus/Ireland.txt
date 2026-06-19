@@ -2247,7 +2247,7 @@ focus_tree = {
 		}
 	}
 	
-	focus = { # increases IRA loyalty
+	focus = {
 		id = IRE_soviet_military_advisors
 		icon = GFX_focus_RJ_communist_advisor
 		prerequisite = { focus = IRE_join_comintern}
@@ -3917,6 +3917,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			add_political_power = 30
+			add_ideas = IRE_PATRIOTIC_NATION
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
@@ -3973,6 +3974,35 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = IRE_OFFICER_SCHOOL
+		}
+		search_filters = { FOCUS_FILTER_ARMY_BONUS }
+	}
+	focus = {
+		id = IRE_OFFICERSCHOOL
+		icon = GFX_focus_generic_military_academy
+		x = 1
+		y = 0
+		relative_position_id = IRE_OFFICERSCHOOL
+		cost = 30
+		ai_will_do = {
+			factor = 3
+		}
+		available = {
+		num_of_available_civilian_factories > 24
+		}
+		prerequisite = {
+			focus = IRE_OFFICERSCHOOL
+		}
+		
+		select_effect = {
+			add_ideas = IRE_MILITARY_ACADEMY_PROJECT
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = IRE_OFFICER_SCHOOL
+				add_idea = IRE_MILITARY_ACADEMY
+			}
+		remove_idea = IRE_MILITARY_ACADEMY_PROJECT
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
