@@ -3978,17 +3978,17 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
 	focus = {
-		id = IRE_OFFICERSCHOOL
-		icon = GFX_focus_generic_military_academy
-		x = 1
-		y = 0
+		id = IRE_ACADEMY
+		icon = GFX_focus_ETH_ecole_militaire_haile_selassie_1er
+		x = 0
+		y = 1
 		relative_position_id = IRE_OFFICERSCHOOL
 		cost = 30
 		ai_will_do = {
 			factor = 3
 		}
 		available = {
-		num_of_available_civilian_factories > 24
+			num_of_available_civilian_factories > 24
 		}
 		prerequisite = {
 			focus = IRE_OFFICERSCHOOL
@@ -4002,7 +4002,6 @@ focus_tree = {
 				remove_idea = IRE_OFFICER_SCHOOL
 				add_idea = IRE_MILITARY_ACADEMY
 			}
-		remove_idea = IRE_MILITARY_ACADEMY_PROJECT
 		}
 		search_filters = { FOCUS_FILTER_ARMY_BONUS }
 	}
