@@ -1,0 +1,677 @@
+focus_tree = {
+	id = malta_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = MLT
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 1500 }
+	
+focus = {
+		id = MLT_state_of_the_nation
+		icon = GFX_goal_generic_consumer_goods
+		x = 3
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	
+	focus = {
+		id = MLT_italian_irredentism
+		icon = GFX_goal_generic_consumer_goods
+		x = 5
+		y = 1
+		cost = 5
+		mutually_exclusive = { focus = MLT_follow_britain }
+		relative_position_id = MLT_state_of_the_nation
+		prerequisite = { focus = MLT_state_of_the_nation }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			give_guarantee = ITA
+			ITA = {  give_guarantee = MLT	}
+
+		}
+	}
+	
+	focus = {
+		id = MLT_italian_help_with_independence
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_italian_irredentism
+		prerequisite = { focus = MLT_italian_irredentism }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_timed_idea = {
+			idea = MLT_italian_help_idea
+			days = 545
+			}
+
+		}
+	}
+	
+	focus = {
+		id = MLT_subjogation_by_italy
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_italian_help_with_independence
+		prerequisite = { focus = MLT_italian_help_with_independence }
+
+		available_if_capitulated = no
+		available = {
+			is_subject = no
+		}
+
+		completion_reward = {
+			ITA = {
+			puppet = MLT
+			}
+
+		}
+	}
+	
+	focus = {
+		id = MLT_the_grand_plan
+		icon = GFX_goal_generic_consumer_goods
+		mutually_exclusive = { focus = MLT_make_ourselves_useful }
+		x = 3
+		y = 1
+		cost = 5
+		relative_position_id = MLT_subjogation_by_italy
+		prerequisite = { focus = MLT_subjogation_by_italy }
+
+		available_if_capitulated = no
+		available = {
+			has_political_power > 500
+		}
+
+		completion_reward = {
+         add_political_power = -500
+		}
+	}
+	
+	focus = {
+		id = MLT_infiltrate_ITA_civilian_sector
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = MLT_the_grand_plan
+		prerequisite = { focus = MLT_the_grand_plan }
+
+		available_if_capitulated = no
+		available = {
+			NOT = { has_idea = MLT_infiltration_ongoing }
+			num_of_available_civilian_factories > 0
+		}
+
+		completion_reward = {
+           add_timed_idea = {
+			idea = MLT_infiltration_ongoing
+			days = 150
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_infiltrate_ITA_military
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = MLT_the_grand_plan
+		prerequisite = { focus = MLT_the_grand_plan }
+
+		available_if_capitulated = no
+		available = {
+			NOT = { has_idea = MLT_infiltration_ongoing }
+			num_of_available_civilian_factories > 1
+		}
+
+		completion_reward = {
+           add_timed_idea = {
+			idea = MLT_infiltration_ongoing
+			days = 150
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_redirect_italian_industrial_resources
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = MLT_infiltrate_ITA_civilian_sector
+		prerequisite = { focus = MLT_infiltrate_ITA_civilian_sector }
+		prerequisite = { focus = MLT_infiltrate_ITA_military }
+
+		available_if_capitulated = no
+		available = {
+			NOT = { has_idea = MLT_infiltration_ongoing }
+		}
+
+		completion_reward = {
+          add_offsite_building = { type = arms_factory level = 2 }
+		  add_offsite_building = { type = industrial_complex level = 2 }
+	}
+    }
+	
+	focus = {
+		id = MLT_friends_in_high_places
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_redirect_italian_industrial_resources
+		prerequisite = { focus = MLT_redirect_italian_industrial_resources }
+
+		available_if_capitulated = no
+
+		completion_reward = {
+          add_ideas = MLT_friends_in_high_places
+	}
+	}
+	
+	focus = {
+		id = MLT_make_our_move
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 20
+		relative_position_id = MLT_friends_in_high_places
+		prerequisite = { focus = MLT_friends_in_high_places }
+		available = {
+			has_political_power > 1900
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+          ITA = {
+		  end_puppet = MLT
+		  }
+		  puppet = ITA
+		  add_political_power = -1900
+	}
+	
+	}
+	
+	focus = {
+		id = MLT_integrate_italy
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 20
+		relative_position_id = MLT_make_our_move
+		prerequisite = { focus = MLT_make_our_move }
+		available = {
+			has_political_power > 1900
+		}
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_cosmetic_tag = ITA_MLT
+			add_state_core = 115
+			add_state_core = 114
+			add_state_core = 156
+			add_state_core = 117
+			add_state_core = 849
+			add_state_core = 157
+			add_state_core = 2
+			add_state_core = 162
+			add_state_core = 161
+			add_state_core = 160
+			add_state_core = 850
+			add_state_core = 39
+			add_state_core = 736
+			add_state_core = 852
+			add_state_core = 159
+			add_state_core = 158
+          if = {
+				limit = { country_exists = ITA }
+				annex_country = {
+					target = ITA
+					transfer_troops = yes
+				}
+				ITA = {
+					every_unit_leader = {
+						set_nationality = ROOT
+					}
+				}
+			}
+		  add_political_power = -1900
+	}
+	
+	}
+	
+	focus = {
+		id = MLT_italian_trade_investments
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 2
+		cost = 5
+		relative_position_id = MLT_subjogation_by_italy
+		prerequisite = { focus = MLT_subjogation_by_italy }
+
+		available_if_capitulated = no
+
+		completion_reward = {
+        add_ideas = MLT_italian_trade_investments_idea
+		}
+	}
+	
+	focus = {
+		id = MLT_italian_industry_in_malta
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_italian_trade_investments
+		prerequisite = { focus = MLT_italian_trade_investments }
+
+		available_if_capitulated = no
+
+		completion_reward = {
+        116 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_make_ourselves_useful
+		icon = GFX_goal_generic_consumer_goods
+		mutually_exclusive = { focus = MLT_the_grand_plan }
+		x = -3
+		y = 1
+		cost = 5
+		relative_position_id = MLT_subjogation_by_italy
+		prerequisite = { focus = MLT_subjogation_by_italy }
+
+		available_if_capitulated = no
+		available = {
+		448 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		661 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		}
+
+		completion_reward = {
+		MLT = {
+		     transfer_state = 448
+			 transfer_state = 661
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_a_new_colonial_administration
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = MLT_make_ourselves_useful
+		prerequisite = { focus = MLT_make_ourselves_useful }
+
+		available_if_capitulated = no
+		completion_reward = {
+		 add_ideas = MLT_new_colonial_administration_idea1
+		}
+	}
+	
+	focus = {
+		id = MLT_the_libyan_colonial_administration
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_a_new_colonial_administration
+		prerequisite = { focus = MLT_a_new_colonial_administration }
+
+		available_if_capitulated = no
+		available = {
+		449 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		450 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		451 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		662 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		663 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		1113 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		
+		}
+
+		completion_reward = {
+		MLT = {
+		     transfer_state = 449
+			 transfer_state = 450
+			 transfer_state = 451
+			 transfer_state = 662
+			 transfer_state = 663
+			 transfer_state = 1113
+			 
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_the_eritrean_colonial_administration
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = MLT_the_libyan_colonial_administration
+		prerequisite = { focus = MLT_the_libyan_colonial_administration }
+
+		available_if_capitulated = no
+		available = {
+		550 = {
+			is_fully_controlled_by = ITA
+		}
+		}
+
+		completion_reward = {
+		MLT = {
+		     transfer_state = 550
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_the_somalian_colonial_administration
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = MLT_the_libyan_colonial_administration
+		prerequisite = { focus = MLT_the_libyan_colonial_administration }
+
+		available_if_capitulated = no
+		available = {
+		559 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		844 = {
+			is_fully_controlled_by = ITA
+		}
+		}
+
+		completion_reward = {
+		MLT = {
+		     transfer_state = 559
+			 transfer_state = 844 
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_the_abbyssinian_colonial_administration
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = MLT_the_eritrean_colonial_administration
+		prerequisite = { focus = MLT_the_eritrean_colonial_administration}
+		prerequisite = { focus = MLT_the_somalian_colonial_administration}
+
+		available_if_capitulated = no
+		available = {
+		908 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		842 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		841 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		840 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		843 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		835 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		836 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		837 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		838 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		839 = {
+			is_fully_controlled_by = ITA
+		}
+		
+		271 = {
+			is_fully_controlled_by = ITA
+		}
+		}
+
+		completion_reward = {
+		MLT = {
+		     transfer_state = 908
+			 transfer_state = 842
+			 transfer_state = 841
+			 transfer_state = 840
+			 transfer_state = 843
+			 transfer_state = 835
+			 transfer_state = 836
+			 transfer_state = 837
+			 transfer_state = 838
+			 transfer_state = 839
+			 transfer_state = 271
+			 
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_model_colonies_everywhere
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_the_abbyssinian_colonial_administration
+		prerequisite = { focus = MLT_the_abbyssinian_colonial_administration }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = MLT_new_colonial_administration_idea1
+			add_idea = MLT_new_colonial_administration_idea2
+			}
+		}
+	}
+	
+	focus = {
+		id = MLT_follow_britain
+		icon = GFX_goal_generic_consumer_goods
+		x = -5
+		y = 1
+		cost = 5
+		mutually_exclusive = { focus = MLT_italian_irredentism }
+		relative_position_id = MLT_state_of_the_nation
+		prerequisite = { focus = MLT_state_of_the_nation }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_ideas = MLT_british_investments_idea
+		
+		}
+	}
+	
+	focus = {
+		id = MLT_the_british_lead
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_follow_britain
+		prerequisite = { focus = MLT_follow_britain }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		
+		}
+	}
+	
+	focus = {
+		id = MLT_welcome_italians_fleeing_fascism
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = MLT_the_british_lead
+		prerequisite = { focus = MLT_the_british_lead }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_ideas = MLT_italian_refugees_idea
+		
+		}
+	}
+	
+	focus = {
+		id = MLT_lease_british_drydocks
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		cost = 5
+		relative_position_id = MLT_welcome_italians_fleeing_fascism
+		prerequisite = { focus = MLT_welcome_italians_fleeing_fascism }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_offsite_building = { type = dockyard level = 3 }
+		
+		}
+	}
+	
+	focus = {
+		id = MLT_build_steelworks
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		cost = 5
+		relative_position_id = MLT_welcome_italians_fleeing_fascism
+		prerequisite = { focus = MLT_welcome_italians_fleeing_fascism }
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 24
+				state = 116
+			}
+		
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
