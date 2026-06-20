@@ -1,0 +1,50 @@
+add_namespace = malta
+
+country_event = { #The Language Question Event
+	id = malta.1
+	title = malta.1.t
+	desc = malta.1.d
+	picture = GFX_malta_language_question
+
+	is_triggered_only = yes
+
+	option = {
+		name = "English, for the crown!"
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+
+	option = {
+		name = "Italian is the way!"
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+
+	option = {
+		name = "We should be proud of the Maltese language!"
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+
+	option = {
+		name = "Perhaps a compromise of Maltese & English?"
+		ai_chance = {
+			base = 1
+		}
+	}
+}

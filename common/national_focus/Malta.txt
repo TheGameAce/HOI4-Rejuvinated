@@ -26,12 +26,18 @@ focus_tree = {
 		available = {
 			
 		}
+
+		completion_reward = {
+			country_event = { id = malta.1 hours = 3 }
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
 
 	focus = {
 		id = MLT_state_of_the_nation
 		icon = GFX_goal_generic_consumer_goods
-		x = 3
+		x = 9
 		y = 0
 		cost = 5
 
