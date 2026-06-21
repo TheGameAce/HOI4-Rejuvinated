@@ -1,6 +1,6 @@
 characters={
 
-	MLT_charles_bonham_carter = { # Historical Governor General of Madagascar from 1930 - 1939, as well as part of 40 - 41.
+	MLT_charles_bonham_carter = { # Historical Governor General of Malta from shortly after game start.
 		name = "Charles Bonham Carter"
 		portraits={
 			civilian={
@@ -10,6 +10,21 @@ characters={
 		country_leader={
 			ideology= conservatism_neutrality
 			traits={ governor_general }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
+
+	MLT_enrico_mizzi = { # Considered to be fascist for his (& his party's) pro-Italian views, as well as pro-Franco views.
+		name = "Enrico Mizzi"
+		portraits={
+			civilian={
+				large = "gfx/leaders/MLT/Enrico_Mizzi.dds"
+			}
+		}
+		country_leader={
+			ideology= fascism_ideology
+			traits={ maltese_italian_irredentist }
 			expire="1965.1.1.12"
 			id=-1
 		}

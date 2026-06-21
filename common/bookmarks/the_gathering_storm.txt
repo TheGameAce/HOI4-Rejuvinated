@@ -6,10 +6,24 @@ bookmarks = {
 		picture = "GFX_select_date_1936"
 		default_country = "ENG"
 		default = yes
-		
+
+		filters = { new_content continent }
+		# filters can also contain 'label'
+		# in that case the countries below can have 'label = { label_1 }' or 'label = { label_1 label_2 }'
+		# all these labels will be gathered and displayed as filter buttons
+
+		# sort_unplayed_first = no            # defaults to yes: countries with unplayed content are listed first
+		# include_majors_in_minor_list = no   # defaults to yes: when a filter is active, majors also show in the mini list
+		# apply_filter_to_majors = yes        # defaults to no: when yes, the major row also respects the filter (only majors matching it are shown)
+		# apply_filter_to_other_country = yes # defaults to no: by default the "other" (---) entry is always shown; when yes it respects the filter too
+		# label_order = { label_1 label_2 }   # optional: forces the label filter button order; a warning is logged for
+		#                                     # any label used by a country that is missing from this list
+		# scrollable_country_list = yes       # defaults to no: scroll the minor list with its vertical scrollbar instead of the overflow dropdown
+
 		"FRA"={
 			history = "FRA_GATHERING_STORM_DESC"
 			ideology = democratic
+			version = base_game
 			available = { NOT = { has_dlc = "La Resistance" } }
 			ideas = {
 				FRA_victors_of_wwi
@@ -25,7 +39,8 @@ bookmarks = {
 		"FRA"={
 			history = "FRA_GATHERING_STORM_DESC"
 			ideology = democratic
-			available = { has_dlc = "La Resistance" } 
+			version = la_resistance
+			required_dlc = { "La Resistance" }
 			ideas = {
 				FRA_victors_of_wwi
 				FRA_disjointed_government
@@ -37,11 +52,11 @@ bookmarks = {
 				FRA_je_suis_la_deluge
 			}
 		}
-
-		USA = {
-			history = "USA_GATHERING_STORM_DESC"
+		"USA"={
+			history = "rj_USA_GATHERING_STORM_DESC"
 			ideology = democratic
-			new_content = yes
+			version = base_game
+			label = { new_content }
 			ideas = {
 				home_of_the_free
 				great_depression
@@ -53,11 +68,11 @@ bookmarks = {
 				USA_reestablish_the_gold_standard
 			}
 		}
-
-		ENG = {
+		"ENG"={
 			history = "ENG_GATHERING_STORM_DESC"
 			ideology = democratic
-			new_content = yes
+			version = base_game
+			label = { new_content }
 			ideas = {
 				stiff_upper_lip
 				ENG_the_war_to_end_all_wars
@@ -73,7 +88,8 @@ bookmarks = {
 		GER = {
 			history = "GER_GATHERING_STORM_DESC"
 			ideology = fascism
-			available = { has_dlc = "Gotterdammerung" }
+			version = gotterdammerung
+			required_dlc = { "Gotterdammerung" }
 			ideas = {
 				GER_mefo_bills_1936_fake_ns
 				GER_army_1936_fake_ns
@@ -89,6 +105,7 @@ bookmarks = {
 		GER = {
 			history = "GER_GATHERING_STORM_DESC"
 			ideology = fascism
+			version = base_game
 			available = { NOT = { has_dlc = "Gotterdammerung" } }
 			ideas = {
 				GER_mefo_bills_1936_fake_ns
@@ -105,7 +122,8 @@ bookmarks = {
 		"ITA"={
 			history = "ITA_GATHERING_STORM_DESC"
 			ideology = fascism
-			available = { has_dlc = "By Blood Alone" }
+			version = by_blood_alone
+			required_dlc = { "By Blood Alone" }
 			ideas = {
 				vittorio_emanuele
 				ITA_iri_fake_ns
@@ -120,6 +138,7 @@ bookmarks = {
 		"ITA"={
 			history = "ITA_GATHERING_STORM_DESC"
 			ideology = fascism
+			version = base_game
 			available = { NOT = { has_dlc = "By Blood Alone" } }
 			ideas = {
 				vittorio_emanuele
@@ -136,6 +155,7 @@ bookmarks = {
 			history = "JAP_GATHERING_STORM_DESC"
 			available = {  NOT = { has_dlc = "No Compromise, No Surrender" } }
 			ideology = neutrality
+			version = base_game
 			override_leader_portrait = JAP_emperor_hirohito
 			ideas = {
 				JAP_1936_fake_state_shintoism_idea
@@ -151,7 +171,8 @@ bookmarks = {
 
 		JAP = {
 			history = "JAP_GATHERING_STORM_DESC"
-			available = {  has_dlc = "No Compromise, No Surrender" }
+			required_dlc = { "No Compromise, No Surrender" }
+			version = no_compromise_no_surrender
 			ideology = neutrality
 			override_leader_portrait = JAP_emperor_hirohito
 			ideas = {
@@ -168,7 +189,8 @@ bookmarks = {
 		"SOV"={
 			history = "SOV_GATHERING_STORM_DESC"
 			ideology = communism
-			available = { has_dlc = "No Step Back" }
+			version = no_step_back
+			required_dlc = { "No Step Back" }
 			ideas = {
 				trotskyite_plot_nsb
 				SOV_second_five_year_plan_fake_1936_ns
@@ -183,6 +205,7 @@ bookmarks = {
 		"SOV"={
 			history = "SOV_GATHERING_STORM_DESC"
 			ideology = communism
+			version = base_game
 			available = { NOT = { has_dlc = "No Step Back" } }
 			ideas = {
 				trotskyite_plot_nsb
@@ -204,11 +227,12 @@ bookmarks = {
 		### MINOR COUNTRIES ###
 		#######################
 
-		"CUB"={
+		CUB = {
 			minor = yes
-			history = "CUB_GATHERING_STORM_DESC"
+			history = "rj_CUB_GATHERING_STORM_DESC"
 			ideology = democratic
-			new_content = yes
+			version = base_game
+			label = { new_content }
 			ideas = {
 				CUB_batistas_influence
 				CUB_recovering_sugar_industry
@@ -223,9 +247,10 @@ bookmarks = {
 
 		BRA = {
 			minor = yes
-			history = "BRA_GATHERING_STORM_DESC"
+			history = "rj_BRA_GATHERING_STORM_DESC"
 			ideology = neutrality
-			new_content = yes
+			version = base_game
+			label = { new_content }
 			ideas = {
 				bra_bandeirantes
 				bra_1930
@@ -242,6 +267,7 @@ bookmarks = {
 			minor = yes
 			history = "EGY_GATHERING_STORM_DESC"
 			ideology = neutrality
+			version = base_game
 			ideas = {
 				EGY_republican_opposition
 				rj_generic_illiteracy_2

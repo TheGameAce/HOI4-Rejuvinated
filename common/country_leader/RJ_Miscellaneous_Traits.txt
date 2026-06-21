@@ -220,4 +220,14 @@ leader_traits = {
 			factor = 1
 		}
 	}
+
+	maltese_italian_irredentist = {
+		random = no
+		fascism_drift = 0.03
+		ai_strategy = {
+			type = befriend
+			id = ITA
+			value = 200
+		}
+	}
 }
