@@ -12,6 +12,7 @@
 ### search_filters = {FOCUS_FILTER_AIR_XP}
 # Reminder that focus filters prio has to be handled in the generic focus file :)
 
+#!gfx:interface/RJ_goals.gfx
 focus_tree = {
 	id = soviet_focus
 
@@ -19220,13 +19221,13 @@ ai_will_do = {
 				elections_allowed = yes
 			}
 			hidden_effect = { set_cosmetic_tag = SOV_russian_tsardom_democratic }
-			country_event = demrussia.1
+			country_event = rj_soviet.1
 		}
 	}
 
 	focus = {
 		id = SOV_continue_the_monarchy
-		icon = GFX_focus_RUS_constitution_monarch
+		icon = GFX_goal_SOV_constitution_monarch
 		prerequisite = { focus = SOV_hold_election }
 		mutually_exclusive = { focus = SOV_return_of_republic }
 		x = -5
@@ -19263,7 +19264,7 @@ ai_will_do = {
 
 	focus = {
 		id = SOV_return_of_republic
-		icon = GFX_focus_RUS_republic_return
+		icon = GFX_goal_SOV_republic_return
 		prerequisite = { focus = SOV_hold_election }
 		mutually_exclusive = { focus = SOV_continue_the_monarchy }
 		x = 5
@@ -19307,7 +19308,7 @@ ai_will_do = {
 			remove_ideas = SOV_tsar_vladimir_i
 			hidden_effect = { set_cosmetic_tag = SOV_russia }
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = RUS_new_republic_idea
+			add_ideas = SOV_new_republic_idea
 		}
 	}
 
@@ -19349,7 +19350,7 @@ ai_will_do = {
 
 	focus = {
 		id = SOV_russia_first
-		icon = GFX_focus_RUS_russia_first
+		icon = GFX_goal_SOV_russia_first
 		prerequisite = { focus = SOV_continue_the_monarchy focus = SOV_return_of_republic }
 		mutually_exclusive = { focus = SOV_our_own_alliance focus = SOV_reforge_old_alliances }
 		x = 0
@@ -19381,7 +19382,7 @@ ai_will_do = {
 
 	focus = {
 		id = SOV_our_own_alliance
-		icon = GFX_focus_RUS_eastern_alliance
+		icon = GFX_goal_SOV_eastern_alliance
 		prerequisite = { focus = SOV_continue_the_monarchy focus = SOV_return_of_republic }
 		mutually_exclusive = { focus = SOV_reforge_old_alliances focus = SOV_russia_first }
 		x = 2
@@ -19427,7 +19428,7 @@ ai_will_do = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_political_power = 50
-			unlock_decision_category_tooltip = RUS_security_pact_category
+			unlock_decision_category_tooltip = SOV_security_pact_category
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = SOV_faction_management_countries_effected_tt
 		}
@@ -19435,7 +19436,7 @@ ai_will_do = {
 
 	focus = {
 		id = SOV_union_of_sovereign_republics
-		icon = GFX_focus_RUS_form_usr
+		icon = GFX_goal_SOV_form_usr
 		prerequisite = { focus = SOV_return_of_republic }
 		mutually_exclusive = { focus = SOV_dismantle_the_union }
 		x = 1
@@ -19452,11 +19453,11 @@ ai_will_do = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 
 		completion_reward = {
-			set_cosmetic_tag = RUS_UNION_SOVEREIGN_STATES
+			set_cosmetic_tag = SOV_UNION_SOVEREIGN_STATES
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_stability = -0.05
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = RUS_multi_ethnic_federation
+			add_ideas = SOV_multi_ethnic_federation
 		}
 	}
 
@@ -19536,13 +19537,13 @@ ai_will_do = {
 			}
 			custom_effect_tooltip = SOV_dismantle_the_union_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = RUS_nation_state
+			add_ideas = SOV_nation_state
 		}
 	}
 
 	focus = {
 		id = SOV_closer_cooperation
-		icon = GFX_focus_RUS_country_protection
+		icon = GFX_goal_SOV_country_protection
 		prerequisite = { focus = SOV_our_own_alliance }
 		mutually_exclusive = {  }
 		x = 3
@@ -19571,7 +19572,7 @@ ai_will_do = {
 
 	focus = {
 		id = SOV_greater_alliance
-		icon = GFX_focus_RUS_expand_democratic_alliance
+		icon = GFX_goal_SOV_expand_democratic_alliance
 		prerequisite = { focus = SOV_our_own_alliance }
 		mutually_exclusive = {  }
 		x = 1
@@ -19597,7 +19598,7 @@ ai_will_do = {
 
 	focus = {
 		id = SOV_expand_the_union
-		icon = GFX_focus_RUS_expand_union
+		icon = GFX_goal_SOV_expand_union
 		prerequisite = { focus = SOV_closer_cooperation }
 		prerequisite = { focus = SOV_union_of_sovereign_republics }
 		mutually_exclusive = {  }
@@ -19626,7 +19627,7 @@ ai_will_do = {
 
 	focus = {
 		id = SOV_god_save_the_tsar
-		icon = GFX_focus_RUS_god_save_tsar
+		icon = GFX_goal_SOV_god_save_tsar
 		prerequisite = { focus = SOV_continue_the_monarchy }
 		mutually_exclusive = {  }
 		x = -1
@@ -19643,7 +19644,7 @@ ai_will_do = {
 		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
 
 		completion_reward = {
-			add_ideas = RUS_god_save_tsar_idea
+			add_ideas = SOV_god_save_tsar_idea
 		}
 	}
 
@@ -19677,13 +19678,13 @@ ai_will_do = {
 				can_create_collaboration_government = yes
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = RUS_constructor_of_democracies_idea
+			add_ideas = SOV_constructor_of_democracies_idea
 		}
 	}
 
 	focus = {
 		id = SOV_reform_entente
-		icon = GFX_focus_RUS_east_entente_members
+		icon = GFX_goal_SOV_east_entente_members
 		prerequisite = { focus = SOV_god_save_the_tsar }
 		prerequisite = { focus = SOV_reforge_old_alliances }
 		mutually_exclusive = { focus = SOV_greater_russian_dream }
@@ -19801,7 +19802,7 @@ ai_will_do = {
 		completion_reward = {
 			add_political_power = 100
 			custom_effect_tooltip = generic_skip_one_line_tt
-			unlock_decision_category_tooltip = RUS_reform_entente_category
+			unlock_decision_category_tooltip = SOV_reform_entente_category
 		}
 	}
 
@@ -19841,7 +19842,7 @@ ai_will_do = {
 			463 = {
 				controller = {
 					country_event = {
-						id = demrussia.8
+						id = rj_soviet.8
 						days = 1
 					}
 					custom_effect_tooltip = needs_approval
@@ -19866,13 +19867,13 @@ ai_will_do = {
 				463 = {
 					controller = {
 						add_timed_idea = {
-							idea = RUS_alaska_payment_recieving
+							idea = SOV_alaska_payment_recieving
 							days = 365
 						}
 					}
 				}
 				add_timed_idea = {
-					idea = RUS_alaska_payment_paying
+					idea = SOV_alaska_payment_paying
 					days = 365
 				}
 			}
@@ -19881,7 +19882,7 @@ ai_will_do = {
 
 	focus = {
 		id = SOV_greater_russian_dream
-		icon = GFX_focus_RUS_dreams_of_greater_russia
+		icon = GFX_goal_SOV_dreams_of_greater_russia
 		prerequisite = { focus = SOV_god_save_the_tsar }
 		mutually_exclusive = { focus = SOV_reform_entente }
 		x = -2
@@ -19911,9 +19912,9 @@ ai_will_do = {
 				can_declare_war_on_same_ideology = yes
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			add_ideas = RUS_greater_russian_dream_idea
+			add_ideas = SOV_greater_russian_dream_idea
 			custom_effect_tooltip = generic_skip_one_line_tt
-			unlock_decision_category_tooltip = RUS_big_russian_empire_category
+			unlock_decision_category_tooltip = SOV_big_russian_empire_category
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_war_support = 0.05
 		}
@@ -20114,7 +20115,7 @@ ai_will_do = {
 
 	focus = {
 		id = SOV_new_frontiers
-		icon = GFX_focus_RUS_even_greater_russia
+		icon = GFX_goal_SOV_even_greater_russia
 		prerequisite = { focus = SOV_greater_russian_dream }
 		mutually_exclusive = {  }
 		x = 0
@@ -20140,7 +20141,7 @@ ai_will_do = {
 			custom_effect_tooltip = generic_skip_one_line_tt
 			custom_effect_tooltip = SOV_new_frontiers_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
-			set_cosmetic_tag = RUS_GREATER_RUSSIAN_EMPIRE
+			set_cosmetic_tag = SOV_GREATER_RUSSIAN_EMPIRE
 		}
 	}
 
@@ -20457,7 +20458,7 @@ ai_will_do = {
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
 			add_timed_idea = {
-				idea = RUS_increase_military_budget_spending
+				idea = SOV_increase_military_budget_spending
 				days = 365
 			}
 		}
@@ -20876,13 +20877,13 @@ ai_will_do = {
 			add_political_power = 25
 			army_experience = 25
 			custom_effect_tooltip = generic_skip_one_line_tt
-			country_event = demrussia.11
+			country_event = rj_soviet.11
 		}
 	}
 
 	focus = {
 		id = SOV_social_democracy
-		icon = GFX_focus_RUS_democratic_socialism
+		icon = GFX_goal_SOV_democratic_socialism
 		prerequisite = { focus = SOV_internal_management }
 		mutually_exclusive = { focus = SOV_capitalism }
 		x = -2
@@ -20906,7 +20907,7 @@ ai_will_do = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_ideas = RUS_social_democracy_idea
+			add_ideas = SOV_social_democracy_idea
 		}
 	}
 
@@ -20936,7 +20937,7 @@ ai_will_do = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_ideas = RUS_better_working_idea
+			add_ideas = SOV_better_working_idea
 		}
 	}
 
@@ -20968,13 +20969,13 @@ ai_will_do = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_ideas = RUS_free_markets_idea
+			add_ideas = SOV_free_markets_idea
 		}
 	}
 
 	focus = {
 		id = SOV_capitalism
-		icon = GFX_focus_RUS_capitalism
+		icon = GFX_goal_SOV_capitalism
 		prerequisite = { focus = SOV_internal_management }
 		mutually_exclusive = { focus = SOV_social_democracy }
 		x = 2
@@ -21000,7 +21001,7 @@ ai_will_do = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_ideas = RUS_return_of_capitalism_idea
+			add_ideas = SOV_return_of_capitalism_idea
 		}
 	}
 
@@ -21276,7 +21277,7 @@ ai_will_do = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			add_ideas = RUS_urban_idea
+			add_ideas = SOV_urban_idea
 			custom_effect_tooltip = generic_skip_one_line_tt
 			random_owned_controlled_state = {
 				limit = {

@@ -1,0 +1,389 @@
+﻿###########################
+# RJ Soviet Events
+###########################
+
+add_namespace = rj_soviet
+
+# Duma Election
+country_event = {
+	id = rj_soviet.1
+	title = rj_soviet.1.t
+	desc = rj_soviet.1.desc
+	picture = GFX_report_event_election_vote
+	
+	is_triggered_only = yes
+	
+	option = { # Trudoviks
+		name = rj_soviet.1.a
+		ai_chance = { factor = 10 }
+		add_political_power = 5
+	}
+	option = { # Progressives
+		name = rj_soviet.1.b
+		ai_chance = { factor = 10 }
+		create_country_leader = {
+			name = "Peter Stuve"
+			picture = GFX_rj_portrait_SOV_peter_struve
+			expire = "1965.1.1"
+			ideology = liberalism
+			traits = { liberal_journalist }
+		}		
+		set_party_name = {
+			ideology = democratic
+			long_name = SOV_progressives_party_long
+			name = SOV_progressives_party
+		}
+	}
+	option = { # Kadets
+		name = rj_soviet.1.c
+		ai_chance = { factor = 10 }
+		create_country_leader = {
+			name = "Aleksandr Konovalov"
+			picture = GFX_rj_portrait_SOV_aleksandr_konovalov
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = { CAN_liberal_corporatist }
+		}
+		set_party_name = {
+			ideology = democratic
+			long_name = SOV_kadets_party_long
+			name = SOV_kadets_party
+		}
+	}
+}
+
+# Russia asks - can they puppet us?
+country_event = {
+	id = rj_soviet.2
+	title = rj_soviet.2.t
+	desc = rj_soviet.2.desc
+	picture = GFX_report_event_FIN_paasikivi_president
+	
+	is_triggered_only = yes
+	
+	option = { # We do need greater protection
+		name = rj_soviet.2.a
+		ai_chance = {
+			base = 95
+			modifier = {
+				factor = 3
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_major = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = rj_soviet.4
+				days = 3
+			}
+		}
+	}
+	option = { # Then we will just be giving up our independence!
+		name = rj_soviet.2.b
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 15
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.5
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = rj_soviet.3
+				days = 3
+			}
+		}
+	}
+}
+
+# Request denied
+country_event = {
+	id = rj_soviet.3
+	title = rj_soviet.3.t
+	desc = rj_soviet.3.desc
+	picture = GFX_report_event_FIN_paasikivi_president
+	
+	is_triggered_only = yes
+	
+	option = { # We will have to respect them
+		name = rj_soviet.3.a
+		ai_chance = {
+			base = 60
+		}
+		add_political_power = -10
+	}
+	option = { # They threaten the security of the alliance!
+		name = rj_soviet.3.b
+		ai_chance = {
+			base = 40
+		}
+		remove_from_faction = FROM
+		ROOT = {
+			create_wargoal = {
+				target = FROM
+				type = puppet_wargoal_focus
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_political_power = -25
+		add_war_support = -0.025
+	}
+}
+
+# Request accepted
+country_event = {
+	id = rj_soviet.4
+	title = rj_soviet.4.t
+	desc = rj_soviet.4.desc
+	picture = GFX_report_event_FIN_paasikivi_president
+	
+	is_triggered_only = yes
+	
+	option = { # Good choice
+		name = rj_soviet.4.a
+		ai_chance = {
+			base = 100
+		}
+		set_autonomy = {
+			target = FROM
+			autonomous_state = autonomy_puppet
+			end_wars = no
+			end_civil_wars = no
+		}
+	}
+}
+
+# Russia wants to become faction leader
+country_event = {
+	id = rj_soviet.5
+	title = rj_soviet.5.t
+	desc = rj_soviet.5.desc
+	picture = GFX_report_event_FIN_paasikivi_president
+	
+	is_triggered_only = yes
+	
+	option = { # Maybe they're right, we'd be better off with them as leader
+		name = rj_soviet.5.a
+		ai_chance = {
+			base = 95
+			modifier = {
+				factor = 3
+				strength_ratio = {
+					tag = FROM
+					ratio < 0.5
+				}
+			}
+			modifier = {
+				factor = 0.5
+				is_major = yes
+			}
+		}
+		FROM = {
+			country_event = {
+				id = rj_soviet.7
+				days = 1
+			}
+		}
+	}
+	option = { # Now is not a good time.
+		name = rj_soviet.5.b
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 15
+				strength_ratio = {
+					tag = FROM
+					ratio > 1.5
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = rj_soviet.6
+				days = 1
+			}
+		}
+	}
+}
+
+# Faction leadership declined
+country_event = {
+	id = rj_soviet.6
+	title = rj_soviet.6.t
+	desc = rj_soviet.6.desc
+	picture = GFX_report_event_FIN_paasikivi_president
+	
+	is_triggered_only = yes
+	
+	option = { # Damn
+		name = rj_soviet.6.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -5
+	}
+}
+
+# Faction leadership accepted
+country_event = {
+	id = rj_soviet.7
+	title = rj_soviet.7.t
+	desc = rj_soviet.7.desc
+	picture = GFX_report_event_FIN_paasikivi_president
+	
+	is_triggered_only = yes
+	
+	option = { # For the greatness of the allies
+		name = rj_soviet.7.a
+		ai_chance = {
+			base = 100
+		}
+		set_faction_leader = yes
+	}
+}
+
+# Russia wants Alaska
+country_event = {
+	id = rj_soviet.8
+	title = rj_soviet.8.t
+	desc = rj_soviet.8.desc
+	picture = GFX_report_event_generic_handshake
+	
+	is_triggered_only = yes
+	
+	option = { # Fair
+		name = rj_soviet.5.a
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 3
+				has_opinion = {
+					target = ROOT
+					value > 80
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = rj_soviet.10
+				days = 1
+			}
+		}
+	}
+	option = { # Funny joke. Now get out
+		name = rj_soviet.5.b
+		ai_chance = {
+			base = 30
+		}
+		FROM = {
+			country_event = {
+				id = rj_soviet.9
+				days = 1
+			}
+		}
+	}
+}
+
+# Alaska denied
+country_event = {
+	id = rj_soviet.9
+	title = rj_soviet.9.t
+	desc = rj_soviet.9.desc
+	picture = GFX_report_event_generic_handshake
+	
+	is_triggered_only = yes
+	
+	option = { # That's unfortunate
+		name = rj_soviet.9.a
+		ai_chance = {
+			base = 80
+		}
+		add_political_power = -5
+	}
+	option = { # Alaska is still Russian in our hearts
+		name = rj_soviet.9.b
+		ai_chance = {
+			base = 30
+		}
+		add_state_claim = 463
+		add_state_claim = 650
+	}
+}
+
+# Alaska accepted
+country_event = {
+	id = rj_soviet.10
+	title = rj_soviet.10.t
+	desc = rj_soviet.10.desc
+	picture = GFX_report_event_generic_handshake
+	
+	is_triggered_only = yes
+	
+	option = { # Finally, Alyaska is back!
+		name = rj_soviet.10.a
+		ai_chance = {
+			base = 100
+		}
+		add_state_core = 463
+		add_state_core = 650
+		transfer_state = 463
+		transfer_state = 650
+		custom_effect_tooltip = generic_skip_one_line_tt
+		463 = {
+			controller = {
+				add_timed_idea = {
+					idea = SOV_alaska_payment_recieving
+					days = 365
+				}
+			}
+		}
+		add_timed_idea = {
+			idea = SOV_alaska_payment_paying
+			days = 365
+		}
+	}
+}
+
+# Fate of black hundreds
+country_event = {
+	id = rj_soviet.11
+	title = rj_soviet.11.t
+	desc = rj_soviet.11.desc
+	picture = GFX_report_event_spr_army_of_africa
+	
+	is_triggered_only = yes
+	
+	option = { # Pardon them, they did help fight commies
+		name = rj_soviet.11.a
+		ai_chance = {
+			base = 30
+		}
+		add_war_support = .05
+		add_political_power = 50
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_stability = -0.05
+	}
+	option = { # Their actions are not forgivable
+		name = rj_soviet.11.b
+		ai_chance = {
+			base = 70
+		}
+		add_stability = .05
+		add_popularity = {
+			ideology = democratic 
+			popularity = 0.05
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		add_war_support = -0.05
+		add_political_power = -25
+	}
+}

@@ -1,6 +1,6 @@
 #### GERMANY LUXEMBOURG DEMOCRATIC RUSSIA ####
-RUS_security_pact_category = {
-	RUS_invite_country_to_security_pact = {
+SOV_security_pact_category = {
+	SOV_invite_country_to_security_pact = {
 		icon = generic_political_address
         cost = 25
 		days_remove = 28
@@ -44,7 +44,7 @@ RUS_security_pact_category = {
 			}
 		}
     }
-	RUS_invite_new_country_to_security_pact = {
+	SOV_invite_new_country_to_security_pact = {
 		icon = generic_political_address
         cost = 25
 		days_remove = 28
@@ -96,7 +96,7 @@ RUS_security_pact_category = {
 			}
 		}
     }
-	RUS_closer_cooperation_with_nation = {
+	SOV_closer_cooperation_with_nation = {
 		icon = generic_political_address
         cost = 50
 		days_remove = 70
@@ -127,13 +127,13 @@ RUS_security_pact_category = {
 		remove_effect = {
 			FROM = {
 				country_event = {
-					id = demrussia.2
+					id = rj_soviet.2
 					days = 2
 				}
 			}
 		}
     }
-	RUS_integrate_nation = {
+	SOV_integrate_nation = {
 		icon = generic_political_address
         cost = 100
 		days_remove = 70
@@ -176,8 +176,8 @@ RUS_security_pact_category = {
     }
 }
 
-RUS_big_russian_empire_category = {
-	RUS_establish_congress_poland = {
+SOV_big_russian_empire_category = {
+	SOV_establish_congress_poland = {
 		icon = generic_form_nation
         cost = 50
 		days_remove = 70
@@ -272,10 +272,10 @@ RUS_big_russian_empire_category = {
 				transfer_state = 784
 				transfer_state = 97
 			}
-			set_country_flag = RUS_has_integrated_congress_poland_flag
+			set_country_flag = SOV_has_integrated_congress_poland_flag
 		}
     }
-	RUS_reestablish_grand_duchy = {
+	SOV_reestablish_grand_duchy = {
 		icon = generic_form_nation
         cost = 50
 		days_remove = 70
@@ -382,7 +382,7 @@ RUS_big_russian_empire_category = {
 			}
 		}
     }
-	RUS_integrate_baltic = {
+	SOV_integrate_baltic = {
 		icon = infiltrate_state
         cost = 50
 		days_remove = 70
@@ -456,7 +456,7 @@ RUS_big_russian_empire_category = {
 				}
 			}
 			custom_trigger_tooltip = {
-				tooltip = RUS_memel_disclusion_tt
+				tooltip = SOV_memel_disclusion_tt
 			}
         }
 		modifier = {
@@ -512,7 +512,7 @@ RUS_big_russian_empire_category = {
 			}
 		}
     }
-	RUS_integrate_bessarabia = {
+	SOV_integrate_bessarabia = {
 		icon = infiltrate_state
         cost = 50
 		days_remove = 70
@@ -564,7 +564,7 @@ RUS_big_russian_empire_category = {
 			}
 		}
     }
-	RUS_integrate_kurils_and_south_sakhalin = {
+	SOV_integrate_kurils_and_south_sakhalin = {
 		icon = infiltrate_state
         cost = 50
 		days_remove = 70
@@ -616,7 +616,7 @@ RUS_big_russian_empire_category = {
 			}
 		}
     }
-	RUS_integrate_galicia = {
+	SOV_integrate_galicia = {
 		icon = infiltrate_state
         cost = 100
 		days_remove = 70
@@ -663,8 +663,8 @@ RUS_big_russian_empire_category = {
 			}
 			has_completed_focus = SOV_new_frontiers
 			custom_trigger_tooltip = {
-				tooltip = RUS_has_integrated_congress_poland_tt
-				has_country_flag = RUS_has_integrated_congress_poland_flag
+				tooltip = SOV_has_integrated_congress_poland_tt
+				has_country_flag = SOV_has_integrated_congress_poland_flag
 			}
         }
 		modifier = {
@@ -688,7 +688,7 @@ RUS_big_russian_empire_category = {
 			}
 		}
     }
-	RUS_integrate_east_prussia = {
+	SOV_integrate_east_prussia = {
 		icon = infiltrate_state
         cost = 100
 		days_remove = 70
@@ -735,8 +735,8 @@ RUS_big_russian_empire_category = {
 			}
 			has_completed_focus = SOV_new_frontiers
 			custom_trigger_tooltip = {
-				tooltip = RUS_has_integrated_congress_poland_tt
-				has_country_flag = RUS_has_integrated_congress_poland_flag
+				tooltip = SOV_has_integrated_congress_poland_tt
+				has_country_flag = SOV_has_integrated_congress_poland_flag
 			}
         }
 		modifier = {
@@ -760,7 +760,7 @@ RUS_big_russian_empire_category = {
 			}
 		}
     }
-	RUS_integrate_bosporus = {
+	SOV_integrate_bosporus = {
 		icon = infiltrate_state
         cost = 100
 		days_remove = 70
@@ -825,7 +825,7 @@ RUS_big_russian_empire_category = {
 			set_province_name = { id = 9833 name = "Constantinople" }
 		}
     }
-	RUS_integrate_mongolia = {
+	SOV_integrate_mongolia = {
 		icon = infiltrate_state
         cost = 100
 		days_remove = 70
@@ -893,7 +893,7 @@ RUS_big_russian_empire_category = {
 			}
 		}
     }
-	RUS_integrate_north_manchuria = {
+	SOV_integrate_north_manchuria = {
 		icon = infiltrate_state
         cost = 100
 		days_remove = 70
@@ -949,10 +949,10 @@ RUS_big_russian_empire_category = {
 				transfer_state = 714
 				transfer_state = 717
 			}
-			set_country_flag = RUS_has_integrated_northern_manchuria_flag
+			set_country_flag = SOV_has_integrated_northern_manchuria_flag
 		}
     }
-	RUS_integrate_south_manchuria = {
+	SOV_integrate_south_manchuria = {
 		icon = infiltrate_state
         cost = 100
 		days_remove = 70
@@ -1002,8 +1002,8 @@ RUS_big_russian_empire_category = {
 			}
 			has_completed_focus = SOV_new_frontiers
 			custom_trigger_tooltip = {
-				tooltip = RUS_has_integrated_northern_manchuria_tt
-				has_country_flag = RUS_has_integrated_northern_manchuria_flag
+				tooltip = SOV_has_integrated_northern_manchuria_tt
+				has_country_flag = SOV_has_integrated_northern_manchuria_flag
 			}
         }
 		modifier = {
@@ -1029,7 +1029,7 @@ RUS_big_russian_empire_category = {
 			}
 		}
     }
-	RUS_integrate_mengjiang = {
+	SOV_integrate_mengjiang = {
 		icon = infiltrate_state
         cost = 100
 		days_remove = 70
@@ -1070,8 +1070,8 @@ RUS_big_russian_empire_category = {
 			}
 			has_completed_focus = SOV_new_frontiers
 			custom_trigger_tooltip = {
-				tooltip = RUS_has_integrated_northern_manchuria_tt
-				has_country_flag = RUS_has_integrated_northern_manchuria_flag
+				tooltip = SOV_has_integrated_northern_manchuria_tt
+				has_country_flag = SOV_has_integrated_northern_manchuria_flag
 			}
         }
 		modifier = {
@@ -1091,7 +1091,7 @@ RUS_big_russian_empire_category = {
 			}
 		}
     }
-	RUS_integrate_korea = {
+	SOV_integrate_korea = {
 		icon = infiltrate_state
         cost = 100
 		days_remove = 70
@@ -1141,8 +1141,8 @@ RUS_big_russian_empire_category = {
 			}
 			has_completed_focus = SOV_new_frontiers
 			custom_trigger_tooltip = {
-				tooltip = RUS_has_integrated_northern_manchuria_tt
-				has_country_flag = RUS_has_integrated_northern_manchuria_flag
+				tooltip = SOV_has_integrated_northern_manchuria_tt
+				has_country_flag = SOV_has_integrated_northern_manchuria_flag
 			}
         }
 		modifier = {
@@ -1168,7 +1168,7 @@ RUS_big_russian_empire_category = {
 			}
 		}
     }
-	RUS_integrate_hokkaido = {
+	SOV_integrate_hokkaido = {
 		icon = infiltrate_state
         cost = 100
 		days_remove = 70
@@ -1217,8 +1217,8 @@ RUS_big_russian_empire_category = {
 		}
     }
 }
-RUS_reform_entente_category = {
-	RUS_ask_for_leadership = {
+SOV_reform_entente_category = {
+	SOV_ask_for_leadership = {
 		icon = SWI_guisan_speech
         cost = 100
 		days_remove = 28
@@ -1250,13 +1250,13 @@ RUS_reform_entente_category = {
 		remove_effect = {
 			FROM = {
 				country_event = {
-					id = demrussia.5
+					id = rj_soviet.5
 					days = 1
 				}
 			}
 		}
     }
-	RUS_reinvite_country_to_entente = {
+	SOV_reinvite_country_to_entente = {
 		icon = generic_political_address
         cost = 50
 		days_remove = 28
