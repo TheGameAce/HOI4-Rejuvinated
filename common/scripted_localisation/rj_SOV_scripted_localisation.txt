@@ -1,0 +1,35 @@
+defined_text = {
+	name = GetKeepCommissarsOrganizationName
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = SOV_keep_commissars_organization_communism
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+		localization_key = SOV_adjoined_battle_priests
+	}
+}
+
+defined_text = {
+	name = GetKeepCommissarsOrganizationDesc
+	text = {
+		trigger = {
+			has_government = communism
+		}
+		localization_key = SOV_keep_commissars_organization_communism_desc
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+		localization_key = SOV_adjoined_battle_priests_desc
+	}
+}
