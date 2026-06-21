@@ -17189,6 +17189,7 @@ focus_tree = {
 				}
 				NOT = { has_completed_focus = SOV_reinstate_the_duma }
 				NOT = { has_completed_focus = SOV_romanov_reconstruction }
+				NOT = { has_completed_focus = SOV_the_path_of_marxism_leninism }
 			}
 		}
 		
@@ -17333,6 +17334,7 @@ focus_tree = {
 				}
 				NOT = { has_completed_focus = SOV_reinstate_the_duma }
 				NOT = { has_completed_focus = SOV_dismantle_the_zemsky_sobor }
+				NOT = { has_completed_focus = SOV_the_path_of_marxism_leninism }
 			}
 		}
 		available_if_capitulated = no
@@ -19341,6 +19343,7 @@ focus_tree = {
 				}
 				NOT = { has_completed_focus = SOV_romanov_reconstruction }
 				NOT = { has_completed_focus = SOV_dismantle_the_zemsky_sobor }
+				NOT = { has_completed_focus = SOV_the_path_of_marxism_leninism }
 			}
 		}
 		available_if_capitulated = no
