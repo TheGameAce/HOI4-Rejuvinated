@@ -1,0 +1,211 @@
+ideas = {
+
+# GERMANYLUXEMBOURG'S DEMOCRATIC RUSSIA IDEAS
+
+	country = {
+
+		SOV_new_republic_idea = {
+
+			picture = SOV_russian_republic_flag 
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				stability_weekly = 0.002
+				consumer_goods_factor = -0.10
+				production_speed_buildings_factor = 0.05
+				political_power_factor = 0.1
+			}
+		}
+
+		SOV_multi_ethnic_federation = {
+
+			picture = citizen_militia_2
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				political_power_factor = -0.15
+			}
+		}
+
+		SOV_nation_state = {
+
+			picture = SOV_the_true_tsars
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				political_power_factor = 0.05
+				war_support_factor = 0.05
+			}
+		}
+
+		SOV_god_save_tsar_idea = {
+
+			picture = SOV_crowning_jewel_of_russia
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				war_stability_factor = 0.15
+				war_support_factor = 0.05
+			}
+		}
+
+		SOV_constructor_of_democracies_idea = {
+
+			picture = generic_volunteer_expedition_bonus
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				puppet_cost_factor = -0.1
+				send_volunteers_tension = -0.25
+				democratic_drift = 0.03
+				justify_war_goal_time = -0.15
+			}
+		}
+
+		SOV_greater_russian_dream_idea = {
+
+			picture = ARG_growing_nationalism_modifier
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				annex_cost_factor = -0.1
+				justify_war_goal_time = -0.2
+				generate_wargoal_tension = -0.8
+			}
+		}
+
+		SOV_alaska_payment_paying = {
+
+			picture = generic_economic_crisis
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.15
+			}
+		}
+
+		SOV_alaska_payment_recieving = {
+
+			picture = generic_economic_increase
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		SOV_increase_military_budget_spending = {
+
+			picture = SOV_third_five_year_plan_military
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+				mobilization_speed = 0.2
+				stability_factor = -0.1
+			}
+		}
+
+		SOV_return_of_capitalism_idea = {
+
+			picture = RAJ_special_economic_zones
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.1
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		SOV_social_democracy_idea = {
+
+			picture = FIN_socialist_welfare
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+
+		SOV_better_working_idea = {
+
+			picture = ARG_construction_guilds
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				industrial_capacity_factory = -0.05
+				production_factory_efficiency_gain_factor = 0.1
+				stability_weekly = 0.001
+			}
+		}
+
+		SOV_free_markets_idea = {
+
+			picture = generic_economic_increase
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		SOV_urban_idea = {
+
+			picture = generic_economic_increase
+
+			allowed = {
+				always = no
+			}
+
+			modifier = {
+				industrial_capacity_factory = 0.05
+				global_building_slots_factor = 0.1
+			}
+		}
+
+	}
+
+}
