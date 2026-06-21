@@ -107,7 +107,7 @@ on_actions = {
 				unlock_national_focus = limited_rearmament_focus
 				unlock_national_focus = shadow_scheme_focus
 				unlock_national_focus = uk_industrial_focus
-				unlock_national_focus = royal_ordinance_focus
+				unlock_national_focus = royal_ordinance_focus #RJ
 				if = {
 					limit = {
 						amount_research_slots > 4
@@ -483,7 +483,7 @@ on_actions = {
 						has_country_leader = { ruling_only = yes character = MEX_leon_trotsky }
 						has_country_leader = { ruling_only = yes character = MEX_valentin_campa }
 					}					
-					is_subject_of = SOV
+					is_subject_of = SOV #RJ
 					SOV = {
 						has_country_leader_ideology = stalinism 
 					}
@@ -1807,6 +1807,9 @@ on_actions = {
 				ENG = {
 					release = FIJ
 				}
+				FIJ = {
+					transfer_state = 725 
+				}
 				USA = {
 					delete_unit = { state = 629 }
 					delete_unit = { state = 630 }
@@ -1826,17 +1829,24 @@ on_actions = {
 					delete_unit = { state = 648 }
 					delete_unit = { state = 645 }
 					release = GUM
+					release = PLU
 					release = FSM
 				}
 				FRA = {
 					release = TAH
 				}
 				AST = {
+					release = BOU
 					release = PNG
-					release = SOL
+				}
+				726 = {
+					set_demilitarized_zone = no 
 				}
 				NZL = {
 					release = SAM
+				}
+				SAM = {
+					transfer_state = 1072
 				}
 				ENG = {
 					set_autonomy = { target = AST autonomy_state = autonomy_free }
@@ -1872,6 +1882,9 @@ on_actions = {
 					add_core_of = HAW
 				}
 				635 = {
+					add_core_of = HAW
+				}
+				1071 = {
 					add_core_of = HAW
 				}
 				636 = {
@@ -1917,6 +1930,9 @@ on_actions = {
 					add_core_of = HAW
 				}
 				734 = {
+					add_core_of = HAW
+				}
+				1072 = {
 					add_core_of = HAW
 				}
 				645 = {
@@ -1997,6 +2013,14 @@ on_actions = {
 					}
 				}
 				634 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				1071 = {
 					add_extra_state_shared_building_slots = 1
 					add_building_construction = {
 						type = industrial_complex
@@ -3462,6 +3486,12 @@ on_actions = {
 					tag = ENG
 				}
 				FROM = { set_country_flag = achievements_pride_and_extreme_prejudice }
+			}
+			if = {
+				limit = {
+					tag = SIA
+				}
+				FROM = { set_country_flag = achievement_thaitanic }
 			}
 		}
 	}

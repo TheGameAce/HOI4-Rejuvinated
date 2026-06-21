@@ -6307,11 +6307,6 @@ focus_tree = {
 				limit = {
 					849 = {
 						is_controlled_by = ROOT
-						free_building_slots = {
-							building = fuel_silo
-							size > 0
-							include_locked = yes
-						}
 					}
 				}
 				849 = { #PUGLIA (Taranto)
@@ -6327,11 +6322,6 @@ focus_tree = {
 				random_core_state = {
 					limit = {
 						is_controlled_by = ROOT
-						free_building_slots = {
-							building = fuel_silo
-							size > 0
-							include_locked = yes
-						}
 					}
 					prioritize = { 852 736 } #ISTRIA as main fallback
 					add_extra_state_shared_building_slots = 1
@@ -6347,11 +6337,6 @@ focus_tree = {
 				limit = {
 					117 = {
 						is_controlled_by = ROOT
-						free_building_slots = {
-							building = fuel_silo
-							size > 0
-							include_locked = yes
-						}
 					}
 				}
 				117 = { #Campagna (Napoli)
@@ -6367,11 +6352,6 @@ focus_tree = {
 				random_core_state = {
 					limit = {
 						is_controlled_by = ROOT
-						free_building_slots = {
-							building = fuel_silo
-							size > 0
-							include_locked = yes
-						}
 					}
 					prioritize = { 157 162 } #ABRUZZO as main fallback
 					add_extra_state_shared_building_slots = 1
@@ -6387,11 +6367,6 @@ focus_tree = {
 				limit = {
 					115 = {
 						is_controlled_by = ROOT
-						free_building_slots = {
-							building = fuel_silo
-							size > 0
-							include_locked = yes
-						}
 					}
 				}
 				115 = { #SICILY (Palermo)
@@ -6407,11 +6382,6 @@ focus_tree = {
 				random_core_state = {
 					limit = {
 						is_controlled_by = ROOT
-						free_building_slots = {
-							building = fuel_silo
-							size > 0
-							include_locked = yes
-						}
 					}
 					prioritize = { 156 114 } #CALABRIA as main fallback
 					add_extra_state_shared_building_slots = 1
