@@ -51,19 +51,24 @@ spriteTypes = {
 	### ENG - United Kingdom ###
 	############################
 
-	SpriteType = {
+	spriteType = {
+		name = "GFX_rj_portrait_ENG_bernard_montgomery_small"
+		texturefile = "gfx/interface/ideas/eng/advisors/rj_advisor_ENG_bernard_montgomery.dds"
+	}
+
+	spriteType = {
 		name = "GFX_rj_portrait_ENG_eric_roberts_small"
 		texturefile = "gfx/interface/ideas/eng/advisors/rj_advisor_ENG_eric_roberts.dds"
 	}
 
-	SpriteType = {
-		name = "GFX_rj_portrait_ENG_william_stephenson_small"
-		texturefile = "gfx/interface/ideas/eng/advisors/rj_advisor_ENG_william_stephenson.dds"
-	}
-
-	SpriteType = {
+	spriteType = {
 		name = "GFX_rj_portrait_ENG_william_fairbairn_small"
 		texturefile = "gfx/interface/ideas/eng/advisors/rj_advisor_ENG_william_fairbairn.dds"
+	}
+
+	spriteType = {
+		name = "GFX_rj_portrait_ENG_william_stephenson_small"
+		texturefile = "gfx/interface/ideas/eng/advisors/rj_advisor_ENG_william_stephenson.dds"
 	}
 
 
@@ -71,14 +76,56 @@ spriteTypes = {
 	### GER - Germany ###
 	#####################
 
-	SpriteType = {
+	spriteType = {
+		name = "GFX_rj_portrait_GER_adolf_hitler_small"
+		texturefile = "gfx/interface/ideas/ger/advisors/rj_advisor_GER_adolf_hitler.dds"
+	}
+
+	spriteType = {
+		name = "GFX_rj_portrait_GER_gerd_von_rundstedt_small"
+		texturefile = "gfx/interface/ideas/ger/advisors/rj_advisor_GER_gerd_von_rundstedt.dds"
+	}
+
+	spriteType = {
+		name = "GFX_rj_portrait_GER_gunther_von_kluge_small"
+		texturefile = "gfx/interface/ideas/ger/advisors/rj_advisor_GER_gunther_von_kluge.dds"
+	}
+
+	spriteType = {
 		name = "GFX_rj_portrait_GER_otto_skorzeny_small"
 		texturefile = "gfx/interface/ideas/ger/advisors/rj_advisor_GER_otto_skorzeny.dds"
 	}
 
-	SpriteType = {
+	spriteType = {
 		name = "GFX_rj_portrait_GER_theodor_von_hippel_small"
 		texturefile = "gfx/interface/ideas/ger/advisors/rj_advisor_GER_theodor_von_hippel.dds"
+	}
+
+	##########################
+	### SOV - Soviet Union ###
+	##########################
+
+	spriteType = {
+		name = "GFX_rj_portrait_SOV_aleksandr_kerensky_small"
+		#texturefile = "gfx/interface/ideas/sov/advisors/rj_advisor_SOV_aleksandr_kerensky.dds"
+		texturefile = "gfx/interface/ideas/portrait_PLACEHOLDER_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_rj_portrait_SOV_aleksandr_konovalov_small"
+		#texturefile = "gfx/interface/ideas/sov/advisors/rj_advisor_SOV_aleksandr_konovalov.dds"
+		texturefile = "gfx/interface/ideas/portrait_PLACEHOLDER_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_rj_portrait_SOV_joseph_stalin_small"
+		texturefile = "gfx/interface/ideas/sov/advisors/rj_advisor_SOV_joseph_stalin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_rj_portrait_SOV_peter_struve_small"
+		#texturefile = "gfx/interface/ideas/sov/advisors/rj_advisor_SOV_peter_struve.dds"
+		texturefile = "gfx/interface/ideas/portrait_PLACEHOLDER_small.dds"
 	}
 
 }

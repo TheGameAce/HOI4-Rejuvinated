@@ -887,7 +887,7 @@ focus_tree = {
 
 	focus = {
 		id = CUB_hold_ctc_rallies
-		icon = GFX_SOV_leader_of_the_party_and_the_people_ccp_2d_sov_compatibility
+		icon = GFX_focus_YUG_pan_slavic_congress
 		cost = 5
 		prerequisite = { focus = CUB_galvanize_the_ctc }
 		relative_position_id = CUB_galvanize_the_ctc
@@ -1012,7 +1012,7 @@ focus_tree = {
 
 	focus = {
 		id = CUB_reaffirm_comintern_ties
-		icon = GFX_SOV_father_of_nations_ccp_2d_sov_compatibility
+		icon = GFX_focus_SOV_father_of_nations
 		cost = 4
 		prerequisite = { focus = CUB_overthrow_the_menocal_government }
 		relative_position_id = CUB_overthrow_the_menocal_government
@@ -1808,7 +1808,7 @@ focus_tree = {
 
 	focus = {
 		id = CUB_one_caribbean_policy
-		icon = GFX_SOV_an_oceangoing_navy_ccp_2d_sov_compatibility
+		icon = GFX_goal_generic_navy_battleship
 		cost = 10
 		prerequisite = { focus = CUB_communism_in_the_caribbean }
 		mutually_exclusive = { focus = CUB_for_the_revolution }
@@ -1897,7 +1897,7 @@ focus_tree = {
 
 	focus = {
 		id = CUB_adapt_the_five_year_plan
-		icon = GFX_SOV_fourth_five_year_plan_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_industry_3
 		cost = 10
 		prerequisite = { focus = CUB_overthrow_the_menocal_government }
 		relative_position_id = CUB_overthrow_the_menocal_government
@@ -2365,7 +2365,7 @@ focus_tree = {
 
 	focus = {
 		id = CUB_stabilize_internal_politics
-		icon = GFX_SOV_committee_in_exile_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_self_management
 		cost = 10
 		prerequisite = { focus = CUB_deal_with_batista focus = CUB_government_reshuffle }
 		relative_position_id = CUB_deal_with_batista
@@ -2966,7 +2966,7 @@ focus_tree = {
 
 	focus = {
 		id = CUB_army_expansion
-		icon = GFX_SOV_depoliticize_the_military_ccp_2d_sov_compatibility
+		icon = GFX_focus_generic_little_entente
 		prerequisite = { focus = CUB_caribbean_dominance }
 		x = -4
 		y = 1
@@ -3389,7 +3389,7 @@ focus_tree = {
 
 	focus = {
 		id = CUB_lay_claim_to_curacao_and_trinidad
-		icon = GFX_SOV_consolidate_power_ccp_2d_sov_compatibility
+		icon = GFX_goal_generic_political_pressure
 		x = -1
 		y = 1
 		prerequisite = { focus = CUB_demand_the_eastern_isles focus = CUB_demand_jamaica_and_the_bahamas }
@@ -5253,7 +5253,7 @@ focus_tree = {
 
 	focus = {
 		id = CUB_increased_safety_standards
-		icon = GFX_SOV_modernize_aircraft_facilities_ccp_2d_sov_compatibility
+		icon = GFX_goal_generic_air_production
 		cost = 10
 
 		prerequisite = {
@@ -5604,7 +5604,7 @@ focus_tree = {
 
 	focus = {
 		id = CUB_excavation_research
-		icon = GFX_SOV_increase_state_reserves_ccp_2d_sov_compatibility
+		icon = GFX_goal_generic_construction2
 		cost = 7.2
 
 		prerequisite = {
@@ -5877,7 +5877,7 @@ focus_tree = {
 
 	focus = {
 		id = CUB_back_the_ward_line
-		icon = GFX_SOV_expand_shipbuilding_plants_ccp_2d_sov_compatibility
+		icon = GFX_goal_generic_construct_naval_dockyard
 		cost = 7.2
 
 		prerequisite = {

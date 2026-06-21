@@ -64,6 +64,7 @@ If you'd like to either contribute to this project or you're simply interested i
 - [France Completed](https://steamcommunity.com/sharedfiles/filedetails/?id=2273181015)
 - [France Total Rework](https://steamcommunity.com/sharedfiles/filedetails/?id=843048390)
 - [Democratic Russia](https://steamcommunity.com/sharedfiles/filedetails/?id=3453965141)
+- [Zeru](https://discord.gg/3HRTbpnP2C)
 
 # HOW TO SETUP THE GITHUB INSTALATION
 ## STEP 1
