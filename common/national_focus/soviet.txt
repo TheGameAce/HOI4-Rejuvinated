@@ -652,7 +652,6 @@ focus_tree = {
 						free_building_slots = {
 							building = fuel_silo
 							size > 0
-							include_locked = yes
 						}
 						NOT = { has_state_flag = SOV_increase_state_reserves_flag }
 					}
@@ -664,7 +663,6 @@ focus_tree = {
 							free_building_slots = {
 								building = fuel_silo
 								size > 0
-								include_locked = yes
 							}
 							NOT = { has_state_flag = SOV_increase_state_reserves_flag }
 						}
@@ -675,7 +673,6 @@ focus_tree = {
 							free_building_slots = {
 								building = fuel_silo
 								size > 0
-								include_locked = yes
 							}
 							NOT = { has_state_flag = SOV_increase_state_reserves_flag }
 						}
@@ -694,7 +691,6 @@ focus_tree = {
 							free_building_slots = {
 								building = fuel_silo
 								size > 0
-								include_locked = yes
 							}
 							NOT = { has_state_flag = SOV_increase_state_reserves_flag }
 						}
@@ -4307,17 +4303,17 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_pc_of_mechanical_engineering
-		cost = 10
+		cost = 5
 
 		available = {
 			if = {
 				limit = {
 					has_dlc = "No Step Back"
 				}
-				has_tech = improved_medium_tank_chassis
+				has_tech = basic_medium_tank_chassis
 			}
 			else = {
-				has_tech = improved_medium_tank
+				has_tech = basic_medium_tank
 			}
 		}
 		
@@ -4329,7 +4325,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = SOV_superior_war_machines
-				bonus = 0.75
+				bonus = 0.5
 				uses = 2
 				category = armor
 			}
@@ -4384,8 +4380,8 @@ focus_tree = {
 							special_type_slot_1 = sloped_armor
 						}
 						upgrades = {
-							tank_nsb_engine_upgrade = 10
-							tank_nsb_armor_upgrade = 7
+							tank_nsb_engine_upgrade = 7
+							tank_nsb_armor_upgrade = 5
 						}
 						icon = "GFX_SOV_improved_medium_tank_medium"
 					}
@@ -4407,8 +4403,8 @@ focus_tree = {
 							special_type_slot_1 = sloped_armor
 						}
 						upgrades = {
-							tank_nsb_engine_upgrade = 10
-							tank_nsb_armor_upgrade = 7
+							tank_nsb_engine_upgrade = 5
+							tank_nsb_armor_upgrade = 5
 						}
 						icon = "GFX_SOV_improved_medium_tank_medium"
 					}
@@ -4427,8 +4423,8 @@ focus_tree = {
 							special_type_slot_1 = sloped_armor
 						}
 						upgrades = {
-							tank_nsb_engine_upgrade = 10
-							tank_nsb_armor_upgrade = 7
+							tank_nsb_engine_upgrade = 5
+							tank_nsb_armor_upgrade = 3
 						}
 						icon = "GFX_SOV_improved_medium_tank_medium"
 					}
@@ -4445,7 +4441,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SOV_pc_of_mechanical_engineering
-		cost = 10
+		cost = 5
 
 		available = {
 
@@ -4459,7 +4455,7 @@ focus_tree = {
 
 			add_tech_bonus = {
 				name = SOV_the_means_to_wage_war
-				bonus = 0.75
+				bonus = 0.5
 				uses = 2
 				category = support_tech
 			}
@@ -4582,7 +4578,7 @@ focus_tree = {
 				}
 				else_if = {
 					limit = {
-						has_tech = antitank2
+						has_tech = antitank4
 					}
 					create_equipment_variant = {
 						name = "SU-100"
@@ -4934,9 +4930,15 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_MANPOWER}
 
 		completion_reward = {
-			add_to_variable = { SOV_the_red_army_mobilization_speed = 0.05 }
-			add_to_variable = { SOV_the_red_army_conscription_factor = 0.03 }
-			custom_effect_tooltip = SOV_strengthen_the_mobilization_plan_ns_tt
+			custom_effect_tooltip = modify_the_red_army_tt
+			add_to_variable = { SOV_the_red_army_mobilization_speed = 0.05 tooltip = mobilization_speed_tt}
+			add_to_variable = { SOV_the_red_army_conscription_factor = 0.03 tooltip = conscription_factor_tt }
+			add_to_variable = { SOV_the_red_army_mastery_loss_factor = 0.05 tooltip = land_mastery_gain_factor_tt }
+
+			#Need for tooltip
+			set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+			multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+
 		}
 	}
 
@@ -6362,9 +6364,19 @@ focus_tree = {
 		search_filters = {}
 
 		completion_reward = {
-			add_to_variable = { SOV_the_red_army_army_org_factor = 0.05 }
-			custom_effect_tooltip = SOV_rehabilitated_military_ns_tt
+			custom_effect_tooltip = modify_the_red_army_tt
+			add_to_variable = { SOV_the_red_army_army_org_factor = 0.05 tooltip = army_org_factor_tt }
+			if = {
+				limit = {
+					NOT = { has_completed_focus = SOV_lessons_of_war }
+				}
+				
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor = 0.15 tooltip = land_mastery_gain_factor_tt }
 
+				#Need for tooltip
+				set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+				multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+			}
 			add_ideas = SOV_rehabilitated_military_ns
 		}
 	}
@@ -6483,10 +6495,14 @@ focus_tree = {
 
 		completion_reward = {
 			add_to_variable = { SOV_the_red_army_army_org_factor = 0.05 }
-			set_variable = { SOV_the_red_army_experience_gain_army_factor = 0 }
 			set_variable = { SOV_the_red_army_experience_loss_factor = 0 }
+			set_variable = { SOV_the_red_army_mastery_loss_factor = 0 }
 
 			custom_effect_tooltip = SOV_lessons_of_war_ns_tt
+			effect_tooltip = {
+				#this should be the positive of whatever the negative mastery lsos is, only used for tooltip
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor = SOV_the_red_army_mastery_loss_factor_inverted tooltip = land_mastery_gain_factor_tt } 
+			}
 
 			unlock_decision_tooltip = SOV_order_227
 			custom_effect_tooltip = SOV_lessons_of_war_unlock_military_operations_tt
@@ -7209,7 +7225,7 @@ focus_tree = {
 			add_political_power = 25
 
 			SOV_paranoia_high_increase_effect = yes
-			
+
 			#HISTORICAL
 			#Zinovyev
 			if = {
@@ -7280,6 +7296,18 @@ focus_tree = {
 				SOV_trigger_great_purge_moscow_trial_effect = yes #FIRST MOSCOW TRIAL -> Zinovyev & friends
 			}
 			custom_effect_tooltip = SOV_trigger_first_moscow_trial_tt
+
+			custom_effect_tooltip = newline_tt
+			if = {
+				limit = { NOT = { has_completed_focus = SOV_lessons_of_war } }
+				
+				custom_effect_tooltip = modify_the_red_army_tt
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor  = -0.05 tooltip = land_mastery_gain_factor_tt }
+
+				#Need for tooltip
+				set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+				multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+			}
 		}
 	}
 
@@ -7568,6 +7596,19 @@ focus_tree = {
 				SOV_paranoia_modifier_update_gui_tooltip = yes
 			}		
 			custom_effect_tooltip = SOV_increase_weekly_paranoia_in_trait_tt
+
+			custom_effect_tooltip = newline_tt
+
+			if = {
+				limit = { NOT = { has_completed_focus = SOV_lessons_of_war } }
+				
+				custom_effect_tooltip = modify_the_red_army_tt
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor = -0.05 tooltip = land_mastery_gain_factor_tt }
+
+				#Need for tooltip
+				set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+				multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+			}
 		}
 	}
 
@@ -7794,6 +7835,18 @@ focus_tree = {
 			}
 
 			set_country_flag = SOV_stalinist_military_flag #New Generals have more chances of being Stalinists after this
+
+			custom_effect_tooltip = newline_tt
+			if = {
+				limit = { NOT = { has_completed_focus = SOV_lessons_of_war } }
+				
+				custom_effect_tooltip = modify_the_red_army_tt
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor = -0.05 tooltip = land_mastery_gain_factor_tt }
+
+				#Need for tooltip
+				set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+				multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+			}
 		}
 	}
 
@@ -7892,6 +7945,18 @@ focus_tree = {
 			custom_effect_tooltip = SOV_trigger_third_moscow_trial_tt
 
 			SOV_remove_paranoia_effect = yes #REMOVE PARANOIA SYSTEM
+
+			custom_effect_tooltip = newline_tt
+			if = {
+				limit = { NOT = { has_completed_focus = SOV_lessons_of_war } }
+				
+				custom_effect_tooltip = modify_the_red_army_tt
+				add_to_variable = { SOV_the_red_army_mastery_loss_factor = -0.05 tooltip = land_mastery_gain_factor_tt }
+
+				#Need for tooltip
+				set_variable = { SOV_the_red_army_mastery_loss_factor_inverted = SOV_the_red_army_mastery_loss_factor }
+				multiply_variable = { SOV_the_red_army_mastery_loss_factor_inverted = -1 }
+			}
 		}
 	}
 
@@ -10389,9 +10454,12 @@ focus_tree = {
 		relative_position_id = SOV_curtailment_of_the_collective_farms
 		cost = 10
 		available = {
-			has_character = SOV_aleksey_rykov
+			OR = {
+				has_character = SOV_aleksey_rykov
+				NOT = { SOV_nikolay_bukharin = { is_country_leader = yes } }
+			}
 		}
-		                
+
 		search_filters = {FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY}
 
 		completion_reward = {
@@ -14953,10 +15021,26 @@ ai_will_do = {
 
 		available = {
 			#SOV controls the states in which railway lines will be built
-			controls_state = 405 #TASHKENT
-			controls_state = 404 #KYZYL ORDA
-			controls_state = 732 #PAMIR
-			controls_state = 586 #ALMA-ATA
+	
+			#TASHKENT
+			405 = {
+				is_controlled_by_ROOT_or_subject = yes 
+			}
+
+			#KYZYL ORDA
+			404 = {
+				is_controlled_by_ROOT_or_subject = yes 
+			}
+
+			#PAMIR
+			732 = {
+				is_controlled_by_ROOT_or_subject = yes 
+			}
+
+			#ALMA-ATA
+			586 = {
+				is_controlled_by_ROOT_or_subject = yes 
+			}
 
 			OR = {
 				AND = { #Relevant states under Soviet control
@@ -14975,27 +15059,88 @@ ai_will_do = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-		
-		SIK = {
-				add_opinion_modifier = { #
-					target = ROOT
-					modifier = SOV_cooperating_with_us
+			hidden_effect = { #Decrease SIK's desire to join Chinese faction (and other AI strategies)
+				SOV_approach_sinkiang_diplomacy_effect = yes
+				SIK = {
+					add_ai_strategy = { #This is added in Gobi Gambit + all 3 investment decisions
+						type = alliance
+						id = SOV		
+						value = 4
+					}
 				}
-		}
-			if = {
-		limit = {	
-		SIK = { has_idea = USA_SOV_SIK_support_idea1 }
 			}
-		SIK = { swap_ideas = {
-		remove_idea = USA_SOV_SIK_support_idea1
-		add_idea = USA_SOV_SIK_support_idea2
-			}	
+			if = { #If SOV controls the relevant states (for whatever weird reason -.-), then insta-build
+				limit = {
+					controls_state = 617 #URUMQI
+					controls_state = 618 #DZUNGARIA
+				}
+				# Tashkent - Frunze - Alma-Ata - Urumqi
+				build_railway = {
+					path = { 1459 10148 10366 12397 12340 12640 7706 12583 4224 1591 10547 10619 12529 7866 1783 10674 4709 } #1840 12526 4770 4709
+				}
+				#Supply Hub in Alma-Ata
+				586 = {
+					add_building_construction = {
+						type = supply_node
+						level = 1
+						province = 1591
+						instant_build = yes
+					}
+				}
+				custom_effect_tooltip = SOV_sinkiang_decisions_available_tt
+			}
+			else = { #If SIK in control of them
+				SIK = { country_event = { id = NSB_soviet_foreign_politics_events.270 hours = 6 random_hours = 6 } }
+				# IF THEY ACCEPT
+				custom_effect_tooltip = if_they_accept_tt
+				effect_tooltip = {
+					add_opinion_modifier = {
+						target = SIK
+						modifier = SOV_complied_with_our_demands
+					}
+					
+					# Tashkent - Frunze - Alma-Ata - Urumqi
+					build_railway = {
+						path = { 1459 10148 10366 12397 12340 12640 7706 12583 4224 1591 10547 10619 12529 7866 1783 10674 4709 }
+					}
+					#Supply Hub in Alma-Ata
+					586 = {
+						add_building_construction = {
+							type = supply_node
+							level = 1
+							province = 1591
+							instant_build = yes
+						}
+					}
+					custom_effect_tooltip = SOV_sinikiang_influence_cg_tt_sov
+					custom_effect_tooltip = SOV_sinkiang_decisions_available_tt
+				}
+				# IF THEY REFUSE
+				custom_effect_tooltip = if_they_refuse_tt
+				effect_tooltip = {
+					add_opinion_modifier = {
+						target = SIK
+						modifier = SOV_rejected_our_demands
+					}
+					# Tashkent - Frunze - Alma-Ata
+					build_railway = {
+						path = { 1459 10148 10366 12397 12340 12640 7706 12583 4224 1591 }
+					}
+					#Supply Hub in Alma-Ata
+					586 = {
+						add_building_construction = {
+							type = supply_node
+							level = 1
+							province = 1591
+							instant_build = yes
+						}
+					}
+					custom_effect_tooltip = SOV_sinikiang_influence_refuse_tt
+				}
+			}
+			custom_effect_tooltip = SOV_volunteers_allowed_sinkiang_tt
 		}
 	}
-			
-		else = { SIK = { add_ideas = USA_SOV_SIK_support_idea1	} }
-	}
-}
 
 	focus = {
 		id = SOV_two_red_flags
@@ -15039,24 +15184,46 @@ ai_will_do = {
 		search_filters = {}
 
 		completion_reward = {
-		PRC = {
-				add_opinion_modifier = { 
+			PRC = {
+				add_opinion_modifier = { #Good relations with Mao
 					target = ROOT
 					modifier = SOV_cooperating_with_us
 				}
-		}
-			if = {
-		limit = {	
-		PRC = { has_idea = USA_SOV_SIK_support_idea1 }
+				add_relation_modifier = {
+					target = ROOT
+					modifier = SOV_soviet_chinese_relations
+				}
+				every_other_country = {
+					limit = {
+						SOV_is_free_chinese_tag = yes
+					}
+					add_opinion_modifier = { #Bad Relations with other Chinese tags
+						target = ROOT
+						modifier = SOV_cooperating_with_other
+					}
+				}
 			}
-		PRC = { swap_ideas = {
-		remove_idea = USA_SOV_PRC_support_idea1
-		add_idea = USA_SOV_PRC_support_idea2
-			}	
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					PRC = { has_idea = USA_SOV_SIK_support_idea1 }
+				}
+				PRC = {
+					swap_ideas = {
+						remove_idea = USA_SOV_PRC_support_idea1
+						add_idea = USA_SOV_PRC_support_idea2
+					}
+				}
+			}
+			else = {
+				PRC = {
+					add_ideas = USA_SOV_PRC_support_idea1
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			activate_targeted_decision = { target = PRC decision = SOV_send_infantry_equipment_asia }
+			custom_effect_tooltip = SOV_volunteers_allowed_mao_tt
 		}
-	}
-		else = { PRC = { add_ideas = USA_SOV_PRC_support_idea1	} }
-	}
 	}
 
 	focus = {
@@ -15104,24 +15271,46 @@ ai_will_do = {
 		search_filters = {}
 
 		completion_reward = {
-		CHI = {
-				add_opinion_modifier = { 
+			CHI = {
+				add_opinion_modifier = { #Good relations with Mao
 					target = ROOT
 					modifier = SOV_cooperating_with_us
 				}
-		}
-			if = {
-		limit = {	
-		CHI = { has_idea = USA_SOV_CHI_support_idea1 }
+				add_relation_modifier = {
+					target = ROOT
+					modifier = SOV_soviet_chinese_relations
+				}
+				every_other_country = {
+					limit = {
+						SOV_is_free_chinese_tag = yes
+					}
+					add_opinion_modifier = { #Bad Relations with other Chinese tags
+						target = ROOT
+						modifier = SOV_cooperating_with_other
+					}
+				}
 			}
-		CHI = { swap_ideas = {
-		remove_idea = USA_SOV_CHI_support_idea1
-		add_idea = USA_SOV_CHI_support_idea2
-			}	
+			custom_effect_tooltip = generic_skip_one_line_tt
+			if = {
+				limit = {
+					CHI = { has_idea = USA_SOV_CHI_support_idea1 }
+				}
+				CHI = {
+					swap_ideas = {
+						remove_idea = USA_SOV_CHI_support_idea1
+						add_idea = USA_SOV_CHI_support_idea2
+					}
+				}
+			}
+			else = {
+				CHI = {
+					add_ideas = USA_SOV_CHI_support_idea1
+				}
+				custom_effect_tooltip = generic_skip_one_line_tt
+			}
+			activate_targeted_decision = { target = CHI decision = SOV_send_infantry_equipment_asia }
+			custom_effect_tooltip = SOV_volunteers_allowed_kuomintang_tt
 		}
-	}
-		else = { CHI = { add_ideas = USA_SOV_CHI_support_idea1	} }
-	}
 	}
 
 	focus = {
@@ -16377,6 +16566,10 @@ ai_will_do = {
 					type = send_lend_lease_desire
 					id = SOV
 					value = 300
+				}
+				add_relation_rule_override = {
+					target = SOV
+					can_send_volunteers = yes 
 				}
 			}
 		}
@@ -19240,7 +19433,7 @@ ai_will_do = {
 		available = {
 			NOT = {
 				has_country_leader = {
-					name = "Aleksandr Kerensky"
+					character = SOV_aleksandr_kerensky
 					ruling_only = yes
 				}
 			}
@@ -20595,7 +20788,6 @@ ai_will_do = {
 				bonus = 1.0
 				uses = 4
 				category = dd_tech
-				category = cl_tech
 				category = ca_tech
 				category = bb_tech
 				category = cv_tech
@@ -20895,7 +21087,7 @@ ai_will_do = {
 		}
 		available = {
 			has_country_leader = {
-				name = "Aleksandr Kerensky"
+				character = SOV_aleksandr_kerensky
 				ruling_only = yes
 			}
 		}
@@ -20925,7 +21117,7 @@ ai_will_do = {
 		}
 		available = {
 			has_country_leader = {
-				name = "Aleksandr Kerensky"
+				character = SOV_aleksandr_kerensky
 				ruling_only = yes
 			}
 		}
@@ -20938,38 +21130,6 @@ ai_will_do = {
 
 		completion_reward = {
 			add_ideas = SOV_better_working_idea
-		}
-	}
-
-	focus = {
-		id = SOV_free_the_markets
-		icon = GFX_focus_RAJ_special_economic_zones
-		prerequisite = { focus = SOV_capitalism }
-		mutually_exclusive = {  }
-		x = 0
-		y = 1
-		relative_position_id = SOV_capitalism
-		cost = 5
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			NOT = {
-				has_country_leader = {
-					name = "Aleksandr Kerensky"
-					ruling_only = yes
-				}
-			}
-		}
-
-		bypass = {
-		}
-		available_if_capitulated = no
-		
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-
-		completion_reward = {
-			add_ideas = SOV_free_markets_idea
 		}
 	}
 
@@ -20988,7 +21148,7 @@ ai_will_do = {
 		available = {
 			NOT = {
 				has_country_leader = {
-					name = "Aleksandr Kerensky"
+					character = SOV_aleksandr_kerensky
 					ruling_only = yes
 				}
 			}
@@ -21002,6 +21162,38 @@ ai_will_do = {
 
 		completion_reward = {
 			add_ideas = SOV_return_of_capitalism_idea
+		}
+	}
+
+	focus = {
+		id = SOV_free_the_markets
+		icon = GFX_focus_RAJ_special_economic_zones
+		prerequisite = { focus = SOV_capitalism }
+		mutually_exclusive = {  }
+		x = 0
+		y = 1
+		relative_position_id = SOV_capitalism
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = {
+				has_country_leader = {
+					character = SOV_aleksandr_kerensky
+					ruling_only = yes
+				}
+			}
+		}
+
+		bypass = {
+		}
+		available_if_capitulated = no
+		
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			add_ideas = SOV_free_markets_idea
 		}
 	}
 
