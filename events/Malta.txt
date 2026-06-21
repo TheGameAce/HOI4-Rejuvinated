@@ -17,6 +17,9 @@ country_event = { #The Language Question Event
 				factor = 0
 			}
 		}
+
+		set_country_flag = MLT_chose_english
+		complete_national_focus = MLT_an_english_answer
 	}
 
 	option = {
@@ -28,6 +31,9 @@ country_event = { #The Language Question Event
 				factor = 0
 			}
 		}
+
+		set_country_flag = MLT_chose_italian
+		complete_national_focus = MLT_an_italian_answer
 	}
 
 	option = {
@@ -39,6 +45,9 @@ country_event = { #The Language Question Event
 				factor = 0
 			}
 		}
+
+		set_country_flag = MLT_chose_maltese
+		complete_national_focus = MLT_a_maltese_answer
 	}
 
 	option = {
@@ -46,5 +55,8 @@ country_event = { #The Language Question Event
 		ai_chance = {
 			base = 1
 		}
+
+		set_country_flag = MLT_chose_compromise
+		complete_national_focus = MLT_a_compromise
 	}
 }

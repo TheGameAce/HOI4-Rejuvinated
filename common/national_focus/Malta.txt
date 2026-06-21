@@ -17,7 +17,6 @@ focus_tree = {
 	focus = {
 		id = MLT_answer_the_language_question
 		icon = GFX_focus_RJ_MLT_answer_the_language_question
-		prerequisite = { }
 		x = 0
 		y = 0
 		cost = 7.2
@@ -35,9 +34,114 @@ focus_tree = {
 	}
 
 	focus = {
+		id = MLT_an_english_answer
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = MLT_answer_the_language_question }
+		mutually_exclusive = { focus = MLT_a_maltese_answer }
+		mutually_exclusive = { focus = MLT_a_compromise }
+		mutually_exclusive = { focus = MLT_an_italian_answer }
+		relative_position_id = MLT_answer_the_language_question
+		x = -7
+		y = 1
+		cost = 1
+
+		available_if_capitulated = yes
+		available = {
+			has_country_flag = MLT_chose_english
+		}
+
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_a_compromise
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = MLT_answer_the_language_question }
+		mutually_exclusive = { focus = MLT_a_maltese_answer }
+		mutually_exclusive = { focus = MLT_an_english_answer }
+		mutually_exclusive = { focus = MLT_an_italian_answer }
+		relative_position_id = MLT_answer_the_language_question
+		x = -3
+		y = 1
+		cost = 1
+
+		available_if_capitulated = yes
+		available = {
+			has_country_flag = MLT_chose_compromise
+		}
+
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_an_italian_answer
+		icon = GFX_focus_ITA_italian_irredentism
+		prerequisite = { focus = MLT_answer_the_language_question }
+		mutually_exclusive = { focus = MLT_a_maltese_answer }
+		mutually_exclusive = { focus = MLT_an_english_answer }
+		mutually_exclusive = { focus = MLT_a_compromise }
+		relative_position_id = MLT_answer_the_language_question
+		x = 3
+		y = 1
+		cost = 1
+
+		available_if_capitulated = yes
+		available = {
+			has_country_flag = MLT_chose_italian
+		}
+
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+	focus = {
+		id = MLT_a_maltese_answer
+		icon = GFX_focus_ITA_italian_irredentism
+		prerequisite = { focus = MLT_answer_the_language_question }
+		mutually_exclusive = { focus = MLT_an_italian_answer }
+		mutually_exclusive = { focus = MLT_an_english_answer }
+		mutually_exclusive = { focus = MLT_a_compromise }
+		relative_position_id = MLT_answer_the_language_question
+		x = 7
+		y = 1
+		cost = 1
+
+		available_if_capitulated = yes
+		available = {
+			has_country_flag = MLT_chose_maltese
+		}
+
+		completion_reward = {
+			
+		}
+
+		search_filters = { FOCUS_FILTER_POLITICAL }
+	}
+
+
+
+
+
+
+
+
+
+
+	focus = {
 		id = MLT_state_of_the_nation
 		icon = GFX_goal_generic_consumer_goods
-		x = 9
+		x = 20
 		y = 0
 		cost = 5
 
