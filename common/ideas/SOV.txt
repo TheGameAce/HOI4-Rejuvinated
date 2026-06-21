@@ -16,7 +16,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = SOV_second_five_year_plan_ccp_2d_sov_compatibility # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+			picture = SOV_second_five_year_plan
 
 			allowed = {
 				always = no
@@ -35,7 +35,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = SOV_third_five_year_plan_ccp_2d_sov_compatibility # New GFX entry pointing to the original icon, so it can be safely overwritten by CCP 2D Sov Art without impacting other content using the same icon
+			picture = SOV_third_five_year_plan
 
 			allowed = {
 				always = no
@@ -55,7 +55,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = trotskyite_plot_nsb_ccp_sov_compatibility
+			picture = trotskyite_plot
 
 			allowed = {
 				always = no
@@ -76,7 +76,7 @@ ideas = {
 
 		trotskyite_plot_purged = {
 			name = trotskyite_plot
-			picture = trotskyite_plot_purged_nsb_ccp_sov_compatibility
+			picture = trotskyite_plot_purged
 			removal_cost = -1
 
 			allowed = {
@@ -776,7 +776,7 @@ ideas = {
 				tag = SOV
 			}
 
-			picture = SOV_restoration_and_development_idea_ccp_sov_compatibility
+			picture = generic_exploit_mines
 
 			modifier = {
 				industry_repair_factor = 0.1
@@ -1046,7 +1046,7 @@ ideas = {
 		SOV_defense_industry_artillery_bonus = {
 			name = SOV_soviet_artillery
 
-			picture = SOV_defense_industry_artillery_bonus_ccp_sov_compatibility
+			picture = generic_artillery_regiments
 
 			removal_cost = -1
 
@@ -1095,7 +1095,7 @@ ideas = {
 		SOV_desperate_measures_ns = {
 			name = SOV_desperate_measures
 
-			picture = SOV_desperate_measures_ns_nsb_ccp_sov_compatibility
+			picture = tfv_can_conscription_crisis
 
 			removal_cost = -1
 
@@ -1117,7 +1117,7 @@ ideas = {
 		SOV_smersh = {
 			name = SOV_smersh
 
-			picture = smersh_nsb_ccp_sov_compatibility
+			picture = saf_soviet_advisers
 
 			removal_cost = -1
 
@@ -1134,7 +1134,7 @@ ideas = {
 		SOV_smersh_no_lar = {
 			name = SOV_smersh
 
-			picture = SOV_smersh_no_lar_ccp_sov_compatibility
+			picture = saf_soviet_advisers
 
 			removal_cost = -1
 
@@ -1834,7 +1834,7 @@ ideas = {
 				always = yes
 			}
 
-			picture = SOV_rehabilitated_military_ns_nsb_ccp_sov_compatibility
+			picture = generic_morale_bonus
 
 			modifier = {
 				land_reinforce_rate = 0.02
@@ -2164,7 +2164,7 @@ ideas = {
 		}
 
 		SOV_consolidate_power = {
-			picture = SOV_consolidate_power_ccp_sov_compatibility
+			picture = generic_volunteer_expedition_bonus
 
 			removal_cost = -1
 
@@ -2183,7 +2183,7 @@ ideas = {
 		}
 
 		SOV_rebuild_the_nation = {
-			picture = SOV_rebuild_the_nation_ccp_sov_compatibility
+			picture = generic_goods_red_bonus
 
 			removal_cost = -1
 
@@ -2202,7 +2202,7 @@ ideas = {
 		}
 
 		SOV_restore_the_glory_of_the_motherland = {
-			picture = SOV_restore_the_glory_of_the_motherland_ccp_sov_compatibility
+			picture = generic_morale_bonus
 
 			removal_cost = -1
 
@@ -2307,7 +2307,7 @@ ideas = {
 		}
 
 		SOV_rebuild_the_savior_cathedral = {
-			picture = SOV_rebuild_the_savior_cathedral_ccp_sov_compatibility
+			picture = ARG_construction_guilds
 
 			removal_cost = -1
 
@@ -2347,7 +2347,7 @@ ideas = {
 
 		SOV_honest_serfdom_idea = {
 
-			picture = SOV_honest_serfdom_idea_ccp_sov_compatibility
+			picture = generic_manpower_bonus
 
 			removal_cost = -1
 
@@ -2368,7 +2368,7 @@ ideas = {
 
 		SOV_memories_of_1905_idea = {
 
-			picture = SOV_memories_of_1905_idea_ccp_sov_compatibility
+			picture = generic_japanese_conflict
 
 			removal_cost = -1
 
@@ -2389,7 +2389,7 @@ ideas = {
 
 		SOV_modernize_the_far_eastern_fleet = {
 
-			picture = SOV_modernize_the_far_eastern_fleet_ccp_sov_compatibility
+			picture = generic_navy_bonus
 
 			removal_cost = -1
 
@@ -2407,29 +2407,9 @@ ideas = {
 			}
 		}
 
-		SOV_modernize_the_far_eastern_fleet_vanilla = { #Non-MTG version of the NS above
-			name = SOV_modernize_the_far_eastern_fleet
-
-			picture = SOV_modernize_the_far_eastern_fleet_vanilla_ccp_sov_compatibility
-
-			removal_cost = -1
-
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				original_tag = SOV
-			}
-
-			modifier = {
-				repair_speed_factor = 0.25
-			}
-		}
-
 		SOV_an_empire_in_the_pacific_idea = {
 
-			picture = SOV_an_empire_in_the_pacific_idea_ccp_sov_compatibility
+			picture = generic_sea_focused_navy
 
 			removal_cost = -1
 
@@ -2460,7 +2440,7 @@ ideas = {
 
 		SOV_national_brotherhood_idea = {
 
-			picture = SOV_national_brotherhood_idea_ccp_sov_compatibility
+			picture = generic_infantry_bonus
 			removal_cost = -1
 
 			allowed = {
@@ -2512,7 +2492,7 @@ ideas = {
 		}
 
 		SOV_legacy_of_rome = {
-			picture = SOV_legacy_of_rome_ccp_sov_compatibility
+			picture = generic_monarchist_uprising
 			removal_cost = -1
 
 			allowed = {
@@ -2532,7 +2512,7 @@ ideas = {
 		}
 
 		SOV_the_iron_wall_of_russian_resolve = {
-			picture = SOV_the_iron_wall_of_russian_resolve_nsb_ccp_sov_compatibility
+			picture = man_five_year_plan_tank
 			removal_cost = -1
 
 			allowed = {
@@ -2552,7 +2532,7 @@ ideas = {
 		}
 
 		SOV_russian_corporate_state = {
-			picture = SOV_russian_corporate_state_ccp_sov_compatibility
+			picture = man_five_year_plan_industry
 			removal_cost = -1
 
 			allowed = {
@@ -2569,7 +2549,7 @@ ideas = {
 		}
 
 		SOV_our_slavic_commitments = {
-			picture = SOV_our_slavic_commitments_ccp_sov_compatibility
+			picture = FRA_matignon_agreements
 			removal_cost = -1
 
 			allowed = {
@@ -2586,7 +2566,7 @@ ideas = {
 		}
 
 		SOV_siberian_lessons = {
-			picture = SOV_siberian_lessons_ccp_sov_compatibility
+			picture = can_wartime_prices_and_trade_board
 			removal_cost = -1
 
 			allowed = {
@@ -2603,7 +2583,7 @@ ideas = {
 		}
 
 		SOV_romanov_reconstruction = {
-			picture = SOV_romanov_reconstruction_ccp_sov_compatibility
+			picture = generic_intel_bonus
 			removal_cost = -1
 
 			allowed = {
@@ -2691,7 +2671,7 @@ ideas = {
 
 		SOV_the_local_soviets_idea = {
 
-			picture = SOV_the_local_soviets_idea_nsb_ccp_sov_compatibility
+			picture = generic_local_self_management
 			removal_cost = -1
 
 			allowed = {
@@ -3078,7 +3058,7 @@ ideas = {
 
 		SOV_politicized_military = {
 
-			picture = SOV_politicized_military_ccp_sov_compatibility
+			picture = generic_reserve_divisions
 
 			removal_cost = -1
 
@@ -3104,7 +3084,7 @@ ideas = {
 		SOV_politicized_military_humanism = {
 			name = SOV_politicized_military
 
-			picture = SOV_politicized_military_humanism_ccp_sov_compatibility
+			picture = generic_reserve_divisions
 
 			removal_cost = -1
 
@@ -3131,7 +3111,7 @@ ideas = {
 		SOV_politicized_military_keep = {
 			name = SOV_politicized_military
 
-			picture = SOV_politicized_military_keep_ccp_sov_compatibility
+			picture = generic_reserve_divisions
 
 			removal_cost = -1
 
@@ -3158,7 +3138,7 @@ ideas = {
 		SOV_politicized_military_keep_humanism = {
 			name = SOV_politicized_military
 
-			picture = SOV_politicized_military_keep_humanism_ccp_sov_compatibility
+			picture = generic_reserve_divisions
 
 			removal_cost = -1
 
@@ -3185,7 +3165,7 @@ ideas = {
 
 		SOV_politicized_military_swap = {
 
-			picture = SOV_politicized_military_swap_ccp_sov_compatibility
+			picture = generic_reserve_divisions
 
 			removal_cost = -1
 
@@ -3210,7 +3190,7 @@ ideas = {
 		SOV_politicized_military_swap_humanism = {
 			name = SOV_politicized_military_swap
 
-			picture = SOV_politicized_military_swap_humanism_ccp_sov_compatibility
+			picture = generic_reserve_divisions
 
 			removal_cost = -1
 
@@ -3234,7 +3214,7 @@ ideas = {
 		}
 
 		SOV_politicized_military_battle_priests = { #Exiles version of Keep Commissars
-			picture = SOV_politicized_military_battle_priests_ccp_sov_compatibility
+			picture = YUG_orthodox_church_support
 
 			removal_cost = -1
 
@@ -10332,6 +10312,5 @@ ideas = {
 				industrial_capacity_dockyard = 0.05
 			}
 		}
-	}	
-
+	}
 }

@@ -8,8 +8,6 @@
 ### search_filters = {FOCUS_FILTER_USA_CONGRESS}
 
 #!gfx:interface/RJ_goals.gfx
-#!gfx:interface/RJ_USA_goals.gfx
-
 focus_tree = {
 	id = usa_focus
 
@@ -342,7 +340,7 @@ focus_tree = {
 
 	focus = {
 		id = RJ_USA_spread_our_ideals
-		icon = GFX_SOV_a_global_class_struggle_ccp_2d_sov_compatibility
+		icon = GFX_focus_ger_great_red_menace
 		x = 1
 		y = 1
 		prerequisite = { focus = USA_democratic_socialism }
@@ -8025,7 +8023,7 @@ focus_tree = {
 
 	focus = {
 		id = RJ_USA_interlocking_convoy_system
-		icon = GFX_SOV_pc_of_the_ussr_navy_ccp_2d_sov_compatibility
+		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = RJ_USA_the_bucket_brigade_system }
 		x = 0
 		y = 1

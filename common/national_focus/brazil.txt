@@ -1,3 +1,4 @@
+#!gfx:interface/RJ_goals.gfx
 focus_tree = {
 	id = brazilian_focus
 	
@@ -791,7 +792,7 @@ focus_tree = {
 	
 	focus = {
 		id = bra_technical_schools
-		icon = GFX_SOV_pc_of_mechanical_engineering_ccp_2d_sov_compatibility
+		icon = GFX_goal_generic_production2
 		relative_position_id = bra_federal_institutes
 		x = -4
 		y = 0
@@ -878,7 +879,7 @@ focus_tree = {
 
 	focus = {
 		id = bra_more_federal_universities
-		icon = GFX_SOV_national_academies_of_sciences_ccp_2d_sov_compatibility
+		icon = GFX_focus_research2
 		prerequisite = { focus = bra_iti }
 		prerequisite = { focus = bra_military_projects }
 		prerequisite = { focus = bra_federal_universities }
