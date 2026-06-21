@@ -6579,7 +6579,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SOV_lessons_of_war
-		cost = 10
+		cost = 5
 
 		available = {
 			any_owned_state = {
@@ -6707,6 +6707,31 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SOV_the_red_army_army_org_regain = 0.1 }
 			custom_effect_tooltip = SOV_barrier_troops_ns_tt
+		}
+	}
+
+	focus = {
+		id = SOV_partisan_suppression
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = SOV_barrier_troops }
+		x = 0
+		y = 1
+		relative_position_id = SOV_barrier_troops
+		cost = 5
+		ai_will_do = {
+			factor = 8
+		}
+		bypass = {
+			has_idea = partisan_suppression_focus
+		}
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = partisan_suppression_focus
+				days = 1795
+			}
 		}
 	}
 
@@ -6901,12 +6926,68 @@ focus_tree = {
 	}
 
 	focus = {
-		id = SOV_the_glory_of_the_red_army
-		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+		id = SOV_Military_Excellence
+		icon = GFX_focus_generic_license_production
 		prerequisite = { focus = SOV_keep_commissars_organization focus = SOV_swap_to_political_advisors focus = SOV_adjoined_battle_priests }
 		x = 1
 		y = 1
 		relative_position_id = SOV_keep_commissars_organization
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = modify_the_red_army_tt
+			add_to_variable = {
+				SOV_the_red_army_army_org_factor = 0.05
+				tooltip = army_org_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			custom_effect_tooltip = modify_the_red_air_force_tt
+			add_to_variable = {
+				SOV_soviet_airforce_army_bonus_air_superiority_factor = 0.1
+				tooltip = army_bonus_air_superiority_factor_tt
+			}
+		}
+	}
+	
+	focus = {
+		id = SOV_Deep_Operations
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = SOV_Military_Excellence }
+		x = 0
+		y = 1
+		relative_position_id = SOV_Military_Excellence
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = modify_the_red_army_tt
+			add_to_variable = {
+				SOV_the_red_army_army_attack_factor = 0.05
+				tooltip = army_attack_factor_tt
+			}
+			add_to_variable = {
+				SOV_the_red_army_army_speed_factor = 0.1
+				tooltip = army_speed_factor_tt
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			add_mastery = {
+				amount = 50
+				folder = land
+			}
+			army_experience = 30
+		}
+	}
+
+	focus = {
+		id = SOV_the_glory_of_the_red_army
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+		prerequisite = { focus = SOV_Deep_Operations }
+		x = 0
+		y = 1
+		relative_position_id = SOV_Deep_Operations
 		cost = 10
 
 		allow_branch = {
@@ -6951,10 +7032,10 @@ focus_tree = {
 	focus = {
 		id = SOV_the_glory_of_the_red_army_alt
 		icon = GFX_focus_SOV_the_glory_of_the_red_army_alternative
-		prerequisite = { focus = SOV_keep_commissars_organization focus = SOV_swap_to_political_advisors focus = SOV_adjoined_battle_priests }
-		x = 1
+		prerequisite = { focus = SOV_Deep_Operations }
+		x = 0
 		y = 1
-		relative_position_id = SOV_keep_commissars_organization
+		relative_position_id = SOV_Deep_Operations
 		cost = 10
 
 		allow_branch = {
@@ -11659,7 +11740,7 @@ focus_tree = {
 		id = SOV_addressing_internal_affairs
 		icon = GFX_focus_generic_self_management
 		prerequisite = { focus = SOV_the_path_of_marxism_leninism }
-		x = 24
+		x = 26
 		y = 1
 		offset = {
 			x = -7
@@ -11760,7 +11841,7 @@ focus_tree = {
 		id = SOV_nkvd_primacy
 		icon = GFX_focus_JAP_learn_from_the_nkvd
 		prerequisite = { focus = SOV_addressing_internal_affairs }
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = SOV_addressing_internal_affairs
 		cost = 5
@@ -11774,6 +11855,137 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = SOV_nkvd_nsb
 			SOV_paranoia_medium_increase_effect = yes
+		}
+	}
+
+	focus = {
+		id = SOV_Expand_the_Labor_Camps
+		icon = GFX_focus_CZE_german_puppet
+		prerequisite = { focus = SOV_nkvd_primacy }
+		x = -1
+		y = 1
+		relative_position_id = SOV_nkvd_primacy
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = sov_gulag
+		}
+	}
+	
+	focus = {
+		id = SOV_Increase_Investment
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = SOV_Expand_the_Labor_Camps }
+		mutually_exclusive = { focus = SOV_Increase_Quotas }
+		x = 0
+		y = 1
+		relative_position_id = SOV_Expand_the_Labor_Camps
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = sov_gulag
+				add_idea = sov_gulag2
+			}
+		}
+	}
+	
+	focus = {
+		id = SOV_Increase_Quotas
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = SOV_Expand_the_Labor_Camps }
+		mutually_exclusive = { focus = SOV_Increase_Investment }
+		x = 2
+		y = 1
+		relative_position_id = SOV_Expand_the_Labor_Camps
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = sov_gulag
+				add_idea = sov_gulag3
+			}
+		}
+	}
+	
+	focus = {
+		id = SOV_Establish_Experimental_Design_Bureau
+		icon = GFX_focus_research2
+		prerequisite = { focus = SOV_Increase_Investment focus = SOV_Increase_Quotas }
+		x = 1
+		y = 1
+		relative_position_id = SOV_Increase_Investment
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = SOV_Experimental_Design_Bureau_tt
+			if = {
+				limit = { has_idea = sov_gulag2 }
+				swap_ideas = {
+					remove_idea = sov_gulag2
+					add_idea = sov_gulag4
+				}
+			}
+			if = {
+				limit = { has_idea = sov_gulag3 }
+				swap_ideas = {
+					remove_idea = sov_gulag3
+					add_idea = sov_gulag5
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SOV_Siberian_Urban_Centers
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = SOV_Establish_Experimental_Design_Bureau }
+		x = 0
+		y = 1
+		relative_position_id = SOV_Establish_Experimental_Design_Bureau
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			controls_state = 574
+			controls_state = 575
+			controls_state = 576
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			574 = {
+				add_extra_state_shared_building_slots = 3
+			}
+			575 = {
+				add_extra_state_shared_building_slots = 3
+			}
+			576 = {
+				add_extra_state_shared_building_slots = 3
+			}
 		}
 	}
 
@@ -11835,7 +12047,7 @@ focus_tree = {
 		id = SOV_positive_heroism
 		icon = GFX_goal_generic_cavalry
 		prerequisite = { focus = SOV_expand_the_agitprop }
-		x = -2
+		x = 2
 		y = 1
 		relative_position_id = SOV_expand_the_agitprop
 		cost = 10
@@ -12046,7 +12258,7 @@ focus_tree = {
 		id = SOV_the_komsomol
 		icon = GFX_focus_generic_join_comintern
 		prerequisite = { focus = SOV_expand_the_agitprop }
-		x = 2
+		x = -2
 		y = 1
 		relative_position_id = SOV_expand_the_agitprop
 		cost = 5
@@ -12077,7 +12289,7 @@ focus_tree = {
 		id = SOV_patriarch_of_all_russia
 		icon = GFX_focus_SOV_patriarch_of_all_russia
 		prerequisite = { focus = SOV_war_heroes focus = SOV_socialist_realism }
-		x = 1
+		x = -1
 		y = 1
 		relative_position_id = SOV_war_heroes
 		cost = 5
@@ -12112,7 +12324,7 @@ focus_tree = {
 		id = SOV_the_comintern
 		icon = GFX_goal_support_communism
 		prerequisite = { focus = SOV_the_path_of_marxism_leninism }
-		x = 9
+		x = 11
 		y = 0
 		relative_position_id = SOV_addressing_internal_affairs
 		cost = 5
@@ -15893,11 +16105,11 @@ focus_tree = {
 	focus = {
 		id = SOV_beaten_but_not_defeated
 		icon = GFX_goal_generic_war_with_comintern
-		x = 61
+		x = 65
 		y = 0
 		relative_position_id = SOV_the_path_of_marxism_leninism
 		offset = {
-			x = -44
+			x = -48
 			y = 0
 			trigger = { #All commie branches hide except for Stalinist
 				has_game_rule = {
@@ -19302,10 +19514,9 @@ focus_tree = {
 		}
 	}
 	
-	########################################################
-	#  DEMOCRATIC RUSSIA MOD - BY GERMANYLUXEMBOURG DELUXE #
-	########################################################
-
+	#######################
+	#  DEMOCRATIC RUSSIA  #
+	#######################
 
 	focus = {
 		id = SOV_reinstate_the_duma
