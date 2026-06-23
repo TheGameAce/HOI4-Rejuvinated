@@ -1,4 +1,19 @@
 characters={
+	
+	MLT_david_campbell = { # Historical Governor General of Malta at the start of the game. Dies on March 12, 1936.
+		name = "Sir David Campbell"
+		portraits={
+			civilian={
+				large = "gfx/leaders/MLT/David_Campbell.dds"
+			}
+		}
+		country_leader={
+			ideology= conservatism_neutrality
+			traits={ governor_general }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
 
 	MLT_charles_bonham_carter = { # Historical Governor General of Malta from shortly after game start.
 		name = "Charles Bonham Carter"
