@@ -1,0 +1,17 @@
+characters = {
+
+	RJ_SIC_liu_wenhui = { # Historical Governor General of Malta at the start of the game. Dies on March 12, 1936.
+		name = "Liu Wenhui"
+		portraits={
+			civilian={
+				large = "gfx/leaders/SIC/Liu_Wenhui.dds"
+			}
+		}
+		country_leader={
+			ideology= despotism
+			traits={ }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
+}
